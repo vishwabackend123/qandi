@@ -93,38 +93,96 @@
                <div class="tablist">
                   <ul class="nav nav-tabs" role="tablist">
                      <li class="nav-item pe-5 me-2">
-                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Mock Test</a>
+                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test1">Mock Test</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#qq2">Attempted</a>
+                        <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted2">Attempted</a>
                      </li>
                   </ul>
                </div>
                <!-- Tab panes -->
                <div class="tab-content bg-white exam_tabdata">
-                  <div class="jee_main_text_take_test__btn">
-                     <div class="mock_exam_jee_main_text">
-                        <h3>JEE Main - Full Syllabus -2021</h3>
+                  <div id="mock_test" class=" tab-pane active">
+                     <div class="jee_main_text_take_test__btn">
+                        <div class="mock_exam_jee_main_text">
+                           <h3>JEE Main - Full Syllabus -2021</h3>
+                        </div>
+                        <button type="button" class="btn btn-common-green mock_test_take_test_btn">Take test</button> 
                      </div>
-                     <button type="button" class="btn btn-common-green mock_test_take_test_btn">Take test</button> 
+                     <div class="line_696"></div>
+                     <div class="mock_test_ques_dure_marks_sub d-flex">
+                        <div class="mock_test_ques_content">
+                           <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                           <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                        </div>
+                        <div class="mock_test_dure_content">
+                           <div class="mock_test_q_d_m_s_text1">Duration</div>
+                           <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                        </div>
+                        <div class="mock_test_marks_content">
+                           <div class="mock_test_q_d_m_s_text1">Marks</div>
+                           <div class="mock_test_q_d_m_s_text2">300</div>
+                        </div>
+                        <div class="mock_test_sub_content">
+                           <div class="mock_test_q_d_m_s_text1">Subject</div>
+                           <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="line_696"></div>
-                  <div class="mock_test_ques_dure_marks_sub d-flex">
-                     <div class="mock_test_ques_content">
-                        <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                        <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
-                     </div>
-                     <div class="mock_test_dure_content">
-                        <div class="mock_test_q_d_m_s_text1">Duration</div>
-                        <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
-                     </div>
-                     <div class="mock_test_marks_content">
-                        <div class="mock_test_q_d_m_s_text1">Marks</div>
-                        <div class="mock_test_q_d_m_s_text2">300</div>
-                     </div>
-                     <div class="mock_test_sub_content">
-                        <div class="mock_test_q_d_m_s_text1">Subject</div>
-                        <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                  <div id="attempted2" class=" tab-pane active">
+                     <div class="accordion-item pt-4">  
+                        <div class="test-table d-flex align-items-center justify-content-between">
+                           <h2 class="m-0">Mock Test</h2>
+                           <h3 class="m-0">17 April 2021</h3>    
+                           <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-space-between;" id="headingTwo"><h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0">View details</h4>
+                           <div>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                 <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              <h3>See analytics</h3>
+                           </div>
+                           <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
+                           </div>  
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                           <div class="accordion-body ps-0 pe-0">
+
+
+                              <div class="mock_test_ques_dure_marks_sub d-flex">
+                                 <div class="mock_test_ques_content2">
+                                    <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                                    <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                 </div>
+                                 <div class="mock_test_dure_content2">
+                                    <div class="mock_test_q_d_m_s_text1">Duration</div>
+                                    <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                 </div>
+                                 <div class="mock_test_marks_content2">
+                                    <div class="mock_test_q_d_m_s_text1">Marks</div>
+                                    <div class="mock_test_q_d_m_s_text2">300</div>
+                                 </div>
+                                 <div class="mock_test_marks_content2">
+                                    <div class="mock_test_q_d_m_s_text1">Subject</div>
+                                    <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                 </div>
+                                 <div class="mock_test_marks_content2">
+                                    <div class="mock_test_q_d_m_s_text1">Slot</div>
+                                    <div class="mock_test_q_d_m_s_text2">Morning</div>
+                                 </div>
+                                 <div class="mock_test_sub_content2">
+                                    <div class="mock_test_q_d_m_s_text1">Score</div>
+                                    <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
+                                 </div>
+                              </div>
+
+
+
+
+
+                           </div>
+                        </div>   
+                     </div> 
                      </div>
                   </div>
                </div>

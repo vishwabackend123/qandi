@@ -279,6 +279,7 @@ Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultCon
 Route::any('/send_verfication_email', [App\Http\Controllers\SubscriptionController::class, 'sendVerficationEmail']);
 
 Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, 'performanceRating'])->name('performance-rating')->middleware('auth');
+Route::any('/trendGraphUpdate/{type}', [App\Http\Controllers\HomeController::class, 'trendGraphUpdate'])->name('trendGraphUpdate')->middleware('auth');
 
 
 
@@ -295,9 +296,9 @@ Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile'])->name('profile')->middleware('auth');
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
-Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
-Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
-Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']); 
+Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
+Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']);
 Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
@@ -307,3 +308,6 @@ Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController
 Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
 Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);
 Route::any('/exam_test', [App\Http\Controllers\LeadUserController::class, 'examTest']);
+Route::any('/overall_analytics', [App\Http\Controllers\LeadUserController::class, 'overallAnalytics']);
+
+
