@@ -57,7 +57,7 @@ class HomeController extends Controller
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
-            $user_id = 685;
+            //$user_id = 685;
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
 
@@ -140,16 +140,6 @@ class HomeController extends Controller
                 $trendResponse = [];
             }
 
-            /* 
-            if (empty($subject_proficiency)) {
-                foreach ($user_subjects as $key => $sub) {
-                    $sub->total_questions = 0;
-                    $sub->correct_ans = 0;
-                    $sub->score = 0;
-
-                    $subject_proficiency[$key] = (array)$sub;
-                }
-            } */
             $curl = curl_init();
             $api_URL = env('API_URL');
 
@@ -313,7 +303,19 @@ class HomeController extends Controller
             }
 
 
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg'));
+
+            $response_task = $this->myqDailytask();
+            $data_task = [];
+            if (isset($response_task['success']) && !empty($response_task['success'])) {
+                $data_task = $response_task['allowed_details'];
+                $collection = collect($data_task);
+                $dailyTask = $collection->where('task_type', 'daily')->sortBy('category')->values()->all();
+                $weekTask = $collection->where('task_type', 'weekly')->sortBy('category')->values()->all();
+                $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
+                $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
+            }
+
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -818,28 +820,8 @@ class HomeController extends Controller
     public function dailytask()
     {
         try {
-            $userData = Session::get('user_data');
-            $user_id = $userData->id;
 
-            $exam_id = $userData->grade_id;
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
-            $curl_option = array(
-
-                CURLOPT_URL => $curl_check_task_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            );
-            curl_setopt_array($curl, $curl_option);
-
-            $response_task_json = curl_exec($curl);
-            $response_task = json_decode($response_task_json, true);
+            $response_task = $this->myqDailytask();
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
                 $data_task = $response_task['allowed_details'];
@@ -1201,5 +1183,31 @@ class HomeController extends Controller
 
 
         return json_encode($response);
+    }
+    public function myqDailytask()
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+
+        $exam_id = $userData->grade_id;
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
+        $curl_option = array(
+
+            CURLOPT_URL => $curl_check_task_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        );
+        curl_setopt_array($curl, $curl_option);
+
+        $response_task_json = curl_exec($curl);
+        $response_task = json_decode($response_task_json, true);
+        return $response_task;
     }
 }
