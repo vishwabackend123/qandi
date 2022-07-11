@@ -2484,16 +2484,11 @@ height: 48px;top: 7px;}
     font-weight: 600;
     color: #1f1f1f;
 }
-.graph_color_label_anwser span small {
-    width: 22px;
-    height: 8px;
-    border-radius: 16px;
-    background-color: #7db9ff;
-    display: inline-block;
-    margin-right: 12px;
+span.mendatfield {
+    font-size: 14px;
+    color: #f41c1c;
 }
-.graph_color_label_anwser span:last-child small {background-color: #56b663;}
-.visit_link a{ font-size: 14px;font-weight: 500;color:#56b663;margin:80px 0;display: inline-block;}
+
 
 /********************* Amit End ****************************/
 
