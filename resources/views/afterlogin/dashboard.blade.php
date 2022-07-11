@@ -3,12 +3,10 @@
 $userData = Session::get('user_data');
 @endphp
 @section('content')
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
-
 @endif
 <!-- Modal -->
 <!-- Side bar menu -->
@@ -75,7 +73,6 @@ $userData = Session::get('user_data');
                                     </h3>
                                     <p class="dashSubtext">Supporting text for better interaction on this section</p>
                                 </div>
-
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
                                     <div class="row">
@@ -107,7 +104,6 @@ $userData = Session::get('user_data');
                                         </div>
                                         @endforeach
                                         @endif
-
                                     </div>
                                 </div>
                                 @else
@@ -127,8 +123,6 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                                 @endif
-
-
                             </div>
                         </div>
                     </div>
@@ -148,7 +142,7 @@ $userData = Session::get('user_data');
                                         </p>
                                     </span>
                                 </h3>
-                                <a href="javascript:;" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
                             </div>
@@ -174,7 +168,6 @@ $userData = Session::get('user_data');
                                         <path fill="#56B663" d="m90.436 39.738 10.084 6.505-3.252 5.042-10.084-6.505z" />
                                     </svg>
                                 </div>
-
                             </div>
                             @endif
                             <div class="tabMainblock">
@@ -192,73 +185,143 @@ $userData = Session::get('user_data');
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div id="daily" class=" tab-pane active">
-
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">0</span><span>/</span><span>0</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
                                                 so that we could generate tasks for you, based on your proficiency levels.</p>
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
+                                                    @foreach($dailyTask as $key=>$data)
+                                                    @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
+                                                    @php
+                                                    $current_date=date("d");
+                                                    if($current_date % 4 == 0){
+                                                    $skill_task = 'Evaluation Skills';
+                                                    $skill_category = 'evaluation';
+                                                    }
+                                                    else if($current_date % 4 == 1){
+                                                    $skill_task = 'Knowledge Skills';
+                                                    $skill_category = 'knowledge';
+                                                    }
+                                                    elseif($current_date % 4 == 2){
+                                                    $skill_task = 'Application Skills';
+                                                    $skill_category = 'application';
+                                                    }
+                                                    else{
+                                                    $skill_task = 'Comprehension Skills';
+                                                    $skill_category = 'comprehension';
+                                                    }
+                                                    @endphp
                                                     <li>
                                                         <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>{{$skill_task}}</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
+                                                        @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
                                                     </li>
+                                                    @endif
+                                                    @if($data['category'] == 'time' && $data['task_type'] == 'daily')
                                                     <li>
                                                         <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>Time Management</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
+                                                        @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
-                                                        </div>
+                                                        @else
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
                                                         </div>
+                                                        @endif
                                                     </li>
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
-                                                        </div>
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
-                                                        </div>
-                                                    </li>
+                                                    @endif
+                                                    @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2">3 more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div id="weekly" class=" tab-pane">
+                                            <div class="taskstatusBlock">
+                                                <h4>Task completed</h4>
+                                                <div class="statusvalue">
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
+                                                </div>
+                                            </div>
+                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
+                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                            <div class="tasklisting">
+                                                <ul class="commonlisting">
+                                                    @foreach($weekTask as $wkey=>$data)
+                                                    @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Accuracy Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Weak topic Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @endforeach
+                                                </ul>
+                                                <div class="moreTaskLink">
+                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg></span></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 commonblockDash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock">
@@ -394,7 +457,6 @@ $userData = Session::get('user_data');
                             @endif
                         </div>
                     </div>
-
                     <div class="col-lg-12">
                         <div class="cardWhiteBg">
                             <section class="weeklyPlanWrapper">
@@ -473,7 +535,6 @@ $userData = Session::get('user_data');
                                 @else
                                 <div class="allSubslider">
                                     <div class="dashborarSlider owl-carousel owl-theme">
-
                                         @foreach($planner as $key=>$val)
                                         <?php
                                         if ($val->subject_id == 1) {
@@ -587,14 +648,12 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                         @endforeach
-
                                     </div>
                                 </div>
                                 @endif
                             </section>
                         </div>
                     </div>
-
                     <div class="col-lg-12">
                         <div class="">
                             <section class="graphCard my-4">
@@ -676,10 +735,8 @@ $userData = Session::get('user_data');
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-
                                                     <canvas id="trend_graph"></canvas>
                                                 </div>
-
                                             </div>
                                             <div class="graphDetail">
                                                 <div class="dropbox">
@@ -689,7 +746,6 @@ $userData = Session::get('user_data');
                                                             <div onclick="show('Mock Test', 'Mock')">Mock Test</div>
                                                             <div onclick="show('Practice Test', 'Practice')">Practice Test</div>
                                                             <div onclick="show('Test Series', 'TestSeries')">Test Series</div>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -726,20 +782,12 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                             </section>
-
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
         <div class="modalcenter">
@@ -764,9 +812,6 @@ $userData = Session::get('user_data');
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
-
-
-
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
@@ -802,242 +847,232 @@ $userData = Session::get('user_data');
     $aWeeks= array_values($aWeeks);
     //dd($aWeeks,$progress_cat );
     @endphp
-
     <script>
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
-                event.stopPropagation();
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                    $(this).parent("p").hide();
-                    $(this).parent("p").removeClass('show');
-                });
-                $(this).siblings("p").show();
-                $(this).siblings("p").addClass('show');
-
-            });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
+            event.stopPropagation();
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
+                $(this).parent("p").removeClass('show');
             });
+            $(this).siblings("p").show();
+            $(this).siblings("p").addClass('show');
+
         });
-        $(document).on('click', function(e) {
-            var card_opened = $('.tooltipclass').hasClass('show');
-            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-                $('.tooltipclass').hide();
-            }
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
         });
+    });
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+        }
+    });
+
     </script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $('.dashborarSlider').owlCarousel({
-            stagePadding: 10,
-            loop: false,
-            margin: 0,
-            nav: true,
-            dots: false,
-            // rewindNav:true,
+    $('.dashborarSlider').owlCarousel({
+        stagePadding: 10,
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false,
+        // rewindNav:true,
 
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    stagePadding: 40,
-                    margin: 0,
-                    loop: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                stagePadding: 40,
+                margin: 0,
+                loop: true,
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+
+        }
+    })
+
+    </script>
+    <script>
+    /* progress Journy graph */
+    const labels1 = <?php print_r($progress_cat); ?>;
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+                label: 'Ideal Pace',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($ideal); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            },
+            {
+                label: 'Your Pace',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($your_place); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            }
+        ]
+    };
+
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
                 },
-                600: {
-                    items: 3
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
                 },
-                1000: {
-                    items: 4
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
                 }
 
             }
-        })
-    </script>
+        }
+    };
 
+    const myChart1 = new Chart(
+        document.getElementById('progressJourny_graph'),
+        config1
+    );
+    /* progress Journy graph end */
 
+    /** ********************/
+    const labels2 = <?php print_r($weeks_json); ?>;
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+                label: 'My score',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($stu_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Peer average',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($avg_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Top score',
+                backgroundColor: '#12c3ff',
+                borderColor: '#12c3ff',
+                data: <?php print_r($max_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            }
+        ]
+    };
 
-
-
-
-
-    <script>
-        /* progress Journy graph */
-        const labels1 = <?php print_r($progress_cat); ?>;
-        const data1 = {
-            labels: labels1,
-            datasets: [{
-                    label: 'Ideal Pace',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($ideal); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
-                },
-                {
-                    label: 'Your Pace',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($your_place); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
                 }
-            ]
-        };
-
-        const config1 = {
-            type: 'line',
-            data: data1,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     }
                 },
-                plugins: {
-                    legend: {
+                y: {
+                    grid: {
                         display: false
                     },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
+                    type: 'linear',
+                    grace: '5%',
+
+                    min: 0,
 
                 }
+
             }
-        };
+        }
+    };
 
-        const myChart1 = new Chart(
-            document.getElementById('progressJourny_graph'),
-            config1
-        );
-        /* progress Journy graph end */
-
-        /** ********************/
-        const labels2 = <?php print_r($weeks_json); ?>;
-        const data2 = {
-            labels: labels2,
-            datasets: [{
-                    label: 'My score',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($stu_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Peer average',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($avg_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Top score',
-                    backgroundColor: '#12c3ff',
-                    borderColor: '#12c3ff',
-                    data: <?php print_r($max_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                }
-            ]
-        };
-
-        const config2 = {
-            type: 'line',
-            data: data2,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        type: 'linear',
-                        grace: '5%',
-
-                        min: 0,
-
-                    }
-
-                }
-            }
-        };
-
-        const myChart2 = new Chart(
-            document.getElementById('trend_graph'),
-            config2
-        );
+    const myChart2 = new Chart(
+        document.getElementById('trend_graph'),
+        config2
+    );
 
 
-        /* $('#markstrend_graph').change(function() {
-            var value = this.value;
-            alert(value);
-        }); */
+    /* $('#markstrend_graph').change(function() {
+        var value = this.value;
+        alert(value);
+    }); */
+
     </script>
-
-
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
+    function show(value, type) {
+        document.querySelector(".text-box").value = value;
 
-            url = "{{ url('trendGraphUpdate/') }}/" + type;
-            $.ajax({
-                type: 'GET', //post method
-                url: url, //ajaxformexample url
-                dataType: "json",
-                success: function(response) {
-                    console.log(response);
-                    myChart2.data.labels = response.labels;
-                    myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[1] = response.average_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[2] = response.max_score; // or you can iterate for multiple datasets
-                    myChart2.update(); // finally update our chart
-                }
-            });
-        }
+        url = "{{ url('trendGraphUpdate/') }}/" + type;
+        $.ajax({
+            type: 'GET', //post method
+            url: url, //ajaxformexample url
+            dataType: "json",
+            success: function(response) {
+                console.log(response);
+                myChart2.data.labels = response.labels;
+                myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[1] = response.average_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[2] = response.max_score; // or you can iterate for multiple datasets
+                myChart2.update(); // finally update our chart
+            }
+        });
+    }
 
-        let dropdown = document.querySelector(".customDropdown")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active")
-        }
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
+    }
+
     </script>
-
-
     @endsection
