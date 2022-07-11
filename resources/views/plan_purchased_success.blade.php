@@ -82,7 +82,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                         </div>
                         <div class="line-692"></div>
                         <div class="text-center ">
-                            <a href="{{route('dashboard')}}" class="plan_successfull_go_to_dashboard btn btn-common-green">Go to Dashboard</a>
+                            <a href="{{route('dashboard')}}" class="plan_successfull_go_to_dashboard btn btn-common-green">Continue</a>
                         </div>
                         <div class="plan_subscribption"></div>
                     </div>
