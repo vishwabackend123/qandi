@@ -46,7 +46,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                     <div class="plan_box_status_contant">
                         <div class="plan_box_status_contant_order_qi d-flex justify-content-between align-items-center">
                             <div class=" plan_box_status_contant_order">Order summary</div>
-                            <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
+                            <div class="plan_box_status_contant_qi">Q&I Subscription </div>
                         </div>
                         <div class="line-692_field"></div>
                         <div>

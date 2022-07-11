@@ -62,6 +62,8 @@
     .graphDetailempty .weekText{
         padding-left: 0px;
     }
+    .graph_head_label h4  {
+        font-size: 17px;}
   
     
 }

@@ -2,7 +2,7 @@
 @section('content')
 @php
 $userData = Session::get('user_data');
-$user_name = isset($userData->first_name)?$userData->first_name:'';
+$user_name = isset($userData->user_name)?$userData->user_name:'';
 @endphp
 <div>
     <div class="plan_successfull_wrapper">
@@ -46,7 +46,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                     <div class="plan_box_status_contant">
                         <div class="plan_box_status_contant_order_qi d-flex justify-content-between align-items-center">
                             <div class=" plan_box_status_contant_order">Order summary</div>
-                            <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
+                            <div class="plan_box_status_contant_qi">Q&I Subscription </div>
                         </div>
                         <div class="line-692"></div>
                         <div>
@@ -70,19 +70,19 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Active date</div>
-                                <div class="plan_subscribption">{{date('d F Y', $transaction_data->created_at)}}</div>
+                                <div class="plan_subscribption">{{date('jS F Y', $transaction_data->created_at)}}</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">End date</div>
                                 @php
                                 $subscription_month=$transaction_data->notes->month;
                                 @endphp
-                                <div class="plan_subscribption">{{date('d F Y',strtotime("+$subscription_month month",$transaction_data->created_at))}}</div>
+                                <div class="plan_subscribption">{{date('jS F Y',strtotime("+$subscription_month month",$transaction_data->created_at))}}</div>
                             </div>
                         </div>
                         <div class="line-692"></div>
                         <div class="text-center ">
-                            <a href="{{route('dashboard')}}" class="plan_successfull_go_to_dashboard btn btn-common-green">Go to Dashboard</a>
+                            <a href="{{route('dashboard')}}" class="plan_successfull_go_to_dashboard btn btn-common-green">Continue</a>
                         </div>
                         <div class="plan_subscribption"></div>
                     </div>
