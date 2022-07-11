@@ -544,24 +544,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $success = isset($aResponse->success) ? $aResponse->success : false;
             $city_list = isset($aResponse->response) ? $aResponse->response : false;
-
-            sort($city_list);
-            $sOption = '';
-            if ($success == false) {
-                $response = ["error" => $err, "success" => false,];
-                return json_encode($response);
-            } else {
-                Redis::set('city_list', json_encode($city_list));
-                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" autocomplete="off" autofocus/><ul id="myMenu">';
-
-                foreach ($city_list as $kCity => $oCity) {
-                    $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
-                }
-                //return json_encode($country_list);
-                $sOption .= '</ul></div>';
-                $response = ["success" => true, "response" => $sOption,];
-                return json_encode($response);
-            }
+            return $city_list;
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

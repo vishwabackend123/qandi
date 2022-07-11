@@ -1238,6 +1238,6 @@ class HomeController extends Controller
 
         $success = isset($aResponse->success) ? $aResponse->success : false;
         $state_list = isset($aResponse->response) ? $aResponse->response : false;
-        return view('afterlogin.profile',compact('state_list'));
+        return view('afterlogin.profile', compact('state_list'));
     }
 }
