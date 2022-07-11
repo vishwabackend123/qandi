@@ -244,14 +244,17 @@
                                           <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                                           <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
                                        </div>
+                                       <div class=""></div>
                                        <div class="mock_test_dure_content2">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
                                        </div>
+                                       <div></div>
                                        <div class="mock_test_marks_content2">
                                           <div class="mock_test_q_d_m_s_text1">Slot</div>
                                           <div class="mock_test_q_d_m_s_text2">Morning</div>
                                        </div>
+                                       <div></div>
                                        <div class="mock_test_sub_content2">
                                           <div class="mock_test_q_d_m_s_text1">Score</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
