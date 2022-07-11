@@ -294,7 +294,7 @@ class HomeController extends Controller
             if ($student_rating == null || empty($student_rating)) {
                 return redirect()->route('performance-rating');
             }
-            dd($ideal, $your_place, $progress_cat);
+            //dd($ideal, $your_place, $progress_cat);
 
             return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {
@@ -1114,5 +1114,74 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
         return view('afterlogin.performance_rating', compact('user_subjects'));
+    }
+
+
+
+
+    /* 
+    
+    */
+    public function trendGraphUpdate($type)
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        //$user_id = 685;
+
+
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/studentDashboard/analytics/' . $user_id . '?test_type=' . $type;
+        $curl_option = array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        );
+        curl_setopt_array($curl, $curl_option);
+
+        $score_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $scoreResponse = json_decode($score_json, true);
+            $response_json = str_replace('NaN', '""', $scoreResponse);
+
+            $scoreResponse = json_decode($response_json, true);
+            $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
+        } else {
+
+            $trendResponse = [];
+        }
+        $aWeeks = $trend_stu_score = $trend_avg_score = $trend_max_score = [];
+        $i = 1;
+        $labels = '';
+
+        if (!empty($trendResponse)) {
+            foreach ($trendResponse as $key => $trend) {
+                $week = "W" . $i;
+                array_push($aWeeks, $week);
+                array_push($trend_stu_score, $trend['student_score']);
+                array_push($trend_avg_score, $trend['average_score']);
+                array_push($trend_max_score, $trend['max_score']);
+
+                $i++;
+            }
+        }
+
+
+        $response['labels'] = $aWeeks;
+        $response['student_score'] = $trend_stu_score;
+        $response['average_score'] = $trend_avg_score;
+        $response['max_score'] = $trend_max_score;
+
+
+        return json_encode($response);
     }
 }

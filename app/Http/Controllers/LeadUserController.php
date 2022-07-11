@@ -114,4 +114,16 @@ class LeadUserController extends Controller
 	{
 		return view('auth.practic_exam');
 	}
+	public function exportOverallAnalytics()
+	{
+		return view('auth.export_overall_analytics');
+	}
+     public function mock_test()
+	{
+		return view('auth.mock_test');
+	}
+     public function live_exam()
+	{
+		return view('auth.live_exam');
+	}
 }

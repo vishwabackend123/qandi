@@ -327,9 +327,15 @@ select.form-control:not([size]):not([multiple]) {
 .copyright a {
     color: #56b663;
     text-decoration: none;
+<<<<<<< HEAD
     border-bottom: 1px solid #cde9d1;
     line-height: 11px;
+=======
+     /* border-bottom: 1px solid #cde9d1;   */
+    line-height: 11px;  
+>>>>>>> 2d48765648f8237988093dcbaf9f5626b3eb1ad2
     display: inline-block;
+    text-decoration:underline;
 }
 
 .sentotp {
@@ -776,7 +782,62 @@ select.form-control:not([size]):not([multiple]) {
     height: 44px;
     min-width: 141px !important;
 }
+<<<<<<< HEAD
 
+=======
+.take-fulltest .btn-common-transparent {
+    max-width: 237px !important;
+}
+.clrsec{
+    flex: 2;
+}
+.clearsec{
+  font-size: 14px;
+  font-weight: 800;
+  color: #d92d20 !important;
+  text-decoration: none !important;
+}
+.test-table h2{
+     font-size: 16px;
+  font-weight: 500;
+    color: #1f1f1f;
+    flex: 1;
+}
+.test-table h3{
+     font-size: 14px;
+  font-weight: 500;
+    color: #868a95;
+    flex: 1;
+}
+.test-table h3 span{
+    font-size: 16px;
+  font-weight: 800;
+    color: #1f1f1f;
+    margin-left: 6px;
+}
+.test-table h4{
+     font-size: 14px;
+  font-weight: 800;
+    color: #56b663;
+}
+.test-table .accordion-header{
+flex-basis: 245px;   
+}
+.test-table .accordion-header .btn{
+max-width: 141px !important;
+height: 38px;
+}
+.exam_tabdata .accordion-body {
+    border-top: 1px dashed #cde3d0;
+}
+.exam_tabdata .accordion-item{
+border-radius: 0 !important;
+border-right: 0;
+border-left: 0;
+border-top:0;
+border-bottom-color: #e5eaee;
+}
+>>>>>>> 2d48765648f8237988093dcbaf9f5626b3eb1ad2
 /*****practic_exam-end**********/
 
 /*********** Navdeep End *************/
@@ -938,7 +999,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .verificationBox a {
     width: 114px;
-    height: 38px;
+    height: 38px;font-size:14px;
     flex-grow: 0;
     display: flex;
     flex-direction: row;
@@ -949,7 +1010,7 @@ select.form-control:not([size]):not([multiple]) {
     border-radius: 8px;
     border: solid 1px #dc6803;
     background-color: #fff;
-    color: #dc6803;
+    color: #dc6803;font-weight:600;
 }
 
 .verificationBox p {
@@ -1138,10 +1199,13 @@ select.form-control:not([size]):not([multiple]) {
     border: solid 1px #56b663;
 }
 
-.freeTrial a:hover {
+.freeTrial a:hover,.btn-common-attempted:hover {
     color: #56b663;
 }
 
+.btn-common-attempted{background-color: rgba(255, 255, 255, 0.5);border-radius: 10px;color:#56b663; font-size: 14px;font-weight: 800; line-height: 1.6;}
+.btn-common-attempted svg{margin-right:7px;    display: inline-block;
+    vertical-align: text-bottom;}
 .getDiscount {
     background: #f5faf6;
     min-height: 100%;
@@ -2548,6 +2612,7 @@ ul.topic_score_lists li:nth-last-child(2) {
 .halfdoughnut2 {
     height: 180px;
     width: 180px;
+<<<<<<< HEAD
     overflow: hidden;
 }
 
@@ -2556,6 +2621,11 @@ ul.topic_score_lists li:nth-last-child(2) {
     height: 100% !important;
 }
 
+=======
+    /* overflow: hidden; */
+}
+.halfdoughnut canvas{width: 100%!important;height:100%!important;}
+>>>>>>> 2d48765648f8237988093dcbaf9f5626b3eb1ad2
 .noofquestions-block {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.12);
@@ -2578,8 +2648,39 @@ ul.topic_score_lists li:hover .noofquestions-block {
     color: #1f1f1f;
     float: right;
 }
+.myScore span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #868a95;
+    margin-top: 5px;
+    display: block;
+}
+.myScore h6 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.myScore {
+    position: absolute;
+    text-align: center;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-58%);
+}
+/******** export_overall_analytics **********/
+.custom_container {
+    max-width: 852px;
+    margin: 0 auto;
+}
+canvas#myChartProgress {
+    height: 180px!important;
+}
+.export_overall_analytics_wrapper .your_rank small {border-radius: 10px;background-color: #e0f6e3;padding: 12px;width: 48px;
+height: 48px;top: 7px;}
+.studentdetail h3.boxheading{margin-bottom: 10px;font-size: 20px;}
 
-/********* Amit End ***********/
+
+/********************* Amit End ****************************/
 
 
 /********* Shubham Start ***********/
@@ -2704,7 +2805,7 @@ header {
     border-top-right-radius: 0px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
 }
-
+.text-right{text-align:right;}
 
 #collapseNotification2 {
     position: fixed;
@@ -2720,7 +2821,7 @@ header {
     height: 100%;
 }
 
-.notification-block_new.show {
+.notification-block_new.activeblock {
     right: 0px !important;
     transition: 0.5s;
 }
@@ -4075,6 +4176,75 @@ button.btn.aeck_filter_btn {
     margin-right: 46px !important;
 }
 
+<<<<<<< HEAD
+=======
+/* **********start mock test   ********** */
+.jee_main_text_take_test__btn
+{
+    display: flex;
+    justify-content: space-between;
+}
+.mock_exam_jee_main_text h3
+{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #363c4f;
+}
+.line_696
+{
+    height: 1px;
+    align-self: stretch;
+    flex-grow: 0;
+    background-color: #e5eaee;
+    margin: 22px 0px 0px 0px;
+}
+.mock_test_take_test_btn
+{
+    min-width: unset!important;
+}
+.mock_test_ques_dure_marks_sub
+{
+    margin-top: 25px;
+}
+.mock_test_ques_content
+{
+    border-right: 1px solid #e5eaee;
+    padding: 0px 70px 0px 0px;
+}
+.mock_test_dure_content, .mock_test_marks_content
+{
+    padding: 0px 70px 0px 70px;
+    border-right: 1px solid #e5eaee;
+}
+.mock_test_sub_content
+{
+    padding: 0px 0px 0px 70px;
+}
+.mock_test_q_d_m_stext
+{
+
+}
+.mock_test_q_d_m_s_text1
+{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #363c4f;
+}
+.mock_test_q_d_m_s_text2
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f
+}
+/* **********start mock test   ********** */
+
+>>>>>>> 2d48765648f8237988093dcbaf9f5626b3eb1ad2
 /********* Vikash End ***********/
 
 /********** Shiv - Start *********/

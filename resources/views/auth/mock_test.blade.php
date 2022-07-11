@@ -1,8 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
-<body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<body class="bg-content">
 <div class="main-wrapper">    
    <header>
       <div class="headerMain">
@@ -95,7 +93,7 @@
                <div class="tablist">
                   <ul class="nav nav-tabs" role="tablist">
                      <li class="nav-item pe-5 me-2">
-                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Custom</a>
+                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Mock Test</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#qq2">Attempted</a>
@@ -104,81 +102,30 @@
                </div>
                <!-- Tab panes -->
                <div class="tab-content bg-white exam_tabdata">
-                  <div id="qq1" class=" tab-pane active">
-                     <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1">
-                        <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
-                           <li class="nav-item" role="presentation" type="button">
-                              <button class="nav-link btn pt-0 pb-0 active">Mathematics</button>
-                           </li>
-                           <li class="nav-item" role="presentation" type="button">
-                              <button class="nav-link pt-0 pb-0 btn">Physics</button>
-                           </li>
-                           <li class="nav-item" role="presentation">
-                              <button class="nav-link pt-0 pb-0 btn" type="button">Chemistry</button>
-                           </li>
-                        </ul>
+                  <div class="jee_main_text_take_test__btn">
+                     <div class="mock_exam_jee_main_text">
+                        <h3>JEE Main - Full Syllabus -2021</h3>
                      </div>
-                    <div class="take-fulltest d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center clrsec">
-                     <button type="button" class="btn btn-common-transparent bg-transparent me-3">Take test for selected topics</button>  
-                    <a href="javascript:void(0);" class="clearsec">Clear Selection</a>
-                    </div>    
-                    <div>   
-                    <a href="javascript:void(0)">
-                <svg class="me-4 align-bottom" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 9a8 8 0 0 1 8-8h28a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H9a8 8 0 0 1-8-8V9z" fill="#FCFDFD"/>
-    <path d="M18 23h10m-12.5-5h15m-10 10h5" stroke="#56B663" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 1.5h28v-1H9v1zM44.5 9v28h1V9h-1zM37 44.5H9v1h28v-1zM1.5 37V9h-1v28h1zM9 44.5A7.5 7.5 0 0 1 1.5 37h-1A8.5 8.5 0 0 0 9 45.5v-1zM44.5 37a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1zM37 1.5A7.5 7.5 0 0 1 44.5 9h1A8.5 8.5 0 0 0 37 .5v1zM9 .5A8.5 8.5 0 0 0 .5 9h1A7.5 7.5 0 0 1 9 1.5v-1z" fill="#56B663"/>
-</svg></a>
-  <button type="button" class="btn btn-common-green">Take full test</button> 
-                    </div> 
-                    </div>
-                    <div class="accordion mt-4 pt-1" id="accordionExample">
-<div class="allscrollbar">
-<div class="accordion-item">  
-<div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
-<h2 class="m-0">3D Geometry</h2>
-<h3 class="m-0">Proficiency : <span>65%</span></h3>    
-<div class="accordion-header d-flex align-items-center" id="headingOne"><h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0">View topics</h4>
-<button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
-</div>  
-    </div>
- <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body ps-0 pe-0">
-         <div class="testslider owl-carousel owl-theme">
-    <div class="item"><h4>1</h4></div>
-    <div class="item"><h4>2</h4></div>
-    <div class="item"><h4>3</h4></div>
-    <div class="item"><h4>4</h4></div>
-    <div class="item"><h4>5</h4></div>
-    <div class="item"><h4>6</h4></div>
-</div>
-      </div>
-    </div>
- 
- </div>     
-    
-</div>    
-
-<div class="accordion-item pt-4">  
-<div class="test-table d-flex align-items-center justify-content-between">
-<h2 class="m-0">Application of Derivaties</h2>
-<h3 class="m-0">Proficiency : <span>30%</span></h3>    
-<div class="accordion-header d-flex align-items-center" id="headingTwo"><h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0">View topics</h4>
-<button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
-</div>  
-    </div>
- <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body ps-0 pe-0">
-       A
-      </div>
-    </div>
- 
- </div> 
-</div>
+                     <button type="button" class="btn btn-common-green mock_test_take_test_btn">Take test</button> 
                   </div>
-                  <div id="qq2" class=" tab-pane">
-                     A
+                  <div class="line_696"></div>
+                  <div class="mock_test_ques_dure_marks_sub d-flex">
+                     <div class="mock_test_ques_content">
+                        <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                        <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                     </div>
+                     <div class="mock_test_dure_content">
+                        <div class="mock_test_q_d_m_s_text1">Duration</div>
+                        <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                     </div>
+                     <div class="mock_test_marks_content">
+                        <div class="mock_test_q_d_m_s_text1">Marks</div>
+                        <div class="mock_test_q_d_m_s_text2">300</div>
+                     </div>
+                     <div class="mock_test_sub_content">
+                        <div class="mock_test_q_d_m_s_text1">Subject</div>
+                        <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -187,33 +134,6 @@
    </div>
 </section>
 </div>    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $('.testslider').owlCarousel({
-            stagePadding: 0,
-            loop: false,
-            margin: 0,
-            nav: false,
-            dots: false,
-            // rewindNav:true,
 
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    stagePadding: 40,
-                    margin: 0,
-                    loop: true,
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-
-            }
-        })
-    </script>
 </body>
 @endsection

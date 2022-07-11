@@ -279,6 +279,7 @@ Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultCon
 Route::any('/send_verfication_email', [App\Http\Controllers\SubscriptionController::class, 'sendVerficationEmail']);
 
 Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, 'performanceRating'])->name('performance-rating')->middleware('auth');
+Route::any('/trendGraphUpdate/{type}', [App\Http\Controllers\HomeController::class, 'trendGraphUpdate'])->name('trendGraphUpdate')->middleware('auth');
 
 
 
@@ -286,20 +287,23 @@ Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, '
 /* dashboard dailytask exam new routes */
 
 Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
-Route::any('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
+Route::any('/dashboard-MyQMatrix/{quadrant_name}', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
-Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
+Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile'])->name('profile')->middleware('auth');
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
-Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
-Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
-Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']); 
+Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
+Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']);
 Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
 Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);
+Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController::class, 'exportOverallAnalytics']);
+Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
+Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);

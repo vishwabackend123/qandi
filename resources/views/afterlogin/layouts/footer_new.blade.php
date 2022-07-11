@@ -472,7 +472,7 @@
 
             $('#EndDate').val(lastDate);
 
-            var planned = <?php echo json_encode($current_week_plan); ?>;!--->
+            var planned = <?php echo json_encode($current_week_plan); ?>;
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 
@@ -1885,9 +1885,6 @@
 
        
     });
-
-
-
 
     
 </script>

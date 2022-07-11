@@ -83,7 +83,7 @@
                 @csrf
                 <div class="custom-input pb-3">
                     <label>Name</label>
-                    <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Full name" maxlength="25" onkeypress="return lettersOnly(event)" required>
+                    <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
@@ -114,7 +114,7 @@
                     <div>
                      <span class="error mt-2" id="errlog_otp"></span>
                      <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
-                        <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a>
+                        <a class="resendweight float-right" href="javascript:void(0);" onclick="resentOtp()">Resend OTP</a>
                     </p>
                     <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
                         <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
@@ -147,7 +147,7 @@
                     <div class="col-lg-6">
                         <label>Exam</label>
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
-                            <option value="" disabled selected hidden>Select exam</option>
+                            <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
 
@@ -167,17 +167,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    /*  $("#location").select2({
-        placeholder: "Select a City",
-        allowClear: true
-    });
-    $("#multiple").select2({
-        placeholder: "Select a City",
-        allowClear: true
-    }); */
-
-
-
+  var timerId='';
     /* name input validation */
     /* only letter number */
     function isNumber(evt) {
@@ -284,6 +274,8 @@
         $('#editsignnumber').removeClass("d-block");
         $('#editsignnumber').addClass("d-none");
         $('#otp_box input[name="register_otp[]"').val('');
+        clearTimeout(timerId);
+        $('#wait_otp_div').text('00:59');
     });
     $('#verifynum').click(function() {
         $check = 0;
@@ -586,7 +578,7 @@
     $('.resend_again').hide();
     var timeLeft = 58;
     var elem = document.getElementById('wait_otp_div');
-    var timerId = setInterval(countdown, 1000);
+     timerId = setInterval(countdown, 1000);
 
     function countdown() {
 
@@ -601,7 +593,7 @@
         }
 
     }
-
 }
+
 </script>
 @endsection
