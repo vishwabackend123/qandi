@@ -51,6 +51,7 @@ input:focus,
 button:focus {
     outline: none !important;
 }
+.btn:focus{box-shadow:none!important;}
 :focus {
     outline: -webkit-focus-ring-color auto 0px !important;
 }
@@ -2474,7 +2475,9 @@ canvas#myChartProgress {
 .export_overall_analytics_wrapper .your_rank small {border-radius: 10px;background-color: #e0f6e3;padding: 12px;width: 48px;
 height: 48px;top: 7px;}
 .studentdetail h3.boxheading{margin-bottom: 10px;font-size: 20px;}
-
+.attemptBtn .btn.btn-common-attempted svg {
+    vertical-align: middle;
+}
 
 /********************* Amit End ****************************/
 
