@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="custom-input pb-3 otp-input" style="display:none">
-                    <label>Enter OTP</label>
+                    <label>Enter OTP <span class="mendatfield">*</spna></label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
-                        <label>Grade</label>
+                        <label>Grade <span class="mendatfield">*</spna></label>
                         <select class="form-control selectdata reqrd" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
@@ -145,7 +145,7 @@
                         </select>
                     </div>
                     <div class="col-lg-6">
-                        <label>Exam</label>
+                        <label>Exam <span class="mendatfield">*</spna></label>
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
