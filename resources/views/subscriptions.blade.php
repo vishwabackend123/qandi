@@ -141,7 +141,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="{{url('/dashboard')}}">Continue</a>
+                        <a href="{{url('/performance-rating')}}">Continue</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -233,7 +233,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="{{url('/dashboard')}}">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
+                        <a href="{{url('/performance-rating')}}">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -444,7 +444,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <div class="planType">
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
-                   
+
                     <div class="freeTrial">
                         <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
                     </div>

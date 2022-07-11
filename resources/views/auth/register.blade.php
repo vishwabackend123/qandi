@@ -82,11 +82,11 @@
             <form id="studentsignup" method="post">
                 @csrf
                 <div class="custom-input pb-3">
-                    <label>Name  <span class="mendatfield">*</spna></label>
+                    <label>Name <span class="mendatfield">*</spna></label>
                     <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
-                    <label>Mobile  <span class="mendatfield">*</spna></label>
+                    <label>Mobile <span class="mendatfield">*</spna></label>
                     <div class="d-flex position-relative" id="mobile_num_box">
                         <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="custom-input pb-3 otp-input" style="display:none">
-                    <label>Enter OTP  <span class="mendatfield">*</spna></label>
+                    <label>Enter OTP <span class="mendatfield">*</spna></label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
@@ -122,12 +122,12 @@
                     </div>
                 </div>
                 <div class="custom-input pb-3">
-                    <label>Email  <span class="mendatfield">*</spna></label>
+                    <label>Email <span class="mendatfield">*</spna></label>
                     <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
                     <span class="error mt-2" id="errlog_mail"></span>
                 </div>
                 <div class="custom-input pb-3">
-                    <label>City  <span class="mendatfield">*</spna></label>
+                    <label>City <span class="mendatfield">*</spna></label>
                     <div id="location-box" class="position-relative">
                         <select class="js-states form-control reqrd" name="location" data-use-select2="true" id="location" required>
                             <option value="">Select a city</option>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
-                        <label>Grade  <span class="mendatfield">*</spna></label>
+                        <label>Grade <span class="mendatfield">*</spna></label>
                         <select class="form-control selectdata reqrd" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
@@ -146,7 +146,7 @@
                         </select>
                     </div>
                     <div class="col-lg-6">
-                        <label>Exam  <span class="mendatfield">*</spna></label>
+                        <label>Exam <span class="mendatfield">*</spna></label>
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
@@ -219,6 +219,7 @@
     }).capitalize();
 
     $('#mobile_num').on('keyup', function() {
+        $("#err_reg_mob").html("");
         if ($(this).val().length == 10) {
             $('#verifynum').removeClass("d-none");
             $('#verifynum').addClass("d-block");
@@ -286,7 +287,6 @@
         if (mobile_num == '') {
             $("#err_reg_mob").html('Please enter your mobile number');
             $("#err_reg_mob").fadeIn('fast');
-            $("#err_reg_mob").fadeOut(1000);
             $check = 1;
         } else {
 
@@ -294,7 +294,6 @@
             if (testMobile.test(mobile_num)) {} else {
                 $("#err_reg_mob").html('Please enter valid mobile number');
                 $("#err_reg_mob").fadeIn('fast');
-                $("#err_reg_mob").fadeOut(1000);
                 $check = 1;
             };
         }
@@ -327,7 +326,8 @@
                     } else {
                         $("#err_reg_mob").html(response.message);
                         $("#err_reg_mob").fadeIn('fast');
-                        $("#err_reg_mob").fadeOut(2000);
+                        /* $("#err_reg_mob").fadeOut(10000); */
+                        $("#mobile_num").focus();
                         return false;
                     }
 
