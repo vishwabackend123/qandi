@@ -57,6 +57,7 @@ class HomeController extends Controller
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
+            //$user_id = 685;
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
 
@@ -130,24 +131,24 @@ class HomeController extends Controller
                 $scoreResponse = json_decode($response_json, true);
 
                 $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : '';
-                $subjectData = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : '';
+                $subject_proficiency = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : [];
                 $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
             } else {
                 $scoreData = [];
-                $subjectData = [];
+                $subject_proficiency = [];
                 $trendResponse = [];
             }
 
-
-            if (empty($subjectData)) {
+            /* 
+            if (empty($subject_proficiency)) {
                 foreach ($user_subjects as $key => $sub) {
                     $sub->total_questions = 0;
                     $sub->correct_ans = 0;
                     $sub->score = 0;
 
-                    $subjectData[$key] = (array)$sub;
+                    $subject_proficiency[$key] = (array)$sub;
                 }
-            }
+            } */
             $curl = curl_init();
             $api_URL = env('API_URL');
 
@@ -176,12 +177,16 @@ class HomeController extends Controller
             if ($response_status != false) {
                 $planner_list = isset($response->result) ? $response->result : [];
                 $cPlanner = collect($planner_list);
+                $planned_test_cnt = $cPlanner->count();
+                $attempted_test_cnt = $cPlanner->where('test_completed_yn', 'Y')->count();
+
                 $sorted_list = $cPlanner->sortBy('test_completed_yn', SORT_NATURAL);
                 $planner = $sorted_list->values()->all();
                 $plucked = $cPlanner->pluck('subject_id');
                 $planner_subject = $plucked->all();
             } else {
                 $planner = $planner_subject = [];
+                $planned_test_cnt = $attempted_test_cnt = 0;
             }
             if (!Session::has('referal_code')) {
                 $curl = curl_init();
@@ -271,8 +276,8 @@ class HomeController extends Controller
 
             $response_myq_json = curl_exec($curl);
             $response_myq = json_decode($response_myq_json, true);
-            $corrent_score_per = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
-            $corrent_score_per = (int) $corrent_score_per;
+            $myqtodayScore = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
+            $myqtodayScore = round($myqtodayScore, 2);
             $score = isset($corrent_score_per) ? $corrent_score_per : 0;
             $progress =  0;
             $inprogress = 0;
@@ -289,8 +294,9 @@ class HomeController extends Controller
             if ($student_rating == null || empty($student_rating)) {
                 return redirect()->route('performance-rating');
             }
+            //dd($ideal, $your_place, $progress_cat);
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1108,5 +1114,74 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
         return view('afterlogin.performance_rating', compact('user_subjects'));
+    }
+
+
+
+
+    /* 
+    
+    */
+    public function trendGraphUpdate($type)
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        //$user_id = 685;
+
+
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/studentDashboard/analytics/' . $user_id . '?test_type=' . $type;
+        $curl_option = array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        );
+        curl_setopt_array($curl, $curl_option);
+
+        $score_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $scoreResponse = json_decode($score_json, true);
+            $response_json = str_replace('NaN', '""', $scoreResponse);
+
+            $scoreResponse = json_decode($response_json, true);
+            $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
+        } else {
+
+            $trendResponse = [];
+        }
+        $aWeeks = $trend_stu_score = $trend_avg_score = $trend_max_score = [];
+        $i = 1;
+        $labels = '';
+
+        if (!empty($trendResponse)) {
+            foreach ($trendResponse as $key => $trend) {
+                $week = "W" . $i;
+                array_push($aWeeks, $week);
+                array_push($trend_stu_score, $trend['student_score']);
+                array_push($trend_avg_score, $trend['average_score']);
+                array_push($trend_max_score, $trend['max_score']);
+
+                $i++;
+            }
+        }
+
+
+        $response['labels'] = $aWeeks;
+        $response['student_score'] = $trend_stu_score;
+        $response['average_score'] = $trend_avg_score;
+        $response['max_score'] = $trend_max_score;
+
+
+        return json_encode($response);
     }
 }
