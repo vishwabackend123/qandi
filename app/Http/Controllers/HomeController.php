@@ -388,13 +388,11 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back()->withErrors(['api issue']);
-                    ;
+                        ->back()->withErrors(['api issue']);;
                 }
             } else {
                 return redirect()
-                    ->back()->withErrors(['empty value']);
-                ;
+                    ->back()->withErrors(['empty value']);;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -1109,10 +1107,12 @@ class HomeController extends Controller
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
         $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
-        if ($student_rating != null || !empty($student_rating)) {
+        $aStudentRating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? (array)json_decode($preferences->subjects_rating) : [];
+        /*  if ($student_rating != null || !empty($student_rating)) {
             return redirect()->route('dashboard');
-        }
-        return view('afterlogin.performance_rating', compact('user_subjects'));
+        } */
+
+        return view('afterlogin.performance_rating', compact('user_subjects', 'aStudentRating'));
     }
 
 
@@ -1211,21 +1211,21 @@ class HomeController extends Controller
     }
     public function profile()
     {
-        $country="India";
+        $country = "India";
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/get-state/' . $country;
 
         $curl = curl_init();
         $curl_option = array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            );
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        );
         curl_setopt_array($curl, $curl_option);
 
         $response_json = curl_exec($curl);

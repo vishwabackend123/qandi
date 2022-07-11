@@ -42,10 +42,15 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         </div>
         <div class="performance_rating_wrapper">
             @foreach($user_subjects as $subject_proficiency)
+            @php
+            $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
+
+            @endphp
+
             <div class="subject-level-proficiency mb-5">
                 <h5>{{$subject_proficiency->subject_name}}</h5>
                 <ul class="proficiency-level-lists d-flex justify-content-beween flex-wrap">
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="1" id="user_pro_level_{{$subject_proficiency->id}}_1" onclick="selectProficiencyLevel({{$subject_proficiency->id}},1)">
+                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==1) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="1" id="user_pro_level_{{$subject_proficiency->id}}_1" onclick="selectProficiencyLevel({{$subject_proficiency->id}},1)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
                             <b></b>
@@ -55,7 +60,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </span>
                         <label class="mb-0">Beginner</label>
                     </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="2" id="user_pro_level_{{$subject_proficiency->id}}_2" onclick="selectProficiencyLevel({{$subject_proficiency->id}},2)">
+                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==2) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="2" id="user_pro_level_{{$subject_proficiency->id}}_2" onclick="selectProficiencyLevel({{$subject_proficiency->id}},2)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
                             <b class="rate-level-active"></b>
@@ -65,7 +70,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </span>
                         <label class="mb-0">Foundation level</label>
                     </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="3" id="user_pro_level_{{$subject_proficiency->id}}_3" onclick="selectProficiencyLevel({{$subject_proficiency->id}},3)">
+                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==3) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="3" id="user_pro_level_{{$subject_proficiency->id}}_3" onclick="selectProficiencyLevel({{$subject_proficiency->id}},3)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
                             <b class="rate-level-active"></b>
@@ -75,7 +80,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </span>
                         <label class="mb-0">Intermediate</label>
                     </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="4" id="user_pro_level_{{$subject_proficiency->id}}_4" onclick="selectProficiencyLevel({{$subject_proficiency->id}},4)">
+                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==4) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="4" id="user_pro_level_{{$subject_proficiency->id}}_4" onclick="selectProficiencyLevel({{$subject_proficiency->id}},4)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
                             <b class="rate-level-active"></b>
@@ -85,7 +90,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </span>
                         <label class="mb-0">Proficient</label>
                     </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="5" id="user_pro_level_{{$subject_proficiency->id}}_5" onclick="selectProficiencyLevel({{$subject_proficiency->id}},5)">
+                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==5) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="5" id="user_pro_level_{{$subject_proficiency->id}}_5" onclick="selectProficiencyLevel({{$subject_proficiency->id}},5)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
                             <b class="rate-level-active"></b>
@@ -109,89 +114,89 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         Back
                     </a>
                 </div>
-                <button class="btn btn-common-green disabled" disabled id="store_rating" onclick="store_rating();">Continue</button>
+                <button class="btn btn-common-green @if(empty($aStudentRating)) disabled @endif" @if(empty($aStudentRating)) disabled @endif id="store_rating" onclick="store_rating();">Continue</button>
             </div>
         </div>
     </div>
 </section>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('#email_success').hide();
-    $('.resend_email').click(function() {
-        var user_id = '<?php echo $user_id; ?>';
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
+    $(document).ready(function() {
+        $('#email_success').hide();
+        $('.resend_email').click(function() {
+            var user_id = '<?php echo $user_id; ?>';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ url('send_verfication_email') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    userId: user_id,
+                },
+                success: function(response_data) {
+                    if (response_data.status === true) {
+                        $('#email_success').css('color', 'green');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    } else {
+                        $('#email_success').css('color', 'red');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    }
+
+                },
+            });
         });
+    });
+
+    function selectProficiencyLevel(id, pr_level) {
+        $(".subject_" + id).removeClass('selected-level');
+        $("#user_pro_level_" + id + "_" + pr_level).addClass('selected-level');
+        $('#store_rating').removeAttr("disabled");
+        $('#store_rating').removeClass("disabled");
+    }
+
+    function isEmpty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+
+
+    function store_rating() {
+        let subjects_rating = {};
+        $('.selected-level').each(function() {
+
+
+            var name = $(this).attr('data-id');
+            var value = $(this).attr('data-value');;
+
+            subjects_rating[name] = value;
+        });
+
+
         $.ajax({
-            url: "{{ url('send_verfication_email') }}",
+            url: "{{ url('/dailyWelcomeUpdates') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                userId: user_id,
+                storeddata: subjects_rating,
             },
+            beforeSend: function() {},
             success: function(response_data) {
-                if (response_data.status === true) {
-                    $('#email_success').css('color', 'green');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
-                } else {
-                    $('#email_success').css('color', 'red');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
+
+                if (response_data == 'success') {
+                    window.location.href = '{{url("performance_analytics")}}';
                 }
 
             },
-        });
-    });
-});
-
-function selectProficiencyLevel(id, pr_level) {
-    $(".subject_" + id ).removeClass('selected-level');
-    $("#user_pro_level_" + id + "_" + pr_level).addClass('selected-level');
-    $('#store_rating').removeAttr("disabled");
-    $('#store_rating').removeClass("disabled");
-}
-function isEmpty(obj) {
-  return Object.keys(obj).length === 0;
-}
-
-
-function store_rating() {
-    let subjects_rating = {};
-    $('.selected-level').each(function() {
-
-
-        var name = $(this).attr('data-id');
-        var value = $(this).attr('data-value');;
-
-        subjects_rating[name] = value;
-    });
-
-
-    $.ajax({
-        url: "{{ url('/dailyWelcomeUpdates') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            storeddata: subjects_rating,
-        },
-        beforeSend: function() {},
-        success: function(response_data) { 
-
-            if (response_data == 'success') {
-                window.location.href = '{{url("performance_analytics")}}';
+            error: function(xhr, b, c) {
+                console.log("xhr=" + xhr + " b=" + b + " c=" + c);
             }
-
-        },
-        error: function(xhr, b, c) {
-            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-        }
-    });
-}
-
+        });
+    }
 </script>
 @endsection
