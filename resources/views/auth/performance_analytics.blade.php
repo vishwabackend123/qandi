@@ -68,7 +68,7 @@ $full_body_attempt = Session::get('full_body_attempt');
             </div>
             <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
-                    <a href="{{ url('subscriptions') }}">
+                    <a href="{{ url('performance-rating') }}">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
