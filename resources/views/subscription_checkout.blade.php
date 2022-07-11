@@ -127,7 +127,7 @@ $userData = Session::get('user_data');
                     </div>
                 <div class="inst">
                     <p>By clicking "Make Payment" you authorise your payment method to be charged in accordance with your subscription plan. For more details</p>
-                    <a href="javascript:void(0)">Terms of Service</a>
+                    <a href="https://qandi.com/terms-of-use/" target="_blank">Terms of Service</a>
                 </div>
             </div>
         </div>

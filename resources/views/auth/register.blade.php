@@ -112,18 +112,19 @@
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                     </div>
                     <div>
-                     <span class="error mt-2" id="errlog_otp"></span>
-                     <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
-                        <a class="resendweight float-right" href="javascript:void(0);" onclick="resentOtp()">Resend OTP</a>
-                    </p>
-                    <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
-                        <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
-                    </p>
-                  </div>
+                        <span class="error mt-2" id="errlog_otp"></span>
+                        <p class="p-0 mt-2 resend resend_again">Didn’t get the code?
+                            <a class="resendweight float-right" href="javascript:void(0);" onclick="resentOtp()">Resend OTP</a>
+                        </p>
+                        <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span>
+                            <a class="resendweight float-right resendcolorchan" href="javascript:void(0);">Resend OTP</a>
+                        </p>
+                    </div>
                 </div>
                 <div class="custom-input pb-3">
                     <label>Email <span class="mendatfield">*</spna></label>
                     <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
+                    <span class="error mt-2" id="errlog_mail"></span>
                 </div>
                 <div class="custom-input pb-3">
                     <label>City <span class="mendatfield">*</spna></label>
@@ -160,14 +161,14 @@
                 </div>
             </form>
         </div>
-        <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a> &nbsp;and &nbsp;<a href="javascript:void(0);">Privacy Policy</a>.</h3>
+        <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="https://qandi.com/terms-of-use/" target="_blank">Terms & Conditions </a> &nbsp;and &nbsp;<a href="https://qandi.com/privacy-policy/" target="_blank">Privacy Policy</a>.</h3>
     </div>
 </section>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-  var timerId='';
+    var timerId = '';
     /* name input validation */
     /* only letter number */
     function isNumber(evt) {
@@ -276,6 +277,8 @@
         $('#otp_box input[name="register_otp[]"').val('');
         clearTimeout(timerId);
         $('#wait_otp_div').text('00:59');
+        $("#errlog_otp").html('')
+        $('#mobile_num').attr("readonly", false);
     });
     $('#verifynum').click(function() {
         $check = 0;
@@ -318,6 +321,8 @@
                         $('#editsignnumber').removeClass("d-none");
                         $('#editsignnumber').addClass("d-block");
 
+                        $('#mobile_num').attr("readonly", true);
+
                         $('.otp-input').show();
                     } else {
                         $("#err_reg_mob").html(response.message);
@@ -342,6 +347,8 @@
             },
             mobile_num: {
                 required: true,
+                minlength: 10,
+                maxlength: 10
             },
             "register_otp[]": {
                 required: true,
@@ -453,6 +460,14 @@
                             setTimeout(function() {
                                 $('#errlog_otp').fadeOut('fast');
                             }, 10000);
+                        } else if (response.msg === 'User already registered') {
+                            //$('errlog_otp').html("Invalid OTP");
+                            var errormsg = $("#errlog_mail").show();
+
+                            errormsg[0].textContent = 'Email address already exist.';
+                            setTimeout(function() {
+                                $('#errlog_mail').fadeOut('fast');
+                            }, 10000);
                         } else {
                             var errormsg = $("#errlog_auth").show();
                             errormsg[0].textContent = response.msg;
@@ -544,29 +559,45 @@
 
     });
 
-    (function() {
-        $('.reqrd').change(function() {
+    $('.otp').keyup(function() {
 
-            var isEmpty = false;
-            $('.reqrd').each(function() {
-                if ($(this).val() == '') {
-                    isEmpty = true;
-                }
-            });
-
-            if (isEmpty) {
-                $('#signup_cnt').attr('disabled', 'disabled');
-                $('#signup_cnt').addClass("disbaled");
-            } else {
-                $('#signup_cnt').removeAttr('disabled');
-                $('#signup_cnt').removeClass("disbaled");
+        var isEmptyOTP = false;
+        $('.otp').each(function() {
+            if ($(this).val() == '') {
+                isEmptyOTP = true;
             }
         });
-    })()
+        if (isEmptyOTP) {
+
+
+        } else {
+            $("#errlog_otp").html("");
+        }
+    });
+
+    $('.reqrd').change(function() {
+
+        var isEmpty = false;
+        $('.reqrd').each(function() {
+            if ($(this).val() == '' || $(this).val() == null) {
+                isEmpty = true;
+            }
+        });
+
+
+        if (isEmpty) {
+            $('#signup_cnt').attr('disabled', 'disabled');
+            $('#signup_cnt').addClass("disbaled");
+        } else {
+            $('#signup_cnt').removeAttr('disabled');
+            $('#signup_cnt').removeClass("disbaled");
+        }
+    });
+
     /* function for select sity */
     document.addEventListener("paste", function(e) {
         console.log(e.target.id);
-        if (e.target.type === "text" && e.target.id !='mobile_num') {
+        if (e.target.type === "text" && e.target.id != 'mobile_num') {
             var data = e.clipboardData.getData('Text');
             data = data.split('');
             [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
@@ -574,26 +605,26 @@
             });
         }
     });
+
     function resentOtpTime() {
-    $('.resend_again').hide();
-    var timeLeft = 58;
-    var elem = document.getElementById('wait_otp_div');
-     timerId = setInterval(countdown, 1000);
+        $('.resend_again').hide();
+        var timeLeft = 58;
+        var elem = document.getElementById('wait_otp_div');
+        timerId = setInterval(countdown, 1000);
 
-    function countdown() {
+        function countdown() {
 
-        if (timeLeft == -1) {
-            clearTimeout(timerId);
-            $('.resend_again').show();
-            $('.resend_timer').hide();
-        } else {
-            $('.resend_timer').show();
-            elem.innerHTML = "00:"+timeLeft ;
-            timeLeft--;
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                $('.resend_again').show();
+                $('.resend_timer').hide();
+            } else {
+                $('.resend_timer').show();
+                elem.innerHTML = "00:" + timeLeft;
+                timeLeft--;
+            }
+
         }
-
     }
-}
-
 </script>
 @endsection

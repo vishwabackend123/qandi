@@ -3,12 +3,10 @@
 $userData = Session::get('user_data');
 @endphp
 @section('content')
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
-
 @endif
 <!-- Modal -->
 <!-- Side bar menu -->
@@ -24,7 +22,7 @@ $userData = Session::get('user_data');
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="verifiaction-link" style="display:none">
-                            <p>A verification link has been sent to <b>Sakshi@gmail.com,</b> please click the link to get your account verified <a href="#">Resend</a></p>
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="#">Resend</a></p>
                         </div>
                     </div>
                 </div>
@@ -50,13 +48,23 @@ $userData = Session::get('user_data');
                                         <div class="mq_round_per"></div>
                                     </div>
                                 </div>
+                                @if(!empty($subject_proficiency))
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Attempt more tests to improve your score.</p>
-                                    <a href="javascript:;" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
+                                @else
+                                <div class="textblock">
+                                    <h6 class="dashSubHeading">Lets get started!</h6>
+                                    <p class="dashSubtext">To begin your journey, attempt "Full body scan".</p>
+                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span></a>
+                                </div>
+                                @endif
                             </div>
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
@@ -75,7 +83,6 @@ $userData = Session::get('user_data');
                                     </h3>
                                     <p class="dashSubtext">Supporting text for better interaction on this section</p>
                                 </div>
-
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
                                     <div class="row">
@@ -107,7 +114,6 @@ $userData = Session::get('user_data');
                                         </div>
                                         @endforeach
                                         @endif
-
                                     </div>
                                 </div>
                                 @else
@@ -123,12 +129,10 @@ $userData = Session::get('user_data');
                                             </svg>
                                         </div>
                                         <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
-                                        <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                        <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                     </div>
                                 </div>
                                 @endif
-
-
                             </div>
                         </div>
                     </div>
@@ -148,16 +152,16 @@ $userData = Session::get('user_data');
                                         </p>
                                     </span>
                                 </h3>
-                                <a href="javascript:;" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
                             </div>
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
-                                    <h4>Full Body Scan Test 2</h4>
+                                    <h4>Full Body Scan Test</h4>
                                     <p>to assess your preparedness and begin to improve it</p>
-                                    <button class="btn btn-common-white">Attempt Now</button>
+                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="107" height="105" viewBox="0 0 107 105" fill="none">
@@ -174,7 +178,6 @@ $userData = Session::get('user_data');
                                         <path fill="#56B663" d="m90.436 39.738 10.084 6.505-3.252 5.042-10.084-6.505z" />
                                     </svg>
                                 </div>
-
                             </div>
                             @endif
                             <div class="tabMainblock">
@@ -192,73 +195,143 @@ $userData = Session::get('user_data');
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div id="daily" class=" tab-pane active">
-
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">0</span><span>/</span><span>0</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
                                                 so that we could generate tasks for you, based on your proficiency levels.</p>
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
+                                                    @foreach($dailyTask as $key=>$data)
+                                                    @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
+                                                    @php
+                                                    $current_date=date("d");
+                                                    if($current_date % 4 == 0){
+                                                    $skill_task = 'Evaluation Skills';
+                                                    $skill_category = 'evaluation';
+                                                    }
+                                                    else if($current_date % 4 == 1){
+                                                    $skill_task = 'Knowledge Skills';
+                                                    $skill_category = 'knowledge';
+                                                    }
+                                                    elseif($current_date % 4 == 2){
+                                                    $skill_task = 'Application Skills';
+                                                    $skill_category = 'application';
+                                                    }
+                                                    else{
+                                                    $skill_task = 'Comprehension Skills';
+                                                    $skill_category = 'comprehension';
+                                                    }
+                                                    @endphp
                                                     <li>
                                                         <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>{{$skill_task}}</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
+                                                        @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
                                                     </li>
+                                                    @endif
+                                                    @if($data['category'] == 'time' && $data['task_type'] == 'daily')
                                                     <li>
                                                         <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>Time Management</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
+                                                        @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
-                                                        </div>
+                                                        @else
                                                         <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
                                                         </div>
+                                                        @endif
                                                     </li>
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task 1</h6>
-                                                            <h4>Evaluation Skills</h4>
-                                                            <h5>10 Questions | 15 mins</h5>
-                                                        </div>
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg">Take test</button>
-                                                        </div>
-                                                    </li>
+                                                    @endif
+                                                    @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2">3 more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div id="weekly" class=" tab-pane">
+                                            <div class="taskstatusBlock">
+                                                <h4>Task completed</h4>
+                                                <div class="statusvalue">
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
+                                                </div>
+                                            </div>
+                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
+                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                            <div class="tasklisting">
+                                                <ul class="commonlisting">
+                                                    @foreach($weekTask as $wkey=>$data)
+                                                    @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Accuracy Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Weak topic Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @endforeach
+                                                </ul>
+                                                <div class="moreTaskLink">
+                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg></span></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4 commonblockDash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock">
@@ -282,7 +355,7 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <a href="#strengthmodal" data-bs-toggle="modal" data-bs-target="#strengthmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}" >
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
@@ -305,7 +378,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor2">
-                                            <a href="#needfocusmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
                                                     <h5>Needs focus</h5>
@@ -329,7 +402,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor3 mb-0">
-                                            <a href="#hopefulmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
                                                     <h5>Hopeful </h5>
@@ -352,7 +425,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="#weakhmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
                                                     <h5>Weak </h5>
@@ -388,13 +461,12 @@ $userData = Session::get('user_data');
                                         </svg>
                                     </div>
                                     <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
-                                    <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                 </div>
                             </div>
                             @endif
                         </div>
                     </div>
-
                     <div class="col-lg-12">
                         <div class="cardWhiteBg">
                             <section class="weeklyPlanWrapper">
@@ -438,7 +510,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="gotoPlanner">
-                                        <a href="">
+                                        <a href="{{ url('/planner') }}">
                                             <span>Go to Planner</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -458,7 +530,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
-                                            <button class="btn btn-common-transparent nobg">
+                                            <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -466,14 +538,13 @@ $userData = Session::get('user_data');
                                                 </span>
                                                 <span>Add
                                                 </span>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                                 @else
                                 <div class="allSubslider">
                                     <div class="dashborarSlider owl-carousel owl-theme">
-
                                         @foreach($planner as $key=>$val)
                                         <?php
                                         if ($val->subject_id == 1) {
@@ -587,14 +658,12 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                         @endforeach
-
                                     </div>
                                 </div>
                                 @endif
                             </section>
                         </div>
                     </div>
-
                     <div class="col-lg-12">
                         <div class="">
                             <section class="graphCard my-4">
@@ -628,12 +697,13 @@ $userData = Session::get('user_data');
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
+                                                @if (isset($ideal) && !empty($ideal))
                                                 <div class="graphDetail w-100">
                                                     <div class="yourPacebox">
                                                         <p class="graphTitle">Ideal Pace</p>
                                                         <p>
                                                             <span class="weekCountline myscore"></span>
-                                                            <span class="weekCount">12</span>
+                                                            <span class="weekCount">{{round($ideal_avg)}}</span>
                                                             <span class="weekText">chapters per week</span>
                                                         </p>
                                                     </div>
@@ -641,18 +711,22 @@ $userData = Session::get('user_data');
                                                         <p class="graphTitle">Your Pace</p>
                                                         <p>
                                                             <span class="weekCountline colorHline"></span>
-                                                            <span class="weekCount">8</span>
+                                                            <span class="weekCount">{{round($your_place_avg)}}</span>
                                                             <span class="weekText">chapters per week</span>
                                                         </p>
                                                     </div>
+                                                    @if(round($ideal_avg) > round($your_place_avg))
                                                     <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
+                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{(round($ideal_avg)-round($your_place_avg))}} chapters this week
                                                     </div>
+                                                    @endif
                                                 </div>
-                                                <div class="graphDetailempty" style="display:none">
+                                                @else
+                                                <div class="graphDetailempty w-100">
                                                     <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                                    <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                                    <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -676,19 +750,20 @@ $userData = Session::get('user_data');
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-
                                                     <canvas id="trend_graph"></canvas>
                                                 </div>
-
                                             </div>
+                                            @if (!empty($trendResponse))
                                             <div class="graphDetail">
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
-                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="Mocktest" readonly>
+                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
-                                                            <div onclick="show('Mock Test', 'Mock')">Mock Test</div>
-                                                            <div onclick="show('Practice Test', 'Practice')">Practice Test</div>
-                                                            <div onclick="show('Test Series', 'TestSeries')">Test Series</div>
+                                                            <div class="active" onclick="show('All Test', 'all')">All Test</div>
+                                                            <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                            <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                            <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                            <div onclick="show('Live', 'Live')">Live </div>
 
                                                         </div>
                                                     </div>
@@ -708,7 +783,8 @@ $userData = Session::get('user_data');
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="graphDetailempty" style="display:none">
+                                            @else
+                                            <div class="graphDetailempty">
                                                 <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
                                                 <div class="h">
                                                     <p class="testScrolltype">
@@ -719,27 +795,24 @@ $userData = Session::get('user_data');
                                                         <span class="weekCountlineH  peerAvg"></span>
                                                         <span class="weekText">Peer average</span>
                                                     </p>
+                                                    <p class="testScrolltype">
+                                                        <span class="weekCountlineH  topScroe"></span>
+                                                        <span class="weekText">Top score</span>
+                                                    </p>
                                                 </div>
-                                                <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </section>
-
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
         <div class="modalcenter">
@@ -764,9 +837,6 @@ $userData = Session::get('user_data');
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
-
-
-
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
@@ -800,9 +870,8 @@ $userData = Session::get('user_data');
     $your_place = isset($your_place) ? json_encode($your_place) : [];
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
-    //dd($aWeeks,$progress_cat );
-    @endphp
 
+    @endphp
     <script>
         $(document).ready(function() {
             $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
@@ -826,8 +895,6 @@ $userData = Session::get('user_data');
             }
         });
     </script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         $('.dashborarSlider').owlCarousel({
@@ -856,13 +923,6 @@ $userData = Session::get('user_data');
             }
         })
     </script>
-
-
-
-
-
-
-
     <script>
         /* progress Journy graph */
         const labels1 = <?php print_r($progress_cat); ?>;
@@ -1011,8 +1071,6 @@ $userData = Session::get('user_data');
             alert(value);
         }); */
     </script>
-
-
     <script>
         function show(value, type) {
             document.querySelector(".text-box").value = value;
@@ -1023,21 +1081,21 @@ $userData = Session::get('user_data');
                 url: url, //ajaxformexample url
                 dataType: "json",
                 success: function(response) {
-                    console.log(response);
+                    console.log(response.student_score);
                     myChart2.data.labels = response.labels;
-                    myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[1] = response.average_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[2] = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
                     myChart2.update(); // finally update our chart
                 }
             });
         }
+
+
 
         let dropdown = document.querySelector(".customDropdown")
         dropdown.onclick = function() {
             dropdown.classList.toggle("active")
         }
     </script>
-
-
     @endsection
