@@ -161,7 +161,7 @@
     <div class="content-wrapper test_analytics_wrapper">
         <div class="container-fluid">
             <div class="mock_inst_text_mock_test mb-4">
-                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
+                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             <h3 class="commonheading">Mock Test</h3>
             <div class="row mt-4 mb-4 align-items-end">
@@ -207,7 +207,7 @@
                 <div class="col-md-5">
                     <div class="commonWhiteBox commonblockDash test_myscrore_card">
                         <h3 class="boxheading d-flex align-items-center">My Score 
-                                <span class="tooltipmain ml-2">
+                            <span class="tooltipmain ml-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
                                 <p class="tooltipclass">
                                 <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>

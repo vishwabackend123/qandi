@@ -160,7 +160,7 @@
     <div class="content-wrapper export_overall_analytics_wrapper">
         <div class="container-fluid">
             <div class="mock_inst_text_mock_test mb-4">
-                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
+                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             <div class="custom_container">
                 <h3 class="commonheading">Detailed Report Analysis</h3>
@@ -180,7 +180,7 @@
                     <div class="col-md-3">
                         <span style="font-size: 14px;font-weight: 500;color: #1f1f1f;">June 23, 2022</span>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-3">
                         <div class="text-right">
                             <button class="btn btn-common-transparent" style="min-width: auto;">
                                 <svg class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: top;">
@@ -193,7 +193,7 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash" style="margin-top:40px;">
                     <h3 class="boxheading" style="margin-bottom:40px;">Progress</h3>
-                    <div class="row">
+                    <div class="row justify-content-between align-items-center" style="margin-top: -28px;">
                         <div class="col-md-4">
                             <div class="studentdetail">
                                 <h3 class="boxheading">Sanjay Kapoor</h3>
@@ -203,9 +203,125 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div>
+                                <canvas id="subjectChart" style="height:100%;width:100%;"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <span class="d-block commontext">Overall subject proficiency</span>
+                                <label class="mb-0 commonboldtext d-block" style="font-size:24px;">50%</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="commonWhiteBox commonblockDash subject_score_card">
+                        <h3 class="boxheading d-flex align-items-center">Subject Score 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Maths</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Physics</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart-1"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Chemistry</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart-2"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>  
+/********* halfdoughnut progress - start ************/
+const circuference = 180;
+const data = {
+  labels: ["Progress"],
+  datasets: [
+    {
+    //   label: "My First Dataset",
+      data: [180, 100],
+      backgroundColor: [
+        "#08d5a1",  
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+const config = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "60%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myCharted = new Chart("subjectChart", config)
+/*********** progress end ****************/
+</script>  
+
+@endsection
