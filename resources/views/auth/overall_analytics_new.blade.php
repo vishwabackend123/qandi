@@ -188,7 +188,7 @@
                                             <div class="commonWhiteBox">
                                                     <h3 class="boxheading d-flex align-items-center mb-5">Progress
                                                     <span class="tooltipmain">
-                                                `        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
                                                             </g>
@@ -197,7 +197,7 @@
                                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
                                                             This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                                                         </p>
-                                                    </span>`
+                                                    </span>
                                                     </h3>
                                                 <div class="overall_percentage_chart">
                                                     <canvas id="myChart"></canvas>
@@ -275,12 +275,52 @@
                                 </div>
                                 <div class="overallMidlle">
                                 <div class="commonWhiteBox">
+                                <h3 class="boxheading">Time Management
+                                        <span class="tooltipmain">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                </g>
+                                            </svg>
+                                            <p class="tooltipclass">
+                                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            </p>
+                                        </span>
+                                    </h3>
                                      <div class="row">
                                          <div class="col-md-6">
-
+                                           <div class="timemanagement">
+                                               <h4 class="garphsubheading">Time for correct/incorrect answer</h4>
+                                               <div class="subjectperformLegend ">
+                                                    <div class="commonSubjectLeg">
+                                                        <span class="bar greenbar"></span>
+                                                        <label class="text">Class Average</label>
+                                                    </div>  
+                                                    <div class="commonSubjectLeg">
+                                                        <span class="bar pinkbar"></span>
+                                                        <label class="text">Student average</label>
+                                                    </div> 
+                                                </div>
+                                           </div>
                                          </div>
                                          <div class="col-md-6">
-                                            
+                                            <div class="timemanagement">
+                                                <h4 class="garphsubheading">Time spent on each question <span>(in Last week)</span></h4>
+                                                <div class="subjectperformLegend ">
+                                                    <div class="commonSubjectLeg spaceright">
+                                                        <span class="bar bluebar"></span>
+                                                        <label class="text">Class Average</label>
+                                                    </div>  
+                                                    <div class="commonSubjectLeg spaceright">
+                                                        <span class="bar greenbar"></span>
+                                                        <label class="text">Student average</label>
+                                                    </div> 
+                                                </div>
+                                                <div class="chartspent">
+                                                    <canvas id="timeSpent_Graph"></canvas>
+                                                </div>
+                                            </div>    
                                          </div>
                                      </div>
                                 </div> 
@@ -995,6 +1035,67 @@ const myscoreconfig = {
 const myscore = new Chart("myscoregraph", myscoreconfig)
 
 /***************** halfdoughnut - end *********************/
+/*******spent-time-graph*********/
+        const data1 = {
+            labels: ['13 May', '14 May','15 May','16 May','17 May'],
+            datasets: [{
+                    label: 'Ideal Pace',
+                    backgroundColor: '#56b663',
+                    borderColor: '#56b663',
+                    data:[20,30,10,20,50],
+                    borderwidth: 0.6,
+                    tension: 0.4
+                },
+                {
+                    label: 'Your Pace',
+                    backgroundColor: '#7db9ff',
+                    borderColor: '#7db9ff',
+                    data:[0,60,30,40,50],
+                    borderwidth: 0.6,
+                    tension: 0.4
+                }
+            ]
+        };
+
+        const config1 = {
+            type: 'line',
+            data: data1,
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+
+                }
+            }
+        };
+
+        const myChart1 = new Chart(
+            document.getElementById('timeSpent_Graph'),
+            config1
+        );
+/*******spent-time-graph-end*********/
+
 </script>   
 
 @endsection
