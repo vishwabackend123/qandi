@@ -2500,6 +2500,8 @@ height: 48px;top: 7px;}
     background-color: #7db9ff;
     display: inline-block;
     margin-right: 12px;
+	top: -2px;
+    position: relative;
 }
 .graph_color_label_anwser span:last-child small { background-color: #56b663;}
 span.mendatfield {
@@ -2507,7 +2509,8 @@ span.mendatfield {
     color: #f41c1c;
 }
 .backBtn+.btn.btn-common-transparent {line-height: 25px;}
-
+.time_management_stacked_barchart .graph_color_label_anwser span small{background-color: #08d5a1;}
+.time_management_stacked_barchart .graph_color_label_anwser span:last-child small {background-color: #f7758f;}
 
 /********************* Amit End ****************************/
 
