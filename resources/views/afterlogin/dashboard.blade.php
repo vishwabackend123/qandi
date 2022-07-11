@@ -355,7 +355,7 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <a href="#strengthmodal" data-bs-toggle="modal" data-bs-target="#strengthmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}" >
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
@@ -378,7 +378,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor2">
-                                            <a href="#needfocusmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
                                                     <h5>Needs focus</h5>
@@ -402,7 +402,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor3 mb-0">
-                                            <a href="#hopefulmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
                                                     <h5>Hopeful </h5>
@@ -425,7 +425,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="#weakhmodal">
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
                                                     <h5>Weak </h5>

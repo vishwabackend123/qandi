@@ -161,7 +161,7 @@
                 </div>
             </form>
         </div>
-        <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a> &nbsp;and &nbsp;<a href="javascript:void(0);">Privacy Policy</a>.</h3>
+        <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="https://qandi.com/terms-of-use/" target="_blank">Terms & Conditions </a> &nbsp;and &nbsp;<a href="https://qandi.com/privacy-policy/" target="_blank">Privacy Policy</a>.</h3>
     </div>
 </section>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
