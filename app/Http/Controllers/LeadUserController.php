@@ -122,8 +122,12 @@ class LeadUserController extends Controller
 	{
 		return view('auth.mock_test');
 	}
-     public function live_exam()
+    public function live_exam()
 	{
 		return view('auth.live_exam');
+	}
+	public function examTest()
+	{
+		return view('auth.exam_test');
 	}
 }
