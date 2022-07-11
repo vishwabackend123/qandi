@@ -4051,7 +4051,22 @@ padding: 11px 20px!important;
     letter-spacing: normal;
     color: #1f1f1f
 }
-/* **********end mock test   ********** */
+.live_exam_diveder_div
+{
+    border-right: 1px solid #cde3d0;
+}
+.mock_test_ques_content22, .live_exam_diveder_div 
+{
+    padding: unset!important;
+}
+.exam_tabdata .accordion-body {
+    padding: 0px 0px 25px 0px;
+}
+.live_mock_exam_section
+{
+    margin-bottom: 19px;
+}
+    /* **********end mock test   ********** */
 /* **********start live   ********** */
 
 .live_exam_red_dot
