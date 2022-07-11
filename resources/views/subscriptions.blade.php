@@ -141,7 +141,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="{{url('/dashboard')}}">Skip to Dashboard</a>
+                        <a href="{{url('/dashboard')}}">Continue</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
