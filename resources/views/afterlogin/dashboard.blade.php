@@ -1023,15 +1023,12 @@ $userData = Session::get('user_data');
                 url: url, //ajaxformexample url
                 dataType: "json",
                 success: function(response) {
-                    // console.log(response);
+                    console.log(response);
                     myChart2.data.labels = response.labels;
-                    console.log(myChart2.data.datasets[0]);
-                    console.log(myChart2.data.datasets[1]);
-                    console.log(myChart2.data.datasets[2]);
-                    /*  myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
-                     myChart2.data.datasets[0] = response.average_score; // or you can iterate for multiple datasets
-                     myChart2.data.datasets[0] = response.max_score; // or you can iterate for multiple datasets
-                     myChart2.update();  */ // finally update our chart
+                    myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1] = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2] = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.update(); // finally update our chart
                 }
             });
         }
