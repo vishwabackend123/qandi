@@ -4099,6 +4099,14 @@ padding: 11px 20px!important;
 {
     margin-bottom:38px;
 }
+.previous_dropbox_page .options
+{
+    background-color: #ffffff;
+}
+.previous_dropbox_page .customDropdown input
+{
+    position: relative!important;
+}
 
 
 

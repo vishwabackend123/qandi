@@ -108,15 +108,13 @@
                               <div class="mock_exam_jee_main_text d-flex align-items-center">
                                  <p class="previous_exam_year_exam_paper_text">Test your preparedness with Past year exam papers</p>
                               </div>
-                              <div class="dropbox">
+                              <div class="dropbox previous_dropbox_page">
                                  <div class="customDropdown dropdown">
-                                    <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                    <input class="text-box" type="text" id="markstrend_graph" placeholder="Select year" readonly>
                                     <div class="options">
-                                       <div class="active" onclick="show('All Test', 'all')">All Test</div>
-                                       <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                       <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                       <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                       <div onclick="show('Live', 'Live')">Live </div>
+                                       <div class="active" onclick="show('Mock Test', 'Mocktest')">2018</div>
+                                       <div onclick="show('Practice Test', 'Assessment')">2021</div>
+                                       <div onclick="show('Test Series', 'Test-Series')">2022</div>
                                     </div>
                                  </div>
                               </div>
@@ -232,15 +230,13 @@
                               <div class="mock_exam_jee_main_text d-flex align-items-center">
                                  <p class="previous_exam_year_exam_paper_text">Test your preparedness with Past year exam papers</p>
                               </div>
-                              <div class="dropbox">
+                              <div class="dropbox previous_dropbox_page">
                                  <div class="customDropdown dropdown">
-                                    <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                    <input class="text-box" type="text" id="markstrend_graph" placeholder="Select year" readonly>
                                     <div class="options">
-                                       <div class="active" onclick="show('All Test', 'all')">All Test</div>
-                                       <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                       <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                       <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                       <div onclick="show('Live', 'Live')">Live </div>
+                                       <div class="active" onclick="show('Mock Test', 'Mocktest')">2018</div>
+                                       <div onclick="show('Practice Test', 'Assessment')">2021</div>
+                                       <div onclick="show('Test Series', 'Test-Series')">2022</div>
                                     </div>
                                  </div>
                               </div>
@@ -409,4 +405,10 @@
    </section>
    </div>
 </body>
+   <script>
+      let dropdown = document.querySelector(".customDropdown")
+        dropdown.onclick = function() {
+            dropdown.classList.toggle("active")
+        }
+    </script>
 @endsection
