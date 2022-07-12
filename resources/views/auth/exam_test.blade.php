@@ -149,7 +149,78 @@
                             </div>
                         <div class="bck-btn">Back</div>
                 </div>
+
                    
+
+                            </div>
+                            <div class="questionType">
+                                <div class="questionTypeinner">
+                                    <div class="questionChoiceType">
+                                        <div class="questionChoice"><a class="singleChoice">Section A (20Q) - Single Choice</a> <a class="numericalChoice">Section B (10Q) - Numerical</a></div>
+                                    </div>
+                                    <div class="timeCounter">
+                                        Average Time:
+                                        <div id="progressBar"><div class="bar"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content aect_tabb_contantt">
+                                <div id="evaluation" class="tab-pane active">
+                                    <div class="questionwrapper">
+                                        <div class="questionheader">
+                                            <div class="question">
+                                                <span class="q-no">Q1.</span>
+                                                <p>
+                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
+                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
+                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
+                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="questionOptionBlock">
+                                            <div class="fancy-radio-buttons row with-image">
+                                                <div class="col-md-6">
+                                                    <div class="image-container">
+                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="image-container">
+                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="image-container">
+                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="image-container">
+                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="application" class="tab-pane">adasdas</div>
+                                <div id="complrehension" class="tab-pane">complrehension</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnbottom">
+                        <div class="questionbtnBlock">
+                            <div class="questionLeftbtns"><button class="btn questionbtn">Mark for Review</button> <button class="btn questionbtn Clearbtn">Clear Response</button></div>
+                            <div class="questionRightbtns"><button class="btn questionbtn">Save & Mark for Review</button> <button class="btn questionbtn">Save & Next</button></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
