@@ -98,7 +98,91 @@
                         </div>
                     </div>
                 </div>
-                <div class="examRightpanel">dfdfd</div>
+                <div class="examRightpanel ans-panel">
+                    <div class="custom-exam-ansplatemain">
+                        <div class="custom-anstop">
+                            <p><span>Answer Palette</span></p>
+                            <div class="custom-exambtn-sec">
+                                
+                                <button type="button" class="btn red-btn" id="btn-ans">1</button>
+                                <button type="button" class="btn" id="btn-ans">2</button>
+                                <button type="button" class="btn" id="btn-ans">3</button>
+                                <button type="button" class="btn" id="btn-ans">4</button>
+                                <button type="button" class="btn" id="btn-ans">5</button>
+                                <button type="button" class="btn red-btn" id="btn-ans">6</button>
+                                <button type="button" class="btn" id="btn-ans">7</button>
+                             
+                                <button type="button" class="btn" id="btn-ans">8</button>
+                                <button type="button" class="btn" id="btn-ans">9</button>
+                                <button type="button" class="btn" id="btn-ans">10</button>
+                                <button type="button" class="btn pink-btn" id="btn-ans">11</button>
+                                <button type="button" class="btn" id="btn-ans">12</button>
+                                <button type="button" class="btn" id="btn-ans">13</button>
+                                <button type="button" class="btn" id="btn-ans">14</button>
+                                
+                                <button type="button" class="btn red-btn" id="btn-ans">15</button>
+                                <button type="button" class="btn" id="btn-ans">16</button>
+                                <button type="button" class="btn" id="btn-ans">17</button>
+                                <button type="button" class="btn red-btn" id="btn-ans">18</button>
+                                <button type="button" class="btn" id="btn-ans">19</button>
+                                <button type="button" class="btn" id="btn-ans">20</button>
+                                <button type="button" class="btn" id="btn-ans">21</button>
+                                <button type="button" class="btn" id="btn-ans">22</button>
+                                <button type="button" class="btn border-btn" id="btn-ans">23</button>
+                                <button type="button" class="btn" id="btn-ans">24</button>
+                                <button type="button" class="btn" id="btn-ans">25</button>
+                                <button type="button" class="btn" id="btn-ans">26</button>
+                                <button type="button" class="btn" id="btn-ans">27</button>
+                                <button type="button" class="btn" id="btn-ans">28</button>
+                                <button type="button" class="btn" id="btn-ans">29</button>
+                                <button type="button" class="btn" id="btn-ans">30</button>
+                               
+                                
+                            </div>
+                        </div>
+                         <div class="reviewans-mainsec">
+                             <div class="review-filter-top">
+                                    <span>Review Questions</span> 
+                                    <label class="filter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </label>
+                                    <label>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </label>
+                             </div>
+                                <div class="list-ans">
+                                    <div class="d-flex quistion-1 redborder-left ">
+                                        <div class="flex-shrink-0" style="padding-left: 16px;">
+                                                 Q1.
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 quistion-content ">
+                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                        </div>
+                                    </div>
+                                    <div class="d-flex quistion-2 greenborder-left">
+                                        <div class="flex-shrink-0" style="padding-left: 16px;">
+                                                 Q2.
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 quistion-content ">
+                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                        </div>
+                                    </div>
+                                    <div class="d-flex quistion-3 greenborder-left">
+                                        <div class="flex-shrink-0" style="padding-left: 16px;">
+                                                 Q3.
+                                        </div>
+                                        <div class="flex-grow-1 ms-3 quistion-content ">
+                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                        </div>
+                                    </div>
+                                </div>
+                         </div>
+                         <div class="bck-btn">Back</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -107,6 +191,108 @@
 
  
 <style> 
+/* shiv start css */
+.custom-anstop > p {
+    margin: 0;
+    padding-bottom: 20px;
+    font-weight: 800;
+}
+.custom-exambtn-sec {
+    padding-top: 20px;
+    border-top: 1px solid rgba(172, 185, 176, 0.14);
+    display: flex;height: 195px;
+    overflow-y: scroll;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.red-btn {
+    background: #d92d20 !important;
+    border: 1px solid #d92d20 !important;
+}
+.border-btn {
+    background: #fff !important;
+    color: #56b663 !important;
+}
+
+button#btn-ans {
+    background: #56b663;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 0 !important;
+    margin: 0px 20px 20px 0px;
+    border: 1px solid #56b663;
+}
+.review-filter-top {
+    display: flex;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+}
+.review-filter-top > span {
+    font-weight: 800;
+    font-size: 16px;flex-grow: 1;
+}
+label.filter {
+    padding-right: 20px;
+}
+.list-ans {
+    padding-top: 20px;
+    height: 269px;
+    overflow-y: scroll;
+}
+
+.list-ans div {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #363c4f;
+    padding-bottom: 10px;position: relative;
+}
+
+.redborder-left:before {
+    content: "";
+    width: 4px;
+    background: #d92d20;
+    position: absolute;
+    height: 66px;
+    border-radius: 20px;
+}
+
+.greenborder-left:before {
+    content: "";
+    width: 4px;
+    background:  #56b663;
+    position: absolute;
+    height: 66px;
+    border-radius: 20px;
+}
+.bck-btn:hover {cursor: pointer;}
+
+
+.bck-btn {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(205, 227, 208, 0.5);
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(54, 60, 79, 0.8);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 10;
+}
+
+.examRightpanel.ans-panel {
+    padding-top: 24px !important;
+}
+
+/* shiv end css */
+
 .examScreentab {
     position: relative;
 }
@@ -140,12 +326,13 @@
 .examRightpanel {
     min-width: 379px;
     max-width: 379px;
-    height: 90vh;
+    height: 100vh;
     margin: 0 0 0 40px;
     padding: 40px 28px 10px;
     border-radius: 20px;
     box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
     background-color: #ffffff;
+    position: relative;
 }
 .submitBtn {
     position: absolute;

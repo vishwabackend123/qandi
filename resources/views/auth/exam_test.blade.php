@@ -876,7 +876,7 @@ button.owl-next.disabled span{
     font-size: 14px;
     font-weight: 800;
     height: 44px;
-}
+} 
 
 .questionLeftbtns .questionbtn:first-child,
 .questionRightbtns .questionbtn:first-child {

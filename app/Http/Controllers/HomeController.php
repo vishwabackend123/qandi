@@ -388,11 +388,13 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back()->withErrors(['api issue']);;
+                        ->back()->withErrors(['api issue']);
+                    ;
                 }
             } else {
                 return redirect()
-                    ->back()->withErrors(['empty value']);;
+                    ->back()->withErrors(['empty value']);
+                ;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -534,59 +536,30 @@ class HomeController extends Controller
                 $sessionData->city = $response->user_info->city;
                 $sessionData->state = $response->user_info->state;
                 $sessionData->country = $response->user_info->country;
-
                 Session::put('user_data', $sessionData);
 
-                return json_encode($response);
             }
-        } catch (\Exception $e) {
-            Log::info($e->getMessage());
-        }
-    }
-    /**
-     * Edit Profile Image
-     *
-     * @param Request $request recieve the body request data
-     *
-     * @return void
-     */
-    public function editProfileImage(Request $request)
-    {
-        try {
-            $postData = $request->only('file-input');
-            $file = $postData['file-input'];
-
-            // Build the input for validation
-            $fileArray = array(
+            if (isset($data['file-input']) && !empty($data['file-input'])) {
+                $file = $data['file-input'];
+                $fileArray = array(
                 'image' => $file
             );
-
-            // Tell the validator that this file should be an image
-            $rules = array(
+                $rules = array(
                 'image' => 'mimes:jpeg,jpg,png,gif|required|max:5120'
-                // max 5120kb
 
             );
-
-            // Now pass the input and rules into the validator
-            $validator = Validator::make($fileArray, $rules);
-
-            // Check to see if validation fails or passes
-            if ($validator->fails()) {
-                // Redirect or return json to frontend with a helpful message to inform the user
-                // that the provided file was not an adequate type
-                return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
-            } else {
-                // Store the File Now
-                $userData = Session::get('user_data');
-
-                $user_id = $userData->id;
-                $exam_id = $userData->grade_id;
-                $file = $request->file('file-input');
-                $file_name = $file->getClientOriginalName();
-                if ($request->hasfile('file-input')) {
-                    $curl = curl_init();
-                    $curl_option = array(
+                $validator = Validator::make($fileArray, $rules);
+                if ($validator->fails()) {
+                    return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
+                } else {
+                    $userData = Session::get('user_data');
+                    $user_id = $userData->id;
+                    $exam_id = $userData->grade_id;
+                    $file = $data['file-input'];
+                    $file_name = $file->getClientOriginalName();
+                    if (isset($data['file-input']) && !empty($data['file-input'])) {
+                        $curl = curl_init();
+                        $curl_option = array(
                         CURLOPT_URL => env('API_URL') . 'api/update-profile-picture',
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_ENCODING => '',
@@ -601,27 +574,28 @@ class HomeController extends Controller
                             'file_extension' => $file_name
                         ),
                     );
-                    curl_setopt_array($curl, $curl_option);
+                        curl_setopt_array($curl, $curl_option);
 
-                    $response = curl_exec($curl);
-                    $err = curl_error($curl);
-                    curl_close($curl);
-                    $aResponse = json_decode($response);
+                        $response = curl_exec($curl);
+                        $err = curl_error($curl);
+                        curl_close($curl);
+                        $aResponse = json_decode($response);
 
-                    if (isset($aResponse->success) && $aResponse->success == true) {
-                        $sessionData = Session::get('user_data');
-                        $sessionData->user_profile_img = $aResponse->filename;
-                        Session::put('user_data', $sessionData);
-                        echo $response;
-                    } else {
-                        echo $response;
+                        if (isset($aResponse->success) && $aResponse->success == true) {
+                            $sessionData = Session::get('user_data');
+                            $sessionData->user_profile_img = $aResponse->filename;
+                            Session::put('user_data', $sessionData);
+    
+                        } 
                     }
                 }
             }
+            return Redirect()->route('dashboard');
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
+
     /**
      * Save Fcm Token
      *
