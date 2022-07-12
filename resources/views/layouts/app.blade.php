@@ -42,6 +42,7 @@
     <!-----Current js-------->
     <!------calander-js------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
     <script>

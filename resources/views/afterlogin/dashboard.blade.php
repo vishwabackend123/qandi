@@ -38,7 +38,7 @@ $userData = Session::get('user_data');
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
                                     </p>
                                 </span>
                             </h3>
@@ -148,7 +148,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
                                         </p>
                                     </span>
                                 </h3>
@@ -201,8 +201,11 @@ $userData = Session::get('user_data');
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
+                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                                so that we could generate tasks for you, based on your proficiency levels.
+                                            </p>
+                                            @endif
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
@@ -264,7 +267,7 @@ $userData = Session::get('user_data');
                                                     @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
@@ -321,7 +324,7 @@ $userData = Session::get('user_data');
                                                     @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
@@ -344,7 +347,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses.  This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
                                 </h3>
@@ -425,7 +428,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
                                                     <h5>Weak </h5>
@@ -484,7 +487,7 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                            To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                                         </p>
                                                     </span>
                                                 </h3>
@@ -691,7 +694,7 @@ $userData = Session::get('user_data');
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                        Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
                                                     </p>
                                                 </span>
                                             </h3>
@@ -753,7 +756,7 @@ $userData = Session::get('user_data');
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                        This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                                                     </p>
                                                 </span>
                                             </h3>

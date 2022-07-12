@@ -91,11 +91,7 @@ class LeadUserController extends Controller
 	{
 		return view('auth.chapter_planner');
 	}
-	public function planner()
-	{
-		//return view('auth.planner');
-		return view('afterlogin.planner.planner_schedule');
-	}
+	s
 	public function emailConfirmation()
 	{
 		return view('auth.email_confirmation');
@@ -123,5 +119,25 @@ class LeadUserController extends Controller
 	public function live_exam()
 	{
 		return view('auth.live_exam');
+	}
+	public function examTest()
+	{
+		return view('auth.exam_test');
+	}
+	public function previousyearexam()
+	{
+		return view('auth.previousyear_exam');
+	}
+	public function overallAnalyticsNew()
+	{
+		return view('auth.overall_analytics_new');
+	}
+	public function exportTestAnalytics()
+	{
+		return view('auth.export_test_analytics');
+	}
+	public function reviewTest()
+	{
+		return view('auth.review_test');
 	}
 }
