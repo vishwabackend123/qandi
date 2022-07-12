@@ -210,7 +210,6 @@
                     </div>
                 </div>
                 <div class="examRightpanel">dfdfd</div>
->>>>>>> a50a34dc389b8d9be1eaf3d02c3854782c2d186a
             </div>
         </div>
     </div>
