@@ -139,4 +139,9 @@ class LeadUserController extends Controller
 	{
 		return view('auth.export_test_analytics');
 	}
+	public function reviewTest()
+	{
+		return view('auth.review_test');
+	}
+
 }

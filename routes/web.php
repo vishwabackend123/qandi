@@ -310,3 +310,6 @@ Route::any('/exam_test', [App\Http\Controllers\LeadUserController::class, 'examT
 Route::any('/previousyear_exam', [App\Http\Controllers\LeadUserController::class, 'previousyearexam']);
 Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
 Route::any('/export_test_analytics', [App\Http\Controllers\LeadUserController::class, 'exportTestAnalytics']);
+Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
+ 
+
