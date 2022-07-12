@@ -425,8 +425,11 @@
                                     </div> 
                                     </div>
                                </div>    
-                        </div>
-                        
+                            <div id="math" class=" tab-pane">sdfsf</div>
+                            <div id="physics" class=" tab-pane">sdfsf</div>
+
+                            <div id="chemistry" class=" tab-pane">sdfsf</div>
+
                     </div>
                 </div>
             </div>
