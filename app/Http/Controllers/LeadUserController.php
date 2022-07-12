@@ -78,7 +78,7 @@ class LeadUserController extends Controller
 	{
 		return view('auth.exam_instructions');
 	}
-	
+
 	public function weeklyPlan()
 	{
 		return view('auth.weekly_plan');
@@ -93,7 +93,8 @@ class LeadUserController extends Controller
 	}
 	public function planner()
 	{
-		return view('auth.planner');
+		//return view('auth.planner');
+		return view('afterlogin.planner.planner_schedule');
 	}
 	public function emailConfirmation()
 	{
@@ -107,7 +108,7 @@ class LeadUserController extends Controller
 	{
 		return view('auth.aeck_myqmatrix');
 	}
-    public function practic_exam()
+	public function practic_exam()
 	{
 		return view('auth.practic_exam');
 	}
@@ -115,11 +116,11 @@ class LeadUserController extends Controller
 	{
 		return view('auth.export_overall_analytics');
 	}
-     public function mock_test()
+	public function mock_test()
 	{
 		return view('auth.mock_test');
 	}
-     public function live_exam()
+	public function live_exam()
 	{
 		return view('auth.live_exam');
 	}
