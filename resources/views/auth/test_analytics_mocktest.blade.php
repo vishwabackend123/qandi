@@ -667,15 +667,15 @@ const myChart = new Chart(ctx, {
     data: {
         labels: ['My Percentage', 'Class Average'],
         datasets: [{
-            data: [12, 22, 50],
+            data: [12, 22],
             label: '',
             backgroundColor: [
-                '#56b663',
-                '#08d5a1'
+                '#6ee7b7',
+                '#56b663'
             ],
             barPercentage: 5,
-            barThickness: 60,
-            maxBarThickness: 60
+            barThickness: 80,
+            maxBarThickness: 80
         }]
     },
     options: {
