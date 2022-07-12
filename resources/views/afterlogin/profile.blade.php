@@ -3,6 +3,14 @@
 $userData = Session::get('user_data');
 @endphp
 @section('content')
+<style type="text/css">
+.error {
+    font-size: 14px;
+    font-weight: normal;
+    color: #dc6803 !important;
+}
+
+</style>
 
 <body class="bg-content">
     <div class="main-wrapper">
@@ -18,82 +26,86 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <div class="row pt-4">
-                            <div class="col-lg-6">
-                                <div class="custom-input pb-4">
-                                    <label>First Name</label>
-                                    <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="custom-input pb-4">
-                                    <label>Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="custom-input pb-4">
-                                    <label>Display Name</label>
-                                    <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="custom-input pb-4">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 custom-input pb-4">
-                                <label>State</label>
-                                <select class="form-control selectdata">
-                                    <option class="we" value="">Select</option>
-                                    @foreach($state_list as $state)
-                                    <option class="we" value="{{$state}}">{{$state}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-lg-6 custom-input pb-4">
-                                <label>City</label>
-                                <select class="form-control selectdata">
-                                    <option class="we">Select</option>
-                                    <option class="we2">Punjab</option>
-                                    <option>Delhi</option>
-                                </select>
-                            </div>
-                        </div>
-                        <hr class="line">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="custom-input pb-4">
-                                    <label>Mobile</label>
-                                    <input type="text" maxlength="10" class="form-control bg-transparent" placeholder="Mobile no" value="9034424140">
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mb-4">
-                        <div class="row mb-4">
-                            <div class="col-lg-12">
-                                <div class="d-flex custom-profileupload">
-                                    <div class="preview-zone hidden">
-                                        <div class="box box-solid">
-                                            <div class="box-body"></div>
-                                        </div>
+                        <form id="editProfile_form" method="post" action="/editProfile">
+                            <div class="row pt-4">
+                                <div class="col-lg-6">
+                                    <div class="custom-input pb-4">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" required>
                                     </div>
-                                    <div class="dropzone-wrapper w-100">
-                                        <div class="dropzone-desc text-center">
-                                            <img src="{{URL::asset('public/after_login/current_ui/images/upload-img.jpg')}}" alt="performance">
-                                            <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>(SVG, PNG, JPG or GIF)</span></p>
-                                        </div>
-                                        <input type="file" name="img_logo" class="dropzone">
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="custom-input pb-4">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="custom-input pb-4">
+                                        <label>Display Name</label>
+                                        <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}" id="username" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="custom-input pb-4">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 custom-input pb-4">
+                                    <label>State</label>
+                                    @php
+                                    $userstate = $userData->state;
+                                    @endphp
+                                    <select class="form-control selectdata state_list" id="state" required>
+                                        <option class="we" value="">Select State</option>
+                                        @foreach($state_list as $state)
+                                        <option class="we" value="{{$state}}" @if($state==$userstate) selected @else "" @endif>{{$state}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 custom-input pb-4">
+                                    <label>City</label>
+                                    <select class="form-control selectdata city_list" id="city_name" required>
+                                        <option class="we">Select City</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr class="line">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="custom-input pb-4">
+                                        <label>Mobile</label>
+                                        <input type="text"  class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr class="line">
-                        <div class="d-flex justify-content-end mb-5 pb-5">
-                            <button class="btn cancle mr-2 bg-transparent disabled">Cancle</button>
-                            <button class="btn savebtn text-white border-0 ml-1 disabled">Save</button>
-                        </div>
+                            <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
+                            <hr class="line mb-4">
+                            <div class="row mb-4">
+                                <div class="col-lg-12">
+                                    <div class="d-flex custom-profileupload">
+                                        <div class="preview-zone hidden">
+                                            <div class="box box-solid">
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper w-100">
+                                            <div class="dropzone-desc text-center">
+                                                <img src="{{URL::asset('public/after_login/current_ui/images/upload-img.jpg')}}" alt="performance">
+                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>(SVG, PNG, JPG or GIF)</span></p>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="line">
+                            <div class="d-flex justify-content-end mb-5 pb-5">
+                                <a href="{{ url('/dashboard') }}" class="btn cancle mr-2 bg-transparent ">Cancel</a>
+                                <button type="submit" class="btn savebtn text-white border-0 ml-1 ">Save</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <hr class="line pb-5 mb-4">
@@ -138,4 +150,105 @@ $userData = Session::get('user_data');
     </div>
 </body>
 @include('afterlogin.layouts.footer_new')
+<script type="text/javascript">
+$(document).ready(function() {
+    var user_state = '<?php echo $userData->state; ?>';
+    getCity(user_state, 'load');
+    $('.state_list').on('change', function() {
+        var state = $(this).val();
+        getCity(state, 'change');
+
+    });
+    $("#editProfile_form").validate({
+        rules: {
+            user_mobile: {
+                mobileregx: /^[6-9][0-9]{9}$/,
+            },
+        },
+        submitHandler: function(form) {
+            var emailField = $('#useremail').val();
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (reg.test(emailField) == false) {
+                $("#errlog_edit").html("Invalid email id");
+                $("#errlog_edit").fadeIn('slow');
+                $("#errlog_edit").fadeOut(10000);
+                alert("hello");
+                return false;
+            }
+            $.ajax({
+                url: "{{ url('/editProfile') }}",
+                type: 'POST',
+                data: $('#editProfile_form').serialize(),
+                beforeSend: function() {},
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    if (response.success == true) {
+
+                        var user_name = response.user_info.user_name;
+                        var city = response.user_info.city;
+                        $('.activeUserName').html(user_name);
+                        $('#activeUserName').text(user_name);
+                        $('#select-city').attr('value', city);
+                        $(".profile-show").show();
+                        $(".edit-form").hide();
+                        $("#LeaDer").show();
+                        $("#sucessAcc_edit").html("Profile updated successfully.");
+                        $("#sucessAcc_edit").fadeIn('slow');
+                        $("#sucessAcc_edit").fadeOut(10000);
+                        $('#firstname').attr('value', response.user_info.first_name);
+                        $('#lastname').attr('value', response.user_info.last_name);
+                        $('#select-state').attr('value', response.user_info.state);
+                        $('#useremail').attr('value', response.user_info.email);
+                        $('#user_mobile').attr('value', response.user_info.mobile);
+                        $('#username').attr('value', user_name);
+                    } else {
+                        $("#errlog_edit").html(response.message);
+                        $("#errlog_edit").fadeIn('slow');
+                        $("#errlog_edit").fadeOut(10000);
+                        return false;
+                    }
+
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+        }
+
+    });
+});
+
+function getCity(state, type) {
+    var user_city = '<?php echo $userData->city; ?>';
+    $.ajax({
+        url: "{{ url('/getCity',) }}",
+        type: "GET",
+        cache: false,
+        data: {
+            'state': state,
+        },
+        success: function(response_data) {
+            if (type == 'change') {
+                $('.city_list').html('<option value="">Select City</option>');
+                $.each(response_data, function(key, value) {
+                    $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                });
+            } else {
+                $('.city_list').html('<option value="">Select City</option>');
+                $.each(response_data, function(key, value) {
+                    if (value == user_city) {
+                        $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
+                    } else {
+                        $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                    }
+
+                });
+            }
+
+        }
+    });
+}
+
+</script>
 @endsection
