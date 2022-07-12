@@ -135,5 +135,8 @@ class LeadUserController extends Controller
 	{
 		return view('auth.overall_analytics_new');
 	}
-
+	public function exportTestAnalytics()
+	{
+		return view('auth.export_test_analytics');
+	}
 }
