@@ -146,7 +146,7 @@
                                  </div>
                               </div>
                               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                 <div class="accordion-body ps-0 pe-0">
+                                 <div class="accordion-body ps-0 pe-0 pt-4">
                                     <div class="testslider owl-carousel owl-theme">
                                        <div class="item">
                                           <div class="exam-box">
@@ -288,7 +288,7 @@
                               </div>
                            </div>
                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                              <div class="accordion-body ps-0 pe-0">
+                              <div class="accordion-body ps-0 pe-0 pt-4">
                                                  <div class="testslider owl-carousel owl-theme">
                                        <div class="item">
                                           <div class="exam-box">
@@ -429,7 +429,7 @@
                               </div>
                            </div>
                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                              <div class="accordion-body ps-0 pe-0">
+                              <div class="accordion-body ps-0 pe-0 pt-4">
                                                  <div class="testslider owl-carousel owl-theme">
                                        <div class="item">
                                           <div class="exam-box">

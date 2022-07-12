@@ -780,6 +780,77 @@ border-left: 0;
 border-top:0;
 border-bottom-color: #e5eaee;
 }
+.exam-box{
+background: #fcfdfd;
+border: 1px solid #e5eaee;
+padding: 10px;
+border-radius: 12px;
+}
+.exambox-heading p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #363c4f;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.exambox-heading h2{
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    color: #868a95;
+}
+.exambox-heading h2 span{
+    color: #1f1f1f;
+}
+.examE{
+    background: #00c2a8;
+}
+.examA{
+    background: #3e8a44;
+}
+.examC{
+    background: #93d658;
+}
+.examK{
+    background: #008799;
+}
+.exam-cate a{
+height: 22px;
+width: 22px;
+border-radius: 4px;
+padding: 2px 6px;
+font-size: 14px;
+font-weight: bold;
+line-height: 17px;
+margin-right: 9px;
+}
+.exam-cate a:nth-child(1){
+border: 1px solid #00c2a8;
+color: #00c2a8;
+}
+.exam-cate a:nth-child(2){
+border: 1px solid #3e8a44;
+color: #3e8a44;
+}
+.exam-cate a:nth-child(3){
+border: 1px solid #93d658;
+color: #93d658;
+}
+.exam-cate a:nth-child(4){
+border: 1px solid #008799;
+color: #008799;
+}
+.exam-cate .btn {
+    max-width: 94px !important;
+    height: 38px !important;
+     min-width: 94px !important;
+    line-height: 8px;
+}
+.selectbox{
+border-color: #56b663;    
+}
 /*****practic_exam-end**********/
 
 /*********** Navdeep End *************/
@@ -3157,17 +3228,56 @@ html.scrollnone .main-wrapper { overflow: hidden;}
     font-stretch: normal;
     font-style: normal;
     line-height: 1.3;color: #1f1f1f;}
-    .overallMidlle .commonWhiteBox .garphsubheading span{ font-size: 16px;
+.overallMidlle .commonWhiteBox .garphsubheading span{ font-size: 16px;
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.3;color: #868a95 ;display:inline-block;margin-left:5px;}
+.overallMidlle .subjectperformLegend {display: flex;align-items:center;margin-bottom:25px;}
+.overallMidlle .subjectperformLegend .commonSubjectLeg.spaceright{margin-right:50px;}
+.barwithTAb{    display: flex;
+align-items: center;
+justify-content: space-between;}
+.timemanagement.common_greenbadge_tabs{padding-right:40px;}
+
+/*******overallsubject**** */
+.commoncodeblock{border:1px solid #e0e0e0; border-radius: 12px;padding-bottom:8px;}
+.codelerheader{background-color:#e0f6e3;padding:19px 20px 16px}
+.codelerheader h3{font-size: 20px;font-weight: 800; line-height: 1.6;color:#1f1f1f;margin-bottom:0px;}
+.codelerninner{padding:19px 20px 12px}
+.codebottom{padding:5px 20px 12px}
+.codelerninner h5{font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #000;margin-bottom:12px;}
+    .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
+    .codelerninner p {font-size: 14px;
         font-weight: 500;
+        line-height: 1.6;
+        color: #797979;margin-bottom:0px;}
+        .codelearningBlock{margin-top:32px;}
+        .commoncodeblock{margin-bottom:20px;overflow:hidden;}
+        .codelerninner p  a{ color: #000;}
+       .codebottom h6 { font-size: 14px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.6;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000;margin-bottom:0px;}
+    .codebottom h2{font-size: 24px;
+        font-weight: 800;
         font-stretch: normal;
         font-style: normal;
-        line-height: 1.3;color: #868a95 ;display:inline-block;margin-left:5px;}
-        .overallMidlle .subjectperformLegend {display: flex;align-items:center;margin-bottom:25px;}
-        .overallMidlle .subjectperformLegend .commonSubjectLeg.spaceright{margin-right:50px;}
-        .barwithTAb{    display: flex;
-            align-items: center;
-            justify-content: space-between;}
-            .timemanagement.common_greenbadge_tabs{padding-right:40px;}
+        line-height: 1.6;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000;margin-bottom:0px;}  
+        .percentageblock{text-align:right;margin-top: -20px;} 
+        .percentageblock a.commmongreenLink{margin-bottom:0px;font-size: 14px;
+            font-weight: 600;
+            line-height: 1.6;}    
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
