@@ -53,6 +53,12 @@ $userData = Session::get('user_data');
                                         <label>Email</label>
                                         <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
                                     </div>
+                                    <div class="custom-input pb-4 position-relative">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
+                                        <a class="bg-white editnumber resendmail" href="javascript:void(0);">Resend</a>
+                                        <span class="email-error">Email not verified, Please resend verification link to verify</span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>State</label>
