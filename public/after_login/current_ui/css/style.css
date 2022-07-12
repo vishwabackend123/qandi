@@ -1492,7 +1492,7 @@ border-bottom-color: #e5eaee;
  }
  .customDropdown::before {
      content: "";
-     background: url(http://localhost/Uniq_web/public/after_login/current_ui/images/arrow_drop_down.svg);
+     background: url(../images/arrow_drop_down.svg);
      position: absolute;
      top: 27px;
      right: 20px;
@@ -2511,7 +2511,9 @@ span.mendatfield {
 .backBtn+.btn.btn-common-transparent {line-height: 25px;}
 .time_management_stacked_barchart .graph_color_label_anwser span small{background-color: #08d5a1;}
 .time_management_stacked_barchart .graph_color_label_anwser span:last-child small {background-color: #f7758f;}
-
+.question-attempted-block {
+    border-right: 1px solid #cde3d0;
+}
 /********************* Amit End ****************************/
 
 
@@ -4066,6 +4068,48 @@ padding: 11px 20px!important;
 {
     margin-bottom: 19px;
 }
+
+
+/* ************Previous year exam  **************** */
+.previous_exam_year_exam_paper_text
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f1f1f;
+    margin-bottom: 0px;
+}
+.see_analytics_mock_exam_previoues_border
+{
+    padding: 8px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: solid 1px #56b663;
+    background-color: #ffffff;
+  }
+.view_detail_text_colleps2 {
+    flex-basis: 109px;
+}
+.previous_exam_page_contain .live_mock_exam_section h3
+{
+    color: #1f1f1f!important;
+    font-size: 14px;
+    font-weight: 600;
+}
+.previous_exam_head_with_drop
+{
+    margin-bottom:38px;
+}
+.previous_dropbox_page .options
+{
+    background-color: #ffffff;
+}
+.previous_dropbox_page .customDropdown input
+{
+    position: relative!important;
+}
+
+
+
     /* **********end mock test   ********** */
 /* **********start live   ********** */
 
@@ -4728,7 +4772,7 @@ padding: 11px 20px!important;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 0px 20px;
+    padding: 8px 0px 20px; 
 }
 .contact-details .first-mob {width: 50%;font-size: 14px;}
 .contact-details .first-mob > b {padding-left: 8px;}
