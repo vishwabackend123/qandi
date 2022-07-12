@@ -99,6 +99,9 @@
                         </a>
                     </div>
                     <span class="error mt-2" id="err_reg_mob"></span>
+                    <!-- for automation testing -->
+                    <div class="d-none" id="testing_otp"></div>
+                    <!-- for automation testing -->
 
                 </div>
 
@@ -310,6 +313,7 @@
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
 
+                    console.log(response);
                     if (response.success == true) {
                         resentOtpTime();
                         $('#verifynum').removeClass("d-block");
@@ -321,6 +325,10 @@
                         $('#editsignnumber').addClass("d-block");
 
                         $('#mobile_num').attr("readonly", true);
+                        if (response.otp) {
+                            $('#testing_otp').html(response.otp);
+                        }
+
 
                         $('.otp-input').show();
                     } else {

@@ -14,7 +14,6 @@ use Carbon\Carbon;
 
 use App\Http\Traits\CommonTrait;
 
-
 class MenuMiddleware
 {
     //
@@ -72,7 +71,14 @@ class MenuMiddleware
             $user_subjects = $this->redis_subjects();
 
             $leaderboard_list = $this->leaderBoard();
-
+            $current_subscription=[];
+            if (isset($subscription_packages->all_packages) && !empty($subscription_packages->all_packages)) {
+                foreach ($subscription_packages->all_packages as $key => $value) {
+                    if ($latest_pack->subscription_id == $value->subscript_id) {
+                        $current_subscription = $value;
+                    }
+                }
+            }
 
             if ($userData->user_profile_img) {
                 $imgPath = $userData->user_profile_img;
@@ -134,6 +140,8 @@ class MenuMiddleware
             \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
             \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);
             \Illuminate\Support\Facades\View::share('notifications', $notifications);
+            \Illuminate\Support\Facades\View::share('current_subscription', $current_subscription);
+
 
             return $next($request);
         } else {
