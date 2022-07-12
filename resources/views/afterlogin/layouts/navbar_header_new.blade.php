@@ -1,3 +1,6 @@
+@php
+$userData = Session::get('user_data');
+@endphp
 <header>
     <div class="headerMain">
         <div class="headerLeft">
