@@ -172,7 +172,7 @@ class PlannerController extends Controller
 
             $curl_url = $api_URL . 'api/student-planner/' . $user_id;
 
-            $curl_option =array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -249,20 +249,20 @@ class PlannerController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/planner-question-selection';
-            $curl_option =array(
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FAILONERROR => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => $request,
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json",
-            ),
+            $curl_option = array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request,
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json",
+                ),
             );
             curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
@@ -451,7 +451,7 @@ class PlannerController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -576,6 +576,69 @@ class PlannerController extends Controller
             //Session::put('exam_name', $test_name);
             Redis::set('exam_name' . $user_id, $test_name);
             return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
+
+
+
+    /**
+     * 
+     * 
+     * 
+     *  */
+    public function plannerSchedule()
+    {
+        try {
+            $userData = Session::get('user_data');
+
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+
+            $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
+
+            $curl_option = array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            $response = json_decode($response_json);
+            $response_status = isset($response->success) ? $response->success : false;
+
+
+            if ($response_status != false) {
+                $aPlanner = isset($response->result) ? $response->result : [];
+            } else {
+                $aPlanner = [];
+            }
+            $planner = collect($aPlanner);
+            $planner_cnt = count($aPlanner);
+            $mondayDate = date('Y-m-d', strtotime('monday this week'));
+            $sundayDate = date('Y-m-d', strtotime('sunday this week'));
+
+            $user_subjects = $this->redis_subjects();
+
+            //dd($planner);
+
+            return view('afterlogin.planner.planner_schedule', compact('planner', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

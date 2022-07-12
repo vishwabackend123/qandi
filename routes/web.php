@@ -199,7 +199,7 @@ Route::any('/weekly_exams', [App\Http\Controllers\PlannerController::class, 'wee
 Route::any('/planner_exam/{planner_id}/{chapter_id}', [App\Http\Controllers\PlannerController::class, 'plannerExam'])->name('planner_exam')->middleware('auth', 'menu');
 Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerController::class, 'shuffleChapter'])->name('shuffle_chapter')->middleware('auth', 'menu');
 Route::any('/getWeeklyPlanSchedule', [App\Http\Controllers\PlannerController::class, 'getWeeklyPlanSchedule'])->name('getWeeklyPlanSchedule')->middleware('auth', 'menu');
-
+Route::any('/planner', [App\Http\Controllers\PlannerController::class, 'plannerSchedule'])->middleware('auth', 'menu');
 
 /**
  * Assessment Exam Controller Routes
@@ -292,13 +292,13 @@ Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
-Route::any('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile')->middleware('auth','menu');
+Route::any('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile')->middleware('auth', 'menu');
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
 Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
 Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']);
-Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
+/* Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner'])->middleware('auth', 'menu'); */
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);

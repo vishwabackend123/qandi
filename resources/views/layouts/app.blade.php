@@ -14,15 +14,15 @@
     <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
     <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}"> -->
-    <!------   current css ------>
+    <!-- ----   current css ---- -->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
-    <!------   current css ------>
+    <!-- ----   current css ---- -->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.css')}}">
@@ -39,11 +39,11 @@
     <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<!-----Current js-------->
-<!------calander-js------->  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
-<script  src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
+    <!-----Current js-------->
+    <!------calander-js------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
