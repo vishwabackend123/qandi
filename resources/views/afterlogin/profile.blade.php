@@ -87,7 +87,7 @@ $userData = Session::get('user_data');
                                     <div class="d-flex custom-profileupload">
                                         <div class="preview-zone hidden">
                                             <div class="box box-solid">
-                                                <div class="box-body"></div>
+                                                <div class="box-body"><img height="64px" width="64px" style="border-radius:32px;margin-right:20px;" src="{{URL::asset('public/after_login/current_ui/images/sample-img.jpg')}}" alt="performance"></div>
                                             </div>
                                         </div>
                                         <div class="dropzone-wrapper w-100">
@@ -102,13 +102,13 @@ $userData = Session::get('user_data');
                             </div>
                             <hr class="line">
                             <div class="d-flex justify-content-end mb-5 pb-5">
-                                <a href="{{ url('/dashboard') }}" class="btn cancle mr-2 bg-transparent ">Cancel</a>
+                                <a href="{{ url('/dashboard') }}" class="btn cancle me-2 bg-transparent ">Cancel</a>
                                 <button type="submit" class="btn savebtn text-white border-0 ml-1 ">Save</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <hr class="line pb-5 mb-4">
+                <div class="pb-5 mb-3"><hr class="line"></div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="info">

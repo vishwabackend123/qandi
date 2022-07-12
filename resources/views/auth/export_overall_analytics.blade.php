@@ -440,28 +440,31 @@ const config_2 = {
 };
 const myCharted_2 = new Chart("subjectChart-2", config_2)
 /********* halfdoughnut progress - start ************/
-const circuference_3 = 180;
-const data_3 = {
+const circuference9 = 180; // deg
+
+const data9 = {
   labels: ["Progress"],
   datasets: [
     {
-    //   label: "My First Dataset",
-      data: [180, 100],
+      label: "My First Dataset",
+      data: [100, 50],
       backgroundColor: [
-        "#ff0000",  
-        "#ddd"
+        "#56b663",
+        "#f2f4f7"
       ]
     }
   ]
 };
-const config_3 = {
+
+const config9 = {
   type: "doughnut",
-  data: data,
+
+  data: data9,
   options: {   
     reponsive: true,
     maintainAspectRatio: false,
-    rotation: (circuference / 2) * -1,
-    circuference: circuference,
+    rotation: (circuference9 / 2) * -1,
+    circumference: circuference9,
     cutout: "60%",
     borderWidth: 0,
     borderRadius: function (context, options) {
@@ -484,7 +487,9 @@ const config_3 = {
     },
   }
 };
-const myCharted_3 = new Chart("progressChart", config_3)
+
+const myChart9 = new Chart("progressChart", config9);
+
 /*********** progress end ****************/
 
  /* progress Journy graph */
