@@ -131,5 +131,9 @@ class LeadUserController extends Controller
 	{
 		return view('auth.overall_analytics_new');
 	}
+	public function reviewTest()
+	{
+		return view('auth.review_test');
+	}
 
 }

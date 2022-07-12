@@ -308,5 +308,7 @@ Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_
 Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);
 Route::any('/exam_test', [App\Http\Controllers\LeadUserController::class, 'examTest']);
 Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
+Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
+ 
 
 
