@@ -290,9 +290,9 @@
                             <label class="m-0 commonboldtext">35%</label>
                         </div>
                     </div>
-                    <h3 class="boxheading subheading d-flex align-items-center">Subject-wise Percentage </h3>
-                    <div class="d-flex justify-content-center">
-                        <div class="sub-wise-per">
+                    <h3 class="boxheading subheading d-flex align-items-center" style="margin-bottom:16px;">Subject-wise Percentage </h3>
+                    <div class="d-flex justify-content-between" style="max-width: 600px;">
+                        <div class="sub-wise-per position-relative">
                             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="64" height="64" rx="10" fill="#B5F7E3"/>
                                 <path d="M44.688 11.129 20.316 11l12.058 6.809 12.314-6.68z" fill="url(#mu62oufnba)"/>
@@ -368,13 +368,103 @@
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <span class="d-block commontext">Overall percentage</span>
-                            <label class="m-0 commonboldtext">64%</label>
+                            <span class="d-block commontext">Physics</span>
+                            <label class="m-0 commonboldtext">14%</label>
+                        </div>
+                        <div class="sub-wise-per position-relative">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="10" fill="#ECFCCB"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.138 12.945a.65.65 0 0 0-1.029.53v27.69c0 .36.292.651.651.651h38.768c.633 0 .893-.812.378-1.18L17.138 12.945zm4.737 8.68a.65.65 0 0 0-1.027.53v15.459c0 .359.291.65.65.65h21.783c.634 0 .894-.814.377-1.181L21.875 21.624z" fill="url(#f3bqxthvua)"/>
+                                <path d="M33.17 52.444c-.314 0-.588-.056-.821-.168a1.092 1.092 0 0 1-.515-.504c-.107-.223-.134-.496-.08-.822.047-.28.137-.512.271-.696.136-.183.302-.33.498-.44.199-.112.414-.196.647-.252.236-.056.475-.097.719-.123.297-.03.538-.058.721-.084.185-.026.325-.065.417-.116a.338.338 0 0 0 .169-.246v-.02c.038-.243 0-.432-.117-.566-.116-.133-.31-.2-.582-.2a1.3 1.3 0 0 0-.718.187 1.181 1.181 0 0 0-.424.444l-1.061-.156a2.13 2.13 0 0 1 .55-.757c.233-.205.501-.358.805-.46a3.042 3.042 0 0 1 1.676-.07c.228.056.43.148.605.278.177.127.306.3.388.52.084.22.098.496.042.826l-.553 3.325H34.68l.117-.682h-.04a1.79 1.79 0 0 1-.361.388 1.836 1.836 0 0 1-.531.288 2.112 2.112 0 0 1-.696.106zm.444-.86a1.345 1.345 0 0 0 1.097-.514c.12-.156.196-.325.226-.508l.097-.586a.697.697 0 0 1-.2.084 2.95 2.95 0 0 1-.305.068c-.11.02-.219.037-.327.052l-.278.039a2.346 2.346 0 0 0-.492.116.993.993 0 0 0-.365.227.647.647 0 0 0-.178.369c-.035.213.016.376.152.488.136.11.327.165.573.165z" fill="#39BD9E"/>
+                                <path d="m7 33.114 1.1-6.626h1.17l-.407 2.478h.052c.078-.12.182-.249.314-.385a1.695 1.695 0 0 1 1.252-.501c.384 0 .714.098.99.294.276.194.473.482.592.864.118.38.132.845.042 1.398-.09.545-.257 1.009-.498 1.39a2.59 2.59 0 0 1-.877.874c-.343.2-.71.3-1.1.3-.285 0-.513-.047-.686-.142-.17-.094-.3-.209-.391-.342a1.675 1.675 0 0 1-.198-.385h-.074l-.13.782H7zm1.562-2.485a2.36 2.36 0 0 0-.003.844c.052.242.153.43.304.566.153.134.355.201.605.201.257 0 .483-.069.68-.207.198-.14.362-.331.491-.573.13-.243.22-.52.272-.831.05-.308.05-.582 0-.822a.981.981 0 0 0-.3-.563c-.152-.135-.357-.203-.615-.203a1.18 1.18 0 0 0-.673.197c-.197.132-.36.316-.489.553-.13.237-.22.517-.272.838z" fill="#39BDA1"/>
+                                <path d="M16.273 50.123h13.014" stroke="#38B87B" stroke-width=".651"/>
+                                <path fill="#D4F4B9" stroke="#38B87B" stroke-width=".651" d="m16.06 49.366.84.841-.84.84-.842-.84z"/>
+                                <path stroke="#38B87B" stroke-width=".651" d="M39.535 50.239h16.918"/>
+                                <path fill="#D4F4B9" stroke="#38B87B" stroke-width=".651" d="m55.7 49.366.84.84-.84.841-.841-.84z"/>
+                                <path d="M9.496 41.185V35.08" stroke="#38B87B" stroke-width=".651"/>
+                                <path fill="#D4F4B9" stroke="#38B87B" stroke-width=".651" d="m8.74 41.4.842-.841.84.84-.84.841z"/>
+                                <path stroke="#38B87B" stroke-width=".651" d="M9.612 24.196V12.547"/>
+                                <path fill="#D4F4B9" stroke="#38B87B" stroke-width=".651" d="m8.741 13.302.841-.84.84.84-.84.84z"/>
+                                <defs>
+                                    <linearGradient id="f3bqxthvua" x1="17.493" y1="15.053" x2="49.914" y2="41.723" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3ABFB0"/>
+                                        <stop offset="1" stop-color="#37B66B"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="d-block commontext">Maths</span>
+                            <label class="m-0 commonboldtext">26%</label>
+                        </div>
+                        <div class="sub-wise-per position-relative">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="10" fill="#C2F3F2"/>
+                                <circle cx="43.907" cy="13.841" r="6.501" fill="url(#pwzgqmqfpa)"/>
+                                <circle cx="14.978" cy="39.3" r="6.501" fill="url(#b7n7hmthcb)"/>
+                                <circle cx="49.501" cy="50.157" r="6.501" fill="url(#4b6hevuegc)"/>
+                                <path stroke="url(#amisrijw7d)" stroke-width="4.821" stroke-linecap="round" d="m19.655 37.124 9.552-3.057"/>
+                                <path stroke="url(#8l98bw4eoe)" stroke-width="4.821" stroke-linecap="round" d="m38.31 26.846 4.201-9.956"/>
+                                <path stroke="url(#fofl2fyeaf)" stroke-width="4.821" stroke-linecap="round" d="m42.937 40.259 4.113 6.173"/>
+                                <circle cx="35.599" cy="33.119" r="10.088" fill="url(#6i9lj4elig)"/>
+                                <defs>
+                                    <linearGradient id="pwzgqmqfpa" x1="43.907" y1="7.34" x2="43.907" y2="20.342" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#78F8E1"/>
+                                        <stop offset="1" stop-color="#099F7B"/>
+                                    </linearGradient>
+                                    <linearGradient id="b7n7hmthcb" x1="14.978" y1="32.799" x2="14.978" y2="45.801" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#78F8E1"/>
+                                        <stop offset="1" stop-color="#099F7B"/>
+                                    </linearGradient>
+                                    <linearGradient id="4b6hevuegc" x1="49.501" y1="43.656" x2="49.501" y2="56.658" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#78F8E1"/>
+                                        <stop offset="1" stop-color="#099F7B"/>
+                                    </linearGradient>
+                                    <linearGradient id="amisrijw7d" x1="23.98" y1="33.587" x2="25.123" y2="38.918" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#fff"/>
+                                        <stop offset="1" stop-color="#DDC7C7"/>
+                                    </linearGradient>
+                                    <linearGradient id="8l98bw4eoe" x1="38.596" y1="20.894" x2="43.402" y2="23.475" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#fff"/>
+                                        <stop offset="1" stop-color="#DDC7C7"/>
+                                    </linearGradient>
+                                    <linearGradient id="fofl2fyeaf" x1="46.783" y1="42.334" x2="41.929" y2="44.791" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#fff"/>
+                                        <stop offset="1" stop-color="#DDC7C7"/>
+                                    </linearGradient>
+                                    <linearGradient id="6i9lj4elig" x1="45.815" y1="40.719" x2="30.54" y2="25.161" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3776D5"/>
+                                        <stop offset="1" stop-color="#37D5CF"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="d-block commontext">Chemistry</span>
+                            <label class="m-0 commonboldtext">32%</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonWhiteBox commonblockDash efficiency_time_card">
+                    <h3 class="boxheading">Efficiency - Time spent </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="avgTime">
+                                <span class="d-block  commontext" style="color:#666;margin-bottom:4px;">Average time/ Question</span>
+                                <label class="d-block">7<sub>sec</sub></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex efficiency_time_taken">
+                                <div class="efficiency_time_bar">
+                                    <canvas id="progressChart"></canvas>
+                                </div>
+                                <div class="avgTime">
+                                    <span class="d-block  commontext" style="color:#666;margin-bottom:4px;margin-top: 14px;">Time taken</span>
+                                    <label class="d-block" style="font-size: 20px;font-weight: 600;color:#000;">172/180<small style="font-size: 16px;font-weight: 500; color: #666;">mins</small></label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="commonWhiteBox commonblockDash export_rank_card">
-                        <h3 class="boxheading d-flex align-items-center">Rank Analysis </h3>
+                        <h3 class="boxheading">Rank Analysis </h3>
                         <div class="d-flex justify-content-between mt-4">
                             <div class="your_rank position-relative" style="padding-left: 66px;">
                                 <small>
@@ -589,6 +679,56 @@ const myscoreconfig = {
   }
 };
 const myscore = new Chart("myscoregraph", myscoreconfig)
+
+/********* Efficiency - Time spent progress - start ************/
+const circuference9 = 180; // deg
+
+const data9 = {
+  labels: ["Progress"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [100, 50],
+      backgroundColor: [
+        "#56b663",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+
+const config9 = {
+  type: "doughnut",
+  data: data9,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference9 / 2) * -1,
+    circumference: circuference9,
+    cutout: "65%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+
+const myChart9 = new Chart("progressChart", config9);
 
 </script>  
 
