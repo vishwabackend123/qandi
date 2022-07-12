@@ -8,9 +8,46 @@
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer">
-                <div class="examLeftpanel">left panel</div>
-                
+                <div class="examLeftpanel">
+                <div class="">
+                        <div class="tabMainblock">
+                            <div class="commontab aeck_commontab">
+                                <div class="tablist">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#evaluation">Math .65</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#application">Physics .50</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Chemistry .60</a>
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                                <div class="submitBtn"><button>Submit Test<span></span></button></div>
+                                <!-- Tab panes -->
+                                <div class="tab-content aect_tabb_contantt">
+                                    <div id="evaluation" class=" tab-pane active">
+                                         
+                                    </div>
+                                    <div id="application" class=" tab-pane">
+                                 adasdas
+                                    </div>
+                                    <div id="complrehension" class=" tab-pane">
+                                    complrehension
+                                    </div>
+                                   
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+
+
+                </div>
                 <div class="examRightpanel">
+                    <div class="main-textexam-sec">
                     <div class="text-examtop-sec">
                         <p><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F"/>
@@ -71,7 +108,7 @@
                                 <button type="button" class="btn" id="btn-ans">20</button>
                                 <button type="button" class="btn" id="btn-ans">21</button>
                                 <button type="button" class="btn" id="btn-ans">22</button>
-                                <button type="button" class="btn" id="btn-ans">23</button>
+                                <button type="button" class="btn border-btn" id="btn-ans">23</button>
                                 <button type="button" class="btn" id="btn-ans">24</button>
                                 <button type="button" class="btn" id="btn-ans">25</button>
                                 <button type="button" class="btn" id="btn-ans">26</button>
@@ -88,12 +125,31 @@
                                 <button type="button" class="btn" id="btn-ans">38</button>
                                 <button type="button" class="btn" id="btn-ans">39</button>
                                 <button type="button" class="btn" id="btn-ans">42</button>
-                                
-                                
+                                <button type="button" class="btn" id="btn-ans">43</button>
+                                <button type="button" class="btn" id="btn-ans">44</button>
+                                <button type="button" class="btn" id="btn-ans">45</button>
                                 
                             </div>
-                    
+
+                        <div class="custom-exam d-none">
+                                <div class="text-examtop-sec">
+                                <p><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F"/>
+                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F"/>
+                                        <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED"/>
+                                        <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>112 mins Left</span> <label><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="14" cy="14" r="8.4" fill="#fff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16"/>
+                                    </svg>
+                                    </label></p>
+                                </div>
+                            </div>
+                        <div class="bck-btn">Back</div>
                 </div>
+                   
             </div>
 
         </div>
@@ -131,8 +187,6 @@
     right: 0px;
 }
 
-
-/* shiv start css for text exam  */
 
 /* shiv start css for text exam  */
 
@@ -204,6 +258,7 @@ button#btn-ans {
 .main-textexam-sec{position: relative;}
 
 /* .text-examtop-sec {display: flex;width: 100%;align-items: center;justify-content: center;} */
+
 
 </style>
  
