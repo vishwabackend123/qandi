@@ -545,7 +545,14 @@ font-weight: 800;
     color: #56b663;
     font-weight: bold;
 }
-
+.resendmail{
+top:25px;    
+}
+.email-error{
+font-size: 12px;
+color: #dc6803;
+font-weight: 500;
+}
 /******Profile-page-end*****/
 
 /*****Planner-pge***********/
@@ -772,6 +779,77 @@ border-right: 0;
 border-left: 0;
 border-top:0;
 border-bottom-color: #e5eaee;
+}
+.exam-box{
+background: #fcfdfd;
+border: 1px solid #e5eaee;
+padding: 10px;
+border-radius: 12px;
+}
+.exambox-heading p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #363c4f;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.exambox-heading h2{
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    color: #868a95;
+}
+.exambox-heading h2 span{
+    color: #1f1f1f;
+}
+.examE{
+    background: #00c2a8;
+}
+.examA{
+    background: #3e8a44;
+}
+.examC{
+    background: #93d658;
+}
+.examK{
+    background: #008799;
+}
+.exam-cate a{
+height: 22px;
+width: 22px;
+border-radius: 4px;
+padding: 2px 6px;
+font-size: 14px;
+font-weight: bold;
+line-height: 17px;
+margin-right: 9px;
+}
+.exam-cate a:nth-child(1){
+border: 1px solid #00c2a8;
+color: #00c2a8;
+}
+.exam-cate a:nth-child(2){
+border: 1px solid #3e8a44;
+color: #3e8a44;
+}
+.exam-cate a:nth-child(3){
+border: 1px solid #93d658;
+color: #93d658;
+}
+.exam-cate a:nth-child(4){
+border: 1px solid #008799;
+color: #008799;
+}
+.exam-cate .btn {
+    max-width: 94px !important;
+    height: 38px !important;
+     min-width: 94px !important;
+    line-height: 8px;
+}
+.selectbox{
+border-color: #56b663;    
 }
 /*****practic_exam-end**********/
 
@@ -2514,6 +2592,13 @@ span.mendatfield {
 .question-attempted-block {
     border-right: 1px solid #cde3d0;
 }
+.export_rank_card .d-flex.mt-4 , .marks_percentage_export_card .d-flex{max-width:400px;}
+.paratext{font-size: 14px;font-weight: 500;color:#868a95;line-height: 1.6;}
+.marks_percentage_export_card .commonboldtext {font-size: 24px;}
+.boxheading.subheading {
+    font-size: 20px;
+}
+.marks_percentage_export_card h3{margin-top:48px;}
 /********************* Amit End ****************************/
 
 
