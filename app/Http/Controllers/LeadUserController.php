@@ -127,4 +127,8 @@ class LeadUserController extends Controller
 	{
 		return view('auth.exam_test');
 	}
+     public function previousyearexam()
+	{
+		return view('auth.previousyear_exam');
+	}
 }
