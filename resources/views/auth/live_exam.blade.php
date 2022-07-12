@@ -144,9 +144,9 @@
                   </div>
                      <div id="attempted" class=" tab-pane">
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between">
-                                 <h2 class="m-0">Mock Test</h2>
-                                 <h3 class="m-0">17 April 2021</h3>
+                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                 <h2 class="m-0">Short Description Series</h2>
+                                 <h3 class="m-0">18 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0 view_detail_text_colleps">View details</h4>
                                     <div class="d-flex align-items-center see_analytics_mock_exam">
@@ -161,20 +161,23 @@
                               </div>
                               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                  <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex">
-                                       <div class="mock_test_ques_content2">
+                                 <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                       <div class="mock_test_ques_content22">
                                           <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                                           <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
                                        </div>
-                                       <div class="mock_test_dure_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_dure_content22">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
                                        </div>
-                                       <div class="mock_test_marks_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_marks_content22">
                                           <div class="mock_test_q_d_m_s_text1">Slot</div>
                                           <div class="mock_test_q_d_m_s_text2">Morning</div>
                                        </div>
-                                       <div class="mock_test_sub_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_sub_content22">
                                           <div class="mock_test_q_d_m_s_text1">Score</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
                                        </div>
@@ -183,9 +186,9 @@
                               </div>
                            </div>
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between">
-                                 <h2 class="m-0">Mock Test</h2>
-                                 <h3 class="m-0">17 April 2021</h3>
+                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                 <h2 class="m-0">Assessment</h2>
+                                 <h3 class="m-0">15 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1" class="m-0 view_detail_text_colleps">View details</h4>
                                     <div class="d-flex align-items-center see_analytics_mock_exam ">
@@ -200,20 +203,23 @@
                               </div>
                               <div id="collapseTwo1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                  <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex">
-                                       <div class="mock_test_ques_content2">
+                                 <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                       <div class="mock_test_ques_content22">
                                           <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                                           <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
                                        </div>
-                                       <div class="mock_test_dure_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_dure_content22">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
                                        </div>
-                                       <div class="mock_test_marks_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_marks_content22">
                                           <div class="mock_test_q_d_m_s_text1">Slot</div>
                                           <div class="mock_test_q_d_m_s_text2">Morning</div>
                                        </div>
-                                       <div class="mock_test_sub_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_sub_content22">
                                           <div class="mock_test_q_d_m_s_text1">Score</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
                                        </div>
@@ -222,9 +228,9 @@
                               </div>
                            </div>
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between">
-                                 <h2 class="m-0">Mock Test</h2>
-                                 <h3 class="m-0">17 April 2021</h3>
+                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                 <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
+                                 <h3 class="m-0">15 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2" class="m-0 view_detail_text_colleps">View details</h4>
                                     <div class="d-flex align-items-center see_analytics_mock_exam">
@@ -239,23 +245,23 @@
                               </div>
                               <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                  <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex">
-                                       <div class="mock_test_ques_content2">
+                                    <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                       <div class="mock_test_ques_content22">
                                           <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                                           <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
                                        </div>
-                                       <div class=""></div>
-                                       <div class="mock_test_dure_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_dure_content22">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
                                        </div>
-                                       <div></div>
-                                       <div class="mock_test_marks_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_marks_content22">
                                           <div class="mock_test_q_d_m_s_text1">Slot</div>
                                           <div class="mock_test_q_d_m_s_text2">Morning</div>
                                        </div>
-                                       <div></div>
-                                       <div class="mock_test_sub_content2">
+                                       <div class="live_exam_diveder_div"></div>
+                                       <div class="mock_test_sub_content22">
                                           <div class="mock_test_q_d_m_s_text1">Score</div>
                                           <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
                                        </div>
