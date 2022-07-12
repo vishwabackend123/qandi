@@ -1492,7 +1492,7 @@ border-bottom-color: #e5eaee;
  }
  .customDropdown::before {
      content: "";
-     background: url(http://localhost/Uniq_web/public/after_login/current_ui/images/arrow_drop_down.svg);
+     background: url(../images/arrow_drop_down.svg);
      position: absolute;
      top: 27px;
      right: 20px;
