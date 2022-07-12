@@ -195,16 +195,9 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash test_myscrore_card">
                     <h3 class="boxheading d-flex align-items-center">My Score 
-                        <span class="tooltipmain ml-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                            <p class="tooltipclass">
-                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                            </p>
-                        </span>
                     </h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-5">
                             <div class="halfdoughnut2 position-relative">
                                 <canvas id="myscoregraph"></canvas>
                                 <div class="myScore">
@@ -213,20 +206,18 @@
                                 </div> 
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="color_labels">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <span>Correct <b><small></small>60</b></span>
-                                    <span>Incorrect <b><small></small>20</b></span>
-                                </div>
-                                <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                        <div class="col-md-5">
+                            <div class="color_labels d-flex justify-content-between">
+                                <span>Correct <b><small></small>60</b></span>
+                                <span>Incorrect <b><small></small>20</b></span>
+                                <span>Not Attempted <b><small></small>20</b></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="commonWhiteBox commonblockDash subject_score_card">
                     <h3 class="boxheading d-flex align-items-center">Subject Score </h3>
-                    <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                    <p class="paratext" style="margin-bottom:32px;">Negative marking for incorrect answers is considered</p>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <h5 class="mb-0">Maths</h5>
@@ -269,6 +260,138 @@
                         </div>
                     </div>
                 </div>
+                <div class="commonWhiteBox commonblockDash test_myscrore_card">
+                    <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
+                    <p class="paratext" style="margin-bottom:20px;">This will compare your test scores with last year 2018 cut-off</p>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-5">
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="color_labels d-flex justify-content-between">
+                                <span>Correct <b><small></small>60</b></span>
+                                <span>Incorrect <b><small></small>20</b></span>
+                                <span>Not Attempted <b><small></small>20</b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonWhiteBox commonblockDash marks_percentage_export_card">
+                    <h3 class="boxheading d-flex align-items-center" style="margin-bottom:20px;">Marks Percentage </h3>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <span class="d-block commontext">Overall percentage</span>
+                            <label class="m-0 commonboldtext">64%</label>
+                        </div>
+                        <div>
+                            <span class="d-block commontext">Class Average</span>
+                            <label class="m-0 commonboldtext">35%</label>
+                        </div>
+                    </div>
+                    <h3 class="boxheading subheading d-flex align-items-center">Subject-wise Percentage </h3>
+                    <div class="d-flex justify-content-center">
+                        <div class="sub-wise-per">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="10" fill="#B5F7E3"/>
+                                <path d="M44.688 11.129 20.316 11l12.058 6.809 12.314-6.68z" fill="url(#mu62oufnba)"/>
+                                <path d="M44.688 11.129 20.316 11l12.058 6.809 12.314-6.68z" fill="url(#reshfpruvb)"/>
+                                <path d="M56.87 31.683 44.43 38.75 32.37 17.809l12.314-6.68 12.186 20.554z" fill="url(#6px5oni96c)"/>
+                                <path d="M56.87 31.683 44.43 38.75 32.37 17.809l12.314-6.68 12.186 20.554z" fill="url(#24bpjkehrd)"/>
+                                <path d="M8 31.811 20.314 11l12.314 6.809L20.314 38.62 8 31.811z" fill="url(#ltovtaw4we)"/>
+                                <path d="M8 31.811 20.314 11l12.314 6.809L20.314 38.62 8 31.811z" fill="url(#o001dtclnf)"/>
+                                <path d="M43.918 52.366V38.839l13.084-7.284-13.084 20.811z" fill="url(#l5rdf1l9jg)"/>
+                                <path d="M43.918 52.366V38.839l13.084-7.284-13.084 20.811z" fill="url(#ka6zoi6j9h)"/>
+                                <path d="M44.3 38.62H20.44v14.002l23.474-.257.385-13.746z" fill="url(#yd4ibw0eli)"/>
+                                <path d="M44.3 38.62H20.44v14.002l23.474-.257.385-13.746z" fill="url(#d1zj8k42hj)"/>
+                                <path d="M20.442 52.622 8 31.81l12.442 6.808v14.003z" fill="url(#pt5i6yp5kk)"/>
+                                <path d="M20.442 52.622 8 31.81l12.442 6.808v14.003z" fill="url(#7h8nj2zvfl)"/>
+                                <path d="m20.313 38.618 12.185-20.811 12.186 20.811H20.313z" fill="url(#3kwmy4tk0m)"/>
+                                <path d="m20.313 38.618 12.185-20.811 12.186 20.811H20.313z" fill="url(#0wesept4xn)"/>
+                                <defs>
+                                    <linearGradient id="mu62oufnba" x1="32.566" y1="11.129" x2="32.566" y2="17.809" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="reshfpruvb" x1="32.566" y1="11.129" x2="32.566" y2="17.809" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="6px5oni96c" x1="44.749" y1="11.257" x2="44.749" y2="38.749" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="24bpjkehrd" x1="44.749" y1="11.257" x2="44.749" y2="38.749" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="ltovtaw4we" x1="20.314" y1="11" x2="20.314" y2="38.62" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="o001dtclnf" x1="20.314" y1="11" x2="20.314" y2="38.62" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="l5rdf1l9jg" x1="50.46" y1="31.555" x2="50.46" y2="52.366" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="ka6zoi6j9h" x1="50.46" y1="31.555" x2="50.46" y2="52.366" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="yd4ibw0eli" x1="32.371" y1="38.619" x2="32.371" y2="52.622" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="d1zj8k42hj" x1="32.371" y1="38.619" x2="32.371" y2="52.622" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="pt5i6yp5kk" x1="14.349" y1="32.068" x2="14.349" y2="52.879" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="7h8nj2zvfl" x1="14.349" y1="32.068" x2="14.349" y2="52.879" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                    <linearGradient id="3kwmy4tk0m" x1="32.498" y1="17.807" x2="32.498" y2="38.618" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D9D9D9"/>
+                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="0wesept4xn" x1="32.498" y1="17.807" x2="32.498" y2="38.618" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#43E1CE"/>
+                                        <stop offset="1" stop-color="#2899CA"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="d-block commontext">Overall percentage</span>
+                            <label class="m-0 commonboldtext">64%</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonWhiteBox commonblockDash export_rank_card">
+                        <h3 class="boxheading d-flex align-items-center">Rank Analysis </h3>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div class="your_rank position-relative" style="padding-left: 66px;">
+                                <small>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </small>
+                                <span class="d-block  commontext">Your rank</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">3<sub style="font-size: 16px;font-weight: 500;">rd</sub></label>
+                            </div>
+                            <div class="total_participants">
+                                <span class="d-block commontext">Total Participants</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">15</label>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -418,6 +541,54 @@ const config_2 = {
   }
 };
 const myCharted_2 = new Chart("subjectChart-2", config_2)
+
+/***********my-score************************* */
+const myscorecir = 260;
+const myscoredata = {
+  labels: ["Correct", "Incorrect", "Not Attempted"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [200, 100, 80],
+      backgroundColor: [
+        "#08d5a1",
+        "#fb7686",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+const myscoreconfig = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "85%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 20;
+        radius.outerStart = 20;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 20;
+        radius.outerEnd = 20;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myscore = new Chart("myscoregraph", myscoreconfig)
 
 </script>  
 

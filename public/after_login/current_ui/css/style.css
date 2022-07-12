@@ -2592,6 +2592,13 @@ span.mendatfield {
 .question-attempted-block {
     border-right: 1px solid #cde3d0;
 }
+.export_rank_card .d-flex.mt-4 , .marks_percentage_export_card .d-flex{max-width:400px;}
+.paratext{font-size: 14px;font-weight: 500;color:#868a95;line-height: 1.6;}
+.marks_percentage_export_card .commonboldtext {font-size: 24px;}
+.boxheading.subheading {
+    font-size: 20px;
+}
+.marks_percentage_export_card h3{margin-top:48px;}
 /********************* Amit End ****************************/
 
 

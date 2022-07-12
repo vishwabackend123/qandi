@@ -64,7 +64,9 @@
     }
     .graph_head_label h4  {
         font-size: 17px;}
-  
+        .boxheading.subheading {
+            font-size: 17px;
+        }
     
 }
 @media only screen and (max-width: 1300px){
