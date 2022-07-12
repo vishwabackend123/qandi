@@ -770,51 +770,6 @@
             $("#collapseNotification").collapse('toggle');
         });
 
-
-        /* search State */
-        $('#select-state').on("click keyup", function(event) {
-            $('#city_list').hide();
-            $('#city_remark').hide();
-            var val = event.target.value;
-            var country = $('#country').val();
-
-            $('.loader-block').show();
-
-            $.ajax({
-                url: "{{ url('/getState',) }}",
-                type: "GET",
-                cache: false,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    'search_text': event.target.value,
-                    'country': country,
-                },
-                success: function(response_data) {
-                    $('.loader-block').hide();
-                    let html = '';
-                    var data = jQuery.parseJSON(response_data);
-
-                    if (data.success === true) {
-
-                        html += data.response;
-
-                    } else {
-                        html += `<ul><li>States</li></ul>`;
-                    }
-
-                    $('#state_list').show();
-                    $('#state_list').html(html);
-                }
-            });
-
-        });
-
-
-        /* function for focusout select state */
-        /* $('#select-state').focusout(function() {
-            //$('#state_list').hide();
-        }) */
-
         /* function for select sity */
         $('#select-city').on("click keyup", function(event) {
             $('#state_list').hide();

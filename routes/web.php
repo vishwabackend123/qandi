@@ -243,7 +243,6 @@ Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController:
 
 /* registration  routes */
 Route::any('/getCountry', [App\Http\Controllers\StudentSignInController::class, 'countryList'])->name('getCountry');
-Route::any('/getState', [App\Http\Controllers\StudentSignInController::class, 'stateList'])->name('getState');
 Route::any('/getCity', [App\Http\Controllers\StudentSignInController::class, 'cityList'])->name('getCity');
 Route::any('/newCityList', [App\Http\Controllers\StudentSignInController::class, 'newCityList'])->name('newCityList');
 Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::class, 'signupAddress'])->name('signupAddress');
@@ -293,7 +292,7 @@ Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
-Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile'])->name('profile')->middleware('auth');
+Route::any('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile')->middleware('auth','menu');
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
@@ -308,3 +307,6 @@ Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController
 Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
 Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);
 Route::any('/exam_test', [App\Http\Controllers\LeadUserController::class, 'examTest']);
+Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
+
+
