@@ -30,7 +30,6 @@
                                         </span>
                                     </a>
                                 </div>
-<<<<<<< HEAD
                             </div> 
                         </div>
                     </div>
@@ -265,7 +264,7 @@
     top: 0px;
     right: 0px;
 }
-<<<<<<< HEAD
+
 
 
 /* shiv start css for text exam  */
@@ -340,9 +339,7 @@ button#btn-ans {
 /* .text-examtop-sec {display: flex;width: 100%;align-items: center;justify-content: center;} */
 
 
-</style>
- 
-=======
+
 .questionTypeinner {
     display: flex;
     justify-content: space-between;
@@ -366,7 +363,7 @@ button#btn-ans {
     border-radius: 4px;
     background-color: rgba(54, 60, 79, 0.1);
 }
->>>>>>> a50a34dc389b8d9be1eaf3d02c3854782c2d186a
+
 
 #progressBar div {
     height: 100%;
