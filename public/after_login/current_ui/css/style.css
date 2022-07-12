@@ -4068,6 +4068,40 @@ padding: 11px 20px!important;
 {
     margin-bottom: 19px;
 }
+
+
+/* ************Previous year exam  **************** */
+.previous_exam_year_exam_paper_text
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f1f1f;
+    margin-bottom: 0px;
+}
+.see_analytics_mock_exam_previoues_border
+{
+    padding: 8px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: solid 1px #56b663;
+    background-color: #ffffff;
+  }
+.view_detail_text_colleps2 {
+    flex-basis: 109px;
+}
+.previous_exam_page_contain .live_mock_exam_section h3
+{
+    color: #1f1f1f!important;
+    font-size: 14px;
+    font-weight: 600;
+}
+.previous_exam_head_with_drop
+{
+    margin-bottom:38px;
+}
+
+
+
     /* **********end mock test   ********** */
 /* **********start live   ********** */
 
