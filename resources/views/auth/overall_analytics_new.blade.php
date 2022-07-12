@@ -319,7 +319,11 @@
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent">
                                                         <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
-                                                            Day
+                                                            
+                                                            <div>
+                                                                <canvas id="timeManagementChart"></canvas>
+                                                            </div>    
+
                                                         </div>
                                                         <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
                                                         <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
@@ -803,6 +807,70 @@ const data3 = {
             config3
         );
 /*******mark-graph-end*********/
+
+/************* Time management bar chart  *************/
+const labelsT = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
+const dataT = {
+  labels: labelsT,
+  datasets: [
+    {
+      label: 'Correct Answers',
+      data: "20",
+      backgroundColor:'#34d399',
+      barThickness: 32
+    },
+    {
+      label: 'Incorrect Answers',
+      data: "10",
+      backgroundColor: '#f7758f',
+      barThickness: 32
+    },
+  ]
+};
+const configT = {
+  type: 'bar',
+  data: dataT,
+  options: {
+    plugins: {
+      title: {
+        display: false,
+        text: 'Chart.js Bar Chart - Stacked'
+      },
+      legend: false
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true
+      }
+    }
+  }
+};
+
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
+
+var myChartT = new Chart(
+    document.getElementById('timeManagementChart'),
+    configT
+  );
+
+
 
 </script>   
 

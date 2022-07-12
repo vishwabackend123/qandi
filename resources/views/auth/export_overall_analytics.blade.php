@@ -459,51 +459,54 @@ const config_2 = {
 const myCharted_2 = new Chart("subjectChart-2", config_2)
 
 /********* halfdoughnut progress - start ************/
-// const circuference_3 = 180;
-// const data_3 = {
-//   labels: ["Progress"],
-//   datasets: [
-//     {
-//     //   label: "My First Dataset",
-//       data: [40, 20],
-//       backgroundColor: [
-//         "#56b663",  
-//         "#f2f4f7"
-//       ]
-//     }
-//   ]
-// };
-// const config_3 = {
-//   type: "doughnut",
-//   data: data_3,
-//   options: {   
-//     reponsive: true,
-//     maintainAspectRatio: false,
-//     rotation: (circuference_3 / 2) * -1,
-//     circuference: circuference_3,
-//     cutout: "60%",
-//     borderWidth: 0,
-//     borderRadius: function (context, options) {
-//       const index_1 = context.dataIndex;
-//       let radius_1 = {};
-//       if (index_1 == 0) {
-//         radius_1.innerStart = 0;
-//         radius_1.outerStart = 0;
-//       }
-//       if (index_1 === context.dataset.data.length - 1) {
-//         radius_1.innerEnd = 0;
-//         radius_1.outerEnd = 0;
-//       }
-//       return radius_1;
-//     },
-//     plugins: {
-//       title: false,
-//       subtitle: false,
-//       legend: false
-//     },
-//   }
-// };
-// const myCharted_3 = new Chart("progressChart", config_3)
+const circuference9 = 180; // deg
+
+const data9 = {
+  labels: ["Progress"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [100, 50],
+      backgroundColor: [
+        "#56b663",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+
+const config9 = {
+  type: "doughnut",
+  data: data9,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference9 / 2) * -1,
+    circumference: circuference9,
+    cutout: "60%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+
+const myChart9 = new Chart("progressChart", config9);
 
 /*********** progress end ****************/
 

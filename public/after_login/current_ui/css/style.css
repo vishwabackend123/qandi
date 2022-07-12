@@ -2511,7 +2511,9 @@ span.mendatfield {
 .backBtn+.btn.btn-common-transparent {line-height: 25px;}
 .time_management_stacked_barchart .graph_color_label_anwser span small{background-color: #08d5a1;}
 .time_management_stacked_barchart .graph_color_label_anwser span:last-child small {background-color: #f7758f;}
-
+.question-attempted-block {
+    border-right: 1px solid #cde3d0;
+}
 /********************* Amit End ****************************/
 
 
