@@ -425,10 +425,12 @@
                                     </div> 
                                     </div>
                                </div>    
-                            <div id="math" class=" tab-pane">sdfsf</div>
-                            <div id="physics" class=" tab-pane">sdfsf</div>
+                            <div id="math" class=" tab-pane">
+                                 <div class="overallmain">Math</div>
+                            </div>
+                            <div id="physics" class=" tab-pane"><div class="overallmain">Physics</div></div>
 
-                            <div id="chemistry" class=" tab-pane">sdfsf</div>
+                            <div id="chemistry" class=" tab-pane"><div class="overallmain">chem</div></div>
 
                     </div>
                 </div>
