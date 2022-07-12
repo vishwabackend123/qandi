@@ -87,6 +87,9 @@
                         </a>
                     </div>
                     <div class="error d-none mt-2 w-100" id="errlog_mob">Please enter valid mobile number</div>
+                    <!-- for automation testing -->
+                    <div class="d-none" id="testing_otp"></div>
+                    <!-- for automation testing -->
                 </div>
                 <div class="custom-input pb-5 verify_otp">
                     <label>Enter OTP</label>
@@ -118,220 +121,222 @@
     </div>
 </section>
 <script type="text/javascript">
-$('.verify_otp').hide();
-$('#otp-verify-btn').hide();
-$('.resend_again').hide();
-var timerId = '';
+    $('.verify_otp').hide();
+    $('#otp-verify-btn').hide();
+    $('.resend_again').hide();
+    var timerId = '';
 
-$(document).ready(function() {
-    var input = document.getElementById("mobile_num");
-    input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            sentotplogin('send');
-        }
+    $(document).ready(function() {
+        var input = document.getElementById("mobile_num");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                sentotplogin('send');
+            }
+        });
+        $("#studentlogin").submit(function(e) {
+            e.preventDefault();
+        });
+        $('#mobile_num').keyup(function() {
+            var value = this.value;
+            var length = value.length;
+            if (value != '') {
+                $('#mobile-input-btn').removeAttr("disabled");
+                $('#mobile-input-btn').removeClass("disabled");
+            } else {
+                $('#mobile-input-btn').attr('disabled', 'disabled');
+                $('#mobile-input-btn').addClass("disabled");
+            }
+        });
+        $('.otp_num').keyup(function(e) {
+            var opt_one = $('#opt_one').val();
+            var mobile_num = $('#mobile_num').val();
+            var opt_two = $('#opt_two').val();
+            var opt_three = $('#opt_three').val();
+            var opt_four = $('#opt_four').val();
+            var opt_five = $('#opt_five').val();
+            if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
+                $(e.target).next('.otp_num').focus();
+            } else if (e.which == 8) {
+                $(e.target).prev('.otp_num').focus();
+            }
+            if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
+                $('#otp-verify-btn').removeAttr("disabled");
+                $('#otp-verify-btn').removeClass("disabled");
+            } else {
+                $('#otp-verify-btn').attr('disabled', 'disabled');
+                $('#otp-verify-btn').addClass("disabled");
+            }
+        });
+        $('.editnumber').click(function() {
+            $('#mobile_num').prop("readonly", false);
+            $(this).hide();
+            $("#mobile-input-btn").show();
+            $('.verify_otp').hide();
+            $('#otp-verify-btn').hide();
+            $('#opt_one').val('');
+            $('#opt_two').val('');
+            $('#opt_three').val('');
+            $('#opt_four').val('');
+            $('#opt_five').val('');
+            clearTimeout(timerId);
+            $('#wait_otp_div').text('00:59');
+        })
+
     });
-    $("#studentlogin").submit(function(e) {
-        e.preventDefault();
-    });
-    $('#mobile_num').keyup(function() {
-        var value = this.value;
-        var length = value.length;
-        if (value != '') {
-            $('#mobile-input-btn').removeAttr("disabled");
-            $('#mobile-input-btn').removeClass("disabled");
-        } else {
-            $('#mobile-input-btn').attr('disabled', 'disabled');
-            $('#mobile-input-btn').addClass("disabled");
-        }
-    });
-    $('.otp_num').keyup(function(e) {
-        var opt_one = $('#opt_one').val();
-        var mobile_num = $('#mobile_num').val();
-        var opt_two = $('#opt_two').val();
-        var opt_three = $('#opt_three').val();
-        var opt_four = $('#opt_four').val();
-        var opt_five = $('#opt_five').val();
-        if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
-            $(e.target).next('.otp_num').focus();
-        } else if (e.which == 8) {
-            $(e.target).prev('.otp_num').focus();
-        }
-        if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
-            $('#otp-verify-btn').removeAttr("disabled");
-            $('#otp-verify-btn').removeClass("disabled");
-        } else {
-            $('#otp-verify-btn').attr('disabled', 'disabled');
-            $('#otp-verify-btn').addClass("disabled");
-        }
-    });
-    $('.editnumber').click(function() {
-        $('#mobile_num').prop("readonly", false);
-        $(this).hide();
-        $("#mobile-input-btn").show();
-        $('.verify_otp').hide();
-        $('#otp-verify-btn').hide();
+
+    function sentotplogin(otp_type) {
         $('#opt_one').val('');
         $('#opt_two').val('');
         $('#opt_three').val('');
         $('#opt_four').val('');
         $('#opt_five').val('');
-        clearTimeout(timerId);
-        $('#wait_otp_div').text('00:59');
-    })
 
-});
-
-function sentotplogin(otp_type) {
-    $('#opt_one').val('');
-    $('#opt_two').val('');
-    $('#opt_three').val('');
-    $('#opt_four').val('');
-    $('#opt_five').val('');
-
-    var mobile = $("#mobile_num").val();
-    if (mobile == '') {
-        $("#errlog_mob").html('Please entered registered mobile number');
-        $("#errlog_mob").fadeIn('fast');
-        $("#errlog_mob").fadeOut(5000);
-        return false;
-    }
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        var mobile = $("#mobile_num").val();
+        if (mobile == '') {
+            $("#errlog_mob").html('Please entered registered mobile number');
+            $("#errlog_mob").fadeIn('fast');
+            $("#errlog_mob").fadeOut(5000);
+            return false;
         }
-    });
-    $.ajax({
-        url: "{{ route('sendotplogin') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            mobile: mobile,
-        },
-        success: function(response_data) {
-
-            var response = jQuery.parseJSON(response_data);
-
-            if (response.success == true) {
-                $('#mobile_num').prop('readonly', true);
-                $('.editnumber').removeClass("d-none");
-                $('.editnumber').show();
-                $("#mobile-input-btn").hide();
-                $('.verify_otp').show();
-                $('#otp-verify-btn').show();
-                if (otp_type == 'resend') {
-                    //$('#resend_opt_msg').removeClass("d-none");
-                    //$("#resend_opt_msg").fadeIn('slow');
-                    //$("#resend_opt_msg").fadeOut(10000);
-                    $('#opt_one').val('');
-                    $('#opt_two').val('');
-                    $('#opt_three').val('');
-                    $('#opt_four').val('');
-                    $('#opt_five').val('');
-                }
-                resentOtpTime();
-
-            } else {
-                $("#errlog_mob").removeClass("d-none");
-                $("#errlog_mob").html(response.message);
-                $("#errlog_mob").fadeIn('slow');
-                $("#errlog_mob").fadeOut(10000);
-                return false;
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
+        });
+        $.ajax({
+            url: "{{ route('sendotplogin') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                mobile: mobile,
+            },
+            success: function(response_data) {
 
-        },
-    });
+                var response = jQuery.parseJSON(response_data);
+                console.log(response);
+                if (response.success == true) {
+                    $('#mobile_num').prop('readonly', true);
+                    $('.editnumber').removeClass("d-none");
+                    $('.editnumber').show();
+                    $("#mobile-input-btn").hide();
+                    $('.verify_otp').show();
+                    $('#otp-verify-btn').show();
+                    if (response.otp) {
+                        $('#testing_otp').html(response.otp);
+                    }
+                    if (otp_type == 'resend') {
+                        //$('#resend_opt_msg').removeClass("d-none");
+                        //$("#resend_opt_msg").fadeIn('slow');
+                        //$("#resend_opt_msg").fadeOut(10000);
+                        $('#opt_one').val('');
+                        $('#opt_two').val('');
+                        $('#opt_three').val('');
+                        $('#opt_four').val('');
+                        $('#opt_five').val('');
+                    }
+                    resentOtpTime();
 
-}
-
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
-
-function verifyTop() {
-
-    var login_mobile = $("#mobile_num").val();
-    var login_otp = '';
-    $(".otp_num").each(function(index) {
-        login_otp = login_otp + $(this).val()
-    });
-
-
-    $.ajax({
-        url: "{{ url('/verifyotplogin') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            login_mobile: login_mobile,
-            login_otp: login_otp,
-        },
-        beforeSend: function() {},
-
-        success: function(response_data) {
-
-            var response = jQuery.parseJSON(response_data);
-            if (response.status == 400) {
-                if (response.error) {
-                    $('#errlog_auth').removeClass("d-none");
-                    $("#errlog_auth").text(response.message);
-                    $('#errlog_auth').removeClass("d-none");
-                    $("#errlog_auth").fadeIn('slow');
-                    $("#errlog_auth").fadeOut(10000);
-
-                }
-            } else {
-                var previousUrl = '{{ url()->previous() }}';
-                if ((previousUrl.includes('subscriptions') == true) || (previousUrl.includes('trial_subscription') == true)) {
-
-                    window.location.href = '{{url("subscriptions")}}';
                 } else {
-                    window.location.href = '{{url("dashboard")}}';
+                    $("#errlog_mob").removeClass("d-none");
+                    $("#errlog_mob").html(response.message);
+                    $("#errlog_mob").fadeIn('slow');
+                    $("#errlog_mob").fadeOut(10000);
+                    return false;
                 }
 
-            }
+            },
+        });
 
-        },
-        error: function(xhr, b, c) {
-            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+    }
+
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
         }
-    });
-}
-document.addEventListener("paste", function(e) {
-    if (e.target.type === "text") {
-        var data = e.clipboardData.getData('Text');
-        data = data.split('');
-        [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
-            node.value = data[index];
+        return true;
+    }
+
+    function verifyTop() {
+
+        var login_mobile = $("#mobile_num").val();
+        var login_otp = '';
+        $(".otp_num").each(function(index) {
+            login_otp = login_otp + $(this).val()
+        });
+
+
+        $.ajax({
+            url: "{{ url('/verifyotplogin') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                login_mobile: login_mobile,
+                login_otp: login_otp,
+            },
+            beforeSend: function() {},
+
+            success: function(response_data) {
+
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 400) {
+                    if (response.error) {
+                        $('#errlog_auth').removeClass("d-none");
+                        $("#errlog_auth").text(response.message);
+                        $('#errlog_auth').removeClass("d-none");
+                        $("#errlog_auth").fadeIn('slow');
+                        $("#errlog_auth").fadeOut(10000);
+
+                    }
+                } else {
+                    var previousUrl = '{{ url()->previous() }}';
+                    if ((previousUrl.includes('subscriptions') == true) || (previousUrl.includes('trial_subscription') == true)) {
+
+                        window.location.href = '{{url("subscriptions")}}';
+                    } else {
+                        window.location.href = '{{url("dashboard")}}';
+                    }
+
+                }
+
+            },
+            error: function(xhr, b, c) {
+                console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+            }
         });
     }
-});
+    document.addEventListener("paste", function(e) {
+        if (e.target.type === "text") {
+            var data = e.clipboardData.getData('Text');
+            data = data.split('');
+            [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
+                node.value = data[index];
+            });
+        }
+    });
 
-function resentOtpTime() {
-    $('.resend_again').hide();
-    var timeLeft = 58;
-    var elem = document.getElementById('wait_otp_div');
-    timerId = setInterval(countdown, 1000);
+    function resentOtpTime() {
+        $('.resend_again').hide();
+        var timeLeft = 58;
+        var elem = document.getElementById('wait_otp_div');
+        timerId = setInterval(countdown, 1000);
 
-    function countdown() {
+        function countdown() {
 
-        if (timeLeft == -1) {
-            clearTimeout(timerId);
-            $('.resend_again').show();
-            $('.resend_timer').hide();
-        } else {
-            $('.resend_timer').show();
-            elem.innerHTML = "00:" + timeLeft;
-            timeLeft--;
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                $('.resend_again').show();
+                $('.resend_timer').hide();
+            } else {
+                $('.resend_timer').show();
+                elem.innerHTML = "00:" + timeLeft;
+                timeLeft--;
+            }
+
         }
 
     }
-
-}
-
 </script>
 @endsection
