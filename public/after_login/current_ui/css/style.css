@@ -2599,7 +2599,7 @@ header {
 
 .main-wrapper {
     padding-left: 78px;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .headericon.dropdown .dropdown-menu li a {
