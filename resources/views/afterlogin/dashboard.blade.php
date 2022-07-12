@@ -201,8 +201,11 @@ $userData = Session::get('user_data');
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
+                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                                so that we could generate tasks for you, based on your proficiency levels.
+                                            </p>
+                                            @endif
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
@@ -264,7 +267,7 @@ $userData = Session::get('user_data');
                                                     @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
@@ -321,7 +324,7 @@ $userData = Session::get('user_data');
                                                     @endforeach
                                                 </ul>
                                                 <div class="moreTaskLink">
-                                                    <a href="javascript:;" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
                                                 </div>
