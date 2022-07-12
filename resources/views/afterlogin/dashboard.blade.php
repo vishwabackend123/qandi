@@ -425,7 +425,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
                                                     <h5>Weak </h5>
