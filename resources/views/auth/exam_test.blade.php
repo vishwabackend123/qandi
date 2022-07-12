@@ -1,8 +1,7 @@
 @extends('afterlogin.layouts.app_new')
  
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+ 
 
 <div class="exam-wrapper">
 <div class="slider">
@@ -682,7 +681,7 @@ button#btn-ans {
 progress(600, 600, $('#progressBar'));
     </script> -->
  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+ 
 
     <script>
  $('.owl-carousel').owlCarousel({
