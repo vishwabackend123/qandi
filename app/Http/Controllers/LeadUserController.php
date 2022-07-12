@@ -131,4 +131,9 @@ class LeadUserController extends Controller
 	{
 		return view('auth.previousyear_exam');
 	}
+    public function overallAnalyticsNew()
+	{
+		return view('auth.overall_analytics_new');
+	}
+
 }

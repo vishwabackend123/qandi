@@ -307,4 +307,10 @@ Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController
 Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
 Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);
 Route::any('/exam_test', [App\Http\Controllers\LeadUserController::class, 'examTest']);
+<<<<<<< HEAD
 Route::any('/previousyear_exam', [App\Http\Controllers\LeadUserController::class, 'previousyearexam']);
+=======
+Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
+
+
+>>>>>>> 8c4b43cceedaf1bffd3035cda148d8a5d64ba356
