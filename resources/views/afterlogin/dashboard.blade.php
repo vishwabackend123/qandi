@@ -355,7 +355,7 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}" >
+                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
@@ -574,9 +574,20 @@ $userData = Session::get('user_data');
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
                                                     @if($val->test_completed_yn=='Y')
-                                                    <a href="" class="btn btn-common-green">Attempted</a>
+                                                    <a href="" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <circle cx="10" cy="10" r="10" fill="#56B663" />
+                                                            <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg> Attempted</a>
                                                     @else
-                                                    <a href="" class="btn btn-common-green">Attempt Now</a>
+                                                    <form method="post" action="{{route('plannerExam',[$val->id])}}">
+                                                        @csrf
+                                                        <input type="hidden" name="chapter_name" value="{{$val->chapter_name}}">
+                                                        <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
+                                                        <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
+                                                        <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
+                                                        <button type="submit" href="" class="btn btn-common-green">Attempt Now</button>
+                                                    </form>
+
                                                     @endif
                                                 </div>
                                                 <div class="subIcon">
