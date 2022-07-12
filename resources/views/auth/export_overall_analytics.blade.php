@@ -261,23 +261,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash time_management_stacked_barchart">
-                    <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
-                    <div class="row graph_head_label" style="margin-bottom:23px;">
-                        <div class="col-md-6">
-                            <h4>Correct/ Incorrect answers</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="graph_color_label_anwser text-right">
-                                <span style="margin-right:25px;"><small></small> Correct Answers</span>
-                                <span><small></small> Incorrect Answers</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <canvas id="timeManagementChart"></canvas>
-                    </div>
-                </div>
                 <div class="commonWhiteBox commonblockDash">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
                     <div class="row graph_head_label" style="margin-bottom:42px;">
@@ -286,8 +269,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="graph_color_label_anwser text-right">
-                                <span style="margin-right:25px;"><small></small> Class Average</span>
-                                <span><small></small> Student average</span>
+                                <span style="margin-right:25px;"><small></small> Correct Answers</span>
+                                <span><small></small> Incorrect Answers</span>
                             </div>
                         </div>
                     </div>
@@ -298,8 +281,8 @@
                 <div class="commonWhiteBox commonblockDash graph_head_label">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Accuracy Percentage <span>(in Last week)</span></h3>
                     <div class="graph_color_label_anwser" style="margin:34px 0 18px;">
-                        <span style="margin-right:25px;"><small></small> Class Average</span>
-                        <span><small></small> Student average</span>
+                        <span style="margin-right:25px;"><small></small> Correct Answers</span>
+                        <span><small></small> Incorrect Answers</span>
                     </div>
                     <div class="progress_journey_chart">
                         <canvas id="progressJourny_graph_2"></canvas>
@@ -361,7 +344,6 @@ const config = {
   }
 };
 const myCharted = new Chart("subjectChart", config)
-
 /*******subject-1**********/
 const circuference_1 = 260;
 const data_1 = {
@@ -457,44 +439,46 @@ const config_2 = {
   }
 };
 const myCharted_2 = new Chart("subjectChart-2", config_2)
-
 /********* halfdoughnut progress - start ************/
-const circuference_3 = 180;
-const data_3 = {
+const circuference9 = 180; // deg
+
+const data9 = {
   labels: ["Progress"],
   datasets: [
     {
-    //   label: "My First Dataset",
-      data: [40, 20],
+      label: "My First Dataset",
+      data: [100, 50],
       backgroundColor: [
-        "#56b663",  
+        "#56b663",
         "#f2f4f7"
       ]
     }
   ]
 };
-const config_3 = {
+
+const config9 = {
   type: "doughnut",
-  data: data_3,
+
+  data: data9,
   options: {   
     reponsive: true,
     maintainAspectRatio: false,
-    rotation: (circuference_3 / 2) * -1,
-    circuference: circuference_3,
+    rotation: (circuference9 / 2) * -1,
+    circumference: circuference9,
     cutout: "60%",
     borderWidth: 0,
     borderRadius: function (context, options) {
-      const index_1 = context.dataIndex;
-      let radius_1 = {};
-      if (index_1 == 0) {
-        radius_1.innerStart = 0;
-        radius_1.outerStart = 0;
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
       }
-      if (index_1 === context.dataset.data.length - 1) {
-        radius_1.innerEnd = 0;
-        radius_1.outerEnd = 0;
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
       }
-      return radius_1;
+      return radius;
     },
     plugins: {
       title: false,
@@ -503,10 +487,12 @@ const config_3 = {
     },
   }
 };
-const myCharted_3 = new Chart("progressChart", config_3)
+
+const myChart9 = new Chart("progressChart", config9);
+
 /*********** progress end ****************/
 
- /* Time management line chart */
+ /* progress Journy graph */
 const labels1 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
 const data1 = {
     labels: labels1,
@@ -565,7 +551,6 @@ const myChart1 = new Chart(
     config1
 );
 
- /* Time management line chart */
 const labels2 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
 const data2 = {
     labels: labels2,
@@ -623,69 +608,10 @@ const myChart2 = new Chart(
     document.getElementById('progressJourny_graph_2'),
     config1
 );
-/* Time management line chart end */
+/* progress Journy graph end */
 
-/************* Time management bar chart  *************/
-const labelsT = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
-const dataT = {
-  labels: labelsT,
-  datasets: [
-    {
-      label: 'Correct Answers',
-      data: "20",
-      backgroundColor:'#34d399',
-      barThickness: 32
-    },
-    {
-      label: 'Incorrect Answers',
-      data: "10",
-      backgroundColor: '#f7758f',
-      barThickness: 32
-    },
-  ]
-};
-const configT = {
-  type: 'bar',
-  data: dataT,
-  options: {
-    plugins: {
-      title: {
-        display: false,
-        text: 'Chart.js Bar Chart - Stacked'
-      },
-      legend: false
-    },
-    responsive: true,
-    scales: {
-      x: {
-        stacked: true,
-      },
-      y: {
-        stacked: true
-      }
-    }
-  }
-};
 
-const DATA_COUNT = 7;
-const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
 
-const actions = [
-  {
-    name: 'Randomize',
-    handler(chart) {
-      chart.data.datasets.forEach(dataset => {
-        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
-      });
-      chart.update();
-    }
-  },
-];
-
-var myChartT = new Chart(
-    document.getElementById('timeManagementChart'),
-    configT
-  );
 
 </script>  
 

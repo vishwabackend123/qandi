@@ -42,6 +42,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script  src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
     <script type="text/x-mathjax-config">
