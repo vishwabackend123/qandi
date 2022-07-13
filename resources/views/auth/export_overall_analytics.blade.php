@@ -204,8 +204,13 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div>
-                                <canvas id="progressChart" style="height:100%;width:100%;"></canvas>
+                            <div class="position-relative">
+                                <div>
+                                    <canvas id="progressChart" style="height:100%;width:100%;"></canvas>
+                                </div>
+                                <div class="proscore">
+                                    80 <span>/100</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
