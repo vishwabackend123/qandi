@@ -887,27 +887,38 @@ $userData = Session::get('user_data');
 
     @endphp
     <script>
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
-                event.stopPropagation();
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+    $(document).ready(function() {
+        $("span.tooltipmain svg").click(function(event) {
+            event.stopPropagation();
+
+            var card_open = $(this).siblings("p").hasClass('show');
+            if (card_open === true) {
+                $(this).siblings("p").hide();
+                $(this).siblings("p").removeClass('show');
+            } else {
+                $("span.tooltipmain p.tooltipclass span").each(function() {
                     $(this).parent("p").hide();
                     $(this).parent("p").removeClass('show');
                 });
                 $(this).siblings("p").show();
                 $(this).siblings("p").addClass('show');
-
-            });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-                $(this).parent("p").hide();
-            });
-        });
-        $(document).on('click', function(e) {
-            var card_opened = $('.tooltipclass').hasClass('show');
-            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-                $('.tooltipclass').hide();
             }
+
+
         });
+        $("span.tooltipmain p.tooltipclass span").click(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+    });
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+            $('.tooltipclass').removeClass('show');
+        }
+    });
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
