@@ -2040,7 +2040,7 @@ ul.proficiency-level-lists li span b {
     background-color: #cccccca1;
     height: 8px;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 ul.proficiency-level-lists li span.mr-3 {
     margin-right: 16px;
