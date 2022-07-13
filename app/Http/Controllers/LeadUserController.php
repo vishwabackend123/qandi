@@ -91,7 +91,6 @@ class LeadUserController extends Controller
 	{
 		return view('auth.chapter_planner');
 	}
-	s
 	public function emailConfirmation()
 	{
 		return view('auth.email_confirmation');
