@@ -208,6 +208,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 so that we could generate tasks for you, based on your proficiency levels.
                                             </p>
                                             @endif
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='Y')
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
@@ -274,6 +275,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </svg></span></a>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                         <div id="weekly" class=" tab-pane">
                                             <div class="taskstatusBlock">
