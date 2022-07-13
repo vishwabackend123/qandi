@@ -200,7 +200,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
@@ -280,7 +280,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
