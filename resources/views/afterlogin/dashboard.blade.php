@@ -203,7 +203,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
-                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
                                                 so that we could generate tasks for you, based on your proficiency levels.
                                             </p>
@@ -349,7 +349,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses.  This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
                                 </h3>
@@ -360,13 +360,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
-                                                <div class="myqinner">
-                                                    <h6>Q1</h6>
-                                                    <h5>Strengths</h5>
-                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
-                                                </div>
-                                                <div class="myqbottomSec">
+                                            <div class="myqinner">
+                                                <h6>Q1</h6>
+                                                <h5>Strengths</h5>
+                                                <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
+                                            </div>
+                                            <div class="myqbottomSec">
+                                                <a href="{{route('dashboard-MyQMatrix','q_1')}}">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -377,19 +377,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor2">
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
-                                                <div class="myqinner">
-                                                    <h6>Q2</h6>
-                                                    <h5>Needs focus</h5>
-                                                    <p>Give a little attention to these topics and take another step towards perfection. </p>
-                                                </div>
-                                                <div class="myqbottomSec">
+                                            <div class="myqinner">
+                                                <h6>Q2</h6>
+                                                <h5>Needs focus</h5>
+                                                <p>Give a little attention to these topics and take another step towards perfection. </p>
+                                            </div>
+                                            <div class="myqbottomSec">
+                                                <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -401,19 +401,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor3 mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
-                                                <div class="myqinner">
-                                                    <h6>Q3</h6>
-                                                    <h5>Hopeful </h5>
-                                                    <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
-                                                </div>
-                                                <div class="myqbottomSec">
+                                            <div class="myqinner">
+                                                <h6>Q3</h6>
+                                                <h5>Hopeful </h5>
+                                                <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
+                                            </div>
+                                            <div class="myqbottomSec">
+                                                <a href="{{route('dashboard-MyQMatrix','q_3')}}">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -424,19 +424,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
-                                                <div class="myqinner">
-                                                    <h6>Q4</h6>
-                                                    <h5>Weak </h5>
-                                                    <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
-                                                </div>
-                                                <div class="myqbottomSec">
+                                            <div class="myqinner">
+                                                <h6>Q4</h6>
+                                                <h5>Weak </h5>
+                                                <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
+                                            </div>
+                                            <div class="myqbottomSec">
+                                                <a href="{{route('dashboard-MyQMatrix','q_4')}}">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -447,8 +447,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +592,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
                                                         <button type="submit" href="" class="btn btn-common-green">Attempt Now</button>
                                                     </form>
-
                                                     @endif
                                                 </div>
                                                 <div class="subIcon">
@@ -780,7 +779,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
                                                             <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
                                                             <div onclick="show('Live', 'Live')">Live </div>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -886,7 +884,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     $your_place = isset($your_place) ? json_encode($your_place) : [];
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
-
     @endphp
     <script>
     $(document).ready(function() {
@@ -921,239 +918,242 @@ $user_id = isset($userData->id)?$userData->id:'';
         }
     });
     $('#email_success').hide();
-        $('.resend_email').click(function() {
-            var user_id = '<?php echo $user_id; ?>';
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "{{ url('send_verfication_email') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    userId: user_id,
-                },
-                success: function(response_data) {
-                    if (response_data.status === true) {
-                        $('#email_success').css('color', 'green');
-                        $('#email_success').text(response_data.message);
-                        $('#email_success').show();
-                        $("#email_success").fadeOut(10000);
-                    } else {
-                        $('#email_success').css('color', 'red');
-                        $('#email_success').text(response_data.message);
-                        $('#email_success').show();
-                        $("#email_success").fadeOut(10000);
-                    }
-
-                },
-            });
+    $('.resend_email').click(function() {
+        var user_id = '<?php echo $user_id; ?>';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
+        $.ajax({
+            url: "{{ url('send_verfication_email') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                userId: user_id,
+            },
+            success: function(response_data) {
+                if (response_data.status === true) {
+                    $('#email_success').css('color', 'green');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                } else {
+                    $('#email_success').css('color', 'red');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                }
+
+            },
+        });
+    });
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $('.dashborarSlider').owlCarousel({
-            stagePadding: 10,
-            loop: false,
-            margin: 0,
-            nav: true,
-            dots: false,
-            // rewindNav:true,
+    $('.dashborarSlider').owlCarousel({
+        stagePadding: 10,
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false,
+        // rewindNav:true,
 
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    stagePadding: 40,
-                    margin: 0,
-                    loop: true,
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                stagePadding: 40,
+                margin: 0,
+                loop: true,
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
             }
-        })
+
+        }
+    })
+
     </script>
     <script>
-        /* progress Journy graph */
-        const labels1 = <?php print_r($progress_cat); ?>;
-        const data1 = {
-            labels: labels1,
-            datasets: [{
-                    label: 'Ideal Pace',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($ideal); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
-                },
-                {
-                    label: 'Your Pace',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($your_place); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
-                }
-            ]
-        };
+    /* progress Journy graph */
+    const labels1 = <?php print_r($progress_cat); ?>;
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+                label: 'Ideal Pace',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($ideal); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            },
+            {
+                label: 'Your Pace',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($your_place); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            }
+        ]
+    };
 
-        const config1 = {
-            type: 'line',
-            data: data1,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+
+            }
+        }
+    };
+
+    const myChart1 = new Chart(
+        document.getElementById('progressJourny_graph'),
+        config1
+    );
+    /* progress Journy graph end */
+
+    /** ********************/
+    const labels2 = <?php print_r($weeks_json); ?>;
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+                label: 'My score',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($stu_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Peer average',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($avg_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Top score',
+                backgroundColor: '#12c3ff',
+                borderColor: '#12c3ff',
+                data: <?php print_r($max_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            }
+        ]
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     }
                 },
-                plugins: {
-                    legend: {
+                y: {
+                    grid: {
                         display: false
                     },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
+                    type: 'linear',
+                    grace: '5%',
+
+                    min: 0,
 
                 }
+
             }
-        };
+        }
+    };
 
-        const myChart1 = new Chart(
-            document.getElementById('progressJourny_graph'),
-            config1
-        );
-        /* progress Journy graph end */
-
-        /** ********************/
-        const labels2 = <?php print_r($weeks_json); ?>;
-        const data2 = {
-            labels: labels2,
-            datasets: [{
-                    label: 'My score',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($stu_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Peer average',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($avg_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Top score',
-                    backgroundColor: '#12c3ff',
-                    borderColor: '#12c3ff',
-                    data: <?php print_r($max_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                }
-            ]
-        };
-
-        const config2 = {
-            type: 'line',
-            data: data2,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        type: 'linear',
-                        grace: '5%',
-
-                        min: 0,
-
-                    }
-
-                }
-            }
-        };
-
-        const myChart2 = new Chart(
-            document.getElementById('trend_graph'),
-            config2
-        );
+    const myChart2 = new Chart(
+        document.getElementById('trend_graph'),
+        config2
+    );
 
 
-        /* $('#markstrend_graph').change(function() {
-            var value = this.value;
-            alert(value);
-        }); */
+    /* $('#markstrend_graph').change(function() {
+        var value = this.value;
+        alert(value);
+    }); */
+
     </script>
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
+    function show(value, type) {
+        document.querySelector(".text-box").value = value;
 
-            url = "{{ url('trendGraphUpdate/') }}/" + type;
-            $.ajax({
-                type: 'GET', //post method
-                url: url, //ajaxformexample url
-                dataType: "json",
-                success: function(response) {
-                    console.log(response.student_score);
-                    myChart2.data.labels = response.labels;
-                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
-                    myChart2.update(); // finally update our chart
-                }
-            });
-        }
+        url = "{{ url('trendGraphUpdate/') }}/" + type;
+        $.ajax({
+            type: 'GET', //post method
+            url: url, //ajaxformexample url
+            dataType: "json",
+            success: function(response) {
+                console.log(response.student_score);
+                myChart2.data.labels = response.labels;
+                myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                myChart2.update(); // finally update our chart
+            }
+        });
+    }
 
 
 
-        let dropdown = document.querySelector(".customDropdown")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active")
-        }
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
+    }
+
     </script>
     @endsection
