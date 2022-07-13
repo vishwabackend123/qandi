@@ -267,9 +267,9 @@
                         <div class="col-md-4">
                             <div class="cutoff-score-bar">
                                 <div class="box">
-                                    <div class="chart" data-percent="70" data-scale-color="#ffb400"></div>
+                                    <div class="cutoff_chart" data-percent="70" data-scale-color="#ffb400"></div>
                                     <div class="chartwrap">
-                                        <div class="chart-1" data-percent="25" data-scale-color="#ffb400"></div>
+                                        <div class="cutoff_chart-1" data-percent="25" data-scale-color="#ffb400"></div>
                                     </div>
                                 </div>
                             </div>
@@ -736,9 +736,9 @@ const config9 = {
 
 const myChart9 = new Chart("progressChart", config9);
 
-/****************************/
+/*********** Cut-off’s Progress bar *****************/
 $(function() {
-  $('.chart').easyPieChart({
+  $('.cutoff_chart').easyPieChart({
     size: 144,
     barColor: "#08d5a1",
     scaleLength: 0,
@@ -747,7 +747,7 @@ $(function() {
     lineCap: "round",
     animate: 2000,
   });
-  $('.chart-1').easyPieChart({
+  $('.cutoff_chart-1').easyPieChart({
     size: 95,
     barColor: "#7db9ff",
     scaleLength: 0,
@@ -755,8 +755,6 @@ $(function() {
     trackColor: "#fff",
     lineCap: "round",
     animate: 2000,
-    radius: "10",
-
   });
 });
 </script>  
