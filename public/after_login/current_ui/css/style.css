@@ -2505,8 +2505,11 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
   font-weight: 800;
   color: #111;
 }
-
+.chapter_performance_card ul.topic_score_lists li:last-child {
+    margin-bottom: 0;
+}
 .overall_percentage_chart{width:100%;height:300px;}
+.subj_progress_card .overall_percentage_chart{height: 247px;}
 .overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
 .halfdoughnut {
     height: 100px;
@@ -2668,14 +2671,16 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 
-.chapter_performance_card ul.topic_score_lists li {width: 100%}
-.chapter_performance_card ul.topic_score_lists {max-height: 300px;}
+.chapter_performance_card ul.topic_score_lists li {width: 100%;margin-bottom: 27px;}
+.chapter_performance_card ul.topic_score_lists {max-height: 234px;}
 .chapter_performance_card .color_labels {
     border-bottom: 1px solid #e5eaee;
     padding-bottom: 23px;
     margin: 20px 0;
 }
-
+.overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
+a.btn-close,a.btn-close:hover{opacity: 1;}
+.myqmatPannel a:hover{text-decoration:none;}
 /********************* Amit End ****************************/
 
 
