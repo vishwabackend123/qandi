@@ -79,7 +79,7 @@ $(".mq_circle_percent").each(function() {
 	} 
 });
 /************ Tooltip *********/
-$(document).ready(function() {
+/*$(document).ready(function() {
     $("span.tooltipmain svg").click(function(event) {
         event.stopPropagation();
         $("span.tooltipmain p.tooltipclass span").each(function() {
@@ -99,7 +99,7 @@ $(document).on('click', function(e) {
     if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
         $('.tooltipclass').hide();
     }
-});
+});*/
 
 /******Test Analytics-Marks Percentage ******/
 $(document).ready(function(){
@@ -114,15 +114,7 @@ $(document).ready(function(){
 
 /************************* Amit - End ****************************/
 
-/*****show-hide-detalis-user-profile-page**********/
-  $(document).ready(function(){
-    $(".flip").click(function(){
-        $("#panel").slideToggle("slow");
-        $(this).text(function(i, v){
-          return v === 'Show details' ? 'Hide details' : 'Show details'
-      })
-    });
-});
+
 /***************************************************/
 /*****upload-user-picture-user-profile-page**********/
   $(document).ready(function(){

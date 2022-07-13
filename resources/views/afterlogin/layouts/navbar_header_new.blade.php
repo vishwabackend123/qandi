@@ -5,7 +5,7 @@ $userData = Session::get('user_data');
     <div class="headerMain">
         <div class="headerLeft">
             <h2>Dashboard</h2>
-            <h6><label>Cource:</label>
+            <h6><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
         </div>

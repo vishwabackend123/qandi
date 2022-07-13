@@ -3082,8 +3082,11 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
   font-weight: 800;
   color: #111;
 }
-
+.chapter_performance_card ul.topic_score_lists li:last-child {
+    margin-bottom: 0;
+}
 .overall_percentage_chart{width:100%;height:300px;}
+.subj_progress_card .overall_percentage_chart{height: 247px;}
 .overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
 .halfdoughnut {
     height: 100px;
@@ -3245,14 +3248,16 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 
-.chapter_performance_card ul.topic_score_lists li {width: 100%}
-.chapter_performance_card ul.topic_score_lists {max-height: 300px;}
+.chapter_performance_card ul.topic_score_lists li {width: 100%;margin-bottom: 27px;}
+.chapter_performance_card ul.topic_score_lists {max-height: 234px;}
 .chapter_performance_card .color_labels {
     border-bottom: 1px solid #e5eaee;
     padding-bottom: 23px;
     margin: 20px 0;
 }
-
+.overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
+a.btn-close,a.btn-close:hover{opacity: 1;}
+.myqmatPannel a:hover{text-decoration:none;}
 /********************* Amit End ****************************/
 
 
@@ -3909,31 +3914,25 @@ justify-content: space-between;}
             font-weight: 600;
             line-height: 1.6;}    
             .aeck_commontab a.nav-link{position:relative}
-           .aeck_commontab a.nav-link.qq1_2_3_4.active:after {
+            .aeck_commontab a.nav-link.qq1_2_3_4.active:after {
                 content: '';
-                width: 16px;
-                height: 20px;
+                width: 5px;
+                height: 5px;
                 position: absolute;
-                border-bottom: 0px solid transparent;
-                border: 7px solid transparent;
-                border-left: 0;
-                border-right: 5px solid #f5faf6;
-                bottom: -6px;
-                left: -9px;
-                transform: rotate(48deg);
+                bottom: -5px;
+                left: -4px;
+                background-color: #56b663;
+                border-top-left-radius: 11px;
             }
-           .aeck_commontab a.nav-link.qq1_2_3_4.active:before {
+            .aeck_commontab a.nav-link.qq1_2_3_4.active:before {
                 content: '';
-                width: 16px;
-                height: 20px;
+                width: 5px;
+                height: 5px;
                 position: absolute;
-                border-bottom: 0px solid transparent;
-                border: 7px solid transparent;
-                border-left: 0;
-                border-right: 5px solid #f5faf6;
-                bottom: -2px;
-                right: -6px;
-                transform: rotate(124deg)
+                bottom: -5px;
+                right: -4px;
+                background-color: #56b663;
+                border-top-right-radius: 11px;
             }
 .blackcolor{color: #1f1f1f    ;}
 /********* Shubham End ***********/
@@ -4349,7 +4348,7 @@ justify-content: space-between;}
 
 .qq1_2_3_4.active {
     color: #363c4f !important;
-    border-bottom: 4px solid #56b663 !important;
+    border-bottom: 5px solid #56b663 !important;
     opacity: 1;
 }
 
@@ -4792,7 +4791,7 @@ padding: 11px 20px!important;
     padding: 0px!important;
 }
 .aeck_commontab .nav-tabs .nav-link {
-    margin-right: 46px!important;background-color:transparent;
+    margin-right: 46px!important;background-color:transparent;margin-bottom: 0;
 }
 
 /* **********start mock test   ********** */

@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
 <!-- 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 <section class="d-flex h-100 login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
@@ -82,7 +80,7 @@
             <form id="studentsignup" method="post">
                 @csrf
                 <div class="custom-input pb-3">
-                    <label>Name
+                    <label>Name </label>
                     <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
@@ -102,9 +100,7 @@
                     <!-- for automation testing -->
                     <div class="d-none" id="testing_otp"></div>
                     <!-- for automation testing -->
-
                 </div>
-
                 <div class="custom-input pb-3 otp-input" style="display:none">
                     <label>Enter OTP</label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
@@ -130,18 +126,17 @@
                     <span class="error mt-2" id="errlog_mail"></span>
                 </div>
                 <div class="custom-input pb-3">
-                    <label>City <span class="mendatfield">*</span></label>
+                    <label>City</label>
                     <div id="location-box" class="position-relative">
                         <select class="js-states form-control reqrd" name="location" data-use-select2="true" id="location" required>
                             <option value="">Select a city</option>
-
                         </select>
                     </div>
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
                         <label>Grade</label>
-                        <select class="form-control selectdata reqrd" name="grade" id="grade" required>
+                        <select class="form-control selectdata reqrd js-example-basic-single" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
@@ -150,11 +145,10 @@
                     </div>
                     <div class="col-lg-6">
                         <label>Exam</label>
-                        <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
+                        <select class="form-control selectdata reqrd js-example-basic-single" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
-
                         </select>
                     </div>
                 </div>
@@ -168,471 +162,472 @@
     </div>
 </section>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    var timerId = '';
-    /* name input validation */
-    /* only letter number */
-    function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        }
-        return true;
+var timerId = '';
+/* name input validation */
+/* only letter number */
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
     }
-    /* only letter input */
-    function lettersOnly(evt) {
+    return true;
+}
+/* only letter input */
+function lettersOnly(evt) {
 
-        evt = (evt) ? evt : event;
-        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
-            ((evt.which) ? evt.which : 0));
+    evt = (evt) ? evt : event;
+    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+        ((evt.which) ? evt.which : 0));
 
-        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
-            (charCode < 97 || charCode > 122)) {
+    if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+        (charCode < 97 || charCode > 122)) {
 
-            return false;
-        }
-        return true;
+        return false;
     }
-    $(document).on("keydown", "#user_name", function(evt) {
-        var firstChar = $("#user_name").val();
-        var val = $("#user_name").val();
-        if (evt.keyCode == 32 && firstChar == "") {
-            return false;
-        }
-        $("#user_name").val(val.replace(/  +/g, ' '));
-
-    });
-    /* convert text in to capitalized text */
-    $.fn.capitalize = function() {
-        $.each(this, function() {
-            var split = this.value.split(' ');
-            for (var i = 0, len = split.length; i < len; i++) {
-                split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
-            }
-            this.value = split.join(' ');
-        });
-        return this;
-    };
-    /* capitalize the input name */
-    $('#user_name').on('keyup', function() {
-        $(this).capitalize();
-    }).capitalize();
-
-    $('#mobile_num').on('keyup', function() {
-        $("#err_reg_mob").html("");
-        if ($(this).val().length == 10) {
-            $('#verifynum').removeClass("d-none");
-            $('#verifynum').addClass("d-block");
-        } else {
-            $('#verifynum').removeClass("d-block");
-            $('#verifynum').addClass("d-none");
-        }
-
-    });
-
-    /* name input validation */
-    $(function() {
-
-        const $inp = $(".otp");
-
-        $inp.on({
-            paste(ev) { // Handle Pasting
-
-                const clip = ev.originalEvent.clipboardData.getData('text').trim();
-                // Allow numbers only
-                if (!/\d{5}/.test(clip)) return ev.preventDefault(); // Invalid. Exit here
-                // Split string to Array or characters
-                const s = [...clip];
-                // Populate inputs. Focus last input.
-                $inp.val(i => s[i]).eq(5).focus();
-            },
-            input(ev) { // Handle typing
-
-                const i = $inp.index(this);
-                if (this.value) $inp.eq(i + 1).focus();
-            },
-            keydown(ev) { // Handle Deleting
-
-                const i = $inp.index(this);
-                if (!this.value && ev.key === "Backspace" && i) $inp.eq(i - 1).focus();
-            }
-        });
-    });
-    /*  $('.otp').keyup(function(event) {
-         $(".otp-input input").filter(function() {
-             return $.trim($(this).val()).length == 0
-         }).length == 0;
-     }); */
-
-    function resentOtp() {
-        $('#otp_box input[name="register_otp[]"').val('');
-        $('#verifynum').click();
+    return true;
+}
+$(document).on("keydown", "#user_name", function(evt) {
+    var firstChar = $("#user_name").val();
+    var val = $("#user_name").val();
+    if (evt.keyCode == 32 && firstChar == "") {
+        return false;
     }
-    $('#editsignnumber').click(function() {
-        $('#mobile_num').val('');
-        $('.otp-input').hide();
-        $('#otpsentmsg').removeClass("d-block");
-        $('#otpsentmsg').addClass("d-none");
-        $('#editsignnumber').removeClass("d-block");
-        $('#editsignnumber').addClass("d-none");
-        $('#otp_box input[name="register_otp[]"').val('');
-        clearTimeout(timerId);
-        $('#wait_otp_div').text('00:59');
-        $("#errlog_otp").html('')
-        $('#mobile_num').attr("readonly", false);
+    $("#user_name").val(val.replace(/  +/g, ' '));
+
+});
+/* convert text in to capitalized text */
+$.fn.capitalize = function() {
+    $.each(this, function() {
+        var split = this.value.split(' ');
+        for (var i = 0, len = split.length; i < len; i++) {
+            split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
+        }
+        this.value = split.join(' ');
     });
-    $('#verifynum').click(function() {
-        $check = 0;
-        var mobile_num = $("#mobile_num").val();
-        if (mobile_num == '') {
-            $("#err_reg_mob").html('Please enter your mobile number');
+    return this;
+};
+/* capitalize the input name */
+$('#user_name').on('keyup', function() {
+    $(this).capitalize();
+}).capitalize();
+
+$('#mobile_num').on('keyup', function() {
+    $("#err_reg_mob").html("");
+    if ($(this).val().length == 10) {
+        $('#verifynum').removeClass("d-none");
+        $('#verifynum').addClass("d-block");
+    } else {
+        $('#verifynum').removeClass("d-block");
+        $('#verifynum').addClass("d-none");
+    }
+
+});
+
+/* name input validation */
+$(function() {
+
+    const $inp = $(".otp");
+
+    $inp.on({
+        paste(ev) { // Handle Pasting
+
+            const clip = ev.originalEvent.clipboardData.getData('text').trim();
+            // Allow numbers only
+            if (!/\d{5}/.test(clip)) return ev.preventDefault(); // Invalid. Exit here
+            // Split string to Array or characters
+            const s = [...clip];
+            // Populate inputs. Focus last input.
+            $inp.val(i => s[i]).eq(5).focus();
+        },
+        input(ev) { // Handle typing
+
+            const i = $inp.index(this);
+            if (this.value) $inp.eq(i + 1).focus();
+        },
+        keydown(ev) { // Handle Deleting
+
+            const i = $inp.index(this);
+            if (!this.value && ev.key === "Backspace" && i) $inp.eq(i - 1).focus();
+        }
+    });
+});
+/*  $('.otp').keyup(function(event) {
+     $(".otp-input input").filter(function() {
+         return $.trim($(this).val()).length == 0
+     }).length == 0;
+ }); */
+
+function resentOtp() {
+    $('#otp_box input[name="register_otp[]"').val('');
+    $('#verifynum').click();
+}
+$('#editsignnumber').click(function() {
+    $('#mobile_num').val('');
+    $('.otp-input').hide();
+    $('#otpsentmsg').removeClass("d-block");
+    $('#otpsentmsg').addClass("d-none");
+    $('#editsignnumber').removeClass("d-block");
+    $('#editsignnumber').addClass("d-none");
+    $('#otp_box input[name="register_otp[]"').val('');
+    clearTimeout(timerId);
+    $('#wait_otp_div').text('00:59');
+    $("#errlog_otp").html('')
+    $('#mobile_num').attr("readonly", false);
+});
+$('#verifynum').click(function() {
+    $check = 0;
+    var mobile_num = $("#mobile_num").val();
+    if (mobile_num == '') {
+        $("#err_reg_mob").html('Please enter your mobile number');
+        $("#err_reg_mob").fadeIn('fast');
+        $check = 1;
+    } else {
+
+        var testMobile = /^[6-9][0-9]{9}$/;
+        if (testMobile.test(mobile_num)) {} else {
+            $("#err_reg_mob").html('Please enter valid mobile number');
             $("#err_reg_mob").fadeIn('fast');
             $check = 1;
-        } else {
-
-            var testMobile = /^[6-9][0-9]{9}$/;
-            if (testMobile.test(mobile_num)) {} else {
-                $("#err_reg_mob").html('Please enter valid mobile number');
-                $("#err_reg_mob").fadeIn('fast');
-                $check = 1;
-            };
-        }
-        if ($check == 1) {
-            return false;
-        } else {
-            url = "{{ url('sentMobileOtp/') }}/" + mobile_num;
-            $.ajax({
-                url: url,
-                type: 'GET',
-                data: {
-                    "_token": "{{ csrf_token() }}"
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-
-                    console.log(response);
-                    if (response.success == true) {
-                        resentOtpTime();
-                        $('#verifynum').removeClass("d-block");
-                        $('#verifynum').addClass("d-none");
-
-                        $('#otpsentmsg').removeClass("d-none");
-                        $('#otpsentmsg').addClass("d-block");
-                        $('#editsignnumber').removeClass("d-none");
-                        $('#editsignnumber').addClass("d-block");
-
-                        $('#mobile_num').attr("readonly", true);
-                        if (response.otp) {
-                            $('#testing_otp').html(response.otp);
-                        }
-
-
-                        $('.otp-input').show();
-                    } else {
-                        $("#err_reg_mob").html(response.message);
-                        $("#err_reg_mob").fadeIn('fast');
-                        /* $("#err_reg_mob").fadeOut(10000); */
-                        $("#mobile_num").focus();
-                        return false;
-                    }
-
-                },
-            });
-        }
-
-
-    });
-
-
-    $("#studentsignup").validate({
-
-        rules: {
-            user_name: {
-                required: true,
-            },
-            mobile_num: {
-                required: true,
-                minlength: 10,
-                maxlength: 10
-            },
-            "register_otp[]": {
-                required: true,
-            },
-            email_add: {
-                required: true,
-            },
-            location: {
-                required: true,
-            },
-            grade: {
-                required: true,
-            },
-            exam: {
-                required: true,
-            }
-        },
-        messages: {
-            "user_name": {
-                required: "Please enter the name."
-            },
-            "mobile_num": {
-                required: "Please enter the mobile number."
-            },
-            "register_otp[]": {
-                required: "Please enter the OTP."
-            },
-            "email_add": {
-                required: "Please enter email address."
-            },
-            "location": {
-                required: "Please select city."
-            },
-            "grade": {
-                required: "Please select grade."
-            },
-            "exam": {
-                required: "Please select exam"
-            }
-        },
-        errorElement: 'div',
-        /* errorLabelContainer: '#errlog_otp', */
-        errorPlacement: function(error, element) {
-
-            switch (element.attr("name")) {
-                case 'user_name':
-                    error.insertAfter($("#user_name"));
-                    break;
-                case 'mobile_num':
-                    error.insertAfter($("#mobile_num_box"));
-                    break;
-                case 'register_otp[]':
-                    //error.add($("#errlog_otp"));
-                    $("#errlog_otp").html('Please enter the valid OTP.')
-                    /*error.insertAfter($("#otp_box") */
-                    break;
-                case 'email_add':
-                    error.insertAfter($("#email_add"));
-                    break;
-                case 'grade':
-                    error.insertAfter($("#grade"));
-                    break;
-                case 'exam':
-                    error.insertAfter($("#exam_id"));
-                    break;
-                case 'location':
-                    error.insertAfter($("#location-box"));
-                    break;
-                default:
-                    error.insertAfter(element);
-            }
-        },
-
-        submitHandler: function(form) {
-            var user_name = $("#user_name").val();
-            var email_add = $("#email_add").val();
-            var mobile_num = $("#mobile_num").val();
-
-            var register_otp = $("input[name='register_otp[]']")
-                .map(function() {
-                    return $(this).val();
-                }).get();
-            var location = $("#location").val();
-            var exam = $("#exam_id").val();
-            var grade_stage = $("#grade").val();
-            $.ajax({
-                url: "{{ url('/verifyOtpRegister') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    reg_otp: register_otp,
-                    email_add: email_add,
-                    user_name: user_name,
-                    mobile_num: mobile_num,
-                    location: location,
-                    exam_id: exam,
-                    stage_at_signup: grade_stage,
-                },
-                beforeSend: function() {},
-                success: function(response_data) { //debugger;
-                    var response = jQuery.parseJSON(response_data);
-
-                    if (response.status == 400) {
-                        if (response.msg === 'Wrong OTP') {
-                            //$('errlog_otp').html("Invalid OTP");
-                            var errormsg = $("#errlog_otp").show();
-
-                            errormsg[0].textContent = "Invalid OTP";
-                            setTimeout(function() {
-                                $('#errlog_otp').fadeOut('fast');
-                            }, 10000);
-                        } else if (response.msg === 'User already registered') {
-                            //$('errlog_otp').html("Invalid OTP");
-                            var errormsg = $("#errlog_mail").show();
-
-                            errormsg[0].textContent = 'Email address already exist.';
-                            setTimeout(function() {
-                                $('#errlog_mail').fadeOut('fast');
-                            }, 10000);
-                        } else {
-                            var errormsg = $("#errlog_auth").show();
-                            errormsg[0].textContent = response.msg;
-                            setTimeout(function() {
-                                $('#errlog_auth').fadeOut('fast');
-                            }, 10000);
-                        }
-                        return false
-                    } else {
-                        $('#student_id').val(response.student_id);
-                        $('.usernamE').html(response.user_name);
-                        $('.student-mobile').html("+91-" + response.mobile);
-                        //$('#otp-verify-box').addClass('open-box');
-
-                        $('#login-box').addClass('close-box');
-                        $('#address-box').addClass('open-box');
-                        window.location.href = '{{url("dashboard")}}';
-                    }
-
-                },
-                error: function(xhr, b, c) {
-                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-                }
-            });
-        }
-
-    });
-    $(document).ready(function() {
-        $('.resend_again').hide();
-
-        $("#location").select2({
-            allowClear: false,
-            minimumInputLength: 3,
-            minimumResultsForSearch: -1,
-            tokenSeparators: [',', ' '],
-            placeholder: "Select a City",
-            selectOnClose: false,
-            closeOnSelect: true,
-
-            ajax: {
-                url: "{{ url('/newCityList') }}",
-                type: "GET",
-                dataType: 'json',
-                delay: 250,
-                data: function(params) {
-                    var queryParameters = {
-                        search_text: params.term
-                    }
-                    return queryParameters;
-                },
-                processResults: function(response_data, params) {
-
-                    // var data = jQuery.parseJSON(response_data);
-
-                    var data = $.map(response_data.response, function(obj) {
-                        obj.id = obj.id;
-                        obj.text = obj.text;
-                        return obj;
-                    });
-
-                    params.page = params.page || 1;
-
-                    return {
-                        results: data,
-                        pagination: {
-                            more: (params.page * 30) < data.total_count
-                        }
-                    };
-                },
-                cache: true
-            }
-        });
-
-        $('#location').val(null).trigger('change');
-        $('#location').on('select2:open', () => {
-            document.querySelector('.select2-search__field').focus();
-        });
-        $(document).on('keypress', '.select2-search__field', function() {
-
-            if (event.which > 32 && (event.which < 65 || event.which > 90) &&
-                (event.which < 97 || event.which > 122)) {
-                event.preventDefault();
-            }
-        });
-        $('#location').change(function() {
-            $("#location-error").hide();
-        })
-
-
-    });
-
-    $('.otp').keyup(function() {
-
-        var isEmptyOTP = false;
-        $('.otp').each(function() {
-            if ($(this).val() == '') {
-                isEmptyOTP = true;
-            }
-        });
-        if (isEmptyOTP) {
-
-
-        } else {
-            $("#errlog_otp").html("");
-        }
-    });
-
-    $('.reqrd').change(function() {
-
-        var isEmpty = false;
-        $('.reqrd').each(function() {
-            if ($(this).val() == '' || $(this).val() == null) {
-                isEmpty = true;
-            }
-        });
-
-
-        if (isEmpty) {
-            $('#signup_cnt').attr('disabled', 'disabled');
-            $('#signup_cnt').addClass("disbaled");
-        } else {
-            $('#signup_cnt').removeAttr('disabled');
-            $('#signup_cnt').removeClass("disbaled");
-        }
-    });
-
-    /* function for select sity */
-    document.addEventListener("paste", function(e) {
-        console.log(e.target.id);
-        if (e.target.type === "text" && e.target.id != 'mobile_num') {
-            var data = e.clipboardData.getData('Text');
-            data = data.split('');
-            [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
-                node.value = data[index];
-            });
-        }
-    });
-
-    function resentOtpTime() {
-        $('.resend_again').hide();
-        var timeLeft = 58;
-        var elem = document.getElementById('wait_otp_div');
-        timerId = setInterval(countdown, 1000);
-
-        function countdown() {
-
-            if (timeLeft == -1) {
-                clearTimeout(timerId);
-                $('.resend_again').show();
-                $('.resend_timer').hide();
-            } else {
-                $('.resend_timer').show();
-                elem.innerHTML = "00:" + timeLeft;
-                timeLeft--;
-            }
-
-        }
+        };
     }
+    if ($check == 1) {
+        return false;
+    } else {
+        url = "{{ url('sentMobileOtp/') }}/" + mobile_num;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                "_token": "{{ csrf_token() }}"
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                console.log(response);
+                if (response.success == true) {
+                    resentOtpTime();
+                    $('#verifynum').removeClass("d-block");
+                    $('#verifynum').addClass("d-none");
+
+                    $('#otpsentmsg').removeClass("d-none");
+                    $('#otpsentmsg').addClass("d-block");
+                    $('#editsignnumber').removeClass("d-none");
+                    $('#editsignnumber').addClass("d-block");
+
+                    $('#mobile_num').attr("readonly", true);
+                    if (response.otp) {
+                        $('#testing_otp').html(response.otp);
+                    }
+
+
+                    $('.otp-input').show();
+                } else {
+                    $("#err_reg_mob").html(response.message);
+                    $("#err_reg_mob").fadeIn('fast');
+                    /* $("#err_reg_mob").fadeOut(10000); */
+                    $("#mobile_num").focus();
+                    return false;
+                }
+
+            },
+        });
+    }
+
+
+});
+
+
+$("#studentsignup").validate({
+
+    rules: {
+        user_name: {
+            required: true,
+        },
+        mobile_num: {
+            required: true,
+            minlength: 10,
+            maxlength: 10
+        },
+        "register_otp[]": {
+            required: true,
+        },
+        email_add: {
+            required: true,
+        },
+        location: {
+            required: true,
+        },
+        grade: {
+            required: true,
+        },
+        exam: {
+            required: true,
+        }
+    },
+    messages: {
+        "user_name": {
+            required: "Please enter the name."
+        },
+        "mobile_num": {
+            required: "Please enter the mobile number."
+        },
+        "register_otp[]": {
+            required: "Please enter the OTP."
+        },
+        "email_add": {
+            required: "Please enter email address."
+        },
+        "location": {
+            required: "Please select city."
+        },
+        "grade": {
+            required: "Please select grade."
+        },
+        "exam": {
+            required: "Please select exam"
+        }
+    },
+    errorElement: 'div',
+    /* errorLabelContainer: '#errlog_otp', */
+    errorPlacement: function(error, element) {
+
+        switch (element.attr("name")) {
+            case 'user_name':
+                error.insertAfter($("#user_name"));
+                break;
+            case 'mobile_num':
+                error.insertAfter($("#mobile_num_box"));
+                break;
+            case 'register_otp[]':
+                //error.add($("#errlog_otp"));
+                $("#errlog_otp").html('Please enter the valid OTP.')
+                /*error.insertAfter($("#otp_box") */
+                break;
+            case 'email_add':
+                error.insertAfter($("#email_add"));
+                break;
+            case 'grade':
+                error.insertAfter($("#grade"));
+                break;
+            case 'exam':
+                error.insertAfter($("#exam_id"));
+                break;
+            case 'location':
+                error.insertAfter($("#location-box"));
+                break;
+            default:
+                error.insertAfter(element);
+        }
+    },
+
+    submitHandler: function(form) {
+        var user_name = $("#user_name").val();
+        var email_add = $("#email_add").val();
+        var mobile_num = $("#mobile_num").val();
+
+        var register_otp = $("input[name='register_otp[]']")
+            .map(function() {
+                return $(this).val();
+            }).get();
+        var location = $("#location").val();
+        var exam = $("#exam_id").val();
+        var grade_stage = $("#grade").val();
+        $.ajax({
+            url: "{{ url('/verifyOtpRegister') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                reg_otp: register_otp,
+                email_add: email_add,
+                user_name: user_name,
+                mobile_num: mobile_num,
+                location: location,
+                exam_id: exam,
+                stage_at_signup: grade_stage,
+            },
+            beforeSend: function() {},
+            success: function(response_data) { //debugger;
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.status == 400) {
+                    if (response.msg === 'Wrong OTP') {
+                        //$('errlog_otp').html("Invalid OTP");
+                        var errormsg = $("#errlog_otp").show();
+
+                        errormsg[0].textContent = "Invalid OTP";
+                        setTimeout(function() {
+                            $('#errlog_otp').fadeOut('fast');
+                        }, 10000);
+                    } else if (response.msg === 'User already registered') {
+                        //$('errlog_otp').html("Invalid OTP");
+                        var errormsg = $("#errlog_mail").show();
+
+                        errormsg[0].textContent = 'Email address already exist.';
+                        setTimeout(function() {
+                            $('#errlog_mail').fadeOut('fast');
+                        }, 10000);
+                    } else {
+                        var errormsg = $("#errlog_auth").show();
+                        errormsg[0].textContent = response.msg;
+                        setTimeout(function() {
+                            $('#errlog_auth').fadeOut('fast');
+                        }, 10000);
+                    }
+                    return false
+                } else {
+                    $('#student_id').val(response.student_id);
+                    $('.usernamE').html(response.user_name);
+                    $('.student-mobile').html("+91-" + response.mobile);
+                    //$('#otp-verify-box').addClass('open-box');
+
+                    $('#login-box').addClass('close-box');
+                    $('#address-box').addClass('open-box');
+                    window.location.href = '{{url("dashboard")}}';
+                }
+
+            },
+            error: function(xhr, b, c) {
+                console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+            }
+        });
+    }
+
+});
+$(document).ready(function() {
+    $('.js-example-basic-single').select2({minimumResultsForSearch: -1});
+    $('.resend_again').hide();
+
+    $("#location").select2({
+        allowClear: false,
+        minimumInputLength: 3,
+        minimumResultsForSearch: -1,
+        tokenSeparators: [',', ' '],
+        placeholder: "Select a City",
+        selectOnClose: false,
+        closeOnSelect: true,
+
+        ajax: {
+            url: "{{ url('/newCityList') }}",
+            type: "GET",
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                var queryParameters = {
+                    search_text: params.term
+                }
+                return queryParameters;
+            },
+            processResults: function(response_data, params) {
+
+                // var data = jQuery.parseJSON(response_data);
+
+                var data = $.map(response_data.response, function(obj) {
+                    obj.id = obj.id;
+                    obj.text = obj.text;
+                    return obj;
+                });
+
+                params.page = params.page || 1;
+
+                return {
+                    results: data,
+                    pagination: {
+                        more: (params.page * 30) < data.total_count
+                    }
+                };
+            },
+            cache: true
+        }
+    });
+
+    $('#location').val(null).trigger('change');
+    $('#location').on('select2:open', () => {
+        document.querySelector('.select2-search__field').focus();
+    });
+    $(document).on('keypress', '.select2-search__field', function() {
+
+        if (event.which > 32 && (event.which < 65 || event.which > 90) &&
+            (event.which < 97 || event.which > 122)) {
+            event.preventDefault();
+        }
+    });
+    $('#location').change(function() {
+        $("#location-error").hide();
+    })
+
+
+});
+
+$('.otp').keyup(function() {
+
+    var isEmptyOTP = false;
+    $('.otp').each(function() {
+        if ($(this).val() == '') {
+            isEmptyOTP = true;
+        }
+    });
+    if (isEmptyOTP) {
+
+
+    } else {
+        $("#errlog_otp").html("");
+    }
+});
+
+$('.reqrd').change(function() {
+
+    var isEmpty = false;
+    $('.reqrd').each(function() {
+        if ($(this).val() == '' || $(this).val() == null) {
+            isEmpty = true;
+        }
+    });
+
+
+    if (isEmpty) {
+        $('#signup_cnt').attr('disabled', 'disabled');
+        $('#signup_cnt').addClass("disbaled");
+    } else {
+        $('#signup_cnt').removeAttr('disabled');
+        $('#signup_cnt').removeClass("disbaled");
+    }
+});
+
+/* function for select sity */
+document.addEventListener("paste", function(e) {
+    console.log(e.target.id);
+    if (e.target.type === "text" && e.target.id != 'mobile_num') {
+        var data = e.clipboardData.getData('Text');
+        data = data.split('');
+        [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
+            node.value = data[index];
+        });
+    }
+});
+
+function resentOtpTime() {
+    $('.resend_again').hide();
+    var timeLeft = 58;
+    var elem = document.getElementById('wait_otp_div');
+    timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            $('.resend_again').show();
+            $('.resend_timer').hide();
+        } else {
+            $('.resend_timer').show();
+            elem.innerHTML = "00:" + timeLeft;
+            timeLeft--;
+        }
+
+    }
+}
+
 </script>
 @endsection

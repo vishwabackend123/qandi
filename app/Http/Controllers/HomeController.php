@@ -237,7 +237,7 @@ class HomeController extends Controller
                 if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
                     $i = 1;
                     foreach ($response_prog['response']['student_progress'] as $progData) {
-                        array_push($ideal, $progData['week_index']);
+                        array_push($ideal, $progData['month_index']);
                         array_push($your_place, $progData['chapter_count']);
                         $week = "W" . $i;
                         array_push($progress_cat, $week);
@@ -849,8 +849,15 @@ class HomeController extends Controller
                 $myq_bool = false;
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
+            
+            $preferences = $this->redis_Preference();
+            $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'quadrant_name'));
+            $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+
+            $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
+            
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'quadrant_name','prof_asst_test'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

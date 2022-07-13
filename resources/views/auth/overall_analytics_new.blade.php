@@ -434,7 +434,7 @@
                                  <div class="overalltop">    
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="commonWhiteBox h-auto">
+                                            <div class="commonWhiteBox h-auto subj_progress_card">
                                                     <h3 class="boxheading d-flex align-items-center mb-5">Progress
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -452,7 +452,7 @@
                                                     <canvas id="mathChart"></canvas>
                                                 </div>
                                             </div>
-                                            <div class="commonWhiteBox chapter_performance_card" style="margin-top:20px;">
+                                            <div class="commonWhiteBox chapter_performance_card h-auto" style="margin-top:20px;">
                                                 <div class="d-flex flex-wrap justify-content-between align-items-center">
                                                     <h3 class="boxheading d-flex align-items-center mb-0">Chapter Performance
                                                         <span class="tooltipmain">
@@ -476,7 +476,7 @@
                                                     <span><small></small> Incorrect answer</span>
                                                     <span><small></small> Unattempted questions</span>
                                                 </div>
-                                                <ul class="topic_score_lists">
+                                                <ul class="topic_score_lists mb-0">
                                                     <li>
                                                         <div class="topic_score_bar">
                                                             <h4>Circular Motion And Gravitation</h4>
@@ -683,7 +683,7 @@
                                                                  </div>
                                                              </div>
                                                              <div class="col-md-6">
-                                                                 <div class="commoncodeblock">
+                                                                 <div class="commoncodeblock mb-0">
                                                                       <div class="codelerheader">
                                                                           <h3>Application</h3>
                                                                       </div>
@@ -707,7 +707,7 @@
                                                                  </div>
                                                              </div>
                                                              <div class="col-md-6">
-                                                                 <div class="commoncodeblock">
+                                                                 <div class="commoncodeblock mb-0">
                                                                       <div class="codelerheader">
                                                                           <h3>Knowledge</h3>
                                                                       </div>
@@ -908,7 +908,7 @@
     </div>
 </div>    
 <!-- Evaluation-popup start  -->
-<div class="modal fade" id="Evaluationmodal">
+<div class="modal fade overall_evaluationmodal_modal" id="Evaluationmodal">
         <div class="modalcenter">
             <div class="modal-dialog">
                 <div class="modal-content strengthmodal_content">
@@ -916,7 +916,7 @@
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
                     </div>
                     <div class="modal-body">
-                        <div class="intraction_text_strength">Evaluation</div>
+                        <div class="intraction_text_strength mt-0">Evaluation</div>
                         <hr>
                         <div class="instruction_text_content"><strong class="blackcolor">20 %</strong>  of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information. 
                         </div>
