@@ -427,9 +427,8 @@
                                             </div>
                                         </div>
                                     </div> 
-                                    </div>
-                               </div> 
-                           </div>      
+                                 </div>
+                               </div>      
                             <div id="math" class=" tab-pane">
                                  <div class="overallmain">
                                  <div class="overalltop">    

@@ -54,9 +54,9 @@ $full_body_attempt = Session::get('full_body_attempt');
                     </ul>
                 </div>
                 <div class="fullbody_scan_test w-50 text-center position-relative">
-                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.png')}}"></span>
-                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.png')}}"></span>
-                    <img src="{{URL::asset('public/after_login/current_ui/images/note.png')}}" style="width: 106.5px;height: 116px;">
+                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.svg')}}"></span>
+                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.svg')}}"></span>
+                    <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full Body Scan Test</h3>
                     <p class="my-3">to assess your preparedness and begin to improve it</p>
                     @if($full_body_attempt=="Y")

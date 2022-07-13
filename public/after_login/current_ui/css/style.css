@@ -1186,7 +1186,7 @@ border-color: #56b663;
 .testType ul {
     padding: 0px;
     margin: 0px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
 }
 
 .testType ul li {
@@ -1243,7 +1243,7 @@ border-color: #56b663;
     align-items: center;
     height: 100%;
 }
-
+.getDiscount .testType ul{margin-bottom:80px;}
 .planPayment .testType {
     width: 50%;
     border-right: 1px solid #e4e2e2;
