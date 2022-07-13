@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+$user_id = isset($userData->id)?$userData->id:'';
 @endphp
 @section('content')
 <style type="text/css">
@@ -52,12 +53,10 @@ $userData = Session::get('user_data');
                                     <div class="custom-input pb-4">
                                         <label>Email</label>
                                         <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
-                                    </div>
-                                    <div class="custom-input pb-4 position-relative">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
-                                        <a class="bg-white editnumber resendmail" href="javascript:void(0);">Resend</a>
+                                        <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);" style="margin: 7px 15px 0 0;">Resend</a>
                                         <span class="email-error">Email not verified, Please resend verification link to verify</span>
+                                        <br>
+                                        <span class="mt-2" id="email_success"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
@@ -138,6 +137,7 @@ $userData = Session::get('user_data');
                                 @php
                                 $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
                                 $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+                                $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
                                 @endphp
                                 <h2>Price</h2>
                                 <h3>₹{{$subsprice}}</h3>
@@ -154,7 +154,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div id="panel">
                                 <hr class="line">
-                                <p>{{$current_subscription->subscription_details}}</p>
+                                <p>{{$subscription_desc}}</p>
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
@@ -189,10 +189,51 @@ $(document).ready(function() {
         },
 
     });
+    $(".flip").click(function() {
+        $("#panel").slideToggle("slow");
+        $(this).text(function(i, v) {
+            return v === 'Show details' ? 'Hide details' : 'Show details'
+        })
+    });
+});
+$('#email_success').hide();
+$('.resend_email').click(function() {
+    var user_id = '<?php echo $user_id; ?>';
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: "{{ url('send_verfication_email') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            userId: user_id,
+        },
+        success: function(response_data) {
+            if (response_data.status === true) {
+                $('#email_success').css('color', 'green');
+                $('#email_success').text(response_data.message);
+                $('#email_success').show();
+                $("#email_success").fadeOut(10000);
+            } else {
+                $('#email_success').css('color', 'red');
+                $('#email_success').text(response_data.message);
+                $('#email_success').show();
+                $("#email_success").fadeOut(10000);
+            }
+
+        },
+    });
 });
 $('#editProfile_form input').keyup(function() {
     editProfileCheck();
 });
+$('#editProfile_form select').change(function() {
+    editProfileCheck();
+});
+
 
 
 function editProfileCheck() {
@@ -201,6 +242,14 @@ function editProfileCheck() {
         var id = this.id;
         if (id == 'file-input') {
             return;
+        }
+        var city = $('#city_name').val();
+        var state = $('#state').val();
+        if (city == '') {
+            empty = true;
+        }
+        if (state == '') {
+            empty = true;
         }
         if ($(this).val() == '') {
             empty = true;
@@ -221,34 +270,39 @@ function editProfileCheck() {
 }
 
 function getCity(state, type) {
-    var user_city = '<?php echo $userData->city; ?>';
-    $.ajax({
-        url: "{{ url('/getCity',) }}",
-        type: "GET",
-        cache: false,
-        data: {
-            'state': state,
-        },
-        success: function(response_data) {
-            if (type == 'change') {
-                $('.city_list').html('<option value="">Select City</option>');
-                $.each(response_data, function(key, value) {
-                    $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                });
-            } else {
-                $('.city_list').html('<option value="">Select City</option>');
-                $.each(response_data, function(key, value) {
-                    if (value == user_city) {
-                        $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
-                    } else {
+    if (state) {
+        var user_city = '<?php echo $userData->city; ?>';
+        $.ajax({
+            url: "{{ url('/getCity',) }}",
+            type: "GET",
+            cache: false,
+            data: {
+                'state': state,
+            },
+            success: function(response_data) {
+                if (type == 'change') {
+                    $('#saveEdit').attr('disabled', 'disabled');
+                    $('#saveEdit').addClass("disabled-btn");
+                    $('.city_list').html('<option value="">Select City</option>');
+                    $.each(response_data, function(key, value) {
                         $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                    }
+                    });
+                } else {
+                    $('.city_list').html('<option value="">Select City</option>');
+                    $.each(response_data, function(key, value) {
+                        if (value == user_city) {
+                            $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
+                        } else {
+                            $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                        }
 
-                });
+                    });
+                }
+
             }
+        });
+    }
 
-        }
-    });
 }
 
 </script>

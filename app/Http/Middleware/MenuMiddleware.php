@@ -74,7 +74,7 @@ class MenuMiddleware
             $current_subscription=[];
             if (isset($subscription_packages->all_packages) && !empty($subscription_packages->all_packages)) {
                 foreach ($subscription_packages->all_packages as $key => $value) {
-                    if ($latest_pack->subscription_id == $value->subscript_id) {
+                    if ((isset($latest_pack->subscription_id) && !empty($latest_pack->subscription_id)) && $latest_pack->subscription_id == $value->subscript_id) {
                         $current_subscription = $value;
                     }
                 }

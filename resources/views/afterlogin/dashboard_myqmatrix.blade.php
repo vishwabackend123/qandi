@@ -251,6 +251,7 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
+ @if(isset($prof_asst_test) && $prof_asst_test=='N')
 <!--------- Modal ------>
 <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
@@ -267,6 +268,7 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
+@endif
 <!-------------------->
 <script>
 $(document).ready(function() {
@@ -299,12 +301,13 @@ $(document).ready(function() {
             $('.tooltipclass').hide();
         }
     });
-    var topic_data = '<?php echo $myq_bool; ?>';
+    /*var topic_data = '<?php echo $myq_bool; ?>';
     if (topic_data) {
         setInterval(function() {
-            $('#matrix').modal('show');
+         $('#matrix').modal('show');        
         }, 1000);
-    }
+    }*/
+    $('#matrix').modal('show');
     var quadrant_name = '<?php echo $quadrant_name ?>';
     if (quadrant_name == 'q_2') {
         questwo_tab();

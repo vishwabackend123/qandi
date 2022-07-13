@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+$user_id = isset($userData->id)?$userData->id:'';
 @endphp
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -21,8 +22,9 @@ $userData = Session::get('user_data');
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="verifiaction-link" style="display:none">
-                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="#">Resend</a></p>
+                        <div class="verifiaction-link">
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="javascript:void(0);" class="resend_email">Resend</a></p>
+                            <span class="mt-2" id="email_success"></span>
                         </div>
                     </div>
                 </div>
@@ -52,7 +54,7 @@ $userData = Session::get('user_data');
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Attempt more tests to improve your score.</p>
-                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('overall_analytics')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -198,14 +200,14 @@ $userData = Session::get('user_data');
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
-                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='Y')
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
@@ -272,12 +274,13 @@ $userData = Session::get('user_data');
                                                             </svg></span></a>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                         <div id="weekly" class=" tab-pane">
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
@@ -347,7 +350,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses.  This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
                                 </h3>
@@ -358,12 +361,14 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                            <a href="#strengthmodal" data-bs-toggle="modal" data-bs-target="#strengthmodal">
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -381,12 +386,14 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor2">
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="#needsfocusmodal" data-bs-toggle="modal" data-bs-target="#needsfocusmodal">
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
                                                     <h5>Needs focus</h5>
                                                     <p>Give a little attention to these topics and take another step towards perfection. </p>
                                                 </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -405,12 +412,14 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor3 mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                            <a href="#hopefulmodal" data-bs-toggle="modal" data-bs-target="#hopefulmodal">
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
                                                     <h5>Hopeful </h5>
                                                     <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                                 </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
@@ -428,12 +437,14 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                            <a href="#weakmodal" data-bs-toggle="modal" data-bs-target="#weakmodal">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
                                                     <h5>Weak </h5>
                                                     <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                                 </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
@@ -572,7 +583,7 @@ $userData = Session::get('user_data');
                                         ?>
                                         <div class="item">
                                             <div class="testPlanCard subCard {{$backgroundclass}}">
-                                                <p class="m-0">{{$backgroundclass}}</p>
+                                                <p class="m-0">{{$subject_name}}</p>
                                                 <h3>{{$val->chapter_name}}</h3>
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
@@ -590,7 +601,6 @@ $userData = Session::get('user_data');
                                                         <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
                                                         <button type="submit" href="" class="btn btn-common-green">Attempt Now</button>
                                                     </form>
-
                                                     @endif
                                                 </div>
                                                 <div class="subIcon">
@@ -771,14 +781,13 @@ $userData = Session::get('user_data');
                                             <div class="graphDetail">
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
-                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                        <div class="options">
-                                                            <div class="active" onclick="show('All Test', 'all')">All Test</div>
-                                                            <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                            <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                            <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                            <div onclick="show('Live', 'Live')">Live </div>
-
+                                                        <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                        <div class="options" style=" overflow-y: auto; height: 303%; ">
+                                                            <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                            <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                            <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                            <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                            <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -847,6 +856,63 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
+    <div class="modal fade" id="needsfocusmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q2</div>
+                        <div class="intraction_text_strength">Needs focus</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Give a little attention to these topics and take another step towards perfection. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hopefulmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q3</div>
+                        <div class="intraction_text_strength">Hopeful</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Topics that are hurdles in your journey. Do not save them for the last.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="weakmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q4</div>
+                        <div class="intraction_text_strength">Weak</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Find your weak topics here. Work hard to move these topics to other quadrants.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Strengths-popup end -->
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
@@ -884,232 +950,280 @@ $userData = Session::get('user_data');
     $your_place = isset($your_place) ? json_encode($your_place) : [];
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
-
     @endphp
     <script>
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
-                event.stopPropagation();
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+    $(document).ready(function() {
+        $("span.tooltipmain svg").click(function(event) {
+            event.stopPropagation();
+
+            var card_open = $(this).siblings("p").hasClass('show');
+            if (card_open === true) {
+                $(this).siblings("p").hide();
+                $(this).siblings("p").removeClass('show');
+            } else {
+                $("span.tooltipmain p.tooltipclass span").each(function() {
                     $(this).parent("p").hide();
                     $(this).parent("p").removeClass('show');
                 });
                 $(this).siblings("p").show();
                 $(this).siblings("p").addClass('show');
+            }
 
-            });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-                $(this).parent("p").hide();
-            });
+
         });
-        $(document).on('click', function(e) {
-            var card_opened = $('.tooltipclass').hasClass('show');
-            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-                $('.tooltipclass').hide();
+        $("span.tooltipmain p.tooltipclass span").click(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+    });
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+            $('.tooltipclass').removeClass('show');
+        }
+        var dropdown_open =$('.customDropdown').hasClass('active');
+        if (!$(e.target).is('.markstrend') && dropdown_open === true) {
+            $('.customDropdown').removeClass('active');
+        }
+    });
+    $('#email_success').hide();
+    $('.resend_email').click(function() {
+        var user_id = '<?php echo $user_id; ?>';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $.ajax({
+            url: "{{ url('send_verfication_email') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                userId: user_id,
+            },
+            success: function(response_data) {
+                if (response_data.status === true) {
+                    $('#email_success').css('color', 'green');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                } else {
+                    $('#email_success').css('color', 'red');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                }
+
+            },
+        });
+    });
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $('.dashborarSlider').owlCarousel({
-            stagePadding: 10,
-            loop: false,
-            margin: 0,
-            nav: true,
-            dots: false,
-            // rewindNav:true,
+    $('.dashborarSlider').owlCarousel({
+        stagePadding: 10,
+        loop: false,
+        margin: 0,
+        nav: true,
+        dots: false,
+        // rewindNav:true,
 
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    stagePadding: 40,
-                    margin: 0,
-                    loop: true,
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                stagePadding: 40,
+                margin: 0,
+                loop: true,
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
             }
-        })
+
+        }
+    })
+
     </script>
     <script>
-        /* progress Journy graph */
-        const labels1 = <?php print_r($progress_cat); ?>;
-        const data1 = {
-            labels: labels1,
-            datasets: [{
-                    label: 'Ideal Pace',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($ideal); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
-                },
-                {
-                    label: 'Your Pace',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($your_place); ?>,
-                    borderwidth: 0.6,
-                    tension: 0.4
-                }
-            ]
-        };
+    /* progress Journy graph */
+    const labels1 = <?php print_r($progress_cat); ?>;
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+                label: 'Ideal Pace',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($ideal); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            },
+            {
+                label: 'Your Pace',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($your_place); ?>,
+                borderwidth: 0.6,
+                tension: 0.4
+            }
+        ]
+    };
 
-        const config1 = {
-            type: 'line',
-            data: data1,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+
+            }
+        }
+    };
+
+    const myChart1 = new Chart(
+        document.getElementById('progressJourny_graph'),
+        config1
+    );
+    /* progress Journy graph end */
+
+    /** ********************/
+    const labels2 = <?php print_r($weeks_json); ?>;
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+                label: 'My score',
+                backgroundColor: '#05d6a1',
+                borderColor: '#05d6a1',
+                data: <?php print_r($stu_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Peer average',
+                backgroundColor: '#f87d96',
+                borderColor: '#f87d96',
+                data: <?php print_r($avg_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            },
+            {
+                label: 'Top score',
+                backgroundColor: '#12c3ff',
+                borderColor: '#12c3ff',
+                data: <?php print_r($max_score_json); ?>,
+                borderwidth: 1,
+                tension: 0.4
+            }
+        ]
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {
+            responsive: true,
+            elements: {
+                point: {
+                    radius: 0
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: false,
+                    text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+            },
+            interaction: {
+                intersect: false,
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
                     }
                 },
-                plugins: {
-                    legend: {
+                y: {
+                    grid: {
                         display: false
                     },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
+                    type: 'linear',
+                    grace: '5%',
+
+                    min: 0,
 
                 }
+
             }
-        };
+        }
+    };
 
-        const myChart1 = new Chart(
-            document.getElementById('progressJourny_graph'),
-            config1
-        );
-        /* progress Journy graph end */
-
-        /** ********************/
-        const labels2 = <?php print_r($weeks_json); ?>;
-        const data2 = {
-            labels: labels2,
-            datasets: [{
-                    label: 'My score',
-                    backgroundColor: '#05d6a1',
-                    borderColor: '#05d6a1',
-                    data: <?php print_r($stu_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Peer average',
-                    backgroundColor: '#f87d96',
-                    borderColor: '#f87d96',
-                    data: <?php print_r($avg_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                },
-                {
-                    label: 'Top score',
-                    backgroundColor: '#12c3ff',
-                    borderColor: '#12c3ff',
-                    data: <?php print_r($max_score_json); ?>,
-                    borderwidth: 1,
-                    tension: 0.4
-                }
-            ]
-        };
-
-        const config2 = {
-            type: 'line',
-            data: data2,
-            options: {
-                responsive: true,
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: false,
-                        text: 'Chart.js Line Chart - Cubic interpolation mode'
-                    },
-                },
-                interaction: {
-                    intersect: false,
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    },
-                    y: {
-                        grid: {
-                            display: false
-                        },
-                        type: 'linear',
-                        grace: '5%',
-
-                        min: 0,
-
-                    }
-
-                }
-            }
-        };
-
-        const myChart2 = new Chart(
-            document.getElementById('trend_graph'),
-            config2
-        );
+    const myChart2 = new Chart(
+        document.getElementById('trend_graph'),
+        config2
+    );
 
 
-        /* $('#markstrend_graph').change(function() {
-            var value = this.value;
-            alert(value);
-        }); */
+    /* $('#markstrend_graph').change(function() {
+        var value = this.value;
+        alert(value);
+    }); */
+
     </script>
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
+    function show(value, type) {
+        document.querySelector(".text-box").value = value;
 
-            url = "{{ url('trendGraphUpdate/') }}/" + type;
-            $.ajax({
-                type: 'GET', //post method
-                url: url, //ajaxformexample url
-                dataType: "json",
-                success: function(response) {
-                    console.log(response.student_score);
-                    myChart2.data.labels = response.labels;
-                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
-                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
-                    myChart2.update(); // finally update our chart
-                }
-            });
-        }
+        url = "{{ url('trendGraphUpdate/') }}/" + type;
+        $.ajax({
+            type: 'GET', //post method
+            url: url, //ajaxformexample url
+            dataType: "json",
+            success: function(response) {
+                console.log(response.student_score);
+                myChart2.data.labels = response.labels;
+                myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                myChart2.update(); // finally update our chart
+            }
+        });
+    }
 
 
 
-        let dropdown = document.querySelector(".customDropdown")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active")
-        }
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
+    }
+
     </script>
     @endsection
