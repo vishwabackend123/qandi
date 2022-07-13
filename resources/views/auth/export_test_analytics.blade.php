@@ -264,7 +264,7 @@
                     <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
                     <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year 2018 cut-off</p>
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="cutoff-score-bar">
                                 <div class="box">
                                     <div class="chart" data-percent="70" data-scale-color="#ffb400"></div>
