@@ -272,9 +272,9 @@
                         </div>
                         <div class="col-md-5">
                             <div class="color_labels d-flex justify-content-between">
-                                <span>Correct <b><small></small>60</b></span>
-                                <span>Incorrect <b><small></small>20</b></span>
-                                <span>Not Attempted <b><small></small>20</b></span>
+                                <span>Cut off score <b><small style="background-color: #7db9ff;"></small>30</b></span>
+                                <span>Your Score <b><small style="background-color: #08d5a1;"></small>80</b></span>
+                                <span>Total Score <b><small style="background-color: #f2f4f7;"></small>200</b></span>
                             </div>
                         </div>
                     </div>

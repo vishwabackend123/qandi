@@ -57,7 +57,7 @@ button:focus {
 li {
     list-style-type: none;
 }
-.btn.focus, .btn:focus{box-shadow:none!important;}
+.btn.focus, .btn:focus , .btn-close:focus{box-shadow:none!important;}
 .btn.btn.btn-common-green.disabled, .btn.btn.btn-common-green:disabled{opacity:1;background-color: #a9e1b0;border: solid 1px #a9e1b0;}
 /* common-scroll */
 ::-webkit-scrollbar {
