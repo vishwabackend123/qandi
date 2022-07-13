@@ -276,7 +276,9 @@ color: #d0d5dd !important;
 .resend {
     font-size: 14px !important;
 }
-
+.Get-otp .btn {
+    height: 44px !important;
+}
 /*******login-page-end*****/
 /******sign-up-strat*******/
 .allscrollbar::-webkit-scrollbar {
