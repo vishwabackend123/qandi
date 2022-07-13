@@ -15,9 +15,38 @@
                                 </svg>
                                 </label>
                             </div>
+                                <div class="anshead-titletext">
+                                    <p>1, 0, 2</p>
+                                </div>
+                                <div class="explanation-sec">
+                                    <div class="explanationdeteail">
+                                        <span>Explanation:</span>
+                                        <p>The locus of the point (x,y) Which is equidistant from the given fixed point (0,2) is a circle</p>
+                                    </div>
+                                        <div class="explanation-bottom">
+                                            <span>lAl=-1lBl=3</span>
+                                            <span>lAl=-1lBl=3</span>
+                                        </div>
+                                        <div class="explanationdeteail">
+                                        
+                                        <p>The locus of the point (x,y) Which is equidistant from the given fixed point (0,2) is a circle</p>
+                                    </div>
+                                        <div class="explanation-bottom">
+                                            <span>lAl=-1lBl=3</span>
+                                            <span>lAl=-1lBl=3</span>
+                                        </div>
+                                        <div class="explanationdeteail">
+                                        
+                                        <p>The locus of the point (x,y) Which is equidistant from the given fixed point (0,2) is a circle</p>
+                                    </div>
+                                        <div class="explanation-bottom">
+                                            <span>lAl=-1lBl=3</span>
+                                            <span>lAl=-1lBl=3</span>
+                                        </div>
+                                </div>
                         </div>
                 </div>
-                <div class="examRightpanel ans-panel">
+                <div class="examRightpanel ans-panel">le
                     <div class="custom-exam-ansplatemain">
                         <div class="custom-anstop">
                             <p><span>Answer Palette</span></p>
@@ -110,6 +139,53 @@
 
  
 <style> 
+/* shiv start ans left */
+.answer-main-sec {
+    background: #fff;
+    padding: 20px;border-radius: 20px;
+}
+.anshead-top {display: flex;align-items: center}
+
+.anshead-top .btn.questionbtn {
+    background: #fff !important;
+}
+.anshead-top > span {flex-grow: 1;font-size: 16px;
+    font-weight: 800;
+    color: #039855;}
+    .anshead-top > label {
+    padding-left: 20px;
+}
+.anshead-titletext p {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.explanation-sec {
+    height: 300px;
+    overflow-y: scroll;
+    padding-left: 135px;
+}
+.explanationdeteail > span {
+    font-size: 16px;
+    font-weight: 800;
+    color: #363c4f;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+.explanationdeteail > p {
+    margin: 0px; font-size: 16px;
+    font-weight: 500;
+}
+.explanation-bottom span {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #363c4f;
+}
+.explanation-bottom {
+    padding: 25px 0px;
+}
+
 /* shiv start css */
 .custom-anstop > p {
     margin: 0;
