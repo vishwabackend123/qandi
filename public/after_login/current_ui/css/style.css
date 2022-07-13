@@ -2023,23 +2023,28 @@ ul.proficiency-level-lists li {
     background-color: rgba(255, 255, 255, 0.3);
     display: inline-flex;
     max-width: 215px;
-    height: 60px;
+    height: 48px;
     justify-content: center;
     align-items: center;
     font-weight: 500;
     color: #363c4f;
     margin-top: 20px;
     width: 100%;
-    margin-right: 18px;
+    margin-right: 15.3px;
     font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
 }
 
 ul.proficiency-level-lists li span b {
-    width:6px;
+    width:4px;
     background-color: #cccccca1;
-    height: 12px;
+    height: 8px;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+ul.proficiency-level-lists li span.mr-3 {
+    margin-right: 16px;
 }
 
 ul.proficiency-level-lists li span b.rate-level-active {
@@ -2049,8 +2054,9 @@ ul.proficiency-level-lists li span b.rate-level-active {
 ul.proficiency-level-lists li.selected-level {
     background-color: #e0f6e3;
     color: #56b663;
+    font-weight: bold;
 }
-
+ul.proficiency-level-lists li label{cursor: pointer;}
 ul.proficiency-level-lists li.selected-level span b.rate-level-active {
     background-color: #56b663;
 }
