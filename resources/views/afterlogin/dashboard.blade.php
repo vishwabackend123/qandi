@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+$user_id = isset($userData->id)?$userData->id:'';
 @endphp
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -21,8 +22,9 @@ $userData = Session::get('user_data');
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="verifiaction-link" style="display:none">
-                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="#">Resend</a></p>
+                        <div class="verifiaction-link">
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="javascript:void(0);" class="resend_email">Resend</a></p>
+                            <span class="mt-2" id="email_success"></span>
                         </div>
                     </div>
                 </div>
@@ -918,6 +920,37 @@ $userData = Session::get('user_data');
             $('.tooltipclass').removeClass('show');
         }
     });
+    $('#email_success').hide();
+        $('.resend_email').click(function() {
+            var user_id = '<?php echo $user_id; ?>';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ url('send_verfication_email') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    userId: user_id,
+                },
+                success: function(response_data) {
+                    if (response_data.status === true) {
+                        $('#email_success').css('color', 'green');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    } else {
+                        $('#email_success').css('color', 'red');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    }
+
+                },
+            });
+        });
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
