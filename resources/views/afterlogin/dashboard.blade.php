@@ -781,13 +781,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="graphDetail">
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
-                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                        <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options" style=" overflow-y: auto; height: 303%; ">
-                                                            <div class="active" onclick="show('All Test', 'all')">All Test</div>
-                                                            <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                            <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                            <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                            <div onclick="show('Live', 'Live')">Live </div>
+                                                            <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                            <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                            <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                            <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                            <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -981,6 +981,10 @@ $user_id = isset($userData->id)?$userData->id:'';
         if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
             $('.tooltipclass').hide();
             $('.tooltipclass').removeClass('show');
+        }
+        var dropdown_open =$('.customDropdown').hasClass('active');
+        if (!$(e.target).is('.markstrend') && dropdown_open === true) {
+            $('.customDropdown').removeClass('active');
         }
     });
     $('#email_success').hide();
