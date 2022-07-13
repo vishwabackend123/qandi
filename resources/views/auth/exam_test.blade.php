@@ -39,7 +39,7 @@
                             <div class="questionType">
                                 <div class="questionTypeinner">
                                     <div class="questionChoiceType">
-                                        <div class="questionChoice"><a class="singleChoice">Section A (20Q) - Single Choice</a> <a class="numericalChoice">Section B (10Q) - Numerical</a></div>
+                                        <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
                                     </div>
                                     <div class="timeCounter">
                                         Average Time:
@@ -426,24 +426,26 @@
                                 </label>
                             </p>
                         </div>
-                        <div class="text-exammid-sec">
+                        <div class="text-exammid-sec borederbot">
                             <p>Overview</p>
-                            <div class="exam-ans-sec top-first">
-                                <div class="ans1">Answered</div>
-                                <div class="ans-in-num">24</div>
-                            </div>
-                            <div class="exam-ans-sec">
-                                <div class="ans2">Unanswered</div>
-                                <div class="ans-in-num">2</div>
-                            </div>
-                            <div class="exam-ans-sec">
-                                <div class="ans3">Marked for review</div>
-                                <div class="ans-in-num">3</div>
-                            </div>
-                            <div class="exam-ans-sec">
-                                <div class="ans4">Answered &amp; marked for review</div>
-                                <div class="ans-in-num">1</div>
-                            </div>
+                            <div class="overviewtest">
+                                    <div class="exam-ans-sec top-first">
+                                        <div class="ans1">Answered</div>
+                                        <div class="ans-in-num">24</div>
+                                    </div>
+                                    <div class="exam-ans-sec">
+                                        <div class="ans2">Unanswered</div>
+                                        <div class="ans-in-num">2</div>
+                                    </div>
+                                    <div class="exam-ans-sec">
+                                        <div class="ans3">Marked for review</div>
+                                        <div class="ans-in-num">3</div>
+                                    </div>
+                                    <div class="exam-ans-sec">
+                                        <div class="ans4">Answered &amp; marked for review</div>
+                                        <div class="ans-in-num">1</div>
+                                    </div>
+                           </div>    
                         </div>
 
                         <div class="text-exambottom-sec">
@@ -518,8 +520,9 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="bck-btn">Back</div>
+                       
                     </div>
+                    <div class="bck-btn"><a href="javascript:;"> Back</a></div>
                 </div>
             </div>
         </div>
@@ -666,7 +669,7 @@
     box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
    
 }
- 
+ .borederbot{    border-bottom: 1px solid rgba(172, 185, 176, 0.14);}
 button.owl-next.disabled span{
     box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
     border: solid 1px rgb(126 128 133 / 50%) !important;
@@ -681,6 +684,10 @@ button.owl-next.disabled span{
 .examLeftpanel {
     width: calc(100% - 379px);
     height: 100vh;
+    padding-right:40px;
+}
+.examLeftpanel .tabMainblock {
+    margin-top: 0px;
 }
 .examScreentab {
     position: relative;
@@ -701,6 +708,7 @@ button.owl-next.disabled span{
     align-items: center;
     height: 44px;
 }
+.submitBtnlink:hover,.submitBtnlink:focus{color:#fff;text-decoration:none}
 .examMaincontainer {
     display: flex;
 }
@@ -709,18 +717,18 @@ button.owl-next.disabled span{
 }
 .examLeftpanel {
     width: calc(100% - 379px);
-    height: 90vh;
+    height: 89vh;
     position: relative;
 }
 .examRightpanel {
     min-width: 379px;
     max-width: 379px;
-    height: 90vh;
-    margin: 0 0 0 40px;
+    min-height: 100%;
+    /* margin: 0 0 0 40px; */
     padding: 40px 28px 10px;
     border-radius: 20px;
     box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-    background-color: #ffffff;
+    background-color: #ffffff;position:relative;
 }
 .submitBtn {
     position: absolute;
@@ -774,7 +782,7 @@ button.owl-next.disabled span{
     border-radius: 6px;
     background-color: #e0f5e3;
 }
-
+.questionChoice a:hover{text-decoration:none}
 .singleChoice {
     flex-grow: 0;
     display: flex;
@@ -891,8 +899,8 @@ button.owl-next.disabled span{
     visibility: hidden;
 }
 .fancy-radio-buttons input[type="radio"] ~ .image-bg {
-    border: 1px solid #a1a1a1;
-    border-radius: 5px;
+    border: 1px solid #cde3d0;
+    border-radius: 8px;
     display: block;
     cursor: pointer;
     width: 100%;
@@ -1003,6 +1011,7 @@ button.owl-next.disabled span{
     position: absolute;
     bottom: 0px;
     width: 100%;
+    padding-right:40px
 }
 
 
@@ -1041,16 +1050,14 @@ button#btn-ans {
 }
 
 .text-exambottom-sec {
-    padding-top: 20px;
-    border-top: 1px solid rgba(172, 185, 176, 0.14);
-    display: flex;
-    flex-flow: wrap;
-    justify-content: start;
-    height: 195px;
-    overflow-y: scroll;
+    margin-top: 20px;
+    height: 38vh;
+    overflow-y: auto;
+    margin-right: -10px;
 }
 
 button#btn-ans {
+    display:inline-block;
     background: #56b663;
     color: #fff;
     width: 28px;
@@ -1058,10 +1065,10 @@ button#btn-ans {
     font-size: 12px;
     font-weight: 800;
     padding: 0 !important;
-    margin: 0px 20px 20px 0px;
+    margin: 0px 18px 20px 0px;
     border: 1px solid #56b663;
 }
-
+button#btn-ans:nth-child(7n){margin-right:0px}
 .pink-btn {
     background: #fb7686 !important;
     border: 0px !important;
@@ -1074,20 +1081,26 @@ button#btn-ans {
     background: #fff !important;
     color: #56b663 !important;
 }
-
-.bck-btn {
-    text-align: center;
+.bck-btn  {    text-align: center;
     padding-top: 10px;
     border-top: 1px solid rgba(205, 227, 208, 0.5);
-    font-size: 14px;
-    font-weight: 800;
-    color: rgba(54, 60, 79, 0.8);
     position: absolute;
     width: 100%;
+    font-size: 14px;
+    left: 0;
+    bottom: 0px;
+    padding-bottom: 10px;background-color:#fff;    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;}
+.bck-btn a{
+    font-weight: 800;
+    color: rgba(54, 60, 79, 0.8);text-decoration:none;
 }
+.bck-btn a:hover{color:#56b663;text-decoration:none}
 .main-textexam-sec {
     position: relative;
 }
+.overviewtest{height: 20vh;
+    min-height: 186px;}
 </style>
  
 <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

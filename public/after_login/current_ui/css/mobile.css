@@ -92,10 +92,24 @@
      height: 400px;
  }
 }
+@media only screen and (max-height: 920px) {
+    .text-exambottom-sec {
+        margin-top: 20px;
+        height: 35vh;} 
+    
+}
+@media only screen and (max-height: 780px) {
+    .text-exambottom-sec {
+        height: 29vh;margin-top: 10px;
+    }
+    .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
+    .overviewtest { height: 25vh; min-height: 173px; }
+}
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 350px;
  }
+
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
