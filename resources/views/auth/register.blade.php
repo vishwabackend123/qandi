@@ -140,37 +140,22 @@
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
-                        <label class="d-block">Grade <span class="mendatfield">*</span></label>
-                        <select class="js-states">
-                            <option>Select grade</option>
-  <option value="AL">Just starting out</option>
-    <option value="AL">Completed (10+1) Syllabus</option>
-    <option value="AL">Completed (10+2) Syllabus</option>
-</select>
-<!--
+                        <label>Grade <span class="mendatfield">*</span></label>
                         <select class="form-control selectdata reqrd" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
                             <option class="we" value="3">Completed (10+2) Syllabus</option>
                         </select>
--->
                     </div>
                     <div class="col-lg-6">
                         <label>Exam <span class="mendatfield">*</span></label>
-                        <select class="js-states">
-                            <option>Exam Type</option>
-  <option value="AL">JEE</option>
-    <option value="AL">NEET</option>
-</select>
-<!--
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
 
                         </select>
--->
                     </div>
                 </div>
                 <span class="error mt-2" id="errlog_auth"></span>
@@ -185,13 +170,6 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-$(document).ready(function() {
-    $('.js-states').select2({
-    minimumResultsForSearch: -1
-});
-});
-</script>
 <script>
     var timerId = '';
     /* name input validation */
