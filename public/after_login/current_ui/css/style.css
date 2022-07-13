@@ -2649,19 +2649,11 @@ span.mendatfield {
     color: #666;
 }
 /****************************/
-.cutoff-score-bar .box {
+.cutoff-score-bar{
     position: relative;
     width: 144px;
     height: 144px;
 }
-.cutoff-score-bar .box .chart {
-position: relative;
-width: 144px;
-text-align: center;
-height: 144px;
-color: #fff;
-}
-
 .cutoff-score-bar .box .chart-1 {
 position: relative;
 width: 95px;
@@ -2669,20 +2661,13 @@ text-align: center;
 height: 95px;
 color: #fff;
 }
-.chartwrap {
+.cutoff_chart-1 {
 position: absolute;
-height: 95px;
-width: 95px;
 top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 }
-.cutoff-score-bar .box canvas {
-position: absolute;
-top: 0;
-left: 0;
-}
-  
+
 /********************* Amit End ****************************/
 
 

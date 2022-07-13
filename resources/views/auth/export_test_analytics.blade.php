@@ -266,12 +266,8 @@
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-4">
                             <div class="cutoff-score-bar">
-                                <div class="box">
-                                    <div class="cutoff_chart" data-percent="70" data-scale-color="#ffb400"></div>
-                                    <div class="chartwrap">
-                                        <div class="cutoff_chart-1" data-percent="25" data-scale-color="#ffb400"></div>
-                                    </div>
-                                </div>
+                                <div class="cutoff_chart" data-percent="70" data-scale-color="#08d5a1"></div>
+                                <div class="cutoff_chart-1" data-percent="25" data-scale-color="#7db9ff"></div>
                             </div>
                         </div>
                         <div class="col-md-5">
