@@ -1155,6 +1155,7 @@ border-color: #56b663;
     line-height: 1;
     letter-spacing: normal;
     text-align: center;
+    color: #1f1f1f;
 }
 
 .peryearPrice {
@@ -1164,6 +1165,7 @@ border-color: #56b663;
     letter-spacing: normal;
     text-align: left;
     margin-top: 25px;
+    color: #1f1f1f;
 }
 
 .peryearPrice sub {
@@ -1191,6 +1193,8 @@ border-color: #56b663;
     line-height: 2.5;
     text-align: left;
     color: #363c4f;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .testType ul li svg {
@@ -1208,8 +1212,7 @@ border-color: #56b663;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
-    line-height: 1.43;
-    border-bottom: 1px solid #56b663;
+    line-height: 1.43;text-decoration:underline;
 }
 
 .btn.btn-common-green {

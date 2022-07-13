@@ -36,6 +36,7 @@
    .week-select{
     font-size: 16px;    
     }
+    
 }
 @media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
@@ -74,8 +75,19 @@
         .boxheading.subheading {
             font-size: 17px;
         }
-    
+        .SelectPlane_text {
+            padding: 30px 0px 20px 0px;
+        }
+        .planeName{padding-bottom:20px;}
+        .testType {
+            padding-top: 40px;padding-bottom: 24px;}
+            .planType {
+                padding-top: 35px;
+            }
+            .selectPlan{padding-bottom:18px;}
+            .testType ul{padding-bottom:40px;}
 }
+
 @media only screen and (max-width: 1300px){
 
     .fullbodyBox .rightImgBox svg{width: 75px;}
