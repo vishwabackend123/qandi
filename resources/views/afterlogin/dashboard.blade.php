@@ -849,7 +849,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Strengths</div>
                         <hr>
                         <div class="instruction_text_content">
-                            Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Going great. Find your strong topics here. Stay in the lead by revision.
                         </div>
                     </div>
                 </div>
@@ -925,7 +925,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
-    $week = "W" . $i;
+    //$week = "W" . $i;
+    $monthName = date('M', mktime(0, 0, 0, $i, 10));
+    $week = $monthName;
     array_push($aWeeks, $week);
     $timestamp = strtotime( $trend['date']);
     $last_date=date("j M", $timestamp);
