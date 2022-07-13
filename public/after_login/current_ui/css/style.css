@@ -2668,6 +2668,14 @@ left: 50%;
 transform: translate(-50%,-50%);
 }
 
+.chapter_performance_card ul.topic_score_lists li {width: 100%}
+.chapter_performance_card ul.topic_score_lists {max-height: 300px;}
+.chapter_performance_card .color_labels {
+    border-bottom: 1px solid #e5eaee;
+    padding-bottom: 23px;
+    margin: 20px 0;
+}
+
 /********************* Amit End ****************************/
 
 
