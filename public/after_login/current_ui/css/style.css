@@ -3278,6 +3278,34 @@ justify-content: space-between;}
         .percentageblock a.commmongreenLink{margin-bottom:0px;font-size: 14px;
             font-weight: 600;
             line-height: 1.6;}    
+            .aeck_commontab a.nav-link{position:relative}
+           .aeck_commontab a.nav-link.qq1_2_3_4.active:after {
+                content: '';
+                width: 16px;
+                height: 20px;
+                position: absolute;
+                border-bottom: 0px solid transparent;
+                border: 7px solid transparent;
+                border-left: 0;
+                border-right: 5px solid #f5faf6;
+                bottom: -6px;
+                left: -9px;
+                transform: rotate(48deg);
+            }
+           .aeck_commontab a.nav-link.qq1_2_3_4.active:before {
+                content: '';
+                width: 16px;
+                height: 20px;
+                position: absolute;
+                border-bottom: 0px solid transparent;
+                border: 7px solid transparent;
+                border-left: 0;
+                border-right: 5px solid #f5faf6;
+                bottom: -2px;
+                right: -6px;
+                transform: rotate(124deg)
+            }
+
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
