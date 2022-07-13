@@ -1426,9 +1426,72 @@ var myChartT = new Chart(
 /**overall-timeManagementChart-End******** */
 
 
-/**Math-timeManagementChart******** */
+/**Subject-timeManagementChart******** */
 
-/**Math-timeManagementChart-End******** */
+const labels8 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
+const data8 = {
+  labels: labels8,
+  datasets: [
+    {
+      label: 'Correct Answers',
+      data: [12, 22,5,20,10,10,5,20],
+      backgroundColor:'#34d399',
+      barThickness: 32
+    },
+    {
+      label: 'Incorrect Answers',
+      data: [5, 10,15,20,30,20,8,10],
+      backgroundColor: '#f7758f',
+      barThickness: 32
+    },
+  ]
+};
+const config8 = {
+  type: 'bar',
+  data: data8,
+  options: {
+    plugins: {
+      title: {
+        display: false,
+        text: 'Chart.js Bar Chart - Stacked'
+      },
+      legend: false
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+        grid: {display: false}
+      },
+      
+      y: {
+        stacked: true
+      }
+    }
+  }
+};
+
+const DATA_COUNT8 = 7;
+const NUMBER_CFG8 = {count: DATA_COUNT8, min: -100, max: 100};
+
+const actions8 = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
+
+var myChart8 = new Chart(
+    document.getElementById('timeManagementChart2'),
+    config8
+  );
+
+/**Subject-timeManagementChart-End******** */
 
 
 </script>   
