@@ -57,7 +57,7 @@ button:focus {
 li {
     list-style-type: none;
 }
-.btn.focus, .btn:focus{box-shadow:none!important;}
+.btn.focus, .btn:focus , .btn-close:focus{box-shadow:none!important;}
 .btn.btn.btn-common-green.disabled, .btn.btn.btn-common-green:disabled{opacity:1;background-color: #a9e1b0;border: solid 1px #a9e1b0;}
 /* common-scroll */
 ::-webkit-scrollbar {
@@ -2647,6 +2647,33 @@ span.mendatfield {
     font-size: 16px;
     font-weight: 500;
     color: #666;
+}
+/****************************/
+.cutoff-score-bar{
+    position: relative;
+    width: 144px;
+    height: 144px;
+}
+.cutoff-score-bar .box .chart-1 {
+position: relative;
+width: 95px;
+text-align: center;
+height: 95px;
+color: #fff;
+}
+.cutoff_chart-1 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.chapter_performance_card ul.topic_score_lists li {width: 100%}
+.chapter_performance_card ul.topic_score_lists {max-height: 300px;}
+.chapter_performance_card .color_labels {
+    border-bottom: 1px solid #e5eaee;
+    padding-bottom: 23px;
+    margin: 20px 0;
 }
 
 /********************* Amit End ****************************/

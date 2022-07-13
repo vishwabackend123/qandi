@@ -304,29 +304,29 @@
                                                                 </div> 
                                                             </div>
                                                             <div class="righttabBlock">
-                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
+                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab1" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day-tab" data-bs-toggle="pill" data-bs-target="#pills-Day" type="button" role="tab" aria-controls="pills-Day" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day1-tab" data-bs-toggle="pill" data-bs-target="#pills-Day1" type="button" role="tab" aria-controls="pills-Day1" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week-tab" data-bs-toggle="pill" data-bs-target="#pills-Week" type="button" role="tab" aria-controls="pills-Week" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week1-tab" data-bs-toggle="pill" data-bs-target="#pills-Week1" type="button" role="tab" aria-controls="pills-Week1" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month-tab" data-bs-toggle="pill" data-bs-target="#pills-Month" type="button" role="tab" aria-controls="pills-Month" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month1-tab" data-bs-toggle="pill" data-bs-target="#pills-Month1" type="button" role="tab" aria-controls="pills-Month1" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
                                                             
                                                             <div>
                                                                 <canvas id="timeManagementChart"></canvas>
                                                             </div>    
 
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
-                                                        <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
+                                                        <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">Week</div>
+                                                        <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">Month</div>
                                                     </div>       
                                                 </div>
                                             </div>
@@ -434,7 +434,7 @@
                                  <div class="overalltop">    
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="commonWhiteBox">
+                                            <div class="commonWhiteBox h-auto">
                                                     <h3 class="boxheading d-flex align-items-center mb-5">Progress
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -452,7 +452,174 @@
                                                     <canvas id="mathChart"></canvas>
                                                 </div>
                                             </div>
+                                            <div class="commonWhiteBox chapter_performance_card" style="margin-top:20px;">
+                                                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                                    <h3 class="boxheading d-flex align-items-center mb-0">Chapter Performance
+                                                        <span class="tooltipmain">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
+                                                                </g>
+                                                            </svg>
+                                                            <p class="tooltipclass">
+                                                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                            </p>
+                                                        </span>
+                                                    </h3>
+                                                    <div class="mock_inst_text_mock_test">
+                                                        <a href="javascript:void(0)" class="text-decoration-none">Expand <i class="fa fa-angle-right" style="margin-left:8px" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between color_labels">
+                                                    <span><small></small> Correct answer</span>
+                                                    <span><small></small> Incorrect answer</span>
+                                                    <span><small></small> Unattempted questions</span>
+                                                </div>
+                                                <ul class="topic_score_lists">
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Permutations and Combinations</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <!--------------->
+                                                            <div class="noofquestions-block">
+                                                                <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                                <div class="color_labels">
+                                                                    <span class="d-block"><small></small> Correct <b>6</b></span>
+                                                                    <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>1</b></span>
+                                                                    <span class="d-block"><small></small> Not Attempted <b>1</b></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Permutations and Combinations</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Permutations and Combinations</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Permutations and Combinations</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="topic_score_bar">
+                                                            <h4>Circular Motion And Gravitation</h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
+                                        
                                         <div class="col-md-6">
                                         <div class="commonWhiteBox">
                                             <div class="subjectperform">
@@ -603,27 +770,27 @@
                                                             <div class="righttabBlock">
                                                                 <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day-tab" data-bs-toggle="pill" data-bs-target="#pills-Day" type="button" role="tab" aria-controls="pills-Day" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day3-tab" data-bs-toggle="pill" data-bs-target="#pills-Day3" type="button" role="tab" aria-controls="pills-Day3" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week-tab" data-bs-toggle="pill" data-bs-target="#pills-Week" type="button" role="tab" aria-controls="pills-Week" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week3-tab" data-bs-toggle="pill" data-bs-target="#pills-Week3" type="button" role="tab" aria-controls="pills-Week3" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month-tab" data-bs-toggle="pill" data-bs-target="#pills-Month" type="button" role="tab" aria-controls="pills-Month" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month3-tab" data-bs-toggle="pill" data-bs-target="#pills-Month3" type="button" role="tab" aria-controls="pills-Month3" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
                                                             
                                                             <div>
                                                                 <canvas id="timeManagementChart2"></canvas>
                                                             </div>    
 
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
-                                                        <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
+                                                        <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">Week</div>
+                                                        <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">Month</div>
                                                     </div>       
                                                 </div>
                                             </div>
@@ -680,27 +847,27 @@
                                                                 </div> 
                                                             </div>
                                                             <div class="righttabBlock">
-                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab2" role="tablist">
+                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab4" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day2-tab" data-bs-toggle="pill" data-bs-target="#pills-Day2" type="button" role="tab" aria-controls="pills-Day2" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day4-tab" data-bs-toggle="pill" data-bs-target="#pills-Day4" type="button" role="tab" aria-controls="pills-Day4" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week2-tab" data-bs-toggle="pill" data-bs-target="#pills-Week2" type="button" role="tab" aria-controls="pills-Week2" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week4-tab" data-bs-toggle="pill" data-bs-target="#pills-Week4" type="button" role="tab" aria-controls="pills-Week4" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month2-tab" data-bs-toggle="pill" data-bs-target="#pills-Month2" type="button" role="tab" aria-controls="pills-Month2" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month4-tab" data-bs-toggle="pill" data-bs-target="#pills-Month4" type="button" role="tab" aria-controls="pills-Month4" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent2">
-                                                        <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
                                                          <div class="chartspent">
                                                             <canvas id="mark_trend2"></canvas>
                                                         </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">Week2</div>
-                                                        <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">Month2</div>
+                                                        <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">Week2</div>
+                                                        <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">Month2</div>
                                                     </div>       
                                                 </div>
                                             </div>
@@ -1426,9 +1593,72 @@ var myChartT = new Chart(
 /**overall-timeManagementChart-End******** */
 
 
-/**Math-timeManagementChart******** */
+/**Subject-timeManagementChart******** */
 
-/**Math-timeManagementChart-End******** */
+const labels8 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
+const data8 = {
+  labels: labels8,
+  datasets: [
+    {
+      label: 'Correct Answers',
+      data: [12, 22,5,20,10,10,5,20],
+      backgroundColor:'#34d399',
+      barThickness: 32
+    },
+    {
+      label: 'Incorrect Answers',
+      data: [5, 10,15,20,30,20,8,10],
+      backgroundColor: '#f7758f',
+      barThickness: 32
+    },
+  ]
+};
+const config8 = {
+  type: 'bar',
+  data: data8,
+  options: {
+    plugins: {
+      title: {
+        display: false,
+        text: 'Chart.js Bar Chart - Stacked'
+      },
+      legend: false
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+        grid: {display: false}
+      },
+      
+      y: {
+        stacked: true
+      }
+    }
+  }
+};
+
+const DATA_COUNT8 = 7;
+const NUMBER_CFG8 = {count: DATA_COUNT8, min: -100, max: 100};
+
+const actions8 = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
+
+var myChart8 = new Chart(
+    document.getElementById('timeManagementChart2'),
+    config8
+  );
+
+/**Subject-timeManagementChart-End******** */
 
 
 </script>   

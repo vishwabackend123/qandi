@@ -262,18 +262,19 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash test_myscrore_card">
                     <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
-                    <p class="paratext" style="margin-bottom:20px;">This will compare your test scores with last year 2018 cut-off</p>
+                    <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year 2018 cut-off</p>
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-md-5">
-                            <div class="">
-                                
+                        <div class="col-md-4">
+                            <div class="cutoff-score-bar">
+                                <div class="cutoff_chart" data-percent="70" data-scale-color="#08d5a1"></div>
+                                <div class="cutoff_chart-1" data-percent="25" data-scale-color="#7db9ff"></div>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="color_labels d-flex justify-content-between">
-                                <span>Correct <b><small></small>60</b></span>
-                                <span>Incorrect <b><small></small>20</b></span>
-                                <span>Not Attempted <b><small></small>20</b></span>
+                                <span>Cut off score <b><small style="background-color: #7db9ff;"></small>30</b></span>
+                                <span>Your Score <b><small style="background-color: #08d5a1;"></small>80</b></span>
+                                <span>Total Score <b><small style="background-color: #f2f4f7;"></small>200</b></span>
                             </div>
                         </div>
                     </div>
@@ -487,6 +488,7 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
 <script> 
 /************* subject *******/
 const circuference = 260;
@@ -730,6 +732,27 @@ const config9 = {
 
 const myChart9 = new Chart("progressChart", config9);
 
+/*********** Cut-off’s Progress bar *****************/
+$(function() {
+  $('.cutoff_chart').easyPieChart({
+    size: 144,
+    barColor: "#08d5a1",
+    scaleLength: 0,
+    lineWidth: 15,
+    trackColor: "#f2f4f7",
+    lineCap: "round",
+    animate: 2000,
+  });
+  $('.cutoff_chart-1').easyPieChart({
+    size: 95,
+    barColor: "#7db9ff",
+    scaleLength: 0,
+    lineWidth: 15,
+    trackColor: "#fff",
+    lineCap: "round",
+    animate: 2000,
+  });
+});
 </script>  
 
 @endsection
