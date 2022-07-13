@@ -16,16 +16,18 @@
     <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
-    
-    <!------   current css ------>
+
+    <!-- ----   current css ---- -->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
-    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
+    <!-- ----   current css ---- -->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.css')}}">
@@ -39,10 +41,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
     <!-- <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 <script  src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY></script>
+    <!-----Current js-------->
+    <!------calander-js------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
+
+
     <script src="https://d3js.org/d3.v4.js"></script>
     <script  src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
@@ -57,16 +66,22 @@
 </script>
     <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
  -->
+<<<<<<< HEAD
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
     <script>
+=======
+    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <!--  <script>
+>>>>>>> 507fa0073fad178d22cd9b6b35d0a88e3186e08b
         $(window).on('load', function() {
             if ($("#welcomeModal").length > 0) {
                 $('#welcomeModal').modal('show');
             }
         });
-    </script>
-    <script async src=https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY></script>
+    </script> -->
+
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -80,64 +95,15 @@
 
 
         gtag('config', 'G-5M3C3F04YY');
-
-
-        /* no back prevention code */
-        /*  $(document).ready(function() {
-             window.history.pushState(null, "", window.location.href);
-             window.onpopstate = function() {
-                 window.history.pushState(null, "", window.location.href);
-             };
-         }); */
-        /* no back prevention code */
     </script>
 
 
 </head>
 
-<style>
-    .star-ratings-css {
-        unicode-bidi: bidi-override;
-        color: #c5c5c5;
-        font-size: 22px;
-        margin: 0 auto;
-        position: relative;
-        padding: 0;
-        /* text-shadow: 0px 1px 0 #a2a2a2; */
-    }
-
-    .star-ratings-css-top {
-        color: #ffdc34;
-        padding: 0;
-        position: absolute;
-        z-index: 1;
-        display: block;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-    }
-
-    .star-ratings-css-bottom {
-        padding: 0;
-        display: block;
-        z-index: 0;
-    }
-
-    html {
-        user-select: none;
-    }
-
-    p:empty {
-        display: none;
-    }
-</style>
-
-<body class="login-body-bg" id="main-body">
 
 
+<body class="bg-content" id="main-body">
     @yield('content')
-
-
 </body>
 
 </html>
