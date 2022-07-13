@@ -262,11 +262,16 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash test_myscrore_card">
                     <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
-                    <p class="paratext" style="margin-bottom:20px;">This will compare your test scores with last year 2018 cut-off</p>
+                    <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year 2018 cut-off</p>
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-5">
-                            <div class="">
-                                
+                            <div class="cutoff-score-bar">
+                                <div class="box">
+                                    <div class="chart" data-percent="70" data-scale-color="#ffb400"></div>
+                                    <div class="chartwrap">
+                                        <div class="chart-1" data-percent="25" data-scale-color="#ffb400"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -487,6 +492,7 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
 <script> 
 /************* subject *******/
 const circuference = 260;
@@ -730,6 +736,29 @@ const config9 = {
 
 const myChart9 = new Chart("progressChart", config9);
 
+/****************************/
+$(function() {
+  $('.chart').easyPieChart({
+    size: 144,
+    barColor: "#08d5a1",
+    scaleLength: 0,
+    lineWidth: 15,
+    trackColor: "#f2f4f7",
+    lineCap: "round",
+    animate: 2000,
+  });
+  $('.chart-1').easyPieChart({
+    size: 95,
+    barColor: "#7db9ff",
+    scaleLength: 0,
+    lineWidth: 15,
+    trackColor: "#fff",
+    lineCap: "round",
+    animate: 2000,
+    radius: "10",
+
+  });
+});
 </script>  
 
 @endsection
