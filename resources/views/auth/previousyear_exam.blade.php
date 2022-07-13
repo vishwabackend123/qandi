@@ -132,23 +132,23 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                     </div>
                                  </div>
@@ -167,23 +167,23 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                     </div>
                                  </div>
@@ -202,23 +202,23 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                     </div>
                                  </div>
@@ -261,33 +261,33 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Slot</div>
-                                          <div class="mock_test_q_d_m_s_text2">Morning</div>
+                                          <div class="mock_test_qdms_text1">Slot</div>
+                                          <div class="mock_test_qdms_text2">Morning</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Score</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
+                                          <div class="mock_test_qdms_text1">Score</div>
+                                          <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
                                        </div>
                                     </div>
                                  </div>
@@ -312,33 +312,33 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Slot</div>
-                                          <div class="mock_test_q_d_m_s_text2">Morning</div>
+                                          <div class="mock_test_qdms_text1">Slot</div>
+                                          <div class="mock_test_qdms_text2">Morning</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Score</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
+                                          <div class="mock_test_qdms_text1">Score</div>
+                                          <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
                                        </div>
                                     </div>
                                  </div>
@@ -363,33 +363,33 @@
                                  <div class="accordion-body ps-0 pe-0">
                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                        <div class="mock_test_ques_content22">
-                                          <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                          <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                          <div class="mock_test_qdms_text2">90 MCQ</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_dure_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text1">Duration</div>
+                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                          <div class="mock_test_q_d_m_s_text2">300</div>
+                                          <div class="mock_test_qdms_text1">Marks</div>
+                                          <div class="mock_test_qdms_text2">300</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                          <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                                          <div class="mock_test_qdms_text1">Subject</div>
+                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_marks_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Slot</div>
-                                          <div class="mock_test_q_d_m_s_text2">Morning</div>
+                                          <div class="mock_test_qdms_text1">Slot</div>
+                                          <div class="mock_test_qdms_text2">Morning</div>
                                        </div>
                                        <div class="live_exam_diveder_div"></div>
                                        <div class="mock_test_sub_content22">
-                                          <div class="mock_test_q_d_m_s_text1">Score</div>
-                                          <div class="mock_test_q_d_m_s_text2"><span>102</span>/<span>300</span></div>
+                                          <div class="mock_test_qdms_text1">Score</div>
+                                          <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
                                        </div>
                                     </div>
                                  </div>
