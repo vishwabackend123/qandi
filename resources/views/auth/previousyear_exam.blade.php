@@ -403,18 +403,14 @@
                                  </div>
                               </div>
                            </div> -->
-
-
-
-
-                           <div class="accordion mt-4 pt-1" id="accordionExample">
+                           <div class="accordion mt-4 pt-1" id="accordionExampleTwo">
                               <div class="allscrollbar">
                                  <div class="accordion-item">
                                     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                        <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                        <h3 class="m-0">18 April 2021</h3>
-                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingOne">
-                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0 view_detail_text_colleps">View details</h4>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingOneOne">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseOneOne" aria-expanded="true" aria-controls="collapseOneOne" class="m-0 view_detail_text_colleps">View details</h4>
                                           <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -424,7 +420,7 @@
                                           <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
                                        </div>
                                     </div>
-                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div id="collapseOneOne" class="accordion-collapse collapse" aria-labelledby="headingOneOne" data-bs-parent="#accordionExampleTwo">
                                        <div class="accordion-body ps-0 pe-0">
                                           <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                              <div class="mock_test_ques_content22">
@@ -465,8 +461,8 @@
                                  <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                        <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                        <h3 class="m-0">18 April 2021</h3>
-                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwo">
-                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0 view_detail_text_colleps">View details</h4>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwoTwo">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo" aria-expanded="true" aria-controls="collapseTwoTwo" class="m-0 view_detail_text_colleps">View details</h4>
                                           <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -476,7 +472,7 @@
                                           <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
                                        </div>
                                     </div>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div id="collapseTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo" data-bs-parent="#accordionExampleTwo">
                                        <div class="accordion-body ps-0 pe-0">
                                           <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                              <div class="mock_test_ques_content22">
@@ -517,8 +513,8 @@
                               <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                        <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                        <h3 class="m-0">18 April 2021</h3>
-                                    <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingThree">
-                                       <h4 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="m-0 view_detail_text_colleps">View details</h4>
+                                    <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingThreeThree">
+                                       <h4 data-bs-toggle="collapse" data-bs-target="#collapseThreeThree" aria-expanded="true" aria-controls="collapseThreeThree" class="m-0 view_detail_text_colleps">View details</h4>
                                        <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -528,7 +524,7 @@
                                        <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
                                     </div>
                                  </div>
-                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                 <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree" data-bs-parent="#accordionExampleTwo">
                                     <div class="accordion-body ps-0 pe-0">
                                        <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                           <div class="mock_test_ques_content22">
