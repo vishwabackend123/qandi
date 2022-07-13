@@ -764,6 +764,7 @@ padding: 32px !important;
      font-size: 14px;
   font-weight: 800;
     color: #56b663;
+    cursor: pointer;
 }
 .test-table .accordion-header{
 flex-basis: 245px;   
