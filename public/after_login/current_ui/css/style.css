@@ -2628,8 +2628,21 @@ span.mendatfield {
     padding-right: 34px;
   
 }
-.efficiency_time_taken{ border-left: 1px solid #e5eaee;height: 84px;  padding-left: 44px;
-   }
+.efficiency_time_taken{ border-left: 1px solid #e5eaee;height: 84px;  padding-left: 44px; }
+.proscore {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1f1f1f;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+}
+.proscore span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+}
 
 /********************* Amit End ****************************/
 
