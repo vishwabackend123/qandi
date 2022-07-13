@@ -4238,7 +4238,7 @@ padding: 11px 20px!important;
 {
 
 }
-.mock_test_q_d_m_s_text1
+.mock_test_qdms_text1
 {
     font-size: 14px;
     font-weight: 500;
@@ -4246,7 +4246,7 @@ padding: 11px 20px!important;
     letter-spacing: normal;
     color: #363c4f;
 }
-.mock_test_q_d_m_s_text2
+.mock_test_qdms_text2
 {
     font-size: 16px;
     font-weight: 800;
@@ -4382,6 +4382,14 @@ padding: 11px 20px!important;
     margin-bottom: 0px;
     margin-left: 4px;
 
+}
+
+
+
+/* *******  Extra css  ******** */
+.Get-otp button {
+    height: 44px!important;
+    width: 360px!important;
 }
 
 /* **********start live   ********** */
