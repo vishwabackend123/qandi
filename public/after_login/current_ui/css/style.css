@@ -4694,6 +4694,22 @@ background: #3e8a44;
     letter-spacing: normal;
     padding: 40px 0px 40px 15px;
 }
+.dashboad_mqmatrix_text_back_to_dashboard {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    padding: 0px 0px 40px 7px;
+}
+.dashboad_mqmatrix_text_back_to_dashboard a
+{
+    color: #56b663;
+    text-decoration: none;
+}
+.dashboad_mqmatrix_text_back_to_dashboard span
+{
+    padding-right: 8px;
+}
 .aeck_text_back_to_analytics span
 {
     padding-right: 8px;
