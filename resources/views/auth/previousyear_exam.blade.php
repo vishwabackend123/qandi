@@ -94,7 +94,7 @@
                      <div class="tablist">
                         <ul class="nav nav-tabs" role="tablist">
                            <li class="nav-item pe-5 me-2">
-                              <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test">Mock Test</a>
+                              <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test">Previous Year Exam</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted">Attempted</a>
@@ -119,111 +119,119 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
-                                 <h2 class="m-0">JEE Main - Full Syllabus</h2>
-                                 <h3 class="m-0 d-flex justify-content-center">2018</h3>
-                                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
-                                    <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="true" aria-controls="collapseTwo1" class="m-0 view_detail_text_colleps2">View details</h4>
-                                    <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                           <div class="accordion mt-4 pt-1" id="accordionExample">
+                              <div class="allscrollbar">
+                                 <div class="accordion-item">
+                                    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                       <h2 class="m-0">JEE Main - Full Syllabus</h2>
+                                       <h3 class="m-0 d-flex justify-content-center">2022</h3>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingOne">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0 view_detail_text_colleps2">View details</h4>
+                                          <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                       </div>
+                                    </div>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                       <div class="accordion-body ps-0 pe-0">
+                                          <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                             <div class="mock_test_ques_content22">
+                                                <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text2">90 MCQ</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_dure_content22">
+                                                <div class="mock_test_qdms_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_marks_content22">
+                                                <div class="mock_test_qdms_text1">Marks</div>
+                                                <div class="mock_test_qdms_text2">300</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Subject</div>
+                                                <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="accordion-item pt-4">
+                                    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                       <h2 class="m-0">JEE Main - Full Syllabus</h2>
+                                       <h3 class="m-0 d-flex justify-content-center">2022</h3>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwo">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0 view_detail_text_colleps2">View details</h4>
+
+                                          <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                       </div>
+                                    </div>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                       <div class="accordion-body ps-0 pe-0">
+                                          <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                             <div class="mock_test_ques_content22">
+                                                <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text2">90 MCQ</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_dure_content22">
+                                                <div class="mock_test_qdms_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_marks_content22">
+                                                <div class="mock_test_qdms_text1">Marks</div>
+                                                <div class="mock_test_qdms_text2">300</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Subject</div>
+                                                <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
-                              <div id="collapseTwo1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                 <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
-                                       <div class="mock_test_ques_content22">
-                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
-                                          <div class="mock_test_qdms_text2">90 MCQ</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_dure_content22">
-                                          <div class="mock_test_qdms_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_marks_content22">
-                                          <div class="mock_test_qdms_text1">Marks</div>
-                                          <div class="mock_test_qdms_text2">300</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_sub_content22">
-                                          <div class="mock_test_qdms_text1">Subject</div>
-                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                              <div class="accordion-item pt-4">
+                                 <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                    <h2 class="m-0">JEE Main - Full Syllabus</h2>
+                                    <h3 class="m-0 d-flex justify-content-center">2022</h3>
+                                    <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingThree">
+                                       <h4 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="m-0 view_detail_text_colleps2">View details</h4>
+
+                                       <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                    </div>
+                                 </div>
+                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-0 pe-0">
+                                       <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                          <div class="mock_test_ques_content22">
+                                             <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                             <div class="mock_test_qdms_text2">90 MCQ</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_dure_content22">
+                                             <div class="mock_test_qdms_text1">Duration</div>
+                                             <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_marks_content22">
+                                             <div class="mock_test_qdms_text1">Marks</div>
+                                             <div class="mock_test_qdms_text2">300</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_sub_content22">
+                                             <div class="mock_test_qdms_text1">Subject</div>
+                                             <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                           <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
-                                 <h2 class="m-0">JEE Main - Full Syllabus</h2>
-                                 <h3 class="m-0 d-flex justify-content-center">2019</h3>
-                                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
-                                    <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2" class="m-0 view_detail_text_colleps2">View details</h4>
-                                    <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
-                                 </div>
-                              </div>
-                              <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                 <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
-                                       <div class="mock_test_ques_content22">
-                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
-                                          <div class="mock_test_qdms_text2">90 MCQ</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_dure_content22">
-                                          <div class="mock_test_qdms_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_marks_content22">
-                                          <div class="mock_test_qdms_text1">Marks</div>
-                                          <div class="mock_test_qdms_text2">300</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_sub_content22">
-                                          <div class="mock_test_qdms_text1">Subject</div>
-                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
-                                 <h2 class="m-0">JEE Main - Full Syllabus</h2>
-                                 <h3 class="m-0 d-flex justify-content-center">2022</h3>
-                                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
-                                    <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="true" aria-controls="collapseTwo3" class="m-0 view_detail_text_colleps2">View details</h4>
-                                    <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
-                                 </div>
-                              </div>
-                              <div id="collapseTwo3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                 <div class="accordion-body ps-0 pe-0">
-                                    <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
-                                       <div class="mock_test_ques_content22">
-                                          <div class="mock_test_qdms_text1">No. Of Questions</div>
-                                          <div class="mock_test_qdms_text2">90 MCQ</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_dure_content22">
-                                          <div class="mock_test_qdms_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_marks_content22">
-                                          <div class="mock_test_qdms_text1">Marks</div>
-                                          <div class="mock_test_qdms_text2">300</div>
-                                       </div>
-                                       <div class="live_exam_diveder_div"></div>
-                                       <div class="mock_test_sub_content22">
-                                          <div class="mock_test_qdms_text1">Subject</div>
-                                          <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+
                         </div>
                         <div id="attempted" class=" tab-pane">
                            <div class="jee_main_text_take_test__btn previous_exam_head_with_drop">
@@ -242,7 +250,7 @@
                               </div>
                            </div>
 
-                           <div class="accordion-item pt-4">
+                           <!-- <div class="accordion-item pt-4">
                               <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                  <h2 class="m-0">JEE Main - Full Syllabus</h2>
                                  <h3 class="m-0">17 April 2021</h3>
@@ -343,8 +351,8 @@
                                     </div>
                                  </div>
                               </div>
-                           </div>
-                           <div class="accordion-item pt-4">
+                           </div> -->
+                           <!-- <div class="accordion-item pt-4">
                               <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                  <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                  <h3 class="m-0">18 April 2021</h3>
@@ -394,7 +402,173 @@
                                     </div>
                                  </div>
                               </div>
+                           </div> -->
+
+
+
+
+                           <div class="accordion mt-4 pt-1" id="accordionExample">
+                              <div class="allscrollbar">
+                                 <div class="accordion-item">
+                                    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                       <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
+                                       <h3 class="m-0">18 April 2021</h3>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingOne">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0 view_detail_text_colleps">View details</h4>
+                                          <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                             </svg>
+                                          </div>
+                                          <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
+                                       </div>
+                                    </div>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                       <div class="accordion-body ps-0 pe-0">
+                                          <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                             <div class="mock_test_ques_content22">
+                                                <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text2">90 MCQ</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_dure_content22">
+                                                <div class="mock_test_qdms_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Marks</div>
+                                                <div class="mock_test_qdms_text2">300</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Subject</div>
+                                                <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_marks_content22">
+                                                <div class="mock_test_qdms_text1">Slot</div>
+                                                <div class="mock_test_qdms_text2">Morning</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Score</div>
+                                                <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="accordion-item pt-4">
+                                 <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                       <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
+                                       <h3 class="m-0">18 April 2021</h3>
+                                       <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwo">
+                                          <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0 view_detail_text_colleps">View details</h4>
+                                          <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                             </svg>
+                                          </div>
+                                          <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
+                                       </div>
+                                    </div>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                       <div class="accordion-body ps-0 pe-0">
+                                          <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                             <div class="mock_test_ques_content22">
+                                                <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text2">90 MCQ</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_dure_content22">
+                                                <div class="mock_test_qdms_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Marks</div>
+                                                <div class="mock_test_qdms_text2">300</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Subject</div>
+                                                <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_marks_content22">
+                                                <div class="mock_test_qdms_text1">Slot</div>
+                                                <div class="mock_test_qdms_text2">Morning</div>
+                                             </div>
+                                             <div class="live_exam_diveder_div"></div>
+                                             <div class="mock_test_sub_content22">
+                                                <div class="mock_test_qdms_text1">Score</div>
+                                                <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item pt-4">
+                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                       <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
+                                       <h3 class="m-0">18 April 2021</h3>
+                                    <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingThree">
+                                       <h4 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="m-0 view_detail_text_colleps">View details</h4>
+                                       <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                             </svg>
+                                          </div>
+                                       <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Review exam</button>
+                                    </div>
+                                 </div>
+                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-0 pe-0">
+                                       <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
+                                          <div class="mock_test_ques_content22">
+                                             <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                             <div class="mock_test_qdms_text2">90 MCQ</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_dure_content22">
+                                             <div class="mock_test_qdms_text1">Duration</div>
+                                             <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_sub_content22">
+                                             <div class="mock_test_qdms_text1">Marks</div>
+                                             <div class="mock_test_qdms_text2">300</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_sub_content22">
+                                             <div class="mock_test_qdms_text1">Subject</div>
+                                             <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_marks_content22">
+                                             <div class="mock_test_qdms_text1">Slot</div>
+                                             <div class="mock_test_qdms_text2">Morning</div>
+                                          </div>
+                                          <div class="live_exam_diveder_div"></div>
+                                          <div class="mock_test_sub_content22">
+                                             <div class="mock_test_qdms_text1">Score</div>
+                                             <div class="mock_test_qdms_text2"><span>102</span>/<span>300</span></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
+
+
+
+
                         </div>
                      </div>
                   </div>
@@ -405,10 +579,10 @@
    </section>
    </div>
 </body>
-   <script>
-      let dropdown = document.querySelector(".customDropdown")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active")
-        }
-    </script>
+<script>
+   let dropdown = document.querySelector(".customDropdown")
+   dropdown.onclick = function() {
+      dropdown.classList.toggle("active")
+   }
+</script>
 @endsection
