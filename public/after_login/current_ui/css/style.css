@@ -3184,7 +3184,7 @@ padding-top: 30px;
 height: auto;}
 .modal-header1{display:flex;justify-content:end;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-#strengthmodal .modal-dialog{max-width:600px;}
+#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:600px;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
@@ -3305,7 +3305,7 @@ justify-content: space-between;}
                 right: -6px;
                 transform: rotate(124deg)
             }
-
+.blackcolor{color: #1f1f1f    ;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
