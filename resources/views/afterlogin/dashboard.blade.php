@@ -360,13 +360,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor1">
-                                            <div class="myqinner">
-                                                <h6>Q1</h6>
-                                                <h5>Strengths</h5>
-                                                <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
-                                            </div>
-                                            <div class="myqbottomSec">
-                                                <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                            <a href="#strengthmodal" data-bs-toggle="modal" data-bs-target="#strengthmodal">
+                                                <div class="myqinner">
+                                                    <h6>Q1</h6>
+                                                    <h5>Strengths</h5>
+                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
+                                                </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                                <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -377,19 +379,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor2">
-                                            <div class="myqinner">
-                                                <h6>Q2</h6>
-                                                <h5>Needs focus</h5>
-                                                <p>Give a little attention to these topics and take another step towards perfection. </p>
-                                            </div>
-                                            <div class="myqbottomSec">
-                                                <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="#needsfocusmodal" data-bs-toggle="modal" data-bs-target="#needsfocusmodal">
+                                                <div class="myqinner">
+                                                    <h6>Q2</h6>
+                                                    <h5>Needs focus</h5>
+                                                    <p>Give a little attention to these topics and take another step towards perfection. </p>
+                                                </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                                <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -401,19 +405,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor3 mb-0">
-                                            <div class="myqinner">
-                                                <h6>Q3</h6>
-                                                <h5>Hopeful </h5>
-                                                <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
-                                            </div>
-                                            <div class="myqbottomSec">
-                                                <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                            <a href="#hopefulmodal" data-bs-toggle="modal" data-bs-target="#hopefulmodal">
+                                                <div class="myqinner">
+                                                    <h6>Q3</h6>
+                                                    <h5>Hopeful </h5>
+                                                    <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
+                                                </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                                <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -424,19 +430,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="myqmatPannel myqcolor4  mb-0">
-                                            <div class="myqinner">
-                                                <h6>Q4</h6>
-                                                <h5>Weak </h5>
-                                                <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
-                                            </div>
-                                            <div class="myqbottomSec">
-                                                <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                            <a href="#weakmodal" data-bs-toggle="modal" data-bs-target="#weakmodal">
+                                                <div class="myqinner">
+                                                    <h6>Q4</h6>
+                                                    <h5>Weak </h5>
+                                                    <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
+                                                </div>
+                                            </a>
+                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                                <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
                                                         @else
@@ -447,8 +455,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
                                                     </span>
-                                                </a>
-                                            </div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -841,6 +849,63 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <hr>
                         <div class="instruction_text_content">
                             Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="needsfocusmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q2</div>
+                        <div class="intraction_text_strength">Needs focus</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Give a little attention to these topics and take another step towards perfection. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hopefulmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q3</div>
+                        <div class="intraction_text_strength">Hopeful</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Topics that are hurdles in your journey. Do not save them for the last.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="weakmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q4</div>
+                        <div class="intraction_text_strength">Weak</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                            Find your weak topics here. Work hard to move these topics to other quadrants.
                         </div>
                     </div>
                 </div>
