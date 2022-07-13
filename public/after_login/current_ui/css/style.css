@@ -335,6 +335,7 @@ select.form-control:not([size]):not([multiple]) {
     padding: 10px 14px !important;
     font-size: 14px;
     font-weight: 400;
+    padding-right: 24px !important;
 }
 
 .select2-container--default .select2-selection--single {
@@ -382,11 +383,12 @@ select.form-control:not([size]):not([multiple]) {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: #56b663 !important;
 }
-
 .select2-search--dropdown {
     padding: 0;
 }
-
+span.select2.select2-container.select2-container--default {
+    width: 100% !important;
+}
 .signuprightpannel {
     padding: 140px 140px 20px;
     height: 100vh;

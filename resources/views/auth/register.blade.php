@@ -82,11 +82,11 @@
             <form id="studentsignup" method="post">
                 @csrf
                 <div class="custom-input pb-3">
-                    <label>Name <span class="mendatfield">*</spna></label>
+                    <label>Name</label>
                     <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
-                    <label>Mobile <span class="mendatfield">*</spna></label>
+                    <label>Mobile</label>
                     <div class="d-flex position-relative" id="mobile_num_box">
                         <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="custom-input pb-3 otp-input" style="display:none">
-                    <label>Enter OTP <span class="mendatfield">*</spna></label>
+                    <label>Enter OTP</label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
@@ -125,12 +125,12 @@
                     </div>
                 </div>
                 <div class="custom-input pb-3">
-                    <label>Email <span class="mendatfield">*</spna></label>
+                    <label>Email</label>
                     <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
                     <span class="error mt-2" id="errlog_mail"></span>
                 </div>
                 <div class="custom-input pb-3">
-                    <label>City <span class="mendatfield">*</spna></label>
+                    <label>City</label>
                     <div id="location-box" class="position-relative">
                         <select class="js-states form-control reqrd" name="location" data-use-select2="true" id="location" required>
                             <option value="">Select a city</option>
@@ -140,22 +140,37 @@
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
-                        <label>Grade <span class="mendatfield">*</spna></label>
+                        <label class="d-block">Grade</label>
+                        <select class="js-states">
+                            <option>Select grade</option>
+  <option value="AL">Just starting out</option>
+    <option value="AL">Completed (10+1) Syllabus</option>
+    <option value="AL">Completed (10+2) Syllabus</option>
+</select>
+<!--
                         <select class="form-control selectdata reqrd" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
                             <option class="we" value="3">Completed (10+2) Syllabus</option>
                         </select>
+-->
                     </div>
                     <div class="col-lg-6">
-                        <label>Exam <span class="mendatfield">*</spna></label>
+                        <label>Exam</label>
+                        <select class="js-states">
+                            <option>Exam Type</option>
+  <option value="AL">JEE</option>
+    <option value="AL">NEET</option>
+</select>
+<!--
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
 
                         </select>
+-->
                     </div>
                 </div>
                 <span class="error mt-2" id="errlog_auth"></span>
@@ -170,6 +185,13 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$(document).ready(function() {
+    $('.js-states').select2({
+    minimumResultsForSearch: -1
+});
+});
+</script>
 <script>
     var timerId = '';
     /* name input validation */
