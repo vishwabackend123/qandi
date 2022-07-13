@@ -782,7 +782,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
                                                         <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                        <div class="options">
+                                                        <div class="options" style=" overflow-y: auto; height: 303%; ">
                                                             <div class="active" onclick="show('All Test', 'all')">All Test</div>
                                                             <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                                             <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
