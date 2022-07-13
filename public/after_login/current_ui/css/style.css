@@ -335,6 +335,7 @@ select.form-control:not([size]):not([multiple]) {
     padding: 10px 14px !important;
     font-size: 14px;
     font-weight: 400;
+    padding-right: 24px !important;
 }
 
 .select2-container--default .select2-selection--single {
