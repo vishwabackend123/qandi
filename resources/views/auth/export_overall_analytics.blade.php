@@ -265,27 +265,44 @@
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
                     <div class="row graph_head_label" style="margin-bottom:42px;">
                         <div class="col-md-6">
+                            <h4>Time spent on each question</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="graph_color_label_anwser text-right">
+                                <span style="margin-right:25px;"><small style="background-color: #08d5a1;"></small>  Correct Answers</span>
+                                <span><small style="background-color: #f7758f;"></small> Incorrect answers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <canvas id="timeManagementChart"></canvas>
+                    </div>
+                </div>
+                <div class="commonWhiteBox commonblockDash">
+                    <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
+                    <div class="row graph_head_label" style="margin-bottom:42px;">
+                        <div class="col-md-6">
                             <h4>Time spent on each question <span>(in Last week)</span></h4>
                         </div>
                         <div class="col-md-6">
                             <div class="graph_color_label_anwser text-right">
-                                <span style="margin-right:25px;"><small></small> Correct Answers</span>
-                                <span><small></small> Incorrect Answers</span>
+                                <span style="margin-right:25px;"><small></small>  Class Average</span>
+                                <span><small></small> Student average</span>
                             </div>
                         </div>
                     </div>
                     <div class="progress_journey_chart">
-                        <canvas id="progressJourny_graph"></canvas>
+                        <canvas id="timeManagement_graph"></canvas>
                     </div>
                 </div>
                 <div class="commonWhiteBox commonblockDash graph_head_label">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Accuracy Percentage <span>(in Last week)</span></h3>
                     <div class="graph_color_label_anwser" style="margin:34px 0 18px;">
-                        <span style="margin-right:25px;"><small></small> Correct Answers</span>
-                        <span><small></small> Incorrect Answers</span>
+                        <span style="margin-right:25px;"><small></small> Class Average</span>
+                        <span><small></small> Student average</span>
                     </div>
                     <div class="progress_journey_chart">
-                        <canvas id="progressJourny_graph_2"></canvas>
+                        <canvas id="accuracyPercentage_graph"></canvas>
                     </div>
                 </div>
                 <div  class="visit_link text-center">
@@ -492,31 +509,31 @@ const myChart9 = new Chart("progressChart", config9);
 
 /*********** progress end ****************/
 
- /* progress Journy graph */
-const labels1 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
-const data1 = {
-    labels: labels1,
+ /* Time management graph  */
+ const data3 = {
+    labels: ['13 May', '14 May','15 May','16 May','17 May'],
     datasets: [{
             label: 'Ideal Pace',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
-            data:"[0, 10, 5, 2, 20, 30, 45]",
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data:[20,25,20,30,20],
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Your Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
-            data: "[0, 5, 15, 2, 23, 30, 25]",
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data:[10,8,10,20,15,10],
             borderwidth: 0.6,
             tension: 0.4
         }
     ]
 };
-const config1 = {
+
+const config3 = {
     type: 'line',
-    data: data1,
+    data: data3,
     options: {
         responsive: true,
         elements: {
@@ -546,72 +563,140 @@ const config1 = {
         }
     }
 };
-const myChart1 = new Chart(
-    document.getElementById('progressJourny_graph'),
-    config1
+
+const myChart3 = new Chart(
+    document.getElementById('timeManagement_graph'),
+    config3
 );
 
-const labels2 = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
-const data2 = {
-    labels: labels2,
-    datasets: [{
-            label: 'Ideal Pace',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
-            data:"[0, 10, 5, 2, 20, 30, 45]",
-            borderwidth: 0.6,
-            tension: 0.4
-        },
-        {
-            label: 'Your Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
-            data: "[0, 5, 15, 2, 23, 30, 25]",
-            borderwidth: 0.6,
-            tension: 0.4
-        }
-    ]
-};
-const config2 = {
-    type: 'line',
-    data: data2,
-    options: {
-        responsive: true,
-        elements: {
-            point: {
-                radius: 0
-            }
-        },
-        plugins: {
-            legend: {
-                display: false
-            },
-            title: {
-                display: false,
-                text: 'Chart.js Line Chart - Cubic interpolation mode'
-            },
-        },
-        interaction: {
-            intersect: false,
-        },
-        scales: {
-            x: {
-                grid: {
-                    display: false
+ /* Accuracy Percentage  graph  */
+
+ const data2 = {
+            labels: ['13 May', '14 May','15 May','16 May','17 May'],
+            datasets: [{
+                    label: 'Ideal Pace',
+                    backgroundColor: '#56b663',
+                    borderColor: '#56b663',
+                    data:[20,30,10,20,50],
+                    borderwidth: 0.6,
+                    tension: 0.4
+                },
+                {
+                    label: 'Your Pace',
+                    backgroundColor: '#7db9ff',
+                    borderColor: '#7db9ff',
+                    data:[0,60,30,40,50],
+                    borderwidth: 0.6,
+                    tension: 0.4
+                }
+            ]
+        };
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+
                 }
             }
+        };
 
-        }
-    }
+        const myChart2 = new Chart(
+            document.getElementById('accuracyPercentage_graph'),
+            config2
+        );
+
+
+/************ Stacked Bar Chart start *********/
+const labelsT = ['13 May','14 May','15 May','16 May','17 May','18 May','19 May','20 May'];
+const dataT = {
+  labels: labelsT,
+  datasets: [
+    {
+      label: 'Correct Answers',
+      data: [12, 22,5,20,10,10,5,20],
+      backgroundColor:'#34d399',
+      barThickness: 32
+    },
+    {
+      label: 'Incorrect Answers',
+      data: [5, 10,15,20,30,20,8,10],
+      backgroundColor: '#f7758f',
+      barThickness: 32
+    },
+  ]
 };
-const myChart2 = new Chart(
-    document.getElementById('progressJourny_graph_2'),
-    config1
-);
-/* progress Journy graph end */
+const configT = {
+  type: 'bar',
+  data: dataT,
+  options: {
+    plugins: {
+      title: {
+        display: false,
+        text: 'Chart.js Bar Chart - Stacked'
+      },
+      legend: false
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+        grid: {display: false}
+      },
+      
+      y: {
+        stacked: true
+      }
+    }
+  }
+};
 
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
 
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+];
 
+var myChartT = new Chart(
+    document.getElementById('timeManagementChart'),
+    configT
+  );
+
+  
+/************ Stacked Bar Chart end *********/
 
 </script>  
 

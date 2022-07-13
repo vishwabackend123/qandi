@@ -1,35 +1,25 @@
 @extends('afterlogin.layouts.app_new')
- 
-
- 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="exam-wrapper">
-<div class="slider">
-    <div class="owl-carousel owl-theme">
-        <div class="item"><h4>1</h4></div>
-        <div class="item"><h4>2</h4></div>
-        <div class="item"><h4>3</h4></div>
-    </div>
-</div>
-
-
-
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer">
-
-
-           
-               
                 <div class="examLeftpanel">
                     <div class="tabMainblock">
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#evaluation">Math <span class="qCount">65</span></a></li>
-                                        <li class="nav-item"><a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#application">Physics <span class="qCount">65</span></a></li>
-                                        <li class="nav-item"><a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Chemistry <span class="qCount">65</span></a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#evaluation">Math <span class="qCount">65</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#application">Physics <span class="qCount">65</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Chemistry <span class="qCount">65</span></a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="submitBtn">
@@ -59,47 +49,300 @@
                             </div>
                             <div class="tab-content aect_tabb_contantt">
                                 <div id="evaluation" class="tab-pane active">
-                                    <div class="questionwrapper">
-                                        <div class="questionheader">
-                                            <div class="question">
-                                                <span class="q-no">Q1.</span>
-                                                <p>
-                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
-                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
-                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of
-                                                    l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.
-                                                </p>
+                                    <div class="questionsliderinner">
+                                        <div class="questionSlider owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="item">
+                                                <div class="questionsliderbox">	
+                                                    <div class="questionwrapper">
+                                                        <div class="questionheader">
+                                                            <div class="question">
+                                                                <span class="q-no">Q1.</span>
+                                                                <p>
+                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
+                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
+                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
+                                                                    then find the value of l3ABl.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="questionOptionBlock">
+                                                            <div class="fancy-radio-buttons row with-image">
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="colMargin">
+                                                                    <div class="image-container">
+                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
+                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="questionOptionBlock">
-                                            <div class="fancy-radio-buttons row with-image">
-                                                <div class="col-md-5 colMargin">
-                                                    <div class="image-container">
-                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5 colMargin">
-                                                    <div class="image-container">
-                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5 colMargin">
-                                                    <div class="image-container">
-                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5 colMargin">
-                                                    <div class="image-container">
-                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
+
+
+
+
+                                    
                                 </div>
                                 <div id="application" class="tab-pane">adasdas</div>
                                 <div id="complrehension" class="tab-pane">complrehension</div>
@@ -113,161 +356,226 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="examRightpanel">
                     <div class="main-textexam-sec">
-                    <div class="text-examtop-sec">
-                        <p><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F"/>
-                                <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F"/>
-                                <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED"/>
-                                <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>112 mins Left</span> <label><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="8.4" fill="#fff"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16"/>
-                            </svg>
-                            </label></p>
-                    </div>
+                        <div class="text-examtop-sec">
+                            <p>
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
+                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                    <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
+                                    <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>112 mins Left</span>
+                                <label>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z"
+                                            fill="#00AB16"
+                                        />
+                                    </svg>
+                                </label>
+                            </p>
+                        </div>
                         <div class="text-exammid-sec">
                             <p>Overview</p>
-                                <div class="exam-ans-sec top-first">
-                                        <div class="ans1">Answered</div>
-                                        <div class="ans-in-num">24</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans2">Unanswered</div>
-                                    <div class="ans-in-num">2</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for review</div>
-                                    <div class="ans-in-num">3</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; marked for review</div>
-                                    <div class="ans-in-num">1</div>
-                                </div>
+                            <div class="exam-ans-sec top-first">
+                                <div class="ans1">Answered</div>
+                                <div class="ans-in-num">24</div>
+                            </div>
+                            <div class="exam-ans-sec">
+                                <div class="ans2">Unanswered</div>
+                                <div class="ans-in-num">2</div>
+                            </div>
+                            <div class="exam-ans-sec">
+                                <div class="ans3">Marked for review</div>
+                                <div class="ans-in-num">3</div>
+                            </div>
+                            <div class="exam-ans-sec">
+                                <div class="ans4">Answered &amp; marked for review</div>
+                                <div class="ans-in-num">1</div>
+                            </div>
                         </div>
 
-                            <div class="text-exambottom-sec">
-                                
-                                <button type="button" class="btn" id="btn-ans">1</button>
-                                <button type="button" class="btn" id="btn-ans">2</button>
-                                <button type="button" class="btn" id="btn-ans">3</button>
-                                <button type="button" class="btn" id="btn-ans">4</button>
-                                <button type="button" class="btn" id="btn-ans">5</button>
-                                <button type="button" class="btn" id="btn-ans">6</button>
-                                <button type="button" class="btn" id="btn-ans">7</button>
-                             
-                                <button type="button" class="btn" id="btn-ans">8</button>
-                                <button type="button" class="btn" id="btn-ans">9</button>
-                                <button type="button" class="btn" id="btn-ans">10</button>
-                                <button type="button" class="btn pink-btn" id="btn-ans">11</button>
-                                <button type="button" class="btn" id="btn-ans">12</button>
-                                <button type="button" class="btn" id="btn-ans">13</button>
-                                <button type="button" class="btn" id="btn-ans">14</button>
-                                
-                                <button type="button" class="btn" id="btn-ans">15</button>
-                                <button type="button" class="btn" id="btn-ans">16</button>
-                                <button type="button" class="btn" id="btn-ans">17</button>
-                                <button type="button" class="btn blue-btn" id="btn-ans">18</button>
-                                <button type="button" class="btn" id="btn-ans">19</button>
-                                <button type="button" class="btn" id="btn-ans">20</button>
-                                <button type="button" class="btn" id="btn-ans">21</button>
-                                <button type="button" class="btn" id="btn-ans">22</button>
-                                <button type="button" class="btn border-btn" id="btn-ans">23</button>
-                                <button type="button" class="btn" id="btn-ans">24</button>
-                                <button type="button" class="btn" id="btn-ans">25</button>
-                                <button type="button" class="btn" id="btn-ans">26</button>
-                                <button type="button" class="btn" id="btn-ans">27</button>
-                                <button type="button" class="btn" id="btn-ans">28</button>
-                                <button type="button" class="btn" id="btn-ans">29</button>
-                                <button type="button" class="btn" id="btn-ans">30</button>
-                                <button type="button" class="btn" id="btn-ans">31</button>
-                                <button type="button" class="btn" id="btn-ans">32</button>
-                                <button type="button" class="btn" id="btn-ans">33</button>
-                                <button type="button" class="btn" id="btn-ans">34</button>
-                                <button type="button" class="btn" id="btn-ans">36</button>
-                                <button type="button" class="btn" id="btn-ans">37</button>
-                                <button type="button" class="btn" id="btn-ans">38</button>
-                                <button type="button" class="btn" id="btn-ans">39</button>
-                                <button type="button" class="btn" id="btn-ans">42</button>
-                                <button type="button" class="btn" id="btn-ans">43</button>
-                                <button type="button" class="btn" id="btn-ans">44</button>
-                                <button type="button" class="btn" id="btn-ans">45</button>
-                                
-                            </div>
+                        <div class="text-exambottom-sec">
+                            <button type="button" class="btn" id="btn-ans">1</button>
+                            <button type="button" class="btn" id="btn-ans">2</button>
+                            <button type="button" class="btn" id="btn-ans">3</button>
+                            <button type="button" class="btn" id="btn-ans">4</button>
+                            <button type="button" class="btn" id="btn-ans">5</button>
+                            <button type="button" class="btn" id="btn-ans">6</button>
+                            <button type="button" class="btn" id="btn-ans">7</button>
+
+                            <button type="button" class="btn" id="btn-ans">8</button>
+                            <button type="button" class="btn" id="btn-ans">9</button>
+                            <button type="button" class="btn" id="btn-ans">10</button>
+                            <button type="button" class="btn pink-btn" id="btn-ans">11</button>
+                            <button type="button" class="btn" id="btn-ans">12</button>
+                            <button type="button" class="btn" id="btn-ans">13</button>
+                            <button type="button" class="btn" id="btn-ans">14</button>
+
+                            <button type="button" class="btn" id="btn-ans">15</button>
+                            <button type="button" class="btn" id="btn-ans">16</button>
+                            <button type="button" class="btn" id="btn-ans">17</button>
+                            <button type="button" class="btn blue-btn" id="btn-ans">18</button>
+                            <button type="button" class="btn" id="btn-ans">19</button>
+                            <button type="button" class="btn" id="btn-ans">20</button>
+                            <button type="button" class="btn" id="btn-ans">21</button>
+                            <button type="button" class="btn" id="btn-ans">22</button>
+                            <button type="button" class="btn border-btn" id="btn-ans">23</button>
+                            <button type="button" class="btn" id="btn-ans">24</button>
+                            <button type="button" class="btn" id="btn-ans">25</button>
+                            <button type="button" class="btn" id="btn-ans">26</button>
+                            <button type="button" class="btn" id="btn-ans">27</button>
+                            <button type="button" class="btn" id="btn-ans">28</button>
+                            <button type="button" class="btn" id="btn-ans">29</button>
+                            <button type="button" class="btn" id="btn-ans">30</button>
+                            <button type="button" class="btn" id="btn-ans">31</button>
+                            <button type="button" class="btn" id="btn-ans">32</button>
+                            <button type="button" class="btn" id="btn-ans">33</button>
+                            <button type="button" class="btn" id="btn-ans">34</button>
+                            <button type="button" class="btn" id="btn-ans">36</button>
+                            <button type="button" class="btn" id="btn-ans">37</button>
+                            <button type="button" class="btn" id="btn-ans">38</button>
+                            <button type="button" class="btn" id="btn-ans">39</button>
+                            <button type="button" class="btn" id="btn-ans">42</button>
+                            <button type="button" class="btn" id="btn-ans">43</button>
+                            <button type="button" class="btn" id="btn-ans">44</button>
+                            <button type="button" class="btn" id="btn-ans">45</button>
+                        </div>
 
                         <div class="custom-exam d-none">
-                                <div class="text-examtop-sec">
-                                <p><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F"/>
-                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F"/>
-                                        <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED"/>
-                                        <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <div class="text-examtop-sec">
+                                <p>
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
+                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                        <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
+                                        <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>112 mins Left</span> <label><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="14" cy="14" r="8.4" fill="#fff"/>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16"/>
-                                    </svg>
-                                    </label></p>
-                                </div>
+                                    <span>112 mins Left</span>
+                                    <label>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z"
+                                                fill="#00AB16"
+                                            />
+                                        </svg>
+                                    </label>
+                                </p>
                             </div>
-                        <div class="bck-btn">Back</div>
-                </div>
-
-                   
-
-                            </div>
-                           
-                           
                         </div>
+                        <div class="bck-btn">Back</div>
                     </div>
-                   
                 </div>
-
             </div>
-
         </div>
     </div>
- 
 </div>
+
 
  
 <style>
-.examMaincontainer{
+    .questionsliderinner{
+        position: relative;
+    }
+
+
+.customNavigation a {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  box-shadow: -2px 1px 10px #bdbdbd;
+  top: calc(50% - 20px);
+  cursor: pointer;
+}
+.customNavigation .prev {
+  left: -15px;
+}
+.customNavigation .next {
+  right: -15px;
+}
+
+
+.questionSlider {
+    position: relative;
+}
+.questionSlider .owl-nav{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.questionSlider .owl-next span {
+    right: 0;
+    font-size: 17px;
+    padding: 0px;
+    position: absolute;
+    bottom: -8px;
+    text-align: center;
+    margin: auto;
+    color: #363c4f;
+    background-color: #f5faf6;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #56b663;
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
+ 
+}
+.questionSlider .owl-prev span {
+    left: 0;
+    font-size: 17px;
+    padding: 0px;
+    position: absolute;
+    bottom: -8px;
+    text-align: center;
+    margin: auto;
+    color: #363c4f;
+    background-color: #f5faf6;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #56b663;
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
+   
+}
+ 
+button.owl-next.disabled span{
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
+    border: solid 1px rgb(126 128 133 / 50%) !important;
+}
+
+.examMaincontainer {
     display: flex;
 }
 .exam-wrapper {
     background: #f5faf6;
 }
-
-.examLeftpanel{
-    width:calc(100% - 379px);
+.examLeftpanel {
+    width: calc(100% - 379px);
     height: 100vh;
-
 }
-.examRightpanel{
-    min-width: 379px;
-    max-width: 379px;
-    height: 100vh;
-    margin: 0 0 0 40px;
-    padding: 40px 28px 10px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-    background-color: #ffffff;
-}
-.submitBtn{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-
-
-
 .examScreentab {
     position: relative;
 }
@@ -404,7 +712,7 @@
     color: #363c4f;
     margin-right: 46px !important;
 }
-.qCount{
+.qCount {
     position: relative;
     padding-left: 12px;
     margin-left: 4px;
@@ -437,12 +745,12 @@
     margin: auto;
     max-height: calc(100% - 270px);
     overflow: overlay;
-    padding: 5px 100px;
+    padding: 0px 100px;
 }
 .questionOptionBlock {
     padding-top: 100px;
-    max-width:710px;
-    width:100%;
+    max-width: 710px;
+    width: 100%;
     margin: auto;
 }
 .questionheader .q-no {
@@ -488,7 +796,7 @@
     font-size: 14px;
     font-weight: bold;
     display: flex;
-    align-items: center;
+    background: #ffffff;
 }
 .fancy-radio-buttons input[type="radio"] + label:before {
     background: #ffffff;
@@ -497,7 +805,7 @@
 .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg {
     box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
     border: solid 1px rgba(86, 182, 99, 0.5);
-    background: white;
+    background: #e0f6e3;
 }
 .fancy-radio-buttons input[type="radio"].correct:checked + label:before {
     background: #70c1b3;
@@ -544,7 +852,11 @@
     display: flex;
 }
 .fancy-radio-buttons .colMargin {
-    margin-bottom: 30px;
+    padding: 0px;
+    max-width: 313px;
+    min-height: 44px;
+    margin: 0 38px 38px 0;
+    width: 100%;
 }
 .questionbtnBlock {
     display: flex;
@@ -564,7 +876,7 @@
     font-size: 14px;
     font-weight: 800;
     height: 44px;
-}
+} 
 
 .questionLeftbtns .questionbtn:first-child,
 .questionRightbtns .questionbtn:first-child {
@@ -586,8 +898,6 @@
     bottom: 0px;
     width: 100%;
 }
-
-
 
 /* shiv start css for text exam  */
 
@@ -627,7 +937,8 @@ button#btn-ans {
     border-top: 1px solid rgba(172, 185, 176, 0.14);
     display: flex;
     flex-flow: wrap;
-    justify-content: start;height: 195px;
+    justify-content: start;
+    height: 195px;
     overflow-y: scroll;
 }
 
@@ -639,12 +950,22 @@ button#btn-ans {
     font-size: 12px;
     font-weight: 800;
     padding: 0 !important;
-    margin: 0px 20px 20px 0px;    border: 1px solid #56b663;
+    margin: 0px 20px 20px 0px;
+    border: 1px solid #56b663;
 }
 
-.pink-btn {background: #fb7686 !important; border:0px !important;}
-.blue-btn{background:#7db9ff !important; border:0px !important;}
-.border-btn{background:#fff !important; color:#56b663 !important;}
+.pink-btn {
+    background: #fb7686 !important;
+    border: 0px !important;
+}
+.blue-btn {
+    background: #7db9ff !important;
+    border: 0px !important;
+}
+.border-btn {
+    background: #fff !important;
+    color: #56b663 !important;
+}
 
 .bck-btn {
     text-align: center;
@@ -656,16 +977,12 @@ button#btn-ans {
     position: absolute;
     width: 100%;
 }
-.main-textexam-sec{position: relative;}
-
-/* .text-examtop-sec {display: flex;width: 100%;align-items: center;justify-content: center;} */
-
-
+.main-textexam-sec {
+    position: relative;
+}
 </style>
-
-
- <!--
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ 
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
  <script>
     function progress(timeleft, timetotal, $element) {
@@ -680,28 +997,31 @@ button#btn-ans {
 
 progress(600, 600, $('#progressBar'));
     </script> -->
- 
- 
 
+    <script type="text/javascript" src="http://localhost/Uniq_web/public/js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
- $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
-})
+        $('.questionSlider').owlCarousel({
+           
+            loop: false,
+            margin: 0,
+            nav: true,
+            dots: false,
+            items: 1,
+           
+        })
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
