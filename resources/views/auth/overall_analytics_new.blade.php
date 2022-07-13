@@ -428,7 +428,8 @@
                                         </div>
                                     </div> 
                                     </div>
-                               </div>    
+                               </div> 
+                           </div>      
                             <div id="math" class=" tab-pane">
                                  <div class="overallmain">
                                  <div class="overalltop">    
@@ -474,14 +475,14 @@
                                                                       </div>
                                                                       <div class="codelerninner">
                                                                            <h5>Evaluation tells you you problem solving skills</h5>
-                                                                           <p> <strong>20%</strong>  % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                                                           <p> <strong>20%</strong>  % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;" >read more...</a></p>
                                                                       </div>
                                                                       <div class="codebottom">
                                                                           <h6>Your accuracy</h6>
                                                                          
                                                                                <h2>50%</h2>
                                                                                <div class="percentageblock">
-                                                                               <a href="javascript:;" class="commmongreenLink">Know more 
+                                                                               <a href="#Evaluationmodal" class="commmongreenLink"   data-bs-toggle="modal" data-bs-target="#Evaluationmodal">Know more 
                                                                                   <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                                       <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                                                     </svg>
@@ -740,7 +741,25 @@
         </div>
     </div>
 </div>    
-
+<!-- Evaluation-popup start  -->
+<div class="modal fade" id="Evaluationmodal">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_strength">Evaluation</div>
+                        <hr>
+                        <div class="instruction_text_content"><strong class="blackcolor">20 %</strong>  of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Evaluation-popup end -->
 <script>
 /*********** BarChart ***********/
 /***overall-progress chart***** */

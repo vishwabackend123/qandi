@@ -1005,6 +1005,8 @@ button.owl-next.disabled span{
     width: 100%;
 }
 
+
+
 /* shiv start css for text exam  */
 
 .text-examtop-sec p span {

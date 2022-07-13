@@ -335,6 +335,7 @@ select.form-control:not([size]):not([multiple]) {
     padding: 10px 14px !important;
     font-size: 14px;
     font-weight: 400;
+    padding-right: 24px !important;
 }
 
 .select2-container--default .select2-selection--single {
@@ -382,11 +383,12 @@ select.form-control:not([size]):not([multiple]) {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: #56b663 !important;
 }
-
 .select2-search--dropdown {
     padding: 0;
 }
-
+span.select2.select2-container.select2-container--default {
+    width: 100% !important;
+}
 .signuprightpannel {
     padding: 140px 140px 20px;
     height: 100vh;
@@ -2020,23 +2022,28 @@ ul.proficiency-level-lists li {
     background-color: rgba(255, 255, 255, 0.3);
     display: inline-flex;
     max-width: 215px;
-    height: 60px;
+    height: 48px;
     justify-content: center;
     align-items: center;
     font-weight: 500;
     color: #363c4f;
     margin-top: 20px;
     width: 100%;
-    margin-right: 18px;
+    margin-right: 15.3px;
     font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
 }
 
 ul.proficiency-level-lists li span b {
-    width:6px;
+    width:4px;
     background-color: #cccccca1;
-    height: 12px;
+    height: 8px;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+ul.proficiency-level-lists li span.mr-3 {
+    margin-right: 16px;
 }
 
 ul.proficiency-level-lists li span b.rate-level-active {
@@ -2046,8 +2053,9 @@ ul.proficiency-level-lists li span b.rate-level-active {
 ul.proficiency-level-lists li.selected-level {
     background-color: #e0f6e3;
     color: #56b663;
+    font-weight: bold;
 }
-
+ul.proficiency-level-lists li label{cursor: pointer;}
 ul.proficiency-level-lists li.selected-level span b.rate-level-active {
     background-color: #56b663;
 }
@@ -3184,7 +3192,7 @@ padding-top: 30px;
 height: auto;}
 .modal-header1{display:flex;justify-content:end;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-#strengthmodal .modal-dialog{max-width:600px;}
+#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:600px;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
@@ -3305,7 +3313,7 @@ justify-content: space-between;}
                 right: -6px;
                 transform: rotate(124deg)
             }
-
+.blackcolor{color: #1f1f1f    ;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
