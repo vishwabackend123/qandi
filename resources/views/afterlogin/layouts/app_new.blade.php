@@ -66,21 +66,17 @@
 </script>
     <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
  -->
-<<<<<<< HEAD
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
-    <script>
-=======
-    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
-    <!--  <script>
->>>>>>> 507fa0073fad178d22cd9b6b35d0a88e3186e08b
+   
+    <!-- <script>
+
         $(window).on('load', function() {
             if ($("#welcomeModal").length > 0) {
                 $('#welcomeModal').modal('show');
             }
         });
-    </script> -->
+    </script>  -->
 
 
     <script>
