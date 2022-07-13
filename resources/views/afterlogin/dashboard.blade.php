@@ -54,7 +54,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Attempt more tests to improve your score.</p>
-                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('overall_analytics')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -204,8 +204,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.
+                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
                                             @if(isset($prof_asst_test) && $prof_asst_test=='Y')
