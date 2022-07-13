@@ -304,29 +304,29 @@
                                                                 </div> 
                                                             </div>
                                                             <div class="righttabBlock">
-                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
+                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab1" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day-tab" data-bs-toggle="pill" data-bs-target="#pills-Day" type="button" role="tab" aria-controls="pills-Day" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day1-tab" data-bs-toggle="pill" data-bs-target="#pills-Day1" type="button" role="tab" aria-controls="pills-Day1" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week-tab" data-bs-toggle="pill" data-bs-target="#pills-Week" type="button" role="tab" aria-controls="pills-Week" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week1-tab" data-bs-toggle="pill" data-bs-target="#pills-Week1" type="button" role="tab" aria-controls="pills-Week1" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month-tab" data-bs-toggle="pill" data-bs-target="#pills-Month" type="button" role="tab" aria-controls="pills-Month" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month1-tab" data-bs-toggle="pill" data-bs-target="#pills-Month1" type="button" role="tab" aria-controls="pills-Month1" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
                                                             
                                                             <div>
                                                                 <canvas id="timeManagementChart"></canvas>
                                                             </div>    
 
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
-                                                        <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
+                                                        <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">Week</div>
+                                                        <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">Month</div>
                                                     </div>       
                                                 </div>
                                             </div>
@@ -603,27 +603,27 @@
                                                             <div class="righttabBlock">
                                                                 <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day-tab" data-bs-toggle="pill" data-bs-target="#pills-Day" type="button" role="tab" aria-controls="pills-Day" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day3-tab" data-bs-toggle="pill" data-bs-target="#pills-Day3" type="button" role="tab" aria-controls="pills-Day3" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week-tab" data-bs-toggle="pill" data-bs-target="#pills-Week" type="button" role="tab" aria-controls="pills-Week" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week3-tab" data-bs-toggle="pill" data-bs-target="#pills-Week3" type="button" role="tab" aria-controls="pills-Week3" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month-tab" data-bs-toggle="pill" data-bs-target="#pills-Month" type="button" role="tab" aria-controls="pills-Month" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month3-tab" data-bs-toggle="pill" data-bs-target="#pills-Month3" type="button" role="tab" aria-controls="pills-Month3" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
                                                             
                                                             <div>
                                                                 <canvas id="timeManagementChart2"></canvas>
                                                             </div>    
 
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
-                                                        <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
+                                                        <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">Week</div>
+                                                        <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">Month</div>
                                                     </div>       
                                                 </div>
                                             </div>
@@ -680,27 +680,27 @@
                                                                 </div> 
                                                             </div>
                                                             <div class="righttabBlock">
-                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab2" role="tablist">
+                                                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab4" role="tablist">
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn active" id="pills-Day2-tab" data-bs-toggle="pill" data-bs-target="#pills-Day2" type="button" role="tab" aria-controls="pills-Day2" aria-selected="true">Day</button>
+                                                                        <button class="nav-link btn active" id="pills-Day4-tab" data-bs-toggle="pill" data-bs-target="#pills-Day4" type="button" role="tab" aria-controls="pills-Day4" aria-selected="true">Day</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Week2-tab" data-bs-toggle="pill" data-bs-target="#pills-Week2" type="button" role="tab" aria-controls="pills-Week2" aria-selected="false">Week</button>
+                                                                        <button class="nav-link btn" id="pills-Week4-tab" data-bs-toggle="pill" data-bs-target="#pills-Week4" type="button" role="tab" aria-controls="pills-Week4" aria-selected="false">Week</button>
                                                                     </li>
                                                                     <li class="nav-item" role="presentation">
-                                                                        <button class="nav-link btn" id="pills-Month2-tab" data-bs-toggle="pill" data-bs-target="#pills-Month2" type="button" role="tab" aria-controls="pills-Month2" aria-selected="false">Month</button>
+                                                                        <button class="nav-link btn" id="pills-Month4-tab" data-bs-toggle="pill" data-bs-target="#pills-Month4" type="button" role="tab" aria-controls="pills-Month4" aria-selected="false">Month</button>
                                                                     </li>
                                                                 </ul>
                                                             </div>
                                                     </div> 
                                                     <div class="tab-content" id="pills-tabContent2">
-                                                        <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
+                                                        <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
                                                          <div class="chartspent">
                                                             <canvas id="mark_trend2"></canvas>
                                                         </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">Week2</div>
-                                                        <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">Month2</div>
+                                                        <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">Week2</div>
+                                                        <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">Month2</div>
                                                     </div>       
                                                 </div>
                                             </div>
