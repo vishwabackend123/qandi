@@ -138,6 +138,7 @@ $userData = Session::get('user_data');
                                 @php
                                 $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
                                 $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+                                $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
                                 @endphp
                                 <h2>Price</h2>
                                 <h3>₹{{$subsprice}}</h3>
@@ -154,7 +155,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div id="panel">
                                 <hr class="line">
-                                <p>{{$current_subscription->subscription_details}}</p>
+                                <p>{{$subscription_desc}}</p>
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
@@ -189,10 +190,17 @@ $(document).ready(function() {
         },
 
     });
+    $(".flip").click(function() {
+        $("#panel").slideToggle("slow");
+        $(this).text(function(i, v) {
+            return v === 'Show details' ? 'Hide details' : 'Show details'
+        })
+    });
 });
 $('#editProfile_form input').keyup(function() {
     editProfileCheck();
 });
+
 
 
 function editProfileCheck() {

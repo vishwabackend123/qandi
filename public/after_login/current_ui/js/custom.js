@@ -114,15 +114,7 @@ $(document).ready(function(){
 
 /************************* Amit - End ****************************/
 
-/*****show-hide-detalis-user-profile-page**********/
-  $(document).ready(function(){
-    $(".flip").click(function(){
-        $("#panel").slideToggle("slow");
-        $(this).text(function(i, v){
-          return v === 'Show details' ? 'Hide details' : 'Show details'
-      })
-    });
-});
+
 /***************************************************/
 /*****upload-user-picture-user-profile-page**********/
   $(document).ready(function(){
