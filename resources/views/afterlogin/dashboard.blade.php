@@ -583,7 +583,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         ?>
                                         <div class="item">
                                             <div class="testPlanCard subCard {{$backgroundclass}}">
-                                                <p class="m-0">{{$backgroundclass}}</p>
+                                                <p class="m-0">{{$subject_name}}</p>
                                                 <h3>{{$val->chapter_name}}</h3>
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
