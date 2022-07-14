@@ -588,7 +588,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
                                                     @if($val->test_completed_yn=='Y')
-                                                    <a href="" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <a href="javascript:void(0);" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <circle cx="10" cy="10" r="10" fill="#56B663" />
                                                             <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg> Attempted</a>
@@ -849,7 +849,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Strengths</div>
                         <hr>
                         <div class="instruction_text_content">
-                            Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Going great. Find your strong topics here. Stay in the lead by revision.
                         </div>
                     </div>
                 </div>
@@ -925,7 +925,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
-    $week = "W" . $i;
+    //$week = "W" . $i;
+    $monthName = date('M', mktime(0, 0, 0, $i, 10));
+    $week = $monthName;
     array_push($aWeeks, $week);
     $timestamp = strtotime( $trend['date']);
     $last_date=date("j M", $timestamp);

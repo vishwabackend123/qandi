@@ -138,16 +138,16 @@
                         <label>Grade</label>
                         <select class="form-control selectdata reqrd js-example-basic-single" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
-                            <option class="we2" value="1">Just starting out</option>
-                            <option class="we" value="2">Completed (10+1) Syllabus</option>
-                            <option class="we" value="3">Completed (10+2) Syllabus</option>
+                            <option class="we2" value="1">10th Standard Pass</option>
+                            <option class="we" value="2">11th Standard Pass</option>
+                            <option class="we" value="3">12th Standard Pass</option>
                         </select>
                     </div>
                     <div class="col-lg-6">
                         <label>Exam</label>
                         <select class="form-control selectdata reqrd js-example-basic-single" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
-                            <option value="1">JEE</option>
+                            <option value="1">JEE Main</option>
                             <option value="2">NEET</option>
                         </select>
                     </div>
