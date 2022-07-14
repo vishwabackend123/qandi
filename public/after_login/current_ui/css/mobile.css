@@ -77,6 +77,8 @@
             padding-top: 35px;
         }
         .planeName{padding-bottom:20px;}
+        .selectPlanedetail {padding: 30px 40px;}
+        .selectPlan {padding: 0px 40px 50px;}
     
 }
 @media only screen and (max-width: 1300px){

@@ -68,7 +68,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             <b></b>
                             <b></b>
                         </span>
-                        <label class="mb-0">Foundation level</label>
+                        <label class="mb-0">Foundation</label>
                     </li>
                     <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==3) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="3" id="user_pro_level_{{$subject_proficiency->id}}_3" onclick="selectProficiencyLevel({{$subject_proficiency->id}},3)">
                         <span class="mr-3">
