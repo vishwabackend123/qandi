@@ -513,7 +513,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </div>
                                             <div class="plannedtestbox">
                                                 <div class="plannedtest">
-                                                    <p class="m-0 AttempType"> Planned Test</p>
+                                                    <p class="m-0 AttempType"> Planned tests</p>
                                                     <p class="m-0 testCount">{{$planned_test_cnt}}</p>
                                                 </div>
                                                 <div class="plannedtest">
@@ -584,7 +584,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="item">
                                             <div class="testPlanCard subCard {{$backgroundclass}}">
                                                 <p class="m-0">{{$subject_name}}</p>
-                                                <h3>{{$val->chapter_name}}</h3>
+                                                <h3 title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
                                                     @if($val->test_completed_yn=='Y')
