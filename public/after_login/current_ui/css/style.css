@@ -2826,7 +2826,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 }
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
-    font-size: 75px;
+    font-size: 58px;
     width: 1em;
     height: 1em;
     position: relative;
@@ -3281,7 +3281,10 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
 .verifiaction-link p b {
     font-weight: 800;
 }
-
+.fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox {
+    width: 96px!important;
+}
+.commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
 
 /********************* Amit End ****************************/
 
@@ -3620,7 +3623,7 @@ header {
     opacity: 0.6;
     border: 0px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;
@@ -3662,6 +3665,7 @@ header {
     font-weight: 800;
     line-height: 1.6;
     color: #363c4f;
+    margin-bottom: 0;
 }
 
 .taskstatusBlock .statusvalue span {
