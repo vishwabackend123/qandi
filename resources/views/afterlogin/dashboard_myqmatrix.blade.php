@@ -12,6 +12,9 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block matrix-page-wrapper">
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
+        <div class="dashboad_mqmatrix_text_back_to_dashboard"><a href="#">
+            <span><</span>Back to Dashboard</a>
+        </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="commonWhiteBox">
