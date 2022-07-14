@@ -203,7 +203,7 @@ color: #d0d5dd !important;
     
 }
 .custom-input .form-control:focus{
-    border: 1px solid rgba(86, 182, 99, 0.4) !important; 
+    border: 1px solid rgba(86, 182, 99, 0.5) !important; 
 }
 
 .custom-input input::-webkit-input-placeholder {
