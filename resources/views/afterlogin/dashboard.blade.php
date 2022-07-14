@@ -31,7 +31,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="row">
                     <div class="col-lg-4 commonblockDash myqTodayPannel">
                         <div class="commondashboardTop">
-                            <h3 class="boxheading headingbgchange">MyQ Today
+                            <h3 class="boxheading headingbgchange boxmainheading">MyQ Today
                                 <span class="tooltipmain">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -70,7 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
-                                    <h3 class="boxheading">Subject Performance
+                                    <h3 class="boxheading boxmainheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4 commonblockDash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock flexblock">
-                                <h3 class="boxheading">My Task Center
+                                <h3 class="boxheading boxmainheading">My Task Center
                                     <span class="tooltipmain">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -197,14 +197,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div id="daily" class=" tab-pane active">
-                                            <div class="taskstatusBlock">
+                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/2</span>
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
                                             @if(isset($prof_asst_test) && $prof_asst_test=='Y')
@@ -280,7 +280,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="taskstatusBlock">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/2</span>
                                                 </div>
                                             </div>
                                             <p class="dashSubtext mt-2">Please attempt the Full body scan test,
@@ -368,7 +368,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -393,7 +393,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Give a little attention to these topics and take another step towards perfection. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -419,7 +419,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
@@ -444,7 +444,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_4">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
@@ -976,6 +976,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         $("span.tooltipmain p.tooltipclass span").click(function() {
             $(this).parent("p").hide();
             $(this).parent("p").removeClass('show');
+        });
+        $('.myq_matrix_quadrant').click(function(){
+            var quad_name=$(this).attr('data-name');
+            sessionStorage.setItem("quadrant_name", quad_name);
+             window.location.href = '{{url("dashboard-MyQMatrix")}}';
         });
     });
     $(document).on('click', function(e) {

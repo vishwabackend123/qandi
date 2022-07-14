@@ -39,7 +39,7 @@
 }
 @media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
-    /* .boxheading {font-size: 20px;} */
+    .boxheading {font-size: 20px;}
         .boxheading .tooltipmain{margin-left:5px;}
 .subCard h3 {
     font-size: 15px;
@@ -57,8 +57,8 @@
 }
 
 .subjextscoreLeft h4 {font-size: 20px;}
-.circle_percent,.round_per{    width: 0.8em;
-    height: 0.8em;}
+/* .circle_percent,.round_per{    width: 0.8em;
+    height: 0.8em;} */
     /* .testPlanCard {
         max-width: 240px !important;
     } */
@@ -77,6 +77,8 @@
             padding-top: 35px;
         }
         .planeName{padding-bottom:20px;}
+        .selectPlanedetail {padding: 30px 40px;}
+        .selectPlan {padding: 0px 40px 50px;}
     
 }
 @media only screen and (max-width: 1300px){
@@ -96,7 +98,7 @@
 }
 @media only screen and (max-height: 780px) {
     .text-exambottom-sec {
-        height: 29vh;margin-top: 10px;
+        height: 29vh;margin-top: 10px;padding-bottom: 15px;
     }
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
@@ -139,7 +141,14 @@
     padding-right: 100px !important;
 }   
 }
-
+@media only screen and (max-width: 1199px){
+    .clander-box {
+    margin-top: 40px;
+}
+.calendar-wrapper {
+    max-width: 100%;
+}
+}
 @media only screen and (max-width: 1024px){
     .plantitleBox {
         padding-right: 50px !important;
