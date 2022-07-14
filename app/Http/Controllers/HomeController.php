@@ -239,7 +239,8 @@ class HomeController extends Controller
                     foreach ($response_prog['response']['student_progress'] as $progData) {
                         array_push($ideal, $progData['month_index']);
                         array_push($your_place, $progData['chapter_count']);
-                        $week = "W" . $i;
+                        $monthName = date('M', mktime(0, 0, 0, $i, 10));
+                        $week = $monthName;
                         array_push($progress_cat, $week);
                         $i++;
                     }
@@ -813,7 +814,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function myQMatrix($quadrant_name)
+    public function myQMatrix()
     {
         try {
             $userData = Session::get('user_data');
@@ -857,7 +858,7 @@ class HomeController extends Controller
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'quadrant_name','prof_asst_test'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool','prof_asst_test'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1144,7 +1145,9 @@ class HomeController extends Controller
 
         if (!empty($trendResponse)) {
             foreach ($trendResponse as $key => $trend) {
-                $week = "W" . $i;
+                //$week = "W" . $i;
+                $monthName = date('M', mktime(0, 0, 0, $i, 10));
+                $week = $monthName;
                 array_push($aWeeks, $week);
                 array_push($trend_stu_score, $trend['student_score']);
                 array_push($trend_avg_score, $trend['average_score']);

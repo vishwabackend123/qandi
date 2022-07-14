@@ -31,7 +31,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="row">
                     <div class="col-lg-4 commonblockDash myqTodayPannel">
                         <div class="commondashboardTop">
-                            <h3 class="boxheading headingbgchange">MyQ Today
+                            <h3 class="boxheading headingbgchange boxmainheading">MyQ Today
                                 <span class="tooltipmain">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -70,7 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
-                                    <h3 class="boxheading">Subject Performance
+                                    <h3 class="boxheading boxmainheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4 commonblockDash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock flexblock">
-                                <h3 class="boxheading">My Task Center
+                                <h3 class="boxheading boxmainheading">My Task Center
                                     <span class="tooltipmain">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -368,7 +368,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -393,7 +393,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Give a little attention to these topics and take another step towards perfection. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -419,7 +419,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
@@ -444,7 +444,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_4">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
@@ -513,7 +513,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </div>
                                             <div class="plannedtestbox">
                                                 <div class="plannedtest">
-                                                    <p class="m-0 AttempType"> Planned Test</p>
+                                                    <p class="m-0 AttempType"> Planned tests</p>
                                                     <p class="m-0 testCount">{{$planned_test_cnt}}</p>
                                                 </div>
                                                 <div class="plannedtest">
@@ -584,11 +584,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="item">
                                             <div class="testPlanCard subCard {{$backgroundclass}}">
                                                 <p class="m-0">{{$subject_name}}</p>
-                                                <h3>{{$val->chapter_name}}</h3>
+                                                <h3 title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
                                                     @if($val->test_completed_yn=='Y')
-                                                    <a href="" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <a href="javascript:void(0);" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <circle cx="10" cy="10" r="10" fill="#56B663" />
                                                             <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg> Attempted</a>
@@ -849,7 +849,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Strengths</div>
                         <hr>
                         <div class="instruction_text_content">
-                            Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Going great. Find your strong topics here. Stay in the lead by revision.
                         </div>
                     </div>
                 </div>
@@ -925,7 +925,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
-    $week = "W" . $i;
+    //$week = "W" . $i;
+    $monthName = date('M', mktime(0, 0, 0, $i, 10));
+    $week = $monthName;
     array_push($aWeeks, $week);
     $timestamp = strtotime( $trend['date']);
     $last_date=date("j M", $timestamp);
@@ -974,6 +976,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         $("span.tooltipmain p.tooltipclass span").click(function() {
             $(this).parent("p").hide();
             $(this).parent("p").removeClass('show');
+        });
+        $('.myq_matrix_quadrant').click(function(){
+            var quad_name=$(this).attr('data-name');
+            sessionStorage.setItem("quadrant_name", quad_name);
+             window.location.href = '{{url("dashboard-MyQMatrix")}}';
         });
     });
     $(document).on('click', function(e) {
