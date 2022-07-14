@@ -2096,10 +2096,9 @@ a.btn-common-attempted svg {
  }
  .vLine{
     background: #cccccc;
-     width: 1px;
-     height: 50px;
-     margin-right: 20px;
-     margin-top: 4px;
+    width: 1px;
+    height: 57px;
+    margin-right: 20px;
  }
  .colorHline{
     background-color: #f7758f !important;
@@ -2309,14 +2308,15 @@ a.btn-common-attempted svg {
      text-align: right;
      color: #56b663;
      display: flex;
-     align-items: center;
-     justify-content: inherit;
  }
  .gotoPlanner a span{
      padding-right:4px;
+     display: inline-block;
  }
  .gotoPlanner a svg{
-     padding-top: 3px;
+     margin-bottom: 4px;
+     top: -2px;
+     position: relative;
  }
  .gotoPlanner{
      display: flex;
