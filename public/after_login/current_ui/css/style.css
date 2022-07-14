@@ -3917,7 +3917,7 @@ justify-content: space-between;}
             font-weight: 600;
             line-height: 1.6;}    
             .aeck_commontab a.nav-link{position:relative}
-            .aeck_commontab a.nav-link.qq1_2_3_4.active:after {
+            .aeck_commontab a.nav-link.qq1_2_3_4.active:after , .qq1_2_3_4.active:after {
                 content: '';
                 width: 5px;
                 height: 5px;
@@ -3927,7 +3927,7 @@ justify-content: space-between;}
                 background-color: #56b663;
                 border-top-left-radius: 11px;
             }
-            .aeck_commontab a.nav-link.qq1_2_3_4.active:before {
+            .aeck_commontab a.nav-link.qq1_2_3_4.active:before , .qq1_2_3_4.active:before{
                 content: '';
                 width: 5px;
                 height: 5px;
