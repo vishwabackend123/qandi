@@ -2099,6 +2099,7 @@ a.btn-common-attempted svg {
      width: 1px;
      height: 50px;
      margin-right: 20px;
+     margin-top: 4px;
  }
  .colorHline{
     background-color: #f7758f !important;
@@ -2323,6 +2324,7 @@ a.btn-common-attempted svg {
  }
  .planewrapper{
      display: flex;
+     align-items: flex-end;
  }
  .subCard{
      padding: 20px !important;
@@ -2468,13 +2470,13 @@ a.btn-common-attempted svg {
      display: flex;
  }
  .testPlanCard{
-     max-width: 397px;
-     margin: 32px 0 0 0;
+     /* max-width: 330px; */
+     margin: 32px 12px 0 12px;
      padding: 20px 0px 20px 0px;
      border-radius: 10px;
      border: solid 1px #e1e3ed;
      background-color: #ffffff;
-     width: 100%
+     /* width: 100% */
  }
  .testplannewuser{
      text-align: center;
@@ -2494,6 +2496,7 @@ line-height: 1.6;
 	 color: #56b663;
 	 min-width: 114px;
 	 padding: 7.5px 15px;min-width: auto!important;
+     height: 38px!important;
  }
  .addPlanbtn .btn span {
      display: flex;
@@ -3267,6 +3270,12 @@ transform: translate(-50%,-50%);
 .overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
 a.btn-close,a.btn-close:hover{opacity: 1;}
 .myqmatPannel a:hover{text-decoration:none;}
+.testPlanCard.testplannewuser {
+    max-width: 330px;
+    width: 100%;
+}
+
+
 /********************* Amit End ****************************/
 
 

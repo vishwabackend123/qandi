@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1680px){
-    .testPlanCard {
+    /* .testPlanCard {
         max-width: 330px !important;
-    }
+    } */
 }
 
 
@@ -11,9 +11,9 @@
     .myqbottomSec h3 .topictext{margin-left: 5px;}
     .myqmatPannel{padding:10px}
     .commonWhiteBox{padding:30px 25px;}
-    .testPlanCard {
+    /* .testPlanCard {
         max-width: 290px !important;
-    }
+    } */
 }
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
@@ -25,10 +25,10 @@
 .plantitleBox {padding-right: 140px !important;}
 
 .graphDetailempty .testScrolltype { margin-right: 9px !important;;}
-.testPlanCard {
+/* .testPlanCard {
     max-width: 280px !important;
 
-}
+} */
 .allSubslider svg{
     width: 30px !important;
     height: 30px !important;
@@ -59,9 +59,9 @@
 .subjextscoreLeft h4 {font-size: 20px;}
 .circle_percent,.round_per{    width: 0.8em;
     height: 0.8em;}
-    .testPlanCard {
+    /* .testPlanCard {
         max-width: 240px !important;
-    }
+    } */
     .graphDetailempty .weekText{
         padding-left: 0px;
     }
@@ -126,9 +126,9 @@
     position: relative !important;
     padding-top: 20px;
 }
-.testPlanCard {
+/* .testPlanCard {
     max-width: 245px !important;
-}
+} */
 .subCard h3 {
     font-size: 16px !important;
 }
@@ -178,9 +178,9 @@
     .weekCount {
         font-size: 18px !important;
     }
-    .testPlanCard {
+    /* .testPlanCard {
         max-width: 180px !important;
-    }
+    } */
     .allSubslider svg {
         width: 20px !important;
         height: 20px !important;
