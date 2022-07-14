@@ -97,6 +97,7 @@ padding: 0;
     background: #f5faf6;
 }
 
+
 .left-sidepannel {
     background: #e0f6e3;
     padding: 40px 40px 80px 40px;
@@ -200,6 +201,9 @@ color: #d0d5dd !important;
     font-weight: 500;
     height: 44px;
     
+}
+.custom-input .form-control:focus{
+    border: 1px solid rgba(86, 182, 99, 0.5) !important; 
 }
 
 .custom-input input::-webkit-input-placeholder {
@@ -2838,7 +2842,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 }
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
-    font-size: 75px;
+    font-size: 58px;
     width: 1em;
     height: 1em;
     position: relative;
@@ -2906,7 +2910,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
-    font-size: 102px;
+    font-size: 110px;
     min-width: 1em;
     height: 1em;
     position: relative;
@@ -2965,21 +2969,21 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 .mq_percent_text {
     position: absolute;
-    font-size: 23px;
-	right: 50px;
+    font-size: 27.1px;
+    right: 48px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
     color: #234628;
     font-weight: 800;
-	letter-spacing: -2px;
+    letter-spacing: -2px;
 }
 
 span.mq_percent_outoff {
     color: rgba(35, 70, 40, 0.2);
-    font-size: 16px;
+    font-size: 18.1px;
     position: absolute;
-    left: 41px;
+    left: 51px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3290,7 +3294,13 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
     max-width: 330px;
     width: 100%;
 }
-
+.verifiaction-link p b {
+    font-weight: 800;
+}
+.fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox {
+    width: 96px!important;
+}
+.commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
 
 /********************* Amit End ****************************/
 
@@ -3447,7 +3457,9 @@ header {
     color: #1f1f1f;
     margin-bottom: 10px;
 }
-
+.boxheading.boxmainheading{
+    color: #234628;
+}
 .myqTodayGraphSec .textblock {
     padding-left: 20px;
 }
@@ -3557,6 +3569,7 @@ header {
     border-radius: 10px;
     background-color: #e0f6e3;
     margin-bottom: 20px;
+    height: 131px;
 }
 
 .subjextscoreLeft h6 {
@@ -3626,7 +3639,7 @@ header {
     opacity: 0.6;
     border: 0px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;
@@ -3650,7 +3663,7 @@ header {
 }
 
 .commontab .nav-tabs {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #cde3d0;
 }
 
 .taskstatusBlock {
@@ -3668,6 +3681,7 @@ header {
     font-weight: 800;
     line-height: 1.6;
     color: #363c4f;
+    margin-bottom: 0;
 }
 
 .taskstatusBlock .statusvalue span {
@@ -4353,6 +4367,10 @@ justify-content: space-between;}
 }
 
 /*********** MyQ-Matrix */
+.tabMainblock_myqmatric{
+    margin-top: 4px!important;
+}
+
 .mqmatric_topic {
     font-size: 20px;
     font-weight: 800;
@@ -4382,6 +4400,7 @@ justify-content: space-between;}
 .mymatrix_table tr td {
     padding-top: 18px;
     height: 62px;
+    padding-left: 0px;
 }
 
 .qq1_2_3_4.active {
@@ -4724,6 +4743,26 @@ background: #3e8a44;
 {
     border-top: hidden;
 }
+.aeck_table_tr td span b
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.table.table.mymatrix_table td span b
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.exam_instruction_scrolling_pd_zero
+{
+    padding-right: 20px!important;
+}
 .aeck_text_back_to_analytics
 {
     font-size: 16px;
@@ -4759,7 +4798,7 @@ background: #3e8a44;
 }
 .aeck_table_scrolling
 {
-    padding-right: 0px!important;
+    padding-right: 12px!important;
 }
 .eack_table_mymq td
 {
@@ -5049,6 +5088,11 @@ padding: 11px 20px!important;
     height: 44px!important;
     width: 360px!important;
 }
+.myqbottomSec .myqarrow svg
+{
+    margin-bottom: -5px;
+}
+
 
 /* **********start live   ********** */
 
@@ -5496,6 +5540,7 @@ padding: 11px 20px!important;
     font-weight: 600;
     font-family: Manrope;
     margin: 0;
+    color: #363c4f;
 }
 .verifiaction-link p > a {
     padding: 10px 35px;

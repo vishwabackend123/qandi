@@ -39,7 +39,7 @@
 }
 @media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
-    /* .boxheading {font-size: 20px;} */
+    .boxheading {font-size: 20px;}
         .boxheading .tooltipmain{margin-left:5px;}
 .subCard h3 {
     font-size: 15px;
@@ -57,8 +57,8 @@
 }
 
 .subjextscoreLeft h4 {font-size: 20px;}
-.circle_percent,.round_per{    width: 0.8em;
-    height: 0.8em;}
+/* .circle_percent,.round_per{    width: 0.8em;
+    height: 0.8em;} */
     /* .testPlanCard {
         max-width: 240px !important;
     } */

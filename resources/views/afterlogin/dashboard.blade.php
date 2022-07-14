@@ -31,7 +31,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="row">
                     <div class="col-lg-4 commonblockDash myqTodayPannel">
                         <div class="commondashboardTop">
-                            <h3 class="boxheading headingbgchange">MyQ Today
+                            <h3 class="boxheading headingbgchange boxmainheading">MyQ Today
                                 <span class="tooltipmain">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -70,7 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
-                                    <h3 class="boxheading">Subject Performance
+                                    <h3 class="boxheading boxmainheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4 commonblockDash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock flexblock">
-                                <h3 class="boxheading">My Task Center
+                                <h3 class="boxheading boxmainheading">My Task Center
                                     <span class="tooltipmain">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -197,14 +197,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div id="daily" class=" tab-pane active">
-                                            <div class="taskstatusBlock">
+                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completeddailyTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
                                             @if(isset($prof_asst_test) && $prof_asst_test=='Y')
