@@ -125,7 +125,7 @@ $userData = Session::get('user_data');
                 </div>
                 <div class="col-lg-8 fortab">
                     <div class="commonWhiteBox">
-                        <div class="tabMainblock">
+                        <div class="tabMainblock tabMainblock_myqmatric">
                             <div class="commontab">
                                 <div class="tablist">
                                     <ul class="nav nav-tabs" role="tablist">
@@ -148,7 +148,7 @@ $userData = Session::get('user_data');
                                     <div id="matrix-quesone" class=" tab-pane active">
                                         <div class="mqmatric_topic">Topics</div>
                                         @if(isset($myq_matrix_topic['Q1']) && $myq_matrix_topic['Q1'])
-                                        <div class="exam_instruction_scrolling">
+                                        <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
                                                 <tbody>
                                                     @foreach($myq_matrix_topic['Q1'] as $matrix_one)
@@ -173,7 +173,7 @@ $userData = Session::get('user_data');
                                     <div id="matrix-questwo" class=" tab-pane">
                                         <div class="mqmatric_topic">Topics</div>
                                         @if(isset($myq_matrix_topic['Q2']) && $myq_matrix_topic['Q2'])
-                                        <div class="exam_instruction_scrolling">
+                                        <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
                                                 <tbody>
                                                     @foreach($myq_matrix_topic['Q2'] as $matrix_one)
@@ -198,7 +198,7 @@ $userData = Session::get('user_data');
                                     <div id="matrix-questhree" class=" tab-pane">
                                         <div class="mqmatric_topic">Topics</div>
                                         @if(isset($myq_matrix_topic['Q3']) && $myq_matrix_topic['Q3'])
-                                        <div class="exam_instruction_scrolling">
+                                        <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
                                                 <tbody>
                                                     @foreach($myq_matrix_topic['Q3'] as $matrix_one)
@@ -223,7 +223,7 @@ $userData = Session::get('user_data');
                                     <div id="matrix-quesfour" class=" tab-pane">
                                         <div class="mqmatric_topic">Topics</div>
                                         @if(isset($myq_matrix_topic['Q4']) && $myq_matrix_topic['Q4'])
-                                        <div class="exam_instruction_scrolling">
+                                        <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
                                                 <tbody>
                                                     @foreach($myq_matrix_topic['Q4'] as $matrix_one)
