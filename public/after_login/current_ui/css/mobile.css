@@ -139,7 +139,14 @@
     padding-right: 100px !important;
 }   
 }
-
+@media only screen and (max-width: 1199px){
+    .clander-box {
+    margin-top: 40px;
+}
+.calendar-wrapper {
+    max-width: 100%;
+}
+}
 @media only screen and (max-width: 1024px){
     .plantitleBox {
         padding-right: 50px !important;
