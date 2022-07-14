@@ -5314,7 +5314,7 @@ padding: 11px 20px!important;
 .task-day-top h2 {
     font-size: 24px;
     font-weight: 800;
-    color: #1f1f1f;
+    color: #1f1f1f;margin-bottom: 0px;
 }
 
 .task-day {
@@ -5327,12 +5327,12 @@ padding: 11px 20px!important;
     font-weight: 500;margin: 0;
     color: #868a95;
 }
-.task1 {padding-top: 30px;}
-.task2 {padding-top: 10px;}
+.task1 {padding-top: 40px;}
+.task2 {padding-top: 24px;}
 .task1 p span {
     font-size: 12px;
     text-transform: uppercase;letter-spacing: 0.96px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .task1>h3 {
@@ -5340,19 +5340,18 @@ padding: 11px 20px!important;
     font-weight: 800;
     color: #1f1f1f;
     margin: 0;
-    padding: 8px 0px;
+    padding: 2px 0px;
 }
 
 .btn-sec {
     border-bottom: 1px solid #e5eaee;
     display: flex;
-    padding-top: 12px;
-    margin-bottom: 12px;
+    padding-top: 12px;padding-bottom: 1px
 }
 
 .task-btn.tasklistbtn {
     flex-grow: 1;
-    text-align: right;padding-top: 10px;
+    text-align: right;
 }
 
 .qust-sec,
@@ -5376,9 +5375,23 @@ padding: 11px 20px!important;
 .dura-sec p label {
     font-size: 16px;
     font-weight: 800;
-    vertical-align: middle;
+    vertical-align: middle;color: #1f1f1f;padding-left: 4px;margin: 0px;
 }
 
+.content-wrapper .col-lg-6:first-child {
+    padding-right: 10px !important;
+}
+
+.content-wrapper .col-lg-6:last-child {
+    padding-left: 10px;
+}
+.dura-sec p svg {
+    vertical-align: middle !important;
+}
+
+.qust-sec p svg {
+    vertical-align: middle !important;
+}
 
 /********** tooltips *********/
 .tooltipclass {
