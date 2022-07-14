@@ -283,8 +283,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/</span><span>2</span>
                                                 </div>
                                             </div>
-                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            </p>
+                                            @endif
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='Y')
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($weekTask as $wkey=>$data)
@@ -332,6 +335,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </svg></span></a>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
