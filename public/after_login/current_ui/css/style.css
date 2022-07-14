@@ -3596,6 +3596,7 @@ header {
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;
+    margin-bottom:0px;
 }
 
 .commontab .nav-tabs .nav-link:hover,
@@ -3694,10 +3695,12 @@ header {
 }
 
 .tasklistbtn .btn {
-    min-width: 120px;
-    padding: 8px 15px
+    min-width: 114px;
+    padding: 8px 16px;
+    /* height: 38px; */
+    width: 114px;
 }
-
+.subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
 .tasklistbtn .btn.nobg {
     background-color: #fff;
 }
@@ -3800,7 +3803,7 @@ header {
 
 .commmongreenLink:hover,
 .commmongreenLink:focus {
-    color: #039855
+    color: #039855;text-decoration: none;
 }
 
 .commonlisting,ul {
@@ -5434,7 +5437,7 @@ padding: 11px 20px!important;
     border: 1px solid #dc6803;
     color: #dc6803;
     border-radius: 8px;
-    margin-left: 30px;
+    margin-left: 30px;text-decoration:none;
 }
 /**********  email-confirmation *********/
 .email-confirmation {
