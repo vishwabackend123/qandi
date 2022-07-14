@@ -739,11 +739,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <span class="weekText">chapters per week</span>
                                                         </p>
                                                     </div>
-                                                    @if(round($ideal_avg) > round($your_place_avg))
+
                                                     <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{(round($ideal_avg)-round($your_place_avg))}} chapters this week
+                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
                                                     </div>
-                                                    @endif
+
                                                 </div>
                                                 @else
                                                 <div class="graphDetailempty w-100">
@@ -868,7 +868,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Needs focus</div>
                         <hr>
                         <div class="instruction_text_content">
-                            Give a little attention to these topics and take another step towards perfection. 
+                            Give a little attention to these topics and take another step towards perfection.
                         </div>
                     </div>
                 </div>
@@ -953,284 +953,290 @@ $user_id = isset($userData->id)?$userData->id:'';
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
     @endphp
+
     <script>
-    $(document).ready(function() {
-        $("span.tooltipmain svg").click(function(event) {
-            event.stopPropagation();
+        $(document).ready(function() {
+            $("span.tooltipmain svg").click(function(event) {
+                event.stopPropagation();
 
-            var card_open = $(this).siblings("p").hasClass('show');
-            if (card_open === true) {
-                $(this).siblings("p").hide();
-                $(this).siblings("p").removeClass('show');
-            } else {
-                $("span.tooltipmain p.tooltipclass span").each(function() {
-                    $(this).parent("p").hide();
-                    $(this).parent("p").removeClass('show');
-                });
-                $(this).siblings("p").show();
-                $(this).siblings("p").addClass('show');
-            }
-
-
-        });
-        $("span.tooltipmain p.tooltipclass span").click(function() {
-            $(this).parent("p").hide();
-            $(this).parent("p").removeClass('show');
-        });
-        $('.myq_matrix_quadrant').click(function(){
-            var quad_name=$(this).attr('data-name');
-            sessionStorage.setItem("quadrant_name", quad_name);
-             window.location.href = '{{url("dashboard-MyQMatrix")}}';
-        });
-    });
-    $(document).on('click', function(e) {
-        var card_opened = $('.tooltipclass').hasClass('show');
-        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-            $('.tooltipclass').hide();
-            $('.tooltipclass').removeClass('show');
-        }
-        var dropdown_open =$('.customDropdown').hasClass('active');
-        if (!$(e.target).is('.markstrend') && dropdown_open === true) {
-            $('.customDropdown').removeClass('active');
-        }
-    });
-    $('#email_success').hide();
-    $('.resend_email').click(function() {
-        var user_id = '<?php echo $user_id; ?>';
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: "{{ url('send_verfication_email') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                userId: user_id,
-            },
-            success: function(response_data) {
-                if (response_data.status === true) {
-                    $('#email_success').css('color', 'green');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
+                var card_open = $(this).siblings("p").hasClass('show');
+                if (card_open === true) {
+                    $(this).siblings("p").hide();
+                    $(this).siblings("p").removeClass('show');
                 } else {
-                    $('#email_success').css('color', 'red');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
+                    $("span.tooltipmain p.tooltipclass span").each(function() {
+                        $(this).parent("p").hide();
+                        $(this).parent("p").removeClass('show');
+                    });
+                    $(this).siblings("p").show();
+                    $(this).siblings("p").addClass('show');
                 }
 
-            },
-        });
-    });
 
+            });
+            $("span.tooltipmain p.tooltipclass span").click(function() {
+                $(this).parent("p").hide();
+                $(this).parent("p").removeClass('show');
+            });
+            $('.myq_matrix_quadrant').click(function() {
+                var quad_name = $(this).attr('data-name');
+                sessionStorage.setItem("quadrant_name", quad_name);
+                window.location.href = '{{url("dashboard-MyQMatrix")}}';
+            });
+        });
+        $(document).on('click', function(e) {
+            var card_opened = $('.tooltipclass').hasClass('show');
+            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+                $('.tooltipclass').hide();
+                $('.tooltipclass').removeClass('show');
+            }
+            var dropdown_open = $('.customDropdown').hasClass('active');
+            if (!$(e.target).is('.markstrend') && dropdown_open === true) {
+                $('.customDropdown').removeClass('active');
+            }
+        });
+        $('#email_success').hide();
+        $('.resend_email').click(function() {
+            var user_id = '<?php echo $user_id; ?>';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ url('send_verfication_email') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    userId: user_id,
+                },
+                success: function(response_data) {
+                    if (response_data.status === true) {
+                        $('#email_success').css('color', 'green');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    } else {
+                        $('#email_success').css('color', 'red');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                    }
+
+                },
+            });
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-    $('.dashborarSlider').owlCarousel({
-        stagePadding: 10,
-        loop: false,
-        margin: 0,
-        nav: true,
-        dots: false,
-        // rewindNav:true,
+        $('.dashborarSlider').owlCarousel({
+            stagePadding: 10,
+            loop: false,
+            margin: 0,
+            nav: true,
+            dots: false,
+            // rewindNav:true,
 
-        responsive: {
-            0: {
-                items: 1,
-                nav: false,
-                stagePadding: 40,
-                margin: 0,
-                loop: true,
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: true,
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+
             }
-
-        }
-    })
-
+        })
     </script>
     <script>
-    /* progress Journy graph */
-    const labels1 = <?php print_r($progress_cat); ?>;
-    const data1 = {
-        labels: labels1,
-        datasets: [{
-                label: 'Ideal Pace',
-                backgroundColor: '#05d6a1',
-                borderColor: '#05d6a1',
-                data: <?php print_r($ideal); ?>,
-                borderwidth: 0.6,
-                tension: 0.4
-            },
-            {
-                label: 'Your Pace',
-                backgroundColor: '#f87d96',
-                borderColor: '#f87d96',
-                data: <?php print_r($your_place); ?>,
-                borderwidth: 0.6,
-                tension: 0.4
-            }
-        ]
-    };
+        /* progress Journy graph */
 
-    const config1 = {
-        type: 'line',
-        data: data1,
-        options: {
-            responsive: true,
-            elements: {
-                point: {
-                    radius: 0
+        const labels1 = <?php print_r($progress_cat); ?>;
+        const data1 = {
+            labels: labels1,
+            datasets: [{
+                    label: 'Ideal Pace',
+                    backgroundColor: '#05d6a1',
+                    borderColor: '#05d6a1',
+                    data: <?php print_r($ideal); ?>,
+                    borderwidth: 0.6,
+                    tension: 0.4
+                },
+                {
+                    label: 'Your Pace',
+                    backgroundColor: '#f87d96',
+                    borderColor: '#f87d96',
+                    data: <?php print_r($your_place); ?>,
+                    borderwidth: 0.6,
+                    tension: 0.4
                 }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: false,
-                    text: 'Chart.js Line Chart - Cubic interpolation mode'
-                },
-            },
-            interaction: {
-                intersect: false,
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
+            ]
+        };
 
-            }
-        }
-    };
-
-    const myChart1 = new Chart(
-        document.getElementById('progressJourny_graph'),
-        config1
-    );
-    /* progress Journy graph end */
-
-    /** ********************/
-    const labels2 = <?php print_r($weeks_json); ?>;
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-                label: 'My score',
-                backgroundColor: '#05d6a1',
-                borderColor: '#05d6a1',
-                data: <?php print_r($stu_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            },
-            {
-                label: 'Peer average',
-                backgroundColor: '#f87d96',
-                borderColor: '#f87d96',
-                data: <?php print_r($avg_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            },
-            {
-                label: 'Top score',
-                backgroundColor: '#12c3ff',
-                borderColor: '#12c3ff',
-                data: <?php print_r($max_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            }
-        ]
-    };
-
-    const config2 = {
-        type: 'line',
-        data: data2,
-        options: {
-            responsive: true,
-            elements: {
-                point: {
-                    radius: 0
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: false,
-                    text: 'Chart.js Line Chart - Cubic interpolation mode'
-                },
-            },
-            interaction: {
-                intersect: false,
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false
+        const config1 = {
+            type: 'line',
+            data: data1,
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
                     }
                 },
-                y: {
-                    grid: {
+                plugins: {
+                    legend: {
                         display: false
                     },
-                    type: 'linear',
-                    grace: '5%',
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
 
-                    min: 0,
+                        },
+                    }
 
                 }
-
             }
-        }
-    };
+        };
 
-    const myChart2 = new Chart(
-        document.getElementById('trend_graph'),
-        config2
-    );
+        const myChart1 = new Chart(
+            document.getElementById('progressJourny_graph'),
+            config1
+        );
+        /* progress Journy graph end */
+
+        /** ********************/
+        const labels2 = <?php print_r($weeks_json); ?>;
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                    label: 'My score',
+                    backgroundColor: '#05d6a1',
+                    borderColor: '#05d6a1',
+                    data: <?php print_r($stu_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                },
+                {
+                    label: 'Peer average',
+                    backgroundColor: '#f87d96',
+                    borderColor: '#f87d96',
+                    data: <?php print_r($avg_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                },
+                {
+                    label: 'Top score',
+                    backgroundColor: '#12c3ff',
+                    borderColor: '#12c3ff',
+                    data: <?php print_r($max_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                }
+            ]
+        };
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+
+                        },
+                    },
+                    y: {
+
+                        type: 'linear',
+                        grace: '5%',
+
+                        min: 0,
+
+                    }
+
+                }
+            }
+        };
+
+        const myChart2 = new Chart(
+            document.getElementById('trend_graph'),
+            config2
+        );
 
 
-    /* $('#markstrend_graph').change(function() {
-        var value = this.value;
-        alert(value);
-    }); */
-
+        /* $('#markstrend_graph').change(function() {
+            var value = this.value;
+            alert(value);
+        }); */
     </script>
     <script>
-    function show(value, type) {
-        document.querySelector(".text-box").value = value;
+        function show(value, type) {
+            document.querySelector(".text-box").value = value;
 
-        url = "{{ url('trendGraphUpdate/') }}/" + type;
-        $.ajax({
-            type: 'GET', //post method
-            url: url, //ajaxformexample url
-            dataType: "json",
-            success: function(response) {
-                console.log(response.student_score);
-                myChart2.data.labels = response.labels;
-                myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
-                myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
-                myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
-                myChart2.update(); // finally update our chart
-            }
-        });
-    }
+            url = "{{ url('trendGraphUpdate/') }}/" + type;
+            $.ajax({
+                type: 'GET', //post method
+                url: url, //ajaxformexample url
+                dataType: "json",
+                success: function(response) {
+                    console.log(response.student_score);
+                    myChart2.data.labels = response.labels;
+                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.update(); // finally update our chart
+                }
+            });
+        }
 
 
 
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
-    }
-
+        let dropdown = document.querySelector(".customDropdown")
+        dropdown.onclick = function() {
+            dropdown.classList.toggle("active")
+        }
     </script>
     @endsection
