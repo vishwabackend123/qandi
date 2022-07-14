@@ -439,7 +439,42 @@ label.filter {
 
 </style>
 
+<script>
+    function review_right_Height() {
+        var total_right_height = $(".reviewScreenright ").outerHeight();
+        $('.reviewScreenleft ').css('height', total_right_height);
 
+        var examTabheader_height = $(".examTabheader").outerHeight();
+        var questionType_height = $(".questionType").outerHeight();
+
+
+        var tabheaderquestion_height = examTabheader_height + questionType_height;
+
+        var questionType_height = $(".reviewScreenright").outerHeight();
+
+
+        var divide_height = questionType_height - tabheaderquestion_height;
+        $('.questionsliderbox ').css('height', divide_height);
+       
+
+      
+
+
+ 
+
+
+    }
+
+    review_right_Height();
+    $("window").load(function() {
+        review_right_Height();
+    });
+
+
+    $(window).resize(function() {
+        review_right_Height();
+    });
+</script>
 
 
 <!-----End__Right_Review_Height_Calculation------->

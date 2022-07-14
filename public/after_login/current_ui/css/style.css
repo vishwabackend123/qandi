@@ -97,6 +97,7 @@ padding: 0;
     background: #f5faf6;
 }
 
+
 .left-sidepannel {
     background: #e0f6e3;
     padding: 40px 40px 80px 40px;
@@ -200,6 +201,9 @@ color: #d0d5dd !important;
     font-weight: 500;
     height: 44px;
     
+}
+.custom-input .form-control:focus{
+    border: 1px solid rgba(86, 182, 99, 0.4) !important;
 }
 
 .custom-input input::-webkit-input-placeholder {
