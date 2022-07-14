@@ -1235,8 +1235,13 @@ border-color: #56b663;
 }
 
 .btn-common-attempted{background-color: rgba(255, 255, 255, 0.5);border-radius: 10px;color:#56b663; font-size: 14px;font-weight: 800; line-height: 1.6;}
-.btn-common-attempted svg{margin-right:7px;    display: inline-block;
-    vertical-align: text-bottom;}
+a.btn-common-attempted svg {
+    margin-right: 7px;
+    display: inline-block;
+    /* vertical-align: text-bottom; */
+    width: 20px!important;
+    height: 20px!important;
+}
 .getDiscount {
     background: #f5faf6;
     min-height: 100%;
@@ -2307,7 +2312,7 @@ border-color: #56b663;
      justify-content: inherit;
  }
  .gotoPlanner a span{
-     padding-right: 10px;;
+     padding-right:4px;
  }
  .gotoPlanner a svg{
      padding-top: 3px;
@@ -2360,15 +2365,19 @@ border-color: #56b663;
      text-transform: uppercase;
  }
  .subCard h3{
-     font-size: 20px;
-     font-weight: 800;
-     font-stretch: normal;
-     font-style: normal;
-     line-height: 1.6;
-     letter-spacing: normal;
-     text-align: left;
-     color: #363c4f;
-     margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #363c4f;
+    margin-bottom: 16px;
+    width: calc(100% - 40px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
  }
  .proficiencyper b{
      font-size: 14px;

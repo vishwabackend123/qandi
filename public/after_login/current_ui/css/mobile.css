@@ -42,12 +42,8 @@
     /* .boxheading {font-size: 20px;} */
         .boxheading .tooltipmain{margin-left:5px;}
 .subCard h3 {
-    width: 120px;
     font-size: 15px;
     font-weight: 800;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
   
 .inst {
