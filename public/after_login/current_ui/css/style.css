@@ -3674,7 +3674,13 @@ header {
     font-size: 20px;
     font-weight: 800;
     line-height: 1.6;
+    color: #363c4f;
 }
+.tabMainblock p.dashSubtext {
+    color: #797979;
+    opacity: 1;
+}
+.statusvalue span:last-child{  font-weight: 600;}
 
 .taskstatusBlock .statusvalue span.codevalue {
     opacity: 1;
