@@ -308,7 +308,7 @@ $(document).ready(function() {
         }, 1000);
     }*/
     $('#matrix').modal('show');
-    var quadrant_name = '<?php echo $quadrant_name ?>';
+    var quadrant_name = sessionStorage.getItem("quadrant_name");
     if (quadrant_name == 'q_2') {
         questwo_tab();
     }
