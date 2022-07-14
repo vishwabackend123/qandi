@@ -3651,7 +3651,7 @@ header {
 }
 
 .commontab .nav-tabs {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #cde3d0;
 }
 
 .taskstatusBlock {
@@ -4355,6 +4355,10 @@ justify-content: space-between;}
 }
 
 /*********** MyQ-Matrix */
+.tabMainblock_myqmatric{
+    margin-top: 4px!important;
+}
+
 .mqmatric_topic {
     font-size: 20px;
     font-weight: 800;
@@ -4384,6 +4388,7 @@ justify-content: space-between;}
 .mymatrix_table tr td {
     padding-top: 18px;
     height: 62px;
+    padding-left: 0px;
 }
 
 .qq1_2_3_4.active {
@@ -4726,6 +4731,26 @@ background: #3e8a44;
 {
     border-top: hidden;
 }
+.aeck_table_tr td span b
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.table.table.mymatrix_table td span b
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.exam_instruction_scrolling_pd_zero
+{
+    padding-right: 20px!important;
+}
 .aeck_text_back_to_analytics
 {
     font-size: 16px;
@@ -4761,7 +4786,7 @@ background: #3e8a44;
 }
 .aeck_table_scrolling
 {
-    padding-right: 0px!important;
+    padding-right: 12px!important;
 }
 .eack_table_mymq td
 {
@@ -5051,6 +5076,11 @@ padding: 11px 20px!important;
     height: 44px!important;
     width: 360px!important;
 }
+.myqbottomSec .myqarrow svg
+{
+    margin-bottom: -5px;
+}
+
 
 /* **********start live   ********** */
 
