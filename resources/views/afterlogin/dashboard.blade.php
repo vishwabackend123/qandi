@@ -368,7 +368,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_1')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -393,7 +393,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Give a little attention to these topics and take another step towards perfection. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_2')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
                                                         {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
@@ -419,7 +419,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_3')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
                                                         {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
@@ -444,7 +444,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                                 </div>
                                             </a>
-                                            <a href="{{route('dashboard-MyQMatrix','q_4')}}">
+                                            <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_4">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
                                                         {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
@@ -976,6 +976,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         $("span.tooltipmain p.tooltipclass span").click(function() {
             $(this).parent("p").hide();
             $(this).parent("p").removeClass('show');
+        });
+        $('.myq_matrix_quadrant').click(function(){
+            var quad_name=$(this).attr('data-name');
+            sessionStorage.setItem("quadrant_name", quad_name);
+             window.location.href = '{{url("dashboard-MyQMatrix")}}';
         });
     });
     $(document).on('click', function(e) {

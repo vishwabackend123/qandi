@@ -1767,10 +1767,11 @@ a.btn-common-attempted svg {
       border-bottom: 4px solid #363c4f;
       opacity: 1;
       background-color: transparent;
+      position: relative;
   }
   .questionwrapper {
       margin: auto;
-      max-height: calc(100% - 270px);
+      max-height: calc(100vh - 350px);
       overflow: overlay;
       padding: 0px 100px;
   }

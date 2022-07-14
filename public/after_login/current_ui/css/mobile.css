@@ -96,7 +96,7 @@
 }
 @media only screen and (max-height: 780px) {
     .text-exambottom-sec {
-        height: 29vh;margin-top: 10px;
+        height: 29vh;margin-top: 10px;padding-bottom: 15px;
     }
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
