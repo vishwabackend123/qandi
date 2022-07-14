@@ -45,7 +45,7 @@ $userData = Session::get('user_data');
     <div class="planner-wrapper ">
         <div class="notification-main">
             <h2>Notifications <a href="{{route('clearAllNotifications')}}">Clear all</a></h2>
-            <div class="new_notification_main_sec">
+            <div class="new_notification_main_sec" id="recent_notify">
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
                 <div class="notification-list">
@@ -69,6 +69,10 @@ $userData = Session::get('user_data');
 </div>
 <!--main-profile-section-->
 <script>
+$(document).on('click', '#nodificbell', function(event) {
+    refresh_notification();
+});
+
 function lettersOnly(evt) {
 
     evt = (evt) ? evt : event;
@@ -80,6 +84,20 @@ function lettersOnly(evt) {
         return false;
     }
     return true;
+}
+
+function refresh_notification() {
+    $.ajax({
+        url: "{{ url('/refresh-notifications',) }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        success: function(response_data) {
+            $('#recent_notify').html(response_data);
+
+        },
+    });
 }
 
 </script>
