@@ -609,6 +609,21 @@ font-weight: 800;
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     color: rgba(54, 60, 79, 0.5);
     padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+}
+::-webkit-calendar-picker-indicator{
+  opacity:0;
+}
+.planner-date .clander-icon{
+right: 14px;
+bottom: 11px;
+z-index: 1;
+}
+.chapter-error svg {
+    vertical-align: sub;
 }
 .planner-date label {
     font-size: 14px;
@@ -721,7 +736,7 @@ overflow: hidden;
   border-radius: 32px;    
 }
 .custom_modal{
- padding: 20px 20px 32px 32px;
+ padding: 32px;
  border-radius: 32px;
  width: 416px;
 }
@@ -729,14 +744,18 @@ overflow: hidden;
     min-width: 166px !important;
 }
 .addtestbtn svg {
-    top: 4px;
+    top: 5px;
 }
 .custom_modal .modal-header .modal-title {
     font-size: 24px;
     font-weight: 800;
+    color: #1f1f1f;
 }
 .custom_modal .modal-header .btn-close {
-    cursor: pointer;
+   cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 .Calendar-title{
 font-size: 24px;
@@ -3495,9 +3514,9 @@ header {
     color: #1f1f1f;
     margin-bottom: 10px;
 }
-.boxheading.boxmainheading{
+/* .boxheading.boxmainheading{
     color: #234628;
-}
+} */
 .myqTodayGraphSec .textblock {
     padding-left: 20px;
 }
@@ -3920,7 +3939,7 @@ height: auto;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
-.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #234628}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
 .commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
 html.scrollnone,
@@ -4035,6 +4054,7 @@ justify-content: space-between;}
 .matrixpage-wrapper .fortab .commonWhiteBox{height:100%;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
+.matrix-page-wrapper .commonWhiteBox{height:100%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4265,7 +4285,7 @@ justify-content: space-between;}
 }
 
 .exam_instruction_scrolling {
-    height: 440px;
+    height: 430px;
     overflow-y: auto;
     padding-right: 150px;
 }
@@ -4417,6 +4437,9 @@ justify-content: space-between;}
 /*********** MyQ-Matrix */
 .tabMainblock_myqmatric{
     margin-top: 4px!important;
+}
+.tabMainblock_myqmatric .commontab .tab-content {
+    padding: 15px 0 0;
 }
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
     position: relative!important;

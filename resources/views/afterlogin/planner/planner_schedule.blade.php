@@ -25,15 +25,21 @@ $userData = Session::get('user_data');
                             <h2 class="week-select pb-3">Select a week</h2>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <div class="planner-date">
+                                    <div class="planner-date position-relative">
                                         <label>Start Date</label>
                                         <input type="date" class="form-control" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}">
+                                        <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <div class="planner-date">
+                                    <div class="planner-date position-relative">
                                         <label>End Date</label>
                                         <input type="date" class="form-control" id="EndDate" name="end_date" value="{{$sundayDate}}">
+                                        <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -48,7 +54,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <p class="chapter-error pt-2 mb-0 " id="limit_error" style="display:none">
-                                <svg class="align-middle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 18.333a8.333 8.333 0 1 0 0-16.666 8.333 8.333 0 0 0 0 16.666zM10 6.667V10M10 13.333h.008" stroke="#FB7686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                                 <span class="ms-1"> </span>
@@ -147,7 +153,7 @@ $userData = Session::get('user_data');
             <div class="text-right addtestbtn">
                 <button type="button" class="btn btn-common-green" id="addChapter" data-value=""><svg class="position-relative" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5 4.167v11.666M4.667 10h11.666" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>&nbsp; Add to test</button>
+                    </svg>&nbsp;&nbsp; Add to test</button>
             </div>
         </div>
     </div>
