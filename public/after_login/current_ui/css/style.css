@@ -2198,7 +2198,7 @@ a.btn-common-attempted svg {
      background-size: revert;
      background-position: center;
      width: 13.1px;
-     height: 7.8px;
+     height: 10px;
  }
  .customDropdown.active::before {
      top: 22px;
@@ -2227,15 +2227,19 @@ a.btn-common-attempted svg {
      position: absolute;
      top: 70px;
      width: 100%;
-     background: #f6f9fd;
+     background: #fff;
      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
      border-radius: 10px;
+     -moz-border-radius:10px;
+     -webkit-border-radius:10px;
+     -moz-scrollbar-position:outside;
      overflow: hidden;
      display: none;  
     font-size: 16px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: normal;
+    color: #1f1f1f;
  }
  .customDropdown.active .options {
      display: block;    z-index: 9;
@@ -2245,8 +2249,10 @@ a.btn-common-attempted svg {
      cursor: pointer;
  }
  .customDropdown .options div:hover {
-    background: #e0f6e3;
-   
+    background: #e0f6e3; 
+ }
+ .journeyBoxcontainer .customDropdown .options div:hover {
+    background: #f0fcf2; 
  }
  .drocustomDropdownpdown input::-webkit-input-placeholder{
     font-size: 16px;
@@ -3308,6 +3314,19 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
     width: 96px!important;
 }
 .commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
+input.text-box.markstrend::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #1f1f1f;
+}
+input.text-box.markstrend::-moz-placeholder { /* Firefox 19+ */
+color: #1f1f1f;    
+}
+input.text-box.markstrend:-ms-input-placeholder { /* IE 10+ */
+color: #1f1f1f;
+}
+input.text-box.markstrend:-moz-placeholder { /* Firefox 18- */
+color: #1f1f1f;
+}
+
 
 /********************* Amit End ****************************/
 
