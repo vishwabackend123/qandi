@@ -5,10 +5,10 @@ $userData = Session::get('user_data');
 @section('content')
 
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar_new')
+  @include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-
+  
 
     <section class="content-wrapper">
         <div class="container-fluid">
@@ -52,9 +52,9 @@ $userData = Session::get('user_data');
                                     <div class="exam-select">
                                         <span class="week-select d-block position-relative">Select exams per week</span>
                                         <div class="d-flex lign-items-center incre-decre-value">
-                                            <div class="value-button border-right radius-left" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                                            <div class="value-button border-end radius-left" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
                                             <input type="text" id="number" value="{{$planner_cnt}}" min="0" max="7" readonly />
-                                            <div class="value-button border-left radius-right" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                                            <div class="value-button border-start radius-right" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@ $userData = Session::get('user_data');
                                 <div class="d-flex align-items-center add-subchapter chaptbox" id="planner_sub_{{$sub->id}}">
                                     @foreach($sub_planner as $plan)
 
-                                    <div class="add-insubchapter mr-3">
+                                    <div class="add-insubchapter me-3">
                                         <input type="hidden" id="select_chapt_id{{$plan->chapter_id}}" name="chapters[]" value="{{$plan->chapter_id}}">
                                         <p class="m-0">
                                             <span class="mr-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
@@ -148,7 +148,7 @@ $userData = Session::get('user_data');
             <div class="modal-body p-0">
                 <input hidden name="chapt_subject_id" id="chapt_subject_id" value="">
                 <div class="custom-input pb-5 mb-5">
-                    <label>Select Chapters</label>
+                    <label class="mb-1">Select Chapters</label>
                     <select class="form-control selectdata" id="select-planner-chapter">
                         <option class="we">Type Chapters</option>
                         <option class="we2">Math</option>
@@ -257,7 +257,7 @@ $userData = Session::get('user_data');
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
-                '<div class = "add-insubchapter mr-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="mr-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="mr-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +

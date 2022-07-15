@@ -292,6 +292,7 @@ color: #d0d5dd !important;
 }
 .enterotp .form-control:first-child:focus{border-color: rgba(86, 182, 99, 0.5) !important;
     border-left: 1px solid rgba(86, 182, 99, 0.5) !important;}
+    .enterotp .form-control:last-child:focus{ border-right: 1px solid rgba(86, 182, 99, 0.5) !important;}
 .resend {
     font-size: 14px !important;
 }
@@ -318,8 +319,8 @@ select.form-control:not([size]):not([multiple]) {
     background: url(../images/drodown-arrow.svg) no-repeat white;
     background-position: 95%;
     cursor: pointer;
-    color: rgba(54, 60, 79, 0.5);   
-    padding-right: 30px;
+    color: #363c4f;   
+    padding-right: 42px;
 }
 
 .signuprightpannel {
@@ -622,9 +623,6 @@ right: 14px;
 bottom: 11px;
 z-index: 1;
 }
-.chapter-error svg {
-    vertical-align: sub;
-}
 .planner-date label {
     font-size: 14px;
     color: #363c4f;
@@ -692,13 +690,10 @@ font-weight: 800;
 .chapter_remove {
     margin-left: 10px;
 }
-.add-chapter label svg{
-top:6px;
-}
 .add-chapter {
     border-bottom: 1px solid #e5eaee;
     padding-bottom: 8px;
-    margin-bottom: 180px;
+    margin-bottom: 240px;
 }
 .chapter-error{
 font-size: 14px;
@@ -714,7 +709,7 @@ font-weight: 500;
 vertical-align: super;
 }
 .add-insubchapter{
-     padding: 17px 12px 17px 17px;
+     padding: 17px 12px 13px 17px;
     border-radius: 8px;
     border: 1px solid #56b663;
     margin-bottom: 10px;
@@ -725,11 +720,12 @@ vertical-align: super;
     font-weight: 500;
 }
 .add-insubchapter p span{
-overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 130px;
-    display: inline-block;    
+    width: 127px;
+    display: inline-block;
+    padding-right: 8px;    
 }
 .clander-box{
   padding: 32px 25px 30px 25px;
@@ -743,9 +739,6 @@ overflow: hidden;
 .addtestbtn .btn {
     min-width: 166px !important;
 }
-.addtestbtn svg {
-    top: 5px;
-}
 .custom_modal .modal-header .modal-title {
     font-size: 24px;
     font-weight: 800;
@@ -756,6 +749,7 @@ overflow: hidden;
     position: absolute;
     right: 20px;
     top: 20px;
+    background-image: none;
 }
 .Calendar-title{
 font-size: 24px;
@@ -2885,7 +2879,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 }
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
-    font-size: 58px;
+    font-size: 60px;
     width: 1em;
     height: 1em;
     position: relative;
@@ -2953,7 +2947,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
-    font-size: 110px;
+    font-size: 112px;
     min-width: 1em;
     height: 1em;
     position: relative;
@@ -3012,8 +3006,8 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 .mq_percent_text {
     position: absolute;
-    font-size: 27.1px;
-    left: 24px;
+    font-size: 24px;
+    right: 54px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3024,9 +3018,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 span.mq_percent_outoff {
     color: rgba(35, 70, 40, 0.2);
-    font-size: 18.1px;
+    font-size: 18px;
     position: absolute;
-    left: 45px;
+    left: 47px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3941,7 +3935,7 @@ height: auto;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;padding-bottom: 18px;}
 html.scrollnone,
 html.scrollnone .wrapper-dashboard,
 html.scrollnone .main-wrapper { overflow: hidden;}
@@ -4055,6 +4049,9 @@ justify-content: space-between;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
+.bellactive a{background-color:#f2f4f7 ;}
+.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
+.subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
