@@ -635,10 +635,11 @@ class PlannerController extends Controller
             $sundayDate = date('Y-m-d', strtotime('sunday this week'));
 
             $user_subjects = $this->redis_subjects();
+            $header_title = "Planner";
 
-            //dd($planner);
 
-            return view('afterlogin.planner.planner_schedule', compact('planner', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
+
+            return view('afterlogin.planner.planner_schedule', compact('header_title', 'planner', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

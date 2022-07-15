@@ -523,8 +523,6 @@ label.filter {
         $('.custom-anstop').css('height', test_review_height_div);
         $('.reviewans-mainsec').css('height', test_review_height_div);
       
-
-
         
        
     }

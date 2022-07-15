@@ -493,7 +493,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="plantitleBox">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
-                                                    Weekly plan
+                                                    Weekly Plan
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -699,7 +699,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="journeyGraph cardWhiteBg">
                                         <div class="boxHeadingBlock">
                                             <h3 class="boxheading">
-                                                Progress journey
+                                                Progress Journey
                                                 <span class="tooltipmain">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -977,7 +977,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     $(this).siblings("p").show();
                     $(this).siblings("p").addClass('show');
                 }
-
+                $('.customDropdown').removeClass('active');
 
             });
             $("span.tooltipmain p.tooltipclass span").click(function() {
