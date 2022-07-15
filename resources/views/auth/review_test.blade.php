@@ -194,94 +194,130 @@
                     
                 </div>
                 <div class="examRightpanel reviewScreenright ans-panel">
-                    <div class="custom-exam-ansplatemain">
-                        <div class="custom-anstop">
-                            <p><span>Answer Palette</span></p>
-                            <div class="text-exambottom-sec">
-                                
-                                <button type="button" class="btn red-btn" id="btn-ans">1</button>
-                                <button type="button" class="btn" id="btn-ans">2</button>
-                                <button type="button" class="btn" id="btn-ans">3</button>
-                                <button type="button" class="btn" id="btn-ans">4</button>
-                                <button type="button" class="btn" id="btn-ans">5</button>
-                                <button type="button" class="btn red-btn" id="btn-ans">6</button>
-                                <button type="button" class="btn" id="btn-ans">7</button>
-                             
-                                <button type="button" class="btn" id="btn-ans">8</button>
-                                <button type="button" class="btn" id="btn-ans">9</button>
-                                <button type="button" class="btn" id="btn-ans">10</button>
-                                <button type="button" class="btn pink-btn" id="btn-ans">11</button>
-                                <button type="button" class="btn" id="btn-ans">12</button>
-                                <button type="button" class="btn" id="btn-ans">13</button>
-                                <button type="button" class="btn" id="btn-ans">14</button>
-                                
-                                <button type="button" class="btn red-btn" id="btn-ans">15</button>
-                                <button type="button" class="btn" id="btn-ans">16</button>
-                                <button type="button" class="btn" id="btn-ans">17</button>
-                                <button type="button" class="btn red-btn" id="btn-ans">18</button>
-                                <button type="button" class="btn" id="btn-ans">19</button>
-                                <button type="button" class="btn" id="btn-ans">20</button>
-                                <button type="button" class="btn" id="btn-ans">21</button>
-                                <button type="button" class="btn" id="btn-ans">22</button>
-                                <button type="button" class="btn border-btn" id="btn-ans">23</button>
-                                <button type="button" class="btn" id="btn-ans">24</button>
-                                <button type="button" class="btn" id="btn-ans">25</button>
-                                <button type="button" class="btn" id="btn-ans">26</button>
-                                <button type="button" class="btn" id="btn-ans">27</button>
-                                <button type="button" class="btn" id="btn-ans">28</button>
-                                <button type="button" class="btn" id="btn-ans">29</button>
-                                <button type="button" class="btn" id="btn-ans">30</button>
-                               
-                                
+                    <div class="custom-anstop">
+                        <p><span>Answer Palette</span></p>
+                        <div class="text-exambottom-sec">
+                            
+                            <button type="button" class="btn red-btn" id="btn-ans">1</button>
+                            <button type="button" class="btn" id="btn-ans">2</button>
+                            <button type="button" class="btn" id="btn-ans">3</button>
+                            <button type="button" class="btn" id="btn-ans">4</button>
+                            <button type="button" class="btn" id="btn-ans">5</button>
+                            <button type="button" class="btn red-btn" id="btn-ans">6</button>
+                            <button type="button" class="btn" id="btn-ans">7</button>
+                            
+                            <button type="button" class="btn" id="btn-ans">8</button>
+                            <button type="button" class="btn" id="btn-ans">9</button>
+                            <button type="button" class="btn" id="btn-ans">10</button>
+                            <button type="button" class="btn pink-btn" id="btn-ans">11</button>
+                            <button type="button" class="btn" id="btn-ans">12</button>
+                            <button type="button" class="btn" id="btn-ans">13</button>
+                            <button type="button" class="btn" id="btn-ans">14</button>
+                            
+                            <button type="button" class="btn red-btn" id="btn-ans">15</button>
+                            <button type="button" class="btn" id="btn-ans">16</button>
+                            <button type="button" class="btn" id="btn-ans">17</button>
+                            <button type="button" class="btn red-btn" id="btn-ans">18</button>
+                            <button type="button" class="btn" id="btn-ans">19</button>
+                            <button type="button" class="btn" id="btn-ans">20</button>
+                            <button type="button" class="btn" id="btn-ans">21</button>
+                            <button type="button" class="btn" id="btn-ans">22</button>
+                            <button type="button" class="btn border-btn" id="btn-ans">23</button>
+                            <button type="button" class="btn" id="btn-ans">24</button>
+                            <button type="button" class="btn" id="btn-ans">25</button>
+                            <button type="button" class="btn" id="btn-ans">26</button>
+                            <button type="button" class="btn" id="btn-ans">27</button>
+                            <button type="button" class="btn" id="btn-ans">28</button>
+                            <button type="button" class="btn" id="btn-ans">29</button>
+                            <button type="button" class="btn" id="btn-ans">30</button>
+                            
+                            
+                        </div>
+                    </div>
+                        <div class="reviewans-mainsec">
+                            <div class="review-filter-top">
+                                <span>Review Questions</span> 
+                                <label class="filter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </label>
+                                <label class="expandbtn">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </label>
+                                <label class="collapsebtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </label>
+                            </div>
+                        <div class="list-ans">
+                            <div class="d-flex quistion-1 redborder-left ">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q1.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+                            <div class="d-flex quistion-2 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q2.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+                            <div class="d-flex quistion-3 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q3.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+
+                            <div class="d-flex quistion-3 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q3.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex quistion-3 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q3.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex quistion-3 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q3.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
+                            </div>
+
+                            <div class="d-flex quistion-3 greenborder-left">
+                                <div class="flex-shrink-0" style="padding-left: 16px;">
+                                            Q3.
+                                </div>
+                                <div class="flex-grow-1 ms-3 quistion-content ">
+                                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                </div>
                             </div>
                         </div>
-                         <div class="reviewans-mainsec">
-                             <div class="review-filter-top">
-                                    <span>Review Questions</span> 
-                                    <label class="filter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                    </label>
-                                    <label class="expandbtn">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </label>
-                                    <label class="collapsebtn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                            <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </label>
-                             </div>
-                            <div class="list-ans">
-                                <div class="d-flex quistion-1 redborder-left ">
-                                    <div class="flex-shrink-0" style="padding-left: 16px;">
-                                                Q1.
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 quistion-content ">
-                                        This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                    </div>
-                                </div>
-                                <div class="d-flex quistion-2 greenborder-left">
-                                    <div class="flex-shrink-0" style="padding-left: 16px;">
-                                                Q2.
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 quistion-content ">
-                                        This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                    </div>
-                                </div>
-                                <div class="d-flex quistion-3 greenborder-left">
-                                    <div class="flex-shrink-0" style="padding-left: 16px;">
-                                                Q3.
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 quistion-content ">
-                                        This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                    </div>
-                                </div>
-                            </div>
-                         </div>
-                         <div class="bck-btn">Back</div>
-                    </div>
+                        </div>
+                        <div class="bck-btn">Back</div>
                 </div>
             </div>
         </div>
@@ -379,6 +415,7 @@
     margin: 0;
     padding-bottom: 20px;
     font-weight: 800;
+    border-bottom: 1px solid rgba(205, 227, 208, 0.5);
 }
 .red-btn {
     background: #d92d20 !important;
@@ -403,7 +440,7 @@ label.filter {
 }
 .list-ans {
     padding-top: 20px;
-    height: 269px;
+    height: 38vh;
     overflow-y: scroll;
 }
 .list-ans div {
@@ -478,21 +515,65 @@ label.filter {
 
 
 <!-----End__Right_Review_Height_Calculation------->
+<script>
+    function review_right_Height() {
+        var review_Screen_right_height = $(".reviewScreenright").outerHeight();
+       
+        var test_review_height_div = review_Screen_right_height / 2;
+        $('.custom-anstop').css('height', test_review_height_div);
+        $('.reviewans-mainsec').css('height', test_review_height_div);
+      
+
+
+        
+       
+    }
+
+    review_right_Height();
+    $("window").load(function() {
+        review_right_Height();
+    });
+
+
+    $(window).resize(function() {
+        review_right_Height();
+    });
+</script>
+
 
 <script>
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
-            var customanstopheigth = $(".custom-anstop").outerHeight();
-            var reviewansmainsecheigth = $(".reviewans-mainsec").outerHeight();
-            var onclickreviewbox = customanstopheigth + reviewansmainsecheigth;
-            $('.reviewans-mainsec').css('height', onclickreviewbox);
+            var review_Screen_right_height = $(".reviewScreenright").outerHeight();
+            var review_ans_mainsec_heigth = $(".reviewans-mainsec").outerHeight();
+            var custom_ans_top_heigth = $(".custom-anstop").outerHeight();
+            var review_filter_top_height = $(".review-filter-top").outerHeight();
+            var list_ans_height = $(".list-ans").outerHeight();
+
+            // var review = $(".reviewScreenright").innerHeight();
+            // alert(review);
+          
+        
+            var calculated_height = review_Screen_right_height - review_ans_mainsec_heigth;
+            var onclick_review_box = custom_ans_top_heigth + calculated_height;
+            $('.reviewans-mainsec').css('height', onclick_review_box);
+            var afterExpandtotalheight =  $(".reviewScreenright").outerHeight();
+             var min_height_q_list_h = afterExpandtotalheight - 122 + "px";
+             $('.reviewans-mainsec').css('height', min_height_q_list_h);
+
+              var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
+              var scroll_height = reviewans_final_height - review_filter_top_height;
+              $('.list-ans').css('height', scroll_height)
+             
+
         });
 
         $(".collapsebtn").on('click', function() {
-            var reviewansmainsecheigth = $(".reviewans-mainsec").outerHeight();
-            var customanstopheigth = $(".custom-anstop").outerHeight();
-            var onclickreviewbox2 = reviewansmainsecheigth - customanstopheigth;
-            $('.reviewans-mainsec').css('height', onclickreviewbox2);
+            var review_ans_mainsec_heigth = $(".reviewans-mainsec").outerHeight();
+            var custom_ans_top_heigth = $(".custom-anstop").outerHeight();
+            var onclick_review_box2 = review_ans_mainsec_heigth - custom_ans_top_heigth;
+            var clickcollapesbtn = onclick_review_box2 + 122 + "px";
+            $('.reviewans-mainsec').css('height', clickcollapesbtn);
         });
     });
 </script>
