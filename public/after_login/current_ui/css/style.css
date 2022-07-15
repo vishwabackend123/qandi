@@ -3753,10 +3753,15 @@ header {
 }
 
 .tasklistbtn .btn {
+<<<<<<< HEAD
+    padding: 8px 22px;
+
+=======
     min-width: 114px;
     padding: 8px 16px;
     height: 38px;
     width: 114px;
+>>>>>>> d5f2fc0b57ac8337bb3ad6f3f5805163f61d5e97
 }
 .subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
 .tasklistbtn .btn.nobg {
@@ -3766,8 +3771,8 @@ header {
 .tasklistbtn .btn.nobg:hover,
 .tasklistbtn .btn.nobg:focus,
 .tasklistbtn .btn.nobg:active {
-    background-color: #56b663;
-    color: #fff
+    background-color: #f5faf6;
+    color: #56b663;
 }
 
 .myqmatPannel {
@@ -5486,7 +5491,7 @@ padding: 11px 20px!important;
     background-color: #1f4736;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
-    z-index: 55;
+    z-index: 5555;
     padding: 15px 30px 15px 20px;
     position: absolute;
     left: 33px;
