@@ -2255,14 +2255,14 @@ a.btn-common-attempted svg {
  .customDropdown.active .options {
      display: block;    z-index: 9;
  }
- .customDropdown .options div {
+ .customDropdown .options .markstrend {
      padding: 12px 20px;
      cursor: pointer;
  }
- .customDropdown .options div:hover {
+ /* .customDropdown .options div:hover {
     background: #e0f6e3; 
- }
- .journeyBoxcontainer .customDropdown .options div:hover {
+ } */
+ .journeyBoxcontainer .customDropdown .options .markstrend:hover {
     background: #f0fcf2; 
  }
  .drocustomDropdownpdown input::-webkit-input-placeholder{
