@@ -82,8 +82,16 @@
     
 }
 @media only screen and (max-width: 1300px){
-
+    .selectPlan {
+        padding: 0px 40px 45px;
+    }
     .fullbodyBox .rightImgBox svg{width: 75px;}
+    .planType {
+        padding-top: 25px;
+    }
+    .selectPlanedetail {
+        padding: 25px 40px;
+    }
 }
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
