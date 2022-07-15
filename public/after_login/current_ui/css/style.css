@@ -3753,15 +3753,10 @@ header {
 }
 
 .tasklistbtn .btn {
-<<<<<<< HEAD
-    padding: 8px 22px;
-
-=======
     min-width: 114px;
     padding: 8px 16px;
     height: 38px;
     width: 114px;
->>>>>>> d5f2fc0b57ac8337bb3ad6f3f5805163f61d5e97
 }
 .subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
 .tasklistbtn .btn.nobg {
