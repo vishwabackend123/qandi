@@ -1,10 +1,27 @@
 @php
 $userData = Session::get('user_data');
+$action  = Route::currentRouteName();
+if($action =='dashboard')
+{
+    $name = "Dashboard";
+}elseif($action == 'dashboard-DailyTask')
+{
+    $name = 'Task Center';
+}elseif($action == 'dashboard-MyQMatrix')
+{
+    $name = 'MyQ Matrix';
+}
+else
+{
+    $name = $action;
+}
+
 @endphp
+
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <h2>Dashboard</h2>
+            <h2>{{$name}}</h2>
             <h6><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
