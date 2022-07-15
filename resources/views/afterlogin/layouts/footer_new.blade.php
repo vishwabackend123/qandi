@@ -300,14 +300,12 @@
     // the following script for leader board section
     $(document).ready(function() {
         $(".account-profile").click(function() {
-
             $(".leader-board").toggle();
             $(".subscription").hide();
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").toggle();
             $("#editProfile_form #cancelEdit").click();
-
 
         });
 
