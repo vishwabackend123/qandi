@@ -79,6 +79,8 @@
             <p>Already have an account? <a href="{{route('login')}}">Login</a></p>
             <form id="studentsignup" method="post">
                 @csrf
+                <input type="hidden" name="refer_code" id="refer_code" value="{{$referral_code ?? ''}}">
+                <input type="hidden" name="refer_email" id="referral_email" value="{{$referral_email ?? ''}}">
                 <div class="custom-input pb-3">
                     <label>Name </label>
                     <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
@@ -435,6 +437,8 @@ $("#studentsignup").validate({
         var location = $("#location").val();
         var exam = $("#exam_id").val();
         var grade_stage = $("#grade").val();
+        var refer_code = $("#refer_code").val();
+        var referral_email = $("#referral_email").val();
         $.ajax({
             url: "{{ url('/verifyOtpRegister') }}",
             type: 'POST',
@@ -447,6 +451,8 @@ $("#studentsignup").validate({
                 location: location,
                 exam_id: exam,
                 stage_at_signup: grade_stage,
+                refer_code: refer_code,
+                refer_email: referral_email,
             },
             beforeSend: function() {},
             success: function(response_data) { //debugger;
