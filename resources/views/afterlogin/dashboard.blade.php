@@ -283,8 +283,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/2</span>
                                                 </div>
                                             </div>
-                                            <p class="dashSubtext mt-2">Please attempt the Full body scan test,
-                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            </p>
+                                            @endif
+                                            @if(isset($prof_asst_test) && $prof_asst_test=='Y')
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($weekTask as $wkey=>$data)
@@ -332,6 +335,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </svg></span></a>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -588,7 +592,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>{{ round($val->chapter_score, 0)}}%</b></div>
                                                 <div class="attemptBtn">
                                                     @if($val->test_completed_yn=='Y')
-                                                    <a href="javascript:void(0);" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <a href="javascript:void(0);" class="btn btn-common-attempted" style="cursor: default;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <circle cx="10" cy="10" r="10" fill="#56B663" />
                                                             <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg> Attempted</a>
