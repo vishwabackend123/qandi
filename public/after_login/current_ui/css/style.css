@@ -2947,7 +2947,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
-    font-size: 110px;
+    font-size: 112px;
     min-width: 1em;
     height: 1em;
     position: relative;
@@ -3006,8 +3006,8 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 .mq_percent_text {
     position: absolute;
-    font-size: 27.1px;
-    left: 24px;
+    font-size: 24px;
+    right: 52px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3018,9 +3018,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 span.mq_percent_outoff {
     color: rgba(35, 70, 40, 0.2);
-    font-size: 18.1px;
+    font-size: 18px;
     position: absolute;
-    left: 45px;
+    left: 47px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
