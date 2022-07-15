@@ -292,6 +292,7 @@ color: #d0d5dd !important;
 }
 .enterotp .form-control:first-child:focus{border-color: rgba(86, 182, 99, 0.5) !important;
     border-left: 1px solid rgba(86, 182, 99, 0.5) !important;}
+    .enterotp .form-control:last-child:focus{ border-right: 1px solid rgba(86, 182, 99, 0.5) !important;}
 .resend {
     font-size: 14px !important;
 }
