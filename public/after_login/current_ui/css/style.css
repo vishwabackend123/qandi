@@ -206,6 +206,7 @@ color: #d0d5dd !important;
     border: 1px solid rgba(86, 182, 99, 0.5) !important; 
 }
 
+
 .custom-input input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(54, 60, 79, 0.5);
@@ -261,7 +262,7 @@ color: #d0d5dd !important;
 
 .enterotp {
     color: #363c4f;
-    border: 1px solid #d0d5dd;
+    /* border: 1px solid #d0d5dd; */
     border-radius: 8px;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
@@ -269,18 +270,28 @@ color: #d0d5dd !important;
 }
 
 .enterotp .form-control {
-    border-left: 0 !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
+    border-left: 0!important;
+    border-top: 0!important;
+    border-bottom: 0!important;
     border-radius: 0;
     background: transparent;
     text-align: center;
+    border: 1px solid #d0d5dd!important;
+    /* border-right: 0px!important; */
+    border-left: 0px!important;
 }
-
+.enterotp .form-control:focus{border-color: rgba(86, 182, 99, 0.5) !important;}
 .enterotp .form-control:last-child {
-    border: 0 !important;
+    border-right: 1px solid #d0d5dd!important;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-
+.enterotp .form-control:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;border-left: 1px solid #d0d5dd!important;
+}
+.enterotp .form-control:first-child:focus{border-color: rgba(86, 182, 99, 0.5) !important;
+    border-left: 1px solid rgba(86, 182, 99, 0.5) !important;}
 .resend {
     font-size: 14px !important;
 }
