@@ -199,7 +199,7 @@ Route::any('/weekly_exams', [App\Http\Controllers\PlannerController::class, 'wee
 Route::any('/planner_exam/{planner_id}/{chapter_id}', [App\Http\Controllers\PlannerController::class, 'plannerExam'])->name('planner_exam')->middleware('auth', 'menu');
 Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerController::class, 'shuffleChapter'])->name('shuffle_chapter')->middleware('auth', 'menu');
 Route::any('/getWeeklyPlanSchedule', [App\Http\Controllers\PlannerController::class, 'getWeeklyPlanSchedule'])->name('getWeeklyPlanSchedule')->middleware('auth', 'menu');
-Route::any('/planner', [App\Http\Controllers\PlannerController::class, 'plannerSchedule'])->middleware('auth', 'menu');
+Route::any('/planner', [App\Http\Controllers\PlannerController::class, 'plannerSchedule'])->name('planner')->middleware('auth', 'menu');
 
 /**
  * Assessment Exam Controller Routes
@@ -311,5 +311,3 @@ Route::any('/previousyear_exam', [App\Http\Controllers\LeadUserController::class
 Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
 Route::any('/export_test_analytics', [App\Http\Controllers\LeadUserController::class, 'exportTestAnalytics']);
 Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
- 
-

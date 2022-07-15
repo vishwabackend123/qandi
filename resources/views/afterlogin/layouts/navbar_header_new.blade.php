@@ -1,10 +1,27 @@
 @php
 $userData = Session::get('user_data');
+$action = Route::currentRouteName();
+if($action =='dashboard')
+{
+$name = "Dashboard";
+}elseif($action == 'dashboard-DailyTask')
+{
+$name = 'Task Center';
+}elseif($action == 'dashboard-MyQMatrix')
+{
+$name = 'MyQ Matrix';
+}
+else
+{
+$name = $action;
+}
+
 @endphp
+
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <h2>Dashboard</h2>
+            <h2 class="text-capitalize">{{isset($header_title)?$header_title:$name}}</h2>
             <h6><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
@@ -69,35 +86,34 @@ $userData = Session::get('user_data');
 </div>
 <!--main-profile-section-->
 <script>
-$(document).on('click', '#nodificbell', function(event) {
-    refresh_notification();
-});
-
-function lettersOnly(evt) {
-
-    evt = (evt) ? evt : event;
-    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
-        ((evt.which) ? evt.which : 0));
-    if (charCode > 32 && (charCode < 65 || charCode > 90) &&
-        (charCode < 97 || charCode > 122)) {
-
-        return false;
-    }
-    return true;
-}
-
-function refresh_notification() {
-    $.ajax({
-        url: "{{ url('/refresh-notifications',) }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        success: function(response_data) {
-            $('#recent_notify').html(response_data);
-
-        },
+    $(document).on('click', '#nodificbell', function(event) {
+        refresh_notification();
     });
-}
 
+    function lettersOnly(evt) {
+
+        evt = (evt) ? evt : event;
+        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+            ((evt.which) ? evt.which : 0));
+        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)) {
+
+            return false;
+        }
+        return true;
+    }
+
+    function refresh_notification() {
+        $.ajax({
+            url: "{{ url('/refresh-notifications',) }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(response_data) {
+                $('#recent_notify').html(response_data);
+
+            },
+        });
+    }
 </script>
