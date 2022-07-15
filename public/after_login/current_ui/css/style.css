@@ -3525,6 +3525,7 @@ header {
 	display: inline-block;
 	margin-left: 8px;
 	cursor: pointer;position: relative;
+    top: -2px;
 }
 
 .content-wrapper {
