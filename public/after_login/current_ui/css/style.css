@@ -4382,7 +4382,9 @@ justify-content: space-between;}
 .tabMainblock_myqmatric{
     margin-top: 4px!important;
 }
-
+.tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
+    position: relative!important;
+}
 .mqmatric_topic {
     font-size: 20px;
     font-weight: 800;
