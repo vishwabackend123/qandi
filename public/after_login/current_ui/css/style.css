@@ -318,8 +318,8 @@ select.form-control:not([size]):not([multiple]) {
     background: url(../images/drodown-arrow.svg) no-repeat white;
     background-position: 95%;
     cursor: pointer;
-    color: rgba(54, 60, 79, 0.5);   
-    padding-right: 30px;
+    color: #363c4f;   
+    padding-right: 42px;
 }
 
 .signuprightpannel {
