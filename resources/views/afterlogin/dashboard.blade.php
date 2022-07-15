@@ -977,7 +977,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     $(this).siblings("p").show();
                     $(this).siblings("p").addClass('show');
                 }
-
+                $('.customDropdown').removeClass('active');
 
             });
             $("span.tooltipmain p.tooltipclass span").click(function() {

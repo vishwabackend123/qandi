@@ -167,6 +167,31 @@
                 $('#otp-verify-btn').attr('disabled', 'disabled');
                 $('#otp-verify-btn').addClass("disabled");
             }
+            if (opt_one) {
+            $('#opt_one').attr('style', 'border: 1px solid #56b66380 !important;');
+            } else {
+                $('#opt_one').attr('style', 'border: 0.5px solid #d0d5dd !important');
+            }
+            if (opt_two) {
+                $('#opt_two').attr('style', 'border: 1px solid #56b66380 !important;');
+            } else {
+                $('#opt_two').attr('style', 'border: 0.5px solid #d0d5dd !important');
+            }
+            if (opt_three) {
+                $('#opt_three').attr('style', 'border: 1px solid #56b66380 !important;');
+            } else {
+                $('#opt_three').attr('style', 'border: 0.5px solid #d0d5dd !important');
+            }
+            if (opt_four) {
+                $('#opt_four').attr('style', 'border: 1px solid #56b66380 !important;');
+            } else {
+                $('#opt_four').attr('style', 'border: 0.5px solid #d0d5dd !important');
+            }
+            if (opt_five) {
+                $('#opt_five').attr('style', 'border: 1px solid #56b66380 !important;');
+            } else {
+                $('#opt_five').attr('style', 'border: 0.5px solid #d0d5dd !important');
+            }
         });
         $('.editnumber').click(function() {
             $('#mobile_num').prop("readonly", false);

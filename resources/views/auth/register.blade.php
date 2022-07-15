@@ -497,7 +497,7 @@ $("#studentsignup").validate({
 
 });
 $(document).ready(function() {
-    $('.js-example-basic-single').select2({minimumResultsForSearch: -1});
+    $('.js-example-basic-single').select2({ minimumResultsForSearch: -1 });
     $('.resend_again').hide();
 
     $("#location").select2({
@@ -567,6 +567,9 @@ $('.otp').keyup(function() {
     $('.otp').each(function() {
         if ($(this).val() == '') {
             isEmptyOTP = true;
+            $(this).attr('style', 'border: 0.5px solid #d0d5dd !important');
+        } else {
+            $(this).attr('style', 'border: 1px solid #56b66380 !important;');
         }
     });
     if (isEmptyOTP) {
