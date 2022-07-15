@@ -360,9 +360,41 @@ class StudentSignInController extends Controller
                     $response['user_name'] = ucwords($user_name);
                     $response['mobile'] = $mobile_num;
                     $response['message'] = $succ_msg;
-                    //  $response['redirect_url'] = url('dashboard');
                     $user_Data = Auth::user();
                     Session::put('user_data', $user_Data);
+                    if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
+                          $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'],];
+                                $request = json_encode($inputjson);
+
+                                $api_URL = env('API_URL');
+                                $curl_url = $api_URL . 'api/insert-referr-student';
+
+                                $curl = curl_init();
+                                $curl_option = array(
+                                    CURLOPT_URL => $curl_url,
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_FAILONERROR => true,
+                                    CURLOPT_ENCODING => "",
+                                    CURLOPT_MAXREDIRS => 10,
+                                    CURLOPT_TIMEOUT => 30,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                    CURLOPT_CUSTOMREQUEST => "POST",
+                                    CURLOPT_POSTFIELDS => $request,
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache",
+                                        "content-type: application/json",
+                                    ),
+                                );
+                                curl_setopt_array($curl, $curl_option);
+
+                                $response_json = curl_exec($curl);
+                                $err = curl_error($curl);
+                                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                                curl_close($curl);
+                                if ($httpcode == 400 || $httpcode == 422) {
+                                    return json_encode(array('success' => false, 'message' => $httpcode));
+                                }
+                        }
 
                     return json_encode($response);
                 } else {
