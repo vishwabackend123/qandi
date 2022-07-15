@@ -3514,9 +3514,9 @@ header {
     color: #1f1f1f;
     margin-bottom: 10px;
 }
-.boxheading.boxmainheading{
+/* .boxheading.boxmainheading{
     color: #234628;
-}
+} */
 .myqTodayGraphSec .textblock {
     padding-left: 20px;
 }
@@ -3938,7 +3938,7 @@ height: auto;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
-.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #234628}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
 .commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
 html.scrollnone,
