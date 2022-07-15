@@ -493,7 +493,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="plantitleBox">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
-                                                    Weekly plan
+                                                    Weekly Plan
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -699,7 +699,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="journeyGraph cardWhiteBg">
                                         <div class="boxHeadingBlock">
                                             <h3 class="boxheading">
-                                                Progress journey
+                                                Progress Journey
                                                 <span class="tooltipmain">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -721,7 +721,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                             </svg> -->
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="progressJourny_graph"></canvas>
+                                                    <canvas id="progressJourny_graph"  style="height: 218px;"></canvas>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
@@ -778,7 +778,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph"></canvas>
+                                                    <canvas id="trend_graph" style="height: 218px;"></canvas>
                                                 </div>
                                             </div>
                                             @if (!empty($trendResponse))
@@ -786,12 +786,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                        <div class="options" style=" overflow-y: auto; height: 303%; ">
-                                                            <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                            <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                            <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                            <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                            <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                        <div class="options">
+                                                            <div  style=" overflow-y: auto;  height: 145px;">
+                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
