@@ -405,6 +405,10 @@ span.select2.select2-container.select2-container--default {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+.select2-results__option{font-size:14px;font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #363c4f;}
 .resendweight{  
 font-weight: 800;       
 }
