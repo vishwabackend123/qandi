@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
 @endphp
 @section('content')
 
 <!-- Side bar menu -->
-
+@include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-    @include('afterlogin.layouts.sidebar_new')
+
 
     <section class="content-wrapper">
         <div class="container-fluid">
@@ -20,26 +20,32 @@ $userData = Session::get('user_data');
                             <div class="d-flex align-items-center justify-content-between planner-title pb-3 mb-1">
                                 <h1>Planner</h1>
                                 <button type="submit" class="btn btn-common-green disabled" id="saveplannerbutton">Save Test</button>
+
                             </div>
-                            <span class="success-text" id="successPlanner_alert"></span>
+                            <p class="chapter-error mb-2 " id="success_msg" style="display:none">
+                                <span class="text-success" id="successPlanner_alert"></span>
+                                &nbsp;
+                            </p>
+
+
                             <h2 class="week-select pb-3">Select a week</h2>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="planner-date position-relative">
                                         <label>Start Date</label>
-                                        <input type="date" class="form-control" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}">
+                                        <input type="date" class="form-control plannerDate" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}" onkeydown="return false" required>
                                         <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
+                                                <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="planner-date position-relative">
                                         <label>End Date</label>
-                                        <input type="date" class="form-control" id="EndDate" name="end_date" value="{{$sundayDate}}">
+                                        <input type="date" class="form-control plannerDate" id="EndDate" name="end_date" value="{{$sundayDate}}" onkeydown="return false" required>
                                         <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
+                                                <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -121,9 +127,9 @@ $userData = Session::get('user_data');
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
-                        <!--  <div class="pt-5 mt-5">
+                        <div class="pt-5 mt-5">
                             <button class="btn btn-common-green disabled w-100">Save Test</button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,6 +154,7 @@ $userData = Session::get('user_data');
                         <option class="we2">Math</option>
                         <option>Apple</option>
                     </select>
+                    <p class="chapter-error" id="errChptAdd_alert"></p>
                 </div>
             </div>
             <div class="text-right addtestbtn">
@@ -159,6 +166,8 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-- Footer Section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
 <!-- footer Section end  -->
 <script type="text/javascript">
@@ -248,7 +257,7 @@ $userData = Session::get('user_data');
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
                 '<div class = "add-insubchapter mr-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="mr-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
-                '<svg  onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
                 '<path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />' +
@@ -258,11 +267,11 @@ $userData = Session::get('user_data');
                 '<path fill="#fff" d="M0 0h18v18H0z" />' +
                 '</clipPath>' +
                 '</defs>' +
-                ' </svg>' +
+                ' </svg></a>' +
                 '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "14" height = "14" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
             $('#plannerChapter').modal('hide');
         } else {
-            $('#errChptAdd_alert').html('Please select one option.');
+            $('#errChptAdd_alert').html('Please select one chapter.');
             $('#errChptAdd_alert').show();
             setTimeout(function() {
                 $('#errChptAdd_alert').fadeOut('fast');
@@ -381,14 +390,13 @@ $userData = Session::get('user_data');
                     var response = jQuery.parseJSON(response_data);
                     //$('.loader-block').hide();
                     if (response.success == true) {
-                        var massage = response.massage;
-                        $('#successPlanner_alert').html(massage);
-                        $('#successPlanner_alert').show();
+                        var message = response.message;
+                        $('#successPlanner_alert').html(message);
+                        $('#success_msg').show();
                         setTimeout(function() {
-                            $('#successPlanner_alert').fadeOut('fast');
+                            $('#success_msg').fadeOut('fast');
                         }, 8000);
-                        $('#overlay').fadeOut();
-
+                        $('#saveplannerbutton').addClass('disabled');
 
                     } else {
                         var message = response.message;
@@ -397,7 +405,7 @@ $userData = Session::get('user_data');
                         setTimeout(function() {
                             $('#errPlanner_alert').fadeOut('fast');
                         }, 8000);
-                        $('#overlay').fadeOut();
+
                         return false;
                     }
 
@@ -434,7 +442,8 @@ $userData = Session::get('user_data');
         }
     });
 
-    $("#StartDate").change(function() {
+    $(".plannerDate").change(function() {
+
         var start_date = this.value;
         var date = new Date(start_date);
 
@@ -536,10 +545,10 @@ function selectDate(date) {
 
 var defaultConfig = {
   weekDayLength: 1,
-  date: '08/05/2021',
+  date: '{{date("m/d/Y")}}',
   onClickDate: selectDate,
   showYearDropdown: true,
-  startOnMonday: false,
+  startOnMonday: true,
 };
 
 var calendar = $('#calendar-wrapper').calendar(defaultConfig);
