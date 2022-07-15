@@ -277,14 +277,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @endif
                                         </div>
                                         <div id="weekly" class=" tab-pane">
-                                            <div class="taskstatusBlock">
+                                            <div class="taskstatusBlock"  style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/2</span>
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext mt-2">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
                                             @if(isset($prof_asst_test) && $prof_asst_test=='Y')
