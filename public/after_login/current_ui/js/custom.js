@@ -180,7 +180,7 @@ $('.notificationnew').click(function() {
 });
 $('.headericon.dropdown').click(function(){
   $('.notification-block_new').removeClass('activeblock show');
-  $('.notificationnew').toggleClass('bellactive')
+  $('.notificationnew').removeClass('bellactive')
   $('html').removeClass("scrollnone");
   // $('.notification-block_new').removeClass('show ')
 });

@@ -2879,7 +2879,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 }
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
-    font-size: 58px;
+    font-size: 60px;
     width: 1em;
     height: 1em;
     position: relative;
@@ -4049,9 +4049,9 @@ justify-content: space-between;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
-.bellactive{background-color:#f2f4f7 ;}
-.subjectScoreBlock .row .SubjectscorePannel:nth-child(3){margin-bottom:0px;}
-.subjectScoreBlock .row .SubjectscorePannel:last-child{margin-bottom:0px;}
+.bellactive a{background-color:#f2f4f7 ;}
+.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
+.subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
