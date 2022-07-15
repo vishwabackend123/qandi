@@ -397,7 +397,7 @@ select.form-control:not([size]):not([multiple]) {
     padding: 0;
 }
 span.select2.select2-container.select2-container--default {
-    width: 100% !important;
+    width: 100% !important;position: relative;
 }
 .signuprightpannel {
     padding: 140px 140px 20px;
@@ -4002,6 +4002,8 @@ justify-content: space-between;}
             }
 .blackcolor{color: #1f1f1f    ;}
 .matrixpage-wrapper .fortab .commonWhiteBox{height:100%;}
+.select2-container--open .select2-dropdown--above{border:0px;}
+.select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
