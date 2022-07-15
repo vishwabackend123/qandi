@@ -609,6 +609,21 @@ font-weight: 800;
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     color: rgba(54, 60, 79, 0.5);
     padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+}
+::-webkit-calendar-picker-indicator{
+  opacity:0;
+}
+.planner-date .clander-icon{
+right: 14px;
+bottom: 11px;
+z-index: 1;
+}
+.chapter-error svg {
+    vertical-align: sub;
 }
 .planner-date label {
     font-size: 14px;
@@ -721,7 +736,7 @@ overflow: hidden;
   border-radius: 32px;    
 }
 .custom_modal{
- padding: 20px 20px 32px 32px;
+ padding: 32px;
  border-radius: 32px;
  width: 416px;
 }
@@ -729,14 +744,18 @@ overflow: hidden;
     min-width: 166px !important;
 }
 .addtestbtn svg {
-    top: 4px;
+    top: 5px;
 }
 .custom_modal .modal-header .modal-title {
     font-size: 24px;
     font-weight: 800;
+    color: #1f1f1f;
 }
 .custom_modal .modal-header .btn-close {
-    cursor: pointer;
+   cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 .Calendar-title{
 font-size: 24px;
@@ -2255,14 +2274,14 @@ a.btn-common-attempted svg {
  .customDropdown.active .options {
      display: block;    z-index: 9;
  }
- .customDropdown .options div {
+ .customDropdown .options .markstrend {
      padding: 12px 20px;
      cursor: pointer;
  }
- .customDropdown .options div:hover {
+ /* .customDropdown .options div:hover {
     background: #e0f6e3; 
- }
- .journeyBoxcontainer .customDropdown .options div:hover {
+ } */
+ .journeyBoxcontainer .customDropdown .options .markstrend:hover {
     background: #f0fcf2; 
  }
  .drocustomDropdownpdown input::-webkit-input-placeholder{
