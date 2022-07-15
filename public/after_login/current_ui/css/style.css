@@ -622,9 +622,6 @@ right: 14px;
 bottom: 11px;
 z-index: 1;
 }
-.chapter-error svg {
-    vertical-align: sub;
-}
 .planner-date label {
     font-size: 14px;
     color: #363c4f;
@@ -692,13 +689,10 @@ font-weight: 800;
 .chapter_remove {
     margin-left: 10px;
 }
-.add-chapter label svg{
-top:6px;
-}
 .add-chapter {
     border-bottom: 1px solid #e5eaee;
     padding-bottom: 8px;
-    margin-bottom: 180px;
+    margin-bottom: 240px;
 }
 .chapter-error{
 font-size: 14px;
@@ -714,7 +708,7 @@ font-weight: 500;
 vertical-align: super;
 }
 .add-insubchapter{
-     padding: 17px 12px 17px 17px;
+     padding: 17px 12px 13px 17px;
     border-radius: 8px;
     border: 1px solid #56b663;
     margin-bottom: 10px;
@@ -725,11 +719,12 @@ vertical-align: super;
     font-weight: 500;
 }
 .add-insubchapter p span{
-overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 130px;
-    display: inline-block;    
+    width: 127px;
+    display: inline-block;
+    padding-right: 8px;    
 }
 .clander-box{
   padding: 32px 25px 30px 25px;
@@ -743,9 +738,6 @@ overflow: hidden;
 .addtestbtn .btn {
     min-width: 166px !important;
 }
-.addtestbtn svg {
-    top: 5px;
-}
 .custom_modal .modal-header .modal-title {
     font-size: 24px;
     font-weight: 800;
@@ -756,6 +748,7 @@ overflow: hidden;
     position: absolute;
     right: 20px;
     top: 20px;
+    background-image: none;
 }
 .Calendar-title{
 font-size: 24px;
