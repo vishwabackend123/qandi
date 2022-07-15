@@ -4034,6 +4034,7 @@ justify-content: space-between;}
 .matrixpage-wrapper .fortab .commonWhiteBox{height:100%;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
+.matrix-page-wrapper .commonWhiteBox{height:100%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4264,7 +4265,7 @@ justify-content: space-between;}
 }
 
 .exam_instruction_scrolling {
-    height: 440px;
+    height: 430px;
     overflow-y: auto;
     padding-right: 150px;
 }
@@ -4416,6 +4417,9 @@ justify-content: space-between;}
 /*********** MyQ-Matrix */
 .tabMainblock_myqmatric{
     margin-top: 4px!important;
+}
+.tabMainblock_myqmatric .commontab .tab-content {
+    padding: 15px 0 0;
 }
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
     position: relative!important;
