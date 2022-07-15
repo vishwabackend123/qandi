@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="myqmatPannel myqcolor3">
+                                    <div class="myqmatPannel myqcolor3 mb-0">
                                         <div class="myqinner">
                                             <h6>Q3</h6>
                                             <h5>Hopeful </h5>
@@ -100,7 +100,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="myqmatPannel myqcolor4">
+                                    <div class="myqmatPannel myqcolor4 mb-0">
                                         <div class="myqinner">
                                             <h6>Q4</h6>
                                             <h5>Weak </h5>
