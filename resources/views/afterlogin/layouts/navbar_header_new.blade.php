@@ -1,16 +1,33 @@
 @php
 $userData = Session::get('user_data');
+$action = Route::currentRouteName();
+if($action =='dashboard')
+{
+$name = "Dashboard";
+}elseif($action == 'dashboard-DailyTask')
+{
+$name = 'Task Center';
+}elseif($action == 'dashboard-MyQMatrix')
+{
+$name = 'MyQ Matrix';
+}
+else
+{
+$name = $action;
+}
+
 @endphp
+
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <h2>{{isset($header_title)?$header_title:'Dashboard'}}</h2>
+            <h2 class="text-capitalize">{{isset($header_title)?$header_title:$name}}</h2>
             <h6><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
         </div>
         <div class="headerRight">
-            <span class="usertext"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}</a></span>
+            <span class="usertext"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
             <span class="headericon notificationnew">
                 <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -27,7 +44,7 @@ $userData = Session::get('user_data');
                 </a>
             </span>
             <span class="headericon dropdown">
-                <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>

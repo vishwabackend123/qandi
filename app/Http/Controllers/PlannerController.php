@@ -637,7 +637,7 @@ class PlannerController extends Controller
             $user_subjects = $this->redis_subjects();
             $header_title = "Planner";
 
-            //dd($planner);
+
 
             return view('afterlogin.planner.planner_schedule', compact('header_title', 'planner', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
         } catch (\Exception $e) {
