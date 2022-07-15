@@ -60,14 +60,7 @@ $(".mq_circle_percent").each(function() {
 		$round = $this.find(".mq_round_per");
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
 	$this.append('<div class="mq_circle_inbox"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div>');
-	$this.prop('Counter', 0).animate({Counter: $dataV},
-	{
-		duration: 2000, 
-		easing: 'swing', 
-		step: function (now) {
-            $this.find(".mq_percent_text").text(Math.ceil(now));
-        }
-    });
+	
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
 		setTimeout(function(){
@@ -78,6 +71,8 @@ $(".mq_circle_percent").each(function() {
 		},1000);
 	} 
 });
+var percent_data =$('.mq_circle_percent').attr('data-percent');
+$(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
 /*$(document).ready(function() {
     $("span.tooltipmain svg").click(function(event) {

@@ -206,6 +206,7 @@ color: #d0d5dd !important;
     border: 1px solid rgba(86, 182, 99, 0.5) !important; 
 }
 
+
 .custom-input input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(54, 60, 79, 0.5);
@@ -261,7 +262,7 @@ color: #d0d5dd !important;
 
 .enterotp {
     color: #363c4f;
-    border: 1px solid #d0d5dd;
+    /* border: 1px solid #d0d5dd; */
     border-radius: 8px;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
@@ -269,18 +270,28 @@ color: #d0d5dd !important;
 }
 
 .enterotp .form-control {
-    border-left: 0 !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
+    border-left: 0!important;
+    border-top: 0!important;
+    border-bottom: 0!important;
     border-radius: 0;
     background: transparent;
     text-align: center;
+    border: 1px solid #d0d5dd!important;
+    /* border-right: 0px!important; */
+    border-left: 0px!important;
 }
-
+.enterotp .form-control:focus{border-color: rgba(86, 182, 99, 0.5) !important;}
 .enterotp .form-control:last-child {
-    border: 0 !important;
+    border-right: 1px solid #d0d5dd!important;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
-
+.enterotp .form-control:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;border-left: 1px solid #d0d5dd!important;
+}
+.enterotp .form-control:first-child:focus{border-color: rgba(86, 182, 99, 0.5) !important;
+    border-left: 1px solid rgba(86, 182, 99, 0.5) !important;}
 .resend {
     font-size: 14px !important;
 }
@@ -2217,7 +2228,7 @@ a.btn-common-attempted svg {
      background-size: revert;
      background-position: center;
      width: 13.1px;
-     height: 7.8px;
+     height: 10px;
  }
  .customDropdown.active::before {
      top: 22px;
@@ -2246,26 +2257,32 @@ a.btn-common-attempted svg {
      position: absolute;
      top: 70px;
      width: 100%;
-     background: #f6f9fd;
+     background: #fff;
      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
      border-radius: 10px;
+     -moz-border-radius:10px;
+     -webkit-border-radius:10px;
+     -moz-scrollbar-position:outside;
      overflow: hidden;
      display: none;  
     font-size: 16px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: normal;
+    color: #1f1f1f;
  }
  .customDropdown.active .options {
      display: block;    z-index: 9;
  }
- .customDropdown .options div {
+ .customDropdown .options .markstrend {
      padding: 12px 20px;
      cursor: pointer;
  }
- .customDropdown .options div:hover {
-    background: #e0f6e3;
-   
+ /* .customDropdown .options div:hover {
+    background: #e0f6e3; 
+ } */
+ .journeyBoxcontainer .customDropdown .options .markstrend:hover {
+    background: #f0fcf2; 
  }
  .drocustomDropdownpdown input::-webkit-input-placeholder{
     font-size: 16px;
@@ -3327,6 +3344,19 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
     width: 96px!important;
 }
 .commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
+input.text-box.markstrend::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #1f1f1f;
+}
+input.text-box.markstrend::-moz-placeholder { /* Firefox 19+ */
+color: #1f1f1f;    
+}
+input.text-box.markstrend:-ms-input-placeholder { /* IE 10+ */
+color: #1f1f1f;
+}
+input.text-box.markstrend:-moz-placeholder { /* Firefox 18- */
+color: #1f1f1f;
+}
+
 
 /********************* Amit End ****************************/
 
@@ -3386,6 +3416,7 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
     font-weight: 600;
     margin-left: 14px;
     line-height: 1.3;
+    color: #1f1f1f;
 }
 
 .headerLeft h6 label {
@@ -3398,7 +3429,7 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
     width: 40px;
     height: 40px;
     line-height: 36px;
-    border: 1px solid #ccc;
+    border: 1px solid #e9eef4;
     text-align: center;
     border-radius: 10px;
 }
@@ -4806,7 +4837,7 @@ background: #3e8a44;
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    padding: 40px 0px 40px 15px;
+    padding: 0px 0px 40px 15px;
 }
 .dashboad_mqmatrix_text_back_to_dashboard {
     font-size: 16px;
@@ -5130,6 +5161,11 @@ padding: 11px 20px!important;
     margin-bottom: -5px;
 }
 
+span.headericon.notificationnew a#nodificbell svg
+{
+  width: 20px;
+  height: 20px;
+}
 
 /* **********start live   ********** */
 
