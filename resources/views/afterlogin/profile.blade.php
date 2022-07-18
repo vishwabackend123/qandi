@@ -35,19 +35,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" required>
+                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" required onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" required>
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" required onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Display Name</label>
-                                        <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required>
+                                        <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="25">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -55,6 +55,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <label>Email</label>
                                         <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
                                         <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);">Resend</a>
+                                        <input type="email" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required maxlength="64" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+                                        <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);" style="margin: 7px 15px 0 0;">Resend</a>
                                         <span class="email-error">Email not verified, Please resend verification link to verify</span>
                                         <br>
                                         <span class="mt-2" id="email_success"></span>
@@ -86,7 +88,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile">
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -240,6 +242,7 @@ $('.resend_email').click(function() {
     });
 });
 $('#editProfile_form input').keyup(function() {
+    $('#editProfile_form').valid();
     editProfileCheck();
 });
 $('#editProfile_form select').change(function() {
@@ -263,7 +266,9 @@ function editProfileCheck() {
         if (state == '') {
             empty = true;
         }
-        if ($(this).val() == '') {
+        var input_data = $(this).val();
+        input_data = input_data.trim();
+        if (input_data == '') {
             empty = true;
         }
     });
@@ -315,6 +320,26 @@ function getCity(state, type) {
         });
     }
 
+}
+
+function onlyAlphabetsForName(e, t) {
+    try {
+        if (window.event) {
+            var charCode = window.event.keyCode;
+        } else if (e) {
+            var charCode = e.which;
+        } else { return true; }
+        if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+            return true;
+        else
+            return false;
+    } catch (err) {
+        alert(err.Description);
+    }
+}
+
+function onlyAlphabetsDisplay(e, t) {
+    return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
 }
 
 </script>
