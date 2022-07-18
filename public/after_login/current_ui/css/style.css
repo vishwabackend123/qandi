@@ -2612,23 +2612,23 @@ line-height: 1.6;
     background-color: #56b663;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    background-image: url(../images/fullscan-card-bg.png);
+    /* background-image: url(../images/fullscan-card-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 }
 
 .fullbody_scan_test span:first-child {
     position: absolute;
     right: 0px;
     top: 10px;
+    z-index: 1;
 }
 
 .fullbody_scan_test span:nth-child(2) {
     position: absolute;
     left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 80px;
 }
 
 .fullbody_scan_test h3 {
@@ -3350,7 +3350,21 @@ color: #1f1f1f;
 input.text-box.markstrend:-moz-placeholder { /* Firefox 18- */
 color: #1f1f1f;
 }
-
+span.greenball-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+span.greenball-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+span.greenball-3 {
+    position: absolute;
+    bottom: 45px;
+    right: 5%;
+}
 
 /********************* Amit End ****************************/
 
