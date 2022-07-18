@@ -3508,7 +3508,7 @@ header {
     height: 100%;
 }
 
-.notification-block_new.activeblock {
+.notification-block_new.activeblock,.notification-block_new.show {
     right: 0px !important;
     transition: 0.5s;
 }
