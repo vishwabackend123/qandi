@@ -23,17 +23,10 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="submitBtn">
-                                    <a href="" class="submitBtnlink">
-                                        <span class="btnText">Submit Test</span>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                <path
-                                                    d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z"
-                                                    fill="#fff"
-                                                />
-                                            </svg>
-                                        </span>
+                                <div class="reviewexamType">
+                                    <a href="#">
+                                    Custom Exam
+                                     
                                     </a>
                                 </div>
                             </div>
@@ -136,6 +129,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="answer-main-sec">
                                                     <div class="anshead-top">
@@ -180,6 +174,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                
                                                
                                             </div>
                                         </div>
@@ -348,6 +343,27 @@
     overflow: hidden;
     margin-right: 15px;
 }
+.reviewexamType a{
+    font-size: 16px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1f1f1f;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    
+}
+.reviewScreenleft .examScreentab .nav-tabs .nav-link {
+    padding: 0px 0 12px;
+}
+
+.reviewScreenleft .questionwrapper{
+    max-height: initial;
+}
 
 
 
@@ -476,30 +492,22 @@ label.filter {
 
 </style>
 
+
 <script>
     function review_right_Height() {
         var total_right_height = $(".reviewScreenright ").outerHeight();
         $('.reviewScreenleft ').css('height', total_right_height);
-
+        $('.examScreentab ').css('height', total_right_height);
         var examTabheader_height = $(".examTabheader").outerHeight();
         var questionType_height = $(".questionType").outerHeight();
-
-
-        var tabheaderquestion_height = examTabheader_height + questionType_height;
-
-        var questionType_height = $(".reviewScreenright").outerHeight();
-
-
-        var divide_height = questionType_height - tabheaderquestion_height;
-        $('.questionsliderbox ').css('height', divide_height);
-       
-
-      
-
-
- 
-
-
+        var topheader_height = examTabheader_height + questionType_height;
+        var cal_height = total_right_height  - topheader_height;
+        $('.tab-content ').css('height', cal_height);
+        $('.questionsliderbox').css('height', cal_height);
+        var answer_main_sec_height = $(".answer-main-sec ").outerHeight();
+        var question_slider_box_height = $(".questionsliderbox").outerHeight();
+        var mid_section_height = question_slider_box_height -answer_main_sec_height;
+        $('.questionwrapper ').css('height', mid_section_height);
     }
 
     review_right_Height();
@@ -512,19 +520,47 @@ label.filter {
         review_right_Height();
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $(".expandbtn1").on('click', function() {
+            var expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
+            var questionheader_height = $(".questionheader").outerHeight();
+
+            $('.answer-main-sec').css('height', expand_question_slider_box_height);
+            var expand_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+            var final_height = expand_answer_main_sec_height -questionheader_height;
+            $('.answer-main-sec').css('height', final_height);
+
+ 
+        });
+
+        $(".collapsebtn1").on('click', function() {
+            var coll_questionsliderbox_height = $(".questionsliderbox").outerHeight();
+            var coll_questionwrapper_height = $(".questionwrapper").outerHeight();
+            var coll_final_height = coll_questionsliderbox_height - coll_questionwrapper_height;
+            $('.answer-main-sec').css('height', coll_final_height);
+            
+
+            // var coll_expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
+            // var coll_questionheader_height = $(".questionheader").outerHeight();
+            // var coll_final_height = coll_expand_question_slider_box_height - coll_questionheader_height;
+            // $('.answer-main-sec').css('height', coll_final_height);
+
+           
+            
+           
+        });
+    });
+</script>
 
 
-<!-----End__Right_Review_Height_Calculation------->
+<!-----Start__Right_Review_Height_Calculation------->
 <script>
     function review_right_Height() {
         var review_Screen_right_height = $(".reviewScreenright").outerHeight();
-       
         var test_review_height_div = review_Screen_right_height / 2;
         $('.custom-anstop').css('height', test_review_height_div);
         $('.reviewans-mainsec').css('height', test_review_height_div);
-      
-        
-    
     }
 
     review_right_Height();
@@ -537,7 +573,6 @@ label.filter {
         review_right_Height();
     });
 </script>
-
 
 <script>
     $(document).ready(function() {
@@ -547,23 +582,15 @@ label.filter {
             var custom_ans_top_heigth = $(".custom-anstop").outerHeight();
             var review_filter_top_height = $(".review-filter-top").outerHeight();
             var list_ans_height = $(".list-ans").outerHeight();
-
-            // var review = $(".reviewScreenright").innerHeight();
-            // alert(review);
-          
-        
             var calculated_height = review_Screen_right_height - review_ans_mainsec_heigth;
             var onclick_review_box = custom_ans_top_heigth + calculated_height;
             $('.reviewans-mainsec').css('height', onclick_review_box);
             var afterExpandtotalheight =  $(".reviewScreenright").outerHeight();
-             var min_height_q_list_h = afterExpandtotalheight - 122 + "px";
-             $('.reviewans-mainsec').css('height', min_height_q_list_h);
-
-              var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
-              var scroll_height = reviewans_final_height - review_filter_top_height;
-              $('.list-ans').css('height', scroll_height)
-             
-
+            var min_height_q_list_h = afterExpandtotalheight - 122 + "px";
+            $('.reviewans-mainsec').css('height', min_height_q_list_h);
+            var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
+            var scroll_height = reviewans_final_height - review_filter_top_height;
+            $('.list-ans').css('height', scroll_height)
         });
 
         $(".collapsebtn").on('click', function() {
@@ -576,30 +603,7 @@ label.filter {
     });
 </script>
 
-<script>
-    $(document).ready(function() {
-        $(".expandbtn1").on('click', function() {
-        
-            var questionwrapperheigth = $(".questionImggraph").outerHeight();
-            var answermainsecheigth = $(".questionOptionBlock").outerHeight();
-            var sac = questionwrapperheigth + answermainsecheigth;
-            var answermainsecheigth = $(".answer-main-sec").outerHeight();
-            var total = sac - answermainsecheigth; 
-            $('.answer-main-sec').css('height', sac);
- 
-        });
-
-        $(".collapsebtn1").on('click', function() {
-            var answermainsecheigth = $(".answer-main-sec").outerHeight();
-            var total = sac - answermainsecheigth; 
-            $('.answer-main-sec').css('height', sac);
-           
-        });
-    });
-</script>
-
-   
-
+<!-----End__Right_Review_Height_Calculation------->
 <!-----Start-for-expand-btn-click------->
 <script>
     $('.expandbtn').on('click', function() {
