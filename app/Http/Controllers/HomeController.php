@@ -476,6 +476,16 @@ class HomeController extends Controller
             $exam_id = $userData->grade_id;
             $user_name = $request->username;
 
+            if (isset($data['file-input']) && !empty($data['file-input'])) {
+                $file = $data['file-input'];
+                $fileArray = array('image' => $file);
+                $rules = array('image' => 'max:2000');
+                $validator = Validator::make($fileArray, $rules);
+                if ($validator->fails()) {
+                     return Redirect::back()->with('message','Image size greater than 2mb');
+                }
+            }
+
             $useremailexists = StudentUsers::where('email', $request->useremail)
                 ->where('id', '!=', $user_id)->exists();
             $mobileexists = StudentUsers::where('mobile', $request->user_mobile)

@@ -14,11 +14,16 @@ $user_id = isset($userData->id)?$userData->id:'';
 </style>
 
 <body class="bg-content">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class="main-wrapper">
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
         <section class="content-wrapper">
+            @if(session()->has('message'))
+            <div class="alert alert-danger">
+                {{ session()->get('message') }}
+            </div>
+            @endif
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4">
@@ -52,9 +57,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4 position-relative">
-                                        <label>Email</label>                           
+                                        <label>Email</label>
                                         <input type="email" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required maxlength="64" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
-                                         <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);">Resend</a>
+                                        <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);">Resend</a>
                                         <span class="email-error">Email not verified, Please resend verification link to verify</span>
                                         <br>
                                         <span class="mt-2" id="email_success"></span>
@@ -65,20 +70,18 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     @php
                                     $userstate = $userData->state;
                                     @endphp
-                                     <select class="form-control selectdata reqrd js-example-basic-single state_list" id="state" name="state" required>
-                                 <option class="we" value="">Select a State</option>
+                                    <select class="form-control selectdata reqrd js-example-basic-single state_list" id="state" name="state" required>
+                                        <option class="we" value="">Select a State</option>
                                         @foreach($state_list as $state)
                                         <option class="we" value="{{$state}}" @if($state==$userstate) selected @else "" @endif>{{$state}}</option>
                                         @endforeach
-                        </select>
-                            
+                                    </select>
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>City</label>
-                            
                                     <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" required>
-                                 <option class="we" value="">Select City</option>
-                        </select>
+                                        <option class="we" value="">Select City</option>
+                                    </select>
                                 </div>
                             </div>
                             <hr class="line">
@@ -160,187 +163,191 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <p>{{$subscription_desc}}</p>
                             </div>
                             <div class="flip d-inline-block">Show details</div>
-                            &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true"></i>
+                            &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-@include('afterlogin.layouts.footer_new')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @include('afterlogin.layouts.footer_new')
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Select a State",
+        });
+        $('.city_list').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Select a City",
+        });
+        editProfileCheck();
+        var user_state = '<?php echo $userData->state; ?>';
+        getCity(user_state, 'load');
+        $('.state_list').on('change', function() {
+            var state = $(this).val();
+            getCity(state, 'change');
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.js-example-basic-single').select2({ 
-    minimumResultsForSearch: -1,
-    placeholder: "Select a State",
-    });
-     $('.city_list').select2({ 
-     minimumResultsForSearch: -1,
-    placeholder: "Select a City",
-    });
-    editProfileCheck();
-    var user_state = '<?php echo $userData->state; ?>';
-    getCity(user_state, 'load');
-    $('.state_list').on('change', function() {
-        var state = $(this).val();
-        getCity(state, 'change');
-
-    });
+        });
 
 
-    $.validator.addMethod("mobileregx", function(value, element, regexpr) {
-        return regexpr.test(value);
-    }, 'Please enter valid mobile number.');
-    $("#editProfile_form").validate({
-        rules: {
-            user_mobile: {
-                mobileregx: /^[6-9][0-9]{9}$/,
+        $.validator.addMethod("mobileregx", function(value, element, regexpr) {
+            return regexpr.test(value);
+        }, 'Please enter valid mobile number.');
+        $("#editProfile_form").validate({
+            rules: {
+                user_mobile: {
+                    mobileregx: /^[6-9][0-9]{9}$/,
+                },
             },
-        },
 
+        });
+        $(".flip").click(function() {
+            $("#panel").slideToggle("slow");
+            $(this).text(function(i, v) {
+                return v === 'Show details' ? 'Hide details' : 'Show details'
+            })
+        });
+        $(".fliparrow").click(function() {
+            $("#panel").slideToggle("slow");
+            $('.flip').text(function(i, v) {
+                return v === 'Show details' ? 'Hide details' : 'Show details'
+            })
+        });
     });
-    $(".flip").click(function() {
-        $("#panel").slideToggle("slow");
-        $(this).text(function(i, v) {
-            return v === 'Show details' ? 'Hide details' : 'Show details'
-        })
-    });
-});
-$('#email_success').hide();
-$('.resend_email').click(function() {
-    var user_id = '<?php echo $user_id; ?>';
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $.ajax({
-        url: "{{ url('send_verfication_email') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            userId: user_id,
-        },
-        success: function(response_data) {
-            if (response_data.status === true) {
-                $('#email_success').css('color', 'green');
-                $('#email_success').text(response_data.message);
-                $('#email_success').show();
-                $("#email_success").fadeOut(10000);
-            } else {
-                $('#email_success').css('color', 'red');
-                $('#email_success').text(response_data.message);
-                $('#email_success').show();
-                $("#email_success").fadeOut(10000);
-            }
-
-        },
-    });
-});
-$('#editProfile_form input').keyup(function() {
-    $('#editProfile_form').valid();
-    editProfileCheck();
-});
-$('#editProfile_form select').change(function() {
-    editProfileCheck();
-});
-
-
-
-function editProfileCheck() {
-    var empty = false;
-    $('#editProfile_form input').each(function() {
-        var id = this.id;
-        if (id == 'file-input') {
-            return;
-        }
-        var city = $('#city_name').val();
-        var state = $('#state').val();
-        if (city == '') {
-            empty = true;
-        }
-        if (state == '') {
-            empty = true;
-        }
-        var input_data = $(this).val();
-        input_data = input_data.trim();
-        if (input_data == '') {
-            empty = true;
-        }
-    });
-
-    if (empty) {
-        $('#saveEdit').attr('disabled', 'disabled');
-        $('#saveEdit').addClass("disabled-btn");
-
-    } else {
-        $('#saveEdit').removeAttr('disabled');
-        $('#saveEdit').removeClass("disabled-btn");
-
-    }
-
-
-}
-
-function getCity(state, type) {
-    if (state) {
-        var user_city = '<?php echo $userData->city; ?>';
-        $.ajax({
-            url: "{{ url('/getCity',) }}",
-            type: "GET",
-            cache: false,
-            data: {
-                'state': state,
-            },
-            success: function(response_data) {
-                if (type == 'change') {
-                    $('#saveEdit').attr('disabled', 'disabled');
-                    $('#saveEdit').addClass("disabled-btn");
-                    $('.city_list').html('<option value="">Select City</option>');
-                    $.each(response_data, function(key, value) {
-                        $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                    });
-                } else {
-                    $('.city_list').html('<option value="">Select City</option>');
-                    $.each(response_data, function(key, value) {
-                        if (value == user_city) {
-                            $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
-                        } else {
-                            $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                        }
-
-                    });
-                }
-
+    $('#email_success').hide();
+    $('.resend_email').click(function() {
+        var user_id = '<?php echo $user_id; ?>';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $.ajax({
+            url: "{{ url('send_verfication_email') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                userId: user_id,
+            },
+            success: function(response_data) {
+                if (response_data.status === true) {
+                    $('#email_success').css('color', 'green');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                } else {
+                    $('#email_success').css('color', 'red');
+                    $('#email_success').text(response_data.message);
+                    $('#email_success').show();
+                    $("#email_success").fadeOut(10000);
+                }
+
+            },
+        });
+    });
+    $('#editProfile_form input').keyup(function() {
+        $('#editProfile_form').valid();
+        editProfileCheck();
+    });
+    $('#editProfile_form select').change(function() {
+        editProfileCheck();
+    });
+
+
+
+    function editProfileCheck() {
+        var empty = false;
+        $('#editProfile_form input').each(function() {
+            var id = this.id;
+            if (id == 'file-input') {
+                return;
+            }
+            var city = $('#city_name').val();
+            var state = $('#state').val();
+            if (city == '') {
+                empty = true;
+            }
+            if (state == '') {
+                empty = true;
+            }
+            var input_data = $(this).val();
+            input_data = input_data.trim();
+            if (input_data == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#saveEdit').attr('disabled', 'disabled');
+            $('#saveEdit').addClass("disabled-btn");
+
+        } else {
+            $('#saveEdit').removeAttr('disabled');
+            $('#saveEdit').removeClass("disabled-btn");
+
+        }
+
+
     }
 
-}
+    function getCity(state, type) {
+        if (state) {
+            var user_city = '<?php echo $userData->city; ?>';
+            $.ajax({
+                url: "{{ url('/getCity',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    'state': state,
+                },
+                success: function(response_data) {
+                    if (type == 'change') {
+                        $('#saveEdit').attr('disabled', 'disabled');
+                        $('#saveEdit').addClass("disabled-btn");
+                        $('.city_list').html('<option value="">Select City</option>');
+                        $.each(response_data, function(key, value) {
+                            $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                        });
+                    } else {
+                        $('.city_list').html('<option value="">Select City</option>');
+                        $.each(response_data, function(key, value) {
+                            if (value == user_city) {
+                                $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
+                            } else {
+                                $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                            }
 
-function onlyAlphabetsForName(e, t) {
-    try {
-        if (window.event) {
-            var charCode = window.event.keyCode;
-        } else if (e) {
-            var charCode = e.which;
-        } else { return true; }
-        if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
-            return true;
-        else
-            return false;
-    } catch (err) {
-        alert(err.Description);
+                        });
+                    }
+
+                }
+            });
+        }
+
     }
-}
 
-function onlyAlphabetsDisplay(e, t) {
-    return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
-}
+    function onlyAlphabetsForName(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            } else if (e) {
+                var charCode = e.which;
+            } else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                return true;
+            else
+                return false;
+        } catch (err) {
+            alert(err.Description);
+        }
+    }
 
-</script>
+    function onlyAlphabetsDisplay(e, t) {
+        return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
+    }
+
+    </script>
 </body>
 @endsection
-
