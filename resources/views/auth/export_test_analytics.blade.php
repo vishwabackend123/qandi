@@ -193,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash test_myscrore_card">
+                <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">My Score 
                     </h3>
                     <div class="row align-items-center justify-content-center">
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash subject_score_card">
+                <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">Subject Score </h3>
                     <p class="paratext" style="margin-bottom:32px;">Negative marking for incorrect answers is considered</p>
                     <div class="row">
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash test_myscrore_card">
+                <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
                     <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year 2018 cut-off</p>
                     <div class="row align-items-center justify-content-center">
@@ -279,7 +279,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash marks_percentage_export_card">
+                <div class="commonWhiteBox commonblockDash marks_percentage_export_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom:20px;">Marks Percentage </h3>
                     <div class="d-flex justify-content-between">
                         <div>
@@ -442,7 +442,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash efficiency_time_card">
+                <div class="commonWhiteBox commonblockDash efficiency_time_card borderRadius">
                     <h3 class="boxheading">Efficiency - Time spent </h3>
                     <div class="row">
                         <div class="col-md-6">
@@ -464,7 +464,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash export_rank_card">
+                <div class="commonWhiteBox commonblockDash export_rank_card borderRadius">
                         <h3 class="boxheading">Rank Analysis </h3>
                         <div class="d-flex justify-content-between mt-4">
                             <div class="your_rank position-relative" style="padding-left: 66px;">
