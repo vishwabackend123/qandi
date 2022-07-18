@@ -4078,7 +4078,9 @@ justify-content: space-between;}
     padding-left: 0px;}
     .bottomlikabs span{    vertical-align: bottom;
         line-height: 23px;}
-        .selectdata option:disabled{color: #bebcbc87!important;}
+        /* .selectdata option:hidden{color: red!important;} */
+        .selectdata option:disabled{color: #a2a0a0!important;}
+        .custom-input .form-control.selectdata{color:#363c4f!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
