@@ -14,6 +14,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
+                    <div class="alert_msg" id="alert_msg"></div>
                     <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                         @csrf
                         <div class="bg-white planner-box">
@@ -22,10 +23,7 @@ $userData = Session::get('user_data');
                                 <button type="submit" class="btn btn-common-green disabled" id="saveplannerbutton">Save Test</button>
 
                             </div>
-                            <p class="chapter-error mb-2 " id="success_msg" style="display:none">
-                                <span class="text-success" id="successPlanner_alert"></span>
-                                &nbsp;
-                            </p>
+
 
 
                             <h2 class="week-select pb-3">Select a week</h2>
@@ -89,7 +87,7 @@ $userData = Session::get('user_data');
                                     <div class="add-insubchapter me-3">
                                         <input type="hidden" id="select_chapt_id{{$plan->chapter_id}}" name="chapters[]" value="{{$plan->chapter_id}}">
                                         <p class="m-0">
-                                            <span class="mr-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
+                                            <span class="me-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
                                             @if($plan->test_completed_yn=="N")
                                             <a href="javascript:void(0)" onclick="Shuffle_Chapter('{{$plan->chapter_id}}','{{$sub->id}}')" title="Shuffle Chapter">
                                                 <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -180,6 +178,20 @@ $userData = Session::get('user_data');
         }
 
         document.getElementById('number').value = value;
+
+        var limitrange = $("#number").val();
+        var chapterscount = $('input[name="chapters[]"]').length;
+        if (limitrange == '0') {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange <= 0) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (chapterscount < limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
+            $('#saveplannerbutton').removeClass('disabled');
+        }
     }
 
     function decreaseValue() {
@@ -193,6 +205,20 @@ $userData = Session::get('user_data');
             value--;
         }
         document.getElementById('number').value = value;
+
+        var limitrange = $("#number").val();
+        var chapterscount = $('input[name="chapters[]"]').length;
+        if (limitrange == '0') {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange <= 0) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (chapterscount < limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
+            $('#saveplannerbutton').removeClass('disabled');
+        }
     }
 
 
@@ -265,7 +291,7 @@ $userData = Session::get('user_data');
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
-                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="mr-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
@@ -408,22 +434,24 @@ $userData = Session::get('user_data');
                     //$('.loader-block').hide();
                     if (response.success == true) {
                         var message = response.message;
-                        $('#successPlanner_alert').html(message);
-                        $('#success_msg').show();
+
+
+                        $('#alert_msg').html('<div class="alert alert-success" role="alert">' + message + '</div>');
+                        $('#alert_msg').show();
                         setTimeout(function() {
-                            $('#success_msg').fadeOut('fast');
+                            $('#alert_msg').fadeOut('fast');
                         }, 8000);
-                        $("#success_msg")[0].scrollIntoView();;
+                        $("#alert_msg")[0].scrollIntoView();
                         $('#saveplannerbutton').addClass('disabled');
 
                     } else {
                         var message = response.message;
-                        $('#errPlanner_alert').html(message);
-                        $('#errPlanner_alert').show();
+                        $('#alert_msg').html('<div class="alert alert-danger" role="alert">' + message + '</div>');
+                        $('#alert_msg').show();
                         setTimeout(function() {
-                            $('#errPlanner_alert').fadeOut('fast');
+                            $('#alert_msg').fadeOut('fast');
                         }, 8000);
-                        $("#div_error")[0].scrollIntoView();;
+                        $("#alert_msg")[0].scrollIntoView();
                         return false;
                     }
 
@@ -483,34 +511,33 @@ $userData = Session::get('user_data');
 
         $('#StartDate').val(firstDate);
         $('#EndDate').val(lastDate);
+        $('.chaptbox').html("");
+        $('#number').val(0);
 
+        var start
         $.ajax({
             url: "getWeeklyPlanSchedule",
             type: "GET",
             cache: false,
             data: {
-                'start_date': start_date
+                'start_date': firstDate
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.range > 0) {
 
                     $('#number').val(response.range);
-
-
                     var planned_edit = response.planner;
                     var result = Object.values(planned_edit);
-
-
                     result.forEach(function(item) {
                         console.log(item);
                         var subject_id = item.subject_id;
                         var chapter_id = item.chapter_id;
                         var chapter_name = item.chapter_name;
                         var status = item.test_completed_yn;
-                        $('#planner_sub_' + subject_id).html("");
+
                         $('#planner_sub_' + subject_id).append(
-                            '<div class = "add-insubchapter mr-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="mr-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                            '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
                             '<svg  onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                             '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                             '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +

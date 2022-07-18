@@ -203,6 +203,7 @@ class PlannerController extends Controller
 
                 $range = count($planner);
 
+
                 return json_encode(array('range' => $range, 'planner' => $planner, 'status' => 'success'));
             } else {
                 return json_encode(array('range' => $range, 'status' => 'failed'));
