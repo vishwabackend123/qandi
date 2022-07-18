@@ -2368,6 +2368,7 @@ a.btn-common-attempted svg {
      color: #56b663;
      display: flex;
  }
+ .gotoPlanner a:hover{color: #039855;}
  .gotoPlanner a span{
      padding-right:4px;
      display: inline-block;
