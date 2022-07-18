@@ -5558,6 +5558,7 @@ span.headericon.notificationnew a#nodificbell svg
 .dura-sec span {
     color: #1f1f1f;
     font-size: 14px;
+    display:inline-block;margin-bottom:3px;
     font-weight: 500;
 }
 
