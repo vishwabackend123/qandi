@@ -185,7 +185,9 @@ color: #d0d5dd !important;
 .custom-input label {
     color: #363c4f;
     font-size: 14px;
-    font-weight: 600;line-height:1.63;
+    font-weight: 600;
+    line-height:1.63;
+    margin-bottom: 4px;
 }
 
 .custom-input .form-control {
@@ -443,7 +445,7 @@ font-weight: 800;
 }
 
 .line {
-    background: rgba(205, 227, 208, 1);
+    background: rgba(205, 227, 208, 0.9);
     margin-top: 0;
 }
 
@@ -572,9 +574,13 @@ font-weight: 800;
     font-size: 14px;
     color: #56b663;
     font-weight: bold;
+    cursor: pointer;
+}
+.fliparrow{
+color: #56b663;    
 }
 .resendmail{
-top:25px;    
+top:29px;    
 }
 .email-error{
 font-size: 12px;
@@ -3426,7 +3432,7 @@ span.greenball-3 {
     font-size: 14px;
     font-weight: 600;
     margin-left: 14px;
-    line-height: 1.3;
+    line-height: 1;
     color: #1f1f1f;
 }
 
@@ -4073,7 +4079,9 @@ justify-content: space-between;}
     padding-left: 0px;}
     .bottomlikabs span{    vertical-align: bottom;
         line-height: 23px;}
-        /* .selectdata option:disabled{color:#ddd!important;} */
+        /* .selectdata option:hidden{color: red!important;} */
+        .selectdata option:disabled{color: #a2a0a0!important;}
+        .custom-input .form-control.selectdata{color:#363c4f!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5191,6 +5199,13 @@ span.headericon.notificationnew a#nodificbell svg
 .fortab .commonWhiteBox {
     padding: 32px 30px 32px 32px!important;
 }
+.tabMainblock_myqmatric .tab-content {
+    margin-left: -3px;
+}
+.aeck_commontab .aeck_tab_in_tab_chapter_topic_section
+{
+    margin-left: -5px;
+}
 
 /* **********start live   ********** */
 
@@ -5544,6 +5559,7 @@ span.headericon.notificationnew a#nodificbell svg
 .dura-sec span {
     color: #1f1f1f;
     font-size: 14px;
+    display:inline-block;margin-bottom:3px;
     font-weight: 500;
 }
 
