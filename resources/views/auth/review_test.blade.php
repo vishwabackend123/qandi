@@ -531,12 +531,6 @@ label.filter {
             var final_height = expand_answer_main_sec_height -questionheader_height;
             $('.answer-main-sec').css('height', final_height);
 
-
-
-         
-
-            
-           
  
         });
 

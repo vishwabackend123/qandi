@@ -56,6 +56,66 @@ $full_body_attempt = Session::get('full_body_attempt');
                 <div class="fullbody_scan_test w-50 text-center position-relative">
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.svg')}}"></span>
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.svg')}}"></span>
+                    <span class="greenball-1">
+                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109 106" width="109" height="106">
+                            <title>Mask group-svg</title>
+                            <defs>
+                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+                                    <path d="m-425 10c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                </clipPath>
+                            </defs>
+                            <style>
+                                .s0 { fill: #52ac5f } 
+                            </style>
+                            <g id="Clip-Path" clip-path="url(#cp1)">
+                                <g id="Layer">
+                                    <path id="Layer" class="s0" d="m82 103c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
+                                    <path id="Layer" class="s0" d="m-437 372c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
+                                    <path id="Layer" class="s0" d="m-4.5 307c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="greenball-2">
+                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 109" width="53" height="109">
+                            <title>Mask group-svg</title>
+                            <defs>
+                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+                                    <path d="m0-233c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                </clipPath>
+                            </defs>
+                            <style>
+                                .s0 { fill: #52ac5f } 
+                            </style>
+                            <g id="Clip-Path" clip-path="url(#cp1)">
+                                <g id="Layer">
+                                    <path id="Layer" class="s0" d="m507-140c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
+                                    <path id="Layer" class="s0" d="m-12 129c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
+                                    <path id="Layer" class="s0" d="m420.5 64c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="greenball-3">
+                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87 88" width="87" height="88">
+                            <title>Mask group-svg</title>
+                            <defs>
+                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+                                    <path d="m-377-211c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                </clipPath>
+                            </defs>
+                            <style>
+                                .s0 { fill: #52ac5f } 
+                            </style>
+                            <g id="Clip-Path" clip-path="url(#cp1)">
+                                <g id="Layer">
+                                    <path id="Layer" class="s0" d="m130-118c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
+                                    <path id="Layer" class="s0" d="m-389 151c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
+                                    <path id="Layer" class="s0" d="m43.5 86c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full Body Scan Test</h3>
                     <p class="my-3">to assess your preparedness and begin to improve it</p>
