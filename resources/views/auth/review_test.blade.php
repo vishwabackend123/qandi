@@ -133,7 +133,71 @@
                                                 </div>
                                                 <div class="answer-main-sec">
                                                     <div class="anshead-top">
-                                                        <span>Answer:</span><button class="btn questionbtn">View details</button> 
+                                                        <span>Answer:</span>
+                                                         
+
+                                                        <div class="review_expand">
+                                                            <div class='percent_btn'><button class="btn questionbtn">View details</button></div>
+                                                            <div class='expand_block'>
+                                                                <div class="first_screen">
+                                                                    
+                                                                    <div class="persent_std">
+                                                                       <span class="attend">To answer you need to have</span>
+                                                                    </div>
+                                                                    
+                                                                
+                                                                    <div class="attemp_box row mt-0">
+                                                                        <div class="sub_att_1 col-md-6">
+                                                                        
+                                                                            <p>Knowledge, Application of</p>
+                                                                            <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> EQUATION OF CIRCLE</a>
+                                                                            
+                                                                        </div>
+                                                                        <div class="sub_att_1 col-md-6">
+                                                                            
+                                                                            <p>Knowledge of</p>
+                                                                            <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> CIRCLE AS A LOCUS OF A POINT</a>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                             <label class="expandbtn1">
                                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -173,6 +237,8 @@
                                                             <span>lAl=-1lBl=3</span>
                                                         </div>
                                                     </div>
+
+                                                    
                                                 </div>
                                                 
                                                
@@ -322,12 +388,77 @@
 
  
 <style> 
+
+.review_expand {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+  
+.expand_block {
+    display: none;
+    position: absolute;
+    right: 0;
+    TOP: 0PX;
+}
+.first_screen {
+    padding: 20px 40px !important;
+    border-radius: 8px;
+  box-shadow: 0 8px 30px 0 rgba(157, 170, 160, 0.3);
+    background-color: #fff;
+    min-width: 541px;
+    z-index: 999;
+}
+.persent_std{
+    padding-bottom:40px;
+}
+.propt_text {
+    padding: 20px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #2c3348;
+    opacity: .99;
+}
+.attemp_box {
+    display: flex;
+}
+.sub_att_1 p {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color:#1f1f1f;    padding: 0px;
+    margin: 0px;
+}
+.attemp_box a {
+    font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+    text-transform: uppercase;
+    width: 100px;
+    text-align: left;
+    cursor: pointer;
+    word-break: break-word;
+    color:#56b663;
+}
 .questionsliderbox{
     position: relative;
 }
-.Explanationbox{
-  
-  
+.attend{
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color:#1f1f1f;
 }
 
 .expandbtn, .expandbtn1{
@@ -381,7 +512,7 @@
 .answer-main-sec {
     background: #fff;
     padding: 20px;border-radius: 20px;
-    height:232px;
+    height:291px;
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -403,7 +534,7 @@
     color: #1f1f1f;
 }
 .explanation-sec {
-    height: 77px;
+    height: 20vh;
     overflow-y: scroll;
     padding-left: 135px;
 }
@@ -493,6 +624,24 @@ label.filter {
 </style>
 
 
+
+<!-----Start-for-percent-btn-click------->
+<script>
+    $(".percent_btn").click(function(e) {
+        $(".expand_block").show();
+        e.stopPropagation();
+    });
+
+    $(".expand_block").click(function(e) {
+        e.stopPropagation();
+    });
+
+    $(document).click(function() {
+        $(".expand_block").hide();
+    });
+</script>
+<!-----End-for-percent-btn-click------->
+
 <script>
     function review_right_Height() {
         var total_right_height = $(".reviewScreenright ").outerHeight();
@@ -531,6 +680,24 @@ label.filter {
             var final_height = expand_answer_main_sec_height -questionheader_height;
             $('.answer-main-sec').css('height', final_height);
 
+
+
+            var ex_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+            var expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
+            var expand_anshead_top_height = $(".anshead-top").outerHeight();
+            var expand_totalpopup_height = expand_anshead_titletext_height + expand_anshead_top_height;
+            var expand_height_popupSection = ex_answer_main_sec_height - expand_totalpopup_height;
+             $('.explanation-sec').css('height', expand_height_popupSection);
+
+             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
+
+
+             var ex_scroll_height = ex_answer_main_sec_height_final - 60 + "px";
+             $('.explanation-sec').css('height', ex_scroll_height);
+
+        
+    
+           
  
         });
 
@@ -539,15 +706,16 @@ label.filter {
             var coll_questionwrapper_height = $(".questionwrapper").outerHeight();
             var coll_final_height = coll_questionsliderbox_height - coll_questionwrapper_height;
             $('.answer-main-sec').css('height', coll_final_height);
-            
+            var coll_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+            var coll_expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
+            var coll_expand_anshead_top_height = $(".anshead-top").outerHeight();
+            var coll_totalpopup_height = coll_expand_anshead_titletext_height + coll_expand_anshead_top_height;
+            var coll_height_popupSection = coll_answer_main_sec_height - coll_totalpopup_height;
+            $('.explanation-sec').css('height', coll_height_popupSection);
+            var coll_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
+            var coll_scroll_height = coll_answer_main_sec_height_final - 60 + "px";
+            $('.explanation-sec').css('height', coll_scroll_height);
 
-            // var coll_expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
-            // var coll_questionheader_height = $(".questionheader").outerHeight();
-            // var coll_final_height = coll_expand_question_slider_box_height - coll_questionheader_height;
-            // $('.answer-main-sec').css('height', coll_final_height);
-
-           
-            
            
         });
     });
