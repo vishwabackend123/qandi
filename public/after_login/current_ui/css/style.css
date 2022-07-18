@@ -5198,6 +5198,13 @@ span.headericon.notificationnew a#nodificbell svg
 .fortab .commonWhiteBox {
     padding: 32px 30px 32px 32px!important;
 }
+.tabMainblock_myqmatric .tab-content {
+    margin-left: -3px;
+}
+.aeck_commontab .aeck_tab_in_tab_chapter_topic_section
+{
+    margin-left: -5px;
+}
 
 /* **********start live   ********** */
 
