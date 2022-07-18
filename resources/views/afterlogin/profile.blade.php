@@ -83,7 +83,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" disabled>
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="dropzone-wrapper w-100">
                                             <div class="dropzone-desc text-center">
                                                 <img src="{{URL::asset('public/after_login/current_ui/images/upload-img.jpg')}}" alt="performance">
-                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>(SVG, PNG, JPG or GIF)</span></p>
+                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>(PNG, JPG or JPEG)</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
                                         </div>
