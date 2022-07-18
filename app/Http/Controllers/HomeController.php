@@ -389,13 +389,11 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back()->withErrors(['api issue']);
-                    ;
+                        ->back()->withErrors(['api issue']);;
                 }
             } else {
                 return redirect()
-                    ->back()->withErrors(['empty value']);
-                ;
+                    ->back()->withErrors(['empty value']);;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -538,17 +536,16 @@ class HomeController extends Controller
                 $sessionData->state = $response->user_info->state;
                 $sessionData->country = $response->user_info->country;
                 Session::put('user_data', $sessionData);
-
             }
             if (isset($data['file-input']) && !empty($data['file-input'])) {
                 $file = $data['file-input'];
                 $fileArray = array(
-                'image' => $file
-            );
+                    'image' => $file
+                );
                 $rules = array(
-                'image' => 'mimes:jpeg,jpg,png|required|max:5120'
+                    'image' => 'mimes:jpeg,jpg,png|required|max:5120'
 
-            );
+                );
                 $validator = Validator::make($fileArray, $rules);
                 if ($validator->fails()) {
                     return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
@@ -561,20 +558,20 @@ class HomeController extends Controller
                     if (isset($data['file-input']) && !empty($data['file-input'])) {
                         $curl = curl_init();
                         $curl_option = array(
-                        CURLOPT_URL => env('API_URL') . 'api/update-profile-picture',
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_ENCODING => '',
-                        CURLOPT_MAXREDIRS => 10,
-                        CURLOPT_TIMEOUT => 0,
-                        CURLOPT_FOLLOWLOCATION => true,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => 'POST',
-                        CURLOPT_POSTFIELDS => array(
-                            'file' => new CURLFILE($file),
-                            'student_id' => $user_id,
-                            'file_extension' => $file_name
-                        ),
-                    );
+                            CURLOPT_URL => env('API_URL') . 'api/update-profile-picture',
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_ENCODING => '',
+                            CURLOPT_MAXREDIRS => 10,
+                            CURLOPT_TIMEOUT => 0,
+                            CURLOPT_FOLLOWLOCATION => true,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                            CURLOPT_CUSTOMREQUEST => 'POST',
+                            CURLOPT_POSTFIELDS => array(
+                                'file' => new CURLFILE($file),
+                                'student_id' => $user_id,
+                                'file_extension' => $file_name
+                            ),
+                        );
                         curl_setopt_array($curl, $curl_option);
 
                         $response = curl_exec($curl);
@@ -586,8 +583,7 @@ class HomeController extends Controller
                             $sessionData = Session::get('user_data');
                             $sessionData->user_profile_img = $aResponse->filename;
                             Session::put('user_data', $sessionData);
-    
-                        } 
+                        }
                     }
                 }
             }
@@ -850,15 +846,15 @@ class HomeController extends Controller
                 $myq_bool = false;
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
-            
+
             $preferences = $this->redis_Preference();
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
             $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
-            
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool','prof_asst_test'));
+
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'prof_asst_test'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

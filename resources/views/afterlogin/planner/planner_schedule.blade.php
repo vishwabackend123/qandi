@@ -126,7 +126,7 @@ $userData = Session::get('user_data');
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
                         <div class="pt-5 mt-5">
-                            <button class="btn btn-common-green disabled w-100">Save Test</button>
+                            <a href="{{route('dashboard')}}" class="btn btn-common-green  w-100">Back to Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -623,5 +623,7 @@ console.log(calendar.getSelectedDate());
         } catch (e) {}
     });
 </script>
-
+<!-- Footer Section -->
+@include('afterlogin.layouts.footer_new')
+<!-- footer Section end  -->
 @endsection
