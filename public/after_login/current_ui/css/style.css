@@ -3800,7 +3800,6 @@ header {
     min-width: 114px;
     padding: 8px 16px;
     height: 38px;
-    width: 114px;
 }
 .subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
 .tasklistbtn .btn.nobg {
@@ -5495,7 +5494,7 @@ span.headericon.notificationnew a#nodificbell svg
 .btn-sec {
     border-bottom: 1px solid #e5eaee;
     display: flex;
-    padding-top: 12px;padding-bottom: 1px
+    padding-top: 12px;padding-bottom: 1px;align-items: center;
 }
 
 .task-btn.tasklistbtn {
