@@ -254,64 +254,64 @@
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Chemical Equilibrium</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>65%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Complex Numbers</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>30%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>30%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Electromagnetic Induction</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>55%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>55%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Chemistry in everyday Life</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>32%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>32%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Biomolecules</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>65%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Chemical Equilibrium</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>22%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>22%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Chemical Equilibrium</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>65%</b></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="mymatrix_table_point">
                                                                         <input type="radio"><span>Chemical Equilibrium</span>
                                                                     </td>
-                                                                    <td>
-                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    <td class="d-flex">
+                                                                        <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>65%</b></span>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
