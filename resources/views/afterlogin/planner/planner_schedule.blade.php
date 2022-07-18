@@ -10,7 +10,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
 
 
-    <section class="content-wrapper">
+    <section class="content-wrapper" id="planner-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
@@ -436,12 +436,12 @@ $userData = Session::get('user_data');
                         var message = response.message;
 
 
-                        $('#alert_msg').html('<div class="alert alert-success" role="alert">' + message + '</div>');
+                        $('#alert_msg').html('<div class="alert alert-success" role="alert">Your weekly schedule has been set.</div>');
                         $('#alert_msg').show();
                         setTimeout(function() {
                             $('#alert_msg').fadeOut('fast');
                         }, 8000);
-                        $("#alert_msg")[0].scrollIntoView();
+                        $("#planner-wrapper")[0].scrollIntoView();
                         $('#saveplannerbutton').addClass('disabled');
 
                     } else {
@@ -451,7 +451,7 @@ $userData = Session::get('user_data');
                         setTimeout(function() {
                             $('#alert_msg').fadeOut('fast');
                         }, 8000);
-                        $("#alert_msg")[0].scrollIntoView();
+                        $("#planner-wrapper")[0].scrollIntoView();
                         return false;
                     }
 
