@@ -630,7 +630,10 @@ class PlannerController extends Controller
                 $aPlanner = [];
             }
             $planner = collect($aPlanner);
+            $filter = $planner->where('test_completed_yn', 'Y')->all();
+
             $planner_cnt = count($aPlanner);
+            $attempted = count($filter);
             $mondayDate = date('Y-m-d', strtotime('monday this week'));
             $sundayDate = date('Y-m-d', strtotime('sunday this week'));
 
@@ -639,7 +642,7 @@ class PlannerController extends Controller
 
 
 
-            return view('afterlogin.planner.planner_schedule', compact('header_title', 'planner', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
+            return view('afterlogin.planner.planner_schedule', compact('header_title', 'planner', 'attempted', 'mondayDate', 'sundayDate', 'planner_cnt', 'user_subjects'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

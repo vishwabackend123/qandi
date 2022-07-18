@@ -5,10 +5,10 @@ $userData = Session::get('user_data');
 @section('content')
 
 <!-- Side bar menu -->
-  @include('afterlogin.layouts.sidebar_new')
+@include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-  
+
 
     <section class="content-wrapper">
         <div class="container-fluid">
@@ -53,7 +53,7 @@ $userData = Session::get('user_data');
                                         <span class="week-select d-block position-relative">Select exams per week</span>
                                         <div class="d-flex lign-items-center incre-decre-value">
                                             <div class="value-button border-end radius-left" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                                            <input type="text" id="number" value="{{$planner_cnt}}" min="0" max="7" readonly />
+                                            <input type="text" id="number" value="{{$planner_cnt}}" min="{{isset($attempted)?$attempted:0}}" max="7" readonly />
                                             <div class="value-button border-start radius-right" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
                                         </div>
                                     </div>
@@ -166,6 +166,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-- Footer Section -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
@@ -182,10 +183,15 @@ $userData = Session::get('user_data');
     }
 
     function decreaseValue() {
+
         var value = parseInt(document.getElementById('number').value, 10);
+        var minvalue = parseInt(document.getElementById('number').min, 10);
+
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
-        value--;
+        if (minvalue < value) {
+            value--;
+        }
         document.getElementById('number').value = value;
     }
 
@@ -197,9 +203,11 @@ $userData = Session::get('user_data');
 
 
         if (limit == 0) {
+            $('#limit_error span').html('');
             var error_txt = 'Please select Exams Per Week';
             $('#limit_error span').html(error_txt);
             $('#limit_error').show();
+            $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error ').fadeOut('fast');
             }, 10000);
@@ -208,11 +216,12 @@ $userData = Session::get('user_data');
 
 
         if (chapters >= limit) {
-
+            $('#limit_error span').html('');
             var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
 
             $('#limit_error span').html(error_txt);
             $('#limit_error').show();
+            $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error').fadeOut('fast');
             }, 10000);
@@ -342,17 +351,21 @@ $userData = Session::get('user_data');
 
             var limit = $('#number').val();
             if (limit == '0') {
+                $('#limit_error span').html('');
                 var error_txt = 'Please select Exams Per Week';
                 $('#limit_error span').html(error_txt);
                 $('#limit_error').show();
+                $(".planner-box")[0].scrollIntoView();;
                 setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
                 }, 5000);
                 return false;
             }
             if (limit <= 0) {
+                $('#limit_error span').html('');
                 $('#limit_error span').html('Please set at least one exam for the selected week.');
                 $('#limit_error').show();
+                $(".planner-box")[0].scrollIntoView();;
                 setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
                 }, 5000);
@@ -362,16 +375,20 @@ $userData = Session::get('user_data');
             var chapters = $('input[name="chapters[]"]').length;
 
             if (chapters < limit) {
+                $('#limit_error span').html('');
                 $('#limit_error').show();
                 $('#limit_error span').html('Select minimum ' + limit + ' chapter for planner.');
+                $(".planner-box")[0].scrollIntoView();;
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
                 }, 5000);*/
                 return false;
             }
             if (chapters > limit) {
+                $('#limit_error span').html('');
                 $('#limit_error').show();
                 $('#limit_error span').html('Select minimum ' + limit + ' chapter for planner.');
+                $(".planner-box")[0].scrollIntoView();;
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
                 }, 5000);*/
@@ -396,6 +413,7 @@ $userData = Session::get('user_data');
                         setTimeout(function() {
                             $('#success_msg').fadeOut('fast');
                         }, 8000);
+                        $("#success_msg")[0].scrollIntoView();;
                         $('#saveplannerbutton').addClass('disabled');
 
                     } else {
@@ -405,7 +423,7 @@ $userData = Session::get('user_data');
                         setTimeout(function() {
                             $('#errPlanner_alert').fadeOut('fast');
                         }, 8000);
-
+                        $("#div_error")[0].scrollIntoView();;
                         return false;
                     }
 
@@ -426,8 +444,10 @@ $userData = Session::get('user_data');
         var subject_id = $(this).attr('value');
 
         var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+        $("#number").val(parseInt($("#number").val()) - 1);
 
         var limitrange = $("#number").val();
+
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
             $('#saveplannerbutton').addClass('disabled');
