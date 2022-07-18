@@ -158,7 +158,7 @@
         </div>
     </aside>
 
-    <div class="content-wrapper test_analytics_wrapper">
+    <div class="content-wrapper test_analytics_wrapper overall_analytics_wrapper">
             <div class="tabMainblock">
                 <div class="commontab aeck_commontab">
                     <div class="tablist">

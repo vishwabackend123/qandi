@@ -3374,7 +3374,12 @@ span.greenball-3 {
     bottom: 45px;
     right: 5%;
 }
-
+.commonWhiteBox.borderRadius {
+    border-radius: 32px;
+}
+.overall_analytics_wrapper .commonWhiteBox {
+    border-radius: 10px;
+}
 /********************* Amit End ****************************/
 
 
