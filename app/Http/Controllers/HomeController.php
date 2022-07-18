@@ -546,7 +546,7 @@ class HomeController extends Controller
                 'image' => $file
             );
                 $rules = array(
-                'image' => 'mimes:jpeg,jpg,png,gif|required|max:5120'
+                'image' => 'mimes:jpeg,jpg,png|required|max:5120'
 
             );
                 $validator = Validator::make($fileArray, $rules);

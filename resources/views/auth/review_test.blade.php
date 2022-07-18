@@ -696,8 +696,7 @@ label.filter {
              $('.explanation-sec').css('height', ex_scroll_height);
 
         
-    
-           
+
  
         });
 

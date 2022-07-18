@@ -2948,7 +2948,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
-    font-size: 112px;
+    font-size: 119px;
     min-width: 1em;
     height: 1em;
     position: relative;
@@ -3007,8 +3007,8 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 .mq_percent_text {
     position: absolute;
-    font-size: 24px;
-    right: 54px;
+    font-size: 27.1px;
+    right: 60px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3019,9 +3019,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 span.mq_percent_outoff {
     color: rgba(35, 70, 40, 0.2);
-    font-size: 18px;
+    font-size: 18.1px;
     position: absolute;
-    left: 47px;
+    left: 50px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -3337,6 +3337,8 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
 }
 .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox {
     width: 96px!important;
+    position: relative;
+    bottom: -2px;
 }
 .commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
 input.text-box.markstrend::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -3667,6 +3669,7 @@ header {
     display: flex;
     align-items: end;
     margin-top: 20px;
+    overflow: hidden;margin-bottom:16px;
 }
 
 .commonblockDash {
@@ -3789,6 +3792,7 @@ header {
     font-weight: 500;
     line-height: 1.6;
     color: #363c4f;
+    margin-bottom: 0;
 }
 
 .commonlisting li {
@@ -4058,9 +4062,17 @@ justify-content: space-between;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
-.bellactive a,.dropdownshow{background-color:#f2f4f7 ;}
+.bellactive a,.headericon.dropdown .dropdown-toggle.show{background-color:#f2f4f7 ;}
 .subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
 .subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
+.bottomlikabs{    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0px;}
+    .bottomlikabs span{    vertical-align: bottom;
+        line-height: 23px;}
+        /* .selectdata option:disabled{color:#ddd!important;} */
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5331,7 +5343,7 @@ span.headericon.notificationnew a#nodificbell svg
     font-weight: 500;
     border: 1px solid #d0d5dd;
 }
-
+#referfrnd input#linkInput{padding-right: 114px;}
 #referfrnd .form-label {
     font-size: 14px;
     font-weight: 800;
