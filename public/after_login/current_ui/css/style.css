@@ -3792,6 +3792,7 @@ header {
     font-weight: 500;
     line-height: 1.6;
     color: #363c4f;
+    margin-bottom: 0;
 }
 
 .commonlisting li {
