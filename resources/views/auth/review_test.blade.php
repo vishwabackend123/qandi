@@ -587,7 +587,7 @@ label.filter {
 }
 .list-ans {
     padding-top: 20px;
-    height: 38vh;
+    height: 33vh;
     overflow-y: scroll;
 }
 .list-ans div {
@@ -757,7 +757,8 @@ label.filter {
             $('.reviewans-mainsec').css('height', min_height_q_list_h);
             var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
             var scroll_height = reviewans_final_height - review_filter_top_height;
-            $('.list-ans').css('height', scroll_height)
+            var scroll_height_20 = scroll_height - 20 + "px";
+            $('.list-ans').css('height', scroll_height_20)
         });
 
         $(".collapsebtn").on('click', function() {
@@ -766,6 +767,25 @@ label.filter {
             var onclick_review_box2 = review_ans_mainsec_heigth - custom_ans_top_heigth;
             var clickcollapesbtn = onclick_review_box2 + 122 + "px";
             $('.reviewans-mainsec').css('height', clickcollapesbtn);
+
+
+
+           var coll_outer_height =  $(".reviewans-mainsec").outerHeight();
+          
+           var coll_review_filter_to_height =  $(".review-filter-top").outerHeight();
+         
+           var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
+           var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
+         
+
+           $('.list-ans').css('height', coll_scroll_final_height)
+
+          
+
+
+
+
+
         });
     });
 </script>
