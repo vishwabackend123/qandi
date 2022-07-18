@@ -3823,8 +3823,9 @@ header {
 
 .tasklistbtn .btn {
     min-width: 114px;
-    padding: 8px 16px;
+    padding: 8px 10px;
     height: 38px;
+    font-size: 13px;
 }
 .subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
 .tasklistbtn .btn.nobg {
