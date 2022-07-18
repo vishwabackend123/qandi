@@ -4061,9 +4061,17 @@ justify-content: space-between;}
 .select2-container--open .select2-dropdown--above{border:0px;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
-.bellactive a,.dropdownshow{background-color:#f2f4f7 ;}
+.bellactive a,.headericon.dropdown .dropdown-toggle.show{background-color:#f2f4f7 ;}
 .subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
 .subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
+.bottomlikabs{    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0px;}
+    .bottomlikabs span{    vertical-align: bottom;
+        line-height: 23px;}
+        .selectdata option:disabled{color: rgba(170,170,170,0.7%)!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5334,7 +5342,7 @@ span.headericon.notificationnew a#nodificbell svg
     font-weight: 500;
     border: 1px solid #d0d5dd;
 }
-
+#referfrnd input#linkInput{padding-right: 114px;}
 #referfrnd .form-label {
     font-size: 14px;
     font-weight: 800;

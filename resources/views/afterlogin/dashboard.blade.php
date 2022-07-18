@@ -268,7 +268,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     @endif
                                                     @endforeach
                                                 </ul>
-                                                <div class="moreTaskLink">
+                                                <div class="moreTaskLink bottomlikabs">
                                                     <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
@@ -329,7 +329,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     @endif
                                                     @endforeach
                                                 </ul>
-                                                <div class="moreTaskLink">
+                                                <div class="moreTaskLink bottomlikabs">
                                                     <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
                                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                             </svg></span></a>
