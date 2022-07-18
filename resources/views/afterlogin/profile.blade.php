@@ -14,6 +14,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 </style>
 
 <body class="bg-content">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <div class="main-wrapper">
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
@@ -50,10 +51,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="custom-input pb-4">
+                                    <div class="custom-input pb-4 position-relative">
                                         <label>Email</label>
                                         <input type="text" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required>
-                                        <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);" style="margin: 7px 15px 0 0;">Resend</a>
+                                        <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);">Resend</a>
                                         <span class="email-error">Email not verified, Please resend verification link to verify</span>
                                         <br>
                                         <span class="mt-2" id="email_success"></span>
@@ -64,18 +65,20 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     @php
                                     $userstate = $userData->state;
                                     @endphp
-                                    <select class="form-control selectdata state_list" id="state" name="state" required>
-                                        <option class="we" value="">Select State</option>
+                                     <select class="form-control selectdata reqrd js-example-basic-single state_list" id="state" name="state" required>
+                                 <option class="we" value="">Select a State</option>
                                         @foreach($state_list as $state)
                                         <option class="we" value="{{$state}}" @if($state==$userstate) selected @else "" @endif>{{$state}}</option>
                                         @endforeach
-                                    </select>
+                        </select>
+                            
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>City</label>
-                                    <select class="form-control selectdata city_list" id="city_name" name="city" required>
-                                        <option class="we" value="">Select City</option>
-                                    </select>
+                            
+                                    <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" required>
+                                 <option class="we" value="">Select City</option>
+                        </select>
                                 </div>
                             </div>
                             <hr class="line">
@@ -100,7 +103,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="dropzone-wrapper w-100">
                                             <div class="dropzone-desc text-center">
                                                 <img src="{{URL::asset('public/after_login/current_ui/images/upload-img.jpg')}}" alt="performance">
-                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>(SVG, PNG, JPG or GIF)</span></p>
+                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF (max. 800x400px)</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
                                         </div>
@@ -110,7 +113,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <hr class="line">
                             <div class="d-flex justify-content-end mb-5 pb-5">
                                 <a href="{{ url('/dashboard') }}" class="btn cancle me-2 bg-transparent ">Cancel</a>
-                                <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ml-1 ">Save</button>
+                                <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ms-1 ">Save</button>
                             </div>
                         </form>
                     </div>
@@ -157,17 +160,26 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <p>{{$subscription_desc}}</p>
                             </div>
                             <div class="flip d-inline-block">Show details</div>
-                            <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
+                            &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @include('afterlogin.layouts.footer_new')
+
 <script type="text/javascript">
 $(document).ready(function() {
+    $('.js-example-basic-single').select2({ 
+    minimumResultsForSearch: -1,
+    placeholder: "Select a State",
+    });
+     $('.city_list').select2({ 
+     minimumResultsForSearch: -1,
+    placeholder: "Select a City",
+    });
     editProfileCheck();
     var user_state = '<?php echo $userData->state; ?>';
     getCity(user_state, 'load');
@@ -306,4 +318,6 @@ function getCity(state, type) {
 }
 
 </script>
+</body>
 @endsection
+
