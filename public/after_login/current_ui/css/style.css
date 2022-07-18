@@ -4072,7 +4072,7 @@ justify-content: space-between;}
     padding-left: 0px;}
     .bottomlikabs span{    vertical-align: bottom;
         line-height: 23px;}
-        /* .selectdata option:disabled{color:#ddd!important;} */
+        .selectdata option:disabled{color: #bebcbc87!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
