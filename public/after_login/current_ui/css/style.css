@@ -5512,10 +5512,12 @@ span.headericon.notificationnew a#nodificbell svg
     padding-bottom: 150px !important;
 }
 
-.task1>p {
-    font-size: 14px;
-    font-weight: 500;margin: 0;
+.task1>p {font-size: 14px;
+    font-weight: 500;
+    margin: 0;
     color: #868a95;
+    margin-bottom: 2px;
+    line-height: 1.6;
 }
 .task1 {padding-top: 40px;}
 .task2 {padding-top: 24px;}
@@ -5525,12 +5527,12 @@ span.headericon.notificationnew a#nodificbell svg
     font-weight: bold;
 }
 
-.task1>h3 {
-    font-size: 16px;
+.task1>h3 {    font-size: 16px;
     font-weight: 800;
     color: #1f1f1f;
     margin: 0;
-    padding: 2px 0px;
+    padding: 1px 0;
+    line-height: 1.6;
 }
 
 .btn-sec {
