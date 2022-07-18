@@ -2442,7 +2442,7 @@ a.btn-common-attempted svg {
     text-align: left;
     color: #363c4f;
     margin-bottom: 16px;
-    width: calc(100% - 40px);
+    width: calc(100% - 76px);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
