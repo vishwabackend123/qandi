@@ -145,12 +145,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 @php $startdate=isset($subscription_details->subscription_start_date)? date("d-m-Y", strtotime($subscription_details->subscription_start_date)):''; @endphp
                                 <h2>Active date</h2>
-                                <h3>{{!empty($startdate)?date("jS F, Y", strtotime($startdate)):''}}</h3>
+                                <h3>{{!empty($startdate)?date("jS F Y", strtotime($startdate)):''}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
                                 @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
                                 <h2>End date</h2>
-                                <h3>{{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</h3>
+                                <h3>{{!empty($expirydate)?date("jS F Y", strtotime($expirydate)):''}}</h3>
                             </div>
                             <div id="panel">
                                 <hr class="line">
