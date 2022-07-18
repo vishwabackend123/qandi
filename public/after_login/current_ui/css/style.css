@@ -3681,11 +3681,6 @@ header {
     padding: 8px 15px;
     min-width: 120px;
 }
-
-.tabMainblock {
-    margin-top: 16px;
-}
-
 .commontab .nav-tabs .nav-link {
     padding: 0px 0px 15px;
     opacity: 0.6;
@@ -4433,7 +4428,7 @@ justify-content: space-between;}
 
 /*********** MyQ-Matrix */
 .tabMainblock_myqmatric{
-    margin-top: 4px!important;
+    margin-top: 0px!important;
 }
 .tabMainblock_myqmatric .commontab .tab-content {
     padding: 15px 0 0;
@@ -4468,9 +4463,7 @@ justify-content: space-between;}
 }
 
 .mymatrix_table tr td {
-    padding-top: 18px;
-    height: 62px;
-    padding-left: 0px;
+    padding: 20px 0px;
 }
 
 .qq1_2_3_4.active {
@@ -5167,6 +5160,9 @@ span.headericon.notificationnew a#nodificbell svg
 {
   width: 20px;
   height: 20px;
+}
+.fortab .commonWhiteBox {
+    padding: 32px 30px 32px 32px!important;
 }
 
 /* **********start live   ********** */
