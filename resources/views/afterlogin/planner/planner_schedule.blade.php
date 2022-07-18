@@ -291,7 +291,7 @@ $userData = Session::get('user_data');
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
-                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
@@ -538,7 +538,7 @@ $userData = Session::get('user_data');
 
                         if (status == "Y") {
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
 
                                 '</p></div>');
 
@@ -547,7 +547,7 @@ $userData = Session::get('user_data');
                         } else {
 
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
                                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
