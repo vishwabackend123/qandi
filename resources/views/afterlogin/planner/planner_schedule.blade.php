@@ -201,7 +201,7 @@ $userData = Session::get('user_data');
 
         value = isNaN(value) ? 0 : value;
         value < 1 ? value = 1 : '';
-        if (minvalue < value) {
+        if (minvalue < value && value > 0) {
             value--;
         }
         document.getElementById('number').value = value;
@@ -536,22 +536,32 @@ $userData = Session::get('user_data');
                         var chapter_name = item.chapter_name;
                         var status = item.test_completed_yn;
 
-                        $('#planner_sub_' + subject_id).append(
-                            '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
-                            '<svg  onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                            '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-                            '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
-                            '<path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />' +
-                            '</g>' +
-                            '<defs>' +
-                            '<clipPath id="h7dsf4yzaa">' +
-                            '<path fill="#fff" d="M0 0h18v18H0z" />' +
-                            '</clipPath>' +
-                            '</defs>' +
-                            ' </svg>' +
-                            '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "14" height = "14" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
+                        if (status == "Y") {
+                            $('#planner_sub_' + subject_id).append(
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+
+                                '</p></div>');
 
 
+
+                        } else {
+
+                            $('#planner_sub_' + subject_id).append(
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name="' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                                '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                                '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
+                                '<path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />' +
+                                '</g>' +
+                                '<defs>' +
+                                '<clipPath id="h7dsf4yzaa">' +
+                                '<path fill="#fff" d="M0 0h18v18H0z" />' +
+                                '</clipPath>' +
+                                '</defs>' +
+                                ' </svg></a>' +
+                                '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "14" height = "14" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
+
+                        }
                     });
 
                 } else {
