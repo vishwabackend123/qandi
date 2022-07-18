@@ -191,7 +191,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash" style="margin-top:40px;">
+                <div class="commonWhiteBox commonblockDash borderRadius" style="margin-top:40px;">
                     <h3 class="boxheading" style="margin-bottom:40px;">Progress</h3>
                     <div class="row justify-content-between align-items-center" style="margin-top: -28px;">
                         <div class="col-md-4">
@@ -221,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash subject_score_card">
+                <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">Subject Score </h3>
                     <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
                     <div class="row">
@@ -266,7 +266,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash">
+                <div class="commonWhiteBox commonblockDash borderRadius">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
                     <div class="row graph_head_label" style="margin-bottom:42px;">
                         <div class="col-md-6">
@@ -283,7 +283,7 @@
                         <canvas id="timeManagementChart"></canvas>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash">
+                <div class="commonWhiteBox commonblockDash borderRadius">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Time management </h3>
                     <div class="row graph_head_label" style="margin-bottom:42px;">
                         <div class="col-md-6">
@@ -300,7 +300,7 @@
                         <canvas id="timeManagement_graph"></canvas>
                     </div>
                 </div>
-                <div class="commonWhiteBox commonblockDash graph_head_label">
+                <div class="commonWhiteBox commonblockDash graph_head_label borderRadius">
                     <h3 class="boxheading d-flex align-items-center" style="margin-bottom: 24px;">Accuracy Percentage <span>(in Last week)</span></h3>
                     <div class="graph_color_label_anwser" style="margin:34px 0 18px;">
                         <span style="margin-right:25px;"><small></small> Class Average</span>

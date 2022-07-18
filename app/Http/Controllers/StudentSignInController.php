@@ -363,11 +363,11 @@ class StudentSignInController extends Controller
                     $user_Data = Auth::user();
                     Session::put('user_data', $user_Data);
                     if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
-                          $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'],];
+                          $inputjson = ["email" => $email_add, "student_refer_by" => $data['refer_code'],];
                                 $request = json_encode($inputjson);
 
                                 $api_URL = env('API_URL');
-                                $curl_url = $api_URL . 'api/insert-referr-student';
+                                $curl_url = $api_URL . 'api/update-referr-student';
 
                                 $curl = curl_init();
                                 $curl_option = array(
@@ -378,7 +378,7 @@ class StudentSignInController extends Controller
                                     CURLOPT_MAXREDIRS => 10,
                                     CURLOPT_TIMEOUT => 30,
                                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                                    CURLOPT_CUSTOMREQUEST => "POST",
+                                    CURLOPT_CUSTOMREQUEST => "PUT",
                                     CURLOPT_POSTFIELDS => $request,
                                     CURLOPT_HTTPHEADER => array(
                                         "cache-control: no-cache",
