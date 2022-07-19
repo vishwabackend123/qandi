@@ -388,7 +388,7 @@ select.form-control:not([size]):not([multiple]) {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border: 0 !important;
-    padding: 5px 0 7px 12px;
+    padding: 5px 12px 7px;
     border-radius: 8px !important;
     box-shadow: 0 4px 10px 2px rgb(219 227 238 / 60%);
     -webkit-box-shadow: 0 4px 10px 2px rgb(219 227 238 / 60%);
@@ -452,14 +452,13 @@ font-weight: 800;
 .custom-profileupload .dropzone-wrapper {
     position: relative;
     height: 126px;
+    width: 100%;
     padding: 16px 24px;
     border-radius: 8px;
     border: solid 1px #d0d5dd;
     background: #fff;
 }
-.custom-profileupload .dropzone-wrapper:hover{
-border-color: #56b663;    
-}
+
 .custom-profileupload .dropzone-desc {
     position: absolute;
     margin: 0 auto;
@@ -523,7 +522,7 @@ border-color: #56b663;
     height: 38px;
     border-radius: 8px;
     font-weight: 600;
-    color: #56b663 !important;
+    color: #56b663;
     width: 87px;
 }
 .subscription-details{
@@ -721,7 +720,6 @@ vertical-align: super;
     border: 1px solid #56b663;
     margin-bottom: 10px;
 }
-.add-insubchapter:hover,.add-insubchapter:focus{    background-color: #f5faf6;}
 .add-insubchapter p {
     color: #1f1f1f;
     font-size: 16px !important;
@@ -3396,7 +3394,7 @@ span.greenball-3 {
 
 /********* Shubham Start ***********/
 /*************header***********/
-header{position: relative;}
+
 .headerMain {
     display: flex;
     align-items: center;
@@ -3732,7 +3730,6 @@ header {
     margin-right: 28px;
     margin-bottom:0px;
 }
-
 .commontab .nav-tabs .nav-link:hover,
 .commontab .nav-tabs .nav-link:focus {
     border: 0px;
@@ -4098,10 +4095,6 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
-        .profileicon{width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            margin-top: -2px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4614,6 +4607,34 @@ justify-content: space-between;}
     background: #f5faf6;
     min-height: 100%;
 }
+.chapter_preficiency_warpper .commontab .nav-tabs .nav-link
+{
+    padding: 0px 0px 15px;
+    opacity: 0.6;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #363c4f;
+    margin-right: 28px;
+    margin-bottom:0px;
+}
+.chapter_preficiency_warpper li.breadcrumb-item a
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #56b663;
+}
+.chapter_preficiency_warpper li.breadcrumb-item.active
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
 
 .knowledge_left_clr_with_text {
     display: flex;
@@ -4684,7 +4705,7 @@ justify-content: space-between;}
     padding: 32px 32px 28px;
     border-radius: 32px;
     background-color: #ffffff;
-    height: 171px;
+    height: 171px;margin-bottom: 20px;
 }
 
 .chapter_profici_application_deves_text
@@ -4699,6 +4720,7 @@ justify-content: space-between;}
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
+    align-items: center;
 }
 .chapter_profici_percent
 {
@@ -4730,6 +4752,7 @@ justify-content: space-between;}
 }
 .chapter_main_tab_clor .nav-link.active {
     background:#f5faf6;
+    font-weight: 800!important;
 }
 .row.chapter_of_row_col_paddin_zero .col {
     padding: 10px!important;
@@ -4901,9 +4924,6 @@ background: #3e8a44;
     color: #56b663;
     text-decoration: none;
 }
-.dashboad_mqmatrix_text_back_to_dashboard a:hover,
-.dashboad_mqmatrix_text_back_to_dashboard:focus,.add-chapter label:hover,.add-chapter label:focus {
-    color: #039855;text-decoration: none;}
 .dashboad_mqmatrix_text_back_to_dashboard span
 {
     padding-right: 8px;
@@ -5285,22 +5305,75 @@ td.mymatrix_table_point
     }
     .chapter_preficiency_warpper .tablist ul
     {
-        width: 423px;
+        width: 428px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .back_button_waraper_text
+    {
+        font-size: 16px;
+        font-weight: 800;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.6;
+        letter-spacing: normal;
+        color: #56b663;
+        padding-bottom: 25px;
+        padding-left: 15px;
+        cursor: pointer;
+    }
+    .text_back_button_waraper_text
+    {
+        padding-left: 8px;
+    }
+    .knowledge_left_clr_with_text_right_div {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .knowledge_left_clr_with_text {
+        padding-right: 16px;
+    }
+    .cotogaty_right_text {
+        font-size: 14px;
+    }
+    .chapter_proficincy_point_anylytics {
+        flex-grow: 0;
+        padding: 16px 16px 14px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        height: 120px;
+        margin-bottom: 12px;
+    }
+    .chapter_preficiency_warpper .common_bars {
+        border-radius: 10px;
+        margin: 8px 0 12px;
+    }
+    .chapter_profici_percentage_profincy
+    {
+        margin-top: 20px;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 16px;
+    }
+    .chapter_profici_percent {
+        font-size: 14px;
+    }
+}
+@media(min-width:768px)
+{
+    .back_button_waraper_text{
+    display: none;
+    }
+}
+@media(max-width:890px) and (min-width:768px)
+{
+    .chapter_profici_nav__right_contant {
+        display: block;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 17px;
+    }
 }
 
 
@@ -5317,8 +5390,7 @@ td.mymatrix_table_point
     width: 456px;
     max-width: 100%;
     float: right;
-    padding: 30px;box-shadow: 0 -4px 8px 0 rgb(164 172 178 / 10%);
-    margin-top: -1px;
+    padding: 30px;
 }
 
 .new_notification_main_sec {
@@ -5339,8 +5411,7 @@ td.mymatrix_table_point
 .notification-main>h2 a {
     font-size: 14px;
     font-weight: 800;
-    color: #868a95;line-height: 1.6;display: inline-block;
-    padding-top: 7px;
+    color: #868a95;line-height: 1.6;
 }
 
 .notification-list {
@@ -5766,7 +5837,6 @@ td.mymatrix_table_point
     border-radius: 8px;
     margin-left: 30px;text-decoration:none;
 }
-.verifiaction-link p > a:hover{background: #dc68030f;}
 /**********  email-confirmation *********/
 .email-confirmation {
     background: #fff;
