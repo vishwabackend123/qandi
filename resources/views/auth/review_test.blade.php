@@ -391,7 +391,7 @@
     position: absolute;
     right: 0;
     TOP: 0PX;
-}
+}  
 .first_screen {
     padding: 20px 40px !important;
     border-radius: 8px;
