@@ -211,19 +211,19 @@
 @media(max-width:767px){
     .left-sidepannel {
     display: none !important;
-}
+    }
     .mobilelogo{
     padding-top: 32px;
     }
     .right-seidepannel {
     padding: 0 16px;
-}
+    }
     .Get-otp button {
     width: 100% !important;
-}
+    }
     .loginform {
     width: 100%;
-}
+    }
     .btn.btn-common-transparent{min-width:200px;}
     .exam_instruction_scrolling
     {
