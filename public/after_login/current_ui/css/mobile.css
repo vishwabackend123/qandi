@@ -161,6 +161,13 @@
 .calendar-wrapper {
     max-width: 100%;
 }
+.graphCardwrapper{flex-wrap:wrap;}
+.journeyGraph {
+    width: 49%;
+}
+.graphCardwrapper .journeyGraph:first-child{margin-bottom:30px;}
+.dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
+
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -295,6 +302,19 @@
     .fullbody_scan_wrapper {margin-top: 44px;}
     .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
     /************ Amit end *********/
+    .SubjectscorePannel{margin-bottom:16px;}
+    .subjextscoreLeft h4 {
+        font-size: 24px;
+    }
+    .commonWhiteBox{padding:20px}
+    .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
+    .myqTodayGraphSec{padding-top:30px;}
+    .dashSubHeading{font-size:16px;}
+    .dashSubtext{margin-bottom:10px;}
+    }
+    @media only screen and (max-width: 576px){
+         .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
+
     }
 @media(min-width:768px){
 .mobile_block{display:none;}
