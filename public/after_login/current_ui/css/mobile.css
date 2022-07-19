@@ -294,8 +294,21 @@
     span.greenball-1{top:-10px;}
     .fullbody_scan_wrapper {margin-top: 44px;}
     .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
+    .userprofile strong {font-size: 16px;font-weight: 800;line-height: 1.6;color: #1f1f1f;margin-left: 12px;}
+    .sidebar_block {width: 258px;margin: 72px 0 0 102px;padding: 28px 24px 0px;background-color: #fff;height: 100%;z-index: 10;position: fixed;}
+    .userprofile span {font-size: 14px;font-weight: 500;color: #868a95;}
+    .pro_sub_label{ font-size: 14px;font-weight: 600;color: #1f1f1f;margin:24px 0 17px;border-bottom:1px solid #e5eaee;padding-bottom:19px;}
+    ul.mob_sidebar_lists li a {height: 50px;padding: 12px 12px 12px 12px;border-radius: 8px;display: block;background-color:#fff;display: flex;align-items: center;}
+    ul.mob_sidebar_lists li.active a{background-color:#e0f6e3;}
+    ul.mob_sidebar_lists li.active a span{color:#56b663;font-weight: 800;}
+    ul.mob_sidebar_lists li a span{  font-size: 16px;font-weight:500;margin-left:11px;color:#1f1f1f;}
+    ul.mob_sidebar_lists li.active a svg.menu-icon-active{display: inline-block;}
+    ul.mob_sidebar_lists li.active a svg:first-child{display: none;}
+    ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
+
     /************ Amit end *********/
-    }
+}
+
 @media(min-width:768px){
 .mobile_block{display:none;}
 }
