@@ -487,7 +487,7 @@
     max-height: initial;
 }
 .reviewScreenleft .questionOptionBlock {
-    padding-top: 60px;
+    padding-top: 45px;
 }
 
 
@@ -529,7 +529,7 @@
 }
 .explanation-sec {
     height: 20vh;
-    overflow-y: scroll;
+    overflow-y: auto;;
     padding-left: 135px;
 }
 .explanationdeteail > span {
@@ -582,7 +582,7 @@ label.filter {
 .list-ans {
     padding-top: 20px;
     height: 33vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .list-ans div {
     font-size: 16px;
