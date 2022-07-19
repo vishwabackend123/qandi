@@ -105,8 +105,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                         <div class="dropzone-wrapper w-100">
                                             <div class="dropzone-desc text-center">
-                                                <img src="{{URL::asset('public/after_login/current_ui/images/upload-img.jpg')}}" alt="performance">
-                                                <p><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF (max. 800x400px)</span></p>
+                                                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 23C3 11.954 11.954 3 23 3s20 8.954 20 20-8.954 20-20 20S3 34.046 3 23z" fill="#F2F4F7"/>
+    <g clip-path="url(#yofycrtcca)">
+        <path d="M26.333 26.333 23 23m0 0-3.333 3.333M23 23v7.5m6.992-2.175A4.168 4.168 0 0 0 28 20.5h-1.05a6.668 6.668 0 1 0-11.45 6.083" stroke="#475467" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <path d="M23 40c-9.389 0-17-7.611-17-17H0c0 12.703 10.297 23 23 23v-6zm17-17c0 9.389-7.611 17-17 17v6c12.703 0 23-10.297 23-23h-6zM23 6c9.389 0 17 7.611 17 17h6C46 10.297 35.703 0 23 0v6zm0-6C10.297 0 0 10.297 0 23h6c0-9.389 7.611-17 17-17V0z" fill="#F9FAFB"/>
+    <defs>
+        <clipPath id="yofycrtcca">
+            <path fill="#fff" transform="translate(13 13)" d="M0 0h20v20H0z"/>
+        </clipPath>
+    </defs>
+</svg>
+                                                <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF (max. 800x400px)</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
                                         </div>
@@ -175,11 +186,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script type="text/javascript">
     $(document).ready(function() {
         $('.js-example-basic-single').select2({
-            minimumResultsForSearch: -1,
             placeholder: "Select a State",
         });
         $('.city_list').select2({
-            minimumResultsForSearch: -1,
             placeholder: "Select a City",
         });
         editProfileCheck();

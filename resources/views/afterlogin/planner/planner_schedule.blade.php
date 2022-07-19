@@ -3,7 +3,11 @@
 $userData = Session::get('user_data');
 @endphp
 @section('content')
-
+<style>
+    input[type="date"]::-ms-clear {
+        display: none;
+    }
+</style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
@@ -31,7 +35,7 @@ $userData = Session::get('user_data');
                                 <div class="col-lg-4">
                                     <div class="planner-date position-relative">
                                         <label>Start Date</label>
-                                        <input type="date" class="form-control plannerDate" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}" onkeydown="return false" required>
+                                        <input type="date" class="form-control plannerDate" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}" onkeydown="return false">
                                         <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span>
@@ -40,7 +44,7 @@ $userData = Session::get('user_data');
                                 <div class="col-lg-4">
                                     <div class="planner-date position-relative">
                                         <label>End Date</label>
-                                        <input type="date" class="form-control plannerDate" id="EndDate" name="end_date" value="{{$sundayDate}}" onkeydown="return false" required>
+                                        <input type="date" class="form-control plannerDate" id="EndDate" name="end_date" value="{{$sundayDate}}" onkeydown="return false">
                                         <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.833 3.333H4.167C3.247 3.333 2.5 4.08 2.5 5v11.667c0 .92.746 1.666 1.667 1.666h11.666c.92 0 1.667-.746 1.667-1.666V5c0-.92-.746-1.667-1.667-1.667zM13.333 1.667V5M6.667 1.667V5M2.5 8.333h15" stroke="#CCC" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span>
@@ -163,11 +167,12 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-<!-- Footer Section -->
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
-
+<!-- Footer Section -->
+@include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->
 <script type="text/javascript">
     function increaseValue() {
@@ -291,7 +296,7 @@ $userData = Session::get('user_data');
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
-                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
+                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
@@ -332,6 +337,7 @@ $userData = Session::get('user_data');
     });
 
     function Shuffle_Chapter(chapt_id, subject_id) {
+
         var selected_chapters = $("input[name='chapters[]']")
             .map(function() {
                 return $(this).val();
@@ -346,7 +352,7 @@ $userData = Session::get('user_data');
             },
 
             success: function(response_data) {
-                // console.log(response_data);
+                console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
                 res_chpter_id = response.chapter_id;
                 res_chpter_name = response.chapter_name;
@@ -355,6 +361,7 @@ $userData = Session::get('user_data');
                 $('#select_chapt_name' + chapt_id).html(res_chpter_name);
                 /*   $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
                  */
+                console.log(res_chpter_id, res_chpter_name);
             },
 
 
@@ -538,7 +545,7 @@ $userData = Session::get('user_data');
 
                         if (status == "Y") {
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
 
                                 '</p></div>');
 
@@ -547,7 +554,7 @@ $userData = Session::get('user_data');
                         } else {
 
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name"' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
                                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
