@@ -445,8 +445,7 @@ font-weight: 800;
 }
 
 .line {
-    background: rgba(205, 227, 208, 0.9);
-    margin-top: 0;
+    border-top: 1px solid rgba(205,227,208,0.5);
 }
 
 .custom-profileupload .dropzone-wrapper {
@@ -457,6 +456,10 @@ font-weight: 800;
     border-radius: 8px;
     border: solid 1px #d0d5dd;
     background: #fff;
+}
+
+.custom-profileupload .dropzone-wrapper:hover{
+border-color: #56b663;    
 }
 
 .custom-profileupload .dropzone-desc {
