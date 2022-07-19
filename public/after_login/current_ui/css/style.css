@@ -3385,7 +3385,7 @@ span.greenball-3 {
 
 /********* Shubham Start ***********/
 /*************header***********/
-
+header{position: relative;}
 .headerMain {
     display: flex;
     align-items: center;
@@ -5216,6 +5216,41 @@ td.mymatrix_table_point
     width: 57%;
 }
 
+
+/* ******** Mobile Responsive vikash Start*********** */
+@media(max-width:767px){
+    /* contect us */
+    .contactus_customer_support_text
+    {
+        font-size: 20px;
+    }
+    .contactus_customer_support_text_under_text
+    {
+        font-size: 14px;
+        margin-top: 16px;
+    }
+    .contectus_bottom_img_svg {
+        display: flex;
+        justify-content: center;
+    }
+    .contectus_bottom_img_svg svg {
+        margin-top: 55px;
+        padding: 45px;
+    }
+    .contactus_free_get_need
+    {
+        padding-top: 32px;
+    }
+/* chapter preficiency */
+    .chapter_profici_nav__right_contant
+    {
+        display: block;
+    }
+}
+
+
+
+/* ******** Mobile Responsive vikash End  *********** */
 /* **********start live   ********** */
 
 /********* Vikash End ***********/
@@ -5227,7 +5262,8 @@ td.mymatrix_table_point
     width: 456px;
     max-width: 100%;
     float: right;
-    padding: 30px;
+    padding: 30px;box-shadow: 0 -4px 8px 0 rgb(164 172 178 / 10%);
+    margin-top: -1px;
 }
 
 .new_notification_main_sec {
@@ -5248,7 +5284,8 @@ td.mymatrix_table_point
 .notification-main>h2 a {
     font-size: 14px;
     font-weight: 800;
-    color: #868a95;line-height: 1.6;
+    color: #868a95;line-height: 1.6;display: inline-block;
+    padding-top: 7px;
 }
 
 .notification-list {
@@ -5674,6 +5711,7 @@ td.mymatrix_table_point
     border-radius: 8px;
     margin-left: 30px;text-decoration:none;
 }
+.verifiaction-link p > a:hover{background: #dc68030f;}
 /**********  email-confirmation *********/
 .email-confirmation {
     background: #fff;

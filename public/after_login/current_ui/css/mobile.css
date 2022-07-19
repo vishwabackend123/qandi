@@ -210,6 +210,21 @@
 }
 @media(max-width:767px){
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
+    .left-sidepannel {
+        display: none !important;
+    }
+    .mobilelogo{
+        padding-top: 32px;
+    }
+    .right-seidepannel {
+        padding: 0 16px;
+    }
+    .Get-otp button {
+        width: 100% !important;
+    }
+    .loginform {
+        width: 100%;
+    }
     .exam_instruction_scrolling
     {
         padding-right:unset;
