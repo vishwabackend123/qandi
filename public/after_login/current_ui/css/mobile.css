@@ -209,6 +209,8 @@
     
 }
 @media(max-width:767px){
+    aside{display:none;}
+    .main-wrapper{padding-left:0;}
     .btn.btn-common-transparent{min-width:200px;}
     .exam_instruction_scrolling
     {
