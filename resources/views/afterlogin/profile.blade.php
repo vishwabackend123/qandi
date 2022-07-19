@@ -175,11 +175,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script type="text/javascript">
     $(document).ready(function() {
         $('.js-example-basic-single').select2({
-            minimumResultsForSearch: -1,
             placeholder: "Select a State",
         });
         $('.city_list').select2({
-            minimumResultsForSearch: -1,
             placeholder: "Select a City",
         });
         editProfileCheck();
