@@ -388,7 +388,7 @@ select.form-control:not([size]):not([multiple]) {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border: 0 !important;
-    padding: 5px 0 7px 12px;
+    padding: 5px 12px 7px;
     border-radius: 8px !important;
     box-shadow: 0 4px 10px 2px rgb(219 227 238 / 60%);
     -webkit-box-shadow: 0 4px 10px 2px rgb(219 227 238 / 60%);
@@ -452,11 +452,13 @@ font-weight: 800;
 .custom-profileupload .dropzone-wrapper {
     position: relative;
     height: 126px;
+    width: 100%;
     padding: 16px 24px;
     border-radius: 8px;
     border: solid 1px #d0d5dd;
     background: #fff;
 }
+
 .custom-profileupload .dropzone-wrapper:hover{
 border-color: #56b663;    
 }
@@ -524,7 +526,7 @@ border-color: #56b663;
     height: 38px;
     border-radius: 8px;
     font-weight: 600;
-    color: #56b663 !important;
+    color: #56b663;
     width: 87px;
 }
 .subscription-details{
@@ -722,7 +724,6 @@ vertical-align: super;
     border: 1px solid #56b663;
     margin-bottom: 10px;
 }
-.add-insubchapter:hover,.add-insubchapter:focus{    background-color: #f5faf6;}
 .add-insubchapter p {
     color: #1f1f1f;
     font-size: 16px !important;
@@ -2543,7 +2544,6 @@ a.btn-common-attempted svg {
      margin: 32px 12px 0 12px;
      padding: 20px 0px 20px 0px;
      border-radius: 10px;
-     border: solid 1px #e1e3ed;
      background-color: #ffffff;
      /* width: 100% */
  }
@@ -2888,7 +2888,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     display: block;
 }
 /*******Dashboard - Subject Performance circular progress bar **********/
-.circle_percent {
+.circle_percent.mt-3 {
     font-size: 60px;
     width: 1em;
     height: 1em;
@@ -2897,6 +2897,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
+    margin-top: 14px!important;
 }
 
 .circle_inner {
@@ -3340,6 +3341,7 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
 .testPlanCard.testplannewuser {
     max-width: 330px;
     width: 100%;
+    border: solid 1px #e1e3ed;
 }
 .verifiaction-link p b {
     font-weight: 800;
@@ -3383,12 +3385,20 @@ span.greenball-3 {
 .overall_analytics_wrapper .commonWhiteBox {
     border-radius: 10px;
 }
+.dashborarSlider .owl-stage .owl-item:first-child .testPlanCard {
+    margin-left: 0;
+}
+.subject_performance_card .boxheading{margin-bottom: 8px;}
+.dashbaordContainer .tabMainblock {
+    margin-top: 10px;
+}
+
 /********************* Amit End ****************************/
 
 
 /********* Shubham Start ***********/
 /*************header***********/
-header{position: relative;}
+
 .headerMain {
     display: flex;
     align-items: center;
@@ -3667,7 +3677,7 @@ header {
     font-weight: bold;
     line-height: 1.3;
     color: #363c4f;
-    margin-top: 5px;
+    margin: 3px 0 0;
 }
 
 .flexblock {
@@ -3682,7 +3692,7 @@ header {
     border-radius: 10px;
     display: flex;
     align-items: end;
-    margin-top: 20px;
+    margin-top: 10.1px;
     overflow: hidden;margin-bottom:16px;
 }
 
@@ -3724,7 +3734,6 @@ header {
     margin-right: 28px;
     margin-bottom:0px;
 }
-
 .commontab .nav-tabs .nav-link:hover,
 .commontab .nav-tabs .nav-link:focus {
     border: 0px;
@@ -4090,10 +4099,6 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
-        .profileicon{width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            margin-top: -2px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4606,6 +4611,34 @@ justify-content: space-between;}
     background: #f5faf6;
     min-height: 100%;
 }
+.chapter_preficiency_warpper .commontab .nav-tabs .nav-link
+{
+    padding: 0px 0px 15px;
+    opacity: 0.6;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #363c4f;
+    margin-right: 28px;
+    margin-bottom:0px;
+}
+.chapter_preficiency_warpper li.breadcrumb-item a
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #56b663;
+}
+.chapter_preficiency_warpper li.breadcrumb-item.active
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
 
 .knowledge_left_clr_with_text {
     display: flex;
@@ -4676,7 +4709,7 @@ justify-content: space-between;}
     padding: 32px 32px 28px;
     border-radius: 32px;
     background-color: #ffffff;
-    height: 171px;
+    height: 171px;margin-bottom: 20px;
 }
 
 .chapter_profici_application_deves_text
@@ -4691,6 +4724,7 @@ justify-content: space-between;}
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
+    align-items: center;
 }
 .chapter_profici_percent
 {
@@ -4722,6 +4756,7 @@ justify-content: space-between;}
 }
 .chapter_main_tab_clor .nav-link.active {
     background:#f5faf6;
+    font-weight: 800!important;
 }
 .row.chapter_of_row_col_paddin_zero .col {
     padding: 10px!important;
@@ -4893,9 +4928,6 @@ background: #3e8a44;
     color: #56b663;
     text-decoration: none;
 }
-.dashboad_mqmatrix_text_back_to_dashboard a:hover,
-.dashboad_mqmatrix_text_back_to_dashboard:focus,.add-chapter label:hover,.add-chapter label:focus {
-    color: #039855;text-decoration: none;}
 .dashboad_mqmatrix_text_back_to_dashboard span
 {
     padding-right: 8px;
@@ -5227,73 +5259,6 @@ td.mymatrix_table_point
 }
 
 
-/* ******** Mobile Responsive vikash Start*********** */
-@media(max-width:767px){
-    /* contect us */
-    .contactus_customer_support_text
-    {
-        font-size: 20px;
-    }
-    .contactus_customer_support_text_under_text
-    {
-        font-size: 14px;
-        margin-top: 16px;
-    }
-    .contectus_bottom_img_svg {
-        display: flex;
-        justify-content: center;
-    }
-    .contectus_bottom_img_svg svg {
-        margin-top: 55px;
-        padding: 45px;
-    }
-    .contactus_free_get_need
-    {
-        padding-top: 32px;
-    }
-/* chapter preficiency */
-    .chapter_profici_nav__right_contant
-    {
-        display: block;
-    }
-    .chapter_profici_nav__right_contant ol.breadcrumb.chapter_breadcrumb {
-        padding-left: 0px;
-    }
-    .chapter_of_row_col_paddin_zero_col
-    {
-        display: none;
-    }
-    .chapter_preficiency_warpper .tablist 
-    {
-        overflow-x: auto;
-    }
-    .chapter_main_tab_clor li.nav-item:last-child a
-    {
-        margin-right: 0px;
-    }
-    .chapter_preficiency_warpper .tablist::-webkit-scrollbar {
-        width: 0px;
-        height: 0px;
-    }
-    .chapter_preficiency_warpper .tablist ul
-    {
-        width: 423px;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 
 
 
@@ -5309,8 +5274,7 @@ td.mymatrix_table_point
     width: 456px;
     max-width: 100%;
     float: right;
-    padding: 30px;box-shadow: 0 -4px 8px 0 rgb(164 172 178 / 10%);
-    margin-top: -1px;
+    padding: 30px;
 }
 
 .new_notification_main_sec {
@@ -5331,8 +5295,7 @@ td.mymatrix_table_point
 .notification-main>h2 a {
     font-size: 14px;
     font-weight: 800;
-    color: #868a95;line-height: 1.6;display: inline-block;
-    padding-top: 7px;
+    color: #868a95;line-height: 1.6;
 }
 
 .notification-list {
@@ -5758,7 +5721,6 @@ td.mymatrix_table_point
     border-radius: 8px;
     margin-left: 30px;text-decoration:none;
 }
-.verifiaction-link p > a:hover{background: #dc68030f;}
 /**********  email-confirmation *********/
 .email-confirmation {
     background: #fff;
