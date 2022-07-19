@@ -51,7 +51,7 @@
                                                         <div class="question">
                                                             <span class="q-no">Q1.</span>
                                                             <p>
-                                                                GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
+                                                            Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
                                                             </p>
                                                         </div>
                                                     </div>
@@ -383,7 +383,7 @@
 .review_expand {
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 70px;
 }
   
 .expand_block {
@@ -509,9 +509,9 @@
     /* height:291px; */   
     position: absolute;
     bottom: 0px;
-    width: 100%;
+    width: 100%;padding-right: 8px;
 }
-.anshead-top {display: flex;align-items: center}
+.anshead-top {display: flex;align-items: center;    padding-right: 20px;}
 
 .anshead-top .btn.questionbtn {
     background: #fff !important;
@@ -765,7 +765,7 @@ label.filter {
            var coll_review_filter_to_height =  $(".review-filter-top").outerHeight();
            var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
            var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
-           $('.list-ans').css('height', coll_scroll_final_height)
+           $('.list-ans').css('height', coll_scroll_final_height)  
         });
     });
 </script>
