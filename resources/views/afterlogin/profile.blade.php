@@ -139,7 +139,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4">
                         <div class="info">
                             <h1 class="main-title">Subscription</h1>
-                            <p>Beginner • {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                            <p>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         </div>
                     </div>
                     <div class="col-lg-8 pt-4">
