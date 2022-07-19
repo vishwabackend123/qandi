@@ -229,4 +229,11 @@
     .selectPlan {
         padding: 0px 16px 45px;
     }
+    .SelectPlane_text p{font-size:16px;margin-bottom: 0;}
+    .SelectPlane_text {
+        padding: 30px 0px 44px 0px;
+    }
+    .subject-level-proficiency h5{margin-bottom: 18px;}
+    ul.proficiency-level-lists li{margin:0 0 14px;max-width: 100px;height: 48px;}
+    ul.proficiency-level-lists li span.mr-3{display:none;}
 }
