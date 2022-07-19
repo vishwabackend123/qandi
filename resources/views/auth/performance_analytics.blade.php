@@ -9,7 +9,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
 $full_body_attempt = Session::get('full_body_attempt');
 
 @endphp
-<section class="subscriptionsPage d-flex">
+<section class="subscriptionsPage d-flex fullbody_scan_page">
     <div class="subscriptionsLeftpannel">
         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
         <div class="progress-box">
@@ -42,6 +42,11 @@ $full_body_attempt = Session::get('full_body_attempt');
         <div class="SelectPlane_text">
             <h3>Full Body Scan</h3>
             <p>To assess your preparedness</p>
+        </div>
+        <div class="verificationBox mobile_block mt-0">
+            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+            <a href="javascript:void(0);" class="resend_email">Resend</a>
+            <!-- <span class="mt-2" id="email_success"></span> -->
         </div>
         <div class="fullbody_scan_wrapper">
             <div class="fullbody_scan_box d-flex">

@@ -33,7 +33,7 @@
     width: 37px !important;
     height: 37px !important;
 }
-.subCard h3{    width: calc(100% - 39px);}
+/* .subCard h3{    width: calc(100% - 39px);} */
    .week-select{
     font-size: 16px;    
     }
@@ -226,8 +226,7 @@
     width: 100%;
     }
     .btn.btn-common-transparent{min-width:200px;}
-        padding: 0 16px;
-    }
+     
     .Get-otp button {
         width: 100% !important;
     }
@@ -271,12 +270,12 @@
     .fullbody_scan_box.d-flex {display: block!important;}
     .fullbody_scan_card.w-50 , .fullbody_scan_test.w-50{width: 100%!important;}
     .fullbody_scan_card.w-50{border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:0px;padding: 20px 20px;}
-    .fullbody_scan_test.w-50{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;}
+    .fullbody_scan_test.w-50{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;overflow: hidden;}
     span.greenball-2 svg {width: 29px!important;height: 39px!important;}
     span.greenball-3 svg {width: 21px!important;height: 21px!important;}
     span.greenball-1 svg {width: 51px!important;height: 70px!important;}
-    .fullbody_scan_test span:first-child img{ width: 41.9px;height: 58px;}
-    .fullbody_scan_test span:nth-child(2) img{ width: 32px;height: 43px;}
+    .fullbody_scan_test span:first-child img{ width: 41.9px!important;height: 58px!important;}
+    .fullbody_scan_test span:nth-child(2) img{ width: 32px!important;height: 43px!important;}
     .fullbody_scan_card p{font-size: 14px; margin-bottom: 23px;}
     .fullbody_scan_card p ~ ul{ margin:24px 0 0!important;}
     .fullbody_scan_card ul li.mb-3{margin-bottom:14px!important;}
@@ -287,9 +286,12 @@
     .fullbody_scan_test {padding: 20px 0 20px 0px;}
     .fullbody_scan_test  img{width: 59.5px!important;height: 64.8px!important;}
     .fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;justify-content: flex-end!important;}
+    .fullbody_scan_test span:first-child{top:-10px;}
+    span.greenball-1{top:-10px;}
+    .fullbody_scan_wrapper {margin-top: 44px;}
+    .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
     /************ Amit end *********/
-}
-
+    }
 @media(min-width:768px){
 .mobile_block{display:none;}
 }

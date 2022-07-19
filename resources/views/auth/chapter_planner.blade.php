@@ -130,7 +130,7 @@
                                 
                             </div>
                             <div id="maths" class="tab-pane active">  
-                                <div class="row row-cols-md-1 row-cols-sm-1 chapter_of_row_col_paddin_zero">
+                                <div class="row row-cols-md-1  chapter_of_row_col_paddin_zero">
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Application of Derivatives</div>
@@ -249,9 +249,9 @@
                                           </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col chapter_of_row_col_paddin_zero_col">
                                     </div>
-                                    <div class="col">
+                                    <div class="col chapter_of_row_col_paddin_zero_col">
                                     </div>
                                 </div>                        
                             </div>
