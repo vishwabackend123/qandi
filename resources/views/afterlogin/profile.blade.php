@@ -83,8 +83,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <option class="we" value="">Select City</option>
                                     </select>
                                 </div>
+                                 <hr class="line">
                             </div>
-                            <hr class="line">
+                           
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
@@ -95,7 +96,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
                             <hr class="line mb-4">
-                            <div class="row mb-4">
+                            <div class="row mb-3">
                                 <div class="col-lg-12">
                                     <div class="d-flex custom-profileupload">
                                         <div class="preview-zone hidden">
@@ -123,8 +124,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                     </div>
                                 </div>
+                                <hr class="line mt-4">
                             </div>
-                            <hr class="line">
+                            
                             <div class="d-flex justify-content-end mb-5 pb-5">
                                 <a href="{{ url('/dashboard') }}" class="btn cancle me-2 bg-transparent ">Cancel</a>
                                 <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ms-1 ">Save</button>
@@ -139,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4">
                         <div class="info">
                             <h1 class="main-title">Subscription</h1>
-                            <p>Beginner • {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                            <p>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         </div>
                     </div>
                     <div class="col-lg-8 pt-4">
