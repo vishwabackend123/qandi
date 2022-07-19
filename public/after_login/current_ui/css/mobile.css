@@ -226,8 +226,7 @@
     width: 100%;
     }
     .btn.btn-common-transparent{min-width:200px;}
-        padding: 0 16px;
-    }
+     
     .Get-otp button {
         width: 100% !important;
     }
@@ -286,10 +285,10 @@
     .fullbody_scan_test p.my-3{margin:6px auto 14px!important;}
     .fullbody_scan_test {padding: 20px 0 20px 0px;}
     .fullbody_scan_test  img{width: 59.5px!important;height: 64.8px!important;}
-    .fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;justify-content: flex-end!important;}
+    .fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;
+        justify-content: flex-end!important;}
     /************ Amit end *********/
-}
-
+    }
 @media(min-width:768px){
 .mobile_block{display:none;}
 }
