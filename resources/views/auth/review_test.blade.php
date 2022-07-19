@@ -659,7 +659,7 @@ label.filter {
     $("window").load(function() {
         review_right_Height();
     });
-   
+      
 
     $(window).resize(function() {
         review_right_Height();

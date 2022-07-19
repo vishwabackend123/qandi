@@ -13,6 +13,13 @@ $user_id = isset($userData->id)?$userData->id:'';
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
+@if($errors->any())
+<script>
+    $(window).on('load', function() {
+        $('#matrix').modal('show');
+    });
+</script>
+@endif
 <div class="main-wrapper">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
@@ -243,7 +250,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -261,7 +268,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -277,7 +284,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @endif
                                         </div>
                                         <div id="weekly" class=" tab-pane">
-                                            <div class="taskstatusBlock"  style="margin-bottom:12px;">
+                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/2</span>
@@ -304,7 +311,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -322,7 +329,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">ALREADY ATTEMPTED</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -568,21 +575,27 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if ($val->subject_id == 1) {
                                             $backgroundclass = "mathCard";
                                             $subject_name = "Mathematics";
+                                            $img_url = 'public/after_login/current_ui/images/mathmatcs.svg';
                                         } elseif ($val->subject_id == 2) {
                                             $backgroundclass = "physicsCard";
                                             $subject_name = "Physics";
+                                            $img_url = 'public/after_login/current_ui/images/physics.svg';
                                         } elseif ($val->subject_id == 3) {
                                             $backgroundclass = "chemistryCard";
                                             $subject_name = "Chemistry";
+                                            $img_url = 'public/after_login/current_ui/images/chemistry.svg';
                                         } elseif ($val->subject_id == 4) {
                                             $backgroundclass = "botanyCard";
                                             $subject_name = "Botany";
+                                            $img_url = 'public/after_login/current_ui/images/botany.svg';
                                         } elseif ($val->subject_id == 146) {
                                             $backgroundclass = "zoologyCard";
                                             $subject_name = "Zoology";
+                                            $img_url = 'public/after_login/current_ui/images/zoology.svg';
                                         } else {
                                             $backgroundclass = "physicsCard";
                                             $subject_name = "";
+                                            $img_url = "";
                                         }
                                         ?>
                                         <div class="item">
@@ -608,80 +621,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     @endif
                                                 </div>
                                                 <div class="subIcon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
-                                                        <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#xbs2u8kpya)" />
-                                                        <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#pdstqsqm7b)" />
-                                                        <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#i6rag4r7fc)" />
-                                                        <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#s6bkns5edd)" />
-                                                        <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#ls4ucv1fue)" />
-                                                        <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#fpylq9jbjf)" />
-                                                        <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#xwkqjxxcog)" />
-                                                        <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#h5r5kftt9h)" />
-                                                        <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#zy6p1fbq7i)" />
-                                                        <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#sdlb5dxifj)" />
-                                                        <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#tg87y2hlqk)" />
-                                                        <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#4gvoyw248l)" />
-                                                        <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#62ss06008m)" />
-                                                        <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#bjzgc4z0ln)" />
-                                                        <defs>
-                                                            <linearGradient id="xbs2u8kpya" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="pdstqsqm7b" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="i6rag4r7fc" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="s6bkns5edd" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="ls4ucv1fue" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="fpylq9jbjf" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="xwkqjxxcog" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="h5r5kftt9h" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="zy6p1fbq7i" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="sdlb5dxifj" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="tg87y2hlqk" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="4gvoyw248l" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                            <linearGradient id="62ss06008m" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#D9D9D9" />
-                                                                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                            </linearGradient>
-                                                            <linearGradient id="bjzgc4z0ln" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                                <stop stop-color="#43E1CE" />
-                                                                <stop offset="1" stop-color="#2899CA" />
-                                                            </linearGradient>
-                                                        </defs>
-                                                    </svg>
+                                                    <img src="{{URL::asset($img_url)}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -721,7 +661,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                             </svg> -->
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="progressJourny_graph"  style="height: 218px;"></canvas>
+                                                    <canvas id="progressJourny_graph" style="height: 218px;"></canvas>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
@@ -787,7 +727,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <div class="customDropdown dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
-                                                            <div  style=" overflow-y: auto;  height: 145px;">
+                                                            <div style=" overflow-y: auto;  height: 145px;">
                                                                 <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
                                                                 <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                                                 <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
@@ -920,6 +860,22 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
     <!-- Strengths-popup end -->
+
+    <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0 bg-light">
+                <div class="modal-header pb-0 border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Please practice more questions on our platform to enable this test.</p>
+                    <div class="text-center mb-4">
+                        <a href="javascript:void(0);" class="btn btn-danger px-5" data-bs-dismiss="modal" aria-label="Close" title="Close"> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
