@@ -5255,6 +5255,43 @@ td.mymatrix_table_point
     {
         display: block;
     }
+    .chapter_profici_nav__right_contant ol.breadcrumb.chapter_breadcrumb {
+        padding-left: 0px;
+    }
+    .chapter_of_row_col_paddin_zero_col
+    {
+        display: none;
+    }
+    .chapter_preficiency_warpper .tablist 
+    {
+        overflow-x: auto;
+    }
+    .chapter_main_tab_clor li.nav-item:last-child a
+    {
+        margin-right: 0px;
+    }
+    .chapter_preficiency_warpper .tablist::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+    .chapter_preficiency_warpper .tablist ul
+    {
+        width: 423px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
