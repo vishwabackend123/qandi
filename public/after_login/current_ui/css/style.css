@@ -720,6 +720,7 @@ vertical-align: super;
     border: 1px solid #56b663;
     margin-bottom: 10px;
 }
+.add-insubchapter:hover,.add-insubchapter:focus{    background-color: #f5faf6;}
 .add-insubchapter p {
     color: #1f1f1f;
     font-size: 16px !important;
@@ -4886,6 +4887,9 @@ background: #3e8a44;
     color: #56b663;
     text-decoration: none;
 }
+.dashboad_mqmatrix_text_back_to_dashboard a:hover,
+.dashboad_mqmatrix_text_back_to_dashboard:focus,.add-chapter label:hover,.add-chapter label:focus {
+    color: #039855;text-decoration: none;}
 .dashboad_mqmatrix_text_back_to_dashboard span
 {
     padding-right: 8px;
