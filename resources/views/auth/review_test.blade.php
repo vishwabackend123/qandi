@@ -51,11 +51,7 @@
                                                         <div class="question">
                                                             <span class="q-no">Q1.</span>
                                                             <p>
-                                                                GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                then find the value of l3ABl.
+                                                            Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
                                                             </p>
                                                         </div>
                                                     </div>
@@ -121,12 +117,7 @@
                                                                     <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="colMargin">
-                                                                <div class="inputAns">
-                                                                    <label for="story">Answer</label>
-                                                                    <textarea style="resize:none" placeholder="Answer here" rows="20" name="comment[text]" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-                                                                </div>
-                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                                     
@@ -495,6 +486,9 @@
 .reviewScreenleft .questionwrapper{
     max-height: initial;
 }
+.reviewScreenleft .questionOptionBlock {
+    padding-top: 60px;
+}
 
 
 
@@ -512,7 +506,7 @@
 .answer-main-sec {
     background: #fff;
     padding: 20px;border-radius: 20px;
-    height:291px;
+    /* height:291px; */   
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -663,7 +657,7 @@ label.filter {
     $("window").load(function() {
         review_right_Height();
     });
-
+      
 
     $(window).resize(function() {
         review_right_Height();
@@ -692,7 +686,7 @@ label.filter {
              var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
 
 
-             var ex_scroll_height = ex_answer_main_sec_height_final - 60 + "px";
+             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
              $('.explanation-sec').css('height', ex_scroll_height);
 
         
@@ -767,25 +761,11 @@ label.filter {
             var onclick_review_box2 = review_ans_mainsec_heigth - custom_ans_top_heigth;
             var clickcollapesbtn = onclick_review_box2 + 122 + "px";
             $('.reviewans-mainsec').css('height', clickcollapesbtn);
-
-
-
            var coll_outer_height =  $(".reviewans-mainsec").outerHeight();
-          
            var coll_review_filter_to_height =  $(".review-filter-top").outerHeight();
-         
            var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
            var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
-         
-
            $('.list-ans').css('height', coll_scroll_final_height)
-
-          
-
-
-
-
-
         });
     });
 </script>
@@ -830,4 +810,17 @@ label.filter {
     });
 </script>
 <!-----end-for-expand-btn-click------->
+
+
+<script>
+    if($(window).height() < 900)
+        {
+             body{
+                background-color:red;
+             }
+           
+        } else {
+        // change functionality for larger screens
+        }
+    </script>
 @endsection
