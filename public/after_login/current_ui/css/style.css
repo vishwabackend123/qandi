@@ -3385,7 +3385,7 @@ span.greenball-3 {
 
 /********* Shubham Start ***********/
 /*************header***********/
-
+header{position: relative;}
 .headerMain {
     display: flex;
     align-items: center;
@@ -5709,6 +5709,7 @@ td.mymatrix_table_point
     border-radius: 8px;
     margin-left: 30px;text-decoration:none;
 }
+.verifiaction-link p > a:hover{background: #dc68030f;}
 /**********  email-confirmation *********/
 .email-confirmation {
     background: #fff;
