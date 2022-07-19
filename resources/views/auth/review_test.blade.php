@@ -506,7 +506,7 @@
 .answer-main-sec {
     background: #fff;
     padding: 20px;border-radius: 20px;
-    /* height:291px; */
+    /* height:291px; */   
     position: absolute;
     bottom: 0px;
     width: 100%;
