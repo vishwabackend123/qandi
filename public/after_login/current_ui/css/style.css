@@ -460,6 +460,7 @@ font-weight: 800;
 .custom-profileupload .dropzone-wrapper:hover{
 border-color: #56b663;    
 }
+
 .custom-profileupload .dropzone-desc {
     position: absolute;
     margin: 0 auto;
