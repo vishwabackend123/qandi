@@ -117,12 +117,7 @@
                                                                     <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="colMargin">
-                                                                <div class="inputAns">
-                                                                    <label for="story">Answer</label>
-                                                                    <textarea style="resize:none" placeholder="Answer here" rows="20" name="comment[text]" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-                                                                </div>
-                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                                     
@@ -491,6 +486,9 @@
 .reviewScreenleft .questionwrapper{
     max-height: initial;
 }
+.reviewScreenleft .questionOptionBlock {
+    padding-top: 60px;
+}
 
 
 
@@ -508,7 +506,7 @@
 .answer-main-sec {
     background: #fff;
     padding: 20px;border-radius: 20px;
-    height:291px;
+    /* height:291px; */
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -812,4 +810,17 @@ label.filter {
     });
 </script>
 <!-----end-for-expand-btn-click------->
+
+
+<script>
+    if($(window).height() < 900)
+        {
+             body{
+                background-color:red;
+             }
+           
+        } else {
+        // change functionality for larger screens
+        }
+    </script>
 @endsection
