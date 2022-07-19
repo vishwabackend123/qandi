@@ -333,6 +333,12 @@
                     </div>
                     <div id="math" class=" tab-pane">
                     </div>
+                    <div class="chapter_analytics">
+                        @include('afterlogin.Analytics.chapter_analytics')
+                    </div>
+                    <div class="topics_analytics">
+                        @include('afterlogin.Analytics.topics_analytics')
+                    </div>
                 </div>
             </div>
         </div>
@@ -340,26 +346,9 @@
         </div>
     </div>
 </div>
-<!-- Evaluation-popup start  -->
-<div class="modal fade overall_evaluationmodal_modal" id="Evaluationmodal">
-    <div class="modalcenter">
-        <div class="modal-dialog">
-            <div class="modal-content strengthmodal_content">
-                <div class="modal-header1">
-                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
-                </div>
-                <div class="modal-body">
-                    <div class="intraction_text_strength mt-0">Evaluation</div>
-                    <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">20 %</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Evaluation-popup end -->
 <script>
+$(".chapter_analytics").hide();
+$(".topics_analytics").hide();
 /*********** BarChart ***********/
 /***overall-progress chart***** */
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -959,6 +948,25 @@ function nxtTab(sub_id) {
             error: function(data, errorThrown) {}
         });
     }
+}
+
+function expandChapterAnalytics(sub_id) {
+    url = "{{ url('chapter-analytics') }}/" + sub_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $(".chapter_analytics").show();
+            $('.chapter_analytics').html(data.html);
+            $('#overall').hide();
+        },
+        error: function(data, errorThrown) {}
+    });
 }
 
 </script>
