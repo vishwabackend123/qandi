@@ -209,8 +209,6 @@
     
 }
 @media(max-width:767px){
-    aside{display:none;}
-    .main-wrapper{padding-left:0;}
     .btn.btn-common-transparent{min-width:200px;}
     .exam_instruction_scrolling
     {
@@ -220,5 +218,15 @@
     .exam_instruction_col_four {
         padding-left: 18px;
         padding-top:30px;
+    }
+    .selectPlan {
+        padding: 0px 40px 45px;
+    }
+    aside{display:none;}
+    .main-wrapper{padding-left:0;}
+    .subscriptionsLeftpannel{display:none;}
+    .subscriptionsPage.d-flex{display: block!important;}
+    .selectPlan {
+        padding: 0px 16px 45px;
     }
 }
