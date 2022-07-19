@@ -51,6 +51,9 @@
                                                         <div class="question">
                                                             <span class="q-no">Q1.</span>
                                                             <p>
+                                                            GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
+                                                            GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
+
                                                                 GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value. 
                                                             </p>
                                                         </div>
