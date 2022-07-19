@@ -323,3 +323,127 @@
 @media(max-width:360px){
     ul.proficiency-level-lists li:nth-child(3){margin:0 0px 14px 0;}
 }
+
+
+
+
+/* ******** Mobile Responsive vikash Start*********** */
+@media(max-width:767px){
+    /* contect us */
+    .contactus_customer_support_text
+    {
+        font-size: 20px;
+    }
+    .contactus_customer_support_text_under_text
+    {
+        font-size: 14px;
+        margin-top: 16px;
+    }
+    .contectus_bottom_img_svg {
+        display: flex;
+        justify-content: center;
+    }
+    .contectus_bottom_img_svg svg {
+        margin-top: 55px;
+        padding: 45px;
+    }
+    .contactus_free_get_need
+    {
+        padding-top: 32px;
+    }
+/* chapter preficiency */
+    .chapter_profici_nav__right_contant
+    {
+        display: block;
+    }
+    .chapter_profici_nav__right_contant ol.breadcrumb.chapter_breadcrumb {
+        padding-left: 0px;
+    }
+    .chapter_of_row_col_paddin_zero_col
+    {
+        display: none;
+    }
+    .chapter_preficiency_warpper .tablist 
+    {
+        overflow-x: auto;
+    }
+    .chapter_main_tab_clor li.nav-item:last-child a
+    {
+        margin-right: 0px;
+    }
+    .chapter_preficiency_warpper .tablist::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+    .chapter_preficiency_warpper .tablist ul
+    {
+        width: 428px;
+    }
+    .back_button_waraper_text
+    {
+        font-size: 16px;
+        font-weight: 800;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.6;
+        letter-spacing: normal;
+        color: #56b663;
+        padding-bottom: 25px;
+        padding-left: 15px;
+        cursor: pointer;
+    }
+    .text_back_button_waraper_text
+    {
+        padding-left: 8px;
+    }
+    .knowledge_left_clr_with_text_right_div {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .knowledge_left_clr_with_text {
+        padding-right: 16px;
+    }
+    .cotogaty_right_text {
+        font-size: 14px;
+    }
+    .chapter_proficincy_point_anylytics {
+        flex-grow: 0;
+        padding: 16px 16px 14px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        height: 120px;
+        margin-bottom: 12px;
+    }
+    .chapter_preficiency_warpper .common_bars {
+        border-radius: 10px;
+        margin: 8px 0 12px;
+    }
+    .chapter_profici_percentage_profincy
+    {
+        margin-top: 20px;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 16px;
+    }
+    .chapter_profici_percent {
+        font-size: 14px;
+    }
+}
+@media(min-width:768px)
+{
+    .back_button_waraper_text{
+    display: none;
+    }
+}
+@media(max-width:890px) and (min-width:768px)
+{
+    .chapter_profici_nav__right_contant {
+        display: block;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 17px;
+    }
+}
