@@ -383,7 +383,7 @@
 .review_expand {
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 70px;
 }
   
 .expand_block {
@@ -391,7 +391,7 @@
     position: absolute;
     right: 0;
     TOP: 0PX;
-}
+}  
 .first_screen {
     padding: 20px 40px !important;
     border-radius: 8px;
@@ -487,7 +487,7 @@
     max-height: initial;
 }
 .reviewScreenleft .questionOptionBlock {
-    padding-top: 60px;
+    padding-top: 45px;
 }
 
 
@@ -509,9 +509,9 @@
     /* height:291px; */   
     position: absolute;
     bottom: 0px;
-    width: 100%;
+    width: 100%;padding-right: 8px;
 }
-.anshead-top {display: flex;align-items: center}
+.anshead-top {display: flex;align-items: center;    padding-right: 20px;}
 
 .anshead-top .btn.questionbtn {
     background: #fff !important;
@@ -529,7 +529,7 @@
 }
 .explanation-sec {
     height: 20vh;
-    overflow-y: scroll;
+    overflow-y: auto;;
     padding-left: 135px;
 }
 .explanationdeteail > span {
@@ -582,7 +582,7 @@ label.filter {
 .list-ans {
     padding-top: 20px;
     height: 33vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .list-ans div {
     font-size: 16px;
@@ -765,7 +765,7 @@ label.filter {
            var coll_review_filter_to_height =  $(".review-filter-top").outerHeight();
            var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
            var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
-           $('.list-ans').css('height', coll_scroll_final_height)
+           $('.list-ans').css('height', coll_scroll_final_height)  
         });
     });
 </script>
