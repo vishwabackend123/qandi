@@ -215,8 +215,16 @@
                                                             <canvas id="timeManagementChart"></canvas>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">Week</div>
-                                                    <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">Month</div>
+                                                    <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
+                                                        <div>
+                                                            <canvas id="timeManagementChartWeek"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
+                                                        <div>
+                                                            <canvas id="timeManagementChartMonth"></canvas>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,11 +297,19 @@
                                             <div class="tab-content" id="pills-tabContent2">
                                                 <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
                                                     <div class="chartspent">
-                                                        <canvas id="mark_trend"></canvas>
+                                                        <canvas id="mark_trend_day"></canvas>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">Week2</div>
-                                                <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">Month2</div>
+                                                <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">
+                                                   <div class="chartspent">
+                                                        <canvas id="mark_trend_week"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">
+                                                    <div class="chartspent">
+                                                        <canvas id="mark_trend_month"></canvas>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -896,12 +912,12 @@ const myChartmath = new Chart(ctxmath, {
 /***************** halfdoughnut - end *********************/
 /*******spent-time-graph*********/
 const data1 = {
-    labels: ['13 May', '14 May', '15 May', '16 May', '17 May'],
+    labels: <?php print_r($days); ?>,
     datasets: [{
             label: 'Ideal Pace',
             backgroundColor: '#56b663',
             borderColor: '#56b663',
-            data: [20, 30, 10, 20, 50],
+            data: <?php print_r($classAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
@@ -909,7 +925,7 @@ const data1 = {
             label: 'Your Pace',
             backgroundColor: '#7db9ff',
             borderColor: '#7db9ff',
-            data: [0, 60, 30, 40, 50],
+            data: <?php print_r($stuAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4
         }
@@ -1021,20 +1037,20 @@ const myCharttm2 = new Chart(
 
 /*******accuracy-graph*********/
 const data2 = {
-    labels: ['13 May', '14 May', '15 May', '16 May', '17 May'],
+    labels: <?php print_r($day); ?>,
     datasets: [{
-            label: 'Ideal Pace',
+            label: 'Class Average',
             backgroundColor: '#56b663',
             borderColor: '#56b663',
-            data: [20, 30, 10, 20, 50],
+            data: <?php print_r($classAcc); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
-            label: 'Your Pace',
+            label: 'Student Average',
             backgroundColor: '#7db9ff',
             borderColor: '#7db9ff',
-            data: [0, 60, 30, 40, 50],
+            data: <?php print_r($stuAcc);  ?>,
             borderwidth: 0.6,
             tension: 0.4
         }
@@ -1141,13 +1157,13 @@ const myChartaccuracy = new Chart(
 /*******accuracy2-end*********/
 
 /*******mark-graph-graph*********/
-const data3 = {
-    labels: ['13 May', '14 May', '15 May', '16 May', '17 May'],
+var data3 = {
+    labels: <?php print_r($date1); ?>,
     datasets: [{
             label: 'Ideal Pace',
             backgroundColor: '#56b663',
             borderColor: '#56b663',
-            data: [20, 25, 20, 30, 20],
+            data: <?php print_r($correctAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
@@ -1155,14 +1171,14 @@ const data3 = {
             label: 'Your Pace',
             backgroundColor: '#ff6678',
             borderColor: '#ff6678',
-            data: [10, 8, 10, 20, 15, 10],
+            data: <?php print_r($incorrectAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
         }
     ]
 };
 
-const config3 = {
+var config3 = {
     type: 'line',
     data: data3,
     options: {
@@ -1195,9 +1211,127 @@ const config3 = {
     }
 };
 
-const myChart3 = new Chart(
-    document.getElementById('mark_trend'),
+var myChart3 = new Chart(
+    document.getElementById('mark_trend_day'),
     config3
+);
+/*-----------week-----------------*/
+var data4 = {
+    labels: <?php print_r($date2); ?>,
+    datasets: [{
+            label: 'Ideal Pace',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data: <?php print_r($correctAns2); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Your Pace',
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data: <?php print_r($incorrectAns2); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+var config4 = {
+    type: 'line',
+    data: data4,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+        },
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+
+        }
+    }
+};
+
+var myChart4 = new Chart(
+    document.getElementById('mark_trend_week'),
+    config4
+);
+/*---------------------month----------------------*/
+const data5 = {
+    labels: <?php print_r($date3); ?>,
+    datasets: [{
+            label: 'Ideal Pace',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data: <?php print_r($correctAns3); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Your Pace',
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data: <?php print_r($incorrectAns3); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+const config5 = {
+    type: 'line',
+    data: data5,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+        },
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+
+        }
+    }
+};
+
+const myChart5 = new Chart(
+    document.getElementById('mark_trend_month'),
+    config5
 );
 /*******mark-graph-end*********/
 /*****mark-trend2******* */
@@ -1267,18 +1401,18 @@ const myChartmarktrend = new Chart(
 /************* Time management bar chart  *************/
 /**overall-timeManagementChart-End******** */
 
-const labelsT = [<?php print_r($date1); ?>];
+const labelsT = <?php print_r($date1); ?>;
 const dataT = {
     labels: labelsT,
     datasets: [{
             label: 'Correct Answers',
-            data: [<?php print_r($correctTime1); ?>],
+            data: <?php print_r($correctTime1); ?>,
             backgroundColor: '#34d399',
             barThickness: 32
         },
         {
             label: 'Incorrect Answers',
-            data: [<?php print_r($incorrectTime1); ?>],
+            data: <?php print_r($incorrectTime1); ?>,
             backgroundColor: '#f7758f',
             barThickness: 32
         },
@@ -1325,6 +1459,127 @@ const actions = [{
 var myChartT = new Chart(
     document.getElementById('timeManagementChart'),
     configT
+);
+
+/**overall weeek */
+var labelsW = <?php print_r($date2); ?>;
+var dataW = {
+    labels: labelsW,
+    datasets: [{
+            label: 'Correct Answers',
+            data: <?php print_r($correctTime2); ?>,
+            backgroundColor: '#34d399',
+            barThickness: 32
+        },
+        {
+            label: 'Incorrect Answers',
+            data: <?php print_r($incorrectTime2); ?>,
+            backgroundColor: '#f7758f',
+            barThickness: 32
+        },
+    ]
+};
+var configW = {
+    type: 'bar',
+    data: dataW,
+    options: {
+        plugins: {
+            title: {
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
+            },
+            legend: false
+        },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+                grid: { display: false }
+            },
+
+            y: {
+                stacked: true
+            }
+        }
+    }
+};
+
+var DATA_COUNTW = 7;
+var NUMBER_CFGW = { count: DATA_COUNTW, min: -100, max: 100 };
+
+var actionsW = [{
+    name: 'Randomize',
+    handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.data = Utils.numbers({ count: chart.data.labels.length, min: -100, max: 100 });
+        });
+        chart.update();
+    }
+}, ];
+
+var myChartW = new Chart(
+    document.getElementById('timeManagementChartWeek'),
+    configW
+);
+/** month */
+var labelsM = <?php print_r($date3); ?>;
+var dataM = {
+    labels: labelsM,
+    datasets: [{
+            label: 'Correct Answers',
+            data: <?php print_r($correctTime3); ?>,
+            backgroundColor: '#34d399',
+            barThickness: 32
+        },
+        {
+            label: 'Incorrect Answers',
+            data: <?php print_r($incorrectTime3); ?>,
+            backgroundColor: '#f7758f',
+            barThickness: 32
+        },
+    ]
+};
+var configM = {
+    type: 'bar',
+    data: dataM,
+    options: {
+        plugins: {
+            title: {
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
+            },
+            legend: false
+        },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+                grid: { display: false }
+            },
+
+            y: {
+                stacked: true
+            }
+        }
+    }
+};
+
+var DATA_COUNTM = 7;
+var NUMBER_CFGM = { count: DATA_COUNTW, min: -100, max: 100 };
+
+var actionsM = [{
+    name: 'Randomize',
+    handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.data = Utils.numbers({ count: chart.data.labels.length, min: -100, max: 100 });
+        });
+        chart.update();
+    }
+}, ];
+
+var myChartM = new Chart(
+    document.getElementById('timeManagementChartMonth'),
+    configM
 );
 /**overall-timeManagementChart-End******** */
 
@@ -1394,39 +1649,39 @@ var myChart8 = new Chart(
 /**Subject-timeManagementChart-End******** */
 
 </script>
-    <script>
-        $(document).ready(function() {
-            $("span.tooltipmain svg").click(function(event) {
-                event.stopPropagation();
+<script>
+$(document).ready(function() {
+    $("span.tooltipmain svg").click(function(event) {
+        event.stopPropagation();
 
-                var card_open = $(this).siblings("p").hasClass('show');
-                if (card_open === true) {
-                    $(this).siblings("p").hide();
-                    $(this).siblings("p").removeClass('show');
-                } else {
-                    $("span.tooltipmain p.tooltipclass span").each(function() {
-                        $(this).parent("p").hide();
-                        $(this).parent("p").removeClass('show');
-                    });
-                    $(this).siblings("p").show();
-                    $(this).siblings("p").addClass('show');
-                }
-                $('.customDropdown').removeClass('active');
-
-            });
-            $("span.tooltipmain p.tooltipclass span").click(function() {
+        var card_open = $(this).siblings("p").hasClass('show');
+        if (card_open === true) {
+            $(this).siblings("p").hide();
+            $(this).siblings("p").removeClass('show');
+        } else {
+            $("span.tooltipmain p.tooltipclass span").each(function() {
                 $(this).parent("p").hide();
                 $(this).parent("p").removeClass('show');
             });
-        });
-        $(document).on('click', function(e) {
-            var card_opened = $('.tooltipclass').hasClass('show');
-            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-                $('.tooltipclass').hide();
-                $('.tooltipclass').removeClass('show');
-            }
-           
-        });
-       
-    </script>
+            $(this).siblings("p").show();
+            $(this).siblings("p").addClass('show');
+        }
+        $('.customDropdown').removeClass('active');
+
+    });
+    $("span.tooltipmain p.tooltipclass span").click(function() {
+        $(this).parent("p").hide();
+        $(this).parent("p").removeClass('show');
+    });
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
+    }
+
+});
+
+</script>
 @endsection
