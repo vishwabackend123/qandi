@@ -3,7 +3,7 @@
 <!-- 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<section class="d-flex h-100 login-signup">
+<section class="d-flex login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
             <a href="javascript:void(0);">

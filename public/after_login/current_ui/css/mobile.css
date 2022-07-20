@@ -240,16 +240,10 @@
     .Get-otp button {
     width: 100% !important;
     }
-    .loginform {
-    width: 100%;
-    }
     .btn.btn-common-transparent{min-width:200px;}
      
     .Get-otp button {
         width: 100% !important;
-    }
-    .loginform {
-        width: 100%;
     }
     .exam_instruction_scrolling
     {
@@ -446,6 +440,12 @@
 }
 
 @media only screen and (max-width: 576px){
+    .loginform {
+    width: 100%;
+    }
+    .login-signup {
+    height:auto;
+    }
         .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
 
 }

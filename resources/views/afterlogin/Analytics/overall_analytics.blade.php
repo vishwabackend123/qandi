@@ -968,6 +968,28 @@ function expandChapterAnalytics(sub_id) {
         error: function(data, errorThrown) {}
     });
 }
+function expandTopicAnalytics(sub_id, subject_name, chapter_name) {
+    url = "{{ url('topic-analytics') }}/" + sub_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "subject_name": subject_name,
+            "chapter_name": chapter_name
+        },
+        beforeSend: function() {
+            // $('.loader-block').show();
+        },
+        success: function(data) {
+            $('.chapter_analytics').hide();
+            $(".topics_analytics").show();
+            $('.topics_analytics').html(data.html);
+            $('#overall').hide();
+
+        },
+        error: function(data, errorThrown) {}
+    });
+}
 
 </script>
 @endsection

@@ -1,109 +1,56 @@
-<div class="topics_breadcum bg-white">
-    <div class="d-flex align-items-center mb-4">
-        <a href="javascript:void(0);" onclick="backChapterPage()" class="back_page"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a href="#" class="text-uppercase">{{$subject}}</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-uppercase">Chapter : {{$chapter_name}}</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-uppercase">Topics</a></li>
-            </ol>
-        </nav>
-    </div>
-    <div class="topic-details row m-0">
-        @foreach($topicList as $list)
-        <div class="col-lg-4" style="margin-bottom: 20px;">
-            <div class="bg-white sub-details w-100">
-                <div class="d-flex align-items-center justify-content-between sub-title">
-                    @php
-                    $topicname = Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...');
-                    $topicnametitle = $list['topic_name'];
-                    @endphp
-                    <h3 class="m-0 p-0" style="text-transform: none;" title="{{Str::ucfirst(Str::lower($topicnametitle))}}"> {{Str::ucfirst(Str::lower($topicnametitle))}} </h3>
-                    <div class="all-star d-flex align-items-center justify-content-between">
-                        <ul class="m-0 p-0">
-                            @if($list['topic_score'] >0 && $list['topic_score'] <= 20 || $list['topic_score']> 20)
-                                <li>
-                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                    <span class="fill-star-color">★</span>
-                                </li>
-                                @else
-                                <li>
-                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                    <span class="gray-star-color">★</span>
-                                </li>
-                                @endif
-                                @if($list['topic_score'] >20 && $list['topic_score'] <= 40 || $list['topic_score']> 40)
-                                    <li>
-                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                        <span class="fill-star-color">★</span>
-                                    </li>
-                                    @else
-                                    <li>
-                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                        <span class="gray-star-color">★</span>
-                                    </li>
-                                    @endif
-                                    @if($list['topic_score'] >40 && $list['topic_score'] <= 60 || $list['topic_score']> 60)
-                                        <li>
-                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                            <span class="fill-star-color">★</span>
-                                        </li>
-                                        @else
-                                        <li>
-                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                            <span class="gray-star-color">★</span>
-                                        </li>
-                                        @endif
-                                        @if($list['topic_score'] >60 && $list['topic_score'] <= 80 || $list['topic_score']> 80)
-                                            <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                                <span class="fill-star-color">★</span>
-                                            </li>
-                                            @else
-                                            <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                                <span class="gray-star-color">★</span>
-                                            </li>
-                                            @endif
-                                            @if($list['topic_score'] >80 && $list['topic_score'] <= 100) <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                                <span class="fill-star-color">★</span>
-                                                </li>
-                                                @else
-                                                <li>
-                                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                                    <span class="gray-star-color">★</span>
-                                                </li>
-                                                @endif
-                        </ul>
-                        <span>{{round($list['topic_score'])}}%</span>
-                    </div>
-                </div>
-                <div class="colorfull-bars">
-                    <div class="d-flex">
-                        <span class="green_bar position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
-                        <span class="yellow_bar position-relative" style="width:{{$list['C_ques_attempted']}}% !important"></span>
-                        <span class="red_bar position-relative" style="width:{{$list['A_ques_attempted']}}% !important"></span>
-                        <span class="skyblue_bar position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
-                    </div>
-                </div>
-                <ul class="d-flex align-items-center p-0 m-0 subject-name">
-                    <li>K</li>
-                    <li>C</li>
-                    <li>A</li>
-                    <li>E</li>
-                </ul>
-            </div>
+<div class="chapter_profici_nav__right_contant">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb chapter_breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);">Chapter : {{$chapter_name}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Topics</li>
+        </ol>
+    </nav>
+    <div class="knowledge_left_clr_with_text_right_div">
+        <div class=" knowledge_left_clr_with_text">
+            <span class="knowledge_left_clr"></span> <span class="cotogaty_right_text">Knowledge</span>
         </div>
-        @endforeach
+        <div class=" knowledge_left_clr_with_text">
+            <span class="aomprehension_left_clr"></span> <span class="cotogaty_right_text">Comprehension</span>
+        </div>
+        <div class=" knowledge_left_clr_with_text">
+            <span class="application_left_clr"></span> <span class="cotogaty_right_text">Application</span>
+        </div>
+        <div class=" knowledge_left_clr_with_text">
+            <span class="evaluation_left_clr"></span> <span class="cotogaty_right_text">Evaluation</span>
+        </div>
     </div>
 </div>
-<style>
-    .fill-star-color {
-        color: #ffdc34 !important;
-    }
-
-    .gray-star-color {
-        color: #e9e9e9 !important;
-    }
-</style>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div id="overall_analytics" class="tab-pane">
+    </div>
+    <div id="maths" class="tab-pane active">
+        <div class="row chapter_of_row_col_paddin_zero">
+            @foreach($topicList as $list)
+            @php
+            $topicname = Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...');
+            $topicnametitle = $list['topic_name'];
+            @endphp
+            <div class="col">
+                <div class="chapter_proficincy_point_anylytics">
+                    <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
+                    <div class="common_bars">
+                        <div class="d-flex common_bars_flex">
+                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
+                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
+                            <span class="common_bar_green common_bar_width position-relative"></span>
+                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
+                        </div>
+                    </div>
+                    <div class="chapter_profici_percentage_profincy">
+                        <div class="chapter_profici_percent">
+                            <span>{{round($list['topic_score'])}}%</span> <span>Proficiency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
