@@ -3405,7 +3405,8 @@ span.greenball-3 {
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
-    background: #fff;
+    background: #fff;    position: relative;
+    z-index: 9;
 }
 
 .headerLeft {
@@ -4099,6 +4100,7 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
+       
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5262,10 +5264,11 @@ td.mymatrix_table_point
 
 
 
-/* ******** Mobile Responsive vikash End  *********** */
-/* **********start live   ********** */
-
 /********* Vikash End ***********/
+
+
+
+
 
 /********** Shiv - Start *********/
 /******** notification ***************/

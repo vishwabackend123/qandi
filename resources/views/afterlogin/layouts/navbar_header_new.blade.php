@@ -46,9 +46,14 @@ $name = $action;
                     </svg>
                 </a>
             </span>
-            <span class="headericon  mobile_block mobilenav">
+            <span class="headericon  mobile_block mobilenav" id="menumobile">
                   <a href="javascript:;">
-                      <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="">
+                      <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
+                  </a>
+            </span>
+            <span class="headericon  mobile_block mobilenav" id="menumobilehide">
+                  <a href="javascript:;">
+                      <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
                   </a>
             </span>
             <span class="headericon dropdown mobile_hide">
@@ -65,7 +70,8 @@ $name = $action;
             </span>
         </div>
     </div>
-</header>
+    <div class="mobilemenu"></div>
+</header> 
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
@@ -125,4 +131,17 @@ $name = $action;
             },
         });
     }
+
+  /*****Mobile-menu js*********** */
+    $("#menumobile").click(function(){
+    $(this).hide();
+    $('#menumobilehide').show();
+     $('.mobilemenu').addClass('showmenu');
+    });
+    $("#menumobilehide").click(function(){
+        $(this).hide(); 
+        $("#menumobile").show();
+     $('.mobilemenu').removeClass('showmenu');
+    });
+     /*****Mobile-menu js*********** */
 </script>
