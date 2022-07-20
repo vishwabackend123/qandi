@@ -265,7 +265,7 @@
                     <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
-                        <input type="email" class="refer_email_input emaillink form-control" placeholder="Name@example.com" id="referEmails" name="refer_emails" autocomplete="off" required>
+                        <input type="text" class="refer_email_input emaillink form-control" placeholder="Name@example.com" id="referEmails" name="refer_emails" autocomplete="off" required>
                     </div>
                     <p><span class="Note">Note:</span>Use “,” between two emails to separate</p>
                     <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
@@ -276,7 +276,7 @@
                     <p class="successRef_copy" style="color:green;"></p>
                     <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
                     <div class="share-link-input">
-                        <input type="share" class="form-control" id="linkInput" value="{{ session()->get('referal_link') }}">
+                        <input type="share" class="form-control" id="linkInput" value="{{ session()->get('referal_link') }}" readonly>
                         <a href="javascript:void(0);" onclick="copylinkfunction()">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.461 9H8.538C7.688 9 7 9.895 7 11v9c0 1.105.689 2 1.538 2h6.923c.85 0 1.539-.895 1.539-2v-9c0-1.105-.689-2-1.539-2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
