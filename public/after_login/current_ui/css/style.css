@@ -5458,6 +5458,12 @@ td.mymatrix_table_point
     padding-right: 20px;
 }
 
+.successRef_copy {
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+}
+
 .share-link-input {position: relative;}
 #referfrnd .share-link-input a {
     border-radius: 0px 8px 8px 0px;
