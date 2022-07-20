@@ -525,7 +525,7 @@ border-color: #56b663;
     height: 38px;
     border-radius: 8px;
     font-weight: 600;
-    color: #56b663;
+    color: #56b663 !important;
     width: 87px;
 }
 .subscription-details{
