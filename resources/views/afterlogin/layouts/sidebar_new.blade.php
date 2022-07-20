@@ -277,11 +277,11 @@
                     <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
                     <div class="share-link-input">
                         @php
-                        $refer_code = Illuminate\Support\Str::limit(session()->get('referal_link') , 27, $end='...');
+                        $refer_code = Illuminate\Support\Str::limit(session()->get('referal_link') , 25, $end='...');
                         @endphp
-                        <input type="share" class="form-control" id="showInput" value="{{$refer_code}}" readonly>
+                        <p class="referfriendlink">{{$refer_code}}</p>
                         <input type="share" class="form-control" id="linkInput" value="{{session()->get('referal_link')}}" style="display: none;">
-                        <!-- <p class="referfriendlink">{{$refer_code}}</p> -->
+                        
                         <a href="javascript:void(0);" onclick="copylinkfunction()">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.461 9H8.538C7.688 9 7 9.895 7 11v9c0 1.105.689 2 1.538 2h6.923c.85 0 1.539-.895 1.539-2v-9c0-1.105-.689-2-1.539-2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
