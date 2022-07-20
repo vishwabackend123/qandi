@@ -449,50 +449,50 @@
                         </div>
 
                         <div class="text-exambottom-sec">
-                            <button type="button" class="btn" id="btn-ans">1</button>
-                            <button type="button" class="btn" id="btn-ans">2</button>
-                            <button type="button" class="btn" id="btn-ans">3</button>
-                            <button type="button" class="btn" id="btn-ans">4</button>
-                            <button type="button" class="btn" id="btn-ans">5</button>
-                            <button type="button" class="btn" id="btn-ans">6</button>
-                            <button type="button" class="btn" id="btn-ans">7</button>
+                            <button type="button" class="btn btn-ans" id="">1</button>
+                            <button type="button" class="btn btn-ans" id="">2</button>
+                            <button type="button" class="btn btn-ans" id="">3</button>
+                            <button type="button" class="btn btn-ans" id="">4</button>
+                            <button type="button" class="btn btn-ans" id="">5</button>
+                            <button type="button" class="btn btn-ans" id="">6</button>
+                            <button type="button" class="btn btn-ans" id="">7</button>
 
-                            <button type="button" class="btn" id="btn-ans">8</button>
-                            <button type="button" class="btn" id="btn-ans">9</button>
-                            <button type="button" class="btn" id="btn-ans">10</button>
-                            <button type="button" class="btn pink-btn" id="btn-ans">11</button>
-                            <button type="button" class="btn" id="btn-ans">12</button>
-                            <button type="button" class="btn" id="btn-ans">13</button>
-                            <button type="button" class="btn" id="btn-ans">14</button>
+                            <button type="button" class="btn btn-ans" id="">8</button>
+                            <button type="button" class="btn btn-ans" id="">9</button>
+                            <button type="button" class="btn btn-ans" id="">10</button>
+                            <button type="button" class="btn pink-btn btn-ans" id="">11</button>
+                            <button type="button" class="btn btn-ans" id="">12</button>
+                            <button type="button" class="btn btn-ans" id="">13</button>
+                            <button type="button" class="btn btn-ans" id="">14</button>
 
-                            <button type="button" class="btn" id="btn-ans">15</button>
-                            <button type="button" class="btn" id="btn-ans">16</button>
-                            <button type="button" class="btn" id="btn-ans">17</button>
-                            <button type="button" class="btn blue-btn" id="btn-ans">18</button>
-                            <button type="button" class="btn" id="btn-ans">19</button>
-                            <button type="button" class="btn" id="btn-ans">20</button>
-                            <button type="button" class="btn" id="btn-ans">21</button>
-                            <button type="button" class="btn" id="btn-ans">22</button>
-                            <button type="button" class="btn border-btn" id="btn-ans">23</button>
-                            <button type="button" class="btn" id="btn-ans">24</button>
-                            <button type="button" class="btn" id="btn-ans">25</button>
-                            <button type="button" class="btn" id="btn-ans">26</button>
-                            <button type="button" class="btn" id="btn-ans">27</button>
-                            <button type="button" class="btn" id="btn-ans">28</button>
-                            <button type="button" class="btn" id="btn-ans">29</button>
-                            <button type="button" class="btn" id="btn-ans">30</button>
-                            <button type="button" class="btn" id="btn-ans">31</button>
-                            <button type="button" class="btn" id="btn-ans">32</button>
-                            <button type="button" class="btn" id="btn-ans">33</button>
-                            <button type="button" class="btn" id="btn-ans">34</button>
-                            <button type="button" class="btn" id="btn-ans">36</button>
-                            <button type="button" class="btn" id="btn-ans">37</button>
-                            <button type="button" class="btn" id="btn-ans">38</button>
-                            <button type="button" class="btn" id="btn-ans">39</button>
-                            <button type="button" class="btn" id="btn-ans">42</button>
-                            <button type="button" class="btn" id="btn-ans">43</button>
-                            <button type="button" class="btn" id="btn-ans">44</button>
-                            <button type="button" class="btn" id="btn-ans">45</button>
+                            <button type="button" class="btn btn-ans" id="">15</button>
+                            <button type="button" class="btn btn-ans" id="">16</button>
+                            <button type="button" class="btn btn-ans" id="">17</button>
+                            <button type="button" class="btn blue-btn btn-ans" id="">18</button>
+                            <button type="button" class="btn btn-ans" id="">19</button>
+                            <button type="button" class="btn btn-ans" id="">20</button>
+                            <button type="button" class="btn btn-ans" id="">21</button>
+                            <button type="button" class="btn btn-ans" id="">22</button>
+                            <button type="button" class="btn border-btn btn-ans" id="">23</button>
+                            <button type="button" class="btn btn-ans" id="">24</button>
+                            <button type="button" class="btn btn-ans" id="">25</button>
+                            <button type="button" class="btn btn-ans" id="">26</button>
+                            <button type="button" class="btn btn-ans" id="">27</button>
+                            <button type="button" class="btn btn-ans" id="">28</button>
+                            <button type="button" class="btn btn-ans" id="">29</button>
+                            <button type="button" class="btn btn-ans" id="">30</button>
+                            <button type="button" class="btn btn-ans" id="">31</button>
+                            <button type="button" class="btn btn-ans" id="">32</button>
+                            <button type="button" class="btn btn-ans" id="">33</button>
+                            <button type="button" class="btn btn-ans" id="">34</button>
+                            <button type="button" class="btn btn-ans" id="">36</button>
+                            <button type="button" class="btn btn-ans" id="">37</button>
+                            <button type="button" class="btn btn-ans" id="">38</button>
+                            <button type="button" class="btn btn-ans" id="">39</button>
+                            <button type="button" class="btn btn-ans" id="">42</button>
+                            <button type="button" class="btn btn-ans" id="">43</button>
+                            <button type="button" class="btn btn-ans" id="">44</button>
+                            <button type="button" class="btn btn-ans" id="">45</button>
                         </div>
 
                         <div class="custom-exam d-none">
