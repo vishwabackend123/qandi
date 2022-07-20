@@ -308,9 +308,11 @@
     }
     .commonWhiteBox{padding:20px}
     .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
-    .myqTodayGraphSec{padding-top:30px;}
+    .myqTodayGraphSec{padding-top:30px;padding-bottom: 40px;}
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
+    .commonblockDash {margin-bottom: 16px; }
+    .content-wrapper {  padding: 30px 16px;}
     }
     @media only screen and (max-width: 576px){
          .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
