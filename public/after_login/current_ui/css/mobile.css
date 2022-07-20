@@ -220,12 +220,13 @@
     
 }
 @media(min-width:768px){
-    .mobile_block{display:none;}
+    .mobile_block{display:none!important;}
     .back_button_waraper_text{
         display: none;
     }
 }
 @media(max-width:767px){
+    .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;
@@ -434,6 +435,14 @@
     .myqTodayGraphSec{padding-top:30px;}
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
+    .content-wrapper {
+        padding: 20px 16px;
+    }
+    #collapseNotification2{width:100%;}
+    .headericon a{border:0px;}
+    span.headericon.notificationnew a#nodificbell svg{width:24px;height:24px;}
+    .mobilenav{margin-right:0px!important;}
+    .headerMain{padding:16px}
 }
 
 @media only screen and (max-width: 576px){
