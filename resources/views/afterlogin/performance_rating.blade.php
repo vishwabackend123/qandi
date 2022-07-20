@@ -36,6 +36,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         </div>
     </div>
     <div class="selectPlan subscriptionsRightpannel">
+        <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
             <h3>Self Analysis</h3>
             <p>Rate your level of proficiency</p>
@@ -115,6 +116,11 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </a>
                 </div>
                 <button class="btn btn-common-green @if(empty($aStudentRating)) disabled @endif" @if(empty($aStudentRating)) disabled @endif id="store_rating" onclick="store_rating();">Continue</button>
+            </div>
+            <div class="verificationBox mobile_block">
+                <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+                <a href="javascript:void(0);" class="resend_email">Resend</a>
+                <!-- <span class="mt-2" id="email_success"></span> -->
             </div>
         </div>
     </div>

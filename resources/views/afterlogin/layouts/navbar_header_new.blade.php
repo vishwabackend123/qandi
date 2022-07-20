@@ -21,19 +21,24 @@ $name = $action;
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <h2 class="text-capitalize">{{isset($header_title)?$header_title:$name}}</h2>
-            <h6><label>Course:</label>
+           <span class="sidebar-logo d-inline-block mobile_block">
+             <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+         </span>
+            <h2 class="text-capitalize mobile_hide">{{isset($header_title)?$header_title:$name}}</h2>
+            <h6 class="mobile_hide"><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
         </div>
         <div class="headerRight">
-            <span class="usertext"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
+            <span class="usertext mobile_hide"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
             <span class="headericon notificationnew">
                 <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <g clip-path="url(#5ju4071vya)">
                             <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                            @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                             <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2" />
+                            @endif
                         </g>
                         <defs>
                             <clipPath id="5ju4071vya">
@@ -43,11 +48,26 @@ $name = $action;
                     </svg>
                 </a>
             </span>
-            <span class="headericon dropdown">
+            <span class="headericon  mobile_block mobilenav" id="menumobile">
+                  <a href="javascript:;">
+                      <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
+                  </a>
+            </span>
+            <span class="headericon  mobile_block mobilenav" id="menumobilehide">
+                  <a href="javascript:;">
+                      <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
+                  </a>
+            </span>
+            <span class="headericon dropdown mobile_hide">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
+                    @if($imgPath)
+                    <img src="{{$imgPath}}"  class="profileicon" />
+                    @else
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
+                    @endif
+                    
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{ route('profile') }}">Profile & Subscription</a></li>
@@ -56,7 +76,8 @@ $name = $action;
             </span>
         </div>
     </div>
-</header>
+    <div class="mobilemenu"></div>
+</header> 
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
@@ -79,6 +100,8 @@ $name = $action;
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div>No new notification!</div>
                 @endif
             </div>
         </div>
@@ -116,4 +139,17 @@ $name = $action;
             },
         });
     }
+
+  /*****Mobile-menu js*********** */
+    $("#menumobile").click(function(){
+    $(this).hide();
+    $('#menumobilehide').show();
+     $('.mobilemenu').addClass('showmenu');
+    });
+    $("#menumobilehide").click(function(){
+        $(this).hide(); 
+        $("#menumobile").show();
+     $('.mobilemenu').removeClass('showmenu');
+    });
+     /*****Mobile-menu js*********** */
 </script>

@@ -1,112 +1,58 @@
-<div class="topics_breadcum">
-    <div class="d-flex align-items-center mb-4">
-        <a href="javascript:void(0);" onclick="backPage()" class="back_page"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb p-0 m-0">
-                <li class="breadcrumb-item"><a href="#" class="text-uppercase">{{$subject}}</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-uppercase">chapters</a></li>
-            </ol>
-        </nav>
+<div class="chapter_profici_nav__right_contant">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb chapter_breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chapters</li>
+        </ol>
+    </nav>
+    <div class="knowledge_left_clr_with_text_right_div">
+        <div class=" knowledge_left_clr_with_text">
+            <span class="knowledge_left_clr"></span> <span class="cotogaty_right_text">Knowledge</span>
+        </div>
+        <div class=" knowledge_left_clr_with_text">
+            <span class="aomprehension_left_clr"></span> <span class="cotogaty_right_text">Comprehension</span>
+        </div>
+        <div class=" knowledge_left_clr_with_text">
+            <span class="application_left_clr"></span> <span class="cotogaty_right_text">Application</span>
+        </div>
+        <div class=" knowledge_left_clr_with_text">
+            <span class="evaluation_left_clr"></span> <span class="cotogaty_right_text">Evaluation</span>
+        </div>
     </div>
-    <div class="topic-details row m-0">
-        @foreach($chapterList as $list)
-        <div class="col-lg-4" style="margin-bottom: 20px;">
-            <div class="bg-white sub-details w-100">
-                <div class="d-flex align-items-center justify-content-between sub-title">
-                    @php
-                    $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 16, $end='...');
-                    $topicnametitle = $list['chapter_name'];
-                    @endphp
-                    <h3 class="m-0 p-0" style="text-transform: none;" title="{{Str::ucfirst(Str::lower($topicnametitle))}}"> {{Str::ucfirst(Str::lower($topicnametitle))}} </h3>
-                    <div class="all-star d-flex align-items-center justify-content-between">
-                        <ul class="m-0 p-0">
-                            @if($list['chapter_score'] >0 && $list['chapter_score'] <= 20 || $list['chapter_score']> 20)
-                                <li>
-                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                    <span class="fill-star-color">★</span>
-                                </li>
-                                @else
-                                <li>
-                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                    <span class="gray-star-color">★</span>
-                                </li>
-                                @endif
-                                @if($list['chapter_score'] >20 && $list['chapter_score'] <= 40 || $list['chapter_score']> 40)
-                                    <li>
-                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                        <span class="fill-star-color">★</span>
-                                    </li>
-                                    @else
-                                    <li>
-                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                        <span class="gray-star-color">★</span>
-                                    </li>
-                                    @endif
-                                    @if($list['chapter_score'] >40 && $list['chapter_score'] <= 60 || $list['chapter_score']> 60)
-                                        <li>
-                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                            <span class="fill-star-color">★</span>
-                                        </li>
-                                        @else
-                                        <li>
-                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                            <span class="gray-star-color">★</span>
-                                        </li>
-                                        @endif
-                                        @if($list['chapter_score'] >60 && $list['chapter_score'] <= 80 || $list['chapter_score']> 80)
-                                            <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                                <span class="fill-star-color">★</span>
-                                            </li>
-                                            @else
-                                            <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                                <span class="gray-star-color">★</span>
-                                            </li>
-                                            @endif
-                                            @if($list['chapter_score'] >80 && $list['chapter_score'] <= 100) <li>
-                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
-                                                <span class="fill-star-color">★</span>
-                                                </li>
-                                                @else
-                                                <li>
-                                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
-                                                    <span class="gray-star-color">★</span>
-                                                </li>
-                                                @endif
-                        </ul>
-                        <span>{{round($list['chapter_score'])}}%</span>
+</div>
+<!-- Tab panes -->
+<div class="tab-content">
+    <div id="overall_analytics" class="tab-pane">
+    </div>
+    <div id="maths" class="tab-pane active">
+        <div class="row chapter_of_row_col_paddin_zero">
+            @foreach($chapterList as $list)
+            @php
+            $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 16, $end='...');
+            $topicnametitle = $list['chapter_name'];
+            @endphp
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="chapter_proficincy_point_anylytics">
+                    <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
+                    <div class="common_bars">
+                        <div class="d-flex common_bars_flex">
+                            <span class="common_bar_sky_blue common_bar_width position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_dark_green common_bar_width position-relative" style="width:{{$list['C_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_green common_bar_width position-relative" style="width:{{$list['A_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_navi_blue common_bar_width position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="colorfull-bars">
-                    <div class="d-flex">
-                        <span class="green_bar position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
-                        <span class="yellow_bar position-relative" style="width:{{$list['C_ques_attempted']}}% !important"></span>
-                        <span class="red_bar position-relative" style="width:{{$list['A_ques_attempted']}}% !important"></span>
-                        <span class="skyblue_bar position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
+                    <div class="chapter_profici_percentage_profincy">
+                        <div class="chapter_profici_percent">
+                            <span>{{round($list['chapter_score'])}}%</span> <span>Proficiency</span>
+                        </div>
+                        @php $chpatername=base64_encode($list['chapter_name']);
+                        @endphp
+                        <div class="chapter_profici_open_topic"><a href="javascript:void(0);" onclick="expandTopicAnalytics({{$list['chapter_id']}},'{{$subject}}','{{$chpatername}}')">Open topics <b>></b></a></div>
                     </div>
-                </div>
-                <div class="d-flex align-items-center justify-content-between subject-box-expend">
-                    <ul class="d-flex align-items-center p-0 m-0 subject-name">
-                        <li>K</li>
-                        <li>C</li>
-                        <li>A</li>
-                        <li>E</li>
-                    </ul>
-                    @php $chpatername=base64_encode($list['chapter_name']);
-                    @endphp
-                    <button class="customgray" onclick="expandTopicAnalytics({{$list['chapter_id']}},'{{$subject}}','{{$chpatername}}')">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none"></path>
-                            <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                            <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                            <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                            <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                        </svg>
-                        EXPAND</button>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 </div>

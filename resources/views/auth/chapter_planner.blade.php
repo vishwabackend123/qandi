@@ -82,6 +82,9 @@
    </aside>
 <div class="content-wrapper">
     <div class="chapter_preficiency_warpper">
+      <div class="back_button_waraper_text">
+         <span><</span><span class="text_back_button_waraper_text">Back</span>
+      </div>
         <div class="col-lg-12 fortab">
             <div class="">
                 <div class="tabMainblock">
@@ -130,8 +133,8 @@
                                 
                             </div>
                             <div id="maths" class="tab-pane active">  
-                                <div class="row chapter_of_row_col_paddin_zero">
-                                    <div class="col">
+                                <div class="row row-cols-md-1  chapter_of_row_col_paddin_zero">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Application of Derivatives</div>
                                              <div class="common_bars">
@@ -148,7 +151,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">3D Geometry</div>
                                              <div class="common_bars">
@@ -165,7 +168,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Area under Curves</div>
                                              <div class="common_bars">
@@ -181,9 +184,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                </div>    
-                                <div class="row chapter_of_row_col_paddin_zero">
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Binomial Theorem</div>
                                              <div class="common_bars">
@@ -199,7 +200,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Complex Numbers</div>
                                               <div class="common_bars">
@@ -215,7 +216,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
                                               <div class="common_bars">
@@ -231,9 +232,7 @@
                                           </div>
                                         </div>
                                     </div>
-                                </div> 
-                                <div class="row chapter_of_row_col_paddin_zero">
-                                    <div class="col">
+                                    <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
                                              <div class="common_bars">
@@ -248,10 +247,6 @@
                                                 <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
                                           </div>
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                    </div>
-                                    <div class="col">
                                     </div>
                                 </div>                        
                             </div>
