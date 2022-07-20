@@ -4100,7 +4100,9 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
-       
+       .profileicon{width: 100%;
+        height: 100%;
+        border-radius: 10px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
