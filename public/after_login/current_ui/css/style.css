@@ -5373,7 +5373,7 @@ td.mymatrix_table_point
 
 #referfrnd .modal-content {
     border: 0;
-    border-radius: 24px;
+    border-radius: 32px;
 }
 
 #referfrnd button.btn {
@@ -5382,7 +5382,7 @@ td.mymatrix_table_point
     height: inherit;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
     min-width: inherit;
-    padding: 8px 25px;
+    padding: 8px 24px;width: 131px;
     font-size: 14px;
     font-weight: 800;
     font-size: inherit;
@@ -5415,14 +5415,19 @@ td.mymatrix_table_point
     padding: 30px 0px 5px;
     position: relative;
 }
+.use-text {
+    font-size: 16px;
+    color: #868a95;
+}
 
 #referfrnd input {
     background: #fff !important;box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
     height: 45px;
     font-weight: 500;
-    border: 1px solid #d0d5dd;
+    border: 1px solid #d0d5dd;font-size: 16px;color: #1f1f1f;
 }
-#referfrnd input#linkInput{padding-right: 114px;}
+#referfrnd input#linkInput{padding-right: 114px;font-size: 16px;
+    color: #212529;}
 #referfrnd .form-label {
     font-size: 14px;
     font-weight: 800;
@@ -5430,7 +5435,7 @@ td.mymatrix_table_point
 }
 
 #referfrnd .Note {
-    padding-right: 10px;
+    padding-right: 4px;
     color: #363c4f;
     font-size: 14px;
     font-weight: 800;
@@ -5455,15 +5460,21 @@ td.mymatrix_table_point
     padding-right: 20px;
 }
 
+.successRef_copy {
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+}
+
 .share-link-input {position: relative;}
 #referfrnd .share-link-input a {
     border-radius: 0px 8px 8px 0px;
     background: #56b663;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 13px;
     font-size: 16px;
     font-weight: 800;
-    position: absolute;
+    position: absolute;width: 117px;
     right: 0px;
     top: 0px;
 }
@@ -5487,18 +5498,29 @@ td.mymatrix_table_point
     padding-right: 10px;
 }
 
+.modal-popup-customize .modal-header {
+    border: 0 !important;
+}
+
+.modal-popup-customize .modal-content {
+    max-width: 416px;
+    border-radius: 32px;
+    border: 0 !important;
+}
+
 .copy {
     background: #56b663;
-    padding: 10px 50px;
+    padding: 10px 49px;
     color: #fff;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 800;
     float: right;
+    width: 175px;
 }
 
 .copy>span {
-    padding-right: 8px;
+    padding-right: 12px;
 }
 
 .copy:hover {
@@ -5513,15 +5535,19 @@ td.mymatrix_table_point
     font-size: 16px;
     font-weight: 800;
 }
+.bottom_back-sec .copy {
+    width: 166px;margin-right: 20px;
+    padding: 10px 43px;
+}
 
 .bottom_back-sec {
     float: left;
-    width: 100%;
+    width: 100%;padding-bottom: 12px;
 }
 
 .bottom_back-sec label>i {
     color: #56b663;
-    padding-right: 10px;
+    padding-right: 10px; font-size: 14px;
 }
 
 .bottom_back-sec label:hover {

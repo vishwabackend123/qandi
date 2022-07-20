@@ -223,9 +223,10 @@
 }
 @media(min-width:768px){
     .mobile_block{display:none!important;}
-    .back_button_waraper_text{
+    .back_button_waraper_tex{
         display: none;
     }
+    .mobile_text_topics_proficiency{display: none!important;}
 }
 @media(max-width:767px){
     .mobile_hide{display:none!important}
@@ -362,6 +363,45 @@
     .chapter_profici_percent {
         font-size: 14px;
     }
+    /* ******** Q1 Q2 Q3 Q4  start*********** */
+    .mqmatric_topic, .mymatrix_proficiency
+    {
+        display: none;
+    }
+    .mymatrix_table tr td:nth-child(2)
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+    td.mymatrix_table_point
+    {
+        width: 100%;
+    }
+    .mobile_text_topics, .mobile_text_proficiency
+    {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.6;
+        letter-spacing: 0.96px;
+        color: #868a95;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling
+    {
+        height:485px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    .myqbottomSec h3 {
+        font-size: 32px;
+    }
+    .myqmatPannel {
+        padding: 12px;
+    }
+    .fortab .commonWhiteBox {
+        padding: 20px 20px 20px 20px!important;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -477,6 +517,16 @@
     .graphimg{width: 100%;}
     .graphDetail {  padding-left:0px; width: 100%;}
     .commonblockDash {margin-bottom: 16px;}
+    .mobile-wrapper{
+        padding: 20px 2px;
+    }
+    .main-title {
+    margin-bottom: 4px;
+    }
+    .custom-profileupload .preview-zone {
+    text-align: left;
+    }
+        
 }
 
 @media only screen and (max-width: 576px){
@@ -485,6 +535,10 @@
     }
     .login-signup {
     height:auto;
+    }
+    .subs-alld h3 {
+    text-align: right;
+    margin-left: 10px;
     }
         .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
         .notification-main {width:100%;max-width:100%;}
