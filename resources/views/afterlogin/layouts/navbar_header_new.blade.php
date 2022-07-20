@@ -141,23 +141,23 @@ $name = $action;
 
   /*****Mobile-menu js*********** */
     $("#menumobile").click(function(){
-            $('html').addClass("scrollnone")
+            $('html').addClass("windowhidden")
             $('body').addClass("sidebartoggle")
             $(this).hide();
             $('#menumobilehide').show();
             $('.sidebar_block').addClass('showmenu');
     });
     $("#menumobilehide").click(function(){
-        $('html').removeClass("scrollnone")
+        $('html').removeClass("windowhidden")
         $('body').removeClass("sidebartoggle")
         $(this).hide(); 
         $("#menumobile").show();
-     $('.sidebar_block').removeClass('showmenu');
+       $('.sidebar_block').removeClass('showmenu');
     });
 
 $('.notificationnew').click(function(){
-  
-
+    $('body').removeClass("sidebartoggle")
+    $('.sidebar_block').removeClass('showmenu');
 });
 
      /*****Mobile-menu js*********** */

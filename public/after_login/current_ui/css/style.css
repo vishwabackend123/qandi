@@ -3981,7 +3981,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .main-wrapper {
     background: #f5faf6;
 }
-
+.windowhidden{overflow: hidden;}
 /******overall Analytic********/
 .overallmain{padding:32px 0px;}
 .overallmain .commonWhiteBox{height:100%;}
