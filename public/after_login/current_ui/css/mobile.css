@@ -219,6 +219,11 @@
     }
     
 }
+@media only screen and (max-width: 991px){
+.main-title {
+    margin-bottom: 4px;
+}
+}
 @media(min-width:768px){
     .mobile_block{display:none!important;}
     .back_button_waraper_tex{
@@ -503,9 +508,6 @@
     #menumobilehide{display:none;}
     .mobile-wrapper{
         padding: 20px 2px;
-    }
-    .main-title {
-    margin-bottom: 4px;
     }
     .custom-profileupload .preview-zone {
     text-align: left;
