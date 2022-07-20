@@ -5492,6 +5492,20 @@ td.mymatrix_table_point
     color: rgba(54, 60, 79, 0.5) !important;
 }
 
+#referfrnd input::placeholder {
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+  
+  #referfrnd input:-ms-input-placeholder { 
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+  
+  #referfrnd input::-ms-input-placeholder {
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+
+
+
 .invation-sec {
     text-align: center;
     padding: 85px 0px 100px;
