@@ -265,7 +265,7 @@
                     <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
-                        <input type="text" class="refer_email_input emaillink form-control" placeholder="Name@example.com" id="referEmails" name="refer_emails" autocomplete="off" required>
+                        <input type="text" class="refer_email_input emaillink form-control" placeholder="Email address" id="referEmails" name="refer_emails" autocomplete="off" required>
                     </div>
                     <p class="use-text"><span class="Note">Note:</span>Use “,” between two emails to separate</p>
                     <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
