@@ -85,7 +85,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </select>
                                 </div>
                             </div>
-                           <div class="line mb-4 d-md-block d-none"></div>
+                            <div class="line mb-4 d-md-block d-none"></div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
@@ -107,17 +107,17 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="dropzone-wrapper w-100">
                                             <div class="dropzone-desc text-center">
                                                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 23C3 11.954 11.954 3 23 3s20 8.954 20 20-8.954 20-20 20S3 34.046 3 23z" fill="#F2F4F7"/>
-    <g clip-path="url(#yofycrtcca)">
-        <path d="M26.333 26.333 23 23m0 0-3.333 3.333M23 23v7.5m6.992-2.175A4.168 4.168 0 0 0 28 20.5h-1.05a6.668 6.668 0 1 0-11.45 6.083" stroke="#475467" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <path d="M23 40c-9.389 0-17-7.611-17-17H0c0 12.703 10.297 23 23 23v-6zm17-17c0 9.389-7.611 17-17 17v6c12.703 0 23-10.297 23-23h-6zM23 6c9.389 0 17 7.611 17 17h6C46 10.297 35.703 0 23 0v6zm0-6C10.297 0 0 10.297 0 23h6c0-9.389 7.611-17 17-17V0z" fill="#F9FAFB"/>
-    <defs>
-        <clipPath id="yofycrtcca">
-            <path fill="#fff" transform="translate(13 13)" d="M0 0h20v20H0z"/>
-        </clipPath>
-    </defs>
-</svg>
+                                                    <path d="M3 23C3 11.954 11.954 3 23 3s20 8.954 20 20-8.954 20-20 20S3 34.046 3 23z" fill="#F2F4F7" />
+                                                    <g clip-path="url(#yofycrtcca)">
+                                                        <path d="M26.333 26.333 23 23m0 0-3.333 3.333M23 23v7.5m6.992-2.175A4.168 4.168 0 0 0 28 20.5h-1.05a6.668 6.668 0 1 0-11.45 6.083" stroke="#475467" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </g>
+                                                    <path d="M23 40c-9.389 0-17-7.611-17-17H0c0 12.703 10.297 23 23 23v-6zm17-17c0 9.389-7.611 17-17 17v6c12.703 0 23-10.297 23-23h-6zM23 6c9.389 0 17 7.611 17 17h6C46 10.297 35.703 0 23 0v6zm0-6C10.297 0 0 10.297 0 23h6c0-9.389 7.611-17 17-17V0z" fill="#F9FAFB" />
+                                                    <defs>
+                                                        <clipPath id="yofycrtcca">
+                                                            <path fill="#fff" transform="translate(13 13)" d="M0 0h20v20H0z" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
                                                 <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span> PNG, JPG or JPEG</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
@@ -147,31 +147,41 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="bg-white subscription-details">
                             <h1 class="subs-heading d-inline-block">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
                             <div class="line mb-3 pb-1"></div>
+                            @php
+                            $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
+                            $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+                            $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
+                            @endphp
+                            @php $startdate=isset($subscription_details->subscription_start_date)? date("d-m-Y", strtotime($subscription_details->subscription_start_date)):''; @endphp
+                            @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+                            @php
+                            $datetime1 = new DateTime($startdate);
+                            $datetime2 = new DateTime($expirydate);
+                            $interval = $datetime1->diff($datetime2);
+                            $days = $interval->format('%a');
+                            @endphp
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription type</h2>
-                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
+                                @if($days < 20)
+                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} {{$days}} days Subscription</h3>
+                                @else
+                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
+                                @endif
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                @php
-                                $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
-                                $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
-                                $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
-                                @endphp
                                 <h2>Price</h2>
                                 <h3>₹{{$subsprice}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                @php $startdate=isset($subscription_details->subscription_start_date)? date("d-m-Y", strtotime($subscription_details->subscription_start_date)):''; @endphp
                                 <h2>Active date</h2>
                                 <h3>{{!empty($startdate)?date("jS F Y", strtotime($startdate)):''}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
-                                @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
                                 <h2>End date</h2>
                                 <h3>{{!empty($expirydate)?date("jS F Y", strtotime($expirydate)):''}}</h3>
                             </div>
                             <div id="panel">
-                                 <div class="line mb-3 pb-1"></div>
+                                <div class="line mb-3 pb-1"></div>
                                 <p>{{$subscription_desc}}</p>
                             </div>
                             <div class="flip d-inline-block">Show details</div>
@@ -262,6 +272,9 @@ $user_id = isset($userData->id)?$userData->id:'';
         editProfileCheck();
     });
     $('#editProfile_form select').change(function() {
+        editProfileCheck();
+    });
+    $('#file-input').change(function() {
         editProfileCheck();
     });
 

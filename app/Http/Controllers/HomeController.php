@@ -480,7 +480,7 @@ class HomeController extends Controller
                 $rules = array('image' => 'max:2000');
                 $validator = Validator::make($fileArray, $rules);
                 if ($validator->fails()) {
-                     return Redirect::back()->with('message','Image size greater than 2mb');
+                     return Redirect::back()->with('message','Image size is greater than 2 MB');
                 }
             }
 
