@@ -1,340 +1,429 @@
-<div class="row" id="topicclose">
-
-    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 only_prog">
+<div class="overallmain">
+    <div class="overalltop">
         <div class="row">
-            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                <div class="bg-white shadow-lg py-3 px-3 procress_inner">
-                    <small>
-                        <!-- <i class="fa  fa-info"></i> -->
-                        <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p class="tooltipclass">
-                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                            A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
-                        </p>
-                    </small>
-                    <div class="prgress-i-txt px-3">
-                        <span class="progress_text">Progress</span>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-md-12">
-                            <div class="d-flex justify-content-center flex-column h-100 ">
-                                <span class="text-center">
-                                    <!-- <div id="subjectscorecontainer" class="text-right"></div> -->
-                                    <div id="subject-comparegraph" class="text-right"></div>
-                                </span>
-                                <!-- <ul class="live-test mt-3">
-                                    <li>
-                                        <span class="last-live-test"></span>Last Test Score
-                                    </li>
-                                    <li>
-                                        <span class="pre-test"></span>Previous Test
-                                    </li>
-                                </ul> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                <div class="row position-relative shadow-lg bg-white" id="f-Numbr-sectin">
-                    @if($skillPer)
-                    <div class="col-6 mb-2 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
-                                <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
-                            <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[0]->skill_name}}</h4>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skill. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_1')}}">See {{$skillPer[0]->skill_name}} MyQ Matrix</a>
-                            </div>
-                            <a class="inner-arrow-right-btm arrowClose" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 mb-2 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
-                                <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
-                            <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[1]->skill_name}}</h4>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
-                                <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                    performance in the test.</p> 
-                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your skills of understanding a problem.</p>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_2')}}">See {{$skillPer[1]->skill_name}} MyQ Matrix</a>
-                            </div>
-                            <a class="inner-arrow-left-btm arrowClose" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
-                                <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
-                            <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[2]->skill_name}}</h4>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your skill of applying concepts to problem solving .</p>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_3')}}">See {{$skillPer[2]->skill_name}} MyQ Matrix</a>
-                            </div>
-                            <a class="inner-arrow-right-top arrowClose" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
-                                <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
-                            <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;"> {{$skillPer[3]->skill_name}}</h4>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you whether you know the concepts.</p>
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_4')}}">See {{$skillPer[3]->skill_name}} MyQ Matrix</a>
-                            </div>
-                            <a class="inner-arrow-left-top arrowClose" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
-        <div class="bg-white shadow-lg p-3">
-            <small>
-                <!-- <i class="fa  fa-info"></i> -->
-                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                <p class="tooltipclass">
-                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                </p>
-            </small>
-            <div class="d-flex align-items-center px-3 flex-box1">
-                <h5 class="dashboard-title ">Chapter Performance </h5>
-                <span class="EXPAND_btn"><button style="margin-right: 40px;" class="customgray" onclick="expandChapterAnalytics({{$sub_id}})">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
-                            <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
-                        </svg>
-                        EXPAND</button></span>
-            </div>
-            <div class="scroll-topic-ana pe-2">
-                @if($subProf)
-                @foreach($subProf as $val)
-                <div class="d-flex align-items-center mt-3 px-3">
-                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 sub">
-                        <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->chapter_name}}">{{$val->chapter_name}}</span>
-                    </div>
-                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
-                        @if($val->correct_ans > 0)
-                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Correct({{round($val->correct_ans)}})">
-
-                        </div>
-                        @endif
-                        @if($val->incorrect_ans > 0)
-                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Incorrect({{round($val->incorrect_ans)}})">
-
-                        </div>
-                        @endif
-                        @if($val->unanswered > 0)
-                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;" title="Unanswered({{round($val->unanswered)}})">
-
-                        </div>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12">
-        <div class="row" id="time-Avg-quest">
-            <div class="col-lg-6 mt-3">
-                <div class="bg-white p-3 h-100 px-5 text-center timeinner">
-                    <small>
-                        <!-- <i class="fa  fa-info"></i> -->
-                        <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p class="tooltipclass">
-                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                            In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
-                        </p>
-                    </small>
-                    <p class="fw-bold text-start">Time Management</p>
-                    <div id="day" style="display:block"></div>
-                    <div id="week" style="display:none"></div>
-                    <div id="month" style="display:none"></div>
-                    <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
-                    <div class="btn-block mt-3">
-                        <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
-                            Day
-                        </button>
-                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
-                            Week
-                        </button>
-                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
-                            Month
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6  mt-3">
-                <div class="bg-white p-3 h-100 px-5 timeinner">
-                    <small>
-                        <!-- <i class="fa  fa-info"></i> -->
-                        <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p class="tooltipclass">
-                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                            Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average will add miles to your success.
-                        </p>
-                    </small>
-                    <p class="fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
-                    <div id="accPerSubjectWise1"></div>
-                    <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
-                </div>
-            </div>
-        </div>
-        <div class="row" id="marKs-trends">
-            <div class="col-lg-6 mt-3">
-                <div class="bg-white p-3 h-100 px-5 text-center timeinner">
-                    <small>
-                        <!-- <i class="fa  fa-info"></i> -->
-                        <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p class="tooltipclass">
-                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                            This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
-                        </p>
-                    </small>
-                    <p class="fw-bold text-start">Marks Trend</p>
-                    <div id="day1" style="display:block"></div>
-                    <div id="week1" style="display:none"></div>
-                    <div id="month1" style="display:none"></div>
-                    <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
-                    <div class="btn-block mt-2">
-                        <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
-                            Day
-                        </button>
-                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
-                            Week
-                        </button>
-                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
-                            Month
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 mt-3">
-                <div class="bg-white pt-3  px-5 timeinner">
-                    <small>
-                        <!-- <i class="fa  fa-info"></i> -->
-                        <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p class="tooltipclass">
-                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                            It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
-                        </p>
-                    </small>
-                    <p class="fw-bold text-start">Accuracy Percentage (Last Week)</p>
-                    <div id="accPerSubjectWise"></div>
-                    <!--p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
-                </div>
-                <div class="bg-white pt-3  px-5" id="back2Dsh">
-                    <div class="d-flex">
-                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4" onClick="backRedirect()">Back to Dashboard</button>
-                        <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
-                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+            <div class="col-md-6">
+                <div class="commonWhiteBox h-auto subj_progress_card">
+                    <h3 class="boxheading d-flex align-items-center mb-5">Progress
+                        <span class="tooltipmain">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                </g>
                             </svg>
-                            &nbsp;Export Analytics</button>
+                            <p class="tooltipclass">
+                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                            </p>
+                        </span>
+                    </h3>
+                    <div class="overall_percentage_chart">
+                        <canvas id="mathChart"></canvas>
+                    </div>
+                </div>
+                <div class="commonWhiteBox chapter_performance_card h-auto" style="margin-top:20px;">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <h3 class="boxheading d-flex align-items-center mb-0">Chapter Performance
+                            <span class="tooltipmain">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="mock_inst_text_mock_test">
+                            <a href="javascript:void(0)" class="text-decoration-none" onclick="expandChapterAnalytics({{$sub_id}})">Expand <i class="fa fa-angle-right" style="margin-left:8px" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between color_labels">
+                        <span><small></small> Correct answer</span>
+                        <span><small></small> Incorrect answer</span>
+                        <span><small></small> Unattempted questions</span>
+                    </div>
+                    <ul class="topic_score_lists mb-0">
+                        @if($subProf)
+                        @foreach($subProf as $val)
+                        <li>
+                            <div class="topic_score_bar">
+                                <h4>{{$val->chapter_name}}</h4>
+                                <div class="progress">
+                                    @if($val->correct_ans > 0)
+                                    <div class="progress-bar correct-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                    @endif
+                                    @if($val->incorrect_ans > 0)
+                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    @endif
+                                    @if($val->unanswered > 0)
+                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    @endif
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+                        @endif
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="commonWhiteBox">
+                    <div class="subjectperform">
+                        <h3 class="boxheading d-flex align-items-center">Core Learning Skill
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="codelearningBlock">
+                            @if($skillPer)
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="commoncodeblock">
+                                        <div class="codelerheader">
+                                            <h3>{{$skillPer[0]->skill_name}}</h3>
+                                        </div>
+                                        <div class="codelerninner">
+                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                        </div>
+                                        <div class="codebottom">
+                                            <h6>Your accuracy</h6>
+                                            <h2>{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <div class="percentageblock">
+                                                <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">Know more
+                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="commoncodeblock">
+                                        <div class="codelerheader">
+                                            <h3>{{$skillPer[1]->skill_name}}</h3>
+                                        </div>
+                                        <div class="codelerninner">
+                                            <h5>It tells you your skill of understanding a problem</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                        </div>
+                                        <div class="codebottom">
+                                            <h6>Your accuracy</h6>
+                                            <h2>{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <div class="percentageblock">
+                                                <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">Know more
+                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="commoncodeblock mb-0">
+                                        <div class="codelerheader">
+                                            <h3>{{$skillPer[2]->skill_name}}</h3>
+                                        </div>
+                                        <div class="codelerninner">
+                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                        </div>
+                                        <div class="codebottom">
+                                            <h6>Your accuracy</h6>
+                                            <h2>{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <div class="percentageblock">
+                                                <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">Know more
+                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="commoncodeblock mb-0">
+                                        <div class="codelerheader">
+                                            <h3>{{$skillPer[3]->skill_name}}</h3>
+                                        </div>
+                                        <div class="codelerninner">
+                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                        </div>
+                                        <div class="codebottom">
+                                            <h6>Your accuracy</h6>
+                                            <h2>{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <div class="percentageblock">
+                                                <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">Know more
+                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overallMidlle">
+        <div class="commonWhiteBox">
+            <h3 class="boxheading">Time Management
+                <span class="tooltipmain">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                        </g>
+                    </svg>
+                    <p class="tooltipclass">
+                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                    </p>
+                </span>
+            </h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="timemanagement common_greenbadge_tabs">
+                        <h4 class="garphsubheading mt-2">Time for correct/incorrect answer</h4>
+                        <div class="barwithTAb">
+                            <div class="subjectperformLegend ">
+                                <div class="commonSubjectLeg">
+                                    <span class="bar greenbar"></span>
+                                    <label class="text">Correct Answers</label>
+                                </div>
+                                <div class="commonSubjectLeg">
+                                    <span class="bar pinkbar"></span>
+                                    <label class="text">Incorrect answers</label>
+                                </div>
+                            </div>
+                            <div class="righttabBlock">
+                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link btn active" id="pills-Day3-tab" data-bs-toggle="pill" data-bs-target="#pills-Day3" type="button" role="tab" aria-controls="pills-Day3" aria-selected="true">Day</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link btn" id="pills-Week3-tab" data-bs-toggle="pill" data-bs-target="#pills-Week3" type="button" role="tab" aria-controls="pills-Week3" aria-selected="false">Week</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link btn" id="pills-Month3-tab" data-bs-toggle="pill" data-bs-target="#pills-Month3" type="button" role="tab" aria-controls="pills-Month3" aria-selected="false">Month</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
+                                <div>
+                                    <canvas id="timeManagementChartDay2"></canvas>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
+                                <div>
+                                    <canvas id="timeManagementChartWeek2"></canvas>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
+                                <div>
+                                    <canvas id="timeManagementChartMonth2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="timemanagement">
+                        <h4 class="garphsubheading">Time spent on each question <span>(in Last week)</span></h4>
+                        <div class="subjectperformLegend ">
+                            <div class="commonSubjectLeg spaceright">
+                                <span class="bar bluebar"></span>
+                                <label class="text">Class Average</label>
+                            </div>
+                            <div class="commonSubjectLeg spaceright">
+                                <span class="bar greenbar"></span>
+                                <label class="text">Student average</label>
+                            </div>
+                        </div>
+                        <div class="chartspent">
+                            <canvas id="timeSpent_Graph2"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="close-block" id="topicopen">
-    <div class="row">
-        <div class="col-12  mb-5">
-            <div class="d-flex align-items-center">
-                <a class="topic-btn-collepse h5 text-dark" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>
-                    {{isset($subScore[0]->subject_name)?ucwords($subScore[0]->subject_name):''}}</a>
-                <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto topic-btn-collepse" id="topic-btn-collepse"><i class="fa fa-compress" aria-hidden="true"></i>
-                    COLLAPSE
-                </button>
-            </div>
-        </div>
-        @if($subProf)
-        @foreach($subProf as $val)
-        <div class="col-md-6 col-lg-4 mb-4 ">
-            <div class="bg-white shadow-lg p-3 sub-topic-box active-box">
-                <div class="d-flex align-items-center py-2 listing-details ">
-                    <span class="mr-3 topics-name">{{$val->chapter_name}}</span>
-                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: 0%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+<div class="overallMidlle">
+    <div class="commonWhiteBox">
+        <h3 class="boxheading">Marks Trends
+            <span class="tooltipmain">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                    </g>
+                </svg>
+                <p class="tooltipclass">
+                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                </p>
+            </span>
+        </h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="timemanagement common_greenbadge_tabs">
+                    <h4 class="garphsubheading mt-2">Correct and Incorrect answers</h4>
+                    <div class="barwithTAb">
+                        <div class="subjectperformLegend ">
+                            <div class="commonSubjectLeg">
+                                <span class="bar greenbar"></span>
+                                <label class="text">Class Average</label>
                             </div>
-                            <div class="star-ratings-css-bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <div class="commonSubjectLeg">
+                                <span class="bar pinkbar"></span>
+                                <label class="text">Student average</label>
                             </div>
                         </div>
-                        <div class="ms-1 score score-rating js-score">
-                            0%
+                        <div class="righttabBlock">
+                            <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab4" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn active" id="pills-Day4-tab" data-bs-toggle="pill" data-bs-target="#pills-Day4" type="button" role="tab" aria-controls="pills-Day4" aria-selected="true">Day</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn" id="pills-Week4-tab" data-bs-toggle="pill" data-bs-target="#pills-Week4" type="button" role="tab" aria-controls="pills-Week4" aria-selected="false">Week</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn" id="pills-Month4-tab" data-bs-toggle="pill" data-bs-target="#pills-Month4" type="button" role="tab" aria-controls="pills-Month4" aria-selected="false">Month</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent2">
+                        <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
+                            <div class="chartspent">
+                                <canvas id="mark_trend_day_2"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">
+                            <div class="chartspent">
+                                <canvas id="mark_trend_week_2"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">
+                            <div class="chartspent">
+                                <canvas id="mark_trend_month_2"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="progress" style="overflow: visible;">
-                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+            </div>
+            <div class="col-md-6">
+                <div class="timemanagement">
+                    <h4 class="garphsubheading">Accuracy Percentage <span>(in Last week)</span></h4>
+                    <div class="subjectperformLegend ">
+                        <div class="commonSubjectLeg spaceright">
+                            <span class="bar bluebar"></span>
+                            <label class="text">Class Average</label>
+                        </div>
+                        <div class="commonSubjectLeg spaceright">
+                            <span class="bar greenbar"></span>
+                            <label class="text">Student average</label>
+                        </div>
                     </div>
-                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                    <div class="chartspent">
+                        <canvas id="accuracy_graph2"></canvas>
                     </div>
-                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                    </div>
-                </div>
-                <div class="d-flex align-items-center flex-wrap">
-                    <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K
-                    </button>
-                    <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C
-                    </button>
-                    <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
-                    </button>
-                    <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                    <!-- <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
-                        Select
-                    </button> -->
                 </div>
             </div>
         </div>
-        @endforeach
-        @endif
+    </div>
+</div>
+<!-- Evaluation-popup start  -->
+<div class="modal fade overall_evaluationmodal_modal" id="Evaluationmodal">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Evaluation</div>
+                    <hr>
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Evaluation-popup end -->
+<div class="modal fade overall_evaluationmodal_modal" id="Comprehensionmodal">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Comprehension</div>
+                    <hr>
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Applicationmodal">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Application</div>
+                    <hr>
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Knowledgemodal">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Knowledge</div>
+                    <hr>
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}% </strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @php
@@ -344,711 +433,561 @@ $currSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
 $lastscore = ($currSocre >= $preSocre) ? $preSocre : $currSocre;
 $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
 @endphp
-<script>
-    /*  $(".scroll-topic-ana").slimscroll({
-        height: "42.5vh",
-    }); */
-    $("#topic-open-btn").click(function() {
-        $("#topicclose").hide();
-        $("#topicopen").show();
-
-    });
-    $(".topic-btn-collepse").click(function() {
-        $("#topicopen").hide();
-        $("#topicclose").show();
-    });
-
-    Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (s)'
+<script type="text/javascript">
+/***math-progress chart***** */
+var ctxmath = document.getElementById('mathChart').getContext('2d');
+var myChartmath = new Chart(ctxmath, {
+    type: 'bar',
+    data: {
+        labels: ['Previous Score', 'Latest score'],
+        datasets: [{
+            data: [<?php echo $preSocre; ?>, <?php echo $currSocre; ?>],
+            label: '',
+            backgroundColor: [
+                '#6ee7b7',
+                '#56b663'
+            ],
+            barPercentage: 5,
+            barThickness: 80,
+            maxBarThickness: 80
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
             }
         },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+        scales: {
+            x: {
+                grid: {
+                    display: false
                 }
-            }
-        },
+            },
 
-        series: [{
-            name: 'Correct Answer Time',
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+/***math-progress chart-end***** */
+
+/**Subject-timeManagementChart******** */
+
+var labels8 = <?php print_r($date1); ?>;
+var data8 = {
+    labels: labels8,
+    datasets: [{
+            label: 'Correct Answers',
             data: <?php print_r($correctTime1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
+            backgroundColor: '#34d399',
+            barThickness: 32
+        },
+        {
+            label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime1); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('week', {
-        credits: {
-            enabled: false
+            backgroundColor: '#f7758f',
+            barThickness: 32
         },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
+    ]
+};
+var config8 = {
+    type: 'bar',
+    data: data8,
+    options: {
+        plugins: {
             title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
             },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
+            legend: false
         },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+                grid: { display: false }
+            },
 
-        series: [{
-            name: 'Correct Answer Time',
+            y: {
+                stacked: true
+            }
+        }
+    }
+};
+
+var DATA_COUNT8 = 7;
+var NUMBER_CFG8 = { count: DATA_COUNT8, min: -100, max: 100 };
+
+var actions8 = [{
+    name: 'Randomize',
+    handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.data = Utils.numbers({ count: chart.data.labels.length, min: -100, max: 100 });
+        });
+        chart.update();
+    }
+}, ];
+
+var myChart8 = new Chart(
+    document.getElementById('timeManagementChartDay2'),
+    config8
+);
+/*------------week---------------*/
+
+var labels9 = <?php print_r($date2); ?>;
+var data9 = {
+    labels: labels9,
+    datasets: [{
+            label: 'Correct Answers',
             data: <?php print_r($correctTime2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
+            backgroundColor: '#34d399',
+            barThickness: 32
+        },
+        {
+            label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime2); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('month', {
-        credits: {
-            enabled: false
+            backgroundColor: '#f7758f',
+            barThickness: 32
         },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
+    ]
+};
+var config9 = {
+    type: 'bar',
+    data: data9,
+    options: {
+        plugins: {
             title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
             },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
+            legend: false
         },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+                grid: { display: false }
+            },
 
-        series: [{
-            name: 'Correct Answer Time',
+            y: {
+                stacked: true
+            }
+        }
+    }
+};
+
+var DATA_COUNT9 = 7;
+var NUMBER_CFG9 = { count: DATA_COUNT8, min: -100, max: 100 };
+
+var actions9 = [{
+    name: 'Randomize',
+    handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.data = Utils.numbers({ count: chart.data.labels.length, min: -100, max: 100 });
+        });
+        chart.update();
+    }
+}, ];
+
+var myChart9 = new Chart(
+    document.getElementById('timeManagementChartWeek2'),
+    config9
+);
+/*-------------month---------------------*/
+var labels7 = <?php print_r($date3); ?>;
+var data7 = {
+    labels: labels7,
+    datasets: [{
+            label: 'Correct Answers',
             data: <?php print_r($correctTime3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
+            backgroundColor: '#34d399',
+            barThickness: 32
+        },
+        {
+            label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime3); ?>,
-            color: '#ff9999'
-        }]
-    });
+            backgroundColor: '#f7758f',
+            barThickness: 32
+        },
+    ]
+};
+var config7 = {
+    type: 'bar',
+    data: data7,
+    options: {
+        plugins: {
+            title: {
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
+            },
+            legend: false
+        },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+                grid: { display: false }
+            },
 
-    function replace(show, hide1, hide2) {
-        if (show == 'day') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_day_time").addClass("active");
-        } else if (show == 'week') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_week_time").addClass("active");
-        } else {
-            $(".s_timeClass").removeClass("active");
-            $("#s_month_time").addClass("active");
+            y: {
+                stacked: true
+            }
         }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
     }
-</script>
-<script>
-    Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
+};
 
-        title: {
-            text: ''
-        },
+var DATA_COUNT7 = 7;
+var NUMBER_CFG7 = { count: DATA_COUNT8, min: -100, max: 100 };
 
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns1); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns2); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns3); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    function s_replace1(show, hide1, hide2) {
-        if (show == 'day1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_day_mark").addClass("active");
-        } else if (show == 'week1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_week_mark").addClass("active");
-        } else {
-            $(".s_classMark").removeClass("active");
-            $("#s_month_mark").addClass("active");
-        }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
+var actions7 = [{
+    name: 'Randomize',
+    handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+            dataset.data = Utils.numbers({ count: chart.data.labels.length, min: -100, max: 100 });
+        });
+        chart.update();
     }
-</script>
-<script>
-    Highcharts.chart('accPerSubjectWise', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
+}, ];
 
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Accuracy Percentage'
-            }
-        },
-
-        xAxis: {
-            categories: <?php print_r($day); ?>
-        },
-        plotOptions: {
-
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Class Average',
+var myChart7 = new Chart(
+    document.getElementById('timeManagementChartMonth2'),
+    config7
+);
+/***accuracy-2******** */
+var dataaccuracy = {
+    labels: <?php print_r($day); ?>,
+    datasets: [{
+            label: 'Class Average',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($classAcc); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Student Average',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($stuAcc); ?>,
-            color: '#6ec986',
-        }]
-    });
-</script>
-<script>
-    Highcharts.chart('accPerSubjectWise1', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
 
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Average Time Spent (s)'
+var configaccuracy = {
+    type: 'line',
+    data: dataaccuracy,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
             }
         },
-
-        xAxis: {
-            categories: <?php print_r($days); ?>
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
         },
-        plotOptions: {
-
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
                 }
             }
+
+        }
+    }
+};
+
+var myChartaccuracy = new Chart(
+    document.getElementById('accuracy_graph2'),
+    configaccuracy
+);
+/*****mark-trend2******* */
+var datamarktrend = {
+    labels: <?php print_r($date1); ?>,
+    datasets: [{
+            label: 'Correct Answer',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data: <?php print_r($correctAns1); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
         },
-        series: [{
-            name: 'Class Average',
+        {
+            label: 'Incorrect Answer',
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data: <?php print_r($incorrectAns1); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+var configmarktrend = {
+    type: 'line',
+    data: datamarktrend,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+        },
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+
+        }
+    }
+};
+
+var myChartmarktrend = new Chart(
+    document.getElementById('mark_trend_day_2'),
+    configmarktrend
+);
+/*------------week------------------*/
+var datamarktrendw = {
+    labels: <?php print_r($date2); ?>,
+    datasets: [{
+            label: 'Correct Answer',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data: <?php print_r($correctAns2); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Incorrect Answer',
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data: <?php print_r($incorrectAns2); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+var configmarktrendw = {
+    type: 'line',
+    data: datamarktrendw,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+        },
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+
+        }
+    }
+};
+
+var myChartmarktrendw = new Chart(
+    document.getElementById('mark_trend_week_2'),
+    configmarktrendw
+);
+/*-------------month----------------------*/
+var datamarktrendm = {
+    labels: <?php print_r($date3); ?>,
+    datasets: [{
+            label: 'Correct Answer',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
+            data: <?php print_r($correctAns3); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Incorrect Answer',
+            backgroundColor: '#ff6678',
+            borderColor: '#ff6678',
+            data: <?php print_r($incorrectAns3); ?>,
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+var configmarktrendm = {
+    type: 'line',
+    data: datamarktrendm,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+        },
+        interaction: {
+            intersect: false,
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
+
+        }
+    }
+};
+
+var myChartmarktrendm = new Chart(
+    document.getElementById('mark_trend_month_2'),
+    configmarktrendm
+);
+
+/************* mark trens end  *************/
+/*******time-graph2*********/
+
+var datatm2 = {
+    labels: <?php print_r($days); ?>,
+    datasets: [{
+            label: 'Class Average',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($classAccuracy); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
+            borderwidth: 0.6,
+            tension: 0.4
+        },
+        {
+            label: 'Student Average',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($stuAccuracy); ?>,
-            color: '#6ec986',
-        }]
-    });
-</script>
-<script>
-    /* score comparison graph */
-    Highcharts.chart('subject-comparegraph', {
-        chart: {
-            type: 'column',
-            height: 185,
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: ['']
-        },
-        yAxis: [{
-            min: 0,
-            title: {
-                text: 'Score %'
-            },
-            max: 100,
-        }, {
-            title: {
-                text: ''
-            },
-            opposite: true
-        }],
-        legend: {
-            shadow: false
-        },
-        tooltip: {
-            shared: true
-        },
-        plotOptions: {
-            column: {
-                grouping: false,
-                shadow: false,
-                borderWidth: 0
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
+            borderwidth: 0.6,
+            tension: 0.4
+        }
+    ]
+};
+
+var configtm2 = {
+    type: 'line',
+    data: datatm2,
+    options: {
+        responsive: true,
+        elements: {
+            point: {
+                radius: 0
             }
         },
-
-        credits: {
-            enabled: false
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
         },
-        exporting: {
-            enabled: false
+        interaction: {
+            intersect: false,
         },
-        series: [{
-            name: 'Previous score',
-            color: '#d0f3ff',
-            data: [<?php echo $preSocre; ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0
-        }, {
-            name: 'Latest score',
-            color: '#21ccff',
-            data: [<?php echo $currSocre; ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0.1
-        }]
-    });
-    /* score comparison graph */
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            }
 
-    /* score pie graph */
-    /*  Highcharts.chart('subjectscorecontainer', {
-         chart: {
-             height: 160,
-             plotBackgroundColor: null,
-             plotBorderWidth: 0,
-             plotShadow: false,
-             spacingTop: 0,
-             spacingBottom: 0,
-             spacingRight: 0,
-         },
-         title: {
-             text: '<span style="font: normal normal 200 42px/60px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
-             align: 'center',
-             verticalAlign: 'middle',
-             y: 50
-         },
-         credits: {
-             enabled: false
-         },
-         exporting: {
-             enabled: false
-         },
+        }
+    }
+};
 
-         tooltip: {
-             pointFormat: '<b>{point.percentage:.1f}%</b>'
-         },
-         accessibility: {
-             point: {
-                 valueSuffix: '%'
-             }
-         },
-         plotOptions: {
-             pie: {
-                 dataLabels: {
-                     enabled: false,
-                     distance: -50,
-                     style: {
-                         fontWeight: 'bold',
-                         color: 'white'
-                     }
-                 },
-                 point: {
-                     events: {
-                         legendItemClick: function() {
-                             this.slice(null);
-                             return false;
-                         }
-                     }
-                 },
-                 startAngle: -140,
-                 endAngle: 140,
-                 center: ['50%', '50%'],
-                 size: '100%'
-             }
-         },
-         series: [{
-             type: 'pie',
-             innerSize: '85%',
-             data: [{
-                     name: 'Score',
-                     y: <?php echo $lastscore; ?>,
-                     color: '#21ccff' // Jane's color
-                 },
-                 {
-                     name: 'Progress',
-                     y: <?php echo $progress ?>,
-                     color: '#d0f3ff' // Jane's color
-                 },
-                 {
-                     name: '',
-                     y: <?php echo (100 - ($lastscore + $progress)); ?>,
+var myCharttm2 = new Chart(
+    document.getElementById('timeSpent_Graph2'),
+    configtm2
+);
+/****time-sheet2******* */
 
-                     color: '#efefef' // Jane's color
-                 }
-             ]
-         }]
-     }); */
-    /* score pie graph */
 </script>
 <script>
-    // $(document).ready(function() {
-    //     $(".dashboard-cards-block .bg-white>small>img").click(function() {
-    //         $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-    //             $(this).parent("p").hide();
-    //         })
-    //         $(this).siblings("p").show();
-    //     });
-    //     $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-    //         $(this).parent("p").hide();
-    //     });
-    // });
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
-            event.stopPropagation();
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+$(document).ready(function() {
+    $("span.tooltipmain svg").click(function(event) {
+        event.stopPropagation();
+
+        var card_open = $(this).siblings("p").hasClass('show');
+        if (card_open === true) {
+            $(this).siblings("p").hide();
+            $(this).siblings("p").removeClass('show');
+        } else {
+            $("span.tooltipmain p.tooltipclass span").each(function() {
                 $(this).parent("p").hide();
                 $(this).parent("p").removeClass('show');
             });
             $(this).siblings("p").show();
             $(this).siblings("p").addClass('show');
-
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-            $(this).parent("p").hide();
-        });
-    });
-    $(document).on('click', function(e) {
-        var card_opened = $('.tooltipclass').hasClass('show');
-        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-            $('.tooltipclass').hide();
         }
-    });
+        $('.customDropdown').removeClass('active');
 
-    function backRedirect() {
-        var url = "{{ route('dashboard') }}";
-        window.location.href = url;
+    });
+    $("span.tooltipmain p.tooltipclass span").click(function() {
+        $(this).parent("p").hide();
+        $(this).parent("p").removeClass('show');
+    });
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
     }
 
-    $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function() {
-        $(this).siblings(".arrow-right-btm-content").addClass("openTopicPara");
-        if ($(".arrow-right-btm-content").hasClass("openTopicPara")) {
-            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events", "none");
-        }
-    });
+});
 
-    $(".arrowClose").click(function() {
-        $(".arrow-right-btm-content").removeClass("openTopicPara");
-        if (!$(".arrow-right-btm-content").hasClass("openTopicPara")) {
-            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events", "auto");
-        }
-    });
 </script>
