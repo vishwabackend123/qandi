@@ -117,7 +117,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         </clipPath>
     </defs>
 </svg>
-                                                <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF (max. 800x400px)</span></p>
+                                                <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
                                         </div>
