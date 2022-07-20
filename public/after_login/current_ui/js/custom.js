@@ -72,7 +72,7 @@ $(".mq_circle_percent").each(function() {
 	} 
 });
 var percent_data =$('.mq_circle_percent').attr('data-percent');
-$(".mq_percent_text").text(Math.round(percent_data))
+$(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
 /*$(document).ready(function() {
     $("span.tooltipmain svg").click(function(event) {
