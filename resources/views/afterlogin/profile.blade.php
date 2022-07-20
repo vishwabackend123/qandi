@@ -264,6 +264,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     $('#editProfile_form select').change(function() {
         editProfileCheck();
     });
+     $('#file-input').change(function() {
+        editProfileCheck();
+    });
 
 
 
