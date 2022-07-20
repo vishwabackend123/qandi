@@ -94,19 +94,11 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h2>
-                                            <div class="percentageblock">
-                                                <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">Know more
-                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,19 +109,11 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>It tells you your skill of understanding a problem</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h2>
-                                            <div class="percentageblock">
-                                                <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">Know more
-                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -140,19 +124,11 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h2>
-                                            <div class="percentageblock">
-                                                <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">Know more
-                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -163,19 +139,11 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="javascript:;">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h2>
-                                            <div class="percentageblock">
-                                                <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">Know more
-                                                    <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

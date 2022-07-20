@@ -31,15 +31,15 @@
             $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 16, $end='...');
             $topicnametitle = $list['chapter_name'];
             @endphp
-            <div class="col">
+            <div class="col-lg-4 col-sm-6 col-12">
                 <div class="chapter_proficincy_point_anylytics">
                     <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
                     <div class="common_bars">
                         <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
+                            <span class="common_bar_sky_blue common_bar_width position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_dark_green common_bar_width position-relative" style="width:{{$list['C_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_green common_bar_width position-relative" style="width:{{$list['A_ques_attempted']}}% !important"></span>
+                            <span class="common_bar_navi_blue common_bar_width position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
                         </div>
                     </div>
                     <div class="chapter_profici_percentage_profincy">

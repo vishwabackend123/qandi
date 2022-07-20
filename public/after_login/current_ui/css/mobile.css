@@ -221,9 +221,10 @@
 }
 @media(min-width:768px){
     .mobile_block{display:none!important;}
-    .back_button_waraper_text{
+    .back_button_waraper_tex{
         display: none;
     }
+    .mobile_text_topics_proficiency{display: none!important;}
 }
 @media(max-width:767px){
     .mobile_hide{display:none!important}
@@ -360,6 +361,45 @@
     .chapter_profici_percent {
         font-size: 14px;
     }
+    /* ******** Q1 Q2 Q3 Q4  start*********** */
+    .mqmatric_topic, .mymatrix_proficiency
+    {
+        display: none;
+    }
+    .mymatrix_table tr td:nth-child(2)
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+    td.mymatrix_table_point
+    {
+        width: 100%;
+    }
+    .mobile_text_topics, .mobile_text_proficiency
+    {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.6;
+        letter-spacing: 0.96px;
+        color: #868a95;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling
+    {
+        height:485px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    .myqbottomSec h3 {
+        font-size: 32px;
+    }
+    .myqmatPannel {
+        padding: 12px;
+    }
+    .fortab .commonWhiteBox {
+        padding: 20px 20px 20px 20px!important;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -408,7 +448,16 @@
     .fullbody_scan_wrapper {margin-top: 44px;}
     .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
     .userprofile strong {font-size: 16px;font-weight: 800;line-height: 1.6;color: #1f1f1f;margin-left: 12px;}
-    .sidebar_block {width: 258px;margin: 72px 0 0 102px;padding: 28px 24px 0px;background-color: #fff;height: 100%;z-index: 10;position: fixed;}
+    .sidebar_block {width: 258px;right: 0;top: 72px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
+    position: fixed;transition: 400ms;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);}
+    .sidebar_block.showmenu {
+        transform: translate(0%);
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+    }
     .userprofile span {font-size: 14px;font-weight: 500;color: #868a95;}
     .pro_sub_label{ font-size: 14px;font-weight: 600;color: #1f1f1f;margin:24px 0 17px;border-bottom:1px solid #e5eaee;padding-bottom:19px;}
     ul.mob_sidebar_lists li a {height: 50px;padding: 12px 12px 12px 12px;border-radius: 8px;display: block;background-color:#fff;display: flex;align-items: center;}
@@ -418,6 +467,20 @@
     ul.mob_sidebar_lists li.active a svg.menu-icon-active{display: inline-block;}
     ul.mob_sidebar_lists li.active a svg:first-child{display: none;}
     ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
+    .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
+    .mobileview_logout {height: calc(100vh - 525px);}
+    .userprofile.headericon a{border: 1px solid #e9eef4;}
+    .sidebartoggle .content-wrapper{position: relative;}
+    .sidebartoggle .content-wrapper:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(31,31,31,0.6);
+        height: 100%;
+        z-index: 10;
+    }
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -437,28 +500,7 @@
     span.headericon.notificationnew a#nodificbell svg{width:24px;height:24px;}
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
-    .mobilemenu{    position: fixed;
-        width: 258px;
-        height: 100vh;
-        background: #fff;
-        top: 70px;
-        right: 0px;
-        padding-top: 28px;
-        padding-right: 0px;
-        overflow: hidden;
-        overflow-y: auto;
-        transition: 400ms;
-        transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        padding-left: 0;
-        z-index: 1;}
-        .mobilemenu.showmenu {
-            transform: translate(0%);
-            -webkit-transform: translateY(0%);
-            -ms-transform: translateY(0%);
-        }
-        #menumobilehide{display:none;}
+    #menumobilehide{display:none;}
         
 }
 

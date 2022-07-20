@@ -14,4 +14,6 @@
     </div>
 </div>
 @endforeach
+@else
+<div>No new notification!</div>
 @endif
