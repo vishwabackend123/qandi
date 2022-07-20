@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="d-flex login-signup">
+<section class="d-flex h-100 login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
             <a href="javascript:void(0);">
