@@ -2424,7 +2424,7 @@ a.btn-common-attempted svg {
      top: 0px;
      right: 0px;
      padding: 18.2px 8.2px 14.9px 13px;
-     background-color: rgba(0, 0, 0, 0.04);
+     background-color: rgba(0, 0, 0, 0.04);border-top-right-radius:10px;
  }
  .subCard p {
      opacity: 0.6;
