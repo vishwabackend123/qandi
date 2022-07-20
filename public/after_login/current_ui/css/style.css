@@ -5409,7 +5409,7 @@ td.mymatrix_table_point
 #referfrnd .modal-body {
     padding: 0px 28px 28px;
 }
-
+#referedfrnd  .modal-body{padding-bottom:20px;}
 #referfrnd button.btn:hover {
     background-image: none !important;
     background-color: #56b663 !important;
