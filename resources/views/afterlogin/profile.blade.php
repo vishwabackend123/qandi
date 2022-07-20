@@ -30,7 +30,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="info">
                             <h1 class="main-title">Personal info</h1>
                             <p>Update your personal details here.</p>
-                            <div class="line"></div>
+                            <div class="line d-block d-lg-none"></div>
                         </div>
                     </div>
                     <div class="col-lg-8">
