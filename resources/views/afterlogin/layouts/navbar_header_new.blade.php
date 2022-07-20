@@ -36,7 +36,9 @@ $name = $action;
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <g clip-path="url(#5ju4071vya)">
                             <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                            @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                             <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2" />
+                            @endif
                         </g>
                         <defs>
                             <clipPath id="5ju4071vya">
@@ -98,6 +100,8 @@ $name = $action;
                     </div>
                 </div>
                 @endforeach
+                @else
+                <div>No new notification!</div>
                 @endif
             </div>
         </div>
