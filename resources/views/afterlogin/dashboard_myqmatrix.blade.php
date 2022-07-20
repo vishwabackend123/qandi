@@ -46,9 +46,9 @@ $userData = Session::get('user_data');
                                         <div class="myqbottomSec">
                                             <h3>
                                                 @if(isset($myq_matrix[0]))
-                                                {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
+                                                {{ $myq_matrix[0]}}
                                                 @else
-                                                00
+                                                0
                                                 @endif
                                                 <span class="topictext">Topics</span>
                                             </h3>
@@ -68,9 +68,9 @@ $userData = Session::get('user_data');
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[1]))
-                                                {{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}
+                                                {{ $myq_matrix[1]}}
                                                 @else
-                                                00
+                                                0
                                                 @endif <span class="topictext">Topics</span></h3>
                                             <a href="javascript:void(0);" id="q2_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
@@ -88,9 +88,9 @@ $userData = Session::get('user_data');
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[2]))
-                                                {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
+                                                {{ $myq_matrix[2]}}
                                                 @else
-                                                00
+                                                0
                                                 @endif <span class="topictext">Topics</span></h3>
                                             <a href="javascript:void(0);" id="q3_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
@@ -108,9 +108,9 @@ $userData = Session::get('user_data');
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[3]))
-                                                {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
+                                                {{ $myq_matrix[3]}}
                                                 @else
-                                                00
+                                                0
                                                 @endif <span class="topictext">Topics</span></h3>
                                             <a href="javascript:void(0);" id="q4_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
