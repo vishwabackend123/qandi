@@ -222,6 +222,10 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div id="matrix-quesfour" class=" tab-pane">
                                         <div class="mqmatric_topic">Topics</div>
+                                        <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
+                                            <div class="mobile_text_topics">TOPICS</div>
+                                            <div class="mobile_text_proficiency">PROFICIENCY</div>
+                                        </div>
                                         @if(isset($myq_matrix_topic['Q4']) && $myq_matrix_topic['Q4'])
                                         <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
