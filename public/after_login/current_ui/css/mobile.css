@@ -407,6 +407,22 @@
     .fortab .commonWhiteBox {
         padding: 20px 20px 20px 20px!important;
     }
+    .plan_box_status {
+        width: 328px;
+    }
+    .plan_box_status_msg
+    {
+        width: 327px;
+    }
+    .plan_success_congrats_msg_name {
+        font-size: 16px;
+    }
+    .plan_box_status_contant_order {
+        font-size: 16px;
+    }
+    .plan_box_status_contant_qi {
+        font-size: 12px;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
