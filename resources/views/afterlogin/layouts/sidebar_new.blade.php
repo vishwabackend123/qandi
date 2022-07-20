@@ -211,7 +211,7 @@
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
                         <input type="email" class="refer_email_input emaillink form-control" placeholder="Name@example.com" id="referEmails" name="refer_emails" autocomplete="off" required>
                     </div>
-                    <p><span class="Note">Note:</span>Use “,” between two emails to separate</p>
+                    <p class="use-text"><span class="Note">Note:</span>Use “,” between two emails to separate</p>
                     <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                     <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
                     <div class="_btn-green"><button type="submit" class="btn btn-common-green"> Send Invite</button></div>
@@ -225,7 +225,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.461 9H8.538C7.688 9 7 9.895 7 11v9c0 1.105.689 2 1.538 2h6.923c.85 0 1.539-.895 1.539-2v-9c0-1.105-.689-2-1.539-2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M4.308 15h-.77c-.408 0-.799-.21-1.087-.586C2.162 14.04 2 13.53 2 13V4c0-.53.162-1.04.45-1.414C2.74 2.21 3.13 2 3.539 2h6.923c.409 0 .8.21 1.088.586C11.838 2.96 12 3.47 12 4v1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg> Copy
+                            </svg> <span style="padding-left:12px">Copy<span>
                         </a>
                     </div>
                 </div>
