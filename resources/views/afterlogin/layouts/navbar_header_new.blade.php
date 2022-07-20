@@ -141,19 +141,21 @@ $name = $action;
 
   /*****Mobile-menu js*********** */
     $("#menumobile").click(function(){
+        $('html').addClass("scrollnone")
     $(this).hide();
     $('#menumobilehide').show();
      $('.sidebar_block').addClass('showmenu');
     });
     $("#menumobilehide").click(function(){
+        $('html').removeClass("scrollnone")
         $(this).hide(); 
         $("#menumobile").show();
      $('.sidebar_block').removeClass('showmenu');
     });
-    $(window).scroll(function() {
-        $("#menumobile").show();
-        $('#menumobilehide').hide();  
-        $('.mobilemenu').removeClass('showmenu'); 
-    });
+    // $(window).scroll(function() {
+    //     $("#menumobile").show();
+    //     $('#menumobilehide').hide();  
+    //     $('.mobilemenu').removeClass('showmenu'); 
+    // });
      /*****Mobile-menu js*********** */
 </script>

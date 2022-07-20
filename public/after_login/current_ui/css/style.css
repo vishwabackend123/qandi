@@ -3406,7 +3406,7 @@ span.greenball-3 {
     padding: 20px 40px 20px 32px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
     background: #fff;    position: relative;
-    z-index: 9;
+    z-index: 99999;
 }
 
 .headerLeft {
