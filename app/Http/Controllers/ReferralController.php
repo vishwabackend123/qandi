@@ -42,7 +42,7 @@ class ReferralController extends Controller
             $exam_id = $userData->grade_id;
             $referrals = (isset($request->refer_emails) && !empty($request->refer_emails)) ? $request->refer_emails : '';
             $referrals_code = (isset($request->refer_code) && !empty($request->refer_code)) ? $request->refer_code : '';
-
+            $referrals = str_replace('"',"",$referrals);
             $refer_mails = explode(',', preg_replace('/\s+/', '', $referrals));
             if (in_array($user_mail, $refer_mails)) {
                 if (count($refer_mails) > 1) {

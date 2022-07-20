@@ -74,6 +74,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </svg></span></a>
                                 </div>
                                 @endif
+
                             </div>
                             <div class="commonWhiteBox subject_performance_card">
                                 <div class="boxHeadingBlock">
