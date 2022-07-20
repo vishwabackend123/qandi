@@ -3,7 +3,7 @@
 @include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-    <div class="content-wrapper test_analytics_wrapper overall_analytics_wrapper">
+    <div class="content-wrapper test_analytics_wrapper overall_analytics_page">
         <div class="tabMainblock">
             <div class="commontab aeck_commontab">
                 <div class="tablist">
