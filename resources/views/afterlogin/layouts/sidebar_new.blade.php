@@ -236,6 +236,7 @@
     </div>
 </aside>
 <div class="modal fade modal-popup-customize emaillinkholder" id="referfrnd" tabindex="-1">
+     <div class="modalcenter">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -291,6 +292,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 <!-- New Ui Modal for invation -->
