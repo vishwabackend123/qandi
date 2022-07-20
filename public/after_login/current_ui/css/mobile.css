@@ -437,6 +437,29 @@
     span.headericon.notificationnew a#nodificbell svg{width:24px;height:24px;}
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
+    .mobilemenu{    position: fixed;
+        width: 258px;
+        height: 100vh;
+        background: #fff;
+        top: 70px;
+        right: 0px;
+        padding-top: 28px;
+        padding-right: 0px;
+        overflow: hidden;
+        overflow-y: auto;
+        transition: 400ms;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        padding-left: 0;
+        z-index: 1;}
+        .mobilemenu.showmenu {
+            transform: translate(0%);
+            -webkit-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+        }
+        #menumobilehide{display:none;}
+        
 }
 
 @media only screen and (max-width: 576px){
