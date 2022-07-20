@@ -2006,7 +2006,7 @@ a.btn-common-attempted svg {
       font-weight: 800;
   }
   
-  button#btn-ans {
+  button.btn-ans {
       background: #56b663;
       color: #fff;
       width: 28px;
@@ -2023,7 +2023,7 @@ a.btn-common-attempted svg {
       margin-right: -10px;
   }
   
-  button#btn-ans {
+  button.btn-ans {
       display:inline-block;
       background: #56b663;
       color: #fff;
@@ -2035,7 +2035,7 @@ a.btn-common-attempted svg {
       margin: 0px 18px 20px 0px;
       border: 1px solid #56b663;
   }
-  button#btn-ans:nth-child(7n){margin-right:0px}
+  button.btn-ans:nth-child(7n){margin-right:0px}
   .pink-btn {
       background: #fb7686 !important;
       border: 0px !important;
