@@ -147,5 +147,10 @@ $name = $action;
         $("#menumobile").show();
      $('.mobilemenu').removeClass('showmenu');
     });
+    $(window).scroll(function() {
+        $("#menumobile").show();
+        $('#menumobilehide').hide();  
+        $('.mobilemenu').removeClass('showmenu'); 
+    });
      /*****Mobile-menu js*********** */
 </script>
