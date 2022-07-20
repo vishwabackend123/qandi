@@ -3861,6 +3861,7 @@ header {
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
+    min-height:244px;
 }
 .myqcolor1 {
     background-color: #d9f99d;
