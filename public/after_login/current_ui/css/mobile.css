@@ -501,6 +501,15 @@
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
     #menumobilehide{display:none;}
+    .mobile-wrapper{
+        padding: 20px 2px;
+    }
+    .main-title {
+    margin-bottom: 4px;
+    }
+    .custom-profileupload .preview-zone {
+    text-align: left;
+    }
         
 }
 
@@ -510,6 +519,10 @@
     }
     .login-signup {
     height:auto;
+    }
+    .subs-alld h3 {
+    text-align: right;
+    margin-left: 10px;
     }
         .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
 
