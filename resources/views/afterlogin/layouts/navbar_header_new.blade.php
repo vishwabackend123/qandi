@@ -142,14 +142,24 @@ $name = $action;
 
     /*****Mobile-menu js*********** */
     $("#menumobile").click(function() {
+        $('html').addClass("windowhidden")
+        $('body').addClass("sidebartoggle")
         $(this).hide();
         $('#menumobilehide').show();
-        $('.mobilemenu').addClass('showmenu');
+        $('.sidebar_block').addClass('showmenu');
     });
     $("#menumobilehide").click(function() {
+        $('html').removeClass("windowhidden")
+        $('body').removeClass("sidebartoggle")
         $(this).hide();
         $("#menumobile").show();
-        $('.mobilemenu').removeClass('showmenu');
+        $('.sidebar_block').removeClass('showmenu');
     });
+
+    $('.notificationnew').click(function() {
+        $('body').removeClass("sidebartoggle")
+        $('.sidebar_block').removeClass('showmenu');
+    });
+
     /*****Mobile-menu js*********** */
 </script>

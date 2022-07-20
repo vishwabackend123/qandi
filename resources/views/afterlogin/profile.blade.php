@@ -18,7 +18,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     <div class="main-wrapper">
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
-        <section class="content-wrapper">
+        <section class="content-wrapper mobile-wrapper">
             @if(session()->has('message'))
             <div class="alert alert-danger">
                 {{ session()->get('message') }}
@@ -30,6 +30,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="info">
                             <h1 class="main-title">Personal info</h1>
                             <p>Update your personal details here.</p>
+                            <div class="line d-block d-lg-none"></div>
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -84,7 +85,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </select>
                                 </div>
                             </div>
-                           <div class="line mb-4"></div>
+                           <div class="line mb-4 d-md-block d-none"></div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
@@ -94,11 +95,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
-                            <div class="line mb-4"></div>
+                            <div class="line mb-4 d-md-block d-none"></div>
                             <div class="row mb-3">
                                 <div class="col-lg-12">
-                                    <div class="d-flex custom-profileupload">
-                                        <div class="preview-zone hidden">
+                                    <div class="d-sm-flex custom-profileupload">
+                                        <div class="preview-zone hidden mb-sm-0 mb-4">
                                             <div class="box box-solid">
                                                 <div class="box-body"><img height="64px" width="64px" style="border-radius:32px;margin-right:20px;" src="{{$imgPath}}" alt="performance"></div>
                                             </div>
@@ -117,7 +118,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         </clipPath>
     </defs>
 </svg>
-                                                <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span>SVG, PNG, JPG or GIF</span></p>
+                                                <p class="pt-2 mt-1"><a href="javascript:void(0);">Click to upload</a> or drag and drop<br> <span> PNG, JPG or JPEG</span></p>
                                             </div>
                                             <input type="file" name="file-input" id="file-input" class="dropzone" accept="image/*">
                                         </div>
@@ -125,14 +126,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             <div class="line mt-4 mb-3"></div>
-                            <div class="d-flex justify-content-end mb-5 pb-5">
+                            <div class="d-flex justify-content-end mb-md-5 mb-2 pb-5">
                                 <a href="{{ url('/dashboard') }}" class="btn cancle me-2 bg-transparent ">Cancel</a>
                                 <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ms-1 ">Save</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="pb-5 mb-3">
+                <div class="pb-sm-5 mb-3">
                     <div class="line"></div>
                 </div>
                 <div class="row">
