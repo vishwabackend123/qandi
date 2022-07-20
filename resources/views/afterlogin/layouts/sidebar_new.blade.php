@@ -101,7 +101,6 @@
     </div>
 </section>
 <!-------------- End --------------->
-
 <aside>
     <span class="sidebar-logo d-inline-block">
         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
@@ -156,7 +155,7 @@
                 <span class="sidebar-menu-tooltip">Planner</span>
             </a>
         </li>
-        <li class="mb-4">
+        <li class="mb-4 current_refer">
             <a href="#referfrnd" class="openSharefrnd" data-bs-toggle="modal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="#234628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -276,7 +275,11 @@
                     <p class="successRef_copy" style="color:green;"></p>
                     <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
                     <div class="share-link-input">
-                        <input type="share" class="form-control" id="linkInput" value="{{ session()->get('referal_link') }}" readonly>
+                        @php
+                        $refer_code = Illuminate\Support\Str::limit(session()->get('referal_link') , 27, $end='...');
+                        @endphp
+                        <input type="share" class="form-control" id="showInput" value="{{$refer_code}}" readonly>
+                        <input type="share" class="form-control" id="linkInput" value="{{session()->get('referal_link')}}" style="display: nonef;">
                         <a href="javascript:void(0);" onclick="copylinkfunction()">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.461 9H8.538C7.688 9 7 9.895 7 11v9c0 1.105.689 2 1.538 2h6.923c.85 0 1.539-.895 1.539-2v-9c0-1.105-.689-2-1.539-2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -338,49 +341,59 @@
         </div>
     </div>
 </div>
-
 <!-- Test Summary Modal -->
-
 <script>
-    var url = window.location.pathname.split("/");
-    var action_method = url[2];
-    if(action_method == 'overall_analytics')
-    {
-        $('.current_dashboard').removeClass('active');
-        $('.current_analytics').addClass('active');
+var url = window.location.pathname.split("/");
+var action_method = url[2];
+if (action_method == 'overall_analytics') {
+    $('.current_dashboard').removeClass('active');
+    $('.current_analytics').addClass('active');
+}
+
+function stateHandle() {
+    if (document.querySelector(".emaillink").value === "") {
+        //button.disabled = true;
+        button.disabled = false;
+    } else {
+        button.disabled = false;
     }
-    function stateHandle() {
-        if (document.querySelector(".emaillink").value === "") {
-            //button.disabled = true;
-            button.disabled = false;
-        } else {
-            button.disabled = false;
-        }
-    }
+}
+$('.current_refer').click(function() {
+    $('.mb-4').removeClass('active');
+    $('.current_refer').addClass('active');
+})
+$('.btn-close').click(function() {
+    $('.current_dashboard').addClass('active');
+    $('.current_refer').removeClass('active');
+});
+
+
 </script>
 <script>
-    function copylinkfunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("linkInput");
+function copylinkfunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("linkInput");
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
-        $(".successRef_copy").text("Copied!");
-        $(".successRef_copy").show();
-        setTimeout(function() {
-            $(".successRef_copy").text("");
-            $(".successRef_copy").hide();
-        }, 4000);
-    }
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+    $(".successRef_copy").text("Copied!");
+    $(".successRef_copy").show();
+    setTimeout(function() {
+        $(".successRef_copy").text("");
+        $(".successRef_copy").hide();
+    }, 4000);
+}
+
 </script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <script>
-    $(".backtobtn").click(function() {
-        $('#referfrnd').modal('show');
-        $('#referedfrnd').modal('hide');
-    });
+$(".backtobtn").click(function() {
+    $('#referfrnd').modal('show');
+    $('#referedfrnd').modal('hide');
+});
+
 </script>
