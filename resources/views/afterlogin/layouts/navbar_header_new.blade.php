@@ -60,7 +60,7 @@ $name = $action;
             </span>
             <span class="headericon dropdown mobile_hide">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
-                    @if($imgPath)
+                    @if($userData->user_profile_img)
                     <img src="{{$imgPath}}"  class="profileicon" />
                     @else
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
