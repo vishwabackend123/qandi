@@ -1,7 +1,7 @@
 <div class="chapter_profici_nav__right_contant">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Maths</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Chapters</li>
         </ol>
     </nav>
@@ -25,69 +25,15 @@
     <div id="overall_analytics" class="tab-pane">
     </div>
     <div id="maths" class="tab-pane active">
-        <div class="row row-cols-md-1  chapter_of_row_col_paddin_zero">
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Application of Derivatives</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">3D Geometry</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Area under Curves</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row chapter_of_row_col_paddin_zero">
+            @foreach($chapterList as $list)
+            @php
+            $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 16, $end='...');
+            $topicnametitle = $list['chapter_name'];
+            @endphp
             <div class="col">
                 <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Binomial Theorem</div>
+                    <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
                     <div class="common_bars">
                         <div class="d-flex common_bars_flex">
                             <span class="common_bar_sky_blue common_bar_width position-relative"></span>
@@ -98,79 +44,15 @@
                     </div>
                     <div class="chapter_profici_percentage_profincy">
                         <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
+                            <span>{{round($list['chapter_score'])}}%</span> <span>Proficiency</span>
                         </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                        @php $chpatername=base64_encode($list['chapter_name']);
+                        @endphp
+                        <div class="chapter_profici_open_topic"><a href="javascript:void(0);" onclick="expandTopicAnalytics({{$list['chapter_id']}},'{{$subject}}','{{$chpatername}}')">Open topics <b>></b></a></div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Complex Numbers</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <div class="row chapter_of_row_col_paddin_zero">
-            <div class="col">
-                <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
-                    <div class="common_bars">
-                        <div class="d-flex common_bars_flex">
-                            <span class="common_bar_sky_blue common_bar_width position-relative"></span>
-                            <span class="common_bar_dark_green common_bar_width position-relative"></span>
-                            <span class="common_bar_green common_bar_width position-relative"></span>
-                            <span class="common_bar_navi_blue common_bar_width position-relative"></span>
-                        </div>
-                    </div>
-                    <div class="chapter_profici_percentage_profincy">
-                        <div class="chapter_profici_percent">
-                            <sapn>28%</span> <span>Proficiency</span>
-                        </div>
-                        <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col chapter_of_row_col_paddin_zero_col">
-            </div>
-            <div class="col chapter_of_row_col_paddin_zero_col">
-            </div>
-        </div>
-    </div>
-    <div id="physics" class=" tab-pane">
-    </div>
-    <div id="chemistry" class=" tab-pane">
     </div>
 </div>
