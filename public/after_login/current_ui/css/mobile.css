@@ -163,10 +163,12 @@
 }
 .graphCardwrapper{flex-wrap:wrap;}
 .journeyGraph {
-    width: 49%;
+    width: 100%;
 }
-.graphCardwrapper .journeyGraph:first-child{margin-bottom:30px;}
+.graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
+.graphCard.my-4{margin-top:16px!important;}
 .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
+.journeyGraph {padding: 20px;}
 
 }
 @media only screen and (max-width: 1024px){
@@ -453,7 +455,7 @@
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 20px 16px;
+        padding: 20px 6px;
     }
     #collapseNotification2{width:100%;}
     .headericon a{border:0px;}
@@ -461,7 +463,20 @@
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
     #menumobilehide{display:none;}
-        
+    #collapseNotification2{top:0}   
+    .notification-main>h2{font-size:20px;} 
+    .notification-main { background: #f5faf6;}
+    .notification-main{padding: 32px 16px;}
+    .main-text{font-size:14px;}
+    .notification-main>h2{margin-bottom:0px;}
+    .new_notification_main_sec { height: calc(100vh - 159px);}
+    .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
+    .verifiaction-link{padding:16px 12px;}
+    .planewrapper{flex-wrap:wrap;}
+    .journeyBoxcontainer{flex-wrap:wrap}
+    .graphimg{width: 100%;}
+    .graphDetail {  padding-left:0px; width: 100%;}
+    .commonblockDash {margin-bottom: 16px;}
 }
 
 @media only screen and (max-width: 576px){
@@ -472,6 +487,8 @@
     height:auto;
     }
         .subjectScoreBlock .col-sm-6{    flex: 0 0 auto; width: 50%;}
+        .notification-main {width:100%;max-width:100%;}
+        .MyqMatrixMain .col-sm-6{width: 100%; max-width: 50%;padding: 0 8px;}
 
 }
 
