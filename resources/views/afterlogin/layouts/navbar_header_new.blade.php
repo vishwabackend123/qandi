@@ -21,9 +21,9 @@ $name = $action;
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-           <span class="sidebar-logo d-inline-block mobile_block">
-             <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
-         </span>
+            <span class="sidebar-logo d-inline-block mobile_block">
+                <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+            </span>
             <h2 class="text-capitalize mobile_hide">{{isset($header_title)?$header_title:$name}}</h2>
             <h6 class="mobile_hide"><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
@@ -49,25 +49,26 @@ $name = $action;
                 </a>
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobile">
-                  <a href="javascript:;">
-                      <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
-                  </a>
+                <a href="javascript:;">
+                    <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
+                </a>
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobilehide">
-                  <a href="javascript:;">
-                      <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
-                  </a>
+                <a href="javascript:;">
+                    <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
+                </a>
             </span>
             <span class="headericon dropdown mobile_hide">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
-                    @if($userData->user_profile_img)
+
+                    @if(isset($userData->user_profile_img))
                     <img src="{{$imgPath}}"  class="profileicon" />
                     @else
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     @endif
-                    
+
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{ route('profile') }}">Profile & Subscription</a></li>
@@ -76,7 +77,8 @@ $name = $action;
             </span>
         </div>
     </div>
-</header> 
+    <div class="mobilemenu"></div>
+</header>
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
@@ -139,26 +141,26 @@ $name = $action;
         });
     }
 
-  /*****Mobile-menu js*********** */
-    $("#menumobile").click(function(){
-            $('html').addClass("windowhidden")
-            $('body').addClass("sidebartoggle")
-            $(this).hide();
-            $('#menumobilehide').show();
-            $('.sidebar_block').addClass('showmenu');
+    /*****Mobile-menu js*********** */
+    $("#menumobile").click(function() {
+        $('html').addClass("windowhidden")
+        $('body').addClass("sidebartoggle")
+        $(this).hide();
+        $('#menumobilehide').show();
+        $('.sidebar_block').addClass('showmenu');
     });
-    $("#menumobilehide").click(function(){
+    $("#menumobilehide").click(function() {
         $('html').removeClass("windowhidden")
         $('body').removeClass("sidebartoggle")
-        $(this).hide(); 
+        $(this).hide();
         $("#menumobile").show();
-       $('.sidebar_block').removeClass('showmenu');
+        $('.sidebar_block').removeClass('showmenu');
     });
 
-$('.notificationnew').click(function(){
-    $('body').removeClass("sidebartoggle")
-    $('.sidebar_block').removeClass('showmenu');
-});
+    $('.notificationnew').click(function() {
+        $('body').removeClass("sidebartoggle")
+        $('.sidebar_block').removeClass('showmenu');
+    });
 
-     /*****Mobile-menu js*********** */
+    /*****Mobile-menu js*********** */
 </script>
