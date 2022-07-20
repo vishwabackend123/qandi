@@ -141,21 +141,24 @@ $name = $action;
 
   /*****Mobile-menu js*********** */
     $("#menumobile").click(function(){
-        $('html').addClass("scrollnone")
-    $(this).hide();
-    $('#menumobilehide').show();
-     $('.sidebar_block').addClass('showmenu');
+            $('html').addClass("scrollnone")
+            $('body').addClass("sidebartoggle")
+            $(this).hide();
+            $('#menumobilehide').show();
+            $('.sidebar_block').addClass('showmenu');
     });
     $("#menumobilehide").click(function(){
         $('html').removeClass("scrollnone")
+        $('body').removeClass("sidebartoggle")
         $(this).hide(); 
         $("#menumobile").show();
      $('.sidebar_block').removeClass('showmenu');
     });
-    // $(window).scroll(function() {
-    //     $("#menumobile").show();
-    //     $('#menumobilehide').hide();  
-    //     $('.mobilemenu').removeClass('showmenu'); 
-    // });
+
+$('.notificationnew').click(function(){
+  
+
+});
+
      /*****Mobile-menu js*********** */
 </script>
