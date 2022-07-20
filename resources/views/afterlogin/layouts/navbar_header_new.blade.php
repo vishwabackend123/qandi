@@ -21,16 +21,13 @@ $name = $action;
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <span class="sidebar-logo  mobile_block">
-                <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
-            </span>
-            <h2 class="text-capitalize mobile_hide">{{isset($header_title)?$header_title:$name}}</h2>
-            <h6 class="mobile_hide"><label>Course:</label>
+            <h2 class="text-capitalize">{{isset($header_title)?$header_title:$name}}</h2>
+            <h6><label>Course:</label>
                 <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
             </h6>
         </div>
         <div class="headerRight">
-            <span class="usertext mobile_hide"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
+            <span class="usertext"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
             <span class="headericon notificationnew">
                 <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -46,7 +43,7 @@ $name = $action;
                     </svg>
                 </a>
             </span>
-            <span class="headericon dropdown mobile_hide">
+            <span class="headericon dropdown">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
@@ -58,13 +55,7 @@ $name = $action;
                     <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </span>
-          <span class="headericon mobilenav mobile_block" id="mobmenu">
-             <a href="javascript:;"><img src="public/after_login/current_ui/images/nav-menu.svg" alt=""></a>
-          </span>
         </div>
-    </div>
-    <div class="mobile-menu">
-          
     </div>
 </header>
 <!--notification-right End-->
@@ -126,8 +117,4 @@ $name = $action;
             },
         });
     }
-    /******Mobile-menu******** */
-    $('#mobmenu').click(function() {
-     $('.mobile-menu').addClass('showmenu') ;  
-    })
 </script>
