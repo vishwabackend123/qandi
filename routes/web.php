@@ -125,7 +125,7 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 
 /* Full exam Controller Routes */
-Route::any('/exam/{full_exam}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth');
+Route::any('/exam/{full_exam}/{instruction?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth');
 Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'nextQuestion'])->name('next_question')->middleware('auth');
 Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
