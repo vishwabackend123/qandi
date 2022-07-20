@@ -74,7 +74,6 @@ $name = $action;
             </span>
         </div>
     </div>
-    <div class="mobilemenu"></div>
 </header> 
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
@@ -140,12 +139,12 @@ $name = $action;
     $("#menumobile").click(function(){
     $(this).hide();
     $('#menumobilehide').show();
-     $('.mobilemenu').addClass('showmenu');
+     $('.sidebar_block').addClass('showmenu');
     });
     $("#menumobilehide").click(function(){
         $(this).hide(); 
         $("#menumobile").show();
-     $('.mobilemenu').removeClass('showmenu');
+     $('.sidebar_block').removeClass('showmenu');
     });
     $(window).scroll(function() {
         $("#menumobile").show();
