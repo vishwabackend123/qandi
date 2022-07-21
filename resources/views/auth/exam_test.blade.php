@@ -152,13 +152,12 @@
                                         </div>
                                     </div>
 
-
                                 </div>
                                 <div id="application" class="tab-pane">adasdas</div>
                                 <div id="complrehension" class="tab-pane">complrehension</div>
                             </div>
-                        </div>
-                    </div>
+                        </div>   
+                    </div>  
                   <!--  <div class="btnbottom">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns"><button class="btn questionbtn">Mark for Review</button> <button class="btn questionbtn Clearbtn">Clear Response</button></div>

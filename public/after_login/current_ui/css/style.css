@@ -914,7 +914,7 @@ color: #008799;
 .selectbox{
 border-color: #56b663;    
 }
-/*****practic_exam-end**********/
+/*****practic_exam-end**********/   
 
 /*********** Navdeep End *************/
 
@@ -3875,6 +3875,7 @@ header {
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
+    min-height:244px;
 }
 .myqcolor1 {
     background-color: #d9f99d;
