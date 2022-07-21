@@ -3341,7 +3341,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 }
-
+.footerheding{padding-left:0px;padding-right:0px;}
 .chapter_performance_card ul.topic_score_lists li {width: 100%;margin-bottom: 27px;}
 .chapter_performance_card ul.topic_score_lists {max-height: 234px;}
 .chapter_performance_card .color_labels {
