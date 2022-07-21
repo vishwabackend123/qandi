@@ -719,7 +719,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph" style="height: 250px;"></canvas>
+                                                    <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
                                             </div>
                                             @if (!empty($trendResponse))
