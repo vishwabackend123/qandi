@@ -68,7 +68,7 @@ $userData = Session::get('user_data');
                                 <span class="ms-1"> </span>
                                 &nbsp;
                             </p>
-                            <h2 class="week-select pb-3 pt-5">Select Chapters</h2>
+                            <h2 class="week-select pb-2 mb-0 pt-5">Select Chapters</h2>
                             @if(isset($user_subjects) && !empty($user_subjects))
                             @foreach($user_subjects as $sub)
                             @php
@@ -94,7 +94,7 @@ $userData = Session::get('user_data');
                                             <span class="me-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
                                             @if($plan->test_completed_yn=="N")
                                             <a href="javascript:void(0)" onclick="Shuffle_Chapter('{{$plan->chapter_id}}','{{$sub->id}}')" title="Shuffle Chapter">
-                                                <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />
                                                         <path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />
@@ -107,7 +107,7 @@ $userData = Session::get('user_data');
                                                 </svg>
                                             </a>
                                             <a href="javasceript:void(0)" value="{{$sub->id}}" class="chapter_remove" title="Remove Chapter">
-                                                <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="m13.5 4.5-9 9M4.5 4.5l9 9" stroke="#FB7686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                 </svg>
                                             </a>
@@ -129,9 +129,11 @@ $userData = Session::get('user_data');
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
+<!--
                         <div class="pt-5 mt-5">
                             <a href="{{route('dashboard')}}" class="btn btn-common-green  w-100">Back to Dashboard</a>
                         </div>
+-->
                     </div>
                 </div>
             </div>
@@ -140,7 +142,7 @@ $userData = Session::get('user_data');
 </div>
 <div class="modal fade" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content custom_modal">
+        <div class="modal-content custom_modal border-0">
             <div class="modal-header border-0 p-0">
                 <h5 class="modal-title pb-3 mb-1" id="plannerChapterLabel">Mathematics</h5>
                 <button type="button" class="btn-close border-0 bg-transparent" data-bs-dismiss="modal" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +151,7 @@ $userData = Session::get('user_data');
             </div>
             <div class="modal-body p-0">
                 <input hidden name="chapt_subject_id" id="chapt_subject_id" value="">
-                <div class="custom-input pb-5 mb-5">
+                <div class="custom-input">
                     <label class="mb-1">Select Chapters</label>
                     <select class="form-control selectdata" id="select-planner-chapter">
                         <option class="we">Type Chapters</option>
@@ -297,7 +299,7 @@ $userData = Session::get('user_data');
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
                 '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
-                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
                 '<path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />' +
@@ -308,7 +310,7 @@ $userData = Session::get('user_data');
                 '</clipPath>' +
                 '</defs>' +
                 ' </svg></a>' +
-                '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "14" height = "14" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
+                '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "18" height = "18" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
             $('#plannerChapter').modal('hide');
         } else {
             $('#errChptAdd_alert').html('Please select one chapter.');
@@ -555,7 +557,7 @@ $userData = Session::get('user_data');
 
                             $('#planner_sub_' + subject_id).append(
                                 '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
-                                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                                '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
                                 '<path d="M2.632 6.75A6.75 6.75 0 0 1 13.77 4.23l3.48 3.27m-16.5 3 3.48 3.27a6.75 6.75 0 0 0 11.137-2.52" />' +
@@ -566,7 +568,7 @@ $userData = Session::get('user_data');
                                 '</clipPath>' +
                                 '</defs>' +
                                 ' </svg></a>' +
-                                '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "14" height = "14" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
+                                '<a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><svg width = "18" height = "18" viewBox = "0 0 18 18" fill = "none" xmlns = "http://www.w3.org/2000/svg" ><path d = "m13.5 4.5-9 9M4.5 4.5l9 9" stroke = "#FB7686" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" /></svg></a></p></div>');
 
                         }
                     });
