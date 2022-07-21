@@ -4126,9 +4126,11 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
-       .profileicon{width: 100%;
-        height: 100%;
-        border-radius: 10px;margin-top:-1px;}
+       .profileicon{width: 101%;
+        height: 101%;
+        border-radius: 8px;
+        margin-top: -1.2px;
+        margin-left: -0.3px;}
 /*        .modal-open .modal{z-index: 999999;}*/
 /*        .modal-backdrop{    z-index: 99999;}*/
         .referfriendlink {background: #fff !important;
@@ -5396,7 +5398,7 @@ td.mymatrix_table_point
     padding: 0px 0px 15px;
 }
 
-#referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;}
+#referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;width:100%;}
 
 .user-profile-sec>h2 {
     font-size: 24px;
