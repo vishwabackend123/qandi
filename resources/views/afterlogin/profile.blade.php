@@ -375,6 +375,11 @@ $user_id = isset($userData->id)?$userData->id:'';
     function onlyAlphabetsDisplay(e, t) {
         return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
     }
+    $("#username").keyup(function() {
+        var myValue = $(this).val();
+        var test = myValue.replace(/  +/g, ' ');
+        $("#username").val(test);
+    });
 
     </script>
 </body>
