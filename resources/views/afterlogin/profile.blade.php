@@ -145,7 +145,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="col-lg-8 pt-4">
                         <div class="bg-white subscription-details">
-                            <h1 class="subs-heading d-inline-block">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
+                            <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none">Upgrade Plan</a>
+                            </div>
                             <div class="line mb-3 pb-1"></div>
                             @php
                             $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
@@ -186,6 +189,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
+                        <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a>
                         </div>
                     </div>
                 </div>
