@@ -299,7 +299,7 @@
 <!-- New Ui Modal for invation -->
 <div class="modal fade modal-popup-customize onsendshow" id="referedfrnd" tabindex="-1">
     
-        <div class="modal-dialog">
+    <div class="modal-dialog">
         <div class="modalcenter">
             <div class="modal-content">
                 <div class="modal-header">
