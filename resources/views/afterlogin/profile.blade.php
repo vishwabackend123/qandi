@@ -60,10 +60,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="custom-input pb-4 position-relative">
                                         <label>Email</label>
                                         <input type="email" class="form-control" placeholder="Email" value="{{$userData->email}}" id="useremail" name="useremail" required maxlength="64" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+                                        @if($userData->email_verified=='No')
                                         <a class="bg-white editnumber resendmail resend_email" href="javascript:void(0);">Resend</a>
                                         <span class="email-error">Email not verified, Please resend verification link to verify</span>
                                         <br>
                                         <span class="mt-2" id="email_success"></span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
