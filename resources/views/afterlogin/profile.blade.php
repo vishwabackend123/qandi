@@ -90,7 +90,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -272,6 +272,10 @@ $user_id = isset($userData->id)?$userData->id:'';
         });
     });
     $('#editProfile_form input').keyup(function() {
+        var id = this.id;
+        if (id === 'mobile_num') {
+            return false;
+        }
         $('#editProfile_form').valid();
         editProfileCheck();
     });
