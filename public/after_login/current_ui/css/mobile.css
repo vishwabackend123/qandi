@@ -407,6 +407,22 @@
     .fortab .commonWhiteBox {
         padding: 20px 20px 20px 20px!important;
     }
+    .plan_box_status {
+        width: 328px;
+    }
+    .plan_box_status_msg
+    {
+        width: 327px;
+    }
+    .plan_success_congrats_msg_name {
+        font-size: 16px;
+    }
+    .plan_box_status_contant_order {
+        font-size: 16px;
+    }
+    .plan_box_status_contant_qi {
+        font-size: 12px;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -528,6 +544,28 @@
     .custom-profileupload .preview-zone {
     text-align: left;
     }
+
+/************ Sachin Start Date:20-07-22 *********/  
+ .verificationBoxmobile {margin-top: 44px;display: block;}
+ .verificationBoxmobile .verificationBox{position: inherit;padding: 20px;margin: auto;}
+ .subscriptionsPage .selectPlanedetail { padding: 20px;}
+ .subscriptionsPage .planeName P{font-size: 14px;line-height: 1.29;}
+ .subscriptionsPage .planType {display: flex;flex-flow: column-reverse;}
+ .subscriptionsPage  #get-sub-btn{width: 100%;}
+ .subscriptionsPage .getSubs{width:100%}
+ .subscriptionsPage .freeTrial{padding-top: 14px;}
+ .subscriptionsPage .testType{display: block;}
+ .subscriptionsPage .testType ul li {line-height: initial;display: flex;align-items: flex-start;margin-bottom: 20px;}
+ .subscriptionsPage .testType{padding-top:24px;}
+.hideonmobile{display: none;}
+.hideondesktop{display: block;}
+.testTypeulbox{height: 150px; overflow: hidden;}
+.allbenefitsbtn{display: block;}
+.getDiscount {padding: 20px;display: block;}
+.getDiscount .planPayment .testType{width: 100%;}
+.applyCo {padding-top: 10px;width: 100%;}
+.getDiscount .planPayment {display: flex;flex-flow: column-reverse;}
+ /************ Sachin End Date:20-07-22 ************/
         
 }
 
