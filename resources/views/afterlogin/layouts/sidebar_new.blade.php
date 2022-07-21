@@ -334,7 +334,9 @@
                     </div>
                     <p class="successRef_copy" style="color:green;"></p>
                     <div class="bottom_back-sec">
-                        <label class="backtobtn"><i class="fas fa-angle-left"></i> Back</label>
+                        <label class="backtobtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg> Back</label>
                         <a href="javascript:void(0);" class="copy" onclick="copylinkfunction()">
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

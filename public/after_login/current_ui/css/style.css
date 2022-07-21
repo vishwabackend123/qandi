@@ -5400,7 +5400,7 @@ td.mymatrix_table_point
 
 #referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;width:100%;height: 100%;
     margin: 0px auto;}
-
+#referedfrnd .btn-close {padding-right: 18px;}
 .user-profile-sec>h2 {
     font-size: 24px;
     font-weight: 800;
@@ -5553,10 +5553,14 @@ border-color: #56b663;
     font-size: 16px;
     font-weight: 600;
     color: #56b663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .invation-sec p span {
-    padding-right: 10px;
+    padding-right: 8px;
+    display: inline-block;
 }
 
 .modal-popup-customize .modal-header {
@@ -5596,16 +5600,21 @@ border-color: #56b663;
     font-size: 16px;
     font-weight: 800;
 }
-.bottom_back-sec .copy {
-    width: 166px;margin-right: 20px;
-    padding: 10px 43px;
+.bottom_back-sec .copy {    width: 166px;
+    margin-right: 20px;
+    padding: 9px 43px;
+    height: 44px;
+    line-height: 1.6;
 }
 
 .bottom_back-sec {
     float: left;
     width: 100%;padding-bottom: 12px;
 }
-
+.backtobtn svg{transform: rotate(180deg);
+    margin-right: 6px;
+    width: 16px;
+    margin-top: -3px;}
 .bottom_back-sec label>i {
     color: #56b663;
     padding-right: 10px; font-size: 14px;
