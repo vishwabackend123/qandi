@@ -278,7 +278,7 @@
                         <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
                         <div class="share-link-input">
                             @php
-                            $refer_code = Illuminate\Support\Str::limit(session()->get('referal_link') , 25, $end='...');
+                            $refer_code = Illuminate\Support\Str::limit(session()->get('referal_link') , 28, $end='...');
                             @endphp
                             <p class="referfriendlink">{{$refer_code}}</p>
                             <input type="share" class="form-control" id="linkInput" value="{{session()->get('referal_link')}}" style="display: none;">
