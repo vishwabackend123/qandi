@@ -3338,10 +3338,11 @@ transform: translate(-50%,-50%);
 .overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
 a.btn-close,a.btn-close:hover{opacity: 1;}
 .myqmatPannel a:hover{text-decoration:none;}
+
 .testPlanCard.testplannewuser {
     max-width: 330px;
     width: 100%;
-    border: solid 1px #e1e3ed;
+    border: solid 1px #e1e3ed;margin-left:0px;
 }
 .verifiaction-link p b {
     font-weight: 800;
