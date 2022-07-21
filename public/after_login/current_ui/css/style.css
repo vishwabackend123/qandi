@@ -4142,6 +4142,10 @@ justify-content: space-between;}
             font-size: 14px;
             color: rgba(54, 60, 79, 0.5);margin-bottom:0px; padding: 10px 14px;
             border-radius: 8px;padding-right:120px;}
+
+.progress_journey_chart{height:100%;}
+.progress_journey_chart canvas{height:110%;}
+
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5547,7 +5551,7 @@ border-color: #56b663;
 
 .invation-sec {
     text-align: center;
-    padding: 85px 0px 100px;
+    padding: 110px 0px 120px;
 }
 
 .invation-sec p {
