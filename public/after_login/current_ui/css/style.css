@@ -4143,8 +4143,8 @@ justify-content: space-between;}
             color: rgba(54, 60, 79, 0.5);margin-bottom:0px; padding: 10px 14px;
             border-radius: 8px;padding-right:120px;}
 
-.progress_journey_chart{height:100%;}
-.progress_journey_chart canvas{height:110%;}
+.progressnewjourney{height:100%;}
+.progressnewjourney canvas{height:calc(100% + 30px);}
 
 /********* Shubham End ***********/
 

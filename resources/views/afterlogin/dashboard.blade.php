@@ -661,8 +661,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                             </svg> -->
-                                                <div class="progress_journey_chart">
-                                                    <canvas id="progressJourny_graph"></canvas>
+                                                <div class="progress_journey_chart progressnewjourney">
+                                                    <canvas id="progressJourny_graph" style="height:250px;"></canvas>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
@@ -719,7 +719,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph"></canvas>
+                                                    <canvas id="trend_graph" style="height: 250px;"></canvas>
                                                 </div>
                                             </div>
                                             @if (!empty($trendResponse))
