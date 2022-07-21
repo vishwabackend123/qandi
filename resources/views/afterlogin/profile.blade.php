@@ -242,6 +242,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     });
     $('#email_success').hide();
     $('.resend_email').click(function() {
+        $('.email-error').hide();
         var user_id = '<?php echo $user_id; ?>';
         $.ajaxSetup({
             headers: {
@@ -257,15 +258,23 @@ $user_id = isset($userData->id)?$userData->id:'';
             },
             success: function(response_data) {
                 if (response_data.status === true) {
+                    
                     $('#email_success').css('color', 'green');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
+                    $("#email_success").fadeOut(2000);
+                    setTimeout(function() {
+                     $('.email-error').show();
+                    }, 2000);
+                    
                 } else {
                     $('#email_success').css('color', 'red');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
                     $("#email_success").fadeOut(10000);
+                    setTimeout(function() {
+                     $('.email-error').show();
+                    }, 2000);
                 }
 
             },
