@@ -619,19 +619,26 @@ font-weight: 800;
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     color: rgba(54, 60, 79, 0.5);
-    padding: 10px 14px;
+    padding: 0 14px;
     border-radius: 8px;
     font-weight: 500;
     z-index: 2;
     position: relative;
 }
 ::-webkit-calendar-picker-indicator{
-  opacity:0;
+    opacity:0;
+    background: transparent;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }
 .planner-date .clander-icon{
 right: 14px;
 bottom: 11px;
-z-index: 1;
 }
 .planner-date label {
     font-size: 14px;
@@ -761,6 +768,9 @@ vertical-align: super;
     top: 20px;
     background-image: none;
 }
+.custom_modal .custom-input{
+padding-bottom: 320px;    
+} 
 .Calendar-title{
 font-size: 24px;
 color: #1f1f1f;
