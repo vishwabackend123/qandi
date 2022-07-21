@@ -275,6 +275,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         editProfileCheck();
     });
     $('#file-input').change(function() {
+        if(this.files[0].size > 2097152)
+        {
+            alert("Image size is greater than 2 MB");
+            return false;
+        }
         editProfileCheck();
     });
 

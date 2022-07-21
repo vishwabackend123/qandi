@@ -116,6 +116,10 @@ $(document).ready(function(){
     var fileTypes = ['jpg', 'jpeg', 'png'];
 
     function readFile(input) {
+        if(input.files[0].size > 2097152)
+        {
+            return false;
+        }
         if (input.files && input.files[0]) {
             var extension = input.files[0].name.split('.').pop().toLowerCase(),
                 isSuccess = fileTypes.indexOf(extension) > -1;
