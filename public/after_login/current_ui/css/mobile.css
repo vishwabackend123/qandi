@@ -423,6 +423,35 @@
     .plan_box_status_contant_qi {
         font-size: 12px;
     }
+    .plan_successfull_heder_icon2 {
+        margin-top: 18px;
+        height: 40px;
+        width: 40px;
+    }
+    .plan_success_congrats_msg
+    {
+        padding: 20px 20px;
+    }
+    .plan_box_status_contant_order_qi
+    {
+        padding: 10px 0;
+    }
+    .plan_order_summary_detailss {
+        margin-top: 4px;
+    }
+    .plan_successfull_go_to_dashboard
+    {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .plan_successfull_heder_icon_img
+    {
+        height: 40px;
+        width: 40px;
+        margin-bottom: 40px;
+        margin-left: 12px;
+        margin-top: 30px;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
