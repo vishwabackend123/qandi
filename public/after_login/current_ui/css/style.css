@@ -5398,7 +5398,8 @@ td.mymatrix_table_point
     padding: 0px 0px 15px;
 }
 
-#referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;width:100%;}
+#referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;width:100%;height: 100%;
+    margin: 0px auto;}
 
 .user-profile-sec>h2 {
     font-size: 24px;
