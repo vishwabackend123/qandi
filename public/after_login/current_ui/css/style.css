@@ -4138,7 +4138,7 @@ justify-content: space-between;}
             height: 45px;
             font-weight: 500;
             border: 1px solid #d0d5dd;
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(54, 60, 79, 0.5);margin-bottom:0px; padding: 10px 14px;
             border-radius: 8px;padding-right:120px;}
 /********* Shubham End ***********/
@@ -5422,7 +5422,7 @@ td.mymatrix_table_point
     padding: 8px 24px;
     width: 140px;
     font-size: 14px !important;
-    font-weight: bolder !important;
+    font-weight: 800 !important;
     font-size: inherit;
     font-weight: inherit;
     font-stretch: normal;
@@ -5476,7 +5476,7 @@ border-color: #56b663;
     color: #212529;}
 #referfrnd .form-label {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
     color: #363c4f;
 }
 
@@ -5484,7 +5484,7 @@ border-color: #56b663;
     padding-right: 4px;
     color: #1f1f1f;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 #referfrnd form+p {
@@ -5517,13 +5517,13 @@ border-color: #56b663;
     border-radius: 0px 8px 8px 0px;
     background: #56b663;
     color: #fff;
-    padding: 9px 13px;
+    padding: 9px 20px;
     font-size: 16px;
     font-weight: 800;
-    position: absolute;width: 117px;
+    position: absolute;
     right: 0px;
     top: 0px;
-    height: 44px;
+    height: 45px;
 }
 
 #referfrnd input::placeholder {
