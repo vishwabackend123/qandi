@@ -384,9 +384,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
-                                                        {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
+                                                        {{$myq_matrix[0]}}
                                                         @else
-                                                        00
+                                                        0
                                                         @endif <span class="topictext">Topics</span>
                                                     </h3>
                                                     <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -409,9 +409,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
-                                                        {{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}
+                                                        {{$myq_matrix[0]}}
                                                         @else
-                                                        00
+                                                        0
                                                         @endif
                                                         <span class="topictext">Topics</span>
                                                     </h3>
@@ -435,9 +435,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[2]))
-                                                        {{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}
+                                                        {{ $myq_matrix[2]}}
                                                         @else
-                                                        00
+                                                        0
                                                         @endif <span class="topictext">Topics</span>
                                                     </h3>
                                                     <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -460,9 +460,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_4">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[3]))
-                                                        {{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}
+                                                        {{ $myq_matrix[3]}}
                                                         @else
-                                                        00
+                                                        0
                                                         @endif <span class="topictext">Topics</span>
                                                     </h3>
                                                     <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -663,7 +663,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                             </svg> -->
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="progressJourny_graph" style="height:190px;"></canvas>
+                                                    <canvas id="progressJourny_graph" style="height:250px;"></canvas>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
@@ -720,7 +720,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph" style="height: 218px;"></canvas>
+                                                    <canvas id="trend_graph" style="height: 250px;"></canvas>
                                                 </div>
                                             </div>
                                             @if (!empty($trendResponse))

@@ -914,7 +914,7 @@ color: #008799;
 .selectbox{
 border-color: #56b663;    
 }
-/*****practic_exam-end**********/
+/*****practic_exam-end**********/   
 
 /*********** Navdeep End *************/
 
@@ -2575,7 +2575,21 @@ line-height: 1.6;
  }
  
 /********************End-Dashboard-By-Sachin-Date-06-07-22**************/
-
+ /************Subscription-Responsive-Element Sachin Start Date:20-07-22 *********/
+.planenameformob {justify-content: space-between;border-bottom: 1px solid rgba(86, 182, 99, 0.2);padding-bottom: 20px;}
+.planenameformob .planeName{border:none;padding-bottom: 0px;}
+.planenameformob .peryearPrice{margin-top: 16px;font-size: 18px;}
+.planenameformob .planeName p{padding: 0px;margin-bottom: 0px;}
+.planenameformob .peryearPrice sub {padding-left: 3px;}
+.hideondesktop{display: none;}
+.autoHeight{height: auto !important;   transition: transform 0.3s ease-in-out;}
+.allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
+.quest_btn{position: absolute;top: 0px;}
+.qprev {left: 11px; }
+.qnext{right:11px; ;}
+.qnext , .qprev  {font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
+.examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
+ /************ Subscription-Responsive-Element-Sachin End Date:20-07-22 ************/
 
 /***************** Sachin End ****************************/
 
@@ -3327,7 +3341,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 }
-
+.footerheding{padding-left:0px;padding-right:0px;}
 .chapter_performance_card ul.topic_score_lists li {width: 100%;margin-bottom: 27px;}
 .chapter_performance_card ul.topic_score_lists {max-height: 234px;}
 .chapter_performance_card .color_labels {
@@ -3338,10 +3352,11 @@ transform: translate(-50%,-50%);
 .overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
 a.btn-close,a.btn-close:hover{opacity: 1;}
 .myqmatPannel a:hover{text-decoration:none;}
+
 .testPlanCard.testplannewuser {
     max-width: 330px;
     width: 100%;
-    border: solid 1px #e1e3ed;
+    border: solid 1px #e1e3ed;margin-left:0px;
 }
 .verifiaction-link p b {
     font-weight: 800;
@@ -3406,7 +3421,7 @@ span.greenball-3 {
     padding: 20px 40px 20px 32px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
     background: #fff;    position: relative;
-    z-index: 99999;
+    z-index: 99;
 }
 
 .headerLeft {
@@ -3861,6 +3876,7 @@ header {
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
+    min-height:244px;
 }
 .myqcolor1 {
     background-color: #d9f99d;
@@ -4103,8 +4119,16 @@ justify-content: space-between;}
        .profileicon{width: 100%;
         height: 100%;
         border-radius: 10px;margin-top:-1px;}
-        .modal-open .modal{z-index: 999999;}
-        .modal-backdrop{    z-index: 99999;}
+/*        .modal-open .modal{z-index: 999999;}*/
+/*        .modal-backdrop{    z-index: 99999;}*/
+        .referfriendlink {background: #fff !important;
+            box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%) !important;
+            height: 45px;
+            font-weight: 500;
+            border: 1px solid #d0d5dd;
+            font-size: 16px;
+            color: rgba(54, 60, 79, 0.5);margin-bottom:0px; padding: 10px 14px;
+            border-radius: 8px;padding-right:120px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5382,9 +5406,10 @@ td.mymatrix_table_point
     height: inherit;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
     min-width: inherit;
-    padding: 8px 24px;width: 131px;
-    font-size: 14px;
-    font-weight: 800;
+    padding: 8px 24px;
+    width: 140px;
+    font-size: 14px !important;
+    font-weight: bolder !important;
     font-size: inherit;
     font-weight: inherit;
     font-stretch: normal;
@@ -5393,13 +5418,14 @@ td.mymatrix_table_point
     line-height: normal;
     letter-spacing: normal;
     background-image: inherit !important;
-    text-transform: capitalize
+    text-transform: capitalize;
+    height: 38px;
 }
 
 #referfrnd .modal-body {
     padding: 0px 28px 28px;
 }
-
+#referedfrnd  .modal-body{padding-bottom:20px;}
 #referfrnd button.btn:hover {
     background-image: none !important;
     background-color: #56b663 !important;
@@ -5416,15 +5442,22 @@ td.mymatrix_table_point
     position: relative;
 }
 .use-text {
-    font-size: 16px;
+    font-size: 14px;
     color: #868a95;
 }
 
 #referfrnd input {
     background: #fff !important;box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
-    height: 45px;
+    height: 44px;
     font-weight: 500;
     border: 1px solid #d0d5dd;font-size: 16px;color: #1f1f1f;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgba(54, 60, 79, 0.5);
+}
+#referfrnd input:focus{
+border-color: #56b663;    
 }
 #referfrnd input#linkInput{padding-right: 114px;font-size: 16px;
     color: #212529;}
@@ -5436,7 +5469,7 @@ td.mymatrix_table_point
 
 #referfrnd .Note {
     padding-right: 4px;
-    color: #363c4f;
+    color: #1f1f1f;
     font-size: 14px;
     font-weight: 800;
 }
@@ -5471,17 +5504,32 @@ td.mymatrix_table_point
     border-radius: 0px 8px 8px 0px;
     background: #56b663;
     color: #fff;
-    padding: 10px 13px;
+    padding: 9px 13px;
     font-size: 16px;
     font-weight: 800;
     position: absolute;width: 117px;
     right: 0px;
     top: 0px;
+    height: 44px;
 }
 
 #referfrnd input::placeholder {
     color: rgba(54, 60, 79, 0.5) !important;
 }
+
+#referfrnd input::placeholder {
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+  
+  #referfrnd input:-ms-input-placeholder { 
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+  
+  #referfrnd input::-ms-input-placeholder {
+    color: rgba(54, 60, 79, 0.5) !important;
+  }
+
+
 
 .invation-sec {
     text-align: center;
