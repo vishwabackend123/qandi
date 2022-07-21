@@ -48,7 +48,7 @@
                             <div class="tab-content aect_tabb_contantt">
                                 <div id="evaluation" class="tab-pane active">
                                     <div class="questionsliderinner">
-                                        <div class="questionSlider owl-carousel owl-theme">
+                                        <div class="questionSlider1">
                                             <div class="item">
                                                 <div class="questionsliderbox">
                                                     <div class="questionwrapper">
@@ -137,252 +137,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="item">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="item">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="item">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="item">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="item">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    GivenGiven A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the
-                                                                    value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then
-                                                                    find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value of l3ABl. A and B are sqaure matrices of order 3 such that lAl=-1lBl=3,
-                                                                    then find the value of l3ABl.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt1" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt1" class="image-bg"> <span class="seNo">A</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt2" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt2" class="image-bg"> <span class="seNo">B</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt3" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt3" class="image-bg"> <span class="seNo">C</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="colMargin">
-                                                                    <div class="image-container">
-                                                                        <input type="radio" id="opt4" name="ff-radiobuttons" class="correct" />
-                                                                        <label for="opt4" class="image-bg"> <span class="seNo">D</span> <span class="optionText">cccccccccccccccccccccccccc</span> </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
                                         </div>
-
+                                        <div class="examQuestionarrow">
+                                            <button type="button" class="qprev quest_btn"><span class="Previous">‹</span></button>
+                                            <button type="button" class="qnext quest_btn"><span class="Next">›</span></button>
+                                        </div>
                                     </div>
-
+ 
 
                                     <div class="btnbottom">
                                         <div class="questionbtnBlock">
@@ -391,19 +152,18 @@
                                         </div>
                                     </div>
 
-
                                 </div>
                                 <div id="application" class="tab-pane">adasdas</div>
                                 <div id="complrehension" class="tab-pane">complrehension</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="btnbottom">
+                        </div>   
+                    </div>  
+                  <!--  <div class="btnbottom">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns"><button class="btn questionbtn">Mark for Review</button> <button class="btn questionbtn Clearbtn">Clear Response</button></div>
                             <div class="questionRightbtns"><button class="btn questionbtn">Save & Mark for Review</button> <button class="btn questionbtn">Save & Next</button></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="examRightpanel">
@@ -524,16 +284,6 @@
     </div>
 
 
-    <script>
-        $('.questionSlider').owlCarousel({
-
-            loop: false,
-            margin: 0,
-            nav: true,
-            dots: false,
-            items: 1,
-
-        })
-    </script>
+  
 
     @endsection
