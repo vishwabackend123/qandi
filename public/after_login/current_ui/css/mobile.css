@@ -232,6 +232,9 @@
         display: none;
     }
     .mobile_text_topics_proficiency{display: none!important;}
+    .back_button_waraper_text {
+        display: none;
+    }
 }
 @media(max-width:767px){
     .mobile_hide{display:none!important}
@@ -423,6 +426,51 @@
     .plan_box_status_contant_qi {
         font-size: 12px;
     }
+    .plan_successfull_heder_icon2 {
+        margin-top: 18px;
+        height: 40px;
+        width: 40px;
+    }
+    .plan_success_congrats_msg
+    {
+        padding: 20px 20px;
+    }
+    .plan_box_status_contant_order_qi
+    {
+        padding: 10px 0;
+    }
+    .plan_order_summary_detailss {
+        margin-top: 4px;
+    }
+    .plan_successfull_go_to_dashboard
+    {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .plan_successfull_heder_icon_img
+    {
+        height: 40px;
+        width: 40px;
+        margin-bottom: 40px;
+        margin-left: 12px;
+        margin-top: 30px;
+    }
+    .aeck_tab_in_tab_chapter_topic_section
+    {
+        padding-right: 0px;
+    }
+    .aeck_polish_strength_btn
+    {
+        display: none;
+    }
+    button.btn.aeck_filter_btn
+    {
+        margin-right: 0px;
+    }
+    .aeck_tab_in_tab_chapter_topic .tab-content
+    {
+        padding: 0px 0px;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -559,12 +607,30 @@
  .subscriptionsPage .testType{padding-top:24px;}
 .hideonmobile{display: none;}
 .hideondesktop{display: block;}
-.testTypeulbox{height: 150px; overflow: hidden;}
-.allbenefitsbtn{display: block;}
+.testTypeulbox{height: 120px; overflow: hidden;}
+.allbenefitsbtn{display: block;padding-top: 16px;}
 .getDiscount {padding: 20px;display: block;}
 .getDiscount .planPayment .testType{width: 100%;}
 .applyCo {padding-top: 10px;width: 100%;}
 .getDiscount .planPayment {display: flex;flex-flow: column-reverse;}
+.pageCountBox{display: flex;justify-content: space-between;}
+.pagecount {font-size: 16px;font-weight: 500;line-height: 1.25;text-align: left; color: #363c4f;display: block;}
+.activePage{color: #56b663;}
+.backtobutton .backBtn{padding-top: 15px;padding-bottom: 44px;}
+.checkoutpage  .planPayment {display: flex;flex-flow: column-reverse;padding: 20px;}
+.checkoutpage  .planPayment .testType { padding: 0px;border-top: 1px solid #e4e2e2;border-right: none;}
+.checkoutpage  .testType ul li {font-size: 14px;line-height: 3;display: flex;align-items: center;font-size: 14px;font-weight: 500;color: #363c4f; line-height: initial; display: flex;align-items: flex-start; margin-bottom: 18px;}
+.checkoutpage .planPayment .testType h2{font-size: 14px;font-weight: 800;line-height: 1.29;margin: 0px; padding: 24px 0px;}
+.securedpayment .secured{position: inherit; }
+.securedpayment{text-align: center;  padding-bottom: 23px;}
+.securedpayment .secured p {justify-content: center;}
+.checkoutpage .inst {padding: 18px 0px;}
+.checkoutpage .applyCoform h3 {font-size: 18px;}
+.checkoutpage .testType ul{margin: 0px;;}
+.checkoutpage{height: auto;}
+.checkoutpage {display: block;padding: 32px 16px 59px;}
+.checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
+
  /************ Sachin End Date:20-07-22 ************/
         
 }
