@@ -1,6 +1,85 @@
 @extends('afterlogin.layouts.app_new')
 
 @section('content')
+<style>
+    .timing {
+        color: #2c3348;
+        font-size: 18px;
+        line-height: 27px;
+        margin-left: 30px;
+    }
+
+    .tiny-green {
+        margin-right: 30px;
+    }
+
+    .base-timer {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
+    .base-timer__svg {
+        transform: scaleX(1);
+        background: #f1f3f4;
+        border-radius: 50%;
+    }
+
+    .base-timer__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+        stroke-width: 7px;
+        stroke: grey;
+    }
+
+    .base-timer__path-remaining {
+        stroke-width: 7px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.arc {
+        /* color: rgba(179, 48, 102, 0.973) */
+        color: #44cd7f;
+    }
+
+    .base-timer__label {
+        /* position: absolute;
+    
+    height: 80px; 
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;*/
+        width: 80px;
+        font-weight: 600;
+    }
+
+    /****SACHIN****/
+    .watch-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        transform: translate(-50%, -50%);
+    }
+
+    .number-block .btn {
+        min-width: 36px;
+        height: 36px;
+        margin-right: 25px;
+        padding: 0;
+    }
+</style>
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -212,20 +291,36 @@ $question_type = "Numerical";
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec">
                             <p>
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <div class="" id="app">
+                                <div class="base-timer">
+                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="base-timer__circle">
+                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                        </g>
+                                    </svg>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                </div>
+                            </div>
+                            <!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                     <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> -->
+                            <span id="base-timer-label" class="base-timer__label"> Left</span>
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
                                 </svg>
-                                <span id="base-timer-label" class="base-timer__label"> Left</span>
-                                <label>
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                    </svg>
-                                </label>
+                            </label>
                             </p>
                         </div>
                         <div class="text-exammid-sec borederbot">
@@ -479,12 +574,6 @@ $question_type = "Numerical";
     <script type="text/javascript">
         $(window).on('load', function() {
             $('#test_instruction').modal('show');
-
-        });
-
-        $('#goto-exam-btn').click(function() {
-            $('#mainDiv').show();
-            $('#exam_content_sec').show();
             setboxHeight();
             startTimer();
             questionstartTimer();
@@ -493,6 +582,12 @@ $question_type = "Numerical";
                 $('#quest_option_' + activeques_id).focus();
             }
         });
+        /* 
+                $('#goto-exam-btn').click(function() {
+                    $('#mainDiv').show();
+                    $('#exam_content_sec').show();
+                   
+                }); */
         $('.selctbtn').click(function() {
             $('.qoption_error').hide();
         });

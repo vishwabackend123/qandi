@@ -619,7 +619,7 @@ $questtype='radio';
 
     });
 
-    $('#goto-exam-btn').click(function() {
+    /* $('#goto-exam-btn').click(function() {
         $('#mainDiv').show();
         $('#exam_content_sec').show();
         setboxHeight();
@@ -629,7 +629,7 @@ $questtype='radio';
         if ($('#quest_option_' + activeques_id).length > 0) {
             $('#quest_option_' + activeques_id).focus();
         }
-    });
+    }); */
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
