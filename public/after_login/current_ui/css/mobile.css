@@ -232,6 +232,9 @@
         display: none;
     }
     .mobile_text_topics_proficiency{display: none!important;}
+    .back_button_waraper_text {
+        display: none;
+    }
 }
 @media(max-width:767px){
     .mobile_hide{display:none!important}
