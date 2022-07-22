@@ -36,7 +36,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         <div class="selectPlan subscriptionsRightpannel">
             <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
             <div class="SelectPlane_text">
-                <h3>Select Plan</h3>
+                <h3 class="pageCountBox">Select Plan<span class="pagecount hideondesktop"><span class="activePage">1</span>/3</span></h3>
                 <p>Decide on the best plan for your preparation</p>
             </div>
             @if(isset($subscriptions) && !empty($subscriptions))
@@ -160,7 +160,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits</div>
+                    <div class="allbenefitsbtn">Show all benefits
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
@@ -274,7 +280,14 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits</div>
+                    <div class="allbenefitsbtn">Show all benefits
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+
+                    </div>
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
@@ -397,7 +410,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits</div>
+                    <div class="allbenefitsbtn">Show all benefits
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
                 </div>
                 <div class="planType">
                     @if($sub->trial_subscription_duration>0)
@@ -527,7 +546,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits</div>
+                    <div class="allbenefitsbtn">Show all benefits
+                    <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </div>
                   
                 </div>
                 <div class="planType">
