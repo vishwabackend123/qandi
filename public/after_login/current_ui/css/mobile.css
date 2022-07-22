@@ -237,6 +237,9 @@
     }
 }
 @media(max-width:767px){
+    .planner-box{
+    padding: 20px;    
+    }
     .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {

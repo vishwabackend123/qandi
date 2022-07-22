@@ -179,20 +179,20 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="timemanagement common_greenbadge_tabs">
-                                                <h4 class="garphsubheading mt-2">Time for correct/incorrect answer</h4>
+                                                <h4 class="garphsubheading">Time for correct/incorrect answer</h4>
                                                 <div class="barwithTAb">
-                                                    <div class="subjectperformLegend ">
-                                                        <div class="commonSubjectLeg">
+                                                    <div class="subjectperformLegend mb-0">
+                                                        <div class="commonSubjectLeg mt-0">
                                                             <span class="bar greenbar"></span>
                                                             <label class="text">Correct Answers</label>
                                                         </div>
-                                                        <div class="commonSubjectLeg">
+                                                        <div class="commonSubjectLeg  mt-0">
                                                             <span class="bar pinkbar"></span>
                                                             <label class="text">Incorrect answers</label>
                                                         </div>
                                                     </div>
                                                     <div class="righttabBlock">
-                                                        <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab1" role="tablist">
+                                                        <ul class="nav nav-pills mb-0 d-inline-flex" id="marks-tab1" role="tablist">
                                                             <li class="nav-item" role="presentation">
                                                                 <button class="nav-link btn active" id="pills-Day1-tab" data-bs-toggle="pill" data-bs-target="#pills-Day1" type="button" role="tab" aria-controls="pills-Day1" aria-selected="true">Day</button>
                                                             </li>
@@ -269,11 +269,11 @@
                                                 <div class="subjectperformLegend ">
                                                     <div class="commonSubjectLeg">
                                                         <span class="bar greenbar"></span>
-                                                        <label class="text">Class Average</label>
+                                                        <label class="text">Correct Answers</label>
                                                     </div>
                                                     <div class="commonSubjectLeg">
                                                         <span class="bar pinkbar"></span>
-                                                        <label class="text">Student average</label>
+                                                        <label class="text">Incorrect answers</label>
                                                     </div>
                                                 </div>
                                                 <div class="righttabBlock">
