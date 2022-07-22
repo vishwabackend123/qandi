@@ -33,9 +33,9 @@ $userData = Session::get('user_data');
 
 
                             <h2 class="week-select pb-3">Select a week</h2>
-                            <div class="row">
+                            <div class="row mb-md-0 mb-4">
                                 <div class="col-lg-4">
-                                    <div class="planner-date position-relative">
+                                    <div class="planner-date position-relative mb-lg-0 mb-3">
                                         <label>Start Date</label>
                                         <input type="date" class="form-control plannerDate" id="StartDate" name="start_date" min="{{$mondayDate}}" value="{{$mondayDate}}" onkeydown="return false">
                                         <span class="position-absolute clander-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +43,7 @@ $userData = Session::get('user_data');
                                             </svg></span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 mb-lg-0 mb-4 pb-2">
                                     <div class="planner-date position-relative">
                                         <label>End Date</label>
                                         <input type="date" class="form-control plannerDate" id="EndDate" name="end_date" value="{{$sundayDate}}" onkeydown="return false">
