@@ -3562,10 +3562,10 @@ header {
     height: 100%;
 }
 
-.notification-block_new.activeblock,.notification-block_new.show {
+/* .notification-block_new.activeblock,.notification-block_new.show {
     right: 0px !important;
     transition: 0.5s;
-}
+} */
 
 /*****************dashboard*******************/
 
@@ -3751,7 +3751,7 @@ header {
     min-width: 120px;
 }
 .commontab .nav-tabs .nav-link {
-    padding: 0px 0px 15px;
+    padding: 0px 0px 25px;
     opacity: 0.6;
     border: 0px;
     font-size: 16px;
@@ -4671,7 +4671,7 @@ justify-content: space-between;}
     margin-right: 28px;
     margin-bottom:0px;
 }
-.chapter_preficiency_warpper li.breadcrumb-item a
+.chapter_preficiency_warpper li.breadcrumb-item a, .chapter_breadcrumb li.breadcrumb-item a
 {
     font-size: 16px;
     font-weight: 800;
@@ -4679,7 +4679,7 @@ justify-content: space-between;}
     letter-spacing: normal;
     color: #56b663;
 }
-.chapter_preficiency_warpper li.breadcrumb-item.active
+.chapter_preficiency_warpper li.breadcrumb-item.active, .chapter_breadcrumb li.breadcrumb-item.active
 {
     font-size: 16px;
     font-weight: 800;
@@ -4690,8 +4690,7 @@ justify-content: space-between;}
 
 .knowledge_left_clr_with_text {
     display: flex;
-    align-items: center;
-    padding-right: 30px;
+    padding-right: 40px;
 }
 
 .knowledge_left_clr_with_text_right_div {
@@ -4702,6 +4701,8 @@ justify-content: space-between;}
 .chapter_profici_nav__right_contant {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 9px;
 }
 
 .cotogaty_right_text {
@@ -4793,7 +4794,7 @@ justify-content: space-between;}
 }
 .chapter_breadcrumb
 {
-    padding-top:26px;
+    padding-top:36px;
     background:#f5faf6;
 }
 .chapter_prefincy_tab.active
@@ -4814,8 +4815,9 @@ justify-content: space-between;}
 {
     background: #e9e9e9;
     height: 12px;
-    border-radius: 6px;
+    border-radius: 10px;
     margin: 18px 0 12px;
+    overflow: hidden;
 }
 .common_bar_sky_blue
 {
@@ -4839,7 +4841,7 @@ background: #3e8a44;
     width:25%;
     height: 12px;
 }
-.common_bars_flex span:first-child
+/* .common_bars_flex span:first-child
 {
     border-top-left-radius: 32px;
     border-bottom-left-radius: 32px;
@@ -4848,7 +4850,7 @@ background: #3e8a44;
 {
     border-top-right-radius: 32px;
     border-bottom-right-radius: 32px;
-}
+} */
 
 
 
@@ -5077,7 +5079,7 @@ padding: 11px 20px!important;
     padding: 0px!important;
 }
 .aeck_commontab .nav-tabs .nav-link {
-    margin-right: 46px!important;background-color:transparent;margin-bottom: 0;font-weight:600;
+    margin-right: 60px!important;background-color:transparent;margin-bottom: 0;font-weight:600;
 }
 
 /* **********start mock test   ********** */
@@ -5321,9 +5323,34 @@ td.mymatrix_table_point
 .notification-main {
     background: #fff;
     width: 456px;
-    max-width: 100%;
-    float: right;
     padding: 30px;
+    right: -100%!important;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 9;
+    top: 11px;
+    margin-top: 70px;
+    height: 100%;
+}
+.activeblock .notification-main{
+    right: 0%!important;
+    transition: 0.5s; 
+}
+.activeblock.notification-block_new {
+    position: fixed;right: auto !important;
+}
+.notification-block_new{
+    position: relative;
+    width: 95.8%;
+}
+.activeblock.notification-block_new::before{
+    content: "";
+    left: 0px;
+    width:100%;
+    height:100%;
+    top:0;
+    background-color: rgb(31,31,31,0.3);
+    position: absolute;
 }
 
 .new_notification_main_sec {

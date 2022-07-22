@@ -216,7 +216,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data->response) ? $response_data->response : [];
 
-
+                dd($response);
                 return view('afterlogin.ExamCustom.exam_result1', compact('response'));
             } else {
                 return false;
@@ -431,7 +431,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title','result_id'));
             } else {
 
                 //return redirect()->back();
@@ -450,7 +450,91 @@ class ResultController extends Controller
      */
     public function examResultAnalytics($result_id)
     {
-        return view('afterlogin.ExamCustom.exam_result_analytics');
+        //return view('afterlogin.ExamCustom.exam_result_analytics');
+        $userData = Session::get('user_data');
+
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
+        if (Redis::exists('exam_name' . $user_id)) {
+            //$exam_name = Session::get('exam_name');
+            $cacheKey = 'exam_name' . $user_id;
+            $exam_name = Redis::get($cacheKey);
+        } else {
+            $exam_name = '';
+        }
+
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
+        $curl_option = array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        );
+        curl_setopt_array($curl, $curl_option);
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response_data = (json_decode($response_json));
+            $scoreResponse = isset($response_data->response) ? $response_data->response : [];
+        } else {
+            $scoreResponse = [];
+        }
+
+        $curl_url2 = "";
+        $curl2 = curl_init();
+        $curl_url2 = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
+        $curl_option2 = array(
+            CURLOPT_URL => $curl_url2,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        );
+        curl_setopt_array($curl2, $curl_option2);
+
+        $response_json = curl_exec($curl2);
+
+        $err = curl_error($curl2);
+        $httpcode = curl_getinfo($curl2, CURLINFO_HTTP_CODE);
+        curl_close($curl2);
+
+        $response_data = json_decode($response_json);
+        $response = isset($response_data->response) ? $response_data->response : [];
+        $check_response = isset($response->success) ? $response->success : false;
+
+        if ($check_response == true) {
+            $rankResponse = isset($response_data->response) ? $response_data->response : [];
+        } else {
+            $rankResponse =  [];
+        }
+
+
+        return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse'));
     }
     /**
      * Ajax Exam Result List

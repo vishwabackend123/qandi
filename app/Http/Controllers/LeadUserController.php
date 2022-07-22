@@ -113,13 +113,19 @@ class LeadUserController extends Controller
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
-            $response_status = isset($response_json['success']) ? $response_json['success'] : false;
+            $response_status = isset($response_json['status']) ? $response_json['status'] : false;
             $email_id = '';
-            if ($response_status == true) {
+            if ($response_status) {
             	$email_id = isset($response_json['email']) ? $response_json['email'] : ''; 
             }else
             {
-            	abort(500, $response_json['error']);
+            	if (isset($response_json['error']) && !empty($response_json['error'])) {
+            		abort(500, $response_json['error']);	
+            	}else
+            	{
+            		abort(500, "Token Expired, please resend email verification");
+            	}
+            	
             }
 		return view('auth.email_confirmation',compact('email_id'));
 	}

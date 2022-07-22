@@ -39,12 +39,12 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="text-right">
-                        <button class="btn btn-common-transparent" style="min-width: auto;">
+                        <a href="{{route('exam_review',[$result_id,'attempted'])}}" class="btn btn-common-transparent" style="min-width: auto;">
                             <svg style="vertical-align:middle;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             Review Question
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                                 @foreach($response->subject_wise_result as $subject)
                                 @php $subject=(object)$subject; @endphp
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link btn" id="{{$subject->subject_name}}" {{$disable_class }} data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false">{{$subject->subject_name}}</button>
+                                    <button class="nav-link btn" id="{{$subject->subject_name}}" {{$disable_class }} data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button>
                                 </li>
                                 @endforeach
                                 @endif
@@ -127,7 +127,7 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
-                                    <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
+                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?$response->result_percentage:0}}%</label>
                                     <div class="overall_percentage_chart">
                                         <canvas id="myChart"></canvas>
                                     </div>
@@ -381,7 +381,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: ['My Percentage', 'Class Average'],
         datasets: [{
-            data: [12, 22],
+            data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
                 '#6ee7b7',
@@ -412,9 +412,34 @@ const myChart = new Chart(ctx, {
     }
 });
 
-/***************** halfdoughnut - start *********************/
+function resetData(subject_id) {
+    if (subject_id == 'all') {
+        myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+        myChart.update();
+        let overall_percent = '<?php echo number_format($response->result_percentage, 2); ?>';
+        $("#percentage").val(overall_percent);
 
+    } else {
+        var graphArr = <?php echo json_encode($subject_graph); ?>;
+        var studet_score = [];
+        var class_score = [];
+        const iterator = graphArr.values();
+        for (const value of iterator) {
+            if (value.subject_id == subject_id) {
+                studet_score.push(value.student_score)
+                studet_score.push(value.class_score)
+                var percentage = value.student_score
+            }
+        }
+        myChart.data.datasets[0].data = studet_score;
+        myChart.update();
 
+        $("#percentage").val(percentage);
+    }
+}
+
+</script>
+<script>
 /***********my-score************************* */
 const myscorecir = 260;
 const myscoredata = {
@@ -460,11 +485,34 @@ const myscoreconfig = {
     }
 };
 const myscore = new Chart("myscoregraph", myscoreconfig)
+$("span.tooltipmain svg").click(function(event) {
+    event.stopPropagation();
 
-/***************** halfdoughnut - end *********************/
-function resetData(subject_id){
-    
-}
+    var card_open = $(this).siblings("p").hasClass('show');
+    if (card_open === true) {
+        $(this).siblings("p").hide();
+        $(this).siblings("p").removeClass('show');
+    } else {
+        $("span.tooltipmain p.tooltipclass span").each(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+        $(this).siblings("p").show();
+        $(this).siblings("p").addClass('show');
+    }
+
+});
+$("span.tooltipmain p.tooltipclass span").click(function() {
+    $(this).parent("p").hide();
+    $(this).parent("p").removeClass('show');
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
+    }
+});
 
 </script>
 @endsection
