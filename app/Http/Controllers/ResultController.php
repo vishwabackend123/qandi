@@ -430,8 +430,8 @@ class ResultController extends Controller
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
-
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response'));
+                $header_title = "Test Analysis";
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title'));
             } else {
 
                 //return redirect()->back();

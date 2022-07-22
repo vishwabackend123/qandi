@@ -544,9 +544,10 @@ border-color: #56b663;
     color: #56b663;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 19px;
 }
-
+.upgradebtn{
+    line-height: 24px;
+}
 .subs-alld h2 {
     font-size: 14px;
     font-weight: normal;
@@ -619,19 +620,26 @@ font-weight: 800;
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     color: rgba(54, 60, 79, 0.5);
-    padding: 10px 14px;
+    padding: 0 14px;
     border-radius: 8px;
     font-weight: 500;
     z-index: 2;
     position: relative;
 }
 ::-webkit-calendar-picker-indicator{
-  opacity:0;
+    opacity:0;
+    background: transparent;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }
 .planner-date .clander-icon{
 right: 14px;
 bottom: 11px;
-z-index: 1;
 }
 .planner-date label {
     font-size: 14px;
@@ -761,6 +769,9 @@ vertical-align: super;
     top: 20px;
     background-image: none;
 }
+.custom_modal .custom-input{
+padding-bottom: 320px;    
+} 
 .Calendar-title{
 font-size: 24px;
 color: #1f1f1f;
@@ -3876,7 +3887,7 @@ header {
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 20px;
-    min-height:244px;
+    min-height:243px;
 }
 .myqcolor1 {
     background-color: #d9f99d;
@@ -3951,7 +3962,7 @@ header {
 .myqarrow {
     width: 20px;
     height: 20px;
-    cursor: pointer;
+    cursor: pointer;margin-top:-8px;
 }
 
 .moreTaskLink .commmongreenLink {
@@ -4116,9 +4127,11 @@ justify-content: space-between;}
         /* .selectdata option:hidden{color: red!important;} */
         .selectdata option:disabled{color: #a2a0a0!important;}
         .custom-input .form-control.selectdata{color:#363c4f!important;}
-       .profileicon{width: 100%;
-        height: 100%;
-        border-radius: 10px;margin-top:-1px;}
+       .profileicon{width: 101%;
+        height: 101%;
+        border-radius: 8px;
+        margin-top: -1.2px;
+        margin-left: -0.3px;}
 /*        .modal-open .modal{z-index: 999999;}*/
 /*        .modal-backdrop{    z-index: 99999;}*/
         .referfriendlink {background: #fff !important;
@@ -4126,9 +4139,13 @@ justify-content: space-between;}
             height: 45px;
             font-weight: 500;
             border: 1px solid #d0d5dd;
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(54, 60, 79, 0.5);margin-bottom:0px; padding: 10px 14px;
             border-radius: 8px;padding-right:120px;}
+
+.progressnewjourney{height:100%;}
+.progressnewjourney canvas{height:calc(100% + 40px);}
+
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5386,8 +5403,9 @@ td.mymatrix_table_point
     padding: 0px 0px 15px;
 }
 
-#referfrnd .modal-dialog {max-width: 416px;}
-
+#referfrnd .modal-dialog,#referedfrnd .modal-dialog {max-width: 416px;width:100%;height: 100%;
+    margin: 0px auto;}
+#referedfrnd .btn-close {padding-right: 18px;}
 .user-profile-sec>h2 {
     font-size: 24px;
     font-weight: 800;
@@ -5409,7 +5427,7 @@ td.mymatrix_table_point
     padding: 8px 24px;
     width: 140px;
     font-size: 14px !important;
-    font-weight: bolder !important;
+    font-weight: 800 !important;
     font-size: inherit;
     font-weight: inherit;
     font-stretch: normal;
@@ -5463,7 +5481,7 @@ border-color: #56b663;
     color: #212529;}
 #referfrnd .form-label {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
     color: #363c4f;
 }
 
@@ -5471,7 +5489,7 @@ border-color: #56b663;
     padding-right: 4px;
     color: #1f1f1f;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 #referfrnd form+p {
@@ -5504,13 +5522,13 @@ border-color: #56b663;
     border-radius: 0px 8px 8px 0px;
     background: #56b663;
     color: #fff;
-    padding: 9px 13px;
+    padding: 9px 20px;
     font-size: 16px;
     font-weight: 800;
-    position: absolute;width: 117px;
+    position: absolute;
     right: 0px;
     top: 0px;
-    height: 44px;
+    height: 45px;
 }
 
 #referfrnd input::placeholder {
@@ -5533,17 +5551,21 @@ border-color: #56b663;
 
 .invation-sec {
     text-align: center;
-    padding: 85px 0px 100px;
+    padding: 106px 0px 118px;
 }
 
 .invation-sec p {
     font-size: 16px;
     font-weight: 600;
     color: #56b663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .invation-sec p span {
-    padding-right: 10px;
+    padding-right: 8px;
+    display: inline-block;
 }
 
 .modal-popup-customize .modal-header {
@@ -5583,16 +5605,21 @@ border-color: #56b663;
     font-size: 16px;
     font-weight: 800;
 }
-.bottom_back-sec .copy {
-    width: 166px;margin-right: 20px;
-    padding: 10px 43px;
+.bottom_back-sec .copy {    width: 166px;
+    margin-right: 20px;
+    padding: 9px 43px;
+    height: 44px;
+    line-height: 1.6;
 }
 
 .bottom_back-sec {
     float: left;
     width: 100%;padding-bottom: 12px;
 }
-
+.backtobtn svg{transform: rotate(180deg);
+    margin-right: 6px;
+    width: 16px;
+    margin-top: -3px;}
 .bottom_back-sec label>i {
     color: #56b663;
     padding-right: 10px; font-size: 14px;

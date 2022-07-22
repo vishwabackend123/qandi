@@ -299,7 +299,7 @@ Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'wee
 Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
 Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']);
 /* Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner'])->middleware('auth', 'menu'); */
-Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
+Route::any('/email_confirmation/{token}', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
 Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);

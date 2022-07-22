@@ -570,6 +570,11 @@
 }
 
 @media only screen and (max-width: 576px){
+    .fliparrow {
+    transform: rotate(90deg);
+    top: 2px;
+    position: relative;
+}
     .loginform {
     width: 100%;
     }
