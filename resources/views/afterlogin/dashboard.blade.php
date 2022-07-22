@@ -29,10 +29,12 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
+                        @if($userData->email_verified=='No')
                         <div class="verifiaction-link">
                             <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="javascript:void(0);" class="resend_email">Resend</a></p>
                             <span class="mt-2" id="email_success"></span>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">

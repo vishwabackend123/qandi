@@ -27,11 +27,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </li>
                 </ul>
             </div>
+            @if($userData->email_verified=='No')
             <div class="verificationBox">
                 <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
                 <a href="javascript:void(0);" class="resend_email">Resend</a>
                 <span class="mt-2" id="email_success"></span>
-            </div>
+            </div>  
+            @endif 
         </div>
         <div class="selectPlan subscriptionsRightpannel">
             <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>

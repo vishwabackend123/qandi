@@ -1,197 +1,302 @@
 @extends('afterlogin.layouts.app_new')
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
-</script>
-<!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $('#endExam').modal('show');
-    });
-</script>
-@php
-$userData = Session::get('user_data');
-@endphp
 @section('content')
-<!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar_new')
-<!-- sidebar menu end -->
-<div class="main-wrapper" id="exam_result_analysis">
-
-    <!-- End start-navbar Section -->
+<div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-
-    <div class="content-wrapper">
-        <div class="container-fluid exam-analytics">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                            <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                            <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                            <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                        </svg>
-                        &nbsp;Export Analytics</button>
-                </div>
+    @include('afterlogin.layouts.sidebar_new')
+    <div class="content-wrapper test_analytics_wrapper">
+        <div class="container-fluid">
+            <div class="mock_inst_text_mock_test mb-4">
+                <a href="{{ url('/dashboard') }}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
-            <div class="row">
-                <div class=" col-lg-4 mb-lg-0 mb-4">
-                    <div class="bg-white shadow-lg p-3 position-relative mb-0">
-
-                        <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
-                        <div class="text-center">
-                            <!-- <img src="images/roundedgraph.jpg"> -->
-                            <div id="scorecontainer"></div>
-                        </div>
-                        <div class="graphdotlisting my-4">
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt">Correct Attempts</span>
-                            </div>
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt">Wrong Attempts</span>
-                            </div>
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt">Not Answered</span>
-                            </div>
-                        </div>
+            <h3 class="commonheading">Mock Test</h3>
+            <div class="row mt-4 mb-4 align-items-end">
+                <div class="col-sm-3">
+                    <div class="question-attempted-block">
+                        <span class="d-block mb-2 commontext">Question Attempted</span>
+                        <label class="m-0 commonboldtext">{{$response->no_of_question - $response->not_answered}}/{{$response->no_of_question}}</label>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <div class="bg-white shadow-lg p-3  position-relative mb-0">
-
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h5 class="dashboard-title mb-3 text-center">Marks Percentage</h5>
-                                <svg viewBox="0 0 36 36" class="circular-chart green">
-                                    <path class="circle-bg" d="M18 2.0845
-                                        a 15.9155 15.9155 0 0 1 0 31.831
-                                        a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}, 100" d="M18 2.0845
-                                        a 15.9155 15.9155 0 0 1 0 31.831
-                                        a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <text x="18" y="22.35" class="percentage">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}}%</text>
+                <div class="col-sm-6">
+                    <div class="time-date-block">
+                        <span class="d-block mb-2 commontext">{{!empty($response->test_attempted_date)?date("j F Y", strtotime($response->test_attempted_date)):''}}</span>
+                        <p class="m-0">
+                            <small class="commontext me-5 pe-4">
+                                <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="d-flex flex-column">
-                                    <div class="map-right-graph">
-                                        <div id="subjectScroe"></div>
-                                        <!-- <img src="images/right-graph.jpg"> -->
-                                    </div>
-                                    <div class="mt-auto btn-block">
-                                        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-                                        @php $count_sub=count($response->subject_wise_result);
-                                        if($count_sub==1){
-                                        $disable_class="disabled" ;
-                                        }else{
-                                        $disable_class="";
-                                        }
-                                        @endphp
-                                      @if(empty($disable_class))  
-                                        <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
-                                      @endif
-                                        <div class="row mt-4">
-                                            @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-                                            @foreach($response->subject_wise_result as $subject)
-                                            @php $subject=(object)$subject; @endphp
-                                            <div class="col"><button id="{{$subject->subject_name}}" {{$disable_class }} class="btn btn-outline-secondary w-100 top-btn-pop text-white" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button></div>
-                                            @endforeach
-                                            @endif
-                                        </div>
-
-                                        @endif
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                                60 min
+                            </small>
+                            <small class="commontext">
+                                <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                {{$response->total_exam_marks}} marks
+                            </small>
+                        </p>
                     </div>
                 </div>
-
+                <div class="col-sm-3">
+                    <div class="text-right">
+                        <button class="btn btn-common-transparent" style="min-width: auto;">
+                            <svg style="vertical-align:middle;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Review Question
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="row mt-5 mb-3">
-                <div class="col-lg-5 mb-lg-0 mb-4 ">
-                    <div class="bg-white shadow p-3 d-flex flex-column position-relative box-height-set">
-
-                        <h5 class="dashboard-title mb-3">Subject Score</h5>
-
-                        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-                        @foreach($response->subject_wise_result as $subject)
-                        @php $subject=(object)$subject; @endphp
-                        @php
-                        $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->correct_count/$subject->total_questions)*100),2):0;
-                        $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
-                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
-                        @endphp
-                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                            <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
-                            <div class="progress ms-auto  col-8" style="overflow: visible;">
-                                @if($correct_per > 0)
-                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="{{$correct_per}}%">{{$subject->correct_count}}</span>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
+                        <h3 class="boxheading d-flex align-items-center">My Score
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="halfdoughnut2 position-relative">
+                                    <canvas id="myscoregraph"></canvas>
+                                    <div class="myScore">
+                                        <h6 class="m-0">{{$response->total_get_marks}}/{{$response->total_exam_marks}}</h6>
+                                        <span>MARKS</span>
+                                    </div>
                                 </div>
-                                @endif
-                                @if($incorrect_per > 0)
-                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$incorrect_per}}%;overflow: visible;">
-                                    <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}">{{$subject->incorrect_count}}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="color_labels">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Correct <b><small></small>{{$response->correct_count}}</b></span>
+                                        <span>Incorrect <b><small></small>{{$response->no_of_question-($response->correct_count+$response->not_answered)}}</b></span>
+                                    </div>
+                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$response->not_answered}}</b></span>
                                 </div>
-                                @endif
-                                @if($not_attempt_per > 0)
-                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$not_attempt_per}}%;overflow: visible;">
-                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="{{$not_attempt_per}}">{{$subject->unanswered_count}}</span>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                        @endforeach
-                        @endif
-
-
-                        <div class="graphdotlisting my-4">
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt">Correct Attempts</span>
-                            </div>
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt">Wrong Attempts</span>
-                            </div>
-                            <div class="garphlistincom">
-                                <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt">Not Answered</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="position-relative box-height-set">
-                        <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
-                        <div id="scroll-mobile" class="tabintablet fortab ">
-                            <ul class="nav nav-tabs cust-tabs exam-panel mytab" id="myTab" role="tablist">
-                                @php $subx=1; @endphp
+                    <div class="commonWhiteBox commonblockDash borderRadius">
+                        <h3 class="boxheading d-flex align-items-center">Marks Percentage
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="common_greenbadge_tabs">
+                            <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab" role="tablist">
+                                @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                @php $count_sub=count($response->subject_wise_result);
+                                if($count_sub==1){
+                                $disable_class="disabled" ;
+                                }else{
+                                $disable_class="";
+                                }
+                                @endphp
+                                @if(empty($disable_class))
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn active" id="pills-overall-tab" data-bs-toggle="pill" data-bs-target="#pills-overall" type="button" role="tab" aria-controls="pills-overall" aria-selected="true" onclick='resetData("all")'>Overall</button>
+                                </li>
+                                @endif
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
                                 @php $subject=(object)$subject; @endphp
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
+                                    <button class="nav-link btn" id="{{$subject->subject_name}}" {{$disable_class }} data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false">{{$subject->subject_name}}</button>
                                 </li>
-                                @php $subx++; @endphp
                                 @endforeach
                                 @endif
-
-
+                                @endif
                             </ul>
-                         </div> 
-                            <div class=" tab-content position-relative cust-tab-content bg-white sub-padding" id="myTabContent">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
+                                    <span class="d-block mb-1 commontext">Overall percentage</span>
+                                    <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
+                                    <div class="overall_percentage_chart">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonWhiteBox commonblockDash borderRadius">
+                        <h3 class="boxheading d-flex align-items-center">Rank Analysis
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div class="your_rank position-relative" style="padding-left: 66px;">
+                                <small>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </small>
+                                <span class="d-block  commontext">Your rank</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">{{$response->user_rank}}
+                                    <!--sub style="font-size: 16px;font-weight: 500;">rd</sub--></label>
+                            </div>
+                            <div class="total_participants">
+                                <span class="d-block commontext">Total Participants</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">{{$response->total_participants}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
+                        <h3 class="boxheading d-flex align-items-center">Subject Score
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                        <div class="row">
+                            @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                            @foreach($response->subject_wise_result as $subject)
+                            @php $subject=(object)$subject; @endphp
+                            @php
+                            $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->correct_count/$subject->total_questions)*100),2):0;
+                            $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
+                            $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
+                            @endphp
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">{{$subject->subject_name}}</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart_{{$subject->subject_id}}"></canvas>
+                                    </div>
+                                    <script type="text/javascript">
+                                    var ids = 'subjectChart_<?php echo $subject->subject_id ?>';
+                                    var circuference = 260;
+                                    var data = {
+                                        labels: ["Correct", "Incorrect", "Not Attempted"],
+                                        datasets: [{
+                                            label: "My First Dataset",
+                                            data: [<?php echo $correct_per; ?>, <?php echo $incorrect_per; ?>, <?php echo $not_attempt_per; ?>],
+                                            backgroundColor: [
+                                                "#08d5a1",
+                                                "#fb7686",
+                                                "#f2f4f7"
+                                            ]
+                                        }]
+                                    };
+                                    var config = {
+                                        type: "doughnut",
+                                        data: data,
+                                        options: {
+                                            reponsive: true,
+                                            maintainAspectRatio: false,
+                                            rotation: (circuference / 2) * -1,
+                                            circumference: circuference,
+                                            cutout: "60%",
+                                            borderWidth: 0,
+                                            borderRadius: function(context, options) {
+                                                const index = context.dataIndex;
+                                                let radius = {};
+                                                if (index == 0) {
+                                                    radius.innerStart = 0;
+                                                    radius.outerStart = 0;
+                                                }
+                                                if (index === context.dataset.data.length - 1) {
+                                                    radius.innerEnd = 0;
+                                                    radius.outerEnd = 0;
+                                                }
+                                                return radius;
+                                            },
+                                            plugins: {
+                                                title: false,
+                                                subtitle: false,
+                                                legend: false
+                                            },
+                                        }
+                                    };
+                                    var myCharted = new Chart(ids, config)
+
+                                    </script>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>{{$subject->correct_count}}</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subject->incorrect_count}}</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subject->unanswered_count}}</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            @endif
+                        </div>
+                    </div>
+                    <div class="commonWhiteBox commonblockDash borderRadius">
+                        <h3 class="boxheading d-flex align-items-center">Topic Score
+                            <span class="tooltipmain ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="common_greenbadge_tabs">
+                            <div class="row mb-4 mt-4 align-items-center">
+                                <div class="col-md-6">
+                                    <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
+                                        @php $subx=1; @endphp
+                                        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                        @foreach($response->subject_wise_result as $subject)
+                                        @php $subject=(object)$subject; @endphp
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link btn @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
+                                        </li>
+                                        @php $subx++; @endphp
+                                        @endforeach
+                                        @endif
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex justify-content-between color_labels">
+                                        <span><small></small> Correct</span>
+                                        <span><small></small> Incorrect</span>
+                                        <span><small></small> Not Attempted</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="pills-tabContent">
                                 @php $topx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
@@ -199,8 +304,7 @@ $userData = Session::get('user_data');
                                 $subject_id=$subject->subject_id;
                                 @endphp
                                 <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
-
-                                    <div class="hScroll topicdiv-scroll">
+                                    <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
                                         @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                         @foreach($response->topic_wise_result as $topic)
                                         @php $topic=(object)$topic; @endphp
@@ -208,40 +312,25 @@ $userData = Session::get('user_data');
                                         $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->correct_count/$topic->total_questions)*100), 2):0;
                                         $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->incorrect_count/$topic->total_questions)*100), 2):0;
                                         $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
-
                                         @endphp
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
-
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                                            <span class="subj-name  col-4" title="{{Str::ucfirst(Str::lower($topic->topic_name))}}">
-                                                @if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
-                                                   @else
-                                                   ""
-                                                   @endif
-                                            </span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                @if($tcorrect_per > 0)
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>@if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
+                                                    @else
+                                                    ""
+                                                    @endif</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: {{$tcorrect_per}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                @endif
-                                                @if($tincorrect_per > 0)
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
-                                                </div>
-                                                @endif
-                                                @if($tnot_attempt_per > 0)
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
-                                                </div>
-                                                @endif
-
                                             </div>
-                                        </div>
+                                        </li>
                                         @endif
                                         @endforeach
                                         @endif
-                                    </div>
+                                    </ul>
                                 </div>
                                 @php $topx++; @endphp
                                 @endforeach
@@ -251,66 +340,17 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <div class="row mb-4 pb-4">
-                <div class="col-md-9">
-                    <div class="bg-white shadow p-5 position-relative">
-
-                        <div class="row">
-                            <div class="col-lg-4 text-center">
-                                <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
-                                <div id="rank"></div>
-
-                                <!-- <img src="images/bottom-left.jpg" /> -->
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="blue-block d-flex flex-column">
-                                    <span>Your Current Rank</span>
-                                    <span class="text-success fs-1">{{$response->user_rank}}</span>
-                                </div>
-                                <div class="blue-block d-flex flex-column mt-4">
-                                    <span>Total Participant</span>
-                                    <span class="text-dark fs-1">{{$response->total_participants}}</span>
-                                </div>
-                            </div>
-                            <!-- <div class="col-12 d-flex mt-5 mb-3">
-                            <button class="btn px-4 top-btn-pop text-white">Overall</button>
-                            <select class="form-select rounded-0 ms-3  w-25" aria-label="Default select example">
-                                <option selected>Subject</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <select class="form-select rounded-0 ms-3 w-25" aria-label="Default select example">
-                                <option selected>Topic</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow p-4 d-flex flex-column position-relative">
-
-                        <span class="text-center w-100"><img src="{{URL::asset('public/after_login/new_ui/images/bottom-right.svg')}}" /></span>
-                        <a class="btn w-100 mt-3 top-btn-pop text-white" href="{{route('exam_review', $response->result_id) }}">Review Questions</a>
-                        <button class="btn-outline-secondary btn rounded-0 w-100 mt-3 px-1"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                    </div>
-                </div>
+            <div class="mt-3 text-end">
+                <button class="btn btn-common-transparent scroll-top" style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
     </div>
 </div>
-@include('afterlogin.layouts.footer_new')
-
 @php
 $correct_cnt=isset($response->correct_count)?$response->correct_count:0;
 $incorrect_cnt=isset($response->wrong_count)?$response->wrong_count:0;
 $not_attempt=isset($response->total_exam_marks)?$response->total_exam_marks:0;
-
 $total_question = $response->no_of_question;
-
 $total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 $correct_score=isset($response->correct_score)?$response->correct_score:0;
 $incorrect_score=isset($response->incorrect_score)?$response->incorrect_score:0;
@@ -318,12 +358,9 @@ $get_score=(isset($response->total_get_marks) && !empty($response->total_get_mar
 $get_score_json=json_encode($get_score);
 $class_average=(isset($response->class_average) && ($response->class_average)>=0)?$response->class_average:0;
 $class_average_json=json_encode($class_average);
-
 $correct_per_pie=!empty($total_question)?round((($correct_cnt/$total_question)*100),2):0;
 $incorrect_per_pie=!empty($total_question)?round((($incorrect_cnt/$total_question)*100),2):0;
-
 $not_attempt_per_pie=100-($correct_per_pie+$incorrect_per_pie);
-
 $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
 $stuscore_arr=$clsAvg_arr=[];
 $stuscore=$clsAvg=0;
@@ -331,207 +368,103 @@ foreach($subject_graph as $key=>$gh){
 $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
-
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
-
 @endphp
-
 <script>
-    // $(".topicdiv-scroll").slimscroll({
-    //     height: "50vh",
-    // });
-    
-    Highcharts.chart('scorecontainer', {
-        chart: {
-            height: 250,
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false
-        },
-        title: {
-            text: '<span style="font: normal normal normal 70px/136px Poppins;color: #2C3348;">{{$get_score}}</span><span style="font: normal normal normal 16px/30px Poppins;color: #2C3348;">/{{$total_makrs}} </span>',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 75
-
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: false,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white'
-                    }
-                },
-                point: {
-                    events: {
-                        legendItemClick: function() {
-                            this.slice(null);
-                            return false;
-                        }
-                    }
-                },
-                startAngle: -180,
-                endAngle: 180,
-                center: ['50%', '50%'],
-                size: '100%'
-            }
-        },
-        series: [{
-            type: 'pie',
-
-            innerSize: '90%',
-            data: [{
-                    name: 'Correct Attempts',
-                    y: <?php echo $correct_per_pie; ?>,
-                    color: '#5cc129' // Jane's color
-                },
-                {
-                    name: 'Wrong Attempts',
-                    y: <?php echo $incorrect_per_pie; ?>,
-                    color: '#eb5347' // Jane's color
-                },
-                {
-                    name: 'Not Answered',
-                    y: <?php echo $not_attempt_per_pie; ?>,
-                    color: '#e4e4e4' // Jane's color
-                }
-
-
-            ]
+/*********** BarChart ***********/
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['My Percentage', 'Class Average'],
+        datasets: [{
+            data: [12, 22],
+            label: '',
+            backgroundColor: [
+                '#6ee7b7',
+                '#56b663'
+            ],
+            barPercentage: 5,
+            barThickness: 80,
+            maxBarThickness: 80
         }]
-    });
-
-
-    const chart = Highcharts.chart('subjectScroe', {
-        chart: {
-            type: 'column',
-            height: 265,
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            }
         },
-        title: {
-            text: ''
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-
-
-        xAxis: {
-            categories: ['Scores']
-        },
-        plotOptions: {
-            column: {
-                borderRadius: 1
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
             },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
+
+            y: {
+                beginAtZero: true
             }
-        },
-
-        series: [{
-            name: "Your Score",
-            data: <?php echo $stuscore_json; ?>,
-            color: '#5cc129'
-        }, {
-            name: "Class Average",
-            data: <?php echo $clsAvg_json; ?>,
-            color: '#FFFA6A'
-        }]
-    });
-
-
-    function resetData(subject_id) {
-        if (subject_id == 'all') {
-
-            chart.series[0].setData(<?php echo $stuscore_json; ?>);
-            chart.series[1].setData(<?php echo $clsAvg_json; ?>);
-        } else {
-            var graphArr = <?php echo json_encode($subject_graph); ?>;
-            var studet_score = [];
-            var class_score = [];
-            const iterator = graphArr.values();
-            for (const value of iterator) {
-                if (value.subject_id == subject_id) {
-                    studet_score.push(value.student_score)
-                    class_score.push(value.class_score)
-
-                }
-            }
-
-            chart.series[0].setData(studet_score);
-            chart.series[1].setData(class_score);
         }
     }
-</script>
+});
 
-<script>
-    Highcharts.setOptions({
-        colors: ['#ff9999', '#fde98d', '#aff3d0']
-    });
-    Highcharts.chart('rank', {
-        chart: {
-            type: 'pyramid',
-            height: 200
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        title: {
-            text: '',
-            x: -50
-        },
-        plotOptions: {
-            series: {
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b> {point.y:,.0f}',
-                    softConnector: true
-                },
-                center: ['40%', '50%'],
-                width: '80%'
+/***************** halfdoughnut - start *********************/
+
+
+/***********my-score************************* */
+const myscorecir = 260;
+const myscoredata = {
+    labels: ["Correct", "Incorrect", "Not Attempted"],
+    datasets: [{
+        label: "My First Dataset",
+        data: [<?php echo $correct_per_pie; ?>, <?php echo $incorrect_per_pie; ?>, <?php echo $not_attempt_per_pie; ?>],
+        backgroundColor: [
+            "#08d5a1",
+            "#fb7686",
+            "#f2f4f7"
+        ]
+    }]
+};
+const myscoreconfig = {
+    type: "doughnut",
+    data: data,
+    options: {
+        reponsive: true,
+        maintainAspectRatio: false,
+        rotation: (circuference / 2) * -1,
+        circumference: circuference,
+        cutout: "85%",
+        borderWidth: 0,
+        borderRadius: function(context, options) {
+            const index = context.dataIndex;
+            let radius = {};
+            if (index == 0) {
+                radius.innerStart = 20;
+                radius.outerStart = 20;
             }
+            if (index === context.dataset.data.length - 1) {
+                radius.innerEnd = 20;
+                radius.outerEnd = 20;
+            }
+            return radius;
         },
-        legend: {
-            enabled: false
+        plugins: {
+            title: false,
+            subtitle: false,
+            legend: false
         },
-        series: [{
-            name: 'Q&I users',
-            data: [
-                ['', <?php echo $response->total_participants; ?>],
-                ['AIR', <?php echo $response->user_rank; ?>],
-                ['', 1]
-            ]
-        }]
-    });
-</script>
+    }
+};
+const myscore = new Chart("myscoregraph", myscoreconfig)
 
+/***************** halfdoughnut - end *********************/
+function resetData(subject_id){
+    
+}
+
+</script>
 @endsection
