@@ -485,8 +485,34 @@ const myscoreconfig = {
     }
 };
 const myscore = new Chart("myscoregraph", myscoreconfig)
+$("span.tooltipmain svg").click(function(event) {
+    event.stopPropagation();
 
-/***************** halfdoughnut - end *********************/
+    var card_open = $(this).siblings("p").hasClass('show');
+    if (card_open === true) {
+        $(this).siblings("p").hide();
+        $(this).siblings("p").removeClass('show');
+    } else {
+        $("span.tooltipmain p.tooltipclass span").each(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+        $(this).siblings("p").show();
+        $(this).siblings("p").addClass('show');
+    }
+
+});
+$("span.tooltipmain p.tooltipclass span").click(function() {
+    $(this).parent("p").hide();
+    $(this).parent("p").removeClass('show');
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
+    }
+});
 
 </script>
 @endsection
