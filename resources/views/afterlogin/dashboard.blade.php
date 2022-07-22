@@ -168,6 +168,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
                             </div>
+                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
