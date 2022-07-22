@@ -129,7 +129,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="line mt-4 mb-3"></div>
                             <div class="d-flex justify-content-end mb-md-5 mb-2 pb-5">
-                                <a href="{{ url('/dashboard') }}" class="btn cancle me-2 bg-transparent ">Cancel</a>
+                                <button id="cancelEdit" class="btn cancle me-2 bg-transparent ">Cancel</button>
                                 <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ms-1 ">Save</button>
                             </div>
                         </form>
@@ -301,6 +301,10 @@ $user_id = isset($userData->id)?$userData->id:'';
         }
         editProfileCheck();
     });
+    $('#cancelEdit').click(function(){
+        var url = "{{ route('dashboard') }}";
+        window.location.href = url;
+    });
 
 
 
@@ -329,10 +333,14 @@ $user_id = isset($userData->id)?$userData->id:'';
         if (empty) {
             $('#saveEdit').attr('disabled', 'disabled');
             $('#saveEdit').addClass("disabled-btn");
+            $('#cancelEdit').attr('disabled', 'disabled');
+            $('#cancelEdit').addClass("disabled-btn");
 
         } else {
             $('#saveEdit').removeAttr('disabled');
             $('#saveEdit').removeClass("disabled-btn");
+            $('#cancelEdit').removeAttr('disabled');
+            $('#cancelEdit').removeClass("disabled-btn");
 
         }
 

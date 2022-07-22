@@ -204,7 +204,7 @@
                 </a>
                 <div class="practice-submenu">
                     <a href="javascript:void(0)">Custom</a>
-                    <a href="javascript:void(0)">Test Series</a>
+                    <a href="{{ url('/series_list') }}">Test Series</a>
                 </div>
             </li>
             <li>
