@@ -90,7 +90,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}" required id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="col-lg-8 pt-4">
                         <div class="bg-white subscription-details">
-                            <h1 class="subs-heading d-inline-block">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
+                            <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none">Upgrade Plan</a>
+                            </div>
                             <div class="line mb-3 pb-1"></div>
                             @php
                             $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
@@ -186,6 +189,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
+                        <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a>
                         </div>
                     </div>
                 </div>
@@ -238,6 +242,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     });
     $('#email_success').hide();
     $('.resend_email').click(function() {
+        $('.email-error').hide();
         var user_id = '<?php echo $user_id; ?>';
         $.ajaxSetup({
             headers: {
@@ -253,21 +258,33 @@ $user_id = isset($userData->id)?$userData->id:'';
             },
             success: function(response_data) {
                 if (response_data.status === true) {
+                    
                     $('#email_success').css('color', 'green');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
+                    $("#email_success").fadeOut(2000);
+                    setTimeout(function() {
+                     $('.email-error').show();
+                    }, 2000);
+                    
                 } else {
                     $('#email_success').css('color', 'red');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
                     $("#email_success").fadeOut(10000);
+                    setTimeout(function() {
+                     $('.email-error').show();
+                    }, 2000);
                 }
 
             },
         });
     });
     $('#editProfile_form input').keyup(function() {
+        var id = this.id;
+        if (id === 'mobile_num') {
+            return false;
+        }
         $('#editProfile_form').valid();
         editProfileCheck();
     });
@@ -275,6 +292,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         editProfileCheck();
     });
     $('#file-input').change(function() {
+        if(this.files[0].size > 2097152)
+        {
+            alert("Image size is greater than 2 MB");
+            return false;
+        }
         editProfileCheck();
     });
 
@@ -370,6 +392,11 @@ $user_id = isset($userData->id)?$userData->id:'';
     function onlyAlphabetsDisplay(e, t) {
         return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
     }
+    $("#username").keyup(function() {
+        var myValue = $(this).val();
+        var test = myValue.replace(/  +/g, ' ');
+        $("#username").val(test);
+    });
 
     </script>
 </body>
