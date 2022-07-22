@@ -118,7 +118,7 @@
                                 @foreach($response->subject_wise_result as $subject)
                                 @php $subject=(object)$subject; @endphp
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link btn" id="{{$subject->subject_name}}" {{$disable_class }} data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false">{{$subject->subject_name}}</button>
+                                    <button class="nav-link btn" id="{{$subject->subject_name}}" {{$disable_class }} data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button>
                                 </li>
                                 @endforeach
                                 @endif
@@ -127,7 +127,7 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
-                                    <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
+                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?$response->result_percentage:0}}%</label>
                                     <div class="overall_percentage_chart">
                                         <canvas id="myChart"></canvas>
                                     </div>
@@ -381,7 +381,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: ['My Percentage', 'Class Average'],
         datasets: [{
-            data: [12, 22],
+            data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
                 '#6ee7b7',
@@ -412,9 +412,34 @@ const myChart = new Chart(ctx, {
     }
 });
 
-/***************** halfdoughnut - start *********************/
+function resetData(subject_id) {
+    if (subject_id == 'all') {
+        myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+        myChart.update();
+        let overall_percent = '<?php echo number_format($response->result_percentage, 2); ?>';
+        $("#percentage").val(overall_percent);
 
+    } else {
+        var graphArr = <?php echo json_encode($subject_graph); ?>;
+        var studet_score = [];
+        var class_score = [];
+        const iterator = graphArr.values();
+        for (const value of iterator) {
+            if (value.subject_id == subject_id) {
+                studet_score.push(value.student_score)
+                studet_score.push(value.class_score)
+                var percentage = value.student_score
+            }
+        }
+        myChart.data.datasets[0].data = studet_score;
+        myChart.update();
 
+        $("#percentage").val(percentage);
+    }
+}
+
+</script>
+<script>
 /***********my-score************************* */
 const myscorecir = 260;
 const myscoredata = {
@@ -462,9 +487,6 @@ const myscoreconfig = {
 const myscore = new Chart("myscoregraph", myscoreconfig)
 
 /***************** halfdoughnut - end *********************/
-function resetData(subject_id){
-    
-}
 
 </script>
 @endsection
