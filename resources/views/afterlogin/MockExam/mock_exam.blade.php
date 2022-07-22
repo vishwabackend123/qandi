@@ -1,6 +1,85 @@
 @extends('afterlogin.layouts.app_new')
 
 @section('content')
+<style>
+    .timing {
+        color: #2c3348;
+        font-size: 18px;
+        line-height: 27px;
+        margin-left: 30px;
+    }
+
+    .tiny-green {
+        margin-right: 30px;
+    }
+
+    .base-timer {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
+    .base-timer__svg {
+        transform: scaleX(1);
+        background: #f1f3f4;
+        border-radius: 50%;
+    }
+
+    .base-timer__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+        stroke-width: 7px;
+        stroke: grey;
+    }
+
+    .base-timer__path-remaining {
+        stroke-width: 7px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.arc {
+        /* color: rgba(179, 48, 102, 0.973) */
+        color: #44cd7f;
+    }
+
+    .base-timer__label {
+        /* position: absolute;
+    
+    height: 80px; 
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;*/
+        width: 80px;
+        font-weight: 600;
+    }
+
+    /****SACHIN****/
+    .watch-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        transform: translate(-50%, -50%);
+    }
+
+    .number-block .btn {
+        min-width: 36px;
+        height: 36px;
+        margin-right: 25px;
+        padding: 0;
+    }
+</style>
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -67,10 +146,10 @@ $question_type = "Numerical";
                                         @csrf
                                         <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                                         <input type="hidden" name="submit_time" id="final_submit_time" value="">
+                                        <input type="hidden" name="total_marks" id="total_marks" value="{{$total_marks}}">
                                         <input type="hidden" name="test_type" value="{{$test_type}}">
                                         <input type="hidden" name="exam_type" value="{{$exam_type}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-                                        <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
@@ -86,100 +165,111 @@ $question_type = "Numerical";
 
                                 </div>
                             </div>
-                            <div class="questionType">
-                                <div class="questionTypeinner">
-                                    <div class="questionChoiceType" style="visibility:hidden">
-                                        <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
-                                    </div>
-                                    <div class="timeCounter">
-                                        Average Time:
-                                        <div id="progressBar">
-                                            <div class="bar"></div>
+                            <div id="question_section">
+                                <div class="questionType">
+                                    <div class="questionTypeinner">
+                                        <div class="questionChoiceType">
+                                            <div class="questionChoice">
+                                                @if(isset($aSections) && !empty($aSections))
+                                                @foreach($aSections as $section)
+                                                @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
+                                                <a class="singleChoice" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]." Q"}}) - {{$section->question_type_name}}</a>
+
+                                                @endif
+                                                @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="timeCounter">
+                                            Average Time:
+                                            <div id="progressBar">
+                                                <div class="bar"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-content aect_tabb_contantt">
-                                <div id="question_section" class="tab-pane active">
+                                <div class="tab-content aect_tabb_contantt">
+                                    <div id="evolution" class="tab-pane active">
 
-                                    <div class="questionsliderinner">
-                                        <div class="questionSlider1">
-                                            <div class="item" id="">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
+                                        <div class="questionsliderinner">
+                                            <div class="questionSlider1">
+                                                <div class="item" id="">
+                                                    <div class="questionsliderbox">
+                                                        <div class="questionwrapper">
 
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <p>{!! $question_text !!}
-                                                                </p>
+                                                            <div class="questionheader">
+                                                                <div class="question">
+                                                                    <span class="q-no">Q1.</span>
+                                                                    <p>{!! $question_text !!}
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="questionImggraph">
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
+                                                            <div class="questionImggraph">
+                                                            </div>
+                                                            <div class="questionOptionBlock">
+                                                                <div class="fancy-radio-buttons row with-image">
 
-                                                                @if($template_type==1 || $template_type==2)
-                                                                @if(isset($option_data) && !empty($option_data))
-                                                                @php $no=0; @endphp
-                                                                @foreach($option_data as $key=>$opt_value)
-                                                                @php
-                                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                                                /* $dom = new DOMDocument();
-                                                                @$dom->loadHTML($opt_value);
-                                                                $anchor = $dom->getElementsByTagName('img')->item(0);
-                                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                                                $latex = "https://math.now.sh?from=".$text;
-                                                                $view_opt='<img src="'.$latex.'" />' ; */
-                                                                @endphp
+                                                                    @if($template_type==1 || $template_type==2)
+                                                                    @if(isset($option_data) && !empty($option_data))
+                                                                    @php $no=0; @endphp
+                                                                    @foreach($option_data as $key=>$opt_value)
+                                                                    @php
+                                                                    $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                                                    /* $dom = new DOMDocument();
+                                                                    @$dom->loadHTML($opt_value);
+                                                                    $anchor = $dom->getElementsByTagName('img')->item(0);
+                                                                    $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                                                    $latex = "https://math.now.sh?from=".$text;
+                                                                    $view_opt='<img src="'.$latex.'" />' ; */
+                                                                    @endphp
 
-                                                                <div class="colMargin">
-                                                                    <div class="image-container markerDiv">
-                                                                        <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
-                                                                        <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}.</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                                                    <div class="colMargin">
+                                                                        <div class="image-container markerDiv">
+                                                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
+                                                                            <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}.</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                @php $no++; @endphp
-                                                                @endforeach
-                                                                @endif
-                                                                @elseif($template_type==11)
+                                                                    @php $no++; @endphp
+                                                                    @endforeach
+                                                                    @endif
+                                                                    @elseif($template_type==11)
 
-                                                                <div class="colMargin">
-                                                                    <div class="inputAns">
-                                                                        <label for="story">Answer</label>
-                                                                        <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                                                    <div class="colMargin">
+                                                                        <div class="inputAns">
+                                                                            <label for="story">Answer</label>
+                                                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                                                        </div>
                                                                     </div>
+                                                                    @endif
+
+
+                                                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                                                 </div>
-                                                                @endif
-
-
-                                                                <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="examQuestionarrow">
+                                                <!-- Previous button -->
+
+                                                <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+                                                    <span class=" Previous">‹</span>
+                                                </button>
+
+
+                                                <!-- Next button -->
+
+                                                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                                                    <span class="Next">›</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="examQuestionarrow">
-                                            <!-- Previous button -->
 
-                                            <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
-                                                <span class=" Previous">‹</span>
-                                            </button>
-
-
-                                            <!-- Next button -->
-
-                                            <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
-                                                <span class="Next">›</span>
-                                            </button>
-                                        </div>
                                     </div>
-
-                                </div>
-                                <!-- <div id="application" class="tab-pane">adasdas</div>
+                                    <!-- <div id="application" class="tab-pane">adasdas</div>
                                 <div id="complrehension" class="tab-pane">complrehension</div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -201,20 +291,36 @@ $question_type = "Numerical";
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec">
                             <p>
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <div class="" id="app">
+                                <div class="base-timer">
+                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="base-timer__circle">
+                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                        </g>
+                                    </svg>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                </div>
+                            </div>
+                            <!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                     <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> -->
+                            <span id="base-timer-label" class="base-timer__label"> Left</span>
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
                                 </svg>
-                                <span id="base-timer-label" class="base-timer__label"> Left</span>
-                                <label>
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                    </svg>
-                                </label>
+                            </label>
                             </p>
                         </div>
                         <div class="text-exammid-sec borederbot">
@@ -355,8 +461,35 @@ $question_type = "Numerical";
 
     <!-- page referesh disabled -->
     <script>
+        var activeques_id = '{{$activeq_id}}';
         /* Allow only numeric with decimal */
+        $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
 
+            $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+                event.preventDefault();
+            }
+            var text = $(this).val();
+            if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+                event.preventDefault();
+            }
+
+            if (event.charCode === 46) {
+                // if dot is the first symbol
+                if (event.target.value.length === 0) {
+                    event.preventDefault();
+                    return;
+                }
+
+                // if there are dots already 
+                if (event.target.value.indexOf('.') !== -1) {
+                    event.preventDefault();
+                    return;
+                }
+
+            }
+        });
         /* Sachin screen changes */
         function setboxHeight() {
             var height = $(".rightSect .flex-column").outerHeight();
@@ -364,10 +497,10 @@ $question_type = "Numerical";
 
         }
         /*  setboxHeight();
-    $("window").load(function() {
-        setboxHeight();
-    });
- */
+         $("window").load(function() {
+             setboxHeight();
+         }); */
+
         $(window).resize(function() {
             setboxHeight();
         });
@@ -375,6 +508,7 @@ $question_type = "Numerical";
 
         /* page referesh disabled */
         $(document).ready(function() {
+
             /* mouse rightclick */
             /*  document.oncontextmenu = function() {
                  return false;
@@ -425,12 +559,9 @@ $question_type = "Numerical";
                     return false;
                 }
             }
-
+            $('#quest_option_' + activeques_id).focus();
         });
     </script>
-    <!-- /page referesh disabled -->
-    <!-- browser back disable -->
-
     <script type="text/javascript">
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
@@ -440,19 +571,9 @@ $question_type = "Numerical";
         });
     </script>
     <!-- browser back disable -->
-
     <script type="text/javascript">
-        var activeques_id = '{{$activeq_id}}';
-
-        // $('.number-block').slimscroll({
-        //     height: '20vh'
-        // });
-        $('.answer-block').slimscroll({
-            height: '30vh'
-        });
-
         $(window).on('load', function() {
-            /*  $('#test_instruction').modal('show'); */
+            $('#test_instruction').modal('show');
             setboxHeight();
             startTimer();
             questionstartTimer();
@@ -460,42 +581,22 @@ $question_type = "Numerical";
             if ($('#quest_option_' + activeques_id).length > 0) {
                 $('#quest_option_' + activeques_id).focus();
             }
-
         });
-
+        /* 
+                $('#goto-exam-btn').click(function() {
+                    $('#mainDiv').show();
+                    $('#exam_content_sec').show();
+                   
+                }); */
         $('.selctbtn').click(function() {
             $('.qoption_error').hide();
         });
-        $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
 
-            //this.value = this.value.replace(/[^0-9\.]/g,'');
-            $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-                event.preventDefault();
-            }
-            var text = $(this).val();
-            if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-                event.preventDefault();
-            }
-            if (event.charCode === 46) {
-                // if dot is the first symbol
-                if (event.target.value.length === 0) {
-                    event.preventDefault();
-                    return;
-                }
-
-                // if there are dots already 
-                if (event.target.value.indexOf('.') !== -1) {
-                    event.preventDefault();
-                    return;
-                }
-
-            }
-        });
         jQuery(function() {
             jQuery(".markerDiv").click(function() {
                 var template_type = $("#current_question_type").val();
                 if (template_type == 2) {
+
                     $('input[type=radio]', this).prop("checked", true);
                 } else {
                     var $checks = $(this).find('input[type=checkbox]');
@@ -504,18 +605,19 @@ $question_type = "Numerical";
 
                 }
             });
-
-
         });
+
         $(document).on('keydown', function(e) {
             if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
                 e.preventDefault();
         });
-        /*  $('.instructions').slimscroll({
-             height: '33vh',
-             color: '#ff9999',
+        /*$('.instructions').slimscroll({
+            height: '33vh',
+            color: '#ff9999',
+            railVisible: true,
+             alwaysVisible: true 
+        });*/
 
-         }); */
 
         const FULL_DASH_ARRAY = 283;
         const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -565,6 +667,8 @@ $question_type = "Numerical";
                 $("#resume-test").modal("show");
             }
         }
+
+
 
         function startTimer() {
             timerInterval = setInterval(() => {
@@ -619,7 +723,7 @@ $question_type = "Numerical";
             // setDisabled(stopBtn);
             timePassed = -1;
             timeLeft = TIME_LIMIT;
-            //console.log(timePassed, timeLeft);
+
 
             timeLabel.innerHTML = formatTime(TIME_LIMIT);
         }
@@ -642,9 +746,9 @@ $question_type = "Numerical";
 
         function setCircleDasharray() {
             const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-            //console.log("setCircleDashArray: ", circleDasharray);
+                calculateTimeFraction() * FULL_DASH_ARRAY
+            ).toFixed(0)} 283`;
+
             timer.setAttribute("stroke-dasharray", circleDasharray);
         }
 
@@ -690,7 +794,6 @@ $question_type = "Numerical";
         }
 
 
-
         function progressBar(percent, $element) {
             var progressBarWidth = percent * $element.width() / (time_allowed * 60);
             $element.find('div').animate({
@@ -730,18 +833,20 @@ $question_type = "Numerical";
                 return valString;
             }
         }
+
         /* per question timer end */
         /* per question timer end */
 
 
         /* getting Next Question Data */
         function qnext(question_id) {
+
             var act_question = $("#current_question").val();
             var q_submit_time = $("#timespend_" + act_question).val();
 
             saveQuestionTime(act_question, q_submit_time);
 
-            url = "{{ url('next_question/') }}/" + question_id;
+            url = "{{ url('mock_next_question/') }}/" + question_id;
             $.ajax({
                 url: url,
                 data: {
@@ -762,8 +867,7 @@ $question_type = "Numerical";
 
 
         /* mark or review */
-        //function markforreview(quest_id, subject_id, chapt_id) {
-        function markforreview() {
+        function markforreview(quest_id, subject_id, chapt_id) {
             var quest_id = $("#current_question").val();
             var subject_id = $("#current_subject_id").val();
             var chapt_id = $("#current_chapter_id").val();
@@ -778,13 +882,14 @@ $question_type = "Numerical";
                 if (res_value != '') {
                     option_id.push($("#quest_option_" + quest_id).val());
                 }
+
             } else {
                 $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
                     option_id.push($(this).val());
                 });
             }
             if (option_id.length > 0) {
-                clearResponse();
+                clearResponse(quest_id, subject_id, cur_quest_no);
             }
 
             $.ajax({
@@ -811,8 +916,9 @@ $question_type = "Numerical";
                             $("#quesnext" + quest_id).click();
 
                         }
+
                     } else {
-                        return false;
+
                     }
 
 
@@ -821,18 +927,18 @@ $question_type = "Numerical";
         }
 
         /* Saved question response */
-        /*  function saveAnswer(question_id, qNo) { */
         function saveAnswer() {
             var question_id = $("#current_question").val();
             var qNo = $("#current_question_no").val();
 
             $('#question_section .quesBtn').attr("disabled", true);
             $('#question_section .quesBtn').addClass("disabled");
-
             var question_id = question_id;
-            var option_id = [];
 
+            var option_id = [];
             var current_question_type = $("#current_question_type").val();
+            var current_subject_id = $("#current_subject_id").val();
+            var current_section_id = $("#current_section_id").val();
 
             if (current_question_type == 11) {
                 var res_value = $("#quest_option_" + question_id).val();
@@ -840,7 +946,6 @@ $question_type = "Numerical";
                 if (res_value != '') {
                     const str = res_value;
                     const last = str.charAt(str.length - 1);
-
                     var decarr = res_value.split(".");
 
                     if (res_value == '-' || res_value == '-.') {
@@ -860,16 +965,14 @@ $question_type = "Numerical";
                 $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                     option_id.push($(this).val());
                 });
-
                 var vld_msg = "Please select your response.";
             }
-
-
             if (option_id.length === 0) {
                 $('#qoption_err_' + question_id).html(vld_msg);
                 $('#qoption_err_' + question_id).addClass('text-danger');
                 $('#qoption_err_' + question_id).fadeIn('fast');
                 $('#qoption_err_' + question_id)[0].scrollIntoView();
+
                 $('#question_section .quesBtn').attr("disabled", false);
                 $('#question_section .quesBtn').removeClass("disabled");
                 setTimeout(function() {
@@ -878,7 +981,7 @@ $question_type = "Numerical";
                 return false;
             }
 
-
+            var err_sts = true;
             var q_submit_time = $("#timespend_" + question_id).val();
 
             $.ajax({
@@ -888,17 +991,38 @@ $question_type = "Numerical";
                     "_token": "{{ csrf_token() }}",
                     question_id: question_id,
                     option_id: option_id,
-                    q_submit_time: q_submit_time
+                    q_submit_time: q_submit_time,
+                    current_subject_id: current_subject_id,
+                    current_section_id: current_section_id,
+                },
+                beforeSend: function() {
+                    //$('.loader-block').show();
                 },
                 success: function(response_data) {
+                    //$('.loader-block').hide();
                     var response = jQuery.parseJSON(response_data);
 
                     if (response.status == 200) {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                        $("#btn_" + question_id).find('i').remove();
-                        $("#btn_" + question_id).html(qNo);
+                        /*  $("#btn_" + question_id).find('i').remove();
+                         $("#btn_" + question_id).html(qNo);
+                         $("#btn_" + question_id).removeClass("btn-light");
+                         $("#btn_" + question_id).addClass("btn-light-green"); */
                         $("#btn_" + question_id).removeClass("border-btn");
 
+                        if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                            $("#submitExam").click();
+                        } else {
+
+                            $("#quesnext" + question_id).click();
+
+                        }
+                    } else if (response.status == 400) {
+                        $('#attempt-alert-text').text(response.message);
+                        $('#attemptlimit').modal('show');
+
+
+                        err_sts = false;
                     }
                 },
                 complete: function() { // Set our complete callback, removed disabled 
@@ -907,16 +1031,8 @@ $question_type = "Numerical";
                 }
             });
 
-            if ($("#quesnext" + question_id).is(":disabled") == true) {
-
-                $("#submitExam").click();
-            } else {
-                $("#quesnext" + question_id).click();
-
-            }
         }
 
-        /* Saved question response */
         function saveAnswerAjax() {
             var question_id = $("#current_question").val();
             var qNo = $("#current_question_no").val();
@@ -925,15 +1041,18 @@ $question_type = "Numerical";
             $('#question_section .quesBtn').addClass("disabled");
 
             var question_id = question_id;
+            var isValid = 1;
             var option_id = [];
             var current_question_type = $("#current_question_type").val();
+            var current_subject_id = $("#current_subject_id").val();
+            var current_section_id = $("#current_section_id").val();
+
             if (current_question_type == 11) {
                 var res_value = $("#quest_option_" + question_id).val();
 
                 if (res_value != '') {
                     const str = res_value;
                     const last = str.charAt(str.length - 1);
-
                     var decarr = res_value.split(".");
 
                     if (res_value == '-' || res_value == '-.') {
@@ -953,7 +1072,6 @@ $question_type = "Numerical";
                 $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                     option_id.push($(this).val());
                 });
-
                 var vld_msg = "Please select your response.";
             }
             if (option_id.length === 0) {
@@ -961,6 +1079,7 @@ $question_type = "Numerical";
                 $('#qoption_err_' + question_id).addClass('text-danger');
                 $('#qoption_err_' + question_id).fadeIn('fast');
                 $('#qoption_err_' + question_id)[0].scrollIntoView();
+
                 $('#question_section .quesBtn').attr("disabled", false);
                 $('#question_section .quesBtn').removeClass("disabled");
                 setTimeout(function() {
@@ -978,14 +1097,35 @@ $question_type = "Numerical";
                     "_token": "{{ csrf_token() }}",
                     question_id: question_id,
                     option_id: option_id,
-                    q_submit_time: q_submit_time
+                    q_submit_time: q_submit_time,
+                    current_subject_id: current_subject_id,
+                    current_section_id: current_section_id,
+                },
+                beforeSend: function() {
+                    //$('.loader-block').show();
                 },
                 success: function(response_data) {
+                    //$('.loader-block').hide();
                     var response = jQuery.parseJSON(response_data);
-
                     if (response.status == 200) {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                        return true;
+
+                        if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                            $("#submitExam").click();
+                        } else {
+                            $("#quesnext" + question_id).click();
+
+                        }
+                        isValid = 1;
+
+                    } else if (response.status == 400) {
+                        $('#attempt-alert-text').text(response.message);
+                        $('#attemptlimit').modal('show');
+
+                        //alert(response.message);
+                        isValid = 0;
+
                     }
                 },
                 complete: function() { // Set our complete callback, removed disabled 
@@ -995,14 +1135,25 @@ $question_type = "Numerical";
                 async: false
             });
 
+            if (isValid == 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
+
 
         function savemarkreview() {
             var quest_id = $("#current_question").val();
             var subject_id = $("#current_subject_id").val();
             var chapt_id = $("#current_chapter_id").val();
             /* saving response */
-            if (saveAnswerAjax(quest_id, '') != false) {
+            var current_question_no = $("#current_question_no").val();
+            var response = saveAnswerAjax(quest_id, current_question_no);
+
+
+            if (response != false) {
+
 
                 // marking for review
                 $.ajax({
@@ -1020,29 +1171,26 @@ $question_type = "Numerical";
                             $("#btn_" + quest_id).removeClass("border-btn");
                             $("#btn_" + quest_id).removeClass("pink-btn");
                             $("#btn_" + quest_id).addClass("blue-btn");
-
                         }
 
                     },
                 });
-                if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
-                    $("#submitExam").click();
-                } else {
-                    $("#quesnext" + quest_id).click();
-
-                }
+                return true;
             }
         }
 
-        //function clearResponse(quest_id, subject_id, qNo) {
         function clearResponse() {
             var quest_id = $("#current_question").val();
             var subject_id = $("#current_subject_id").val();
             var qNo = $("#current_question_no").val();
 
+
             var response = [];
             var current_question_type = $("#current_question_type").val();
+            var current_subject_id = $("#current_subject_id").val();
+            var current_section_id = $("#current_section_id").val();
+
             if (current_question_type == 11) {
                 var res_value = $("#quest_option_" + quest_id).val();
 
@@ -1065,9 +1213,9 @@ $question_type = "Numerical";
                     $('#qoption_err_' + quest_id).addClass('text-danger');
                     $('#qoption_err_' + quest_id).fadeIn('fast');
                     $('#qoption_err_' + quest_id)[0].scrollIntoView();
+
                 }
             }
-
 
             $("#btn_" + quest_id).addClass("border-btn");
             $("#btn_" + quest_id).removeClass("pink-btn");
@@ -1084,7 +1232,8 @@ $question_type = "Numerical";
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.status == 200) {
-
+                        $("#btn_" + quest_id).find('i').remove();
+                        $("#btn_" + quest_id).html(qNo);
                     }
 
                 },
@@ -1098,7 +1247,7 @@ $question_type = "Numerical";
 
             saveQuestionTime(act_question, q_submit_time);
 
-            url = "{{ url('next_subject_question/') }}/" + subject_id;
+            url = "{{ url('mock_next_subject_question/') }}/" + subject_id;
             $.ajax({
                 url: url,
                 data: {
@@ -1109,7 +1258,33 @@ $question_type = "Numerical";
                     clearInterval(timer_countdown);
                     clearInterval(setEachQuestionTimeNext_countdown);
 
-                    $("#myTabContent #question_section div").html(result);
+                    $("#myTabContent #question_section div").remove();
+                    $("#myTabContent #question_section").html(result);
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                }
+            });
+
+
+        }
+
+        function get_subject_Sec_question(subject_id, section_id) {
+            var act_question = $("#current_question").val();
+            var q_submit_time = $("#timespend_" + act_question).val();
+
+            saveQuestionTime(act_question, q_submit_time);
+
+            url = "{{ url('mock_next_subject_question/') }}/" + subject_id + "/" + section_id;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(result) {
+                    clearInterval(ctimer);
+                    clearInterval(timer_countdown);
+                    clearInterval(setEachQuestionTimeNext_countdown);
+
+                    $("#myTabContent #question_section div").remove();
                     $("#myTabContent #question_section").html(result);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 }
@@ -1128,7 +1303,11 @@ $question_type = "Numerical";
                     "_token": "{{ csrf_token() }}",
                     'q_time': time
                 },
+                beforeSend: function() {
+                    //$('.loader-block').show();
+                },
                 success: function(response_data) {
+                    // $('.loader-block').hide();
                     var response = jQuery.parseJSON(response_data);
                     if (response.status == 200) {
 
@@ -1149,22 +1328,20 @@ $question_type = "Numerical";
                         let lefttime_exam_h = document.getElementById("lefttime_pop_h");
                         let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                        const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
+                        const circleDasharray = `${(
+                            calculateTimeFraction() * FULL_DASH_ARRAY
+                        ).toFixed(0)} 283`;
 
                         timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                         lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
- */
-                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
-                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
-                        $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                        lefttime_exam_s.innerHTML = formatTime(timeLeft); */
 
+                        $('#FullTest_Exam_Panel_Interface_A').modal('show');
 
                     } else {
                         form.submit();
                     }
-
 
 
                 }
@@ -1179,9 +1356,6 @@ $question_type = "Numerical";
 
                 $('#form_exam_submit')[0].submit();
             });
-
-
-
         });
     </script>
     @endsection

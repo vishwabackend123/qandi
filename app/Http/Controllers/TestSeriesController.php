@@ -66,15 +66,15 @@ class TestSeriesController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response_json);
             $status = isset($aResponse->success) ? json_decode($aResponse->success) : false;
-
+            $header_title = "Test Series";
 
             if ($status == true) {
                 $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
                 $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
 
-                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
+                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series','header_title'));
             } else {
-                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
+                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series','header_title'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -150,7 +150,7 @@ class TestSeriesController extends Controller
                 } else {
                     $aQuestions_list = [];
 
-                    return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                   return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
                 }
 
 
@@ -236,10 +236,11 @@ class TestSeriesController extends Controller
 
                     return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
                 } else {
-                    return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                    //return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                    return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
                 }
             } else {
-                return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                 return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());

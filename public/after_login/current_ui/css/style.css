@@ -595,6 +595,22 @@ font-weight: 500;
 /******Profile-page-end*****/
 
 /*****Planner-pge***********/
+.gotodashboard{
+ padding: 19px 31px;
+ border-radius: 20px;
+ background: #e0f6e3;
+margin-bottom: 20px;
+}
+.gotodashboard p{
+color: #363c4f;
+font-size: 14px;
+font-weight: 600;
+}
+.gotodashboard a{
+color: #56b663;
+font-size: 14px;
+font-weight: 800;
+}
 .planner-box{
 padding: 32px;
 border-radius: 32px;
@@ -763,11 +779,13 @@ vertical-align: super;
     color: #1f1f1f;
 }
 .custom_modal .modal-header .btn-close {
-   cursor: pointer;
+  cursor: pointer;
     position: absolute;
     right: 20px;
     top: 20px;
     background-image: none;
+    margin-right: 0px;
+    opacity: 1;
 }
 .custom_modal .custom-input{
 padding-bottom: 320px;    
@@ -5336,7 +5354,14 @@ td.mymatrix_table_point
     right: 0%!important;
     transition: 0.5s; 
 }
+.show .notification-main{
+    right: 0%!important;
+    transition: 0.5s; 
+}
 .activeblock.notification-block_new {
+    position: fixed;right: auto !important;
+}
+.show.notification-block_new {
     position: fixed;right: auto !important;
 }
 .notification-block_new{
@@ -5344,6 +5369,15 @@ td.mymatrix_table_point
     width: 95.8%;
 }
 .activeblock.notification-block_new::before{
+    content: "";
+    left: 0px;
+    width:100%;
+    height:100%;
+    top:0;
+    background-color: rgb(31,31,31,0.3);
+    position: absolute;
+}
+.show.notification-block_new::before{
     content: "";
     left: 0px;
     width:100%;

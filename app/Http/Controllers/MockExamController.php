@@ -34,7 +34,7 @@ class MockExamController extends Controller
      *
      * @return void
      */
-    public function mockExam(Request $request)
+    public function mockExam(Request $request, $inst = '')
     {
         try {
             $filtered_subject = [];
@@ -52,38 +52,55 @@ class MockExamController extends Controller
             $inputjson['exam_id'] = $exam_id;
 
             $request = json_encode($inputjson);
+            $url_name = Route::current()->getName();
 
-            $curl_url = "";
-            $curl = curl_init();
-            $api_URL = env('API_URL');
+            $mockCacheKey = 'MockExamTest:all:' . $user_id;
+            if ($inst == 'instruction' || $url_name == 'mockExamTest') {
+                if (Redis::exists('MockExamTest:all:' . $user_id)) {
+                    Redis::del('MockExamTest:all:' . $user_id);
+                }
+            }
 
-            //$curl_url = $api_URL . 'api/assessment-question-selection';
-            //$curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';
-            $curl_url = $api_URL . 'api/mock-exam/' . $exam_id;
-            $curl_option = array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 360,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_POSTFIELDS => $request,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
+            if (Redis::exists('MockExamTest:all:' . $user_id)) {
+                $response_json = Redis::get($mockCacheKey);
+            } else {
 
-                ),
-            );
-            curl_setopt_array($curl, $curl_option);
-            $response_json = curl_exec($curl);
+                $curl_url = "";
+                $curl = curl_init();
+                $api_URL = env('API_URL');
 
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
+
+                $curl_url = $api_URL . 'api/mock-exam/' . $exam_id;
+                $curl_option = array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 360,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                    CURLOPT_POSTFIELDS => $request,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+
+                    ),
+                );
+                curl_setopt_array($curl, $curl_option);
+                $response_json = curl_exec($curl);
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+
+                Redis::set($mockCacheKey, $response_json);
+            }
 
             $responsedata = json_decode($response_json);
+
+
 
             $response_status = isset($responsedata->success) ? $responsedata->success : false;
 
@@ -188,32 +205,37 @@ class MockExamController extends Controller
                 $option_data[] = '';
             }
 
-
-
-            /* set redis for save exam question response */
-            $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];
-            $redis_data = [
-                'given_ans' => $retrive_array,
-                'taken_time' => $retrive_time_array,
-                'taken_time_sec' => $retrive_time_sec,
-                'answer_swap_cnt' => $answer_swap_cnt,
-                'questions_count' => $questions_count,
-                'all_questions_id' => $keys,
-                'full_time' => $exam_fulltime,
-                'section_data' => $aSections,
-                'attempt_count' => $attempt_sub_section_cnt,
-                'aSectionSub' => $aSectionSub,
-                'aSubSecCount' => $aSubSecCount,
-            ];
-
-
-            // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
-
             $tagrets = implode(', ', $aTargets);
             $test_type = 'Mocktest';
             $exam_type = 'PE';
             $exam_mode = 'Practice';
+
+            if (isset($inst) && $inst === 'instruction') {
+
+                /* set redis for save exam question response */
+                $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];
+                $redis_data = [
+                    'given_ans' => $retrive_array,
+                    'taken_time' => $retrive_time_array,
+                    'taken_time_sec' => $retrive_time_sec,
+                    'answer_swap_cnt' => $answer_swap_cnt,
+                    'questions_count' => $questions_count,
+                    'all_questions_id' => $keys,
+                    'full_time' => $exam_fulltime,
+                    'section_data' => $aSections,
+                    'attempt_count' => $attempt_sub_section_cnt,
+                    'aSectionSub' => $aSectionSub,
+                    'aSubSecCount' => $aSubSecCount,
+                ];
+
+
+                // Push Value in Redis
+                Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+
+                $exam_url = route('mockExam');
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+            }
 
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
@@ -221,11 +243,13 @@ class MockExamController extends Controller
             $url_name = Route::current()->getName();
             $header_title = "Mock Test";
             if ($url_name == 'mockExamTest') {
-                return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks','header_title'));
+                return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'header_title'));
             } else {
-                return view('afterlogin.AdaptiveExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode','header_title'));
+                //return view('afterlogin.MockExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'header_title'));
+                return view('afterlogin.MockExam.mock_exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'header_title'));
             }
         } catch (\Exception $e) {
+            // status dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -317,7 +341,8 @@ class MockExamController extends Controller
             $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount : [];
 
 
-            return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            // return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -425,7 +450,7 @@ class MockExamController extends Controller
             $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount : [];
 
 
-            return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

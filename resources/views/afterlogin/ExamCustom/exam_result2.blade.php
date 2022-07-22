@@ -14,6 +14,7 @@
     </h3>
     <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
     <div class="row">
+        @if(isset($response->subject_wise_result))
         @foreach($response->subject_wise_result as $subData)
         <div class="col-md-6 mb-3">
             <h5 class="mb-0">{{$subData->subject_name}}</h5>
@@ -28,8 +29,8 @@
                 </div>
             </div>
         </div>
-
         @endforeach
+        @endif
         <!--  <div class="col-md-6 mb-3">
             <h5 class="mb-0">Physics</h5>
             <div class="d-flex align-items-center">
@@ -76,11 +77,13 @@
         <div class="row mb-4 mt-4 align-items-center">
             <div class="col-md-6">
                 <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
+                    @if(isset($response->subject_wise_result))
                     @foreach($response->subject_wise_result as $skey=>$subData)
                     <li class="nav-item" role="presentation">
                         <button class="nav-link btn @if($skey==0) active @endif" id="pills-{{$subData->subject_name}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{$subData->subject_name}}" type="button" role="tab" aria-controls="pills-{{$subData->subject_name}}" aria-selected="true">{{$subData->subject_name}}</button>
                     </li>
                     @endforeach
+                    @endif
                     <!--  <li>
                         <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
                     </li>
@@ -98,9 +101,11 @@
             </div>
         </div>
         <div class="tab-content" id="pills-tabContent">
+            @if(isset($response->subject_wise_result))
             @foreach($response->subject_wise_result as $key=>$subDataTopic)
             <div class="tab-pane fade show @if($key==0) active @endif" id="pills-{{$subDataTopic->subject_name}}" role="tabpanel" aria-labelledby="pills-{{$subDataTopic->subject_name}}-tab">
                 <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                    @if(isset($response->topic_wise_result))
                     @foreach($response->topic_wise_result as $key=>$tdata)
                     @if($tdata->subject_id==$subDataTopic->subject_id)
                     @php
@@ -121,10 +126,11 @@
                     </li>
                     @endif
                     @endforeach
-
+                    @endif
                 </ul>
             </div>
             @endforeach
+            @endif
             <!--  <div class="tab-pane fade" id="pills-physicssub" role="tabpanel" aria-labelledby="pills-physicssub-tab">...</div>
             <div class="tab-pane fade" id="pills-chemistrysub" role="tabpanel" aria-labelledby="pills-chemistrysub-tab">...</div> -->
         </div>

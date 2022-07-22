@@ -1205,4 +1205,29 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
+
+<script>
+
+/*********Notification-Scrolljs*************/
+$('.notificationnew').click(function() {
+  $(this).toggleClass('bellactive')
+  $('.notification-block_new').toggleClass('activeblock')
+      if ($('.notification-block_new ').hasClass('activeblock')) {
+          $('html').addClass("scrollnone")
+      }else {
+          $('html').removeClass("scrollnone")
+      };
+});
+$('.headericon.dropdown').click(function(){
+  $('.notification-block_new').removeClass('activeblock show');
+  $('.notificationnew').removeClass('bellactive')
+  $('html').removeClass("scrollnone");
+  // $('.notification-block_new').removeClass('show ')
+});
+
+/*********Notification-Js*****/
+</script>
+
+
+
     @endsection

@@ -1,6 +1,19 @@
+<div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1" id="testTypeDiv">
+    <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
+        <li class="nav-item" role="presentation" type="button">
+            <button class="nav-link btn pt-0 pb-0 all_attemp active">All Test Series</button>
+        </li>
+        <li class="nav-item" role="presentation" type="button">
+            <button class="nav-link btn pt-0 pb-0 open_attemp">Open Test Series</button>
+        </li>
+        <li class="nav-item" role="presentation" type="button">
+            <button class="nav-link pt-0 pb-0 btn live_attemp">Live Test Series</button>
+        </li>
+    </ul>
+</div>
 @if(!empty($result_data))
 @foreach($result_data as $sche)
-<div class="accordion-item pt-4">
+<div class="compLeteS accordion-item pt-4 exam_mode_{{$sche->exam_mode}}">
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
         <h2 class="m-0">
             @if($sche->test_series_name)
@@ -17,7 +30,7 @@
         </h2>
         <h3 class="m-0">{{date('d F Y', strtotime($sche->created_at));}}</h3>
         <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
-            <a href="javascript:void(0);"  class="m-0 view_detail_text_colleps">
+            <a href="javascript:void(0);" class="m-0 view_detail_text_colleps">
                 <h4 class="view_details" data-id="{{$sche->id}}">View details</h4>
             </a>
             <div class="d-flex align-items-center see_analytics_mock_exam">
@@ -69,7 +82,13 @@
     <span class="sub-details">No result history available right now.</span>
 </div>
 @endif
+@if(!empty($result_data))
+<div class="no_data_found text-center">
+    <span class="sub-details" id="error_data">No result history available right now.</span>
+</div>
+@endif
 <script type="text/javascript">
+$('.no_data_found').hide();
 $('.view_details').click(function() {
     var text_data = $(this).text();
     var ids = parseInt($(this).attr('data-id'));
