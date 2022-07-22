@@ -33,7 +33,8 @@ class MenuMiddleware
             if (!Session::has('user_data')) {
                 Session::put('user_data', $user_Data);
             }
-            $userData = Session::get('user_data');
+            //$userData = Session::get('user_data');
+            $userData = $user_Data;
 
 
 
