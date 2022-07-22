@@ -452,6 +452,22 @@
         margin-left: 12px;
         margin-top: 30px;
     }
+    .aeck_tab_in_tab_chapter_topic_section
+    {
+        padding-right: 0px;
+    }
+    .aeck_polish_strength_btn
+    {
+        display: none;
+    }
+    button.btn.aeck_filter_btn
+    {
+        margin-right: 0px;
+    }
+    .aeck_tab_in_tab_chapter_topic .tab-content
+    {
+        padding: 0px 0px;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
