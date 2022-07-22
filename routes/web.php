@@ -261,7 +261,7 @@ Route::any('/get_exam_result_analytics/{result_id}', [App\Http\Controllers\Resul
 
 
 /* mock exam Routes */
-Route::any('/mock_exam', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExam')->middleware('auth');
+Route::any('/mock_exam/{instruction?}', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExam')->middleware('auth');
 Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExamTest')->middleware('auth', 'menu');
 
 Route::any('/mock_next_question/{ques_id}', [App\Http\Controllers\MockExamController::class, 'mockNextQuestion'])->name('mockNextQuestion')->middleware('auth');
