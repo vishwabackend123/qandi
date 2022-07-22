@@ -39,12 +39,12 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="text-right">
-                        <button class="btn btn-common-transparent" style="min-width: auto;">
+                        <a href="{{route('exam_review',[$result_id,'attempted'])}}" class="btn btn-common-transparent" style="min-width: auto;">
                             <svg style="vertical-align:middle;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             Review Question
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

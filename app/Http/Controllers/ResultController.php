@@ -431,7 +431,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title','result_id'));
             } else {
 
                 //return redirect()->back();
