@@ -41,13 +41,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" required onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
+                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname"  onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" required onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname"  onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -313,6 +313,12 @@ $user_id = isset($userData->id)?$userData->id:'';
         $('#editProfile_form input').each(function() {
             var id = this.id;
             if (id == 'file-input') {
+                return;
+            }
+            if (id == 'firstname') {
+                return;
+            }
+            if (id == 'lastname') {
                 return;
             }
             var city = $('#city_name').val();
