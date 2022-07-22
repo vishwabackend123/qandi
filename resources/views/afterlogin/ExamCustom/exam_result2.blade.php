@@ -1,151 +1,198 @@
-<div class="col-lg-5 mb-lg-0 mb-4">
-    <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100 custom-box-shadow">
-        <h5 class="dashboard-title mb-3">Subject Score</h5>
-        <input type="hidden" name="subject_data" id="subject_data" value="{{json_encode($response->subject_wise_result)}}">
-
-        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-        @foreach($response->subject_wise_result as $subject)
-        @php $subject=(object)$subject; @endphp
-        @php
-        $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->correct_count/$subject->total_questions)*100),2):0;
-        $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
-        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
-        @endphp
-        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-            <span class="subj-name  col-3" title="{{$subject->subject_name}}">{{$subject->subject_name}}</span>
-            <div class="progress ms-auto  col-8" style="overflow: visible;">
-                @if($correct_per > 0)
-                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
-                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="{{$correct_per}}%">{{$subject->correct_count}}</span>
+<div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
+    <h3 class="boxheading d-flex align-items-center">Subject Score
+        <span class="tooltipmain ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                </g>
+            </svg>
+            <p class="tooltipclass">
+                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+            </p>
+        </span>
+    </h3>
+    <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+    <div class="row">
+        @foreach($response->subject_wise_result as $subData)
+        <div class="col-md-6 mb-3">
+            <h5 class="mb-0">{{$subData->subject_name}}</h5>
+            <div class="d-flex align-items-center">
+                <div class="halfdoughnut">
+                    <canvas id="subjectChart_{{$subData->subject_id}}"></canvas>
                 </div>
-                @endif
-                @if($incorrect_per > 0)
-                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$incorrect_per}}%;overflow: visible;">
-                    <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}%">{{$subject->incorrect_count}}</span>
+                <div class="color_labels ms-5">
+                    <span class="d-block">Correct <b><small></small>{{$subData->correct_count}}</b></span>
+                    <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subData->incorrect_count}}</b></span>
+                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subData->unanswered_count}}</b></span>
                 </div>
-                @endif
-                @if($not_attempt_per > 0)
-                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$not_attempt_per}}%;overflow: visible;">
-                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="{{$not_attempt_per}}%">{{$subject->unanswered_count}}</span>
-                </div>
-                @endif
             </div>
         </div>
+
         @endforeach
-        @endif
-
-
-            <div class="graphdotlisting my-4">
-                <div class="garphlistincom">
-                    <span class="abrv-graph bg1"> </span>
-                    <span class="graph-txt">Correct Attempts</span>
+        <!--  <div class="col-md-6 mb-3">
+            <h5 class="mb-0">Physics</h5>
+            <div class="d-flex align-items-center">
+                <div class="halfdoughnut">
+                    <canvas id="subjectChart-1"></canvas>
                 </div>
-                <div class="garphlistincom">
-                    <span class="abrv-graph bg2"> </span>
-                    <span class="graph-txt">Wrong Attempts</span>
-                </div>
-                <div class="garphlistincom">
-                    <span class="abrv-graph bg3"> </span>
-                    <span class="graph-txt">Not Answered</span>
+                <div class="color_labels ms-5">
+                    <span class="d-block">Correct <b><small></small>32</b></span>
+                    <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <h5 class="mb-0">Chemistry</h5>
+            <div class="d-flex align-items-center">
+                <div class="halfdoughnut">
+                    <canvas id="subjectChart-2"></canvas>
+                </div>
+                <div class="color_labels ms-5">
+                    <span class="d-block">Correct <b><small></small>32</b></span>
+                    <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>
-<div class="col-lg-7">
-    <div class="position-relative h-100">
-        <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
-          <div id="scroll-mobile" class="tabintablet fortab ">
-            <ul class="nav nav-tabs widthAuto cust-tabs exam-panel mytab" id="myTab" role="tablist">
-                @php $subx=1; @endphp
-                @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-                @foreach($response->subject_wise_result as $subject)
-                @php $subject=(object)$subject; @endphp
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}
-                        <span class="circleL"></span>
-                        <span class="circleR"></span>
-                        <span class="squareL"></span>
-                        <span class="squareR"></span>
-                    </a>
-                </li>
-                @php $subx++; @endphp
-                @endforeach
-                @endif
-            </ul>
-          </div>
-            <div class="tab-content position-relative cust-tab-content bg-white sub-padding" id="myTabContent">
-                @php $topx=1; @endphp
-                @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
-                @foreach($response->subject_wise_result as $subject)
-                @php $subject=(object)$subject;
-                $subject_id=$subject->subject_id;
-                @endphp
-                <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
+<div class="commonWhiteBox commonblockDash borderRadius">
+    <h3 class="boxheading d-flex align-items-center">Topic Score
+        <span class="tooltipmain ml-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                </g>
+            </svg>
+            <p class="tooltipclass">
+                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+            </p>
+        </span>
+    </h3>
+    <div class="common_greenbadge_tabs">
+        <div class="row mb-4 mt-4 align-items-center">
+            <div class="col-md-6">
+                <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
+                    @foreach($response->subject_wise_result as $skey=>$subData)
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link btn @if($skey==0) active @endif" id="pills-{{$subData->subject_name}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{$subData->subject_name}}" type="button" role="tab" aria-controls="pills-{{$subData->subject_name}}" aria-selected="true">{{$subData->subject_name}}</button>
+                    </li>
+                    @endforeach
+                    <!--  <li>
+                        <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link btn" id="pills-chemistrysub-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistrysub" type="button" role="tab" aria-controls="pills-chemistrysub" aria-selected="false">Chemistry</button>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-between color_labels">
+                    <span><small></small> Correct</span>
+                    <span><small></small> Incorrect</span>
+                    <span><small></small> Not Attempted</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            @foreach($response->subject_wise_result as $key=>$subDataTopic)
+            <div class="tab-pane fade show @if($key==0) active @endif" id="pills-{{$subDataTopic->subject_name}}" role="tabpanel" aria-labelledby="pills-{{$subDataTopic->subject_name}}-tab">
+                <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                    @foreach($response->topic_wise_result as $key=>$tdata)
+                    @if($tdata->subject_id==$subDataTopic->subject_id)
+                    @php
+                    $corr_Per=(isset($tdata->total_questions)&& !empty($tdata->total_questions))?$tdata->correct_count*100/$tdata->total_questions:0;
+                    $incorr_Per=(isset($tdata->incorrect_count)&& !empty($tdata->total_questions))?$tdata->incorrect_count*100/$tdata->total_questions:0;
+                    $unanswered_Per=(isset($tdata->unanswered_count)&& !empty($tdata->total_questions))?$tdata->unanswered_count*100/$tdata->total_questions:0;
+                    @endphp
 
-                    <div class="hScroll topicdiv-scroll pb-0">
-                        @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
-                        @foreach($response->topic_wise_result as $topic)
-                        @php $topic=(object)$topic; @endphp
-                        @php
-                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->correct_count/$topic->total_questions)*100), 2):0;
-                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->incorrect_count/$topic->total_questions)*100), 2):0;
-                        $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
-
-                        @endphp
-                        @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
-
-                        <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                            <span class="subj-name  col-4" title="{{Str::ucfirst(Str::lower($topic->topic_name))}}"> @if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
-                               @else
-                               ""
-                               @endif
-                            </span>
-                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                @if($tcorrect_per > 0)
-                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
-                                </div>
-                                @endif
-                                @if($tincorrect_per > 0)
-                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
-                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
-                                </div>
-                                @endif
-                                @if($tnot_attempt_per > 0)
-                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
-                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
-                                </div>
-                                @endif
-
+                    <li>
+                        <div class="topic_score_bar">
+                            <h4>{{$tdata->topic_name}}</h4>
+                            <div class="progress">
+                                <div class="progress-bar correct-bg" role="progressbar" style="width:{{$corr_Per}}%" aria-valuenow=" {{$corr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar incorrect-bg" role="progressbar" style="width:{{$incorr_Per}}%" aria-valuenow=" {{$incorr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$unanswered_Per}}%" aria-valuenow=" {{$unanswered_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                        @endif
-                        @endforeach
-                        @endif
-                    </div>
-                </div>
-                @php $topx++; @endphp
-                @endforeach
-                @endif
+                    </li>
+                    @endif
+                    @endforeach
+
+                </ul>
             </div>
+            @endforeach
+            <!--  <div class="tab-pane fade" id="pills-physicssub" role="tabpanel" aria-labelledby="pills-physicssub-tab">...</div>
+            <div class="tab-pane fade" id="pills-chemistrysub" role="tabpanel" aria-labelledby="pills-chemistrysub-tab">...</div> -->
         </div>
     </div>
 </div>
+
 <script>
-    /*$(".topicdiv-scroll").slimscroll({
-        height: "50vh",
-    });*/
-</script>
-<script>
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-            });
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-            $(this).parent("p").hide();
-        });
-    });
+    /***************** halfdoughnut - start *********************/
+    var graphArr = <?php echo json_encode($response->subject_wise_result); ?>;
+    var studet_score = [];
+    var class_score = [];
+    var data = 'data';
+    var m = 'circuference';
+    var i = 0;
+    const iterator = graphArr.values();
+    for (const value of iterator) {
+        var subId = value.subject_id;
+        var correct_count = value.correct_count;
+        var incorrect_count = value.incorrect_count;
+        var unanswered_count = value.unanswered_count;
+        /* eval('var ' + data + subId + '= '';');
+        console.log(data); */
+
+
+
+        var circuference = 260;
+        var data = {
+            labels: ["Correct", "Incorrect", "Not Attempted"],
+            datasets: [{
+                label: "My First Dataset",
+                data: [correct_count, incorrect_count, unanswered_count],
+                backgroundColor: [
+                    "#08d5a1",
+                    "#fb7686",
+                    "#f2f4f7"
+                ]
+            }]
+        };
+        const config = {
+            type: "doughnut",
+            data: data,
+            options: {
+                reponsive: true,
+                maintainAspectRatio: false,
+                rotation: (circuference / 2) * -1,
+                circumference: circuference,
+                cutout: "60%",
+                borderWidth: 0,
+                borderRadius: function(context, options) {
+                    const index = context.dataIndex;
+                    let radius = {};
+                    if (index == 0) {
+                        radius.innerStart = 0;
+                        radius.outerStart = 0;
+                    }
+                    if (index === context.dataset.data.length - 1) {
+                        radius.innerEnd = 0;
+                        radius.outerEnd = 0;
+                    }
+                    return radius;
+                },
+                plugins: {
+                    title: false,
+                    subtitle: false,
+                    legend: false
+                },
+            }
+        };
+        const myCharted = new Chart("subjectChart_" + subId, config)
+    }
 </script>
