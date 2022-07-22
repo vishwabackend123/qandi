@@ -1205,4 +1205,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
+
+
     @endsection

@@ -93,13 +93,15 @@
             },
             beforeSend: function() {
 
-            },
-            success: function(data) {
-                $("#attempted2").show();
-                $('#attempted2').html(data.html);
-            },
-            error: function(data, errorThrown) {}
+                },
+                success: function(data) {
+                    $("#attempted2").show();
+                    $('#attempted2').html(data.html);
+                    $('#testTypeDiv').attr("style", "display: none !important");
+                },
+                error: function(data, errorThrown) {
+                }
+            });
         });
-    });
 </script>
 @endsection
