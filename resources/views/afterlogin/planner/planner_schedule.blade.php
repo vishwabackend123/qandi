@@ -12,12 +12,14 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.sidebar_new')
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
-
-
     <section class="content-wrapper" id="planner-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
+                <div class="d-flex align-items-center justify-content-between gotodashboard">
+                <p class="m-0">Your weekly schedule has been set</p>  
+                <a href="javascript:void(0);">Go to Dashboard</a>
+                </div>    
                     <div class="alert_msg" id="alert_msg"></div>
                     <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                         @csrf
