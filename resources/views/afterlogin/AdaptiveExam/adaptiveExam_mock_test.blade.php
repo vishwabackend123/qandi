@@ -104,4 +104,5 @@
             });
         });
 </script>
+@include('afterlogin.layouts.footer_new')
 @endsection
