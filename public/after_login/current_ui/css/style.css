@@ -5335,7 +5335,14 @@ td.mymatrix_table_point
     right: 0%!important;
     transition: 0.5s; 
 }
+.show .notification-main{
+    right: 0%!important;
+    transition: 0.5s; 
+}
 .activeblock.notification-block_new {
+    position: fixed;right: auto !important;
+}
+.show.notification-block_new {
     position: fixed;right: auto !important;
 }
 .notification-block_new{
@@ -5343,6 +5350,15 @@ td.mymatrix_table_point
     width: 95.8%;
 }
 .activeblock.notification-block_new::before{
+    content: "";
+    left: 0px;
+    width:100%;
+    height:100%;
+    top:0;
+    background-color: rgb(31,31,31,0.3);
+    position: absolute;
+}
+.show.notification-block_new::before{
     content: "";
     left: 0px;
     width:100%;

@@ -1016,3 +1016,46 @@
         }
     }
 </script>
+
+
+
+<script>
+/*********Notification-Scrolljs*************/
+$('.notificationnew').click(function() {
+  $(this).toggleClass('bellactive')
+  $('.notification-block_new').toggleClass('activeblock')
+      if ($('.notification-block_new ').hasClass('activeblock')) {
+          $('html').addClass("scrollnone")
+      }else {
+          $('html').removeClass("scrollnone")
+      };
+});
+$('.headericon.dropdown').click(function(){
+  $('.notification-block_new').removeClass('activeblock show');
+  $('.notificationnew').removeClass('bellactive')
+  $('html').removeClass("scrollnone");
+  // $('.notification-block_new').removeClass('show ')
+});
+
+/*********Notification-Js*****/
+</script>
+
+
+
+<script>
+/**********************Notification-Overlay Remove Outside Section Click*******************/
+$(document).on('click', function(e) {
+    var card_opened = $('.notification-block_new').hasClass('activeblock');
+    if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
+        $('.notification-block_new').removeClass("activeblock");
+    }
+});
+
+$(document).on('click', function(e) {
+    var card_opened = $('.notification-block_new').hasClass('show');
+    if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
+        $('.notification-block_new').removeClass("show");
+    }
+});
+/**********************Notification-Overlay Remove Outside Section Click*******************/
+</script>
