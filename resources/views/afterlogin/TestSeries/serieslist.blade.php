@@ -1,380 +1,221 @@
 @extends('afterlogin.layouts.app_new')
-@php
-$userData = Session::get('user_data');
-@endphp
 @section('content')
-<!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar_new')
-<!-- sidebar menu end -->
 <div class="main-wrapper">
-    <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
-    <div class="content-wrapper">
-        <div class="container-fluid list-series practice-series-lists">
+    @include('afterlogin.layouts.sidebar_new')
+    <section class="content-wrapper">
+        @if(session()->has('message'))
+        <div class="alert alert-danger">
+            {{ session()->get('message') }}
+        </div>
+        @endif
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12  p-lg-5">
-                    <div class="tab-wrapper live-exam live-exam-custom fortab">
-                        <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs widthAuto mytab" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test Series
-                                        <span class="circleL"></span>
-                                        <span class="circleR"></span>
-                                        <span class="squareL"></span>
-                                        <span class="squareR"></span>
-                                    </a>
+                <div class="col-lg-12">
+                    <div class="commontab">
+                        <div class="tablist">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item pe-5 me-2">
+                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1" id="test_series">Test Series</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
+                                <li class="nav-item">
+                                    <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted_tab" id="attempted">Attempted</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="tab-content cust-tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab">
-                                <div class="d-flex  p-4 pb-4 custom-exam-subjects">
-                                    <a class="btn sectionBtn open_test btn-primary me-2">OPEN TEST SERIES</a>
-                                    <a class="btn sectionBtn live_tes btn-outline-primary">LIVE TEST SERIES</a>
+                        <!-- Tab panes -->
+                        <div class="tab-content bg-white exam_tabdata">
+                            <div id="qq1" class=" tab-pane active">
+                                <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1">
+                                    <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
+                                        <li class="nav-item" role="presentation" type="button">
+                                            <button class="nav-link btn pt-0 pb-0 open_test active">Open Test Series</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation" type="button">
+                                            <button class="nav-link pt-0 pb-0 btn live_test">Live Test Series</button>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="open_test_div mt-4">
-                                    @if(!empty($open_series))
-                                    <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
+                                <div class="accordion mt-4 pt-1" id="open_test_div">
+                                    <div class="allscrollbar">
+                                        @if(!empty($open_series))
                                         @foreach($open_series as $open)
-                                        <ul class="speci-text">
-                                            <li class="a1TS"> <span class="sub-details">{{$open->test_series_name}}</span>
-                                            </li>
-                                            <li class="a2TS"><strong>{{$open->questions_count}} Questions</strong>
-                                            </li>
-                                            <li class="a3TS"><strong>{{$open->time_allowed}} min</strong>
-                                            </li>
-                                            <li class="a4TS">
-                                                <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="series_name" value="{{$open->test_series_name}}" />
-                                                    <input type="hidden" name="series_id" value="{{$open->test_series_id}}" />
-                                                    <input type="hidden" name="series_type" value="{{$open->series_type}}" />
-                                                    <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
-                                                    <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
-                                                    <input type="hidden" name="exam_mode" value="Open" />
-                                                    <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
-                                                </form>
-                                            </li>
-                                        </ul>
+                                        <div class="accordion-item pt-4">
+                                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
+                                                <h2 class="m-0">{{$open->test_series_name}}</h2>
+                                                <h2 class="m-0"><strong>{{$open->questions_count}} Questions</strong></h2>
+                                                <h2 class="m-0"><strong>{{$open->time_allowed}} minutes</strong></h2>
+                                                <div class="accordion-header d-flex align-items-center" id="headingOne">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="series_name" value="{{$open->test_series_name}}" />
+                                                        <input type="hidden" name="series_id" value="{{$open->test_series_id}}" />
+                                                        <input type="hidden" name="series_type" value="{{$open->series_type}}" />
+                                                        <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
+                                                        <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
+                                                        <input type="hidden" name="exam_mode" value="Open" />
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4"> TAKE TEST</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                         @endforeach
+                                        @else
+                                        <div class="row text-center p-4">
+                                            <h5>No series available.</h5>
+                                        </div>
+                                        @endif
                                     </div>
-                                    @else
-                                    <div class="row text-center p-4">
-                                        <h5>No series available.</h5>
-                                    </div>
-                                    @endif
                                 </div>
-                                <div class="live_test_div mt-5">
-                                    @if(!empty($live_series))
-                                    <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
+                                <div class="accordion mt-4 pt-1" id="live_test_div">
+                                    <div class="allscrollbar">
+                                       @php 
+                                       $i=0;
+                                       @endphp
+                                        @if(!empty($live_series))
                                         @foreach($live_series as $live)
                                         @if($live->test_completed_yn === 'N')
-                                        <ul class="speci-text">
-                                            <li class="a1TS"> <span class="sub-details">{{$live->test_series_name}}</span>
-                                            </li>
-                                            <li class="a2TS"><strong>{{$live->questions_count}} Questions</strong>
-                                            </li>
-                                            <li class="a3TS"><strong>{{$live->time_allowed}} min</strong>
-                                            </li>
-                                            <li class="a4TS">
-
-                                                <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
-                                                    <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
-                                                    <input type="hidden" name="series_type" value="{{$live->series_type}}" />
-                                                    <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
-                                                    <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
-                                                    <input type="hidden" name="exam_mode" value="Live" />
-                                                    <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Start</button>
-                                                </form>
-
-                                            </li>
-                                        </ul>
+                                        <div class="accordion-item pt-4">
+                                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
+                                                <h2 class="m-0">{{$live->test_series_name}}</h2>
+                                                <h2 class="m-0"><strong>{{$live->questions_count}} Questions</strong></h2>
+                                                <h2 class="m-0"><strong>{{$live->time_allowed}} minutes</strong></h2>
+                                                <div class="accordion-header d-flex align-items-center" id="headingOne">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
+                                                        <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
+                                                        <input type="hidden" name="series_type" value="{{$live->series_type}}" />
+                                                        <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
+                                                        <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
+                                                        <input type="hidden" name="exam_mode" value="Live" />
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @php 
+                                        $i++;
+                                        @endphp
                                         @endif
                                         @endforeach
+                                        @else
+                                        <div class="row text-center p-4">
+                                            <h5>No series avialable.</h5>
+                                        </div>
+                                        @endif
+                                        @if($i <= 0)
+                                        <div class="row text-center p-4">
+                                            <h5>No series avialable.</h5>
+                                        </div>
+                                        @endif
                                     </div>
-                                    @else
-                                    <div class="row text-center p-4">
-                                        <h5>No series avialable.</h5>
-                                    </div>
-                                    @endif
                                 </div>
                             </div>
-                            <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
-                                @include('afterlogin.TestSeries.attempted_result_list')
+                            <div id="attempted_tab" class=" tab-pane">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
-<div class="loader-block" style="display:none;">
-    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
-</div>
-<style>
-    .result-list-table {
-        background: #f6f9fd;
-        border-radius: 15px;
-    }
-
-    .result-list-table .result-list-head {
-        flex: 2;
-    }
-
-    .result-list-head h4 {
-        color: #231f20;
-        font-size: 16px;
-        font-weight: 600;
-        flex: 1;
-    }
-
-    .result-list-head p {
-        color: #231f20;
-        font-size: 15px;
-        font-weight: 600;
-    }
-
-    .morning-slot {
-        flex: 2;
-    }
-
-    .morning-slot p {
-        color: #231f20;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .result-list-btns {
-        flex: 1;
-    }
-
-    .result-list-btns a {
-        line-height: 37px;
-        height: 48px;
-        text-align: center;
-        display: block;
-        background: #f4f4f4;
-        border-radius: 10px;
-    }
-
-    .result-list-btns a .fa {
-        font-size: 17px;
-        line-height: 48px;
-    }
-
-    .result-review {
-        height: 48px;
-        background: #f4f4f4;
-        border-radius: 10px;
-        color: #515151 !important;
-        font-size: 16px;
-        width: 75%;
-    }
-
-    .score-show {
-        flex: 3;
-        border-right: 1px solid #b9b9b9;
-    }
-
-    .score-show p {
-        color: #231f20;
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .score-show p span {
-        color: #00baff;
-    }
-
-    .result-analysis {
-        background: #13c5ff;
-        background-color: #13c5ff;
-        border-color: #13c5ff;
-        -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 32px;
-        border-radius: 20px;
-        height: 45px;
-        width: 208px;
-        border: 0;
-    }
-
-    .paper-summery {
-        flex: 5;
-    }
-
-    .paper-sub {
-        font-size: 13px;
-        flex: 1;
-        word-break: break-all;
-    }
-
-    .paper-sub span {
-        color: #00baff;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .paper-sub small {
-        display: block;
-        color: #231f20;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .result-list-table .slbs-link a {
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    @media only screen and (max-width: 1199px) {
-        .result-list-head h4 {
-            font-size: 14px;
-        }
-
-        .result-list-head p {
-            font-size: 14px;
-            flex: 1;
-        }
-    }
-
-    @media only screen and (max-width: 991px) {
-        .result-list .d-flex.justify-content-between {
-            display: flex !important;
-        }
-
-        .result-review {
-            font-size: 13px;
-        }
-
-        .paper-sub small {
-            font-size: 12px;
-        }
-
-        .paper-sub span {
-            font-size: 13px;
-        }
-    }
-</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    $(window).on('load', function() {
-        $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
-    });
-    $(document).ready(function() {
-        $('.live_test_div').hide();
-        $('.open_test').click(function() {
-            $(this).addClass('btn-primary');
-            $(this).removeClass('btn-outline-primary');
-            $('.live_tes').removeClass('btn-primary');
-            $('.live_tes').addClass('btn-outline-primary');
-            $('.live_test_div').hide();
-            $('.open_test_div').show();
-        });
-        $('.live_tes').click(function() {
-            $(this).addClass('btn-primary');
-            $(this).removeClass('btn-outline-primary');
-            $('.open_test').removeClass('btn-primary');
-            $('.open_test').addClass('btn-outline-primary');
-            $('.live_test_div').show();
-            $('.open_test_div').hide();
-        });
-        $('#live-tab').click(function() {
-            $('.loader-block').show();
-            url = "{{ url('ajax_exam_result_list') }}/Test-Series";
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                beforeSend: function() {
+$('.testslider').owlCarousel({
+    stagePadding: 0,
+    loop: false,
+    margin: 15,
+    nav: false,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+            stagePadding: 40,
+            margin: 5,
+            loop: true,
+        },
+        700: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        },
+        1200: {
+            items: 4
+        }
 
-                },
-                success: function(data) {
-                    $('.loader-block').hide();
-                    $("#live").show();
-                    $('#live').html(data.html);
 
-                },
-                error: function(data, errorThrown) {
-                    $('.loader-block').hide();
-                }
-            });
-        });
-        $(document).on('click', '.all_attemp', function() {
-            $(this).addClass('btn-primary');
-            $(this).removeClass('btn-outline-primary');
-            $('.open_attemp').removeClass('btn-primary');
-            $('.open_attemp').addClass('btn-outline-primary');
-            $('.live_attemp').removeClass('btn-primary');
-            $('.live_attemp').addClass('btn-outline-primary');
-            $('.compLeteS').show();
-            $('.no_data_found').hide();
-            hideExpend();
-
-        });
-        $(document).on('click', '.open_attemp', function() {
-            $(this).addClass('btn-primary');
-            $(this).removeClass('btn-outline-primary');
-            $('.all_attemp').removeClass('btn-primary');
-            $('.all_attemp').addClass('btn-outline-primary');
-            $('.live_attemp').removeClass('btn-primary');
-            $('.live_attemp').addClass('btn-outline-primary');
-            $('.compLeteS').hide();
-            $('.exam_mode_Open').show();
-            var data_list = $('.exam_mode_Open').length;
-            if (data_list > 0) {
-                $('.no_data_found').hide();
-            } else {
-                $('.no_data_found').show();
-                $('#error_data').text('No result history available right now.');
-            }
-            hideExpend();
-        });
-        $(document).on('click', '.live_attemp', function() {
-            $(this).addClass('btn-primary');
-            $(this).removeClass('btn-outline-primary');
-            $('.all_attemp').removeClass('btn-primary');
-            $('.all_attemp').addClass('btn-outline-primary');
-            $('.open_attemp').removeClass('btn-primary');
-            $('.open_attemp').addClass('btn-outline-primary');
-            $('.compLeteS').hide();
-            $('.exam_mode_Live').show();
-            var data_list = $('.exam_mode_Live').length;
-            if (data_list > 0) {
-                $('.no_data_found').hide();
-            } else {
-                $('.no_data_found').show();
-                $('#error_data').text('No result history available right now.');
-            }
-            hideExpend();
-        });
-    });
-
-    function hideExpend() {
-        $('.loader-block').show();
-        $('.hideallexpend').each(function() {
-
-            var current_id = this.id;
-            var current_div_id = $(this).attr('data-id');
-            if ($('#' + current_div_id).hasClass('show')) {
-                $('#' + current_id).trigger('click')
-            }
-        });
-        setTimeout(function() {
-            $('.loader-block').hide();
-            $('.scroll_top').scrollTop(0);
-        }, 500);
     }
+});
+$('#live_test_div').hide();
+$('.open_test').click(function() {
+    $('#open_test_div').show();
+    $('#live_test_div').hide();
+    $(this).addClass('active');
+    $('.live_test').removeClass('active');
+});
+$('.live_test').click(function() {
+    $('#open_test_div').hide();
+    $('#live_test_div').show();
+    $(this).addClass('active');
+    $('.open_test').removeClass('active');
+});
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/Test-Series";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+        },
+        error: function(data, errorThrown) {}
+    });
+});
+$(document).on('click', '.all_attemp', function() {
+    $(this).addClass('active');
+    $('.open_attemp').removeClass('active');
+    $('.live_attemp').removeClass('active');
+    $('.compLeteS').show();
+
+});
+$(document).on('click', '.open_attemp', function() {
+    $(this).addClass('active');
+    $('.all_attemp').removeClass('active');
+    $('.live_attemp').removeClass('active');
+    $('.compLeteS').hide();
+    $('.exam_mode_Open').show();
+    var data_list = $('.exam_mode_Open').length;
+    if (data_list > 0) {
+        $('.no_data_found').hide();
+    } else {
+        $('.no_data_found').show();
+        $('#error_data').text('No result history available right now.');
+    }
+});
+$(document).on('click', '.live_attemp', function() {
+    $(this).addClass('active');
+    $('.all_attemp').removeClass('active');
+    $('.open_attemp').removeClass('active');
+    $('.compLeteS').hide();
+    $('.exam_mode_Live').show();
+    var data_list = $('.exam_mode_Live').length;
+    if (data_list > 0) {
+        $('.no_data_found').hide();
+    } else {
+        $('.no_data_found').show();
+        $('#error_data').text('No result history available right now.');
+    }
+});
+
 </script>
-@include('afterlogin.layouts.footer_new')
+</body>
 @endsection

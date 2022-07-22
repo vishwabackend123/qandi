@@ -473,6 +473,8 @@ class HomeController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $user_name = $request->username;
+            $firstname =isset($request->firstname) && !empty($request->firstname) ? $request->firstname : "";
+            $lastname =isset($request->lastname) && !empty($request->lastname) ? $request->lastname : "";
 
             if (isset($data['file-input']) && !empty($data['file-input'])) {
                 $file = $data['file-input'];
@@ -490,7 +492,7 @@ class HomeController extends Controller
                 ->where('id', '!=', $user_id)->exists();
             //echo "<pre>"; print_r($mobileexists); die;
             //$exists = StudentUsers::where('email', $request->useremail)->exists();
-            $request = ["id" => $user_id, "first_name" => $request->firstname, "last_name" => $request->lastname, "user_name" => $request->username, "email" => $request->useremail, "mobile" => $request->user_mobile, "city" => $request->city, "state" => $request->state, "country" => $request->country];
+            $request = ["id" => $user_id, "first_name" => $firstname, "last_name" => $lastname, "user_name" => $request->username, "email" => $request->useremail, "mobile" => $request->user_mobile, "city" => $request->city, "state" => $request->state, "country" => $request->country];
 
             $request_json = json_encode($request);
             $api_URL = env('API_URL');

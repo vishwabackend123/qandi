@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div id="attempted2" class=" tab-pane">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -76,32 +76,32 @@
     </div>
 </body>
 <script type="text/javascript">
-$('#take_test').click(function() {
-    var url = "{{ route('mockExam') }}";
-    window.location.href = url;
-});
-$('#mcoktest').click(function() {
-    $('#mock_test').addClass('active');
-    $('#attempted2').removeClass('active');
-});
-$('#attempted').click(function() {
-            url = "{{ url('ajax_exam_result_list') }}/Mocktest";
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                beforeSend: function() {
+    $('#take_test').click(function() {
+        var url = "{{ route('mockExam','instruction') }}";
+        window.location.href = url;
+    });
+    $('#mcoktest').click(function() {
+        $('#mock_test').addClass('active');
+        $('#attempted2').removeClass('active');
+    });
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Mocktest";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
                 },
                 success: function(data) {
                     $("#attempted2").show();
                     $('#attempted2').html(data.html);
+                    $('#testTypeDiv').attr("style", "display: none !important");
                 },
                 error: function(data, errorThrown) {
                 }
             });
         });
-
 </script>
 @endsection
