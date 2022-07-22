@@ -97,6 +97,7 @@ $('#attempted').click(function() {
                 success: function(data) {
                     $("#attempted2").show();
                     $('#attempted2').html(data.html);
+                    $('#testTypeDiv').attr("style", "display: none !important");
                 },
                 error: function(data, errorThrown) {
                 }
