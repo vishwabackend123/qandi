@@ -745,7 +745,8 @@ class HomeController extends Controller
             $response = curl_exec($curl);
 
             curl_close($curl);
-            return Redirect()->route('dashboard');
+            return json_encode($response);
+            //return Redirect()->route('dashboard');
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

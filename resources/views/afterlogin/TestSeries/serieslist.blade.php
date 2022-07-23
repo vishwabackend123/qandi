@@ -217,5 +217,5 @@ $(document).on('click', '.live_attemp', function() {
 });
 
 </script>
-</body>
+@include('afterlogin.layouts.footer_new')
 @endsection

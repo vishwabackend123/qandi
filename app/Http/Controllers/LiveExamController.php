@@ -90,8 +90,9 @@ class LiveExamController extends Controller
             usort($schedule_list, function ($a, $b) {
                 return strcmp($a->end_date, $b->end_date);
             });
+            $header_title = "Live Exam";
 
-            return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list'));
+            return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list','header_title'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
