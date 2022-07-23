@@ -181,7 +181,7 @@
                                     <label class="text">Correct Answers</label>
                                 </div>
                                 <div class="commonSubjectLeg">
-                                    <span class="bar pinkbar"></span>
+                                    <span class="bar pinkbar2"></span>
                                     <label class="text">Incorrect answers</label>
                                 </div>
                             </div>
@@ -262,7 +262,7 @@
                     <div class="barwithTAb">
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
-                                <span class="bar greenbar"></span>
+                                <span class="bar greenbar3"></span>
                                 <label class="text">Class Average</label>
                             </div>
                             <div class="commonSubjectLeg">
@@ -312,7 +312,7 @@
                             <label class="text">Class Average</label>
                         </div>
                         <div class="commonSubjectLeg spaceright">
-                            <span class="bar greenbar"></span>
+                            <span class="bar greenbar2"></span>
                             <label class="text">Student average</label>
                         </div>
                     </div>
@@ -746,8 +746,8 @@ var datamarktrendw = {
     labels: <?php print_r($date2); ?>,
     datasets: [{
             label: 'Correct Answer',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#08d5a1',
+            borderColor: '#08d5a1',
             data: <?php print_r($correctAns2); ?>,
             borderwidth: 0.6,
             tension: 0.4
