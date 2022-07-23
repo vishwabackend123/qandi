@@ -92,8 +92,8 @@ class PreviousYearExamController extends Controller
                 $unique = $collection->unique('paper_year');
                 $years_list = $unique->pluck('paper_year');
                 $years_list->all();
-
-                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list'));
+                $header_title = "Previous Year Exam";
+                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list','header_title'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
             }

@@ -549,6 +549,7 @@ class ResultController extends Controller
         $redis_subjects = $this->redis_subjects();
         $cSubjects = collect($redis_subjects);
         $result_data = $this->getAllResult($exam_type);
+        $years_list = [];
         foreach ($result_data as $key => $value) {
             $id = explode(',', $value->subject_id_list);
             if ($id) {
@@ -557,10 +558,17 @@ class ResultController extends Controller
             } else {
                 $result_data[$key]->subject_name = "";
             }
+            $year = date('Y', strtotime($value->created_at));
+            $years_list[]=$year;
         }
 
-
-        $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();
+        if ($exam_type == 'PreviousYear') {
+            $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects','years_list'))->render();
+        }else
+        {
+            $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();    
+        }
+        
 
         return response()->json([
             'status' => true,
