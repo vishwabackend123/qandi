@@ -46,7 +46,7 @@
                                                 <h2 class="m-0"><strong>{{$open->questions_count}} Questions</strong></h2>
                                                 <h2 class="m-0"><strong>{{$open->time_allowed}} minutes</strong></h2>
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
-                                                    <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="series_name" value="{{$open->test_series_name}}" />
                                                         <input type="hidden" name="series_id" value="{{$open->test_series_id}}" />
@@ -69,9 +69,9 @@
                                 </div>
                                 <div class="accordion mt-4 pt-1" id="live_test_div">
                                     <div class="allscrollbar">
-                                       @php 
-                                       $i=0;
-                                       @endphp
+                                        @php
+                                        $i=0;
+                                        @endphp
                                         @if(!empty($live_series))
                                         @foreach($live_series as $live)
                                         @if($live->test_completed_yn === 'N')
@@ -94,7 +94,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @php 
+                                        @php
                                         $i++;
                                         @endphp
                                         @endif
@@ -104,118 +104,116 @@
                                             <h5>No series avialable.</h5>
                                         </div>
                                         @endif
-                                        @if($i <= 0)
-                                        <div class="row text-center p-4">
+                                        @if($i <= 0) <div class="row text-center p-4">
                                             <h5>No series avialable.</h5>
-                                        </div>
-                                        @endif
                                     </div>
+                                    @endif
                                 </div>
                             </div>
-                            <div id="attempted_tab" class=" tab-pane">
-                            </div>
+                        </div>
+                        <div id="attempted_tab" class=" tab-pane">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+</div>
+</section>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-$('.testslider').owlCarousel({
-    stagePadding: 0,
-    loop: false,
-    margin: 15,
-    nav: false,
-    dots: false,
-    responsive: {
-        0: {
-            items: 1,
-            nav: false,
-            stagePadding: 40,
-            margin: 5,
-            loop: true,
-        },
-        700: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        },
-        1200: {
-            items: 4
+    $('.testslider').owlCarousel({
+        stagePadding: 0,
+        loop: false,
+        margin: 15,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                stagePadding: 40,
+                margin: 5,
+                loop: true,
+            },
+            700: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            }
+
+
         }
-
-
-    }
-});
-$('#live_test_div').hide();
-$('.open_test').click(function() {
-    $('#open_test_div').show();
-    $('#live_test_div').hide();
-    $(this).addClass('active');
-    $('.live_test').removeClass('active');
-});
-$('.live_test').click(function() {
-    $('#open_test_div').hide();
-    $('#live_test_div').show();
-    $(this).addClass('active');
-    $('.open_test').removeClass('active');
-});
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/Test-Series";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
-
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-        },
-        error: function(data, errorThrown) {}
     });
-});
-$(document).on('click', '.all_attemp', function() {
-    $(this).addClass('active');
-    $('.open_attemp').removeClass('active');
-    $('.live_attemp').removeClass('active');
-    $('.compLeteS').show();
+    $('#live_test_div').hide();
+    $('.open_test').click(function() {
+        $('#open_test_div').show();
+        $('#live_test_div').hide();
+        $(this).addClass('active');
+        $('.live_test').removeClass('active');
+    });
+    $('.live_test').click(function() {
+        $('#open_test_div').hide();
+        $('#live_test_div').show();
+        $(this).addClass('active');
+        $('.open_test').removeClass('active');
+    });
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Test-Series";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-});
-$(document).on('click', '.open_attemp', function() {
-    $(this).addClass('active');
-    $('.all_attemp').removeClass('active');
-    $('.live_attemp').removeClass('active');
-    $('.compLeteS').hide();
-    $('.exam_mode_Open').show();
-    var data_list = $('.exam_mode_Open').length;
-    if (data_list > 0) {
-        $('.no_data_found').hide();
-    } else {
-        $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
-    }
-});
-$(document).on('click', '.live_attemp', function() {
-    $(this).addClass('active');
-    $('.all_attemp').removeClass('active');
-    $('.open_attemp').removeClass('active');
-    $('.compLeteS').hide();
-    $('.exam_mode_Live').show();
-    var data_list = $('.exam_mode_Live').length;
-    if (data_list > 0) {
-        $('.no_data_found').hide();
-    } else {
-        $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
-    }
-});
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+            },
+            error: function(data, errorThrown) {}
+        });
+    });
+    $(document).on('click', '.all_attemp', function() {
+        $(this).addClass('active');
+        $('.open_attemp').removeClass('active');
+        $('.live_attemp').removeClass('active');
+        $('.compLeteS').show();
 
+    });
+    $(document).on('click', '.open_attemp', function() {
+        $(this).addClass('active');
+        $('.all_attemp').removeClass('active');
+        $('.live_attemp').removeClass('active');
+        $('.compLeteS').hide();
+        $('.exam_mode_Open').show();
+        var data_list = $('.exam_mode_Open').length;
+        if (data_list > 0) {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No result history available right now.');
+        }
+    });
+    $(document).on('click', '.live_attemp', function() {
+        $(this).addClass('active');
+        $('.all_attemp').removeClass('active');
+        $('.open_attemp').removeClass('active');
+        $('.compLeteS').hide();
+        $('.exam_mode_Live').show();
+        var data_list = $('.exam_mode_Live').length;
+        if (data_list > 0) {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No result history available right now.');
+        }
+    });
 </script>
 </body>
 @endsection
