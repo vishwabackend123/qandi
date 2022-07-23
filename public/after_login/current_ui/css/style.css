@@ -3008,7 +3008,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     background: #cbebcf;
     border-radius: 50%;
     overflow: hidden;
-    display: inline-block;
+    display: inline-block;box-shadow:0px 9px 16px rgba(164,172,178,0.4);
 }
 
 .mq_circle_inner {
