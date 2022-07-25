@@ -992,4 +992,5 @@ function expandTopicAnalytics(sub_id, subject_name, chapter_name) {
 }
 
 </script>
+@include('afterlogin.layouts.footer_new')
 @endsection

@@ -250,7 +250,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -268,7 +268,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -311,7 +311,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -329,7 +329,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -614,7 +614,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg> Attempted</a>
                                                     @else
-                                                    <form method="post" action="{{route('plannerExam',[$val->id])}}">
+                                                    <form method="post" action="{{route('plannerExam',[$val->id,'instruction'])}}">
                                                         @csrf
                                                         <input type="hidden" name="chapter_name" value="{{$val->chapter_name}}">
                                                         <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
@@ -1205,29 +1205,4 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
-
-<script>
-
-/*********Notification-Scrolljs*************/
-$('.notificationnew').click(function() {
-  $(this).toggleClass('bellactive')
-  $('.notification-block_new').toggleClass('activeblock')
-      if ($('.notification-block_new ').hasClass('activeblock')) {
-          $('html').addClass("scrollnone")
-      }else {
-          $('html').removeClass("scrollnone")
-      };
-});
-$('.headericon.dropdown').click(function(){
-  $('.notification-block_new').removeClass('activeblock show');
-  $('.notificationnew').removeClass('bellactive')
-  $('html').removeClass("scrollnone");
-  // $('.notification-block_new').removeClass('show ')
-});
-
-/*********Notification-Js*****/
-</script>
-
-
-
     @endsection
