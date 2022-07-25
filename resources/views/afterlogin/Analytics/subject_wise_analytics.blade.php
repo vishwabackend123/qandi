@@ -39,10 +39,19 @@
                             <a href="javascript:void(0)" class="text-decoration-none" onclick="expandChapterAnalytics({{$sub_id}})">Expand <i class="fa fa-angle-right" style="margin-left:8px" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between color_labels">
-                        <span><small></small> Correct answer</span>
-                        <span><small></small> Incorrect answer</span>
-                        <span><small></small> Unattempted questions</span>
+                    <div class="subjectperformLegend flexleg">
+                        <div class="commonSubjectLeg">
+                            <span class="bar greenbar"></span>
+                            <label class="text">Correct answer</label>
+                        </div>
+                        <div class="commonSubjectLeg">
+                            <span class="bar pinkbar"></span>
+                            <label class="text">Incorrect answer</label>
+                        </div>
+                        <div class="commonSubjectLeg">
+                            <span class="bar graybar"></span>
+                            <label class="text">Unattempted questions</label>
+                        </div>
                     </div>
                     <ul class="topic_score_lists mb-0">
                         @if($subProf)

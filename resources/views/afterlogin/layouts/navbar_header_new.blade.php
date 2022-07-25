@@ -112,13 +112,15 @@ $name = $action;
 <script>
     $(".notificationOverlay").click(function(){
         $(".notification-block_new").removeClass("activeblock");
+        $(".notification-block_new").removeClass("show");
+        $(".notificationnewgit").removeClass("bellactive");
         $(".notification-main").hide();
-        $(".fa-events-icons-ready").removeClass("scrollnone");
+        $('html').removeClass("scrollnone");
     });
     $(".notificationnew").click(function(){
          $(".notification-main").show();
          
-    });
+    });  
  </script>
 
 

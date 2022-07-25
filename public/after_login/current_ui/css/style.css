@@ -3283,6 +3283,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .chapter_performance_card ul.topic_score_lists li:last-child {
     margin-bottom: 0;
 }
+.chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
 .overall_percentage_chart{width:100%;height:300px;}
 .subj_progress_card .overall_percentage_chart{height: 247px;}
 .overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
@@ -3519,6 +3520,27 @@ span.greenball-3 {
     top: -5px;
     font-weight: normal;
 }
+.yaxis_label.yaxis_label_2 {left: -64px;}
+.yaxis_label{    
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+}
+.yaxis_label small{
+    transform: rotate(270deg);
+    display: inline-block;
+    font-size: 12px;
+}
+.graph_padd{padding-left: 20px;    position: relative;}
+.subjectblockOverall .halfdoughnutsmall {margin-bottom: -20px;min-width: 100px;}
+.yaxis_label.yaxis_label_3 {
+    left: -36px;
+}
+
 /********************* Amit End ****************************/
 
 
@@ -4135,8 +4157,8 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .subjectperformLegend  .commonSubjectLeg .text{opacity: 0.6; font-size: 14px;font-weight: 500; line-height: 1.6;color: #1f1f1f;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
     align-items: flex-end;
-    justify-content: space-between;min-height: 126px;}
-.subjectblockOverall .textblock h3{ margin: 0px 0px 18px ; font-size: 20px; font-weight: 800;line-height: 1.6;  color: #000;}
+    justify-content: space-between;min-height: 121px;}
+.subjectblockOverall .textblock h3{ margin: 0px 0px 18px ; font-size: 20px; font-weight: 800; color: #000;}
 .subjectblockOverall .textblock h5 { opacity: 0.6; font-size: 14px; font-weight: 500;  line-height: 1.6; color: #363c4f;margin-bottom:0px;}
 .subjectblockOverall .textblock h6{font-size: 14px;font-weight: 800; line-height: 1.6; color: #363c4f;margin:0px}
 .halfdoughnutsmall{height:100px;width:100px;}
@@ -4256,7 +4278,7 @@ justify-content: space-between;}
 
 .progressnewjourney{height:100%;}
 .progressnewjourney canvas{height:calc(100% + 40px);}
-.overallmain .boxheading .tooltipmain{top:-4px}
+.overallmain .boxheading .tooltipmain{top:-2px}
 
 /********* Shubham End ***********/
 
