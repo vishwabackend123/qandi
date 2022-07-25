@@ -31,10 +31,10 @@ class MenuMiddleware
             $user_Data = Auth::user();
 
             if (!Session::has('user_data')) {
-                Session::put('user_data', $user_Data);
+                //Session::put('user_data', $user_Data);
             }
-            //$userData = Session::get('user_data');
-            $userData = $user_Data;
+            Session::put('user_data', $user_Data);
+            $userData = Session::get('user_data');
 
 
 

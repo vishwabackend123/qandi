@@ -92,7 +92,7 @@ class LiveExamController extends Controller
             });
             $header_title = "Live Exam";
 
-            return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list','header_title'));
+            return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list', 'header_title'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -105,7 +105,7 @@ class LiveExamController extends Controller
      *
      * @return void
      */
-    public function liveExam(Request $request, $schedule_id)
+    public function liveExam(Request $request, $schedule_id, $inst = "")
     {
         try {
             $filtered_subject = [];
@@ -122,6 +122,7 @@ class LiveExamController extends Controller
             $exam_name = 'Live Exam';
 
 
+
             $exam_fulltime = 5400;
             $exam_ques_count = 90;
 
@@ -130,32 +131,48 @@ class LiveExamController extends Controller
 
             $request = json_encode($inputjson);
 
-            $curl_url = "";
-            $curl = curl_init();
-            $api_URL = env('API_URL');
+            $dTaskCacheKey = 'DailyTaskExam:' . $user_id;
+            if ($inst == 'instruction') {
+                if (Redis::exists($dTaskCacheKey)) {
+                    Redis::del($dTaskCacheKey);
+                }
+            }
 
-            $curl_url = $api_URL . 'api/live-exam/live-exam-web/' . $schedule_id;
-            $curl_option = array(
+            if (Redis::exists($dTaskCacheKey)) {
+                $response_json = Redis::get($dTaskCacheKey);
+            } else {
 
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            );
-            curl_setopt_array($curl, $curl_option);
+                $curl_url = "";
+                $curl = curl_init();
+                $api_URL = env('API_URL');
 
-            $response_json = curl_exec($curl);
-            $response_json = str_replace('NaN', '""', $response_json);
+                $curl_url = $api_URL . 'api/live-exam/live-exam-web/' . $schedule_id;
+                $curl_option = array(
 
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                );
+                curl_setopt_array($curl, $curl_option);
 
-            if ($httpcode == 200) {
+                $response_json = curl_exec($curl);
+                $response_json = str_replace('NaN', '""', $response_json);
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+                Redis::set($dTaskCacheKey, $response_json);
+            }
+            $responsedata = json_decode($response_json);
+            $status = isset($responsedata->success) ? $responsedata->success : false;
+
+            if ($status == true) {
                 $responsedata = json_decode($response_json);
 
                 $aQuestions_list = $responsedata->questions_list;
@@ -231,28 +248,34 @@ class LiveExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-
-
-
-            /* set redis for save exam question response */
-            $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
-            $redis_data = [
-                'given_ans' => $retrive_array,
-                'taken_time' => $retrive_time_array,
-                'taken_time_sec' => $retrive_time_sec,
-                'answer_swap_cnt' => $answer_swap_cnt,
-                'questions_count' => $questions_count,
-                'all_questions_id' => $keys,
-                'full_time' => $exam_fulltime,
-            ];
-
-            // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
-
             $tagrets = implode(', ', $aTargets);
+
+            if (isset($inst) && $inst == 'instruction') {
+                /* set redis for save exam question response */
+                $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
+                $redis_data = [
+                    'given_ans' => $retrive_array,
+                    'taken_time' => $retrive_time_array,
+                    'taken_time_sec' => $retrive_time_sec,
+                    'answer_swap_cnt' => $answer_swap_cnt,
+                    'questions_count' => $questions_count,
+                    'all_questions_id' => $keys,
+                    'full_time' => $exam_fulltime,
+                ];
+
+                // Push Value in Redis
+                Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                $exam_url = route('live_exam', $schedule_id);
+
+
+                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+            }
+
+
 
             return view('afterlogin.LiveExam.live_exam', compact('live_exam_id', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -308,6 +331,7 @@ class LiveExamController extends Controller
                 return redirect()->back();
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

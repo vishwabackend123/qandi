@@ -910,18 +910,18 @@ $('.headericon.dropdown,.sidebar-menu-lists a').click(function(){
 
 <script>
 /**********************Notification-Overlay Remove Outside Section Click*******************/
-$(document).on('click', function(e) {
-    var card_opened = $('.notification-block_top').hasClass('activeblock');
-    if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-        $('.notification-block_top').removeClass("activeblock");
-    }
-});
+// $(document).on('click', function(e) {
+//     var card_opened = $('.notification-block_top').hasClass('activeblock');
+//     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
+//         $('.notification-block_top').removeClass("activeblock");
+//     }
+// });
 
-$(document).on('click', function(e) {
-    var card_opened = $('.notification-block_top').hasClass('show');
-    if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-        $('.notification-block_top').removeClass("show");
-    }
-});
+// $(document).on('click', function(e) {
+//     var card_opened = $('.notification-block_top').hasClass('show');
+//     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
+//         $('.notification-block_top').removeClass("show");
+//     }
+// });
 /**********************Notification-Overlay Remove Outside Section Click*******************/
 </script>

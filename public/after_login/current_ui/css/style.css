@@ -3133,26 +3133,27 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 }
 
 .mq_percent_text {
-    position: absolute;
-    font-size: 27.1px;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: 18px;
     z-index: 3;
     color: #234628;
     font-weight: 800;
     letter-spacing: -2px;
+    margin-right: 3px;
 }
 
 span.mq_percent_outoff {
-    color: rgba(35, 70, 40, 0.2);
-    font-size: 18.1px;
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
+    color: rgba(35,70,40,0.2);
+    font-size: 17px;
     z-index: 3;
     font-weight: 800;
+}
+.valeblockmyq{    position: absolute;
+    font-size: 18px;
+    top: 49%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 100%;
+    text-align: center;
 }
 /******* test_analytics_mocktest *******/
 h3.commonheading{
@@ -3282,6 +3283,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .chapter_performance_card ul.topic_score_lists li:last-child {
     margin-bottom: 0;
 }
+.chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
 .overall_percentage_chart{width:100%;height:300px;}
 .subj_progress_card .overall_percentage_chart{height: 247px;}
 .overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
@@ -3668,12 +3670,14 @@ header {
 }
 .text-right{text-align:right;}
 
-#collapseNotification2 {
+/*comment by Sachin date:25-07-22 for Overlay*/
+
+ #collapseNotification2 {
     position: fixed;
     right: -100%;
     width: 95.8%;
     z-index: 9;
-    background-color: #1f1f1f63;
+    /* background-color: #1f1f1f63; */
     opacity: 1;
     top: 11px;
     margin-top: 70px;
@@ -3681,6 +3685,9 @@ header {
     transition: 0.5s;
     height: 100%;
 }
+
+
+
 
 /* .notification-block_new.activeblock,.notification-block_new.show {
     right: 0px !important;
@@ -5463,7 +5470,7 @@ td.mymatrix_table_point
     position: fixed;
     z-index: 9;
     top: 11px;
-    margin-top: 70px;
+    margin-top: 68px;
     height: 100%;
 }
 .activeblock .notification-main{
@@ -5484,7 +5491,7 @@ td.mymatrix_table_point
     position: relative;
     width: 95.8%;
 }
-.activeblock.notification-block_new::before{
+/* .activeblock.notification-block_new::before{
     content: "";
     left: 0px;
     width:100%;
@@ -5501,6 +5508,25 @@ td.mymatrix_table_point
     top:0;
     background-color: rgb(31,31,31,0.3);
     position: absolute;
+} */
+
+.notificationOverlay::before{
+    position: fixed;
+    right: 0;
+    width:98%;
+    z-index: 9;
+    background-color: rgb(31,31,31,0.5);
+    opacity: 1;
+    top: 0px;
+    left:0;
+    display: none;
+    transition: 0.5s;
+    height: 100%;
+    content: "";
+}
+
+.activeblock .notificationOverlay::before{
+    display: block;
 }
 
 .new_notification_main_sec {
