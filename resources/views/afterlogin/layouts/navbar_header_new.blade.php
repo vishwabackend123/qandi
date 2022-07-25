@@ -120,7 +120,7 @@ $name = $action;
     $(".notificationnew").click(function(){
          $(".notification-main").show();
          
-    });
+    });  
  </script>
 
 
