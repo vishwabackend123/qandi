@@ -99,131 +99,78 @@ $question_type = "Numerical";
         }
     });
 </script>
-<div>
-    <div class="d-flex ">
-        <!-- question Type Tag -->
-        <span class="fw-bold text-uppercase">{{$question_type}}</span>
-        <!-- question Type Tag -->
-        <div id="counter_{{$active_q_id}}" class="ms-auto counter mb-4 d-flex">
-            <span id="avg_text_{{$active_q_id}}" class="avg-time">Average Time :</span>
-            <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
-                <span class="seconds" id="seconds_{{$active_q_id}}"></span>
+<div class="questionsliderinner">
+    <div class="questionSlider1">
+        <div class="item" id="">
+            <div class="questionsliderbox">
+                <div class="questionwrapper">
 
-                <div id="percentBar1_{{$active_q_id}}"></div>
+                    <div class="questionheader">
+                        <div class="question">
+                            <span class="q-no">Q{{$qNo}}.</span>
+                            <p>{!! $question_text !!}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="questionImggraph">
+                    </div>
+                    <div class="questionOptionBlock">
+                        <div class="fancy-radio-buttons row with-image">
 
-            </div>
-            <div class="time_taken_css" id="q_time_taken_{{$active_q_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$active_q_id}}"></span>:<span id="up_seconds_{{$active_q_id}}"></span>mins</div>
+                            @if($template_type==1 || $template_type==2)
+                            @if(isset($option_data) && !empty($option_data))
+                            @php $no=0; @endphp
+                            @foreach($option_data as $key=>$opt_value)
+                            @php
+                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                            /* $dom = new DOMDocument();
+                            @$dom->loadHTML($opt_value);
+                            $anchor = $dom->getElementsByTagName('img')->item(0);
+                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                            $latex = "https://math.now.sh?from=".$text;
+                            $view_opt='<img src="'.$latex.'" />' ; */
+                            @endphp
 
-        </div>
-    </div>
-    <div class="question-block">
-        <span style="visibility:hidden">
-            <!-- Next and previous button -->
-            <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{($qNo==1)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
-            @if(isset($last_qid) && ($last_qid==$active_q_id))
-            <button href="javascript:void(0);" class="arrow next-arow {{(isset($last_qid) && ($last_qid==$active_q_id))?'d-none':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right" title="Next Question"></i></button>
+                            <div class="colMargin">
+                                <div class="image-container markerDiv">
+                                    <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
+                                    <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}.</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                </div>
+                            </div>
+                            @php $no++; @endphp
+                            @endforeach
+                            @endif
+                            @elseif($template_type==11)
 
-            @else
-            <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
+                            <div class="colMargin">
+                                <div class="inputAns">
+                                    <label for="story">Answer</label>
+                                    <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                </div>
+                            </div>
+                            @endif
 
-            @endif
-        </span>
-        <!-- Next and previous button -->
-        <!-- Static data  for demo -->
-        @if(env('ADAPTIVE_DEMO') == 'true')
-        <sapn class="question_difficulty_tag small">
-            <span class="small me-1">Subject Id: {!! $subject_id !!}</span> |
-            <span class="small mx-1">Chapter Id: {!! $chapter_id !!}</span> |
-            <span class="small mx-1">Topic Id: {!! $topic_id !!}</span> |
-            <span class="small mx-1">Question Id: {!! $activeq_id !!}</span> |
-            <span class="small mx-1">Track: {!! $track !!}</span> |
-            <span class="small ms-1">Difficulty Level: {!! $difficulty_level !!}</span>
-        </sapn>
-        @endif
 
-        <!-- Static data  for demo -->
-
-        <div class="question py-3 d-flex"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
-
-        <div class="ans-block row my-3">
-            @if($template_type==1 || $template_type==2)
-            @if(isset($option_data) && !empty($option_data))
-            @php $no=0; @endphp
-            @foreach($option_data as $key=>$opt_value)
-            @php
-            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-            /*
-            $dom = new DOMDocument();
-            @$dom->loadHTML($opt_value);
-            $anchor = $dom->getElementsByTagName('img')->item(0);
-            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-            $latex = "https://math.now.sh?from=".$text;
-            $view_opt='<img src="'.$latex.'" />' ;
-            */
-            @endphp
-            <div class="col-md-6 mb-4 markerDiv">
-                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                <div class="border ps-3 ans">
-                    <label class="question mb-0 mt-1 d-flex align-items-center" for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                            <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            @php $no++; @endphp
-            @endforeach
-            @endif
-            <!-- --------- correct answer for demo---------- -->
-            @if(env('ADAPTIVE_DEMO') == 'true')
-            <style>
-                #demo_ans p {
-                    display: inline
-                }
-            </style>
-            <span id="demo_ans" class="d-flex">
-                <span>Correct Answers :</span>
-                @php $no_ans=0; @endphp
-                @if(isset($correct_answers) && !empty($correct_answers))
-
-                @foreach($correct_answers as $anskey=>$ans_value)
-                @php
-
-                $dom2 = new DOMDocument();
-                @$dom2->loadHTML($ans_value);
-                $anchorAns = $dom2->getElementsByTagName('img')->item(0);
-                $anstext = isset($anchorAns)? $anchorAns->getAttribute('alt') : '';
-                $anslatex = "https://math.now.sh?from=".$anstext;
-                $view_ans='<img src="'.$anslatex.'" />' ;
-                @endphp
-                <label><span class="ms-2"> {{$alpha[$anskey-1]}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
-
-
-                @php $no_ans++; @endphp
-                @endforeach
-                @endif
-
-            </span>
-            @endif
-            <!-- --------- correct answer for demo---------- -->
-            @elseif($template_type==11)
-            <div class="col-md-5 mb-4">
-                <div class="numeric-input-box">
-                    <span>Answer here</span>
-                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
-                </div>
-            </div>
-            @endif
         </div>
-        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
     </div>
+    <div class="examQuestionarrow">
+        <!-- Previous button -->
 
-    <div class="tab-btn-box  d-flex mt-3">
+        <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+            <span class=" Previous">‹</span>
+        </button>
 
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer quesBtn" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}')">Save & Next</a>
 
+        <!-- Next button -->
 
-        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
-
-        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
-
-        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes quesBtn" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}','{{$qNo}}')">Clear Response</a>
+        <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+            <span class="Next">›</span>
+        </button>
     </div>
 </div>
 <!-- exam footer -->

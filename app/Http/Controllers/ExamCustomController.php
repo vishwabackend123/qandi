@@ -97,8 +97,9 @@ class ExamCustomController extends Controller
                     $subject_chapter_list[$subject_id] = $aSubject_chapters;
                 }
             }
+            $header_title = 'Practice';
 
-            return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list'));
+            return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list','header_title'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1237,6 +1238,7 @@ class ExamCustomController extends Controller
                 return response(array('status' => 'failed'));
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
