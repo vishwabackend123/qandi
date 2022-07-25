@@ -81,7 +81,7 @@
     </aside>
     <div class="content-wrapper">
         <div class="exam_instruction_wrapper">
-            <div class="row">
+            <div class="row flex-column-reverse flex-lg-row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
                         <a href=""> Mock Test</a>
@@ -165,6 +165,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 exam_instruction_col_four">
+                <div class="mock-test-mobile">
+                <i class="fas fa-chevron-left"></i><a href="javascript:void(0)"> Mock Test</a>
+                            </div>
                     <div class="exam_section_right_side">
                         <div class="exam_section_right_side_padding">
                             <div class="exam_section_right_side_jee_main">JEE Main - Full Syllabus -2021</div>
