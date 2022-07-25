@@ -5490,7 +5490,7 @@ td.mymatrix_table_point
 .notificationOverlay::before{
     position: fixed;
     right: 0;
-    width:100%;
+    width:98%;
     z-index: 9;
     background-color: rgb(31,31,31,0.5);
     opacity: 1;
