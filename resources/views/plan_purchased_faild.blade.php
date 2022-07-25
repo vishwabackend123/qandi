@@ -40,7 +40,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                         </svg>
                         <div class="plan_success_congrats_msg_faild">
                             <div class="plan_success_congrats_msg_name">Payment Failed</div>
-                            <div class="plan_success_congrats_msg_text">The payment for transaction ID: {{$transaction_data->id}} could not be processed. You can retry making the payment again .</div>
+                            <div class="plan_success_congrats_msg_text">The payment for transaction ID: @if(isset($transaction_data->id)) {{$transaction_data->id}} @endif could not be processed. You can retry making the payment again .</div>
                         </div>
                     </div>
                     <div class="plan_box_status_contant">
@@ -52,7 +52,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                         <div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Transaction ID:</div>
-                                <div class="plan_subscribption">{{$transaction_data->id}}</div>
+                                <div class="plan_subscribption">@if(isset($transaction_data->id)) {{$transaction_data->id}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Subscription type</div>
@@ -64,7 +64,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Date</div>
-                                <div class="plan_subscribption">{{date('d F Y', $transaction_data->created_at)}}</div>
+                                <div class="plan_subscribption">@if(isset($transaction_data->created_at)) {{date('d F Y', $transaction_data->created_at)}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Order Status:</div>
@@ -73,15 +73,17 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                         </div>
                         <div class="line-692_field"></div>
                         <div class="text-center ">
-                            <form action="{{route('checkout')}}" if="checkout_{{$transaction_data->notes->subscription_id}}" method="post">
-                            @csrf
-                            <input type="hidden" name="exam_id" value="{{$exam_id}}">
-                            <input type="hidden" name="subscript_id" value="{{$transaction_data->notes->subscription_id}}">
-                            <input type="hidden" name="exam_period" value="12">
-                            <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$transaction_data->amount/100}}">
-                            <button type="submit" class="btn btn-common-green "  id="get-sub-btn"> Retry payment</button>
-                        </form>
+                            @if(isset($transaction_data->id))
+                            <form action="{{route('checkout')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="exam_id" value="{{$exam_id}}">
+                                <input type="hidden" name="subscript_id" value="{{$transaction_data->notes->subscription_id}}">
+                                <input type="hidden" name="exam_period" value="12">
+                                <input type="hidden" name="period_unit" value="month">
+                                <input type="hidden" name="exam_price" value="{{$transaction_data->amount/100}}">
+                                <button type="submit" class="btn btn-common-green " id="get-sub-btn"> Retry payment</button>
+                            </form>
+                            @endif
                             <div class="plan_back_to_subscription">
                                 <b>
                                     <</b> <a href="{{route('subscriptions')}}"><u>Back to Subscription</u></a>

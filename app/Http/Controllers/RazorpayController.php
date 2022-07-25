@@ -97,7 +97,7 @@ class RazorpayController extends Controller
 
             $aResponse = json_decode($response_json);
             $success_status = isset($aResponse->success) ? $aResponse->success : false;
-            $transaction_data = $aResponse->orderDetails;
+            $transaction_data = isset($aResponse->orderDetails) ? $aResponse->orderDetails : [];
             if ($success_status == true) {
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
