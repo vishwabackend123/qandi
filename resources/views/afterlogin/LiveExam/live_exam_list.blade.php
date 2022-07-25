@@ -27,6 +27,7 @@
                                 $start_date_top = $schedule_list[0]->start_date;
                                 $end_date_top =$schedule_list[0]->end_date;
                                 $testCompleted_yn=$schedule_list[0]->test_completed_yn;
+                                $sched_id=$schedule_list[0]->schedule_id;
                                 @endphp
                                 @if($testCompleted_yn=="N" )
                                 <div class="jee_main_text_take_test__btn">
@@ -34,7 +35,7 @@
                                         <div class="live_exam_red_dot me-3"></div>
                                         <h3>{{$schedule_list[0]->exam_name}}</h3>
                                     </div>
-                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}">Take test</a>
+                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test {{$sched_id}}</a>
                                         @endif
                                 </div>
                                 <div class="line_696"></div>
@@ -145,28 +146,27 @@
 </section>
 </div>
 <script type="text/javascript">
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/Live";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Live";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-        },
-        error: function(data, errorThrown) {}
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+            },
+            error: function(data, errorThrown) {}
+        });
     });
-});
-$('#live_exam').click(function(){
- $("#attempted_tab").hide();
-});
-
+    $('#live_exam').click(function() {
+        $("#attempted_tab").hide();
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

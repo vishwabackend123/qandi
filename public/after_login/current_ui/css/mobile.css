@@ -41,6 +41,7 @@
 @media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
+    .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
         .boxheading .tooltipmain{margin-left:5px;}
 .subCard h3 {
     font-size: 15px;

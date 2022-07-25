@@ -133,7 +133,7 @@ class ReviewController extends Controller
                 if (isset($result_response->all_question)) {
                     $i = 1;
                     foreach ($result_response->all_question as $key => $value) {
-                        $result_response->all_question[$key]->quest_id=$i;
+                        $result_response->all_question[$key]->quest_id = $i;
                         $i++;
                     }
                 }
@@ -204,7 +204,9 @@ class ReviewController extends Controller
                     $exam_name = '';
                 }
 
-                return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
+                /*  return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
+      */
+                return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
             } else {
                 if ($pageName == 'attempted') {
                     return Redirect::back()->withErrors(['Data does not exist for this result id.']);
@@ -321,7 +323,9 @@ class ReviewController extends Controller
 
 
 
-            return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+            /*  return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+    */
+            return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -428,7 +432,7 @@ class ReviewController extends Controller
             }
 
 
-            return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+            return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

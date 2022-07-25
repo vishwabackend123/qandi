@@ -39,7 +39,8 @@
                                                     </p>
                                                 </span>
                                             </h3>
-                                            <div class="overall_percentage_chart">
+                                            <div class="overall_percentage_chart graph_padd">
+                                                <span class="yaxis_label"><small> Score% </small></span>
                                                 <canvas id="myChart"></canvas>
                                             </div>
                                         </div>
@@ -181,12 +182,12 @@
                                             <div class="timemanagement common_greenbadge_tabs">
                                                 <h4 class="garphsubheading">Time for correct/incorrect answer</h4>
                                                 <div class="barwithTAb">
-                                                    <div class="subjectperformLegend mb-0">
-                                                        <div class="commonSubjectLeg mt-0">
+                                                    <div class="subjectperformLegend">
+                                                        <div class="commonSubjectLeg">
                                                             <span class="bar greenbar"></span>
                                                             <label class="text">Correct Answers</label>
                                                         </div>
-                                                        <div class="commonSubjectLeg  mt-0">
+                                                        <div class="commonSubjectLeg ">
                                                             <span class="bar pinkbar2"></span>
                                                             <label class="text">Incorrect answers</label>
                                                         </div>
@@ -207,17 +208,20 @@
                                                 </div>
                                                 <div class="tab-content" id="pills-tabContent">
                                                     <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChart"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartWeek"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartMonth"></canvas>
                                                         </div>
                                                     </div>
@@ -237,7 +241,9 @@
                                                         <label class="text">Student average</label>
                                                     </div>
                                                 </div>
-                                                <div class="chartspent">
+                                                <div class="chartspent graph_padd">
+                                               
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                     <canvas id="timeSpent_Graph"></canvas>
                                                 </div>
                                             </div>
@@ -277,7 +283,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="righttabBlock">
-                                                    <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab2" role="tablist">
+                                                    <ul class="nav nav-pills mb-0 d-inline-flex" id="marks-tab2" role="tablist">
                                                         <li class="nav-item" role="presentation">
                                                             <button class="nav-link btn active" id="pills-Day2-tab" data-bs-toggle="pill" data-bs-target="#pills-Day2" type="button" role="tab" aria-controls="pills-Day2" aria-selected="true">Day</button>
                                                         </li>
@@ -292,17 +298,20 @@
                                             </div>
                                             <div class="tab-content" id="pills-tabContent2">
                                                 <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
-                                                    <div class="chartspent">
+                                                    <div class="chartspent graph_padd">
+                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                                         <canvas id="mark_trend_day"></canvas>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">
-                                                    <div class="chartspent">
+                                                    <div class="chartspent graph_padd">
+                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                                         <canvas id="mark_trend_week"></canvas>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">
-                                                    <div class="chartspent">
+                                                    <div class="chartspent graph_padd">
+                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                                         <canvas id="mark_trend_month"></canvas>
                                                     </div>
                                                 </div>
@@ -311,7 +320,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="timemanagement">
-                                            <h4 class="garphsubheading">Accuracy Percentage <span>(in Last week)</span></h4>
+                                            <h4 class="garphsubheading mt-2">Accuracy Percentage <span>(in Last week)</span></h4>
                                             <div class="subjectperformLegend ">
                                                 <div class="commonSubjectLeg spaceright">
                                                     <span class="bar bluebar"></span>
@@ -322,7 +331,8 @@
                                                     <label class="text">Student average</label>
                                                 </div>
                                             </div>
-                                            <div class="chartspent">
+                                            <div class="chartspent graph_padd">
+                                                <span class="yaxis_label  yaxis_label_3"><small> Average  time taken (sec)  </small> </span>
                                                 <canvas id="accuracy_graph"></canvas>
                                             </div>
                                         </div>
@@ -378,11 +388,21 @@ const myChart = new Chart(ctx, {
             x: {
                 grid: {
                     display: false
+                },
+                ticks: {
+                    color: '#1f1f1f',
+                    font: {
+                        size: 14,
+                        weight: 500,
+                        family:'Manrope',
+                        style:'normal'
+                    }
                 }
             },
 
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                text: 'amit'
             }
         }
     }
