@@ -5349,7 +5349,7 @@ td.mymatrix_table_point
     width: 456px;
     padding: 30px;
     right: -100%!important;
-    transition: 0.5s;
+    transition: 0.4s;
     position: fixed;
     z-index: 9;
     top: 11px;
@@ -5358,11 +5358,11 @@ td.mymatrix_table_point
 }
 .activeblock .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .show .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .activeblock.notification-block_new {
     position: fixed;right: auto !important;
