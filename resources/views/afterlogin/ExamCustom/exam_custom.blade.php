@@ -38,7 +38,7 @@
                                 @foreach($subject_list as $skey=>$sub)
                                 <div class="take-fulltest d-flex align-items-center justify-content-between">
                                     <div class="d-flex align-items-center clrsec topic_form">
-                                        <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
+                                        <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-right">
                                             @csrf
                                             <input type="hidden" id="selected_topic" name="topics">
                                             <input type="hidden" id="selected_tab" name="selected_tab">
@@ -55,7 +55,7 @@
                                                 <path d="M9 1.5h28v-1H9v1zM44.5 9v28h1V9h-1zM37 44.5H9v1h28v-1zM1.5 37V9h-1v28h1zM9 44.5A7.5 7.5 0 0 1 1.5 37h-1A8.5 8.5 0 0 0 9 45.5v-1zM44.5 37a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1zM37 1.5A7.5 7.5 0 0 1 44.5 9h1A8.5 8.5 0 0 0 37 .5v1zM9 .5A8.5 8.5 0 0 0 .5 9h1A7.5 7.5 0 0 1 9 1.5v-1z" fill="#56B663" />
                                             </svg>
                                         </a>
-                                        <form method="post" action="{{route('custom_exam')}}">
+                                        <form method="post" action="{{route('custom_exam','instruction')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                             <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
@@ -78,7 +78,7 @@
                                                         @endif</span></h3>
                                                 <div class="accordion-header d-flex align-items-center" id="headingTwo">
                                                     <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" class="m-0" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View topics</h4>
-                                                    <form method="post" action="{{route('custom_exam_chapter')}}" class="mb-0">
+                                                    <form method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                                                         @csrf
                                                         <input type="hidden" name="subject_id" value="">
                                                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
@@ -114,119 +114,118 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-$('.topic_form').attr("style", "visibility: hidden !important");
-
-
-function showSubChapters(subject) {
-    $('.SubActBtn').removeClass('active');
-    $('.subjectlist').removeClass('d-block');
-    $('.subjectlist').addClass('d-none');
-    $('#' + subject + '_btn').addClass('active');
-    $('#' + subject + '_list').removeClass('d-none');
-    $('#' + subject + '_list').addClass('d-block');
-    $('.full_take').removeClass('d-block');
-    $('.full_take').addClass('d-none');
-    $('#' + subject + '_test').removeClass('d-none');
-    $('#' + subject + '_test').addClass('d-block');
-}
-$('.chapters-expend').hide();
-
-function show_topic(chapt_id, sub_id) {
-    var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
-    if (chapter_ex === true) {
-        $('#collapseTwo_custome_' + chapt_id).removeClass('show');
-        $('#collapseTwo_custome_' + chapt_id).hide();
-        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
-    } else {
-        $('#collapseTwo_custome_' + chapt_id).show();
-        $('#collapseTwo_custome_' + chapt_id).addClass('show');
-        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
-    }
-    url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
-            $('#overlay').fadeIn();
-        },
-        success: function(result) {
-            $("#topic_section_" + chapt_id).html(result);
-        }
-    });
-
-}
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/Assessment";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
-
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-            $('#AssessmentTypeDiv').attr("style", "display: block !important");
-        },
-        error: function(data, errorThrown) {}
-    });
-});
-var aTopics = [];
-
-function addOrRemove(value) {
-    var index = aTopics.indexOf(value);
-
-    if (index === -1) {
-        aTopics.push(value);
-        $('#chpt_topic_' + value).addClass('topic_selected');
-        $('#chpt_topic_' + value).addClass('btn-common-green');
-        $('#chpt_topic_' + value).removeClass('btn-common-transparent');
-        $('#chpt_topic_' + value).removeClass('bg-transparent');
-    } else {
-        aTopics.splice(index, 1);
-        $('#chpt_topic_' + value).removeClass('topic_selected');
-        $('#chpt_topic_' + value).removeClass('btn-common-green');
-        $('#chpt_topic_' + value).addClass('btn-common-transparent');
-        $('#chpt_topic_' + value).addClass('bg-transparent');
-    }
-    $('#selected_topic').val(aTopics);
-    if (aTopics.length > 0) {
-        $('.topic_form').attr("style", "visibility: visible !important");
-    } else {
-        $('.topic_form').attr("style", "visibility: hidden !important");
-    }
-}
-
-function clearTopics() {
-    aTopics = [];
-    $('#selected_topic').val('');
-    $('.addremovetopic').removeClass('topic_selected');
-    $('.addremovetopic').removeClass('btn-common-green');
-    $('.addremovetopic').addClass('btn-common-transparent');
-    $('.addremovetopic').addClass('bg-transparent');
     $('.topic_form').attr("style", "visibility: hidden !important");
 
-}
 
-function showSubfilter(subject) {
-    $('.SubattemptActBtn').removeClass('active');
-    $('.compLeteS').hide();
-    if (subject == "all_subject") {
-      $('.compLeteS').show();
-        $("#all_subject_flt").addClass('active');
-    } else {
-      $('#' + subject + '_flt').addClass('active');
-      $("#all_subject_flt").removeClass('active');
-      $('.' + subject + '-rlt').show();
+    function showSubChapters(subject) {
+        $('.SubActBtn').removeClass('active');
+        $('.subjectlist').removeClass('d-block');
+        $('.subjectlist').addClass('d-none');
+        $('#' + subject + '_btn').addClass('active');
+        $('#' + subject + '_list').removeClass('d-none');
+        $('#' + subject + '_list').addClass('d-block');
+        $('.full_take').removeClass('d-block');
+        $('.full_take').addClass('d-none');
+        $('#' + subject + '_test').removeClass('d-none');
+        $('#' + subject + '_test').addClass('d-block');
+    }
+    $('.chapters-expend').hide();
+
+    function show_topic(chapt_id, sub_id) {
+        var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
+        if (chapter_ex === true) {
+            $('#collapseTwo_custome_' + chapt_id).removeClass('show');
+            $('#collapseTwo_custome_' + chapt_id).hide();
+            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
+        } else {
+            $('#collapseTwo_custome_' + chapt_id).show();
+            $('#collapseTwo_custome_' + chapt_id).addClass('show');
+            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
+        }
+        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
+            success: function(result) {
+                $("#topic_section_" + chapt_id).html(result);
+            }
+        });
+
+    }
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Assessment";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
+
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+                $('#AssessmentTypeDiv').attr("style", "display: block !important");
+            },
+            error: function(data, errorThrown) {}
+        });
+    });
+    var aTopics = [];
+
+    function addOrRemove(value) {
+        var index = aTopics.indexOf(value);
+
+        if (index === -1) {
+            aTopics.push(value);
+            $('#chpt_topic_' + value).addClass('topic_selected');
+            $('#chpt_topic_' + value).addClass('btn-common-green');
+            $('#chpt_topic_' + value).removeClass('btn-common-transparent');
+            $('#chpt_topic_' + value).removeClass('bg-transparent');
+        } else {
+            aTopics.splice(index, 1);
+            $('#chpt_topic_' + value).removeClass('topic_selected');
+            $('#chpt_topic_' + value).removeClass('btn-common-green');
+            $('#chpt_topic_' + value).addClass('btn-common-transparent');
+            $('#chpt_topic_' + value).addClass('bg-transparent');
+        }
+        $('#selected_topic').val(aTopics);
+        if (aTopics.length > 0) {
+            $('.topic_form').attr("style", "visibility: visible !important");
+        } else {
+            $('.topic_form').attr("style", "visibility: hidden !important");
+        }
     }
 
-}
+    function clearTopics() {
+        aTopics = [];
+        $('#selected_topic').val('');
+        $('.addremovetopic').removeClass('topic_selected');
+        $('.addremovetopic').removeClass('btn-common-green');
+        $('.addremovetopic').addClass('btn-common-transparent');
+        $('.addremovetopic').addClass('bg-transparent');
+        $('.topic_form').attr("style", "visibility: hidden !important");
 
+    }
+
+    function showSubfilter(subject) {
+        $('.SubattemptActBtn').removeClass('active');
+        $('.compLeteS').hide();
+        if (subject == "all_subject") {
+            $('.compLeteS').show();
+            $("#all_subject_flt").addClass('active');
+        } else {
+            $('#' + subject + '_flt').addClass('active');
+            $("#all_subject_flt").removeClass('active');
+            $('.' + subject + '-rlt').show();
+        }
+
+    }
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

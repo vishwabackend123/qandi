@@ -147,6 +147,8 @@ class ResultController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
+
+
             if ($test_type == 'Live') {
                 return view('afterlogin.LiveExam.live_result', compact('autosubmit'));
             }
@@ -163,7 +165,7 @@ class ResultController extends Controller
 
                 return Redirect::route('exam_result_analytics', [$result_id]);
             } else {
-
+                dd($response_data);
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
