@@ -47,7 +47,7 @@
                                         </form>
                                         <a href="javascript:void(0);" onclick="clearTopics();" class="clearsec">Clear Selection</a>
                                     </div>
-                                    <div class="full_take {{($skey==0)?'d-block':'d-none'}}" id="{{$sub->subject_name}}_test">
+                                    <div class="full_take {{($skey==0)?'d-flex':'d-none'}}" id="{{$sub->subject_name}}_test">
                                         <a href="javascript:void(0)">
                                             <svg class="me-4 align-bottom" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 9a8 8 0 0 1 8-8h28a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H9a8 8 0 0 1-8-8V9z" fill="#FCFDFD" />
@@ -90,9 +90,8 @@
                                             </div>
                                             <div id="collapseTwo_custome_{{$chapters->chapter_id}}" class=" chapters-expend">
                                                 <div class="accordion-body ps-0 pe-0 pt-4">
-                                                    <div class="testslider owl-carousel owl-theme">
-                                                        <div class="item" id="topic_section_{{$chapters->chapter_id}}">
-                                                        </div>
+                                                    <div class="testslider owl-carousel owl-theme" id="topic_section_{{$chapters->chapter_id}}">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -115,34 +114,8 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-$('.topic_form').attr("style", "display: none !important");
-$('.testslider').owlCarousel({
-    stagePadding: 0,
-    loop: false,
-    margin: 15,
-    nav: false,
-    dots: false,
-    responsive: {
-        0: {
-            items: 1,
-            nav: false,
-            stagePadding: 40,
-            margin: 5,
-            loop: true,
-        },
-        700: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        },
-        1200: {
-            items: 4
-        }
+$('.topic_form').attr("style", "visibility: hidden !important");
 
-
-    }
-});
 
 function showSubChapters(subject) {
     $('.SubActBtn').removeClass('active');
@@ -223,9 +196,9 @@ function addOrRemove(value) {
     }
     $('#selected_topic').val(aTopics);
     if (aTopics.length > 0) {
-        $('.topic_form').attr("style", "display: block !important");
+        $('.topic_form').attr("style", "visibility: visible !important");
     } else {
-        $('.topic_form').attr("style", "display: none !important");
+        $('.topic_form').attr("style", "visibility: hidden !important");
     }
 }
 
@@ -236,7 +209,7 @@ function clearTopics() {
     $('.addremovetopic').removeClass('btn-common-green');
     $('.addremovetopic').addClass('btn-common-transparent');
     $('.addremovetopic').addClass('bg-transparent');
-    $('.topic_form').attr("style", "display: none !important");
+    $('.topic_form').attr("style", "visibility: hidden !important");
 
 }
 

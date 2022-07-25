@@ -227,7 +227,7 @@
                                 <label class="text">Class Average</label>
                             </div>
                             <div class="commonSubjectLeg spaceright">
-                                <span class="bar greenbar"></span>
+                                <span class="bar greenbar2"></span>
                                 <label class="text">Student average</label>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                     <div class="barwithTAb">
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
-                                <span class="bar greenbar3"></span>
+                                <span class="bar greenbar"></span>
                                 <label class="text">Class Average</label>
                             </div>
                             <div class="commonSubjectLeg">
@@ -687,8 +687,8 @@ var datamarktrend = {
     labels: <?php print_r($date1); ?>,
     datasets: [{
             label: 'Correct Answer',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#34d399',
+            borderColor: '#34d399',
             data: <?php print_r($correctAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
