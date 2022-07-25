@@ -72,6 +72,17 @@ $(".mq_circle_percent").each(function() {
 	} 
 });
 var percent_data =$('.mq_circle_percent').attr('data-percent');
+var headingpercent = Math.ceil(percent_data);
+if(headingpercent < 40){
+    $('.dashSubHeading').text('Good start, but long way to go.');
+    $('.mq_circle_percent').addClass('mq_circle_red');
+}else if(headingpercent > 39 && headingpercent < 75){
+     $('.dashSubHeading').text('It’s time to push your limits.');
+     $('.mq_circle_percent').addClass('mq_circle_yellow');
+}else if(headingpercent > 75){
+    $('.dashSubHeading').text('You are doing great!');
+    $('.mq_circle_percent').addClass('green');
+}
 $(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
 /*$(document).ready(function() {
