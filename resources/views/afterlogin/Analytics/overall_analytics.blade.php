@@ -39,7 +39,8 @@
                                                     </p>
                                                 </span>
                                             </h3>
-                                            <div class="overall_percentage_chart">
+                                            <div class="overall_percentage_chart graph_padd">
+                                                <span class="yaxis_label"><small> Score% </small></span>
                                                 <canvas id="myChart"></canvas>
                                             </div>
                                         </div>
@@ -207,17 +208,20 @@
                                                 </div>
                                                 <div class="tab-content" id="pills-tabContent">
                                                     <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChart"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartWeek"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
-                                                        <div>
+                                                        <div  class="graph_padd">
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartMonth"></canvas>
                                                         </div>
                                                     </div>
@@ -237,7 +241,9 @@
                                                         <label class="text">Student average</label>
                                                     </div>
                                                 </div>
-                                                <div class="chartspent">
+                                                <div class="chartspent graph_padd">
+                                               
+                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                     <canvas id="timeSpent_Graph"></canvas>
                                                 </div>
                                             </div>
@@ -378,11 +384,21 @@ const myChart = new Chart(ctx, {
             x: {
                 grid: {
                     display: false
+                },
+                ticks: {
+                    color: '#1f1f1f',
+                    font: {
+                        size: 14,
+                        weight: 500,
+                        family:'Manrope',
+                        style:'normal'
+                    }
                 }
             },
 
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                text: 'amit'
             }
         }
     }
