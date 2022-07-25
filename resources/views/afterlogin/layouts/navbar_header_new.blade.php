@@ -153,10 +153,10 @@ $("#menumobilehide").click(function() {
     $('.sidebar_block').removeClass('showmenu');
 });
 
-$('.notificationnew').click(function() {
-    $('body').removeClass("sidebartoggle")
-    $('.sidebar_block').removeClass('showmenu');
-});
+// $('.notificationnew').click(function() {
+//     $('body').removeClass("sidebartoggle")
+//     $('.sidebar_block').removeClass('showmenu');
+// });
 
 /*****Mobile-menu js*********** */
 $('#clearAll').click(function() {
