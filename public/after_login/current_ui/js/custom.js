@@ -59,7 +59,7 @@ $(".mq_circle_percent").each(function() {
 		$dataDeg = $dataV * 3.6,
 		$round = $this.find(".mq_round_per");
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
-	$this.append('<div class="mq_circle_inbox"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div>');
+	$this.append('<div class="mq_circle_inbox"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div>');
 	
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
@@ -72,6 +72,17 @@ $(".mq_circle_percent").each(function() {
 	} 
 });
 var percent_data =$('.mq_circle_percent').attr('data-percent');
+var headingpercent = Math.ceil(percent_data);
+if(headingpercent < 40){
+    $('.dashSubHeading').text('Good start, but long way to go.');
+    $('.mq_circle_percent').addClass('mq_circle_red');
+}else if(headingpercent > 39 && headingpercent < 75){
+     $('.dashSubHeading').text('It’s time to push your limits.');
+     $('.mq_circle_percent').addClass('mq_circle_yellow');
+}else if(headingpercent > 75){
+    $('.dashSubHeading').text('You are doing great!');
+    $('.mq_circle_percent').addClass('mq_circle_green');
+}
 $(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
 /*$(document).ready(function() {

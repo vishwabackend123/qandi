@@ -75,8 +75,11 @@ $name = $action;
     </div>
     <div class="mobilemenu"></div>
 </header>
+
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
+<div class="notificationOverlay"></div>
+    
     <div class="planner-wrapper ">
         <div class="notification-main">
             <h2>Notifications <a href="javascript:void(0);" id="clearAll">Clear all</a></h2>
@@ -105,6 +108,22 @@ $name = $action;
     </div>
 </div>
 <!--main-profile-section-->
+
+<script>
+    $(".notificationOverlay").click(function(){
+        $(".notification-block_new").removeClass("activeblock");
+        $(".notification-block_new").removeClass("show");
+        $(".notificationnewgit").removeClass("bellactive");
+        $(".notification-main").hide();
+        $('html').removeClass("scrollnone");
+    });
+    $(".notificationnew").click(function(){
+         $(".notification-main").show();
+         
+    });  
+ </script>
+
+
 <script>
 $(document).on('click', '#nodificbell', function(event) {
     refresh_notification();
