@@ -1,85 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 
 @section('content')
-<style>
-    .timing {
-        color: #2c3348;
-        font-size: 18px;
-        line-height: 27px;
-        margin-left: 30px;
-    }
-
-    .tiny-green {
-        margin-right: 30px;
-    }
-
-    .base-timer {
-        position: relative;
-        width: 60px;
-        height: 60px;
-    }
-
-    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
-    .base-timer__svg {
-        transform: scaleX(1);
-        background: #f1f3f4;
-        border-radius: 50%;
-    }
-
-    .base-timer__circle {
-        fill: none;
-        stroke: none;
-    }
-
-    .base-timer__path-elapsed {
-        stroke-width: 7px;
-        stroke: grey;
-    }
-
-    .base-timer__path-remaining {
-        stroke-width: 7px;
-        stroke-linecap: round;
-        transform: rotate(90deg);
-        transform-origin: center;
-        transition: 1s linear all;
-        fill-rule: nonzero;
-        stroke: currentColor;
-    }
-
-    .base-timer__path-remaining.arc {
-        /* color: rgba(179, 48, 102, 0.973) */
-        color: #44cd7f;
-    }
-
-    .base-timer__label {
-        /* position: absolute;
-    
-    height: 80px; 
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;*/
-        width: 80px;
-        font-weight: 600;
-    }
-
-    /****SACHIN****/
-    .watch-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 24px;
-        transform: translate(-50%, -50%);
-    }
-
-    .number-block .btn {
-        min-width: 36px;
-        height: 36px;
-        margin-right: 25px;
-        padding: 0;
-    }
-</style>
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -289,9 +210,8 @@ $question_type = "Numerical";
 
                 <div class="examRightpanel">
                     <div class="main-textexam-sec">
-                        <div class="text-examtop-sec">
-                            <p>
-                            <div class="" id="app">
+                        <div class="text-examtop-sec d-flex align-items-center justify-content-between">
+                            <div id="app" class="me-4 pe-2">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <g class="base-timer__circle">
@@ -321,7 +241,6 @@ $question_type = "Numerical";
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
                                 </svg>
                             </label>
-                            </p>
                         </div>
                         <div class="text-exammid-sec borederbot">
                             <p>Overview</p>

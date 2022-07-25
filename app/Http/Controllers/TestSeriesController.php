@@ -72,9 +72,9 @@ class TestSeriesController extends Controller
                 $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
                 $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
 
-                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series','header_title'));
+                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series', 'header_title'));
             } else {
-                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series','header_title'));
+                return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series', 'header_title'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -88,8 +88,10 @@ class TestSeriesController extends Controller
      *
      * @return void
      */
-    public function testSeriesExam(Request $request)
+    public function testSeriesExam(Request $request, $inst = '')
     {
+
+
         try {
             $userData = Session::get('user_data');
 
@@ -101,6 +103,8 @@ class TestSeriesController extends Controller
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
             }
 
+            $requestData = $request;
+
             $exam_name = isset($request->series_name) ? $request->series_name : '';
             $exam_name = isset($request->series_name) ? $exam_name : '';
             $series_id = isset($request->series_id) ? $request->series_id : '';
@@ -110,37 +114,52 @@ class TestSeriesController extends Controller
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
 
             if (!empty($series_id)) {
-                $curl_url = "";
-                $curl = curl_init();
-                $api_URL = env('API_URL');
 
-                $curl_url = $api_URL . 'api/testSeries-questions/' . $exam_id . '/' . $series_id;
-                $curl_option = array(
+                $tSCacheKey = 'TestSeriesExam:' . $user_id;
+                if ($inst == 'instruction') {
+                    if (Redis::exists($tSCacheKey)) {
+                        Redis::del($tSCacheKey);
+                    }
+                }
 
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
+                if (Redis::exists($tSCacheKey)) {
+                    $response_json = Redis::get($tSCacheKey);
+                } else {
+                    $curl_url = "";
+                    $curl = curl_init();
+                    $api_URL = env('API_URL');
 
-                    CURLOPT_HTTPHEADER => array(
-                        "cache-control: no-cache",
-                        "content-type: application/json"
-                    ),
-                );
-                curl_setopt_array($curl, $curl_option);
+                    $curl_url = $api_URL . 'api/testSeries-questions/' . $exam_id . '/' . $series_id;
+                    $curl_option = array(
 
-                $response_json = curl_exec($curl);
+                        CURLOPT_URL => $curl_url,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => "",
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => true,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
 
-                // $response_json = str_replace('NaN', '""', $response_json);
-                // $response_json = stripslashes(html_entity_decode($response_json));
+                        CURLOPT_HTTPHEADER => array(
+                            "cache-control: no-cache",
+                            "content-type: application/json"
+                        ),
+                    );
+                    curl_setopt_array($curl, $curl_option);
 
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
+                    $response_json = curl_exec($curl);
+
+                    // $response_json = str_replace('NaN', '""', $response_json);
+                    // $response_json = stripslashes(html_entity_decode($response_json));
+
+                    $err = curl_error($curl);
+                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                    curl_close($curl);
+
+                    Redis::set($tSCacheKey, $response_json);
+                }
+
                 $responsedata = (object)json_decode($response_json, true);
 
                 $status = isset($responsedata->success) ? $responsedata->success : false;
@@ -150,7 +169,7 @@ class TestSeriesController extends Controller
                 } else {
                     $aQuestions_list = [];
 
-                   return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
+                    return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
                 }
 
 
@@ -214,35 +233,44 @@ class TestSeriesController extends Controller
                     } else {
                         $option_data[] = '';
                     }
-
-                    /* set redis for save exam question response */
-                    $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
-                    $redis_data = [
-                        'given_ans' => $retrive_array,
-                        'taken_time' => $retrive_time_array,
-                        'taken_time_sec' => $retrive_time_sec,
-                        'answer_swap_cnt' => $answer_swap_cnt,
-                        'questions_count' => $questions_count,
-                        'all_questions_id' => $keys,
-                        'full_time' => $exam_fulltime
-                    ];
-                    // Push Value in Redis
-                    Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                     $tagrets = implode(', ', $aTargets);
                     $test_type = 'Test-Series';
                     $exam_type = 'TS';
                     //Session::put('exam_name', $exam_name);
                     Redis::set('exam_name' . $user_id, $exam_name);
 
-                    return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
+                    if (isset($inst) && $inst == 'instruction') {
+                        /* set redis for save exam question response */
+                        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
+                        $redis_data = [
+                            'given_ans' => $retrive_array,
+                            'taken_time' => $retrive_time_array,
+                            'taken_time_sec' => $retrive_time_sec,
+                            'answer_swap_cnt' => $answer_swap_cnt,
+                            'questions_count' => $questions_count,
+                            'all_questions_id' => $keys,
+                            'full_time' => $exam_fulltime,
+                            'series_id' => $series_id,
+                        ];
+                        // Push Value in Redis
+                        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                        $exam_url = route('test_series');
+
+                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData'));
+                    }
+
+
+                    //return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
+                    return view('afterlogin.ExamViews.exam_new', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
                 } else {
                     //return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
-                    return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
+                    return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
                 }
             } else {
-                 return Redirect::back()->with('message','Question not available With these filters! Please try Again.');
+                return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
             }
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
