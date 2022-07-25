@@ -90,9 +90,8 @@
                                             </div>
                                             <div id="collapseTwo_custome_{{$chapters->chapter_id}}" class=" chapters-expend">
                                                 <div class="accordion-body ps-0 pe-0 pt-4">
-                                                    <div class="testslider owl-carousel owl-theme">
-                                                        <div class="item" id="topic_section_{{$chapters->chapter_id}}">
-                                                        </div>
+                                                    <div class="testslider owl-carousel owl-theme" id="topic_section_{{$chapters->chapter_id}}">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,33 +115,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
 $('.topic_form').attr("style", "visibility: hidden !important");
-$('.testslider').owlCarousel({
-    stagePadding: 0,
-    loop: false,
-    margin: 15,
-    nav: false,
-    dots: false,
-    responsive: {
-        0: {
-            items: 1,
-            nav: false,
-            stagePadding: 40,
-            margin: 5,
-            loop: true,
-        },
-        700: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        },
-        1200: {
-            items: 4
-        }
 
-
-    }
-});
 
 function showSubChapters(subject) {
     $('.SubActBtn').removeClass('active');
