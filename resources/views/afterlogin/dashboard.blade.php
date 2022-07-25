@@ -254,7 +254,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -272,7 +272,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -315,7 +315,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -333,7 +333,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Already Attempted</a>
+                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
                                                         </div>
                                                         @endif
                                                     </li>
