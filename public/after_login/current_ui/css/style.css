@@ -3143,9 +3143,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 
 span.mq_percent_outoff {
     color: rgba(35,70,40,0.2);
-    font-size: 17px;
+    font-size: 18px;
     z-index: 3;
-    font-weight: 800;
+    font-weight: 600;
 }
 .valeblockmyq{    position: absolute;
     font-size: 18px;
