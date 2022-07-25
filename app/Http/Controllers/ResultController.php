@@ -167,6 +167,7 @@ class ResultController extends Controller
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -431,7 +432,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response','header_title','result_id'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id'));
             } else {
 
                 //return redirect()->back();
@@ -559,16 +560,15 @@ class ResultController extends Controller
                 $result_data[$key]->subject_name = "";
             }
             $year = date('Y', strtotime($value->created_at));
-            $years_list[]=$year;
+            $years_list[] = $year;
         }
 
         if ($exam_type == 'PreviousYear') {
-            $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects','years_list'))->render();
-        }else
-        {
-            $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();    
+            $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list'))->render();
+        } else {
+            $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();
         }
-        
+
 
         return response()->json([
             'status' => true,
