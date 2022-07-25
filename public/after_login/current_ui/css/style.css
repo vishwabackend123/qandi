@@ -2097,6 +2097,79 @@ a.btn-common-attempted svg {
   }
   .overviewtest{height: 20vh;
       min-height: 186px;}
+    .timing {
+        color: #2c3348;
+        font-size: 18px;
+        line-height: 27px;
+        margin-left: 30px;
+    }
+
+    .tiny-green {
+        margin-right: 30px;
+    }
+
+    .base-timer {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
+    .base-timer__svg {
+        transform: scaleX(1);
+        background: #f1f3f4;
+        border-radius: 50%;
+    }
+
+    .base-timer__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+        stroke-width: 7px;
+        stroke: grey;
+    }
+
+    .base-timer__path-remaining {
+        stroke-width: 7px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.arc {
+        /* color: rgba(179, 48, 102, 0.973) */
+        color: #44cd7f;
+    }
+
+    .base-timer__label {
+      flex-basis: 172px;
+    font-weight: 600;
+    font-size: 22px;
+    }
+    .text-examtop-sec {
+    border-bottom: 1px solid rgba(172, 185, 176, 0.14);
+    padding-bottom: 39px;
+}
+    /****SACHIN****/
+    .watch-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        transform: translate(-50%, -50%);
+    }
+
+    .number-block .btn {
+        min-width: 36px;
+        height: 36px;
+        margin-right: 25px;
+        padding: 0;
+    }
 /************************************Page-Test-Exam-Screen-End---By-Sachin-Date-13-07-2022**************/
 
 
