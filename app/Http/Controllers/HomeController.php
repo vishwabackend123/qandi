@@ -473,8 +473,8 @@ class HomeController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $user_name = $request->username;
-            $firstname =isset($request->firstname) && !empty($request->firstname) ? $request->firstname : "";
-            $lastname =isset($request->lastname) && !empty($request->lastname) ? $request->lastname : "";
+            $firstname = isset($request->firstname) && !empty($request->firstname) ? $request->firstname : "";
+            $lastname = isset($request->lastname) && !empty($request->lastname) ? $request->lastname : "";
 
             if (isset($data['file-input']) && !empty($data['file-input'])) {
                 $file = $data['file-input'];
@@ -482,7 +482,7 @@ class HomeController extends Controller
                 $rules = array('image' => 'max:2000');
                 $validator = Validator::make($fileArray, $rules);
                 if ($validator->fails()) {
-                     return Redirect::back()->with('message','Image size is greater than 2 MB');
+                    return Redirect::back()->with('message', 'Image size is greater than 2 MB');
                 }
             }
 
@@ -921,7 +921,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function dailyTaskExam($category, $tasktype, $skill_category = "", Request $request)
+    public function dailyTaskExam($category, $tasktype, $inst = "", $skill_category = "",  Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -946,38 +946,51 @@ class HomeController extends Controller
                     $test_type = 'Task-Center-' . ucwords($category);
                 }
 
+                $dTaskCacheKey = 'DailyTaskExam:' . $user_id;
+                if ($inst == 'instruction') {
+                    if (Redis::exists($dTaskCacheKey)) {
+                        Redis::del($dTaskCacheKey);
+                    }
+                }
 
-                $curl_url = "";
-                $curl = curl_init();
-                $api_URL = env('API_URL');
+                if (Redis::exists($dTaskCacheKey)) {
+                    $response_json = Redis::get($dTaskCacheKey);
+                } else {
 
-                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category_url . '/' . $user_id;
-                $curl_option =  array(
+                    $curl_url = "";
+                    $curl = curl_init();
+                    $api_URL = env('API_URL');
 
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
+                    $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category_url . '/' . $user_id;
+                    $curl_option =  array(
 
-                    CURLOPT_HTTPHEADER => array(
-                        "cache-control: no-cache",
-                        "content-type: application/json"
-                    ),
-                );
-                curl_setopt_array($curl, $curl_option);
+                        CURLOPT_URL => $curl_url,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => "",
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => true,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
 
-                $response_json = curl_exec($curl);
+                        CURLOPT_HTTPHEADER => array(
+                            "cache-control: no-cache",
+                            "content-type: application/json"
+                        ),
+                    );
+                    curl_setopt_array($curl, $curl_option);
 
-                // $response_json = str_replace('NaN', '""', $response_json);
-                // $response_json = stripslashes(html_entity_decode($response_json));
+                    $response_json = curl_exec($curl);
 
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
+                    // $response_json = str_replace('NaN', '""', $response_json);
+                    // $response_json = stripslashes(html_entity_decode($response_json));
+
+                    $err = curl_error($curl);
+                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                    curl_close($curl);
+
+                    Redis::set($dTaskCacheKey, $response_json);
+                }
                 $response_data = (object)json_decode($response_json, true);
 
                 $status = isset($response_data->success) ? $response_data->success : false;
@@ -1060,26 +1073,37 @@ class HomeController extends Controller
                     } else {
                         $option_data[] = '';
                     }
-
-                    /* set redis for save exam question response */
-                    $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
-                    $redis_data = [
-                        'given_ans' => $retrive_array,
-                        'taken_time' => $retrive_time_array,
-                        'taken_time_sec' => $retrive_time_sec,
-                        'answer_swap_cnt' => $answer_swap_cnt,
-                        'questions_count' => $questions_count,
-                        'all_questions_id' => $keys,
-                        'full_time' => $exam_fulltime
-                    ];
-                    // Push Value in Redis
-                    Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                     $tagrets = implode(', ', $aTargets);
 
                     $exam_type = 'PT';
                     $exam_mode = "Practice";
                     //Session::put('exam_name', $exam_name);
                     Redis::set('exam_name' . $user_id, $exam_name);
+
+
+                    if (isset($inst) && $inst == 'instruction') {
+                        /* set redis for save exam question response */
+                        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
+                        $redis_data = [
+                            'given_ans' => $retrive_array,
+                            'taken_time' => $retrive_time_array,
+                            'taken_time_sec' => $retrive_time_sec,
+                            'answer_swap_cnt' => $answer_swap_cnt,
+                            'questions_count' => $questions_count,
+                            'all_questions_id' => $keys,
+                            'full_time' => $exam_fulltime
+                        ];
+                        // Push Value in Redis
+                        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                        if ($category == 'skill') {
+                            $exam_url = route('dailyTaskExamSkill', ['category' => $category, 'tasktype' => $tasktype, 'instruction' => 'instruction', 'skill_category' => $skill_category]);
+                        } else {
+                            $exam_url = route('dailyTaskExam', ['category' => $category, 'tasktype' => $tasktype]);
+                        }
+
+
+                        return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                    }
 
 
                     return view('afterlogin.DailyTaskExam.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
