@@ -311,7 +311,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="timemanagement">
-                                            <h4 class="garphsubheading">Accuracy Percentage <span>(in Last week)</span></h4>
+                                            <h4 class="garphsubheading mt-2">Accuracy Percentage <span>(in Last week)</span></h4>
                                             <div class="subjectperformLegend ">
                                                 <div class="commonSubjectLeg spaceright">
                                                     <span class="bar bluebar"></span>
