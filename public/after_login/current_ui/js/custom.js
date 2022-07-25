@@ -81,7 +81,7 @@ if(headingpercent < 40){
      $('.mq_circle_percent').addClass('mq_circle_yellow');
 }else if(headingpercent > 75){
     $('.dashSubHeading').text('You are doing great!');
-    $('.mq_circle_percent').addClass('green');
+    $('.mq_circle_percent').addClass('mq_circle_green');
 }
 $(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
