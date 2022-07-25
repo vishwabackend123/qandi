@@ -1,33 +1,35 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
-<div class="exam-box">
-    <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
-        <p>{{$topic->topic_name}}</p>
-        <h2>Proficiency : <span>
-                @if(isset($topic->topic_score))
-                {{round($topic->topic_score)}}%
-                @else
-                0%
-                @endif
-            </span>
-        </h2>
-    </div>
-    <div class="topic_score_bar mb-3">
-        <div class="progress">
-            <div class="progress-bar examE" role="progressbar" style="width: {{$topic->E_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar examA" role="progressbar" style="width:{{$topic->A_ques_attempted}} %" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar examC" role="progressbar" style="width: {{$topic->C_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar examK" role="progressbar" style="width: {{$topic->K_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="item">
+    <div class="exam-box">
+        <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
+            <p>{{$topic->topic_name}}</p>
+            <h2>Proficiency : <span>
+                    @if(isset($topic->topic_score))
+                    {{round($topic->topic_score)}}%
+                    @else
+                    0%
+                    @endif
+                </span>
+            </h2>
         </div>
-    </div>
-    <div class="exam-cate d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-            <a href="javascript:void(0)">E</a>
-            <a href="javascript:void(0)">A</a>
-            <a href="javascript:void(0)">C</a>
-            <a href="javascript:void(0)">K</a>
+        <div class="topic_score_bar mb-3">
+            <div class="progress">
+                <div class="progress-bar examE" role="progressbar" style="width: {{$topic->E_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar examA" role="progressbar" style="width:{{$topic->A_ques_attempted}} %" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar examC" role="progressbar" style="width: {{$topic->C_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar examK" role="progressbar" style="width: {{$topic->K_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
         </div>
-        <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic">Select</button>
+        <div class="exam-cate d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <a href="javascript:void(0)">E</a>
+                <a href="javascript:void(0)">A</a>
+                <a href="javascript:void(0)">C</a>
+                <a href="javascript:void(0)">K</a>
+            </div>
+            <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic">Select</button>
+        </div>
     </div>
 </div>
 @endforeach
@@ -36,3 +38,33 @@
     <h5>Topic not available</h5>
 </div>
 @endif
+<script type="text/javascript">
+$('.testslider').owlCarousel({
+    stagePadding: 0,
+    loop: false,
+    margin: 15,
+    nav: false,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+            stagePadding: 40,
+            margin: 5,
+            loop: true,
+        },
+        700: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        },
+        1200: {
+            items: 4
+        }
+
+
+    }
+});
+
+</script>
