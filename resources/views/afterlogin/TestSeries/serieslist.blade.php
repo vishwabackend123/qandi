@@ -215,5 +215,5 @@
         }
     });
 </script>
-</body>
+@include('afterlogin.layouts.footer_new')
 @endsection
