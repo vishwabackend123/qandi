@@ -10,7 +10,7 @@
     .fullbodyBox .leftBox{padding-right:10px;}
     .myqbottomSec h3 .topictext{margin-left: 5px;}
     .myqmatPannel{padding:10px}
-    .commonWhiteBox{padding:30px 25px;}
+    .commonWhiteBox{padding:32px;}
     /* .testPlanCard {
         max-width: 290px !important;
     } */
@@ -635,6 +635,34 @@
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
  /************ Sachin End Date:20-07-22 ************/
+
+ /************ Shiv start for exam-insturction Date:25-07-22 ************/
+
+ .exam_instruction_wrapper {padding: 10px;}
+ .mock-test-mobile > a {
+     color: #56b663;
+     font-size: 14px;
+     font-weight: 800;
+     padding-left:14px;line-height: 1.6;
+ }
+ .mock-test-mobile > i {
+     font-size: 13px;
+     color: #56b663;
+ }
+ .mock-test-mobile{display: block;}
+ .exam_instruction_col_four{padding-top: 2px;}
+ .mock-test-mobile {
+ padding-bottom: 24px;
+}
+
+.exam_section_right_side {padding: 24px 10px 24px;}
+.exam_inst_col_four_text_contant {margin-top: 16px;}
+.exam_section_right_side_padding {padding: 0px 11px 39px;}
+.mock_inst_text_mock_test {display: none;}
+.exam_inst_col_four_text_contant2 {font-size: 14px;}
+.exam_instruction_text{padding-top: 44px;padding-bottom: 8px;}
+.exam_inst_sec_head{padding-top: 32px;}
+.exam_inst_ul_li li {padding-top: 20px;}
         
 }
 

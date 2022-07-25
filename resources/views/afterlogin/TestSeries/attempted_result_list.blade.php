@@ -11,9 +11,23 @@
         </li>
     </ul>
 </div>
+<div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1" id="AssessmentTypeDiv" style="display:none !important">
+    <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
+        <li class="nav-item" role="presentation" type="button">
+            <button class="nav-link btn pt-0 pb-0 SubattemptActBtn active" onclick="showSubfilter('all_subject');" id="all_subject_flt">ALL SUBJECTS</button>
+        </li>
+        @isset($cSubjects)
+        @foreach($cSubjects as $key=>$subject)
+        <li class="nav-item" role="presentation" type="button">
+            <button class="nav-link btn pt-0 pb-0 SubattemptActBtn " onclick="showSubfilter('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_flt">{{$subject->subject_name}}</button>
+        </li>
+        @endforeach
+        @endisset
+    </ul>
+</div>
 @if(!empty($result_data))
 @foreach($result_data as $sche)
-<div class="compLeteS accordion-item pt-4 exam_mode_{{$sche->exam_mode}}">
+<div class="compLeteS accordion-item pt-4 {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
         <h2 class="m-0">
             @if($sche->test_series_name)

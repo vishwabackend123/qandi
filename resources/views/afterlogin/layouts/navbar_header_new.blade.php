@@ -168,7 +168,10 @@ $('#clearAll').click(function() {
         },
         success: function(response_data) {
             $('#collapseNotification2').removeClass('show');
+            $('#collapseNotification2').removeClass('activeblock');
+
             $('.notificationnew').removeClass('bellactive');
+            $('html').removeClass("scrollnone");
         },
     });
 });
