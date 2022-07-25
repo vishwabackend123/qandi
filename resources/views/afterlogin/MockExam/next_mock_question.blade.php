@@ -4,6 +4,7 @@ $subject_id = isset($que_sub_id)?$que_sub_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+$section_id = isset($question_data->section_id)?$question_data->section_id:'';
 $question_type='';
 
 if($template_type == 1){
