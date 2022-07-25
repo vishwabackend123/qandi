@@ -146,13 +146,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                     </div>
                     <div class="col-lg-8 pt-4">
-                        <div class="bg-white subscription-details">
-                            <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
-                            <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
-                            <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none">Upgrade Plan</a>
-                            </div>
-                            <div class="line mb-3 pb-1"></div>
-                            @php
+                        @php
                             $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
                             $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
                             $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
@@ -165,6 +159,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                             $interval = $datetime1->diff($datetime2);
                             $days = $interval->format('%a');
                             @endphp
+                        <div class="bg-white subscription-details">
+                            <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
+                            <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
+                            @csrf
+                            <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
+                            <input type="hidden" name="subscript_id" value="{{$current_subscription->subscript_id}}">
+                            <input type="hidden" name="exam_period" value="12">
+                            <input type="hidden" name="period_unit" value="month">
+                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
+                            <button type="submit" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none" id="get-sub-btn">Upgrade Plan</button>
+                        </form>
+                            </div>
+                            <div class="line mb-3 pb-1"></div>
+                            
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription type</h2>
                                 @if($days < 20)
@@ -191,7 +200,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
-                        <a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a>
+                        <!--a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a-->
+
                         </div>
                     </div>
                 </div>
