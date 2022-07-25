@@ -3648,12 +3648,14 @@ header {
 }
 .text-right{text-align:right;}
 
-#collapseNotification2 {
+/*comment by Sachin date:25-07-22 for Overlay*/
+
+ #collapseNotification2 {
     position: fixed;
     right: -100%;
     width: 95.8%;
     z-index: 9;
-    background-color: #1f1f1f63;
+    /* background-color: #1f1f1f63; */
     opacity: 1;
     top: 11px;
     margin-top: 70px;
@@ -3661,6 +3663,9 @@ header {
     transition: 0.5s;
     height: 100%;
 }
+
+
+
 
 /* .notification-block_new.activeblock,.notification-block_new.show {
     right: 0px !important;
@@ -5443,7 +5448,7 @@ td.mymatrix_table_point
     position: fixed;
     z-index: 9;
     top: 11px;
-    margin-top: 70px;
+    margin-top: 68px;
     height: 100%;
 }
 .activeblock .notification-main{
@@ -5464,7 +5469,7 @@ td.mymatrix_table_point
     position: relative;
     width: 95.8%;
 }
-.activeblock.notification-block_new::before{
+/* .activeblock.notification-block_new::before{
     content: "";
     left: 0px;
     width:100%;
@@ -5481,6 +5486,25 @@ td.mymatrix_table_point
     top:0;
     background-color: rgb(31,31,31,0.3);
     position: absolute;
+} */
+
+.notificationOverlay::before{
+    position: fixed;
+    right: 0;
+    width:98%;
+    z-index: 9;
+    background-color: rgb(31,31,31,0.5);
+    opacity: 1;
+    top: 0px;
+    left:0;
+    display: none;
+    transition: 0.5s;
+    height: 100%;
+    content: "";
+}
+
+.activeblock .notificationOverlay::before{
+    display: block;
 }
 
 .new_notification_main_sec {
