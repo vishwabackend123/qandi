@@ -113,10 +113,11 @@ $name = $action;
     $(".notificationOverlay").click(function(){
         $(".notification-block_new").removeClass("activeblock");
         $(".notification-main").hide();
+        $(".fa-events-icons-ready").removeClass("scrollnone");
     });
-
     $(".notificationnew").click(function(){
          $(".notification-main").show();
+         
     });
  </script>
 
