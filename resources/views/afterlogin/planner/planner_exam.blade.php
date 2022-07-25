@@ -495,7 +495,6 @@ $question_type = "Numerical";
 </div>
 
 <!-- @ include('afterlogin.layouts.footer_new') -->
-@include('afterlogin.layouts.exam_footer')
 <!-- page referesh disabled -->
 <script>
     var activeques_id = '{{$activeq_id}}';
