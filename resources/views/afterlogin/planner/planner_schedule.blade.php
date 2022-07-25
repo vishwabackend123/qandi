@@ -16,7 +16,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
-                <div class="d-flex align-items-center justify-content-between gotodashboard">
+                <div class="d-sm-flex align-items-center justify-content-between gotodashboard">
                 <p class="m-0">Your weekly schedule has been set</p>  
                 <a href="javascript:void(0);">Go to Dashboard</a>
                 </div>    
