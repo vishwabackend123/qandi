@@ -82,8 +82,7 @@ class PreviousYearExamController extends Controller
                 $response_data = (array)(json_decode($response_json));
                 $upcomming_live_exam = isset($response_data['paper-list']) ? $response_data['paper-list'] : [];
                 foreach ($upcomming_live_exam as $key => $value) {
-                    if($value->test_completed_yn =='Y')
-                    {
+                    if ($value->test_completed_yn == 'Y') {
                         unset($upcomming_live_exam[$key]);
                     }
                 }
@@ -93,7 +92,7 @@ class PreviousYearExamController extends Controller
                 $years_list = $unique->pluck('paper_year');
                 $years_list->all();
                 $header_title = "Previous Year Exam";
-                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list','header_title'));
+                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list', 'header_title'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
             }
@@ -108,7 +107,7 @@ class PreviousYearExamController extends Controller
      *
      * @return void
      */
-    public function previousYearExam(Request $request)
+    public function previousYearExam(Request $request, $inst = '')
     {
         try {
             $filtered_subject = [];
@@ -121,38 +120,55 @@ class PreviousYearExamController extends Controller
             }
 
 
-            $exam_name = isset($request->paper_name) ? $request->paper_name : '';
             $paper_id = isset($request->paper_id) ? $request->paper_id : '';
 
 
-            $curl_url = "";
-            $curl = curl_init();
-            $api_URL = env('API_URL');
+            $pyCacheKey = 'PreviousYearExam:' . $user_id;
+            if ($inst == 'instruction') {
+                if (Redis::exists($pyCacheKey)) {
+                    Redis::del($pyCacheKey);
+                }
+            }
 
-            $curl_url = $api_URL . 'api/previous-year-question-paper/' . $paper_id;
-            $curl_option = array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 360,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
+            if (Redis::exists($pyCacheKey)) {
+                $response_json = Redis::get($pyCacheKey);
+            } else {
 
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
 
-                ),
-            );
-            curl_setopt_array($curl, $curl_option);
-            $response_json = curl_exec($curl);
 
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
 
+                $curl_url = "";
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+
+                $curl_url = $api_URL . 'api/previous-year-question-paper/' . $paper_id;
+                $curl_option = array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 360,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+
+                    ),
+                );
+                curl_setopt_array($curl, $curl_option);
+                $response_json = curl_exec($curl);
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+                Redis::set($pyCacheKey, $response_json);
+            }
+
+            //dd($curl_url, $response_json);
             $responsedata = json_decode($response_json);
 
             $response_status = isset($responsedata->success) ? $responsedata->success : false;
@@ -165,6 +181,9 @@ class PreviousYearExamController extends Controller
                 //$exam_ques_count = $questions_count = count($aQuestions_list);
                 $exam_ques_count = $questions_count = isset($responsedata->total_ques) ? $responsedata->total_ques : 0;
                 $total_marks  = isset($responsedata->total_marks) ? $responsedata->total_marks : 0;
+
+
+                $exam_name = isset($responsedata->paper_details[0]->paper_name) ? $responsedata->paper_details[0]->paper_name : '';
             } else {
                 $aQuestions_list = $aSections = [];
                 $questions_count = 0;
@@ -251,39 +270,45 @@ class PreviousYearExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-
-
-
-            /* set redis for save exam question response */
-            $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];
-            $redis_data = [
-                'given_ans' => $retrive_array,
-                'taken_time' => $retrive_time_array,
-                'taken_time_sec' => $retrive_time_sec,
-                'answer_swap_cnt' => $answer_swap_cnt,
-                'questions_count' => $questions_count,
-                'all_questions_id' => $keys,
-                'full_time' => $exam_fulltime,
-                'section_data' => $aSections,
-                'attempt_count' => $attempt_sub_section_cnt,
-                'aSectionSub' => $aSectionSub,
-                'aSubSecCount' => $aSubSecCount,
-            ];
-
-
-            // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
-
             $tagrets = implode(', ', $aTargets);
             $test_type = 'PreviousYear';
             $exam_type = 'PT';
             $exam_mode = 'Practice';
+
+            if (isset($inst) && $inst == 'instruction') {
+
+                /* set redis for save exam question response */
+                $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];
+                $redis_data = [
+                    'given_ans' => $retrive_array,
+                    'taken_time' => $retrive_time_array,
+                    'taken_time_sec' => $retrive_time_sec,
+                    'answer_swap_cnt' => $answer_swap_cnt,
+                    'questions_count' => $questions_count,
+                    'all_questions_id' => $keys,
+                    'full_time' => $exam_fulltime,
+                    'section_data' => $aSections,
+                    'attempt_count' => $attempt_sub_section_cnt,
+                    'aSectionSub' => $aSectionSub,
+                    'aSubSecCount' => $aSubSecCount,
+                ];
+
+
+                // Push Value in Redis
+                Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                $exam_url = route('previousYearExam');
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+            }
+
+
 
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
 
             return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id'));
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

@@ -51,7 +51,7 @@
                                                 <h3 class="m-0 d-flex justify-content-center">{{$sche->paper_year}}</h3>
                                                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwo">
                                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo_{{$sche->paper_id}}" aria-expanded="true" aria-controls="collapseTwo_{{$sche->paper_id}}" class="m-0 view_detail_text_colleps2">View details</h4>
-                                                    <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam')}}" method="post">
+                                                    <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam','instruction')}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="paper_name" value="{{$sche->paper_name}}" />
                                                         <input type="hidden" name="paper_id" value="{{$sche->paper_id}}" />
@@ -108,42 +108,40 @@
 </section>
 </div>
 <script>
-$('#filter_year').change(function() {
+    $('#filter_year').change(function() {
 
-    var selected_val = $(this).val();
-    if (selected_val) {
-        $('.compLeteS').hide();
-        $('.filter_data_' + selected_val).show();
-    } else {
-        $('.compLeteS').show();
+        var selected_val = $(this).val();
+        if (selected_val) {
+            $('.compLeteS').hide();
+            $('.filter_data_' + selected_val).show();
+        } else {
+            $('.compLeteS').show();
+        }
+    });
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
     }
-});
-let dropdown = document.querySelector(".customDropdown")
-dropdown.onclick = function() {
-    dropdown.classList.toggle("active")
-}
-
 </script>
 <script type="text/javascript">
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-        },
-        error: function(data, errorThrown) {}
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+            },
+            error: function(data, errorThrown) {}
+        });
     });
-});
-
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

@@ -271,7 +271,7 @@ Route::any('/mock_next_sub_sec_question/{sub_id}/{sec_id}', [App\Http\Controller
 Route::any('/exam_result_analytics/{result_id}', [App\Http\Controllers\ResultController::class, 'examResultAnalytics'])->name('exam_result_analytics')->middleware('auth', 'menu');
 
 Route::any('/previous_year_exam', [App\Http\Controllers\PreviousYearExamController::class, 'index'])->name('previous_year_exam')->middleware('auth', 'menu');
-Route::any('/previousYearExam', [App\Http\Controllers\PreviousYearExamController::class, 'previousYearExam'])->name('previousYearExam')->middleware('auth', 'menu');
+Route::any('/previousYearExam/{instruction?}', [App\Http\Controllers\PreviousYearExamController::class, 'previousYearExam'])->name('previousYearExam')->middleware('auth', 'menu');
 
 Route::any('/chapter-analytics/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'chapterAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');
 Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultController::class, 'ajaxExamResultList'])->middleware('auth', 'menu');
