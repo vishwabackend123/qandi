@@ -236,7 +236,7 @@ Route::any('/refund_form', [App\Http\Controllers\SubscriptionController::class, 
 Route::any('/refund_form_submit', [App\Http\Controllers\SubscriptionController::class, 'refundFormSubmit'])->name('refund_form_submit')->middleware('auth', 'menu');
 
 /* Adaptive chapter wise planner route */
-Route::any('/plannerExam/{planner_id}', [App\Http\Controllers\PlannerController::class, 'plannerAdaptiveExam'])->name('plannerExam')->middleware('auth', 'menu');
+Route::any('/plannerExam/{planner_id}/{instruction?}', [App\Http\Controllers\PlannerController::class, 'plannerAdaptiveExam'])->name('plannerExam')->middleware('auth', 'menu');
 Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveChapterExamResult'])->name('planner_exam_result')->middleware('auth', 'menu');
 
 
@@ -287,8 +287,8 @@ Route::any('/trendGraphUpdate/{type}', [App\Http\Controllers\HomeController::cla
 
 Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
 Route::any('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
-Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
-Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
+Route::any('/DailyTask-exam/{category}/{tasktype}/{instruction?}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
+Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{instruction?}/{skill_category?}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
