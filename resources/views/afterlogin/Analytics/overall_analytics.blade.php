@@ -111,7 +111,7 @@
                                                                         label: "My First Dataset",
                                                                         data: [<?php echo $correct_score; ?>, <?php echo $incorrect_ans; ?>, <?php echo $unanswered; ?>],
                                                                         backgroundColor: [
-                                                                            "#08d5a1",
+                                                                            "#34d399",
                                                                             "#fb7686",
                                                                             "#f2f4f7"
                                                                         ]
@@ -187,7 +187,7 @@
                                                             <label class="text">Correct Answers</label>
                                                         </div>
                                                         <div class="commonSubjectLeg  mt-0">
-                                                            <span class="bar pinkbar"></span>
+                                                            <span class="bar pinkbar2"></span>
                                                             <label class="text">Incorrect answers</label>
                                                         </div>
                                                     </div>
@@ -233,7 +233,7 @@
                                                         <label class="text">Class Average</label>
                                                     </div>
                                                     <div class="commonSubjectLeg spaceright">
-                                                        <span class="bar greenbar"></span>
+                                                        <span class="bar greenbar2"></span>
                                                         <label class="text">Student average</label>
                                                     </div>
                                                 </div>
@@ -272,7 +272,7 @@
                                                         <label class="text">Correct Answers</label>
                                                     </div>
                                                     <div class="commonSubjectLeg">
-                                                        <span class="bar pinkbar"></span>
+                                                        <span class="bar pinkbar2"></span>
                                                         <label class="text">Incorrect answers</label>
                                                     </div>
                                                 </div>
@@ -318,7 +318,7 @@
                                                     <label class="text">Class Average</label>
                                                 </div>
                                                 <div class="commonSubjectLeg spaceright">
-                                                    <span class="bar greenbar"></span>
+                                                    <span class="bar greenbar2"></span>
                                                     <label class="text">Student average</label>
                                                 </div>
                                             </div>
@@ -523,16 +523,16 @@ var data3 = {
     labels: <?php print_r($date1); ?>,
     datasets: [{
             label: 'Ideal Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#34d399',
+            borderColor: '#34d399',
             data: <?php print_r($correctAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Your Pace',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -582,16 +582,16 @@ var data4 = {
     labels: <?php print_r($date2); ?>,
     datasets: [{
             label: 'Ideal Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#34d399',
+            borderColor: '#34d399',
             data: <?php print_r($correctAns2); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Your Pace',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns2); ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -641,16 +641,16 @@ const data5 = {
     labels: <?php print_r($date3); ?>,
     datasets: [{
             label: 'Ideal Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#34d399',
+            borderColor: '#34d399',
             data: <?php print_r($correctAns3); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Your Pace',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns3); ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -992,4 +992,5 @@ function expandTopicAnalytics(sub_id, subject_name, chapter_name) {
 }
 
 </script>
+@include('afterlogin.layouts.footer_new')
 @endsection

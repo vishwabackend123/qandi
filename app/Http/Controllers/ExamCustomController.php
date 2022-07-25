@@ -1238,6 +1238,7 @@ class ExamCustomController extends Controller
                 return response(array('status' => 'failed'));
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

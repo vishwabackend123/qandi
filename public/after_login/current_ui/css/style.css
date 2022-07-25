@@ -2097,6 +2097,79 @@ a.btn-common-attempted svg {
   }
   .overviewtest{height: 20vh;
       min-height: 186px;}
+    .timing {
+        color: #2c3348;
+        font-size: 18px;
+        line-height: 27px;
+        margin-left: 30px;
+    }
+
+    .tiny-green {
+        margin-right: 30px;
+    }
+
+    .base-timer {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+
+    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
+    .base-timer__svg {
+        transform: scaleX(1);
+        background: #f1f3f4;
+        border-radius: 50%;
+    }
+
+    .base-timer__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    .base-timer__path-elapsed {
+        stroke-width: 7px;
+        stroke: grey;
+    }
+
+    .base-timer__path-remaining {
+        stroke-width: 7px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+    }
+
+    .base-timer__path-remaining.arc {
+        /* color: rgba(179, 48, 102, 0.973) */
+        color: #44cd7f;
+    }
+
+    .base-timer__label {
+      flex-basis: 172px;
+    font-weight: 600;
+    font-size: 22px;
+    }
+    .text-examtop-sec {
+    border-bottom: 1px solid rgba(172, 185, 176, 0.14);
+    padding-bottom: 39px;
+}
+    /****SACHIN****/
+    .watch-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        transform: translate(-50%, -50%);
+    }
+
+    .number-block .btn {
+        min-width: 36px;
+        height: 36px;
+        margin-right: 25px;
+        padding: 0;
+    }
 /************************************Page-Test-Exam-Screen-End---By-Sachin-Date-13-07-2022**************/
 
 
@@ -3008,7 +3081,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     background: #cbebcf;
     border-radius: 50%;
     overflow: hidden;
-    display: inline-block;
+    display: inline-block;box-shadow:0px 9px 16px rgba(164,172,178,0.4);
 }
 
 .mq_circle_inner {
@@ -3436,7 +3509,14 @@ span.greenball-3 {
 .dashbaordContainer .tabMainblock {
     margin-top: 10px;
 }
-
+.chapter_breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: #56b663;    
+    font-size: 22px;
+    height: 20px;
+    position: relative;
+    top: -5px;
+    font-weight: normal;
+}
 /********************* Amit End ****************************/
 
 
@@ -4035,10 +4115,16 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 }
 .subjectperformLegend .commonSubjectLeg{margin-right:10px;margin-top:20px;}
 .subjectperformLegend  .bar{  width: 22px; height: 8px;display:inline-block;margin-right:12px; border-radius: 16px;}
-.subjectperformLegend  .greenbar{background-color:#08d5a1}
+.subjectperformLegend  .greenbar{background-color:#34d399}
+.subjectperformLegend  .greenbar2{background-color:#56b663;}
+.subjectperformLegend  .greenbar3{background-color:#08d5a1;}
+
+
 .subjectperformLegend  .pinkbar{background-color:#ff6678}
+.subjectperformLegend  .pinkbar2{background-color:#f7758f}
+
 .subjectperformLegend  .graybar{background-color:#e5eaee}
-.subjectperformLegend .bluebar{background-color: #7db9ff    ;}
+.subjectperformLegend .bluebar{background-color: #7db9ff;}
 .subjectperformLegend  .commonSubjectLeg .text{opacity: 0.6; font-size: 14px;font-weight: 500; line-height: 1.6;color: #1f1f1f;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
     align-items: flex-end;
@@ -4812,7 +4898,7 @@ justify-content: space-between;}
 }
 .chapter_breadcrumb
 {
-    padding-top:36px;
+    padding-top:31px;
     background:#f5faf6;
 }
 .chapter_prefincy_tab.active
@@ -4837,6 +4923,10 @@ justify-content: space-between;}
     margin: 18px 0 12px;
     overflow: hidden;
 }
+.chapter_proficincy_point_anylytics .common_bars
+{
+    height: 16px;
+}
 .common_bar_sky_blue
 {
     flex-grow: 0;
@@ -4858,6 +4948,10 @@ background: #3e8a44;
 {
     width:25%;
     height: 12px;
+}
+.chapter_proficincy_point_anylytics .common_bar_width
+{
+    height: 16px;
 }
 /* .common_bars_flex span:first-child
 {
@@ -5343,7 +5437,7 @@ td.mymatrix_table_point
     width: 456px;
     padding: 30px;
     right: -100%!important;
-    transition: 0.5s;
+    transition: 0.4s;
     position: fixed;
     z-index: 9;
     top: 11px;
@@ -5352,11 +5446,11 @@ td.mymatrix_table_point
 }
 .activeblock .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .show .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .activeblock.notification-block_new {
     position: fixed;right: auto !important;
