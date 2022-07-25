@@ -1121,4 +1121,5 @@ $question_type = "Numerical";
             });
         });
     </script>
+    @include('afterlogin.layouts.footer_new')
     @endsection

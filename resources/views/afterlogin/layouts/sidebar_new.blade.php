@@ -209,7 +209,7 @@
                     Practice <span class="practice-toggle-arrow"><i class="fa fa-chevron-right"></i></span>
                 </a>
                 <div class="practice-submenu">
-                    <a href="javascript:void(0)">Custom</a>
+                    <a href="{{ url('/exam_custom') }}">Custom</a>
                     <a href="{{ url('/series_list') }}">Test Series</a>
                 </div>
             </li>

@@ -169,6 +169,7 @@ $('#clearAll').click(function() {
         success: function(response_data) {
             $('#collapseNotification2').removeClass('show');
             $('.notificationnew').removeClass('bellactive');
+            $('html').removeClass("scrollnone");
         },
     });
 });
