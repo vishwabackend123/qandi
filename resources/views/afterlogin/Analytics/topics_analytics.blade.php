@@ -2,7 +2,7 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
-            <li class="breadcrumb-item"><a href="javascript:void(0);">Chapter : {{$chapter_name}}</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);">Chapters</a></li>
             <li class="breadcrumb-item active" aria-current="page">Topics</li>
         </ol>
     </nav>
@@ -22,6 +22,7 @@
     </div>
 </div>
 <!-- Tab panes -->
+<h4 class="boxheading">{{$chapter_name}}</h4>
 <div class="tab-content">
     <div id="overall_analytics" class="tab-pane">
     </div>

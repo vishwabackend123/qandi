@@ -651,7 +651,8 @@ font-weight: 800;
     position: absolute;
     right: 0;
     top: 0;
-    width: auto;
+    width: 100%;
+    height: 100%;
 }
 .planner-date .clander-icon{
 right: 14px;
@@ -3509,7 +3510,14 @@ span.greenball-3 {
 .dashbaordContainer .tabMainblock {
     margin-top: 10px;
 }
-
+.chapter_breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    color: #56b663;    
+    font-size: 22px;
+    height: 20px;
+    position: relative;
+    top: -5px;
+    font-weight: normal;
+}
 /********************* Amit End ****************************/
 
 
@@ -4891,7 +4899,7 @@ justify-content: space-between;}
 }
 .chapter_breadcrumb
 {
-    padding-top:36px;
+    padding-top:31px;
     background:#f5faf6;
 }
 .chapter_prefincy_tab.active
@@ -4916,6 +4924,10 @@ justify-content: space-between;}
     margin: 18px 0 12px;
     overflow: hidden;
 }
+.chapter_proficincy_point_anylytics .common_bars
+{
+    height: 16px;
+}
 .common_bar_sky_blue
 {
     flex-grow: 0;
@@ -4937,6 +4949,10 @@ background: #3e8a44;
 {
     width:25%;
     height: 12px;
+}
+.chapter_proficincy_point_anylytics .common_bar_width
+{
+    height: 16px;
 }
 /* .common_bars_flex span:first-child
 {
@@ -5422,7 +5438,7 @@ td.mymatrix_table_point
     width: 456px;
     padding: 30px;
     right: -100%!important;
-    transition: 0.5s;
+    transition: 0.4s;
     position: fixed;
     z-index: 9;
     top: 11px;
@@ -5431,11 +5447,11 @@ td.mymatrix_table_point
 }
 .activeblock .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .show .notification-main{
     right: 0%!important;
-    transition: 0.5s; 
+    transition: 0.4s; 
 }
 .activeblock.notification-block_new {
     position: fixed;right: auto !important;
@@ -6144,3 +6160,8 @@ border-color: #56b663;
     padding: 20px 75px;
 }
 .privacy-sec > a {color: #56b663;}   
+
+
+
+/**********  exam_instructions *********/
+.mock-test-mobile{display: none;}

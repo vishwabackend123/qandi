@@ -279,101 +279,6 @@
         });
 
     });
-
-    // the following script for profile section
-    $(document).ready(function() {
-
-        $(".user-pic-block").click(function() {
-            $(".main-profile-section").addClass("blure-bg")
-            $(".main-profile-section").toggle();
-            $(".profile-show").hide();
-            $("#LeaDer").hide();
-            $(".edit-form").hide();
-
-        });
-        /* $(".account-profile").click(function() {
-            $(".main-profile-section").toggle();
-        }); */
-    });
-
-    // the following script for leader board section
-    $(document).ready(function() {
-        $(".account-profile").click(function() {
-            $(".leader-board").toggle();
-            $(".subscription").hide();
-            $(".log-out-screen").hide();
-            $(".edit-form").hide();
-            $(".profile-show").toggle();
-            $("#editProfile_form #cancelEdit").click();
-
-        });
-
-    });
-
-    // the following js for edit
-    $(document).ready(function() {
-        $(".edit-btn-show").click(function() {
-            $(".edit-form").show();
-        });
-        $(".edit-btn-show").click(function() {
-            $(".profile-show").hide();
-            $("#leaderboxId").hide();
-        });
-    });
-
-    // the following js for and profile edit
-    $(document).ready(function() {
-        $(".cancel-btn").click(function() {
-            $(".profile-show").show();
-            $("#LeaDer").show();
-
-            $(".edit-form").hide();
-            $('#editProfile_form').trigger("reset");
-        });
-    });
-
-    // the following js for blure
-    $(document).ready(function() {
-        $(".main-profile-section.blure-bg").click(function() {
-            $(".blure-bg").hide();
-        });
-        $('.closeprofile').click(function() {
-            $(".blure-bg").hide();
-        });
-    });
-
-    // the following script for subscription section  log-out-screen
-    $(document).ready(function() {
-        $(".subscription-profile").click(function() {
-
-            $(".subscription").toggle();
-            $(".leader-board").hide();
-            $("#search_field").val('');
-            $('#search_field').keyup();
-            $("#editProfile_form #cancelEdit").click();
-            $(".log-out-screen").hide();
-            $(".edit-form").hide();
-            $(".profile-show").hide();
-
-        });
-
-    });
-
-    // the following script for log out section
-    $(document).ready(function() {
-        $(".log-out-btn").click(function() {
-
-            $(".log-out-screen").toggle();
-            $(".subscription").hide();
-            $(".leader-board").hide();
-            $("#search_field").val('');
-            $('#search_field').keyup();
-            $("#editProfile_form #cancelEdit").click();
-            $(".edit-form").hide();
-            $(".profile-show").hide();
-        });
-
-    });
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -515,20 +420,6 @@
             jQuery('.dash-nav-link a').removeClass("active");
             jQuery(this).addClass("active");
             //jQuery(this).removeClass("active");
-        });
-    });
-
-    $(document).ready(function() {
-        $('#EdiTbtnnn').click(function() {
-            $('#LeaDer').hide();
-            $("#search_field").val('');
-            $('#search_field').keyup();
-            $('#saveEdit').attr('disabled', 'disabled');
-            $('#saveEdit').addClass("disabled-btn");
-            $('#editProfile_form').trigger("reset");
-            var validator = $("#editProfile_form").validate();
-            validator.resetForm();
-
         });
     });
 </script>
@@ -699,15 +590,6 @@
         }
     });
 
-    $(".user-name-block span.notification").click(function() {
-        if (!$(this).hasClass("notification-icons-active")) {
-            $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active");
-        } else {
-            $(this).removeClass("notification-icons-active");
-            $('#collapsePlanner').hide();
-        }
-    });
 
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
@@ -831,25 +713,6 @@
         }
 
     });
-
-
-
-    $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
-        $('html').addClass("scrollnone")
-        setTimeout(function() {
-            if ($('.notification-block').hasClass('notification-block-active')) {
-                $('html').addClass("scrollnone")
-            } else if ($('.main-profile-section').hasClass('show')) {
-                $('html').addClass("scrollnone")
-            } else if ($('.planmner-block').css('display') == 'block') {
-                $('html').addClass("scrollnone")
-            } else {
-                $('html').removeClass("scrollnone")
-            }
-        }, 0);
-
-
-    });
 </script>
 <script>
     $(".dash-nav-link a:last-child").click(function() {
@@ -921,20 +784,20 @@
         }
     });
 
-    $(".profile-section ul").on('click', function() {
-        $("#LeaDer , .profile-show").removeClass("animateAccountCard");
-        if ($(".profile-section ul li:nth-child(2)").hasClass("active")) {
-            $(".subscription-box").addClass("showCard");
-            $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
-        } else if ($(".profile-section ul li:nth-child(3)").hasClass("active")) {
-            $(".log-out-screen").addClass("showCard");
-            $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
-        } else if ($(".profile-section ul li:first-child").hasClass("active")) {
-            $("#LeaDer , .profile-show").addClass("showCard");
-            $(".log-out-screen , .subscription-box ").removeClass("showCard");
-            $(".edit-form").hide();
-        }
-    });
+    // $(".profile-section ul").on('click', function() {
+    //     $("#LeaDer , .profile-show").removeClass("animateAccountCard");
+    //     if ($(".profile-section ul li:nth-child(2)").hasClass("active")) {
+    //         $(".subscription-box").addClass("showCard");
+    //         $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
+    //     } else if ($(".profile-section ul li:nth-child(3)").hasClass("active")) {
+    //         $(".log-out-screen").addClass("showCard");
+    //         $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
+    //     } else if ($(".profile-section ul li:first-child").hasClass("active")) {
+    //         $("#LeaDer , .profile-show").addClass("showCard");
+    //         $(".log-out-screen , .subscription-box ").removeClass("showCard");
+    //         $(".edit-form").hide();
+    //     }
+    // });
     $(".profile-picture-txt #EdiTbtnnn").click(function() {
         $("#LeaDer , .profile-show").removeClass("showCard");
     });
@@ -964,12 +827,12 @@
         $(this).prev().removeClass(" category_selct");
     });
 
-    $('#plannCal,#nodificbell,.user-pic-block').click(function() {
-        $("html, body, .wrapper-dashboard").animate({
-            scrollTop: 0
-        }, "100");
-        $('html').addClass("scrollnone")
-    });
+    // $('#plannCal,#nodificbell,.user-pic-block').click(function() {
+    //     $("html, body, .wrapper-dashboard").animate({
+    //         scrollTop: 0
+    //     }, "100");
+    //     $('html').addClass("scrollnone")
+    // });
 
     function searchCity() {
         var input, filter, ul, li, a, i, txtValue;
@@ -1022,20 +885,23 @@
 <script>
 /*********Notification-Scrolljs*************/
 $('.notificationnew').click(function() {
-  $(this).toggleClass('bellactive')
-  $('.notification-block_new').toggleClass('activeblock')
-      if ($('.notification-block_new ').hasClass('activeblock')) {
-          $('html').addClass("scrollnone")
+  $(this).toggleClass('bellactive');
+  $('.notification-block_new').toggleClass('activeblock');
+      if ($('.notification-block_new').hasClass('activeblock')) {
+          $('html').addClass("scrollnone");
       }else {
-          $('html').removeClass("scrollnone")
+          $('html').removeClass("scrollnone");
       };
 });
-$('.headericon.dropdown').click(function(){
-  $('.notification-block_new').removeClass('activeblock show');
-  $('.notificationnew').removeClass('bellactive')
+$('.headericon.dropdown,.sidebar-menu-lists a').click(function(){
+  $('.notification-block_new').removeClass('activeblock');
+  $('.notification-block_new').removeClass('show');
+  $('.notificationnew').removeClass('bellactive');
   $('html').removeClass("scrollnone");
   // $('.notification-block_new').removeClass('show ')
 });
+
+
 
 /*********Notification-Js*****/
 </script>
@@ -1045,16 +911,16 @@ $('.headericon.dropdown').click(function(){
 <script>
 /**********************Notification-Overlay Remove Outside Section Click*******************/
 $(document).on('click', function(e) {
-    var card_opened = $('.notification-block_new').hasClass('activeblock');
+    var card_opened = $('.notification-block_top').hasClass('activeblock');
     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-        $('.notification-block_new').removeClass("activeblock");
+        $('.notification-block_top').removeClass("activeblock");
     }
 });
 
 $(document).on('click', function(e) {
-    var card_opened = $('.notification-block_new').hasClass('show');
+    var card_opened = $('.notification-block_top').hasClass('show');
     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-        $('.notification-block_new').removeClass("show");
+        $('.notification-block_top').removeClass("show");
     }
 });
 /**********************Notification-Overlay Remove Outside Section Click*******************/
