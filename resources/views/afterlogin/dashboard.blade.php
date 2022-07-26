@@ -31,7 +31,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-12">
                         @if($userData->email_verified=='No')
                         <div class="verifiaction-link">
-                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="javascript:void(0);" class="resend_email">Resend</a></p>
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified. <a href="javascript:void(0);" class="resend_email">Resend</a></p>
                             <span class="mt-2" id="email_success"></span>
                         </div>
                         @endif
@@ -48,7 +48,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </g>
                                     </svg>
                                     <p class="tooltipclass">
-                                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                         A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
                                     </p>
                                 </span>
@@ -88,7 +88,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </g>
                                             </svg>
                                             <p class="tooltipclass">
-                                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                 This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                                             </p>
                                         </span>
@@ -159,7 +159,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </g>
                                         </svg>
                                         <p class="tooltipclass">
-                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                             A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
                                         </p>
                                     </span>
@@ -172,8 +172,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
-                                    <h4>Full Body Scan Test</h4>
-                                    <p>to assess your preparedness and begin to improve it</p>
+                                    <h4>Full body scan test</h4>
+                                    <p>to assess yourpreparation and take your first step to improvement.</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
@@ -364,7 +364,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </g>
                                         </svg>
                                         <p class="tooltipclass">
-                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                             A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
@@ -512,7 +512,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </g>
                                                         </svg>
                                                         <p class="tooltipclass">
-                                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                             To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                                         </p>
                                                     </span>
@@ -651,7 +651,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </g>
                                                     </svg>
                                                     <p class="tooltipclass">
-                                                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                         Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
                                                     </p>
                                                 </span>
@@ -713,7 +713,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </g>
                                                     </svg>
                                                     <p class="tooltipclass">
-                                                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                         This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                                                     </p>
                                                 </span>
