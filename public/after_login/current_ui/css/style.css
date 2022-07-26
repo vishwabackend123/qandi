@@ -3570,6 +3570,9 @@ span.greenball-3 {
 }
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
 .overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 261px;max-height: 261px}
+.overall_analytics_page .chapter_profici_application_deves_text{    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;}
 /********************* Amit End ****************************/
 
 
