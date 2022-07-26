@@ -28,12 +28,12 @@
         <div class="row chapter_of_row_col_paddin_zero">
             @foreach($chapterList as $list)
             @php
-            $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 16, $end='...');
+            $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 25, $end='...');
             $topicnametitle = $list['chapter_name'];
             @endphp
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
+                    <div class="chapter_profici_application_deves_text" title="{{$topicnametitle}}">{{Str::ucfirst(Str::lower($topicname))}} </div>
                     <div class="common_bars">
                         <div class="d-flex common_bars_flex">
                             <span class="common_bar_sky_blue common_bar_width position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
