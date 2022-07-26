@@ -239,8 +239,14 @@
 }
 @media(max-width:767px){
     .planner-box{
-    padding: 20px;    
+    padding: 20px;  
+    margin-bottom: 20px;
     }
+    .custom_modal {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+}
     .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
@@ -668,6 +674,19 @@
 }
 
 @media only screen and (max-width: 576px){
+    .add-subchapter {
+    width: 100%;
+    }
+    .add-insubchapter p {
+    display: flex;
+    font-size: 14px !important;
+}
+    .add-insubchapter p span {
+    width: 100%;
+}
+    .add-insubchapter {
+    padding: 14px 12px 8px 15px;
+}
     .fliparrow {
     transform: rotate(90deg);
     top: 2px;
