@@ -45,7 +45,7 @@
                         <img src="{{URL::asset('public/after_login/current_ui/images/Subject-performance.svg')}}" alt="performance" class="w-100 d-block">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">MyQ Today</h5>
-                            <p>See how you are doing and see the percentage of<br> subject you are doing good in</p>
+                            <p>Keep track of your progress inyour subjects</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -115,7 +115,7 @@
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
                     <div class="d-flex position-relative" id="mobile_num_box">
-                        <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
+                        <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no." name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
                         <a class="editnumber  d-none" id="verifynum" href="javascript:void(0);">Verify</a>
                         <a class="editnumber bg-white d-none" href="javascript:void(0);" id="editsignnumber">
@@ -310,14 +310,14 @@ $('#verifynum').click(function() {
     $check = 0;
     var mobile_num = $("#mobile_num").val();
     if (mobile_num == '') {
-        $("#err_reg_mob").html('Please enter your mobile number');
+        $("#err_reg_mob").html('Please enter your Mobile no.');
         $("#err_reg_mob").fadeIn('fast');
         $check = 1;
     } else {
 
         var testMobile = /^[6-9][0-9]{9}$/;
         if (testMobile.test(mobile_num)) {} else {
-            $("#err_reg_mob").html('Please enter valid mobile number');
+            $("#err_reg_mob").html('Please enter valid Mobile no.');
             $("#err_reg_mob").fadeIn('fast');
             $check = 1;
         };
@@ -401,7 +401,7 @@ $("#studentsignup").validate({
             required: "Please enter the name."
         },
         "mobile_num": {
-            required: "Please enter the mobile number."
+            required: "Please enter the Mobile no.."
         },
         "register_otp[]": {
             required: "Please enter the OTP."

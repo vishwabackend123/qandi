@@ -71,7 +71,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">Lets get started!</h6>
                                     <p class="dashSubtext">To begin your journey, attempt "Full body scan".</p>
-                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </svg>
                                         </div>
                                         <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
-                                        <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
+                                        <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                     </div>
                                 </div>
                                 @endif
@@ -168,13 +168,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
                             </div>
-                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
+
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full Body Scan Test</h4>
                                     <p>to assess your preparedness and begin to improve it</p>
-                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-white">Attempt Now</a>
+                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="107" height="105" viewBox="0 0 107 105" fill="none">
@@ -490,7 +490,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                     </div>
                                     <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
-                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
+                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                 </div>
                             </div>
                             @endif
