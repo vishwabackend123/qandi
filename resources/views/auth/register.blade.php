@@ -108,6 +108,8 @@
                 @csrf
                 <input type="hidden" name="refer_code" id="refer_code" value="{{$referral_code ?? ''}}">
                 <input type="hidden" name="refer_email" id="referral_email" value="{{$referral_email ?? ''}}">
+                <input type="hidden" name="state" id="state_name" value="">
+                <input type="hidden" name="city" id="city_name" value="">
                 <div class="custom-input pb-3">
                     <label>Name </label>
                     <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
@@ -466,6 +468,8 @@ $("#studentsignup").validate({
         var grade_stage = $("#grade").val();
         var refer_code = $("#refer_code").val();
         var referral_email = $("#referral_email").val();
+        var state = $('#state_name').val();
+        var city = $('#city_name').val();
         $.ajax({
             url: "{{ url('/verifyOtpRegister') }}",
             type: 'POST',
@@ -475,9 +479,10 @@ $("#studentsignup").validate({
                 email_add: email_add,
                 user_name: user_name,
                 mobile_num: mobile_num,
-                location: location,
+                location: city,
                 exam_id: exam,
                 stage_at_signup: grade_stage,
+                state: state,
                 refer_code: refer_code,
                 refer_email: referral_email,
             },
@@ -560,6 +565,7 @@ $(document).ready(function() {
                 var data = $.map(response_data.response, function(obj) {
                     obj.id = obj.id;
                     obj.text = obj.text;
+                    obj.datavalue = obj.state;
                     return obj;
                 });
 
@@ -574,6 +580,10 @@ $(document).ready(function() {
             },
             cache: true
         }
+    }).on('select2:select', function (e) {
+         var data = e.params.data;
+         $('#state_name').val(data['datavalue']);
+         $('#city_name').val(data['id']);
     });
 
     $('#location').val(null).trigger('change');
