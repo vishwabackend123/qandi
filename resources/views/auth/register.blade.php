@@ -45,7 +45,7 @@
                         <img src="{{URL::asset('public/after_login/current_ui/images/Subject-performance.svg')}}" alt="performance" class="w-100 d-block">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">MyQ Today</h5>
-                            <p>See how you are doing and see the percentage of<br> subject you are doing good in</p>
+                            <p>Keep track of your progress inyour subjects</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -115,7 +115,7 @@
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
                     <div class="d-flex position-relative" id="mobile_num_box">
-                        <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
+                        <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no." name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
                         <a class="editnumber  d-none" id="verifynum" href="javascript:void(0);">Verify</a>
                         <a class="editnumber bg-white d-none" href="javascript:void(0);" id="editsignnumber">

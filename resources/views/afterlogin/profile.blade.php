@@ -92,7 +92,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-12">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no" value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no." value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>

@@ -26,12 +26,9 @@ $userData = Session::get('user_data');
                         <div class="bg-white planner-box">
                             <div class="d-flex align-items-center justify-content-between planner-title pb-3 mb-1">
                                 <h1>Planner</h1>
-                                <button type="submit" class="btn btn-common-green disabled" id="saveplannerbutton">Save Test</button>
+                                <button type="submit" class="btn btn-common-green disabled d-sm-block d-none" id="saveplannerbutton">Save Test</button>
 
                             </div>
-
-
-
                             <h2 class="week-select pb-3">Select a week</h2>
                             <div class="row mb-md-0 mb-4">
                                 <div class="col-lg-4">
@@ -87,10 +84,10 @@ $userData = Session::get('user_data');
                                     &nbsp; Add chapters
                                 </label>
                                 @if(isset($sub_planner) && !empty($sub_planner))
-                                <div class="d-flex align-items-center add-subchapter chaptbox" id="planner_sub_{{$sub->id}}">
+                                <div class="d-sm-flex align-items-center add-subchapter chaptbox" id="planner_sub_{{$sub->id}}">
                                     @foreach($sub_planner as $plan)
 
-                                    <div class="add-insubchapter me-3">
+                                    <div class="add-insubchapter me-sm-3">
                                         <input type="hidden" id="select_chapt_id{{$plan->chapter_id}}" name="chapters[]" value="{{$plan->chapter_id}}">
                                         <p class="m-0">
                                             <span class="me-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
@@ -127,7 +124,7 @@ $userData = Session::get('user_data');
                         </div>
                     </form>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 d-md-block d-none">
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
@@ -139,6 +136,9 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
+        <div class="bg-white position-fixed w-100 d-sm-none d-block savebtnfix">
+           <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerbutton">Save Test</button>
+           </div>    
         </div>
     </section>
 </div>
@@ -300,7 +300,7 @@ $userData = Session::get('user_data');
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append(
-                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
+                '<div class = "add-insubchapter me-sm-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg   width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
@@ -549,7 +549,7 @@ $userData = Session::get('user_data');
 
                         if (status == "Y") {
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-sm-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
 
                                 '</p></div>');
 
@@ -558,7 +558,7 @@ $userData = Session::get('user_data');
                         } else {
 
                             $('#planner_sub_' + subject_id).append(
-                                '<div class = "add-insubchapter me-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
+                                '<div class = "add-insubchapter me-sm-3" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
                                 '<a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                                 '<g clip-path="url(#h7dsf4yzaa)" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
                                 '<path d="M17.25 3v4.5h-4.5M.75 15v-4.5h4.5" />' +
