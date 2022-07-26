@@ -384,7 +384,7 @@ class AdpativeExamController extends Controller
      *
      * @return void
      */
-    public function topicAdaptiveExam(Request $request)
+    public function topicAdaptiveExam(Request $request, $inst = '')
     {
         try {
             $filtered_subject = [];
@@ -397,65 +397,82 @@ class AdpativeExamController extends Controller
             if (Redis::exists('adaptive_session:' . $user_id)) {
                 Redis::del(Redis::keys('adaptive_session:' . $user_id));
             }
-
-
-            $question_count = isset($request->question_count) ? $request->question_count : 30;
-            $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
-            $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
-            $topic_id = isset($request->topics) ? $request->topics : 0;
-            $select_topic = isset($request->topics) ? array_map('intval', explode(",", $request->topics)) : [];
-
-
-            $inputjson['student_id'] = $user_id;
-            $inputjson['exam_id'] = (string)$exam_id;
-            if (count($select_topic) > 1) {
-                $inputjson['topic_id'] = $select_topic;
-            } else {
-                $inputjson['topic_id'] = !empty($select_topic) ? $select_topic[0] : [];
+            $topicAdaptiveCacheKey = 'TopicAdaptiveExam:' . $user_id;
+            if ($inst == 'instruction') {
+                if (Redis::exists($topicAdaptiveCacheKey)) {
+                    Redis::del($topicAdaptiveCacheKey);
+                }
             }
 
-            $inputjson['session_id'] = 0;
-            $inputjson['end_test'] = "";
-            $inputjson['exam_over'] = "";
-            $inputjson['questions_list'] = [];
-            $inputjson['answerList'] = [];
-
-            $request = json_encode($inputjson);
-
-            $curl_url = "";
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-
-            if (count($select_topic) > 1) {
-                $curl_url = $api_URL . 'api/adaptive-assessment-multi-topics-practice';
+            if (Redis::exists($topicAdaptiveCacheKey)) {
+                $response_json = Redis::get($topicAdaptiveCacheKey);
+                $adaptive_session = Redis::get('adaptive_session:' . $user_id,);
+                $sesion_data = json_decode($adaptive_session);
+                $select_topic = isset($sesion_data->selected_topics) ? $sesion_data->selected_topics : [];
             } else {
-                $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+
+
+
+                $question_count = isset($request->question_count) ? $request->question_count : 30;
+                $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
+                $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+                $topic_id = isset($request->topics) ? $request->topics : 0;
+                $select_topic = isset($request->topics) ? array_map('intval', explode(",", $request->topics)) : [];
+
+
+                $inputjson['student_id'] = $user_id;
+                $inputjson['exam_id'] = (string)$exam_id;
+                if (count($select_topic) > 1) {
+                    $inputjson['topic_id'] = $select_topic;
+                } else {
+                    $inputjson['topic_id'] = !empty($select_topic) ? $select_topic[0] : [];
+                }
+
+                $inputjson['session_id'] = 0;
+                $inputjson['end_test'] = "";
+                $inputjson['exam_over'] = "";
+                $inputjson['questions_list'] = [];
+                $inputjson['answerList'] = [];
+
+                $request = json_encode($inputjson);
+
+                $curl_url = "";
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+
+                if (count($select_topic) > 1) {
+                    $curl_url = $api_URL . 'api/adaptive-assessment-multi-topics-practice';
+                } else {
+                    $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+                }
+
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => $request,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+
+                    ),
+                ));
+                $response_json = curl_exec($curl);
+
+
+                $response_json = str_replace('NaN', '""', $response_json);
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+                Redis::set($topicAdaptiveCacheKey, $response_json);
             }
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $request,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-
-                ),
-            ));
-            $response_json = curl_exec($curl);
-
-
-            $response_json = str_replace('NaN', '""', $response_json);
-
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
 
             $responsedata = json_decode($response_json);
 
@@ -541,34 +558,43 @@ class AdpativeExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-
-            /* set redis for save exam question response */
-            $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $aQ_list = [];
-            $redis_data = [
-                'given_ans' => $retrive_array,
-                'taken_time' => $retrive_time_array,
-                'taken_time_sec' => $retrive_time_sec,
-                'answer_swap_cnt' => $answer_swap_cnt,
-                'questions_count' => $questions_count,
-                'all_questions_id' => $question_ids,
-                'full_time' => $exam_fulltime,
-                'adaptive_api_url' => $curl_url,
-                'selected_topics' => $select_topic,
-            ];
-
-            // Push Value in Redis
-            Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
-
             $tagrets = implode(', ', $aTargets);
 
             $test_type = 'Assessment';
             $exam_type = 'PT';
+            $exam_name = $test_name;
             //Session::put('exam_name', $test_name);
             Redis::set('exam_name' . $user_id, $test_name);
+
+            if (isset($inst) && $inst == 'instruction') {
+                /* set redis for save exam question response */
+                $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $aQ_list = [];
+                $redis_data = [
+                    'given_ans' => $retrive_array,
+                    'taken_time' => $retrive_time_array,
+                    'taken_time_sec' => $retrive_time_sec,
+                    'answer_swap_cnt' => $answer_swap_cnt,
+                    'questions_count' => $questions_count,
+                    'all_questions_id' => $question_ids,
+                    'full_time' => $exam_fulltime,
+                    'adaptive_api_url' => $curl_url,
+                    'selected_topics' => $select_topic,
+                ];
+
+                // Push Value in Redis
+                Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
+
+                $exam_url = route('custom_exam_topic');
+
+
+                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+            }
+
 
             /* dd($exam_fulltime); */
             return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }

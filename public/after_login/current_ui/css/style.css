@@ -3106,6 +3106,11 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     transition: 1.05s;
 }
 
+.mq_circle_red .mq_round_per{ background: #f76c6c;}
+.mq_circle_yellow .mq_round_per{background: #f7c86d;}
+
+
+
 .mq_percent_more .mq_circle_inner {
     clip: rect(0 0.5em 1em 0em);
 }
@@ -3879,7 +3884,7 @@ header {
 }
 .commontab .nav-tabs .nav-link {
     padding: 0px 0px 25px;
-    opacity: 0.6;
+    /* opacity: 0.6; */
     border: 0px;
     font-size: 16px;
     font-weight: 500;
@@ -4279,6 +4284,8 @@ justify-content: space-between;}
 .progressnewjourney{height:100%;}
 .progressnewjourney canvas{height:calc(100% + 40px);}
 .overallmain .boxheading .tooltipmain{top:-2px}
+.chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
+.chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 
 /********* Shubham End ***********/
 
