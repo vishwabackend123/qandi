@@ -3158,9 +3158,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-    background-image: url(../images/roundshape2.png);
-    background-position-x: -7.5px;
-    background-size: 117px;
+    background-image: url(../images/roundshape.svg);
+    background-position-x: -0.3px;
+    background-size: 106px;
     background-position-y: -1px;
     background-repeat: no-repeat;
     box-shadow: 0px 9px 16px rgb(164 172 178 / 40%);
