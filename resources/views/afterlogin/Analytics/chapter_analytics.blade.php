@@ -33,7 +33,7 @@
             @endphp
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text" title="{{$topicnametitle}}">{{Str::ucfirst(Str::lower($topicname))}} </div>
+                    <div class="chapter_profici_application_deves_text" title="{{$topicnametitle}}">{{Str::ucfirst(Str::lower($topicnametitle))}} </div>
                     <div class="common_bars">
                         <div class="d-flex common_bars_flex">
                             <span class="common_bar_sky_blue common_bar_width position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
