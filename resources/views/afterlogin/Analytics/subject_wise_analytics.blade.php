@@ -105,6 +105,7 @@
                                         <div class="codelerninner">
                                             <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights.</h5>
                                             <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -135,6 +136,7 @@
                                         <div class="codelerninner">
                                             <h5>Application skill indicates your ability to use the information in a new way.</h5>
                                             <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -149,6 +151,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5> Knowledge skill determines your ability to recall.</h5>
+
                                             <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
