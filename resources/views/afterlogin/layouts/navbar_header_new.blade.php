@@ -110,6 +110,14 @@ $name = $action;
 <!--main-profile-section-->
 
 <script>
+      $(document).ready(function(){
+        $(".notificationnew").click(function() {
+            $("html, body").animate({ 
+                scrollTop: 0 
+            }, "fast");
+            return false;
+        });
+   });
     $(".notificationOverlay").click(function() {
         $(".notification-block_new").removeClass("activeblock");
         $(".notification-block_new").removeClass("show");
@@ -196,14 +204,20 @@ $name = $action;
     });
 </script>
 <script>
-    $(window).scroll(function() {
-	var $height = $(window).scrollTop();
-    if($height > 20) {
-            $('.notification-main').addClass('scrollPosition');
-        } else {
-            $('.notification-main').removeClass('scrollPosition');
-        }
-    });
+    // $(window).scroll(function() {
+	// var $height = $(window).scrollTop();
+    // if($height > 10 && $height < 20) {
+    //     $('.notification-main').css("top", "-18px");
+    //     } else if ($height > 21 && $height < 34) {
+    //         $('.notification-main').css("top", "-25px");
+    //     } else if ($height > 35) {
+    //         $('.notification-main').css("top", "-38px");
+    //     }  else {
+    //         $('.notification-main').css("top", "11px");
+    //     } {
+    //     }
+    // });
+  
 </script>
 <style>
 .scrollPosition{top:-32px;}
