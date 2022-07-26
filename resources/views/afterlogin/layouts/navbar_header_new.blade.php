@@ -59,7 +59,7 @@ $name = $action;
             <span class="headericon dropdown mobile_hide">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
                     @if(isset($userData->user_profile_img))
-                    <img src="{{$imgPath}}" class="profileicon" />
+                    <img src="{{ $imgPath ?? '' }}" class="profileicon" />
                     @else
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
@@ -78,8 +78,8 @@ $name = $action;
 
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
-<div class="notificationOverlay"></div>
-    
+    <div class="notificationOverlay"></div>
+
     <div class="planner-wrapper ">
         <div class="notification-main">
             <h2>Notifications <a href="javascript:void(0);" id="clearAll">Clear all</a></h2>
@@ -110,89 +110,88 @@ $name = $action;
 <!--main-profile-section-->
 
 <script>
-    $(".notificationOverlay").click(function(){
+    $(".notificationOverlay").click(function() {
         $(".notification-block_new").removeClass("activeblock");
         $(".notification-block_new").removeClass("show");
         $(".notificationnew").removeClass("bellactive");
         $(".notification-main").hide();
         $('html').removeClass("scrollnone");
     });
-    $(".notificationnew").click(function(){
-         $(".notification-main").show();
-         
-    });  
- </script>
+    $(".notificationnew").click(function() {
+        $(".notification-main").show();
+
+    });
+</script>
 
 
 <script>
-$(document).on('click', '#nodificbell', function(event) {
-    refresh_notification();
-});
+    $(document).on('click', '#nodificbell', function(event) {
+        refresh_notification();
+    });
 
-function lettersOnly(evt) {
+    function lettersOnly(evt) {
 
-    evt = (evt) ? evt : event;
-    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
-        ((evt.which) ? evt.which : 0));
-    if (charCode > 32 && (charCode < 65 || charCode > 90) &&
-        (charCode < 97 || charCode > 122)) {
+        evt = (evt) ? evt : event;
+        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+            ((evt.which) ? evt.which : 0));
+        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)) {
 
-        return false;
+            return false;
+        }
+        return true;
     }
-    return true;
-}
 
-function refresh_notification() {
-    $.ajax({
-        url: "{{ url('/refresh-notifications',) }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        success: function(response_data) {
-            $('#recent_notify').html(response_data);
+    function refresh_notification() {
+        $.ajax({
+            url: "{{ url('/refresh-notifications',) }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(response_data) {
+                $('#recent_notify').html(response_data);
 
-        },
+            },
+        });
+    }
+
+    /*****Mobile-menu js*********** */
+    $("#menumobile").click(function() {
+        $('html').addClass("windowhidden")
+        $('body').addClass("sidebartoggle")
+        $(this).hide();
+        $('#menumobilehide').show();
+        $('.sidebar_block').addClass('showmenu');
     });
-}
-
-/*****Mobile-menu js*********** */
-$("#menumobile").click(function() {
-    $('html').addClass("windowhidden")
-    $('body').addClass("sidebartoggle")
-    $(this).hide();
-    $('#menumobilehide').show();
-    $('.sidebar_block').addClass('showmenu');
-});
-$("#menumobilehide").click(function() {
-    $('html').removeClass("windowhidden")
-    $('body').removeClass("sidebartoggle")
-    $(this).hide();
-    $("#menumobile").show();
-    $('.sidebar_block').removeClass('showmenu');
-});
-
-// $('.notificationnew').click(function() {
-//     $('body').removeClass("sidebartoggle")
-//     $('.sidebar_block').removeClass('showmenu');
-// });
-
-/*****Mobile-menu js*********** */
-$('#clearAll').click(function() {
-    $.ajax({
-        url: "{{route('clearAllNotifications')}}",
-        type: 'GET',
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        success: function(response_data) {
-            $('#collapseNotification2').removeClass('show');
-            $('#collapseNotification2').removeClass('activeblock');
-
-            $('.notificationnew').removeClass('bellactive');
-            $('html').removeClass("scrollnone");
-        },
+    $("#menumobilehide").click(function() {
+        $('html').removeClass("windowhidden")
+        $('body').removeClass("sidebartoggle")
+        $(this).hide();
+        $("#menumobile").show();
+        $('.sidebar_block').removeClass('showmenu');
     });
-});
 
+    // $('.notificationnew').click(function() {
+    //     $('body').removeClass("sidebartoggle")
+    //     $('.sidebar_block').removeClass('showmenu');
+    // });
+
+    /*****Mobile-menu js*********** */
+    $('#clearAll').click(function() {
+        $.ajax({
+            url: "{{route('clearAllNotifications')}}",
+            type: 'GET',
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(response_data) {
+                $('#collapseNotification2').removeClass('show');
+                $('#collapseNotification2').removeClass('activeblock');
+
+                $('.notificationnew').removeClass('bellactive');
+                $('html').removeClass("scrollnone");
+            },
+        });
+    });
 </script>
