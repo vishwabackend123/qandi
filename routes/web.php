@@ -94,7 +94,7 @@ Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class,
 
 /* ExamCustom Controller Routs */
 Route::get('/exam_custom/{filter?}', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
-Route::any('/custom_exam', [App\Http\Controllers\ExamCustomController::class, 'subjectExam'])->name('custom_exam')->middleware('auth', 'menu');
+Route::any('/custom_exam/{instruction?}', [App\Http\Controllers\ExamCustomController::class, 'subjectExam'])->name('custom_exam')->middleware('auth', 'menu');
 Route::any('/ajax_next_question/{ques_id}', [App\Http\Controllers\ExamCustomController::class, 'ajaxNextQuestion'])->name('ajax_next_question')->middleware('auth');
 Route::any('/ajax_next_subject_question/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajaxNextSubjectQuestion'])->name('ajax_next_subject_question')->middleware('auth');
 Route::any('/saveAnswer', [App\Http\Controllers\ExamCustomController::class, 'saveAnswer'])->name('saveAnswer')->middleware('auth');
@@ -211,7 +211,7 @@ Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'search
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth');
 
 /* routes for adptive chapter_exam */
-Route::any('/custom_exam_chapter', [App\Http\Controllers\ExamCustomController::class, 'chapterAdaptiveExam'])->name('custom_exam_chapter')->middleware('auth', 'menu');
+Route::any('/custom_exam_chapter/{instruction?}', [App\Http\Controllers\ExamCustomController::class, 'chapterAdaptiveExam'])->name('custom_exam_chapter')->middleware('auth', 'menu');
 Route::any('/ajax_adaptive_question_chapter/{nkey}', [App\Http\Controllers\ExamCustomController::class, 'ajaxAdaptiveQuestionChapter'])->name('ajax_adaptive_question_chapter')->middleware('auth');
 Route::any('/saveAdaptiveTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveAdaptiveTimeSession'])->name('saveAdaptiveTimeSession')->middleware('auth');
 Route::any('/adaptiveClearResponse', [App\Http\Controllers\ExamCustomController::class, 'adaptiveClearResponse'])->name('adaptiveClearResponse')->middleware('auth');
@@ -219,7 +219,7 @@ Route::any('/saveAdaptiveAnswer', [App\Http\Controllers\ExamCustomController::cl
 
 
 /* routes for adptive chapter_exam */
-Route::any('/custom_exam_topic', [App\Http\Controllers\AdpativeExamController::class, 'topicAdaptiveExam'])->name('custom_exam_topic')->middleware('auth', 'menu');
+Route::any('/custom_exam_topic/{instruction?}', [App\Http\Controllers\AdpativeExamController::class, 'topicAdaptiveExam'])->name('custom_exam_topic')->middleware('auth', 'menu');
 Route::any('/ajax_adaptive_question_topic/{nkey}', [App\Http\Controllers\AdpativeExamController::class, 'ajaxAdaptiveQuestionTopic'])->name('ajax_adaptive_question_topic')->middleware('auth');
 Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveTopicExamResult'])->name('adaptive_topic_exam_result')->middleware('auth', 'menu');
 Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveChapterExamResult'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');
