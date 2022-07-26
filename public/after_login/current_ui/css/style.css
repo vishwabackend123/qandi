@@ -4279,6 +4279,8 @@ justify-content: space-between;}
 .progressnewjourney{height:100%;}
 .progressnewjourney canvas{height:calc(100% + 40px);}
 .overallmain .boxheading .tooltipmain{top:-2px}
+.chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
+.chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 
 /********* Shubham End ***********/
 
