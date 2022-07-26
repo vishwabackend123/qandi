@@ -3087,11 +3087,21 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     min-width: 1em;
     height: 1em;
     position: relative;
-    background: #cbebcf;
+    /* background: #cbebcf; */
     border-radius: 50%;
-    overflow: hidden;
-    display: inline-block;box-shadow:0px 9px 16px rgba(164,172,178,0.4);
+    /* overflow: hidden; */
+    display: inline-block;
+    /* box-shadow:0px 9px 16px rgba(164,172,178,0.4); */
 }
+
+.circletop{position: relative;
+    overflow: hidden;
+    font-size: 119px;
+    min-width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    display: inline-block;
+    top: -15px;}
 
 .mq_circle_inner {
     position: absolute;
@@ -3142,7 +3152,12 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-
+    background-image: url(../images/roundshape.png);
+    background-position-x: -11px;
+    background-size: 127px;
+    background-position-y: -3px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 9px 16px rgb(164 172 178 / 40%);
 }
 
 .mq_percent_text {

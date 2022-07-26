@@ -195,3 +195,16 @@ $name = $action;
         });
     });
 </script>
+<script>
+    $(window).scroll(function() {
+	var $height = $(window).scrollTop();
+    if($height > 20) {
+            $('.notification-main').addClass('scrollPosition');
+        } else {
+            $('.notification-main').removeClass('scrollPosition');
+        }
+    });
+</script>
+<style>
+.scrollPosition{top:-32px;}
+</style>

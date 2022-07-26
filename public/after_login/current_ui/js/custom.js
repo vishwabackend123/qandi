@@ -59,7 +59,7 @@ $(".mq_circle_percent").each(function() {
 		$dataDeg = $dataV * 3.6,
 		$round = $this.find(".mq_round_per");
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
-	$this.append('<div class="mq_circle_inbox"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div>');
+	$this.append('<div class="mq_circle_inbox"><div class="valeblocktop"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div></div>');
 	
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
