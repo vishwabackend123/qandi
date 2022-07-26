@@ -212,6 +212,5 @@ $name = $action;
         } {
         }
     });
-  
 </script>
  
