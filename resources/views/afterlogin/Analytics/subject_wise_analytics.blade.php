@@ -62,13 +62,13 @@
                                 <h4>{{$val->chapter_name}}</h4>
                                 <div class="progress">
                                     @if($val->correct_ans > 0)
-                                    <div class="progress-bar correct-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar correct-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" title="Correct({{round($val->correct_ans)}})"></div>
                                     @endif
                                     @if($val->incorrect_ans > 0)
-                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" title="Incorrect({{round($val->incorrect_ans)}})"></div>
                                     @endif
                                     @if($val->unanswered > 0)
-                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" title="Unanswered({{round($val->unanswered)}})"></div>
                                     @endif
                                 </div>
                             </div>
@@ -104,12 +104,12 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights.</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                            <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
 
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
-                                            <h2>{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -120,11 +120,11 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Comprehension skill determines your ability to understand.</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps you <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps you <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
-                                            <h2>{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -135,12 +135,12 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Application skill indicates your ability to use the information in a new way.</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                            <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to determine your  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
 
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
-                                            <h2>{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -152,11 +152,11 @@
                                         <div class="codelerninner">
                                             <h5> Knowledge skill determines your ability to recall.</h5>
 
-                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
+                                            <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
-                                            <h2>{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h2>
+                                            <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -356,7 +356,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Evaluation</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{(int)$skillPer[0]->percentage}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
                     </div>
                 </div>
             </div>
@@ -374,7 +374,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Comprehension</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> of questions are of Comprehension/Understanding skills. This skill helps you understand the meaning, translation, interpolation and interpretation of instructions and problems.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{(int)$skillPer[1]->percentage}}%</strong> of questions are of Comprehension/Understanding skills. This skill helps you understand the meaning, translation, interpolation and interpretation of instructions and problems.
                     </div>
                 </div>
             </div>
@@ -391,7 +391,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Application</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> of questions are of application skills. This skill helps you to determine your ability to execute or implement the information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{(int)$skillPer[2]->percentage}}%</strong> of questions are of application skills. This skill helps you to determine your ability to execute or implement the information.
                     </div>
                 </div>
             </div>
@@ -408,7 +408,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Knowledge</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}% </strong> of questions are of Knowledge/Remembering skills. This skill helps you determine your ability to recognize and recall information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{(int)$skillPer[3]->percentage}}% </strong> of questions are of Knowledge/Remembering skills. This skill helps you determine your ability to recognize and recall information.
                     </div>
                 </div>
             </div>
