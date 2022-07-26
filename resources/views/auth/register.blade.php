@@ -310,14 +310,14 @@ $('#verifynum').click(function() {
     $check = 0;
     var mobile_num = $("#mobile_num").val();
     if (mobile_num == '') {
-        $("#err_reg_mob").html('Please enter your Mobile no.');
+        $("#err_reg_mob").html('Please enter your mobile number');
         $("#err_reg_mob").fadeIn('fast');
         $check = 1;
     } else {
 
         var testMobile = /^[6-9][0-9]{9}$/;
         if (testMobile.test(mobile_num)) {} else {
-            $("#err_reg_mob").html('Please enter valid Mobile no.');
+            $("#err_reg_mob").html('Please enter valid mobile number');
             $("#err_reg_mob").fadeIn('fast');
             $check = 1;
         };
@@ -401,7 +401,7 @@ $("#studentsignup").validate({
             required: "Please enter the name."
         },
         "mobile_num": {
-            required: "Please enter the Mobile no.."
+            required: "Please enter the mobile number."
         },
         "register_otp[]": {
             required: "Please enter the OTP."

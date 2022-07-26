@@ -246,7 +246,7 @@
 
         var mobile = $("#mobile_num").val();
         if (mobile == '') {
-            $("#errlog_mob").html('Please entered registered Mobile no.');
+            $("#errlog_mob").html('Please entered registered mobile number');
             $("#errlog_mob").fadeIn('fast');
             $("#errlog_mob").fadeOut(5000);
             return false;
