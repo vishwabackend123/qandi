@@ -1998,8 +1998,10 @@ a.btn-common-attempted svg {
       font-size: 14px;
       font-weight: 800;
       height: 44px;
-      width:110px;
+     
   } 
+
+  .answer-main-sec .btn.questionbtn{ width:110px;}
   
   .questionLeftbtns .questionbtn:first-child,
   .questionRightbtns .questionbtn:first-child {
