@@ -113,7 +113,7 @@ $name = $action;
     $(".notificationOverlay").click(function(){
         $(".notification-block_new").removeClass("activeblock");
         $(".notification-block_new").removeClass("show");
-        $(".notificationnewgit").removeClass("bellactive");
+        $(".notificationnew").removeClass("bellactive");
         $(".notification-main").hide();
         $('html').removeClass("scrollnone");
     });
