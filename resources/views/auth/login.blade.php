@@ -42,7 +42,7 @@
                         <img src="{{URL::asset('public/after_login/current_ui/images/Subject-performance.svg')}}" alt="performance" class="w-100 d-block">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">MyQ Today</h5>
-                            <p>See how you are doing and see the percentage of<br> subject you are doing good in</p>
+                            <p>Check out your progress and see what percentage of <br> subjects you are doing well in </p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -105,7 +105,7 @@
                 <div class="custom-input changeno pb-4">
                     <label>Mobile</label>
                     <div class="d-flex position-relative">
-                        <input type="text" maxlength="10" class="form-control bg-white" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
+                        <input type="text" maxlength="10" class="form-control bg-white" name="login_mobile" id="mobile_num" placeholder="Mobile no." onkeypress="return isNumber(event)">
                         <a class="d-none bg-white editnumber" href="javascript:void(0);">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -113,7 +113,7 @@
                             &nbsp;Change
                         </a>
                     </div>
-                    <div class="error d-none mt-2 w-100" id="errlog_mob">Please enter valid mobile number</div>
+                    <div class="error d-none mt-2 w-100" id="errlog_mob">Please enter valid Mobile no.</div>
                     <!-- for automation testing -->
                     <div class="d-none" id="testing_otp"></div>
                     <!-- for automation testing -->
@@ -246,7 +246,7 @@
 
         var mobile = $("#mobile_num").val();
         if (mobile == '') {
-            $("#errlog_mob").html('Please entered registered mobile number');
+            $("#errlog_mob").html('Please entered registered Mobile no.');
             $("#errlog_mob").fadeIn('fast');
             $("#errlog_mob").fadeOut(5000);
             return false;
