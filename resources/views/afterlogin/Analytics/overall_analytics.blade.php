@@ -180,7 +180,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="timemanagement common_greenbadge_tabs">
-                                                <h4 class="garphsubheading">Time for correct/incorrect answer</h4>
+                                                <h4 class="garphsubheading mb-0 mt-2">Time for correct/incorrect answer</h4>
                                                 <div class="barwithTAb">
                                                     <div class="subjectperformLegend">
                                                         <div class="commonSubjectLeg">
@@ -230,7 +230,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="timemanagement">
-                                                <h4 class="garphsubheading">Time spent on each question <span>(in Last week)</span></h4>
+                                                <h4 class="garphsubheading mb-0 mt-2">Time spent on each question <span>(in Last week)</span></h4>
                                                 <div class="subjectperformLegend ">
                                                     <div class="commonSubjectLeg spaceright">
                                                         <span class="bar bluebar"></span>
@@ -269,7 +269,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="timemanagement common_greenbadge_tabs">
-                                            <h4 class="garphsubheading mt-2">Correct and Incorrect answers</h4>
+                                            <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect answers</h4>
                                             <div class="barwithTAb">
                                                 <div class="subjectperformLegend ">
                                                     <div class="commonSubjectLeg">
@@ -319,7 +319,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="timemanagement">
-                                            <h4 class="garphsubheading mt-2">Accuracy Percentage <span>(in Last week)</span></h4>
+                                            <h4 class="garphsubheading mt-2 mb-0">Accuracy Percentage <span>(in Last week)</span></h4>
                                             <div class="subjectperformLegend ">
                                                 <div class="commonSubjectLeg spaceright">
                                                     <span class="bar bluebar"></span>

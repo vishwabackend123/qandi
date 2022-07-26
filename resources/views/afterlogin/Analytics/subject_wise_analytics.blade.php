@@ -183,7 +183,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="timemanagement common_greenbadge_tabs">
-                        <h4 class="garphsubheading mt-2">Time for correct/incorrect answer</h4>
+                        <h4 class="garphsubheading mt-2 mb-0">Time for correct/incorrect answer</h4>
                         <div class="barwithTAb">
                             <div class="subjectperformLegend ">
                                 <div class="commonSubjectLeg">
@@ -196,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="righttabBlock">
-                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab3" role="tablist">
+                                <ul class="nav nav-pills mb-0 d-inline-flex" id="marks-tab3" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link btn active" id="pills-Day3-tab" data-bs-toggle="pill" data-bs-target="#pills-Day3" type="button" role="tab" aria-controls="pills-Day3" aria-selected="true">Day</button>
                                     </li>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="timemanagement">
-                        <h4 class="garphsubheading">Time spent on each question <span>(in Last week)</span></h4>
+                        <h4 class="garphsubheading mb-0 mt-2">Time spent on each question <span>(in Last week)</span></h4>
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg spaceright">
                                 <span class="bar bluebar"></span>
@@ -272,7 +272,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="timemanagement common_greenbadge_tabs">
-                    <h4 class="garphsubheading mt-2">Correct and Incorrect answers</h4>
+                    <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect answers</h4>
                     <div class="barwithTAb">
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
@@ -285,7 +285,7 @@
                             </div>
                         </div>
                         <div class="righttabBlock">
-                            <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab4" role="tablist">
+                            <ul class="nav nav-pills mb-0 d-inline-flex" id="marks-tab4" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link btn active" id="pills-Day4-tab" data-bs-toggle="pill" data-bs-target="#pills-Day4" type="button" role="tab" aria-controls="pills-Day4" aria-selected="true">Day</button>
                                 </li>
@@ -322,7 +322,7 @@
             </div>
             <div class="col-md-6">
                 <div class="timemanagement">
-                    <h4 class="garphsubheading">Accuracy Percentage <span>(in Last week)</span></h4>
+                    <h4 class="garphsubheading mt-2 mb-0">Accuracy Percentage <span>(in Last week)</span></h4>
                     <div class="subjectperformLegend ">
                         <div class="commonSubjectLeg spaceright">
                             <span class="bar bluebar"></span>

@@ -100,7 +100,12 @@
     }
 }
 @media only screen and (max-width: 1280px){
-
+    .subjectperformLegend .bar {
+        width: 18px;
+        height: 7px;
+        margin-right: 4px;
+    }
+    .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
 }
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
