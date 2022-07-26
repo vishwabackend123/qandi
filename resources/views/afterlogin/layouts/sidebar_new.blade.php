@@ -12,9 +12,9 @@
         <span>NEET</span>
     </div>
     <label class="d-flex justify-content-between align-items-center pro_sub_label">
-        Profile & Subcription 
+        Profile & Subcription
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="m6 12 4-4-4-4" stroke="#868A95" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m6 12 4-4-4-4" stroke="#868A95" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </label>
     <ul class="mob_sidebar_lists m-0">
@@ -105,11 +105,10 @@
     <span class="sidebar-logo d-inline-block">
         <!-- <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"> -->
         <svg width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M27.756.894H.926V28h26.83V.894zM54.584 28.001h-26.83v27.105h26.83V28.001z" fill="#38D430"/>
-    <path d="M54.584.894h-26.83V28h26.83V.894z" fill="#00AB16"/>
-    <path d="m44.268 20.41 2.256 2.35h2.604l-3.627-3.795 2.325-2.725V13.52l-3.558 4.156-3.418-3.57 1-.723c1.163-.87 2.325-2.02 2.325-3.665 0-2.373-1.788-3.947-4.231-3.947-2.116 0-4.186 1.527-4.186 4.064 0 1.55 1.14 2.796 1.907 3.614l.488.517-.325.235c-1.744 1.292-2.884 2.53-2.884 4.628 0 2.138 1.628 4.254 4.65 4.254 1.86 0 3.28-1.06 4.674-2.671zM37.711 9.714a2.23 2.23 0 0 1 .64-1.608 2.186 2.186 0 0 1 1.593-.647c1.371 0 2.278.987 2.278 2.208 0 .822-.349 1.527-1.348 2.255l-1.233.94-.65-.705c-.629-.634-1.28-1.48-1.28-2.443zm-.813 8.95c0-1.292.743-2.114 1.65-2.795l.814-.634 3.697 3.876-.14.164c-.952 1.104-1.999 1.973-3.301 1.973-1.697 0-2.72-1.291-2.72-2.584zm-14.022-4.215a8.707 8.707 0 0 0-1.455-4.794 8.575 8.575 0 0 0-3.843-3.171A8.476 8.476 0 0 0 12.638 6 8.53 8.53 0 0 0 8.264 8.37a8.673 8.673 0 0 0-2.337 4.423 8.727 8.727 0 0 0 .486 4.99 8.627 8.627 0 0 0 3.145 3.878 8.496 8.496 0 0 0 4.747 1.461 8.276 8.276 0 0 0 4.89-1.662l1.407 1.428h4.068l-3.438-3.488a8.528 8.528 0 0 0 1.644-4.951zm-3.86 2.71-2.34-2.37h-4.065l4.383 4.445a5.43 5.43 0 0 1-3.8.647 5.469 5.469 0 0 1-3.28-2.04 5.572 5.572 0 0 1 .426-7.274 5.437 5.437 0 0 1 7.193-.539 5.539 5.539 0 0 1 2.068 3.284 5.582 5.582 0 0 1-.584 3.847zm17.06 16.083h10.196v3.048H42.78v10.53h3.477v3.046H36.062v-3.043h3.499v-10.53h-3.484v-3.051z" fill="#1F1F1F"/>
-</svg>
-
+            <path d="M27.756.894H.926V28h26.83V.894zM54.584 28.001h-26.83v27.105h26.83V28.001z" fill="#38D430" />
+            <path d="M54.584.894h-26.83V28h26.83V.894z" fill="#00AB16" />
+            <path d="m44.268 20.41 2.256 2.35h2.604l-3.627-3.795 2.325-2.725V13.52l-3.558 4.156-3.418-3.57 1-.723c1.163-.87 2.325-2.02 2.325-3.665 0-2.373-1.788-3.947-4.231-3.947-2.116 0-4.186 1.527-4.186 4.064 0 1.55 1.14 2.796 1.907 3.614l.488.517-.325.235c-1.744 1.292-2.884 2.53-2.884 4.628 0 2.138 1.628 4.254 4.65 4.254 1.86 0 3.28-1.06 4.674-2.671zM37.711 9.714a2.23 2.23 0 0 1 .64-1.608 2.186 2.186 0 0 1 1.593-.647c1.371 0 2.278.987 2.278 2.208 0 .822-.349 1.527-1.348 2.255l-1.233.94-.65-.705c-.629-.634-1.28-1.48-1.28-2.443zm-.813 8.95c0-1.292.743-2.114 1.65-2.795l.814-.634 3.697 3.876-.14.164c-.952 1.104-1.999 1.973-3.301 1.973-1.697 0-2.72-1.291-2.72-2.584zm-14.022-4.215a8.707 8.707 0 0 0-1.455-4.794 8.575 8.575 0 0 0-3.843-3.171A8.476 8.476 0 0 0 12.638 6 8.53 8.53 0 0 0 8.264 8.37a8.673 8.673 0 0 0-2.337 4.423 8.727 8.727 0 0 0 .486 4.99 8.627 8.627 0 0 0 3.145 3.878 8.496 8.496 0 0 0 4.747 1.461 8.276 8.276 0 0 0 4.89-1.662l1.407 1.428h4.068l-3.438-3.488a8.528 8.528 0 0 0 1.644-4.951zm-3.86 2.71-2.34-2.37h-4.065l4.383 4.445a5.43 5.43 0 0 1-3.8.647 5.469 5.469 0 0 1-3.28-2.04 5.572 5.572 0 0 1 .426-7.274 5.437 5.437 0 0 1 7.193-.539 5.539 5.539 0 0 1 2.068 3.284 5.582 5.582 0 0 1-.584 3.847zm17.06 16.083h10.196v3.048H42.78v10.53h3.477v3.046H36.062v-3.043h3.499v-10.53h-3.484v-3.051z" fill="#1F1F1F" />
+        </svg>
         <span class="custom-border mt-3"></span>
     </span>
     <ul class="sidebar-menu-lists">
@@ -242,7 +241,6 @@
     </div>
 </aside>
 <div class="modal fade modal-popup-customize emaillinkholder" id="referfrnd" tabindex="-1">
-     
     <div class="modal-dialog">
         <div class="modalcenter">
             <div class="modal-content">
@@ -288,7 +286,6 @@
                             @endphp
                             <p class="referfriendlink">{{$refer_code}}</p>
                             <input type="share" class="form-control" id="linkInput" value="{{session()->get('referal_link')}}" style="display: none;">
-                            
                             <a href="javascript:void(0);" onclick="copylinkfunction()">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.461 9H8.538C7.688 9 7 9.895 7 11v9c0 1.105.689 2 1.538 2h6.923c.85 0 1.539-.895 1.539-2v-9c0-1.105-.689-2-1.539-2z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -304,7 +301,6 @@
 </div>
 <!-- New Ui Modal for invation -->
 <div class="modal fade modal-popup-customize onsendshow" id="referedfrnd" tabindex="-1">
-    
     <div class="modal-dialog">
         <div class="modalcenter">
             <div class="modal-content">
@@ -341,8 +337,8 @@
                     <p class="successRef_copy" style="color:green;"></p>
                     <div class="bottom_back-sec">
                         <label class="backtobtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg> Back</label>
+                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg> Back</label>
                         <a href="javascript:void(0);" class="copy" onclick="copylinkfunction()">
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -354,20 +350,23 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>
 <!-- Test Summary Modal -->
 <script>
 var url = window.location.pathname.split("/");
-var action_method = url[2];
+var action_method = url[1];
+console.log(url);
 if (action_method == 'overall_analytics') {
     $('.current_dashboard').removeClass('active');
     $('.current_analytics').addClass('active');
+} else if (action_method == 'planner') {
+    $('.current_dashboard').removeClass('active');
+    $('.current_planner').addClass('active');
 }
 
 function stateHandle() {
     if (document.querySelector(".emaillink").value === "") {
-        //button.disabled = true;
         button.disabled = false;
     } else {
         button.disabled = false;
@@ -378,10 +377,32 @@ $('.current_refer').click(function() {
     $('.current_refer').addClass('active');
 })
 $('.btn-close').click(function() {
-    $('.current_dashboard').addClass('active');
-    $('.current_refer').removeClass('active');
+    if (action_method == 'overall_analytics') {
+        $('.current_refer').removeClass('active');
+        $('.current_analytics').addClass('active');
+    } else if (action_method == 'planner') {
+        $('.current_refer').removeClass('active');
+        $('.current_planner').addClass('active');
+    } else {
+        $('.current_dashboard').addClass('active');
+        $('.current_refer').removeClass('active');
+    }
 });
+$('#referfrnd').on('click', function(e) {
+    if (e.target !== this)
+        return;
+    if (action_method == 'overall_analytics') {
+        $('.current_refer').removeClass('active');
+        $('.current_analytics').addClass('active');
+    } else if (action_method == 'planner') {
+        $('.current_refer').removeClass('active');
+        $('.current_planner').addClass('active');
+    } else {
+        $('.current_dashboard').addClass('active');
+        $('.current_refer').removeClass('active');
+    }
 
+});
 
 </script>
 <script>
@@ -404,7 +425,6 @@ function copylinkfunction() {
 }
 
 </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <script>
 $(".backtobtn").click(function() {
     $('#referfrnd').modal('show');
