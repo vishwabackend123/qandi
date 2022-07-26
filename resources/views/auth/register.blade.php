@@ -52,7 +52,7 @@
                         <img src="{{URL::asset('public/after_login/current_ui/images/progress-jer.svg')}}" alt="performance" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">Progress journey</h5>
-                            <p>Visually track how your progress is going, graph that<br> shows you ideal pace and your pace</p>
+                            <p>Track your progress visually with a graph that shows you <br>your ideal and actual pace</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -65,7 +65,7 @@
                     <div class="carousel-item">
                         <img src="{{URL::asset('public/after_login/current_ui/images/Task-center.svg')}}" alt="performance" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="pb-2">Task centre</h5>
+                            <h5 class="pb-2">Task center</h5>
                             <p>To assess your readiness, set daily or weekly tasks to<br> evaluate your skills </p>
                         </div>
                     </div>

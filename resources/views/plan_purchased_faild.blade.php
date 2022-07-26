@@ -40,7 +40,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                         </svg>
                         <div class="plan_success_congrats_msg_faild">
                             <div class="plan_success_congrats_msg_name">Payment Failed</div>
-                            <div class="plan_success_congrats_msg_text">The payment for transaction ID: @if(isset($transaction_data->id)) {{$transaction_data->id}} @endif could not be processed. You can retry making the payment again .</div>
+                            <div class="plan_success_congrats_msg_text">The payment for transaction ID: @if(isset($transaction_data->id)) {{$transaction_data->id}} @endif could not be processed. Please try again or choose a different payment method.</div>
                         </div>
                     </div>
                     <div class="plan_box_status_contant">
@@ -139,7 +139,7 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                     <div class="plan_box_status_contant">
                         <div class="plan_box_status_contant_order_qi d-flex justify-content-between align-items-center">
                             <div class=" plan_box_status_contant_order">Order summary</div>
-                            <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
+                            <div class="plan_box_status_contant_qi">Q&I Subscription </div>
                         </div>
                         <div class="line-692_field"></div>
                         <div>
