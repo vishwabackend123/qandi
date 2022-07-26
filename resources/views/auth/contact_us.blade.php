@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="main-wrapper">
+<!-- <div class="main-wrapper">
     <header>
       <div class="headerMain">
          <div class="headerLeft">
@@ -132,6 +132,52 @@
          </div>
       </div>
    </div>
+</div> -->
+
+<div class="missing-info-main">
+   <div class="missing-info-section">
+   <div class="profile-sec">
+      <div class="name-title">
+         <span><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x=".5" y=".5" width="39" height="39" rx="9.5" fill="#fff" stroke="#E9EEF4"/>
+                  <path d="M26.667 27.5v-1.667a3.333 3.333 0 0 0-3.334-3.333h-6.666a3.333 3.333 0 0 0-3.334 3.333V27.5M20 19.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667z" stroke="#1F1F1F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+         </span>
+         <label>Sakshi Kumar</label>
+         <div class="contact-section">
+         <div class="contact-num">
+            <span>Mobile</span>
+            <label>8127372924</label>
+         </div>
+         <div class="city-sec">
+            <span>City</span>
+            <label>Bengaluru</label>
+         </div>
+      </div>
+      <div class="contact-section">
+         <div class="contact-num">
+            <span>Grade</span>
+            <label>12th</label>
+         </div>
+         <div class="city-sec">
+            <span>Exam</span>
+            <label>JEE Main</label>
+         </div>
+      </div>
+      </div>
+   </div>
+      <div class="email-sec">
+         <h2>Provide email to start journey</h2>
+         <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Email</label>
+         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email Address">
+         <button type="button" id="mobile-input-btn" class="btn btn-common-green text-white">Subscribe Now</button>
+         <div class="terms-sec">
+            <p>By clicking continue, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a></p>
+         </div>
+         </div>
+      </div>
+</div>
 </div>
    
 @endsection

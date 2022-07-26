@@ -796,6 +796,14 @@ font-size: 24px;
 color: #1f1f1f;
 font-weight: 800;
 }
+.savebtnfix{
+bottom: 0;
+padding: 12px 16px;
+left: 0;
+}
+.custom_modal .custom-input .form-control:not([size]):not([multiple]){
+padding-right: 39px;    
+}
 /*****Planner-pge-end***********/
 
 /*****practic_exam-start**********/
@@ -6219,3 +6227,92 @@ border-color: #56b663;
 
 /**********  exam_instructions *********/
 .mock-test-mobile{display: none;}
+
+/**********  updating missing info *********/
+.missing-info-main {
+    background: #f5faf6;
+    height: 100vh;
+}
+
+.missing-info-section {
+    position: absolute;
+    width: 360px;
+    max-width: 360px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.name-title {
+    background: #e0f6e3;
+    padding: 13px 24px;
+    border-radius: 10px;
+}
+
+.name-title > label {
+    color: #363c4f;
+    font-size: 22px;
+    font-weight: 800;
+    padding-left: 14px;
+}
+.name-title > span {
+    vertical-align: middle;
+}
+.contact-section {
+    display: flex;
+    padding: 20px 0px 0px;
+}
+.contact-num { width: 50%;}
+.contact-num > span,.city-sec > span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #363c4f;
+}
+.contact-num > label , .city-sec > label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #363c4f;
+    padding-left: 10px;
+}
+.city-sec {
+    text-align: right;
+    width: 50%;
+}
+.email-sec {
+    padding: 40px 0px;
+}
+
+.email-sec > h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #363c4f;margin: 0;
+    padding-bottom: 20px;
+}
+.email-sec input#exampleFormControlInput1 {
+    background: #fff;
+    border: solid 1px #d0d5dd;font-size: 14px;
+    color: rgba(54, 60, 79, 0.5);
+}
+.email-sec label.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #363c4f;
+}
+.email-sec .btn.btn-common-green {
+    background: #a9e1b0 !important;
+    border: 1px solid #a9e1b0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.terms-sec {
+    padding: 34px 0px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.terms-sec p > a {
+    color: #a9e1b0;
+    text-decoration: underline;
+}
+

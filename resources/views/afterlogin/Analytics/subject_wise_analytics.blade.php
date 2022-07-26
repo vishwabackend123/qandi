@@ -16,7 +16,8 @@
                             </p>
                         </span>
                     </h3>
-                    <div class="overall_percentage_chart">
+                    <div class="overall_percentage_chart graph_padd">
+                        <span class="yaxis_label"><small> Score% </small></span>
                         <canvas id="mathChart"></canvas>
                     </div>
                 </div>
@@ -103,7 +104,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. This skill helps you to determine your <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -118,7 +119,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>It tells you your skill of understanding a problem</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -133,7 +134,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -148,7 +149,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Evaluation tells you you problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> % of questions are of evaluation skills. This skill helps you to determine your <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
+                                            <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -210,17 +211,20 @@
                         </div>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
-                                <div>
+                                <div  class="graph_padd">
+                                    <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartDay2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
-                                <div>
+                                <div  class="graph_padd">
+                                    <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartWeek2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
-                                <div>
+                                <div  class="graph_padd">
+                                    <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartMonth2"></canvas>
                                 </div>
                             </div>
@@ -240,7 +244,8 @@
                                 <label class="text">Student average</label>
                             </div>
                         </div>
-                        <div class="chartspent">
+                        <div class="chartspent graph_padd">   
+                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                             <canvas id="timeSpent_Graph2"></canvas>
                         </div>
                     </div>
@@ -295,17 +300,20 @@
                     </div>
                     <div class="tab-content" id="pills-tabContent2">
                         <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
-                            <div class="chartspent">
+                            <div class="chartspent graph_padd">
+                                <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_day_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">
-                            <div class="chartspent">
+                            <div class="chartspent graph_padd">
+                                <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_week_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">
-                            <div class="chartspent">
+                            <div class="chartspent graph_padd">
+                                <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_month_2"></canvas>
                             </div>
                         </div>
@@ -325,7 +333,8 @@
                             <label class="text">Student average</label>
                         </div>
                     </div>
-                    <div class="chartspent">
+                    <div class="chartspent graph_padd">
+                        <span class="yaxis_label  yaxis_label_2"><small> Average  time taken (sec)  </small> </span>
                         <canvas id="accuracy_graph2"></canvas>
                     </div>
                 </div>
