@@ -242,8 +242,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="chartspent graph_padd">
-                                               
-                                                            <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
+                                                    <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                                     <canvas id="timeSpent_Graph"></canvas>
                                                 </div>
                                             </div>
@@ -332,7 +331,7 @@
                                                 </div>
                                             </div>
                                             <div class="chartspent graph_padd">
-                                                <span class="yaxis_label  yaxis_label_3"><small> Average  time taken (sec)  </small> </span>
+                                                <span class="yaxis_label  yaxis_label_2"><small> Average  time taken (sec)  </small> </span>
                                                 <canvas id="accuracy_graph"></canvas>
                                             </div>
                                         </div>
