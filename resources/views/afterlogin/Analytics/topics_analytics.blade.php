@@ -1,8 +1,8 @@
 <div class="chapter_profici_nav__right_contant">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
-            <li class="breadcrumb-item"><a href="javascript:void(0);">Chapters</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);" class="chapter_subject">{{$subject}}</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);" class="chapter_topic">Chapters</a></li>
             <li class="breadcrumb-item active" aria-current="page">Topics</li>
         </ol>
     </nav>
