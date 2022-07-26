@@ -238,6 +238,12 @@
     }
 }
 @media(max-width:767px){
+    .planner-title h1 {
+    margin: 0;
+    }
+    .gotodashboard {
+    padding: 12px 20px;
+    }
     .planner-box{
     padding: 20px;  
     margin-bottom: 20px;
@@ -676,6 +682,9 @@
 @media only screen and (max-width: 576px){
     .add-subchapter {
     width: 100%;
+    overflow-y: auto;
+    height: 200px;
+    padding-right: 8px;
     }
     .add-insubchapter p {
     display: flex;
