@@ -30,7 +30,7 @@
         <div class="row chapter_of_row_col_paddin_zero">
             @foreach($topicList as $list)
             @php
-            $topicname = Illuminate\Support\Str::limit($list['topic_name'], 25, $end='...');
+            $topicname = Illuminate\Support\Str::limit($list['topic_name'], 35, $end='...');
             $topicnametitle = $list['topic_name'];
             @endphp
             <div class="col-lg-4 col-sm-6 col-12">
