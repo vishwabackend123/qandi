@@ -215,4 +215,7 @@
         </div>
     </div>
 </div>
+   <!-- Footer Section -->
+   @include('afterlogin.layouts.footer_new')
+    <!-- footer Section end  -->
 @endsection

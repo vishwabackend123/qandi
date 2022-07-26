@@ -12,7 +12,7 @@
                             </svg>
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                               The dashboard also gives you a graphical peak into your chapter-wise progress per week. The graph shows the ideal path of your journey to success and your performance against it. It also gives you a comparative analysis of how your journey is going so far. This is important for you so that you do not lose track of the time against the amount of syllabus you need to cover. 
                             </p>
                         </span>
                     </h3>
@@ -32,7 +32,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies! 
                                 </p>
                             </span>
                         </h3>
@@ -90,7 +90,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                    A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. It will also display those topics that can become your strength with a little more effort on your part. Move up the ladder. 
                                 </p>
                             </span>
                         </h3>
@@ -176,7 +176,7 @@
                     </svg>
                     <p class="tooltipclass">
                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                        You can view the detailed analysis of time management while attempting tests and the average time spent on each question from this part of the screen. 
                     </p>
                 </span>
             </h3>
@@ -265,7 +265,7 @@
                 </svg>
                 <p class="tooltipclass">
                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                    The graphical representation of this section shows the marks scored by you in past months/ past weeks against the top marks scored by other learners and the average marks scored by all the users of the platform. This will show your week-on-week performance and to achieve your goal, you should maintain an increasing trend/graph. 
                 </p>
             </span>
         </h3>

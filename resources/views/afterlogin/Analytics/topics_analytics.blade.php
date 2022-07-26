@@ -1,8 +1,8 @@
 <div class="chapter_profici_nav__right_contant">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0);">{{$subject}}</a></li>
-            <li class="breadcrumb-item"><a href="javascript:void(0);">Chapters</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);" class="chapter_subject">{{$subject}}</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);" class="chapter_topic">Chapters</a></li>
             <li class="breadcrumb-item active" aria-current="page">Topics</li>
         </ol>
     </nav>
@@ -30,12 +30,12 @@
         <div class="row chapter_of_row_col_paddin_zero">
             @foreach($topicList as $list)
             @php
-            $topicname = Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...');
+            $topicname = Illuminate\Support\Str::limit($list['topic_name'], 35, $end='...');
             $topicnametitle = $list['topic_name'];
             @endphp
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="chapter_proficincy_point_anylytics">
-                    <div class="chapter_profici_application_deves_text">{{Str::ucfirst(Str::lower($topicname))}} </div>
+                    <div class="chapter_profici_application_deves_text" title="{{$topicnametitle}}">{{Str::ucfirst(Str::lower($topicname))}} </div>
                     <div class="common_bars">
                         <div class="d-flex common_bars_flex">
                             <span class="common_bar_sky_blue common_bar_width position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
