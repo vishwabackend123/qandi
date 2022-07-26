@@ -3106,6 +3106,11 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     transition: 1.05s;
 }
 
+.mq_circle_red .mq_round_per{ background: #f76c6c;}
+.mq_circle_yellow .mq_round_per{background: #f7c86d;}
+
+
+
 .mq_percent_more .mq_circle_inner {
     clip: rect(0 0.5em 1em 0em);
 }
