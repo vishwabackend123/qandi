@@ -103,8 +103,9 @@
                                             <h3>{{$skillPer[0]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you  problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. This skill helps you to determine your <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                            <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights.</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -118,8 +119,8 @@
                                             <h3>{{$skillPer[1]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>It tells you  skill of understanding a problem</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            <h5>Comprehension skill determines your ability to understand.</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps you <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -133,8 +134,9 @@
                                             <h3>{{$skillPer[2]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you  problem solving skills</h5>
-                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                            <h5>Application skill indicates your ability to use the information in a new way.</h5>
+                                            <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
@@ -148,7 +150,8 @@
                                             <h3>{{$skillPer[3]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you  problem solving skills</h5>
+                                            <h5> Knowledge skill determines your ability to recall.</h5>
+
                                             <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
@@ -371,7 +374,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Comprehension</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong> of questions are of Comprehension/Understanding skills. This skill helps you understand the meaning, translation, interpolation and interpretation of instructions and problems.
                     </div>
                 </div>
             </div>
@@ -388,7 +391,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Application</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong> of questions are of application skills. This skill helps you to determine your ability to execute or implement the information.
                     </div>
                 </div>
             </div>
@@ -405,7 +408,7 @@
                 <div class="modal-body">
                     <div class="intraction_text_strength mt-0">Knowledge</div>
                     <hr>
-                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}% </strong> of questions are of evaluation skills. This skill helps you to determine your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.
+                    <div class="instruction_text_content"><strong class="blackcolor">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}% </strong> of questions are of Knowledge/Remembering skills. This skill helps you determine your ability to recognize and recall information.
                     </div>
                 </div>
             </div>
