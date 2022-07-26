@@ -103,7 +103,7 @@
                                             <h3>{{$skillPer[0]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <h5>Evaluation tells you  problem solving skills</h5>
                                             <p> <strong>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</strong>  of questions are of evaluation skills. This skill helps you to determine your <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
@@ -118,7 +118,7 @@
                                             <h3>{{$skillPer[1]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>It tells you your skill of understanding a problem</h5>
+                                            <h5>It tells you  skill of understanding a problem</h5>
                                             <p> <strong>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</strong>  of questions are of Comprehension/Understanding skills. This skill helps <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
@@ -133,7 +133,7 @@
                                             <h3>{{$skillPer[2]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <h5>Evaluation tells you  problem solving skills</h5>
                                             <p> <strong>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</strong>  of questions are of application skills. This skill helps you to determine your <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
@@ -148,7 +148,7 @@
                                             <h3>{{$skillPer[3]->skill_name}}</h3>
                                         </div>
                                         <div class="codelerninner">
-                                            <h5>Evaluation tells you you problem solving skills</h5>
+                                            <h5>Evaluation tells you  problem solving skills</h5>
                                             <p> <strong>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</strong> of questions are of Knowledge/Remembering skills. This skill helps you  <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
