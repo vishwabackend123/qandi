@@ -196,7 +196,7 @@ $name = $action;
         });
     });
 </script>
-<script>
+<!-- <script>
     $(window).scroll(function() {
 	var $height = $(window).scrollTop();
     if($height > 10 && $height < 20) {
@@ -212,5 +212,5 @@ $name = $action;
         } {
         }
     });
-</script>
+</script> -->
  
