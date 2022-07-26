@@ -203,15 +203,15 @@ $name = $action;
         $('.notification-main').css("top", "-15px");
         } else if ($height > 20 && $height < 34) {
             $('.notification-main').css("top", "-22px");
+        }else if ($height > 40){
+            $('.notification-main').css("top", "-45px");
         } else if ($height > 34) {
-            $('.notification-main').css("top", "-30px");
+            $('.notification-main').css("top", "-35px");
         }  else {
-            $('.notification-main').css("top", "11px");
+            $('.notification-main').css("top", "7px");
         } {
         }
     });
   
 </script>
-<style>
-.scrollPosition{top:-32px;}
-</style>
+ 
