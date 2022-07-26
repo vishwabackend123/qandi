@@ -53,7 +53,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         <div class="fullbody_scan_wrapper">
             <div class="fullbody_scan_box d-flex">
                 <div class="fullbody_scan_card w-50">
-                    <p class="mt-0">Please attempt the Full Body Scan test, so that we can generate tasks for you, based on your proficiency levels.</p>
+                    <p class="mt-0">Please attempt the Full Body Scan test, so that we can generate tasks based on your proficiency levels.</p>
                     <span class="custom-border"></span>
                     <ul style="margin-top:32px">
                         <li class="mb-3">No of Questions: <span>{{$prof_test_qcount}} questions</span></li>
@@ -125,8 +125,8 @@ $full_body_attempt = Session::get('full_body_attempt');
                         </svg>
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
-                    <h3 class="mb-0 mt-2">Full Body Scan Test</h3>
-                    <p class="my-3">to assess your preparedness and begin to improve it</p>
+                    <h3 class="mb-0 mt-2">Full body scan test</h3>
+                    <p class="my-3">to assess yourpreparation and take your first step to improvement.</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                     @else

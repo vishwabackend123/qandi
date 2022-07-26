@@ -31,7 +31,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-12">
                         @if($userData->email_verified=='No')
                         <div class="verifiaction-link">
-                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="javascript:void(0);" class="resend_email">Resend</a></p>
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified. <a href="javascript:void(0);" class="resend_email">Resend</a></p>
                             <span class="mt-2" id="email_success"></span>
                         </div>
                         @endif
@@ -172,8 +172,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
-                                    <h4>Full Body Scan Test</h4>
-                                    <p>to assess your preparedness and begin to improve it</p>
+                                    <h4>Full body scan test</h4>
+                                    <p>to assess yourpreparation and take your first step to improvement.</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
