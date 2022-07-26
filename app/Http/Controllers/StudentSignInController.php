@@ -282,6 +282,7 @@ class StudentSignInController extends Controller
             $location = $request->input('location');
             $exam_id = $request->input('exam_id');
             $stage_at_signup = $request->input('stage_at_signup');
+            $state = $request->input('state');
 
             $reg_otp_value = (int)implode('', $reg_otp);
 
@@ -304,7 +305,8 @@ class StudentSignInController extends Controller
                 'grade_id' => (int)$exam_id,
                 'city' => $location,
                 'otp' => (int)$reg_otp_value,
-                'stage_at_signup' => (int)$stage_at_signup
+                'stage_at_signup' => (int)$stage_at_signup,
+                'state' => $state,
             ];
 
             $request_json = json_encode($request);
@@ -863,7 +865,7 @@ class StudentSignInController extends Controller
             $search = isset($data['search_text']) ? $data['search_text'] : 'ab';
 
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/get-address?searchString=' . $search;
+            $curl_url = $api_URL . 'api/get-new-address?city=' . $search;
 
             $curl_url = str_replace(" ", '%20', $curl_url);
 
@@ -890,7 +892,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
 
             $success = isset($aResponse->success) ? $aResponse->success : false;
-            $city_list = isset($aResponse->response) ? $aResponse->response : false;
+            $city_list = isset($aResponse->result) ? $aResponse->result : false;
 
             sort($city_list);
             $sOption = [];
@@ -900,8 +902,9 @@ class StudentSignInController extends Controller
             } else {
                 Redis::set('city_list', json_encode($city_list));
                 foreach ($city_list as $kCity => $oCity) {
-                    $arr["id"] = $oCity;
-                    $arr["text"] = $oCity;
+                    $arr["id"] = $oCity->city;
+                    $arr["text"] = $oCity->city.'('.$oCity->state_code.')';
+                    $arr["state"] = $oCity->state;
                     array_push($sOption, $arr);
                 }
                 $response = ["success" => true, "response" => $sOption];
