@@ -3568,7 +3568,8 @@ span.greenball-3 {
 .yaxis_label.yaxis_label_3 {
     left: -36px;
 }
-
+.overall_analytics_page .topic_score_bar .progress{height: 12px;}
+.overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 261px;max-height: 261px}
 /********************* Amit End ****************************/
 
 
@@ -4170,7 +4171,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .flexleg{display: flex;    align-items: center;
     justify-content: space-between;
 }
-.subjectperformLegend .commonSubjectLeg{margin-right:10px;margin-top:20px;}
+.subjectperformLegend .commonSubjectLeg{margin-right:10px;margin-top:13px;}
 .subjectperformLegend  .bar{  width: 22px; height: 8px;display:inline-block;margin-right:12px; border-radius: 16px;}
 .subjectperformLegend  .greenbar{background-color:#34d399}
 .subjectperformLegend  .greenbar2{background-color:#56b663;}
@@ -4222,13 +4223,13 @@ justify-content: space-between;}
     line-height: 1.6;
     color: #000;margin-bottom:12px;}
     .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
-    .codelerninner p {font-size: 14px;
+    .codelerninner p {font-size: 14px;min-height: 92px;
         font-weight: 500;
         line-height: 1.6;
         color: #797979;margin-bottom:0px;}
         .codelearningBlock{margin-top:32px;}
         .commoncodeblock{margin-bottom:20px;overflow:hidden;}
-        .codelerninner p  a{ color: #000;}
+        .codelerninner p  a{ color: #000;    text-decoration: underline;}
        .codebottom h6 { font-size: 14px;
             font-weight: 500;
             font-stretch: normal;
