@@ -55,8 +55,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </h3>
                             <div class="myqTodayGraphSec">
                                 <div class="mq_circle_percent" data-percent="{{$myqtodayScore}}">
-                                    <div class="mq_circle_inner">
-                                        <div class="mq_round_per"></div>
+                                    <div class="circletop">
+                                        <div class="mq_circle_inner">
+                                            <div class="mq_round_per"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 @if(!empty($subject_proficiency))
