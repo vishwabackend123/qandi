@@ -36,14 +36,14 @@
                                 </div>
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
-                                <div class="take-fulltest d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center clrsec topic_form">
-                                        <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-right">
+                                <div class="take-fulltest d-lg-flex align-items-center justify-content-between">
+                                    <div class="d-sm-flex align-items-center clrsec topic_form">
+                                        <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
                                             <input type="hidden" id="selected_topic" name="topics">
                                             <input type="hidden" id="selected_tab" name="selected_tab">
                                             <input type="hidden" name="question_count" value="30">
-                                            <button type="submit" class="btn btn-common-transparent bg-transparent me-3">Take test for selected topics</button>
+                                            <button type="submit" class="btn btn-common-transparent bg-transparent me-sm-3">Take test for selected topics</button>
                                         </form>
                                         <a href="javascript:void(0);" onclick="clearTopics();" class="clearsec">Clear Selection</a>
                                     </div>
@@ -55,7 +55,7 @@
                                                 <path d="M9 1.5h28v-1H9v1zM44.5 9v28h1V9h-1zM37 44.5H9v1h28v-1zM1.5 37V9h-1v28h1zM9 44.5A7.5 7.5 0 0 1 1.5 37h-1A8.5 8.5 0 0 0 9 45.5v-1zM44.5 37a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1zM37 1.5A7.5 7.5 0 0 1 44.5 9h1A8.5 8.5 0 0 0 37 .5v1zM9 .5A8.5 8.5 0 0 0 .5 9h1A7.5 7.5 0 0 1 9 1.5v-1z" fill="#56B663" />
                                             </svg>
                                         </a>
-                                        <form method="post" action="{{route('custom_exam','instruction')}}">
+                                        <form method="post" class="fulltestform" action="{{route('custom_exam','instruction')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                             <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
@@ -115,7 +115,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     $('.topic_form').attr("style", "visibility: hidden !important");
-
+    $(".clearsec").click(function(){
+    $(".take-fulltest").removeClass("mobile-test");
+    });
 
     function showSubChapters(subject) {
         $('.SubActBtn').removeClass('active');
@@ -230,8 +232,10 @@
         $('#selected_topic').val(aTopics);
         if (aTopics.length > 0) {
             $('.topic_form').attr("style", "visibility: visible !important");
+            $('.take-fulltest').addClass('mobile-test');
         } else {
             $('.topic_form').attr("style", "visibility: hidden !important");
+            $('.take-fulltest').removeClass('mobile-test');
         }
     }
 

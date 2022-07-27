@@ -28,11 +28,13 @@ $userData = Session::get('user_data');
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses. 
+                                        This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. 
+                                        It will also exhibit/display those topics that can become your strength with a little more effort on your part. Move up the ladder.  
                                     </p>
                                 </span>
                             </h3>
-                            <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                            <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
                         </div>
                         <div class="MyqMatrixMain mt-3">
                             <div class="row">
@@ -41,7 +43,7 @@ $userData = Session::get('user_data');
                                         <div class="myqinner">
                                             <h6>Q1</h6>
                                             <h5>Strengths</h5>
-                                            <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
+                                            <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>

@@ -3,8 +3,10 @@
 $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
 $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
-$lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id) ?$userData->lead_exam_id:'';
-$trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
+$leadData ='';
+    if (Session::has('lead_trail_status')) {
+        $leadData = Session::get('lead_trail_status');
+    }
 @endphp
 @section('content')
 <div class="wrapper">
@@ -424,7 +426,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <div class="freeTrial">
+                        @if(isset($leadData) && $leadData !=2)
                         <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
+                        @endif
                     </div>
                     @else
                     <div class="freeTrial">
@@ -562,7 +566,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     @if(!in_array($sub->subscript_id,$purchasedid) )
 
                     <div class="freeTrial">
+                         @if(isset($leadData) && $leadData !=2)
                         <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
+                        @endif
                     </div>
                     @else
                     <div class="freeTrial">

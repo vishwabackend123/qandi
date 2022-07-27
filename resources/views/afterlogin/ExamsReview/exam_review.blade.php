@@ -87,9 +87,12 @@ $question_type = "Numerical";
                                                         <div class="questionheader">
                                                             <div class="question">
                                                                 <span class="q-no">Q1.</span>
-                                                                <p>
-                                                                    {!! $question_text !!}
-                                                                </p>
+                                                                <div class="quesbox">
+                                                                    <p>
+                                                                        {!! $question_text !!}
+                                                                    </p>
+                                                                </div>
+                                                                
                                                             </div>
                                                         </div>
                                                         <!--  <div class="questionImggraph">
@@ -363,6 +366,7 @@ $question_type = "Numerical";
         position: absolute;
         right: 0;
         TOP: 0PX;
+        z-index: 999;
     }
 
     .first_screen {
@@ -451,6 +455,8 @@ $question_type = "Numerical";
         background: #fff;
         overflow: hidden;
         margin-right: 15px;
+        min-width: 335px;
+        max-width: 335px;
     }
 
     .reviewexamType a {
