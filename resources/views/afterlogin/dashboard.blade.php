@@ -220,7 +220,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
                                             </p>
                                             @endif
-                                            @if(isset($prof_asst_test) && $prof_asst_test=='Y')
+                                            @if(isset($dailyTask) && !empty($dailyTask))
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
