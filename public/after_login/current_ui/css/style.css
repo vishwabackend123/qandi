@@ -3077,10 +3077,19 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     border-radius: 50%;
 }
 
-.orangegraph.percent_more:after,
+/* .orangegraph.percent_more:after,
 .orangegraph .round_per {
     background: #F7C86D;
+} */
+.radial_progress_bar .progress-bar__progress.yellowgraph{
+stroke : #f6c86d;
+filter: drop-shadow(0px 0px 3px rgb(246,200,109,0.6));
 }
+.radial_progress_bar .progress-bar__progress.greengraph{
+    stroke : #04c894;
+filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.6));
+}
+
 
 .greengraph.percent_more:after,
 .greengraph .round_per {
