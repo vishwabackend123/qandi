@@ -58,7 +58,7 @@ $userData = Session::get('user_data');
                         <div class="task1">
                             <p><span>Task {{$key+1}}</span></p>
                             <h3>{{$skill_task}}</h3>
-                            <p>Sharpen your evaluation skills with this quick curated test</p>
+                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Question</span>
@@ -94,7 +94,7 @@ $userData = Session::get('user_data');
                         <div class="task1 task2 ">
                             <p><span>Task {{$key+1}}</span></p>
                             <h3>Time Management</h3>
-                            <p>Sharpen your evaluation skills with this quick curated test</p>
+                            <p>Take this test to improve your time management skills.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Question</span>
@@ -148,7 +148,7 @@ $userData = Session::get('user_data');
                         <div class="task1">
                             <p><span>Task {{$wkey+1}} </span></p>
                             <h3>Accuracy Test</h3>
-                            <p>Work on your accuracy with this test</p>
+                            <p>Work on your accuracy with this test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Question</span>
@@ -183,7 +183,7 @@ $userData = Session::get('user_data');
                             <div class="task1 task2 ">
                                 <p><span>Task {{$wkey+1}} </span></p>
                                 <h3>Weak topic Test</h3>
-                                <p>Work on your accuracy with this test</p>
+                                <p>Take this test to work on your weak topics</p>
                                 <div class="btn-sec">
                                     <div class="qust-sec">
                                         <span>Question</span>
