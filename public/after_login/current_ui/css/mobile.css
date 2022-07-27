@@ -59,12 +59,8 @@
     padding-top: 90px;
 }
 
-.subjextscoreLeft h4 {font-size: 20px;}
-/* .circle_percent,.round_per{    width: 0.8em;
-    height: 0.8em;} */
-    /* .testPlanCard {
-        max-width: 240px !important;
-    } */
+.subjextscoreLeft h4 {font-size: 20px;width:100%;}
+.boxheading{    min-width: 187px;}
     .graphDetailempty .weekText{
         padding-left: 0px;
     }
@@ -584,14 +580,19 @@
     }
     .commonWhiteBox{padding:20px}
     .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
-    .myqTodayGraphSec{padding-top:30px;}
-    .dashSubHeading{font-size:16px;}
+    .myqTodayGraphSec{padding-top:30px;padding-bottom:35px;}
+    .dashSubHeading{font-size:15px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
         padding: 20px 6px;
     }
+    .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
+    .SubjectscorePannel{height:160px;}
+    .subjextscoreLeft h6{margin-bottom:3px;}
     .headericon a{border:0px;}
+    .subjextscoreLeft .d-flex{justify-content: end!important;
+        flex-wrap: wrap;}
     span.headericon.notificationnew a#nodificbell svg{width:24px;height:24px;}
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
