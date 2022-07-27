@@ -1,268 +1,147 @@
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Q&I</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{URL::asset('public/images/favicon.ico')}}" type="{{URL::asset('public/image/x-icon')}}" />
-    <style>
-        .upInfo {
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    background: white;
-}
-
-.upInfo .logo {
-    text-align: center;
-    margin: 15px;
-}
-
-.upInfo .verify-field {
-    display: flex;
-}
-
-.upInfo .verify-field .btn {
-    width: fit-content !important;
-    color: #ffffff;
-    background: #4caf50 !important;
-    border: none !important;
-    cursor: pointer;
-}
-
-.upInfo #contact {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    background: #4caf5014;
-    padding: 25px;
-    margin: 150px 0;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
-    border-radius: 18px;
-}
-
-.upInfo #contact h3 {
-    display: block;
-    font-size: 30px;
-    font-weight: 300;
-    margin-bottom: 10px;
-}
-
-.upInfo fieldset {
-    border: medium none !important;
-    margin: 0 0 10px;
-    min-width: 100%;
-    padding: 0;
-    width: 100%;
-}
-
-.upInfo #contact input[type="text"],
-.upInfo #contact input[type="email"],
-.upInfo #contact input[type="tel"],
-.upInfo #contact input[type="button"] {
-    width: 100%;
-    border: 1px solid #ccc;
-    background: #fff;
-    margin: 0 0 5px;
-    padding: 10px;
-    font-size: 20px;
-}
-
-.upInfo #contact input[type="text"]:hover,
-.upInfo #contact input[type="email"]:hover,
-.upInfo #contact input[type="tel"]:hover {
-    -webkit-transition: border-color 0.3s ease-in-out;
-    -moz-transition: border-color 0.3s ease-in-out;
-    transition: border-color 0.3s ease-in-out;
-    border: 1px solid #aaa;
-}
-
-.upInfo #contact button[type="submit"] {
-    cursor: pointer;
-    width: 100%;
-    border: none;
-    background: #4caf50;
-    color: #fff;
-    margin: 0 0 5px;
-    padding: 10px;
-    font-size: 15px;
-}
-
-.upInfo #contact button[type="submit"]:hover {
-    background: #43a047;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.upInfo #contact button[type="submit"]:active {
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.upInfo #contact input:focus {
-    outline: 0;
-    border: 1px solid #aaa;
-}
-
-.upInfo::-webkit-input-placeholder {
-    color: #888;
-}
-
-.upInfo:-moz-placeholder {
-    color: #888;
-}
-
-.upInfo::-moz-placeholder {
-    color: #888;
-}
-
-.upInfo:-ms-input-placeholder {
-    color: #888;
-}
-
-</style>
-</head>
-<div class="upInfo">
-    <form id="contact" action="" method="post">
-        <div class="logo"> <img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}"></div>
-        <input type="hidden" name="country" id="country" value="India">
-        <input type="hidden" name="state" id="state" value="{{$lead_user_data['mx_State']}}">
-        <input type="hidden" name="exam_id" id="exam_id" value="{{$lead_user_data['mx_Exam_id']}}">
-        <input type="hidden" name="trail" id="trail" value="{{$trail}}">
-        <input type="hidden" name="mx_Grade_id" id="mx_Grade_id" value="{{$lead_user_data['mx_Grade_id']}}">
-        <h3>Update Your Information</h3>
-        <span id="errormsg" style="color:red"></span>
-        <fieldset>
-            <input placeholder="Your name" value="{{$lead_user_data['FirstName']}}" type="text" tabindex="1" required autofocus id="user_name">
-        </fieldset>
-        <fieldset class="verify-field">
-            <input placeholder="Your Phone Number" value="{{$lead_user_data['Mobile']}}" type="tel" tabindex="3" required id="mobile_num">
-            <input class="btn btn-default" value="Verifed" type="button" tabindex="3" required>
-            </span>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Email Address" value="{{$lead_user_data['EmailAddress']}}" type="email" tabindex="2" required id="email_add">
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your City" id="city" value="{{$lead_user_data['mx_City']}}" type="text" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Exam to prepare for" value="{{$lead_user_data['mx_Exam_to_prepare']}}" type="text" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your grade" value="{{$lead_user_data['mx_Grade']}}" type="text" tabindex="2" required>
-        </fieldset>
-        @if($trail==1)
-        <fieldset>
-            <button name="submit" type="submit" id="contact-submit">Start Free</button>
-        </fieldset>
-        @else
-         <fieldset>
-            <button name="submit" type="submit" id="contact-submit">Subscribe now</button>
-        </fieldset>
-        @endif
-    </form>
+@extends('layouts.app')
+@section('content')
+<div class="missing-info-main">
+    <div class="missing-info-section">
+        <div class="profile-sec">
+            <div class="name-title">
+                <span><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x=".5" y=".5" width="39" height="39" rx="9.5" fill="#fff" stroke="#E9EEF4" />
+                        <path d="M26.667 27.5v-1.667a3.333 3.333 0 0 0-3.334-3.333h-6.666a3.333 3.333 0 0 0-3.334 3.333V27.5M20 19.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667z" stroke="#1F1F1F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <label id="user_name">{{$lead_user_data['FirstName']}}</label>
+                <div class="contact-section">
+                    <div class="contact-num">
+                        <span>Mobile</span>
+                        <label>{{$lead_user_data['Mobile']}}</label>
+                    </div>
+                    <div class="city-sec">
+                        <span>City</span>
+                        <label id="location">{{$lead_user_data['mx_City']}}</label>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <div class="contact-num">
+                        <span>Grade</span>
+                        <label>{{$lead_user_data['mx_Grade']}}</label>
+                    </div>
+                    <div class="city-sec">
+                        <span>Exam</span>
+                        <label>{{$lead_user_data['mx_Exam_to_prepare']}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="email-sec">
+            <h2>Provide email to start journey</h2>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email Address">
+                <span class="email_error" style="color:red">Please enter valid email id</span>
+                @if($trail==1)
+                <button type="button" id="free_trail" class="btn btn-common-green text-white trail">Start Free Trial</button>
+                @else
+                <button type="button" id="subscribe_now" class="btn btn-common-green text-white trail">Subscribe Now</button>
+                @endif
+                <div class="terms-sec">
+                    <p>By clicking continue, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type='text/javascript'>
-$(document).ready(function() {
-    $('#errormsg').hide();
-    $("form").submit(function(e) {
-        e.preventDefault(e);
-        var mobile_num = $("#mobile_num").val();
-        var email_add = $("#email_add").val();
-        var user_name = $("#user_name").val();
-        $.ajax({
-            url: "{{ route('sendotpsignup') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                mobile: mobile_num,
-                email: email_add,
-            },
-            success: function(response_data) {
-                var response = jQuery.parseJSON(response_data);
-                if (response.success == true) {
-                    verfiyRegister(response.mobile_otp);    
-                }else
-                {
-                    $("#errormsg").text(response.message);
-                    $("#errormsg").fadeIn('slow');
-                    $("#errormsg").fadeOut(10000);
-                }
-                
-            },
-        });
-    });
+<input type="hidden" name="state" id="state" value="{{$lead_user_data['mx_State']}}">
+<script type="text/javascript">
+$('.email_error').hide();
+$('.email_input').keyup(function() {
+    var input_data = $(this).val();
+    if (input_data == '') {
+        $('.trail').attr('disabled', 'disabled');
+        $('.trail').addClass("disabled-btn");
+        $('.trail').attr('style', 'background:#a9e1b0 !important');
+    } else {
+        $('.trail').removeAttr('disabled');
+        $('.trail').removeClass("disabled-btn");
+        $('.trail').attr('style', 'background: #56b663 !important');
+    }
 });
-
-function verfiyRegister(reg_otp) {
-    var mobile_num = $("#mobile_num").val();
-    var email_add = $("#email_add").val();
-    var user_name = $("#user_name").val();
+$('.email_input').blur(function() {
+    var input_data = $(this).val();
+    if (!isValidEmail(input_data)) {
+        $('.email_error').show();
+        $('.trail').attr('disabled', 'disabled');
+        $('.trail').addClass("disabled-btn");
+        $('.trail').attr('style', 'background:#a9e1b0 !important');
+    } else {
+        $('.email_error').hide();
+    }
+});
+$('.trail').click(function() {
+    //var mobile_num =<?php echo $lead_user_data['Mobile'] ?>;
+    var mobile_num = 9990344765;
+    url = "{{ url('sentMobileOtp/') }}/" + mobile_num;
     $.ajax({
-        url: "{{ url('/verifyOtpRegister') }}",
-        type: 'POST',
+        url: url,
+        type: 'GET',
         data: {
-            "_token": "{{ csrf_token() }}",
-            reg_otp: reg_otp,
-            email_add: email_add,
-            user_name: user_name,
-            mobile_num: mobile_num,
+            "_token": "{{ csrf_token() }}"
         },
         success: function(response_data) {
             var response = jQuery.parseJSON(response_data);
-             if (response.status == 400) {
-                $("#errormsg").text(response.error);
-                $("#errormsg").fadeIn('slow');
-                $("#errormsg").fadeOut(10000);
-             }else
-             {
-                updateAddress(response.student_id);    
-             }
-            
-        },
-        error: function(xhr, b, c) {
-            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-        }
-    });
-}
-function updateAddress(student_id) {
-        var country = $("#country").val();
-        var state = $("#state").val();
-        var city = $("#city").val();
-        var referCode = '';
-        var referEmail = '';
-        var exam_id = $('#exam_id').val();
-        var trail = $('#trail').val();
-        var mx_Grade_id = $('#mx_Grade_id').val();
-                $.ajax({
-                    url: "{{ url('/signupAddress') }}",
-                    type: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        student_id: student_id,
-                        country: country,
-                        state: state,
-                        city: city,
-                        refer_code: referCode,
-                        refer_email: referEmail,
-                        exam_id: exam_id,
-                        trail:trail,
-                        mx_Grade_id:mx_Grade_id,
-                    },
-                    success: function(response_data) { //debugger;
-                        var response = jQuery.parseJSON(response_data);
-                        if (response.redirect_url) {
-                            window.location.href = response.redirect_url
+            var register_otp = response.otp;
+            var user_name = '<?php echo $lead_user_data["FirstName"]?>';
+            var email_add = $(".email_input").val();
+            var location = '<?php echo $lead_user_data["mx_City"]?>';
+            var exam = <?php echo $lead_user_data['mx_Exam_id']?>;
+            var grade_stage = <?php echo $lead_user_data['mx_Grade_id']?>;
+            var refer_code = '';
+            var referral_email = '';
+            var state = $("#state").val();
+            $.ajax({
+                url: "{{ url('/verifyOtpRegister') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    reg_otp: register_otp,
+                    email_add: email_add,
+                    user_name: user_name,
+                    mobile_num: mobile_num,
+                    location: location,
+                    exam_id: exam,
+                    stage_at_signup: grade_stage,
+                    state: state,
+                    refer_code: refer_code,
+                    refer_email: referral_email,
+                },
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+
+                    if (response.status == 400) {
+                        if (response.msg === 'Wrong OTP') {
+
+                        } else if (response.msg === 'User already registered') {
+
+                        } else {
+
                         }
-                    },
-                    error: function(xhr, b, c) {
-                        console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                        return false
+                    } else {
+                        window.location.href = '{{url("dashboard")}}';
                     }
-                });
+
+                },
+                error: function(xhr, b, c) {
+
+                }
+            });
+        },
+    });
+});
+
+function isValidEmail(email) {
+    return /^[a-z0-9]+([-._][a-z0-9]+)*@([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,4}$/.test(email) &&
+        /^(?=.{1,64}@.{4,64}$)(?=.{6,100}$).*/.test(email);
 }
 
 </script>
-<html>
+@endsection

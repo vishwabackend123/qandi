@@ -7,6 +7,10 @@ $userData = Session::get('user_data');
     input[type="date"]::-ms-clear {
         display: none;
     }
+
+    #alert_msg {
+        display: none;
+    }
 </style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
@@ -16,11 +20,13 @@ $userData = Session::get('user_data');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
-                <div class="d-sm-flex align-items-center justify-content-between gotodashboard">
-                <p class="m-0">Your weekly schedule has been set</p>  
-                <a href="javascript:void(0);">Go to Dashboard</a>
-                </div>    
-                    <div class="alert_msg" id="alert_msg"></div>
+                    <div id="alert_msg">
+                        <div class="d-sm-flex align-items-center justify-content-between gotodashboard ">
+                            <p class="m-0">Your weekly schedule has been set</p>
+                            <a href="{{route('dashboard')}}">Go to Dashboard</a>
+                        </div>
+                    </div>
+
                     <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                         @csrf
                         <div class="bg-white planner-box">
@@ -128,7 +134,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
-<!--
+                        <!--
                         <div class="pt-5 mt-5">
                             <a href="{{route('dashboard')}}" class="btn btn-common-green  w-100">Back to Dashboard</a>
                         </div>
@@ -136,9 +142,9 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-        <div class="bg-white position-fixed w-100 d-sm-none d-block savebtnfix">
-           <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerbutton">Save Test</button>
-           </div>    
+            <div class="bg-white position-fixed w-100 d-sm-none d-block savebtnfix">
+                <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerbutton">Save Test</button>
+            </div>
         </div>
     </section>
 </div>
@@ -447,21 +453,21 @@ $userData = Session::get('user_data');
                         var message = response.message;
 
 
-                        $('#alert_msg').html('<div class="alert alert-success" role="alert">Your weekly schedule has been set.</div>');
+
                         $('#alert_msg').show();
-                        setTimeout(function() {
-                            $('#alert_msg').fadeOut('fast');
-                        }, 8000);
+                        /*  setTimeout(function() {
+                             $('#alert_msg').fadeOut('fast');
+                         }, 8000); */
                         $("#planner-wrapper")[0].scrollIntoView();
                         $('#saveplannerbutton').addClass('disabled');
 
                     } else {
                         var message = response.message;
-                        $('#alert_msg').html('<div class="alert alert-danger" role="alert">' + message + '</div>');
+
                         $('#alert_msg').show();
-                        setTimeout(function() {
-                            $('#alert_msg').fadeOut('fast');
-                        }, 8000);
+                        /*  setTimeout(function() {
+                             $('#alert_msg').fadeOut('fast');
+                         }, 8000); */
                         $("#planner-wrapper")[0].scrollIntoView();
                         return false;
                     }
@@ -483,7 +489,10 @@ $userData = Session::get('user_data');
         var subject_id = $(this).attr('value');
 
         var selected_count = $('#planner_sub_' + subject_id + ' div').length;
-        $("#number").val(parseInt($("#number").val()) - 1);
+
+        if ($("#number").val() > 0) {
+            $("#number").val(parseInt($("#number").val()) - 1);
+        }
 
         var limitrange = $("#number").val();
 
