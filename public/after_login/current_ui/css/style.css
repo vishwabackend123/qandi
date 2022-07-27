@@ -65,7 +65,7 @@ li {
 
 /* common-scroll */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
     height: 5px;
 }
 ::-webkit-scrollbar-track {
@@ -305,15 +305,16 @@ color: #d0d5dd !important;
 /*******login-page-end*****/
 /******sign-up-strat*******/
 .allscrollbar::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
+    background: #cccccc !important;
 }
 
 .allscrollbar::-webkit-scrollbar-track {
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .allscrollbar::-webkit-scrollbar-thumb {
-    background: #cccccc !important;
+    background:#e5eaee !important;
     border-radius: 2px;
 }
 
@@ -810,13 +811,18 @@ padding-right: 39px;
 .exam_tabdata{
 border-radius: 32px;
 margin-top: 28px;
-padding: 32px !important;
+padding: 32px 24px 32px 32px !important;
+}
+.testtablescroll{
+    overflow-y: auto;
+    height: 335px;
+    padding-right: 16px;    
 }
 .exam_topicbtn ul.nav {
-    height: 35px;
+    height: 36px;
 }
 .exam_topicbtn ul.nav .btn.nav-link {
-    height: 29px;
+    height: 30px;
     line-height: 14px;
 }
 .take-fulltest{
@@ -827,9 +833,10 @@ padding: 32px !important;
 .take-fulltest .btn {
     height: 44px;
     min-width: 141px !important;
+    font-size: 16px !important;
 }
 .take-fulltest .btn-common-transparent {
-    max-width: 237px !important;
+    max-width: 258px !important;
 }
 .clrsec{
     flex: 2;
@@ -841,10 +848,14 @@ padding: 32px !important;
   text-decoration: none !important;
 }
 .test-table h2{
-     font-size: 16px;
-  font-weight: 500;
+    font-size: 16px;
+    font-weight: 500;
     color: #1f1f1f;
-    flex: 1;
+    flex: 1; 
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .test-table h3{
      font-size: 14px;
@@ -863,9 +874,10 @@ padding: 32px !important;
   font-weight: 800;
     color: #56b663;
     cursor: pointer;
+    flex-basis: 200px;
 }
 .test-table .accordion-header{
-flex-basis: 245px;   
+flex-basis: 246px;   
 }
 .test-table .accordion-header .btn{
 max-width: 141px !important;
@@ -880,6 +892,10 @@ border-right: 0;
 border-left: 0;
 border-top:0;
 border-bottom-color: #e5eaee;
+margin-top: 24px;
+}
+.exam_tabdata .accordion-item:nth-child(1){
+margin-top: 0;    
 }
 .exam-box{
 background: #fcfdfd;
@@ -888,13 +904,14 @@ padding: 10px;
 border-radius: 12px;
 }
 .exambox-heading p {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: #363c4f;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin: 0;
+    width: 125px;
 }
 .exambox-heading h2{
     font-size: 13px;
@@ -3952,11 +3969,11 @@ header {
     min-width: 120px;
 }
 .commontab .nav-tabs .nav-link {
-    padding: 0px 0px 25px;
+    padding: 0px 0px 20px;
     /* opacity: 0.6; */
     border: 0px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;

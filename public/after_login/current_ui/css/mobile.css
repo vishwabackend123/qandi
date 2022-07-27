@@ -279,9 +279,6 @@
     }
     .test-table h2 {
     width: 240px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
     .planner-title h1 {
     margin: 0;
