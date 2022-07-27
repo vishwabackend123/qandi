@@ -1,9 +1,5 @@
 
 /************ Amit - Start **************/
-var percentageComplete = 0.9;
-var strokeDashOffsetValue = 100 - (percentageComplete * 100);
-var progressBar = $(".js-progress-bar");
-progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
 /********** Sidebar *****/
 $("ul.submenu-lists li.practice-menu>a").click(function(){
     $(this).parent().toggleClass("practice-menu-active");

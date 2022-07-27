@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="radial_progress_bar">
+<div class="radial_progress_bar" style="padding:50px;">
     <svg xmlns="http://www.w3.org/2000/svg"
         viewBox="-1 -1 34 34">
     
@@ -13,5 +13,13 @@
                     js-progress-bar" />
     </svg>
 </div>
+
+<script>
+    var percentageComplete = 0.9;
+var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+var progressBar = $(".js-progress-bar");
+progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+</script>
+
 
 @endsection
