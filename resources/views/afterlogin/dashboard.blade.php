@@ -129,7 +129,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <circle cx="16" cy="16" r="15.9155"
                                                                     class="progress-bar__background" />
                                                             
-                                                            <circle cx="16" cy="16" r="15.9155"
+                                                            <circle cx="16" cy="16" r="15.9155" id="progress-bar{{$key}}"
                                                                     class="progress-bar__progress 
                                                                             js-progress-bar {{$colorcls}}" />
                                                             </svg>
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <script>
                                             var percentageComplete = "{{round($sub['score'])}}";
                                             var strokeDashOffsetValue = 100 - (percentageComplete);
-                                            var progressBar = $(".js-progress-bar");
+                                            var progressBar = $("#progress-bar{{$key}}");
                                             progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
                                         </script>
                                         @endforeach
