@@ -237,7 +237,32 @@ class SubscriptionController extends Controller
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
                 Session::put('user_data', $sessionData);
+                if (Session::has('lead_trail_status')) {
+                        $curl = curl_init();
+                        $api_URL = env('API_URL');
+                        $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/trial';
+                        $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
+                        $headers = array(
+                            'x-api-key: ' . $apiKey,
+                        );
+                        $curl_option = array(
+                            CURLOPT_URL => $curl_url,
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_ENCODING => "",
+                            CURLOPT_MAXREDIRS => 10,
+                            CURLOPT_TIMEOUT => 0,
+                            CURLOPT_FOLLOWLOCATION => true,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                            CURLOPT_CUSTOMREQUEST => "GET",
+                            CURLOPT_HTTPHEADER => $headers,
+                        );
+                        curl_setopt_array($curl, $curl_option);
 
+                        $response_json = curl_exec($curl);
+                        $err = curl_error($curl);
+                        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                        curl_close($curl);
+                    } 
                 return redirect()->route('dashboard');
             } else {
                 return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);
