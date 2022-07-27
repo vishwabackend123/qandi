@@ -693,6 +693,16 @@
 .checkoutpage {display: block;padding: 32px 16px 59px;}
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
+.planDetailBox {display: block;width: 100%;}
+.vLine{display: none;}
+.plantitleBox {padding-right: 0px !important;width: 100%;}
+.planDetail {display: block;width: 100%;}
+.selectedWeek {display: flex;justify-content: space-between; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
+.plannedtestbox {display: flex;justify-content: space-between;}
+.weeklyPlanWrapper {padding: 20px;}
+.gotoplanner_mob{display: block;padding-top: 16px;border-bottom: 1px solid #e5eaee;padding-bottom: 10px;}
+.journeyGraph .boxheading {margin-bottom: 21px;}
+.dropboxmob{margin-bottom: 30px;}
  /************ Sachin End Date:20-07-22 ************/
 
  /************ Shiv start for exam-insturction Date:25-07-22 ************/
