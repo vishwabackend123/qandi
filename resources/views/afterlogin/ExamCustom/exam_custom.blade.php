@@ -37,7 +37,7 @@
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
                                 <div class="take-fulltest d-lg-flex align-items-center justify-content-between">
-                                    <div class="d-sm-flex align-items-center clrsec topic_form">
+                                    <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select" >
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
                                             <input type="hidden" id="selected_topic" name="topics">
@@ -130,6 +130,8 @@
         $('.full_take').addClass('d-none');
         $('#' + subject + '_test').removeClass('d-none');
         $('#' + subject + '_test').addClass('d-block');
+        $('.topic_form').attr("style", "visibility: hidden !important");
+        clearTopics();
     }
     $('.chapters-expend').hide();
 
@@ -222,12 +224,14 @@
             $('#chpt_topic_' + value).addClass('btn-common-green');
             $('#chpt_topic_' + value).removeClass('btn-common-transparent');
             $('#chpt_topic_' + value).removeClass('bg-transparent');
+            $('#chpt_topic_' + value).html('Selected');
         } else {
             aTopics.splice(index, 1);
             $('#chpt_topic_' + value).removeClass('topic_selected');
             $('#chpt_topic_' + value).removeClass('btn-common-green');
             $('#chpt_topic_' + value).addClass('btn-common-transparent');
             $('#chpt_topic_' + value).addClass('bg-transparent');
+            $('#chpt_topic_' + value).html('Select');
         }
         $('#selected_topic').val(aTopics);
         if (aTopics.length > 0) {

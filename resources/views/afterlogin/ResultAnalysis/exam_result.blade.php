@@ -244,6 +244,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 window.history.pushState(null, "", window.location.href);
             };
         });
+        
     </script>
     <!-- browser back disable -->
     <script>
