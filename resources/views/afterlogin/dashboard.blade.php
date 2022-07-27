@@ -95,7 +95,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext mb-3">Know your strengths and weaknesses and step up your game.</p>
+                                    <p class="dashSubtext mb-3">Supporting text for better interaction on this section</p>
                                 </div>
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "yellowgraph";
+                                            $colorcls = "orangegraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
@@ -117,33 +117,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <h6>{{$sub['subject_name']}}</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>{{round($sub['score'])}}%</h4>
-                                                        <!-- <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
+                                                        <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
                                                             <div class="circle_inner">
                                                                 <div class="round_per"></div>
                                                             </div>
-                                                        </div> -->
-                                                        <div class="radial_progress_bar">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="-1 -1 34 34">
-                                                            
-                                                            <circle cx="16" cy="16" r="15.9155"
-                                                                    class="progress-bar__background" />
-                                                            
-                                                            <circle cx="16" cy="16" r="15.9155" id="progress-bar{{$key}}"
-                                                                    class="progress-bar__progress 
-                                                                            js-progress-bar {{$colorcls}}" />
-                                                            </svg>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <script>
-                                            var percentageComplete = "{{round($sub['score'])}}";
-                                            var strokeDashOffsetValue = 100 - (percentageComplete);
-                                            var progressBar = $("#progress-bar{{$key}}");
-                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-                                        </script>
                                         @endforeach
                                         @endif
                                     </div>
@@ -213,6 +195,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
+                            <!--  <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab">
                                     <div class="tablist">
@@ -385,11 +368,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses.  This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. It will also exhibit/display those topics that can become your strength with a little more effort on your part. Move up the ladder.
+                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
                                 </h3>
-                                <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
+                                <p class="dashSubtext">Supporting text for better interaction on this section</p>
                             </div>
                             @if(!empty($myq_matrix))
                             <div class="MyqMatrixMain mt-3">
@@ -400,7 +383,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
+                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
@@ -1225,5 +1208,4 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
-    
     @endsection

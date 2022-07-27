@@ -154,7 +154,40 @@
                 $('#overlay').fadeIn();
             },
             success: function(result) {
-                $("#topic_section_" + chapt_id).html(result);
+                $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+
+                $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
+                $("#topic_section_" + chapt_id).owlCarousel({
+
+                    stagePadding: 0,
+                    loop: false,
+                    margin: 15,
+                    nav: false,
+                    dots: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false,
+                            stagePadding: 40,
+                            margin: 5,
+                            loop: true,
+                        },
+                        700: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        },
+                        1200: {
+                            items: 4
+                        }
+
+
+                    }
+                });
+
+
+
             }
         });
 

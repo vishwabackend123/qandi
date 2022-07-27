@@ -38,33 +38,3 @@
     <h5>Topic not available</h5>
 </div>
 @endif
-<script type="text/javascript">
-$('.testslider').owlCarousel({
-    stagePadding: 0,
-    loop: false,
-    margin: 15,
-    nav: false,
-    dots: false,
-    responsive: {
-        0: {
-            items: 1,
-            nav: false,
-            stagePadding: 40,
-            margin: 5,
-            loop: true,
-        },
-        700: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        },
-        1200: {
-            items: 4
-        }
-
-
-    }
-});
-
-</script>

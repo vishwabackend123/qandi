@@ -1096,7 +1096,7 @@ class HomeController extends Controller
                         // Push Value in Redis
                         Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                         if ($category == 'skill') {
-                            $exam_url = route('dailyTaskExamSkill', ['category' => $category, 'tasktype' => $tasktype, 'instruction' => 'instruction', 'skill_category' => $skill_category]);
+                            $exam_url = route('dailyTaskExamSkill', ['category' => $category, 'tasktype' => $tasktype, 'instruction' => 'exam', 'skill_category' => $skill_category]);
                         } else {
                             $exam_url = route('dailyTaskExam', ['category' => $category, 'tasktype' => $tasktype]);
                         }
