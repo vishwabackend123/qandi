@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "orangegraph";
+                                            $colorcls = "yellowgraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
@@ -117,15 +117,33 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <h6>{{$sub['subject_name']}}</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>{{round($sub['score'])}}%</h4>
-                                                        <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
+                                                        <!-- <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
                                                             <div class="circle_inner">
                                                                 <div class="round_per"></div>
                                                             </div>
+                                                        </div> -->
+                                                        <div class="radial_progress_bar">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="-1 -1 34 34">
+                                                            
+                                                            <circle cx="16" cy="16" r="15.9155"
+                                                                    class="progress-bar__background" />
+                                                            
+                                                            <circle cx="16" cy="16" r="15.9155" id="progress-bar{{$key}}"
+                                                                    class="progress-bar__progress 
+                                                                            js-progress-bar {{$colorcls}}" />
+                                                            </svg>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <script>
+                                            var percentageComplete = "{{round($sub['score'])}}";
+                                            var strokeDashOffsetValue = 100 - (percentageComplete);
+                                            var progressBar = $("#progress-bar{{$key}}");
+                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                                        </script>
                                         @endforeach
                                         @endif
                                     </div>
@@ -1207,4 +1225,5 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
+    
     @endsection

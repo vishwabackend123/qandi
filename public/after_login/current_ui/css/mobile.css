@@ -60,11 +60,7 @@
 }
 
 .subjextscoreLeft h4 {font-size: 20px;}
-/* .circle_percent,.round_per{    width: 0.8em;
-    height: 0.8em;} */
-    /* .testPlanCard {
-        max-width: 240px !important;
-    } */
+
     .graphDetailempty .weekText{
         padding-left: 0px;
     }
@@ -231,6 +227,20 @@
     
 }
 @media only screen and (max-width: 991px){
+   .topic_form{
+    display: none !Important;
+    }
+    .mobile-test .topic_form{
+    display: flex !Important;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    }
+    .take-fulltest .btn {
+    min-width: 100% !important;
+    }
+    .fulltestform{
+    width: 100%;    
+    }
 .main-title {
     margin-bottom: 4px;
 }
@@ -246,6 +256,9 @@
     }
 }
 @media(max-width:767px){
+    .exam_tabdata {
+    padding: 16px !important;
+}
     .planner-title h1 {
     margin: 0;
     }
@@ -275,7 +288,6 @@
     .Get-otp button {
     width: 100% !important;
     }
-    .btn.btn-common-transparent{min-width:200px;}
      
     .Get-otp button {
         width: 100% !important;
@@ -584,14 +596,19 @@
     }
     .commonWhiteBox{padding:20px}
     .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
-    .myqTodayGraphSec{padding-top:30px;}
-    .dashSubHeading{font-size:16px;}
+    .myqTodayGraphSec{padding-top:30px;padding-bottom:35px;}
+    .dashSubHeading{font-size:15px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
         padding: 20px 6px;
     }
+    .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
+    .SubjectscorePannel{height:160px;}
+    .subjextscoreLeft h6{margin-bottom:3px;}
     .headericon a{border:0px;}
+    .subjextscoreLeft .d-flex{justify-content: end!important;
+        flex-wrap: wrap;}
     span.headericon.notificationnew a#nodificbell svg{width:24px;height:24px;}
     .mobilenav{margin-right:0px!important;}
     .headerMain{padding:16px}
@@ -684,10 +701,34 @@
 .exam_instruction_text{padding-top: 44px;padding-bottom: 8px;}
 .exam_inst_sec_head{padding-top: 32px;}
 .exam_inst_ul_li li {padding-top: 20px;}
-.main-wrapper header{width:100%;}      
+.main-wrapper header{width:100%;}     
+.boxheading{    min-width: 187px;}
+.dashbaordContainer .tabMainblock{margin-top:14px;} 
+.commontab .nav-tabs .nav-link{padding-bottom:8px;}
+.tablist ul li {text-align: center;}
+.taskstatusBlock h4{margin-top:11px;margin-bottom:20px!important;}
+.tasklisting .tasklistleft h4{font-size: 15px;}
+.tasklisting .tasklistleft h6{margin-bottom:0px;}
+.tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
+    font-weight: 800; height: 38px;line-height:15px;}
+    .tasklisting{padding-bottom: 30px;}
+    .myqmatPannel{height:198px;min-height:198px;}
+    .myqmatPannel .myqinner h6,.myqmatPannel .myqinner h5{margin-bottom:4px;}
+    .myqmatPannel .myqinner p{min-height:60px;-webkit-line-clamp: 3;height:60px;}
+    .myqarrow{margin-top:1px;}
+    .myqmatPannel{margin-bottom:16px;}
+    .subjextscoreLeft h4 {font-size: 20px;width:100%;}
+    .boxHeadingBlock.flexblock{flex-wrap:wrap;}
 }
 
 @media only screen and (max-width: 576px){
+      .mobile-test .topic_form{
+    display: flex !Important;
+    }
+    .take-fulltest .btn-common-transparent {
+    max-width: 100% !important;
+    width: 100%;
+}
     .add-subchapter {
     width: 100%;
     overflow-y: auto;
@@ -723,6 +764,15 @@
         .notification-main {width:100%;max-width:100%;}
         .MyqMatrixMain .col-sm-6{width: 100%; max-width: 50%;padding: 0 8px;}
 
+}
+@media only screen and (max-width: 460px){
+    .exam_topicbtn  ul.nav .btn.nav-link {
+    padding: 0 7px;
+}
+      .mobile-test .topic_form{
+    display: block !Important;
+    text-align: center;
+    }
 }
 
 @media(max-width:360px){

@@ -164,6 +164,10 @@ $name = $action;
         $(this).hide();
         $('#menumobilehide').show();
         $('.sidebar_block').addClass('showmenu');
+        $('.notificationnew').removeClass('bellactive')
+        $('.notification-block_new ').removeClass('activeblock')
+        $('.notification-block_new ').removeClass('show')
+         
     });
     $("#menumobilehide").click(function() {
         $('html').removeClass("windowhidden")
@@ -171,6 +175,7 @@ $name = $action;
         $(this).hide();
         $("#menumobile").show();
         $('.sidebar_block').removeClass('showmenu');
+        $('html').removeClass("scrollnone");
     });
 
     // $('.notificationnew').click(function() {
