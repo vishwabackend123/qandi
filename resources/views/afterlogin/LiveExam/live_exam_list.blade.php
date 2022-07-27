@@ -147,28 +147,27 @@
 </section>
 </div>
 <script type="text/javascript">
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/Live";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Live";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-        },
-        error: function(data, errorThrown) {}
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+            },
+            error: function(data, errorThrown) {}
+        });
     });
-});
-$('#live_exam').click(function() {
-    $("#attempted_tab").hide();
-});
-
+    $('#live_exam').click(function() {
+        $("#attempted_tab").hide();
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

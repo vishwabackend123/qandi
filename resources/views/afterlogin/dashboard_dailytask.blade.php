@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -116,7 +116,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -160,17 +160,17 @@ $userData = Session::get('user_data');
                                     </p>
                                 </div>
                                 <div class="dura-sec">
-                                        <span>Duration</span>
-                                        <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <label>{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</label>
-                                        </p>
-                                    </div>
+                                    <span>Duration</span>
+                                    <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <label>{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</label>
+                                    </p>
+                                </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -205,7 +205,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     @if($data['allowed'] == '1')
                                     <div class="task-btn tasklistbtn">
-                                        <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                        <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
                                     </div>
                                     @else
                                     <div class="task-btn tasklistbtn">
@@ -292,21 +292,20 @@ $userData = Session::get('user_data');
             </div>
         </div>
         <script>
-        $(window).on('load', function() {
-            //$('#matrix').modal('show');
-        });
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function() {
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+            $(window).on('load', function() {
+                //$('#matrix').modal('show');
+            });
+            $(document).ready(function() {
+                $(".dashboard-cards-block .bg-white>small>img").click(function() {
+                    $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                        $(this).parent("p").hide();
+                    });
+                    $(this).siblings("p").show();
+                });
+                $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                     $(this).parent("p").hide();
                 });
-                $(this).siblings("p").show();
             });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-                $(this).parent("p").hide();
-            });
-        });
-
         </script>
         <!-- Footer Section -->
         @include('afterlogin.layouts.footer_new')
