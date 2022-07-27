@@ -260,7 +260,6 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
- @if(isset($prof_asst_test) && $prof_asst_test=='N')
 <!--------- Modal ------>
 <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
@@ -269,7 +268,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div> -->
             <div class="modal-body text-center">
-                <p>Give more tests for this <br /> section to be populated</p>
+                <p>Give more tests for this <br /> section to be populateddd</p>
                 <div class="text-center mb-4">
                     <a href="{{url('/dashboard')}}" class="btn btn-danger px-5"> Back</a>
                 </div>
@@ -277,7 +276,6 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-@endif
 <!-------------------->
 <script>
 $(document).ready(function() {
@@ -310,13 +308,12 @@ $(document).ready(function() {
             $('.tooltipclass').hide();
         }
     });
-    /*var topic_data = '<?php echo $myq_bool; ?>';
+    var topic_data = '<?php echo $myq_bool; ?>';
     if (topic_data) {
         setInterval(function() {
          $('#matrix').modal('show');        
         }, 1000);
-    }*/
-    $('#matrix').modal('show');
+    }
     var quadrant_name = sessionStorage.getItem("quadrant_name");
     if (quadrant_name == 'q_2') {
         questwo_tab();

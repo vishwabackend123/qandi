@@ -35,7 +35,8 @@
                                         <div class="live_exam_red_dot me-3"></div>
                                         <h3>{{$schedule_list[0]->exam_name}}</h3>
                                     </div>
-                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test</a>
+                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test
+                                        </a>
                                         @endif
                                 </div>
                                 <div class="line_696"></div>
