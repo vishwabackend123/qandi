@@ -885,6 +885,10 @@
 <script>
 /*********Notification-Scrolljs*************/
 $('.notificationnew').click(function() {
+    $('.mobilemenu').removeClass("showmenu");
+    $('#menumobilehide').hide();
+    $("#menumobile").show();
+    $('body').removeClass('sidebartoggle');
   $(this).toggleClass('bellactive');
   $('.notification-block_new').toggleClass('activeblock');
       if ($('.notification-block_new').hasClass('activeblock')) {
