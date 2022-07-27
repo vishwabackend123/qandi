@@ -109,9 +109,9 @@ $question_type = "Numerical";
                                                                 <span class="q-no">Q1.</span>
                                                                 <div class="quesbox">
                                                                     <p>{!! $question_text !!}
-                                                                     </p>
+                                                                    </p>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </div>
                                                         <div class="questionImggraph">
@@ -275,7 +275,7 @@ $question_type = "Numerical";
                         </div>
 
                     </div>
-                    <div class="bck-btn"><a href="javascript:;"> Back</a></div>
+                    <!-- <div class="bck-btn"><a href="javascript:;"> Back</a></div>  -->
                 </div>
             </div>
         </div>
