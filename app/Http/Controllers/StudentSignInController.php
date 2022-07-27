@@ -551,7 +551,7 @@ class StudentSignInController extends Controller
             $search = isset($data['search_text']) ? $data['search_text'] : '';
 
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/get-cities/' . $state;
+            $curl_url = $api_URL . 'api/get-all-new-cities/' . $state;
 
             $curl_url = str_replace(" ", '%20', $curl_url);
 
