@@ -117,10 +117,22 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <h6>{{$sub['subject_name']}}</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>{{round($sub['score'])}}%</h4>
-                                                        <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
+                                                        <!-- <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
                                                             <div class="circle_inner">
                                                                 <div class="round_per"></div>
                                                             </div>
+                                                        </div> -->
+                                                        <div class="radial_progress_bar">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="-1 -1 34 34">
+                                                            
+                                                            <circle cx="16" cy="16" r="15.9155"
+                                                                    class="progress-bar__background" />
+                                                            
+                                                            <circle cx="16" cy="16" r="15.9155"
+                                                                    class="progress-bar__progress 
+                                                                            js-progress-bar" />
+                                                            </svg>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1206,5 +1218,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         dropdown.onclick = function() {
             dropdown.classList.toggle("active")
         }
+    </script>
+    <script>
+        var percentageComplete = 0.5;
+        var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+        var progressBar = $(".js-progress-bar");
+        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
     </script>
     @endsection
