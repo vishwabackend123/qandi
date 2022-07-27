@@ -135,6 +135,7 @@
                             </div>
                         </div>
                     </div>
+                    @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -167,6 +168,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="col-md-7">
                     <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
@@ -515,4 +517,5 @@ $(document).on('click', function(e) {
 });
 
 </script>
+@include('afterlogin.layouts.footer_new')
 @endsection
