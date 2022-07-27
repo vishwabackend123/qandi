@@ -260,6 +260,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
                                                         </div>
                                                         @endif
+
                                                     </li>
                                                     @endif
                                                     @if($data['category'] == 'time' && $data['task_type'] == 'daily')
