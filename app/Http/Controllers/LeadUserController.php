@@ -173,4 +173,9 @@ class LeadUserController extends Controller
 	{
 		return view('auth.review_test');
 	}
+
+	public function radialBar()
+	{
+		return view('auth.radial_bar');
+	}
 }
