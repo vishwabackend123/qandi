@@ -764,6 +764,9 @@
 
 }
 @media only screen and (max-width: 460px){
+    .exam_topicbtn  ul.nav .btn.nav-link {
+    padding: 0 7px;
+}
       .mobile-test .topic_form{
     display: block !Important;
     text-align: center;
