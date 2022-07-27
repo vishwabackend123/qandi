@@ -59,7 +59,7 @@
     padding-top: 90px;
 }
 
-.subjextscoreLeft h4 {font-size: 20px;width:100%;}
+.subjextscoreLeft h4 {font-size: 20px;}
 
     .graphDetailempty .weekText{
         padding-left: 0px;
@@ -717,6 +717,7 @@
     .myqmatPannel .myqinner p{height:60px;-webkit-line-clamp: 3;}
     .myqarrow{margin-top:1px;}
     .myqmatPannel{margin-bottom:16px;}
+    .subjextscoreLeft h4 {font-size: 20px;width:100%;}
 }
 
 @media only screen and (max-width: 576px){
