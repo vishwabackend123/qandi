@@ -68,6 +68,7 @@ $('.email_input').keyup(function() {
 $('.email_input').blur(function() {
     var input_data = $(this).val();
     if (!isValidEmail(input_data)) {
+        $('.email_error').text('Please enter valid email id');
         $('.email_error').show();
         $('.trail').attr('disabled', 'disabled');
         $('.trail').addClass("disabled-btn");
@@ -77,8 +78,8 @@ $('.email_input').blur(function() {
     }
 });
 $('.trail').click(function() {
-    //var mobile_num =<?php echo $lead_user_data['Mobile'] ?>;
-    var mobile_num = 9990344765;
+    var ids = $(this).attr('id');
+    var mobile_num = <?php echo $lead_user_data['Mobile'] ?>;
     url = "{{ url('sentMobileOtp/') }}/" + mobile_num;
     $.ajax({
         url: url,
@@ -88,52 +89,73 @@ $('.trail').click(function() {
         },
         success: function(response_data) {
             var response = jQuery.parseJSON(response_data);
-            var register_otp = response.otp;
-            var user_name = '<?php echo $lead_user_data["FirstName"]?>';
-            var email_add = $(".email_input").val();
-            var location = '<?php echo $lead_user_data["mx_City"]?>';
-            var exam = <?php echo $lead_user_data['mx_Exam_id']?>;
-            var grade_stage = <?php echo $lead_user_data['mx_Grade_id']?>;
-            var refer_code = '';
-            var referral_email = '';
-            var state = $("#state").val();
-            $.ajax({
-                url: "{{ url('/verifyOtpRegister') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    reg_otp: register_otp,
-                    email_add: email_add,
-                    user_name: user_name,
-                    mobile_num: mobile_num,
-                    location: location,
-                    exam_id: exam,
-                    stage_at_signup: grade_stage,
-                    state: state,
-                    refer_code: refer_code,
-                    refer_email: referral_email,
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
+            if (response.success == true) {
+                var register_otp = Array.from(String(response.otp), Number);
+                var user_name = '<?php echo $lead_user_data["FirstName"]?>';
+                var email_add = $(".email_input").val();
+                var location = '<?php echo $lead_user_data["mx_City"]?>';
+                var exam = <?php echo $lead_user_data['mx_Exam_id']?>;
+                var grade_stage = <?php echo $lead_user_data['mx_Grade_id']?>;
+                var refer_code = '';
+                var referral_email = '';
+                var state = $("#state").val();
+                $.ajax({
+                    url: "{{ url('/verifyOtpRegister') }}",
+                    type: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        reg_otp: register_otp,
+                        email_add: email_add,
+                        user_name: user_name,
+                        mobile_num: mobile_num,
+                        location: location,
+                        exam_id: exam,
+                        stage_at_signup: grade_stage,
+                        state: state,
+                        refer_code: refer_code,
+                        refer_email: referral_email,
+                    },
+                    success: function(response_data) {
+                        var response = jQuery.parseJSON(response_data);
 
-                    if (response.status == 400) {
-                        if (response.msg === 'Wrong OTP') {
+                        if (response.status == 400) {
 
-                        } else if (response.msg === 'User already registered') {
-
+                            $('.email_error').show();
+                            $('.email_error').text(response.msg);
+                            setTimeout(function() {
+                                $(".email_error").fadeOut();
+                            }, 5000);
+                            return false
                         } else {
+                            if (ids == 'free_trail') {
+                                var subscription_id = '';
+                                if (exam == 1) {
+                                    subscription_id = 1;
+                                } else {
+                                    subscription_id = 4;
+                                }
+                                var current_year = new Date().getFullYear();
+                                window.location.href = '{{url("trial_subscription")}}' + '/' + subscription_id + '/' + current_year + '/' + exam;
+                            } else {
+                                window.location.href = '{{url("dashboard")}}';
+                            }
 
                         }
-                        return false
-                    } else {
-                        window.location.href = '{{url("dashboard")}}';
+
+                    },
+                    error: function(xhr, b, c) {
+
                     }
+                });
+            } else {
+                $('.email_error').show();
+                $('.email_error').text(response.message);
+                setTimeout(function() {
+                    $(".email_error").fadeOut();
+                }, 5000);
 
-                },
-                error: function(xhr, b, c) {
+            }
 
-                }
-            });
         },
     });
 });

@@ -734,14 +734,15 @@
 .tasklisting .tasklistleft h4{font-size: 15px;}
 .tasklisting .tasklistleft h6{margin-bottom:0px;}
 .tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
-    font-weight: 800; height: 38px;}
+    font-weight: 800; height: 38px;line-height:15px;}
     .tasklisting{padding-bottom: 30px;}
-    .myqmatPannel{height:198px;}
+    .myqmatPannel{height:198px;min-height:198px;}
     .myqmatPannel .myqinner h6,.myqmatPannel .myqinner h5{margin-bottom:4px;}
-    .myqmatPannel .myqinner p{height:60px;-webkit-line-clamp: 3;}
+    .myqmatPannel .myqinner p{min-height:60px;-webkit-line-clamp: 3;height:60px;}
     .myqarrow{margin-top:1px;}
     .myqmatPannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
+    .boxHeadingBlock.flexblock{flex-wrap:wrap;}
 }
 
 @media only screen and (max-width: 576px){

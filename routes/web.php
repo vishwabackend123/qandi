@@ -311,5 +311,3 @@ Route::any('/previousyear_exam', [App\Http\Controllers\LeadUserController::class
 Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
 Route::any('/export_test_analytics', [App\Http\Controllers\LeadUserController::class, 'exportTestAnalytics']);
 Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
-
-Route::any('/radial_bar', [App\Http\Controllers\LeadUserController::class, 'radialBar']);
