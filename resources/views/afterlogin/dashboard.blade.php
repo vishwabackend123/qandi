@@ -496,6 +496,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
+                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                         </div>
                     </div>
                     <div class="col-lg-12">

@@ -125,7 +125,7 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 
 /* Full exam Controller Routes */
-Route::any('/exam/{full_exam}/{instruction?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth');
+Route::any('/exam/{full_exam}/{instruction?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
 Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'nextQuestion'])->name('next_question')->middleware('auth');
 Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
@@ -174,7 +174,7 @@ Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController
 
 /* TestSeries Routes */
 Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'seriesList'])->name('series_list')->middleware('auth', 'menu');
-Route::any('/test_series/{instruction?}', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth');
+Route::any('/test_series/{instruction?}', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth', 'menu');
 
 /* Referal Controller Routes */
 Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'storeReferralFriend'])->name('store_referral')->middleware('auth', 'menu');
@@ -261,7 +261,7 @@ Route::any('/get_exam_result_analytics/{result_id}', [App\Http\Controllers\Resul
 
 
 /* mock exam Routes */
-Route::any('/mock_exam/{instruction?}', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExam')->middleware('auth');
+Route::any('/mock_exam/{instruction?}', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExam')->middleware('auth', 'menu');
 Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExamTest')->middleware('auth', 'menu');
 
 Route::any('/mock_next_question/{ques_id}', [App\Http\Controllers\MockExamController::class, 'mockNextQuestion'])->name('mockNextQuestion')->middleware('auth');
