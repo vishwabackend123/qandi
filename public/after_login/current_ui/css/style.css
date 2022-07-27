@@ -2930,7 +2930,7 @@ ul.sidebar-menu-lists li.active a svg:first-child{
     padding-left: 20px;
     color: rgba(54, 60, 79, 0.7);
     font-weight: bold;
-    margin-top: 130px;
+    margin-top: 130px;font-size:14px;
 }
 
 ul.submenu-lists li>a {
@@ -3001,7 +3001,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
     font-family: 'Inter', sans-serif;
     display: block;
     padding: 8px 20px 8px 20px;
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;font-size: 14px;
 }
 
 .practice-submenu a:hover {
@@ -3643,7 +3643,7 @@ padding: 20px;
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
-    box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
 }
