@@ -149,7 +149,6 @@ $userData = Session::get('user_data');
                                                 <div class="paper-sub">
                                                     <small>Score</small>
                                                     <span><b style="color:rgba(12, 193, 255, 0.9);">{{$sche->marks_gain}}</b> /{{$sche->no_of_question * 4}} </span>
-                                                    <!-- <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a> -->
                                                 </div>
                                             </div>
                                         </div>
