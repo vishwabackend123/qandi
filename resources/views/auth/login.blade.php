@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<section class="d-flex h-100 login-signup">
+<body style="background: #f5faf6;">
+<section class="d-flex login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
             <a href="javascript:void(0);">
@@ -144,7 +145,7 @@
                 </div>
             </form>
         </div>
-        <h3 class="copyright text-center position-absolute">&copy 2022 Q&I. All rights reserved.</h3>
+        <h3 class="copyright text-center position-md-absolute mt-md-0 mt-3 pb-md-0 pb-3">&copy 2022 Q&I. All rights reserved.</h3>
     </div>
 </section>
 <script type="text/javascript">
@@ -391,4 +392,5 @@
 
     }
 </script>
+</body>
 @endsection
