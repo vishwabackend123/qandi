@@ -60,7 +60,7 @@
 }
 
 .subjextscoreLeft h4 {font-size: 20px;width:100%;}
-.boxheading{    min-width: 187px;}
+
     .graphDetailempty .weekText{
         padding-left: 0px;
     }
@@ -685,7 +685,22 @@
 .exam_instruction_text{padding-top: 44px;padding-bottom: 8px;}
 .exam_inst_sec_head{padding-top: 32px;}
 .exam_inst_ul_li li {padding-top: 20px;}
-.main-wrapper header{width:100%;}      
+.main-wrapper header{width:100%;}     
+.boxheading{    min-width: 187px;}
+.dashbaordContainer .tabMainblock{margin-top:14px;} 
+.commontab .nav-tabs .nav-link{padding-bottom:8px;}
+.tablist ul li {text-align: center;}
+.taskstatusBlock h4{margin-top:11px;margin-bottom:20px!important;}
+.tasklisting .tasklistleft h4{font-size: 15px;}
+.tasklisting .tasklistleft h6{margin-bottom:0px;}
+.tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
+    font-weight: 800; height: 38px;}
+    .tasklisting{padding-bottom: 30px;}
+    .myqmatPannel{height:198px;}
+    .myqmatPannel .myqinner h6,.myqmatPannel .myqinner h5{margin-bottom:4px;}
+    .myqmatPannel .myqinner p{height:60px;-webkit-line-clamp: 3;}
+    .myqarrow{margin-top:1px;}
+    .myqmatPannel{margin-bottom:16px;}
 }
 
 @media only screen and (max-width: 576px){
