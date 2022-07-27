@@ -117,15 +117,33 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <h6>{{$sub['subject_name']}}</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>{{round($sub['score'])}}%</h4>
-                                                        <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
+                                                        <!-- <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
                                                             <div class="circle_inner">
                                                                 <div class="round_per"></div>
                                                             </div>
+                                                        </div>  -->
+                                                        <div class="radial_progress_bar">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="-1 -1 34 34">
+                                                            
+                                                            <circle cx="16" cy="16" r="15.9155"
+                                                                    class="progress-bar__background" />
+                                                            
+                                                            <circle id="js-progress-bar{{$key}}" cx="16" cy="16" r="15.9155"
+                                                                    class="progress-bar__progress 
+                                                                            js-progress-bar {{$colorcls}}" />
+                                                            </svg>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <script>
+                                            var percentageComplete = "{{round($sub['score'])}}";
+                                            var strokeDashOffsetValue = 100 - (percentageComplete);
+                                            var progressBar = $("#js-progress-bar{{$key}}");
+                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                                        </script>
                                         @endforeach
                                         @endif
                                     </div>
@@ -522,6 +540,18 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </h3>
                                                 <p class="dashSubtext">Plan your weekly tests for any chapters</p>
                                             </div>
+                                            <div class="gotoPlanner gotoplanner_mob mobile_block">
+                                                <a href="{{ url('/planner') }}">
+                                                    <span>Go to Planner</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+
+
+
                                         </div>
                                         <div class="planDetailBox">
                                             <div class="vLine"></div>
@@ -541,7 +571,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="gotoPlanner">
+                                    <div class="gotoPlanner mobile_hide">
                                         <a href="{{ url('/planner') }}">
                                             <span>Go to Planner</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -722,6 +752,23 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+
+                                        <div class="dropbox mobile_block dropboxmob">
+                                            <div class="customDropdown dropdown">
+                                                <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                <div class="options">
+                                                    <div style=" overflow-y: auto;  height: 145px;">
+                                                        <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                        <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                        <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                        <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                        <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
@@ -730,7 +777,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </div>
                                             @if (!empty($trendResponse))
                                             <div class="graphDetail">
-                                                <div class="dropbox">
+                                                <div class="dropbox mobile_hide ">
                                                     <div class="customDropdown dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
