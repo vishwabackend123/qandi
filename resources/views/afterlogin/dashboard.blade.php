@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "orangegraph";
+                                            $colorcls = "yellowgraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
@@ -129,15 +129,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <circle cx="16" cy="16" r="15.9155"
                                                                     class="progress-bar__background" />
                                                             
-                                                            <circle cx="16" cy="16" r="15.9155"
+                                                            <circle cx="16" cy="16" r="15.9155" id="progress-bar{{$key}}"
                                                                     class="progress-bar__progress 
-                                                                            js-progress-bar" />
+                                                                            js-progress-bar {{$colorcls}}" />
                                                             </svg>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <script>
+                                            var percentageComplete = "{{round($sub['score'])}}";
+                                            var strokeDashOffsetValue = 100 - (percentageComplete);
+                                            var progressBar = $("#progress-bar{{$key}}");
+                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                                        </script>
                                         @endforeach
                                         @endif
                                     </div>
@@ -1219,10 +1225,5 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active")
         }
     </script>
-    <script>
-        var percentageComplete = 0.5;
-        var strokeDashOffsetValue = 100 - (percentageComplete * 100);
-        var progressBar = $(".js-progress-bar");
-        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-    </script>
+    
     @endsection
