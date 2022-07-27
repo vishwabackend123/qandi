@@ -68,15 +68,15 @@
                                     <div class="allscrollbar">
                                         @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                         @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-                                        <div class="accordion-item pt-4">
-                                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
+                                        <div class="accordion-item pt-md-4">
+                                            <div class="test-table d-md-flex align-items-center justify-content-between pb-md-3 mb-md-1 position-relative">
                                                 <h2 class="m-0">{{$chapters->chapter_name}}</h2>
                                                 <h3 class="m-0">Proficiency : <span> @if(isset($chapters->chapter_score))
                                                         {{round($chapters->chapter_score)}}%
                                                         @else
                                                         0%
                                                         @endif</span></h3>
-                                                <div class="accordion-header d-flex align-items-center" id="headingTwo">
+                                                <div class="accordion-header d-flex align-items-center justify-content-between pt-md-0 pt-4" id="headingTwo">
                                                     <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" class="m-0" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View topics</h4>
                                                     <form method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                                                         @csrf

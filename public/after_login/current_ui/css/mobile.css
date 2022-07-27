@@ -258,6 +258,30 @@
 @media(max-width:767px){
     .exam_tabdata {
     padding: 16px !important;
+    }
+    .take-fulltest {
+    padding: 12px 0;
+    border-radius: 0;
+   }
+    .exam_tabdata .accordion-item {
+    border-radius: 10px !important;
+    border: 1px solid #e5eaee;
+    padding:12px;
+    margin-bottom: 16px;
+    }
+    .exam_tabdata{
+    background: transparent !Important;    
+    }
+    .test-table h3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+    .test-table h2 {
+    width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
     .planner-title h1 {
     margin: 0;
@@ -769,6 +793,9 @@
 
 }
 @media only screen and (max-width: 460px){
+    .test-table h2 {
+    width: 140px;
+}
     .exam_topicbtn  ul.nav .btn.nav-link {
     padding: 0 7px;
 }
