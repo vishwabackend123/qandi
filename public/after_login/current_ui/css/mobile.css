@@ -258,6 +258,27 @@
 @media(max-width:767px){
     .exam_tabdata {
     padding: 16px !important;
+    }
+    .take-fulltest {
+    padding: 12px 0;
+    border-radius: 0;
+   }
+    .exam_tabdata .accordion-item {
+    border-radius: 10px !important;
+    border: 1px solid #e5eaee;
+    padding:12px;
+    margin-bottom: 16px;
+    }
+    .exam_tabdata{
+    background: transparent !Important;    
+    }
+    .test-table h3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+    .test-table h2 {
+    width: 240px;
 }
     .planner-title h1 {
     margin: 0;
@@ -672,6 +693,16 @@
 .checkoutpage {display: block;padding: 32px 16px 59px;}
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
+.planDetailBox {display: block;width: 100%;}
+.vLine{display: none;}
+.plantitleBox {padding-right: 0px !important;width: 100%;}
+.planDetail {display: block;width: 100%;}
+.selectedWeek {display: flex;justify-content: space-between; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
+.plannedtestbox {display: flex;justify-content: space-between;}
+.weeklyPlanWrapper {padding: 20px;}
+.gotoplanner_mob{display: block;padding-top: 16px;border-bottom: 1px solid #e5eaee;padding-bottom: 10px;}
+.journeyGraph .boxheading {margin-bottom: 21px;}
+.dropboxmob{margin-bottom: 30px;}
  /************ Sachin End Date:20-07-22 ************/
 
  /************ Shiv start for exam-insturction Date:25-07-22 ************/
@@ -719,6 +750,9 @@
     .myqmatPannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
+    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px;}
+    .fullbodyBox .leftBox h4{margin-bottom:0px;}
+    .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
 }
 
 @media only screen and (max-width: 576px){
@@ -766,6 +800,9 @@
 
 }
 @media only screen and (max-width: 460px){
+    .test-table h2 {
+    width: 140px;
+}
     .exam_topicbtn  ul.nav .btn.nav-link {
     padding: 0 7px;
 }
