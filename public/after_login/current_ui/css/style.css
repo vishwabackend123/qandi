@@ -3077,10 +3077,19 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     border-radius: 50%;
 }
 
-.orangegraph.percent_more:after,
+/* .orangegraph.percent_more:after,
 .orangegraph .round_per {
     background: #F7C86D;
+} */
+.radial_progress_bar .progress-bar__progress.yellowgraph{
+stroke : #f6c86d;
+filter: drop-shadow(0px 0px 3px rgb(246,200,109,0.6));
 }
+.radial_progress_bar .progress-bar__progress.greengraph{
+    stroke : #04c894;
+filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.6));
+}
+
 
 .greengraph.percent_more:after,
 .greengraph .round_per {
@@ -3579,30 +3588,33 @@ span.greenball-3 {
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
-    height: 200px;
-    transform: rotate(-90deg);
-    width: 200px;
-    
-    }
-    
-    .radial_progress_bar  .progress-bar__background {
-    fill: none;
-    stroke: #e2eff0;
-    stroke-width: 1.8;
-    }
-    
-    .radial_progress_bar  .progress-bar__progress {
-    fill: none;
-    stroke: #e2eff0;
-    stroke: #f66c6c;
-    stroke-dasharray: 100 100;
-    stroke-dashoffset: 100;
-    stroke-linecap: round;
-    stroke-width: 1.8;
-    transition: stroke-dashoffset 1s ease-in-out;
-    filter: drop-shadow(0px 0px 1px rgb(246,108,108,0.6));
-    padding: 20px;
-    }
+height: 56px;
+transform: rotate(-90deg);
+width: 56px;
+overflow: visible;
+}
+
+.radial_progress_bar  .progress-bar__background {
+fill: none;
+stroke: #cbebcf;
+stroke-width: 4;
+}
+
+.radial_progress_bar  .progress-bar__progress {
+fill: none;
+/* stroke: #b9e8bf; */
+stroke: #f66c6c;
+stroke-dasharray: 100 100;
+stroke-dashoffset: 100;
+stroke-linecap: round;
+stroke-width: 4;
+transition: stroke-dashoffset 1s ease-in-out;
+filter:drop-shadow(0px 0px 3px rgb(246,108,108,0.6));
+padding: 20px;
+}
+.radial_progress_bar {
+    margin-top: 1rem!important;
+}
 /********************* Amit End ****************************/
 
 

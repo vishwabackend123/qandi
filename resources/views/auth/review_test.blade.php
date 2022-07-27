@@ -52,9 +52,11 @@
                                                     <div class="questionheader">
                                                         <div class="question">
                                                             <span class="q-no">Q1.</span>
+                                                            <div class="quesbox">
                                                             <p>
                                                                 Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value.
                                                             </p>
+                                                        </div>
                                                         </div>
                                                     </div>
                                                     <div class="questionImggraph">
