@@ -455,6 +455,8 @@ $question_type = "Numerical";
         background: #fff;
         overflow: hidden;
         margin-right: 15px;
+        min-width: 335px;
+        max-width: 335px;
     }
 
     .reviewexamType a {
