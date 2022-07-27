@@ -95,7 +95,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext mb-3">Know your strengths and weaknesses and step up your game.</p>
+                                    <p class="dashSubtext mb-3">Supporting text for better interaction on this section</p>
                                 </div>
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
@@ -129,7 +129,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <circle cx="16" cy="16" r="15.9155"
                                                                     class="progress-bar__background" />
                                                             
-                                                            <circle cx="16" cy="16" r="15.9155" id="progress-bar{{$key}}"
+                                                            <circle id="js-progress-bar{{$key}}" cx="16" cy="16" r="15.9155"
                                                                     class="progress-bar__progress 
                                                                             js-progress-bar {{$colorcls}}" />
                                                             </svg>
@@ -141,7 +141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <script>
                                             var percentageComplete = "{{round($sub['score'])}}";
                                             var strokeDashOffsetValue = 100 - (percentageComplete);
-                                            var progressBar = $("#progress-bar{{$key}}");
+                                            var progressBar = $("#js-progress-bar{{$key}}");
                                             progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
                                         </script>
                                         @endforeach
@@ -385,11 +385,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses.  This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. It will also exhibit/display those topics that can become your strength with a little more effort on your part. Move up the ladder.
+                                            A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                                         </p>
                                     </span>
                                 </h3>
-                                <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
+                                <p class="dashSubtext">Supporting text for better interaction on this section</p>
                             </div>
                             @if(!empty($myq_matrix))
                             <div class="MyqMatrixMain mt-3">
@@ -400,7 +400,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
+                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
