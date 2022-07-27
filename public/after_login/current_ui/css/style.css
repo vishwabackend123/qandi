@@ -3579,30 +3579,33 @@ span.greenball-3 {
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
-    height: 56px;
-    transform: rotate(-90deg);
-    width: 56px;
-    overflow: visible;
-    }
-    
-    .radial_progress_bar  .progress-bar__background {
-    fill: none;
-    stroke: #cbebcf;
-    stroke-width: 4;
-    }
-    
-    .radial_progress_bar  .progress-bar__progress {
-    fill: none;
-    /* stroke: #b9e8bf; */
-    stroke: #f66c6c;
-    stroke-dasharray: 100 100;
-    stroke-dashoffset: 100;
-    stroke-linecap: round;
-    stroke-width: 4;
-    transition: stroke-dashoffset 1s ease-in-out;
-    filter:drop-shadow(0px 0px 3px rgb(246,108,108,0.6));
-    padding: 20px;
-    }
+height: 56px;
+transform: rotate(-90deg);
+width: 56px;
+overflow: visible;
+}
+
+.radial_progress_bar  .progress-bar__background {
+fill: none;
+stroke: #cbebcf;
+stroke-width: 4;
+}
+
+.radial_progress_bar  .progress-bar__progress {
+fill: none;
+/* stroke: #b9e8bf; */
+stroke: #f66c6c;
+stroke-dasharray: 100 100;
+stroke-dashoffset: 100;
+stroke-linecap: round;
+stroke-width: 4;
+transition: stroke-dashoffset 1s ease-in-out;
+filter:drop-shadow(0px 0px 3px rgb(246,108,108,0.6));
+padding: 20px;
+}
+.radial_progress_bar {
+    margin-top: 1rem!important;
+}
 /********************* Amit End ****************************/
 
 
