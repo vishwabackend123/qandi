@@ -101,7 +101,7 @@
                                     </p>
                                 </span>
                             </h3>
-                            <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                            <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
                         </div>
                         <div class="MyqMatrixMain mt-3">
                             <div class="row">
