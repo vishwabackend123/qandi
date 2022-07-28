@@ -47,19 +47,19 @@
                                     <div class="mock_test_ques_dure_marks_sub d-flex">
                                         <div class="mock_test_ques_content">
                                             <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                            <div class="mock_test_q_d_m_s_text2">{{$questions_count}} MCQ</div>
+                                            <div class="mock_test_qdms_text2">{{$questions_count}} MCQ</div>
                                         </div>
                                         <div class="mock_test_dure_content">
                                             <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                            <div class="mock_test_q_d_m_s_text2"><span>{{$exam_fulltime}}</span><span>Mins</span></div>
+                                            <div class="mock_test_qdms_text2"><span>{{$exam_fulltime}}</span><span>Mins</span></div>
                                         </div>
                                         <div class="mock_test_marks_content">
                                             <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                            <div class="mock_test_q_d_m_s_text2">{{$total_marks}}</div>
+                                            <div class="mock_test_qdms_text2">{{$total_marks}}</div>
                                         </div>
                                         <div class="mock_test_sub_content">
                                             <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                            <div class="mock_test_q_d_m_s_text2">{{$tagrets}}</div>
+                                            <div class="mock_test_qdms_text2">{{$tagrets}}</div>
                                         </div>
                                     </div>
                                 </div>

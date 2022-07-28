@@ -93,7 +93,7 @@
                      <div class="tablist">
                         <ul class="nav nav-tabs" role="tablist">
                            <li class="nav-item pe-5 me-2">
-                              <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test">Mock Test</a>
+                              <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test">Live Exam</a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted">Attempted</a>
@@ -147,7 +147,7 @@
                            <div class="accordion mt-4 pt-1" id="accordionExample">
                               <div class="allscrollbar">
                                  <div class="accordion-item">
-                                    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                    <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                        <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                        <h3 class="m-0">15 April 2021</h3>
                                        <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between" id="headingOne">
@@ -190,7 +190,7 @@
                                  </div>
 
                                  <div class="accordion-item pt-4">
-                                    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                    <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                        <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                        <h3 class="m-0">15 April 2021</h3>
                                        <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between" id="headingTwo">
@@ -233,7 +233,7 @@
                                  </div>
                               </div>
                               <div class="accordion-item pt-4">
-                                 <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                                 <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                     <h2 class="m-0">JEE Main - Full Syllabus- 2022</h2>
                                     <h3 class="m-0">15 April 2021</h3>
                                     <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between" id="headingThree">
