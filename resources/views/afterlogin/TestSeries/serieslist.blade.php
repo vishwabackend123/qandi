@@ -37,14 +37,14 @@
                                     </ul>
                                 </div>
                                 <div class="accordion mt-4 pt-1" id="open_test_div">
-                                    <div class="allscrollbar">
+                                    <div class="allscrollbar tablescroll">
                                         @if(!empty($open_series))
                                         @foreach($open_series as $open)
                                         <div class="accordion-item pt-4">
                                             <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                                 <h2 class="m-0">{{$open->test_series_name}}</h2>
-                                                <h2 class="m-0"><strong>{{$open->questions_count}} Questions</strong></h2>
-                                                <h2 class="m-0"><strong>{{$open->time_allowed}} minutes</strong></h2>
+                                                <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2>
+                                                <h2 class="m-0 mintext">{{$open->time_allowed}} minutes</h2>
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
                                                     <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="accordion mt-4 pt-1" id="live_test_div">
-                                    <div class="allscrollbar">
+                                    <div class="allscrollbar tablescroll">
                                         @php
                                         $i=0;
                                         @endphp
@@ -78,10 +78,10 @@
                                         <div class="accordion-item pt-4">
                                             <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                                 <h2 class="m-0">{{$live->test_series_name}}</h2>
-                                                <h2 class="m-0"><strong>{{$live->questions_count}} Questions</strong></h2>
-                                                <h2 class="m-0"><strong>{{$live->time_allowed}} minutes</strong></h2>
+                                                <h2 class="m-0 questiontext">{{$live->questions_count}} Questions</h2>
+                                                <h2 class="m-0 mintext">{{$live->time_allowed}} minutes</h2>
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
-                                                    <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
                                                         <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
