@@ -166,7 +166,7 @@
             <h3 class="commonheading">Mock Test</h3>
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
-                    <span class="d-block mb-2 commontext">Question Attempted</span>
+                    <span class="d-block mb-2 commontext">Questions Attempted</span>
                     <label class="m-0 commonboldtext">80/100</label>
                 </div>
                 <div class="time-date-block">

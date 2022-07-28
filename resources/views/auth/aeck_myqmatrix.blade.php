@@ -111,7 +111,7 @@
                                             <h6>Evaluation</h6>
                                         </div>
                                         <div class="aeck_myqinner_p">
-                                            <p>Evaluation tells you your problem solving skills.
+                                            <p>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights.
                                             </p>
                                         </div>
                                         <div class="myqbottomSec aeck_myqbottomSec">
@@ -129,7 +129,7 @@
                                             <h6>Application</h6>
                                         </div>
                                         <div class="aeck_myqinner_p">
-                                            <p>Application tells you your problem solving skills.
+                                            <p>Application skill indicates your ability to use the information in a new way.
                                             </p>
                                         </div>
                                         <div class="myqbottomSec aeck_myqbottomSec">
@@ -149,7 +149,7 @@
                                             <h6>Comprehension</h6>
                                         </div>
                                         <div class="aeck_myqinner_p">
-                                            <p>Comprehension tells you your problem solving skills.
+                                            <p>Comprehension skill determines your ability to understand.
                                             </p>
                                         </div>
                                         <div class="myqbottomSec aeck_myqbottomSec">
@@ -167,7 +167,7 @@
                                             <h6>Knowledge</h6>
                                         </div>
                                         <div class="aeck_myqinner_p">
-                                            <p>Knowledge tells you your problem solving skills.
+                                            <p>Knowledge skill determines your ability to recall.
                                             </p>
                                         </div>
                                         <div class="myqbottomSec aeck_myqbottomSec">
@@ -196,7 +196,7 @@
                                             <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#application">Application</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Complrehension</a>
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Comprehension</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#knowledge">Knowledge</a>

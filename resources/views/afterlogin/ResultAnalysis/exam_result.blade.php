@@ -26,7 +26,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             <h3 class="commonheading">{{$exam_name}}</h3>
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
-                    <span class="d-block mb-2 commontext">Question Attempted</span>
+                    <span class="d-block mb-2 commontext">Questions Attempted</span>
                     <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
                 </div>
                 <div class="time-date-block">

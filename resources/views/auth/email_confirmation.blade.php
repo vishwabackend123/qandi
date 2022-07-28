@@ -35,7 +35,7 @@
             </svg>
         </div>
         <p><span>Email successfully Verified</span></p>
-        <p><label><b>{{$email_id}}</b> is now Verified </label></p>
+        <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
         <a href="{{ url('/dashboard') }}" class="btn btn-common-green"> Continue</a>
     </div>
 </div>

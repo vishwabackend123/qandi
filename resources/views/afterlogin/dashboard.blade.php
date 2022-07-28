@@ -95,7 +95,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext mb-3">Supporting text for better interaction on this section</p>
+                                    <p class="dashSubtext mb-3">Map your subject journey. Aim for complete circle.</p>
                                 </div>
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
@@ -285,7 +285,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <li>
                                                         <div class="tasklistleft">
                                                             <h6>Task {{$key+1}}</h6>
-                                                            <h4>Time Management</h4>
+                                                            <h4>Comprehension Skills</h4>
                                                             <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
                                                         @if($data['allowed'] == '1')
@@ -391,7 +391,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </p>
                                     </span>
                                 </h3>
-                                <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                                <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
                             </div>
                             @if(!empty($myq_matrix))
                             <div class="MyqMatrixMain mt-3">
@@ -562,11 +562,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </div>
                                             <div class="plannedtestbox">
                                                 <div class="plannedtest">
-                                                    <p class="m-0 AttempType"> Planned tests</p>
+                                                    <p class="m-0 AttempType">Planned Tests</p>
                                                     <p class="m-0 testCount">{{$planned_test_cnt}}</p>
                                                 </div>
                                                 <div class="plannedtest">
-                                                    <p class="m-0 AttempType">Attempted Test</p>
+                                                    <p class="m-0 AttempType">Attempted Tests</p>
                                                     <p class="m-0 testCount">{{$attempted_test_cnt}}</p>
                                                 </div>
                                             </div>
@@ -729,7 +729,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                                 @else
                                                 <div class="graphDetailempty w-100">
-                                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
                                                     <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                 </div>
                                                 @endif
@@ -850,6 +850,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Strengths</div>
                         <hr>
                         <div class="instruction_text_content">
+                           
                             Going great. Find your strong topics here. Stay in the lead by revision.
                         </div>
                     </div>
