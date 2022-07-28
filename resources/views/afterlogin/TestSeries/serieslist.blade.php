@@ -81,7 +81,7 @@
                                                 <h2 class="m-0 questiontext">{{$live->questions_count}} Questions</h2>
                                                 <h2 class="m-0 mintext">{{$live->time_allowed}} minutes</h2>
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
-                                                    <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
                                                         <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
