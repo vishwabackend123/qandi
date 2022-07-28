@@ -2066,6 +2066,9 @@ a.btn-common-attempted svg {
       padding-left: 16px;
       margin-right: 16px;
   }
+  #question_section{
+    margin-left: -6px;
+  }
   .btn.questionbtn.Clearbtn {
       padding: 8px 16px;
       border-radius: 8px;
@@ -2769,8 +2772,8 @@ line-height: 1.6;
 .autoHeight{height: auto !important;   transition: transform 0.3s ease-in-out;}
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
 .quest_btn{position: absolute;top: -5px;}
-.qprev {left: 11px; }
-.qnext{right:11px; ;}
+.qprev {left: 0px; }
+.qnext{right:0px; ;}
 .qnext , .qprev  {font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
