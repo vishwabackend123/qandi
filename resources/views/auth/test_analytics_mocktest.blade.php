@@ -647,7 +647,7 @@
                 </div>
                 
             </div>
-            <div class="mt-3 text-end">
+            <div class="text-end" style="margin-top:20px;">
                 <button class="btn btn-common-transparent scroll-top"  style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
