@@ -42,7 +42,7 @@
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
-        .boxheading .tooltipmain{margin-left:5px;}
+        /* .boxheading .tooltipmain{margin-left:5px;} */
 .subCard h3 {
     font-size: 15px;
     font-weight: 800;
@@ -81,7 +81,7 @@
         .owl-carousel .owl-item .subIcon img {
             width: 50px;
         }
-    
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {padding: 0.5rem 0.6rem;}
 }
 @media only screen and (max-width: 1300px){
     .selectPlan {
@@ -102,6 +102,7 @@
         margin-right: 4px;
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0.5rem 0.6rem;}
 }
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
@@ -756,6 +757,7 @@
 
     /************ Shiv start for notification 28-07-2022 ************/
     .notification-main>h2 a { color: #56b663;}
+    /************ End for notification 28-07-2022 ************/
 
 }
 
