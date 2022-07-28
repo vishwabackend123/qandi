@@ -263,7 +263,7 @@ $question_type = "Numerical";
     /*  $('#clearBtn_response').attr("disabled", true);
     $('#clearBtn_response').removeClass("Clearbtnenable"); */
     var quest_id = '{{$activeq_id}}';
-    alert()
+
     var option_id = [];
     var current_question_type = $("#current_question_type").val();
 
