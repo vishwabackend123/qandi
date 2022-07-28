@@ -118,7 +118,7 @@
                               </div>
                               <div class="mock_test_dure_content">
                                  <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                 <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                 <div class="mock_test_qdms_text2"><span>180</span> <span>Mins</span></div>
                               </div>
                               <div class="mock_test_marks_content">
                                  <div class="mock_test_q_d_m_s_text1">Marks</div>
@@ -156,7 +156,7 @@
                                        </div>
                                        <div class="mock_test_dure_content2">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text2"><span>180</span> <span>Mins</span></div>
                                        </div>
                                        <div class="mock_test_marks_content2">
                                           <div class="mock_test_q_d_m_s_text1">Marks</div>
@@ -203,7 +203,7 @@
                                        </div>
                                        <div class="mock_test_dure_content2">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text2"><span>180</span> <span>Mins</span></div>
                                        </div>
                                        <div class="mock_test_marks_content2">
                                           <div class="mock_test_q_d_m_s_text1">Marks</div>
@@ -250,7 +250,7 @@
                                        </div>
                                        <div class="mock_test_dure_content2">
                                           <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                          <div class="mock_test_qdms_text2"><span>180</span><span>Mins</span></div>
+                                          <div class="mock_test_qdms_text2"><span>180</span> <span>Mins</span></div>
                                        </div>
                                        <div class="mock_test_marks_content2">
                                           <div class="mock_test_q_d_m_s_text1">Marks</div>

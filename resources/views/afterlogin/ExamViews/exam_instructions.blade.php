@@ -21,13 +21,13 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
-                        <a href=""> Mock Test</a>
+                        <a href="" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Mock Test</a>
                     </div>
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
                     <div class="exam_instruction_text_under_text">Prior to taking the test, please read through all of the instruction sections carefully.</div>
                     <div class="exam_instruction_scrolling">
                         <div>
-                            <div class="exam_inst_sec_head"><b>1. General</b></div>
+                            <div class="exam_inst_sec_head"><b>1. <span>General<span></b></div>
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} minutes</b></li>
@@ -38,7 +38,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                         <div>
                             <div class="exam_inst_sec_head_flex">
-                                <div class="exam_inst_sec_head"><b>2. Physics</b></div>
+                                <div class="exam_inst_sec_head"><b>2. <span>Physics</span></b></div>
                                 <div class="exam_inst_sec_head_padding">
                                     <span>Total Marks:</span>
                                     <span><b>100</b></span>
@@ -59,7 +59,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                         <div>
                             <div class="exam_inst_sec_head_flex">
-                                <div class="exam_inst_sec_head"><b>3. Chemistry</b></div>
+                                <div class="exam_inst_sec_head"><b>3. <span>Chemistry</span></b></div>
                                 <div class="exam_inst_sec_head_padding">
                                     <span>Total Marks:</span>
                                     <span><b>100</b></span>
@@ -80,7 +80,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                         <div>
                             <div class="exam_inst_sec_head_flex">
-                                <div class="exam_inst_sec_head"><b>4. Mathematics</b></div>
+                                <div class="exam_inst_sec_head"><b>4. <span>Mathematics</span></b></div>
                                 <div class="exam_inst_sec_head_padding">
                                     <span>Total Marks:</span>
                                     <span><b>100</b></span>

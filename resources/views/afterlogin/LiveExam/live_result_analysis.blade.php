@@ -325,9 +325,9 @@
                                                 <div class="noofquestions-block">
                                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                                     <div class="color_labels">
-                                                        <span class="d-block"><small></small> Correct <b>6</b></span>
-                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>1</b></span>
-                                                        <span class="d-block"><small></small> Not Attempted <b>1</b></span>
+                                                        <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
+                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                        <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
                                                     </div>
                                                 </div>
                                             </div>

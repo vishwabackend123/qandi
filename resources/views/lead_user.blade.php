@@ -85,7 +85,7 @@
             <h2>Provide email to start journey</h2>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email Address">
+                <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email Address" maxlength="35">
                 <span class="email_error" style="color:red">Please enter valid email id</span>
                 @if($trail==1)
                 <button type="button" id="free_trail" class="btn btn-common-green text-white trail">Start Free Trial</button>

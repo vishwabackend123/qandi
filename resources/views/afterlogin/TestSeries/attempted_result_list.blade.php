@@ -71,7 +71,7 @@
                 </div>
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Duration</div>
-                    <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span><span>Mins</span></div>
+                    <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
                 </div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Marks</div>
