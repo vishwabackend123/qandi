@@ -4037,7 +4037,7 @@ header {
     border: 0px;
     font-size: 16px;
     font-weight: 800;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #363c4f;
     border-bottom: 4px solid #363c4f;
     opacity: 1;
@@ -4637,7 +4637,7 @@ justify-content: space-between;}
 }
 
 .exam_inst_ul_li {
-    padding-left: 50px;
+    padding-left: 40px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.3;
@@ -5375,13 +5375,13 @@ padding: 11px 20px!important;
 .jee_main_text_take_test__btn
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;align-items: center;
 }
 .mock_exam_jee_main_text h3
 {
     font-size: 20px;
     font-weight: 800;
-    line-height: normal;
+    line-height: normal;margin-bottom:0px;
     letter-spacing: normal;
     color: #363c4f;
 }
