@@ -5395,7 +5395,10 @@ padding: 11px 20px!important;
 }
 .mock_test_take_test_btn
 {
-    min-width: unset!important;
+    font-size: 16px!important;
+    min-width: 112px!important;
+    max-width: 112px;
+    height: 44px;
 }
 .mock_test_ques_dure_marks_sub
 {
