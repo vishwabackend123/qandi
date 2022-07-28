@@ -172,7 +172,16 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->user_rank}}
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
+                                @php
+                                    $number = $rankResponse->user_rank;
+                                    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+                                    if (($number %100) >= 11 && ($number%100) <= 13){ 
+                                        $abbreviation='th' ; 
+                                    } else {
+                                     $abbreviation=$ends[$number % 10]; 
+                                     } 
+                                     @endphp
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
