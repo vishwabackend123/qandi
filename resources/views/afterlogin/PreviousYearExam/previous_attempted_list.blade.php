@@ -97,10 +97,13 @@
 </div>
 <script type="text/javascript">
 $('.view_details').click(function() {
+   
     var text_data = $(this).text();
     if (text_data === 'View details') {
+        $(this).parents('.compLeteS').addClass('list_active');
         $(this).text('Hide details');
     } else if (text_data === 'Hide details') {
+        $(this).parents('.compLeteS').removeClass('list_active');
         $(this).text('View details');
     }
 });

@@ -978,6 +978,8 @@ class AdpativeExamController extends Controller
             $response_data = json_decode($response_json);
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
+            //  dd($request,  $response_data);
+
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
 

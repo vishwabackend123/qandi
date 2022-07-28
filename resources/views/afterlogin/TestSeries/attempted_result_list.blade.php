@@ -107,13 +107,16 @@
 <script type="text/javascript">
 $('.no_data_found').hide();
 $('.view_details').click(function() {
+   
     var text_data = $(this).text();
     var ids = parseInt($(this).attr('data-id'));
     var toggel = $('#chapter_' + ids).hasClass('show');
     if (text_data === 'View details') {
+        $(this).parents('.compLeteS').addClass('list_active');
         $(this).text('Hide details');
         $('#chapter_' + ids).addClass('show');
     } else if (text_data === 'Hide details') {
+        $(this).parents('.compLeteS').removeClass('list_active');
         $(this).text('View details');
         $('#chapter_' + ids).removeClass('show');
     }
