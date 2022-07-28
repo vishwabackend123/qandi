@@ -753,6 +753,10 @@
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px;}
     .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
+
+    /************ Shiv start for notification 28-07-2022 ************/
+    .notification-main>h2 a { color: #56b663;}
+
 }
 
 @media only screen and (max-width: 576px){
