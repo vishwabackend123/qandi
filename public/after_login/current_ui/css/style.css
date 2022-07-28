@@ -2066,6 +2066,9 @@ a.btn-common-attempted svg {
       padding-left: 16px;
       margin-right: 16px;
   }
+  #question_section{
+    margin-left: -6px;
+  }
   .btn.questionbtn.Clearbtn {
       padding: 8px 16px;
       border-radius: 8px;
@@ -2769,8 +2772,8 @@ line-height: 1.6;
 .autoHeight{height: auto !important;   transition: transform 0.3s ease-in-out;}
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
 .quest_btn{position: absolute;top: -5px;}
-.qprev {left: 11px; }
-.qnext{right:11px; ;}
+.qprev {left: 0px; }
+.qnext{right:0px; ;}
 .qnext , .qprev  {font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
@@ -3289,6 +3292,9 @@ h3.commonheading{
     border-radius: 6px;
     background-color: #e0f5e3;
 }
+.common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
+.common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
+
 .common_greenbadge_tabs ul.nav .btn.nav-link {
     background-color: transparent;
     color: #363c4f;
@@ -3304,7 +3310,7 @@ h3.commonheading{
 }
 .your_rank small {
     border-radius: 8px;
-    background-color: #f5faf6;
+    background-color: #e0f6e3;
     padding: 15px;
     width: 52px;
     height: 52px;
@@ -3494,6 +3500,8 @@ span.mendatfield {
 .time_management_stacked_barchart .graph_color_label_anwser span:last-child small {background-color: #f7758f;}
 .question-attempted-block {
     border-right: 1px solid #cde3d0;
+    padding-right: 65px;
+    margin-right: 36px;
 }
 .export_rank_card .d-flex.mt-4 , .marks_percentage_export_card .d-flex{max-width:400px;}
 .paratext{font-size: 14px;font-weight: 500;color:#868a95;line-height: 1.6;}
@@ -4440,6 +4448,9 @@ justify-content: space-between;}
     transform: rotate(180deg);top: 0px;
     position: relative;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
+    .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
+    .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
+
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
