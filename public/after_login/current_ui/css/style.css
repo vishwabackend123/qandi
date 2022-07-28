@@ -3313,8 +3313,6 @@ h3.commonheading{
 }
 .progress-bar.incorrect-bg {
     background-color: #fb7686;
-	border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
 }
 .progress-bar.not-attempted-bg {
     background-color: #e5eaee;
@@ -3635,6 +3633,14 @@ padding: 20px;
     margin-top: 1rem!important;
 }
 .flexgrow{flex-grow: 1;}
+.test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 209px;height: 44px;font-size: 16px;}
+.test_analytics_wrapper .dashSubtext{color:#868a95;opacity: 1;}
+.test_analytics_wrapper .subject_score_card .color_labels span b {color: #111;}
+.test_analytics_wrapper .topic_score_lists .topic_score_bar h4 {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.test_analytics_wrapper  .halfdoughnut2{height: 173px;width: 173px;}
+.progress-bar:nth-child(2){	border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;}
+
 /********************* Amit End ****************************/
 
 
