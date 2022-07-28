@@ -887,7 +887,7 @@ padding: 32px 24px 32px 32px !important;
      font-size: 14px;
   font-weight: 500;
     color: #1f1f1f;
-    flex: 1;margin-top:3px;
+    flex: 1;margin-top:3px!important;
 }
 .test-table h3 span{
     font-size: 16px;
@@ -4414,8 +4414,9 @@ justify-content: space-between;}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
-.test-table.list_active  h2,.test-table.list_active  h3{font-weight: 800;}
-
+.compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800;}
+.compLeteS.list_active{border-bottom:0px;}
+.test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
