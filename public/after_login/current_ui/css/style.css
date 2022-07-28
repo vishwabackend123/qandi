@@ -1970,6 +1970,7 @@ a.btn-common-attempted svg {
       font-weight: bold;
       display: flex;
       background: #ffffff;
+      align-items: center;
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
       background: #ffffff;
@@ -2018,10 +2019,12 @@ a.btn-common-attempted svg {
       padding: 1px 6px;
       border-radius: 2px;
       line-height: 18px;
+      font-weight: bold;
   }
   .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
       background-color: #56b663;
       color: #ffffff;
+      font-weight: 600;;
   }
   .fancy-radio-buttons.with-image {
       justify-content: center;
@@ -2103,7 +2106,9 @@ a.btn-common-attempted svg {
       padding-top: 20px;
       font-size: 16px;
       font-weight: 800;
+      color: #363c4f;
   }
+  .optionText p{font-weight: bold;}
   
   button.btn-ans {
       background: #56b663;
@@ -2113,6 +2118,13 @@ a.btn-common-attempted svg {
       font-size: 12px;
       font-weight: 800;
       padding: 0 !important;
+  }
+  .Clearbtnenable{
+    color: #d92d20 !important;
+  }
+
+  .optionText p{
+    margin-bottom: 0px;
   }
   
   .text-exambottom-sec {
@@ -3277,6 +3289,9 @@ h3.commonheading{
     border-radius: 6px;
     background-color: #e0f5e3;
 }
+.common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
+.common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
+
 .common_greenbadge_tabs ul.nav .btn.nav-link {
     background-color: transparent;
     color: #363c4f;
@@ -4428,6 +4443,9 @@ justify-content: space-between;}
     transform: rotate(180deg);top: 0px;
     position: relative;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
+    .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
+    .tablescroll{height:calc(100vh - 350px);overflow-y: auto;padding-right:10px;}
+
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/

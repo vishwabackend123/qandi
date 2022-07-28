@@ -36,7 +36,7 @@
                                 </div>
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
-                                <div class="take-fulltest d-lg-flex align-items-center justify-content-end {{($skey==0)?'d-flex':'d-none'}}"  id="{{$sub->subject_name}}_main">
+                                <div class="take-fulltest d-lg-flex align-items-center justify-content-end {{($skey==0)?'d-lg-flex':'d-none'}}"  id="{{$sub->subject_name}}_main">
                                     <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select">
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
@@ -111,7 +111,7 @@
                                                         @endif</span></h3>
                                                 <div class="accordion-header d-flex align-items-center justify-content-between pt-md-0 pt-4" id="headingTwo">
                                                     <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" class="m-0" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View topics</h4>
-                                                    <form class="w-100" method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
+                                                    <form class="w-100 text-right" method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                                                         @csrf
                                                         <input type="hidden" name="subject_id" value="">
                                                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
@@ -164,7 +164,7 @@ function showSubChapters(subject) {
     $('#' + subject + '_test').addClass('d-flex');
     $('.topic_form').attr("style", "display: none  !important");
     $('.take-fulltest').attr("style", "display: none  !important");
-    $('#' + subject + '_main').attr("style", "display: flex  !important");
+    $('#' + subject + '_main').attr("style", "display: flex");
     clearTopics();
 }
 $('.chapters-expend').hide();
@@ -274,7 +274,7 @@ function addOrRemove(value) {
             if ($(this).hasClass('active')) {
                 var ids = $(this).attr('id');
                 ids = ids.replace("_btn", "_select");
-                $('#' + ids).attr("style", "display: flex  !important");
+                $('#' + ids).attr("style", "display: flex");
             }
 
         });
