@@ -90,7 +90,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. It will also display those topics that can become your strength with a little more effort on your part. Move up the ladder. 
+                                    The platform gives you an in-depth analysis based on your accuracy in learning skills - Knowledge, Comprehension, Application and Evaluation. These have been inspired by various instructional design models which lay our foundation of cognitive development 
                                 </p>
                             </span>
                         </h3>

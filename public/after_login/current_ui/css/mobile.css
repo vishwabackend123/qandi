@@ -42,7 +42,7 @@
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
-        .boxheading .tooltipmain{margin-left:5px;}
+        /* .boxheading .tooltipmain{margin-left:5px;} */
 .subCard h3 {
     font-size: 15px;
     font-weight: 800;
@@ -81,7 +81,7 @@
         .owl-carousel .owl-item .subIcon img {
             width: 50px;
         }
-    
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {padding: 0.5rem 0.6rem;}
 }
 @media only screen and (max-width: 1300px){
     .selectPlan {
@@ -102,6 +102,7 @@
         margin-right: 4px;
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0.5rem 0.6rem;}
 }
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
@@ -257,20 +258,22 @@
 }
 @media(max-width:767px){
     .exam_tabdata {
-    padding: 16px !important;
+    padding: 16px 0 !important;
+    background: transparent !Important;   
     }
     .take-fulltest {
     padding: 12px 0;
     border-radius: 0;
-   }
+    }
     .exam_tabdata .accordion-item {
     border-radius: 10px !important;
     border: 1px solid #e5eaee;
     padding:12px;
-    margin-bottom: 16px;
+    margin-top: 16px;
     }
-    .exam_tabdata{
-    background: transparent !Important;    
+   .chapters-expend .accordion-body {
+    margin-top: 23px;
+    padding: 22px 0 0px 0 !important;
     }
     .test-table h3 {
     position: absolute;
@@ -279,7 +282,7 @@
     }
     .test-table h2 {
     width: 240px;
-}
+    }
     .planner-title h1 {
     margin: 0;
     }

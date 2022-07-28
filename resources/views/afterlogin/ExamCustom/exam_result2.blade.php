@@ -31,32 +31,7 @@
         </div>
         @endforeach
         @endif
-        <!--  <div class="col-md-6 mb-3">
-            <h5 class="mb-0">Physics</h5>
-            <div class="d-flex align-items-center">
-                <div class="halfdoughnut">
-                    <canvas id="subjectChart-1"></canvas>
-                </div>
-                <div class="color_labels ms-5">
-                    <span class="d-block">Correct <b><small></small>32</b></span>
-                    <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
-                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <h5 class="mb-0">Chemistry</h5>
-            <div class="d-flex align-items-center">
-                <div class="halfdoughnut">
-                    <canvas id="subjectChart-2"></canvas>
-                </div>
-                <div class="color_labels ms-5">
-                    <span class="d-block">Correct <b><small></small>32</b></span>
-                    <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
-                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
-                </div>
-            </div>
-        </div> -->
+       
     </div>
 </div>
 <div class="commonWhiteBox commonblockDash borderRadius">
@@ -84,12 +59,7 @@
                     </li>
                     @endforeach
                     @endif
-                    <!--  <li>
-                        <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link btn" id="pills-chemistrysub-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistrysub" type="button" role="tab" aria-controls="pills-chemistrysub" aria-selected="false">Chemistry</button>
-                    </li> -->
+                   
                 </ul>
             </div>
             <div class="col-md-6">
@@ -121,6 +91,14 @@
                                 <div class="progress-bar correct-bg" role="progressbar" style="width:{{$corr_Per}}%" aria-valuenow=" {{$corr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar incorrect-bg" role="progressbar" style="width:{{$incorr_Per}}%" aria-valuenow=" {{$incorr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$unanswered_Per}}%" aria-valuenow=" {{$unanswered_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="noofquestions-block">
+                                <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                <div class="color_labels">
+                                    <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
+                                    <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$tdata->incorrect_count}}</b></span>
+                                    <span class="d-block"><small></small> Not Attempted <b>{{$tdata->unanswered_count}}</b></span>
+                                </div>
                             </div>
                         </div>
                     </li>

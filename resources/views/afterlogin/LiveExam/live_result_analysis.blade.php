@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius"  style=" height: 292px;">
                         <h3 class="boxheading d-flex align-items-center">My Score
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -122,7 +122,8 @@
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?$response->result_percentage:0}}%</label>
-                                    <div class="overall_percentage_chart">
+                                    <div class="overall_percentage_chart graph_padd">
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec)  </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -130,7 +131,7 @@
                         </div>
                     </div>
                     @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius"  style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -152,12 +153,12 @@
                                         <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </small>
-                                <span class="d-block  commontext">Your rank</span>
+                                <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$response->user_rank}}
-                                    <!--sub style="font-size: 16px;font-weight: 500;">rd</sub--></label>
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
                             </div>
                             <div class="total_participants">
-                                <span class="d-block commontext">Total Participants</span>
+                                <span class="d-block commontext" style="color: #666;">Total Participants</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$response->total_participants}}</label>
                             </div>
                         </div>
@@ -321,6 +322,14 @@
                                                     <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                                     <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
+                                                <div class="noofquestions-block">
+                                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                    <div class="color_labels">
+                                                        <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
+                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                        <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
                                         @endif
@@ -336,7 +345,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-3 text-end">
+            <div class="text-end" style="margin-top:20px;">
                 <button class="btn btn-common-transparent scroll-top" style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
@@ -380,8 +389,8 @@ const myChart = new Chart(ctx, {
             data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
-                '#6ee7b7',
-                '#56b663'
+                        '#56b663',
+                        '#08d5a1'
             ],
             barPercentage: 5,
             barThickness: 80,
