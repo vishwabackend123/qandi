@@ -26,7 +26,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             <h3 class="commonheading">{{$exam_name}}</h3>
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
-                    <span class="d-block mb-2 commontext">Question Attempted</span>
+                    <span class="d-block mb-2 commontext">Questions Attempted</span>
                     <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
                 </div>
                 <div class="time-date-block">
@@ -136,7 +136,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?$scoreResponse->result_percentage:0}}%</label>
-                                    <div class="overall_percentage_chart">
+                                    <div class="overall_percentage_chart graph_padd">
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec)  </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -147,7 +148,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -169,11 +170,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </small>
-                                <span class="d-block  commontext">Your rank</span>
-                                <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->user_rank}}</label>
+                                <span class="d-block  commontext" style="color: #666;">Your rank</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->user_rank}}
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
                             </div>
                             <div class="total_participants">
-                                <span class="d-block commontext">Total Participants</span>
+                                <span class="d-block commontext" style="color: #666;">Total Participants</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->total_participants}}</label>
                             </div>
                         </div>
@@ -184,7 +186,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 </div>
 
             </div>
-            <div class="mt-3 text-end">
+            <div class="text-end" style="margin-top:20px;">
                 <button class="btn btn-common-transparent scroll-top" style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
@@ -250,8 +252,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                     data: ['{{$stuscore}}', '{{$clsAvg}}'],
                     label: '',
                     backgroundColor: [
-                        '#6ee7b7',
-                        '#56b663'
+                        '#56b663',
+                        '#08d5a1'
                     ],
                     barPercentage: 5,
                     barThickness: 80,

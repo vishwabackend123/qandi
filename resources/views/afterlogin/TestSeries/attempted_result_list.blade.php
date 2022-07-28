@@ -29,7 +29,7 @@
 @foreach($result_data as $sche)
 <div class="compLeteS accordion-item pt-4 {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
-        <h2 class="m-0">
+        <h2 class="m-0 mt-1">
             @if($sche->test_series_name)
             {{$sche->test_series_name}}
             @elseif($sche->live_exam_name)
