@@ -21,7 +21,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     <div class="content-wrapper test_analytics_wrapper">
         <div class="container-fluid">
             <div class="mock_inst_text_mock_test mb-4">
-                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
+                <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             <h3 class="commonheading">{{$exam_name}}</h3>
             <div class="d-flex mt-4 mb-4 align-items-end">
@@ -237,7 +237,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                 window.history.pushState(null, "", window.location.href);
             };
         });
-        
     </script>
     <!-- browser back disable -->
     <script>
@@ -320,7 +319,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             labels: ["Correct", "Incorrect", "Not Attempted"],
             datasets: [{
                 label: "My First Dataset",
-                data: [10, 10, 55],
+                data: [<?php echo $correct_per_pie; ?>, <?php echo $incorrect_per_pie; ?>, <?php echo $not_attempt_per_pie; ?>],
                 backgroundColor: [
                     "#08d5a1",
                     "#fb7686",
