@@ -5541,7 +5541,7 @@ td.mymatrix_table_point
 {
     width: 57%;
 }
-
+.exam_tabdata .accordion-collapse.show .accordion-body{border-bottom:0px;}
 
 
 
