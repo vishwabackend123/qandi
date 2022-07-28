@@ -4451,7 +4451,10 @@ justify-content: space-between;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
     .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
-
+   .liveexamScroll{height: calc(100vh - 542px);
+    overflow-y: auto;
+    padding-right: 10px;
+    overflow-x: hidden;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5423,6 +5426,7 @@ padding: 11px 20px!important;
     min-width: 112px!important;
     max-width: 112px;
     height: 44px;
+    padding: 8px 16px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
@@ -5530,7 +5534,7 @@ padding: 11px 20px!important;
   flex-grow: 0;
   background-color: #d92d20;
   border-radius: 25px;
-  margin-top: -9px;
+  margin-top: 0px;
 }
 .live_exam_upcoming_text
 {
