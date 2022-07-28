@@ -38,3 +38,10 @@
     <h5>Topic not available</h5>
 </div>
 @endif
+<script>
+$(document).ready(function(){    
+    $('.addremovetopic').on('click', function(e) {           
+    $(this).parent().parent().toggleClass('examborderchange');            
+    });    
+});    
+</script>
