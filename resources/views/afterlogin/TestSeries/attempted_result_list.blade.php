@@ -28,7 +28,7 @@
 @if(!empty($result_data))
 @foreach($result_data as $sche)
 <div class="compLeteS accordion-item pt-4 {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
-    <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
+    <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
         <h2 class="m-0">
             @if($sche->test_series_name)
             {{$sche->test_series_name}}
@@ -107,13 +107,16 @@
 <script type="text/javascript">
 $('.no_data_found').hide();
 $('.view_details').click(function() {
+   
     var text_data = $(this).text();
     var ids = parseInt($(this).attr('data-id'));
     var toggel = $('#chapter_' + ids).hasClass('show');
     if (text_data === 'View details') {
+        $(this).parents('.test-table').addClass('list_active');
         $(this).text('Hide details');
         $('#chapter_' + ids).addClass('show');
     } else if (text_data === 'Hide details') {
+        $(this).parents('.test-table').removeClass('list_active');
         $(this).text('View details');
         $('#chapter_' + ids).removeClass('show');
     }
