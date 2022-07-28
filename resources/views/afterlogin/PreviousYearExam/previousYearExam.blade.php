@@ -233,7 +233,7 @@ $question_type = "Numerical";
 
                                                                     <div class="colMargin">
                                                                         <div class="image-container markerDiv">
-                                                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
+                                                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
                                                                             <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
                                                                         </div>
                                                                     </div>
@@ -245,7 +245,7 @@ $question_type = "Numerical";
                                                                     <div class="colMargin">
                                                                         <div class="inputAns">
                                                                             <label for="story">Answer</label>
-                                                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     @endif
@@ -285,7 +285,7 @@ $question_type = "Numerical";
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button>
-                                <button class="btn questionbtn Clearbtn quesBtn" onclick="clearResponse()">Clear Response</button>
+                                <button class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
@@ -934,6 +934,8 @@ $question_type = "Numerical";
             });
         }
 
+
+
         /* Saved question response */
         function saveAnswer() {
             var question_id = $("#current_question").val();
@@ -1243,10 +1245,36 @@ $question_type = "Numerical";
                         $("#btn_" + quest_id).find('i').remove();
                         $("#btn_" + quest_id).html(qNo);
                     }
-
+                    checkResponse(quest_id);
                 },
             });
 
+        }
+
+        function checkResponse(quest_id) {
+            var option_id = [];
+            var current_question_type = $("#current_question_type").val();
+
+            if (current_question_type == 11) {
+                var res_value = $("#quest_option_" + quest_id).val();
+
+                if (res_value != '') {
+                    option_id.push($("#quest_option_" + quest_id).val());
+                }
+
+            } else {
+                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                    option_id.push($(this).val());
+                });
+            }
+            console.log(option_id);
+            if (option_id.length > 0) {
+                $('#clearBtn_response').attr("disabled", false);
+                $('#clearBtn_response').addClass("Clearbtnenable");
+            } else {
+                $('#clearBtn_response').attr("disabled", true);
+                $('#clearBtn_response').removeClass("Clearbtnenable");
+            }
         }
 
         function get_subject_question(subject_id) {

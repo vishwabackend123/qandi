@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 
 @section('content')
+
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -202,7 +203,7 @@ $question_type = "Numerical";
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button>
-                                <button id="clearBtn_{{$activeq_id}}" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                                <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
@@ -759,31 +760,7 @@ $question_type = "Numerical";
 
         /* per question timer end */
         /* per question timer end */
-        function checkResponse(quest_id) {
-            var option_id = [];
-            var current_question_type = $("#current_question_type").val();
 
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + quest_id).val();
-
-                if (res_value != '') {
-                    option_id.push($("#quest_option_" + quest_id).val());
-                }
-
-            } else {
-                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-                    option_id.push($(this).val());
-                });
-            }
-            console.log(option_id);
-            if (option_id.length > 0) {
-                $('#clearBtn_' + quest_id).attr("disabled", false);
-                $('#clearBtn_' + quest_id).addClass("Clearbtnenable");
-            } else {
-                $('#clearBtn_' + quest_id).attr("disabled", true);
-                $('#clearBtn_' + quest_id).removeClass("Clearbtnenable");
-            }
-        }
         /* getting Next Question Data */
         function qnext(question_id) {
 
@@ -1182,10 +1159,36 @@ $question_type = "Numerical";
                         $("#btn_" + quest_id).find('i').remove();
                         $("#btn_" + quest_id).html(qNo);
                     }
-
+                    checkResponse(quest_id);
                 },
             });
 
+        }
+
+        function checkResponse(quest_id) {
+            var option_id = [];
+            var current_question_type = $("#current_question_type").val();
+
+            if (current_question_type == 11) {
+                var res_value = $("#quest_option_" + quest_id).val();
+
+                if (res_value != '') {
+                    option_id.push($("#quest_option_" + quest_id).val());
+                }
+
+            } else {
+                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                    option_id.push($(this).val());
+                });
+            }
+            console.log(option_id);
+            if (option_id.length > 0) {
+                $('#clearBtn_response').attr("disabled", false);
+                $('#clearBtn_response').addClass("Clearbtnenable");
+            } else {
+                $('#clearBtn_response').attr("disabled", true);
+                $('#clearBtn_response').removeClass("Clearbtnenable");
+            }
         }
 
         function get_subject_question(subject_id) {
