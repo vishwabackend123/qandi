@@ -830,6 +830,11 @@ padding: 32px 24px 32px 32px !important;
   padding: 12px 16px;
   border-radius: 12px;
 }
+.filterdropdown{
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(164 172 178 / 10%);    
+}
 .take-fulltest .btn {
     height: 44px;
     min-width: 141px !important;
@@ -865,7 +870,7 @@ padding: 32px 24px 32px 32px !important;
      font-size: 14px;
   font-weight: 500;
     color: #1f1f1f;
-    flex: 1;
+    flex: 1;margin-top:3px;
 }
 .test-table h3 span{
     font-size: 16px;
@@ -878,7 +883,7 @@ padding: 32px 24px 32px 32px !important;
   font-weight: 800;
     color: #56b663;
     cursor: pointer;
-    flex-basis: 200px;
+    flex-basis: 200px;margin-bottom:0px;margin-top:3px;
 }
 .test-table .accordion-header{
 flex-basis: 246px;   
@@ -6404,12 +6409,21 @@ border-color: #56b663;
     width: 100%;
     margin-top: 40px;
 }
+.email-sec input#exampleFormControlInput1::placeholder {
+    color: rgba(54, 60, 79, 0.5);
+}
 
 .terms-sec {
-    padding: 34px 0px;
+    padding: 34px 0px 0px;
     text-align: center;
     font-size: 14px;
     line-height: 1.6;
+}
+.email-sec {
+    padding: 40px 0px 0px;
+}
+.logo_sec {
+    padding-bottom: 10px;
 }
 .terms-sec p > a {
     color: #a9e1b0;

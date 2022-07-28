@@ -60,7 +60,7 @@ $question_type = "Numerical";
                                     </p> -->
                                     <div class="quesbox">
                                         <p>{!! $question_text !!}
-                                            </p>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -85,8 +85,8 @@ $question_type = "Numerical";
 
                                     <div class="colMargin">
                                         <div class="image-container markerDiv">
-                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
-                                            <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" />
+                                            <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}.</span> <span class="optionText">{!! $opt_value !!}</span> </label>
                                         </div>
                                     </div>
                                     @php $no++; @endphp
