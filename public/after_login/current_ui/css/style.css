@@ -4444,7 +4444,7 @@ justify-content: space-between;}
     position: relative;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
-    .tablescroll{height:calc(100vh - 350px);overflow-y: auto;padding-right:10px;}
+    .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
 
 /********* Shubham End ***********/
 
