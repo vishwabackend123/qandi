@@ -132,7 +132,7 @@
                         </div>
                         <div id="attempted2" class=" tab-pane">
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                              <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                  <h2 class="m-0">Mock Test</h2>
                                  <h3 class="m-0">17 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
@@ -179,7 +179,7 @@
                               </div>
                            </div>
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                              <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                  <h2 class="m-0">Mock Test</h2>
                                  <h3 class="m-0">17 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
@@ -226,7 +226,7 @@
                               </div>
                            </div>
                            <div class="accordion-item pt-4">
-                              <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+                              <div class="test-table d-flex align-items-baseline justify-content-between live_mock_exam_section">
                                  <h2 class="m-0">Mock Test</h2>
                                  <h3 class="m-0">17 April 2021</h3>
                                  <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
