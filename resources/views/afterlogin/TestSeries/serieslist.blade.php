@@ -104,7 +104,7 @@
                                             <h5>No series avialable.</h5>
                                         </div>
                                         @endif
-                                        @if($i <= 0) <div class="row text-center p-4">
+                                        @if(!empty($live_series) && $i <= 0) <div class="row text-center p-4">
                                             <h5>No series avialable.</h5>
                                     </div>
                                     @endif
@@ -122,98 +122,99 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    $('.testslider').owlCarousel({
-        stagePadding: 0,
-        loop: false,
-        margin: 15,
-        nav: false,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1,
-                nav: false,
-                stagePadding: 40,
-                margin: 5,
-                loop: true,
-            },
-            700: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            },
-            1200: {
-                items: 4
-            }
-
-
+$('.testslider').owlCarousel({
+    stagePadding: 0,
+    loop: false,
+    margin: 15,
+    nav: false,
+    dots: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false,
+            stagePadding: 40,
+            margin: 5,
+            loop: true,
+        },
+        700: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        },
+        1200: {
+            items: 4
         }
-    });
+
+
+    }
+});
+$('#live_test_div').hide();
+$('.open_test').click(function() {
+    $('#open_test_div').show();
     $('#live_test_div').hide();
-    $('.open_test').click(function() {
-        $('#open_test_div').show();
-        $('#live_test_div').hide();
-        $(this).addClass('active');
-        $('.live_test').removeClass('active');
-    });
-    $('.live_test').click(function() {
-        $('#open_test_div').hide();
-        $('#live_test_div').show();
-        $(this).addClass('active');
-        $('.open_test').removeClass('active');
-    });
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/Test-Series";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
+    $(this).addClass('active');
+    $('.live_test').removeClass('active');
+});
+$('.live_test').click(function() {
+    $('#open_test_div').hide();
+    $('#live_test_div').show();
+    $(this).addClass('active');
+    $('.open_test').removeClass('active');
+});
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/Test-Series";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
 
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-            },
-            error: function(data, errorThrown) {}
-        });
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+        },
+        error: function(data, errorThrown) {}
     });
-    $(document).on('click', '.all_attemp', function() {
-        $(this).addClass('active');
-        $('.open_attemp').removeClass('active');
-        $('.live_attemp').removeClass('active');
-        $('.compLeteS').show();
+});
+$(document).on('click', '.all_attemp', function() {
+    $(this).addClass('active');
+    $('.open_attemp').removeClass('active');
+    $('.live_attemp').removeClass('active');
+    $('.compLeteS').show();
 
-    });
-    $(document).on('click', '.open_attemp', function() {
-        $(this).addClass('active');
-        $('.all_attemp').removeClass('active');
-        $('.live_attemp').removeClass('active');
-        $('.compLeteS').hide();
-        $('.exam_mode_Open').show();
-        var data_list = $('.exam_mode_Open').length;
-        if (data_list > 0) {
-            $('.no_data_found').hide();
-        } else {
-            $('.no_data_found').show();
-            $('#error_data').text('No result history available right now.');
-        }
-    });
-    $(document).on('click', '.live_attemp', function() {
-        $(this).addClass('active');
-        $('.all_attemp').removeClass('active');
-        $('.open_attemp').removeClass('active');
-        $('.compLeteS').hide();
-        $('.exam_mode_Live').show();
-        var data_list = $('.exam_mode_Live').length;
-        if (data_list > 0) {
-            $('.no_data_found').hide();
-        } else {
-            $('.no_data_found').show();
-            $('#error_data').text('No result history available right now.');
-        }
-    });
+});
+$(document).on('click', '.open_attemp', function() {
+    $(this).addClass('active');
+    $('.all_attemp').removeClass('active');
+    $('.live_attemp').removeClass('active');
+    $('.compLeteS').hide();
+    $('.exam_mode_Open').show();
+    var data_list = $('.exam_mode_Open').length;
+    if (data_list > 0) {
+        $('.no_data_found').hide();
+    } else {
+        $('.no_data_found').show();
+        $('#error_data').text('No result history available right now.');
+    }
+});
+$(document).on('click', '.live_attemp', function() {
+    $(this).addClass('active');
+    $('.all_attemp').removeClass('active');
+    $('.open_attemp').removeClass('active');
+    $('.compLeteS').hide();
+    $('.exam_mode_Live').show();
+    var data_list = $('.exam_mode_Live').length;
+    if (data_list > 0) {
+        $('.no_data_found').hide();
+    } else {
+        $('.no_data_found').show();
+        $('#error_data').text('No result history available right now.');
+    }
+});
+
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
