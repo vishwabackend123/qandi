@@ -223,7 +223,6 @@ class ExamCustomController extends Controller
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
             }
 
-            /* dd($inst); */
             $subjectExamCacheKey = 'SubjectExam:' . $user_id;
             if ($inst == 'instruction') {
                 if (Redis::exists($subjectExamCacheKey)) {
