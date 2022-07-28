@@ -166,7 +166,7 @@
                 <h3 class="commonheading">Live Test</h3>
                 <div class="d-flex mt-4 mb-4 align-items-end">
                     <div class="question-attempted-block">
-                        <span class="d-block mb-2 commontext">Question Attempted</span>
+                        <span class="d-block mb-2 commontext">Questions Attempted</span>
                         <label class="m-0 commonboldtext">80/100</label>
                     </div>
                     <div class="time-date-block">
@@ -258,7 +258,7 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">Cut-off’s Comparator </h3>
-                    <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year 2018 cut-off</p>
+                    <p class="paratext" style="margin-bottom:25px;">This will compare your test scores with last year’s exam cut-off</p>
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-4">
                             <div class="cutoff-score-bar">
@@ -268,7 +268,7 @@
                         </div>
                         <div class="col-md-5">
                             <div class="color_labels d-flex justify-content-between">
-                                <span>Cut off score <b><small style="background-color: #7db9ff;"></small>30</b></span>
+                                <span>Cut-off score <b><small style="background-color: #7db9ff;"></small>30</b></span>
                                 <span>Your Score <b><small style="background-color: #08d5a1;"></small>80</b></span>
                                 <span>Total Score <b><small style="background-color: #f2f4f7;"></small>200</b></span>
                             </div>
