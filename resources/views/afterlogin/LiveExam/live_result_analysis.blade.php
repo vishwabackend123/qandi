@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius"  style=" height: 292px;">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
                         <h3 class="boxheading d-flex align-items-center">My Score
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -123,7 +123,7 @@
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?$response->result_percentage:0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec)  </small></span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
-                    <div class="commonWhiteBox commonblockDash borderRadius"  style=" height: 180px;">
+                    <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -155,7 +155,16 @@
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$response->user_rank}}
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
+                                    @php
+                                    $number = $response->user_rank;
+                                    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+                                    if (($number %100) >= 11 && ($number%100) <= 13){ 
+                                        $abbreviation='th' ; 
+                                    } else {
+                                     $abbreviation=$ends[$number % 10]; 
+                                     } 
+                                     @endphp 
+                                     <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -389,8 +398,8 @@ const myChart = new Chart(ctx, {
             data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
-                        '#56b663',
-                        '#08d5a1'
+                '#56b663',
+                '#08d5a1'
             ],
             barPercentage: 5,
             barThickness: 80,
