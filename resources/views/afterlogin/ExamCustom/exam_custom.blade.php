@@ -36,8 +36,8 @@
                                 </div>
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
-                                <div class="take-fulltest d-lg-flex align-items-center justify-content-between">
-                                    <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select" >
+                                <div class="take-fulltest d-lg-flex align-items-center justify-content-between {{($skey==0)?'d-flex':'d-none'}}"  id="{{$sub->subject_name}}_main">
+                                    <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select">
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
                                             <input type="hidden" id="selected_topic" name="topics">
@@ -91,7 +91,6 @@
                                             <div id="collapseTwo_custome_{{$chapters->chapter_id}}" class=" chapters-expend">
                                                 <div class="accordion-body ps-0 pe-0 pt-4">
                                                     <div class="testslider owl-carousel owl-theme" id="topic_section_{{$chapters->chapter_id}}">
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,159 +113,175 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    $('.topic_form').attr("style", "visibility: hidden !important");
-    $(".clearsec").click(function(){
+$('.topic_form').attr("style", "display: none !important");
+$(".clearsec").click(function() {
     $(".take-fulltest").removeClass("mobile-test");
-    });
+});
 
-    function showSubChapters(subject) {
-        $('.SubActBtn').removeClass('active');
-        $('.subjectlist').removeClass('d-block');
-        $('.subjectlist').addClass('d-none');
-        $('#' + subject + '_btn').addClass('active');
-        $('#' + subject + '_list').removeClass('d-none');
-        $('#' + subject + '_list').addClass('d-block');
-        $('.full_take').removeClass('d-block');
-        $('.full_take').addClass('d-none');
-        $('#' + subject + '_test').removeClass('d-none');
-        $('#' + subject + '_test').addClass('d-block');
-        $('.topic_form').attr("style", "visibility: hidden !important");
-        clearTopics();
+function showSubChapters(subject) {
+    $('.SubActBtn').removeClass('active');
+    $('.subjectlist').removeClass('d-block');
+    $('.subjectlist').addClass('d-none');
+    $('#' + subject + '_btn').addClass('active');
+    $('#' + subject + '_list').removeClass('d-none');
+    $('#' + subject + '_list').addClass('d-block');
+    $('.full_take').removeClass('d-block');
+    $('.full_take').addClass('d-none');
+    $('#' + subject + '_test').removeClass('d-none');
+    $('#' + subject + '_test').addClass('d-block');
+    $('.topic_form').attr("style", "display: none  !important");
+    $('.take-fulltest').attr("style", "display: none  !important");
+    $('#' + subject + '_main').attr("style", "display: block  !important");
+    clearTopics();
+}
+$('.chapters-expend').hide();
+
+function show_topic(chapt_id, sub_id) {
+    var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
+    if (chapter_ex === true) {
+        $('#collapseTwo_custome_' + chapt_id).removeClass('show');
+        $('#collapseTwo_custome_' + chapt_id).hide();
+        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
+    } else {
+        $('#collapseTwo_custome_' + chapt_id).show();
+        $('#collapseTwo_custome_' + chapt_id).addClass('show');
+        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
     }
-    $('.chapters-expend').hide();
+    url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+            $('#overlay').fadeIn();
+        },
+        success: function(result) {
+            $(".chapters-expend  #topic_section_" + chapt_id).html(result);
 
-    function show_topic(chapt_id, sub_id) {
-        var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
-        if (chapter_ex === true) {
-            $('#collapseTwo_custome_' + chapt_id).removeClass('show');
-            $('#collapseTwo_custome_' + chapt_id).hide();
-            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
-        } else {
-            $('#collapseTwo_custome_' + chapt_id).show();
-            $('#collapseTwo_custome_' + chapt_id).addClass('show');
-            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
-        }
-        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-                $('#overlay').fadeIn();
-            },
-            success: function(result) {
-                $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+            $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
+            $("#topic_section_" + chapt_id).owlCarousel({
 
-                $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
-                $("#topic_section_" + chapt_id).owlCarousel({
-
-                    stagePadding: 0,
-                    loop: false,
-                    margin: 15,
-                    nav: false,
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false,
-                            stagePadding: 40,
-                            margin: 5,
-                            loop: true,
-                        },
-                        700: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 3
-                        },
-                        1200: {
-                            items: 4
-                        }
-
-
+                stagePadding: 0,
+                loop: false,
+                margin: 15,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        stagePadding: 40,
+                        margin: 5,
+                        loop: true,
+                    },
+                    700: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
                     }
-                });
+
+
+                }
+            });
 
 
 
-            }
-        });
-
-    }
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/Assessment";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-                $('#AssessmentTypeDiv').attr("style", "display: block !important");
-            },
-            error: function(data, errorThrown) {}
-        });
+        }
     });
-    var aTopics = [];
 
-    function addOrRemove(value) {
-        var index = aTopics.indexOf(value);
+}
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/Assessment";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
 
-        if (index === -1) {
-            aTopics.push(value);
-            $('#chpt_topic_' + value).addClass('topic_selected');
-            $('#chpt_topic_' + value).addClass('btn-common-green');
-            $('#chpt_topic_' + value).removeClass('btn-common-transparent');
-            $('#chpt_topic_' + value).removeClass('bg-transparent');
-            $('#chpt_topic_' + value).html('Selected');
-        } else {
-            aTopics.splice(index, 1);
-            $('#chpt_topic_' + value).removeClass('topic_selected');
-            $('#chpt_topic_' + value).removeClass('btn-common-green');
-            $('#chpt_topic_' + value).addClass('btn-common-transparent');
-            $('#chpt_topic_' + value).addClass('bg-transparent');
-            $('#chpt_topic_' + value).html('Select');
-        }
-        $('#selected_topic').val(aTopics);
-        if (aTopics.length > 0) {
-            $('.topic_form').attr("style", "visibility: visible !important");
-            $('.take-fulltest').addClass('mobile-test');
-        } else {
-            $('.topic_form').attr("style", "visibility: hidden !important");
-            $('.take-fulltest').removeClass('mobile-test');
-        }
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+            $('#AssessmentTypeDiv').attr("style", "display: block !important");
+        },
+        error: function(data, errorThrown) {}
+    });
+});
+var aTopics = [];
+
+function addOrRemove(value) {
+    var index = aTopics.indexOf(value);
+
+    if (index === -1) {
+        aTopics.push(value);
+        $('#chpt_topic_' + value).addClass('topic_selected');
+        $('#chpt_topic_' + value).addClass('btn-common-green');
+        $('#chpt_topic_' + value).removeClass('btn-common-transparent');
+        $('#chpt_topic_' + value).removeClass('bg-transparent');
+        $('#chpt_topic_' + value).html('Selected');
+    } else {
+        aTopics.splice(index, 1);
+        $('#chpt_topic_' + value).removeClass('topic_selected');
+        $('#chpt_topic_' + value).removeClass('btn-common-green');
+        $('#chpt_topic_' + value).addClass('btn-common-transparent');
+        $('#chpt_topic_' + value).addClass('bg-transparent');
+        $('#chpt_topic_' + value).html('Select');
+    }
+    $('#selected_topic').val(aTopics);
+    if (aTopics.length > 0) {
+        $('.topic_form').attr("style", "display: none  !important");
+        $(".SubActBtn").each(function() {
+            if ($(this).hasClass('active')) {
+                var ids = $(this).attr('id');
+                ids = ids.replace("_btn", "_select");
+                $('#' + ids).attr("style", "display: block  !important");
+            }
+
+        });
+
+        $('.take-fulltest').addClass('mobile-test');
+    } else {
+        $('.topic_form').attr("style", "display: none  !important");
+        $('.take-fulltest').removeClass('mobile-test');
     }
 
-    function clearTopics() {
-        aTopics = [];
-        $('#selected_topic').val('');
-        $('.addremovetopic').removeClass('topic_selected');
-        $('.addremovetopic').removeClass('btn-common-green');
-        $('.addremovetopic').addClass('btn-common-transparent');
-        $('.addremovetopic').addClass('bg-transparent');
-        $('.topic_form').attr("style", "visibility: hidden !important");
 
+}
+
+function clearTopics() {
+    aTopics = [];
+    $('#selected_topic').val('');
+    $('.addremovetopic').removeClass('topic_selected');
+    $('.addremovetopic').removeClass('btn-common-green');
+    $('.addremovetopic').addClass('btn-common-transparent');
+    $('.addremovetopic').addClass('bg-transparent');
+    $('.addremovetopic').html('Select');
+    $('.exam-box').removeClass('examborderchange');
+    $('.topic_form').attr("style", "display: none  !important");
+
+}
+
+function showSubfilter(subject) {
+    $('.SubattemptActBtn').removeClass('active');
+    $('.compLeteS').hide();
+    if (subject == "all_subject") {
+        $('.compLeteS').show();
+        $("#all_subject_flt").addClass('active');
+    } else {
+        $('#' + subject + '_flt').addClass('active');
+        $("#all_subject_flt").removeClass('active');
+        $('.' + subject + '-rlt').show();
     }
 
-    function showSubfilter(subject) {
-        $('.SubattemptActBtn').removeClass('active');
-        $('.compLeteS').hide();
-        if (subject == "all_subject") {
-            $('.compLeteS').show();
-            $("#all_subject_flt").addClass('active');
-        } else {
-            $('#' + subject + '_flt').addClass('active');
-            $("#all_subject_flt").removeClass('active');
-            $('.' + subject + '-rlt').show();
-        }
+}
 
-    }
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
