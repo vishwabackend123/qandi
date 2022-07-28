@@ -1953,6 +1953,7 @@ a.btn-common-attempted svg {
       font-weight: bold;
       display: flex;
       background: #ffffff;
+      align-items: center;
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
       background: #ffffff;
@@ -2001,10 +2002,12 @@ a.btn-common-attempted svg {
       padding: 1px 6px;
       border-radius: 2px;
       line-height: 18px;
+      font-weight: bold;
   }
   .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
       background-color: #56b663;
       color: #ffffff;
+      font-weight: 600;;
   }
   .fancy-radio-buttons.with-image {
       justify-content: center;
@@ -2086,7 +2089,9 @@ a.btn-common-attempted svg {
       padding-top: 20px;
       font-size: 16px;
       font-weight: 800;
+      color: #363c4f;
   }
+  .optionText p{font-weight: bold;}
   
   button.btn-ans {
       background: #56b663;
@@ -2096,6 +2101,13 @@ a.btn-common-attempted svg {
       font-size: 12px;
       font-weight: 800;
       padding: 0 !important;
+  }
+  .Clearbtnenable{
+    color: #d92d20 !important;
+  }
+
+  .optionText p{
+    margin-bottom: 0px;
   }
   
   .text-exambottom-sec {
