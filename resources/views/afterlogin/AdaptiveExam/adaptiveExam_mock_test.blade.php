@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="mock_test_dure_content">
                                             <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                            <div class="mock_test_qdms_text2"><span>{{$exam_fulltime}}</span><span>Mins</span></div>
+                                            <div class="mock_test_qdms_text2"><span>{{$exam_fulltime}}</span> <span>Mins</span></div>
                                         </div>
                                         <div class="mock_test_marks_content">
                                             <div class="mock_test_q_d_m_s_text1">Marks</div>

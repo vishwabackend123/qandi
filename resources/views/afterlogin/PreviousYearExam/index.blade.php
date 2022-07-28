@@ -69,7 +69,7 @@
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_dure_content22">
                                                             <div class="mock_test_qdms_text1">Duration</div>
-                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span><span>Mins</span></div>
+                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span> <span>Mins</span></div>
                                                         </div>
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_marks_content22">
