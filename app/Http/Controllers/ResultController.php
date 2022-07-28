@@ -165,7 +165,7 @@ class ResultController extends Controller
 
                 return Redirect::route('exam_result_analytics', [$result_id]);
             } else {
-                dd($response_data);
+
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -219,7 +219,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data->response) ? $response_data->response : [];
 
-                dd($response);
+
                 return view('afterlogin.ExamCustom.exam_result1', compact('response'));
             } else {
                 return false;
@@ -394,11 +394,11 @@ class ResultController extends Controller
      *
      * @return void
      */
-    public function getExamResultAnalytics($result_id,$type_exam=null)
+    public function getExamResultAnalytics($result_id, $type_exam = null)
     {
         try {
             if ($type_exam) {
-                $type_exam =base64_decode($type_exam);
+                $type_exam = base64_decode($type_exam);
             }
             $userData = Session::get('user_data');
 
@@ -437,7 +437,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id','type_exam'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id', 'type_exam'));
             } else {
 
                 //return redirect()->back();
@@ -504,6 +504,8 @@ class ResultController extends Controller
             $scoreResponse = [];
         }
 
+
+
         $curl_url2 = "";
         $curl2 = curl_init();
         $curl_url2 = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
@@ -538,6 +540,7 @@ class ResultController extends Controller
         } else {
             $rankResponse =  [];
         }
+
 
 
         return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse'));
