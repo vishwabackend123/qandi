@@ -1140,9 +1140,10 @@ $question_type = "Numerical";
                 }
             }
 
-            $("#btn_" + quest_id).addClass("border-btn");
+
             $("#btn_" + quest_id).removeClass("pink-btn");
-            $("#btn_" + quest_id).removeClass("pink-blue");
+            $("#btn_" + quest_id).removeClass("blue-btn");
+            $("#btn_" + quest_id).addClass("border-btn");
 
             $.ajax({
                 url: "{{ route('clearResponse') }}",
