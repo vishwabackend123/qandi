@@ -4425,8 +4425,9 @@ justify-content: space-between;}
 .compLeteS.list_active{border-bottom:0px;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
-    transform: rotate(180deg);top: -2px;
+    transform: rotate(180deg);top: 0px;
     position: relative;}
+    .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
