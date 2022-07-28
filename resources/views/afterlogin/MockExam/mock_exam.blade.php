@@ -202,7 +202,7 @@ $question_type = "Numerical";
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button>
-                                <button id="clearBtn_{{$activeq_id}}" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                                <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button>
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
