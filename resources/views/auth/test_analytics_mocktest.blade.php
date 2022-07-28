@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius"   style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis 
                                 <span class="tooltipmain ml-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
@@ -287,11 +287,12 @@
                                         <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </small>
-                                <span class="d-block  commontext">Your rank</span>
-                                <label class="m-0 commonboldtext" style="font-size:32px;">3<sub style="font-size: 16px;font-weight: 500;">rd</sub></label>
+                                <span class="d-block  commontext" style="color: #666;">Your rank</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">3
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
                             </div>
                             <div class="total_participants">
-                                <span class="d-block commontext">Total Participants</span>
+                                <span class="d-block commontext" style="color: #666;">Total Participants</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">15</label>
                             </div>
                         </div>
