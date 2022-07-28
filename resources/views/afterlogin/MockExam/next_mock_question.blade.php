@@ -21,6 +21,7 @@ $question_type = "Numerical";
 
 
 @endphp
+
 <div class="questionType">
     <div class="questionTypeinner">
         <div class="questionChoiceType">
@@ -221,4 +222,33 @@ $question_type = "Numerical";
             }
         });
     });
+</script>
+<script type="text/javascript">
+    /*  $('#clearBtn_response').attr("disabled", true);
+    $('#clearBtn_response').removeClass("Clearbtnenable"); */
+    var quest_id = '{{$activeq_id}}';
+    alert()
+    var option_id = [];
+    var current_question_type = $("#current_question_type").val();
+
+    if (current_question_type == 11) {
+        var res_value = $("#quest_option_" + quest_id).val();
+
+        if (res_value != '') {
+            option_id.push($("#quest_option_" + quest_id).val());
+        }
+
+    } else {
+        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+    }
+    console.log(option_id);
+    if (option_id.length > 0) {
+        $('#clearBtn_response').attr("disabled", false);
+        $('#clearBtn_response').addClass("Clearbtnenable");
+    } else {
+        $('#clearBtn_response').attr("disabled", true);
+        $('#clearBtn_response').removeClass("Clearbtnenable");
+    }
 </script>
