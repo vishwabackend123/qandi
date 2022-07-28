@@ -67,27 +67,27 @@
             <div class="mock_test_ques_dure_marks_sub d-flex">
                 <div class="mock_test_ques_content2">
                     <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                    <div class="mock_test_q_d_m_s_text2">{{$sche->no_of_question}} MCQ</div>
+                    <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                 </div>
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Duration</div>
-                    <div class="mock_test_q_d_m_s_text2"><span>{{$sche->test_time/60}}</span><span>Mins</span></div>
+                    <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span><span>Mins</span></div>
                 </div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Marks</div>
-                    <div class="mock_test_q_d_m_s_text2">{{$sche->no_of_question * 4}}</div>
+                    <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
                 </div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Subject</div>
-                    <div class="mock_test_q_d_m_s_text2">{{$sche->subject_name}}</div>
+                    <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                 </div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Slot</div>
-                    <div class="mock_test_q_d_m_s_text2">Morning</div>
+                    <div class="mock_test_qdms_text2">Morning</div>
                 </div>
                 <div class="mock_test_sub_content2">
                     <div class="mock_test_q_d_m_s_text1">Score</div>
-                    <div class="mock_test_q_d_m_s_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
+                    <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
                 </div>
             </div>
         </div>
@@ -107,13 +107,16 @@
 <script type="text/javascript">
 $('.no_data_found').hide();
 $('.view_details').click(function() {
+   
     var text_data = $(this).text();
     var ids = parseInt($(this).attr('data-id'));
     var toggel = $('#chapter_' + ids).hasClass('show');
     if (text_data === 'View details') {
+        $(this).parents('.test-table').addClass('list_active');
         $(this).text('Hide details');
         $('#chapter_' + ids).addClass('show');
     } else if (text_data === 'Hide details') {
+        $(this).parents('.test-table').removeClass('list_active');
         $(this).text('View details');
         $('#chapter_' + ids).removeClass('show');
     }

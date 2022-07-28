@@ -168,7 +168,6 @@ class PreviousYearExamController extends Controller
                 Redis::set($pyCacheKey, $response_json);
             }
 
-            //dd($curl_url, $response_json);
             $responsedata = json_decode($response_json);
 
             $response_status = isset($responsedata->success) ? $responsedata->success : false;

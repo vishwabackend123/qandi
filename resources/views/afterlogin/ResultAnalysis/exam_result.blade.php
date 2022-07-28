@@ -23,45 +23,38 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
-
             <h3 class="commonheading">{{$exam_name}}</h3>
-            <div class="row mt-4 mb-4 align-items-end">
-                <div class="col-sm-3">
-                    <div class="question-attempted-block">
-                        <span class="d-block mb-2 commontext">Question Attempted</span>
-                        <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
-                    </div>
+            <div class="d-flex mt-4 mb-4 align-items-end">
+                <div class="question-attempted-block">
+                    <span class="d-block mb-2 commontext">Question Attempted</span>
+                    <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
                 </div>
-                <div class="col-sm-6">
-                    <div class="time-date-block">
-                        <span class="d-block mb-2 commontext">{{isset($scoreResponse->total_get_marks)?date('j F Y', strtotime($scoreResponse->test_attempted_date)):''}}</span>
-                        <p class="m-0">
-                            <small class="commontext me-5 pe-4">
-                                <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                60 min
-                            </small>
-                            <small class="commontext">
-                                <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                {{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}} marks
-                            </small>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="text-right">
-                        <a class="btn btn-common-transparent" style="min-width: auto;" href="{{route('exam_review', $scoreResponse->result_id) }}">
-                            <svg style="vertical-align:middle;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <div class="time-date-block">
+                    <span class="d-block mb-2 commontext">{{isset($scoreResponse->total_get_marks)?date('j F Y', strtotime($scoreResponse->test_attempted_date)):''}}</span>
+                    <p class="m-0">
+                        <small class="commontext me-5 pe-4">
+                            <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            Review Question
-                        </a>
-                    </div>
+                            60 min
+                        </small>
+                        <small class="commontext">
+                            <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            {{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}} marks
+                        </small>
+                    </p>
+                </div>
+                <div class="text-right flexgrow">
+                    <a class="btn btn-common-transparent" style="min-width: auto;" href="{{route('exam_review', $scoreResponse->result_id) }}">
+                        <svg style="vertical-align:middle;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Review Question
+                    </a>
                 </div>
             </div>
             <div class="row">
