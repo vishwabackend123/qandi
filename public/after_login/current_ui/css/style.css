@@ -2447,7 +2447,7 @@ a.btn-common-attempted svg {
      position: absolute;
      top: 27px;
      right: 20px;
-     z-index: 1000;
+     z-index: 1;
      width: 21px;
      height: 8px;
      transition: 0.5s;
