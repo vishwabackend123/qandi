@@ -852,7 +852,10 @@
         .timemanagement.common_greenbadge_tabs{padding-right:0px;}
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
-        .mobilescrolltab{width:600px;}
+        .mobilescrolltab{overflow-x: auto;}
+        .mobilescrolltab .nav-tabs{width:523px;padding-bottom: 10px;
+            padding-left: 9px;}
+        .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
 }
 
 @media only screen and (max-width: 576px){
