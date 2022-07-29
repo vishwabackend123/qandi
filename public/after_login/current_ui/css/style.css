@@ -4486,7 +4486,7 @@ justify-content: space-between;}
     overflow-y: auto;
     padding-right: 10px;
     overflow-x: hidden;}
-    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:500;}
+    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
     .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800!important;}
 /********* Shubham End ***********/
 
@@ -5518,10 +5518,20 @@ padding: 11px 20px!important;
 
 
 /* ************Previous year exam  **************** */
-.previous_exam_head_with_drop .customDropdown
-{
-    width: 233px!important;
+
+.previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple]){
     height: 50px;
+    width: 233px;
+    color: #1f1f1f;
+    background: #f6f9fd;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 5px 14px;
+}
+.previous_exam_head_with_drop .customDropdown::before{
+top:20px;    
 }
 .previous_exam_year_exam_paper_text
 {
