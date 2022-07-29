@@ -1875,12 +1875,12 @@ a.btn-common-attempted svg {
   }
   .examScreentab .nav-tabs .nav-link {
       padding: 0px 0px 24px;
-      opacity: 0.6;
+      /* opacity: 0.6; */
       border: 0px;
       font-size: 16px;
       font-weight: 600;
       line-height: 1.6;
-      color: #363c4f;
+      color: #1f1f1f;
       margin-right: 46px !important;
   }
   .qCount {
@@ -2030,12 +2030,13 @@ a.btn-common-attempted svg {
       justify-content: center;
       flex-flow: wrap;
       display: flex;
+      gap: 38px;
   }
   .fancy-radio-buttons .colMargin {
       padding: 0px;
-      max-width: 313px;
+      max-width: 309px;
       min-height: 44px;
-      margin: 0 38px 38px 0;
+      /* margin: 0 38px 38px 0; */
       width: 100%;
   }
   .questionbtnBlock {
@@ -2080,10 +2081,11 @@ a.btn-common-attempted svg {
       height: 44px;
   }
   .btnbottom {
-      position: absolute;
-      bottom: 0px;
-      width: 100%;
-      padding-right:40px
+    position: absolute;
+    bottom: 0px;
+    width: 101%;
+    padding-right: 40px;
+    margin-left: -6px;
   }
   
   
@@ -2095,13 +2097,16 @@ a.btn-common-attempted svg {
       color: #2c3348;
       font-weight: normal;
       display: inline-block;
-      padding: 0px 32px;
+      /* padding: 0px 32px; */
   }
   .text-examtop-sec > p {
       text-align: center;
       margin: 0px;
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   }
   
   .text-exammid-sec > p {
@@ -2238,7 +2243,7 @@ a.btn-common-attempted svg {
     }
     .text-examtop-sec {
     border-bottom: 1px solid rgba(172, 185, 176, 0.14);
-    padding-bottom: 39px;
+     
 }
     /****SACHIN****/
     .watch-icon {
@@ -2773,8 +2778,23 @@ line-height: 1.6;
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
 .quest_btn{position: absolute;top: -5px;}
 .qprev {left: 0px; }
-.qnext{right:0px; ;}
-.qnext , .qprev  {font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
+.qnext{right:6px; ;}
+.quest_btn .Previous ,.quest_btn .Next{ 
+    font-size: 22px;
+}
+.reviewScreenleft .examScreentab .nav-tabs .nav-link{
+    font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
+.qnext , .qprev  {
+    line-height: 0px;
+    font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
     margin-bottom: 0px;
