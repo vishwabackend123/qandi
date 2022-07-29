@@ -108,6 +108,7 @@ $question_type = "Numerical";
     var subject_id = '{{$subject_id}}';
     var chapter_id = '{{$chapter_id}}';
     var subject_id = '{{$subject_id}}';
+    var last_qId = '{{$last_qid}}';
     /*  $(".next_button").removeClass("activequestion");
      */
     /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
@@ -123,6 +124,9 @@ $question_type = "Numerical";
 
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
+    if (last_qId == question_id) {
+        $('#saveNext').html('Save & Submit');
+    }
 </script>
 <script>
     $(document).ready(function() {

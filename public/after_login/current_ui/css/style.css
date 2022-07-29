@@ -1971,6 +1971,7 @@ a.btn-common-attempted svg {
       display: flex;
       background: #ffffff;
       align-items: center;
+          color: #1f1f1f;
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
       background: #ffffff;
@@ -2034,11 +2035,21 @@ a.btn-common-attempted svg {
   }
   .fancy-radio-buttons .colMargin {
       padding: 0px;
-      max-width: 309px;
+      max-width: 313px;
       min-height: 44px;
       /* margin: 0 38px 38px 0; */
       width: 100%;
   }
+  .reviewScreenleft .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg {
+    border: 1px solid #039855;
+    background: #bdf3c5;
+}
+.reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
+    background-color: #039855;
+    
+   
+ 
+}
   .questionbtnBlock {
       display: flex;
       justify-content: space-between;
@@ -4461,7 +4472,7 @@ justify-content: space-between;}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
-.compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800;}
+
 .compLeteS.list_active{border-bottom:0px;}
 .mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
@@ -4475,6 +4486,8 @@ justify-content: space-between;}
     overflow-y: auto;
     padding-right: 10px;
     overflow-x: hidden;}
+    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:500;}
+    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -6538,6 +6551,10 @@ border-color: #56b663;
 
 
 /***************************For Review page start***************************************/
+
+.reviewScreenleft .questionwrapper{
+        padding: 0px;
+}
 .fancy-radio-buttons
   .correct
   input[type="radio"].correct:checked
@@ -6550,7 +6567,10 @@ border-color: #56b663;
 .review_expand {
   position: absolute;
   top: 5%;
-  right: 70px;
+  right: 50px;
+}
+.explanationdeteail{
+    padding-top: 19px;
 }
 
 .expand_block {
@@ -6675,7 +6695,7 @@ border-color: #56b663;
 }
 
 .reviewScreenleft .questionOptionBlock {
-  padding-top: 45px;
+  padding-top: 100px;
 }
 
 /* shiv start ans left */
@@ -6705,6 +6725,7 @@ border-color: #56b663;
   font-size: 16px;
   font-weight: 800;
   color: #039855;
+  text-decoration: underline;
 }
 
 .anshead-top > label {
@@ -6726,7 +6747,7 @@ border-color: #56b663;
 .explanationdeteail > span {
   font-size: 16px;
   font-weight: 800;
-  color: #363c4f;
+  color: #1f1f1f;
   padding-bottom: 3px;
   display: inline-block;
 }

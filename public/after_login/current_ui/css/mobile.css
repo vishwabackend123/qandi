@@ -264,6 +264,7 @@
     .take-fulltest {
     padding: 12px 0;
     border-radius: 0;
+    display: block !important;
     }
     .exam_tabdata .accordion-item {
     border-radius: 10px !important;
