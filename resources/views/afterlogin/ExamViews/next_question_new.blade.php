@@ -86,14 +86,14 @@ $question_type = "Numerical";
     <div class="examQuestionarrow">
         <!-- Previous button -->
 
-        <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+        <button type="button" class="qprev quest_btn {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} {{empty($prev_qid)?'disabled':''}}" {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
             <span class=" Previous">‹</span>
         </button>
 
 
         <!-- Next button -->
 
-        <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+        <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}} {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
             <span class="Next">›</span>
         </button>
     </div>
@@ -108,6 +108,7 @@ $question_type = "Numerical";
     var subject_id = '{{$subject_id}}';
     var chapter_id = '{{$chapter_id}}';
     var subject_id = '{{$subject_id}}';
+    var last_qId = '{{$last_qid}}';
     /*  $(".next_button").removeClass("activequestion");
      */
     /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
@@ -123,6 +124,9 @@ $question_type = "Numerical";
 
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
+    if (last_qId == question_id) {
+        $('#saveNext').html('Save & Submit');
+    }
 </script>
 <script>
     $(document).ready(function() {

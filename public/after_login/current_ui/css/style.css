@@ -1875,12 +1875,12 @@ a.btn-common-attempted svg {
   }
   .examScreentab .nav-tabs .nav-link {
       padding: 0px 0px 24px;
-      opacity: 0.6;
+      /* opacity: 0.6; */
       border: 0px;
       font-size: 16px;
       font-weight: 600;
       line-height: 1.6;
-      color: #363c4f;
+      color: #1f1f1f;
       margin-right: 46px !important;
   }
   .qCount {
@@ -1971,6 +1971,7 @@ a.btn-common-attempted svg {
       display: flex;
       background: #ffffff;
       align-items: center;
+          color: #1f1f1f;
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
       background: #ffffff;
@@ -2030,14 +2031,25 @@ a.btn-common-attempted svg {
       justify-content: center;
       flex-flow: wrap;
       display: flex;
+      gap: 38px;
   }
   .fancy-radio-buttons .colMargin {
       padding: 0px;
-      max-width: 313px;
+      max-width: 294px;
       min-height: 44px;
-      margin: 0 38px 38px 0;
+      /* margin: 0 38px 38px 0; */
       width: 100%;
   }
+  .reviewScreenleft .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg {
+    border: 1px solid #039855;
+    background: #bdf3c5;
+}
+.reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
+    background-color: #039855;
+    
+   
+ 
+}
   .questionbtnBlock {
       display: flex;
       justify-content: space-between;
@@ -2059,7 +2071,8 @@ a.btn-common-attempted svg {
      
   } 
 
-  .answer-main-sec .btn.questionbtn{ width:110px;}
+  .answer-main-sec .btn.questionbtn{width: 111px;
+    height: 36px;}
   
   .questionLeftbtns .questionbtn:first-child,
   .questionRightbtns .questionbtn:first-child {
@@ -2080,10 +2093,11 @@ a.btn-common-attempted svg {
       height: 44px;
   }
   .btnbottom {
-      position: absolute;
-      bottom: 0px;
-      width: 100%;
-      padding-right:40px
+    position: absolute;
+    bottom: 0px;
+    width: 101%;
+    padding-right: 40px;
+    margin-left: -6px;
   }
   
   
@@ -2095,13 +2109,16 @@ a.btn-common-attempted svg {
       color: #2c3348;
       font-weight: normal;
       display: inline-block;
-      padding: 0px 32px;
+      /* padding: 0px 32px; */
   }
   .text-examtop-sec > p {
       text-align: center;
       margin: 0px;
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   }
   
   .text-exammid-sec > p {
@@ -2131,10 +2148,19 @@ a.btn-common-attempted svg {
   }
   
   .text-exambottom-sec {
-      margin-top: 20px;
+      margin-top: 20px !important;
       height: 38vh;
       overflow-y: auto;
       margin-right: -10px;
+  }
+  .reviewScreenright button.btn-ans{
+    border: solid 1px #039855;
+    background-color: #039855;
+ 
+  }
+  .reviewScreenright .border-btn{
+    color: #039855 !important;
+
   }
   
   button.btn-ans {
@@ -2162,16 +2188,27 @@ a.btn-common-attempted svg {
       background: #fff !important;
       color: #56b663 !important;
   }
-  .bck-btn  {    text-align: center;
-      padding-top: 10px;
-      border-top: 1px solid rgba(205, 227, 208, 0.5);
-      position: absolute;
-      width: 100%;
-      font-size: 14px;
-      left: 0;
-      bottom: 0px;
-      padding-bottom: 10px;background-color:#fff;    border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;}
+  .bck-btn  {  
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(205, 227, 208, 0.5);
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    /* left: 0; */
+    bottom: 0px;
+    padding-bottom: 10px;
+    /* background-color: #725353; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 88%;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #363c4f;
+}
   .bck-btn a{
       font-weight: 800;
       color: rgba(54, 60, 79, 0.8);text-decoration:none;
@@ -2238,7 +2275,7 @@ a.btn-common-attempted svg {
     }
     .text-examtop-sec {
     border-bottom: 1px solid rgba(172, 185, 176, 0.14);
-    padding-bottom: 39px;
+     
 }
     /****SACHIN****/
     .watch-icon {
@@ -2411,7 +2448,7 @@ a.btn-common-attempted svg {
      position: absolute;
      top: 27px;
      right: 20px;
-     z-index: 1000;
+     z-index: 1;
      width: 21px;
      height: 8px;
      transition: 0.5s;
@@ -2773,8 +2810,23 @@ line-height: 1.6;
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
 .quest_btn{position: absolute;top: -5px;}
 .qprev {left: 0px; }
-.qnext{right:0px; ;}
-.qnext , .qprev  {font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
+.qnext{right:6px; ;}
+.quest_btn .Previous ,.quest_btn .Next{ 
+    font-size: 22px;
+}
+.reviewScreenleft .examScreentab .nav-tabs .nav-link{
+    font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #363c4f;
+}
+.qnext , .qprev  {
+    line-height: 0px;
+    font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
     margin-bottom: 0px;
@@ -3240,12 +3292,12 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.6));
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-    background-image: url(../images/roundshape.svg);
-    background-position-x: -0.3px;
-    background-size: 106px;
-    background-position-y: -1px;
+    background-image: url(../images/roundshape3.svg);
+    background-position-x: -12px;
+    background-size: 128px;
+    background-position-y: -3px;
     background-repeat: no-repeat;
-    box-shadow: 0px 9px 16px rgb(164 172 178 / 40%);
+    box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
 }
 
 .mq_percent_text {
@@ -4441,8 +4493,9 @@ justify-content: space-between;}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
-.compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800;}
-.compLeteS.list_active{border-bottom:0px;}
+
+.compLeteS.list_active,.compLeteA.list_active{border-bottom:0px;}
+.mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
     transform: rotate(180deg);top: 0px;
@@ -4450,7 +4503,14 @@ justify-content: space-between;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
     .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
-
+   .liveexamScroll{height: calc(100vh - 542px);
+    overflow-y: auto;
+    padding-right: 10px;
+    overflow-x: hidden;}
+    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
+    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3,.compLeteA.list_active .test-table  h3,.compLeteA.list_active 
+    .test-table  h3{font-weight: 800!important;}
+    .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5422,6 +5482,7 @@ padding: 11px 20px!important;
     min-width: 112px!important;
     max-width: 112px;
     height: 44px;
+    padding: 8px 16px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
@@ -5480,6 +5541,21 @@ padding: 11px 20px!important;
 
 
 /* ************Previous year exam  **************** */
+
+.previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple]){
+    height: 50px;
+    width: 233px;
+    color: #1f1f1f;
+    background: #f6f9fd;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 5px 14px;
+}
+.previous_exam_head_with_drop .customDropdown::before{
+top:20px;    
+}
 .previous_exam_year_exam_paper_text
 {
     font-size: 16px;
@@ -5529,7 +5605,7 @@ padding: 11px 20px!important;
   flex-grow: 0;
   background-color: #d92d20;
   border-radius: 25px;
-  margin-top: -9px;
+  margin-top: 0px;
 }
 .live_exam_upcoming_text
 {
@@ -5580,7 +5656,7 @@ padding: 11px 20px!important;
 }
 .view_detail_text_colleps
 {
-    flex-basis: 180px;
+    flex-basis: 200px;
 }
 .see_analytics_mock_exam h3
 {
@@ -6511,5 +6587,312 @@ border-color: #56b663;
 .examLeftpanel li.nav-item {
     margin-top: 9px;
 }
+
+
+
+/***************************For Review page start***************************************/
+
+.reviewScreenleft .questionwrapper{
+        padding: 0px;
+}
+.fancy-radio-buttons
+  .correct
+  input[type="radio"].correct:checked
+  ~ .image-bg
+  .seNo {
+  background-color: #56b663;
+  color: #ffffff;
+}
+
+.review_expand {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+ 
+
+.expand_block {
+  display: none;
+  position: absolute;
+  right: 18px;
+  top: 0px;
+  z-index: 999;
+}
+
+.first_screen {
+  padding: 20px 40px !important;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px 0 rgba(157, 170, 160, 0.3);
+  background-color: #fff;
+  min-width: 541px;
+  z-index: 999;
+  max-height: 143px;
+  overflow: scroll;
+}
+
+.persent_std {
+  padding-bottom: 40px;
+}
+
+.propt_text {
+  padding: 20px 0;
+  text-align: left;
+  font-size: 14px;
+  color: #2c3348;
+  opacity: 0.99;
+}
+
+.attemp_box {
+  display: flex;
+}
+
+.sub_att_1 p {
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1f1f1f;
+  padding: 0px;
+  margin: 0px;
+}
+
+.attemp_box a {
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  width: 100px;
+  text-align: left;
+  cursor: pointer;
+  word-break: break-word;
+  color: #56b663;
+  line-height: 30px;
+}
+
+.questionsliderbox {
+  position: relative;
+}
+
+.attend {
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1f1f1f;
+}
+
+.expandbtn,
+.expandbtn1 {
+  display: block;
+  cursor: pointer;
+}
+
+.collapsebtn,
+.collapsebtn1 {
+  display: none;
+  cursor: pointer;
+}
+
+.reviewans-mainsec {
+  position: absolute;
+  bottom: 25px;
+  background: #fff;
+  overflow: hidden;
+  margin-right: 15px;
+  min-width: 335px;
+  max-width: 335px;
+}
+
+.reviewexamType a {
+  font-size: 16px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1f1f1f;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin-top: 9px;
+}
+
+.reviewScreenleft .examScreentab .nav-tabs .nav-link {
+  padding: 0px 0 24px;
+}
+
+.reviewScreenleft .questionwrapper {
+  max-height: initial;
+}
+
+.reviewScreenleft .questionOptionBlock {
+  padding-top: 100px;
+}
+
+/* shiv start ans left */
+.answer-main-sec {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  /* height:291px; */
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding-right: 8px;
+  box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  padding-top: 24px;
+}
+
+.anshead-top {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.anshead-top .btn.questionbtn {
+  background: #fff !important;
+}
+
+.anshead-top > span {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 800;
+  color: #039855;
+  text-decoration: underline;
+}
+
+.anshead-top > label {
+  padding-left: 20px;
+  padding-top: 6px;
+}
+
+.anshead-titletext p {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.explanation-sec {
+  height: 20vh;
+  overflow-y: auto;
+  padding-left: 135px;
+}
+
+.explanationdeteail > span {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1f1f1f;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
+.explanationdeteail > p {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.explanation-bottom span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #363c4f;
+}
+
+.explanation-bottom {
+  padding: 25px 0px;
+}
+
+.custom-anstop > p {
+  margin: 0;
+  padding-bottom: 20px;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+  color: #363c4f;
+}
+
+.red-btn {
+  background: #d92d20 !important;
+  border: 1px solid #d92d20 !important;
+}
+
+.border-btn {
+  background: #fff !important;
+  color: #56b663 !important;
+}
+
+.review-filter-top {
+  display: flex;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+}
+
+.review-filter-top > span {
+  font-weight: 800;
+  font-size: 16px;
+  flex-grow: 1;
+  color:#363c4f;
+}
+
+label.filter {
+  padding-right: 20px;
+}
+
+.list-ans {
+  padding-top: 20px;
+  height: 33vh;
+  overflow-y: auto;
+  margin: 5px 0px;
+}
+
+.list-ans div {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #363c4f;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.redborder-left:before {
+  content: "";
+  width: 4px;
+  background: #d92d20;
+  position: absolute;
+  height: 66px;
+  border-radius: 20px;
+}
+
+.greenborder-left:before {
+  content: "";
+  width: 4px;
+  /* background: #56b663; */
+  background-color: #039855;
+  position: absolute;
+  height: 66px;
+  border-radius: 20px;
+}
+
+.bck-btn:hover {
+  cursor: pointer;
+}
+
+.examRightpanel.ans-panel {
+  padding-top: 24px !important;
+}
+
+/* shiv end css */
+/***********************************End Review page***************************/
 
 

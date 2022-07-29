@@ -1,8 +1,12 @@
 version: 0.0
 os: linux
-
-hooks: 
-  AfterInstall: 
-    - 
-      location: script.sh
+files:
+  - source: /
+    destination: /var/www/html/uniq
+    #overwrite: true
+file_exists_behavior: OVERWRITE
+hooks:
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 300
       runas: ubuntu

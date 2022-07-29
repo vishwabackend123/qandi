@@ -64,7 +64,8 @@
                                     $end_date_new = date('jS F Y', strtotime($newDate));
                                     @endphp
                                     <div class="mock_test_sub_content">
-                                        <div class="mock_test_qdms_text1">End Date</div>
+                                    
+                                    <div class="mock_test_qdms_text1">End Date</div>
                                         <div class="mock_test_qdms_text2">{{$end_date_new}}</div>
                                     </div>
                                 </div>
@@ -72,6 +73,7 @@
                                 @endif
                                 <div>
                                     <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                    <div class="liveexamScroll">
                                     @if(!empty($schedule_list))
                                     @php
                                     $dataAvail = 0;
@@ -136,6 +138,7 @@
                                 </div>
                                 @endif
                             </div>
+                     </div>
                         </div>
                         <div id="attempted_tab" class=" tab-pane">
                         </div>

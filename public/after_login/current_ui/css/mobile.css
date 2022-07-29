@@ -264,6 +264,7 @@
     .take-fulltest {
     padding: 12px 0;
     border-radius: 0;
+    display: block !important;
     }
     .exam_tabdata .accordion-item {
     border-radius: 10px !important;
@@ -531,6 +532,10 @@
     {
         padding: 0px 0px;
     }
+         #exam_tabdata_bg_mob {
+        padding: unset !important;
+        background: #fff!important;;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -612,6 +617,12 @@
         height: 100%;
         z-index: 10;
     }
+
+    .test_analytics_wrapper .d-flex.mt-4.mb-4.align-items-end {display: block!important;margin: 18px 0 16px!important;}
+    .question-attempted-block {border: none;padding: 0;margin: 0 0 16px;}
+    .text-right.flexgrow, .time-date-block {display: inline-block;vertical-align: middle;}
+    .text-right.flexgrow {margin: 14px 0 0 40px;}
+
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -740,7 +751,7 @@
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
 .commontab .nav-tabs .nav-link{padding-bottom:8px;}
 .tablist ul li {text-align: center;}
-.taskstatusBlock h4{margin-top:11px;margin-bottom:20px!important;}
+.taskstatusBlock h4{margin-top:11px;margin-bottom:0px!important;}
 .tasklisting .tasklistleft h4{font-size: 15px;}
 .tasklisting .tasklistleft h6{margin-bottom:0px;}
 .tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
@@ -748,19 +759,50 @@
     .tasklisting{padding-bottom: 30px;}
     .myqmatPannel{height:198px;min-height:198px;}
     .myqmatPannel .myqinner h6,.myqmatPannel .myqinner h5{margin-bottom:4px;}
-    .myqmatPannel .myqinner p{min-height:60px;-webkit-line-clamp: 3;height:60px;}
+    .myqmatPannel .myqinner p{min-height:62px;-webkit-line-clamp: 3;height:60px;}
     .myqarrow{margin-top:1px;}
     .myqmatPannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
-    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px;}
+    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
     .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
 
     /************ Shiv start for notification 28-07-2022 ************/
     .notification-main>h2 a { color: #56b663;}
     /************ End for notification 28-07-2022 ************/
-
+    .radial_progress_bar{margin-top:12px;}
+    .myqTodayGraphSec .textblock { padding-left: 14px; }
+    .mobilejustify  .nav-item, .mobilejustify .nav-link {
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: center;margin-right:0px!important;
+    }
+    .commontab .nav-tabs .nav-item.show .nav-link, .commontab .nav-tabs .nav-link.active{border-bottom: 5px solid #56b663!important;}
+        .commontab .nav-tabs .nav-link.active:before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            bottom: -5px;
+            right: -4px;
+            background-color: #56b663;
+            border-top-right-radius: 11px;
+        }
+        .commontab .nav-tabs .nav-link.active:after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            bottom: -5px;
+            left: -4px;
+            background-color: #56b663;
+            border-top-left-radius: 11px
+        }
+        .mytaskdash .commonWhiteBox{min-height:644px;}
+        .verifiaction-link p{line-height:1.7;}
+        .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
+        .overall_analytics_page .tabMainblock{padding:0px 10px}
 }
 
 @media only screen and (max-width: 576px){
@@ -806,6 +848,12 @@
         .notification-main {width:100%;max-width:100%;}
         .MyqMatrixMain .col-sm-6{width: 100%; max-width: 50%;padding: 0 8px;}
 
+        /************ Amit start *********/
+        .text-right.flexgrow, .time-date-block {display: block;}
+        .text-right.flexgrow {margin: 16px 0 0 0px;text-align: left;}
+
+        /************ Amit end *********/
+
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
@@ -822,6 +870,11 @@
 
 @media(max-width:360px){
     ul.proficiency-level-lists li:nth-child(3){margin:0 0px 14px 0;}
+    /************ Amit start *********/
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 100%;}
+
+    /************ Amit end *********/
+
 }
 
 @media(max-width:890px) and (min-width:768px)

@@ -52,13 +52,11 @@ $question_type = "Numerical";
                             <div class="examTabheader">
                                 <div class="tablist">
                                     <ul class="nav nav-tabs" role="tablist" id="myTab">
-                                        @if(!empty($filtered_subject))
-                                        @foreach($filtered_subject as $key=>$sub)
+
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} </a>
+                                            <a class="nav-link qq1_2_3_4 all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                         </li>
-                                        @endforeach
-                                        @endif
+
                                     </ul>
                                 </div>
                                 <div class="submitBtn">
@@ -158,17 +156,18 @@ $question_type = "Numerical";
                                         </div>
                                         <div class="examQuestionarrow">
                                             <!-- Previous button -->
+                                            <span style="visibility:hidden">
+                                                <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
+                                                    <span class=" Previous">‹</span>
+                                                </button>
 
-                                            <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
-                                                <span class=" Previous">‹</span>
-                                            </button>
 
+                                                <!-- Next button -->
 
-                                            <!-- Next button -->
-
-                                            <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
-                                                <span class="Next">›</span>
-                                            </button>
+                                                <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
+                                                    <span class="Next">›</span>
+                                                </button>
+                                            </span>
                                         </div>
                                     </div>
 
@@ -196,7 +195,7 @@ $question_type = "Numerical";
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec">
                             <p>
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                     <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
@@ -252,7 +251,7 @@ $question_type = "Numerical";
                         <div class="custom-exam d-none">
                             <div class="text-examtop-sec">
                                 <p>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                         <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                         <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />

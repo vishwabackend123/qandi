@@ -155,6 +155,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="exam_type" value="{{$exam_type}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
+                                    <input type="hidden" name="py_paperid" value="{{isset($paper_id)?$paper_id:0}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>
@@ -289,7 +290,7 @@ $question_type = "Numerical";
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                                <button class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                                <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
@@ -299,7 +300,7 @@ $question_type = "Numerical";
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec">
                             <p>
-                            <div class="" id="app">
+                            <!-- <div class="" id="app">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <g class="base-timer__circle">
@@ -314,14 +315,14 @@ $question_type = "Numerical";
                                     </svg>
                                     <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                                 </div>
-                            </div>
-                            <!-- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </div> -->
+                            <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                     <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg> -->
+                                </svg>
                             <span id="base-timer-label" class="base-timer__label"> Left</span>
                             <label>
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -371,7 +372,7 @@ $question_type = "Numerical";
                         <div class="custom-exam d-none">
                             <div class="text-examtop-sec">
                                 <p>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                         <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                         <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
