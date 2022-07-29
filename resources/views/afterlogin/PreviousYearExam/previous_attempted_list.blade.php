@@ -46,7 +46,7 @@
                     {{$sche->test_type}}
                     @endif
                 </h2>
-                <h3 class="m-0">{{date('d F Y', strtotime($sche->created_at));}}</h3>
+                <h3 class="m-0 notbold">{{date('d F Y', strtotime($sche->created_at));}}</h3>
                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwoTwo">
                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo_{{$sche->id}}" aria-expanded="true" aria-controls="collapseTwoTwo" class="m-0 view_detail_text_colleps view_details">View details</h4>
                     <a href="{{route('get_exam_result_analytics',$sche->id)}}">
@@ -109,10 +109,10 @@ $('.view_details').click(function() {
    
     var text_data = $(this).text();
     if (text_data === 'View details') {
-        $(this).parents('.compLeteS').addClass('list_active');
+        $(this).parents('.compLeteA').addClass('list_active');
         $(this).text('Hide details');
     } else if (text_data === 'Hide details') {
-        $(this).parents('.compLeteS').removeClass('list_active');
+        $(this).parents('.compLeteA').removeClass('list_active');
         $(this).text('View details');
     }
 });

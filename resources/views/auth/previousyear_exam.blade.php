@@ -118,15 +118,6 @@
                                     </div>
                                  </div>
                               </div>
-                               <!-- <div class="customDropdown dropdown">
-                                 <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                 <div class="options">
-                                    <div style=" overflow-y: auto;  height: 145px;">
-                                       <div class="active markstrend">2021</div>
-                                       <div class="active markstrend">2020</div>
-                                    </div>
-                                 </div>
-                           </div> -->
                            </div>
                            <div class="accordion mt-4 pt-1" id="accordionExample">
                               <div class="allscrollbar">
@@ -590,4 +581,5 @@
       dropdown.classList.toggle("active")
    }
 </script>
+
 @endsection

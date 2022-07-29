@@ -153,11 +153,16 @@ $question_type = "Numerical";
     $("#current_subject_id").val(subject_id);
 
     $("#current_section_id").val(curr_section_id);
+    var last_qId = '{{$last_qid}}';
 
 
 
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
+
+    if (last_qId == question_id) {
+        $('#saveNext').html('Save & Submit');
+    }
 </script>
 <script>
     $(document).ready(function() {
