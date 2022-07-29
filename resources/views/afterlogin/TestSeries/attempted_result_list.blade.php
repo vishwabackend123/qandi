@@ -52,7 +52,7 @@
                     <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                @php 
+                @php
                 $test_type = base64_encode($sche->test_type);
                 @endphp
                 <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type])}}">
@@ -69,6 +69,16 @@
                     <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                 </div>
+                @if($sche->test_type == 'Live')
+                <div class="mock_test_dure_content2">
+                    <div class="mock_test_q_d_m_s_text1">Start Date</div>
+                    <div class="mock_test_qdms_text2"><span>{{date('d F Y', strtotime($sche->stat_date));}}</span></div>
+                </div>
+                <div class="mock_test_marks_content2">
+                    <div class="mock_test_q_d_m_s_text1">End Date</div>
+                    <div class="mock_test_qdms_text2">{{date('d F Y', strtotime($sche->end_date));}}</div>
+                </div>
+                @else
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Duration</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
@@ -85,6 +95,7 @@
                     <div class="mock_test_q_d_m_s_text1">Slot</div>
                     <div class="mock_test_qdms_text2">Morning</div>
                 </div>
+                @endif
                 <div class="mock_test_sub_content2">
                     <div class="mock_test_q_d_m_s_text1">Score</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
@@ -107,7 +118,7 @@
 <script type="text/javascript">
 $('.no_data_found').hide();
 $('.view_details').click(function() {
-   
+
     var text_data = $(this).text();
     var ids = parseInt($(this).attr('data-id'));
     var toggel = $('#chapter_' + ids).hasClass('show');
