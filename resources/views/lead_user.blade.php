@@ -11,12 +11,24 @@
 .terms-sec {padding: 24px 0px;}
 .missing-info-section {
     position: static;
-    width: 360px;
-    max-width: 360px;
-    padding: 40px 0px 20px 28px;
+    max-width: 380px;
+    padding: 40px 16px 20px;
     top: inherit;
     left: inherit;
     transform: inherit;
+    margin: 0 auto;
+    width: 100%;
+}
+.contact-num > label, .city-sec > label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #363c4f;
+    padding-left: 6px;
+}
+.name-title {
+    background: #e0f6e3;
+    padding: 20px;
+    border-radius: 10px;
 }
 .logo_sec {
     padding-bottom: 52px;
