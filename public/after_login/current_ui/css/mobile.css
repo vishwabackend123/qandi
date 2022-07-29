@@ -573,7 +573,7 @@
     }
     .MockTestMob .mock_test_ques_content
     {
-        width: 49%;
+        width: 50%;
         padding-bottom: 18px;
     }
     .MockTestMob .mock_test_dure_content
@@ -588,8 +588,28 @@
     .MockTestMob .mock_test_sub_content
     {
         text-align: right;
+        width: 80%;
     }
-
+    .MockTestMob .test-table h3
+    {
+        position: inherit;
+        text-align: right;
+        width: 100%;
+        padding-bottom: 18px;
+    }
+    .MockTestMob .test-table h2
+    {
+        float: left;
+    }
+    .MockTestMob .test-table .accordion-header .btn {
+        max-width: 100%;
+        min-width: 100%;
+        margin-left: 0px!important;
+    }
+    .MockTestMob .live_mock_exam_section
+    {
+        display: block;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
