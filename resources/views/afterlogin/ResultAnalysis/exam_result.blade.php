@@ -21,12 +21,12 @@ $user_id = isset($userData->id)?$userData->id:'';
     <div class="content-wrapper test_analytics_wrapper">
         <div class="container-fluid">
             <div class="mock_inst_text_mock_test mb-4">
-                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
+                <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             <h3 class="commonheading">{{$exam_name}}</h3>
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
-                    <span class="d-block mb-2 commontext">Question Attempted</span>
+                    <span class="d-block mb-2 commontext">Questions Attempted</span>
                     <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
                 </div>
                 <div class="time-date-block">
@@ -172,7 +172,16 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->user_rank}}
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
+                                @php
+                                    $number = $rankResponse->user_rank;
+                                    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+                                    if (($number %100) >= 11 && ($number%100) <= 13){ 
+                                        $abbreviation='th' ; 
+                                    } else {
+                                     $abbreviation=$ends[$number % 10]; 
+                                     } 
+                                     @endphp
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -239,7 +248,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                 window.history.pushState(null, "", window.location.href);
             };
         });
-        
     </script>
     <!-- browser back disable -->
     <script>
@@ -322,7 +330,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             labels: ["Correct", "Incorrect", "Not Attempted"],
             datasets: [{
                 label: "My First Dataset",
-                data: [10, 10, 55],
+                data: [<?php echo $correct_per_pie; ?>, <?php echo $incorrect_per_pie; ?>, <?php echo $not_attempt_per_pie; ?>],
                 backgroundColor: [
                     "#08d5a1",
                     "#fb7686",

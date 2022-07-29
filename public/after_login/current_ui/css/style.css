@@ -3260,12 +3260,12 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.6));
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-    background-image: url(../images/roundshape.svg);
-    background-position-x: -0.3px;
-    background-size: 106px;
-    background-position-y: -1px;
+    background-image: url(../images/roundshape3.svg);
+    background-position-x: -12px;
+    background-size: 128px;
+    background-position-y: -3px;
     background-repeat: no-repeat;
-    box-shadow: 0px 9px 16px rgb(164 172 178 / 40%);
+    box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
 }
 
 .mq_percent_text {
@@ -4463,6 +4463,7 @@ justify-content: space-between;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800;}
 .compLeteS.list_active{border-bottom:0px;}
+.mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
     transform: rotate(180deg);top: 0px;
@@ -4470,7 +4471,10 @@ justify-content: space-between;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
     .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
-
+   .liveexamScroll{height: calc(100vh - 542px);
+    overflow-y: auto;
+    padding-right: 10px;
+    overflow-x: hidden;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5442,6 +5446,7 @@ padding: 11px 20px!important;
     min-width: 112px!important;
     max-width: 112px;
     height: 44px;
+    padding: 8px 16px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
@@ -5500,6 +5505,29 @@ padding: 11px 20px!important;
 
 
 /* ************Previous year exam  **************** */
+.previous_exam_head_with_drop .customDropdown::before
+{
+    content: "";
+    background: url(../images/arrow_drop_down.svg);
+    position: absolute;
+    top: 17px;
+    right: 11px;
+    z-index: 1000;
+    width: 21px;
+    height: 8px;
+    transition: 0.5s;
+    pointer-events: none;
+    background-size: revert;
+    background-position: center;
+    width: 13.1px;
+    height: 10px;
+    background: #f5faf6;
+}
+.previous_exam_head_with_drop .customDropdown
+{
+    width: 233px!important;
+    height: 50px;
+}
 .previous_exam_year_exam_paper_text
 {
     font-size: 16px;
@@ -5549,7 +5577,7 @@ padding: 11px 20px!important;
   flex-grow: 0;
   background-color: #d92d20;
   border-radius: 25px;
-  margin-top: -9px;
+  margin-top: 0px;
 }
 .live_exam_upcoming_text
 {
@@ -5600,7 +5628,7 @@ padding: 11px 20px!important;
 }
 .view_detail_text_colleps
 {
-    flex-basis: 180px;
+    flex-basis: 200px;
 }
 .see_analytics_mock_exam h3
 {

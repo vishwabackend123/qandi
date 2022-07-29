@@ -258,7 +258,8 @@
 }
 @media(max-width:767px){
     .exam_tabdata {
-    padding: 16px !important;
+    padding: 16px 0 !important;
+    background: transparent !Important;   
     }
     .take-fulltest {
     padding: 12px 0;
@@ -273,9 +274,6 @@
    .chapters-expend .accordion-body {
     margin-top: 23px;
     padding: 22px 0 0px 0 !important;
-    }
-    .exam_tabdata{
-    background: transparent !Important;    
     }
     .test-table h3 {
     position: absolute;

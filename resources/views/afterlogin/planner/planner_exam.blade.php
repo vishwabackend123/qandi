@@ -164,17 +164,18 @@ $question_type = "Numerical";
                                         </div>
                                         <div class="examQuestionarrow">
                                             <!-- Previous button -->
+                                            <span style="visibility:hidden">
+                                                <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
+                                                    <span class=" Previous">‹</span>
+                                                </button>
 
-                                            <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
-                                                <span class=" Previous">‹</span>
-                                            </button>
 
+                                                <!-- Next button -->
 
-                                            <!-- Next button -->
-
-                                            <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
-                                                <span class="Next">›</span>
-                                            </button>
+                                                <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
+                                                    <span class="Next">›</span>
+                                                </button>
+                                            </span>
                                         </div>
                                     </div>
 

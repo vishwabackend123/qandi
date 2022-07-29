@@ -204,11 +204,11 @@ function show_topic(chapt_id, sub_id) {
                     0: {
                         items: 1,
                         nav: false,
-                        stagePadding: 40,
+                        stagePadding: 0,
                         margin: 5,
                         loop: true,
                     },
-                    700: {
+                    590: {
                         items: 2
                     },
                     1000: {

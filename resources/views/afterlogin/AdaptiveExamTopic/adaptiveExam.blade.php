@@ -52,13 +52,11 @@ $question_type = "Numerical";
                             <div class="examTabheader">
                                 <div class="tablist">
                                     <ul class="nav nav-tabs" role="tablist" id="myTab">
-                                        @if(!empty($filtered_subject))
-                                        @foreach($filtered_subject as $key=>$sub)
+
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} </a>
+                                            <a class="nav-link qq1_2_3_4 all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                         </li>
-                                        @endforeach
-                                        @endif
+
                                     </ul>
                                 </div>
                                 <div class="submitBtn">
@@ -158,17 +156,18 @@ $question_type = "Numerical";
                                         </div>
                                         <div class="examQuestionarrow">
                                             <!-- Previous button -->
+                                            <span style="visibility:hidden">
+                                                <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
+                                                    <span class=" Previous">‹</span>
+                                                </button>
 
-                                            <button type="button" class="qprev quest_btn {{empty($prev_qKey)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" {{empty($prev_qKey)?'disabled':''}}>
-                                                <span class=" Previous">‹</span>
-                                            </button>
 
+                                                <!-- Next button -->
 
-                                            <!-- Next button -->
-
-                                            <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
-                                                <span class="Next">›</span>
-                                            </button>
+                                                <button type="button" class="qnext quest_btn {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')">
+                                                    <span class="Next">›</span>
+                                                </button>
+                                            </span>
                                         </div>
                                     </div>
 
