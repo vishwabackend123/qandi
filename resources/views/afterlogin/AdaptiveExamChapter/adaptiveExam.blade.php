@@ -1104,18 +1104,18 @@ $question_type = "Numerical";
 
                 submitHandler: function(form) {
                     if (timeLeft >= 1) {
-                        let timer_left = document.querySelector("#base-timer-path-remaining_alt");
-                        let lefttime_exam_h = document.getElementById("lefttime_pop_h");
-                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+                        /*  let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                         let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                         let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                        const circleDasharray = `${(
-                            calculateTimeFraction() * FULL_DASH_ARRAY
-                        ).toFixed(0)} 283`;
-                        console.log("setCircleDashArray: ", circleDasharray);
-                        timer_left.setAttribute("stroke-dasharray", circleDasharray);
+                         const circleDasharray = `${(
+                             calculateTimeFraction() * FULL_DASH_ARRAY
+                         ).toFixed(0)} 283`;
+                         console.log("setCircleDashArray: ", circleDasharray);
+                         timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
-                        lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
+                         lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                         lefttime_exam_s.innerHTML = formatTime(timeLeft); */
 
                         var act_question = $("#current_question").val();
                         var response_ans = submitsaveAnswer(act_question);
@@ -1124,6 +1124,10 @@ $question_type = "Numerical";
                             return false;
                         } else {
                             stop('submit');
+
+                            let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+                            lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
 
                             $('#FullTest_Exam_Panel_Interface_A').modal('show');
                         }

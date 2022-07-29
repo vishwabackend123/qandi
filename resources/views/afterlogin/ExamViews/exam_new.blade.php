@@ -914,6 +914,7 @@ $question_type = "Numerical";
             if ($("#quesnext" + question_id).is(":disabled") == true) {
 
                 $("#submitExam").click();
+                alert("hi");
             } else {
                 $("#quesnext" + question_id).click();
 
@@ -1025,13 +1026,18 @@ $question_type = "Numerical";
                             $("#btn_" + quest_id).removeClass("pink-btn");
                             $("#btn_" + quest_id).addClass("blue-btn");
 
+                            alert("2");
                         }
 
                     },
                 });
-                if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
+                alert("1");
+
+                if ($("#quesnext" + quest_id).is(":disabled") == true) {
+                    alert("3");
                     $("#submitExam").click();
+                    alert("4");
                 } else {
                     $("#quesnext" + quest_id).click();
 

@@ -1098,7 +1098,7 @@ $question_type = "Numerical";
 
                 submitHandler: function(form) {
                     if (timeLeft >= 1) {
-                        let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                        /* let timer_left = document.querySelector("#base-timer-path-remaining_alt");
                         let lefttime_exam_h = document.getElementById("lefttime_pop_h");
                         let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
@@ -1109,7 +1109,7 @@ $question_type = "Numerical";
                         timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                         lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
+                        lefttime_exam_s.innerHTML = formatTime(timeLeft); */
 
                         var act_question = $("#current_question").val();
                         var response_ans = submitsaveAnswer(act_question);

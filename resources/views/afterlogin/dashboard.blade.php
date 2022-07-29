@@ -123,14 +123,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </div>
                                                         </div>  -->
                                                         <div class="radial_progress_bar">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="-1 -1 34 34">
-                                                            
-                                                            <circle cx="16" cy="16" r="15.9155"
-                                                                    class="progress-bar__background" />
-                                                            
-                                                            <circle id="js-progress-bar{{$key}}" cx="16" cy="16" r="15.9155"
-                                                                    class="progress-bar__progress 
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+
+                                                                <circle cx="16" cy="16" r="15.9155" class="progress-bar__background" />
+
+                                                                <circle id="js-progress-bar{{$key}}" cx="16" cy="16" r="15.9155" class="progress-bar__progress 
                                                                             js-progress-bar {{$colorcls}}" />
                                                             </svg>
                                                         </div>
@@ -850,7 +847,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="intraction_text_strength">Strengths</div>
                         <hr>
                         <div class="instruction_text_content">
-                           
+
                             Going great. Find your strong topics here. Stay in the lead by revision.
                         </div>
                     </div>
