@@ -648,7 +648,17 @@
     .question-attempted-block {border: none;padding: 0;margin: 0 0 16px;}
     .text-right.flexgrow, .time-date-block {display: inline-block;vertical-align: middle;}
     .text-right.flexgrow {margin: 14px 0 0 40px;}
-
+    .test_analytics_wrapper .mock_inst_text_mock_test {display: block;margin: 12px 0 32px;}
+    .test_analytics_wrapper h3.commonheading {font-size: 20px;}
+    .commonWhiteBox.commonblockDash.test_myscrore_card.borderRadius {height: auto!important;}
+    .test_analytics_wrapper .commonWhiteBox.borderRadius{border-radius: 10px;padding:20px 16px 16px;}
+    .test_analytics_wrapper .halfdoughnut2{margin:0 auto;}
+    .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
+    .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
+    .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {margin-bottom: 23px;}
+    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
+    .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -793,8 +803,34 @@
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
     .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
+    /************ Shiv start for refer and friend************/
+    .modal-popup-customize .modal-content {
+        border: 0 !important;
+        height: 100%;
+        background: #f5faf6;
+    }
 
-    /************ Shiv start for notification 28-07-2022 ************/
+    #referfrnd .modalcenter {
+        display: flex;
+        align-items: start;
+        height: 100%;
+        margin-top: 70px;
+    }
+
+    .user-profile-sec>h2 {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 20px 0px 0px;
+        color: #1f1f1f;
+    }
+    #referfrnd .modal-body {
+        padding: 0px 17px 0px;
+    }
+    #referfrnd .modal-content {
+        border-radius: 0 !important;
+    }
+
+    /************ Shiv start for notification ************/
     .notification-main>h2 a { color: #56b663;}
     /************ End for notification 28-07-2022 ************/
     .radial_progress_bar{margin-top:12px;}
@@ -829,6 +865,23 @@
         .verifiaction-link p{line-height:1.7;}
         .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
         .overall_analytics_page .tabMainblock{padding:0px 10px}
+        .mb-md-3{margin-bottom:16px;}
+        .overall_percentage_chart{height:260px;}
+        .subjectperformLegend.flexleg{flex-wrap:wrap;}
+        .subjectperformLegend .commonSubjectLeg{width:100%;margin-top:3px;}
+        .subjectperformLegend .bar {
+            width: 22px;
+            height: 8px;
+            margin-right: 12px;
+        }
+        .subjectblockOverall{margin-top:12px;}
+        .timemanagement.common_greenbadge_tabs{padding-right:0px;}
+        .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
+        .overallmain{padding-bottom:0px;}
+        .mobilescrolltab{overflow-x: auto;}
+        .mobilescrolltab .nav-tabs{width:523px;padding-bottom: 10px;
+            padding-left: 9px;}
+        .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
 }
 
 @media only screen and (max-width: 576px){
@@ -876,7 +929,7 @@
 
         /************ Amit start *********/
         .text-right.flexgrow, .time-date-block {display: block;}
-        .text-right.flexgrow {margin: 16px 0 0 0px;text-align: left;}
+        .text-right.flexgrow {margin: 17px 0 0 0px;text-align: left;}
 
         /************ Amit end *********/
 
@@ -892,6 +945,15 @@
     display: block !Important;
     text-align: center;
     }
+    /************ Amit start *********/
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
+        display: flex!important;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        margin-right: -16px;
+    }
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
+    /************ Amit end *********/
 }
 
 @media(max-width:360px){
