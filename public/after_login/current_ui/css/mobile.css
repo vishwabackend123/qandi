@@ -751,7 +751,7 @@
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
 .commontab .nav-tabs .nav-link{padding-bottom:8px;}
 .tablist ul li {text-align: center;}
-.taskstatusBlock h4{margin-top:11px;margin-bottom:20px!important;}
+.taskstatusBlock h4{margin-top:11px;margin-bottom:0px!important;}
 .tasklisting .tasklistleft h4{font-size: 15px;}
 .tasklisting .tasklistleft h6{margin-bottom:0px;}
 .tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
@@ -759,19 +759,48 @@
     .tasklisting{padding-bottom: 30px;}
     .myqmatPannel{height:198px;min-height:198px;}
     .myqmatPannel .myqinner h6,.myqmatPannel .myqinner h5{margin-bottom:4px;}
-    .myqmatPannel .myqinner p{min-height:60px;-webkit-line-clamp: 3;height:60px;}
+    .myqmatPannel .myqinner p{min-height:62px;-webkit-line-clamp: 3;height:60px;}
     .myqarrow{margin-top:1px;}
     .myqmatPannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
-    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px;}
+    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
     .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
 
     /************ Shiv start for notification 28-07-2022 ************/
     .notification-main>h2 a { color: #56b663;}
     /************ End for notification 28-07-2022 ************/
-
+    .radial_progress_bar{margin-top:12px;}
+    .myqTodayGraphSec .textblock { padding-left: 14px; }
+    .mobilejustify  .nav-item, .mobilejustify .nav-link {
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: center;margin-right:0px!important;
+    }
+    .commontab .nav-tabs .nav-item.show .nav-link, .commontab .nav-tabs .nav-link.active{border-bottom: 5px solid #56b663!important;}
+        .commontab .nav-tabs .nav-link.active:before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            bottom: -5px;
+            right: -4px;
+            background-color: #56b663;
+            border-top-right-radius: 11px;
+        }
+        .commontab .nav-tabs .nav-link.active:after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            bottom: -5px;
+            left: -4px;
+            background-color: #56b663;
+            border-top-left-radius: 11px
+        }
+        .mytaskdash .commonWhiteBox{min-height:644px;}
+        .verifiaction-link p{line-height:1.7;}
 }
 
 @media only screen and (max-width: 576px){

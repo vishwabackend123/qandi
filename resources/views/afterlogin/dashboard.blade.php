@@ -168,7 +168,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 commonblockDash">
+                    <div class="col-lg-4 commonblockDash mytaskdash">
                         <div class="commonWhiteBox">
                             <div class="boxHeadingBlock flexblock">
                                 <h3 class="boxheading">My Task Center
@@ -215,7 +215,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @endif
                             <!--  <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
-                                <div class="commontab">
+                                <div class="commontab mobilejustify">
                                     <div class="tablist">
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
