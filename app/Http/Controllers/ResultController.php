@@ -147,8 +147,6 @@ class ResultController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-            Session::put('test_type', $test_type);
-
             if ($test_type == 'Live') {
                 return view('afterlogin.LiveExam.live_result', compact('autosubmit'));
             }
@@ -273,7 +271,12 @@ class ResultController extends Controller
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data->response) ? $response_data->response : [];
-                $test_type = Session::get('test_type');
+               if (Redis::exists('test_type' . $user_id)) {
+                $cacheKey = 'test_type' . $user_id;
+                $test_type = Redis::get($cacheKey);
+                } else {
+                    $test_type = '';
+                }
 
                 return view('afterlogin.ExamCustom.exam_result2', compact('response','test_type'));
             } else {
@@ -539,8 +542,12 @@ class ResultController extends Controller
         } else {
             $rankResponse =  [];
         }
-        $test_type = Session::get('test_type');
-        print_r($test_type);die;
+        if (Redis::exists('test_type' . $user_id)) {
+            $cacheKey = 'test_type' . $user_id;
+            $test_type = Redis::get($cacheKey);
+        } else {
+            $test_type = '';
+        }
         $header_title = "Test Analysis";
 
         return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse','test_type','header_title'));

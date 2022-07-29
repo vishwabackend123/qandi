@@ -186,7 +186,7 @@ $question_type = "Numerical";
 
                                                 <!-- Next button -->
 
-                                                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                                                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}} " {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
                                                     <span class="Next">›</span>
                                                 </button>
                                             </div>
@@ -217,7 +217,7 @@ $question_type = "Numerical";
                 <div class="examRightpanel">
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec d-flex align-items-center justify-content-between">
-                            <div id="app" class="me-4 pe-2">
+                            <div id="app" class="me-4 pe-2 mb-2">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <g class="base-timer__circle">
@@ -230,7 +230,7 @@ $question_type = "Numerical";
                                      "></path>
                                         </g>
                                     </svg>
-                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
                                 </div>
                             </div>
                             <!-- <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +241,13 @@ $question_type = "Numerical";
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg> -->
                             <span id="base-timer-label" class="base-timer__label"> Left</span>
-                            <label>
+                            <label class="stop" onclick="stop();">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
+                            <label class="start" onclick="start();" style="display: none">
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="14" cy="14" r="8.4" fill="#fff" />
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
@@ -936,6 +942,9 @@ $question_type = "Numerical";
                         if ($("#quesnext" + question_id).is(":disabled") == true) {
 
                             $("#submitExam").click();
+
+                            /*  $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
+
                         } else {
 
                             $("#quesnext" + question_id).click();
@@ -1287,7 +1296,8 @@ $question_type = "Numerical";
 
                         lefttime_exam_h.innerHTML = formatTime(timeLeft);
                         lefttime_exam_s.innerHTML = formatTime(timeLeft); */
-
+                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
                         $('#FullTest_Exam_Panel_Interface_A').modal('show');
 
                     } else {

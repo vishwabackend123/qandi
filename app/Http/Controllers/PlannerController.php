@@ -575,7 +575,7 @@ class PlannerController extends Controller
             $exam_name = $test_name;
             //Session::put('exam_name', $test_name);
             Redis::set('exam_name' . $user_id, $test_name);
-
+            Redis::set('test_type' . $user_id, $test_type);
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $aQ_list = [];
