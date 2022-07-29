@@ -5505,24 +5505,6 @@ padding: 11px 20px!important;
 
 
 /* ************Previous year exam  **************** */
-.previous_exam_head_with_drop .customDropdown::before
-{
-    content: "";
-    background: url(../images/arrow_drop_down.svg);
-    position: absolute;
-    top: 17px;
-    right: 11px;
-    z-index: 1000;
-    width: 21px;
-    height: 8px;
-    transition: 0.5s;
-    pointer-events: none;
-    background-size: revert;
-    background-position: center;
-    width: 13.1px;
-    height: 10px;
-    background: #f5faf6;
-}
 .previous_exam_head_with_drop .customDropdown
 {
     width: 233px!important;
