@@ -532,6 +532,10 @@
     {
         padding: 0px 0px;
     }
+         #exam_tabdata_bg_mob {
+        padding: unset !important;
+        background: #fff!important;;
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/
