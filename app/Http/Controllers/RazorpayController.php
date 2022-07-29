@@ -104,7 +104,7 @@ class RazorpayController extends Controller
 
                 Session::put('user_data', $sessionData);
                         $curl = curl_init();
-                        $api_URL = env('API_URL');
+                        $api_URL = env('CRM_URL');
                         $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/purchased';
                         $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
                         $headers = array(

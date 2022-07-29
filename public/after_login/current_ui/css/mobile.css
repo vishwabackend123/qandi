@@ -614,6 +614,12 @@
         z-index: 10;
     }
 
+    .test_analytics_wrapper .d-flex.mt-4.mb-4.align-items-end {display: block!important;margin: 18px 0 16px!important;}
+    .question-attempted-block {border: none;padding: 0;margin: 0 0 16px;}
+    .text-right.flexgrow, .time-date-block {display: inline-block;vertical-align: middle;}
+    .text-right.flexgrow {margin: 14px 0 0 40px;}
+
+
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -807,6 +813,12 @@
         .notification-main {width:100%;max-width:100%;}
         .MyqMatrixMain .col-sm-6{width: 100%; max-width: 50%;padding: 0 8px;}
 
+        /************ Amit start *********/
+        .text-right.flexgrow, .time-date-block {display: block;}
+        .text-right.flexgrow {margin: 16px 0 0 0px;text-align: left;}
+
+        /************ Amit end *********/
+
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
@@ -823,6 +835,11 @@
 
 @media(max-width:360px){
     ul.proficiency-level-lists li:nth-child(3){margin:0 0px 14px 0;}
+    /************ Amit start *********/
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 100%;}
+
+    /************ Amit end *********/
+
 }
 
 @media(max-width:890px) and (min-width:768px)

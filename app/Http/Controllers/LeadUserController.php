@@ -17,7 +17,7 @@ class LeadUserController extends Controller
 	{
 		try {
 			$curl = curl_init();
-			$api_URL = env('API_URL');
+			$api_URL = env('CRM_URL');
 			$curl_url = $api_URL . 'crm/get_lead_info/' . $lead_id;
 			$apiKey = '16c6df40-195d-4480-b735-56f65a19389a';
 			$headers = array(

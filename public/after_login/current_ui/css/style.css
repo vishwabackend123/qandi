@@ -2147,10 +2147,19 @@ a.btn-common-attempted svg {
   }
   
   .text-exambottom-sec {
-      margin-top: 20px;
+      margin-top: 20px !important;
       height: 38vh;
       overflow-y: auto;
       margin-right: -10px;
+  }
+  .reviewScreenright button.btn-ans{
+    border: solid 1px #039855;
+    background-color: #039855;
+ 
+  }
+  .reviewScreenright .border-btn{
+    color: #039855 !important;
+
   }
   
   button.btn-ans {
@@ -2178,16 +2187,27 @@ a.btn-common-attempted svg {
       background: #fff !important;
       color: #56b663 !important;
   }
-  .bck-btn  {    text-align: center;
-      padding-top: 10px;
-      border-top: 1px solid rgba(205, 227, 208, 0.5);
-      position: absolute;
-      width: 100%;
-      font-size: 14px;
-      left: 0;
-      bottom: 0px;
-      padding-bottom: 10px;background-color:#fff;    border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;}
+  .bck-btn  {  
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(205, 227, 208, 0.5);
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    /* left: 0; */
+    bottom: 0px;
+    padding-bottom: 10px;
+    /* background-color: #725353; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 88%;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #363c4f;
+}
   .bck-btn a{
       font-weight: 800;
       color: rgba(54, 60, 79, 0.8);text-decoration:none;
@@ -4473,7 +4493,7 @@ justify-content: space-between;}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 
-.compLeteS.list_active{border-bottom:0px;}
+.compLeteS.list_active,.compLeteA.list_active{border-bottom:0px;}
 .mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
@@ -4487,7 +4507,9 @@ justify-content: space-between;}
     padding-right: 10px;
     overflow-x: hidden;}
     .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
-    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800!important;}
+    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3,.compLeteA.list_active .test-table  h3,.compLeteA.list_active 
+    .test-table  h3{font-weight: 800!important;}
+    .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -6575,13 +6597,11 @@ border-color: #56b663;
 }
 
 .review_expand {
-  position: absolute;
-  top: 5%;
-  right: 50px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
-.explanationdeteail{
-    padding-top: 19px;
-}
+ 
 
 .expand_block {
   display: none;
@@ -6697,7 +6717,7 @@ border-color: #56b663;
 }
 
 .reviewScreenleft .examScreentab .nav-tabs .nav-link {
-  padding: 0px 0 12px;
+  padding: 0px 0 24px;
 }
 
 .reviewScreenleft .questionwrapper {
@@ -6718,6 +6738,8 @@ border-color: #56b663;
   bottom: 0px;
   width: 100%;
   padding-right: 8px;
+  box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  padding-top: 24px;
 }
 
 .anshead-top {
@@ -6740,6 +6762,7 @@ border-color: #56b663;
 
 .anshead-top > label {
   padding-left: 20px;
+  padding-top: 6px;
 }
 
 .anshead-titletext p {
@@ -6784,6 +6807,7 @@ border-color: #56b663;
   padding-bottom: 20px;
   font-weight: 800;
   border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+  color: #363c4f;
 }
 
 .red-btn {
@@ -6807,6 +6831,7 @@ border-color: #56b663;
   font-weight: 800;
   font-size: 16px;
   flex-grow: 1;
+  color:#363c4f;
 }
 
 label.filter {
@@ -6817,6 +6842,7 @@ label.filter {
   padding-top: 20px;
   height: 33vh;
   overflow-y: auto;
+  margin: 5px 0px;
 }
 
 .list-ans div {
