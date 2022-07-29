@@ -11,12 +11,24 @@
 .terms-sec {padding: 24px 0px;}
 .missing-info-section {
     position: static;
-    width: 360px;
-    max-width: 360px;
-    padding: 40px 0px 20px 28px;
+    max-width: 380px;
+    padding: 40px 16px 20px;
     top: inherit;
     left: inherit;
     transform: inherit;
+    margin: 0 auto;
+    width: 100%;
+}
+.contact-num > label, .city-sec > label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #363c4f;
+    padding-left: 6px;
+}
+.name-title {
+    background: #e0f6e3;
+    padding: 20px;
+    border-radius: 10px;
 }
 .logo_sec {
     padding-bottom: 52px;
@@ -82,10 +94,10 @@
             </div>
         </div>
         <div class="email-sec">
-            <h2>Provide email to start journey</h2>
+            <h2>Provide email to start free trial.</h2>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email Address" maxlength="35">
+                <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email address" maxlength="35">
                 <span class="email_error" style="color:red">Please enter valid email id</span>
                 @if($trail==1)
                 <button type="button" id="free_trail" class="btn btn-common-green text-white trail">Start Free Trial</button>

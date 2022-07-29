@@ -126,6 +126,10 @@
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 350px;
  }
+ .list-ans{
+    height: 27vh;
+ }
+
 
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
@@ -532,10 +536,32 @@
     {
         padding: 0px 0px;
     }
-         #exam_tabdata_bg_mob {
-        padding: unset !important;
+    .MockTestMob .exam_tabdata {
+        padding: 32px 24px 32px 32px !important;
         background: #fff!important;;
     }
+    .MockTestMob .mock_test_ques_dure_marks_sub
+    {
+        flex-wrap: wrap;
+    }
+    .MockTestMob .mock_test_ques_content, .MockTestMob .mock_test_dure_content, .MockTestMob .mock_test_marks_content,.MockTestMob .mock_test_sub_content
+    {
+        padding: unset;
+        border-right: none;
+    }
+    .MockTestMob .mock_test_ques_content
+    {
+        width: 49%;
+    }
+    .MockTestMob .mock_test_dure_content
+    {
+        width: 50%;
+    }
+    .MockTestMob .mock_test_marks_content
+    {
+        width: 20%;
+    }
+
     /********* Vikash End ************/
 
     /************ Amit start *********/
@@ -801,6 +827,8 @@
         }
         .mytaskdash .commonWhiteBox{min-height:644px;}
         .verifiaction-link p{line-height:1.7;}
+        .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
+        .overall_analytics_page .tabMainblock{padding:0px 10px}
 }
 
 @media only screen and (max-width: 576px){
