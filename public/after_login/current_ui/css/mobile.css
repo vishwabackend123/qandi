@@ -650,7 +650,7 @@
     .text-right.flexgrow {margin: 14px 0 0 40px;}
     .test_analytics_wrapper .mock_inst_text_mock_test {display: block;margin: 12px 0 32px;}
     .test_analytics_wrapper h3.commonheading {font-size: 20px;}
-    .commonWhiteBox.commonblockDash.test_myscrore_card.borderRadius {height: auto!important;}
+    .test_analytics_wrapper .commonWhiteBox.commonblockDash{height: auto!important;}
     .test_analytics_wrapper .commonWhiteBox.borderRadius{border-radius: 10px;padding:20px 16px 16px;}
     .test_analytics_wrapper .halfdoughnut2{margin:0 auto;}
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
@@ -659,6 +659,7 @@
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav {margin-bottom: 23px;}
     .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
     .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
+    .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -878,7 +879,10 @@
         .timemanagement.common_greenbadge_tabs{padding-right:0px;}
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
-        .mobilescrolltab{width:600px;}
+        .mobilescrolltab{overflow-x: auto;}
+        .mobilescrolltab .nav-tabs{width:523px;padding-bottom: 10px;
+            padding-left: 9px;}
+        .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
 }
 
 @media only screen and (max-width: 576px){
@@ -957,6 +961,14 @@
     ul.proficiency-level-lists li:nth-child(3){margin:0 0px 14px 0;}
     /************ Amit start *********/
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 100%;}
+    .test_analytics_wrapper .d-flex.justify-content-between.mt-4 {display: block!important;}
+    .total_participants {margin-top: 20px;}
+    .subject_score_card .col-sm-6.mb-3 .d-flex.align-items-center {display: block!important;}
+    .subject_score_card .col-sm-6.mb-3 .d-flex.align-items-center .halfdoughnut {margin: 0 auto;width: 138px;height: 84px}
+    .subject_score_card .col-sm-6.mb-3 .d-flex.align-items-center .color_labels.ms-5 {display: flex;margin: 12px 0 10px!important;border-bottom: 1px solid #e5eaee;padding-bottom: 24px;}
+    .subject_score_card .col-sm-6.mb-3 .d-flex.align-items-center .color_labels.ms-5 span.d-block.mt-3.mb-3 {margin: 0 18px!important;}
+    .subject_score_card .col-sm-6.mb-3:last-child .d-flex.align-items-center .color_labels.ms-5{border:0;margin: 0!important;padding:0;}
+    .subject_score_card .col-sm-6.mb-3:last-child{margin: 0 !important;}
 
     /************ Amit end *********/
 

@@ -215,7 +215,7 @@
                     <h3 class="boxheading d-flex align-items-center">Subject Score </h3>
                     <p class="paratext" style="margin-bottom:32px;">Negative marking for incorrect answers is considered</p>
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-sm-6 mb-3">
                             <h5 class="mb-0">Maths</h5>
                             <div class="d-flex align-items-center">
                                 <div class="halfdoughnut">
