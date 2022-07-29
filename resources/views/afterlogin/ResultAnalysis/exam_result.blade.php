@@ -378,7 +378,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     </script>
     <script>
         $(document).ready(function() {
-            var test_tye = '<?php echo $test_type; ?>';
+            var test_tye = 'Mocktest';
             console.log(test_tye);
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
             $.ajax({

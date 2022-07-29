@@ -540,7 +540,6 @@ class ResultController extends Controller
             $rankResponse =  [];
         }
         $test_type = Session::get('test_type');
-        print_r($test_type);die;
         $header_title = "Test Analysis";
 
         return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse','test_type','header_title'));
