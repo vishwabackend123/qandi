@@ -2071,7 +2071,8 @@ a.btn-common-attempted svg {
      
   } 
 
-  .answer-main-sec .btn.questionbtn{ width:110px;}
+  .answer-main-sec .btn.questionbtn{width: 111px;
+    height: 36px;}
   
   .questionLeftbtns .questionbtn:first-child,
   .questionRightbtns .questionbtn:first-child {
@@ -6606,7 +6607,7 @@ border-color: #56b663;
 .expand_block {
   display: none;
   position: absolute;
-  right: 0;
+  right: 18px;
   top: 0px;
   z-index: 999;
 }
@@ -6618,6 +6619,8 @@ border-color: #56b663;
   background-color: #fff;
   min-width: 541px;
   z-index: 999;
+  max-height: 143px;
+  overflow: scroll;
 }
 
 .persent_std {
@@ -6662,6 +6665,7 @@ border-color: #56b663;
   cursor: pointer;
   word-break: break-word;
   color: #56b663;
+  line-height: 30px;
 }
 
 .questionsliderbox {
@@ -6866,7 +6870,8 @@ label.filter {
 .greenborder-left:before {
   content: "";
   width: 4px;
-  background: #56b663;
+  /* background: #56b663; */
+  background-color: #039855;
   position: absolute;
   height: 66px;
   border-radius: 20px;
