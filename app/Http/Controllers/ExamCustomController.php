@@ -945,8 +945,10 @@ class ExamCustomController extends Controller
                 $sorted = $collection->sortBy([['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             }
-
-            return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
+            $redis_subjects = $this->redis_subjects();
+            $cSubjects = collect($redis_subjects);
+            $filtered_subject = $cSubjects->where('id', $subject_id)->first();
+            return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id','filtered_subject'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
