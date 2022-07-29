@@ -94,7 +94,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                     @if(isset($test_type) && !empty($test_type) && $test_type !='Assessment')
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain ml-2">
@@ -149,8 +148,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                    @endif
-                    @if(isset($test_type) && !empty($test_type) && $test_type =='Live')
+                  
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -184,7 +182,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                      $abbreviation=$ends[$number % 10]; 
                                      } 
                                      @endphp
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">{{$abbreviation}}</sub></label>
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -192,7 +190,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                     @endif
                 </div>
                 <div class="col-md-7" id="subject_topic_section">
 
@@ -378,7 +375,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     </script>
     <script>
         $(document).ready(function() {
-            var test_tye = '<?php echo $test_type; ?>';
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
             $.ajax({
                 url: url2,
@@ -388,10 +384,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                 success: function(result) {
 
                     $("#subject_topic_section").html(result);
-                    if(test_tye == 'Assessment')
-                    {
-                        $('.subject_score_card').hide();
-                    }
 
                 }
             });

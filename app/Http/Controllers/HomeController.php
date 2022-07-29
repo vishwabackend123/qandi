@@ -1101,8 +1101,8 @@ class HomeController extends Controller
                             $exam_url = route('dailyTaskExam', ['category' => $category, 'tasktype' => $tasktype]);
                         }
 
-
-                        return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                        $header_title = "Task Center";
+                        return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime','header_title'));
                     }
 
 
