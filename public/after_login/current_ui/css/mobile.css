@@ -537,13 +537,35 @@
         padding: 0px 0px;
     }
     .MockTestMob .exam_tabdata {
-        padding: 32px 24px 32px 32px !important;
-        background: #fff!important;;
+        padding: 12px !important;
+        background: #fff!important;border-radius: 10px;
     }
     .MockTestMob .mock_test_ques_dure_marks_sub
     {
         flex-wrap: wrap;
     }
+    .mock_test_take_test_btn_for_mob
+    {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 24px;
+        height: unset!important;
+        font-size: 14px!important;
+
+    }
+    .MockTestMob .mock_test_qdms_text2, .MockTestMob .mock_test_q_d_m_s_text1
+    {
+        font-size: 12px;
+    }
+    .MockTestMob .mock_exam_jee_main_text h3
+    {
+        font-size: 16px;
+    }
+    .MockTestMob .mock_test_ques_dure_marks_sub
+    {
+        margin-top: 24px;
+    }
+    
     .MockTestMob .mock_test_ques_content, .MockTestMob .mock_test_dure_content, .MockTestMob .mock_test_marks_content,.MockTestMob .mock_test_sub_content
     {
         padding: unset;
@@ -552,14 +574,20 @@
     .MockTestMob .mock_test_ques_content
     {
         width: 49%;
+        padding-bottom: 18px;
     }
     .MockTestMob .mock_test_dure_content
     {
         width: 50%;
+        text-align: right;
     }
     .MockTestMob .mock_test_marks_content
     {
         width: 20%;
+    }
+    .MockTestMob .mock_test_sub_content
+    {
+        text-align: right;
     }
 
     /********* Vikash End ************/
