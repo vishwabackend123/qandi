@@ -182,7 +182,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                      $abbreviation=$ends[$number % 10]; 
                                      } 
                                      @endphp
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">{{$abbreviation}}</sub></label>
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
