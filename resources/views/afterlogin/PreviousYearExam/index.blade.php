@@ -48,7 +48,7 @@
                                         <div class="accordion-item pt-4 compLeteS filter_data_{{$sche->paper_year}}">
                                             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                                 <h2 class="m-0">{{$sche->paper_name}}</h2>
-                                                <h3 class="m-0 d-flex justify-content-center">{{$sche->paper_year}}</h3>
+                                                <h3 class="m-0 d-flex justify-content-center notbold">{{$sche->paper_year}}</h3>
                                                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwo">
                                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo_{{$sche->paper_id}}" aria-expanded="true" aria-controls="collapseTwo_{{$sche->paper_id}}" class="m-0 view_detail_text_colleps2">View details</h4>
                                                     <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam','instruction')}}" method="post">
@@ -69,7 +69,7 @@
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_dure_content22">
                                                             <div class="mock_test_qdms_text1">Duration</div>
-                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span> <span>Mins</span></div>
+                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span><span>Mins</span></div>
                                                         </div>
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_marks_content22">
@@ -144,13 +144,15 @@ $('#attempted').click(function() {
     });
 });
 $('.view_detail_text_colleps2').click(function() {
-    var text_data = $(this).text();
-    if (text_data === 'View details') {
-        $(this).text('Hide details');
-    } else if (text_data === 'Hide details') {
-        $(this).text('View details');
-    }
-});
+        var text_data = $(this).text();
+        if (text_data === 'View details') {
+            $(this).parents('.compLeteS').addClass('list_active');
+            $(this).text('Hide details');
+        } else if (text_data === 'Hide details') {
+            $(this).parents('.compLeteS').removeClass('list_active');
+            $(this).text('View details');
+        }
+     });
 
 </script>
 @include('afterlogin.layouts.footer_new')

@@ -1971,6 +1971,7 @@ a.btn-common-attempted svg {
       display: flex;
       background: #ffffff;
       align-items: center;
+          color: #1f1f1f;
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
       background: #ffffff;
@@ -2034,11 +2035,21 @@ a.btn-common-attempted svg {
   }
   .fancy-radio-buttons .colMargin {
       padding: 0px;
-      max-width: 309px;
+      max-width: 313px;
       min-height: 44px;
       /* margin: 0 38px 38px 0; */
       width: 100%;
   }
+  .reviewScreenleft .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg {
+    border: 1px solid #039855;
+    background: #bdf3c5;
+}
+.reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
+    background-color: #039855;
+    
+   
+ 
+}
   .questionbtnBlock {
       display: flex;
       justify-content: space-between;
@@ -2136,10 +2147,19 @@ a.btn-common-attempted svg {
   }
   
   .text-exambottom-sec {
-      margin-top: 20px;
+      margin-top: 20px !important;
       height: 38vh;
       overflow-y: auto;
       margin-right: -10px;
+  }
+  .reviewScreenright button.btn-ans{
+    border: solid 1px #039855;
+    background-color: #039855;
+ 
+  }
+  .reviewScreenright .border-btn{
+    color: #039855 !important;
+
   }
   
   button.btn-ans {
@@ -2167,16 +2187,27 @@ a.btn-common-attempted svg {
       background: #fff !important;
       color: #56b663 !important;
   }
-  .bck-btn  {    text-align: center;
-      padding-top: 10px;
-      border-top: 1px solid rgba(205, 227, 208, 0.5);
-      position: absolute;
-      width: 100%;
-      font-size: 14px;
-      left: 0;
-      bottom: 0px;
-      padding-bottom: 10px;background-color:#fff;    border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;}
+  .bck-btn  {  
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(205, 227, 208, 0.5);
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    /* left: 0; */
+    bottom: 0px;
+    padding-bottom: 10px;
+    /* background-color: #725353; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 88%;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #363c4f;
+}
   .bck-btn a{
       font-weight: 800;
       color: rgba(54, 60, 79, 0.8);text-decoration:none;
@@ -4461,8 +4492,8 @@ justify-content: space-between;}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
-.compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800;}
-.compLeteS.list_active{border-bottom:0px;}
+
+.compLeteS.list_active,.compLeteA.list_active{border-bottom:0px;}
 .mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
@@ -4475,6 +4506,10 @@ justify-content: space-between;}
     overflow-y: auto;
     padding-right: 10px;
     overflow-x: hidden;}
+    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
+    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3,.compLeteA.list_active .test-table  h3,.compLeteA.list_active 
+    .test-table  h3{font-weight: 800!important;}
+    .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5505,24 +5540,6 @@ padding: 11px 20px!important;
 
 
 /* ************Previous year exam  **************** */
-.previous_exam_head_with_drop .customDropdown::before
-{
-    content: "";
-    background: url(../images/arrow_drop_down.svg);
-    position: absolute;
-    top: 17px;
-    right: 11px;
-    z-index: 1000;
-    width: 21px;
-    height: 8px;
-    transition: 0.5s;
-    pointer-events: none;
-    background-size: revert;
-    background-position: center;
-    width: 13.1px;
-    height: 10px;
-    background: #f5faf6;
-}
 .previous_exam_head_with_drop .customDropdown
 {
     width: 233px!important;
@@ -6556,6 +6573,10 @@ border-color: #56b663;
 
 
 /***************************For Review page start***************************************/
+
+.reviewScreenleft .questionwrapper{
+        padding: 0px;
+}
 .fancy-radio-buttons
   .correct
   input[type="radio"].correct:checked
@@ -6566,10 +6587,11 @@ border-color: #56b663;
 }
 
 .review_expand {
-  position: absolute;
-  top: 5%;
-  right: 70px;
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
+ 
 
 .expand_block {
   display: none;
@@ -6685,7 +6707,7 @@ border-color: #56b663;
 }
 
 .reviewScreenleft .examScreentab .nav-tabs .nav-link {
-  padding: 0px 0 12px;
+  padding: 0px 0 24px;
 }
 
 .reviewScreenleft .questionwrapper {
@@ -6693,7 +6715,7 @@ border-color: #56b663;
 }
 
 .reviewScreenleft .questionOptionBlock {
-  padding-top: 45px;
+  padding-top: 100px;
 }
 
 /* shiv start ans left */
@@ -6706,6 +6728,8 @@ border-color: #56b663;
   bottom: 0px;
   width: 100%;
   padding-right: 8px;
+  box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  padding-top: 24px;
 }
 
 .anshead-top {
@@ -6723,10 +6747,12 @@ border-color: #56b663;
   font-size: 16px;
   font-weight: 800;
   color: #039855;
+  text-decoration: underline;
 }
 
 .anshead-top > label {
   padding-left: 20px;
+  padding-top: 6px;
 }
 
 .anshead-titletext p {
@@ -6744,7 +6770,7 @@ border-color: #56b663;
 .explanationdeteail > span {
   font-size: 16px;
   font-weight: 800;
-  color: #363c4f;
+  color: #1f1f1f;
   padding-bottom: 3px;
   display: inline-block;
 }
@@ -6771,6 +6797,7 @@ border-color: #56b663;
   padding-bottom: 20px;
   font-weight: 800;
   border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+  color: #363c4f;
 }
 
 .red-btn {
@@ -6794,6 +6821,7 @@ border-color: #56b663;
   font-weight: 800;
   font-size: 16px;
   flex-grow: 1;
+  color:#363c4f;
 }
 
 label.filter {
@@ -6804,6 +6832,7 @@ label.filter {
   padding-top: 20px;
   height: 33vh;
   overflow-y: auto;
+  margin: 5px 0px;
 }
 
 .list-ans div {
