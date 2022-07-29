@@ -31,7 +31,7 @@
                                             $latest_year = date('Y');
                                             @endphp
                                             <select class="form-control form-select" id="filter_year">
-                                                <option value="">Select Year </option>
+                                                <option value="">Select year </option>
                                                 @if(!empty($years_list))
                                                 @foreach($years_list as $yr)
                                                 <option value="{{$yr}}">{{$yr}}</option>
@@ -45,7 +45,7 @@
                                     @if(!empty($upcomming_live_exam))
                                     <div class="allscrollbar">
                                         @foreach($upcomming_live_exam as $sche)
-                                        <div class="accordion-item pt-4 compLeteS filter_data_{{$sche->paper_year}}">
+                                        <div class="accordion-item pt-4 mt-1 compLeteS filter_data_{{$sche->paper_year}}">
                                             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                                 <h2 class="m-0">{{$sche->paper_name}}</h2>
                                                 <h3 class="m-0 d-flex justify-content-center notbold">{{$sche->paper_year}}</h3>

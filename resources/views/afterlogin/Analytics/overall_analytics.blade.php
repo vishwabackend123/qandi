@@ -6,7 +6,7 @@
     <div class="content-wrapper test_analytics_wrapper overall_analytics_page">
         <div class="tabMainblock">
             <div class="commontab aeck_commontab">
-                <div class="tablist">
+                <div class="tablist mobilescrolltab">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#overall" onclick="nxtTab(null)">Overall Analytics</a>
@@ -24,7 +24,7 @@
                         <div class="overallmain">
                             <div class="overalltop">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-md-3">
                                         <div class="commonWhiteBox">
                                             <h3 class="boxheading d-flex align-items-center mb-5">Progress
                                                 <span class="tooltipmain">
