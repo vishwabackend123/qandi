@@ -1079,7 +1079,7 @@ class HomeController extends Controller
                     $exam_mode = "Practice";
                     //Session::put('exam_name', $exam_name);
                     Redis::set('exam_name' . $user_id, $exam_name);
-
+                    Redis::set('test_type' . $user_id, $test_type);
 
                     if (isset($inst) && $inst == 'instruction') {
                         /* set redis for save exam question response */

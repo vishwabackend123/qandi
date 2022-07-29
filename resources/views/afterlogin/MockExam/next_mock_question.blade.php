@@ -160,6 +160,8 @@ $question_type = "Numerical";
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
 
+
+
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');
     }

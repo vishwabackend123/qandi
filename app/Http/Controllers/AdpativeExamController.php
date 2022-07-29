@@ -185,6 +185,7 @@ class AdpativeExamController extends Controller
 
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
+            Redis::set('test_type' . $user_id, $test_type);
 
             return view('afterlogin.AdaptiveExam.adaptiveExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type'));
         } catch (\Exception $e) {
@@ -565,6 +566,7 @@ class AdpativeExamController extends Controller
             $exam_name = $test_name;
             //Session::put('exam_name', $test_name);
             Redis::set('exam_name' . $user_id, $test_name);
+            Redis::set('test_type' . $user_id, $test_type);
 
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
