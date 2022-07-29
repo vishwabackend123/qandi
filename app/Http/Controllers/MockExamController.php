@@ -239,7 +239,7 @@ class MockExamController extends Controller
 
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
-
+            Redis::set('test_type' . $user_id, $test_type);
             $url_name = Route::current()->getName();
             $header_title = "Mock Test";
             if ($url_name == 'mockExamTest') {

@@ -148,6 +148,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
+                  
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -374,8 +375,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     </script>
     <script>
         $(document).ready(function() {
-
-
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
             $.ajax({
                 url: url2,

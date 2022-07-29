@@ -448,16 +448,12 @@ $userData = Session::get('user_data');
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    //$('.loader-block').hide();
                     if (response.success == true) {
                         var message = response.message;
-
-
-
                         $('#alert_msg').show();
-                        /*  setTimeout(function() {
+                          setTimeout(function() {
                              $('#alert_msg').fadeOut('fast');
-                         }, 8000); */
+                         }, 180000); 
                         $("#planner-wrapper")[0].scrollIntoView();
                         $('#saveplannerbutton').addClass('disabled');
 

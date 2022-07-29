@@ -147,8 +147,6 @@ class ResultController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-
-
             if ($test_type == 'Live') {
                 return view('afterlogin.LiveExam.live_result', compact('autosubmit'));
             }
@@ -273,9 +271,14 @@ class ResultController extends Controller
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data->response) ? $response_data->response : [];
+               if (Redis::exists('test_type' . $user_id)) {
+                $cacheKey = 'test_type' . $user_id;
+                $test_type = Redis::get($cacheKey);
+                } else {
+                    $test_type = '';
+                }
 
-
-                return view('afterlogin.ExamCustom.exam_result2', compact('response'));
+                return view('afterlogin.ExamCustom.exam_result2', compact('response','test_type'));
             } else {
                 return false;
             }
@@ -456,7 +459,6 @@ class ResultController extends Controller
      */
     public function examResultAnalytics($result_id)
     {
-        //return view('afterlogin.ExamCustom.exam_result_analytics');
         $userData = Session::get('user_data');
 
 
@@ -540,10 +542,15 @@ class ResultController extends Controller
         } else {
             $rankResponse =  [];
         }
+        if (Redis::exists('test_type' . $user_id)) {
+            $cacheKey = 'test_type' . $user_id;
+            $test_type = Redis::get($cacheKey);
+        } else {
+            $test_type = '';
+        }
+        $header_title = "Test Analysis";
 
-
-
-        return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse'));
+        return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse','test_type','header_title'));
     }
     /**
      * Ajax Exam Result List

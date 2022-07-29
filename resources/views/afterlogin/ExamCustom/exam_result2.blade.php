@@ -114,7 +114,7 @@
         </div>
     </div>
 </div>
-
+ 
 <script>
     /***************** halfdoughnut - start *********************/
     var graphArr = <?php echo json_encode($response->subject_wise_result); ?>;
