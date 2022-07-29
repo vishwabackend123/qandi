@@ -3038,8 +3038,10 @@ ul.sidebar-menu-lists li.active a svg:first-child{
     padding-left: 20px;
     color: rgba(54, 60, 79, 0.7);
     font-weight: bold;
-    margin-top: 130px;font-size:14px;
+    margin-top: 141px;font-size:14px;
 }
+.submenu-block h6.mb-5{margin-bottom:35px!important;}
+
 
 ul.submenu-lists li>a {
     display: flex;
