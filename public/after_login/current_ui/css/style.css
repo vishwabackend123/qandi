@@ -4473,7 +4473,7 @@ justify-content: space-between;}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 
-.compLeteS.list_active{border-bottom:0px;}
+.compLeteS.list_active,.compLeteA.list_active{border-bottom:0px;}
 .mock_test_ques_dure_marks_sub{justify-content:space-between;}
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
@@ -4486,8 +4486,10 @@ justify-content: space-between;}
     overflow-y: auto;
     padding-right: 10px;
     overflow-x: hidden;}
-    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:500;}
-    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3{font-weight: 800!important;}
+    .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
+    .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3,.compLeteA.list_active .test-table  h3,.compLeteA.list_active 
+    .test-table  h3{font-weight: 800!important;}
+    .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
