@@ -31,7 +31,7 @@
                                             $latest_year = date('Y');
                                             @endphp
                                             <select class="form-control form-select" id="filter_year">
-                                                <option value="">Select Year </option>
+                                                <option value="">Select year </option>
                                                 @if(!empty($years_list))
                                                 @foreach($years_list as $yr)
                                                 <option value="{{$yr}}">{{$yr}}</option>
@@ -45,7 +45,7 @@
                                     @if(!empty($upcomming_live_exam))
                                     <div class="allscrollbar">
                                         @foreach($upcomming_live_exam as $sche)
-                                        <div class="accordion-item pt-4 compLeteS filter_data_{{$sche->paper_year}}">
+                                        <div class="accordion-item pt-4 mt-1 compLeteS filter_data_{{$sche->paper_year}}">
                                             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                                 <h2 class="m-0">{{$sche->paper_name}}</h2>
                                                 <h3 class="m-0 d-flex justify-content-center notbold">{{$sche->paper_year}}</h3>
@@ -108,7 +108,42 @@
 </section>
 </div>
 <script>
-    $('.view_detail_text_colleps2').click(function() {
+$('#filter_year').change(function() {
+
+    var selected_val = $(this).val();
+    if (selected_val) {
+        $('.compLeteS').hide();
+        $('.filter_data_' + selected_val).show();
+    } else {
+        $('.compLeteS').show();
+    }
+});
+let dropdown = document.querySelector(".customDropdown")
+dropdown.onclick = function() {
+    dropdown.classList.toggle("active")
+}
+
+</script>
+<script type="text/javascript">
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+        },
+        error: function(data, errorThrown) {}
+    });
+});
+$('.view_detail_text_colleps2').click(function() {
         var text_data = $(this).text();
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
@@ -118,40 +153,7 @@
             $(this).text('View details');
         }
      });
-    $('#filter_year').change(function() {
 
-        var selected_val = $(this).val();
-        if (selected_val) {
-            $('.compLeteS').hide();
-            $('.filter_data_' + selected_val).show();
-        } else {
-            $('.compLeteS').show();
-        }
-    });
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
-    }
-</script>
-<script type="text/javascript">
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-            },
-            error: function(data, errorThrown) {}
-        });
-    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

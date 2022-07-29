@@ -87,7 +87,7 @@
          </ul>
       </aside>
       <section class="content-wrapper">
-         <div class="container-fluid">
+         <div class="container-fluid mock_text_exam_page_head">
             <div class="row">
                <div class="col-lg-12">
                   <div class="commontab">
@@ -102,7 +102,7 @@
                         </ul>
                      </div>
                      <!-- Tab panes -->
-                     <div class="tab-content bg-white exam_tabdata">
+                     <div class="tab-content bg-white exam_tabdata " id="exam_tabdata_bg_mob">
                         <div id="mock_test" class=" tab-pane active">
                            <div class="jee_main_text_take_test__btn">
                               <div class="mock_exam_jee_main_text">

@@ -132,6 +132,7 @@ class PreviousYearExamController extends Controller
 
             if (Redis::exists($pyCacheKey)) {
                 $response_json = Redis::get($pyCacheKey);
+                $paper_id = Session::get('paper_id');
             } else {
 
 
@@ -166,6 +167,7 @@ class PreviousYearExamController extends Controller
                 curl_close($curl);
 
                 Redis::set($pyCacheKey, $response_json);
+                Session::put('paper_id', $paper_id);
             }
 
             $responsedata = json_decode($response_json);
