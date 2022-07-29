@@ -378,7 +378,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     </script>
     <script>
         $(document).ready(function() {
-            var test_tye = '<?php echo $test_type; ?>';
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
             $.ajax({
                 url: url2,
@@ -388,10 +387,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                 success: function(result) {
 
                     $("#subject_topic_section").html(result);
-                    if(test_tye == 'Assessment')
-                    {
-                        $('.subject_score_card').hide();
-                    }
 
                 }
             });
