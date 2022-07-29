@@ -90,6 +90,7 @@
                             </div>
                         </div>
                     </div>
+                    @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain ml-2">
@@ -141,6 +142,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
@@ -186,6 +188,7 @@
                     @endif
                 </div>
                 <div class="col-md-7">
+                     @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
                     <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Subject Score
                             <span class="tooltipmain ml-2">
@@ -275,6 +278,7 @@
                             @endif
                         </div>
                     </div>
+                    @endif
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Topic Score
                             <span class="tooltipmain ml-2">
