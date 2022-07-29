@@ -16,7 +16,7 @@
     <div class="row">
         @if(isset($response->subject_wise_result))
         @foreach($response->subject_wise_result as $subData)
-        <div class="col-md-6 mb-3">
+        <div class="col-sm-6 mb-3">
             <h5 class="mb-0">{{$subData->subject_name}}</h5>
             <div class="d-flex align-items-center">
                 <div class="halfdoughnut">
