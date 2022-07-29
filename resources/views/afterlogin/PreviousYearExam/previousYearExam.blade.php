@@ -155,6 +155,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="exam_type" value="{{$exam_type}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
+                                    <input type="hidden" name="py_paperid" value="{{isset($paper_id)?$paper_id:0}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>

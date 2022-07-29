@@ -108,7 +108,42 @@
 </section>
 </div>
 <script>
-    $('.view_detail_text_colleps2').click(function() {
+$('#filter_year').change(function() {
+
+    var selected_val = $(this).val();
+    if (selected_val) {
+        $('.compLeteS').hide();
+        $('.filter_data_' + selected_val).show();
+    } else {
+        $('.compLeteS').show();
+    }
+});
+let dropdown = document.querySelector(".customDropdown")
+dropdown.onclick = function() {
+    dropdown.classList.toggle("active")
+}
+
+</script>
+<script type="text/javascript">
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+        },
+        error: function(data, errorThrown) {}
+    });
+});
+$('.view_detail_text_colleps2').click(function() {
         var text_data = $(this).text();
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
@@ -118,40 +153,7 @@
             $(this).text('View details');
         }
      });
-    $('#filter_year').change(function() {
 
-        var selected_val = $(this).val();
-        if (selected_val) {
-            $('.compLeteS').hide();
-            $('.filter_data_' + selected_val).show();
-        } else {
-            $('.compLeteS').show();
-        }
-    });
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
-    }
-</script>
-<script type="text/javascript">
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-            },
-            error: function(data, errorThrown) {}
-        });
-    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
