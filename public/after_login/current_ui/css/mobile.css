@@ -126,6 +126,10 @@
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 350px;
  }
+ .list-ans{
+    height: 27vh;
+ }
+
 
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
