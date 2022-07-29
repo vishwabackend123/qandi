@@ -94,7 +94,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                     @if(isset($test_type) && !empty($test_type) && $test_type !='Assessment')
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain ml-2">
@@ -149,8 +148,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                    @endif
-                    @if(isset($test_type) && !empty($test_type) && $test_type =='Live')
+                  
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -192,7 +190,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                     @endif
                 </div>
                 <div class="col-md-7" id="subject_topic_section">
 

@@ -277,7 +277,6 @@ class ResultController extends Controller
                 } else {
                     $test_type = '';
                 }
-                print_r($test_type);die;
 
                 return view('afterlogin.ExamCustom.exam_result2', compact('response','test_type'));
             } else {
