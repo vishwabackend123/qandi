@@ -618,7 +618,17 @@
     .question-attempted-block {border: none;padding: 0;margin: 0 0 16px;}
     .text-right.flexgrow, .time-date-block {display: inline-block;vertical-align: middle;}
     .text-right.flexgrow {margin: 14px 0 0 40px;}
-
+    .test_analytics_wrapper .mock_inst_text_mock_test {display: block;margin: 12px 0 32px;}
+    .test_analytics_wrapper h3.commonheading {font-size: 20px;}
+    .commonWhiteBox.commonblockDash.test_myscrore_card.borderRadius {height: auto!important;}
+    .test_analytics_wrapper .commonWhiteBox.borderRadius{border-radius: 10px;padding:20px 16px 16px;}
+    .test_analytics_wrapper .halfdoughnut2{margin:0 auto;}
+    .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
+    .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
+    .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {margin-bottom: 23px;}
+    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
+    .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -815,7 +825,7 @@
 
         /************ Amit start *********/
         .text-right.flexgrow, .time-date-block {display: block;}
-        .text-right.flexgrow {margin: 16px 0 0 0px;text-align: left;}
+        .text-right.flexgrow {margin: 17px 0 0 0px;text-align: left;}
 
         /************ Amit end *********/
 
@@ -831,6 +841,15 @@
     display: block !Important;
     text-align: center;
     }
+    /************ Amit start *********/
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
+        display: flex!important;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        margin-right: -16px;
+    }
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
+    /************ Amit end *********/
 }
 
 @media(max-width:360px){
