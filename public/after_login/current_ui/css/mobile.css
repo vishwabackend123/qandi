@@ -803,8 +803,34 @@
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
     .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
+    /************ Shiv start for refer and friend************/
+    .modal-popup-customize .modal-content {
+        border: 0 !important;
+        height: 100%;
+        background: #f5faf6;
+    }
 
-    /************ Shiv start for notification 28-07-2022 ************/
+    #referfrnd .modalcenter {
+        display: flex;
+        align-items: start;
+        height: 100%;
+        margin-top: 70px;
+    }
+
+    .user-profile-sec>h2 {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 20px 0px 0px;
+        color: #1f1f1f;
+    }
+    #referfrnd .modal-body {
+        padding: 0px 17px 0px;
+    }
+    #referfrnd .modal-content {
+        border-radius: 0 !important;
+    }
+
+    /************ Shiv start for notification ************/
     .notification-main>h2 a { color: #56b663;}
     /************ End for notification 28-07-2022 ************/
     .radial_progress_bar{margin-top:12px;}
