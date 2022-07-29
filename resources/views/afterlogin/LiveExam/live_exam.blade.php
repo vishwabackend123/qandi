@@ -196,7 +196,7 @@ $question_type = "Numerical";
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                                <button class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                                <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
