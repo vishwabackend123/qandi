@@ -581,4 +581,5 @@
       dropdown.classList.toggle("active")
    }
 </script>
+
 @endsection
