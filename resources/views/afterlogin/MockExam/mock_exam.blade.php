@@ -940,11 +940,10 @@ $question_type = "Numerical";
                         $("#btn_" + question_id).removeClass("border-btn");
 
                         if ($("#quesnext" + question_id).is(":disabled") == true) {
-                            alert("#quesnext" + question_id);
-                            alert($("#quesnext" + question_id).is(":disabled"));
-                            // $("#submitExam").click();
 
-                            $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                            $("#submitExam").click();
+
+                            /*  $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
 
                         } else {
 
