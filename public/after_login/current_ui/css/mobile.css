@@ -829,6 +829,20 @@
         .verifiaction-link p{line-height:1.7;}
         .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
         .overall_analytics_page .tabMainblock{padding:0px 10px}
+        .mb-md-3{margin-bottom:16px;}
+        .overall_percentage_chart{height:260px;}
+        .subjectperformLegend.flexleg{flex-wrap:wrap;}
+        .subjectperformLegend .commonSubjectLeg{width:100%;margin-top:3px;}
+        .subjectperformLegend .bar {
+            width: 22px;
+            height: 8px;
+            margin-right: 12px;
+        }
+        .subjectblockOverall{margin-top:12px;}
+        .timemanagement.common_greenbadge_tabs{padding-right:0px;}
+        .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
+        .overallmain{padding-bottom:0px;}
+        .mobilescrolltab{width:600px;}
 }
 
 @media only screen and (max-width: 576px){
