@@ -24,7 +24,7 @@
                         <div class="overallmain">
                             <div class="overalltop">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-md-3">
                                         <div class="commonWhiteBox">
                                             <h3 class="boxheading d-flex align-items-center mb-5">Progress
                                                 <span class="tooltipmain">

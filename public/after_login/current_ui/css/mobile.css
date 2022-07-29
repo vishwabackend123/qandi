@@ -801,6 +801,8 @@
         }
         .mytaskdash .commonWhiteBox{min-height:644px;}
         .verifiaction-link p{line-height:1.7;}
+        .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
+        .overall_analytics_page .tabMainblock{padding:0px 10px}
 }
 
 @media only screen and (max-width: 576px){
