@@ -108,40 +108,50 @@
 </section>
 </div>
 <script>
-    $('#filter_year').change(function() {
+$('#filter_year').change(function() {
 
-        var selected_val = $(this).val();
-        if (selected_val) {
-            $('.compLeteS').hide();
-            $('.filter_data_' + selected_val).show();
-        } else {
-            $('.compLeteS').show();
-        }
-    });
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
+    var selected_val = $(this).val();
+    if (selected_val) {
+        $('.compLeteS').hide();
+        $('.filter_data_' + selected_val).show();
+    } else {
+        $('.compLeteS').show();
     }
+});
+let dropdown = document.querySelector(".customDropdown")
+dropdown.onclick = function() {
+    dropdown.classList.toggle("active")
+}
+
 </script>
 <script type="text/javascript">
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
 
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-            },
-            error: function(data, errorThrown) {}
-        });
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+        },
+        error: function(data, errorThrown) {}
     });
+});
+$('.view_detail_text_colleps2').click(function() {
+    var text_data = $(this).text();
+    if (text_data === 'View details') {
+        $(this).text('Hide details');
+    } else if (text_data === 'Hide details') {
+        $(this).text('View details');
+    }
+});
+
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
