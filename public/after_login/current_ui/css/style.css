@@ -2440,6 +2440,7 @@ a.btn-common-attempted svg {
      position: relative;
      width:100%;
      border-radius: 10px;
+     height: 60px;
  }
  .customDropdown::before {
      content: "";
