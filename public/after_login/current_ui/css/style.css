@@ -3751,10 +3751,12 @@ padding: 20px;
 .test_analytics_wrapper .topic_score_lists .topic_score_bar h4 {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .test_analytics_wrapper  .halfdoughnut2{height: 173px;width: 173px;}
 .progress-bar:nth-child(2){	border-top-right-radius: 4px;border-bottom-right-radius: 4px;}
-#FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content {max-width: 100%;width: auto;}
+#FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content {max-width: 100%;width: auto;border: 0;}
 #FullTest_Exam_Panel_Interface_A .modal-dialog {max-width: 554px;}
 #FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content .modal-body{height: 428px;}
 #FullTest_Exam_Panel_Interface_A .exam_text_content{padding: 20px 0px 0;line-height: 1.4;}
+#FullTest_Exam_Panel_Interface_A .exam-footer-sec .task-btn.tasklistbtn{display:flex;}
+#FullTest_Exam_Panel_Interface_A .exam-footer-sec .tasklistbtn .btn{width:50%;}
 
 /********************* Amit End ****************************/
 
