@@ -1,86 +1,17 @@
 @extends('afterlogin.layouts.app_new')
 
 @section('content')
-<style>
-    .timing {
-        color: #2c3348;
-        font-size: 18px;
-        line-height: 27px;
-        margin-left: 30px;
-    }
 
-    .tiny-green {
-        margin-right: 30px;
-    }
-
-    .base-timer {
-        position: relative;
-        width: 60px;
-        height: 60px;
-    }
-
-    /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
-    .base-timer__svg {
-        transform: scaleX(1);
-        background: #f1f3f4;
-        border-radius: 50%;
-    }
-
-    .base-timer__circle {
-        fill: none;
-        stroke: none;
-    }
-
-    .base-timer__path-elapsed {
-        stroke-width: 7px;
-        stroke: grey;
-    }
-
-    .base-timer__path-remaining {
-        stroke-width: 7px;
-        stroke-linecap: round;
-        transform: rotate(90deg);
-        transform-origin: center;
-        transition: 1s linear all;
-        fill-rule: nonzero;
-        stroke: currentColor;
-    }
-
-    .base-timer__path-remaining.arc {
-        /* color: rgba(179, 48, 102, 0.973) */
-        color: #44cd7f;
-    }
-
-    .base-timer__label {
-        /* position: absolute;
-    
-    height: 80px; 
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;*/
-        width: 80px;
-        font-weight: 600;
-    }
-
-    /****SACHIN****/
-    .watch-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 24px;
-        transform: translate(-50%, -50%);
-    }
-
-    .number-block .btn {
-        min-width: 36px;
-        height: 36px;
-        margin-right: 25px;
-        padding: 0;
-    }
-</style>
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+
+        $endExamCheck = $('#endExam').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+
+            stop();
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
