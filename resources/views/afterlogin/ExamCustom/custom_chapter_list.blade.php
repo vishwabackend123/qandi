@@ -3,7 +3,7 @@
     @foreach($chapters as $tKey=>$chapters)
     <div class="accordion-item">
         <div class="test-table d-md-flex align-items-center justify-content-between pb-md-3 mb-md-1 position-relative">
-            <h2 class="m-0">{{$chapters->chapter_name}}</h2>
+            <h2 class="m-0" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</h2>
             <h3 class="m-0">Proficiency : <span> @if(isset($chapters->chapter_score))
                     {{round($chapters->chapter_score)}}%
                     @else
