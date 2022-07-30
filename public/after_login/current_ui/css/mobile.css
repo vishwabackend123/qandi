@@ -623,6 +623,16 @@
     {
         display: block;
     }
+
+
+    .model_popup_live_result .modal-header
+    {
+        border-radius: 10px!important;
+    }
+    .model_popup_live_result
+    {
+        background: rgba(0,0,0,0.0);
+    }
     /********* Vikash End ************/
 
     /************ Amit start *********/

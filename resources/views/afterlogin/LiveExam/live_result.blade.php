@@ -23,7 +23,7 @@
 <!-- Side bar menu -->
 
 
-<div class="main-wrapper bg-gray">
+<div class="main-wrapper bg-gray model_popup_live_result">
 
     <div class="modal fade show" id="endExam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div class="modal-dialog modal-dialog-centered">
