@@ -5708,7 +5708,15 @@ td.mymatrix_table_point
     width: 57%;
 }
 .exam_tabdata .accordion-collapse.show .accordion-body{border-bottom:0px;}
-
+.model_popup_live_result .modal-content
+{
+    border-radius: 10px!important;
+}
+.model_popup_live_result
+{
+    opacity: 0.5;
+    background-color: #1f1f1f
+}
 
 
 
