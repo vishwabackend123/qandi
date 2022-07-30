@@ -721,6 +721,15 @@
     .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
     .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;}
+    .email-confirmation{max-width: 328px;margin: 0 auto;padding: 20px;border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;}
+    .email-confirmation p > span{font-size:16px;}
+    .email-confirmation > p {padding: 28px 0px 28px;margin:0;}
+    .email-profile-pick svg {width: 60px;height: 60px;}
+    .email-confirmation > p.email_head{padding: 12px 0 27px;}
+    .email-confirmation .btn.btn-common-transparent{min-width: auto;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}

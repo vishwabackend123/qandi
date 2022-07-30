@@ -33,10 +33,21 @@
                 <path d="M58.834 64.167H42.166c-5 0-8.334-2.5-8.334-8.334V44.168c0-5.834 3.334-8.334 8.334-8.334h16.666c5 0 8.334 2.5 8.334 8.334v11.666c0 5.834-3.334 8.334-8.334 8.334z" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
+            <div class="d-none">
+                <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50.5" cy="50" r="50" fill="#FEF0C7"/>
+                    <path d="M50 43.793v-9.655c8.702 0 15.862 7.16 15.862 15.862S58.702 65.862 50 65.862 34.138 58.702 34.138 50c0-4.206 1.672-8.243 4.645-11.217" stroke="#DC6803" stroke-width="2.5" stroke-miterlimit="10"/>
+                    <path d="M42.128 44.078a1.379 1.379 0 1 1 1.95-1.95l7.872 5.921a2.759 2.759 0 1 1-3.9 3.901l-5.922-7.872z" fill="#DC6803"/>
+                </svg>
+            </div>
         </div>
-        <p><span>Email successfully Verified</span></p>
+        <p class="email_head"><span>Email successfully Verified</span></p>
         <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
-        <a href="{{ url('/dashboard') }}" class="btn btn-common-green"> Continue</a>
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="javascript:void(0)" class="btn btn-common-transparent nobg w-50 d-none" style="padding: 10px 40px;margin:24px 12px 0px 0px;"> Resend</a>
+            <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
+        </div>
+        
     </div>
 </div>
 @endsection
