@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
 <section class="getDiscount checkoutpage">
     <div class="backtobutton hideondesktop">
         <div class="backBtn">
-            <a href="{{route('subscriptions')}}">
+            <a href="{{url()->previous()}}">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -27,7 +27,7 @@ $userData = Session::get('user_data');
     <div class="planPayment">
         <div class="testType">
             <div class="backBtn hideonmobile">
-                <a href="{{route('subscriptions')}}">
+                <a href="{{url()->previous()}}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

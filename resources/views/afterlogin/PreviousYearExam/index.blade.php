@@ -1,10 +1,27 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
+
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
     <section class="content-wrapper">
         <div class="container-fluid previous_exam_page_contain">
+            @if(count($errors) > 0 )
+
+            <div id="alert_msg" class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach($errors->all() as $error)
+                <span>{{$error}}</span>
+                @endforeach
+
+            </div>
+            <script>
+                $(function() {
+                    setTimeout(function() {
+                        $("#alert_msg").hide();
+                    }, 5000);
+                });
+            </script>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="commontab">
@@ -104,46 +121,45 @@
                 </div>
             </div>
         </div>
+    </section>
 </div>
-</section>
-</div>
+
 <script>
-$('#filter_year').change(function() {
+    $('#filter_year').change(function() {
 
-    var selected_val = $(this).val();
-    if (selected_val) {
-        $('.compLeteS').hide();
-        $('.filter_data_' + selected_val).show();
-    } else {
-        $('.compLeteS').show();
+        var selected_val = $(this).val();
+        if (selected_val) {
+            $('.compLeteS').hide();
+            $('.filter_data_' + selected_val).show();
+        } else {
+            $('.compLeteS').show();
+        }
+    });
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
     }
-});
-let dropdown = document.querySelector(".customDropdown")
-dropdown.onclick = function() {
-    dropdown.classList.toggle("active")
-}
-
 </script>
 <script type="text/javascript">
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-        },
-        error: function(data, errorThrown) {}
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+            },
+            error: function(data, errorThrown) {}
+        });
     });
-});
-$('.view_detail_text_colleps2').click(function() {
+    $('.view_detail_text_colleps2').click(function() {
         var text_data = $(this).text();
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
@@ -152,8 +168,7 @@ $('.view_detail_text_colleps2').click(function() {
             $(this).parents('.compLeteS').removeClass('list_active');
             $(this).text('View details');
         }
-     });
-
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
