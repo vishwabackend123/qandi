@@ -41,7 +41,7 @@
                                         <div class="mock_exam_jee_main_text">
                                             <h3>{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h3>
                                         </div>
-                                        <button type="button" class="btn btn-common-green mock_test_take_test_btn" id="take_test">Take test</button>
+                                        <button type="button" class="btn btn-common-green mock_test_take_test_btn mobile_hide" id="take_test">Take test</button>
                                     </div>
                                     <div class="line_696"></div>
                                     <div class="mock_test_ques_dure_marks_sub d-flex">
@@ -62,6 +62,7 @@
                                             <div class="mock_test_qdms_text2">{{$tagrets}}</div>
                                         </div>
                                     </div>
+                                    <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take test</button>
                                 </div>
                                 <div id="attempted2" class=" tab-pane">
 

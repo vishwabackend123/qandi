@@ -36,7 +36,7 @@
                                 </div>
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
-                                <div class="take-fulltest d-lg-flex align-items-center justify-content-end {{($skey==0)?'d-lg-flex':'d-none'}}"  id="{{$sub->subject_name}}_main">
+                                <div class="take-fulltest d-lg-flex align-items-center justify-content-end {{($skey==0)?'d-lg-flex':'d-none'}}" id="{{$sub->subject_name}}_main">
                                     <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select">
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
@@ -47,7 +47,7 @@
                                         </form>
                                         <a href="javascript:void(0);" onclick="clearTopics();" class="clearsec">Clear Selection</a>
                                     </div>
-                                    <div class="full_take {{($skey==0)?'d-flex':'d-none'}}" id="{{$sub->subject_name}}_test">
+                                    <div class="full_take position-relative {{($skey==0)?'d-flex':'d-none'}}" id="{{$sub->subject_name}}_test">
                                         <a href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
                                             <svg class="me-4 align-bottom" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 9a8 8 0 0 1 8-8h28a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H9a8 8 0 0 1-8-8V9z" fill="#FCFDFD" />
@@ -56,38 +56,11 @@
                                             </svg>
                                         </a>
                                         <ul class="dropdown-menu filterdropdown">
-                                    <li class="text-right"><a href="javascript:void(0);" class="dropdown-item fliterclr">CLEAR</a></li>        
-                    <li><a class="dropdown-item" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none"></path>
-                              <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                              <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                            </svg> Low Proficiency</a></li>
-                    <li><a class="dropdown-item" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"></path>
-                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                            </svg> High Proficiency</a></li>
-                     <li><a class="dropdown-item" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2978" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2681" d="M0 0h24v24H0z" style="fill:none"></path>
-                              <path data-name="Path 2682" d="M15 10V5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2683" d="M19 21h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2684" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2685" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                            </svg> A to Z order</a></li>
-                     <li><a class="dropdown-item" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2979" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2686" d="M0 0h24v24H0z" style="fill:none"></path>
-                              <path data-name="Path 2687" d="M15 21v-5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2688" d="M19 10h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2689" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                              <path data-name="Path 2690" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                            </svg> Z to A order</a></li>
-                </ul>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z order</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A order</a></li>
+                                        </ul>
                                         <form method="post" class="fulltestform" action="{{route('custom_exam','instruction')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="{{$sub->id}}">
@@ -97,7 +70,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="accordion mt-4 pt-1 subjectlist  {{($skey==0)?'d-block':'d-none'}}" id="{{$sub->subject_name}}_list">
+                                <div class="accordion mt-4 pt-1 subjectlist  {{($skey==0)?'d-block':'d-none'}} chapter_list_{{$sub->id}}" id="{{$sub->subject_name}}_list">
                                     <div class="testtablescroll allscrollbar">
                                         @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                         @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
@@ -314,6 +287,44 @@ function showSubfilter(subject) {
     }
 
 }
+
+function chapterlist_filter(sub_id, filter_type) {
+    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "filter_type": filter_type
+        },
+        beforeSend: function() {
+            $('#overlay').fadeIn();
+        },
+        success: function(result) {
+            $(".chapter_list_" + sub_id).html('');
+            $(".chapter_list_" + sub_id).html(result);
+        }
+    });
+};
+
+function clear_chapter_filter(sub_id, filter_type) {
+    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "filter_type": filter_type
+        },
+        beforeSend: function() {
+            $('#overlay').fadeIn();
+        },
+        success: function(result) {
+            $(".chapter_list_" + sub_id).html('');
+            $(".chapter_list_" + sub_id).html(result);
+        }
+    });
+
+};
 
 </script>
 @include('afterlogin.layouts.footer_new')
