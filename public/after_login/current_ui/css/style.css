@@ -2808,9 +2808,9 @@ line-height: 1.6;
 .hideondesktop{display: none;}
 .autoHeight{height: auto !important;   transition: transform 0.3s ease-in-out;}
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
-.quest_btn{position: absolute;top: -5px;}
+.quest_btn{position: absolute;top: -33px;}
 .qprev {left: 0px; }
-.qnext{right:6px; ;}
+.qnext{right:0px; ;}
 .quest_btn .Previous ,.quest_btn .Next{ 
     font-size: 22px;
 }
