@@ -2440,6 +2440,7 @@ a.btn-common-attempted svg {
      position: relative;
      width:100%;
      border-radius: 10px;
+     height: 60px;
  }
  .customDropdown::before {
      content: "";
@@ -2807,9 +2808,9 @@ line-height: 1.6;
 .hideondesktop{display: none;}
 .autoHeight{height: auto !important;   transition: transform 0.3s ease-in-out;}
 .allbenefitsbtn{font-size: 14px;font-weight: bold; font-stretch: normal;font-style: normal;line-height: 1.6;letter-spacing: normal;color:#56b663;display: none;}
-.quest_btn{position: absolute;top: -5px;}
+.quest_btn{position: absolute;top: -33px;}
 .qprev {left: 0px; }
-.qnext{right:6px; ;}
+.qnext{right:0px; ;}
 .quest_btn .Previous ,.quest_btn .Next{ 
     font-size: 22px;
 }
@@ -3433,6 +3434,7 @@ h3.commonheading{
     border-radius: 4px;
     height: 10px;
     position: relative;
+    cursor: pointer;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);
@@ -3443,6 +3445,8 @@ ul.topic_score_lists {
     overflow-y: auto;
     max-height: 535px;
     padding-right: 40px;
+    min-height: 310px;
+    place-content: flex-start;
 }
 ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
 .subject_score_card h5{
@@ -3468,18 +3472,18 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
-.noofquestions-block {
+.noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
-    position: absolute;
     padding: 20px 20px;
     width: 200px;
-    z-index: 1;
-	right: -20px;
-	display: none;	
+    border: 0;
+    min-width: auto;	
+    right: -25px!important;
+    left: auto!important;
 }
-ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -3757,6 +3761,9 @@ padding: 20px;
 #FullTest_Exam_Panel_Interface_A .exam_text_content{padding: 20px 0px 0;line-height: 1.4;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .task-btn.tasklistbtn{display:flex;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .tasklistbtn .btn{width:50%;}
+.progress.dropdown-toggle::after {
+    border: 0;
+}
 
 /********************* Amit End ****************************/
 
@@ -3769,7 +3776,7 @@ padding: 20px;
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
-    box-shadow: 0 4px 8px 0 rgba(62, 96, 121, 0.1);
+    box-shadow: 0 4px 8px -2px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
 }
@@ -4508,7 +4515,7 @@ justify-content: space-between;}
     position: relative;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
-    .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:10px;}
+    .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:20px;}
    .liveexamScroll{height: calc(100vh - 542px);
     overflow-y: auto;
     padding-right: 10px;
@@ -4934,9 +4941,10 @@ justify-content: space-between;}
     color: #1f1f1f;
 }
 
-.mymatrix_table tr td {
+.mymatrix_table tr td{
     padding: 20px 0px;
 }
+.mymatrix_table tr td:nth-child(2){padding-left:10px;}
 
 .qq1_2_3_4.active {
     color: #363c4f !important;
