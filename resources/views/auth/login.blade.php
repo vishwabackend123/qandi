@@ -63,7 +63,7 @@
                     <div class="carousel-item">
                         <img src="{{URL::asset('public/after_login/current_ui/images/Task-center.svg')}}" alt="performance" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="pb-2">Task ccenter</h5>
+                            <h5 class="pb-2">Task center</h5>
                             <p>To assess your readiness, set daily or weekly tasks to<br> evaluate your skills </p>
                         </div>
                     </div>
