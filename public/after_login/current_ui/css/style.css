@@ -6904,4 +6904,9 @@ label.filter {
 /* shiv end css */
 /***********************************End Review page***************************/
 
+#filterBy .dropdown-menu{
+    transform: translate(200px, 64px) !important;
+    min-width: auto;
+}
+
 
