@@ -751,20 +751,20 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </h3>
                                         </div>
 
-                                        <div class="dropbox mobile_block dropboxmob">
+                                        <!--div class="dropbox mobile_block dropboxmob">
                                             <div class="customDropdown dropdown">
                                                 <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                 <div class="options">
                                                     <div style=" overflow-y: auto;  height: 145px;">
                                                         <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                        <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                        <div class="markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                                         <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
                                                         <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
                                                         <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div-->
 
 
                                         <div class="journeyBoxcontainer">
