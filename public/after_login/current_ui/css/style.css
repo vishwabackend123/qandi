@@ -3469,7 +3469,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
-/* .noofquestions-block.dropdown-menu {
+.noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
@@ -3477,7 +3477,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 200px;
     border: 0;
     min-width: auto;	
-} */
+}
 /* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
