@@ -27,7 +27,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
                     <span class="d-block mb-2 commontext">Questions Attempted</span>
-                    <label class="m-0 commonboldtext">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</label>
+                    <label class="m-0 commonboldtext">{{$scoreResponse->no_of_question - $scoreResponse->not_answered}}/{{$scoreResponse->no_of_question}}</label>
                 </div>
                 <div class="time-date-block">
                     <span class="d-block mb-2 commontext">{{isset($scoreResponse->total_get_marks)?date('j F Y', strtotime($scoreResponse->test_attempted_date)):''}}</span>

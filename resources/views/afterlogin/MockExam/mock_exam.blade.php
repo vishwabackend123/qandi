@@ -3,6 +3,15 @@
 @section('content')
 
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+
+        $endExamCheck = $('#endExam').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+
+            stop();
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",

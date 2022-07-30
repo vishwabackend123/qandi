@@ -190,7 +190,7 @@ class PreviousYearExamController extends Controller
                 $questions_count = 0;
                 $exam_fulltime = 0;
                 $total_marks = 0;
-                return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                return Redirect::back()->withErrors(['Question not available in this exam! Please try Again.']);
             }
             $exam_ques_count = $questions_count;
 
