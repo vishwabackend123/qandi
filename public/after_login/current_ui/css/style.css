@@ -3444,6 +3444,8 @@ ul.topic_score_lists {
     overflow-y: auto;
     max-height: 535px;
     padding-right: 40px;
+    min-height: 310px;
+    place-content: flex-start;
 }
 ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
 .subject_score_card h5{
