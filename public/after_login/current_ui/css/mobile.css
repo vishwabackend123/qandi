@@ -283,6 +283,11 @@
     margin-top: 23px;
     padding: 22px 0 0px 0 !important;
     }
+    .testtablescroll .accordion-header .btn {
+    max-width: 111px !important;
+    min-width: 111px !important;
+    padding-top: 8px;
+    }
     .test-table h3 {
     position: absolute;
     right: 0;
@@ -290,7 +295,12 @@
     }
     .test-table h2 {
     width: 240px;
+    font-size: 14px;
     }
+    .test-table h3 {
+    font-size: 12px;
+    margin-top: 0 !important;
+}
     .planner-title h1 {
     margin: 0;
     }
