@@ -940,7 +940,7 @@ border-color: #56b663;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin: 0;
-    width: 125px;
+    width: 110px;
 }
 .exambox-heading h2{
     font-size: 13px;
@@ -2439,7 +2439,6 @@ a.btn-common-attempted svg {
  .customDropdown {
      position: relative;
      width:100%;
-     height: 60px;
      border-radius: 10px;
  }
  .customDropdown::before {
@@ -3751,8 +3750,13 @@ padding: 20px;
 .test_analytics_wrapper .subject_score_card .color_labels span b {color: #111;}
 .test_analytics_wrapper .topic_score_lists .topic_score_bar h4 {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .test_analytics_wrapper  .halfdoughnut2{height: 173px;width: 173px;}
-.progress-bar:nth-child(2){	border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;}
+.progress-bar:nth-child(2){	border-top-right-radius: 4px;border-bottom-right-radius: 4px;}
+#FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content {max-width: 100%;width: auto;border: 0;}
+#FullTest_Exam_Panel_Interface_A .modal-dialog {max-width: 554px;}
+#FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content .modal-body{height: 428px;}
+#FullTest_Exam_Panel_Interface_A .exam_text_content{padding: 20px 0px 0;line-height: 1.4;}
+#FullTest_Exam_Panel_Interface_A .exam-footer-sec .task-btn.tasklistbtn{display:flex;}
+#FullTest_Exam_Panel_Interface_A .exam-footer-sec .tasklistbtn .btn{width:50%;}
 
 /********************* Amit End ****************************/
 
@@ -5704,7 +5708,32 @@ td.mymatrix_table_point
     width: 57%;
 }
 .exam_tabdata .accordion-collapse.show .accordion-body{border-bottom:0px;}
-
+.model_popup_live_result .modal-content
+{
+    border: 0px!important;
+}
+.model_popup_live_result
+{
+    opacity: 0.5;
+    background-color: #1f1f1f
+}
+.model_popup_live_result .modal-body h2
+{
+    font-size: 26px;
+    color: #1f1f1f;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.model_popup_live_result .modal-body b{
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363c4f;
+}
 
 
 
@@ -6297,11 +6326,12 @@ border-color: #56b663;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #1f1f1f;
-    padding: 25px 40px;
+    padding: 32px 75.5px;
     text-align: center;
-    width: 460px;
-    border-radius: 20px;
+    width: 100%;
+    border-radius: 32px;
     max-width: 460px;
+    box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 }
 .email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 20px 0px 40px;}
 .email-confirmation p > span {
@@ -6315,7 +6345,7 @@ border-color: #56b663;
     font-weight: 500;
     display: inline-block;color: #363c4f;
 }
-.email-confirmation .btn.btn-common-green {min-width: inherit;padding: 10px 40px;margin: 15px 0px;}
+.email-confirmation .btn.btn-common-green {min-width: inherit;padding: 10px 40px;margin: 24px 0px 0px;}
 
 /**********  texst summary modal *********/
 .modal-header-exam {
@@ -6364,7 +6394,9 @@ border-color: #56b663;
     font-size: 14px;
     height: 44px;
 }
-.exam-footer-sec .task-btn.tasklistbtn .btn-common-green > label {padding-left: 8px;vertical-align: middle;}
+.exam-footer-sec .task-btn.tasklistbtn .btn-common-green > label {padding-left: 8px;
+    /* vertical-align: middle; */
+}
 .ans1:before {
     content: "";
     width: 14px;
@@ -6903,5 +6935,10 @@ label.filter {
 
 /* shiv end css */
 /***********************************End Review page***************************/
+
+#filterBy .dropdown-menu{
+    transform: translate(200px, 64px) !important;
+    min-width: auto;
+}
 
 

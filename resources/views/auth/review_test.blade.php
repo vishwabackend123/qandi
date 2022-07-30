@@ -294,21 +294,23 @@
                         <div class="review-filter-top">
                             <span>Review Questions</span>
                                 <div class="filter_cate">
-                                    <div class="dropdown">
-                                        <label class="filter dropbtn" onclick="myFunction()">
+                                        <label class="filter"  data-bs-toggle="dropdown" aria-expanded="false">
                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
                                         </label>
-                                        <div id="myDropdown" class="dropdown-content">
-                                            <a href="#home">Home</a>
-                                            <a href="#about">About</a>
-                                            <a href="#contact">Contact</a>
-                                        </div>
-                                    </div>
- 
 
 
+                                        <ul class="dropdown-menu filterdropdown">
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z order</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A order</a></li>
+                                        </ul>
+
+
+
+                                       
                                 </div>
                             
 
@@ -897,70 +899,6 @@
         // change functionality for larger screens
     }
 </script>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-<style>
-    .dropbtn {
  
-  color: white;
- 
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;    right: 0px;
-  padding: 20px 0px;
-}
-
-.dropdown-content a {
-  color: #1f1f1f;
- 
-  text-decoration: none;
-  display: block;
-  padding-left: 20px;
-  padding-top:8px;
-  padding-bottom:8px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
     </style>
 @endsection
