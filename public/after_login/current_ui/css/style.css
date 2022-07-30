@@ -2439,7 +2439,6 @@ a.btn-common-attempted svg {
  .customDropdown {
      position: relative;
      width:100%;
-     height: 60px;
      border-radius: 10px;
  }
  .customDropdown::before {
@@ -6908,5 +6907,10 @@ label.filter {
 
 /* shiv end css */
 /***********************************End Review page***************************/
+
+#filterBy .dropdown-menu{
+    transform: translate(200px, 64px) !important;
+    min-width: auto;
+}
 
 
