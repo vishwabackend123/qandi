@@ -3469,18 +3469,16 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
-.noofquestions-block {
+/* .noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
-    position: absolute;
     padding: 20px 20px;
     width: 200px;
-    z-index: 1;
-	right: -20px;
-	display: none;	
-}
-ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+    border: 0;
+    min-width: auto;	
+} */
+/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -3758,6 +3756,9 @@ padding: 20px;
 #FullTest_Exam_Panel_Interface_A .exam_text_content{padding: 20px 0px 0;line-height: 1.4;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .task-btn.tasklistbtn{display:flex;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .tasklistbtn .btn{width:50%;}
+.progress.dropdown-toggle::after {
+    border: 0;
+}
 
 /********************* Amit End ****************************/
 
@@ -3770,7 +3771,7 @@ padding: 20px;
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
-    box-shadow: 0 4px 8px 0 rgba(62, 96, 121, 0.1);
+    box-shadow: 0 4px 8px -2px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
 }
