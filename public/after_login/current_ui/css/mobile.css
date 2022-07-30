@@ -631,7 +631,8 @@
     }
     .model_popup_live_result
     {
-        background: rgba(0,0,0,0.0);
+        opacity: 0.5;
+        background-color: #1f1f1f
     }
     /********* Vikash End ************/
 
