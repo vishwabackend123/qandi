@@ -5710,12 +5710,29 @@ td.mymatrix_table_point
 .exam_tabdata .accordion-collapse.show .accordion-body{border-bottom:0px;}
 .model_popup_live_result .modal-content
 {
-    border-radius: 10px!important;
+    border: 0px!important;
 }
 .model_popup_live_result
 {
     opacity: 0.5;
     background-color: #1f1f1f
+}
+.model_popup_live_result .modal-body h2
+{
+    font-size: 26px;
+    color: #1f1f1f;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.model_popup_live_result .modal-body b{
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363c4f;
 }
 
 

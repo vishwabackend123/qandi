@@ -27,7 +27,7 @@
 
     <div class="modal fade show" id="endExam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-0  ">
+            <div class="modal-content">
                 <div class="modal-header pb-0 border-0">
                     <a href="{{route('live_exam_list')}}" type="button" class="btn-close"></a>
                 </div>
