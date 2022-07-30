@@ -131,6 +131,50 @@
         display: none;
     }
 </style>
+<style>
+    .time_taken_css span:first-child {
+        font-weight: 600;
+    }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 87px;
+        background-color: #E4E4E4;
+        height: 14px;
+        border-radius: 4px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #56b663;
+        border-radius: 4px;
+    }
+</style>
 
 <body class="login-body-bg" id="main-body">
 
