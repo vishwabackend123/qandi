@@ -3434,6 +3434,7 @@ h3.commonheading{
     border-radius: 4px;
     height: 10px;
     position: relative;
+    cursor: pointer;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);
@@ -3479,6 +3480,8 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 200px;
     border: 0;
     min-width: auto;	
+    right: -25px!important;
+    left: auto!important;
 }
 /* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
