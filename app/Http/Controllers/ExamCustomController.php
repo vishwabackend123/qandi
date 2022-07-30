@@ -369,6 +369,7 @@ class ExamCustomController extends Controller
             $exam_name = "Custom Exam";
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
+            Redis::set('test_type' . $user_id, $test_type);
 
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
@@ -944,8 +945,10 @@ class ExamCustomController extends Controller
                 $sorted = $collection->sortBy([['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             }
-
-            return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
+            $redis_subjects = $this->redis_subjects();
+            $cSubjects = collect($redis_subjects);
+            $filtered_subject = $cSubjects->where('id', $subject_id)->first();
+            return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id','filtered_subject'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1161,6 +1164,7 @@ class ExamCustomController extends Controller
             $exam_name = $test_name;
 
             Redis::set('exam_name' . $user_id, $test_name);
+            Redis::set('test_type' . $user_id, $test_type);
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $aQ_list = [];

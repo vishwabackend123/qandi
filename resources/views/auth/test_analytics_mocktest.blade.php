@@ -289,7 +289,7 @@
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">3
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;">th</sub></label>
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">th</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -311,7 +311,7 @@
                         </h3>
                         <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-sm-6 mb-3">
                                 <h5 class="mb-0">Maths</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="halfdoughnut">

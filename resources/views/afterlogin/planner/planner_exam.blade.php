@@ -201,23 +201,43 @@ $question_type = "Numerical";
 
                 <div class="examRightpanel">
                     <div class="main-textexam-sec">
-                        <div class="text-examtop-sec">
-                            <p>
-                                <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="text-examtop-sec d-flex align-items-center justify-content-between">
+                            <div id="app" class="me-4 pe-2 mb-2">
+                                <div class="base-timer">
+                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="base-timer__circle">
+                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                        </g>
+                                    </svg>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
+                                </div>
+                            </div>
+                            <!-- <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
                                     <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg> -->
+                            <span id="base-timer-label" class="base-timer__label"> Left</span>
+                            <label class="stop" onclick="stop();">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
                                 </svg>
-                                <span id="base-timer-label" class="base-timer__label"> Left</span>
-                                <label>
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                    </svg>
-                                </label>
-                            </p>
+                            </label>
+                            <label class="start" onclick="start();" style="display: none">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
                         </div>
                         <div class="text-exammid-sec borederbot" style="visibility: hidden;">
                             <p>Overview</p>
@@ -283,490 +303,704 @@ $question_type = "Numerical";
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modalcenter">
-            <div class="modal-dialog">
-                <div class="modal-content exammodal_content">
-                    <div class="modal-body">
-                        <div class="modal-header-exam">
-                            <div class="exam-overview">
-                                <label>Exam Overview</label>
-                            </div>
-                            <div class="exam-overview-time">
-                                <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
-                                        <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
-                                        <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body">
+                    <div class="modal-header-exam">
+                        <div class="exam-overview">
+                            <label>Exam Overview</label>
+                        </div>
+                        <div class="exam-overview-time">
+                            <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
+                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                    <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
+                                    <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+                            <span><span id="lefttime_pop_s"> </span>Left</span>
+                        </div>
+                    </div>
+                    <div class="exam-ans-sec top-first">
+                        <div class="ans1">Answered</div>
+                        <div class="ans-in-num">24</div>
+                    </div>
+                    <div class="exam-ans-sec">
+                        <div class="ans2">Unanswered</div>
+                        <div class="ans-in-num">2</div>
+                    </div>
+                    <div class="exam-ans-sec">
+                        <div class="ans3">Marked for review</div>
+                        <div class="ans-in-num">3</div>
+                    </div>
+                    <div class="exam-ans-sec">
+                        <div class="ans4">Answered & marked for review</div>
+                        <div class="ans-in-num">1</div>
+                    </div>
+                    <div class="exam_text_content">
+                        No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
+                    </div>
+                    <div class="exam-footer-sec">
+                        <div class="task-btn tasklistbtn">
+                            <button class="btn btn-common-transparent nobg reviewbtn" data-bs-dismiss="modal" onclick="start()">Back To test</button>
+                            <button id="bt-modal-confirm" class="btn btn-common-green"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg>
                                 </label>
-                                <span><span id="lefttime_pop_s"> </span>Left</span>
-                            </div>
-                        </div>
-                        <div class="exam-ans-sec top-first">
-                            <div class="ans1">Answered</div>
-                            <div class="ans-in-num">24</div>
-                        </div>
-                        <div class="exam-ans-sec">
-                            <div class="ans2">Unanswered</div>
-                            <div class="ans-in-num">2</div>
-                        </div>
-                        <div class="exam-ans-sec">
-                            <div class="ans3">Marked for review</div>
-                            <div class="ans-in-num">3</div>
-                        </div>
-                        <div class="exam-ans-sec">
-                            <div class="ans4">Answered & marked for review</div>
-                            <div class="ans-in-num">1</div>
-                        </div>
-                        <div class="exam_text_content">
-                            No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
-                        </div>
-                        <div class="exam-footer-sec">
-                            <div class="task-btn tasklistbtn">
-                                <button class="btn btn-common-transparent nobg reviewbtn" data-bs-dismiss="modal" onclick="start()">Back To test</button>
-                                <button id="bt-modal-confirm" class="btn btn-common-green"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
-                                        </svg>
-                                    </label>
-                                </button>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="endExam" tabindex="-1" role="dialog" aria-labelledby="endExam" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body">
+                    <div class="modal-header-exam text-center ">
+                        <div class="exam-overview ">
+                            <label>Exam Time Over</label>
+                        </div>
 
-    <script>
-        var activeques_id = '{{$activeq_id}}';
-        /* Allow only numeric with decimal */
-        $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-            //this.value = this.value.replace(/[^0-9\.]/g,'');
-            $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+                    </div>
+                    <div class="exam-footer-sec  p-4">
+                        <div class="task-btn tasklistbtn text-center">
+                            <button id="bt-modal-confirm_over" class="btn btn-common-green"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                                    </svg>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var activeques_id = '{{$activeq_id}}';
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
                 event.preventDefault();
+                return;
             }
-            var text = $(this).val();
-            if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
                 event.preventDefault();
+                return;
             }
-            if (event.charCode === 46) {
-                // if dot is the first symbol
-                if (event.target.value.length === 0) {
-                    event.preventDefault();
-                    return;
-                }
-
-                // if there are dots already 
-                if (event.target.value.indexOf('.') !== -1) {
-                    event.preventDefault();
-                    return;
-                }
-
-            }
-        });
-        /* Sachin screen changes */
-        function setboxHeight() {
-            var height = $(".rightSect .flex-column").outerHeight();
-            $('.cust-tab-content').css('height', height);
 
         }
-        /*  setboxHeight();
-         $("window").load(function() {
-             setboxHeight();
-         }); */
+    });
+    /* Sachin screen changes */
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+        $('.cust-tab-content').css('height', height);
 
-        $(window).resize(function() {
-            setboxHeight();
-        });
-        /* /Sachin screen changes */
+    }
+    /*  setboxHeight();
+     $("window").load(function() {
+         setboxHeight();
+     }); */
 
-        /* page referesh disabled */
-        $(document).ready(function() {
-            /* mouse rightclick */
-            /*   document.oncontextmenu = function() {
+    $(window).resize(function() {
+        setboxHeight();
+    });
+    /* /Sachin screen changes */
+
+    /* page referesh disabled */
+    $(document).ready(function() {
+        /* mouse rightclick */
+        /*   document.oncontextmenu = function() {
+              return false;
+          };
+
+          $(document).mousedown(function(e) {
+              if (e.button == 2) {
+
                   return false;
-              };
+              }
+              return true;
+          }); */
+        /* mouse rightclick */
 
-              $(document).mousedown(function(e) {
-                  if (e.button == 2) {
-
-                      return false;
-                  }
-                  return true;
-              }); */
-            /* mouse rightclick */
-
-            document.onkeydown = function(e) {
-                // disable F12 key
-                if (e.keyCode == 123 || e.keyCode == 116) {
-                    return false;
-                }
-                /* Ctrl+A */
-                if (e.keyCode == 65 && e.ctrlKey) {
-
-                    return false;
-                }
-                /* Ctrl+R */
-                if (e.keyCode == 82 && e.ctrlKey) {
-
-                    return false;
-                }
-
-                // disable ctrl+shift+I key
-                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                    return false;
-                }
-
-                // disable ctrl+shift+J key
-                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                    return false;
-                }
-
-                // disable ctrl+U key
-                if (e.ctrlKey && e.keyCode == 85) {
-                    return false;
-                }
-
-                // disable ctrl+P key
-                if (e.ctrlKey && e.keyCode == 80) {
-                    return false;
-                }
+        document.onkeydown = function(e) {
+            // disable F12 key
+            if (e.keyCode == 123 || e.keyCode == 116) {
+                return false;
             }
-            $('#quest_option_' + activeques_id).focus();
-        });
-    </script>
-    <!-- /page referesh disabled -->
-    <!-- browser back disable -->
+            /* Ctrl+A */
+            if (e.keyCode == 65 && e.ctrlKey) {
 
-    <script type="text/javascript">
-        $(document).ready(function() {
+                return false;
+            }
+            /* Ctrl+R */
+            if (e.keyCode == 82 && e.ctrlKey) {
+
+                return false;
+            }
+
+            // disable ctrl+shift+I key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                return false;
+            }
+
+            // disable ctrl+shift+J key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+
+            // disable ctrl+U key
+            if (e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+
+            // disable ctrl+P key
+            if (e.ctrlKey && e.keyCode == 80) {
+                return false;
+            }
+        }
+        $('#quest_option_' + activeques_id).focus();
+    });
+</script>
+<!-- /page referesh disabled -->
+<!-- browser back disable -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function() {
             window.history.pushState(null, "", window.location.href);
-            window.onpopstate = function() {
-                window.history.pushState(null, "", window.location.href);
-            };
-        });
-    </script>
-    <!-- /browser back disable -->
+        };
+    });
+</script>
+<!-- /browser back disable -->
 
-    <script type="text/javascript">
-        /*$('.number-block').slimscroll({
+<script type="text/javascript">
+    /*$('.number-block').slimscroll({
         height: '20vh'
     });
     $('.answer-block').slimscroll({
         height: '30vh'
     });*/
 
-        $(window).on('load', function() {
-            $('#test_instruction').modal('show');
-            setboxHeight();
-            startTimer();
-            questionstartTimer();
-            setEachQuestionTime();
-            if ($('#quest_option_' + activeques_id).length > 0) {
-                $('#quest_option_' + activeques_id).focus();
-            }
-
-        });
-
-        $('.selctbtn').click(function() {
-            $('.qoption_error').hide();
-        });
-
-        jQuery(function() {
-            jQuery(".markerDiv").click(function() {
-                var template_type = $("#current_question_type").val();
-                if (template_type == 2) {
-                    $('input[type=radio]', this).prop("checked", true);
-                } else {
-                    var $checks = $(this).find('input[type=checkbox]');
-
-                    $checks.prop("checked", !$checks.is(":checked"));
-
-                }
-            });
-        });
-        $(document).on('keydown', function(e) {
-            if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
-                e.preventDefault();
-        });
-        /*$('.instructions').slimscroll({
-            height: '33vh',
-            color: '#ff9999',
-
-        });*/
-
-        const FULL_DASH_ARRAY = 283;
-        const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
-
-        //All buttons
-        let startBtn = document.querySelector(".start");
-        let stopBtn = document.querySelector(".stop");
-        let resetBtn = document.querySelector(".reset");
-
-        //DOM elements
-        let timer = document.querySelector("#base-timer-path-remaining");
-        let timeLabel = document.getElementById("base-timer-label");
-
-        //Time related vars
-        const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
-        let timePassed = -1;
-        let timeLeft = TIME_LIMIT;
-        let timerInterval = null;
-
-
-        function reset() {
-            clearInterval(timerInterval);
-            resetVars();
-            startBtn.innerHTML = "Start";
-            timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+    $(window).on('load', function() {
+        $('#test_instruction').modal('show');
+        setboxHeight();
+        startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
         }
 
-        function start(withReset = false) {
-            setDisabled(startBtn);
-            removeDisabled(stopBtn);
-            $(".stop").show();
-            $(".start").hide();
-            if (withReset) {
-                resetVars();
-            }
-            startTimer();
-        }
+    });
 
-        function stop(type = '') {
-            setDisabled(stopBtn);
-            removeDisabled(startBtn);
-            $(".stop").hide();
-            $(".start").show();
-            // startBtn.innerHTML = "Continue";
-            clearInterval(timerInterval);
-            if (type !== 'submit') {
-                $("#resume-test").modal("show");
-            }
-        }
+    $('.selctbtn').click(function() {
+        $('.qoption_error').hide();
+    });
 
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                timePassed = timePassed += 1;
-                timeLeft = TIME_LIMIT - timePassed;
-                $('#final_submit_time').val(timePassed);
-                timeLabel.innerHTML = formatTime(timeLeft);
-                setCircleDasharray();
-
-                if (timeLeft === 0) {
-
-                    timeIsUp();
-                }
-            }, 1000);
-        }
-
-        window.addEventListener("load", () => {
-            // startTimer();
-            timeLabel.innerHTML = formatTime(TIME_LIMIT);
-            // setDisabled(stopBtn);
-        });
-
-        //---------------------------------------------
-        //HELPER METHODS
-        //---------------------------------------------
-        function setDisabled(button) {
-            button.setAttribute("disabled", true);
-        }
-
-        function removeDisabled(button) {
-            button.removeAttribute("disabled");
-        }
-
-        function timeIsUp() {
-
-            /*  setDisabled(startBtn);
-             removeDisabled(stopBtn); */
-            clearInterval(timerInterval);
-            $('#endMsg').css('font-size', 24 + 'px');
-            $('#endMsg').text('Time Out!');
-            $('#endExam').modal('show');
-
-            /* let confirmReset = confirm("Time is UP! Wanna restart?");
-            if (confirmReset) {
-                reset();
-                startTimer();
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
+            if (template_type == 2) {
+                $('input[type=radio]', this).prop("checked", true);
             } else {
-                reset();
-            } */
-        }
+                var $checks = $(this).find('input[type=checkbox]');
 
-        function resetVars() {
-            // removeDisabled(startBtn);
-            // setDisabled(stopBtn);
-            timePassed = -1;
-            timeLeft = TIME_LIMIT;
-            console.log(timePassed, timeLeft);
+                $checks.prop("checked", !$checks.is(":checked"));
 
-            timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        }
-
-        function formatTime(time) {
-            const minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-
-            if (seconds < 10) {
-                seconds = `0${seconds}`;
             }
+        });
+    });
+    $(document).on('keydown', function(e) {
+        if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
+            e.preventDefault();
+    });
+    /*$('.instructions').slimscroll({
+        height: '33vh',
+        color: '#ff9999',
 
-            return `${minutes} min ${seconds} sec`;
+    });*/
+
+    const FULL_DASH_ARRAY = 283;
+    const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
+
+    //All buttons
+    let startBtn = document.querySelector(".start");
+    let stopBtn = document.querySelector(".stop");
+    let resetBtn = document.querySelector(".reset");
+
+    //DOM elements
+    let timer = document.querySelector("#base-timer-path-remaining");
+    let timeLabel = document.getElementById("base-timer-label");
+
+    //Time related vars
+    const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
+    let timePassed = -1;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+
+
+    function reset() {
+        clearInterval(timerInterval);
+        resetVars();
+        startBtn.innerHTML = "Start";
+        timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+    }
+
+    function start(withReset = false) {
+        setDisabled(startBtn);
+        removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
+        if (withReset) {
+            resetVars();
+        }
+        startTimer();
+    }
+
+    function stop(type = '') {
+        setDisabled(stopBtn);
+        removeDisabled(startBtn);
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
+        clearInterval(timerInterval);
+        if (type !== 'submit') {
+            $("#resume-test").modal("show");
+        }
+    }
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timePassed = timePassed += 1;
+            timeLeft = TIME_LIMIT - timePassed;
+            $('#final_submit_time').val(timePassed);
+            timeLabel.innerHTML = formatTime(timeLeft);
+            setCircleDasharray();
+
+            if (timeLeft === 0) {
+
+                timeIsUp();
+            }
+        }, 1000);
+    }
+
+    window.addEventListener("load", () => {
+        // startTimer();
+        timeLabel.innerHTML = formatTime(TIME_LIMIT);
+        // setDisabled(stopBtn);
+    });
+
+    //---------------------------------------------
+    //HELPER METHODS
+    //---------------------------------------------
+    function setDisabled(button) {
+        button.setAttribute("disabled", true);
+    }
+
+    function removeDisabled(button) {
+        button.removeAttribute("disabled");
+    }
+
+    function timeIsUp() {
+
+        /*  setDisabled(startBtn);
+         removeDisabled(stopBtn); */
+        clearInterval(timerInterval);
+        $('#endMsg').css('font-size', 24 + 'px');
+        $('#endMsg').text('Time Out!');
+        $('#endExam').modal('show');
+
+        /* let confirmReset = confirm("Time is UP! Wanna restart?");
+        if (confirmReset) {
+            reset();
+            startTimer();
+        } else {
+            reset();
+        } */
+    }
+
+    function resetVars() {
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
+        timePassed = -1;
+        timeLeft = TIME_LIMIT;
+        console.log(timePassed, timeLeft);
+
+        timeLabel.innerHTML = formatTime(TIME_LIMIT);
+    }
+
+    function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
         }
 
-        function calculateTimeFraction() {
-            const rawTimeFraction = timeLeft / TIME_LIMIT;
-            return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-        }
+        return `${minutes} min ${seconds} sec`;
+    }
 
-        function setCircleDasharray() {
-            const circleDasharray = `${(
+    function calculateTimeFraction() {
+        const rawTimeFraction = timeLeft / TIME_LIMIT;
+        return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+
+    function setCircleDasharray() {
+        const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-            console.log("setCircleDashArray: ", circleDasharray);
-            timer.setAttribute("stroke-dasharray", circleDasharray);
-        }
+        console.log("setCircleDashArray: ", circleDasharray);
+        timer.setAttribute("stroke-dasharray", circleDasharray);
+    }
 
-        /* per question timer */
-        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-        var fsec = time_allowed * 60;
+    /* per question timer */
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var fsec = time_allowed * 60;
 
-        var up_timer = 0;
-        var countdown_txt = " Seconds";
-        var upcounter_txt = " Mins";
-        var ctimer;
-        var setEachQuestionTimeNext_countdown;
-        var timer_countdown;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+    var ctimer;
+    var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
 
-        function questionstartTimer() {
+    function questionstartTimer() {
 
-            timer_countdown = setInterval(function() {
-                fsec--;
-                //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
-                progressBar(fsec, $('.progressBar_first'));
-                if (fsec == -1) {
-                    clearInterval(timer_countdown);
-                    $('.progressBar_first').css('background-color', '#E4E4E4');
-                    $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
-                    $('#q_time_taken_first').show();
-                    $('#avg_text').hide();
-                    $('.progressBar_first').hide();
-                }
-
-            }, 1000);
-
-        }
-
-
-
-        function progressBar(percent, $element) {
-            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
-            $element.find('div').animate({
-                width: progressBarWidth
-            }, 500).html(percent + "%&nbsp;");
-            if (percent <= 20) {
-                $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
-            }
-            if (percent <= 0) {
+        timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('.progressBar_first'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
                 $('.progressBar_first').css('background-color', '#E4E4E4');
                 $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_first').show();
+                $('#avg_text').hide();
+                $('.progressBar_first').hide();
             }
+
+        }, 1000);
+
+    }
+
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
         }
-
-        var minutesLabel = document.getElementById("up_minutes");
-        var secondsLabel = document.getElementById("up_seconds");
-        //var totalSec = document.getElementById("tsec");
-        var totalSeconds = -1;
-
-
-        function setEachQuestionTime() {
-            setEachQuestionTimeNext_countdown = setInterval(function() {
-                ++totalSeconds;
-                $('.timespend_first').val(totalSeconds);
-                secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-                //totalSec.innerHTML = pad(totalSeconds);
-            }, 1000);
+        if (percent <= 0) {
+            $('.progressBar_first').css('background-color', '#E4E4E4');
+            $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
         }
+    }
 
-        function pad(val) {
-            var valString = val + "";
-            if (valString.length < 2) {
-                return "0" + valString;
-            } else {
-                return valString;
-            }
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
+    var totalSeconds = -1;
+
+
+    function setEachQuestionTime() {
+        setEachQuestionTimeNext_countdown = setInterval(function() {
+            ++totalSeconds;
+            $('.timespend_first').val(totalSeconds);
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }, 1000);
+    }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
         }
-        /* per question timer end */
+    }
+    /* per question timer end */
 
 
 
-        /* getting Next Question Data */
-        function qnext(question_key) {
+    /* getting Next Question Data */
+    function qnext(question_key) {
 
-            var act_question = $("#current_question").val();
-            var q_submit_time = $("#timespend_" + act_question).val();
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
 
-            /*         saveQuestionTime(act_question, q_submit_time); */
+        /*         saveQuestionTime(act_question, q_submit_time); */
 
-            url = "{{ url('ajax_adaptive_question_chapter/') }}/" + question_key;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    "session_id": "{{$session_id}}",
-                    "chapter_id": "{{$chapter_id}}",
+        url = "{{ url('ajax_adaptive_question_chapter/') }}/" + question_key;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "session_id": "{{$session_id}}",
+                "chapter_id": "{{$chapter_id}}",
 
-                },
-                success: function(result) {
-                    if (result.status == "success") {
-                        clearInterval(ctimer);
-                        clearInterval(timer_countdown);
-                        clearInterval(setEachQuestionTimeNext_countdown);
+            },
+            success: function(result) {
+                if (result.status == "success") {
+                    clearInterval(ctimer);
+                    clearInterval(timer_countdown);
+                    clearInterval(setEachQuestionTimeNext_countdown);
 
-                        $("#question_section div").remove();
-                        $("#question_section").html(result.html);
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    } else {
-                        $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.'");
-                        $('#endExam').modal('show');
-                    }
+                    $("#question_section div").remove();
+                    $("#question_section").html(result.html);
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                } else {
+                    $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.'");
+                    $('#endExam').modal('show');
                 }
+            }
+        });
+    }
+
+
+    /* mark or review */
+    function markforreview() {
+        var quest_id = $("#current_question").val();
+        var subject_id = $("#current_subject_id").val();
+        var chapt_id = $("#current_chapter_id").val();
+        var cur_quest_no = $('#current_question_no').val();
+
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
             });
         }
+        if (option_id.length > 0) {
+            clearResponse(quest_id, subject_id, cur_quest_no);
+        }
+
+        $.ajax({
+            url: "{{ route('markforreview') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+                chapter_id: chapt_id
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.success == true) {
+                    $("#btn_" + quest_id).removeClass("btn-light");
+                    $("#btn_" + quest_id).addClass("btn-secondary");
+                } else {
+
+                }
+
+                if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                    $("#submitExam").click();
+                } else {
+                    $("#quesnext" + quest_id).click();
+
+                }
+
+            },
+        });
+    }
+
+    /* Saved question response */
+    function saveAnswer() {
+        var question_id = $("#current_question").val();
+        var qNo = $("#current_question_no").val();
 
 
-        /* mark or review */
-        function markforreview() {
-            var quest_id = $("#current_question").val();
-            var subject_id = $("#current_subject_id").val();
-            var chapt_id = $("#current_chapter_id").val();
-            var cur_quest_no = $('#current_question_no').val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
 
-            var option_id = [];
-            var current_question_type = $("#current_question_type").val();
+        var question_id = question_id;
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
 
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + quest_id).val();
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
 
-                if (res_value != '') {
-                    option_id.push($("#quest_option_" + quest_id).val());
+            if (res_value != '') {
+                const str = res_value;
+                const last = str.charAt(str.length - 1);
+
+                var decarr = res_value.split(".");
+
+                if (res_value == '-' || res_value == '-.') {
+                    var vld_msg = "Enter valid answer.";
+                } else if (last === '.') {
+                    var vld_msg = "Numeric values cannot end with a decimal.";
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
+                    var vld_msg = "Numerical values were allowed up to two decimal places.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
                 }
             } else {
-                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-                    option_id.push($(this).val());
-                });
-            }
-            if (option_id.length > 0) {
-                clearResponse(quest_id, subject_id, cur_quest_no);
+                var vld_msg = "Please fill your response.";
             }
 
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+            var vld_msg = "Please select your response.";
+        }
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html(vld_msg);
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
+            return false;
+        }
+
+        var q_submit_time = $("#timespend_" + question_id).val();
+
+        $.ajax({
+            url: "{{ route('saveAdaptiveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.status == 200) {
+                    $("#quesnext" + question_id).click();
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
+                    $("#btn_" + question_id).removeClass("btn-light");
+                    $("#btn_" + question_id).addClass("btn-light-green");
+                }
+            },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            }
+        });
+
+
+    }
+    /* Saved current question response before Submit */
+    function submitsaveAnswer(question_id) {
+
+
+        var question_id = question_id;
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+            if (res_value != '') {
+                const str = res_value;
+                const last = str.charAt(str.length - 1);
+                var decarr = res_value.split(".");
+
+                if (res_value == '-' || res_value == '-.') {
+                    var vld_msg = "Enter valid answer.";
+                } else if (last === '.') {
+                    var vld_msg = "Numeric values cannot end with a decimal.";
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
+                    var vld_msg = "Numerical values were allowed up to two decimal places.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
+                }
+            } else {
+                var vld_msg = "Please fill your response.";
+            }
+
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+            var vld_msg = "Please select your response.";
+        }
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html(vld_msg);
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
+            return false;
+        }
+
+        var q_submit_time = $("#timespend_" + question_id).val();
+        $.ajax({
+            url: "{{ route('saveAdaptiveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            success: function(response_data) {
+                return true;
+            },
+        });
+
+
+    }
+
+    function savemarkreview() {
+        var quest_id = $("#current_question").val();
+        var subject_id = $("#current_subject_id").val();
+        var chapt_id = $("#current_chapter_id").val();
+        /* saving response */
+        if (saveAnswer(quest_id, '') != false) {
+
+            // marking for review
             $.ajax({
                 url: "{{ route('markforreview') }}",
                 type: 'POST',
@@ -778,379 +1012,194 @@ $question_type = "Numerical";
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("btn-light");
+                        $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).addClass("btn-secondary");
-                    } else {
-
-                    }
-
-                    if ($("#quesnext" + quest_id).is(":disabled") == true) {
-
-                        $("#submitExam").click();
-                    } else {
-                        $("#quesnext" + quest_id).click();
-
+                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
                     }
 
                 },
             });
         }
+    }
 
-        /* Saved question response */
-        function saveAnswer() {
-            var question_id = $("#current_question").val();
-            var qNo = $("#current_question_no").val();
+    function clearResponse() {
+        var quest_id = $("#current_question").val();
+        var subject_id = $("#current_subject_id").val();
+        var qNo = $("#current_question_no").val();
 
+        var response = [];
+        var current_question_type = $("#current_question_type").val();
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
 
-            $('#question_section .quesBtn').attr("disabled", true);
-            $('#question_section .quesBtn').addClass("disabled");
-
-            var question_id = question_id;
-            var option_id = [];
-            var current_question_type = $("#current_question_type").val();
-
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + question_id).val();
-
-                if (res_value != '') {
-                    const str = res_value;
-                    const last = str.charAt(str.length - 1);
-
-                    var decarr = res_value.split(".");
-
-                    if (res_value == '-' || res_value == '-.') {
-                        var vld_msg = "Enter valid answer.";
-                    } else if (last === '.') {
-                        var vld_msg = "Numeric values cannot end with a decimal.";
-                    } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
-                        var vld_msg = "Numerical values were allowed up to two decimal places.";
-                    } else {
-                        option_id.push($("#quest_option_" + question_id).val());
-                    }
-                } else {
-                    var vld_msg = "Please fill your response.";
-                }
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("To be clear, nothing is filled.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+                $('#qoption_err_' + quest_id)[0].scrollIntoView();
 
             } else {
-                $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-                    option_id.push($(this).val());
-                });
-                var vld_msg = "Please select your response.";
+                $("#quest_option_" + quest_id).val('');
             }
-            if (option_id.length === 0) {
-                $('#qoption_err_' + question_id).html(vld_msg);
-                $('#qoption_err_' + question_id).addClass('text-danger');
-                $('#qoption_err_' + question_id).fadeIn('fast');
-                $('#qoption_err_' + question_id)[0].scrollIntoView();
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
-                setTimeout(function() {
-                    $('#qoption_err_' + question_id).fadeOut("fast");
-                }, 8000);
-                return false;
-            }
-
-            var q_submit_time = $("#timespend_" + question_id).val();
-
-            $.ajax({
-                url: "{{ route('saveAdaptiveAnswer') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    question_id: question_id,
-                    option_id: option_id,
-                    q_submit_time: q_submit_time
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-
-                    if (response.status == 200) {
-                        $("#quesnext" + question_id).click();
-                        $("#btn_" + question_id).find('i').remove();
-                        $("#btn_" + question_id).html(qNo);
-                        $("#btn_" + question_id).removeClass("btn-light");
-                        $("#btn_" + question_id).addClass("btn-light-green");
-                    }
-                },
-                complete: function() { // Set our complete callback, removed disabled 
-                    $('#question_section .quesBtn').attr("disabled", false);
-                    $('#question_section .quesBtn').removeClass("disabled");
-                }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                response = $(this).prop('checked', false);
             });
 
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+                $('#qoption_err_' + quest_id)[0].scrollIntoView();
 
-        }
-        /* Saved current question response before Submit */
-        function submitsaveAnswer(question_id) {
-
-
-            var question_id = question_id;
-            var option_id = [];
-            var current_question_type = $("#current_question_type").val();
-
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + question_id).val();
-                if (res_value != '') {
-                    const str = res_value;
-                    const last = str.charAt(str.length - 1);
-                    var decarr = res_value.split(".");
-
-                    if (res_value == '-' || res_value == '-.') {
-                        var vld_msg = "Enter valid answer.";
-                    } else if (last === '.') {
-                        var vld_msg = "Numeric values cannot end with a decimal.";
-                    } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
-                        var vld_msg = "Numerical values were allowed up to two decimal places.";
-                    } else {
-                        option_id.push($("#quest_option_" + question_id).val());
-                    }
-                } else {
-                    var vld_msg = "Please fill your response.";
-                }
-
-            } else {
-                $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-                    option_id.push($(this).val());
-                });
-                var vld_msg = "Please select your response.";
-            }
-            if (option_id.length === 0) {
-                $('#qoption_err_' + question_id).html(vld_msg);
-                $('#qoption_err_' + question_id).addClass('text-danger');
-                $('#qoption_err_' + question_id).fadeIn('fast');
-                $('#qoption_err_' + question_id)[0].scrollIntoView();
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
-                setTimeout(function() {
-                    $('#qoption_err_' + question_id).fadeOut("fast");
-                }, 8000);
-                return false;
-            }
-
-            var q_submit_time = $("#timespend_" + question_id).val();
-            $.ajax({
-                url: "{{ route('saveAdaptiveAnswer') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    question_id: question_id,
-                    option_id: option_id,
-                    q_submit_time: q_submit_time
-                },
-                success: function(response_data) {
-                    return true;
-                },
-            });
-
-
-        }
-
-        function savemarkreview() {
-            var quest_id = $("#current_question").val();
-            var subject_id = $("#current_subject_id").val();
-            var chapt_id = $("#current_chapter_id").val();
-            /* saving response */
-            if (saveAnswer(quest_id, '') != false) {
-
-                // marking for review
-                $.ajax({
-                    url: "{{ route('markforreview') }}",
-                    type: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        question_id: quest_id,
-                        subject_id: subject_id,
-                        chapter_id: chapt_id
-                    },
-                    success: function(response_data) {
-                        var response = jQuery.parseJSON(response_data);
-                        if (response.success == true) {
-                            $("#btn_" + quest_id).removeClass("btn-light");
-                            $("#btn_" + quest_id).removeClass("btn-light-green");
-                            $("#btn_" + quest_id).addClass("btn-secondary");
-                            $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
-                        }
-
-                    },
-                });
             }
         }
 
-        function clearResponse() {
-            var quest_id = $("#current_question").val();
-            var subject_id = $("#current_subject_id").val();
-            var qNo = $("#current_question_no").val();
 
-            var response = [];
-            var current_question_type = $("#current_question_type").val();
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + quest_id).val();
+        $("#btn_" + quest_id).addClass("btn-light");
+        $("#btn_" + quest_id).removeClass("btn-light-green");
+        $("#btn_" + quest_id).removeClass("btn-secondary");
 
-                if (res_value === '') {
-                    $('#qoption_err_' + quest_id).html("To be clear, nothing is filled.");
-                    $('#qoption_err_' + quest_id).addClass('text-danger');
-                    $('#qoption_err_' + quest_id).fadeIn('fast');
-                    $('#qoption_err_' + quest_id)[0].scrollIntoView();
-
-                } else {
-                    $("#quest_option_" + quest_id).val('');
+        $.ajax({
+            url: "{{ route('adaptiveClearResponse') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+                    $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
                 }
-            } else {
-                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-                    response = $(this).prop('checked', false);
-                });
-
-                if (response.length == 0) {
-                    $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-                    $('#qoption_err_' + quest_id).addClass('text-danger');
-                    $('#qoption_err_' + quest_id).fadeIn('fast');
-                    $('#qoption_err_' + quest_id)[0].scrollIntoView();
-
-                }
-            }
-
-
-            $("#btn_" + quest_id).addClass("btn-light");
-            $("#btn_" + quest_id).removeClass("btn-light-green");
-            $("#btn_" + quest_id).removeClass("btn-secondary");
-
-            $.ajax({
-                url: "{{ route('adaptiveClearResponse') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    question_id: quest_id,
-                    subject_id: subject_id,
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-                    if (response.status == 200) {
-                        $("#btn_" + quest_id).find('i').remove();
-                        $("#btn_" + quest_id).html(qNo);
-                    }
-                    checkResponse(quest_id);
-                },
-            });
-
-        }
-
-        function checkResponse(quest_id) {
-            var option_id = [];
-            var current_question_type = $("#current_question_type").val();
-
-            if (current_question_type == 11) {
-                var res_value = $("#quest_option_" + quest_id).val();
-
-                if (res_value != '') {
-                    option_id.push($("#quest_option_" + quest_id).val());
-                }
-
-            } else {
-                $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-                    option_id.push($(this).val());
-                });
-            }
-            console.log(option_id);
-            if (option_id.length > 0) {
-                $('#clearBtn_response').attr("disabled", false);
-                $('#clearBtn_response').addClass("Clearbtnenable");
-            } else {
-                $('#clearBtn_response').attr("disabled", true);
-                $('#clearBtn_response').removeClass("Clearbtnenable");
-            }
-        }
-
-        /* function get_subject_question(subject_id) {
-
-            url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function(result) {
-                    $("#question_section").html(result);
-                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                }
-            });
-
-
-        } */
-
-        function saveQuestionTime(question_id, time) {
-            url = "{{ url('saveAdaptiveTimeSession') }}/" + question_id;
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    'q_time': time
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-                    if (response.status == 200) {
-
-                    }
-                }
-            });
-
-
-        }
-
-
-
-        $(document).ready(function() {
-            $("#form_exam_submit").validate({
-
-                submitHandler: function(form) {
-                    if (timeLeft >= 1) {
-                        let timer_left = document.querySelector("#base-timer-path-remaining_alt");
-                        let lefttime_exam_h = document.getElementById("lefttime_pop_h");
-                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
-
-                        const circleDasharray = `${(
-                            calculateTimeFraction() * FULL_DASH_ARRAY
-                        ).toFixed(0)} 283`;
-                        console.log("setCircleDashArray: ", circleDasharray);
-                        timer_left.setAttribute("stroke-dasharray", circleDasharray);
-
-                        lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
-
-                        var act_question = $("#current_question").val();
-                        var response_ans = submitsaveAnswer(act_question);
-
-                        if (response_ans == false) {
-                            return false;
-                        } else {
-                            stop('submit');
-
-                            $('#FullTest_Exam_Panel_Interface_A').modal('show');
-                        }
-
-                        /*   $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
-
-                    } else {
-                        form.submit();
-                    }
-
-
-                }
-
-
-            });
-
-            $('#bt-modal-confirm').click(function() {
-
-                $('#form_exam_submit')[0].submit();
-            });
-            $('#bt-modal-confirm_over').click(function() {
-
-                $('#form_exam_submit')[0].submit();
-            });
+                checkResponse(quest_id);
+            },
         });
-    </script>
-    @include('afterlogin.layouts.footer_new')
-    @endsection
+
+    }
+
+    function checkResponse(quest_id) {
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        console.log(option_id);
+        if (option_id.length > 0) {
+            $('#clearBtn_response').attr("disabled", false);
+            $('#clearBtn_response').addClass("Clearbtnenable");
+        } else {
+            $('#clearBtn_response').attr("disabled", true);
+            $('#clearBtn_response').removeClass("Clearbtnenable");
+        }
+    }
+
+    /* function get_subject_question(subject_id) {
+
+        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                $("#question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+            }
+        });
+
+
+    } */
+
+    function saveQuestionTime(question_id, time) {
+        url = "{{ url('saveAdaptiveTimeSession') }}/" + question_id;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'q_time': time
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
+            }
+        });
+
+
+    }
+
+
+
+    $(document).ready(function() {
+        $("#form_exam_submit").validate({
+
+            submitHandler: function(form) {
+                if (timeLeft >= 1) {
+                    /* let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+
+                    const circleDasharray = `${(
+                        calculateTimeFraction() * FULL_DASH_ARRAY
+                    ).toFixed(0)} 283`;
+                    console.log("setCircleDashArray: ", circleDasharray);
+                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
+
+                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_s.innerHTML = formatTime(timeLeft); */
+
+                    var act_question = $("#current_question").val();
+                    var response_ans = submitsaveAnswer(act_question);
+
+                    if (response_ans == false) {
+                        return false;
+                    } else {
+                        stop('submit');
+
+                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
+                        $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                    }
+
+                    /*   $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
+
+                } else {
+                    form.submit();
+                }
+
+
+            }
+
+
+        });
+
+        $('#bt-modal-confirm').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
+        $('#bt-modal-confirm_over').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
+    });
+</script>
+@include('afterlogin.layouts.footer_new')
+@endsection
