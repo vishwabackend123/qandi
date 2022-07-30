@@ -941,7 +941,7 @@
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
         .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{width:523px;padding-bottom: 10px;
+        .mobilescrolltab .nav-tabs{width:560px;padding-bottom: 10px;
             padding-left: 9px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
 }
