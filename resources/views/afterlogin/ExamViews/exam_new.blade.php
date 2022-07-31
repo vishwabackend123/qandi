@@ -146,10 +146,7 @@ $question_type = "Numerical";
                                             <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
                                         </div>
                                         <div class="timeCounter">
-                                            Average Time:
-                                            <div id="progressBar">
-                                                <div class="bar"></div>
-                                            </div>
+
                                             <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                                 <span id="avg_text" class="avg-time">Average Time :</span>
                                                 <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">

@@ -233,6 +233,8 @@ $question_type = "Numerical";
     $("#myTab .class_" + subject_id).addClass("active");
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');
+    } else {
+        $('#saveNext').html('Save & Next');
     }
 </script>
 <script>

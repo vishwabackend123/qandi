@@ -249,6 +249,8 @@ $question_type = "Numerical";
 
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');
+    } else {
+        $('#saveNext').html('Save & Next');
     }
 </script>
 <script>
