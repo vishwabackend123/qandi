@@ -33,7 +33,13 @@
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            60 min
+                            @php 
+                                $init = $response->result_time_taken;
+                                $hours = floor($init / 3600);
+                                $minutes = floor(($init / 60) % 60);
+                                $seconds = $init % 60;
+                            @endphp
+                            {{$minutes}} min {{$seconds}} sec
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
