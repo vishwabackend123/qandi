@@ -108,6 +108,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @endforeach
             <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
+                    @if (!Session::has('lead_trail_status')) 
                     <a href="{{route('subscriptions')}}">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -116,6 +117,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </span>
                         Back
                     </a>
+                    @endif
                 </div>
                 <button class="btn btn-common-green @if(empty($aStudentRating)) disabled @endif" @if(empty($aStudentRating)) disabled @endif id="store_rating" onclick="store_rating();">Continue</button>
             </div>
