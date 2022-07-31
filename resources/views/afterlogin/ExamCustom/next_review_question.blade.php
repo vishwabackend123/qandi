@@ -66,7 +66,7 @@ $question_type = "Numerical";
         <div class="col-md-6 mb-4">
             <input class="form-check-input checkboxans" {{$checked}} disabled type="checkbox" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
             <div class="border ps-3 ans {{$resp_class}}">
-                <label class="question m-0 py-3 " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                <label class="question m-0 py-3 " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
             </div>
         </div>@php $no++; @endphp
         @endforeach
