@@ -130,7 +130,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                     @else
-                    <a class="btn btn-common-white" href="{{route('exam','full_exam')}}">Attempt Now</a>
+                    <a class="btn btn-common-white" href="{{route('exam',['full_exam','instruction'])}}">Attempt Now</a>
                     @endif
                 </div>
             </div>

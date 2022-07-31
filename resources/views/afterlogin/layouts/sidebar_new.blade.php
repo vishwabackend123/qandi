@@ -363,6 +363,9 @@ if (action_method == 'overall_analytics') {
 } else if (action_method == 'planner') {
     $('.current_dashboard').removeClass('active');
     $('.current_planner').addClass('active');
+} else if (action_method == 'exam_custom' || action_method == 'series_list' || action_method == 'mockExamTest' || action_method == 'previous_year_exam') {
+    $('.current_dashboard').removeClass('active');
+    $('.current_practice').addClass('active');
 }
 
 function stateHandle() {
