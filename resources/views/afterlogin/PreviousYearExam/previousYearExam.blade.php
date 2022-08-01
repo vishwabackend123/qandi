@@ -108,9 +108,9 @@ $question_type = "Numerical";
                                         <div class="questionChoiceType">
                                             <div class="questionChoice">
                                                 @if(isset($aSections) && !empty($aSections))
-                                                @foreach($aSections as $section)
+                                                @foreach($aSections as $sKey=>$section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
-                                                <a class="singleChoice" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
+                                                <a class="singleChoice @if($skey==0) single_Choice_active @endif" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
 
                                                 @endif
                                                 @endforeach
@@ -1324,7 +1324,6 @@ $question_type = "Numerical";
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
-
 
     }
 

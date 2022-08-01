@@ -110,7 +110,7 @@ $question_type = "Numerical";
                 @foreach($aSections as $Vsec)
                 @php $secId=$Vsec->id;@endphp
                 @if(isset($aSubSecCount->$subject_id->$secId) && $aSubSecCount->$subject_id->$secId>0)
-                <a class="singleChoice section_{{$secId}}" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$secId}}')">{{$Vsec->section_name}} ({{$aSubSecCount->$subject_id->$secId."Q"}}) - {{$Vsec->question_type_name}}</a>
+                <a class="singleChoice {{($secId==$section_id)?'single_Choice_active':''}} section_{{$secId}}" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$secId}}')">{{$Vsec->section_name}} ({{$aSubSecCount->$subject_id->$secId."Q"}}) - {{$Vsec->question_type_name}}</a>
 
                 @endif
                 @endforeach

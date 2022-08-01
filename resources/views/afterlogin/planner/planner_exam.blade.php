@@ -390,7 +390,7 @@ $question_type = "Numerical";
                 <div class="modal-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
-                            <label>Exam Time Over</label>
+                            <label id="endMsg">Exam Time Over</label>
                         </div>
 
                     </div>
