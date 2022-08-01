@@ -33,7 +33,13 @@
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            60 min
+                            @php 
+                                $init = $response->result_time_taken;
+                                $hours = floor($init / 3600);
+                                $minutes = floor(($init / 60) % 60);
+                                $seconds = $init % 60;
+                            @endphp
+                            {{$minutes}} min {{$seconds}} sec
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +139,7 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
-                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?$response->result_percentage:0}}%</label>
+                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
                                         <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small></span>
                                         <canvas id="myChart"></canvas>
@@ -336,24 +342,32 @@
                                         @endphp
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
-                                            <div class="topic_score_bar">
+                                            <div class="topic_score_bar dropdown">
                                                 <h4>@if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
                                                     @else
                                                     ""
                                                     @endif</h4>
-                                                <div class="progress">
+                                                <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <div class="progress-bar correct-bg" role="progressbar" style="width: {{$tcorrect_per}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                                     <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                                     <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <div class="noofquestions-block">
+                                                <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                                     <div class="color_labels">
                                                         <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
                                                         <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
                                                         <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
                                                     </div>
-                                                </div>
+                                                </ul>
+                                                <!-- <div class="noofquestions-block">
+                                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                    <div class="color_labels">
+                                                        <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
+                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                        <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
+                                                    </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                         @endif

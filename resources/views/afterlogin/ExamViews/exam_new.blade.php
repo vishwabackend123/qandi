@@ -22,6 +22,50 @@
         });
     });
 </script>
+<style>
+    .time_taken_css span:first-child {
+        font-weight: 600;
+    }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 87px;
+        background-color: #E4E4E4;
+        height: 14px;
+        border-radius: 4px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #56b663;
+        border-radius: 4px;
+    }
+</style>
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -96,104 +140,114 @@ $question_type = "Numerical";
 
                                 </div>
                             </div>
-                            <div class="questionType">
-                                <div class="questionTypeinner">
-                                    <div class="questionChoiceType" style="visibility:hidden">
-                                        <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
-                                    </div>
-                                    <div class="timeCounter">
-                                        Average Time:
-                                        <div id="progressBar">
-                                            <div class="bar"></div>
+                            <div id="question_section">
+                                <div class="questionType">
+                                    <div class="questionTypeinner">
+                                        <div class="questionChoiceType" style="visibility:hidden">
+                                            <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
+                                        </div>
+                                        <div class="timeCounter">
+
+                                            <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                                <span id="avg_text" class="avg-time">Average Time :</span>
+                                                <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                    <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                    <div id="percentBar_{{$activeq_id}}"></div>
+                                                </div>
+                                                <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                    <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-content aect_tabb_contantt">
-                                <div id="question_section" class="tab-pane active">
+                                <div class="tab-content aect_tabb_contantt">
+                                    <div id="" class="tab-pane active">
 
-                                    <div class="questionsliderinner">
-                                        <div class="questionSlider1">
-                                            <div class="item" id="">
-                                                <div class="questionsliderbox">
-                                                    <div class="questionwrapper">
+                                        <div class="questionsliderinner">
+                                            <div class="questionSlider1">
+                                                <div class="item" id="">
+                                                    <div class="questionsliderbox">
+                                                        <div class="questionwrapper">
 
-                                                        <div class="questionheader">
-                                                            <div class="question">
-                                                                <span class="q-no">Q1.</span>
-                                                                <!-- <p>{!! $question_text !!}
+                                                            <div class="questionheader">
+                                                                <div class="question">
+                                                                    <span class="q-no">Q1.</span>
+                                                                    <!-- <p>{!! $question_text !!}
                                                                 </p> -->
-                                                                <div class="quesbox">
-                                                                    <p>{!! $question_text !!}
-                                                                    </p>
+                                                                    <div class="quesbox">
+                                                                        <p>{!! $question_text !!}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="questionImggraph">
-                                                        </div>
-                                                        <div class="questionOptionBlock">
-                                                            <div class="fancy-radio-buttons row with-image">
+                                                            <div class="questionImggraph">
+                                                            </div>
+                                                            <div class="questionOptionBlock">
+                                                                <div class="fancy-radio-buttons row with-image">
 
-                                                                @if($template_type==1 || $template_type==2)
-                                                                @if(isset($option_data) && !empty($option_data))
-                                                                @php $no=0; @endphp
-                                                                @foreach($option_data as $key=>$opt_value)
-                                                                @php
-                                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                                                /* $dom = new DOMDocument();
-                                                                @$dom->loadHTML($opt_value);
-                                                                $anchor = $dom->getElementsByTagName('img')->item(0);
-                                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                                                $latex = "https://math.now.sh?from=".$text;
-                                                                $view_opt='<img src="'.$latex.'" />' ; */
-                                                                @endphp
+                                                                    @if($template_type==1 || $template_type==2)
+                                                                    @if(isset($option_data) && !empty($option_data))
+                                                                    @php $no=0; @endphp
+                                                                    @foreach($option_data as $key=>$opt_value)
+                                                                    @php
+                                                                    $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                                                    /* $dom = new DOMDocument();
+                                                                    @$dom->loadHTML($opt_value);
+                                                                    $anchor = $dom->getElementsByTagName('img')->item(0);
+                                                                    $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                                                    $latex = "https://math.now.sh?from=".$text;
+                                                                    $view_opt='<img src="'.$latex.'" />' ; */
+                                                                    @endphp
 
-                                                                <div class="colMargin">
-                                                                    <div class="image-container markerDiv">
-                                                                        <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
-                                                                        <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                                                    <div class="colMargin">
+                                                                        <div class="image-container markerDiv">
+                                                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
+                                                                            <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                @php $no++; @endphp
-                                                                @endforeach
-                                                                @endif
-                                                                @elseif($template_type==11)
+                                                                    @php $no++; @endphp
+                                                                    @endforeach
+                                                                    @endif
+                                                                    @elseif($template_type==11)
 
-                                                                <div class="colMargin">
-                                                                    <div class="inputAns">
-                                                                        <label for="story">Answer</label>
-                                                                        <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                                                    <div class="colMargin">
+                                                                        <div class="inputAns">
+                                                                            <label for="story">Answer</label>
+                                                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                                                        </div>
                                                                     </div>
+                                                                    @endif
+
+
+                                                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                                                 </div>
-                                                                @endif
-
-
-                                                                <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="examQuestionarrow">
+                                                <!-- Previous button -->
+
+                                                <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+                                                    <span class=" Previous">‹</span>
+                                                </button>
+
+
+                                                <!-- Next button -->
+
+                                                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                                                    <span class="Next">›</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="examQuestionarrow">
-                                            <!-- Previous button -->
 
-                                            <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
-                                                <span class=" Previous">‹</span>
-                                            </button>
-
-
-                                            <!-- Next button -->
-
-                                            <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
-                                                <span class="Next">›</span>
-                                            </button>
-                                        </div>
                                     </div>
-
-                                </div>
-                                <!-- <div id="application" class="tab-pane">adasdas</div>
+                                    <!-- <div id="application" class="tab-pane">adasdas</div>
                                 <div id="complrehension" class="tab-pane">complrehension</div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,7 +286,7 @@ $question_type = "Numerical";
                             </div>
                             <!-- <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#56b663" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -297,7 +351,7 @@ $question_type = "Numerical";
                                 <p>
                                     <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#56b663" />
                                         <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                         <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -334,7 +388,7 @@ $question_type = "Numerical";
                         <div class="exam-overview-time">
                             <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#56b663" />
                                     <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
                                     <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

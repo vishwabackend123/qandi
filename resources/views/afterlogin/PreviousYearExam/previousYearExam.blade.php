@@ -110,7 +110,7 @@ $question_type = "Numerical";
                                                 @if(isset($aSections) && !empty($aSections))
                                                 @foreach($aSections as $section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
-                                                <a class="singleChoice" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]." Q"}}) - {{$section->question_type_name}}</a>
+                                                <a class="singleChoice" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
 
                                                 @endif
                                                 @endforeach
@@ -118,10 +118,17 @@ $question_type = "Numerical";
                                             </div>
                                         </div>
                                         <div class="timeCounter">
-                                            Average Time:
-                                            <div id="progressBar">
-                                                <div class="bar"></div>
+                                            <div id="counter_{{$activeq_id}}" class="counter  d-flex">
+                                                <span id="avg_text" class="avg-time">Average Time :</span>
+                                                <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                    <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                    <div id="percentBar_{{$activeq_id}}"></div>
+                                                </div>
+                                                <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                    <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                                </div>
                                             </div>
+                                            <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                         </div>
                                     </div>
                                 </div>

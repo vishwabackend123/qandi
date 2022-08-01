@@ -180,7 +180,7 @@ class LiveExamController extends Controller
                 // $exam_fulltime = $responsedata->time_allowed;
 
                 $questions_count = count($aQuestions_list);
-                $exam_fulltime = $questions_count;
+                $exam_fulltime = $responsedata->time_allowed;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;

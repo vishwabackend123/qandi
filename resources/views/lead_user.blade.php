@@ -105,7 +105,7 @@
                 <button type="button" id="subscribe_now" class="btn btn-common-green text-white trail" style="cursor:default">Subscribe Now</button>
                 @endif
                 <div class="terms-sec">
-                    <p>By clicking continue, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a></p>
+                    <p>By clicking continue, you agree to our <a href="https://qanditoday.com/terms-of-use/" target="_blank">Terms & Conditions</a> and <a href="https://qanditoday.com/privacy-policy/" target="_blank">Privacy Policy.</a></p>
                 </div>
             </div>
         </div>

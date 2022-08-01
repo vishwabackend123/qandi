@@ -19,87 +19,194 @@ $question_type = "Numerical";
 }
 
 @endphp
-<div class="questionsliderinner">
-    <div class="questionSlider1">
-        <div class="item" id="">
-            <div class="questionsliderbox">
-                <div class="questionwrapper">
+<script>
+    $(document).ready(function() {
+        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+        var questionTime = parseInt(time_allowed) * 60;
 
-                    <div class="questionheader">
-                        <div class="question">
-                            <span class="q-no">Q{{$qNo}}.</span>
-                            <!-- <p>{!! $question_text !!}
+        var sec = parseInt(time_allowed) * 60;
+        var interval = 1000;
+        var qest = '{{$activeq_id}}';
+        var aj_up_timer = '{{$aquestionTakenTime}}';
+
+        var ctxt = " Seconds";
+        if (aj_up_timer >= questionTime) {
+            var sec = 0;
+        } else {
+            var sec = questionTime - aj_up_timer;
+        }
+
+        $('#percentBar_{{$activeq_id}}').html('')
+        $('#timespend_{{$activeq_id}}').val("");
+
+
+        ctimer = setInterval(function() {
+            sec--;
+
+            progressBar_next(sec, $('#progressBar_{{$activeq_id}}'));
+
+            if (sec == -1) {
+                clearInterval(ctimer);
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_{{$activeq_id}}').show();
+                $('#avg_text_{{$activeq_id}}').hide();
+                $('#progressBar_{{$activeq_id}}').hide();
+            }
+        }, interval);
+
+
+        function progressBar_next(percent, $element) {
+            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+
+            $element.find('div').animate({
+                width: progressBarWidth
+            }, 500).html(percent + "%&nbsp;");
+            if (percent <= 20) {
+                $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
+            }
+            if (percent <= 0) {
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+            }
+
+        }
+        var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
+        var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
+        //var totalSec = document.getElementById("tsec");
+        var totalSeconds = aj_up_timer;
+
+        function setEachQuestionTimeNext() {
+            setEachQuestionTimeNext_countdown = setInterval(function() {
+                ++totalSeconds;
+                $('#timespend_{{$activeq_id}}').val(totalSeconds);
+                secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+                //totalSec.innerHTML = pad(totalSeconds);
+            }, 1000);
+        }
+        setEachQuestionTimeNext();
+
+        function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+    });
+</script>
+<div class="questionType">
+    <div class="questionTypeinner">
+        <div class="questionChoiceType" style="visibility:hidden">
+            <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
+        </div>
+        <div class="timeCounter">
+            <!--  Average Time:123
+            <div id="progressBar">
+                <div class="bar"></div>
+            </div> -->
+            <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex qiestionTimer">
+                <span id="avg_text_{{$activeq_id}}" class="avg-time">Average Time 123:</span>
+                <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
+                    <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+
+                    <div id="percentBar1_{{$activeq_id}}"></div>
+
+                </div>
+                <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
+
+            </div>
+            <input type="hidden" name="question_spendtime" id="timespend_{{$activeq_id}}" value="" />
+        </div>
+    </div>
+</div>
+<div class="tab-content aect_tabb_contantt">
+    <div id="evolution" class="tab-pane active">
+        <div class="questionsliderinner">
+            <div class="questionSlider1">
+                <div class="item" id="">
+                    <div class="questionsliderbox">
+                        <div class="questionwrapper">
+
+                            <div class="questionheader">
+                                <div class="question">
+                                    <span class="q-no">Q{{$qNo}}.</span>
+                                    <!-- <p>{!! $question_text !!}
                             </p> -->
-                            <div class="quesbox">
-                                <p>{!! $question_text !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="questionImggraph">
-                    </div>
-                    <div class="questionOptionBlock">
-                        <div class="fancy-radio-buttons row with-image">
-
-                            @if($template_type==1 || $template_type==2)
-                            @if(isset($option_data) && !empty($option_data))
-                            @php $no=0; @endphp
-                            @foreach($option_data as $key=>$opt_value)
-                            @php
-                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                            /* $dom = new DOMDocument();
-                            @$dom->loadHTML($opt_value);
-                            $anchor = $dom->getElementsByTagName('img')->item(0);
-                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                            $latex = "https://math.now.sh?from=".$text;
-                            $view_opt='<img src="'.$latex.'" />' ; */
-
-                            @endphp
-
-                            <div class="colMargin">
-                                <div class="image-container markerDiv">
-                                    <input class="correct quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
-                                    <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                    <div class="quesbox">
+                                        <p>{!! $question_text !!}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            @php $no++; @endphp
-                            @endforeach
-                            @endif
-                            @elseif($template_type==11)
+                            <div class="questionImggraph">
+                            </div>
+                            <div class="questionOptionBlock">
+                                <div class="fancy-radio-buttons row with-image">
 
-                            <div class="colMargin">
-                                <div class="inputAns">
-                                    <label for="story">Answer</label>
-                                    <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                    @if($template_type==1 || $template_type==2)
+                                    @if(isset($option_data) && !empty($option_data))
+                                    @php $no=0; @endphp
+                                    @foreach($option_data as $key=>$opt_value)
+                                    @php
+                                    $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                    /* $dom = new DOMDocument();
+                                    @$dom->loadHTML($opt_value);
+                                    $anchor = $dom->getElementsByTagName('img')->item(0);
+                                    $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                    $latex = "https://math.now.sh?from=".$text;
+                                    $view_opt='<img src="'.$latex.'" />' ; */
+
+                                    @endphp
+
+                                    <div class="colMargin">
+                                        <div class="image-container markerDiv">
+                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
+                                            <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
+                                        </div>
+                                    </div>
+                                    @php $no++; @endphp
+                                    @endforeach
+                                    @endif
+                                    @elseif($template_type==11)
+
+                                    <div class="colMargin">
+                                        <div class="inputAns">
+                                            <label for="story">Answer</label>
+                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                        </div>
+                                    </div>
+                                    @endif
+
+
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                 </div>
                             </div>
-                            @endif
-
-
-                            <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="examQuestionarrow">
+                <!-- Previous button -->
+
+                <button type="button" class="qprev quest_btn {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} {{empty($prev_qid)?'disabled':''}}" {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+                    <span class=" Previous">‹</span>
+                </button>
+
+
+                <!-- Next button -->
+
+                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}} {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                    <span class="Next">›</span>
+                </button>
+            </div>
         </div>
     </div>
-    <div class="examQuestionarrow">
-        <!-- Previous button -->
-
-        <button type="button" class="qprev quest_btn {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} {{empty($prev_qid)?'disabled':''}}" {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
-            <span class=" Previous">‹</span>
-        </button>
-
-
-        <!-- Next button -->
-
-        <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}} {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
-            <span class="Next">›</span>
-        </button>
-    </div>
 </div>
 
-</div>
+
 
 <script>
     var question_id = '{{$activeq_id}}';
@@ -126,6 +233,8 @@ $question_type = "Numerical";
     $("#myTab .class_" + subject_id).addClass("active");
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');
+    } else {
+        $('#saveNext').html('Save & Next');
     }
 </script>
 <script>
