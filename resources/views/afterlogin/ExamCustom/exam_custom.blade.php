@@ -172,7 +172,7 @@ function show_topic(chapt_id, sub_id) {
                     stagePadding: 0,
                     loop: false,
                     margin: 15,
-                    nav: false,
+                    nav: true,
                     dots: false,
                     responsive: {
                         0: {
