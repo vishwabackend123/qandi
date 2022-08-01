@@ -47,12 +47,12 @@ $name = $action;
                 </a>
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobile">
-                <a href="javascript:;">
+                <a href="javascript:void(0);">
                     <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
                 </a>
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobilehide">
-                <a href="javascript:;">
+                <a href="javascript:void(0);">
                     <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
                 </a>
             </span>

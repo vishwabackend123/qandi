@@ -145,7 +145,7 @@
                 </div>
             </form>
         </div>
-        <h3 class="copyright text-center position-md-absolute mt-md-0 mt-3 pb-md-0 pb-3">&copy 2022 Q&I. All rights reserved.</h3>
+        <h3 class="copyright text-center position-absolute mt-md-0 mt-3 pb-md-0 pb-3">&copy 2022 Q&I. All rights reserved.</h3>
     </div>
 </section>
 <script type="text/javascript">
