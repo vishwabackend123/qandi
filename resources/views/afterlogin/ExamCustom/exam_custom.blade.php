@@ -218,6 +218,7 @@ $('#attempted').click(function() {
             $('#attempted_tab').html(data.html);
             $('#testTypeDiv').attr("style", "display: none !important");
             $('#AssessmentTypeDiv').attr("style", "display: block !important");
+            $('.slot_div').hide();
         },
         error: function(data, errorThrown) {}
     });
