@@ -232,9 +232,78 @@ $userData = Session::get('user_data');
                                 <a class="nav-link qq1_2_3_4 m-0" id="weekly_tasks-tab" data-bs-toggle="tab" data-bs-target="#weekly_tasks" type="button" role="tab" aria-controls="weekly_tasks" aria-selected="false">Weekly Tasks</a>
                             </li>
                         </ul>
-                        <div class="tab-content">
+                        <div class="tab-content" style="padding:16px 0 0;">
                             <div class="tab-pane fade show active" id="daily_tasks" role="tabpanel" aria-labelledby="daily_tasks-tab">
-                                gg
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="commonboldtext m-0" style="color: #363c4f;">Task completed</h5>
+                                    <label class="m-0 commonboldtext" style="color: #363c4f;">4 <span style="font-weight:600;color: rgba(54,60,79,0.5);">/6</span></label>
+                                </div>  
+                                <ul class="task_center_lists">
+                                    <li>
+                                        <div class="task1">
+                                            <p class="m-0"><span>Task 1</span></p>
+                                            <h3>Knowledge Skills</h3>
+                                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <div class="btn-sec">
+                                                <div class="qust-sec">
+                                                    <span>Question</span>
+                                                    <p>
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <label>10</label>
+                                                    </p>
+                                                </div>
+                                                <div class="dura-sec">
+                                                    <span>Duration</span>
+                                                    <p>
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <label>15 mins</label>
+                                                    </p>
+                                                </div>
+                                                <div class="task-btn tasklistbtn">
+                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Take test</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="task1">
+                                            <p class="m-0"><span>Task 2</span></p>
+                                            <h3>Evaluation Skills</h3>
+                                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <div class="btn-sec">
+                                                <div class="qust-sec">
+                                                    <span>Question</span>
+                                                    <p>
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <label>10</label>
+                                                    </p>
+                                                </div>
+                                                <div class="dura-sec">
+                                                    <span>Duration</span>
+                                                    <p>
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                        <label>15 mins</label>
+                                                    </p>
+                                                </div>
+                                                <div class="task-btn tasklistbtn">
+                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Take test</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="tab-pane fade" id="weekly_tasks" role="tabpanel" aria-labelledby="weekly_tasks-tab">
                                 gccccg

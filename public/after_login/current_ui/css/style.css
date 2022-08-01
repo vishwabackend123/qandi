@@ -3778,7 +3778,10 @@ padding: 20px;
 .taskcenter_wrapper .commontab .nav-tabs .nav-link {
     padding-bottom: 12px;
 }
-
+ul.task_center_lists .task1 {
+    padding-top: 24px;
+}
+.tablist ul.task_center_lists li{text-align:left;}
 /********************* Amit End ****************************/
 
 
