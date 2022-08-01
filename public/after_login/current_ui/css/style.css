@@ -2016,6 +2016,7 @@ a.btn-common-attempted svg {
       background: #ffffff;
       align-items: center;
           color: #1f1f1f;
+          overflow: overlay;
          
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
@@ -2174,9 +2175,7 @@ a.btn-common-attempted svg {
       color: #363c4f;
   }
   .optionText p{font-weight: bold;}
-  .optionText{
-    overflow: overlay;
-  }
+ 
   
   button.btn-ans {
       background: #56b663;

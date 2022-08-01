@@ -23,6 +23,18 @@ $(document).on('click', function (e) {
         $(".submenu-block").hide();
         $(".sidebar-exam-menu").removeClass("active");
     }
+     var url = window.location.pathname.split("/");
+    var action_method = url[1];
+    if (action_method == 'overall_analytics') {
+        $('.current_dashboard').removeClass('active');
+        $('.current_analytics').addClass('active');
+    } else if (action_method == 'planner') {
+        $('.current_dashboard').removeClass('active');
+        $('.current_planner').addClass('active');
+    } else if (action_method == 'exam_custom' || action_method == 'series_list' || action_method == 'mockExamTest' || action_method == 'previous_year_exam') {
+        $('.current_dashboard').removeClass('active');
+        $('.current_practice').addClass('active');
+    }
 });
 
 /************* Dashboard- Subject Performance Circular Progress Bar ************/
