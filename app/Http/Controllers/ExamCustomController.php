@@ -822,6 +822,7 @@ class ExamCustomController extends Controller
                 $sorted = $collect_topic->sortBy([['topic_name', 'asc']]);
                 $topics = $sorted->values()->all();
             }
+            print_r($chapter_id);die;
             return view('afterlogin.ExamCustom.custom_topic', compact('topics','chapter_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
