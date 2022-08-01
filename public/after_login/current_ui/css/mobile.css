@@ -970,7 +970,8 @@
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
         .overallmain .commonWhiteBox{height:auto;}
         .codelearningBlock .col-md-6{    flex: 0 0 auto;
-            width: 50%;padding: 8px;}
+            width: 50%;padding: 0px 8px;}
+            .commoncodeblock{margin-bottom:17px;}
             .codelerheader h3 {
                 font-size: 14px;
                 font-weight: 800;
@@ -986,6 +987,19 @@
             .codelerninner {    padding: 8px 13px 9px; }
             .codebottom { padding: 0px 13px 12px; }
             .codebottom h2{font-size:20px;}
+            .codelerninner h5{display:none;}
+            .overall_analytics_page.test_analytics_wrapper .mock_inst_text_mock_test {
+                display: block;
+                margin: 12px 0 0px;
+            } 
+            .overall_analytics_page.test_analytics_wrapper .mock_inst_text_mock_test { width: 100%;    margin-bottom: -32px;
+                text-align: right;
+            }
+            .overall_analytics_page.test_analytics_wrapper ul.topic_score_lists li{margin-bottom:24px;}
+            .overall_analytics_page.test_analytics_wrapper .topic_score_lists .topic_score_bar h4{margin-bottom:12px;}
+            .codelearningBlock {
+                margin-top: 19px;
+            }
 }
 
 @media only screen and (max-width: 576px){
@@ -1043,6 +1057,7 @@
 
 }
 @media only screen and (max-width: 460px){
+    .codelerninner p{min-height:113px;}
     .test-table h2 {
     width: 140px;
 }
@@ -1063,6 +1078,8 @@
     /************ Amit end *********/
 }
 @media only screen and (max-width: 400px){
+    
+    .codelerninner p{    word-break: break-word;    min-height: 162px;}
     .common_greenbadge_tabs.exam_topicbtn ul.nav li {
     margin-left: 10px;
     }
