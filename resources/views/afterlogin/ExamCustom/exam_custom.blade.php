@@ -210,15 +210,25 @@
             },
             beforeSend: function() {
 
-            },
-            success: function(data) {
-                $("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-                $('#AssessmentTypeDiv').attr("style", "display: block !important");
-            },
-            error: function(data, errorThrown) {}
-        });
+}
+$('#attempted').click(function() {
+    url = "{{ url('ajax_exam_result_list') }}/Assessment";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+            $('#AssessmentTypeDiv').attr("style", "display: block !important");
+            $('.slot_div').hide();
+        },
+        error: function(data, errorThrown) {}
     });
     var aTopics = [];
 
@@ -240,7 +250,7 @@
             $('#chpt_topic_' + value).addClass('bg-transparent');
             $('#chpt_topic_' + value).html('Select');
         }
-        $('#selected_topic').val(aTopics);
+        $('.selected_topic').val(aTopics);
         if (aTopics.length > 0) {
             $('.topic_form').attr("style", "display: none  !important");
             $(".SubActBtn").each(function() {
@@ -263,7 +273,7 @@
 
     function clearTopics() {
         aTopics = [];
-        $('#selected_topic').val('');
+        $('.selected_topic').val('');
         $('.addremovetopic').removeClass('topic_selected');
         $('.addremovetopic').removeClass('btn-common-green');
         $('.addremovetopic').addClass('btn-common-transparent');
