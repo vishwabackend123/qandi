@@ -40,7 +40,7 @@
                                     <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select">
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
-                                            <input type="hidden" id="selected_topic" name="topics">
+                                            <input type="hidden" class="selected_topic" name="topics">
                                             <input type="hidden" id="selected_tab" name="selected_tab">
                                             <input type="hidden" name="question_count" value="30">
                                             <button type="submit" class="btn btn-common-transparent bg-transparent me-sm-3">Take test for selected topics</button>

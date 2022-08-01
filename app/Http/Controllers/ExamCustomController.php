@@ -770,13 +770,13 @@ class ExamCustomController extends Controller
     {
         try {
             $userData = Session::get('user_data');
-
+            
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
             $filter_by = isset($request->filter_type) ? $request->filter_type : '';
             $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
-
+            dd($api_url);
             $curl = curl_init();
             $curl_option = array(
                 CURLOPT_URL => $api_url,
@@ -822,7 +822,6 @@ class ExamCustomController extends Controller
                 $sorted = $collect_topic->sortBy([['topic_name', 'asc']]);
                 $topics = $sorted->values()->all();
             }
-
             return view('afterlogin.ExamCustom.custom_topic', compact('topics','chapter_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
