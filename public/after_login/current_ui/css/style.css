@@ -3782,6 +3782,35 @@ ul.task_center_lists .task1 {
     padding-top: 24px;
 }
 .tablist ul.task_center_lists li{text-align:left;}
+.taskcenter_wrapper .mock_inst_text_mock_test {
+    display: block;
+    padding: 12px 0 32px;
+}  
+.taskcenter_wrapper .commontab .nav-tabs .nav-link span {
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 37px;
+    width: 24px;
+    height: 19px;
+    background-color: #e0f6e3;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 0.96px;
+    color: #56b663;
+}
+.skill_para_toggle h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1f1f1f;
+    margin: 0;
+    padding: 1px 0;
+    line-height: 1.6;
+}
+.skill_para_toggle span {
+    color: #cccccc;
+    font-size: 22px;
+}
 /********************* Amit End ****************************/
 
 
