@@ -1018,9 +1018,9 @@
     }
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
-        display: flex!important;
         flex-wrap: nowrap;
         overflow-y: auto;
+        max-width: 100%;
     }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     /************ Amit end *********/
