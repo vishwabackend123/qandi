@@ -171,7 +171,7 @@
                     stagePadding: 0,
                     loop: false,
                     margin: 15,
-                    nav: false,
+                    nav: true,
                     dots: false,
                     responsive: {
                         0: {
