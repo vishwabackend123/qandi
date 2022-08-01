@@ -42,11 +42,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </svg>
                             @php
                             $init = $scoreResponse->result_time_taken;
-                            $hours = floor($init / 3600);
-                            $minutes = floor(($init / 60) % 60);
-                            $seconds = $init % 60;
+                            $explode_init =explode(':',$init);                           
                             @endphp
-                            {{$minutes}} min {{$seconds}} sec
+                            {{$explode_init[1]}} min {{$explode_init[2]}} sec
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
