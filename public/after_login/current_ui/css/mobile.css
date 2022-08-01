@@ -82,6 +82,7 @@
             width: 50px;
         }
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {padding: 0.5rem 0.6rem;}
+        .questionOptionBlock {padding-left: 25px;}
 }
 @media only screen and (max-width: 1300px){
     .selectPlan {
@@ -94,6 +95,8 @@
     .selectPlanedetail {
         padding: 25px 40px;
     }
+    .questionOptionBlock {padding-left: 0px;}
+    .questionwrapper { padding: 0px 40px;}
 }
 @media only screen and (max-width: 1280px){
     .subjectperformLegend .bar {
@@ -964,6 +967,12 @@
 }
 
 @media only screen and (max-width: 576px){
+    .right-seidepannel h1 {
+    font-size: 24px;
+    }
+    .right-seidepannel p {
+    padding-bottom: 60px;
+    }
       .mobile-test .topic_form{
     display: flex !Important;
     }
@@ -994,9 +1003,6 @@
 }
     .loginform {
     width: 100%;
-    }
-    .login-signup {
-    height:auto;
     }
     .subs-alld h3 {
     text-align: right;

@@ -1,6 +1,6 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
-<div class="item">
+<div class="item" id="topic_list_{{$chapter_id}}">
     <div class="exam-box">
         <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
             <p>{{$topic->topic_name}}</p>
@@ -39,9 +39,9 @@
 </div>
 @endif
 <script>
-$(document).ready(function(){    
-    $('.addremovetopic').on('click', function(e) {           
-    $(this).parent().parent().toggleClass('examborderchange');            
-    });    
-});    
+    $(document).ready(function() {
+        $('.addremovetopic').on('click', function(e) {
+            $(this).parent().parent().toggleClass('examborderchange');
+        });
+    });
 </script>
