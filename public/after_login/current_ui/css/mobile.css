@@ -1021,7 +1021,6 @@
         display: flex!important;
         flex-wrap: nowrap;
         overflow-y: auto;
-        margin-right: -16px;
     }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     /************ Amit end *********/
