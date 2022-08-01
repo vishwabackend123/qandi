@@ -823,7 +823,7 @@ class ExamCustomController extends Controller
                 $topics = $sorted->values()->all();
             }
 
-            return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
+            return view('afterlogin.ExamCustom.custom_topic', compact('topics','chapter_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
