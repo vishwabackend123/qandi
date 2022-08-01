@@ -222,11 +222,17 @@ $userData = Session::get('user_data');
             </div>
             <!--------- Mobile View ------------->
             <div class="mobile_block">
+                <div class="mock_inst_text_mock_test">
+                    <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
+                </div>
                 <div class="commontab">
                     <div class="tablist">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link qq1_2_3_4 active m-0" id="daily_tasks-tab" data-bs-toggle="tab" data-bs-target="#daily_tasks" type="button" role="tab" aria-controls="daily_tasks" aria-selected="true">Daily Tasks</a>
+                                <a class="nav-link qq1_2_3_4 active m-0" id="daily_tasks-tab" data-bs-toggle="tab" data-bs-target="#daily_tasks" type="button" role="tab" aria-controls="daily_tasks" aria-selected="true">
+                                    Daily Tasks
+                                    <span>2</span>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link qq1_2_3_4 m-0" id="weekly_tasks-tab" data-bs-toggle="tab" data-bs-target="#weekly_tasks" type="button" role="tab" aria-controls="weekly_tasks" aria-selected="false">Weekly Tasks</a>
@@ -242,8 +248,11 @@ $userData = Session::get('user_data');
                                     <li>
                                         <div class="task1">
                                             <p class="m-0"><span>Task 1</span></p>
-                                            <h3>Knowledge Skills</h3>
-                                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <div class="d-flex justify-content-between align-items-center skill_para_toggle">
+                                                <h3>Evaluation Skills</h3>
+                                                <span><i class="fa fa-angle-down"></i></span>
+                                            </div>
+                                            <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Question</span>
@@ -274,8 +283,11 @@ $userData = Session::get('user_data');
                                     <li>
                                         <div class="task1">
                                             <p class="m-0"><span>Task 2</span></p>
-                                            <h3>Evaluation Skills</h3>
-                                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <div class="d-flex justify-content-between align-items-center skill_para_toggle">
+                                                <h3>Knowledge Skills</h3>
+                                                <span><i class="fa fa-angle-down"></i></span>
+                                            </div>
+                                            <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Question</span>
@@ -306,7 +318,7 @@ $userData = Session::get('user_data');
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="weekly_tasks" role="tabpanel" aria-labelledby="weekly_tasks-tab">
-                                gccccg
+                                
                             </div>
                         </div>
                     </div>
@@ -397,7 +409,12 @@ $userData = Session::get('user_data');
                 });
                 $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                     $(this).parent("p").hide();
-                });
+                }); 
+            });
+
+            $(".skill_para_toggle span").click(function(){
+                $(this).parent().next("p").slideToggle();
+                $(this).children().toggleClass("fa-angle-down fa-angle-up");
             });
         </script>
         <!-- Footer Section -->
