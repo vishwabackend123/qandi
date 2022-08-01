@@ -964,14 +964,35 @@
         .mobilescrolltab .nav-tabs{width:560px;padding-bottom: 10px;
             padding-left: 9px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
-        #timeManagementChart{height:287px!important;width:400px!important;}
-        .graph_padd{overflow-x: auto;padding-bottom:20px;}
+        /* #timeManagementChart{height:280px!important;width:350px!important;}
+        .graph_padd{overflow-x: auto;padding-bottom:10px;} */
+        .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
+        .overallmain .commonWhiteBox{height:auto;}
+        .codelearningBlock .col-md-6{    flex: 0 0 auto;
+            width: 50%;padding: 8px;}
+            .codelerheader h3 {
+                font-size: 14px;
+                font-weight: 800;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.6;
+                letter-spacing: normal;
+            }
+            .codelerheader {
+                padding: 14px 12px;
+            }
+            .overalltop{margin-bottom:0px;}
+            .codelerninner {    padding: 8px 13px 9px; }
+            .codebottom { padding: 0px 13px 12px; }
+            .codebottom h2{font-size:20px;}
 }
 
 @media only screen and (max-width: 576px){
     .right-seidepannel h1 {
     font-size: 24px;
     }
+
     .right-seidepannel p {
     padding-bottom: 60px;
     }
