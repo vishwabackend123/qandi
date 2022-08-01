@@ -2174,9 +2174,9 @@ a.btn-common-attempted svg {
       color: #363c4f;
   }
   .optionText p{font-weight: bold;}
-  .optionText{
+  /* .optionText{
     overflow: overlay;
-  }
+  } */
   
   button.btn-ans {
       background: #56b663;
