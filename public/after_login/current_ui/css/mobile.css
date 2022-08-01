@@ -235,6 +235,7 @@
     
 }
 @media only screen and (max-width: 991px){
+    .matrix-page-wrapper .col-lg-8.fortab{margin-top:16px;}
    .topic_form{
     display: none !Important;
     }
@@ -458,9 +459,7 @@
         display: none;
     }
     .mymatrix_table tr td:nth-child(2)
-    {
-        display: flex;
-        justify-content: flex-end;
+    {text-align: right;
     }
     td.mymatrix_table_point
     {
@@ -1087,7 +1086,7 @@
     .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
     .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
     .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
-    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;}
+    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
     /************ Amit end *********/
 }
 
