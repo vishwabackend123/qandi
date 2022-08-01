@@ -13,13 +13,13 @@ $userData = Session::get('user_data');
     });
 </script>
 @endif
-<div class="main-wrapper dashboard">
+<div class="main-wrapper dashboard taskcenter_wrapper">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row mobile_hide">
                 <div class="col-lg-6">
                     @foreach($dailyTask as $key=>$data)
                     @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
@@ -220,6 +220,30 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
+            <!--------- Mobile View ------------->
+            <div class="mobile_block">
+                <div class="commontab">
+                    <div class="tablist">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4 active m-0" id="daily_tasks-tab" data-bs-toggle="tab" data-bs-target="#daily_tasks" type="button" role="tab" aria-controls="daily_tasks" aria-selected="true">Daily Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4 m-0" id="weekly_tasks-tab" data-bs-toggle="tab" data-bs-target="#weekly_tasks" type="button" role="tab" aria-controls="weekly_tasks" aria-selected="false">Weekly Tasks</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="daily_tasks" role="tabpanel" aria-labelledby="daily_tasks-tab">
+                                gg
+                            </div>
+                            <div class="tab-pane fade" id="weekly_tasks" role="tabpanel" aria-labelledby="weekly_tasks-tab">
+                                gccccg
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <!----------------------------------->
         </div>
         <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
