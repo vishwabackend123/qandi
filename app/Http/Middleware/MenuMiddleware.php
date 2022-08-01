@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Traits\CommonTrait;
 
@@ -127,6 +128,12 @@ class MenuMiddleware
             } else {
                 //expire today
                 $suscription_status = 1;
+            }
+             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
+            if (Route::getCurrentRoute()->getName() !='subscriptions') {
+                if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
+                    return redirect()->route('subscriptions');
+                }
             }
 
             \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
