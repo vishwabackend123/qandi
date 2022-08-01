@@ -99,7 +99,7 @@ Route::any('/ajax_next_question/{ques_id}', [App\Http\Controllers\ExamCustomCont
 Route::any('/ajax_next_subject_question/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajaxNextSubjectQuestion'])->name('ajax_next_subject_question')->middleware('auth');
 Route::any('/saveAnswer', [App\Http\Controllers\ExamCustomController::class, 'saveAnswer'])->name('saveAnswer')->middleware('auth');
 Route::any('/clearResponse', [App\Http\Controllers\ExamCustomController::class, 'clearResponse'])->name('clearResponse')->middleware('auth');
-Route::any('/ajax_custom_topic/{chapt_id}', [App\Http\Controllers\ExamCustomController::class, 'chaptersTopic'])->name('ajax_custom_topic')->middleware('auth');
+Route::any('/ajax_custom_topic/{chapter_id}', [App\Http\Controllers\ExamCustomController::class, 'chaptersTopic'])->name('ajax_custom_topic')->middleware('auth');
 Route::any('/ajax_chapter_list/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajaxChapterList'])->name('ajax_chapter_list')->middleware('auth');
 Route::any('/filter_subject_chapter/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'filterSubjectChapter'])->name('filter_subject_chapter')->middleware('auth');
 
