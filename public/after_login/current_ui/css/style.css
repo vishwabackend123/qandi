@@ -2965,7 +2965,7 @@ line-height: 1.6;
     font-size: 14px;
     font-weight: 800;
     color: #56b663;
-    padding: 8px;
+    padding: 8px;opacity: inherit;
     min-width: 160px;
 }
 
@@ -6598,6 +6598,14 @@ border-color: #56b663;
 }
 .privacy-sec > a {color: #56b663;}   
 
+
+/********** slelect plan *********/
+.peryearPrice > span {
+    font-size: 14px;
+    color: #363c4f;
+    padding-left: 4px;
+    display: inline-block;
+}
 
 
 /**********  exam_instructions *********/
