@@ -59,7 +59,7 @@ $question_type = "Numerical";
                                     </ul>
                                 </div>
                                 <div class="reviewexamType">
-                                    <a href="#">
+                                    <a href="javascript:void(0);" style="cursor:default">
                                         {{$exam_name}}
                                     </a>
                                 </div>
@@ -353,7 +353,7 @@ $question_type = "Numerical";
 
                         </div>
                     </div>
-                    <a class="btn bck-btn" href="{{url('/dashboard')}}">Back</a>
+                    <a class="btn bck-btn" href="{{url()->previous()}}">Back</a>
                 </div>
             </div>
         </div>

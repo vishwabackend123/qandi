@@ -2016,6 +2016,7 @@ a.btn-common-attempted svg {
       background: #ffffff;
       align-items: center;
           color: #1f1f1f;
+          overflow: overlay;
          
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
@@ -2174,9 +2175,7 @@ a.btn-common-attempted svg {
       color: #363c4f;
   }
   .optionText p{font-weight: bold;}
-  /* .optionText{
-    overflow: overlay;
-  } */
+ 
   
   button.btn-ans {
       background: #56b663;
@@ -2965,7 +2964,7 @@ line-height: 1.6;
     font-size: 14px;
     font-weight: 800;
     color: #56b663;
-    padding: 8px;
+    padding: 8px;opacity: inherit;
     min-width: 160px;
 }
 
@@ -6598,6 +6597,14 @@ border-color: #56b663;
 }
 .privacy-sec > a {color: #56b663;}   
 
+
+/********** slelect plan *********/
+.peryearPrice > span {
+    font-size: 14px;
+    color: #363c4f;
+    padding-left: 4px;
+    display: inline-block;
+}
 
 
 /**********  exam_instructions *********/

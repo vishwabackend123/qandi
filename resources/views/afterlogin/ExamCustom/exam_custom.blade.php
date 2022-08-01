@@ -160,7 +160,7 @@
         $('.topic_form').attr("style", "display: none  !important");
         $('.take-fulltest').attr("style", "display: none  !important");
         $('#' + subject + '_main').attr("style", "display: flex");
-        clearTopics();
+        //clearTopics();
     }
     $('.chapters-expend').hide();
 
@@ -223,16 +223,8 @@
         });
 
     }
-    $('#attempted').click(function() {
-        url = "{{ url('ajax_exam_result_list') }}/Assessment";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-
-}
+</script>
+<script type="text/javascript">
 $('#attempted').click(function() {
     url = "{{ url('ajax_exam_result_list') }}/Assessment";
     $.ajax({
@@ -250,8 +242,11 @@ $('#attempted').click(function() {
             $('#AssessmentTypeDiv').attr("style", "display: block !important");
             $('.slot_div').hide();
         },
-        error: function(data, errorThrown) {}
+        error: function(data, errorThrown) {
+
+        }
     });
+ });
     var aTopics = [];
 
     function addOrRemove(value) {
@@ -336,7 +331,7 @@ $('#attempted').click(function() {
                 $(".chapter_list_" + sub_id).html(result);
             }
         });
-    };
+    }
 
     function clear_chapter_filter(sub_id, filter_type) {
         url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
