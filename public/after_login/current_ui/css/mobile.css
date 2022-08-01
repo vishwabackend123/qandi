@@ -995,6 +995,11 @@
             .overall_analytics_page.test_analytics_wrapper .mock_inst_text_mock_test { width: 100%;    margin-bottom: -32px;
                 text-align: right;
             }
+            .overall_analytics_page.test_analytics_wrapper ul.topic_score_lists li{margin-bottom:24px;}
+            .overall_analytics_page.test_analytics_wrapper .topic_score_lists .topic_score_bar h4{margin-bottom:12px;}
+            .codelearningBlock {
+                margin-top: 19px;
+            }
 }
 
 @media only screen and (max-width: 576px){
