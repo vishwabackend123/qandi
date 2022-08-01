@@ -280,7 +280,8 @@ $question_type = "Numerical";
                             <span>Review Questions</span>
 
                             <div id="filterBy">
-                                <label class="filter" data-bs-toggle="dropdown" aria-expanded="false" title="Filter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <label class="filter" data-bs-toggle="dropdown" aria-expanded="false" title="Filter">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer">
                                         <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </label>
