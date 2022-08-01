@@ -2174,8 +2174,11 @@ a.btn-common-attempted svg {
       color: #363c4f;
   }
   .optionText p{font-weight: bold;}
-  .optionText{
+  .reviewScreenleft .optionText{
     overflow-x: overlay;
+  }
+  .examLeftpanel   .optionText{
+    overflow: initial;
   }
   
   button.btn-ans {
