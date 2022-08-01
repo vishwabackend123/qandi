@@ -204,9 +204,9 @@ class ReviewController extends Controller
                     $exam_name = '';
                 }
 
-                /*  return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
-      */
-                return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
+                $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true),'subject_id');
+
+                return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name','all_question_array'));
             } else {
                 if ($pageName == 'attempted') {
                     return Redirect::back()->withErrors(['Data does not exist for this result id.']);
@@ -499,5 +499,15 @@ class ReviewController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function array_group(array $data, $by_column)
+    {
+        $result = [];
+        foreach ($data as $item) {
+            $column = $item[$by_column];
+            unset($item[$by_column]);
+            $result[$column][] = $item;
+        }
+        return $result;
     }
 }
