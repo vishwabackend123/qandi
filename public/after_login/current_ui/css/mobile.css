@@ -880,12 +880,20 @@
         height: 100%;
         background: #f5faf6;
     }
+    
 
     #referfrnd .modalcenter {
         display: flex;
         align-items: start;
-        height: 100%;
         margin-top: 70px;
+        height: calc(100% - 70px);
+    }
+
+    #referfrnd .modal-dialog, #referedfrnd .modal-dialog {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0px auto;
+        height: calc(100% - 70px);
     }
 
     .user-profile-sec>h2 {
