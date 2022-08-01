@@ -59,7 +59,7 @@ $question_type = "Numerical";
                                     </ul>
                                 </div>
                                 <div class="reviewexamType">
-                                    <a href="#">
+                                    <a href="javascript:void(0);" style="cursor:default">
                                         {{$exam_name}}
                                     </a>
                                 </div>
