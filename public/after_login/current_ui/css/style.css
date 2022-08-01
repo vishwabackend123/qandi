@@ -6639,6 +6639,7 @@ border-color: #56b663;
 
 .examLeftpanel li.nav-item {
     margin-top: 9px;
+    margin-right: 60px;
 }
 
 
@@ -6951,6 +6952,21 @@ label.filter {
 #filterBy .dropdown-menu{
     transform: translate(200px, 64px) !important;
     min-width: auto;
+}
+
+.qcountout{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1f1f1f;
+}
+
+.examLeftpanel .nav-item{
+    position: relative;
+
 }
 
 
