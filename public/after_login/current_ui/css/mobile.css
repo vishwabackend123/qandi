@@ -99,6 +99,7 @@
     .questionwrapper { padding: 0px 40px;}
 }
 @media only screen and (max-width: 1280px){
+    .subjectblockOverall .textblock{    width: calc(100% - 100px);}
     .subjectperformLegend .bar {
         width: 18px;
         height: 7px;
