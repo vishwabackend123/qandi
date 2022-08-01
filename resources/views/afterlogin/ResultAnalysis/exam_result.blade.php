@@ -6,6 +6,9 @@ $user_id = isset($userData->id)?$userData->id:'';
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
 @endif
@@ -37,11 +40,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            @php 
-                                $init = $scoreResponse->result_time_taken;
-                                $hours = floor($init / 3600);
-                                $minutes = floor(($init / 60) % 60);
-                                $seconds = $init % 60;
+                            @php
+                            $init = $scoreResponse->result_time_taken;
+                            $hours = floor($init / 3600);
+                            $minutes = floor(($init / 60) % 60);
+                            $seconds = $init % 60;
                             @endphp
                             {{$minutes}} min {{$seconds}} sec
                         </small>
@@ -143,7 +146,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?number_format($scoreResponse->result_percentage,2):0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec)  </small></span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -154,7 +157,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                  
+
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -179,16 +182,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">{{$rankResponse->user_rank}}
-                                @php
+                                    @php
                                     $number = $rankResponse->user_rank;
                                     $ends = array('th','st','nd','rd','th','th','th','th','th','th');
-                                    if (($number %100) >= 11 && ($number%100) <= 13){ 
-                                        $abbreviation='th' ; 
-                                    } else {
-                                     $abbreviation=$ends[$number % 10]; 
-                                     } 
-                                     @endphp
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">{{$abbreviation}}</sub></label>
+                                    if (($number %100) >= 11 && ($number%100) <= 13){ $abbreviation='th' ; } else { $abbreviation=$ends[$number % 10]; } @endphp <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -243,17 +240,20 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
     @endphp
-    <!-- Footer Section -->
-    @include('afterlogin.layouts.footer_new')
-    <!-- footer Section end  -->
+
     <!-- browser back disable -->
 
     <script type="text/javascript">
         $(document).ready(function() {
+
             window.history.pushState(null, "", window.location.href);
+
             window.onpopstate = function() {
+
                 window.history.pushState(null, "", window.location.href);
+
             };
+
         });
     </script>
     <!-- browser back disable -->
@@ -400,4 +400,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             height: "50vh",
         });*/
     </script>
+    <!-- Footer Section -->
+    @include('afterlogin.layouts.footer_new')
+    <!-- footer Section end  -->
     @endsection

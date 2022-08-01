@@ -1847,19 +1847,20 @@ a.btn-common-attempted svg {
       text-align: left;
     
   }
-  .questionChoice a:first-child{
-    background-color: #56b663;
-    color: #ffffff !important;
-  }
-  .questionChoice a:nth-child(2){
+  .questionChoice .singleChoice{
     background-color: transparent;
     color: #000000 !important;
  
   }
- 
-  .singleChoice:hover {
-      color: #fff;
+  .questionChoice .singleChoice.single_Choice_active{
+    background-color: #56b663;
+    color: #ffffff !important;
   }
+  
+ 
+  /* .singleChoice:hover {
+      color: #fff;
+  } */
   .numericalChoice:hover {
       color: #000000;
   }
