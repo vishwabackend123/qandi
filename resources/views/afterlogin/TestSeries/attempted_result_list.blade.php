@@ -91,7 +91,7 @@
                     <div class="mock_test_q_d_m_s_text1">Subject</div>
                     <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                 </div>
-                <div class="mock_test_marks_content2">
+                <div class="mock_test_marks_content2 slot_div">
                     <div class="mock_test_q_d_m_s_text1">Slot</div>
                     <div class="mock_test_qdms_text2">Morning</div>
                 </div>
