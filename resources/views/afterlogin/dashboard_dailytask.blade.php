@@ -252,7 +252,7 @@ $userData = Session::get('user_data');
                                                 <h3>Evaluation Skills</h3>
                                                 <span><i class="fa fa-angle-down"></i></span>
                                             </div>
-                                            <p style="display:none;">Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Question</span>
@@ -287,7 +287,7 @@ $userData = Session::get('user_data');
                                                 <h3>Knowledge Skills</h3>
                                                 <span><i class="fa fa-angle-down"></i></span>
                                             </div>
-                                            <p style="display:none;">Quickly sharpen your evaluation skills with this curated test.</p>
+                                            <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Question</span>
@@ -414,6 +414,7 @@ $userData = Session::get('user_data');
 
             $(".skill_para_toggle span").click(function(){
                 $(this).parent().next("p").slideToggle();
+                $(this).children().toggleClass("fa-angle-down fa-angle-up");
             });
         </script>
         <!-- Footer Section -->
