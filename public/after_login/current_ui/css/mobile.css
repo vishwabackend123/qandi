@@ -959,6 +959,9 @@
 }
 
 @media only screen and (max-width: 576px){
+    .right-seidepannel h1 {
+    font-size: 24px;
+}
       .mobile-test .topic_form{
     display: flex !Important;
     }
@@ -989,9 +992,6 @@
 }
     .loginform {
     width: 100%;
-    }
-    .login-signup {
-    height:auto;
     }
     .subs-alld h3 {
     text-align: right;
