@@ -6974,5 +6974,8 @@ label.filter {
     background-color: #f5faf6;
     color: rgba(54, 60, 79, 0.7);
 }
+.exam-wrapper .content-wrapper{
+    padding: 34px 30px;
+}
 
 
