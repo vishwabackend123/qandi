@@ -119,42 +119,40 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-$('.topic_form').attr("style", "display: none !important");
-$(".clearsec").click(function() {
-    $(".take-fulltest").removeClass("mobile-test");
-});
+    $('.topic_form').attr("style", "display: none !important");
+    $(".clearsec").click(function() {
+        $(".take-fulltest").removeClass("mobile-test");
+    });
 
-function showSubChapters(subject) {
-    $('.SubActBtn').removeClass('active');
-    $('.subjectlist').removeClass('d-block');
-    $('.subjectlist').addClass('d-none');
-    $('#' + subject + '_btn').addClass('active');
-    $('#' + subject + '_list').removeClass('d-none');
-    $('#' + subject + '_list').addClass('d-block');
-    $('.full_take').removeClass('d-flex');
-    $('.full_take').addClass('d-none');
-    $('#' + subject + '_test').removeClass('d-none');
-    $('#' + subject + '_test').addClass('d-flex');
-    $('.topic_form').attr("style", "display: none  !important");
-    $('.take-fulltest').attr("style", "display: none  !important");
-    $('#' + subject + '_main').attr("style", "display: flex");
-    clearTopics();
-}
-$('.chapters-expend').hide();
-
-function show_topic(chapt_id, sub_id) {
-    var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
-    if (chapter_ex === true) {
-        $('#collapseTwo_custome_' + chapt_id).removeClass('show');
-        $('#collapseTwo_custome_' + chapt_id).hide();
-        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
-    } else {
-        $('#collapseTwo_custome_' + chapt_id).show();
-        $('#collapseTwo_custome_' + chapt_id).addClass('show');
-        $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
+    function showSubChapters(subject) {
+        $('.SubActBtn').removeClass('active');
+        $('.subjectlist').removeClass('d-block');
+        $('.subjectlist').addClass('d-none');
+        $('#' + subject + '_btn').addClass('active');
+        $('#' + subject + '_list').removeClass('d-none');
+        $('#' + subject + '_list').addClass('d-block');
+        $('.full_take').removeClass('d-flex');
+        $('.full_take').addClass('d-none');
+        $('#' + subject + '_test').removeClass('d-none');
+        $('#' + subject + '_test').addClass('d-flex');
+        $('.topic_form').attr("style", "display: none  !important");
+        $('.take-fulltest').attr("style", "display: none  !important");
+        $('#' + subject + '_main').attr("style", "display: flex");
+        clearTopics();
     }
-    var topic_length = $('#topic_list_' + chapt_id).length;
-    if (topic_length == 0) {
+    $('.chapters-expend').hide();
+
+    function show_topic(chapt_id, sub_id) {
+        var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
+        if (chapter_ex === true) {
+            $('#collapseTwo_custome_' + chapt_id).removeClass('show');
+            $('#collapseTwo_custome_' + chapt_id).hide();
+            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View topics');
+        } else {
+            $('#collapseTwo_custome_' + chapt_id).show();
+            $('#collapseTwo_custome_' + chapt_id).addClass('show');
+            $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
+        }
         url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
         $.ajax({
             url: url,
@@ -169,6 +167,7 @@ function show_topic(chapt_id, sub_id) {
 
                 $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
                 $("#topic_section_" + chapt_id).owlCarousel({
+
                     stagePadding: 0,
                     loop: false,
                     margin: 15,
@@ -200,7 +199,16 @@ function show_topic(chapt_id, sub_id) {
 
             }
         });
+
     }
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Assessment";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
 }
 $('#attempted').click(function() {
@@ -222,113 +230,111 @@ $('#attempted').click(function() {
         },
         error: function(data, errorThrown) {}
     });
-});
-var aTopics = [];
+    var aTopics = [];
 
-function addOrRemove(value) {
-    var index = aTopics.indexOf(value);
+    function addOrRemove(value) {
+        var index = aTopics.indexOf(value);
 
-    if (index === -1) {
-        aTopics.push(value);
-        $('#chpt_topic_' + value).addClass('topic_selected');
-        $('#chpt_topic_' + value).addClass('btn-common-green');
-        $('#chpt_topic_' + value).removeClass('btn-common-transparent');
-        $('#chpt_topic_' + value).removeClass('bg-transparent');
-        $('#chpt_topic_' + value).html('Selected');
-    } else {
-        aTopics.splice(index, 1);
-        $('#chpt_topic_' + value).removeClass('topic_selected');
-        $('#chpt_topic_' + value).removeClass('btn-common-green');
-        $('#chpt_topic_' + value).addClass('btn-common-transparent');
-        $('#chpt_topic_' + value).addClass('bg-transparent');
-        $('#chpt_topic_' + value).html('Select');
+        if (index === -1) {
+            aTopics.push(value);
+            $('#chpt_topic_' + value).addClass('topic_selected');
+            $('#chpt_topic_' + value).addClass('btn-common-green');
+            $('#chpt_topic_' + value).removeClass('btn-common-transparent');
+            $('#chpt_topic_' + value).removeClass('bg-transparent');
+            $('#chpt_topic_' + value).html('Selected');
+        } else {
+            aTopics.splice(index, 1);
+            $('#chpt_topic_' + value).removeClass('topic_selected');
+            $('#chpt_topic_' + value).removeClass('btn-common-green');
+            $('#chpt_topic_' + value).addClass('btn-common-transparent');
+            $('#chpt_topic_' + value).addClass('bg-transparent');
+            $('#chpt_topic_' + value).html('Select');
+        }
+        $('.selected_topic').val(aTopics);
+        if (aTopics.length > 0) {
+            $('.topic_form').attr("style", "display: none  !important");
+            $(".SubActBtn").each(function() {
+                if ($(this).hasClass('active')) {
+                    var ids = $(this).attr('id');
+                    ids = ids.replace("_btn", "_select");
+                    $('#' + ids).attr("style", "display: flex");
+                }
+
+            });
+
+            $('.take-fulltest').addClass('mobile-test');
+        } else {
+            $('.topic_form').attr("style", "display: none  !important");
+            $('.take-fulltest').removeClass('mobile-test');
+        }
+
+
     }
-    $('.selected_topic').val(aTopics);
-    if (aTopics.length > 0) {
-        $('.topic_form').attr("style", "display: none  !important");
-        $(".SubActBtn").each(function() {
-            if ($(this).hasClass('active')) {
-                var ids = $(this).attr('id');
-                ids = ids.replace("_btn", "_select");
-                $('#' + ids).attr("style", "display: flex");
-            }
 
+    function clearTopics() {
+        aTopics = [];
+        $('.selected_topic').val('');
+        $('.addremovetopic').removeClass('topic_selected');
+        $('.addremovetopic').removeClass('btn-common-green');
+        $('.addremovetopic').addClass('btn-common-transparent');
+        $('.addremovetopic').addClass('bg-transparent');
+        $('.addremovetopic').html('Select');
+        $('.exam-box').removeClass('examborderchange');
+        $('.topic_form').attr("style", "display: none  !important");
+
+    }
+
+    function showSubfilter(subject) {
+        $('.SubattemptActBtn').removeClass('active');
+        $('.compLeteS').hide();
+        if (subject == "all_subject") {
+            $('.compLeteS').show();
+            $("#all_subject_flt").addClass('active');
+        } else {
+            $('#' + subject + '_flt').addClass('active');
+            $("#all_subject_flt").removeClass('active');
+            $('.' + subject + '-rlt').show();
+        }
+
+    }
+
+    function chapterlist_filter(sub_id, filter_type) {
+        url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "filter_type": filter_type
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
+            success: function(result) {
+                $(".chapter_list_" + sub_id).html('');
+                $(".chapter_list_" + sub_id).html(result);
+            }
+        });
+    };
+
+    function clear_chapter_filter(sub_id, filter_type) {
+        url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "filter_type": filter_type
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
+            success: function(result) {
+                $(".chapter_list_" + sub_id).html('');
+                $(".chapter_list_" + sub_id).html(result);
+            }
         });
 
-        $('.take-fulltest').addClass('mobile-test');
-    } else {
-        $('.topic_form').attr("style", "display: none  !important");
-        $('.take-fulltest').removeClass('mobile-test');
-    }
-
-
-}
-
-function clearTopics() {
-    aTopics = [];
-    $('.selected_topic').val('');
-    $('.addremovetopic').removeClass('topic_selected');
-    $('.addremovetopic').removeClass('btn-common-green');
-    $('.addremovetopic').addClass('btn-common-transparent');
-    $('.addremovetopic').addClass('bg-transparent');
-    $('.addremovetopic').html('Select');
-    $('.exam-box').removeClass('examborderchange');
-    $('.topic_form').attr("style", "display: none  !important");
-
-}
-
-function showSubfilter(subject) {
-    $('.SubattemptActBtn').removeClass('active');
-    $('.compLeteS').hide();
-    if (subject == "all_subject") {
-        $('.compLeteS').show();
-        $("#all_subject_flt").addClass('active');
-    } else {
-        $('#' + subject + '_flt').addClass('active');
-        $("#all_subject_flt").removeClass('active');
-        $('.' + subject + '-rlt').show();
-    }
-
-}
-
-function chapterlist_filter(sub_id, filter_type) {
-    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-            "filter_type": filter_type
-        },
-        beforeSend: function() {
-            $('#overlay').fadeIn();
-        },
-        success: function(result) {
-            $(".chapter_list_" + sub_id).html('');
-            $(".chapter_list_" + sub_id).html(result);
-        }
-    });
-};
-
-function clear_chapter_filter(sub_id, filter_type) {
-    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
-
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-            "filter_type": filter_type
-        },
-        beforeSend: function() {
-            $('#overlay').fadeIn();
-        },
-        success: function(result) {
-            $(".chapter_list_" + sub_id).html('');
-            $(".chapter_list_" + sub_id).html(result);
-        }
-    });
-
-};
-
+    };
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

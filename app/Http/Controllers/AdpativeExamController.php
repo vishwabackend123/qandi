@@ -477,6 +477,7 @@ class AdpativeExamController extends Controller
 
             $responsedata = json_decode($response_json);
 
+            //  dd($responsedata, $curl_url, $request);
 
             $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
             $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
