@@ -7062,5 +7062,67 @@ label.filter {
 .exam-wrapper .content-wrapper{
     padding: 34px 30px;
 }
+/*****************************Toast message***********/
+.toastdata{
+  max-width: 378px;
+  position: absolute;
+  top: 85px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  -webkit-box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  -moz-box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+}
 
-
+.toastdata.active{
+  transform: translateX(0);
+}
+.toast-content{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.toast-check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  background-color: #40f467;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    flex: 1;
+}
+  .message h5{
+font-size: 16px;
+font-weight: bold;
+color: #039855;
+}
+.message p{
+font-size: 14px;
+font-weight: 500;
+color: #363c4f;
+margin: 0;
+}
+.toast-close{
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  cursor: pointer;
+}
+.progress{
+height: 0;        
+}
+/*****************************Toast message end***********/
