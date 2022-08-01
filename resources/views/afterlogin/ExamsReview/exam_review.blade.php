@@ -46,7 +46,7 @@ $question_type = "Numerical";
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4  all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} <!-- <span class="qCount">65</span> --></a>
+                                            <a class="nav-link qq1_2_3_4  all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} <span class="qCount">{{count($all_question_array[$sub->id])}}</span></a>
                                         </li>
                                         @endforeach
                                         @endif
@@ -280,7 +280,8 @@ $question_type = "Numerical";
                             <span>Review Questions</span>
 
                             <div id="filterBy">
-                                <label class="filter" data-bs-toggle="dropdown" aria-expanded="false" title="Filter"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <label class="filter" data-bs-toggle="dropdown" aria-expanded="false" title="Filter">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer">
                                         <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </label>
