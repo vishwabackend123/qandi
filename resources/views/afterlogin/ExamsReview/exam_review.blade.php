@@ -46,7 +46,7 @@ $question_type = "Numerical";
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4  all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} <!-- <span class="qCount">65</span> --></a>
+                                            <a class="nav-link qq1_2_3_4  all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} <span class="qCount">{{count($all_question_array[$sub->id])}}</span></a>
                                         </li>
                                         @endforeach
                                         @endif
