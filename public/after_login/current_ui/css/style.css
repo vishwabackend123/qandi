@@ -3765,8 +3765,17 @@ padding: 20px;
 #FullTest_Exam_Panel_Interface_A .exam_text_content{padding: 20px 0px 0;line-height: 1.4;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .task-btn.tasklistbtn{display:flex;}
 #FullTest_Exam_Panel_Interface_A .exam-footer-sec .tasklistbtn .btn{width:50%;}
-.progress.dropdown-toggle::after {
-    border: 0;
+.progress.dropdown-toggle::after {border: 0;}
+.taskcenter_wrapper .commontab {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.taskcenter_wrapper .commontab .nav-tabs .nav-item {
+    width: 50%;
+}
+.taskcenter_wrapper .commontab .nav-tabs .nav-link {
+    padding-bottom: 12px;
 }
 
 /********************* Amit End ****************************/
@@ -6220,6 +6229,7 @@ border-color: #56b663;
     text-transform: capitalize;
     font-size: 14px;
     height: 44px;
+    line-height:26px;
 }
 
 .qust-sec span,
@@ -6639,6 +6649,7 @@ border-color: #56b663;
 
 .examLeftpanel li.nav-item {
     margin-top: 9px;
+    margin-right: 60px;
 }
 
 
@@ -6951,6 +6962,29 @@ label.filter {
 #filterBy .dropdown-menu{
     transform: translate(200px, 64px) !important;
     min-width: auto;
+}
+
+.qcountout{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1f1f1f;
+}
+
+.examLeftpanel .nav-item{
+    position: relative;
+
+}
+.examQuestionarrow button.disabled {
+    border: solid 1px rgba(208, 213, 221, 0.5);
+    background-color: #f5faf6;
+    color: rgba(54, 60, 79, 0.7);
+}
+.exam-wrapper .content-wrapper{
+    padding: 34px 30px;
 }
 
 

@@ -109,7 +109,8 @@ $question_type = "Numerical";
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} <span class="qCount">{{$sub->count}}</span></a>
+                                            <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} </a>
+                                            <span class="qCount qcountout">{{$sub->count}}</span>
                                         </li>
                                         @endforeach
                                         @endif
