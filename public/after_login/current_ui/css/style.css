@@ -998,6 +998,49 @@ color: #008799;
 .selectbox{
 border-color: #56b663;    
 }
+.testslider .owl-nav {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ .testslider .owl-nav button.owl-prev{
+    height: 40px;
+    width: 40px;
+     box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    -webkit-box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    -moz-box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    background: #fff !important;
+    font-size: 28px !important;
+    border-radius: 20px !important;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    line-height: 36px !important; 
+    color: #1f1f1f !important;
+   }
+ .testslider .owl-nav button.owl-next{
+    height: 40px;
+    width: 40px;
+     box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    -webkit-box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    -moz-box-shadow: 0 8px 16px 0 rgba(164, 172, 178, 0.24) !important;
+    background: #fff !important;
+    font-size: 28px !important;
+    border-radius: 20px !important;
+    position: absolute;
+    top: 32px;
+    right: 0px;
+    line-height: 36px !important;
+    color: #1f1f1f !important;
+   }
+.testslider .owl-nav button.owl-next.disabled span {
+    box-shadow: none !important;
+    border: 0 !important;
+}
+.testslider .owl-nav .disabled {
+    opacity: 0 !Important;
+}
 /*****practic_exam-end**********/   
 
 /*********** Navdeep End *************/
@@ -3782,6 +3825,35 @@ ul.task_center_lists .task1 {
     padding-top: 24px;
 }
 .tablist ul.task_center_lists li{text-align:left;}
+.taskcenter_wrapper .mock_inst_text_mock_test {
+    display: block;
+    padding: 12px 0 32px;
+}  
+.taskcenter_wrapper .commontab .nav-tabs .nav-link span {
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 37px;
+    width: 24px;
+    height: 19px;
+    background-color: #e0f6e3;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 0.96px;
+    color: #56b663;
+}
+.skill_para_toggle h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1f1f1f;
+    margin: 0;
+    padding: 1px 0;
+    line-height: 1.6;
+}
+.skill_para_toggle span {
+    color: #cccccc;
+    font-size: 22px;
+}
 /********************* Amit End ****************************/
 
 
