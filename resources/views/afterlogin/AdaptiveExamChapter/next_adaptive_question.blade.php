@@ -185,17 +185,18 @@ $question_type = "Numerical";
             </div>
             <div class="examQuestionarrow">
                 <!-- Previous button -->
+                <span style="visibility:hidden">
+                    <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+                        <span class=" Previous">‹</span>
+                    </button>
 
-                <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
-                    <span class=" Previous">‹</span>
-                </button>
 
+                    <!-- Next button -->
 
-                <!-- Next button -->
-
-                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
-                    <span class="Next">›</span>
-                </button>
+                    <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                        <span class="Next">›</span>
+                    </button>
+                </span>
             </div>
         </div>
     </div>

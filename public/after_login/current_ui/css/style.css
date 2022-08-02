@@ -7138,3 +7138,10 @@ margin: 0;
 height: 0;        
 }
 /*****************************Toast message end***********/
+
+.model_popup_live_result .modal-backdrop.fade {
+    opacity: 0 !important;
+}
+.model_popup_live_result .modal-backdrop{
+    z-index: -1 !important;
+}
