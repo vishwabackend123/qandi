@@ -19,6 +19,10 @@
         };
     });
 </script>
+
+
+
+
 @section('content')
 <!-- Side bar menu -->
 <div class="main-wrapper bg-gray model_popup_live_result">

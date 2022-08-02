@@ -5810,9 +5810,9 @@ td.mymatrix_table_point
     border: 0px!important;
 }
 .model_popup_live_result
-{
-    opacity: 0.5;
-    background-color: #1f1f1f
+{z-index: 9999;
+    position: relative;
+    background-color: #6d6d6d;
 }
 .model_popup_live_result .modal-body h2
 {
@@ -7135,9 +7135,4 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.model_popup_live_result .modal-backdrop.fade {
-    opacity: 0 !important;
-}
-.model_popup_live_result .modal-backdrop{
-    z-index: -1 !important;
-}
+ 
