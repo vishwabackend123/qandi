@@ -20,6 +20,7 @@
                                 </li>
                             </ul>
                         </div>
+<!--
                         <div class="toastdata">
    <div class="toast-content">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,6 +41,7 @@
    <div class="progress"></div>
 </div>
 <button class="toast-btn">toast</button>        
+-->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
                             <div id="qq1" class=" tab-pane active">
