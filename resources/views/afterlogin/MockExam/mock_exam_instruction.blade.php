@@ -50,17 +50,25 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             <div class="line-693"></div>
-                            <div class="exam_instruct_section_subject"><b>Section A</b></div>
+                            @if(isset($aSections))
+                            @foreach($aSections as $sec)
+                            @php $marksArr=json_decode($sec->marking_scheme); @endphp
+                            <div class="exam_instruct_section_subject"><b>{{$sec->section_name}}</b></div>
                             <ul class="exam_inst_ul_li">
-                                <li>This section contains 15 <b>questions of Single Choice.</b></li>
-                                <li><b>For Single Choice question</b>, 4 mark(s) is allotted for each correct response, 1 mark(s) will be deducted for each incorrect response, and 0 mark(s) are given for partial answers</li>
+                                <li>This section contains {{$sec->total_num_of_ques}} <b>questions of {{$sec->question_type_name}}.</b></li>
+                                @if($sec->total_num_of_ques > $sec->num_of_ques_tobeattempted)
+                                <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted</li>
+                                @endif
+                                <li><b>For {{$sec->section_name}} question</b>, {{$marksArr[0]}} mark(s) is allotted for each correct response, {{$marksArr[1]}} mark(s) will be deducted for each incorrect response, and 0 mark(s) are given for partial answers</li>
                             </ul>
-                            <div class="exam_instruct_section_subject"><b>Section B</b></div>
+                            @endforeach
+                            @endif
+                            <!-- <div class="exam_instruct_section_subject"><b>Section B</b></div>
                             <ul class="exam_inst_ul_li">
                                 <li>This section contains 15 <b>questions of Numerical Choice.</b></li>
                                 <li>Out of 15 questions only <b>10 questions</b> need to be attempted</li>
                                 <li>For Single Choice question, 4 mark(s) is allotted for each correct <br>response, 1 mark(s) will be deducted for each incorrect response</li>
-                            </ul>
+                            </ul> -->
                         </div>
                         @endforeach
                         @endif
