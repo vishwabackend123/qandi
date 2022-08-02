@@ -165,7 +165,6 @@ class ResultController extends Controller
 
                 return Redirect::route('exam_result_analytics', [$result_id]);
             } else {
-
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -576,10 +575,17 @@ class ResultController extends Controller
             } else {
                 $result_data[$key]->subject_name = "";
             }
+            if ($exam_type == 'Live') {
+                $date = strtotime(date('Y-m-d', strtotime($value->resultDate)));
+                $now = strtotime(date('Y-m-d'));
+                if ($date > $now) {
+                    unset($result_data[$key]);
+                }
+            }
             $year = date('Y', strtotime($value->created_at));
             $years_list[] = $year;
-        }
 
+        }
         if ($exam_type == 'PreviousYear') {
             $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list'))->render();
         } else {
