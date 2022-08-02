@@ -28,7 +28,7 @@
                 <a href="javascript:void(0)">C</a>
                 <a href="javascript:void(0)">K</a>
             </div>
-            <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic">Select</button>
+            <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic topic_{{$subject_name}}">Select</button>
         </div>
     </div>
 </div>
