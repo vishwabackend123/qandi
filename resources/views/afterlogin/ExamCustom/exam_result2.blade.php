@@ -1,3 +1,4 @@
+ @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
 <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
     <h3 class="boxheading d-flex align-items-center">Subject Score
         <span class="tooltipmain ml-2">
@@ -34,6 +35,7 @@
        
     </div>
 </div>
+@endif
 <div class="commonWhiteBox commonblockDash borderRadius">
     <h3 class="boxheading d-flex align-items-center">Topic Score
         <span class="tooltipmain ml-2">
