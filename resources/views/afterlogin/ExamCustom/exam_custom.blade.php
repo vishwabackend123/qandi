@@ -103,7 +103,7 @@
                                                         0%
                                                         @endif</span></h3>
                                                 <div class="accordion-header d-flex align-items-center justify-content-between pt-md-0 pt-4" id="headingTwo">
-                                                    <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" class="m-0" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View topics</h4>
+                                                    <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}','{{$sub->subject_name}}')" class="m-0" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View topics</h4>
                                                     <form class="w-100 text-right" method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                                                         @csrf
                                                         <input type="hidden" name="subject_id" value="">
@@ -158,11 +158,24 @@
         $('.topic_form').attr("style", "display: none  !important");
         $('.take-fulltest').attr("style", "display: none  !important");
         $('#' + subject + '_main').attr("style", "display: flex");
+        let is_select=false;
+        $(".topic_" + subject).each(function() {
+        
+        if ($(this).hasClass('topic_selected')) {
+            is_select=true;
+        }
+
+       });
+        if(is_select)
+        {
+            $('#' + subject + '_select').attr("style", "display: flex");
+        }
+        
         //clearTopics();
     }
     $('.chapters-expend').hide();
 
-    function show_topic(chapt_id, sub_id) {
+    function show_topic(chapt_id, sub_id,subject_name) {
         var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
         if (chapter_ex === true) {
             $('#collapseTwo_custome_' + chapt_id).removeClass('show');
@@ -173,7 +186,7 @@
             $('#collapseTwo_custome_' + chapt_id).addClass('show');
             $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
         }
-        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
+        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
         $.ajax({
             url: url,
             data: {
