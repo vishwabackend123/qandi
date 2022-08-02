@@ -209,7 +209,7 @@ var btn = document.querySelector(".toast-btn");
 var close = document.querySelector(".toast-close");
 var progress = document.querySelector(".progress");
 
-btn.addEventListener("click", () =>{
+function toastFunction() {
   toast.classList.add("active");
   progress.classList.add("active");
 
@@ -220,15 +220,15 @@ btn.addEventListener("click", () =>{
   setTimeout(() =>{
     progress.classList.remove("active");
   }, 5300)
-})
+}
 
-close.addEventListener("click", () =>{
+function toastClose() {
   toast.classList.remove("active");
 
   setTimeout(() =>{
     progress.classList.remove("active");
   }, 300)
-});
+}
    
-/************************Toast Message end***************************/
+/************************Toast Message end***************************/ 
 
