@@ -1000,6 +1000,7 @@
             .codelearningBlock {
                 margin-top: 19px;
             }
+            .boxheading.mb-5{margin-bottom:26px!important;}
 }
 
 @media only screen and (max-width: 576px){
