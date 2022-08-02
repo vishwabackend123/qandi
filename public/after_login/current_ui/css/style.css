@@ -904,7 +904,7 @@ padding-bottom: 0;
     flex-basis: 200px;margin-bottom:0px;margin-top:3px;
 }
 .test-table .accordion-header{
-flex-basis: 246px;   
+flex-basis: 270px;   
 }
 .test-table .accordion-header .btn{
 max-width: 141px !important;
@@ -4526,7 +4526,7 @@ justify-content: space-between;}
 .codelerninner h5{font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
-    color: #000;margin-bottom:12px;min-height:91px;}
+    color: #000;margin-bottom:12px;min-height:113px;}
     .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
     .codelerninner p {font-size: 14px;
         font-weight: 500;
