@@ -20,7 +20,6 @@
                                 </li>
                             </ul>
                         </div>
-<!--
                         <div class="toastdata">
    <div class="toast-content">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,15 +32,14 @@
          <p>A verification link has been sent, please click the link to get your account verified</p>
       </div>
    </div>
-   <div class="toast-close">
+   <div class="toast-close" onclick="toastClose()">
       <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
    </div>
    <div class="progress"></div>
 </div>
-<button class="toast-btn">toast</button>        
--->
+<!--<button class="toast-btn" onclick="toastFunction()">toast</button>        -->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
                             <div id="qq1" class=" tab-pane active">
@@ -140,7 +138,7 @@
     </section>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
+<script>    
     $('.topic_form').attr("style", "display: none !important");
     $(".clearsec").click(function() {
         $(".take-fulltest").removeClass("mobile-test");
