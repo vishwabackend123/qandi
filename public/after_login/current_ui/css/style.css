@@ -3869,7 +3869,7 @@ ul.task_center_lists .task1 {
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
-    box-shadow: 0 4px 8px -2px rgba(62, 96, 121, 0.1);
+    box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
 }
