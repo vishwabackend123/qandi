@@ -3,7 +3,7 @@
 <div class="item" id="topic_list_{{$chapter_id}}">
     <div class="exam-box">
         <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
-            <p>{{$topic->topic_name}}</p>
+            <p title="{{$topic->topic_name}}">{{$topic->topic_name}}</p>
             <h2>Proficiency : <span>
                     @if(isset($topic->topic_score))
                     {{round($topic->topic_score)}}%

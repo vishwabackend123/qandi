@@ -380,7 +380,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         /***************** halfdoughnut - end *********************/
     </script>
-     @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
+    
     <script>
         $(document).ready(function() {
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
@@ -402,7 +402,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             height: "50vh",
         });*/
     </script>
-    @endif
+
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
