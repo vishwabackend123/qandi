@@ -84,6 +84,7 @@
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {padding: 0.5rem 0.6rem;}
         .questionOptionBlock {padding-left: 25px;}
         .reviewScreenleft li.nav-item { margin-right: 35px;}
+        .overallMidlle .commonWhiteBox .garphsubheading span{font-size: 14px;}
 }
 @media only screen and (max-width: 1300px){
     .selectPlan {
