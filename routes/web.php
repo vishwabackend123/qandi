@@ -89,7 +89,7 @@ Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class
 Route::any('/trial_subscription/{package_id}/{exam_year}/{exam_id}', [App\Http\Controllers\SubscriptionController::class, 'trialSubscription'])->name('trial_subscription')->middleware('auth');
 Route::any('/checkout', [App\Http\Controllers\SubscriptionController::class, 'checkout'])->name('checkout')->middleware('auth');
 
-Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class, 'store'])->name('razorpay.payment.store')->middleware('auth');
+Route::any('razorpay-payment', [App\Http\Controllers\RazorpayController::class, 'store'])->name('razorpay.payment.store')->middleware('auth');
 
 
 /* ExamCustom Controller Routs */
