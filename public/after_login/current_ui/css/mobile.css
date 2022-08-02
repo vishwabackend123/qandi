@@ -119,6 +119,7 @@
     .text-exambottom-sec {
         margin-top: 20px;
         height: 35vh;} 
+       
     
 }
 @media only screen and (max-height: 780px) {
@@ -127,6 +128,7 @@
     }
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
+   
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
