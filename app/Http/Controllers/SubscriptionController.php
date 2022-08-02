@@ -237,14 +237,14 @@ class SubscriptionController extends Controller
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
                 Session::put('user_data', $sessionData);
-                        $curl = curl_init();
-                        $api_URL = env('CRM_URL');
-                        $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/trial';
-                        $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
-                        $headers = array(
+                $curl = curl_init();
+                $api_URL = env('CRM_URL');
+                $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/trial';
+                $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
+                $headers = array(
                             'x-api-key: ' . $apiKey,
                         );
-                        $curl_option = array(
+                $curl_option = array(
                             CURLOPT_URL => $curl_url,
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_ENCODING => "",
@@ -255,13 +255,13 @@ class SubscriptionController extends Controller
                             CURLOPT_CUSTOMREQUEST => "POST",
                             CURLOPT_HTTPHEADER => $headers,
                         );
-                        curl_setopt_array($curl, $curl_option);
+                curl_setopt_array($curl, $curl_option);
 
-                        $response_json = curl_exec($curl);
-                        $err = curl_error($curl);
-                        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                        curl_close($curl);
-                     
+                $response_json = curl_exec($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
                 return redirect()->route('dashboard');
             } else {
                 return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);
@@ -280,6 +280,9 @@ class SubscriptionController extends Controller
     public function checkout(Request $request)
     {
         try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            $cacheKey = 'checkout_details:' . $user_id;
             if ($request->isMethod('post')) {
                 $postdata = $request->all();
                 $price = isset($request->exam_price) ? $request->exam_price : 0;
@@ -374,10 +377,28 @@ class SubscriptionController extends Controller
                 } else {
                     $subscriptions_data = [];
                 }
-
+                $checkout_data = array();
+                $checkout_data['subscriptions_data'] = $subscriptions_data;
+                $checkout_data['razorpayOrderId'] = $razorpayOrderId;
+                $checkout_data['price'] = $price;
+                $checkout_data['subscript_id'] = $subscript_id;
+                $checkout_data['exam_id'] = $exam_id;
+                $checkout_data['coupon_discount'] = $coupon_discount;
+                $checkout_data['discount_code'] = $discount_code;
+                $checkout_data['discounted_price'] = $discounted_price;
+                Redis::set($cacheKey, json_encode($checkout_data));
                 return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
             } else {
-                return redirect()->route('subscriptions');
+                $checkout_data = json_decode(Redis::get($cacheKey), true);
+                $subscriptions_data = (object)$checkout_data['subscriptions_data'];
+                $razorpayOrderId = $checkout_data['razorpayOrderId'];
+                $price=$checkout_data['price'];
+                $subscript_id=$checkout_data['subscript_id'];
+                $exam_id = $checkout_data['exam_id'];
+                $coupon_discount = $checkout_data['coupon_discount'];
+                $discount_code = $checkout_data['discount_code'];
+                $discounted_price = $checkout_data['discounted_price'];
+                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
