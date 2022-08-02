@@ -897,14 +897,19 @@ padding-bottom: 0;
     margin-left: 6px;
 }
 .test-table h4{
-     font-size: 14px;
-  font-weight: 800;
+    font-size: 14px;
+    font-weight: 800;
     color: #56b663;
     cursor: pointer;
-    flex-basis: 200px;margin-bottom:0px;margin-top:3px;
+    flex-basis: 200px;
+    margin-bottom:0px;
+    margin-top:3px;
+}
+.take-fulltest.d-none{
+padding: 0;    
 }
 .test-table .accordion-header{
-flex-basis: 246px;   
+flex-basis: 270px;   
 }
 .test-table .accordion-header .btn{
 max-width: 141px !important;
@@ -3765,7 +3770,8 @@ span.greenball-3 {
     left: -36px;
 }
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
-.overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 261px;max-height: 261px}
+.overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 353px;
+    max-height: 353px;}
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
