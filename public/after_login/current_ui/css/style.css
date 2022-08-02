@@ -3858,6 +3858,22 @@ ul.task_center_lists .task1 {
     transform: rotate(180deg);
     margin-right: 4px;
 }
+.submenu_menu_block .pro_sub_label + span {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(54, 60, 79, 0.7);
+    letter-spacing: 0.42px;
+    margin: 7px 0 4px;
+    display: inline-block;
+    padding-left: 12px;
+}
+.submenu_menu_block ul.submenu-lists li>a:hover{background-color:transparent;}
+.submenu_menu_block ul.submenu-lists li>a{padding:0;margin-top: 28px;}
+.submenu_menu_block ul.submenu-lists {padding-left: 12px;}
+.submenu_menu_block .practice-submenu a{padding: 9px 0 9px 19px;}
+.submenu_menu_block .practice-submenu{padding-left: 40px;margin:12px 0 40px;}
+.submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
+
 /********************* Amit End ****************************/
 
 
