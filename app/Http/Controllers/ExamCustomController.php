@@ -776,7 +776,6 @@ class ExamCustomController extends Controller
 
             $filter_by = isset($request->filter_type) ? $request->filter_type : '';
             $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
-            dd($api_url);
             $curl = curl_init();
             $curl_option = array(
                 CURLOPT_URL => $api_url,

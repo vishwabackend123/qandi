@@ -151,6 +151,7 @@
 </div>
 <script type="text/javascript">
     $('#attempted').click(function() {
+        $("#attempted_tab").show();
         url = "{{ url('ajax_exam_result_list') }}/Live";
         $.ajax({
             url: url,
@@ -161,15 +162,17 @@
 
             },
             success: function(data) {
-                $("#attempted_tab").show();
+                
                 $('#attempted_tab').html(data.html);
                 $('#testTypeDiv').attr("style", "display: none !important");
+                $('#mock_test').hide();
             },
             error: function(data, errorThrown) {}
         });
     });
     $('#live_exam').click(function() {
         $("#attempted_tab").hide();
+        $('#mock_test').show();
     });
 </script>
 @include('afterlogin.layouts.footer_new')
