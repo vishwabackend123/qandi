@@ -3854,6 +3854,10 @@ ul.task_center_lists .task1 {
     color: #cccccc;
     font-size: 22px;
 }
+.submenu_menu_block .pro_sub_label svg {
+    transform: rotate(180deg);
+    margin-right: 4px;
+}
 /********************* Amit End ****************************/
 
 
@@ -4508,7 +4512,7 @@ justify-content: space-between;}
     line-height: 1.6;
     color: #000;margin-bottom:12px;min-height:91px;}
     .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
-    .codelerninner p {font-size: 14px;min-height: 92px;
+    .codelerninner p {font-size: 14px;
         font-weight: 500;
         line-height: 1.6;
         color: #797979;margin-bottom:0px;}
@@ -5810,9 +5814,9 @@ td.mymatrix_table_point
     border: 0px!important;
 }
 .model_popup_live_result
-{
-    opacity: 0.5;
-    background-color: #1f1f1f
+{z-index: 9999;
+    position: relative;
+    background-color: #6d6d6d;
 }
 .model_popup_live_result .modal-body h2
 {
@@ -7135,9 +7139,4 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.model_popup_live_result .modal-backdrop.fade {
-    opacity: 0 !important;
-}
-.model_popup_live_result .modal-backdrop{
-    z-index: -1 !important;
-}
+ 
