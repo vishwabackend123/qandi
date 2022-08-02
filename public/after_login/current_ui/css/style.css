@@ -4115,7 +4115,7 @@ header {
 .myqTodayGraphSec {
     display: flex;
     align-items: center;
-    padding-top: 35px;padding-bottom:45px;
+    padding-top: 35px;padding-bottom:46px;
 }
 
 .emptystate {
@@ -4467,7 +4467,7 @@ height: auto;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;padding-bottom: 0px;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -19px;height: auto;padding-bottom: 0px;}
 html.scrollnone,
 html.scrollnone .wrapper-dashboard,
 html.scrollnone .main-wrapper { overflow: hidden;}
