@@ -4467,7 +4467,7 @@ height: auto;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;padding-bottom: 18px;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;padding-bottom: 0px;}
 html.scrollnone,
 html.scrollnone .wrapper-dashboard,
 html.scrollnone .main-wrapper { overflow: hidden;}
@@ -4588,8 +4588,6 @@ justify-content: space-between;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
 .bellactive a,.headericon.dropdown .dropdown-toggle.show{background-color:#f2f4f7 ;}
-.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
-.subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
 .bottomlikabs{    position: absolute;
     bottom: 14px;
     left: 50%;
@@ -6924,7 +6922,7 @@ border-color: #56b663;
   width: 100%;
   padding-right: 8px;
   box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-  padding-top: 24px;
+  /* padding-top: 24px; */
 }
 
 .anshead-top {
