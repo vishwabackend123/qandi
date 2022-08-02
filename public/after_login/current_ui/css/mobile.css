@@ -666,6 +666,10 @@
         justify-content: space-between;
         padding-top: 16px;
     }
+    .MockTestMob .exam_tabdata .accordion-body
+    {
+        padding: 0px;
+    }
     .mock_attempetd_head_wraper .mock_test_ques_content2
     {
         padding: 0px;
@@ -705,6 +709,7 @@
     .LiveExamMob .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(3)
     {
         width: 50%!important;
+        padding-bottom: 0px!important;
     }
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
@@ -718,6 +723,7 @@
     {
         width: 100%;
     }
+    
 
     /*  */
     /********* Vikash End ************/
