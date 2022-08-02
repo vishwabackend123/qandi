@@ -166,8 +166,10 @@ class TestSeriesController extends Controller
 
                 if ($status == true) {
                     $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
+                    $total_marks = isset($responsedata->total_marks) ? $responsedata->total_marks : 0;
                 } else {
                     $aQuestions_list = [];
+                    $total_marks = 0;
 
                     return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
                 }
@@ -256,7 +258,8 @@ class TestSeriesController extends Controller
                         Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                         $exam_url = route('test_series');
 
-                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData'));
+                        $exam_title = "Test Series Exam";
+                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject'));
                     }
 
 

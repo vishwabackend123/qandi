@@ -3,7 +3,7 @@
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper">
+    <section class="content-wrapper MockTestMob LiveExamMob">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -35,7 +35,7 @@
                                         <div class="live_exam_red_dot me-3"></div>
                                         <h3>{{$schedule_list[0]->exam_name}}</h3>
                                     </div>
-                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test
+                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn mobile_hide" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test
                                         </a>
                                         @endif
                                 </div>
@@ -69,6 +69,7 @@
                                         <div class="mock_test_qdms_text2">{{$end_date_new}}</div>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take test</button>
                                 @endif
                                 @endif
                                 <div>
@@ -138,9 +139,10 @@
                                 </div>
                                 @endif
                             </div>
+                            
                      </div>
                         </div>
-                        <div id="attempted_tab" class=" tab-pane">
+                        <div id="attempted_tab" class=" tab-pane mock_attempetd_head_wraper">
                         </div>
                     </div>
                 </div>
