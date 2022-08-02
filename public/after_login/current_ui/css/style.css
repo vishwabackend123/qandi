@@ -2039,8 +2039,8 @@ a.btn-common-attempted svg {
   .fancy-radio-buttons input[type="radio"]:disabled + label,
   .fancy-radio-buttons input[type="radio"]:disabled + label:before,
   .fancy-radio-buttons input[type="radio"]:disabled ~ .image-bg {
-      opacity: 0.8;
-      cursor: not-allowed;
+      opacity: 1;
+      cursor: pointer;
   }
   .fancy-radio-buttons input[type="radio"].correct:disabled + label,
   .fancy-radio-buttons input[type="radio"].correct:disabled + label:before,
