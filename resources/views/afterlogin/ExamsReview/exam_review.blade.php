@@ -353,7 +353,7 @@ $question_type = "Numerical";
 
                         </div>
                     </div>
-                    <a class="btn bck-btn" href="{{ url('/dashboard') }}">Back</a>
+                    <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
                 </div>
             </div>
         </div>
