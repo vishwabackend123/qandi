@@ -314,7 +314,8 @@ $question_type = "Numerical";
             $('.list-ans').css('height', scroll_height_20)
         });
 
-        $(".collapsebtn").on('click', function() {
+        /*$(".collapsebtn").on('click', function() {
+            console.log("hello");
             var review_ans_mainsec_heigth = $(".reviewans-mainsec").outerHeight();
             var custom_ans_top_heigth = $(".custom-anstop").outerHeight();
             var onclick_review_box2 = review_ans_mainsec_heigth - custom_ans_top_heigth;
@@ -325,7 +326,7 @@ $question_type = "Numerical";
             var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
             var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
             $('.list-ans').css('height', coll_scroll_final_height)
-        });
+        });*/
     });
 </script>
 
