@@ -756,10 +756,10 @@
     .commonWhiteBox{padding:20px}
     .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
     .myqTodayGraphSec{padding-top:30px;padding-bottom:35px;}
-    .dashSubHeading{font-size:15px;}
+    .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 20px 6px;
+        padding: 40px 6px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
