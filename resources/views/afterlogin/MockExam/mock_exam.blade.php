@@ -1234,7 +1234,7 @@ $question_type = "Numerical";
                 $('#qoption_err_' + quest_id).fadeIn('fast');
                 $('#qoption_err_' + quest_id)[0].scrollIntoView();
 
-                updateCountValue(question_id, 'clear');
+
 
             }
         }
@@ -1259,6 +1259,7 @@ $question_type = "Numerical";
                     $("#btn_" + quest_id).html(qNo);
                 }
                 checkResponse(quest_id);
+                updateCountValue(quest_id, 'clear');
             },
         });
 
@@ -1415,15 +1416,14 @@ $question_type = "Numerical";
 
     function updateCountValue(quest_id, type) {
 
-        console.log("1");
-        console.log(saveArr);
+
+
 
         var saveArrIndex = saveArr.indexOf(quest_id);
         if (saveArrIndex !== -1) {
             saveArr.splice(saveArrIndex, 1);
         }
 
-        console.log(saveArr);
 
         var markForReviewArrIndex = markForReviewArr.indexOf(quest_id);
         if (markForReviewArrIndex !== -1) {
@@ -1439,22 +1439,21 @@ $question_type = "Numerical";
 
         if (type === 'onlyReview') {
             markForReviewArr.push(quest_id);
-
         } else if (type === 'saveAns') {
             var arrlength = saveArr.length;
             saveArr.push(quest_id);
-
-
         } else if (type === 'saveAnsReview') {
             saveMarkReviewArr.push(quest_id);
-
         } else {
 
         }
+
         var save_count = saveArr.length;
         var r_count = markForReviewArr.length;
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
+
+        console.log(save_count, r_count, s_r_count, unanswered);
 
         $('#ans_cnt_2').html(save_count);
         $('#ans_cnt').html(save_count);
