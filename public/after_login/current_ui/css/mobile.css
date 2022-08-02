@@ -433,13 +433,14 @@
     }
     .chapter_proficincy_point_anylytics {
         flex-grow: 0;
-        padding: 16px 16px 14px;
+        padding: 16px 16px 16px;
         border-radius: 10px;
         background-color: #ffffff;
-        height: 120px;
+        min-height: 120px;
         margin-bottom: 12px;
+        height:auto;
     }
-    .chapter_preficiency_warpper .common_bars {
+    .chapter_proficincy_point_anylytics .common_bars {
         border-radius: 10px;
         margin: 8px 0 12px;
     }
@@ -487,6 +488,10 @@
     }
     .myqmatPannel {
         padding: 12px;
+    }
+    .tabMainblock_myqmatric .tab-content
+    {
+        padding-top: 20px!important;
     }
     .fortab .commonWhiteBox {
         padding: 20px 20px 20px 20px!important;
@@ -1000,6 +1005,7 @@
             .codelearningBlock {
                 margin-top: 19px;
             }
+            .boxheading.mb-5{margin-bottom:26px!important;}
 }
 
 @media only screen and (max-width: 576px){
