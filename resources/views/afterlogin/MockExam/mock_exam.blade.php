@@ -280,19 +280,19 @@ $question_type = "Numerical";
                             <div class="overviewtest">
                                 <div class="exam-ans-sec top-first">
                                     <div class="ans1">Answered</div>
-                                    <div class="ans-in-num">24</div>
+                                    <div class="ans-in-num" id="ans_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans2">Unanswered</div>
-                                    <div class="ans-in-num">2</div>
+                                    <div class="ans-in-num" id="unans_cnt">{{$exam_ques_count}}</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans3">Marked for review</div>
-                                    <div class="ans-in-num">3</div>
+                                    <div class="ans-in-num" id="rev_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans4">Answered &amp; marked for review</div>
-                                    <div class="ans-in-num">1</div>
+                                    <div class="ans-in-num" id="ans_rev_cnt">0</div>
                                 </div>
                             </div>
                         </div>
@@ -364,19 +364,19 @@ $question_type = "Numerical";
                     </div>
                     <div class="exam-ans-sec top-first">
                         <div class="ans1">Answered</div>
-                        <div class="ans-in-num">24</div>
+                        <div class="ans-in-num" id="ans_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans2">Unanswered</div>
-                        <div class="ans-in-num">2</div>
+                        <div class="ans-in-num" id="unans_cnt_2">{{$exam_ques_count}}</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans3">Marked for review</div>
-                        <div class="ans-in-num">3</div>
+                        <div class="ans-in-num" id="rev_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans4">Answered & marked for review</div>
-                        <div class="ans-in-num">1</div>
+                        <div class="ans-in-num" id="ans_rev_cnt_2">0</div>
                     </div>
                     <div class="exam_text_content">
                         No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
@@ -458,12 +458,18 @@ $question_type = "Numerical";
     })
 </script>
 
-<!-- @ include('afterlogin.layouts.footer_new') -->
-@include('afterlogin.layouts.exam_footer')
+
 
 <!-- page referesh disabled -->
 <script>
     var activeques_id = '{{$activeq_id}}';
+    var saveArr = [];
+    var markForReviewArr = [];
+    var saveMarkReviewArr = [];
+    var totalQCount = '{{$exam_ques_count}}';
+
+
+
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -910,6 +916,10 @@ $question_type = "Numerical";
                     $("#btn_" + quest_id).removeClass("blue-btn");
                     $("#btn_" + quest_id).addClass("pink-btn");
 
+
+                    updateCountValue(quest_id, 'onlyReview');
+
+
                     if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
                         $("#submitExam").click();
@@ -1010,6 +1020,8 @@ $question_type = "Numerical";
                      $("#btn_" + question_id).addClass("btn-light-green"); */
                     $("#btn_" + question_id).removeClass("border-btn");
 
+                    updateCountValue(question_id, 'saveAns');
+
                     if ($("#quesnext" + question_id).is(":disabled") == true) {
 
                         $("#submitExam").click();
@@ -1034,8 +1046,8 @@ $question_type = "Numerical";
                 $('#question_section .quesBtn').removeClass("disabled");
             }
         });
-
     }
+
 
     function saveAnswerAjax() {
         var question_id = $("#current_question").val();
@@ -1114,6 +1126,8 @@ $question_type = "Numerical";
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
+
+
                     if ($("#quesnext" + question_id).is(":disabled") == true) {
 
                         $("#submitExam").click();
@@ -1175,6 +1189,8 @@ $question_type = "Numerical";
                         $("#btn_" + quest_id).removeClass("border-btn");
                         $("#btn_" + quest_id).removeClass("pink-btn");
                         $("#btn_" + quest_id).addClass("blue-btn");
+
+                        updateCountValue(quest_id, 'saveAnsReview');
                     }
 
                 },
@@ -1217,6 +1233,8 @@ $question_type = "Numerical";
                 $('#qoption_err_' + quest_id).addClass('text-danger');
                 $('#qoption_err_' + quest_id).fadeIn('fast');
                 $('#qoption_err_' + quest_id)[0].scrollIntoView();
+
+                updateCountValue(question_id, 'clear');
 
             }
         }
@@ -1262,7 +1280,7 @@ $question_type = "Numerical";
                 option_id.push($(this).val());
             });
         }
-        console.log(option_id);
+        /*      console.log(option_id); */
         if (option_id.length > 0) {
             $('#clearBtn_response').attr("disabled", false);
             $('#clearBtn_response').addClass("Clearbtnenable");
@@ -1392,5 +1410,69 @@ $question_type = "Numerical";
             $('#form_exam_submit')[0].submit();
         });
     });
+
+
+
+    function updateCountValue(quest_id, type) {
+
+        console.log("1");
+        console.log(saveArr);
+
+        var saveArrIndex = saveArr.indexOf(quest_id);
+        if (saveArrIndex !== -1) {
+            saveArr.splice(saveArrIndex, 1);
+        }
+
+        console.log(saveArr);
+
+        var markForReviewArrIndex = markForReviewArr.indexOf(quest_id);
+        if (markForReviewArrIndex !== -1) {
+            markForReviewArr.splice(markForReviewArrIndex, 1);
+
+        }
+
+        var saveMarkReviewArrIndex = saveMarkReviewArr.indexOf(quest_id);
+        if (saveMarkReviewArrIndex !== -1) {
+            saveMarkReviewArr.splice(saveMarkReviewArrIndex, 1);
+
+        }
+
+        if (type === 'onlyReview') {
+            markForReviewArr.push(quest_id);
+
+        } else if (type === 'saveAns') {
+            var arrlength = saveArr.length;
+            saveArr.push(quest_id);
+
+
+        } else if (type === 'saveAnsReview') {
+            saveMarkReviewArr.push(quest_id);
+
+        } else {
+
+        }
+        var save_count = saveArr.length;
+        var r_count = markForReviewArr.length;
+        var s_r_count = saveMarkReviewArr.length;
+        var unanswered = totalQCount - (save_count + r_count + s_r_count);
+
+        $('#ans_cnt_2').html(save_count);
+        $('#ans_cnt').html(save_count);
+
+        $('#unans_cnt_2').html(unanswered);
+        $('#unans_cnt').html(unanswered);
+
+        $('#rev_cnt_2').html(r_count);
+        $('#rev_cnt').html(r_count);
+
+        $('#ans_rev_cnt_2').html(s_r_count);
+        $('#ans_rev_cnt').html(s_r_count);
+
+    }
 </script>
+
+
+@include('afterlogin.layouts.exam_footer')
+
+
 @endsection
