@@ -4506,7 +4506,7 @@ justify-content: space-between;}
 .codelerninner h5{font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
-    color: #000;margin-bottom:12px;}
+    color: #000;margin-bottom:12px;min-height:91px;}
     .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
     .codelerninner p {font-size: 14px;min-height: 92px;
         font-weight: 500;
