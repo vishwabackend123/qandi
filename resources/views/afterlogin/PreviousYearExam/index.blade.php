@@ -1,23 +1,37 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
-
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
     <section class="content-wrapper">
         <div class="container-fluid previous_exam_page_contain">
             @if(count($errors) > 0 )
-
-            <div id="alert_msg" class="alert alert-danger alert-dismissible fade show" role="alert">
-                @foreach($errors->all() as $error)
-                <span>{{$error}}</span>
-                @endforeach
-
+            <div class="toastdata active">
+                <div class="toast-content">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
+                        <path d="M23.666 16.387V17a6.667 6.667 0 1 1-3.953-6.093m3.953.76L17 18.34l-2-2" stroke="#039855" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17 32C8.716 32 2 25.284 2 17H0c0 9.389 7.611 17 17 17v-2zm15-15c0 8.284-6.716 15-15 15v2c9.389 0 17-7.611 17-17h-2zM17 2c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17v2zm0-2C7.611 0 0 7.611 0 17h2C2 8.716 8.716 2 17 2V0z" fill="#BDF3C5" />
+                    </svg>
+                    <div class="message">
+                        <h5 class="mb-2"> </h5>
+                        @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="toast-close" onclick="toastClose()">
+                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="progress active"></div>
             </div>
             <script>
                 $(function() {
                     setTimeout(function() {
-                        $("#alert_msg").hide();
+                        $(".toastdata").removeClass('active');
+                         $(".progress").removeClass('active');
                     }, 5000);
                 });
             </script>
@@ -123,58 +137,59 @@
         </div>
     </section>
 </div>
-
 <script>
-    $('#filter_year').change(function() {
+$('#filter_year').change(function() {
 
-        var selected_val = $(this).val();
-        if (selected_val) {
-            $('.compLeteS').hide();
-            $('.filter_data_' + selected_val).show();
-        } else {
-            $('.compLeteS').show();
-        }
-    });
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
+    var selected_val = $(this).val();
+    if (selected_val) {
+        $('.compLeteS').hide();
+        $('.filter_data_' + selected_val).show();
+    } else {
+        $('.compLeteS').show();
     }
+});
+let dropdown = document.querySelector(".customDropdown")
+dropdown.onclick = function() {
+    dropdown.classList.toggle("active")
+}
+
 </script>
 <script type="text/javascript">
-    $('#previous_year_tab').click(function(){
-        $('#mock_test').show();
-        $('#attempted_tab').hide();
-    });
-    $('#attempted').click(function() {
-        $('#mock_test').hide();
-        $('#attempted_tab').show();
-        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
+$('#previous_year_tab').click(function() {
+    $('#mock_test').show();
+    $('#attempted_tab').hide();
+});
+$('#attempted').click(function() {
+    $('#mock_test').hide();
+    $('#attempted_tab').show();
+    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
 
-            },
-            success: function(data) {
-                //$("#attempted_tab").show();
-                $('#attempted_tab').html(data.html);
-                $('#testTypeDiv').attr("style", "display: none !important");
-            },
-            error: function(data, errorThrown) {}
-        });
+        },
+        success: function(data) {
+            //$("#attempted_tab").show();
+            $('#attempted_tab').html(data.html);
+            $('#testTypeDiv').attr("style", "display: none !important");
+        },
+        error: function(data, errorThrown) {}
     });
-    $('.view_detail_text_colleps2').click(function() {
-        var text_data = $(this).text();
-        if (text_data === 'View details') {
-            $(this).parents('.compLeteS').addClass('list_active');
-            $(this).text('Hide details');
-        } else if (text_data === 'Hide details') {
-            $(this).parents('.compLeteS').removeClass('list_active');
-            $(this).text('View details');
-        }
-    });
+});
+$('.view_detail_text_colleps2').click(function() {
+    var text_data = $(this).text();
+    if (text_data === 'View details') {
+        $(this).parents('.compLeteS').addClass('list_active');
+        $(this).text('Hide details');
+    } else if (text_data === 'Hide details') {
+        $(this).parents('.compLeteS').removeClass('list_active');
+        $(this).text('View details');
+    }
+});
+
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
