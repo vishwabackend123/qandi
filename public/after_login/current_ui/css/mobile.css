@@ -703,6 +703,13 @@
     .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
     .mobileview_logout {height: calc(100vh - 525px);}
     .userprofile.headericon a{border: 1px solid #e9eef4;}
+    .userprofile.headericon a img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: -1px;
+        margin-left: -1px;
+    }
     .sidebartoggle .content-wrapper{position: relative;}
     .sidebartoggle .content-wrapper:before {
         content: '';
