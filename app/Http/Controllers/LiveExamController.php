@@ -267,8 +267,8 @@ class LiveExamController extends Controller
                 Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                 $exam_url = route('live_exam', $schedule_id);
 
-
-                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                $exam_title = "Live Exam";
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
             }
 
 

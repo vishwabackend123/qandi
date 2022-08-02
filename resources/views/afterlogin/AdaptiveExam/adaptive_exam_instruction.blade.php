@@ -21,19 +21,18 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
-                        <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Test Series</a>
-
+                        <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>{{$exam_title??'Mock Test'}}</a>
                     </div>
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
                     <div class="exam_instruction_text_under_text">Prior to taking the test, please read through all of the instruction sections carefully.</div>
                     <div class="exam_instruction_scrolling">
                         <div>
-                            <div class="exam_inst_sec_head"><b>1. <span>General</span></b></div>
+                            <div class="exam_inst_sec_head"><b>1. <span>General<span></b></div>
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} minutes</b></li>
-                                <li>This test is of <b>{{$total_marks}} marks</b></li>
-                                <li>There will be <b>{{$questions_count}} questions</b> in the test</li>
+                                <!--  <li>This test is of <b>{{$total_marks}} marks</b></li>
+                                <li>There will be <b>{{$questions_count}} questions</b> in the test</li> -->
                                 <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
                             </ul>
                         </div>
@@ -45,15 +44,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div>
                             <div class="exam_inst_sec_head_flex">
                                 <div class="exam_inst_sec_head"><b>{{$i}}. <span>Physics</span></b></div>
-                                <div class="exam_inst_sec_head_padding">
+                                <!--  <div class="exam_inst_sec_head_padding">
                                     <span>Total Marks:</span>
                                     <span><b>100</b></span>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="line-693"></div>
 
                             <ul class="exam_inst_ul_li">
-                                <li>This section contains {{$sub->count}} <b>questions of Single Choice.</b></li>
+                                <li>This section contains <b>questions of Single Choice.</b></li>
                                 <li><b>For Single Choice question</b>, 4 mark(s) is allotted for each correct response, 1 mark(s) will be deducted for each incorrect response, and 0 mark(s) are given for partial answers</li>
                             </ul>
 
@@ -61,7 +60,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                         @endforeach
                         @endif
-                        <!--  <div>
+                        <!-- <div>
                             <div class="exam_inst_sec_head_flex">
                                 <div class="exam_inst_sec_head"><b>2. <span>Physics</span></b></div>
                                 <div class="exam_inst_sec_head_padding">
@@ -135,10 +134,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant1">Duration</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$exam_fulltime}} Mins</div>
                             </div>
-                            <div class="exam_inst_col_four_text_contant">
+                            <!--  <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">No. Of Questions</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ Questions</div>
-                            </div>
+                            </div> -->
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
@@ -165,18 +164,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best {{ucwords($userData->user_name)}}!</div>
-
-                                <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="series_name" value="{{$requestData->series_name}}" />
-                                    <input type="hidden" name="series_id" value="{{$requestData->series_id}}" />
-                                    <input type="hidden" name="series_type" value="{{$requestData->series_type}}" />
-                                    <input type="hidden" name="time_allowed" value="{{$requestData->time_allowed}}" />
-                                    <input type="hidden" name="questions_count" value="{{$requestData->questions_count}}" />
-                                    <input type="hidden" name="exam_mode" value="{{$requestData->exam_mode}}" />
-
-                                    <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
-                                </form>
+                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
                             </div>
                         </div>
                     </div>
