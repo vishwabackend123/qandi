@@ -148,7 +148,11 @@ $userData = Session::get('user_data');
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div id="matrix-quesone" class=" tab-pane active">
-                                        <div class="mqmatric_topic">Topics</div>
+                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
+                                            <div class="mobile_text_topics">TOPICS</div>
+                                            <div class="mobile_text_proficiency">PROFICIENCY</div>
+                                        </div>
                                         @if(isset($myq_matrix_topic['Q1']) && $myq_matrix_topic['Q1'])
                                         <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
@@ -173,7 +177,11 @@ $userData = Session::get('user_data');
                                         @endif
                                     </div>
                                     <div id="matrix-questwo" class=" tab-pane">
-                                        <div class="mqmatric_topic">Topics</div>
+                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
+                                            <div class="mobile_text_topics">TOPICS</div>
+                                            <div class="mobile_text_proficiency">PROFICIENCY</div>
+                                        </div>
                                         @if(isset($myq_matrix_topic['Q2']) && $myq_matrix_topic['Q2'])
                                         <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
@@ -198,7 +206,11 @@ $userData = Session::get('user_data');
                                         @endif
                                     </div>
                                     <div id="matrix-questhree" class=" tab-pane">
-                                        <div class="mqmatric_topic">Topics</div>
+                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
+                                            <div class="mobile_text_topics">TOPICS</div>
+                                            <div class="mobile_text_proficiency">PROFICIENCY</div>
+                                        </div>
                                         @if(isset($myq_matrix_topic['Q3']) && $myq_matrix_topic['Q3'])
                                         <div class="exam_instruction_scrolling exam_instruction_scrolling_pd_zero">
                                             <table class="table mymatrix_table">
