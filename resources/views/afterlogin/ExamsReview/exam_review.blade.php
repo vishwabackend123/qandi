@@ -179,8 +179,6 @@ $question_type = "Numerical";
                                                                                 <p>Knowledge, Application of</p>
                                                                                 <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
                                                                                 @endif
-                                                                                <p>Knowledge, Application of</p>
-                                                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> EQUATION OF CIRCLE</a>
 
                                                                             </div>
                                                                             <div class="sub_att_1 col-md-6">
