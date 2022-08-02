@@ -162,6 +162,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="bg-white subscription-details">
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
                             <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                            @if($days <=14)
                             <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
                             @csrf
                             <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
@@ -170,7 +171,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <input type="hidden" name="period_unit" value="month">
                             <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none" id="get-sub-btn">Upgrade Plan</button>
+                           
                         </form>
+                         @endif
                             </div>
                             <div class="line mb-3 pb-1"></div>
                             

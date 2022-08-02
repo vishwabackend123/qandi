@@ -56,51 +56,58 @@ class RazorpayController extends Controller
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
+            $cacheKey = 'payment_details:' . $user_id;
+            $paymentKey = 'payment_response:' . $user_id;
             $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
-            $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
-            $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
-            $exam_id = isset($request->exam_id) ? $request->exam_id : '';
-            $verify_request = [
-                    "payment_id" => $payment_id,
-                    "order_id" => $order_id,
-                    "signature" => $razorpay_signature,
-                    "user_id" => $user_id
-                ];
+            if (isset($payment_id) && !empty($payment_id)) {
+                $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
+                $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
+                $exam_id = isset($request->exam_id) ? $request->exam_id : '';
+                $verify_request = [
+                        "payment_id" => $payment_id,
+                        "order_id" => $order_id,
+                        "signature" => $razorpay_signature,
+                        "user_id" => $user_id
+                    ];
 
-            $order_request_json = json_encode($verify_request);
+                $order_request_json = json_encode($verify_request);
+                    $curl = curl_init();
+                    $api_URL = env('API_URL');
+                    $curl_url = $api_URL . 'api/payment/verify-payment';
+                    $curl_option = array(
+                        CURLOPT_URL => $curl_url,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_FAILONERROR => true,
+                        CURLOPT_ENCODING => "",
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "POST",
+                        CURLOPT_POSTFIELDS => $order_request_json,
+                        CURLOPT_HTTPHEADER => array(
+                            "accept: application/json",
+                            "content-type: application/json"
+                        ),
+                    );
+                    curl_setopt_array($curl, $curl_option);
+                    $response_json = curl_exec($curl);
 
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/payment/verify-payment';
-            $curl_option = array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $order_request_json,
-                CURLOPT_HTTPHEADER => array(
-                    "accept: application/json",
-                    "content-type: application/json"
-                ),
-            );
-            curl_setopt_array($curl, $curl_option);
-            $response_json = curl_exec($curl);
-
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-
+                    $err = curl_error($curl);
+                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                    curl_close($curl);
+                Redis::set($cacheKey, $order_request_json);
+                Redis::set($paymentKey, $response_json);      
+            }else
+            {
+                $order_request_json = Redis::get($cacheKey);
+                $response_json = Redis::get($paymentKey);
+            }
             $aResponse = json_decode($response_json);
             $success_status = isset($aResponse->success) ? $aResponse->success : false;
             $transaction_data = isset($aResponse->orderDetails) ? $aResponse->orderDetails : [];
             if ($success_status == true) {
                 $sessionData = Session::get('user_data');
-                $sessionData->grade_id = $exam_id;
+                $sessionData->grade_id = isset($exam_id) && !empty($exam_id) ? $exam_id : $sessionData->grade_id;
 
                 Session::put('user_data', $sessionData);
                         $curl = curl_init();

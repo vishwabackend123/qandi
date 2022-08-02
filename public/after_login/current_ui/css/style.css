@@ -745,7 +745,7 @@ font-weight: 500;
 vertical-align: super;
 }
 .add-insubchapter{
-     padding: 17px 12px 13px 17px;
+     padding: 15px 11px 13px 13px;
     border-radius: 8px;
     border: 1px solid #56b663;
     margin-bottom: 10px;
@@ -838,6 +838,7 @@ padding: 32px 24px 32px 32px !important;
     -moz-box-shadow: 0 8px 30px 0 rgba(157, 170, 160, 0.3);  
     padding: 20px;
     transform: translate(-60px, 60px) !important;
+    min-width: 147px;
 }
 
 .filterdropdown .dropdown-item {
@@ -2016,6 +2017,7 @@ a.btn-common-attempted svg {
       background: #ffffff;
       align-items: center;
           color: #1f1f1f;
+          overflow: overlay;
          
   }
   .fancy-radio-buttons input[type="radio"] + label:before {
@@ -2174,9 +2176,7 @@ a.btn-common-attempted svg {
       color: #363c4f;
   }
   .optionText p{font-weight: bold;}
-  .optionText{
-    overflow-x: overlay;
-  }
+ 
   
   button.btn-ans {
       background: #56b663;
@@ -2965,7 +2965,7 @@ line-height: 1.6;
     font-size: 14px;
     font-weight: 800;
     color: #56b663;
-    padding: 8px;
+    padding: 8px;opacity: inherit;
     min-width: 160px;
 }
 
@@ -6599,6 +6599,14 @@ border-color: #56b663;
 .privacy-sec > a {color: #56b663;}   
 
 
+/********** slelect plan *********/
+.peryearPrice > span {
+    font-size: 14px;
+    color: #363c4f;
+    padding-left: 4px;
+    display: inline-block;
+}
+
 
 /**********  exam_instructions *********/
 .mock-test-mobile{display: none;}
@@ -7062,5 +7070,67 @@ label.filter {
 .exam-wrapper .content-wrapper{
     padding: 34px 30px;
 }
+/*****************************Toast message***********/
+.toastdata{
+  max-width: 378px;
+  position: absolute;
+  top: 85px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  -webkit-box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  -moz-box-shadow: 0 2px 30px 5px rgba(16, 24, 40, 0.08);
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+}
 
-
+.toastdata.active{
+  transform: translateX(0);
+}
+.toast-content{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.toast-check{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  background-color: #40f467;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    flex: 1;
+}
+  .message h5{
+font-size: 16px;
+font-weight: bold;
+color: #039855;
+}
+.message p{
+font-size: 14px;
+font-weight: 500;
+color: #363c4f;
+margin: 0;
+}
+.toast-close{
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  cursor: pointer;
+}
+.progress{
+height: 0;        
+}
+/*****************************Toast message end***********/

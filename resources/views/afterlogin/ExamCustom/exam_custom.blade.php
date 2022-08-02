@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<div class="main-wrapper">
+<div class="main-wrapper">    
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
     <section class="content-wrapper">
@@ -20,6 +20,28 @@
                                 </li>
                             </ul>
                         </div>
+<!--
+                        <div class="toastdata">
+   <div class="toast-content">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3"/>
+         <path d="M23.666 16.387V17a6.667 6.667 0 1 1-3.953-6.093m3.953.76L17 18.34l-2-2" stroke="#039855" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M17 32C8.716 32 2 25.284 2 17H0c0 9.389 7.611 17 17 17v-2zm15-15c0 8.284-6.716 15-15 15v2c9.389 0 17-7.611 17-17h-2zM17 2c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17v2zm0-2C7.611 0 0 7.611 0 17h2C2 8.716 8.716 2 17 2V0z" fill="#BDF3C5"/>
+      </svg>
+      <div class="message">
+         <h5 class="mb-2">Email Verification Link Sent </h5>
+         <p>A verification link has been sent, please click the link to get your account verified</p>
+      </div>
+   </div>
+   <div class="toast-close">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+   </div>
+   <div class="progress"></div>
+</div>
+<button class="toast-btn">toast</button>        
+-->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
                             <div id="qq1" class=" tab-pane active">
