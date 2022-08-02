@@ -314,19 +314,19 @@ $question_type = "Numerical";
                             <div class="overviewtest">
                                 <div class="exam-ans-sec top-first">
                                     <div class="ans1">Answered</div>
-                                    <div class="ans-in-num">24</div>
+                                    <div class="ans-in-num" id="ans_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans2">Unanswered</div>
-                                    <div class="ans-in-num">2</div>
+                                    <div class="ans-in-num" id="unans_cnt">{{$questions_count}}</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans3">Marked for review</div>
-                                    <div class="ans-in-num">3</div>
+                                    <div class="ans-in-num" id="rev_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
                                     <div class="ans4">Answered &amp; marked for review</div>
-                                    <div class="ans-in-num">1</div>
+                                    <div class="ans-in-num" id="ans_rev_cnt">0</div>
                                 </div>
                             </div>
                         </div>
@@ -399,19 +399,19 @@ $question_type = "Numerical";
                     </div>
                     <div class="exam-ans-sec top-first">
                         <div class="ans1">Answered</div>
-                        <div class="ans-in-num">24</div>
+                        <div class="ans-in-num" id="ans_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans2">Unanswered</div>
-                        <div class="ans-in-num">2</div>
+                        <div class="ans-in-num" id="unans_cnt_2">{{$questions_count}}</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans3">Marked for review</div>
-                        <div class="ans-in-num">3</div>
+                        <div class="ans-in-num" id="rev_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
                         <div class="ans4">Answered & marked for review</div>
-                        <div class="ans-in-num">1</div>
+                        <div class="ans-in-num" id="ans_rev_cnt_2">0</div>
                     </div>
                     <div class="exam_text_content">
                         No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
@@ -588,6 +588,11 @@ $question_type = "Numerical";
 
 <script type="text/javascript">
     var activeques_id = '{{$activeq_id}}';
+
+    var saveArr = [];
+    var markForReviewArr = [];
+    var saveMarkReviewArr = [];
+    var totalQCount = '{{$questions_count}}';
 
     // $('.number-block').slimscroll({
     //     height: '20vh'
@@ -949,6 +954,8 @@ $question_type = "Numerical";
                     $("#btn_" + quest_id).removeClass("blue-btn");
                     $("#btn_" + quest_id).addClass("pink-btn");
 
+                    updateCountValue(quest_id, 'onlyReview');
+
                     if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
                         $("#submitExam").click();
@@ -1040,9 +1047,11 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    $("#btn_" + question_id).find('i').remove();
-                    $("#btn_" + question_id).html(qNo);
+                    /*  $("#btn_" + question_id).find('i').remove();
+                     $("#btn_" + question_id).html(qNo); */
                     $("#btn_" + question_id).removeClass("border-btn");
+
+                    updateCountValue(question_id, 'saveAns');
 
                 }
             },
@@ -1167,7 +1176,7 @@ $question_type = "Numerical";
                         $("#btn_" + quest_id).removeClass("pink-btn");
                         $("#btn_" + quest_id).addClass("blue-btn");
 
-
+                        updateCountValue(quest_id, 'saveAnsReview');
                     }
 
                 },
@@ -1237,6 +1246,7 @@ $question_type = "Numerical";
 
                 }
                 checkResponse(quest_id);
+                updateCountValue(quest_id, 'clear');
             },
         });
 
@@ -1359,5 +1369,60 @@ $question_type = "Numerical";
 
 
     });
+
+    function updateCountValue(quest_id, type) {
+
+
+
+
+        var saveArrIndex = saveArr.indexOf(quest_id);
+        if (saveArrIndex !== -1) {
+            saveArr.splice(saveArrIndex, 1);
+        }
+
+
+        var markForReviewArrIndex = markForReviewArr.indexOf(quest_id);
+        if (markForReviewArrIndex !== -1) {
+            markForReviewArr.splice(markForReviewArrIndex, 1);
+
+        }
+
+        var saveMarkReviewArrIndex = saveMarkReviewArr.indexOf(quest_id);
+        if (saveMarkReviewArrIndex !== -1) {
+            saveMarkReviewArr.splice(saveMarkReviewArrIndex, 1);
+
+        }
+
+        if (type === 'onlyReview') {
+            markForReviewArr.push(quest_id);
+        } else if (type === 'saveAns') {
+            var arrlength = saveArr.length;
+            saveArr.push(quest_id);
+        } else if (type === 'saveAnsReview') {
+            saveMarkReviewArr.push(quest_id);
+        } else {
+
+        }
+
+        var save_count = saveArr.length;
+        var r_count = markForReviewArr.length;
+        var s_r_count = saveMarkReviewArr.length;
+        var unanswered = totalQCount - (save_count + r_count + s_r_count);
+
+        console.log(save_count, r_count, s_r_count, unanswered);
+
+        $('#ans_cnt_2').html(save_count);
+        $('#ans_cnt').html(save_count);
+
+        $('#unans_cnt_2').html(unanswered);
+        $('#unans_cnt').html(unanswered);
+
+        $('#rev_cnt_2').html(r_count);
+        $('#rev_cnt').html(r_count);
+
+        $('#ans_rev_cnt_2').html(s_r_count);
+        $('#ans_rev_cnt').html(s_r_count);
+
+    }
 </script>
 @endsection
