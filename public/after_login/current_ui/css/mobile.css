@@ -119,6 +119,7 @@
     .text-exambottom-sec {
         margin-top: 20px;
         height: 35vh;} 
+       
     
 }
 @media only screen and (max-height: 780px) {
@@ -127,6 +128,7 @@
     }
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
+   
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
@@ -491,6 +493,15 @@
     .myqmatPannel {
         padding: 12px;
     }
+    .dashboad_mqmatrix_text_back_to_dashboard
+    {
+        padding: 4px 0px 24px 7px;
+    }
+    .knowledge_left_clr_with_text
+    {
+        display: flex;
+        align-items: center;
+    }
     .tabMainblock_myqmatric .tab-content
     {
         padding-top: 20px!important;
@@ -618,22 +629,99 @@
         position: inherit;
         text-align: right;
         width: 100%;
-        padding-bottom: 18px;
+    }
+    .mock_attempetd_head_wraper .MockTestMob .test-table h3
+    {
+        padding-bottom: 0px!important;
     }
     .MockTestMob .test-table h2
     {
         float: left;
+        width: 50%;
     }
     .MockTestMob .test-table .accordion-header .btn {
         max-width: 100%;
         min-width: 100%;
         margin-left: 0px!important;
+        margin-top: 16px;
     }
     .MockTestMob .live_mock_exam_section
     {
-        display: block;
+        flex-wrap: wrap;
     }
+    .MockTestMob .btn.btn-common-transparent
+    {
+        padding: 7px 22px;
+    }
+    .MockTestMob .mock_btn_vie_detail
+    {
+        /* justify-content: normal; */
+        flex-wrap: wrap;
+    }
+    .MockTestMob .view_detail_text_colleps {
+        flex-basis: initial;
+    }
+    .MockTestMob .mock_btn_vie_detail {
+        flex-basis: 682px!important;
+        justify-content: space-between;
+        padding-top: 16px;
+    }
+    .mock_attempetd_head_wraper .mock_test_ques_content2
+    {
+        padding: 0px;
+        border-right: 0px;
+    }
+    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_marks_content2, .mock_attempetd_head_wraper .mock_test_sub_content2, .mock_attempetd_head_wraper .mock_test_ques_content2
+    {
+        padding: 0px;
+        border-right: 0px;
+        width: 50%;
+    }
+    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(2), .mock_attempetd_head_wraper .mock_test_sub_content2
+    {
+        text-align: end;
+    }
+    .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(4)
+    {
+        text-align: end;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 80%!important;
+    }
+    .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(3)
+    {
+        padding: 0px;
+        border-right: 0px;
+        width: 20%;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+    .mock_attempetd_head_wraper .mock_test_qdms_text2
+    {
+        margin-top: 0px;
+    }
+    /* Live exam */
+
+    .LiveExamMob .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(3)
+    {
+        width: 50%!important;
+    }
+    .LiveExamMob .mock_test_sub_content {
+        text-align: right;
+        width: 50%!important;
+    }
+    .LiveExamMob .mock_test_dure_content
+    {
+        text-align: left!important;
+    }
+    .LiveExamMob .mock_test_ques_content
+    {
+        width: 100%;
+    }
+
+    /*  */
     /********* Vikash End ************/
+
 
     /************ Amit start *********/
     aside{display:none;}

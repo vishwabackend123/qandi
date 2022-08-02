@@ -101,6 +101,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
+                    @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain ml-2">
@@ -155,7 +156,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-
+                    @endif
+                    @if(isset($test_type) && $test_type=='Live')
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
@@ -191,6 +193,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <div class="col-md-7" id="subject_topic_section">
 
@@ -377,6 +380,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         /***************** halfdoughnut - end *********************/
     </script>
+     @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
     <script>
         $(document).ready(function() {
             url2 = "{{ url('exam_result_analysis_attempt/') }}";
@@ -398,6 +402,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             height: "50vh",
         });*/
     </script>
+    @endif
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
