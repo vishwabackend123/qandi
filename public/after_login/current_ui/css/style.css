@@ -897,11 +897,16 @@ padding-bottom: 0;
     margin-left: 6px;
 }
 .test-table h4{
-     font-size: 14px;
-  font-weight: 800;
+    font-size: 14px;
+    font-weight: 800;
     color: #56b663;
     cursor: pointer;
-    flex-basis: 200px;margin-bottom:0px;margin-top:3px;
+    flex-basis: 200px;
+    margin-bottom:0px;
+    margin-top:3px;
+}
+.take-fulltest.d-none{
+padding: 0;    
 }
 .test-table .accordion-header{
 flex-basis: 270px;   
