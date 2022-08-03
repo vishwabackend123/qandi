@@ -816,7 +816,7 @@ padding: 32px 24px 32px 32px !important;
 .testtablescroll{
     overflow-y: auto;
     height: 335px;
-    padding-right: 16px;    
+    padding-right: 13px;    
 }
 .exam_topicbtn ul.nav {
     height: 36px;
@@ -904,9 +904,6 @@ padding-bottom: 0;
     flex-basis: 200px;
     margin-bottom:0px;
     margin-top:3px;
-}
-.take-fulltest.d-none{
-padding: 0;    
 }
 .test-table .accordion-header{
 flex-basis: 270px;   
@@ -3535,6 +3532,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     min-width: auto;	
     right: -25px!important;
     left: auto!important;
+    z-index: 9;
 }
 /* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
@@ -4639,6 +4637,8 @@ justify-content: space-between;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
+    .d-lg-flex2{display:flex;}
+    .d-none2{display:none;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
