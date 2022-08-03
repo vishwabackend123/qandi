@@ -82,7 +82,7 @@
                     <h3>See analytics</h3>
                 </a>
             </div>
-            <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4">Review exam</a>
+            <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
         </div>
     </div>
     <div id="chapter_{{$sche->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -126,6 +126,8 @@
             </div>
         </div>
     </div>
+    <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
+
 </div>
 @endforeach
 @else

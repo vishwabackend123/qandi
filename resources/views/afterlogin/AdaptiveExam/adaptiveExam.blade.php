@@ -665,6 +665,8 @@ $question_type = "Numerical";
             resetVars();
         }
         startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
     }
 
     function stop(type = '') {
@@ -674,6 +676,8 @@ $question_type = "Numerical";
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        clearInterval(timer_countdown);
+        clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
         }

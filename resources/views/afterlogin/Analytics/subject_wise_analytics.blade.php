@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="codelerninner">
                                             <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
-                                            <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. This skill <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                         </div>
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
