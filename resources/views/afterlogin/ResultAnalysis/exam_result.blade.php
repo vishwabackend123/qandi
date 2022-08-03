@@ -258,6 +258,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         display: false

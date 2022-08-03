@@ -3508,9 +3508,9 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     margin-bottom: 0;
 }
 .chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
-.overall_percentage_chart{width:100%;height:300px;}
+.overall_percentage_chart{height:280px!important;}
 .subj_progress_card .overall_percentage_chart{height: 247px;}
-.overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
+/* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
     height: 100px;
     width: 100px;
@@ -3532,6 +3532,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     min-width: auto;	
     right: -25px!important;
     left: auto!important;
+    z-index: 9;
 }
 /* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
@@ -4636,7 +4637,8 @@ justify-content: space-between;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
-    .take-fulltest.d-none{display:none!important;}
+    .d-lg-flex2{display:flex;}
+    .d-none2{display:none;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
