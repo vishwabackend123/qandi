@@ -71,10 +71,10 @@ class RazorpayController extends Controller
                     ];
 
                 $order_request_json = json_encode($verify_request);
-                    $curl = curl_init();
-                    $api_URL = env('API_URL');
-                    $curl_url = $api_URL . 'api/payment/verify-payment';
-                    $curl_option = array(
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/payment/verify-payment';
+                $curl_option = array(
                         CURLOPT_URL => $curl_url,
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_FAILONERROR => true,
@@ -89,16 +89,15 @@ class RazorpayController extends Controller
                             "content-type: application/json"
                         ),
                     );
-                    curl_setopt_array($curl, $curl_option);
-                    $response_json = curl_exec($curl);
+                curl_setopt_array($curl, $curl_option);
+                $response_json = curl_exec($curl);
 
-                    $err = curl_error($curl);
-                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                    curl_close($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
                 Redis::set($cacheKey, $order_request_json);
-                Redis::set($paymentKey, $response_json);      
-            }else
-            {
+                Redis::set($paymentKey, $response_json);
+            } else {
                 $order_request_json = Redis::get($cacheKey);
                 $response_json = Redis::get($paymentKey);
             }
@@ -110,14 +109,15 @@ class RazorpayController extends Controller
                 $sessionData->grade_id = isset($exam_id) && !empty($exam_id) ? $exam_id : $sessionData->grade_id;
 
                 Session::put('user_data', $sessionData);
-                        $curl = curl_init();
-                        $api_URL = env('CRM_URL');
-                        $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/purchased';
-                        $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
-                        $headers = array(
+                if (env('CRM_URL_STATUS')) {
+                    $curl = curl_init();
+                    $api_URL = env('CRM_URL');
+                    $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/purchased';
+                    $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
+                    $headers = array(
                             'x-api-key: ' . $apiKey,
                         );
-                        $curl_option = array(
+                    $curl_option = array(
                             CURLOPT_URL => $curl_url,
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_ENCODING => "",
@@ -128,15 +128,16 @@ class RazorpayController extends Controller
                             CURLOPT_CUSTOMREQUEST => "POST",
                             CURLOPT_HTTPHEADER => $headers,
                         );
-                        curl_setopt_array($curl, $curl_option);
+                    curl_setopt_array($curl, $curl_option);
 
-                        $response_json = curl_exec($curl);
-                        $err = curl_error($curl);
-                        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                        curl_close($curl);
+                    $response_json = curl_exec($curl);
+                    $err = curl_error($curl);
+                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                    curl_close($curl);
+                }
                 return view('plan_purchased_success', compact('transaction_data'));
             } else {
-                return view('plan_purchased_faild', compact('transaction_data','exam_id'));
+                return view('plan_purchased_faild', compact('transaction_data', 'exam_id'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
