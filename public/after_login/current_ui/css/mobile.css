@@ -110,7 +110,10 @@
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0.5rem 0.6rem;}
+    .subject_performance_card .dashSubtext{font-size:13px;}
 }
+
+
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 400px;
@@ -174,6 +177,9 @@
 }   
 }
 @media only screen and (max-width: 1199px){
+    .myqTodayPannel .commondashboardTop{
+        background-color: transparent;
+    }
     .clander-box {
     margin-top: 40px;
 }
@@ -849,8 +855,8 @@
         font-size: 24px;
     }
     .commonWhiteBox{padding:20px}
-    .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:6px;}
-    .myqTodayGraphSec{padding-top:30px;padding-bottom:35px;}
+    .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:4px;}
+    .myqTodayGraphSec{padding-top:30px;padding-bottom:20px;}
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
@@ -970,7 +976,7 @@
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
 .commontab .nav-tabs .nav-link{padding-bottom:8px;}
 .tablist ul li {text-align: center;}
-.taskstatusBlock h4{margin-top:11px;margin-bottom:0px!important;}
+.taskstatusBlock h4{margin-top:6px;margin-bottom:0px!important;}
 .tasklisting .tasklistleft h4{font-size: 15px;}
 .tasklisting .tasklistleft h6{margin-bottom:0px;}
 .tasklistbtn .btn.nobg{min-width:114px;max-width:114px;font-size: 14px;
