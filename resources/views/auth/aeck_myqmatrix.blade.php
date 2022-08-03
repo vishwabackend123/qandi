@@ -187,7 +187,7 @@
                     <div class="commonWhiteBox">
                         <div class="tabMainblock">
                             <div class="commontab aeck_commontab">
-                                <div class="tablist">
+                                <div class="tablist mobilescrolltab">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#evaluation">Evaluation</a>
