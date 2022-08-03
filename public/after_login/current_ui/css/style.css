@@ -3395,6 +3395,7 @@ h3.commonheading{
     padding: 3px;
     border-radius: 6px;
     background-color: #e0f5e3;
+    height: 36px;
 }
 .common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
 .common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
@@ -3405,6 +3406,8 @@ h3.commonheading{
     font-size: 14px;
     font-weight: 500;
     border-radius: 4px;
+    height: 30px;
+    padding: 0 16px!important;
 }
 .common_greenbadge_tabs ul.nav .btn.nav-link.active {
     background-color: #56b663;
@@ -3512,16 +3515,17 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .subj_progress_card .overall_percentage_chart{height: 247px;}
 /* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    min-width: 100px;
     overflow: hidden;
+    max-width: 138px;
 }
-.halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
+/* .halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;} */
 .halfdoughnut2{ height: 180px;
     width: 180px;
     /* overflow: hidden; */
 }
-.halfdoughnut canvas{width: 100%!important;height:100%!important;}
+/* .halfdoughnut canvas{width: 100%!important;height:100%!important;} */
 .noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
@@ -3877,6 +3881,11 @@ ul.task_center_lists .task1 {
 .submenu_menu_block .practice-submenu a{padding: 9px 0 9px 19px;}
 .submenu_menu_block .practice-submenu{padding-left: 33px;margin:12px 0 40px;}
 .submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
+.overall_analytics_page .common_greenbadge_tabs ul.nav.mb-0{margin-bottom:12px!important;}
+.time-date-block span.d-block.mb-2.commontext , .question-attempted-block span.d-block.mb-2.commontext {
+    margin-bottom: 16px!important;
+}
+#subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 
 /********************* Amit End ****************************/
 
