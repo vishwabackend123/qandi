@@ -5425,8 +5425,12 @@ background: #3e8a44;
     font-style: normal;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #363c4f;
+    color: #363c4f;min-height:90px;max-height:90px;
 }
+.aeck_myqinner_p p{    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;}
 .aeck_myqbottomSec
 {
     padding: 0px 12px 12px 12px;
@@ -7158,5 +7162,7 @@ margin: 0;
 height: 0;        
 }
 /*****************************Toast message end***********/
+
+.quesbox img{max-width: 400px;}
 
  
