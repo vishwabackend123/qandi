@@ -859,7 +859,7 @@ padding-bottom: 0;
     font-size: 16px !important;
 }
 .take-fulltest .btn-common-transparent {
-    min-width: 227px !important;
+    min-width: 244px !important;
     font-size: 14px !important;
 }
 .chapters-expend .accordion-body {
@@ -2972,7 +2972,7 @@ line-height: 1.6;
 }
 
 .btn.btn-common-transparent {
-    padding: 8px 15px;
+    padding: 8px 16px;
     border-radius: 8px;
     border: solid 1px #56b663;
     background-color: #f5faf6;
@@ -4637,7 +4637,8 @@ justify-content: space-between;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
-    .take-fulltest.d-none{display:none!important;}
+    .d-lg-flex2{display:flex;}
+    .d-none2{display:none;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
