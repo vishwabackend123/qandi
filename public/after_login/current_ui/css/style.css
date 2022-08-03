@@ -4636,6 +4636,7 @@ justify-content: space-between;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
+    .take-fulltest.d-none{display:none!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
