@@ -111,6 +111,15 @@
                                             <h6>Your accuracy</h6>
                                             <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
                                         </div>
+                                        <div class="text-center mobile_block">
+                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <span class="greenarrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -125,6 +134,15 @@
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
+                                        </div>
+                                        <div class="text-center mobile_block">
+                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <span class="greenarrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -142,6 +160,15 @@
                                             <h6>Your accuracy</h6>
                                             <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
                                         </div>
+                                        <div class="text-center mobile_block">
+                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <span class="greenarrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -157,6 +184,15 @@
                                         <div class="codebottom">
                                             <h6>Your accuracy</h6>
                                             <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
+                                        </div>
+                                        <div class="text-center mobile_block">
+                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <span class="greenarrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -345,6 +381,26 @@
         </div>
     </div>
 </div>
+<!-- KnowMore-popup start  -->
+<div class="modal fade overall_evaluationmodal_modal" id="knowMore">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Evaluation</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                        Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- KnowMore-popup end -->
 <!-- Evaluation-popup start  -->
 <div class="modal fade overall_evaluationmodal_modal" id="Evaluationmodal">
     <div class="modalcenter">
@@ -442,6 +498,8 @@ var myChartmath = new Chart(ctxmath, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 display: false

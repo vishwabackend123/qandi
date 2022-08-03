@@ -1191,7 +1191,7 @@
         .overallmain .commonWhiteBox{height:auto;}
         .codelearningBlock .col-md-6{    flex: 0 0 auto;
             width: 50%;padding: 0px 8px;}
-            .commoncodeblock{margin-bottom:17px;}
+            .commoncodeblock{margin-bottom:17px;padding-bottom:13px;}
             .codelerheader h3 {
                 font-size: 14px;
                 font-weight: 800;
@@ -1205,7 +1205,7 @@
             }
             .overalltop{margin-bottom:0px;}
             .codelerninner {    padding: 8px 13px 9px; }
-            .codebottom { padding: 0px 13px 12px; }
+            .codebottom { padding: 0px 13px 6px; }
             .codebottom h2{font-size:20px;}
             .codelerninner h5{display:none;}
             .overall_analytics_page.test_analytics_wrapper .mock_inst_text_mock_test {
