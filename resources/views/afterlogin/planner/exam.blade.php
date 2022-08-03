@@ -601,6 +601,8 @@ $questtype='radio';
             resetVars();
         }
         startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
     }
 
     function stop(type = '') {
@@ -610,6 +612,8 @@ $questtype='radio';
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        clearInterval(timer_countdown);
+        clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
         }
