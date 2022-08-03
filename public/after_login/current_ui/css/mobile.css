@@ -1098,7 +1098,39 @@
 
     /************ Shiv start for notification ************/
     .notification-main>h2 a { color: #56b663;}
-    /************ End for notification 28-07-2022 ************/
+
+      /************  for exam overview ************/
+
+     
+      .modal-header-exam {
+        display: block;
+    }
+
+    .modal-header-exam .exam-overview {
+        flex: initial;
+        padding-bottom: 16px;
+    }
+    #FullTest_Exam_Panel_Interface_A .modal-dialog{max-width: 328px;margin: 0 auto;}
+    .exam-overview > label {
+        font-size: 18px;
+        font-weight: 800;
+        color: #1f1f1f;
+    }
+    .modal-content.exammodal_content .modal-body {
+        padding: 20px;
+    }
+
+    #FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content .modal-body {
+        height: 100%;
+    }
+    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {
+        padding: 8px 16px !important;
+        height: 44px !important;
+    }
+    /************ End ************/
+ 
+
+
     .radial_progress_bar{margin-top:12px;}
     .myqTodayGraphSec .textblock { padding-left: 14px; }
     .mobilejustify  .nav-item, .mobilejustify .nav-link {
