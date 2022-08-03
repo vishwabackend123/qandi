@@ -410,6 +410,7 @@ $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
+ @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
 <script>
 /*********** BarChart ***********/
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -476,6 +477,7 @@ function resetData(subject_id) {
 }
 
 </script>
+@endif
 <script>
 /***********my-score************************* */
 const myscorecir = 260;
@@ -493,12 +495,12 @@ const myscoredata = {
 };
 const myscoreconfig = {
     type: "doughnut",
-    data: data,
+    data: myscoredata,
     options: {
         reponsive: true,
         maintainAspectRatio: false,
-        rotation: (circuference / 2) * -1,
-        circumference: circuference,
+        rotation: (myscorecir / 2) * -1,
+        circumference: myscorecir,
         cutout: "85%",
         borderWidth: 0,
         borderRadius: function(context, options) {
