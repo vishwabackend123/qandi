@@ -237,25 +237,9 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
     @endphp
-
-    <!-- browser back disable -->
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            window.history.pushState(null, "", window.location.href);
-
-            window.onpopstate = function() {
-
-                window.history.pushState(null, "", window.location.href);
-
-            };
-
-        });
-    </script>
-    <!-- browser back disable -->
-    <script>
-        /*********** BarChart ***********/
+ @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
+<script type="text/javascript">
+            /*********** BarChart ***********/
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'bar',
@@ -325,6 +309,26 @@ $user_id = isset($userData->id)?$userData->id:'';
                 $("#percentage").val(percentage);
             }
         }
+</script>
+@endif
+    <!-- browser back disable -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            window.history.pushState(null, "", window.location.href);
+
+            window.onpopstate = function() {
+
+                window.history.pushState(null, "", window.location.href);
+
+            };
+
+        });
+    </script>
+    <!-- browser back disable -->
+    <script>
+
 
 
 
