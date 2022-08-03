@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "orangegraph";
+                                            $colorcls = "yellowgraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
