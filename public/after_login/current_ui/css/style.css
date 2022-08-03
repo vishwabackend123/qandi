@@ -816,7 +816,7 @@ padding: 32px 24px 32px 32px !important;
 .testtablescroll{
     overflow-y: auto;
     height: 335px;
-    padding-right: 16px;    
+    padding-right: 13px;    
 }
 .exam_topicbtn ul.nav {
     height: 36px;
@@ -904,9 +904,6 @@ padding-bottom: 0;
     flex-basis: 200px;
     margin-bottom:0px;
     margin-top:3px;
-}
-.take-fulltest.d-none{
-padding: 0;    
 }
 .test-table .accordion-header{
 flex-basis: 270px;   
