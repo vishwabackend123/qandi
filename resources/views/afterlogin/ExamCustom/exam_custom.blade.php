@@ -157,7 +157,7 @@
         $('#' + subject + '_test').addClass('d-flex');
         $('.topic_form').attr("style", "display: none  !important");
         $('.take-fulltest').attr("style", "display: none  !important");
-        $('#' + subject + '_main').attr("style", "display: flex");
+        $('#' + subject + '_main').attr("style", "display: flex !important");
         let is_select=false;
         $(".topic_" + subject).each(function() {
         
@@ -168,7 +168,7 @@
        });
         if(is_select)
         {
-            $('#' + subject + '_select').attr("style", "display: flex");
+            $('#' + subject + '_select').attr("style", "display: flex !important");
         }
         
         //clearTopics();
