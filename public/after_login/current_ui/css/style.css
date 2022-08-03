@@ -2099,6 +2099,18 @@ a.btn-common-attempted svg {
    
  
 }
+.reviewScreenleft .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg.wronganswer {
+    border: 1px solid #d92d20;
+    background: #f1aba6;
+}
+.reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg.wronganswer .seNo {
+    background-color: #d92d20;
+    
+   
+ 
+}
+
+
   .questionbtnBlock {
       display: flex;
       justify-content: space-between;
@@ -4538,7 +4550,7 @@ justify-content: space-between;}
         color: #797979;margin-bottom:0px;}
         .codelearningBlock{margin-top:32px;}
         .commoncodeblock{margin-bottom:20px;overflow:hidden;}
-        .codelerninner p  a{ color: #000;    text-decoration: underline;}
+        .codelerninner p  a{ color: #1f1f1f;    text-decoration: underline;font-size: 14px;}
        .codebottom h6 { font-size: 14px;
             font-weight: 500;
             font-stretch: normal;
