@@ -90,7 +90,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div id="collapseTwo_{{$sche->paper_id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div id="collapseTwo_{{$sche->paper_id}}" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body ps-0 pe-0">
                                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                                         <div class="mock_test_ques_content22">
@@ -128,7 +128,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div id="attempted_tab" class=" tab-pane mock_attempetd_head_wraper">
+                            <div id="attempted_tab" class=" tab-pane mock_attempetd_head_wraper PrevousYearExam_wraper_contant2">
                             </div>
                         </div>
                     </div>
