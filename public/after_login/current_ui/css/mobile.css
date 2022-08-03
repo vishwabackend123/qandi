@@ -730,9 +730,78 @@
     {
         width: 100%;
     }
-    
-
+    .live_exam_jee_main_date_st_ed_ques
+    {
+        flex: auto!important;
+    }
+    .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(1)
+    {
+        width: 100%;
+    }
+    .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(2), .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(3)
+    {
+        width: 50%;
+    }
+    .LiveExamMob .mock_test_sub_content2
+    {
+        padding-top: 16px;
+    }
+    .form-select{
+    padding: 6px 10px 6px 24px;
+    border-radius: 10px;
+    border: solid 1px #cde3d0;
+    background-color: white;
+    }
+    .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
+    {
+    width: 161px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: solid 1px #cde3d0;
+    background-color: white;
+    }
     /*  */
+    .previous_exam_page_contain .live_mock_exam_section h3{
+
+        font-weight: 600;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .previous_exam_year_exam_paper_text
+    {
+        margin-bottom: 9px;
+    }
+    .PrevousYearExam_wraper_contant1 .test-table h4
+    {
+        margin-top: 11px!important;
+        flex-basis: 100px;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_ques_content22
+    {
+        width: 50%;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_marks_content22
+    {
+        width: 20%;
+        padding-top: 16px;
+    }
+    .PrevousYearExam_wraper_contant1 .live_exam_diveder_div
+    {
+        border-right: unset;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_dure_content22
+    {
+        width: 50%;
+        text-align: right;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_sub_content22
+    {
+        width: 80%;
+        text-align: right;
+        padding-top: 16px;
+    }
+
+
     /********* Vikash End ************/
 
 
