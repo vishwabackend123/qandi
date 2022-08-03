@@ -288,6 +288,7 @@ class ExamCustomController extends Controller
             $responsedata = json_decode($response_json);
             $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
             $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
+            $total_marks = isset($responsedata->total_marks) ? $responsedata->total_marks : [];
 
             if ($httpcode_response == true) {
                 if (!empty($aQuestions_list)) {
@@ -766,7 +767,7 @@ class ExamCustomController extends Controller
      *
      * @return void
      */
-    public function chaptersTopic(Request $request, $chapter_id,$subject_name)
+    public function chaptersTopic(Request $request, $chapter_id, $subject_name)
     {
         try {
             $userData = Session::get('user_data');
@@ -821,7 +822,7 @@ class ExamCustomController extends Controller
                 $sorted = $collect_topic->sortBy([['topic_name', 'asc']]);
                 $topics = $sorted->values()->all();
             }
-            return view('afterlogin.ExamCustom.custom_topic', compact('topics', 'chapter_id','subject_name'));
+            return view('afterlogin.ExamCustom.custom_topic', compact('topics', 'chapter_id', 'subject_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

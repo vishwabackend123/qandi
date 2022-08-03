@@ -17,7 +17,7 @@
     <div class="row">
         @if(isset($response->subject_wise_result))
         @foreach($response->subject_wise_result as $subData)
-        <div class="col-sm-6 mb-3">
+        <div class="col-sm-6 mb-5">
             <h5 class="mb-0">{{$subData->subject_name}}</h5>
             <div class="d-flex align-items-center">
                 <div class="halfdoughnut">
@@ -144,7 +144,7 @@
 
 
 
-        var circuference = 260;
+        var circuference = 180;
         var data = {
             labels: ["Correct", "Incorrect", "Not Attempted"],
             datasets: [{

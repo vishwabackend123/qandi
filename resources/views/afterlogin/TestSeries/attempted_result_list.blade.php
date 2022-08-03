@@ -29,7 +29,29 @@
 @foreach($result_data as $sche)
 <div class="compLeteS accordion-item pt-4 {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
+        @php
+            $testname="";
+            if($sche->test_series_name)
+            {
+                $testname = $sche->test_series_name;    
+            }elseif($sche->live_exam_name)
+            {
+                $testname = $sche->live_exam_name;    
+            }
+            elseif($sche->test_type == 'Mocktest')
+            {
+             $testname =  'Mock Test';   
+            }elseif($sche->test_type == 'PreviousYear')
+            {
+                $testname =  $sche->py_paper_name;   
+            }else
+            {
+                $testname =$sche->test_type;
+            }
+            
+            @endphp
         <h2 class="m-0 mt-1">
+            
             @if($sche->test_series_name)
             {{$sche->test_series_name}}
             @elseif($sche->live_exam_name)
@@ -54,12 +76,13 @@
                 </svg>
                 @php
                 $test_type = base64_encode($sche->test_type);
+                $test_name = base64_encode($testname);
                 @endphp
-                <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type])}}">
+                <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type,$test_name])}}">
                     <h3>See analytics</h3>
                 </a>
             </div>
-            <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4">Review exam</a>
+            <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
         </div>
     </div>
     <div id="chapter_{{$sche->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -103,6 +126,8 @@
             </div>
         </div>
     </div>
+    <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
+
 </div>
 @endforeach
 @else

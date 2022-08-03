@@ -816,7 +816,7 @@ padding: 32px 24px 32px 32px !important;
 .testtablescroll{
     overflow-y: auto;
     height: 335px;
-    padding-right: 16px;    
+    padding-right: 13px;    
 }
 .exam_topicbtn ul.nav {
     height: 36px;
@@ -904,9 +904,6 @@ padding-bottom: 0;
     flex-basis: 200px;
     margin-bottom:0px;
     margin-top:3px;
-}
-.take-fulltest.d-none{
-padding: 0;    
 }
 .test-table .accordion-header{
 flex-basis: 270px;   
@@ -1023,7 +1020,7 @@ border-color: #56b663;
     top: 32px;
     left: 0px;
     line-height: 36px !important; 
-    color: #1f1f1f !important;
+    color: #00ab16 !important;
    }
  .testslider .owl-nav button.owl-next{
     height: 40px;
@@ -1038,7 +1035,7 @@ border-color: #56b663;
     top: 32px;
     right: 0px;
     line-height: 36px !important;
-    color: #1f1f1f !important;
+    color: #00ab16 !important;
    }
 .testslider .owl-nav button.owl-next.disabled span {
     box-shadow: none !important;
@@ -2102,6 +2099,18 @@ a.btn-common-attempted svg {
    
  
 }
+.reviewScreenleft .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg.wronganswer {
+    border: 1px solid #d92d20;
+    background: #f1aba6;
+}
+.reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg.wronganswer .seNo {
+    background-color: #d92d20;
+    
+   
+ 
+}
+
+
   .questionbtnBlock {
       display: flex;
       justify-content: space-between;
@@ -3398,6 +3407,7 @@ h3.commonheading{
     padding: 3px;
     border-radius: 6px;
     background-color: #e0f5e3;
+    height: 36px;
 }
 .common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
 .common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
@@ -3408,6 +3418,8 @@ h3.commonheading{
     font-size: 14px;
     font-weight: 500;
     border-radius: 4px;
+    height: 30px;
+    padding: 0 16px!important;
 }
 .common_greenbadge_tabs ul.nav .btn.nav-link.active {
     background-color: #56b663;
@@ -3511,20 +3523,21 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     margin-bottom: 0;
 }
 .chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
-.overall_percentage_chart{width:100%;height:300px;}
+.overall_percentage_chart{height:280px!important;}
 .subj_progress_card .overall_percentage_chart{height: 247px;}
-.overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
+/* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    min-width: 100px;
     overflow: hidden;
+    max-width: 138px;
 }
-.halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
+/* .halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;} */
 .halfdoughnut2{ height: 180px;
     width: 180px;
     /* overflow: hidden; */
 }
-.halfdoughnut canvas{width: 100%!important;height:100%!important;}
+/* .halfdoughnut canvas{width: 100%!important;height:100%!important;} */
 .noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
@@ -3535,6 +3548,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     min-width: auto;	
     right: -25px!important;
     left: auto!important;
+    z-index: 9;
 }
 /* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
@@ -3879,6 +3893,11 @@ ul.task_center_lists .task1 {
 .submenu_menu_block .practice-submenu a{padding: 9px 0 9px 19px;}
 .submenu_menu_block .practice-submenu{padding-left: 33px;margin:12px 0 40px;}
 .submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
+.overall_analytics_page .common_greenbadge_tabs ul.nav.mb-0{margin-bottom:12px!important;}
+.time-date-block span.d-block.mb-2.commontext , .question-attempted-block span.d-block.mb-2.commontext {
+    margin-bottom: 16px!important;
+}
+#subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 
 /********************* Amit End ****************************/
 
@@ -4540,7 +4559,7 @@ justify-content: space-between;}
         color: #797979;margin-bottom:0px;}
         .codelearningBlock{margin-top:32px;}
         .commoncodeblock{margin-bottom:20px;overflow:hidden;}
-        .codelerninner p  a{ color: #000;    text-decoration: underline;}
+        .codelerninner p  a{ color: #1f1f1f;    text-decoration: underline;font-size: 14px;}
        .codebottom h6 { font-size: 14px;
             font-weight: 500;
             font-stretch: normal;
@@ -4639,6 +4658,8 @@ justify-content: space-between;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
+    .d-lg-flex2{display:flex;}
+    .d-none2{display:none;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5425,8 +5446,12 @@ background: #3e8a44;
     font-style: normal;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #363c4f;
+    color: #363c4f;min-height:90px;max-height:90px;
 }
+.aeck_myqinner_p p{    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;}
 .aeck_myqbottomSec
 {
     padding: 0px 12px 12px 12px;

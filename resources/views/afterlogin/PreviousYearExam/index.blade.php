@@ -3,7 +3,7 @@
 <div class="main-wrapper">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper">
+    <section class="content-wrapper MockTestMob">
         <div class="container-fluid previous_exam_page_contain">
             @if(count($errors) > 0 )
             <div class="toastdata active">
@@ -51,10 +51,10 @@
                         </div>
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
-                            <div id="mock_test" class=" tab-pane active">
+                            <div id="mock_test" class=" tab-pane active PrevousYearExam_wraper_contant1 mock_attempetd_head_wraper">
                                 <div class="jee_main_text_take_test__btn previous_exam_head_with_drop">
                                     <div class="mock_exam_jee_main_text d-flex align-items-center">
-                                        <p class="previous_exam_year_exam_paper_text">Test your preparedness with Past year exam papers</p>
+                                        <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>Past year exam papers</p>
                                     </div>
                                     <div class="dropbox previous_dropbox_page">
                                         <div class="customDropdown dropdown">
@@ -90,7 +90,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <div id="collapseTwo_{{$sche->paper_id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div id="collapseTwo_{{$sche->paper_id}}" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body ps-0 pe-0">
                                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                                         <div class="mock_test_ques_content22">
@@ -128,7 +128,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div id="attempted_tab" class=" tab-pane">
+                            <div id="attempted_tab" class=" tab-pane mock_attempetd_head_wraper PrevousYearExam_wraper_contant2">
                             </div>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ $question_type = "Numerical";
                                     <ul class="nav nav-tabs" role="tablist" id="myTab">
 
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
+                                            <a class="nav-link qq1_2_3_4 all_div  active   " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                         </li>
 
                                     </ul>
@@ -619,6 +619,8 @@ $question_type = "Numerical";
             resetVars();
         }
         startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
     }
 
     function stop(type = '') {
@@ -628,6 +630,8 @@ $question_type = "Numerical";
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        clearInterval(timer_countdown);
+        clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
         }

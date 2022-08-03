@@ -41,7 +41,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-4 commonblockDash myqTodayPannel">
                         <div class="commondashboardTop">
                             <h3 class="boxheading headingbgchange">MyQ Today
-                                <span class="tooltipmain">
+                                <span class="tooltipmain tooltipmyq">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                         <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "orangegraph";
+                                            $colorcls = "yellowgraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
@@ -272,7 +272,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button  class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
 
@@ -291,7 +291,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -334,7 +334,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -352,7 +352,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button  class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>

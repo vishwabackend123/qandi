@@ -17,7 +17,11 @@ use App\Http\Traits\CommonTrait;
 
 class MenuMiddleware
 {
-    //
+    private static $checkRouteName = [
+        'profile',
+        'planner',
+        
+    ]; 
     use CommonTrait;
     /**
      * Handle an incoming request.
@@ -129,8 +133,9 @@ class MenuMiddleware
                 //expire today
                 $suscription_status = 1;
             }
+            
              $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
-            if (Route::getCurrentRoute()->getName() !='subscriptions') {
+            if (in_array(Route::getCurrentRoute()->getName(),self::$checkRouteName)) {
                 if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
                     return redirect()->route('subscriptions');
                 }

@@ -1,15 +1,11 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
-$active_q_id = isset($activeq_id)?$activeq_id:'';
-$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$subject_id = isset($que_sub_id)?$que_sub_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
-$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
-$track = isset($question_data->track)?$question_data->track:'';
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-$correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
+$question_type='';
 
-$question_type = '';
 if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -21,40 +17,41 @@ $question_type = "Single Choice";
 }elseif ($template_type == 11) {
 $question_type = "Numerical";
 }
+
 @endphp
 <script>
     $(document).ready(function() {
         var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+        var questionTime = parseInt(time_allowed) * 60;
 
-        var sec = time_allowed * 60;
+        var sec = parseInt(time_allowed) * 60;
         var interval = 1000;
-        var qest = '{{$active_q_id}}';
-        /* var aj_up_timer = '{{$aquestionTakenTime}}';
+        var qest = '{{$activeq_id}}';
+        var aj_up_timer = '{{$aquestionTakenTime}}';
 
-        alert(time_allowed_sec + " " + aj_up_timer);
         var ctxt = " Seconds";
-        if (aj_up_timer >= 60) {
+        if (aj_up_timer >= questionTime) {
             var sec = 0;
         } else {
-            var sec = 60 - aj_up_timer;
+            var sec = questionTime - aj_up_timer;
         }
- */
-        $('#percentBar_{{$active_q_id}}').html('')
-        $('#timespend_{{$active_q_id}}').val("");
+
+        $('#percentBar_{{$activeq_id}}').html('')
+        $('#timespend_{{$activeq_id}}').val("");
 
 
         ctimer = setInterval(function() {
             sec--;
 
-            progressBar_next(sec, $('#progressBar_{{$active_q_id}}'));
+            progressBar_next(sec, $('#progressBar_{{$activeq_id}}'));
 
             if (sec == -1) {
                 clearInterval(ctimer);
-                $('#progressBar_{{$active_q_id}}').css('background-color', '#E4E4E4');
-                $('#progressBar_{{$active_q_id}}').css('border-left', 'solid 4px #ff6060');
-                $('#q_time_taken_{{$active_q_id}}').show();
-                $('#avg_text_{{$active_q_id}}').hide();
-                $('#progressBar_{{$active_q_id}}').hide();
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_{{$activeq_id}}').show();
+                $('#avg_text_{{$activeq_id}}').hide();
+                $('#progressBar_{{$activeq_id}}').hide();
             }
         }, interval);
 
@@ -66,22 +63,22 @@ $question_type = "Numerical";
                 width: progressBarWidth
             }, 500).html(percent + "%&nbsp;");
             if (percent <= 20) {
-                $('#percentBar_{{$active_q_id}}').css('background-color', '#FFDC34');
+                $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
             }
             if (percent <= 0) {
-                $('#progressBar_{{$active_q_id}}').css('background-color', '#E4E4E4');
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
             }
 
         }
-        var minutesLabel = document.getElementById("up_minutes_{{$active_q_id}}");
-        var secondsLabel = document.getElementById("up_seconds_{{$active_q_id}}");
+        var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
+        var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
         //var totalSec = document.getElementById("tsec");
-        var totalSeconds = -1;
+        var totalSeconds = aj_up_timer;
 
         function setEachQuestionTimeNext() {
             setEachQuestionTimeNext_countdown = setInterval(function() {
                 ++totalSeconds;
-                $('#timespend_{{$active_q_id}}').val(totalSeconds);
+                $('#timespend_{{$activeq_id}}').val(totalSeconds);
                 secondsLabel.innerHTML = pad(totalSeconds % 60);
 
                 minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
@@ -100,29 +97,22 @@ $question_type = "Numerical";
         }
     });
 </script>
-<div class="questionType">
+
+<div class="questionType" style="visibility:hidden">
     <div class="questionTypeinner">
         <div class="questionChoiceType" style="visibility:hidden">
             <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
         </div>
         <div class="timeCounter">
-            <div id="counter_{{$active_q_id}}" class="ms-auto counter mb-4 d-flex">
-                <span id="avg_text_{{$active_q_id}}" class="avg-time">Average Time :</span>
-                <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
-                    <span class="seconds" id="seconds_{{$active_q_id}}"></span>
-
-                    <div id="percentBar_{{$active_q_id}}"></div>
-
-                </div>
-                <div class="time_taken_css" id="q_time_taken_{{$active_q_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$active_q_id}}"></span>:<span id="up_seconds_{{$active_q_id}}"></span>mins</div>
-
+            Average Time:
+            <div id="progressBar">
+                <div class="bar"></div>
             </div>
-            <input type="hidden" name="question_spendtime" id="timespend_{{$active_q_id}}" value="" />
         </div>
     </div>
 </div>
 <div class="tab-content aect_tabb_contantt">
-    <div class="tab-pane active">
+    <div id="evolution" class="tab-pane active">
         <div class="questionsliderinner">
             <div class="questionSlider1">
                 <div class="item" id="">
@@ -157,11 +147,12 @@ $question_type = "Numerical";
                                     $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                     $latex = "https://math.now.sh?from=".$text;
                                     $view_opt='<img src="'.$latex.'" />' ; */
+
                                     @endphp
 
                                     <div class="colMargin">
                                         <div class="image-container markerDiv">
-                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
+                                            <input class="correct quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" onclick="checkResponse('{{$activeq_id}}')" />
                                             <label for="option_{{$activeq_id}}_{{$key}}" class="image-bg"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! $opt_value !!}</span> </label>
                                         </div>
                                     </div>
@@ -188,43 +179,53 @@ $question_type = "Numerical";
             </div>
             <div class="examQuestionarrow">
                 <!-- Previous button -->
-                <span style="visibility:hidden">
-                    <button type="button" class="qprev quest_btn {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
-                        <span class=" Previous">‹</span>
-                    </button>
+
+                <button type="button" class="qprev quest_btn {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} {{empty($prev_qid)?'disabled':''}}" {{(isset($prev_qid) && ($prev_qid==$activeq_id))?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" {{empty($prev_qid)?'disabled':''}}>
+                    <span class=" Previous">‹</span>
+                </button>
 
 
-                    <!-- Next button -->
+                <!-- Next button -->
 
-                    <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
-                        <span class="Next">›</span>
-                    </button>
-                </span>
+                <button type="button" class="qnext quest_btn {{empty($next_qid)?'disabled':''}} {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')">
+                    <span class="Next">›</span>
+                </button>
             </div>
         </div>
     </div>
 </div>
-<!-- exam footer -->
+
+
+
 <script>
-    var question_id = '{{$active_q_id}}';
+    var question_id = '{{$activeq_id}}';
     var template_type = '{{$template_type}}';
     var curr_ques_no = '{{$qNo}}';
+    var subject_id = '{{$subject_id}}';
+    var chapter_id = '{{$chapter_id}}';
+    var subject_id = '{{$subject_id}}';
+    var last_qId = '{{$last_qid}}';
+    /*  $(".next_button").removeClass("activequestion");
+     */
+    /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
+    //$("#exam_content_sec  #btn_" + question_id).focus();
 
-    $(".next_button").removeClass("activequestion");
-    $("#btn_" + question_id).addClass("activequestion");
+    /*     $("#btn_" + question_id).addClass("activequestion"); */
     $("#current_question").val(question_id);
     $("#current_question_type").val(template_type);
     $("#current_question_no").val(curr_ques_no);
+    $("#current_chapter_id").val(chapter_id);
+    $("#current_subject_id").val(subject_id);
 
-    //$("#exam_content_sec  #btn_" + question_id).focus();
-    // $(".number-block #btn_" + question_id)[0].scrollIntoView();
 
-
-    var subject_id = '{{$subject_id}}';
-    /*  $("#myTab .all_div").removeClass("active");
-     $("#myTab .class_" + subject_id).addClass("active"); */
+    $("#myTab .all_div").removeClass("active");
+    $("#myTab .class_" + subject_id).addClass("active");
+    if (last_qId == question_id) {
+        $('#saveNext').html('Save & Submit');
+    } else {
+        $('#saveNext').html('Save & Next');
+    }
 </script>
-<!-- check size of screen -->
 <script>
     $(document).ready(function() {
         $(window).on("resize", function(e) {
@@ -246,8 +247,10 @@ $question_type = "Numerical";
         }
         $('#quest_option_' + question_id).focus();
     });
+
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
@@ -257,6 +260,7 @@ $question_type = "Numerical";
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
+
         if (event.charCode === 46) {
             // if dot is the first symbol
             if (event.target.value.length === 0) {
@@ -315,5 +319,3 @@ $question_type = "Numerical";
         $('#clearBtn_response').removeClass("Clearbtnenable");
     }
 </script>
-
-<!-- End check size of screen -->
