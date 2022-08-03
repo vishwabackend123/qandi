@@ -102,6 +102,9 @@
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
 }
 @media only screen and (max-width: 1280px){
+    .reviewScreenleft li.nav-item {
+        margin-right: 15px;
+    }
     .subjectblockOverall .textblock{    width: calc(100% - 100px);}
     .subjectperformLegend .bar {
         width: 18px;
