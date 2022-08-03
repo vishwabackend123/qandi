@@ -365,14 +365,14 @@ class StudentSignInController extends Controller
                     $user_Data = Auth::user();
                     Session::put('user_data', $user_Data);
                     if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
-                          $inputjson = ["email" => $email_add, "student_refer_by" => $data['refer_code'],];
-                                $request = json_encode($inputjson);
+                        $inputjson = ["email" => $email_add, "student_refer_by" => $data['refer_code'],];
+                        $request = json_encode($inputjson);
 
-                                $api_URL = env('API_URL');
-                                $curl_url = $api_URL . 'api/update-referr-student';
+                        $api_URL = env('API_URL');
+                        $curl_url = $api_URL . 'api/update-referr-student';
 
-                                $curl = curl_init();
-                                $curl_option = array(
+                        $curl = curl_init();
+                        $curl_option = array(
                                     CURLOPT_URL => $curl_url,
                                     CURLOPT_RETURNTRANSFER => true,
                                     CURLOPT_FAILONERROR => true,
@@ -387,16 +387,17 @@ class StudentSignInController extends Controller
                                         "content-type: application/json",
                                     ),
                                 );
-                                curl_setopt_array($curl, $curl_option);
+                        curl_setopt_array($curl, $curl_option);
 
-                                $response_json = curl_exec($curl);
-                                $err = curl_error($curl);
-                                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                                curl_close($curl);
-                                if ($httpcode == 400 || $httpcode == 422) {
-                                    return json_encode(array('success' => false, 'message' => $httpcode));
-                                }
+                        $response_json = curl_exec($curl);
+                        $err = curl_error($curl);
+                        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                        curl_close($curl);
+                        if ($httpcode == 400 || $httpcode == 422) {
+                            return json_encode(array('success' => false, 'message' => $httpcode));
                         }
+                    }
+                    if (env('CRM_URL_STATUS')) {
                         $curl = curl_init();
                         $api_URL = env('CRM_URL');
                         $curl_url = $api_URL . 'crm/update_lead_info/' . $student_id.'/create';
@@ -421,7 +422,7 @@ class StudentSignInController extends Controller
                         $err = curl_error($curl);
                         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                         curl_close($curl);
-                          
+                    }
 
                     return json_encode($response);
                 } else {
@@ -821,7 +822,6 @@ class StudentSignInController extends Controller
     public function sentMobileOtp($mobile, Request $request)
     {
         try {
-
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/mobile-otp/' . $mobile;
 

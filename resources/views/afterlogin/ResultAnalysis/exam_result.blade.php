@@ -40,11 +40,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            @php
-                            $init = $scoreResponse->result_time_taken;
-                            $explode_init =explode(':',$init);                           
-                            @endphp
-                            {{$explode_init[1]}} min {{$explode_init[2]}} sec
+                            {{$rankResponse->test_total_time/60}} min
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: sub;" class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,25 +237,9 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
     @endphp
-
-    <!-- browser back disable -->
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            window.history.pushState(null, "", window.location.href);
-
-            window.onpopstate = function() {
-
-                window.history.pushState(null, "", window.location.href);
-
-            };
-
-        });
-    </script>
-    <!-- browser back disable -->
-    <script>
-        /*********** BarChart ***********/
+ @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
+<script type="text/javascript">
+            /*********** BarChart ***********/
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'bar',
@@ -331,6 +311,26 @@ $user_id = isset($userData->id)?$userData->id:'';
                 $("#percentage").val(percentage);
             }
         }
+</script>
+@endif
+    <!-- browser back disable -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            window.history.pushState(null, "", window.location.href);
+
+            window.onpopstate = function() {
+
+                window.history.pushState(null, "", window.location.href);
+
+            };
+
+        });
+    </script>
+    <!-- browser back disable -->
+    <script>
+
 
 
 

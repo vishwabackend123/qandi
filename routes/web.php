@@ -163,7 +163,7 @@ Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 
 Route::any('/live_exam_list', [App\Http\Controllers\LiveExamController::class, 'liveExamList'])->name('live_exam_list')->middleware('auth', 'menu');
 Route::any('/live_exam/{id}/{instruction?}', [App\Http\Controllers\LiveExamController::class, 'liveExam'])->name('live_exam')->middleware('auth', 'menu');
 Route::any('/live_exam_result/{result_id}', [App\Http\Controllers\LiveExamController::class, 'liveExamResult'])->name('live_exam_result')->middleware('auth', 'menu');
-
+Route::any('/live_next_question/{ques_id}', [App\Http\Controllers\LiveExamController::class, 'nextLiveQuestion'])->name('live_next_question')->middleware('auth');
 
 /* AnalyticsController Routes */
 
@@ -257,7 +257,7 @@ Route::any('/topic-analytics/{sub_id}', [App\Http\Controllers\AnalyticsControlle
 /* discount code  */
 Route::any('/ajax_validate_coupon_code', [App\Http\Controllers\SubscriptionController::class, 'validatDiscountCode'])->middleware('auth');
 /*exam history */
-Route::any('/get_exam_result_analytics/{result_id}/{testName?}', [App\Http\Controllers\ResultController::class, 'getExamResultAnalytics'])->name('get_exam_result_analytics')->middleware('auth', 'menu');
+Route::any('/get_exam_result_analytics/{result_id}/{testType?}/{testName?}', [App\Http\Controllers\ResultController::class, 'getExamResultAnalytics'])->name('get_exam_result_analytics')->middleware('auth', 'menu');
 
 
 /* mock exam Routes */

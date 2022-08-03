@@ -237,14 +237,15 @@ class SubscriptionController extends Controller
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
                 Session::put('user_data', $sessionData);
-                $curl = curl_init();
-                $api_URL = env('CRM_URL');
-                $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/trial';
-                $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
-                $headers = array(
+                if (env('CRM_URL_STATUS')) {
+                    $curl = curl_init();
+                    $api_URL = env('CRM_URL');
+                    $curl_url = $api_URL . 'crm/update_lead_info/' . $user_id.'/trial';
+                    $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
+                    $headers = array(
                             'x-api-key: ' . $apiKey,
                         );
-                $curl_option = array(
+                    $curl_option = array(
                             CURLOPT_URL => $curl_url,
                             CURLOPT_RETURNTRANSFER => true,
                             CURLOPT_ENCODING => "",
@@ -255,13 +256,13 @@ class SubscriptionController extends Controller
                             CURLOPT_CUSTOMREQUEST => "POST",
                             CURLOPT_HTTPHEADER => $headers,
                         );
-                curl_setopt_array($curl, $curl_option);
+                    curl_setopt_array($curl, $curl_option);
 
-                $response_json = curl_exec($curl);
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
-
+                    $response_json = curl_exec($curl);
+                    $err = curl_error($curl);
+                    $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                    curl_close($curl);
+                }
                 return redirect()->route('dashboard');
             } else {
                 return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);

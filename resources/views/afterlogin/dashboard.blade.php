@@ -106,7 +106,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         if (round($sub['score']) <= 40) {
                                             $colorcls = "";
                                         } elseif (round($sub['score']) <= 75) {
-                                            $colorcls = "orangegraph";
+                                            $colorcls = "yellowgraph";
                                         } else {
                                             $colorcls = "greengraph";
                                         }
@@ -272,7 +272,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button  class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
 
@@ -291,7 +291,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -334,7 +334,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>
@@ -352,7 +352,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
-                                                            <a href="javascript:void(0);" class="btn btn-common-transparent nobg">Attempted</a>
+                                                            <button  class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
                                                         </div>
                                                         @endif
                                                     </li>

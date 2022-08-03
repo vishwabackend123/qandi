@@ -56,7 +56,7 @@
                                 </div>
                                 @isset($subject_list)
                                 @foreach($subject_list as $skey=>$sub)
-                                <div class="take-fulltest d-lg-flex align-items-center justify-content-end {{($skey==0)?'d-lg-flex':'d-none'}}" id="{{$sub->subject_name}}_main">
+                                <div class="take-fulltest d-lg-flex2 align-items-center justify-content-end {{($skey==0)?'d-lg-flex2':'d-none2'}}" id="{{$sub->subject_name}}_main">
                                     <div class="d-sm-flex align-items-center clrsec topic_form" id="{{$sub->subject_name}}_select">
                                         <form id="topic_form" method="post" action="{{route('custom_exam_topic','instruction')}}" class="topic_list_form text-sm-right">
                                             @csrf
