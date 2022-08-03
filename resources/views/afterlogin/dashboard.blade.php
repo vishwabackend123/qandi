@@ -1060,6 +1060,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                     margin: 0,
                     loop: true,
                 },
+
+                500: {
+                    items: 1
+                },
                 600: {
                     items: 3
                 },
