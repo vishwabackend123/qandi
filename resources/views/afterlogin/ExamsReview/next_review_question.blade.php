@@ -57,11 +57,11 @@ $question_type = "Numerical";
                         $attemptedByUser=isset($attempt_opt['Answer:'])?$attempt_opt['Answer:']:[];
 
                         if(in_array($key,$answerKeys) && in_array($key,$attemptedByUser)){
-                        $resp_class= 'correctAnswer';
+                        $resp_class= 'correctans';
                         }else if(in_array($key,$answerKeys) && !in_array($key,$attemptedByUser)){
-                        $resp_class= 'correctAnswer';
+                        $resp_class= 'correctans';
                         }else if(!in_array($key,$answerKeys) && in_array($key,$attemptedByUser)){
-                        $resp_class= 'incorrectAnswer';
+                        $resp_class= 'wronganswer';
                         }else{
                         $resp_class= '';
                         }
@@ -75,7 +75,7 @@ $question_type = "Numerical";
                         <div class="colMargin">
                             <div class="image-container">
                                 <input type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}" class="correct" {{$checked}} disabled />
-                                <label for="opt1" class="image-bg" for="option_{{$activeq_id}}_{{$key}}"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! !empty($text)?$view_opt:$opt_value; !!}</span> </label>
+                                <label for="opt1" class="image-bg  {{$resp_class}}" for="option_{{$activeq_id}}_{{$key}}"> <span class="seNo">{{$alpha[$no]}}</span> <span class="optionText">{!! !empty($text)?$view_opt:$opt_value; !!}</span> </label>
                             </div>
                         </div>
                         @php $no++; @endphp

@@ -53,10 +53,10 @@
                                                         <div class="question">
                                                             <span class="q-no">Q1.</span>
                                                             <div class="quesbox">
-                                                            <p>
-                                                                Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value.
-                                                            </p>
-                                                        </div>
+                                                                <p>
+                                                                    Given A and B are sqaure matrices of order 3 such that lAl=-1lBl=3, then find the value.
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="questionImggraph">
@@ -293,26 +293,26 @@
                     <div class="reviewans-mainsec">
                         <div class="review-filter-top">
                             <span>Review Questions</span>
-                                <div class="filter_cate">
-                                        <label class="filter"  data-bs-toggle="dropdown" aria-expanded="false">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </label>
+                            <div class="filter_cate">
+                                <label class="filter" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 2.25h-15l6 7.095v4.905l3 1.5V9.345l6-7.095z" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </label>
 
 
-                                        <ul class="dropdown-menu filterdropdown">
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z order</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A order</a></li>
-                                        </ul>
+                                <ul class="dropdown-menu filterdropdown">
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> A - Z order</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> Z - A order</a></li>
+                                </ul>
 
 
 
-                                       
-                                </div>
-                            
+
+                            </div>
+
 
                             <label class="expandbtn">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -899,6 +899,6 @@
         // change functionality for larger screens
     }
 </script>
- 
-    </style>
+
+</style>
 @endsection
