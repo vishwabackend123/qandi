@@ -63,7 +63,7 @@ $question_type = "Numerical";
                                     <ul class="nav nav-tabs" role="tablist" id="myTab">
 
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
+                                            <a class="nav-link qq1_2_3_4 all_div  active   " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                         </li>
 
                                     </ul>

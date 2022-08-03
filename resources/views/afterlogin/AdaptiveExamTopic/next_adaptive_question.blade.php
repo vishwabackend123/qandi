@@ -221,8 +221,8 @@ $question_type = "Numerical";
 
 
     var subject_id = '{{$subject_id}}';
-    $("#myTab .all_div").removeClass("active");
-    $("#myTab .class_" + subject_id).addClass("active");
+    /*  $("#myTab .all_div").removeClass("active");
+     $("#myTab .class_" + subject_id).addClass("active"); */
 </script>
 <!-- check size of screen -->
 <script>
