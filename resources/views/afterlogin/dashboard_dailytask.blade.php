@@ -84,7 +84,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
-                                    <a href="javascript:void(0);" class="btn btn-common-transparent nobg" style="cursor: default;">Already Attempted</a>
+                                    <button class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
                                 </div>
                                 @endif
                             </div>
@@ -120,7 +120,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
-                                    <a href="javascript:void(0);" class="btn btn-common-transparent nobg" style="cursor: default;">Already Attempted</a>
+                                    <button class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
                                 </div>
                                 @endif
                             </div>
@@ -174,7 +174,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
-                                    <a href="javascript:void(0);" class="btn btn-common-transparent nobg" style="cursor: default;">Already Attempted</a>
+                                    <button  class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
                                 </div>
                                 @endif
                             </div>
@@ -209,7 +209,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     @else
                                     <div class="task-btn tasklistbtn">
-                                        <a href="javascript:void(0);" class="btn btn-common-transparent nobg" style="cursor: default;">Already Attempted</a>
+                                        <button class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
                                     </div>
                                     @endif
                                 </div>
