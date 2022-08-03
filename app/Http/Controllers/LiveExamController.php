@@ -268,7 +268,10 @@ class LiveExamController extends Controller
                 $exam_url = route('live_exam', $schedule_id);
 
                 $exam_title = "Live Exam";
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+                $total_marks = $questions_count * 4;
+                $header_title = "Live Exam";
+                $exam_name = $responsedata->exam_name;
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
             }
 
 

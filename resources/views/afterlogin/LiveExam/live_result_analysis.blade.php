@@ -8,17 +8,7 @@
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="{{ url('/dashboard') }}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
-            @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
-            <h3 class="commonheading">Live Test</h3>
-            @elseif(isset($type_exam) && !empty($type_exam) && $type_exam =='Mocktest')
-            <h3 class="commonheading">Mock Test</h3>
-            @elseif(isset($type_exam) && !empty($type_exam) && $type_exam =='Test-Series')
-            <h3 class="commonheading">Test Series</h3>
-            @elseif(isset($type_exam) && !empty($type_exam) && $type_exam =='PreviousYear')
-            <h3 class="commonheading">Previous Year Exam</h3>
-            @else
-            <h3 class="commonheading">Custom</h3>
-            @endif
+            <h3 class="commonheading">{{$type_name}}</h3>
             
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
@@ -410,6 +400,7 @@ $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
+ @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
 <script>
 /*********** BarChart ***********/
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -476,6 +467,7 @@ function resetData(subject_id) {
 }
 
 </script>
+@endif
 <script>
 /***********my-score************************* */
 const myscorecir = 260;
@@ -493,12 +485,12 @@ const myscoredata = {
 };
 const myscoreconfig = {
     type: "doughnut",
-    data: data,
+    data: myscoredata,
     options: {
         reponsive: true,
         maintainAspectRatio: false,
-        rotation: (circuference / 2) * -1,
-        circumference: circuference,
+        rotation: (myscorecir / 2) * -1,
+        circumference: myscorecir,
         cutout: "85%",
         borderWidth: 0,
         borderRadius: function(context, options) {

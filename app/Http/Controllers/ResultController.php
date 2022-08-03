@@ -398,11 +398,14 @@ class ResultController extends Controller
      *
      * @return void
      */
-    public function getExamResultAnalytics($result_id, $type_exam = null)
+    public function getExamResultAnalytics($result_id, $type_exam = null,$type_name = null)
     {
         try {
             if ($type_exam) {
                 $type_exam = base64_decode($type_exam);
+            }
+            if ($type_name) {
+                $type_name = base64_decode($type_name);
             }
             $userData = Session::get('user_data');
 
@@ -441,7 +444,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id', 'type_exam'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id', 'type_exam','type_name'));
             } else {
 
                 //return redirect()->back();

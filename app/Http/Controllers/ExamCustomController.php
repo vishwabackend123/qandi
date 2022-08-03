@@ -766,7 +766,7 @@ class ExamCustomController extends Controller
      *
      * @return void
      */
-    public function chaptersTopic(Request $request, $chapter_id,$subject_name)
+    public function chaptersTopic(Request $request, $chapter_id, $subject_name)
     {
         try {
             $userData = Session::get('user_data');
@@ -821,7 +821,7 @@ class ExamCustomController extends Controller
                 $sorted = $collect_topic->sortBy([['topic_name', 'asc']]);
                 $topics = $sorted->values()->all();
             }
-            return view('afterlogin.ExamCustom.custom_topic', compact('topics', 'chapter_id','subject_name'));
+            return view('afterlogin.ExamCustom.custom_topic', compact('topics', 'chapter_id', 'subject_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
