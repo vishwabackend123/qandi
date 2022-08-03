@@ -271,7 +271,7 @@ class LiveExamController extends Controller
                 $total_marks = $questions_count * 4;
                 $header_title = "Live Exam";
                 $exam_name = $responsedata->exam_name;
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
@@ -282,6 +282,112 @@ class LiveExamController extends Controller
             Log::info($e->getMessage());
         }
     }
+
+
+
+    /**
+     * Next Question
+     *
+     * @param mixed   $quest_id question id
+     * @param Request $request  recieve the body request data
+     *
+     * @return void
+     */
+    public function nextLiveQuestion($quest_id, Request $request)
+    {
+        try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+
+
+            $cacheKey = 'CustomQuestion:all:' . $user_id;
+            $redis_result = Redis::get($cacheKey);
+
+            if (isset($redis_result) && !empty($redis_result)) :
+                $response = json_decode($redis_result);
+            endif;
+
+
+            $allQuestions = isset($response) ? $response : []; // redis response as object
+            $allQuestionsArr = (array)$allQuestions; //object convert to array
+
+            $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
+
+            $question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
+
+
+            $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
+            $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+
+            /* this extra code for test series */
+            if (empty($que_sub_id)) {
+                $que_sub_id = (isset($question_data->subt_id)) ? $question_data->subt_id : '';
+            }
+            /* this extra code for test series */
+
+
+            $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
+
+            $qNo = $key + 1;
+            $nextKey = $key + 1;
+
+            $nextKey = (count($allQuestionsArr) > 0) ? $nextKey % count($allQuestionsArr) : $nextKey;
+
+            if ($key > 0) { // Key would become 0
+                $prevKey = $key - 1;
+            } else {
+                $prevKey = $key;
+            }
+            $next_qid = '';
+            $prev_qid = '';
+
+
+            $next_qid = $allkeys[$nextKey];
+
+            $prev_qid = $allkeys[$prevKey];
+            $last_qid = end($allkeys);
+
+
+
+            if (isset($question_data) && !empty($question_data)) {
+                /*  $publicPath = url('/') . '/public/images/questions/'; */
+                // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+                // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+                // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+                $qs_id = $question_data->question_id;
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
+
+                $tempdata = json_decode($option_ques, true);
+
+                $opArr = [];
+                if (isset($tempdata) && is_array($tempdata)) {
+                    foreach ($tempdata as $key => $option) {
+                        // $option = str_replace('/public/images/questions/', $publicPath, $option);
+                        $opArr[$key] = $option;
+                    }
+                }
+                //$optionArray = $this->shuffle_assoc($opArr);
+                $optionArray = $opArr;
+                $option_data = $optionArray;
+            } else {
+                $option_data[] = '';
+            }
+            $session_result = Redis::get('custom_answer_time_' . $user_id);
+            $sessionResult = json_decode($session_result);
+
+            $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
+            $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
+
+
+            return view('afterlogin.LiveExam.live_next_ques', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
     /**
      * Live exam result
      *
