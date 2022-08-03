@@ -1102,7 +1102,9 @@ class HomeController extends Controller
                         }
 
                         $header_title = "Task Center";
-                        return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime','header_title'));
+                        $exam_title = "Task Center";
+
+                        return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title'));
                     }
 
 

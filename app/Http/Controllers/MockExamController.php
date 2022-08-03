@@ -234,7 +234,10 @@ class MockExamController extends Controller
 
                 $exam_url = route('mockExam');
 
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                $exam_title = "Mock Test";
+
+                // dd($aSections);
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title'));
             }
 
             //Session::put('exam_name', $exam_name);

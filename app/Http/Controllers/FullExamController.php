@@ -87,12 +87,14 @@ class FullExamController extends Controller
                     $aQuestions_list = $responsedata->questions_list;
 
                     $exam_fulltime = $responsedata->time_allowed;
+                    $total_marks = $responsedata->total_marks;
 
                     $questions_count = count($aQuestions_list);
                 } else {
                     $aQuestions_list = [];
                     $questions_count = 0;
                     $exam_fulltime = 0;
+                    $total_marks = 0;
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
 
@@ -141,7 +143,9 @@ class FullExamController extends Controller
 
                 $exam_url = route('exam', ['full_exam']);
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                $exam_title = "Full Body Exam";
+
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
             } else {
                 $cacheKey = 'CustomQuestion:all:' . $user_id;
                 $redis_result = Redis::get($cacheKey);

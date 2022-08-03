@@ -589,8 +589,13 @@ class AdpativeExamController extends Controller
 
                 $exam_url = route('custom_exam_topic');
 
+                $exam_title = "Adaptive Topic Exam";
+                $eType = "Adaptive";
+                $total_marks = 0;
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+
+                /*  return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime')); */
             }
 
 

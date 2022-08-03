@@ -31,7 +31,7 @@ $(document).on('click', function (e) {
     } else if (action_method == 'planner') {
         $('.current_dashboard').removeClass('active');
         $('.current_planner').addClass('active');
-    } else if (action_method == 'exam_custom' || action_method == 'series_list' || action_method == 'mockExamTest' || action_method == 'previous_year_exam') {
+    } else if (action_method == 'exam_custom' || action_method == 'series_list' || action_method == 'mockExamTest' || action_method == 'previous_year_exam' || action_method == 'live_exam_list') {
         $('.current_dashboard').removeClass('active');
         $('.current_practice').addClass('active');
     }

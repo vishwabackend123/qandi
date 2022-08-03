@@ -299,7 +299,9 @@ class PreviousYearExamController extends Controller
                 Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                 $exam_url = route('previousYearExam');
 
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime'));
+                $exam_title = "Previous Year Test";
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title'));
             }
 
 

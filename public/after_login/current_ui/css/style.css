@@ -3263,11 +3263,11 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 } */
 .radial_progress_bar .progress-bar__progress.yellowgraph{
 stroke : #f6c86d;
-filter: drop-shadow(0px 0px 3px rgb(246,200,109,0.6));
+filter: drop-shadow(0px 0px 3px rgb(246,200,109,0.8));
 }
 .radial_progress_bar .progress-bar__progress.greengraph{
     stroke : #04c894;
-filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.6));
+filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 }
 
 
@@ -3796,7 +3796,7 @@ stroke-dashoffset: 100;
 stroke-linecap: round;
 stroke-width: 4;
 transition: stroke-dashoffset 1s ease-in-out;
-filter:drop-shadow(0px 0px 3px rgb(246,108,108,0.6));
+filter:drop-shadow(0px 0px 3px rgb(246,108,108,0.8));
 padding: 20px;
 }
 .radial_progress_bar {
@@ -3877,7 +3877,7 @@ ul.task_center_lists .task1 {
 .submenu_menu_block ul.submenu-lists li>a{padding:0;margin-top: 28px;}
 .submenu_menu_block ul.submenu-lists {padding-left: 12px;}
 .submenu_menu_block .practice-submenu a{padding: 9px 0 9px 19px;}
-.submenu_menu_block .practice-submenu{padding-left: 40px;margin:12px 0 40px;}
+.submenu_menu_block .practice-submenu{padding-left: 33px;margin:12px 0 40px;}
 .submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
 
 /********************* Amit End ****************************/
@@ -4115,7 +4115,7 @@ header {
 .myqTodayGraphSec {
     display: flex;
     align-items: center;
-    padding-top: 35px;padding-bottom:45px;
+    padding-top: 35px;padding-bottom:46px;
 }
 
 .emptystate {
@@ -4467,7 +4467,7 @@ height: auto;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;padding-bottom: 18px;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -19px;height: auto;padding-bottom: 0px;}
 html.scrollnone,
 html.scrollnone .wrapper-dashboard,
 html.scrollnone .main-wrapper { overflow: hidden;}
@@ -4588,8 +4588,6 @@ justify-content: space-between;}
 .select2-container--default.select2-container--open .select2-selection--single{border-color:rgba(86, 182, 99, 0.5)!important}
 .matrix-page-wrapper .commonWhiteBox{height:100%;}
 .bellactive a,.headericon.dropdown .dropdown-toggle.show{background-color:#f2f4f7 ;}
-.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel{margin-bottom:0px;}
-.subjectScoreBlock .row .col-sm-6:last-child .SubjectscorePannel{margin-bottom:0px;}
 .bottomlikabs{    position: absolute;
     bottom: 14px;
     left: 50%;
