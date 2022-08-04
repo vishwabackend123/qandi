@@ -1006,8 +1006,8 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    /*  $("#btn_" + question_id).find('i').remove();
-                     $("#btn_" + question_id).html(qNo); */
+                    $("#btn_" + question_id).removeClass("pink-btn");
+                    $("#btn_" + question_id).removeClass("blue-btn");
                     $("#btn_" + question_id).removeClass("border-btn");
 
                     updateCountValue(question_id, 'saveAns');
