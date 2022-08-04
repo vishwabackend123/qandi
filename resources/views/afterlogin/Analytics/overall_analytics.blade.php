@@ -208,21 +208,27 @@
                                                 </div>
                                                 <div class="tab-content" id="pills-tabContent">
                                                     <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
-                                                        <div class="graph_padd bargraph_scroll">
-                                                            <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
-                                                            <canvas id="timeManagementChart"></canvas>
+                                                        <div class="bargraph_scroll">    
+                                                            <div class="graph_padd bargraph_size">
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <canvas id="timeManagementChart"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
-                                                        <div class="graph_padd bargraph_scroll">
-                                                            <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
-                                                            <canvas id="timeManagementChartWeek"></canvas>
+                                                        <div class="bargraph_scroll">    
+                                                            <div class="graph_padd bargraph_size">
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <canvas id="timeManagementChartWeek"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
-                                                        <div class="graph_padd bargraph_scroll">
-                                                            <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
-                                                            <canvas id="timeManagementChartMonth"></canvas>
+                                                        <div class="bargraph_scroll">    
+                                                            <div class="graph_padd bargraph_size">
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <canvas id="timeManagementChartMonth"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -241,9 +247,11 @@
                                                         <label class="text">Student average</label>
                                                     </div>
                                                 </div>
-                                                <div class="chartspent graph_padd bargraph_scroll">
-                                                    <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
-                                                    <canvas id="timeSpent_Graph"></canvas>
+                                                <div class="chartspent bargraph_scroll">
+                                                    <div class="graph_padd bargraph_size">
+                                                        <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                        <canvas id="timeSpent_Graph"></canvas>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,21 +305,27 @@
                                             </div>
                                             <div class="tab-content" id="pills-tabContent2">
                                                 <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
-                                                    <div class="chartspent graph_padd bargraph_scroll">
-                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
-                                                        <canvas id="mark_trend_day"></canvas>
+                                                    <div class="chartspent  bargraph_scroll">
+                                                        <div class="graph_padd bargraph_size">
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <canvas id="mark_trend_day"></canvas>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">
-                                                    <div class="chartspent graph_padd bargraph_scroll">
-                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
-                                                        <canvas id="mark_trend_week"></canvas>
+                                                    <div class="chartspent  bargraph_scroll">
+                                                        <div class="graph_padd bargraph_size">
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <canvas id="mark_trend_week"></canvas>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">
-                                                    <div class="chartspent graph_padd bargraph_scroll">
-                                                        <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
-                                                        <canvas id="mark_trend_month"></canvas>
+                                                    <div class="chartspent  bargraph_scroll">
+                                                        <div class="graph_padd bargraph_size">
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <canvas id="mark_trend_month"></canvas>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -330,10 +344,11 @@
                                                     <label class="text">Student average</label>
                                                 </div>
                                             </div>
-                                            <div class="chartspent graph_padd bargraph_scroll">
-                                                <span class="yaxis_label  yaxis_label_2"><small> Average time taken (sec) </small> </span>
-
-                                                <canvas id="accuracy_graph"></canvas>
+                                            <div class="chartspent  bargraph_scroll">
+                                                <div class="graph_padd bargraph_size">
+                                                    <span class="yaxis_label  yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                    <canvas id="accuracy_graph"></canvas>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
