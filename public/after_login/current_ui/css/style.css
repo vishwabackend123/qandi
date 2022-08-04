@@ -890,6 +890,7 @@ padding-bottom: 0;
     color: #868a95;
     flex: 1;margin-top:3px!important;
 }
+.live_mock_exam_section.test-table h3{color:#1f1f1f;}
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
@@ -1887,7 +1888,7 @@ a.btn-common-attempted svg {
       padding: 4px 16px;
       border-radius: 4px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.6;
       letter-spacing: normal;
       text-align: left;
@@ -1895,12 +1896,18 @@ a.btn-common-attempted svg {
   }
   .questionChoice .singleChoice{
     background-color: transparent;
-    color: #000000 !important;
+    color: #363c4f !important;
+    font-weight: 500;
  
   }
   .questionChoice .singleChoice.single_Choice_active{
     background-color: #56b663;
     color: #ffffff !important;
+    font-weight: 600;
+    padding: 3px 16px;
+  }
+  .time_taken_css{
+    padding-right: 25px;
   }
   
  
@@ -1954,11 +1961,25 @@ a.btn-common-attempted svg {
       font-size: 16px;
       font-weight: 800;
       line-height: 1.6;
-      color: #363c4f;
+      color: #1f1f1f !important;
       border-bottom: 4px solid #363c4f;
       opacity: 1;
       background-color: transparent;
       position: relative;
+  }
+  .examScreentab .nav-tabs .nav-link.active .qcountout{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    color: #1f1f1f !important;
+
+  }
+  .countActive {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    line-height: 1.6 !important;
+    color: #1f1f1f !important;
+
   }
   .questionwrapper {
       margin: auto;
@@ -3907,6 +3928,7 @@ ul.task_center_lists .task1 {
     margin-bottom: 16px!important;
 }
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
+.commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 
 /********************* Amit End ****************************/
 
@@ -4552,8 +4574,7 @@ justify-content: space-between;}
 .timemanagement.common_greenbadge_tabs{padding-right:40px;}
 
 /*******overallsubject**** */
-.commoncodeblock{border:1px solid #e0e0e0; border-radius: 12px;padding-bottom:8px;}
-.codelerheader{background-color:#e0f6e3;padding:19px 20px 16px}
+.codelerheader{background-color:#e0f6e3;padding:19px 20px 16px;border-top-left-radius: 12px;border-top-right-radius: 12px;border: 1px solid #e0e0e0;border-bottom: oldlace;}
 .codelerheader h3{font-size: 20px;font-weight: 800; line-height: 1.6;color:#1f1f1f;margin-bottom:0px;}
 .codelerninner{padding:19px 20px 12px}
 .codebottom{padding:5px 20px 12px}
@@ -4669,6 +4690,9 @@ justify-content: space-between;}
     .exam-select  .error{position: absolute;bottom:-14px;}
     .d-lg-flex2{display:flex;}
     .d-none2{display:none;}
+    .attemptedscroll {
+        height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
+    }
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4860,7 +4884,7 @@ justify-content: space-between;}
 
 .exam_instruction_wrapper {
     background: #f5faf6;
-    padding: 35px;
+    padding: 0px 8px 0px 2px;
     min-height: 100%
 }
 
@@ -7111,8 +7135,8 @@ label.filter {
 
 .qcountout{
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 1px;
+    right: 7px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.6;

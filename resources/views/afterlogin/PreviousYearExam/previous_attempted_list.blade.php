@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="accordion mt-4 pt-1" id="accordionExampleTwo">
-    <div class="allscrollbar">
+    <div class="allscrollbar tablescroll">
         @if(!empty($result_data))
         @foreach($result_data as $sche)
         @php

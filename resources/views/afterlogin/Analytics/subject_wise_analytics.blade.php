@@ -102,23 +102,24 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[0]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. </h5>
-                                            <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. This skill helps you to  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
-
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. </h5>
+                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. This skill helps you to  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,22 +128,24 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[1]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
-                                            <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
+                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -151,23 +154,25 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[2]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Application skill indicates your ability to use the information in a new way. This involves using acquired knowledge and establish relationships. </h5>
-                                            <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Application skill indicates your ability to use the information in a new way. This involves using acquired knowledge and establish relationships. </h5>
+                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
 
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,23 +181,25 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[3]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5> Knowledge skill determines your ability to recall, recognize factual information and basic concepts. This skill is memory-dependent. </h5>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5> Knowledge skill determines your ability to recall, recognize factual information and basic concepts. This skill is memory-dependent. </h5>
 
-                                            <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -316,11 +323,11 @@
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
                                 <span class="bar greenbar"></span>
-                                <label class="text">Class Average</label>
+                                <label class="text">Correct Answers</label>
                             </div>
                             <div class="commonSubjectLeg">
                                 <span class="bar pinkbar"></span>
-                                <label class="text">Student average</label>
+                                <label class="text">Incorrect answers</label>
                             </div>
                         </div>
                         <div class="righttabBlock">
