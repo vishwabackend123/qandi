@@ -284,6 +284,12 @@
     }
 }
 @media(max-width:767px){
+    .take-fulltest .btn {
+    font-size: 14px !important;
+}
+    .exam_tabdata {
+    margin-top: 8px;
+}
     .testtablescroll {
     height: 500px;
 }
@@ -1026,7 +1032,7 @@
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 40px 6px;
+        padding: 30px 6px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -1140,7 +1146,7 @@
 .main-wrapper header{width:100%;}     
 .boxheading{    min-width: 187px;}
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
-.commontab .nav-tabs .nav-link{padding-bottom:8px;}
+.commontab .nav-tabs .nav-link{padding-bottom:19px;}
 .tablist ul li {text-align: center;}
 .taskstatusBlock h4{margin-top:6px;margin-bottom:0px!important;}
 .tasklisting .tasklistleft h4{font-size: 15px;}
@@ -1469,7 +1475,7 @@
     width: 140px;
 }
     .exam_topicbtn  ul.nav .btn.nav-link {
-    padding: 0 7px;
+    padding: 0 7px !important;
 }
       .mobile-test .topic_form{
     display: block !Important;
