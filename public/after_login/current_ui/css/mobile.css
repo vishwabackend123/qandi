@@ -1009,7 +1009,7 @@
     .email-profile-pick svg {width: 60px;height: 60px;}
     .email-confirmation > p.email_head{padding: 12px 0 27px;}
     .email-confirmation .btn.btn-common-transparent{min-width: auto;}
-
+    .commoncodeblock_content{padding-bottom:13px;}
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -1227,6 +1227,7 @@
         position: absolute;
         top: 30px;
         min-width: 280px;
+        max-width: 280px;
         margin-right: initial;
     }
     .tooltipmain.right-tolltip .tooltipclass:after {
@@ -1253,6 +1254,7 @@
         left: -160px;
         top: 36px;
         min-width: 250px;
+        max-width: 250px;
         display: none;
         text-align: left;
         height: auto !important;
