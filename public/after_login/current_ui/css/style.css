@@ -1973,6 +1973,13 @@ a.btn-common-attempted svg {
     color: #1f1f1f !important;
 
   }
+  .countActive {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    line-height: 1.6 !important;
+    color: #1f1f1f !important;
+
+  }
   .questionwrapper {
       margin: auto;
       max-height: calc(100vh - 350px);
