@@ -6914,8 +6914,8 @@ border-color: #56b663;
   background: #fff;
   overflow: hidden;
   margin-right: 15px;
-  min-width: 335px;
-  max-width: 335px;
+  min-width: 333px;
+  max-width: 333px;
 }
 
 .reviewexamType a {
@@ -7044,6 +7044,7 @@ border-color: #56b663;
   padding-bottom: 20px;
   padding-top: 20px;
   border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+  padding-right: 4px;
 }
 
 .review-filter-top > span {
