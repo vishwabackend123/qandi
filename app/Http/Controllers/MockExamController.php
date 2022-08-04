@@ -504,6 +504,8 @@ class MockExamController extends Controller
                 $attempts_cnt = $attempts->where('sub_id', $subject_id)->where("section_id", $section_id);
                 $sec_q_attmpt_count = $attempts_cnt->count();
 
+
+
                 if (($sec_q_attmpt_count >= $max_attempt_limit)) {
                     $response['status'] = 400;
                     $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;

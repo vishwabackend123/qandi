@@ -6,9 +6,16 @@
 
         $endExamCheck = $('#endExam').hasClass('show');
         if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
-            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+            /*  $('#FullTest_Exam_Panel_Interface_A').modal('hide');
 
-            stop();
+             stop(); */
+            $("<input />").attr("type", "hidden")
+                .attr("name", "autosubmit")
+                .attr("value", "true")
+                .appendTo("#form_exam_submit");
+
+            $('#form_exam_submit')[0].submit();
+
         }
     });
     $(window).load(function() {

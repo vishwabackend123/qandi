@@ -529,6 +529,8 @@ class ExamCustomController extends Controller
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
 
+
+
             $redis_result = Redis::get('custom_answer_time_' . $user_id);
 
             if (!empty($redis_result)) {
@@ -540,6 +542,7 @@ class ExamCustomController extends Controller
                 $retrive_time_sec = $redisArray['taken_time_sec'];
 
                 $sectionData = isset($redisArray['section_data']) ? $redisArray['section_data'] : [];
+
                 $sectionData = collect($sectionData);
                 $limit_data = $sectionData->where("id", $section_id)->first();
                 $max_attempt_limit = isset($limit_data['num_of_ques_tobeattempted']) ? $limit_data['num_of_ques_tobeattempted'] : 0;
@@ -553,6 +556,8 @@ class ExamCustomController extends Controller
                 $attempts = collect($attempt_sub_section_cnt);
                 $attempts_cnt = $attempts->where('sub_id', $subject_id)->where("section_id", $section_id);
                 $sec_q_attmpt_count = $attempts_cnt->count();
+
+
 
                 if (($sec_q_attmpt_count >= $max_attempt_limit) && $max_attempt_limit > 0) {
                     $response['status'] = 400;
