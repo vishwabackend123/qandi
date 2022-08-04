@@ -7197,9 +7197,9 @@ height: 0;
 
 .quesbox img{max-width: 400px;}
 .wronganswer .seNo {
-    background-color: #d92d20;
-    color: #fff;
-    font-weight: 600;
+    background-color: #d92d20 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
 }
 
  
