@@ -1220,6 +1220,30 @@
         height: 44px !important;
     }
 
+    /************  for planner popup ************/
+    #plannerChapter .modal-dialog {position: initial;}
+    #plannerChapter .custom_modal {
+        width: 95% !important;
+        padding: 20px;
+        border-radius: 8px;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .custom_modal .modal-header .modal-title {
+        font-size: 20px;
+        font-weight: 800;
+        color: #1f1f1f;
+    }
+    .custom-input .form-control.selectdata {
+        color: rgba(54, 60, 79, 0.5)!important;
+    }
+    .intraction_text_strength {
+        font-size: 20px;
+        font-weight: 800;
+
+    }
 
     /************  for tooltip ************/
     .tooltipmain.right-tolltip .tooltipclass {
@@ -1248,7 +1272,7 @@
         background-color: #1f4736;
         border-radius: 12px;
         box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
-        z-index: 5555;
+        z-index: 9;
         padding: 15px 30px 15px 20px;
         position: absolute;
         left: -160px;
