@@ -3929,7 +3929,8 @@ ul.task_center_lists .task1 {
 }
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
-
+.bargraph_scroll canvas{width:100%!important;}
+.bargraph_scroll {height:280px!important;}
 /********************* Amit End ****************************/
 
 
