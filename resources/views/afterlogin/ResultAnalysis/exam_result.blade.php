@@ -229,7 +229,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     $stuscore=$stuscore+$gh->student_score;
     $clsAvg=$clsAvg+$gh->class_score;
     }
-
+    $stuscore = max($stuscore, 0);
     $stuscore_arr[]=round($stuscore,2);
     $stuscore_json=json_encode($stuscore_arr);
     $clsAvg_arr[]=round($clsAvg,2);
@@ -298,7 +298,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 const iterator = graphArr.values();
                 for (const value of iterator) {
                     if (value.subject_id == subject_id) {
-                        studet_score.push(value.student_score)
+                        studet_score.push(Math.max(value.student_score, 0))
                         studet_score.push(value.class_score)
                         var percentage = value.student_score
                     }
