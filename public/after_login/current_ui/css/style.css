@@ -3569,19 +3569,19 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 /* .halfdoughnut canvas{width: 100%!important;height:100%!important;} */
-.noofquestions-block.dropdown-menu {
+.noofquestions-block {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
     padding: 20px 20px;
     width: 200px;
-    border: 0;
-    min-width: auto;	
+    border: 0;	
     right: -25px!important;
-    left: auto!important;
     z-index: 9;
+    position: absolute;
+    display: none;
 }
-/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
+ul.topic_score_lists li:hover .noofquestions-block{display: block;}
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -3930,7 +3930,6 @@ ul.task_center_lists .task1 {
 }
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
-.bargraph_scroll canvas{width:100%!important;}
 .bargraph_scroll {height:280px!important;}
 /********************* Amit End ****************************/
 
