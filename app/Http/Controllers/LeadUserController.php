@@ -114,10 +114,12 @@ class LeadUserController extends Controller
             curl_close($curl);
             $response_status = isset($response_json['status']) ? $response_json['status'] : false;
             $email_id = '';
+            $message_success = "";
             if ($response_status) {
             	$email_id = isset($response_json['email']) ? $response_json['email'] : ''; 
+            	$message_success = isset($response_json['message']) ? $response_json['message'] : ''; 
             }
-		return view('auth.email_confirmation',compact('email_id','response_json'));
+		return view('auth.email_confirmation',compact('email_id','response_json','message_success'));
 	}
 	public function testAnalyticsMocktest()
 	{
