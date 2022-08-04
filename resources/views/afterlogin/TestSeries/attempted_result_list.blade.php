@@ -92,34 +92,41 @@
                     <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                 </div>
+                <div class="live_exam_diveder_div"></div>
                 @if($sche->test_type == 'Live')
-                
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Start Date</div>
                     <div class="mock_test_qdms_text2"><span>{{date('d F Y', strtotime($sche->stat_date));}}</span></div>
                 </div>
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">End Date</div>
                     <div class="mock_test_qdms_text2">{{date('d F Y', strtotime($sche->end_date));}}</div>
                 </div>
+                <div class="live_exam_diveder_div"></div>
                 @else
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Duration</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
                 </div>
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Marks</div>
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
                 </div>
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_marks_content2">
                     <div class="mock_test_q_d_m_s_text1">Subject</div>
                     <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                 </div>
+                <div class="live_exam_diveder_div slot_div"></div>
                 <div class="mock_test_marks_content2 slot_div">
                     <div class="mock_test_q_d_m_s_text1">Slot</div>
                     <div class="mock_test_qdms_text2">Morning</div>
                 </div>
                 @endif
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_sub_content2">
                     <div class="mock_test_q_d_m_s_text1">Score</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
