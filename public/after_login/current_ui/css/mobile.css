@@ -117,6 +117,7 @@
     .subject_performance_card .dashSubtext{font-size:13px;}
     .mock_test_ques_dure_marks_sub{justify-content:space-between;}
     .questionOptionBlock{    padding-top: 25px;}
+    .reviewScreenleft .questionOptionBlock{padding-top:25px;}
 }
 
 
@@ -1008,7 +1009,7 @@
     .email-profile-pick svg {width: 60px;height: 60px;}
     .email-confirmation > p.email_head{padding: 12px 0 27px;}
     .email-confirmation .btn.btn-common-transparent{min-width: auto;}
-
+    .commoncodeblock_content{padding-bottom:13px;}
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {

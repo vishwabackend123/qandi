@@ -3927,6 +3927,7 @@ ul.task_center_lists .task1 {
     margin-bottom: 16px!important;
 }
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
+.commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 
 /********************* Amit End ****************************/
 
@@ -4572,8 +4573,7 @@ justify-content: space-between;}
 .timemanagement.common_greenbadge_tabs{padding-right:40px;}
 
 /*******overallsubject**** */
-.commoncodeblock{border:1px solid #e0e0e0; border-radius: 12px;padding-bottom:8px;}
-.codelerheader{background-color:#e0f6e3;padding:19px 20px 16px}
+.codelerheader{background-color:#e0f6e3;padding:19px 20px 16px;border-top-left-radius: 12px;border-top-right-radius: 12px;border: 1px solid #e0e0e0;border-bottom: oldlace;}
 .codelerheader h3{font-size: 20px;font-weight: 800; line-height: 1.6;color:#1f1f1f;margin-bottom:0px;}
 .codelerninner{padding:19px 20px 12px}
 .codebottom{padding:5px 20px 12px}
