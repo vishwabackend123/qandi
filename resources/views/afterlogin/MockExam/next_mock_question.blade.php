@@ -240,12 +240,11 @@ $question_type = "Numerical";
     $("#current_section_id").val(curr_section_id);
     var last_qId = '{{$last_qid}}';
 
-
-
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
 
-
+    $("#myTab .qcountout").removeClass("countActive");
+    $("#myTab .qcountout_" + subject_id).addClass("countActive");
 
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');

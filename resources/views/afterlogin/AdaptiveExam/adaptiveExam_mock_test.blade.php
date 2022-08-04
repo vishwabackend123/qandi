@@ -44,28 +44,30 @@
                                         <button type="button" class="btn btn-common-green mock_test_take_test_btn mobile_hide" id="take_test">Take test</button>
                                     </div>
                                     <div class="line_696"></div>
-                                    <div class="mock_test_ques_dure_marks_sub d-flex">
-                                        <div class="mock_test_ques_content">
-                                            <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
-                                            <div class="mock_test_qdms_text2">{{$questions_count}} MCQ</div>
-                                        </div>
-                                        <div class="mock_test_dure_content">
-                                            <div class="mock_test_q_d_m_s_text1">Duration</div>
-                                            <div class="mock_test_qdms_text2"><span>{{$exam_fulltime}}</span> <span>Mins</span></div>
-                                        </div>
-                                        <div class="mock_test_marks_content">
-                                            <div class="mock_test_q_d_m_s_text1">Marks</div>
-                                            <div class="mock_test_qdms_text2">{{$total_marks}}</div>
-                                        </div>
-                                        <div class="mock_test_sub_content">
-                                            <div class="mock_test_q_d_m_s_text1">Subject</div>
-                                            <div class="mock_test_qdms_text2">{{$tagrets}}</div>
+                                    <div class="attemptedscroll">
+                                        <div class="mock_test_ques_dure_marks_sub d-flex">
+                                            <div class="mock_test_ques_content">
+                                                <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text2">{{$questions_count}} MCQ</div>
+                                            </div>
+                                            <div class="mock_test_dure_content">
+                                                <div class="mock_test_q_d_m_s_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>{{$exam_fulltime}}</span> <span>Mins</span></div>
+                                            </div>
+                                            <div class="mock_test_marks_content">
+                                                <div class="mock_test_q_d_m_s_text1">Marks</div>
+                                                <div class="mock_test_qdms_text2">{{$total_marks}}</div>
+                                            </div>
+                                            <div class="mock_test_sub_content">
+                                                <div class="mock_test_q_d_m_s_text1">Subject</div>
+                                                <div class="mock_test_qdms_text2">{{$tagrets}}</div>
+                                            </div>
                                         </div>
                                     </div>
+                                   
                                     <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take test</button>
                                 </div>
                                 <div id="attempted2" class=" tab-pane mock_attempetd_head_wraper">
-
                                 </div>
                             </div>
                         </div>
