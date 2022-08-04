@@ -58,7 +58,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
         @else
-        <p class="email_head"><span>Email successfully Verified</span></p>
+        <p class="email_head"><span>{{$message_success}}</span></p>
         <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>

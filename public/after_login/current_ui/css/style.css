@@ -891,7 +891,6 @@ padding-bottom: 0;
     flex: 1;margin-top:3px!important;
 }
 .live_mock_exam_section.test-table h3{color:#1f1f1f;}
-
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
@@ -3452,6 +3451,7 @@ h3.commonheading{
     border-radius: 4px;
     height: 30px;
     padding: 0 16px!important;
+    line-height: 30px;
 }
 .common_greenbadge_tabs ul.nav .btn.nav-link.active {
     background-color: #56b663;
@@ -3569,19 +3569,19 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 /* .halfdoughnut canvas{width: 100%!important;height:100%!important;} */
-.noofquestions-block {
+.noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
     padding: 20px 20px;
     width: 200px;
-    border: 0;	
+    border: 0;
+    min-width: auto;	
     right: -25px!important;
+    left: auto!important;
     z-index: 9;
-    position: absolute;
-    display: none;
 }
-ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -4671,6 +4671,7 @@ justify-content: space-between;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
 
 .compLeteS.list_active,.compLeteA.list_active{border-bottom:0px;}
+/* .mock_test_ques_dure_marks_sub{justify-content:space-between;} */
 .test-table .accordion-header .btn.btn-common-transparent {min-width:141px;}
 .mocktestarrow  i{    margin-right: 8px;
     transform: rotate(180deg);top: 0px;
@@ -5674,20 +5675,24 @@ padding: 11px 20px!important;
 .mock_test_ques_dure_marks_sub
 {
     margin-top: 25px;
-    justify-content: space-between;
 }
-.mock_test_ques_dure_marks_sub.nojusify{    justify-content: initial;}
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content {
+.mock_test_ques_content
+{
     border-right: 1px solid #e5eaee;
-    padding: 0 70px 0 0;
+    padding: 0px 70px 0px 0px;
 }
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, 
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content {
-    padding: 0 70px;
+.mock_test_dure_content, .mock_test_marks_content
+{
+    padding: 0px 70px 0px 70px;
     border-right: 1px solid #e5eaee;
 }
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content {
-    padding: 0 0 0 70px;
+.mock_test_sub_content
+{
+    padding: 0px 0px 0px 70px;
+}
+.mock_test_q_d_m_stext
+{
+
 }
 .mock_test_qdms_text1,.mock_test_q_d_m_s_text1
 {
@@ -5822,15 +5827,15 @@ top:20px;
     height: 1px;
 }
 .mock_test_dure_content2, .mock_test_marks_content2 {
-    padding: 0px 0px 0px 0px;
-    /* border-right: 1px solid #e5eaee; */
+    padding: 0px 50px 0px 50px;
+    border-right: 1px solid #e5eaee;
 }
 .mock_test_ques_content2 {
-    /* border-right: 1px solid #e5eaee; */
-    padding: 0px 0px 0px 0px;
+    border-right: 1px solid #e5eaee;
+    padding: 0px 50px 0px 0px;
 }
 .mock_test_sub_content2 {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 50px;
 }
 .mock_btn_vie_detail
 {
@@ -5841,7 +5846,7 @@ top:20px;
 {
     flex-basis: 200px;
 }
-.live_mock_exam_section .see_analytics_mock_exam h3
+.see_analytics_mock_exam h3
 {
     font-size: 14px;
     font-weight: 800;
@@ -7090,7 +7095,7 @@ label.filter {
   font-weight: 500;
   line-height: 1.4;
   color: #363c4f;
-  padding-bottom: 10px;
+ 
   position: relative;
 }
 
@@ -7225,6 +7230,24 @@ height: 0;
 .reviewScreenright .text-exambottom-sec{
     height: 33vh;
 }
+<<<<<<< HEAD
 .reviewbtn{line-height: 22px !important;}
+.quistion-content  img{
+  
+    max-width: 200px !important;
+    height: auto !important;
+}
+=======
+>>>>>>> 93a9c895453b91aa37bf7b0f01067005056787bf
 
+.reviewScreenright .list-ans .ms-3{ 
+    margin-left: initial !important;
+}
+.list-ans div > div:first-child {
+    padding: 0px 9px 0px 13px !important;
+}
+  .list-ans .d-flex{
+   margin-bottom: 12px;
+  }
+ 
  

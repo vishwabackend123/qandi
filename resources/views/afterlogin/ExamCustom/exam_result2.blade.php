@@ -87,14 +87,14 @@
                     @endphp
 
                     <li>
-                        <div class="topic_score_bar">
+                        <div class="topic_score_bar dropdown">
                             <h4>{{$tdata->topic_name}}</h4>
-                            <div class="progress">
+                            <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="progress-bar correct-bg" role="progressbar" style="width:{{$corr_Per}}%" aria-valuenow=" {{$corr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar incorrect-bg" role="progressbar" style="width:{{$incorr_Per}}%" aria-valuenow=" {{$incorr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$unanswered_Per}}%" aria-valuenow=" {{$unanswered_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <ul class="noofquestions-block">
+                            <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                 <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                 <div class="color_labels">
                                     <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
