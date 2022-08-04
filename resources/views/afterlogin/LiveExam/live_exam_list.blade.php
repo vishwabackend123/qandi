@@ -40,7 +40,7 @@
                                         @endif
                                 </div>
                                 <div class="line_696"></div>
-                                <div class="mock_test_ques_dure_marks_sub d-flex">
+                                <div class="mock_test_ques_dure_marks_sub d-flex nojusify">
                                     <div class="mock_test_ques_content">
                                         <div class="mock_test_qdms_text1">No. Of Questions</div>
                                         <div class="mock_test_qdms_text2"><span>{{$schedule_list[0]->questions_count}}</span> Questions</div>
