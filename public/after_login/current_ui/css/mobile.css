@@ -606,6 +606,10 @@
         /* background: #fff!important; */
         border-radius: 10px;
     }
+    .live_exam_diveder_div
+    {
+        display: none;
+    }
     .MockTestMob .exam_tabdata #mock_test
     {
         padding: 12px;
@@ -687,6 +691,10 @@
     {
         flex-wrap: wrap;
     }
+    .MockTestMob .mock_test_marks_content2:nth-child(1)
+    {
+        width: 20%;
+    }
     .MockTestMob .btn.btn-common-transparent
     {
         padding: 10px 22px;
@@ -718,12 +726,17 @@
     {
         padding: 0px;
     }
+    .mock_attemptepted_spacing .mock_test_ques_content2, .mock_attemptepted_spacing .mock_test_dure_content2, .mock_attemptepted_spacing .mock_test_marks_content, .mock_attemptepted_spacing .mock_test_sub_content, .mock_attemptepted_spacing .mock_test_marks_content2
+    {
+        padding-bottom: 16px!important;
+    }
+
     .mock_attempetd_head_wraper .mock_test_ques_content2
     {
         padding: 0px;
         border-right: 0px;
     }
-    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_marks_content2, .mock_attempetd_head_wraper .mock_test_sub_content2, .mock_attempetd_head_wraper .mock_test_ques_content2
+    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_sub_content2, .mock_attempetd_head_wraper .mock_test_ques_content2
     {
         padding: 0px;
         border-right: 0px;
@@ -759,6 +772,10 @@
         width: 50%!important;
         padding-bottom: 0px!important;
     }
+    .LiveExamMob .mock_test_dure_content2
+    {
+        padding-top:16px;
+    }
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
         width: 50%!important;
@@ -766,6 +783,21 @@
     .LiveExamMob .btn.btn-common-transparent
     {
         margin-top: 16px;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content
+    {
+        margin-top: 16px;
+        padding: 0px;
+        border-right: unset;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
+    {
+        margin-top: 16px;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content
+    {
+        padding: 0px;
+        border-right: unset;
     }
     .LiveExamMob .mock_test_dure_content
     {
@@ -787,7 +819,7 @@
     {
         width: 50%;
     }
-    .LiveExamMob .mock_test_sub_content2
+    .LiveExamMob .mock_test_sub_content2, .LiveExamMob .mock_attempetd_head_wraper .mock_test_marks_content2
     {
         padding-top: 16px;
     }

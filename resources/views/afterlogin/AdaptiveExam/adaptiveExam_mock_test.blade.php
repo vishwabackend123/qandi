@@ -70,7 +70,7 @@
                                    
                                     <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take test</button>
                                 </div>
-                                <div id="attempted2" class=" tab-pane mock_attempetd_head_wraper">
+                                <div id="attempted2" class=" tab-pane mock_attempetd_head_wraper mock_attemptepted_spacing">
                                 </div>
                             </div>
                         </div>
