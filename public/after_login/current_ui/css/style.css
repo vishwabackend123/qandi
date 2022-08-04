@@ -3534,7 +3534,6 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 }
 .chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
 .overall_percentage_chart{height:280px!important;}
-.subj_progress_card .overall_percentage_chart{height: 247px;}
 /* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
     height: 150px;

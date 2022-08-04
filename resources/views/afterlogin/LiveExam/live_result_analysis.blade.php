@@ -211,7 +211,7 @@
                                     </div>
                                     <script type="text/javascript">
                                     var ids = 'subjectChart_<?php echo $subject->subject_id ?>';
-                                    var circuference = 260;
+                                    var circuference = 180;
                                     var data = {
                                         labels: ["Correct", "Incorrect", "Not Attempted"],
                                         datasets: [{
