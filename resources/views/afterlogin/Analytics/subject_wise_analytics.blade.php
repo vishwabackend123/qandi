@@ -257,19 +257,19 @@
                         </div>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartDay2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartWeek2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartMonth2"></canvas>
                                 </div>
@@ -290,7 +290,7 @@
                                 <label class="text">Student average</label>
                             </div>
                         </div>
-                        <div class="chartspent graph_padd">   
+                        <div class="chartspent graph_padd bargraph_scroll">   
                             <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                             <canvas id="timeSpent_Graph2"></canvas>
                         </div>
@@ -346,19 +346,19 @@
                     </div>
                     <div class="tab-content" id="pills-tabContent2">
                         <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_day_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_week_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_month_2"></canvas>
                             </div>
@@ -379,7 +379,7 @@
                             <label class="text">Student average</label>
                         </div>
                     </div>
-                    <div class="chartspent graph_padd">
+                    <div class="chartspent graph_padd bargraph_scroll">
                         <span class="yaxis_label  yaxis_label_2"><small> Average  time taken (sec)  </small> </span>
                         <canvas id="accuracy_graph2"></canvas>
                     </div>
@@ -558,6 +558,7 @@ var config8 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -619,6 +620,7 @@ var config9 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -679,6 +681,7 @@ var config7 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -736,6 +739,7 @@ var configaccuracy = {
     data: dataaccuracy,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -795,6 +799,7 @@ var configmarktrend = {
     data: datamarktrend,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -854,6 +859,7 @@ var configmarktrendw = {
     data: datamarktrendw,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -913,6 +919,7 @@ var configmarktrendm = {
     data: datamarktrendm,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -975,6 +982,7 @@ var configtm2 = {
     data: datatm2,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
