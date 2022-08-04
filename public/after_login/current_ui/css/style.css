@@ -3534,7 +3534,6 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 }
 .chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
 .overall_percentage_chart{height:280px!important;}
-.subj_progress_card .overall_percentage_chart{height: 247px;}
 /* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
     height: 150px;
@@ -6915,8 +6914,8 @@ border-color: #56b663;
   background: #fff;
   overflow: hidden;
   margin-right: 15px;
-  min-width: 335px;
-  max-width: 335px;
+  min-width: 333px;
+  max-width: 333px;
 }
 
 .reviewexamType a {
@@ -6982,7 +6981,9 @@ border-color: #56b663;
   padding-left: 20px;
   padding-top: 6px;
 }
-
+.anshead-titletext{
+    margin-bottom: 35px;
+}
 .anshead-titletext p {
   font-size: 16px;
   font-weight: 800;
@@ -7043,6 +7044,7 @@ border-color: #56b663;
   padding-bottom: 20px;
   padding-top: 20px;
   border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+  padding-right: 4px;
 }
 
 .review-filter-top > span {
@@ -7195,5 +7197,13 @@ height: 0;
 /*****************************Toast message end***********/
 
 .quesbox img{max-width: 400px;}
+.wronganswer .seNo {
+    background-color: #d92d20 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+.reviewScreenright .text-exambottom-sec{
+    height: 33vh;
+}
 
  
