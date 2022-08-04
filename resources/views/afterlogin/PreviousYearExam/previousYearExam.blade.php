@@ -1024,10 +1024,8 @@ $question_type = "Numerical";
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
-                    /*  $("#btn_" + question_id).find('i').remove();
-                     $("#btn_" + question_id).html(qNo);
-                     $("#btn_" + question_id).removeClass("btn-light");
-                     $("#btn_" + question_id).addClass("btn-light-green"); */
+                    $("#btn_" + question_id).removeClass("pink-btn");
+                    $("#btn_" + question_id).removeClass("blue-btn");
                     $("#btn_" + question_id).removeClass("border-btn");
 
                     updateCountValue(question_id, 'saveAns');

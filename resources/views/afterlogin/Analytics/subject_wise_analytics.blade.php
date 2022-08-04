@@ -102,23 +102,24 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[0]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. </h5>
-                                            <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. This skill helps you to  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
-
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. </h5>
+                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. This skill helps you to  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,22 +128,24 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[1]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
-                                            <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
+                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -151,23 +154,25 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[2]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5>Application skill indicates your ability to use the information in a new way. This involves using acquired knowledge and establish relationships. </h5>
-                                            <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5>Application skill indicates your ability to use the information in a new way. This involves using acquired knowledge and establish relationships. </h5>
+                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
 
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,23 +181,25 @@
                                         <div class="codelerheader">
                                             <h3>{{$skillPer[3]->skill_name}}</h3>
                                         </div>
-                                        <div class="codelerninner">
-                                            <h5> Knowledge skill determines your ability to recall, recognize factual information and basic concepts. This skill is memory-dependent. </h5>
+                                        <div class="commoncodeblock_content">
+                                            <div class="codelerninner">
+                                                <h5> Knowledge skill determines your ability to recall, recognize factual information and basic concepts. This skill is memory-dependent. </h5>
 
-                                            <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
-                                        </div>
-                                        <div class="codebottom">
-                                            <h6>Your accuracy</h6>
-                                            <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
-                                        </div>
-                                        <div class="text-center mobile_block">
-                                            <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
-                                                <span class="greenarrow">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
+                                            </div>
+                                            <div class="codebottom">
+                                                <h6>Your accuracy</h6>
+                                                <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
+                                            </div>
+                                            <div class="text-center mobile_block">
+                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                    <span class="greenarrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -250,19 +257,19 @@
                         </div>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartDay2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartWeek2"></canvas>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
-                                <div  class="graph_padd">
+                                <div  class="graph_padd bargraph_scroll">
                                     <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                                     <canvas id="timeManagementChartMonth2"></canvas>
                                 </div>
@@ -283,7 +290,7 @@
                                 <label class="text">Student average</label>
                             </div>
                         </div>
-                        <div class="chartspent graph_padd">   
+                        <div class="chartspent graph_padd bargraph_scroll">   
                             <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
                             <canvas id="timeSpent_Graph2"></canvas>
                         </div>
@@ -316,11 +323,11 @@
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
                                 <span class="bar greenbar"></span>
-                                <label class="text">Class Average</label>
+                                <label class="text">Correct Answers</label>
                             </div>
                             <div class="commonSubjectLeg">
                                 <span class="bar pinkbar"></span>
-                                <label class="text">Student average</label>
+                                <label class="text">Incorrect answers</label>
                             </div>
                         </div>
                         <div class="righttabBlock">
@@ -339,19 +346,19 @@
                     </div>
                     <div class="tab-content" id="pills-tabContent2">
                         <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_day_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_week_2"></canvas>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">
-                            <div class="chartspent graph_padd">
+                            <div class="chartspent graph_padd bargraph_scroll">
                                 <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  marks </small> </span>
                                 <canvas id="mark_trend_month_2"></canvas>
                             </div>
@@ -372,7 +379,7 @@
                             <label class="text">Student average</label>
                         </div>
                     </div>
-                    <div class="chartspent graph_padd">
+                    <div class="chartspent graph_padd bargraph_scroll">
                         <span class="yaxis_label  yaxis_label_2"><small> Average  time taken (sec)  </small> </span>
                         <canvas id="accuracy_graph2"></canvas>
                     </div>
@@ -551,6 +558,7 @@ var config8 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -612,6 +620,7 @@ var config9 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -672,6 +681,7 @@ var config7 = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -729,6 +739,7 @@ var configaccuracy = {
     data: dataaccuracy,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -788,6 +799,7 @@ var configmarktrend = {
     data: datamarktrend,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -847,6 +859,7 @@ var configmarktrendw = {
     data: datamarktrendw,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -906,6 +919,7 @@ var configmarktrendm = {
     data: datamarktrendm,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -968,6 +982,7 @@ var configtm2 = {
     data: datatm2,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
