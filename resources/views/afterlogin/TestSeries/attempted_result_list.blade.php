@@ -93,6 +93,7 @@
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                 </div>
                 @if($sche->test_type == 'Live')
+                
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Start Date</div>
                     <div class="mock_test_qdms_text2"><span>{{date('d F Y', strtotime($sche->stat_date));}}</span></div>
