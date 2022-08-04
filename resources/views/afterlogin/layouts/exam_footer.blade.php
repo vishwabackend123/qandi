@@ -4,3 +4,17 @@
 <script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jquery.slimscroll.min.js')}}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+$('.submitBtnlink').click(function() {
+    $('body').addClass("make_me_blue");
+});
+</script>
+
+<style>
+
+.make_me_blue  .modal-backdrop {
+    background: #f5faf6;
+    opacity: 1 !important;
+}
+</style>
