@@ -623,7 +623,8 @@ $('.otp').keyup(function() {
     }
 });
 
-$('.reqrd').change(function() {
+$('.reqrd').keyup(function() {
+    
 
     var isEmpty = false;
     $('.reqrd').each(function() {

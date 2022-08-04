@@ -220,6 +220,10 @@ $question_type = "Numerical";
 
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
+
+    $("#myTab .qcountout").removeClass("countActive");
+    $("#myTab .qcountout_" + subject_id).addClass("countActive");
+
     if (last_qId == question_id) {
         $('#saveNext').html('Save & Submit');
     } else {
