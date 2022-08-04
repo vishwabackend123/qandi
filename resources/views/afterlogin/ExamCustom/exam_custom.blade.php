@@ -12,7 +12,7 @@
                     <div class="commontab">
                         <div class="tablist">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item pe-5 me-2">
+                                <li class="nav-item pe-md-5 pe-4 me-2">
                                     <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Custom</a>
                                 </li>
                                 <li class="nav-item">
