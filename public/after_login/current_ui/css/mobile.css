@@ -81,7 +81,6 @@
         .owl-carousel .owl-item .subIcon img {
             width: 50px;
         }
-        .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {padding: 0.5rem 0.6rem;}
         .questionOptionBlock {padding-left: 25px;}
         .reviewScreenleft li.nav-item { margin-right: 35px;}
         .overallMidlle .commonWhiteBox .garphsubheading span{font-size: 14px;}
@@ -113,7 +112,7 @@
         margin-right: 4px;
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
-    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0.5rem 0.6rem;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;}
     .subject_performance_card .dashSubtext{font-size:13px;}
     .mock_test_ques_dure_marks_sub{justify-content:space-between;}
     .questionOptionBlock{    padding-top: 25px;}
@@ -996,7 +995,6 @@
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
     .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
     .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
-    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {margin-bottom: 23px;}
     .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
     .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;}
@@ -1010,11 +1008,10 @@
     .email-confirmation > p.email_head{padding: 12px 0 27px;}
     .email-confirmation .btn.btn-common-transparent{min-width: auto;}
     .commoncodeblock_content{padding-bottom:13px;}
-    /* .bargraph_scroll{
-        overflow-x: scroll;
-        min-width: 450px;
+    .bargraph_scroll{
+        overflow-x: auto;
+        width: 500px;
     }
-    .bargraph_scroll canvas{width:auto!important;} */
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -1346,7 +1343,7 @@
         /* #timeManagementChart{height:280px!important;width:350px!important;}
         .graph_padd{overflow-x: auto;padding-bottom:10px;} */
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
-        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:38px;}
         .overallmain .commonWhiteBox{height:auto;}
         .codelearningBlock .col-md-6{    flex: 0 0 auto;
             width: 50%;padding: 0px 8px;}
@@ -1453,7 +1450,7 @@
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
         flex-wrap: nowrap;
-        overflow-y: auto;
+        overflow-x: auto;
         max-width: 100%;
     }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
