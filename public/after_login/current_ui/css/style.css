@@ -5676,23 +5676,17 @@ padding: 11px 20px!important;
 {
     margin-top: 25px;
 }
-.mock_test_ques_content
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content
 {
-    border-right: 1px solid #e5eaee;
     padding: 0px 70px 0px 0px;
 }
-.mock_test_dure_content, .mock_test_marks_content
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, .mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content
 {
     padding: 0px 70px 0px 70px;
-    border-right: 1px solid #e5eaee;
 }
-.mock_test_sub_content
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
 {
     padding: 0px 0px 0px 70px;
-}
-.mock_test_q_d_m_stext
-{
-
 }
 .mock_test_qdms_text1,.mock_test_q_d_m_s_text1
 {
@@ -5846,7 +5840,7 @@ top:20px;
 {
     flex-basis: 200px;
 }
-.see_analytics_mock_exam h3
+.see_analytics_mock_exam h3,.live_mock_exam_section .see_analytics_mock_exam h3
 {
     font-size: 14px;
     font-weight: 800;
