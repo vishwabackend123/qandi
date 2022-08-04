@@ -4693,6 +4693,7 @@ justify-content: space-between;}
     .attemptedscroll {
         height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
     }
+    #resume-test .modal-content{border:0px;max-width:554px;width:100%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -6538,9 +6539,7 @@ border-color: #56b663;
     color: #1f1f1f;
 }
 
-.modal-content.exammodal_content {
-    max-width: 554px;
-    width: 554px;border-radius: 20px;
+.modal-content.exammodal_content {border-radius: 20px;
 }
 .modal-content.exammodal_content .modal-body {padding: 24px;}
 .exam-overview-time > span {
