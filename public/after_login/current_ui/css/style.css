@@ -5685,16 +5685,12 @@ padding: 11px 20px!important;
 }
 .mock_test_dure_content, .mock_test_marks_content
 {
-    padding: 0px 70px 0px 70px;
-    border-right: 1px solid #e5eaee;
+    padding: 0px 0px;
+    /* border-right: 1px solid #e5eaee; */
 }
 .mock_test_sub_content
 {
-    padding: 0px 0px 0px 70px;
-}
-.mock_test_q_d_m_stext
-{
-
+    padding: 0px 0px 0px 0px;
 }
 .mock_test_qdms_text1,.mock_test_q_d_m_s_text1
 {
