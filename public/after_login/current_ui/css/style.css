@@ -5687,12 +5687,8 @@ padding: 11px 20px!important;
     padding: 0 70px;
     border-right: 1px solid #e5eaee;
 }
-.mock_test_sub_content {
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content {
     padding: 0 0 0 70px;
-}
-.mock_test_sub_content
-{
-    padding: 0px 0px 0px 0px;
 }
 .mock_test_qdms_text1,.mock_test_q_d_m_s_text1
 {

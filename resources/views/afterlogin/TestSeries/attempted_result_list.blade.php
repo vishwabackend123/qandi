@@ -92,7 +92,7 @@
                     <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                 </div>
-                <div class="live_exam_diveder_div"></div>
+                
                 @if($sche->test_type == 'Live')
                 <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_dure_content2">
@@ -104,8 +104,8 @@
                     <div class="mock_test_q_d_m_s_text1">End Date</div>
                     <div class="mock_test_qdms_text2">{{date('d F Y', strtotime($sche->end_date));}}</div>
                 </div>
-                <div class="live_exam_diveder_div"></div>
                 @else
+                <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Duration</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
