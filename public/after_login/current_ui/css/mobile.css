@@ -1011,10 +1011,8 @@
     .email-confirmation > p.email_head{padding: 12px 0 27px;}
     .email-confirmation .btn.btn-common-transparent{min-width: auto;}
     .commoncodeblock_content{padding-bottom:13px;}
-    .bargraph_scroll canvas{ 
-        
-        width: 500px!important;
-    }
+    
+
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -1482,6 +1480,9 @@
         max-width: 100%;
     }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
+    .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
+    .bargraph_size canvas {position: absolute;left: 18px;top: 0; pointer-events:none; }
+    .bargraph_size{width:500px;}
     /************ Amit end *********/
 }
 @media only screen and (max-width: 400px){
