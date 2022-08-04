@@ -395,7 +395,6 @@ foreach($subject_graph as $key=>$gh){
 $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
-$stuscore = max($stuscore, 0);
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
@@ -404,6 +403,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
  @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
 <script>
 /*********** BarChart ***********/
+var student_scr ='<?php echo $stuscore ?>';
+var student_bar_color ='#56b663';
+if(student_scr < 0)
+{
+    student_bar_color ='#E74969';
+}
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
@@ -413,7 +418,7 @@ const myChart = new Chart(ctx, {
             data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
-                '#56b663',
+                student_bar_color,
                 '#08d5a1'
             ],
             barPercentage: 5,
@@ -446,6 +451,7 @@ const myChart = new Chart(ctx, {
 function resetData(subject_id) {
     if (subject_id == 'all') {
         myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+        myChart.data.datasets[0].backgroundColor = [student_bar_color,'#08d5a1'];
         myChart.update();
         let overall_percent = '<?php echo number_format($response->result_percentage, 2); ?>';
         $("#percentage").val(overall_percent);
@@ -457,12 +463,18 @@ function resetData(subject_id) {
         const iterator = graphArr.values();
         for (const value of iterator) {
             if (value.subject_id == subject_id) {
-                studet_score.push(Math.max(value.student_score, 0))
+                studet_score.push(value.student_score)
                 studet_score.push(value.class_score)
                 var percentage = value.student_score
             }
         }
+        var student_subject_color ='#56b663';
+        if(percentage < 0)
+        {
+             student_subject_color ='#E74969';
+        }
         myChart.data.datasets[0].data = studet_score;
+        myChart.data.datasets[0].backgroundColor = [student_subject_color,'#08d5a1'];
         myChart.update();
 
         $("#percentage").val(percentage);
