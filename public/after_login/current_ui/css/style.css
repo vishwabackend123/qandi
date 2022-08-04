@@ -5678,16 +5678,7 @@ padding: 11px 20px!important;
     margin-top: 25px;
     justify-content: space-between;
 }
-.mock_test_ques_content
-{
-    border-right: 1px solid #e5eaee;
-    padding: 0px 70px 0px 0px;
-}
-.mock_test_dure_content, .mock_test_marks_content
-{
-    padding: 0px 0px;
-    /* border-right: 1px solid #e5eaee; */
-}
+
 .mock_test_sub_content
 {
     padding: 0px 0px 0px 0px;
