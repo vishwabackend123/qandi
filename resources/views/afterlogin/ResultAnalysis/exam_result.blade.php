@@ -64,7 +64,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="col-md-5">
                     <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
                         <h3 class="boxheading d-flex align-items-center">My Score
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -100,7 +100,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -156,7 +156,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     @if(isset($test_type) && $test_type=='Live')
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -201,6 +201,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             </div>
         </div>
     </div>
+</div>
     @php
     $correct_cnt=isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0;
     $incorrect_cnt=isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0;
@@ -237,6 +238,43 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
     @endphp
+     <script type="text/javascript">
+$(document).ready(function() {
+    $(document).on('click', 'span.tooltipmain2 svg', function(event) {
+    //$("span.tooltipmain svg").click(function(event) {
+        console.log("hello");
+        event.stopPropagation();
+
+        var card_open = $(this).siblings("p").hasClass('show');
+        if (card_open === true) {
+            $(this).siblings("p").hide();
+            $(this).siblings("p").removeClass('show');
+        } else {
+            $("span.tooltipmain2 p.tooltipclass span").each(function() {
+                $(this).parent("p").hide();
+                $(this).parent("p").removeClass('show');
+            });
+            $(this).siblings("p").show();
+            $(this).siblings("p").addClass('show');
+        }
+        $('.customDropdown').removeClass('active');
+
+    });
+    $("span.tooltipmain2 p.tooltipclass span").click(function() {
+        $(this).parent("p").hide();
+        $(this).parent("p").removeClass('show');
+    });
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
+    }
+
+});
+
+</script>
  @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
 <script type="text/javascript">
             /*********** BarChart ***********/
