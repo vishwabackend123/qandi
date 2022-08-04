@@ -285,6 +285,9 @@
     }
 }
 @media(max-width:767px){
+    .testtablescroll {
+    height: 500px;
+}
     .filterdropdown{
     transform: translate(0, 60px) !important;
 }
