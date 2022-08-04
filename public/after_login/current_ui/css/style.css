@@ -5828,28 +5828,17 @@ top:20px;
     background-color:#e5eaee;
     height: 1px;
 }
-<<<<<<< HEAD
 .mock_test_dure_content2, .mock_test_marks_content2 {
     padding: 0px 0px 0px 0px;
     /* border-right: 1px solid #e5eaee; */
-=======
-/* .mock_test_dure_content2, .mock_test_marks_content2 {
-    padding: 0px 50px 0px 50px;
-    border-right: 1px solid #e5eaee;
->>>>>>> bc163403274dcbca88410dde003d48deb92584ca
 }
 .mock_test_ques_content2 {
     /* border-right: 1px solid #e5eaee; */
     padding: 0px 0px 0px 0px;
 }
 .mock_test_sub_content2 {
-<<<<<<< HEAD
     padding: 0px 0px 0px 0px;
 }
-=======
-    padding: 0px 0px 0px 50px;
-} */
->>>>>>> bc163403274dcbca88410dde003d48deb92584ca
 .mock_btn_vie_detail
 {
     flex-basis: 485px!important;
