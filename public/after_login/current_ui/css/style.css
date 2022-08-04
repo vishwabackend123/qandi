@@ -7090,7 +7090,7 @@ label.filter {
   font-weight: 500;
   line-height: 1.4;
   color: #363c4f;
-  padding-bottom: 10px;
+ 
   position: relative;
 }
 
@@ -7226,5 +7226,20 @@ height: 0;
     height: 33vh;
 }
 .reviewbtn{line-height: 22px !important;}
+.quistion-content  img{
+  
+    max-width: 200px !important;
+    height: auto !important;
+}
 
+.reviewScreenright .list-ans .ms-3{ 
+    margin-left: initial !important;
+}
+.list-ans div > div:first-child {
+    padding: 0px 9px 0px 13px !important;
+}
+  .list-ans .d-flex{
+   margin-bottom: 12px;
+  }
+ 
  
