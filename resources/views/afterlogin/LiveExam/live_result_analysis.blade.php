@@ -395,6 +395,7 @@ foreach($subject_graph as $key=>$gh){
 $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
+$stuscore = max($stuscore, 0);
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
@@ -456,7 +457,7 @@ function resetData(subject_id) {
         const iterator = graphArr.values();
         for (const value of iterator) {
             if (value.subject_id == subject_id) {
-                studet_score.push(value.student_score)
+                studet_score.push(Math.max(value.student_score, 0))
                 studet_score.push(value.class_score)
                 var percentage = value.student_score
             }

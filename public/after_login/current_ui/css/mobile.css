@@ -115,6 +115,9 @@
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0.5rem 0.6rem;}
     .subject_performance_card .dashSubtext{font-size:13px;}
+    .mock_test_ques_dure_marks_sub{justify-content:space-between;}
+    .questionOptionBlock{    padding-top: 25px;}
+    .reviewScreenleft .questionOptionBlock{padding-top:25px;}
 }
 
 
