@@ -286,22 +286,29 @@
 @media(max-width:767px){
     .take-fulltest .btn {
     font-size: 14px !important;
-}
+    }
+    .test-table h3 span {
+    font-size: 14px;
+    }
     .exam_tabdata {
     margin-top: 8px;
-}
+    }
     .testtablescroll {
     height: 500px;
-}
+    padding-right: 8px;
+    }
+    .exam-wrapperpadding{
+    padding: 30px 0 0 !important;    
+    }
     .filterdropdown{
     transform: translate(0, 60px) !important;
-}
+    }
     .exam_tabdata {
     padding: 16px 0 !important;
     background: transparent !Important;   
     }
     .take-fulltest {
-    padding: 12px 0;
+    padding: 0 0;
     border-radius: 0;
     display: block !important;
     }
@@ -328,6 +335,7 @@
     .test-table h2 {
     width: 240px;
     font-size: 14px;
+    font-weight: 600;
     }
     .test-table h3 {
     font-size: 12px;
@@ -1017,10 +1025,8 @@
     .email-confirmation > p.email_head{padding: 12px 0 27px;}
     .email-confirmation .btn.btn-common-transparent{min-width: auto;}
     .commoncodeblock_content{padding-bottom:13px;}
-    .bargraph_scroll canvas{ 
-        
-        width: 500px!important;
-    }
+    
+
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -1032,7 +1038,7 @@
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 30px 6px;
+        padding: 39px 6px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -1488,6 +1494,9 @@
         max-width: 100%;
     }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
+    .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
+    .bargraph_size canvas {position: absolute;left: 18px;top: 0; pointer-events:none; }
+    .bargraph_size{width:500px;}
     /************ Amit end *********/
 }
 @media only screen and (max-width: 400px){
