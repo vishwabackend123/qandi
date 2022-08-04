@@ -4669,6 +4669,9 @@ justify-content: space-between;}
     .exam-select  .error{position: absolute;bottom:-14px;}
     .d-lg-flex2{display:flex;}
     .d-none2{display:none;}
+    .attemptedscroll {
+        height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
+    }
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/

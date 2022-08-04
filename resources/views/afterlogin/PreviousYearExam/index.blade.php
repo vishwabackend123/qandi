@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="accordion mt-4 pt-1" id="accordionExample">
                                     @if(!empty($upcomming_live_exam))
-                                    <div class="allscrollbar">
+                                    <div class="allscrollbar tablescroll">
                                         @foreach($upcomming_live_exam as $sche)
                                         <div class="accordion-item pt-4 mt-1 compLeteS filter_data_{{$sche->paper_year}}">
                                             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
