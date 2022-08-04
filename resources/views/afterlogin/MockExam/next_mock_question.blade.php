@@ -236,8 +236,8 @@ $question_type = "Numerical";
     $("#current_question_no").val(curr_ques_no);
     $("#current_chapter_id").val(chapter_id);
     $("#current_subject_id").val(subject_id);
-
     $("#current_section_id").val(curr_section_id);
+
     var last_qId = '{{$last_qid}}';
 
     $("#myTab .all_div").removeClass("active");
