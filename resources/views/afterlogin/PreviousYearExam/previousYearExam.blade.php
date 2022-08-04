@@ -57,9 +57,10 @@ $question_type = "Numerical";
                 <input type="hidden" id="current_question_no" value="1" />
                 <input type="hidden" id="current_chapter_id" value="{{$chapter_id}}" />
                 <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
-
-
                 <input type="hidden" id="current_section_id" value="{{$section_id}}" />
+
+
+
 
                 <div class="examLeftpanel">
                     <div class="tabMainblock">
