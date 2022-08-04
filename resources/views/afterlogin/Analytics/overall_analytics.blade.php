@@ -208,19 +208,19 @@
                                                 </div>
                                                 <div class="tab-content" id="pills-tabContent">
                                                     <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
-                                                        <div class="graph_padd">
+                                                        <div class="graph_padd bargraph_scroll">
                                                             <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChart"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
-                                                        <div class="graph_padd">
+                                                        <div class="graph_padd bargraph_scroll">
                                                             <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartWeek"></canvas>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
-                                                        <div class="graph_padd">
+                                                        <div class="graph_padd bargraph_scroll">
                                                             <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
                                                             <canvas id="timeManagementChartMonth"></canvas>
                                                         </div>
@@ -241,7 +241,7 @@
                                                         <label class="text">Student average</label>
                                                     </div>
                                                 </div>
-                                                <div class="chartspent graph_padd">
+                                                <div class="chartspent graph_padd bargraph_scroll">
                                                     <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
                                                     <canvas id="timeSpent_Graph"></canvas>
                                                 </div>
@@ -297,19 +297,19 @@
                                             </div>
                                             <div class="tab-content" id="pills-tabContent2">
                                                 <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
-                                                    <div class="chartspent graph_padd">
+                                                    <div class="chartspent graph_padd bargraph_scroll">
                                                         <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
                                                         <canvas id="mark_trend_day"></canvas>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">
-                                                    <div class="chartspent graph_padd">
+                                                    <div class="chartspent graph_padd bargraph_scroll">
                                                         <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
                                                         <canvas id="mark_trend_week"></canvas>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">
-                                                    <div class="chartspent graph_padd">
+                                                    <div class="chartspent graph_padd bargraph_scroll">
                                                         <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
                                                         <canvas id="mark_trend_month"></canvas>
                                                     </div>
@@ -330,7 +330,7 @@
                                                     <label class="text">Student average</label>
                                                 </div>
                                             </div>
-                                            <div class="chartspent graph_padd">
+                                            <div class="chartspent graph_padd bargraph_scroll">
                                                 <span class="yaxis_label  yaxis_label_2"><small> Average time taken (sec) </small> </span>
 
                                                 <canvas id="accuracy_graph"></canvas>
@@ -442,6 +442,7 @@ const config1 = {
     data: data1,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -505,6 +506,7 @@ const config2 = {
     data: data2,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -567,6 +569,7 @@ var config3 = {
     data: data3,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -626,6 +629,7 @@ var config4 = {
     data: data4,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -685,6 +689,7 @@ const config5 = {
     data: data5,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         elements: {
             point: {
                 radius: 0
@@ -751,6 +756,7 @@ const configT = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -812,6 +818,7 @@ var configW = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
@@ -872,6 +879,7 @@ var configM = {
             legend: false
         },
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 stacked: true,
