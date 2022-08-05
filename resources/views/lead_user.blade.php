@@ -31,14 +31,39 @@
     border-radius: 10px;
 }
 .logo_sec {
-    padding-bottom: 52px;
+    padding-bottom: 40px;
 }
 
     }
 </style>
 <div class="missing-info-main">
+    <div class="logo-fullpage mobile_hide">
+    <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#wign0frmma)">
+                    <path d="M24 4.001H8v16h16V4zM39.996 20.002h-16v16h16v-16z" fill="#38D430" />
+                    <path d="M39.996 4.001h-16v16h16V4z" fill="#00AB16" />
+                    <path d="m33.851 15.522 1.345 1.386h1.553l-2.163-2.24 1.387-1.608v-1.606l-2.122 2.453-2.038-2.108.596-.426c.693-.513 1.387-1.193 1.387-2.164 0-1.4-1.067-2.33-2.524-2.33-1.262 0-2.496.902-2.496 2.4 0 .915.68 1.65 1.137 2.133l.291.305-.194.139c-1.04.762-1.72 1.493-1.72 2.731 0 1.262.971 2.511 2.774 2.511 1.11 0 1.955-.625 2.787-1.576zm-3.91-6.315a1.303 1.303 0 0 1 1.331-1.33c.818 0 1.359.582 1.359 1.303 0 .485-.208.9-.804 1.33l-.735.555-.389-.416c-.374-.374-.762-.873-.762-1.442zm-.485 5.283c0-.762.443-1.248.984-1.65l.485-.374 2.205 2.288-.083.097c-.569.652-1.193 1.165-1.97 1.165-1.011 0-1.621-.763-1.621-1.526zm-8.362-2.488a5.103 5.103 0 1 0-5.111 5.12 4.968 4.968 0 0 0 2.916-.982l.84.843h2.425l-2.05-2.059a5 5 0 0 0 .98-2.922zm-2.302 1.6-1.395-1.4h-2.424l2.613 2.624a3.265 3.265 0 1 1 1.206-1.224zm10.174 9.493h6.08v1.8h-2.082v6.215h2.073v1.798h-6.08v-1.796h2.087v-6.216h-2.078v-1.801z" fill="#1F1F1F" />
+                </g>
+                <defs>
+                    <filter id="wign0frmma" x="0" y=".001" width="47.996" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feOffset dy="4" />
+                        <feGaussianBlur stdDeviation="4" />
+                        <feColorMatrix values="0 0 0 0 0.641667 0 0 0 0 0.67375 0 0 0 0 0.7 0 0 0 0.1 0" />
+                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1768_17758" />
+                        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feOffset dy="4" />
+                        <feGaussianBlur stdDeviation="4" />
+                        <feColorMatrix values="0 0 0 0 0.641667 0 0 0 0 0.67375 0 0 0 0 0.7 0 0 0 0.1 0" />
+                        <feBlend in2="effect1_dropShadow_1768_17758" result="effect2_dropShadow_1768_17758" />
+                        <feBlend in="SourceGraphic" in2="effect2_dropShadow_1768_17758" result="shape" />
+                    </filter>
+                </defs>
+            </svg>
+    </div>
     <div class="missing-info-section">
-        <div class="logo_sec">
+        <div class="logo_sec mobile_block">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#wign0frmma)">
                     <path d="M24 4.001H8v16h16V4zM39.996 20.002h-16v16h16v-16z" fill="#38D430" />
