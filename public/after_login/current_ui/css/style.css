@@ -3931,6 +3931,8 @@ ul.task_center_lists .task1 {
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 .bargraph_size{height:280px!important;}
+.test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
+.colorLabels{margin:0 28px;}
 
 /********************* Amit End ****************************/
 
@@ -3940,7 +3942,7 @@ ul.task_center_lists .task1 {
 
 .headerMain {
     display: flex;
-    align-items: center;
+    align-items: center;    
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
     box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
