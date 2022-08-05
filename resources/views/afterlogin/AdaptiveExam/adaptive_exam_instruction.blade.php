@@ -43,7 +43,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
                         <div>
                             <div class="exam_inst_sec_head_flex">
-                                <div class="exam_inst_sec_head"><b>{{$i}}. <span>Physics</span></b></div>
+                                <div class="exam_inst_sec_head"><b>{{$i}}. <span>{{$sub->subject_name}}</span></b></div>
                                 <!--  <div class="exam_inst_sec_head_padding">
                                     <span>Total Marks:</span>
                                     <span><b>100</b></span>
