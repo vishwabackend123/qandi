@@ -23,10 +23,10 @@
         </div>
         <div class="exam-cate d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <a href="javascript:void(0)">E</a>
-                <a href="javascript:void(0)">A</a>
-                <a href="javascript:void(0)">C</a>
-                <a href="javascript:void(0)">K</a>
+                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">E</a>
+                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">A</a>
+                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">C</a>
+                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">K</a>
             </div>
             <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic topic_{{$subject_name}}">Select</button>
         </div>

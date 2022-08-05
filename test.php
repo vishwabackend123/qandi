@@ -1,4 +1,0 @@
-<?php 
-// just checking
-phpinfo();?>
-
