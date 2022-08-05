@@ -388,6 +388,7 @@ class AdpativeExamController extends Controller
     public function topicAdaptiveExam(Request $request, $inst = '')
     {
         try {
+            $header_title = "Practice";
             $filtered_subject = [];
 
             $userData = Session::get('user_data');
@@ -593,14 +594,14 @@ class AdpativeExamController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
 
                 /*  return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime')); */
             }
 
 
             /* dd($exam_fulltime); */
-            return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+            return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id','header_title'));
         } catch (\Exception $e) {
 
             Log::info($e->getMessage());

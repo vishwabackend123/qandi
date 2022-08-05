@@ -372,6 +372,7 @@ class ExamCustomController extends Controller
             Redis::set('exam_name' . $user_id, $exam_name);
             Redis::set('test_type' . $user_id, $test_type);
 
+            $header_title = 'Practice';
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
@@ -390,11 +391,11 @@ class ExamCustomController extends Controller
                 $exam_url = route('custom_exam');
 
                 $exam_title = "Custom Subject Exam";
-                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title','header_title'));
             }
 
 
-            return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+            return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id','header_title'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1021,6 +1022,7 @@ class ExamCustomController extends Controller
     public function chapterAdaptiveExam(Request $request, $inst = '')
     {
         try {
+            $header_title = "Practice";
             $filtered_subject = [];
 
             $userData = Session::get('user_data');
@@ -1191,14 +1193,14 @@ class ExamCustomController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
             }
 
 
             //Session::put('exam_name', $test_name);
 
 
-            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
+            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name','header_title'));
         } catch (\Exception $e) {
             dd($e->getMessage());
             Log::info($e->getMessage());

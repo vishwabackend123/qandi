@@ -84,7 +84,7 @@
             <div class="row flex-column-reverse flex-lg-row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
-                    <a href="" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Mock Test</a>
+                    <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
                         
                     </div>
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
