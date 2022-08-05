@@ -1457,6 +1457,8 @@
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar {display:none; } 
+            .commonblockDash.myqTodayPannel .commonWhiteBox{top:0}
+
 }
 
 @media only screen and (max-width: 576px){
