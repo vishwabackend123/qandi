@@ -1959,7 +1959,7 @@ a.btn-common-attempted svg {
   .examScreentab .nav-tabs .nav-link.active {
       border: 0px;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 800 !important;
       line-height: 1.6;
       color: #1f1f1f !important;
       border-bottom: 4px solid #363c4f;
