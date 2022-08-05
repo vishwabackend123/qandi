@@ -451,9 +451,9 @@ $userData = Session::get('user_data');
                     if (response.success == true) {
                         var message = response.message;
                         $('#alert_msg').show();
-                          setTimeout(function() {
-                             $('#alert_msg').fadeOut('fast');
-                         }, 180000); 
+                        setTimeout(function() {
+                            $('#alert_msg').fadeOut('fast');
+                        }, 180000);
                         $("#planner-wrapper")[0].scrollIntoView();
                         $('#saveplannerbutton').addClass('disabled');
 
@@ -540,9 +540,13 @@ $userData = Session::get('user_data');
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
+                console.log(response);
                 if (response.range > 0) {
 
                     $('#number').val(response.range);
+                    $("#number").attr({
+                        "min": response.range // values (or variables) here
+                    });
                     var planned_edit = response.planner;
                     var result = Object.values(planned_edit);
                     result.forEach(function(item) {
@@ -583,6 +587,9 @@ $userData = Session::get('user_data');
                 } else {
 
                     $('#number').val(response.range);
+                    $("#number").attr({
+                        "min": response.range // values (or variables) here
+                    });
                     $('.add-subchapter').html("");
 
                 }

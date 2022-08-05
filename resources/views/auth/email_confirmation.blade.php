@@ -59,7 +59,11 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
-        <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
+        @if($message_success == 'Email already verified')
+        <p><label><b>{{$email_id}}</b>  is verified. </label></p>
+        @else
+         <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
+        @endif
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
