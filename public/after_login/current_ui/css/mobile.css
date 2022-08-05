@@ -125,10 +125,13 @@
      height: 400px;
  }
 }
-@media only screen and (max-height: 920px) {
-    /* .text-exambottom-sec {
-        margin-top: 20px;
-        height: 35vh;}  */
+@media only screen and (max-height: 1024px) {
+    .text-exambottom-sec { height: 44vh;}
+       
+    
+}
+@media only screen and (max-height: 900px) {
+    .text-exambottom-sec { height: 37vh;}
        
     
 }
@@ -139,6 +142,9 @@
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
+    .text-exambottom-sec {
+        height: 29vh;
+    }
    
 }
 @media only screen and (max-height: 700px) {
