@@ -430,7 +430,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
                                                 <div class="myqbottomSec">
                                                     <h3>@if(isset($myq_matrix[0]))
-                                                        {{$myq_matrix[0]}}
+                                                        {{$myq_matrix[1]}}
                                                         @else
                                                         0
                                                         @endif
