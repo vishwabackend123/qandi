@@ -6760,7 +6760,7 @@ border-color: #56b663;
 .email-sec input#exampleFormControlInput1 {
     background: #fff;
     border: solid 1px #d0d5dd;font-size: 14px;
-    font-weight: 500;
+    font-weight: 500;height: 48px;
 }
 .email-sec label.form-label {
     font-size: 14px;
