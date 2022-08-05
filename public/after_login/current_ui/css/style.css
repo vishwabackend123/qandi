@@ -6437,7 +6437,7 @@ border-color: #56b663;
     font-size: 14px;
     color: #fff;
     line-height: 1.8;
-    font-weight: normal;
+    font-weight: normal;z-index:9;
 }
 .tooltipclass > span {display: none;}
 .tooltipclass:before {
