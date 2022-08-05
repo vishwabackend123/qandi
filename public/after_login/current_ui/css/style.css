@@ -7282,4 +7282,10 @@ margin-bottom: 12px;
     content: "";
     display: none;
 } 
+.ReCountActive {
+    font-size: 16px!important;
+    font-weight: 800!important;
+    line-height: 1.6!important;
+    color: #363c4f!important;   
+    }
  
