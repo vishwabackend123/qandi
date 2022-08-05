@@ -3532,6 +3532,7 @@ h3.commonheading{
     height: 10px;
     position: relative;
     cursor: pointer;
+    font-size: 0px;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);

@@ -203,7 +203,7 @@
                             $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
                             $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
                             @endphp
-                            <div class="col-sm-6 mb-3">
+                            <div class="col-sm-6 mb-5">
                                 <h5 class="mb-0">{{$subject->subject_name}}</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="halfdoughnut">
