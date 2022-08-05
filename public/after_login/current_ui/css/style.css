@@ -7246,5 +7246,32 @@ padding: 0px 9px 0px 13px !important;
 .list-ans .d-flex{
 margin-bottom: 12px;
 }
- 
+.boxheading .tooltipmain2 {
+    display: inline-block;
+    margin-left: 8px;
+    cursor: pointer;position: relative;
+    top: -2px;
+}
+.tooltipmain2.right-tolltip .tooltipclass {
+    left: -367px;
+    position: absolute;
+    top: -12px;
+    margin-right: 38px;
+}
+.tooltipmain2.right-tolltip .tooltipclass:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    top: 15px;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #1f4736;
+    right: -12px;
+    border-top: 12px solid transparent;
+}
+
+.tooltipmain2.right-tolltip .tooltipclass:before {
+    content: "";
+    display: none;
+} 
  
