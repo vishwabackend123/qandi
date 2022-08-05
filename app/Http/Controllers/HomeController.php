@@ -1125,9 +1125,7 @@ class HomeController extends Controller
         $preferences = $this->redis_Preference();
         $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
         $aStudentRating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? (array)json_decode($preferences->subjects_rating) : [];
-        /*  if ($student_rating != null || !empty($student_rating)) {
-            return redirect()->route('dashboard');
-        } */
+        Session::put('subscription_status', true);
 
         return view('afterlogin.performance_rating', compact('user_subjects', 'aStudentRating'));
     }

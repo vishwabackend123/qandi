@@ -138,7 +138,10 @@ class MenuMiddleware
             //if (in_array(Route::getCurrentRoute()->getName(),self::$checkRouteName)) {
              if (Route::getCurrentRoute()->getName() !='subscriptions') {
                 if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
-                    return redirect()->route('subscriptions');
+                    if (!Session::has('subscription_status')) {
+                        return redirect()->route('subscriptions');
+                    }
+                    
                 }
             }
 

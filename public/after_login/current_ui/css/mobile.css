@@ -125,10 +125,13 @@
      height: 400px;
  }
 }
-@media only screen and (max-height: 920px) {
-    /* .text-exambottom-sec {
-        margin-top: 20px;
-        height: 35vh;}  */
+@media only screen and (max-height: 1024px) {
+    .text-exambottom-sec { height: 44vh;}
+       
+    
+}
+@media only screen and (max-height: 900px) {
+    .text-exambottom-sec { height: 37vh;}
        
     
 }
@@ -139,6 +142,9 @@
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
+    .text-exambottom-sec {
+        height: 29vh;
+    }
    
 }
 @media only screen and (max-height: 700px) {
@@ -518,9 +524,6 @@
         width: 4px;
         height: 4px;
     }
-    .myqbottomSec h3 {
-        font-size: 32px;
-    }
     .myqmatPannel {
         padding: 12px;
     }
@@ -829,6 +832,14 @@
     border: solid 1px #cde3d0;
     background-color: white;
     }
+    .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
+    {
+        margin-top: 16px!important;
+    }
+    .mock_test_marks_content22.mock_test_slot_content222
+    {
+        margin-top: 16px!important;
+    }
     .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
     {
     width: 161px;
@@ -836,6 +847,14 @@
     border-radius: 8px;
     border: solid 1px #cde3d0;
     background-color: white;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_marks_con
+    {
+        margin-bottom: 16px!important;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_sub_content
+    {
+        margin-bottom: 16px!important;
     }
     /*  */
     .previous_exam_page_contain .live_mock_exam_section h3{
@@ -1451,6 +1470,8 @@
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar {display:none; } 
+            .commonblockDash.myqTodayPannel .commonWhiteBox{top:0}
+
 }
 
 @media only screen and (max-width: 576px){

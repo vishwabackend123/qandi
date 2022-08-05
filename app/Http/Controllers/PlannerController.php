@@ -416,6 +416,7 @@ class PlannerController extends Controller
     public function plannerAdaptiveExam($planner_id = null, $inst = "", Request $request)
     {
         try {
+            $header_title = 'Planner Exam';
             $filtered_subject = [];
 
             $userData = Session::get('user_data');
@@ -599,13 +600,13 @@ class PlannerController extends Controller
                 $exam_title = "Planner Exam";
                 $eType = "Adaptive";
                 $total_marks = 0;
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
 
                 /* return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'eType')); */
             }
 
 
-            return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
+            return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name','header_title'));
         } catch (\Exception $e) {
             dd($e->getMessage());
             Log::info($e->getMessage());
