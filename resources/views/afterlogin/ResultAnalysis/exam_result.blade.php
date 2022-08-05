@@ -64,7 +64,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="col-md-5">
                     <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
                         <h3 class="boxheading d-flex align-items-center">My Score
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -100,7 +100,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -115,7 +115,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="common_greenbadge_tabs">
                             <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link btn active" id="pills-overall-tab" data-bs-toggle="pill" data-bs-target="#pills-overall" type="button" role="tab" aria-controls="pills-overall" aria-selected="true">Overall</button>
+                                    <button class="nav-link btn active" id="pills-overall-tab" data-bs-toggle="pill" data-bs-target="#pills-overall" type="button" role="tab" aria-controls="pills-overall" aria-selected="true" onclick='resetData("all")'>Overall</button>
                                 </li>
                                 @if(isset($scoreResponse->subject_graph) && !empty($scoreResponse->subject_graph))
                                 @foreach($scoreResponse->subject_graph as $subject)
@@ -156,7 +156,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     @if(isset($test_type) && $test_type=='Live')
                     <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
-                            <span class="tooltipmain ml-2">
+                            <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -201,6 +201,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             </div>
         </div>
     </div>
+</div>
     @php
     $correct_cnt=isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0;
     $incorrect_cnt=isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0;
@@ -229,7 +230,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     $stuscore=$stuscore+$gh->student_score;
     $clsAvg=$clsAvg+$gh->class_score;
     }
-    $stuscore = max($stuscore, 0);
     $stuscore_arr[]=round($stuscore,2);
     $stuscore_json=json_encode($stuscore_arr);
     $clsAvg_arr[]=round($clsAvg,2);
@@ -237,8 +237,51 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
     @endphp
+     <script type="text/javascript">
+$(document).ready(function() {
+    $(document).on('click', 'span.tooltipmain2 svg', function(event) {
+    //$("span.tooltipmain svg").click(function(event) {
+        console.log("hello");
+        event.stopPropagation();
+
+        var card_open = $(this).siblings("p").hasClass('show');
+        if (card_open === true) {
+            $(this).siblings("p").hide();
+            $(this).siblings("p").removeClass('show');
+        } else {
+            $("span.tooltipmain2 p.tooltipclass span").each(function() {
+                $(this).parent("p").hide();
+                $(this).parent("p").removeClass('show');
+            });
+            $(this).siblings("p").show();
+            $(this).siblings("p").addClass('show');
+        }
+        $('.customDropdown').removeClass('active');
+
+    });
+    $("span.tooltipmain2 p.tooltipclass span").click(function() {
+        $(this).parent("p").hide();
+        $(this).parent("p").removeClass('show');
+    });
+});
+$(document).on('click', function(e) {
+    var card_opened = $('.tooltipclass').hasClass('show');
+    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+        $('.tooltipclass').hide();
+        $('.tooltipclass').removeClass('show');
+    }
+
+});
+
+</script>
  @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
 <script type="text/javascript">
+    var student_scr ='<?php echo $stuscore ?>';
+    var student_bar_color ='#56b663';
+    if(student_scr < 0)
+    {
+        student_bar_color ='#E74969';
+    }
             /*********** BarChart ***********/
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
@@ -249,7 +292,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     data: ['{{$stuscore}}', '{{$clsAvg}}'],
                     label: '',
                     backgroundColor: [
-                        '#56b663',
+                        student_bar_color,
                         '#08d5a1'
                     ],
                     barPercentage: 5,
@@ -283,10 +326,8 @@ $user_id = isset($userData->id)?$userData->id:'';
             /* var subject_data_json = JSON.parse($('#subject_data').val()); */
 
             if (subject_id == 'all') {
-
-
-
                 myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+                myChart.data.datasets[0].backgroundColor = [student_bar_color,'#08d5a1'];
                 myChart.update();
                 let overall_percent = '<?php echo number_format($scoreResponse->result_percentage, 2); ?>';
                 $("#percentage").val(overall_percent);
@@ -298,14 +339,18 @@ $user_id = isset($userData->id)?$userData->id:'';
                 const iterator = graphArr.values();
                 for (const value of iterator) {
                     if (value.subject_id == subject_id) {
-                        studet_score.push(Math.max(value.student_score, 0))
+                        studet_score.push(value.student_score)
                         studet_score.push(value.class_score)
                         var percentage = value.student_score
                     }
                 }
-
-                console.log(studet_score);
+                var student_subject_color ='#56b663';
+                if(percentage < 0)
+                {
+                     student_subject_color ='#E74969';
+                }
                 myChart.data.datasets[0].data = studet_score;
+                myChart.data.datasets[0].backgroundColor = [student_subject_color,'#08d5a1'];
                 myChart.update();
 
                 $("#percentage").val(percentage);

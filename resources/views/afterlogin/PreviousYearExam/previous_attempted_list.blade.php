@@ -85,12 +85,12 @@
                             <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
                         </div>
                         <div class="live_exam_diveder_div"></div>
-                        <div class="mock_test_sub_content22">
+                        <div class="mock_test_sub_content22 mock_test_marks_content">
                             <div class="mock_test_qdms_text1">Marks</div>
                             <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
                         </div>
                         <div class="live_exam_diveder_div"></div>
-                        <div class="mock_test_sub_content22">
+                        <div class="mock_test_sub_content22 mock_test_sub_content">
                             <div class="mock_test_qdms_text1">Subject</div>
                             <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                         </div>

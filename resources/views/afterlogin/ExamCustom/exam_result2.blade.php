@@ -1,7 +1,7 @@
  @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
 <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
     <h3 class="boxheading d-flex align-items-center">Subject Score
-        <span class="tooltipmain ml-2">
+        <span class="tooltipmain2 ml-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -38,7 +38,7 @@
 @endif
 <div class="commonWhiteBox commonblockDash borderRadius">
     <h3 class="boxheading d-flex align-items-center">Topic Score
-        <span class="tooltipmain ml-2">
+        <span class="tooltipmain2 ml-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
@@ -87,14 +87,14 @@
                     @endphp
 
                     <li>
-                        <div class="topic_score_bar">
+                        <div class="topic_score_bar dropdown">
                             <h4>{{$tdata->topic_name}}</h4>
-                            <div class="progress">
+                            <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="progress-bar correct-bg" role="progressbar" style="width:{{$corr_Per}}%" aria-valuenow=" {{$corr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar incorrect-bg" role="progressbar" style="width:{{$incorr_Per}}%" aria-valuenow=" {{$incorr_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$unanswered_Per}}%" aria-valuenow=" {{$unanswered_Per}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <ul class="noofquestions-block">
+                            <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                 <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                 <div class="color_labels">
                                     <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
@@ -124,7 +124,7 @@
         </div>
     </div>
 </div>
- 
+
 <script>
     /***************** halfdoughnut - start *********************/
     var graphArr = <?php echo json_encode($response->subject_wise_result); ?>;
@@ -189,32 +189,5 @@
         };
         const myCharted = new Chart("subjectChart_" + subId, config)
     }
-    $("span.tooltipmain svg").click(function(event) {
-            event.stopPropagation();
 
-            var card_open = $(this).siblings("p").hasClass('show');
-            if (card_open === true) {
-                $(this).siblings("p").hide();
-                $(this).siblings("p").removeClass('show');
-            } else {
-                $("span.tooltipmain p.tooltipclass span").each(function() {
-                    $(this).parent("p").hide();
-                    $(this).parent("p").removeClass('show');
-                });
-                $(this).siblings("p").show();
-                $(this).siblings("p").addClass('show');
-            }
-
-        });
-    $("span.tooltipmain p.tooltipclass span").click(function() {
-        $(this).parent("p").hide();
-        $(this).parent("p").removeClass('show');
-    });
-    $(document).on('click', function(e) {
-        var card_opened = $('.tooltipclass').hasClass('show');
-        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-            $('.tooltipclass').hide();
-            $('.tooltipclass').removeClass('show');
-        }
-    });
 </script>

@@ -326,17 +326,17 @@
                                         @endphp
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
-                                            <div class="topic_score_bar">
+                                            <div class="topic_score_bar dropdown">
                                                 <h4>@if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
                                                     @else
                                                     ""
                                                     @endif</h4>
-                                                <div class="progress">
+                                                <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <div class="progress-bar correct-bg" role="progressbar" style="width: {{$tcorrect_per}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                                     <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                                     <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
-                                                <ul class="noofquestions-block">
+                                                <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                                     <div class="color_labels">
                                                         <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
@@ -395,7 +395,6 @@ foreach($subject_graph as $key=>$gh){
 $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
-$stuscore = max($stuscore, 0);
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
@@ -404,6 +403,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
  @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
 <script>
 /*********** BarChart ***********/
+var student_scr ='<?php echo $stuscore ?>';
+var student_bar_color ='#56b663';
+if(student_scr < 0)
+{
+    student_bar_color ='#E74969';
+}
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
@@ -413,7 +418,7 @@ const myChart = new Chart(ctx, {
             data: ['{{$stuscore}}', '{{$clsAvg}}'],
             label: '',
             backgroundColor: [
-                '#56b663',
+                student_bar_color,
                 '#08d5a1'
             ],
             barPercentage: 5,
@@ -446,6 +451,7 @@ const myChart = new Chart(ctx, {
 function resetData(subject_id) {
     if (subject_id == 'all') {
         myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+        myChart.data.datasets[0].backgroundColor = [student_bar_color,'#08d5a1'];
         myChart.update();
         let overall_percent = '<?php echo number_format($response->result_percentage, 2); ?>';
         $("#percentage").val(overall_percent);
@@ -457,12 +463,18 @@ function resetData(subject_id) {
         const iterator = graphArr.values();
         for (const value of iterator) {
             if (value.subject_id == subject_id) {
-                studet_score.push(Math.max(value.student_score, 0))
+                studet_score.push(value.student_score)
                 studet_score.push(value.class_score)
                 var percentage = value.student_score
             }
         }
+        var student_subject_color ='#56b663';
+        if(percentage < 0)
+        {
+             student_subject_color ='#E74969';
+        }
         myChart.data.datasets[0].data = studet_score;
+        myChart.data.datasets[0].backgroundColor = [student_subject_color,'#08d5a1'];
         myChart.update();
 
         $("#percentage").val(percentage);

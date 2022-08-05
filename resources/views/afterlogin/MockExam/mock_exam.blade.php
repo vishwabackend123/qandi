@@ -30,8 +30,10 @@ $userData = Session::get('user_data');
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+$section_id = isset($question_data->section_id)?$question_data->section_id:'';
 $question_type = '';
 
 if($template_type == 1){
@@ -56,6 +58,7 @@ $question_type = "Numerical";
                 <input type="hidden" id="current_question_no" value="1" />
                 <input type="hidden" id="current_chapter_id" value="{{$chapter_id}}" />
                 <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
+                <input type="hidden" id="current_section_id" value="{{$section_id}}" />
 
                 <div class="examLeftpanel">
                     <div class="tabMainblock">
@@ -434,6 +437,31 @@ $question_type = "Numerical";
                     <div class="exam-footer-sec  p-4">
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                                    </svg>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body">
+                    <div class="modal-header-exam text-center ">
+                        <div class="exam-overview ">
+                            <label id="attempt-alert-text">Exam Paused</label>
+                        </div>
+                    </div>
+                    <div class="exam-footer-sec  p-4">
+                        <div class="task-btn tasklistbtn text-center">
+                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Ok <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg>
                                 </label>

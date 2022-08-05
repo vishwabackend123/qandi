@@ -891,7 +891,6 @@ padding-bottom: 0;
     flex: 1;margin-top:3px!important;
 }
 .live_mock_exam_section.test-table h3{color:#1f1f1f;}
-
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
@@ -3452,6 +3451,7 @@ h3.commonheading{
     border-radius: 4px;
     height: 30px;
     padding: 0 16px!important;
+    line-height: 30px;
 }
 .common_greenbadge_tabs ul.nav .btn.nav-link.active {
     background-color: #56b663;
@@ -3569,19 +3569,19 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     /* overflow: hidden; */
 }
 /* .halfdoughnut canvas{width: 100%!important;height:100%!important;} */
-.noofquestions-block {
+.noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff;
     padding: 20px 20px;
     width: 200px;
-    border: 0;	
+    border: 0;
+    min-width: auto;	
     right: -25px!important;
+    left: auto!important;
     z-index: 9;
-    position: absolute;
-    display: none;
 }
-ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -3930,7 +3930,8 @@ ul.task_center_lists .task1 {
 }
 #subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
-.bargraph_scroll {height:280px!important;}
+.bargraph_size{height:280px!important;}
+
 /********************* Amit End ****************************/
 
 
@@ -4693,6 +4694,8 @@ justify-content: space-between;}
     .attemptedscroll {
         height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
     }
+    #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;}
+    #resume-test  .modal-content{border:0px}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -5673,21 +5676,22 @@ padding: 11px 20px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
-    margin-top: 25px;
-    justify-content: space-between;
+    margin-top: 25px;justify-content:space-between;
 }
-.mock_test_ques_dure_marks_sub.nojusify{    justify-content: initial;}
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content {
-    border-right: 1px solid #e5eaee;
-    padding: 0 70px 0 0;
+.mock_test_ques_dure_marks_sub.nojusify {
+    justify-content: initial;
 }
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, 
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content {
-    padding: 0 70px;
-    border-right: 1px solid #e5eaee;
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content
+{
+    padding: 0px 70px 0px 0px;    border-right: 1px solid #e5eaee;
 }
-.mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content {
-    padding: 0 0 0 70px;
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, .mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content
+{
+    padding: 0px 70px 0px 70px;border-right: 1px solid #e5eaee;
+}
+.mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
+{
+    padding: 0px 0px 0px 70px;
 }
 .mock_test_qdms_text1,.mock_test_q_d_m_s_text1
 {
@@ -5821,16 +5825,16 @@ top:20px;
     background-color:#e5eaee;
     height: 1px;
 }
-.mock_test_dure_content2, .mock_test_marks_content2 {
-    padding: 0px 0px 0px 0px;
-    /* border-right: 1px solid #e5eaee; */
+/* .mock_test_dure_content2, .mock_test_marks_content2 {
+    padding: 0px 50px 0px 50px;
+    border-right: 1px solid #e5eaee;
 }
 .mock_test_ques_content2 {
-    /* border-right: 1px solid #e5eaee; */
-    padding: 0px 0px 0px 0px;
-}
+    border-right: 1px solid #e5eaee;
+    padding: 0px 50px 0px 0px;
+} */
 .mock_test_sub_content2 {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 50px;
 }
 .mock_btn_vie_detail
 {
@@ -5841,7 +5845,7 @@ top:20px;
 {
     flex-basis: 200px;
 }
-.live_mock_exam_section .see_analytics_mock_exam h3
+.see_analytics_mock_exam h3,.live_mock_exam_section .see_analytics_mock_exam h3
 {
     font-size: 14px;
     font-weight: 800;
@@ -6382,8 +6386,8 @@ border-color: #56b663;
 .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {
     text-transform: capitalize;
     font-size: 14px;
-    height: 44px;
-    line-height:26px;
+    height: 44px;   
+    line-height:1.6;
 }
 
 .qust-sec span,
@@ -6433,7 +6437,7 @@ border-color: #56b663;
     font-size: 14px;
     color: #fff;
     line-height: 1.8;
-    font-weight: normal;
+    font-weight: normal;z-index:9;
 }
 .tooltipclass > span {display: none;}
 .tooltipclass:before {
@@ -6537,9 +6541,7 @@ border-color: #56b663;
     color: #1f1f1f;
 }
 
-.modal-content.exammodal_content {
-    max-width: 554px;
-    width: 554px;border-radius: 20px;
+.modal-content.exammodal_content {border-radius: 20px;
 }
 .modal-content.exammodal_content .modal-body {padding: 24px;}
 .exam-overview-time > span {
@@ -7096,7 +7098,7 @@ label.filter {
   font-weight: 500;
   line-height: 1.4;
   color: #363c4f;
-  padding-bottom: 10px;
+ 
   position: relative;
 }
 
@@ -7231,6 +7233,51 @@ height: 0;
 .reviewScreenright .text-exambottom-sec{
     height: 33vh;
 }
+
 .reviewbtn{line-height: 22px !important;}
 
+.quistion-content  img{
+
+max-width: 200px !important;
+height: auto !important;
+}
+
+.reviewScreenright .list-ans .ms-3{ 
+margin-left: initial !important;
+}
+
+.list-ans div > div:first-child {
+padding: 0px 9px 0px 13px !important;
+}
+.list-ans .d-flex{
+margin-bottom: 12px;
+}
+.boxheading .tooltipmain2 {
+    display: inline-block;
+    margin-left: 8px;
+    cursor: pointer;position: relative;
+    top: -2px;
+}
+.tooltipmain2.right-tolltip .tooltipclass {
+    left: -367px;
+    position: absolute;
+    top: -12px;
+    margin-right: 38px;
+}
+.tooltipmain2.right-tolltip .tooltipclass:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    top: 15px;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #1f4736;
+    right: -12px;
+    border-top: 12px solid transparent;
+}
+
+.tooltipmain2.right-tolltip .tooltipclass:before {
+    content: "";
+    display: none;
+} 
  

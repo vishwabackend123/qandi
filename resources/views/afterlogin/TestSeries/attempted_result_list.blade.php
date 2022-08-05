@@ -27,7 +27,7 @@
 </div>
 @if(!empty($result_data))
 @foreach($result_data as $sche)
-<div class="compLeteS accordion-item pt-4 {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
+<div class="compLeteS accordion-item  {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
         @php
             $testname="";
@@ -111,12 +111,12 @@
                     <div class="mock_test_qdms_text2"><span>{{$sche->test_time/60}}</span> <span>Mins</span></div>
                 </div>
                 <div class="live_exam_diveder_div"></div>
-                <div class="mock_test_marks_content2">
+                <div class="mock_test_marks_content">
                     <div class="mock_test_q_d_m_s_text1">Marks</div>
                     <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
                 </div>
                 <div class="live_exam_diveder_div"></div>
-                <div class="mock_test_marks_content2">
+                <div class="mock_test_sub_content">
                     <div class="mock_test_q_d_m_s_text1">Subject</div>
                     <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                 </div>
@@ -127,7 +127,7 @@
                 </div>
                 @endif
                 <div class="live_exam_diveder_div"></div>
-                <div class="mock_test_sub_content2">
+                <div class="mock_test_dure_content2">
                     <div class="mock_test_q_d_m_s_text1">Score</div>
                     <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
                 </div>
