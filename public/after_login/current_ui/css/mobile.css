@@ -832,6 +832,14 @@
     border: solid 1px #cde3d0;
     background-color: white;
     }
+    .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
+    {
+        margin-top: 16px!important;
+    }
+    .mock_test_marks_content22.mock_test_slot_content222
+    {
+        margin-top: 16px!important;
+    }
     .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
     {
     width: 161px;
@@ -839,6 +847,14 @@
     border-radius: 8px;
     border: solid 1px #cde3d0;
     background-color: white;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_marks_con
+    {
+        margin-bottom: 16px!important;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_sub_content
+    {
+        margin-bottom: 16px!important;
     }
     /*  */
     .previous_exam_page_contain .live_mock_exam_section h3{
