@@ -125,13 +125,10 @@
      height: 400px;
  }
 }
-@media only screen and (max-height: 1024px) {
-    .text-exambottom-sec { height: 44vh;}
-       
-    
-}
-@media only screen and (max-height: 900px) {
-    .text-exambottom-sec { height: 37vh;}
+@media only screen and (max-height: 920px) {
+    /* .text-exambottom-sec {
+        margin-top: 20px;
+        height: 35vh;}  */
        
     
 }
@@ -142,9 +139,6 @@
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
-    .text-exambottom-sec {
-        height: 29vh;
-    }
    
 }
 @media only screen and (max-height: 700px) {
@@ -524,6 +518,9 @@
         width: 4px;
         height: 4px;
     }
+    .myqbottomSec h3 {
+        font-size: 32px;
+    }
     .myqmatPannel {
         padding: 12px;
     }
@@ -617,6 +614,10 @@
     {
         padding: 12px;
         border-radius: 10px!important;
+        /* background: #fff; */
+    }
+    .MockTestMob .bg-white-bg_mob
+    {
         background: #fff!important;
     }
     .MockTestMob .mock_test_ques_dure_marks_sub
@@ -775,7 +776,7 @@
         width: 50%!important;
         padding-bottom: 0px!important;
     }
-    .LiveExamMob .mock_test_dure_content2
+    .LiveExamMob .mock_test_dure_content2:last-child
     {
         padding-top:16px;
     }
@@ -826,20 +827,24 @@
     {
         padding-top: 16px;
     }
+    .MockTestMob .mock_btn_vie_detail
+    {
+        padding-top: 16px;
+    }
     .form-select{
     padding: 6px 10px 6px 24px;
     border-radius: 10px;
     border: solid 1px #cde3d0;
     background-color: white;
     }
-    .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
+    /* .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
     {
         margin-top: 16px!important;
     }
-    .mock_test_marks_content22.mock_test_slot_content222
+    #mock_test_slot_content222
     {
         margin-top: 16px!important;
-    }
+    } */
     .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
     {
     width: 161px;
@@ -847,7 +852,21 @@
     border-radius: 8px;
     border: solid 1px #cde3d0;
     background-color: white;
+    font-size: 14px;
     }
+    .PrevousYearExam_wraper_contant2 .tablescroll
+    {
+        padding-right: 0px!important;
+    }
+    .PrevousYearExam_wraper_contant1 .exam_tabdata #mock_test
+    {
+        background-color: unset!important;
+    }
+    .PrevousYearExam_wraper_contant1 .btn.btn-common-transparent
+    {
+        padding: 7px 22px;
+    }
+
     .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_marks_con
     {
         margin-bottom: 16px!important;
@@ -865,7 +884,13 @@
     }
     .previous_exam_year_exam_paper_text
     {
-        margin-bottom: 9px;
+        margin-bottom: 13px;
+    }
+    .previous_exam_year_exam_paper_text
+    {
+        font-size: 14px;
+        font-weight: bold;
+        color: #1f1f1f;
     }
     .PrevousYearExam_wraper_contant1 .test-table h4
     {
@@ -1470,8 +1495,6 @@
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar {display:none; } 
-            .commonblockDash.myqTodayPannel .commonWhiteBox{top:0}
-
 }
 
 @media only screen and (max-width: 576px){

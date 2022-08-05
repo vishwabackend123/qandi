@@ -20,7 +20,7 @@
                         </div>
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
-                            <div id="mock_test" class=" tab-pane active">
+                            <div id="mock_test" class=" tab-pane active bg-white-bg_mob">
                                 @if(!empty($schedule_list))
                                 @php
                                 $today_top = date('d-m-y');;
