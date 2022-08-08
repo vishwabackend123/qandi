@@ -37,6 +37,10 @@
    .week-select{
     font-size: 16px;    
     }
+    .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
+        min-height: 285px;
+        max-height: 287px;
+    }
 }
 @media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
@@ -84,6 +88,10 @@
         .questionOptionBlock {padding-left: 25px;}
         .reviewScreenleft li.nav-item { margin-right: 35px;}
         .overallMidlle .commonWhiteBox .garphsubheading span{font-size: 14px;}
+        .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
+            min-height: 303px;
+            max-height: 303px;
+        }
 }
 @media only screen and (max-width: 1300px){
     .selectPlan {

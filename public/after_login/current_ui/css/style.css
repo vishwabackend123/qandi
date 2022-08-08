@@ -3822,8 +3822,11 @@ span.greenball-3 {
     left: -36px;
 }
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
-.overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 353px;
-    max-height: 353px;}
+.chapter_performance_card ul.topic_score_lists {
+    min-height: 281px;
+    max-height: 281px;
+}
+.codelerninner p{min-height:64px}
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
