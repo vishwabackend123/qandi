@@ -4696,6 +4696,7 @@ justify-content: space-between;}
     }
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;}
     #resume-test  .modal-content{border:0px}
+    .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
