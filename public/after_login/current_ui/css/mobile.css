@@ -147,6 +147,8 @@
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
+    .text-exambottom-sec {height: 30vh;}
+    
    
 }
 @media only screen and (max-height: 700px) {
