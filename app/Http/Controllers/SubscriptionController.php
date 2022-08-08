@@ -302,6 +302,39 @@ class SubscriptionController extends Controller
                         $price = $price - $discounted_price;
                     }
                 }
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
+
+                $curl = curl_init();
+                $curl_option = array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+                curl_setopt_array($curl, $curl_option);
+
+                $package_response_json = curl_exec($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+                if ($httpcode != 200 || $httpcode != 201) {
+                    $pResponse = json_decode($package_response_json);
+                    $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
+                    $subscriptions_data = !empty($package_data) ? $package_data[0] : [];
+                    $subscript_data = json_decode($subscriptions_data->subs_price,true);
+                    $price = $subscript_data['price'];
+                } else {
+                    $subscriptions_data = [];
+                }
+
                 $amount = $price * 100;
 
                 $notes = [
@@ -348,36 +381,7 @@ class SubscriptionController extends Controller
                 }
 
 
-                $curl = curl_init();
-                $api_URL = env('API_URL');
-                $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
-
-                $curl = curl_init();
-                $curl_option = array(
-
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            );
-                curl_setopt_array($curl, $curl_option);
-
-                $package_response_json = curl_exec($curl);
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
-
-                if ($httpcode != 200 || $httpcode != 201) {
-                    $pResponse = json_decode($package_response_json);
-                    $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
-                    $subscriptions_data = !empty($package_data) ? $package_data[0] : [];
-                } else {
-                    $subscriptions_data = [];
-                }
+                
                 $checkout_data = array();
                 $checkout_data['subscriptions_data'] = $subscriptions_data;
                 $checkout_data['razorpayOrderId'] = $razorpayOrderId;
