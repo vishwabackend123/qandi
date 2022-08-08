@@ -3929,7 +3929,6 @@ ul.task_center_lists .task1 {
 .time-date-block span.d-block.mb-2.commontext , .question-attempted-block span.d-block.mb-2.commontext {
     margin-bottom: 16px!important;
 }
-#subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 .bargraph_size{height:280px!important;}
 .test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
