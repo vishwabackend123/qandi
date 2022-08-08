@@ -194,6 +194,19 @@ $question_type = "Numerical";
     });
 </script>
 <!-----End-for-percent-btn-click------->
+<script>
+    var question_id = '{{$activeq_id}}';
+    $(".next_button").removeClass("activequestion");
+    $("#btn_" + question_id).addClass("activequestion");
+
+    var subject_id = '{{$subject_id}}';
+    $("#myTab .all_div").removeClass("active");
+    $("#myTab .class_" + subject_id).addClass("active");
+
+    $("#myTab .qcountout").removeClass("ReCountActive");
+    $("#myTab .review_" + subject_id).addClass("ReCountActive");
+</script>
+
 
 <script>
     function review_right_Height() {

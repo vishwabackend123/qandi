@@ -167,7 +167,7 @@
                                      $abbreviation=$ends[$number % 10]; 
                                      } 
                                      @endphp 
-                                     <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">{{$abbreviation}}</sub></label>
+                                     <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;margin-left: -2px;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>
@@ -203,7 +203,7 @@
                             $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
                             $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
                             @endphp
-                            <div class="col-sm-6 mb-3">
+                            <div class="col-sm-6 mb-5">
                                 <h5 class="mb-0">{{$subject->subject_name}}</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="halfdoughnut">
@@ -284,8 +284,15 @@
                             </span>
                         </h3>
                         <div class="common_greenbadge_tabs">
-                            <div class="row mb-4 mt-4 align-items-center">
-                                <div class="col-md-6">
+                            <div class="row mt-4 align-items-center">
+                                <div class="col-12">
+                                    <div class="d-flex  color_labels mb-4">
+                                        <span style="margin-left: 4px;"><small></small> Correct</span>
+                                        <span class="colorLabels"><small></small> Incorrect</span>
+                                        <span><small></small> Not Attempted</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
                                     <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
                                         @php $subx=1; @endphp
                                         @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -298,13 +305,6 @@
                                         @endforeach
                                         @endif
                                     </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex justify-content-between color_labels">
-                                        <span><small></small> Correct</span>
-                                        <span><small></small> Incorrect</span>
-                                        <span><small></small> Not Attempted</span>
-                                    </div>
                                 </div>
                             </div>
                             <div class="tab-content" id="pills-tabContent">

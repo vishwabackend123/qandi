@@ -42,12 +42,12 @@ $question_type = "Numerical";
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs" role="tablist">
+                                    <ul class="nav nav-tabs" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
                                             <a class="nav-link qq1_2_3_4  all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} </a>
-                                            <span class="qCount qcountout  reviewqcount">{{count($all_question_array[$sub->id])}}</span>
+                                            <span class="qCount qcountout reviewqcount review_{{$sub->id}} @if($activesub_id==$sub->id) ReCountActive @endif">{{count($all_question_array[$sub->id])}}</span>
                                         </li>
                                         @endforeach
                                         @endif
@@ -260,11 +260,11 @@ $question_type = "Numerical";
 
 
                             @if ($val->attempt_status == 'Correct')
-                            <button type="button" class="btn btn-ans" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                            <button type="button" class="btn btn-ans next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
                             @elseif ($val->attempt_status == 'Incorrect')
-                            <button type="button" class="btn btn-ans red-btn" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                            <button type="button" class="btn btn-ans red-btn next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
                             @else
-                            <button type="button" class="btn btn-ans border-btn" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                            <button type="button" class="btn btn-ans border-btn next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
                             @endif
                             @php $quKey++; @endphp
                             @endforeach

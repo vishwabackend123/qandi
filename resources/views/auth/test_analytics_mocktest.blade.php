@@ -289,7 +289,7 @@
                                 </small>
                                 <span class="d-block  commontext" style="color: #666;">Your rank</span>
                                 <label class="m-0 commonboldtext" style="font-size:32px;">3
-                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;">th</sub></label>
+                                <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;margin-left: -2px;">th</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>

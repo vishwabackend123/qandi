@@ -110,33 +110,33 @@ $question_type = "Numerical";
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
                                             <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} </a>
-                                            <span class="qCount qcountout ">{{$sub->count}}</span>
+                                            <span class="qCount qcountout qcountout_{{$sub->id}} @if($activesub_id==$sub->id) countActive @endif"">{{$sub->count}}</span>
                                         </li>
                                         @endforeach
                                         @endif
                                     </ul>
                                 </div>
-                                <div class="submitBtn">
-                                    <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
-                                        <input type="hidden" name="submit_time" id="final_submit_time" value="">
-                                        <input type="hidden" name="test_type" value="{{$test_type}}">
-                                        <input type="hidden" name="exam_type" value="{{$exam_type}}">
-                                        <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-                                        <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
-                                        <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
+                                <div class=" submitBtn">
+                                                <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
+                                                    <input type="hidden" name="submit_time" id="final_submit_time" value="">
+                                                    <input type="hidden" name="test_type" value="{{$test_type}}">
+                                                    <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                                                    <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
+                                                    <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
+                                                    <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
 
-                                        <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
-                                            <span class="btnText">Submit Test</span>
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                        <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
-                                    </form>
+                                                    <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
+                                                        <span class="btnText">Submit Test</span>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                                <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                    <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
+                                                </form>
 
                                 </div>
                             </div>

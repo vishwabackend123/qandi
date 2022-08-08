@@ -1216,6 +1216,9 @@ $question_type = "Numerical";
                     } else {
                         stop('submit');
 
+                        let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+                        lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
                         $('#FullTest_Exam_Panel_Interface_A').modal('show');
                     }
 

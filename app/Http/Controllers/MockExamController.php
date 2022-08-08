@@ -37,6 +37,7 @@ class MockExamController extends Controller
     public function mockExam(Request $request, $inst = '')
     {
         try {
+            $header_title = "Mock Test";
             $filtered_subject = [];
             $userData = Session::get('user_data');
 
@@ -235,16 +236,13 @@ class MockExamController extends Controller
                 $exam_url = route('mockExam');
 
                 $exam_title = "Mock Test";
-
-                // dd($aSections);
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title'));
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title','header_title'));
             }
 
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
             Redis::set('test_type' . $user_id, $test_type);
             $url_name = Route::current()->getName();
-            $header_title = "Mock Test";
             if ($url_name == 'mockExamTest') {
                 return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'header_title'));
             } else {

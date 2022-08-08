@@ -258,7 +258,10 @@ color: #d0d5dd !important;
     text-decoration: none !important;
     border-left: 1px solid rgba(208, 213, 221, 0.5);
 }
-
+.editnumber svg {
+    position: relative;
+    top: 3px;
+}
 .editnumber.verifyno {
     top: 30px;
 }
@@ -355,7 +358,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #363c4f !important;
+    color: #363c4f;
     line-height: 24px !important;
     height: 44px;
     padding: 10px 14px !important;
@@ -1959,7 +1962,7 @@ a.btn-common-attempted svg {
   .examScreentab .nav-tabs .nav-link.active {
       border: 0px;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 800 !important;
       line-height: 1.6;
       color: #1f1f1f !important;
       border-bottom: 4px solid #363c4f;
@@ -2242,7 +2245,7 @@ a.btn-common-attempted svg {
   
   .text-exambottom-sec {
       margin-top: 20px !important;
-      height: 38vh;
+      height: 48vh;
       overflow-y: auto;
       margin-right: -10px;
   }
@@ -3368,7 +3371,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     clip: rect(0 0.5em 1em 0em);
 }
 
-.mq_percent_more:after {
+.mq_percent_more .circletop:after{
     position: absolute;
     left: 0.5em;
     top: 0em;
@@ -3393,6 +3396,9 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background-position-y: -3px;
     background-repeat: no-repeat;
     box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
+}
+.mq_percent_more .mq_circle_inbox{
+    box-shadow:none
 }
 
 .mq_percent_text {
@@ -3532,6 +3538,7 @@ h3.commonheading{
     height: 10px;
     position: relative;
     cursor: pointer;
+    font-size: 0px;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);
@@ -3815,8 +3822,11 @@ span.greenball-3 {
     left: -36px;
 }
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
-.overall_analytics_page .chapter_performance_card ul.topic_score_lists{min-height: 353px;
-    max-height: 353px;}
+.chapter_performance_card ul.topic_score_lists {
+    min-height: 281px;
+    max-height: 281px;
+}
+.codelerninner p{min-height:64px}
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
@@ -3925,13 +3935,13 @@ ul.task_center_lists .task1 {
 .submenu_menu_block .practice-submenu{padding-left: 33px;margin:12px 0 40px;}
 .submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
 .overall_analytics_page .common_greenbadge_tabs ul.nav.mb-0{margin-bottom:12px!important;}
-.time-date-block span.d-block.mb-2.commontext , .question-attempted-block span.d-block.mb-2.commontext {
-    margin-bottom: 16px!important;
-}
-#subject_topic_section .row .col-sm-6.mb-5:last-child{margin-bottom:0!important;}
+.time-date-block span.d-block.mb-2.commontext {margin-bottom: 16px!important;}
+.question-attempted-block span.d-block.mb-2.commontext {margin-bottom: 11px!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 .bargraph_size{height:280px!important;}
-
+.test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
+.colorLabels{margin:0 28px;}
+/* .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto} */
 /********************* Amit End ****************************/
 
 
@@ -3940,7 +3950,7 @@ ul.task_center_lists .task1 {
 
 .headerMain {
     display: flex;
-    align-items: center;
+    align-items: center;    
     justify-content: space-between;
     padding: 20px 40px 20px 32px;
     box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
@@ -4927,7 +4937,8 @@ justify-content: space-between;}
 }
 
 .exam_instruction_scrolling {
-    height: 430px;
+    /* height: 430px; */
+    height: calc(100vh - 287px);
     overflow-y: auto;
     padding-right: 150px;
 }
@@ -6140,7 +6151,6 @@ td.mymatrix_table_point
     padding: 10px 14px;
     border-radius: 8px;
     font-size: 14px;
-    color: rgba(54, 60, 79, 0.5);
 }
 #referfrnd input:focus{
 border-color: #56b663;    
@@ -6705,6 +6715,7 @@ border-color: #56b663;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: 60px;
 }
 
 .name-title {
@@ -6741,6 +6752,11 @@ border-color: #56b663;
 }
 .city-sec {
     width: 37%;
+    display: flex;
+}
+
+.logo-fullpage {
+    padding: 40px;
 }
 .email-sec {
     padding: 40px 0px;
@@ -6755,7 +6771,7 @@ border-color: #56b663;
 .email-sec input#exampleFormControlInput1 {
     background: #fff;
     border: solid 1px #d0d5dd;font-size: 14px;
-    font-weight: 500;
+    font-weight: 500;height: 48px;
 }
 .email-sec label.form-label {
     font-size: 14px;
@@ -6786,7 +6802,7 @@ border-color: #56b663;
     padding-bottom: 10px;
 }
 .terms-sec p > a {
-    color: #A9E1B0;
+    color: #56b663;
     text-decoration: underline;
 }
 
@@ -7102,7 +7118,7 @@ label.filter {
   width: 4px;
   background: #d92d20;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
@@ -7112,7 +7128,7 @@ label.filter {
   /* background: #56b663; */
   background-color: #039855;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
@@ -7275,4 +7291,10 @@ margin-bottom: 12px;
     content: "";
     display: none;
 } 
+.ReCountActive {
+    font-size: 16px!important;
+    font-weight: 800!important;
+    line-height: 1.6!important;
+    color: #363c4f!important;   
+    }
  
