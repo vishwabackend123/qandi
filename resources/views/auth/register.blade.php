@@ -611,8 +611,13 @@ $(document).ready(function() {
     $('#location').change(function() {
         $("#location-error").hide();
     })
-
-
+    $(document).keypress(function(e){
+        if (e.keyCode === 13) {
+            if ($('#signup_cnt').hasClass('disabled') != true) {
+                $('#signup_cnt').trigger('click');
+            }
+        }
+    });
 });
 
 $('.otp').keyup(function() {
