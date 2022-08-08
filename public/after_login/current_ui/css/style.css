@@ -7118,7 +7118,7 @@ label.filter {
   width: 4px;
   background: #d92d20;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
@@ -7128,7 +7128,7 @@ label.filter {
   /* background: #56b663; */
   background-color: #039855;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
