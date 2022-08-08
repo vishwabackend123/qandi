@@ -309,6 +309,7 @@ $('#editsignnumber').click(function() {
     $('#wait_otp_div').text('00:59');
     $("#errlog_otp").html('')
     $('#mobile_num').attr("readonly", false);
+    saveFormValidate();
 });
 $('#verifynum').click(function() {
     $check = 0;
@@ -652,8 +653,14 @@ function saveFormValidate() {
         $('#signup_cnt').attr('disabled', 'disabled');
         $('#signup_cnt').addClass("disbaled");
     } else {
-        $('#signup_cnt').removeAttr('disabled');
-        $('#signup_cnt').removeClass("disbaled");
+        if ($("#studentsignup").valid()) {
+            $('#signup_cnt').removeAttr('disabled');
+            $('#signup_cnt').removeClass("disbaled");    
+        }else{
+            $('#signup_cnt').attr('disabled', 'disabled');
+            $('#signup_cnt').addClass("disbaled");
+        }
+        
     }
 }
 
