@@ -4931,7 +4931,8 @@ justify-content: space-between;}
 }
 
 .exam_instruction_scrolling {
-    height: 430px;
+    /* height: 430px; */
+    height: calc(100vh - 287px);
     overflow-y: auto;
     padding-right: 150px;
 }
