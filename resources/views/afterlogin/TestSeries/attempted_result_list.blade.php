@@ -31,6 +31,7 @@
     <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
         @php
             $testname="";
+            $marks =$sche->no_of_question * 4;
             if($sche->test_series_name)
             {
                 $testname = $sche->test_series_name;    
@@ -41,6 +42,15 @@
             elseif($sche->test_type == 'Mocktest')
             {
              $testname =  'Mock Test';   
+             if($sche->no_of_question == 90)
+             {
+                $marks=300;
+             }
+             if($sche->no_of_question == 200)
+             {
+                $marks=720;
+             }
+             
             }elseif($sche->test_type == 'PreviousYear')
             {
                 $testname =  $sche->py_paper_name;   
@@ -113,7 +123,7 @@
                 <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_marks_content">
                     <div class="mock_test_q_d_m_s_text1">Marks</div>
-                    <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
+                    <div class="mock_test_qdms_text2">{{$marks}}</div>
                 </div>
                 <div class="live_exam_diveder_div"></div>
                 <div class="mock_test_sub_content">
