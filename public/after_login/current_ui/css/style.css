@@ -3371,7 +3371,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     clip: rect(0 0.5em 1em 0em);
 }
 
-.mq_percent_more:after {
+.mq_percent_more .circletop:after{
     position: absolute;
     left: 0.5em;
     top: 0em;
@@ -3396,6 +3396,9 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background-position-y: -3px;
     background-repeat: no-repeat;
     box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
+}
+.mq_percent_more .mq_circle_inbox{
+    box-shadow:none
 }
 
 .mq_percent_text {
@@ -3936,7 +3939,7 @@ ul.task_center_lists .task1 {
 .bargraph_size{height:280px!important;}
 .test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
 .colorLabels{margin:0 28px;}
-
+/* .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto} */
 /********************* Amit End ****************************/
 
 
@@ -4931,7 +4934,8 @@ justify-content: space-between;}
 }
 
 .exam_instruction_scrolling {
-    height: 430px;
+    /* height: 430px; */
+    height: calc(100vh - 287px);
     overflow-y: auto;
     padding-right: 150px;
 }

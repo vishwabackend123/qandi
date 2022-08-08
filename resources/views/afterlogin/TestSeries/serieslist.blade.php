@@ -40,7 +40,7 @@
                                     <div class="allscrollbar tablescroll">
                                         @if(!empty($open_series))
                                         @foreach($open_series as $open)
-                                        <div class="accordion-item pt-4">
+                                        <div class="accordion-item pt-4 m-0">
                                             <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                                 <h2 class="m-0">{{$open->test_series_name}}</h2>
                                                 <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2>
@@ -75,7 +75,7 @@
                                         @if(!empty($live_series))
                                         @foreach($live_series as $live)
                                         @if($live->test_completed_yn === 'N')
-                                        <div class="accordion-item pt-4">
+                                        <div class="accordion-item pt-4 m-0">
                                             <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                                 <h2 class="m-0">{{$live->test_series_name}}</h2>
                                                 <h2 class="m-0 questiontext">{{$live->questions_count}} Questions</h2>
