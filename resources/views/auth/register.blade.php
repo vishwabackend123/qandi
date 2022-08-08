@@ -295,6 +295,7 @@ $(function() {
 function resentOtp() {
     $('#otp_box input[name="register_otp[]"').val('');
     $('#verifynum').click();
+    saveFormValidate();
 }
 $('#editsignnumber').click(function() {
     $('#mobile_num').val('');
@@ -308,6 +309,7 @@ $('#editsignnumber').click(function() {
     $('#wait_otp_div').text('00:59');
     $("#errlog_otp").html('')
     $('#mobile_num').attr("readonly", false);
+    saveFormValidate();
 });
 $('#verifynum').click(function() {
     $check = 0;
@@ -633,9 +635,13 @@ $('.otp').keyup(function() {
 });
 
 $('.reqrd').keyup(function() {
-    
-
-    var isEmpty = false;
+    saveFormValidate();
+});
+$('.reqrd').change(function() {
+    saveFormValidate();
+});
+function saveFormValidate() {
+     var isEmpty = false;
     $('.reqrd').each(function() {
         if ($(this).val() == '' || $(this).val() == null) {
             isEmpty = true;
@@ -647,10 +653,16 @@ $('.reqrd').keyup(function() {
         $('#signup_cnt').attr('disabled', 'disabled');
         $('#signup_cnt').addClass("disbaled");
     } else {
-        $('#signup_cnt').removeAttr('disabled');
-        $('#signup_cnt').removeClass("disbaled");
+        if ($("#studentsignup").valid()) {
+            $('#signup_cnt').removeAttr('disabled');
+            $('#signup_cnt').removeClass("disbaled");    
+        }else{
+            $('#signup_cnt').attr('disabled', 'disabled');
+            $('#signup_cnt').addClass("disbaled");
+        }
+        
     }
-});
+}
 
 /* function for select sity */
 document.addEventListener("paste", function(e) {
