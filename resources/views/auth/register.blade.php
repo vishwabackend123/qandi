@@ -3,6 +3,7 @@
 <!-- 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body style="background: #f5faf6;">
 <section class="d-flex login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
@@ -165,7 +166,7 @@
                     </div>
                 </div>
                 <div class="custom-input pb-3 row">
-                    <div class="col-lg-6">
+                    <div class="col-6">
                         <label>Grade</label>
                         <select class="form-control selectdata reqrd js-example-basic-single" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
@@ -174,9 +175,9 @@
                             <option class="we" value="3">12th Standard Pass</option>
                         </select>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-6">
                         <label>Exam</label>
-                        <select class="form-control selectdata reqrd js-example-basic-single" name="exam" id="exam_id" required>
+                        <select class="form-control selectdata reqrd js-example-basic-single examtype" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE Main</option>
                             <option value="2">NEET</option>
@@ -535,7 +536,15 @@ $("#studentsignup").validate({
 
 });
 $(document).ready(function() {
-    $('.js-example-basic-single').select2({ minimumResultsForSearch: -1 });
+     $('.js-example-basic-single').select2({ 
+      minimumResultsForSearch: -1 ,
+       placeholder: "Select grade",
+      });
+       $('.examtype').select2({ 
+       minimumResultsForSearch: -1 ,
+       placeholder: "Exam Type",
+      });
+    
     $('.resend_again').hide();
 
     $("#location").select2({
@@ -677,4 +686,5 @@ function resentOtpTime() {
 }
 
 </script>
+</body>
 @endsection

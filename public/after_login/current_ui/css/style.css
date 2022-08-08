@@ -355,7 +355,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #363c4f !important;
+    color: #363c4f;
     line-height: 24px !important;
     height: 44px;
     padding: 10px 14px !important;
