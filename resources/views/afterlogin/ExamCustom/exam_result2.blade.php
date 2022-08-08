@@ -190,3 +190,22 @@
     }
 
 </script>
+<!-- <script>
+$(document).ready(function(){
+    $(".topic_score_bar").hover(function(){
+           var $ul = $(this).children(".dropdown-menu");
+           var $button = $(this).children(".dropdown-toggle");
+            var ulOffset = $ul.offset();
+            var spaceUp = (ulOffset.top - $button.height() - $ul.height()) - $(window).scrollTop();
+            var spaceDown = $(window).scrollTop() + $(window).height() - (ulOffset.top + $ul.height());
+            $ul.parent(".topic_score_bar").toggleClass("show");
+              $ul.toggleClass("show");
+              if (spaceDown < 0 && (spaceUp >= 0 || spaceUp > spaceDown))
+      $(this).addClass("dropup");
+        }).on( ".dropdown", function() {
+            // always reset after close
+            $(this).removeClass("dropup");
+            });
+}); 
+
+</script> -->
