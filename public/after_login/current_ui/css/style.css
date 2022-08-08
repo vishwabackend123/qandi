@@ -7298,4 +7298,15 @@ margin-bottom: 12px;
     line-height: 1.6!important;
     color: #363c4f!important;   
     }
+
+ 
+    .reviewScreenright .list-ans .ms-3 {
+        margin-left: initial !important;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+    .make_me_blue  .modal-backdrop {
+        background: #f5faf6;
+        opacity: 1 !important;
+    }
  
