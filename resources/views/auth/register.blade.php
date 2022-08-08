@@ -476,6 +476,7 @@ $("#studentsignup").validate({
         $.ajax({
             url: "{{ url('/verifyOtpRegister') }}",
             type: 'POST',
+            async: false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 reg_otp: register_otp,
