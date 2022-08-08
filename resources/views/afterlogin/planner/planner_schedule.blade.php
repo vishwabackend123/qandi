@@ -545,7 +545,7 @@ $userData = Session::get('user_data');
 
                     $('#number').val(response.range);
                     $("#number").attr({
-                        "min": response.range // values (or variables) here
+                        "min": response.attempted // values (or variables) here
                     });
                     var planned_edit = response.planner;
                     var result = Object.values(planned_edit);
