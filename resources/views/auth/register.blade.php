@@ -295,6 +295,7 @@ $(function() {
 function resentOtp() {
     $('#otp_box input[name="register_otp[]"').val('');
     $('#verifynum').click();
+    saveFormValidate();
 }
 $('#editsignnumber').click(function() {
     $('#mobile_num').val('');
@@ -633,9 +634,13 @@ $('.otp').keyup(function() {
 });
 
 $('.reqrd').keyup(function() {
-    
-
-    var isEmpty = false;
+    saveFormValidate();
+});
+$('.reqrd').change(function() {
+    saveFormValidate();
+});
+function saveFormValidate() {
+     var isEmpty = false;
     $('.reqrd').each(function() {
         if ($(this).val() == '' || $(this).val() == null) {
             isEmpty = true;
@@ -650,7 +655,7 @@ $('.reqrd').keyup(function() {
         $('#signup_cnt').removeAttr('disabled');
         $('#signup_cnt').removeClass("disbaled");
     }
-});
+}
 
 /* function for select sity */
 document.addEventListener("paste", function(e) {
