@@ -69,8 +69,8 @@
                 {{$sche->live_exam_name}}
                 @elseif($sche->test_type == 'Mocktest')
                 Mock Test
-                @elseif($sche->test_type == 'PreviousYear')
-                {{$sche->py_paper_name}}
+                @elseif($sche->test_type == 'Assessment')
+                Custom Exam
                 @else
                 {{$sche->test_type}}
                 @endif
