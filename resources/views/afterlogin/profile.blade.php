@@ -41,13 +41,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname"  onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
+                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname"  onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -91,15 +91,17 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="row">
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>Grade</label>
-                                    <select class="form-control selectdata js-example-basic-single selectgrade"  name="grade" required>
-                                        <option class="we" value="">Select a Grade</option>
-                                        <option>12th</option>
+                                    <select class="form-control selectdata js-example-basic-single selectgrade" name="grade" id="grade" required>
+                                        <option class="we" value="" disabled selected hidden>Select grade</option>
+                                        <option class="we2" value="1" @if($student_stage_at_sgnup==1) selected @else '' @endif>10th Standard Pass</option>
+                                        <option class="we" value="2" @if($student_stage_at_sgnup==2) selected @else '' @endif>11th Standard Pass</option>
+                                        <option class="we" value="3" @if($student_stage_at_sgnup==3) selected @else '' @endif>12th Standard Pass</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
-                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no." value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
+                                        <input type="text" class="form-control bg-transparent" placeholder="Mobile no." value="{{$userData->mobile}}" id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -154,43 +156,39 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="col-lg-8 pt-4">
                         @php
-                            $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
-                            $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
-                            $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
-                            @endphp
-                            @php $startdate=isset($subscription_details->subscription_start_date)? date("d-m-Y", strtotime($subscription_details->subscription_start_date)):''; @endphp
-                            @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
-                            @php
-                            $datetime1 = new DateTime($startdate);
-                            $datetime2 = new DateTime($expirydate);
-                            $interval = $datetime1->diff($datetime2);
-                            $days = $interval->format('%a');
-                            @endphp
+                        $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
+                        $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+                        $subscription_desc = (isset($current_subscription->subscription_details) && !empty($current_subscription->subscription_details))? $current_subscription->subscription_details :'No data';
+                        @endphp
+                        @php $startdate=isset($subscription_details->subscription_start_date)? date("d-m-Y", strtotime($subscription_details->subscription_start_date)):''; @endphp
+                        @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+                        @php
+                        $datetime1 = new DateTime($startdate);
+                        $datetime2 = new DateTime($expirydate);
+                        $interval = $datetime1->diff($datetime2);
+                        $days = $interval->format('%a');
+                        @endphp
                         <div class="bg-white subscription-details">
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
-                            <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
-                            @if($days <=14)
-                            <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
-                            @csrf
-                            <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
-                            <input type="hidden" name="subscript_id" value="{{$current_subscription->subscript_id}}">
-                            <input type="hidden" name="exam_period" value="12">
-                            <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                            <button type="submit" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none" id="get-sub-btn">Upgrade Plan</button>
-                           
-                        </form>
-                         @endif
+                                <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
+                                @if($days <=14) <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
+                                    <input type="hidden" name="subscript_id" value="{{$current_subscription->subscript_id}}">
+                                    <input type="hidden" name="exam_period" value="12">
+                                    <input type="hidden" name="period_unit" value="month">
+                                    <input type="hidden" name="exam_price" value="{{$subsprice}}">
+                                    <button type="submit" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none" id="get-sub-btn">Upgrade Plan</button>
+                                    </form>
+                                    @endif
                             </div>
                             <div class="line mb-3 pb-1"></div>
-                            
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription type</h2>
-                                @if($days < 20)
-                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} {{$days}} days Subscription</h3>
-                                @else
-                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
-                                @endif
+                                @if($days < 20) <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} {{$days}} days Subscription</h3>
+                                    @else
+                                    <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
+                                    @endif
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Price</h2>
@@ -210,8 +208,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="flip d-inline-block">Show details</div>
                             &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
-                        <!--a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a-->
-
+                            <!--a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a-->
                         </div>
                     </div>
                 </div>
@@ -284,22 +281,22 @@ $user_id = isset($userData->id)?$userData->id:'';
             },
             success: function(response_data) {
                 if (response_data.status === true) {
-                    
+
                     $('#email_success').css('color', 'green');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
                     $("#email_success").fadeOut(2000);
                     setTimeout(function() {
-                     $('.email-error').show();
+                        $('.email-error').show();
                     }, 2000);
-                    
+
                 } else {
                     $('#email_success').css('color', 'red');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
                     $("#email_success").fadeOut(10000);
                     setTimeout(function() {
-                     $('.email-error').show();
+                        $('.email-error').show();
                     }, 2000);
                 }
 
@@ -318,15 +315,14 @@ $user_id = isset($userData->id)?$userData->id:'';
         editProfileCheck();
     });
     $('#file-input').change(function() {
-        if(this.files[0].size > 2097152)
-        {
+        if (this.files[0].size > 2097152) {
             $(this).val(null);
             alert("Image size is greater than 2 MB");
             return false;
         }
         editProfileCheck();
     });
-    $('#cancelEdit').click(function(){
+    $('#cancelEdit').click(function() {
         var url = "{{ route('dashboard') }}";
         window.location.href = url;
     });
@@ -348,10 +344,14 @@ $user_id = isset($userData->id)?$userData->id:'';
             }
             var city = $('#city_name').val();
             var state = $('#state').val();
+            var grade = $('#grade').val();
             if (city == '') {
                 empty = true;
             }
             if (state == '') {
+                empty = true;
+            }
+            if (grade == '') {
                 empty = true;
             }
             var input_data = $(this).val();
