@@ -4,7 +4,7 @@
 <section class="d-flex login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
-            <a href="javascript:void(0);">
+            <a href="https://www.qanditoday.com/" target="_blank">
                 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#dxjwe095ea)">
                         <path d="M28 4.8H8.8V24H28V4.8zM47.195 24.001h-19.2v19.2h19.2V24z" fill="#38D430" />
