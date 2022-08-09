@@ -698,6 +698,7 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        $('body').removeClass("make_me_blue");
     }
 
     function stop(type = '') {
@@ -711,6 +712,7 @@ $questtype='radio';
         clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
+            $('body').addClass("make_me_blue");
         }
     }
 
