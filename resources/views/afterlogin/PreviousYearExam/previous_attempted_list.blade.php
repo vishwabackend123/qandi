@@ -13,15 +13,7 @@
                 @endif
             </select>
         </div>
-        <!-- <div class="customDropdown dropdown">
-            <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-            <div class="options">
-                <div style=" overflow-y: auto;  height: 145px;">
-                    <div class="active markstrend">2021</div>
-                    <div class="active markstrend">2020</div>
-                </div>
-            </div>
-        </div> -->
+       
     </div>
 </div>
 <div class="accordion mt-4 pt-1" id="accordionExampleTwo">
@@ -46,10 +38,14 @@
                     {{$sche->test_type}}
                     @endif
                 </h2>
+                 @php
+                        $test_type = base64_encode($sche->test_type);
+                        $test_name = base64_encode($sche->py_paper_name);
+                        @endphp
                 <h3 class="m-0 notbold">{{date('d F Y', strtotime($sche->created_at));}}</h3>
                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwoTwo">
                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo_{{$sche->id}}" aria-expanded="true" aria-controls="collapseTwoTwo" class="m-0 view_detail_text_colleps view_details">View details</h4>
-                    <a href="{{route('get_exam_result_analytics',$sche->id)}}">
+                    <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type,$test_name])}}">
                         <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border mobile_hide">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -62,10 +58,8 @@
                             <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             <path d="M16.667 12.25a7.576 7.576 0 0 1-8.684 5.975c-3.158-.508-5.7-3.05-6.216-6.208a7.584 7.584 0 0 1 5.95-8.675" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        @php
-                        $test_type = base64_encode($sche->test_type);
-                        @endphp
-                        <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type])}}">
+
+                        <a href="{{route('get_exam_result_analytics',[$sche->id,$test_type,$test_name])}}">
                             <h3 class="previous_attempt_exam_mob_block"><b>See analytics</b></h3>
                         </a>
                     </div>
