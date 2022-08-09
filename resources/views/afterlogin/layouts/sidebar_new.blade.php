@@ -1,3 +1,6 @@
+@php
+$userData = Session::get('user_data');
+@endphp
 <!-------- Mobile Sidebar -------------->
 <section class="sidebar_block mobile_block mobilemenu">
     <div class="userprofile headericon d-flex align-items-center justify-content-between">
@@ -8,18 +11,18 @@
                 </svg>
                 <!-- <img src="https://student-image1-new.s3.ap-south-1.amazonaws.com/1659422295_703.jpg"> -->
             </a>
-            <strong>Hi Sakshi!</strong>
+            <strong>Hi {{ucwords($userData->user_name)}}! </strong>
         </div>
-        <span>NEET</span>
+        <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
     </div>
 
     <div class="main_menu_block">
-        <label class="d-flex justify-content-between align-items-center pro_sub_label">
+        <a  href="{{ route('profile') }}" class="d-flex justify-content-between align-items-center pro_sub_label">
             Profile & Subcription
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="m6 12 4-4-4-4" stroke="#868A95" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-        </label>
+        </a>
         <ul class="mob_sidebar_lists m-0">
             <li class="active">
                 <a href="{{ url('/dashboard') }}">
@@ -160,7 +163,7 @@
     </div>
 
     <div class="mobileview_logout position-relative">
-        <button class="btn btn-common-transparent">Logout</button>
+        <a href="{{ route('logout') }}" class="btn btn-common-transparent">Logout</a>
     </div>
 </section>
 <!-------------- End --------------->

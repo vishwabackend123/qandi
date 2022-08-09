@@ -4707,7 +4707,7 @@ justify-content: space-between;}
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;}
     #resume-test  .modal-content{border:0px}
     .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto}
-    /* .dropdown.show .dropdown-menu{display:block;} */
+    .dropdown.show .dropdown-menu{display:block;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
