@@ -89,7 +89,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="line mb-4 d-md-block d-none"></div>
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-6 custom-input pb-4">
+                                    <label>Grade</label>
+                                    <select class="form-control selectdata js-example-basic-single selectgrade"  name="grade" required>
+                                        <option class="we" value="">Select a Grade</option>
+                                        <option>12th</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Mobile</label>
                                         <input type="text" class="form-control bg-transparent" placeholder="Mobile no." value="{{$userData->mobile}}"  id="mobile_num" minlength="10" maxlength="10" onkeypress="return isNumber(event)" name="user_mobile" readonly>
@@ -220,6 +227,10 @@ $user_id = isset($userData->id)?$userData->id:'';
         });
         $('.city_list').select2({
             placeholder: "Select a City",
+        });
+        $('.selectgrade').select2({
+            minimumResultsForSearch: -1,
+            placeholder: "Select a Grade",
         });
         editProfileCheck();
         var user_state = '<?php echo $userData->state; ?>';
