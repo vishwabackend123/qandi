@@ -51,8 +51,15 @@
         </span>
     </h3>
     <div class="common_greenbadge_tabs">
-        <div class="row mb-4 mt-4 align-items-center">
-            <div class="col-md-6">
+        <div class="row mt-4 align-items-center">
+            <div class="col-12">
+                <div class="d-flex  color_labels mb-4">
+                    <span style="margin-left: 4px;"><small></small> Correct</span>
+                    <span class="colorLabels"><small></small> Incorrect</span>
+                    <span><small></small> Not Attempted</span>
+                </div>
+            </div>
+            <div class="col-12">
                 <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
                     @if(isset($response->subject_wise_result))
                     @foreach($response->subject_wise_result as $skey=>$subData)
@@ -64,13 +71,7 @@
                    
                 </ul>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex justify-content-between color_labels">
-                    <span><small></small> Correct</span>
-                    <span><small></small> Incorrect</span>
-                    <span><small></small> Not Attempted</span>
-                </div>
-            </div>
+            
         </div>
         <div class="tab-content" id="pills-tabContent">
             @if(isset($response->subject_wise_result))
