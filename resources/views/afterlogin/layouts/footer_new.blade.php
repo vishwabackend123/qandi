@@ -884,6 +884,12 @@
 
 <script>
 /*********Notification-Scrolljs*************/
+$('a[href="#referfrnd"]').click(function() {
+    $('.mobilemenu').removeClass("showmenu");
+    $('#menumobilehide').hide();
+    $("#menumobile").show();
+    $('body').removeClass('sidebartoggle');
+});
 $('.notificationnew').click(function() {
     $('.mobilemenu').removeClass("showmenu");
     $('#menumobilehide').hide();

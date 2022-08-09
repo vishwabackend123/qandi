@@ -120,7 +120,7 @@
         margin-right: 4px;
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
-    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
     .subject_performance_card .dashSubtext{font-size:13px;}
     .mock_test_ques_dure_marks_sub{justify-content:space-between;}
     .questionOptionBlock{    padding-top: 25px;}
@@ -326,7 +326,7 @@
     border-radius: 10px !important;
     border: 1px solid #e5eaee;
     padding:12px;
-    margin-top: 16px;
+    margin-top: 16px;height: 100%;
     }
    .chapters-expend .accordion-body {
     margin-top: 23px;
@@ -1462,8 +1462,7 @@
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
         .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{width:560px;padding-bottom: 10px;
-            padding-left: 9px;}
+        .mobilescrolltab .nav-tabs{width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         /* #timeManagementChart{height:280px!important;width:350px!important;}
         .graph_padd{overflow-x: auto;padding-bottom:10px;} */
@@ -1506,6 +1505,7 @@
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar {display:none; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
+            .resendmail {top: 30px; }
 }
 
 
