@@ -341,19 +341,19 @@ $question_type = "Numerical";
                             <span><span id="lefttime_pop_s"> </span>Left</span>
                         </div>
                     </div>
-                    <div class="exam-ans-sec top-first">
+                    <div class="exam-ans-sec top-first d-none">
                         <div class="ans1">Answered</div>
                         <div class="ans-in-num">24</div>
                     </div>
-                    <div class="exam-ans-sec">
+                    <div class="exam-ans-sec d-none">
                         <div class="ans2">Unanswered</div>
                         <div class="ans-in-num">2</div>
                     </div>
-                    <div class="exam-ans-sec">
+                    <div class="exam-ans-sec d-none">
                         <div class="ans3">Marked for review</div>
                         <div class="ans-in-num">3</div>
                     </div>
-                    <div class="exam-ans-sec">
+                    <div class="exam-ans-sec d-none">
                         <div class="ans4">Answered & marked for review</div>
                         <div class="ans-in-num">1</div>
                     </div>
