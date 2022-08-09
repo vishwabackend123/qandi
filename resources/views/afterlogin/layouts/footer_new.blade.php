@@ -929,3 +929,9 @@ $('.headericon.dropdown,.sidebar-menu-lists a').click(function(){
 // });
 /**********************Notification-Overlay Remove Outside Section Click*******************/
 </script>
+
+<script>
+$('.submitBtnlink').click(function() {
+    $('body').addClass("make_me_blue");
+});
+</script>
