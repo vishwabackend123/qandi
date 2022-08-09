@@ -332,9 +332,15 @@
                                                     ""
                                                     @endif</h4>
                                                 <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    @if($tcorrect_per > 0)    
                                                     <div class="progress-bar correct-bg" role="progressbar" style="width: {{$tcorrect_per}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
+                                                    @if($tincorrect_per > 0)    
                                                     <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
+                                                     @if($tnot_attempt_per > 0)    
                                                     <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
                                                 </div>
                                                 <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
