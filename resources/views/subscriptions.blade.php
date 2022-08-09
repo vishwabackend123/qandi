@@ -183,7 +183,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green disabled" disabled id="get-sub-btn"> Purchased</button>
                         </form>
                     </div>
@@ -304,7 +303,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get subscription</button>
                         </form>
                     </div>
@@ -444,7 +442,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green disabled" disabled id="get-sub-btn"> Get Subscribe</button>
                         </form>
                     </div>
@@ -582,7 +579,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get subscription</button>
                         </form>
                     </div>
@@ -705,7 +701,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green" id="get-sub-btn">Renew</button>
                         </form>
                     </div>
@@ -824,7 +819,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscribe</button>
                         </form>
                     </div>
@@ -940,7 +934,6 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <input type="hidden" name="exam_price" value="{{$subsprice}}">
                             <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscribe</button>
                         </form>
                     </div>
