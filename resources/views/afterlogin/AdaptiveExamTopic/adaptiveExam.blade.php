@@ -323,7 +323,7 @@ $question_type = "Numerical";
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modalcenter">
         <div class="modal-dialog">
-            <div class="modal-content exammodal_content">
+            <div class="modal-content exammodal_content nocontentmodal">
                 <div class="modal-body">
                     <div class="modal-header-exam">
                         <div class="exam-overview">
