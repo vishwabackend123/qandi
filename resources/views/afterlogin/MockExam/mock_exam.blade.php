@@ -300,7 +300,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
 
-                        <div class="text-exambottom-sec">
+                        <div class="text-exambottom-sec" id="questNo">
                             <!-- <button type="button" class="btn" id="btn-ans">1</button>
                             <button type="button" class="btn pink-btn" id="btn-ans">11</button>
                             <button type="button" class="btn blue-btn" id="btn-ans">18</button>
@@ -618,12 +618,7 @@ $question_type = "Numerical";
             $('#quest_option_' + activeques_id).focus();
         }
     });
-    /* 
-            $('#goto-exam-btn').click(function() {
-                $('#mainDiv').show();
-                $('#exam_content_sec').show();
-               
-            }); */
+
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
@@ -1484,7 +1479,6 @@ $question_type = "Numerical";
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
 
-        console.log(save_count, r_count, s_r_count, unanswered);
 
         $('#ans_cnt_2').html(save_count);
         $('#ans_cnt').html(save_count);

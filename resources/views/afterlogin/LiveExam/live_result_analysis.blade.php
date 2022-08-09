@@ -8,7 +8,11 @@
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="{{ url('/dashboard') }}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
+            @if($type_name=='Assessment')
+            <h3 class="commonheading">Custom Exam</h3>
+            @else
             <h3 class="commonheading">{{$type_name}}</h3>
+            @endif
             
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
