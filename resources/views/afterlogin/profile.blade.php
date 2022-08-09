@@ -15,7 +15,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 <body class="bg-content">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <div class="main-wrapper">
+    <div class="main-wrapper exam-wrapperBg">
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
         <section class="content-wrapper mobile-wrapper">

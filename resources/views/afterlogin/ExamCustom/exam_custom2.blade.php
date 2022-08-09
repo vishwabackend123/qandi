@@ -15,7 +15,7 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<div class="main-wrapper">
+<div class="main-wrapper exam-wrapperBg">
 
   <!-- End start-navbar Section -->
   @include('afterlogin.layouts.navbar_header_new')

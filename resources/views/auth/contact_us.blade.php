@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- <div class="main-wrapper">
+<div class="main-wrapper exam-wrapperBg">
     <header>
       <div class="headerMain">
          <div class="headerLeft">
@@ -85,30 +85,47 @@
       <div class="contacrus_page_wrapper">
          <div class="contactus_customer_support_text">Customer Support</div>
          <div class="contactus_customer_support_text_under_text">Do you need assistance with your Q& I service or product?<br>We will get you assistance you require.</div>
-         <div class="contactus_free_get_need">Toll Free</div>
-         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="contactus_free_get_need_span">0120-4511500</span>
-         </div>
-         <div class="contactus_free_get_need">Get in touch</div>
-         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="contactus_free_get_need_span">Mail us</span>
-         </div>
-         <div class="contactus_free_get_need">Need to tell us something?</div>
-         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="contactus_free_get_need_span">Chat with us</span>
-         </div>
+          <div class="row">
+              <div class="col-md-3 col-sm-4">
+                 <div class="contactcommon">
+                 <div class="contactus_free_get_need">Toll Free</div>
+                     <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="contactus_free_get_need_span">0120-4511500</span>
+                     </div>
+                 </div>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                 <div class="contactcommon">
+                    <div class="contactus_free_get_need">Get in touch</div>
+                     <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="contactus_free_get_need_span">Mail us</span>
+                     </div>
+                 </div>
+               </div> 
+               <div class="col-md-3 col-sm-4">
+                 <div class="contactcommon"> 
+                     <div class="contactus_free_get_need">Need to tell us something?</div>
+                     <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 6.667 13.333 10 10 13.333" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2.667 2.667v4.666A2.667 2.667 0 0 0 5.333 10h8" stroke="#1F1F1F" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="contactus_free_get_need_span">Chat with us</span>
+                     </div>
+                 </div>
+               </div> 
+          </div>
+        
+        
+         
          <div class="contectus_bottom_img_svg">
             <svg xmlns="http://www.w3.org/2000/svg" width="330" height="326" viewBox="0 0 330 326" fill="none">
             <circle cx="12" cy="150" r="12" fill="#56B663"/>
@@ -132,9 +149,9 @@
          </div>
       </div>
    </div>
-</div> -->
+</div>
 
-<div class="missing-info-main">
+<!-- <div class="missing-info-main">
    <div class="missing-info-section">
    <div class="profile-sec">
       <div class="name-title">
@@ -178,6 +195,6 @@
          </div>
       </div>
 </div>
-</div>
+</div> -->
    
 @endsection

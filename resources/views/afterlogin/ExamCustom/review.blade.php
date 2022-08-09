@@ -35,7 +35,7 @@ $question_type = "Numerical";
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<div class="main-wrapper">
+<div class="main-wrapper exam-wrapperBg">
 
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')

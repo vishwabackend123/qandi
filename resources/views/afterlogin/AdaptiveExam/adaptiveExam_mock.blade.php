@@ -128,7 +128,7 @@ $questtype='radio';
         border-radius: 20px !important;
     }
 </style>
-<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
+<div class="main-wrapper exam-wrapperBg" id="mainDiv" style="padding-left:0px; display:none;">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
