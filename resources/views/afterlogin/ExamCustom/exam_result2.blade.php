@@ -68,8 +68,10 @@
                     </li>
                     @endforeach
                     @endif
+                   
                 </ul>
             </div>
+            
         </div>
         <div class="tab-content" id="pills-tabContent">
             @if(isset($response->subject_wise_result))
@@ -190,3 +192,5 @@
     }
 
 </script>
+
+

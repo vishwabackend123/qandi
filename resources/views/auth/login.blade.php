@@ -234,7 +234,14 @@
             $('#opt_five').val('');
             clearTimeout(timerId);
             $('#wait_otp_div').text('00:59');
-        })
+        });
+        $(document).keypress(function(e){
+            if (e.keyCode === 13) {
+              if ($('#otp-verify-btn').css('display') != 'none' && $('#otp-verify-btn').hasClass('disabled') != true) {
+                verifyTop();
+              }
+            }
+        });
 
     });
 

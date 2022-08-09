@@ -24,7 +24,7 @@
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 140px !important;}
 
-.graphDetailempty .testScrolltype { margin-right: 9px !important;;}
+.graphDetailempty .testScrolltype { margin-right: 9px !important;}
 /* .testPlanCard {
     max-width: 280px !important;
 
@@ -147,6 +147,8 @@
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
+    .text-exambottom-sec {height: 30vh;}
+    
    
 }
 @media only screen and (max-height: 700px) {
@@ -1503,7 +1505,9 @@
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar {display:none; } 
+            .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
 }
+
 
 @media only screen and (max-width: 576px){
     .right-seidepannel h1 {

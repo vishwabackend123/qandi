@@ -3935,9 +3935,8 @@ ul.task_center_lists .task1 {
 .submenu_menu_block .practice-submenu{padding-left: 33px;margin:12px 0 40px;}
 .submenu_menu_block ul.submenu-lists li>a svg {margin-right: 12px;}
 .overall_analytics_page .common_greenbadge_tabs ul.nav.mb-0{margin-bottom:12px!important;}
-.time-date-block span.d-block.mb-2.commontext , .question-attempted-block span.d-block.mb-2.commontext {
-    margin-bottom: 16px!important;
-}
+.time-date-block span.d-block.mb-2.commontext {margin-bottom: 16px!important;}
+.question-attempted-block span.d-block.mb-2.commontext {margin-bottom: 11px!important;}
 .commoncodeblock_content{border: 1px solid #e0e0e0;border-top:0;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;}
 .bargraph_size{height:280px!important;}
 .test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
@@ -4707,6 +4706,8 @@ justify-content: space-between;}
     }
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;}
     #resume-test  .modal-content{border:0px}
+    .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto}
+    /* .dropdown.show .dropdown-menu{display:block;} */
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -7118,7 +7119,7 @@ label.filter {
   width: 4px;
   background: #d92d20;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
@@ -7128,7 +7129,7 @@ label.filter {
   /* background: #56b663; */
   background-color: #039855;
   position: absolute;
-  height: 66px;
+  height: 100%;
   border-radius: 20px;
 }
 
@@ -7296,5 +7297,16 @@ margin-bottom: 12px;
     font-weight: 800!important;
     line-height: 1.6!important;
     color: #363c4f!important;   
+    }
+
+ 
+    .reviewScreenright .list-ans .ms-3 {
+        margin-left: initial !important;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+    .make_me_blue  .modal-backdrop {
+        background: #f5faf6;
+        opacity: 1 !important;
     }
  
