@@ -253,10 +253,10 @@ $question_type = "Numerical";
             var newWindowWidth = $(window).width();
             if (newWindowWidth < 768) {
                 //$('.right').insertBefore('.left');
-                $("#exam_content_sec  #btn_" + question_id).focusout();
+                $("#questNo  #btn_" + question_id).focusout();
             } else {
                 //$('.left').insertBefore('.right');
-                $("#exam_content_sec  #btn_" + question_id).focus();
+                $("#questNo  #btn_" + question_id).focus();
 
             }
         }
