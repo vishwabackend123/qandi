@@ -1512,6 +1512,7 @@
                 position: relative;
             }
             .bg-white.subscription-details.mt-5{margin-top:20px!important;}
+            .login-signup,.selectPlan{background-color: #e0f6e3;}
 }
 
 
