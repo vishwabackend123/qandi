@@ -45,7 +45,7 @@
                     <a class="btn btn-common-green btntheme" href="{{route('live_exam_list')}}" type="button" class="btn-close">OK</a>
                 </div>
                 @else
-                <div class="modal-body pt-3 pb-5 px-4 text-center">
+                <div class="modal-body pt-3 pb-4 px-4 text-center">
                     <h2 class="mb-3">Impressive!</h2>
                     <p>You successfully completed the test.
                     </p>
