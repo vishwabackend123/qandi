@@ -36,8 +36,9 @@ class AnalyticsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function overallAnalytics($active_id = '', Request $request)
+    public function overallAnalytics( Request $request)
     {
+        $active_id = "";
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;

@@ -360,7 +360,7 @@ $question_type = "Numerical";
                         <div class="ans-in-num">1</div>
                     </div>
                     <div class="exam_text_content">
-                        No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
+                        No changes will be allowed after submission. Are you sure you want to submit test for final marking?
                     </div>
                     <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn">

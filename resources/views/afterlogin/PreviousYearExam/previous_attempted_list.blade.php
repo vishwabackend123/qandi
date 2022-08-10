@@ -13,7 +13,7 @@
                 @endif
             </select>
         </div>
-       
+
     </div>
 </div>
 <div class="accordion mt-4 pt-1" id="accordionExampleTwo">
@@ -38,10 +38,10 @@
                     {{$sche->test_type}}
                     @endif
                 </h2>
-                 @php
-                        $test_type = base64_encode($sche->test_type);
-                        $test_name = base64_encode($sche->py_paper_name);
-                        @endphp
+                @php
+                $test_type = base64_encode($sche->test_type);
+                $test_name = base64_encode($sche->py_paper_name);
+                @endphp
                 <h3 class="m-0 notbold">{{date('d F Y', strtotime($sche->created_at));}}</h3>
                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwoTwo">
                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo_{{$sche->id}}" aria-expanded="true" aria-controls="collapseTwoTwo" class="m-0 view_detail_text_colleps view_details">View details</h4>
@@ -113,26 +113,25 @@
     </div>
 </div>
 <script type="text/javascript">
-$('.view_details').click(function() {
-   
-    var text_data = $(this).text();
-    if (text_data === 'View details') {
-        $(this).parents('.compLeteA').addClass('list_active');
-        $(this).text('Hide details');
-    } else if (text_data === 'Hide details') {
-        $(this).parents('.compLeteA').removeClass('list_active');
-        $(this).text('View details');
-    }
-});
-$('#filter_attemp_year').change(function() {
+    $('.view_details').click(function() {
 
-    var selected_val = $(this).val();
-    if (selected_val) {
-        $('.compLeteA').hide();
-        $('.filter_year_' + selected_val).show();
-    } else {
-        $('.compLeteA').show();
-    }
-});
+        var text_data = $(this).text();
+        if (text_data === 'View details') {
+            $(this).parents('.compLeteA').addClass('list_active');
+            $(this).text('Hide details');
+        } else if (text_data === 'Hide details') {
+            $(this).parents('.compLeteA').removeClass('list_active');
+            $(this).text('View details');
+        }
+    });
+    $('#filter_attemp_year').change(function() {
 
+        var selected_val = $(this).val();
+        if (selected_val) {
+            $('.compLeteA').hide();
+            $('.filter_year_' + selected_val).show();
+        } else {
+            $('.compLeteA').show();
+        }
+    });
 </script>

@@ -302,7 +302,9 @@ class PreviousYearExamController extends Controller
 
                 $exam_title = "Previous Year Test";
 
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title','header_title'));
+
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
             }
 
 
@@ -310,7 +312,7 @@ class PreviousYearExamController extends Controller
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
             Redis::set('test_type' . $user_id, $test_type);
-            return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id','header_title'));
+            return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id', 'header_title'));
         } catch (\Exception $e) {
             dd($e->getMessage());
             Log::info($e->getMessage());

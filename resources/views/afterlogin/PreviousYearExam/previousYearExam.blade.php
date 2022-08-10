@@ -385,7 +385,7 @@ $question_type = "Numerical";
                         <div class="ans-in-num" id="ans_rev_cnt_2">0</div>
                     </div>
                     <div class="exam_text_content">
-                        No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
+                        No changes will be allowed after submission. Are you sure you want to submit test for final marking?
                     </div>
                     <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn">
@@ -451,6 +451,31 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
+<div class="modal fade" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body">
+                    <div class="modal-header-exam text-center ">
+                        <div class="exam-overview ">
+                            <label id="attempt-alert-text">Exam Paused</label>
+                        </div>
+                    </div>
+                    <div class="exam-footer-sec  p-4">
+                        <div class="task-btn tasklistbtn text-center">
+                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Ok <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                                    </svg>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     $('.questionSlider').owlCarousel({
@@ -1148,7 +1173,6 @@ $question_type = "Numerical";
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
                     $('#attemptlimit').modal('show');
-
                     //alert(response.message);
                     isValid = 0;
 

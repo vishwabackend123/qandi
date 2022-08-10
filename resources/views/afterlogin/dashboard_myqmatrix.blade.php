@@ -43,7 +43,7 @@ $userData = Session::get('user_data');
                                         <div class="myqinner">
                                             <h6>Q1</h6>
                                             <h5>Strengths</h5>
-                                            <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
+                                            <p>Going great. Find your strong topics here. Stay in the lead by revision.retgtretret</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>
