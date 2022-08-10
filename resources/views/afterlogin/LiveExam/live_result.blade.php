@@ -49,6 +49,7 @@
                     <h2 class="mb-3">Impressive!</h2>
                     <p>You successfully completed the test.
                     </p>
+                    <a class="btn btn-common-green btntheme mt-3" href="{{route('live_exam_list')}}" type="button" class="btn-close">OK</a>
                 </div>
                 @endif
 
