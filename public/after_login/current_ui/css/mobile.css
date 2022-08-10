@@ -109,6 +109,13 @@
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
 }
 @media only screen and (max-width: 1280px){
+    .contacrus_page_wrapper {
+        padding-bottom: 200px;
+        position: relative;
+    }
+    .contectus_bottom_img_svg{bottom: 0px;
+        right: 90;
+        max-width: 200px;    height: 241px;}
     .reviewexamType a{font-size: 14px;}
     .reviewScreenleft li.nav-item {
         margin-right: 15px;
@@ -1317,6 +1324,7 @@
 
     #FullTest_Exam_Panel_Interface_A .modal-content.exammodal_content .modal-body {
         height: 100%;
+        max-height: 100% !important;
     }
     .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {
         padding: 8px 16px !important;
@@ -1503,7 +1511,7 @@
             .boxheading.mb-5{margin-bottom:26px!important;}
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
-            .mobilescrolltab::-webkit-scrollbar {display:none; } 
+            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
             .tablescroll{height: calc(100vh - 258px);}
@@ -1512,6 +1520,267 @@
                 position: relative;
             }
             .bg-white.subscription-details.mt-5{margin-top:20px!important;}
+            .login-signup,.selectPlan{background-color: #e0f6e3;}
+            .testscreenmob .hideonmobile{display: none !important;}
+            .testscreenmob .hideondesktop{display: block  !important;}
+            .testscreenmob .bottomfixarrow {
+                line-height: 0px;
+                font-size: 17px;
+                padding: 0;
+                position: absolute;
+                bottom: 26px;
+                color: #363c4f;
+                background-color: #ffffff;
+                width: 28px;
+                height: 28px;
+                border: 1px solid #dfe1df;
+                border-radius: 6px;
+                font-weight: 700;
+                box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;
+                right: 16px;
+                transform: rotate(90deg);
+            }
+            .testscreenmob .bottomfixarrow .Previous, {
+                font-size: 22px;
+            }
+            .testscreenmob .btn123 .text-examtop-sec {
+                border-top: 1px solid rgba(172, 185, 176, 0.14);
+                border-bottom: none;
+                padding: 13px 16px 20px 16px;
+            }
+
+            .testscreenmob .quesbox {
+                padding-right: 10px;
+            }
+
+            .testscreenmob .examMaincontainer {
+                display: block;
+            }
+
+            .testscreenmob {
+                    background: #ffffff;
+            }
+
+            .testscreenmob   .examLeftpanelmob {
+                background: #f5faf6;
+                padding:40px 16px;
+            }
+            .testscreenmob   .examLeftpanelmob {
+                    width: 100%;
+                    padding-top: 116px;
+                    height: 100%;
+            }
+            .testscreenmob .examLeftpanelmob  .submitBtn {
+                position: absolute;
+                top: -72px;
+                right: 0px;
+            }
+
+            .testscreenmob .examLeftpanelmob .btnbottom {
+                position: absolute;
+                bottom: 0px;
+                width: 101%;
+                padding-right: 0px;
+                margin-left: -6px;
+            }
+
+            .testscreenmob .examLeftpanelmob .questionLeftbtns,.testscreenmob .examLeftpanelmob .questionRightbtns {
+                display: flex;
+                justify-content: space-between;
+            }
+            .testscreenmob .fancy-radio-buttons.with-image {
+                gap: 10px;
+                margin: 0px;
+            }
+
+            .testscreenmob .fancy-radio-buttons .colMargin {
+                max-width: 92%;
+            }
+            .testscreenmob .content-wrapper {
+                padding: 0px;
+            }
+            
+            .testscreenmob .nav {
+                display: flex;
+                flex-wrap: initial;
+            }
+            
+            .testscreenmob .questionwrapper {
+                padding: 0px;
+                margin: auto;
+                max-height: calc(100vh - 520px);
+                overflow: overlay;
+            }
+
+            .testscreenmob .questionTypeinner {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .testscreenmob .counter{
+                position: inherit;
+                margin: 0px;;
+                margin: 0px !important;
+                text-align:center;
+            }
+
+            .testscreenmob .timeCounter {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .testscreenmob .time_taken_css {
+                padding-right: 0px;
+            }
+
+            .testscreenmob .tiny-green {
+                margin-right: 0px;
+            }
+
+            .testscreenmob .qnext,.testscreenmob .qprev {
+                top: -52px;
+            }
+
+            .testscreenmob .singleChoice{
+                min-width: 250px;
+                max-width: 250px;
+            }
+
+            .testscreenmob .btnformobietest  .btnbottom {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .testscreenmob .questionLeftbtns,.testscreenmob .questionRightbtns {
+                display: block;
+                justify-content: space-between;
+            }
+
+            .testscreenmob .btnformobietest  .questionbtnBlock {
+                display: flex;
+                justify-content: space-between;
+                flex-flow: wrap;
+                gap:15px;  
+            }
+
+            .testscreenmob .questionChoiceType{
+                width:100%;
+                overflow-x:auto;
+            }
+            .testscreenmob .questionChoice {
+                margin: 28px 0px 2px 0;
+                min-width: 500px;
+            }
+
+            .testscreenmob .btnformobietest .btnbottom {
+                position: fixed;
+                bottom: 73px;
+                background: #ffffff;
+                width: 100%;
+                margin: 0px;
+                padding: 16px;
+            }
+            
+            .testscreenmob .btn.questionbtn {
+                padding: 6px 7px;
+                border-radius: 8px;
+                border: solid 1px #56b663;
+                background-color: #f5faf6;
+                color: #56b663;
+                font-size: 14px;
+                font-weight: 800;
+                height: 34px;
+            }
+            .testscreenmob .btn.questionbtn.Clearbtn{ background: transparent;}
+
+            .testscreenmob #saveNext ,.testscreenmob .markReviwebtn{
+                min-width: 130px;
+                max-width: 130px;
+            }
+            .testscreenmob .quesbox img {
+                max-width: 200px;
+                height: auto !important;
+            }
+
+            .testscreenmob .examRightpanelmob{
+                min-width: 100%;
+                max-width: 100%;
+                padding: 0px;
+            }
+            
+            .testscreenmob .modal-backdrop.show {
+                opacity: 0.3;
+                display: none;
+            }
+
+            .testscreenmob .base-timer__label {
+                flex-basis: auto;
+                font-weight: 600;
+                font-size: 16px;
+            color:#2c3348;
+            }
+            .testscreenmob .base-timer {
+            width: 40px;
+                height: 40px;
+            }
+            .testscreenmob  #app{
+                margin-right: 10px !important;
+                padding-right:0px !important;    margin-bottom: 0px !important;
+            }
+            .testscreenmob .borederbot {
+                border-bottom: 1px solid rgba(172, 185, 176, 0.14);
+                padding: 0px 16px;
+            }
+            .testscreenmob .text-exambottom-sec {
+                margin-top: 20px !important;
+                height: 30vh;
+                margin-right: 0px;
+                text-align: center;
+                width: 95%;margin-bottom: 20px;
+            }
+            .testscreenmob .btn123{
+                position: fixed;
+                background: white;
+                width: 100%;
+                bottom: 0px;
+                height: 73px;
+            }
+            .testscreenmob .main-textexam-sec {
+                position: absolute;
+                bottom: -109px;
+                width: 100%;
+                background: #fff;
+            }
+            .testscreenmob .overviewtest {
+                height: auto;
+                min-height: auto;
+            }
+            .testscreenmob .examScreentab .nav-tabs .nav-link {
+                padding: 0px 0px 20px;
+            
+            }
+            .testscreenmob .examLeftpanel li.nav-item {
+                margin-right: 30px;
+            }
+            .testscreenmob .main-textexam-sec{display:none;}
+            .testscreenmob .hide{display:none;}
+            .testscreenmob .hideyes{ display:none;transform: rotate(270deg) !important;}
+            .testscreenmob .overlaydiv{
+                content:"";
+                position: fixed;
+                top:0px;
+                width:100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.51);
+                display: none;
+                
+            }
 }
 
 
