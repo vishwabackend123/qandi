@@ -913,16 +913,16 @@ var datamarktrendm = {
     labels: <?php print_r($date3); ?>,
     datasets: [{
             label: 'Correct Answer',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#08d5a1',
+            borderColor: '#08d5a1',
             data: <?php print_r($correctAns3); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Incorrect Answer',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns3); ?>,
             borderwidth: 0.6,
             tension: 0.4
