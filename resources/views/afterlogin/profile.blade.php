@@ -33,7 +33,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line d-block d-lg-none"></div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-7">
                         <form id="editProfile_form" method="post" action="{{route('editProfile')}}" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="country" value="India">
@@ -148,13 +148,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="line"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="info">
+                    <div class="col-lg-11">
+                    <div class="info">
                             <h1 class="main-title">Subscription</h1>
                             <p>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         </div>
-                    </div>
-                    <div class="col-lg-8 pt-4">
                         @php
                         $subspriceData=(isset($current_subscription->subs_price) && !empty($current_subscription->subs_price))?(array)json_decode($current_subscription->subs_price):[];
                         $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
@@ -168,7 +166,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $interval = $datetime1->diff($datetime2);
                         $days = $interval->format('%a');
                         @endphp
-                        <div class="bg-white subscription-details">
+                        <div class="bg-white subscription-details mt-5">
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
                                 <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
                                 @if($days <=14) <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
