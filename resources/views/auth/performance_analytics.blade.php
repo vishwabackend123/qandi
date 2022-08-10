@@ -11,7 +11,7 @@ $full_body_attempt = Session::get('full_body_attempt');
 @endphp
 <section class="subscriptionsPage d-flex fullbody_scan_page">
     <div class="subscriptionsLeftpannel">
-        <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+        <a href="https://www.qanditoday.com/" target="_blank"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
         <div class="progress-box">
             <ul class="progressorder">
                 <li class="progress__item progress__item--completed">

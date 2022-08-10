@@ -71,7 +71,7 @@ Route::any('/saveFcmToken', [App\Http\Controllers\HomeController::class, 'saveFc
 
 /* Home Controller Routes */
 Route::any('/studentstandfor', [App\Http\Controllers\HomeController::class, 'studentStand'])->name('studentstandfor')->middleware('auth', 'menu');
-Route::any('/standupstore', [App\Http\Controllers\HomeController::class, 'storeStandValue'])->name('standupstore')->middleware('auth', 'menu');
+//Route::any('/standupstore', [App\Http\Controllers\HomeController::class, 'storeStandValue'])->name('standupstore')->middleware('auth', 'menu');
 
 /* login routes */
 Route::any('/sendotplogin', [App\Http\Controllers\StudentSignInController::class, 'sendotplogin'])->name('sendotplogin');

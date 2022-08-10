@@ -339,7 +339,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function storeStandValue(Request $request)
+    /*public function storeStandValue(Request $request)
     {
         try {
             $data = $request->all();
@@ -351,33 +351,6 @@ class HomeController extends Controller
             $stand_value = $request->input('user_stand_value');
 
             if ($stand_value) {
-                $request = ['student_id' => (int)$user_id, 'student_stage_at_sgnup' => (int)$stand_value,];
-                $request_json = json_encode($request);
-
-                $api_URL = env('API_URL');
-                $curl_url = $api_URL . 'api/stage-at-signUp';
-                $curl = curl_init();
-                $curl_option = array(
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_FAILONERROR => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "PUT",
-                    CURLOPT_POSTFIELDS => $request_json,
-                    CURLOPT_HTTPHEADER => array(
-                        "accept: application/json",
-                        "content-type: application/json"
-                    ),
-                );
-                curl_setopt_array($curl, $curl_option);
-                $response_json = curl_exec($curl);
-
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
 
                 if ($httpcode != 200 && $httpcode != 201) {
                     $status = false;
@@ -398,7 +371,7 @@ class HomeController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
-    }
+    } */
     /**
      * DailyWelcomeUpdates
      *
@@ -599,6 +572,7 @@ class HomeController extends Controller
                     }
                 }
             }
+            $this->updateStudentStage($user_id,$data['grade']);
             return Redirect()->route('dashboard');
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -921,7 +895,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function dailyTaskExam($category, $tasktype, $inst = "", $skill_category = "",  Request $request)
+    public function dailyTaskExam($category, $tasktype, $inst = "", $skill_category = "", Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -956,7 +930,6 @@ class HomeController extends Controller
                 if (Redis::exists($dTaskCacheKey)) {
                     $response_json = Redis::get($dTaskCacheKey);
                 } else {
-
                     $curl_url = "";
                     $curl = curl_init();
                     $api_URL = env('API_URL');
@@ -1256,5 +1229,35 @@ class HomeController extends Controller
         $success = isset($aResponse->success) ? $aResponse->success : false;
         $state_list = isset($aResponse->response) ? $aResponse->response : false;
         return view('afterlogin.profile', compact('state_list'));
+    }
+    public function updateStudentStage($user_id,$stand_value)
+    {
+        $request = ['student_id' => (int)$user_id, 'student_stage_at_sgnup' => (int)$stand_value,];
+        $request_json = json_encode($request);
+
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/stage-at-signUp';
+        $curl = curl_init();
+        $curl_option = array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "PUT",
+                    CURLOPT_POSTFIELDS => $request_json,
+                    CURLOPT_HTTPHEADER => array(
+                        "accept: application/json",
+                        "content-type: application/json"
+                    ),
+                );
+        curl_setopt_array($curl, $curl_option);
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
     }
 }

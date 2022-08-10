@@ -1,6 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
-<div class="main-wrapper">
+<div class="main-wrapper  exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
     <section class="content-wrapper">
