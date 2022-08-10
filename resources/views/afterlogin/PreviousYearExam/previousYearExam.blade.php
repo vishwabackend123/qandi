@@ -670,6 +670,8 @@ $question_type = "Numerical";
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        $('body').removeClass("make_me_blue");
+
     }
 
     function stop(type = '') {
@@ -683,6 +685,8 @@ $question_type = "Numerical";
         clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
+            $('body').addClass("make_me_blue");
+
         }
     }
 

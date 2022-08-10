@@ -4,7 +4,7 @@
 
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
-<div class="main-wrapper h-100">
+<div class="main-wrapper h-100 exam-wrapperBg">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')
 

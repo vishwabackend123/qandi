@@ -13,7 +13,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     });
 </script>
 @endif
-<div class="main-wrapper">
+<div class="main-wrapper exam-wrapperBg">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <div class="content-wrapper">

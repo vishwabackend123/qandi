@@ -158,6 +158,7 @@ class MenuMiddleware
             \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);
             \Illuminate\Support\Facades\View::share('notifications', $notifications);
             \Illuminate\Support\Facades\View::share('current_subscription', $current_subscription);
+            \Illuminate\Support\Facades\View::share('student_stage_at_sgnup', $student_stage_at_sgnup);
 
 
             return $next($request);
