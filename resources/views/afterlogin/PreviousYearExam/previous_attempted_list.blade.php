@@ -63,7 +63,7 @@
                             <h3 class="previous_attempt_exam_mob_block"><b>See analytics</b></h3>
                         </a>
                     </div>
-                    <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
+                    <a href="{{route('exam_review',[$sche->id,'attempted',$test_name])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
                 </div>
             </div>
             <div id="collapseTwoTwo_{{$sche->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo" data-bs-parent="#accordionExampleTwo">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
+            <a href="{{route('exam_review',[$sche->id,'attempted',$test_name])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
 
         </div>
         @endforeach

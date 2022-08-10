@@ -45,9 +45,12 @@ class ReviewController extends Controller
      *
      * @return void
      */
-    public function getReview($result_id, $pageName = "")
+    public function getReview($result_id, $pageName = "",  $type_name = null)
     {
         try {
+            if ($type_name) {
+                $type_name = base64_decode($type_name);
+            }
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -196,17 +199,21 @@ class ReviewController extends Controller
 
 
                 //if (Session::has('exam_name')) {
-                if (Redis::exists('exam_name' . $user_id)) {
-                    //$exam_name = Session::get('exam_name');
-                    $cacheKey = 'exam_name' . $user_id;
-                    $exam_name = Redis::get($cacheKey);
+                if ($pageName == 'attempted') {
+                    $exam_name = !empty($type_name) ? $type_name : '';
                 } else {
-                    $exam_name = '';
+                    if (Redis::exists('exam_name' . $user_id)) {
+                        //$exam_name = Session::get('exam_name');
+                        $cacheKey = 'exam_name' . $user_id;
+                        $exam_name = Redis::get($cacheKey);
+                    } else {
+                        $exam_name = '';
+                    }
                 }
 
-                $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true),'subject_id');
+                $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true), 'subject_id');
 
-                return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name','all_question_array'));
+                return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name', 'all_question_array'));
             } else {
                 if ($pageName == 'attempted') {
                     return Redirect::back()->withErrors(['Data does not exist for this result id.']);
