@@ -31,7 +31,7 @@
                 $(function() {
                     setTimeout(function() {
                         $(".toastdata").removeClass('active');
-                         $(".progress").removeClass('active');
+                        $(".progress").removeClass('active');
                     }, 5000);
                 });
             </script>
@@ -76,6 +76,7 @@
                                     @if(!empty($upcomming_live_exam))
                                     <div class="allscrollbar tablescroll">
                                         @foreach($upcomming_live_exam as $sche)
+
                                         <div class="accordion-item pt-4 mt-1 compLeteS filter_data_{{$sche->paper_year}}">
                                             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
                                                 <h2 class="m-0">{{$sche->paper_name}}</h2>
@@ -138,58 +139,56 @@
     </section>
 </div>
 <script>
-$('#filter_year').change(function() {
+    $('#filter_year').change(function() {
 
-    var selected_val = $(this).val();
-    if (selected_val) {
-        $('.compLeteS').hide();
-        $('.filter_data_' + selected_val).show();
-    } else {
-        $('.compLeteS').show();
+        var selected_val = $(this).val();
+        if (selected_val) {
+            $('.compLeteS').hide();
+            $('.filter_data_' + selected_val).show();
+        } else {
+            $('.compLeteS').show();
+        }
+    });
+    let dropdown = document.querySelector(".customDropdown")
+    dropdown.onclick = function() {
+        dropdown.classList.toggle("active")
     }
-});
-let dropdown = document.querySelector(".customDropdown")
-dropdown.onclick = function() {
-    dropdown.classList.toggle("active")
-}
-
 </script>
 <script type="text/javascript">
-$('#previous_year_tab').click(function() {
-    $('#mock_test').show();
-    $('#attempted_tab').hide();
-});
-$('#attempted').click(function() {
-    $('#mock_test').hide();
-    $('#attempted_tab').show();
-    url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
-
-        },
-        success: function(data) {
-            //$("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-        },
-        error: function(data, errorThrown) {}
+    $('#previous_year_tab').click(function() {
+        $('#mock_test').show();
+        $('#attempted_tab').hide();
     });
-});
-$('.view_detail_text_colleps2').click(function() {
-    var text_data = $(this).text();
-    if (text_data === 'View details') {
-        $(this).parents('.compLeteS').addClass('list_active');
-        $(this).text('Hide details');
-    } else if (text_data === 'Hide details') {
-        $(this).parents('.compLeteS').removeClass('list_active');
-        $(this).text('View details');
-    }
-});
+    $('#attempted').click(function() {
+        $('#mock_test').hide();
+        $('#attempted_tab').show();
+        url = "{{ url('ajax_exam_result_list') }}/PreviousYear";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
+            },
+            success: function(data) {
+                //$("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+            },
+            error: function(data, errorThrown) {}
+        });
+    });
+    $('.view_detail_text_colleps2').click(function() {
+        var text_data = $(this).text();
+        if (text_data === 'View details') {
+            $(this).parents('.compLeteS').addClass('list_active');
+            $(this).text('Hide details');
+        } else if (text_data === 'Hide details') {
+            $(this).parents('.compLeteS').removeClass('list_active');
+            $(this).text('View details');
+        }
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
