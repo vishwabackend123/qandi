@@ -861,8 +861,8 @@ var datamarktrendw = {
         },
         {
             label: 'Incorrect Answer',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns2); ?>,
             borderwidth: 0.6,
             tension: 0.4
