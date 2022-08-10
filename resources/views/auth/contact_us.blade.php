@@ -86,8 +86,8 @@
          <div class="contactus_customer_support_text">Customer Support</div>
          <div class="contactus_customer_support_text_under_text">Do you need assistance with your Q& I service or product?<br>We will get you assistance you require.</div>
           <div class="row">
-              <div class="col-md-3 col-sm-4">
-                 <div class="contactcommon">
+              <div class="col-lg-3 col-md-4">
+                 <div class="contactcommon no-border">
                  <div class="contactus_free_get_need">Toll Free</div>
                      <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -98,7 +98,7 @@
                      </div>
                  </div>
               </div>
-              <div class="col-md-3 col-sm-4">
+              <div class="col-lg-3 col-md-4">
                  <div class="contactcommon">
                     <div class="contactus_free_get_need">Get in touch</div>
                      <div>
@@ -110,7 +110,7 @@
                      </div>
                  </div>
                </div> 
-               <div class="col-md-3 col-sm-4">
+               <div class="col-lg-3 col-md-4">
                  <div class="contactcommon"> 
                      <div class="contactus_free_get_need">Need to tell us something?</div>
                      <div>
