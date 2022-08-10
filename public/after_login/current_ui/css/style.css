@@ -792,6 +792,13 @@ vertical-align: super;
     margin-right: 0px;
     opacity: 1;
 }
+.closesvg{
+    right: 30px !important;
+    top: 6px !important;    
+}
+.autosub{
+font-size: 17px;    
+}
 .custom_modal .custom-input{
 padding-bottom: 320px;    
 } 
