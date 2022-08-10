@@ -450,7 +450,7 @@ font-weight: 800;
 }
 
 .line {
-    border-top: 1px solid rgba(205,227,208,0.5);
+    border-top: 1px solid #cde3d0;
 }
 
 .custom-profileupload .dropzone-wrapper {
