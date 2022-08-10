@@ -1047,6 +1047,13 @@ $(document).on('click', '.chapter_topic', function(event) {
     $(".topics_analytics").hide();
 });
 
+// $(document).on('click', '.mobilescrolltab .nav-tabs > li', function() {
+//    $(".mobilescrolltab").animate({scrollLeft:'+=100'},1000);
+// });
+
+
+
+
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
