@@ -9,7 +9,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
 @endphp
 <section class="subscriptionsPage d-flex">
     <div class="subscriptionsLeftpannel">
-        <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+       <a href="https://www.qanditoday.com/" target="_blank"> <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
         <div class="progress-box">
             <ul class="progressorder">
                 <li class="progress__item progress__item--completed">

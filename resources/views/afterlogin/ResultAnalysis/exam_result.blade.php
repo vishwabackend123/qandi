@@ -26,7 +26,11 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
+            @if(isset($scoreResponse->test_type) && $scoreResponse->test_type =='Assessment')
+            <h3 class="commonheading">Custom Exam</h3>
+            @else
             <h3 class="commonheading">{{$exam_name}}</h3>
+            @endif
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
                     <span class="d-block mb-2 commontext">Questions Attempted</span>

@@ -440,17 +440,17 @@ font-weight: 800;
 .main-title {
     color: #363c4f;
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 800;line-height: 1.3;
 }
 
 .info p {
     color: #363c4f;
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 14px;line-height: 1.3;
 }
 
 .line {
-    border-top: 1px solid rgba(205,227,208,0.5);
+    border-top: 1px solid #cde3d0;
 }
 
 .custom-profileupload .dropzone-wrapper {
@@ -773,7 +773,7 @@ vertical-align: super;
 .custom_modal{
  padding: 32px;
  border-radius: 32px;
- width: 416px;
+ width: 416px;margin:0 auto;
 }
 .addtestbtn .btn {
     min-width: 166px !important;
@@ -791,6 +791,13 @@ vertical-align: super;
     background-image: none;
     margin-right: 0px;
     opacity: 1;
+}
+.closesvg{
+    right: 30px !important;
+    top: 6px !important;    
+}
+.autosub{
+font-size: 17px;    
 }
 .custom_modal .custom-input{
 padding-bottom: 320px;    
@@ -818,8 +825,8 @@ padding: 32px 24px 32px 32px !important;
 }
 .testtablescroll{
     overflow-y: auto;
-    height: 335px;
-    padding-right: 13px;    
+    height: calc(100vh - 480px);
+    padding-right: 10px;    
 }
 .exam_topicbtn ul.nav {
     height: 36px;
@@ -1778,7 +1785,7 @@ a.btn-common-attempted svg {
       display: flex;
   }
   .exam-wrapper {
-      background: #f5faf6;
+      background: #e0f6e3;
       min-height: 100vh;
   }
   .examLeftpanel {
@@ -1879,7 +1886,7 @@ a.btn-common-attempted svg {
     margin: 28px 0px 40px 0;
     padding: 3px;
     border-radius: 6px;
-    background-color: #e0f5e3;
+    background-color: #CBECD0;
   }
   .questionChoice a:hover{text-decoration:none}
   .singleChoice {
@@ -2057,10 +2064,10 @@ a.btn-common-attempted svg {
    .fancy-radio-buttons input[type="radio"]:checked ~ .image-bg {
       box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
       border: solid 1px rgba(86, 182, 99, 0.5);
-      background: #e0f6e3;
+      background: #cbecd0;
   }
   .fancy-radio-buttons input[type="radio"].correct:checked + label:before {
-      background: #70c1b3;
+      background: #cbecd0;
   } 
 
 
@@ -2131,7 +2138,7 @@ a.btn-common-attempted svg {
   }
   .reviewScreenleft .fancy-radio-buttons input[type="radio"] ~ .image-bg.correctans {
     border: 1px solid #039855;
-    background: #bdf3c5;
+    background: #cbecd0;
 }
 .reviewScreenleft .fancy-radio-buttons input[type="radio"] ~ .image-bg.correctans .seNo {
     background-color: #039855;color:#fff;font-weight: 600;
@@ -2922,7 +2929,7 @@ line-height: 1.6;
 }
 .qnext , .qprev  {
     line-height: 0px;
-    font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #f5faf6; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
+    font-size: 17px; padding: 0;position: absolute; bottom: -8px;color: #363c4f;background-color: #E0F6E3; width: 28px; height: 28px; border: 1px solid #56b663;border-radius: 6px;font-weight: 700;box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;}
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
     margin-bottom: 0px;
@@ -3032,7 +3039,7 @@ line-height: 1.6;
 ul.proficiency-level-lists li {
     border-radius: 8px;
     border: solid 1px #cde3d0;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     display: inline-flex;
     max-width: 176px;
     height: 48px;
@@ -3064,7 +3071,7 @@ ul.proficiency-level-lists li span b.rate-level-active {
 }
 
 ul.proficiency-level-lists li.selected-level {
-    background-color: #e0f6e3;
+    background-color: #CBECD0;
     color: #56b663;
     font-weight: bold;
 }
@@ -3443,7 +3450,7 @@ h3.commonheading{
 .common_greenbadge_tabs ul.nav {
     padding: 3px;
     border-radius: 6px;
-    background-color: #e0f5e3;
+    background-color: #CBECD0;
     height: 36px;
 }
 .common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
@@ -4707,7 +4714,13 @@ justify-content: space-between;}
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;}
     #resume-test  .modal-content{border:0px}
     .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto}
-    /* .dropdown.show .dropdown-menu{display:block;} */
+    .dropdown.show .dropdown-menu{display:block;}
+    .exam-wrapperBg,#planner-wrapper{background-color:#e0f6e3;    min-height: 100vh;}
+    .nocontentmodal .exam_text_content{border-top:0px!important;}
+    #myscoregraph{    z-index: 9;
+        position: relative;}
+        #endExam .btn.btn-common-green{min-width: 104px;}
+.custom-input .form-control.bg-transparent{background-color:  #f9fafb!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -4898,7 +4911,7 @@ justify-content: space-between;}
 }
 
 .exam_instruction_wrapper {
-    background: #f5faf6;
+    background: #e0f6e3;
     padding: 0px 8px 0px 2px;
     min-height: 100%
 }
@@ -5137,8 +5150,7 @@ justify-content: space-between;}
 
 /******** Contact us *****/
 .contacrus_page_wrapper {
-    Background: #f5faf6;
-    min-height: 100%;
+    Background: #e0f6e3;
     padding-top: 20px;
     padding-left: 20px;
 }
@@ -5166,25 +5178,30 @@ justify-content: space-between;}
     line-height: 1.6;
     letter-spacing: normal;
     color: #1f1f1f;
-    padding-top: 68px;
 }
 
 .contactus_free_get_need_span {
     font-size: 16px;
     font-weight: 800;
     line-height: 1.6;
-    letter-spacing: normal;
+    letter-spacing: normal;display: inline-block;
+    margin-top: 4px;
     color: #56b663;
 }
 
 .contectus_bottom_img_svg {
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    bottom: 90px;
+    right: 90;
 }
+.contactcommon{border-left:1px solid #cde3d0 ;margin-top:60px;padding-left:10px;}
+.contactcommon.no-border{border-left:0px;padding-left: 0px;}
 
-.contectus_bottom_img_svg svg {
+/* .contectus_bottom_img_svg svg {
     margin-top: -150px;
-}
+} */
 
 /* popup */
 .intraction_text_q1 {
@@ -6705,7 +6722,7 @@ border-color: #56b663;
 
 /**********  updating missing info *********/
 .missing-info-main {
-    background: #f5faf6;
+    background: #e0f6e3;
     height: 100vh;
 }
 
@@ -6720,7 +6737,7 @@ border-color: #56b663;
 }
 
 .name-title {
-    background: #e0f6e3;
+    background: #fff;
     padding: 13px 24px;
     border-radius: 10px;
 }

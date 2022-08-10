@@ -8,7 +8,11 @@
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="{{ url('/dashboard') }}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
+            @if($type_name=='Assessment')
+            <h3 class="commonheading">Custom Exam</h3>
+            @else
             <h3 class="commonheading">{{$type_name}}</h3>
+            @endif
             
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
@@ -332,9 +336,15 @@
                                                     ""
                                                     @endif</h4>
                                                 <div class="progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    @if($tcorrect_per > 0)    
                                                     <div class="progress-bar correct-bg" role="progressbar" style="width: {{$tcorrect_per}}%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
+                                                    @if($tincorrect_per > 0)    
                                                     <div class="progress-bar incorrect-bg" role="progressbar" style="width: {{$tincorrect_per}}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
+                                                     @if($tnot_attempt_per > 0)    
                                                     <div class="progress-bar not-attempted-bg" role="progressbar" style="width: {{$tnot_attempt_per}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    @endif
                                                 </div>
                                                 <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>

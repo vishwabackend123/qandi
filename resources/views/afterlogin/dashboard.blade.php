@@ -282,7 +282,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <li>
                                                         <div class="tasklistleft">
                                                             <h6>Task {{$key+1}}</h6>
-                                                            <h4>Comprehension Skills</h4>
+                                                            <h4>Time Management</h4>
                                                             <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
                                                         </div>
                                                         @if($data['allowed'] == '1')

@@ -120,7 +120,7 @@
         margin-right: 4px;
     }
     .subjectperformLegend .commonSubjectLeg .text{font-size:13px;}
-    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;}
+    .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
     .subject_performance_card .dashSubtext{font-size:13px;}
     .mock_test_ques_dure_marks_sub{justify-content:space-between;}
     .questionOptionBlock{    padding-top: 25px;}
@@ -326,7 +326,7 @@
     border-radius: 10px !important;
     border: 1px solid #e5eaee;
     padding:12px;
-    margin-top: 16px;height: 100%;
+    margin-top: 16px;height:auto;
     }
    .chapters-expend .accordion-body {
     margin-top: 23px;
@@ -410,15 +410,15 @@
     }
     .contectus_bottom_img_svg {
         display: flex;
-        justify-content: center;
+        justify-content: center;bottom:2%;right:4%
     }
     .contectus_bottom_img_svg svg {
         margin-top: 55px;
         padding: 45px;
     }
-    .contactus_free_get_need
+    .contactcommon
     {
-        padding-top: 32px;
+        margin-top: 32px;border-left:0px;padding-left:0px;
     }
     /* chapter preficiency */
     .chapter_profici_nav__right_contant
@@ -1506,6 +1506,13 @@
             .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
+            .tablescroll{height: calc(100vh - 258px);}
+            .contacrus_page_wrapper{
+                padding-bottom: 340px;
+                position: relative;
+            }
+            .bg-white.subscription-details.mt-5{margin-top:20px!important;}
+            .login-signup,.selectPlan{background-color: #e0f6e3;}
 }
 
 

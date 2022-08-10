@@ -143,6 +143,8 @@ class ResultController extends Controller
 
             $response_json = curl_exec($curl);
 
+
+
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
@@ -154,7 +156,7 @@ class ResultController extends Controller
             $response_data = (json_decode($response_json));
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
-            //   dd($response_data,  $request);
+
             if ($check_response == true) {
                 if (!empty($category) && !empty($tasktype)) {
                     $saveDailyTaskRecord = $this->saveRecordToTaskCenterHistory($user_id, $tasktype, $category);
@@ -168,7 +170,7 @@ class ResultController extends Controller
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -398,7 +400,7 @@ class ResultController extends Controller
      *
      * @return void
      */
-    public function getExamResultAnalytics($result_id, $type_exam = null,$type_name = null)
+    public function getExamResultAnalytics($result_id, $type_exam = null, $type_name = null)
     {
         try {
             if ($type_exam) {
@@ -444,7 +446,7 @@ class ResultController extends Controller
                 $response_data = (json_decode($response_json));
                 $response = isset($response_data) ? $response_data : [];
                 $header_title = "Test Analysis";
-                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id', 'type_exam','type_name'));
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response', 'header_title', 'result_id', 'type_exam', 'type_name'));
             } else {
 
                 //return redirect()->back();
@@ -587,7 +589,6 @@ class ResultController extends Controller
             }
             $year = date('Y', strtotime($value->created_at));
             $years_list[] = $year;
-
         }
         if ($exam_type == 'PreviousYear') {
             $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list'))->render();

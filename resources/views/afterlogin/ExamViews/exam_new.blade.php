@@ -331,7 +331,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
 
-                        <div class="text-exambottom-sec">
+                        <div class="text-exambottom-sec" id="questNo">
                             <!-- <button type="button" class="btn" id="btn-ans">1</button>
                             <button type="button" class="btn pink-btn" id="btn-ans">11</button>
                             <button type="button" class="btn blue-btn" id="btn-ans">18</button>
@@ -704,6 +704,7 @@ $question_type = "Numerical";
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        $('body').removeClass("make_me_blue");
     }
 
     function stop(type = '') {
@@ -717,6 +718,7 @@ $question_type = "Numerical";
         clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
             $("#resume-test").modal("show");
+            $('body').addClass("make_me_blue");
         }
     }
 
