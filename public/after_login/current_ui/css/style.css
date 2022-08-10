@@ -4720,6 +4720,7 @@ justify-content: space-between;}
     #myscoregraph{    z-index: 9;
         position: relative;}
         #endExam .btn.btn-common-green{min-width: 104px;}
+.custom-input .form-control.bg-transparent{background-color:  #f9fafb!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
