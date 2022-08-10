@@ -63,3 +63,8 @@
 @include('afterlogin.layouts.footer_new')
 
 @endsection
+<script>
+$('.submitBtnlink').click(function() {
+    $('body').addClass("make_me_blue");
+});
+</script>
