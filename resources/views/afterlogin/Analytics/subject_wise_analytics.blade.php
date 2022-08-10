@@ -330,11 +330,11 @@
                     <div class="barwithTAb">
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg">
-                                <span class="bar greenbar"></span>
+                                <span class="bar greenbar3"></span>
                                 <label class="text">Correct Answers</label>
                             </div>
                             <div class="commonSubjectLeg">
-                                <span class="bar pinkbar"></span>
+                                <span class="bar pinkbar2"></span>
                                 <label class="text">Incorrect answers</label>
                             </div>
                         </div>
@@ -793,16 +793,16 @@ var datamarktrend = {
     labels: <?php print_r($date1); ?>,
     datasets: [{
             label: 'Correct Answer',
-            backgroundColor: '#34d399',
-            borderColor: '#34d399',
+            backgroundColor: '#08d5a1',
+            borderColor: '#08d5a1',
             data: <?php print_r($correctAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Incorrect Answer',
-            backgroundColor: '#ff6678',
-            borderColor: '#ff6678',
+            backgroundColor: '#f7758f',
+            borderColor: '#f7758f',
             data: <?php print_r($incorrectAns1); ?>,
             borderwidth: 0.6,
             tension: 0.4
