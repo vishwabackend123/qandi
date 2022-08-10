@@ -450,7 +450,7 @@ font-weight: 800;
 }
 
 .line {
-    border-top: 1px solid rgba(205,227,208,0.5);
+    border-top: 1px solid #cde3d0;
 }
 
 .custom-profileupload .dropzone-wrapper {
@@ -773,7 +773,7 @@ vertical-align: super;
 .custom_modal{
  padding: 32px;
  border-radius: 32px;
- width: 416px;
+ width: 416px;margin:0 auto;
 }
 .addtestbtn .btn {
     min-width: 166px !important;
@@ -4719,6 +4719,7 @@ justify-content: space-between;}
     .nocontentmodal .exam_text_content{border-top:0px!important;}
     #myscoregraph{    z-index: 9;
         position: relative;}
+        #endExam .btn.btn-common-green{min-width: 104px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
