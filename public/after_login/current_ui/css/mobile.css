@@ -1011,6 +1011,55 @@
         text-align: right;
         width: 30%;
     }
+    .CoustomAttempted .mock_test_ques_content2
+    {
+        width: 50%;
+        padding-bottom: 16px;
+    }
+    .CoustomAttempted .mock_test_dure_content2 {
+        width: 50%;
+        text-align: right;
+    }
+    .CoustomAttempted .mock_test_dure_content2:last-child {
+        width: 50%;
+        text-align: left!important;
+    }
+    .Testseriesattemb .mock_test_dure_content2 {
+        width: 50%;
+        text-align: right;
+    }
+    .Testseriesattemb .mock_test_ques_content2 {
+        width: 50%;
+        /* padding-bottom: 16px; */
+    }
+    .Testseriesattemb .mock_test_dure_content2:last-child {
+        /* padding-top: 16px; */
+    }
+    .Testseriesattemb .mock_test_marks_content2.slot_div{
+        /* padding-top: 16px; */
+    }
+    .TestseriesContent .test-table
+    {
+        flex-wrap: wrap;
+    }
+    .TestseriesContent .test-table h2
+    {
+        flex:auto;
+        width: 50%;
+    }
+    .TestseriesContent .test-table h2:nth-child(2)
+    {
+        text-align: right;
+        padding-bottom: 27px;
+    }
+    .TestseriesContent .test-table h2:last-child
+    {
+        padding-bottom: 35px;
+    }
+    .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
+    {
+        padding: 0px;
+    }
     /********* Vikash End ************/
 
 
