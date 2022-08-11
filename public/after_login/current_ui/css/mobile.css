@@ -1149,6 +1149,7 @@
     .notification-main { background: #f5faf6;}
     .notification-main{padding: 32px 16px;}
     .main-text{font-size:14px;}
+    .notification-list  .main-text{word-break: break-word;}
     .notification-main>h2{margin-bottom:0px;}
     .new_notification_main_sec { height: calc(100vh - 176px);margin-top:20px;}
     .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
