@@ -144,6 +144,9 @@
     /* .text-exambottom-sec {
         margin-top: 20px;
         height: 35vh;}  */
+        .anshead-titletext {
+            margin-bottom: 0px;
+        }
        
     
 }
@@ -156,6 +159,11 @@
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
     .text-exambottom-sec {height: 30vh;}
     
+    
+   
+}
+@media only screen and (max-height: 720px) {
+    .text-exambottom-sec {height: 26vh;}
    
 }
 @media only screen and (max-height: 700px) {
@@ -1781,6 +1789,7 @@
                 display: none;
                 
             }
+            
 }
 
 
