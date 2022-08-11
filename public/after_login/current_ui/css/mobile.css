@@ -1,7 +1,4 @@
 @media only screen and (max-width: 1680px){
-    /* .testPlanCard {
-        max-width: 330px !important;
-    } */
 }
 
 
@@ -11,9 +8,6 @@
     .myqbottomSec h3 .topictext{margin-left: 5px;}
     .myqmatPannel{padding:10px}
     .commonWhiteBox{padding:32px;}
-    /* .testPlanCard {
-        max-width: 290px !important;
-    } */
 }
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
@@ -23,17 +17,12 @@
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 140px !important;}
-
 .graphDetailempty .testScrolltype { margin-right: 9px !important;}
-/* .testPlanCard {
-    max-width: 280px !important;
 
-} */
 .allSubslider svg{
     width: 37px !important;
     height: 37px !important;
 }
-/* .subCard h3{    width: calc(100% - 39px);} */
    .week-select{
     font-size: 16px;    
     }
@@ -46,7 +35,6 @@
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
-        /* .boxheading .tooltipmain{margin-left:5px;} */
 .subCard h3 {
     font-size: 15px;
     font-weight: 800;
@@ -141,9 +129,6 @@
  }
 }
 @media only screen and (max-height: 920px) {
-    /* .text-exambottom-sec {
-        margin-top: 20px;
-        height: 35vh;}  */
         .anshead-titletext {
             margin-bottom: 0px;
         }
@@ -151,9 +136,6 @@
     
 }
 @media only screen and (max-height: 780px) {
-    /* .text-exambottom-sec {
-        height: 29vh;margin-top: 10px;padding-bottom: 15px;
-    } */
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
     .reviewScreenright .text-exambottom-sec {height: 26vh;}
@@ -186,7 +168,6 @@
 }
 .loginrightpannel {
     padding-top: 160px;
-    /* height: 420px; */
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -195,9 +176,6 @@
     position: relative !important;
     padding-top: 20px;
 }
-/* .testPlanCard {
-    max-width: 245px !important;
-} */
 .subCard h3 {
     font-size: 16px !important;
 }
@@ -266,9 +244,6 @@
     .weekCount {
         font-size: 18px !important;
     }
-    /* .testPlanCard {
-        max-width: 180px !important;
-    } */
     .allSubslider svg {
         width: 20px !important;
         height: 20px !important;
@@ -408,9 +383,6 @@
         padding-left: 18px;
         padding-top:30px;
     }
-    /* .selectPlan {
-        padding: 0px 40px 45px;
-    } */
 
     /********* Vikash Start ************/
     /* contect us */
@@ -627,8 +599,6 @@
         padding: 0px 0px;
     }
     .MockTestMob .exam_tabdata {
-        /* padding: 12px !important; */
-        /* background: #fff!important; */
         border-radius: 10px;
     }
     .live_exam_diveder_div
@@ -639,7 +609,6 @@
     {
         padding: 12px;
         border-radius: 10px!important;
-        /* background: #fff; */
     }
     .MockTestMob .bg-white-bg_mob
     {
@@ -731,7 +700,6 @@
     }
     .MockTestMob .mock_btn_vie_detail
     {
-        /* justify-content: normal; */
         flex-wrap: wrap;
     }
     .MockTestMob .view_detail_text_colleps {
@@ -862,14 +830,6 @@
     border: solid 1px #cde3d0;
     background-color: white;
     }
-    /* .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
-    {
-        margin-top: 16px!important;
-    }
-    #mock_test_slot_content222
-    {
-        margin-top: 16px!important;
-    } */
     .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
     {
     width: 161px;
@@ -1030,13 +990,6 @@
     }
     .Testseriesattemb .mock_test_ques_content2 {
         width: 50%;
-        /* padding-bottom: 16px; */
-    }
-    .Testseriesattemb .mock_test_dure_content2:last-child {
-        /* padding-top: 16px; */
-    }
-    .Testseriesattemb .mock_test_marks_content2.slot_div{
-        /* padding-top: 16px; */
     }
     .TestseriesContent .test-table
     {
@@ -1060,6 +1013,10 @@
     {
         padding: 0px;
     }
+    .TestseriesContent .test-table .accordion-header
+    {
+        flex-basis: 0;
+    }
     /********* Vikash End ************/
 
 
@@ -1076,7 +1033,6 @@
     ul.proficiency-level-lists li span.mr-3{display:none;}
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
-    /* .logo {width: 40px;height: 40px;} */
     .btn.btn-common-green{min-width:156px;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
@@ -1515,7 +1471,6 @@
         .overall_analytics_page .commonWhiteBox{margin-bottom:16px;}
         .overall_analytics_page .tabMainblock{padding:0px 10px;}
         .mb-md-3{margin-bottom:16px;}
-        /* .overall_percentage_chart{height:250px;} */
         .subjectperformLegend.flexleg{flex-wrap:wrap;}
         .subjectperformLegend .commonSubjectLeg{width:100%;margin-top:3px;}
         .subjectperformLegend .bar {
@@ -1530,8 +1485,6 @@
         .mobilescrolltab{overflow-x: auto;}
         .mobilescrolltab .nav-tabs{width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
-        /* #timeManagementChart{height:280px!important;width:350px!important;}
-        .graph_padd{overflow-x: auto;padding-bottom:10px;} */
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:38px;}
         .overallmain .commonWhiteBox{height:auto;}
@@ -1598,7 +1551,7 @@
                 right: 16px;
                 transform: rotate(90deg);
             }
-            .testscreenmob .bottomfixarrow .Previous, {
+            .testscreenmob .bottomfixarrow .Previous {
                 font-size: 22px;
             }
             .testscreenmob .btn123 .text-examtop-sec {
@@ -1836,10 +1789,14 @@
                 width:100%;
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.51);
-                display: none;
-                
-            }
-            
+                display: none; }
+                .exam_tabdata .accordion-item:nth-child(1) {
+    margin-top: 0!important;
+}
+.mobilehoriontal400{width:400px;} 
+.mobilehoriontal450{width:450px;}  
+.mobilehoriontal500{width:500px;}            
+
 }
 
 
