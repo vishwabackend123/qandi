@@ -1000,6 +1000,10 @@
         flex:auto;
         width: 50%;
     }
+    .TestseriesContent .test-table h2:nth-child(3)
+    {
+        width: 30%!important;
+    }
     .TestseriesContent .test-table h2:nth-child(2)
     {
         text-align: right;
