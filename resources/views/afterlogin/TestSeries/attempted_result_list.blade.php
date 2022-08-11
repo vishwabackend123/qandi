@@ -31,38 +31,38 @@
     <div class="compLeteS accordion-item  {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
         <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
             @php
-                $testname="";
-                $marks =$sche->no_of_question * 4;
-                if($sche->test_series_name)
-                {
-                    $testname = $sche->test_series_name;    
-                }elseif($sche->live_exam_name)
-                {
-                    $testname = $sche->live_exam_name;    
-                }
-                elseif($sche->test_type == 'Mocktest')
-                {
-                $testname =  'Mock Test';   
-                if($sche->no_of_question == 90)
-                {
-                    $marks=300;
-                }
-                if($sche->no_of_question == 200)
-                {
-                    $marks=720;
-                }
-                
-                }elseif($sche->test_type == 'PreviousYear')
-                {
-                    $testname =  $sche->py_paper_name;   
-                }else
-                {
-                    $testname =$sche->test_type;
-                }
-                
-                @endphp
+            $testname="";
+            $marks =$sche->no_of_question * 4;
+            if($sche->test_series_name)
+            {
+            $testname = $sche->test_series_name;
+            }elseif($sche->live_exam_name)
+            {
+            $testname = $sche->live_exam_name;
+            }
+            elseif($sche->test_type == 'Mocktest')
+            {
+            $testname = 'Mock Test';
+            if($sche->no_of_question == 90)
+            {
+            $marks=300;
+            }
+            if($sche->no_of_question == 200)
+            {
+            $marks=720;
+            }
+
+            }elseif($sche->test_type == 'PreviousYear')
+            {
+            $testname = $sche->py_paper_name;
+            }else
+            {
+            $testname =$sche->test_type;
+            }
+
+            @endphp
             <h2 class="m-0 mt-1">
-                
+
                 @if($sche->test_series_name)
                 {{$sche->test_series_name}}
                 @elseif($sche->live_exam_name)
@@ -93,7 +93,7 @@
                         <h3>See analytics</h3>
                     </a>
                 </div>
-                <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
+                <a href="{{route('exam_review',[$sche->id,'attempted',$test_name])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
             </div>
         </div>
         <div id="chapter_{{$sche->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -103,7 +103,7 @@
                         <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
                         <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                     </div>
-                    
+
                     @if($sche->test_type == 'Live')
                     <div class="live_exam_diveder_div"></div>
                     <div class="mock_test_dure_content2">
@@ -145,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
+        <a href="{{route('exam_review',[$sche->id,'attempted',$test_name])}}" class="btn btn-common-transparent bg-transparent mobile_block">Review exam</a>
 
     </div>
     @endforeach
@@ -161,21 +161,20 @@
     @endif
 </div>
 <script type="text/javascript">
-$('.no_data_found').hide();
-$('.view_details').click(function() {
+    $('.no_data_found').hide();
+    $('.view_details').click(function() {
 
-    var text_data = $(this).text();
-    var ids = parseInt($(this).attr('data-id'));
-    var toggel = $('#chapter_' + ids).hasClass('show');
-    if (text_data === 'View details') {
-        $(this).parents('.compLeteS').addClass('list_active');
-        $(this).text('Hide details');
-        $('#chapter_' + ids).addClass('show');
-    } else if (text_data === 'Hide details') {
-        $(this).parents('.compLeteS').removeClass('list_active');
-        $(this).text('View details');
-        $('#chapter_' + ids).removeClass('show');
-    }
-});
-
+        var text_data = $(this).text();
+        var ids = parseInt($(this).attr('data-id'));
+        var toggel = $('#chapter_' + ids).hasClass('show');
+        if (text_data === 'View details') {
+            $(this).parents('.compLeteS').addClass('list_active');
+            $(this).text('Hide details');
+            $('#chapter_' + ids).addClass('show');
+        } else if (text_data === 'Hide details') {
+            $(this).parents('.compLeteS').removeClass('list_active');
+            $(this).text('View details');
+            $('#chapter_' + ids).removeClass('show');
+        }
+    });
 </script>
