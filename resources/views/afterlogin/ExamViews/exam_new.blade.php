@@ -110,13 +110,13 @@ $question_type = "Numerical";
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
                                             <a class="nav-link qq1_2_3_4 all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif >{{$sub->subject_name}} </a>
-                                            <span class="qCount qcountout qcountout_{{$sub->id}} @if($activesub_id==$sub->id) countActive @endif"">{{$sub->count}}</span>
+                                            <span class="qCount qcountout qcountout_{{$sub->id}} @if($activesub_id==$sub->id) countActive @endif">{{$sub->count}}</span>
                                         </li>
                                         @endforeach
                                         @endif
                                     </ul>
                                 </div>
-                                <div class=" submitBtn">
+                                <div class="submitBtn">
                                                 <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
@@ -385,7 +385,7 @@ $question_type = "Numerical";
                         <div class="exam-overview">
                             <label>Exam Overview</label>
                         </div>
-                        <div class=" d-flex exam-overview-time">
+                        <div class="d-flex align-items-center justify-content-center exam-overview-time">
                             <div class="base-timer">
                                 <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                     <g class="base-timer__circle">
