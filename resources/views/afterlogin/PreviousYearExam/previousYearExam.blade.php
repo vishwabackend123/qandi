@@ -356,7 +356,7 @@ $question_type = "Numerical";
                         <div class="exam-overview">
                             <label>Exam Overview</label>
                         </div>
-                        <div class="d-flex exam-overview-time">
+                        <div class="d-flex align-items-center justify-content-center exam-overview-time">
                             <div class="base-timer">
                                 <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                     <g class="base-timer__circle">
