@@ -1793,7 +1793,10 @@
                 .exam_tabdata .accordion-item:nth-child(1) {
     margin-top: 0!important;
 }
-            
+.mobilehoriontal400{width:400px;} 
+.mobilehoriontal450{width:450px;}  
+.mobilehoriontal500{width:500px;}            
+
 }
 
 
