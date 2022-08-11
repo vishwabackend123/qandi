@@ -311,7 +311,7 @@
     margin-top: 8px;
     }
     .testtablescroll {
-    height: 500px;
+        height: calc(100vh - 340px);
     padding-right: 8px;
     }
     .exam-wrapperpadding{
