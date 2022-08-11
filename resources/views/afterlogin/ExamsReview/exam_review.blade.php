@@ -527,7 +527,7 @@ $question_type = "Numerical";
             var coll_height_popupSection = coll_answer_main_sec_height - coll_totalpopup_height;
             $('.explanation-sec').css('height', coll_height_popupSection);
             var coll_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
-            var coll_scroll_height = coll_answer_main_sec_height_final - 60 + "px";
+            var coll_scroll_height = coll_answer_main_sec_height_final - 90 + "px";
             $('.explanation-sec').css('height', coll_scroll_height);
 
 
@@ -572,7 +572,7 @@ $question_type = "Numerical";
             $('.reviewans-mainsec').css('height', min_height_q_list_h);
             var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
             var scroll_height = reviewans_final_height - review_filter_top_height;
-            var scroll_height_20 = scroll_height - 20 + "px";
+            var scroll_height_20 = scroll_height - 30 + "px";
             $('.list-ans').css('height', scroll_height_20)
         });
 
@@ -585,7 +585,7 @@ $question_type = "Numerical";
             var coll_outer_height = $(".reviewans-mainsec").outerHeight();
             var coll_review_filter_to_height = $(".review-filter-top").outerHeight();
             var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
-            var coll_scroll_final_height = coll_review_divide_height - 20 + "px";
+            var coll_scroll_final_height = coll_review_divide_height - 30 + "px";
             $('.list-ans').css('height', coll_scroll_final_height)
         });
     });
