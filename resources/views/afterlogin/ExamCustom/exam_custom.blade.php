@@ -128,7 +128,7 @@
                                 @endforeach
                                 @endisset
                             </div>
-                            <div id="attempted_tab" class=" tab-pane">
+                            <div id="attempted_tab" class=" tab-pane MockTestMob CoustomAttempted">
                             </div>
                         </div>
                     </div>

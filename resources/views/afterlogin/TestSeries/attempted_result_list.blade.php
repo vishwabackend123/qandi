@@ -25,7 +25,7 @@
         @endisset
     </ul>
 </div>
-<div class="tablescroll">
+<div class="tablescroll MockTestMob Testseriesattemb mock_attemptepted_spacing">
     @if(!empty($result_data))
     @foreach($result_data as $sche)
     <div class="compLeteS accordion-item  {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">

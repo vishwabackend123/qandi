@@ -37,7 +37,7 @@
                                     </ul>
                                 </div>
                                 <div class="accordion mt-4 pt-1" id="open_test_div">
-                                    <div class="allscrollbar tablescroll">
+                                    <div class="allscrollbar tablescroll TestseriesContent">
                                         @if(!empty($open_series))
                                         @foreach($open_series as $open)
                                         <div class="accordion-item pt-4 m-0">
