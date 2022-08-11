@@ -394,7 +394,7 @@
     .exam_instruction_scrolling
     {
         padding-right:unset;
-        height:unset;
+        height:auto;
     }
     .exam_instruction_col_four {
         padding-left: 18px;
@@ -873,7 +873,7 @@
     }
     .PrevousYearExam_wraper_contant2 .tablescroll
     {
-        padding-right: 0px!important;
+        padding-right: 10px!important;    height: calc(100vh - 354px);
     }
     .PrevousYearExam_wraper_contant1 .exam_tabdata #mock_test
     {
