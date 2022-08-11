@@ -319,7 +319,7 @@
     margin-top: 8px;
     }
     .testtablescroll {
-    height: 500px;
+        height: calc(100vh - 340px);
     padding-right: 8px;
     }
     .exam-wrapperpadding{
@@ -402,7 +402,7 @@
     .exam_instruction_scrolling
     {
         padding-right:unset;
-        height:unset;
+        height:auto;
     }
     .exam_instruction_col_four {
         padding-left: 18px;
@@ -881,7 +881,7 @@
     }
     .PrevousYearExam_wraper_contant2 .tablescroll
     {
-        padding-right: 0px!important;
+        padding-right: 10px!important;    height: calc(100vh - 354px);
     }
     .PrevousYearExam_wraper_contant1 .exam_tabdata #mock_test
     {
@@ -1157,8 +1157,9 @@
     .notification-main { background: #f5faf6;}
     .notification-main{padding: 32px 16px;}
     .main-text{font-size:14px;}
+    .notification-list  .main-text{word-break: break-word;}
     .notification-main>h2{margin-bottom:0px;}
-    .new_notification_main_sec { height: calc(100vh - 159px);}
+    .new_notification_main_sec { height: calc(100vh - 176px);margin-top:20px;}
     .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
     .verifiaction-link{padding:16px 12px;}
     .planewrapper{flex-wrap:wrap;}

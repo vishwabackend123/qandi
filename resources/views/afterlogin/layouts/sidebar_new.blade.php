@@ -83,7 +83,7 @@ $userData = Session::get('user_data');
                     <span>Refer friends</span>
                 </a>
             </li>
-            <li>
+            <!--li>
                 <a href="javascript:void(0)">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#fff" d="M0 0h24v24H0z" />
@@ -100,7 +100,7 @@ $userData = Session::get('user_data');
                     </svg>
                     <span>Contact us</span>
                 </a>
-            </li>
+            </li-->
         </ul>
     </div>  
 
@@ -240,7 +240,7 @@ $userData = Session::get('user_data');
                 <span class="sidebar-menu-tooltip">Refer a friend</span>
             </a>
         </li>
-        <li class="mb-4">
+        <!--li class="mb-4">
             <a href="javascript:void(0)" style="position: absolute;bottom: 30px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#fff" d="M0 0h24v24H0z" />
@@ -257,7 +257,7 @@ $userData = Session::get('user_data');
                 </svg>
                 <span class="sidebar-menu-tooltip">Contact us</span>
             </a>
-        </li>
+        </li-->
     </ul>
     <div class="submenu-block">
         <h6 class="mb-5">Exam</h6>
