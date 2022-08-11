@@ -1013,6 +1013,10 @@
     {
         padding: 0px;
     }
+    .TestseriesContent .test-table .accordion-header
+    {
+        flex-basis: 0;
+    }
     /********* Vikash End ************/
 
 
