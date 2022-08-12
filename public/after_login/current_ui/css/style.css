@@ -4741,6 +4741,8 @@ justify-content: space-between;}
     top: 50%;
     margin-top: -50px;
     z-index: 99999;}
+    .matrixpage-wrapper .exam_instruction_scrolling {
+        height: calc(100vh - 501px);}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
