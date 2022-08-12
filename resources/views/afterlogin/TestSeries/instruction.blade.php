@@ -53,7 +53,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line-693"></div>
 
                             <ul class="exam_inst_ul_li">
-                                <li>This section contains {{$sub->count}} <b>questions of Single Choice.</b></li>
+                                <li>This section contains {{$sub->count}} <b>question(s) of Single Choice.</b></li>
                                 <li><b>For Single Choice question</b>, 4 mark(s) is allotted for each correct response, 1 mark(s) will be deducted for each incorrect response, and 0 mark(s) are given for partial answers</li>
                             </ul>
 
