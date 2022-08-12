@@ -55,7 +55,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @php $marksArr=json_decode($sec->marking_scheme); @endphp
                             <div class="exam_instruct_section_subject"><b>{{$sec->section_name}}</b></div>
                             <ul class="exam_inst_ul_li">
-                                <li>This section contains {{$sec->total_num_of_ques}} <b>questions of {{$sec->question_type_name}}.</b></li>
+                                <li>This section contains {{$sec->total_num_of_ques}} <b>question(s) of {{$sec->question_type_name}}.</b></li>
                                 @if($sec->total_num_of_ques > $sec->num_of_ques_tobeattempted)
                                 <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted</li>
                                 @endif
