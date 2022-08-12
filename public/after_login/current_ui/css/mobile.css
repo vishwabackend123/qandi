@@ -1799,7 +1799,10 @@
 }
 .mobilehoriontal400{width:400px;} 
 .mobilehoriontal450{width:450px;}  
-.mobilehoriontal500{width:500px;}            
+.mobilehoriontal500{width:500px;}   
+.hide-text{display: none;}   
+.testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
+.testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
 
 }
 
