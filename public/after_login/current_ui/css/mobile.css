@@ -1535,7 +1535,9 @@
             .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
-            .tablescroll{height: calc(100vh - 258px);}
+            .tablescroll{height: calc(100vh - 258px);
+               padding-right: 10px;
+             }
             .contacrus_page_wrapper{
                 padding-bottom: 340px;
                 position: relative;
