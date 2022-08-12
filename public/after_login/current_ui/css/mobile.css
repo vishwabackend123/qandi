@@ -1021,6 +1021,12 @@
     {
         flex-basis: 0;
     }
+    .LiveExamMob22 .mock_attemptepted_spacing .mock_test_ques_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_dure_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_sub_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content2 {
+        padding-bottom: 0px!important;
+    }
+    .TestseriesAttempt22 .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
     /********* Vikash End ************/
 
 
