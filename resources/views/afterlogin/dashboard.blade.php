@@ -22,7 +22,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 @endif
 <div class="spinnerblock" style="display:none">
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-    <span class="sr-only">Loading...</span>
+        <span class="sr-only">Loading...</span>
     </div>
 </div>
 
@@ -216,7 +216,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
+                            <!--  <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
