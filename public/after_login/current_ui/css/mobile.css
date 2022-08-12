@@ -1007,11 +1007,16 @@
     .TestseriesContent .test-table h2:nth-child(2)
     {
         text-align: right;
-        padding-bottom: 27px;
+        padding-bottom: 21px;
+        padding-top: 10px;
     }
     .TestseriesContent .test-table h2:last-child
     {
         padding-bottom: 35px;
+    }
+    .TestseriesContent .test-table h2:first-child
+    {
+        padding-bottom: 8px;
     }
     .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
     {
@@ -1027,6 +1032,11 @@
     .TestseriesAttempt22 .exam_tabdata .accordion-body {
         padding: 0px 0px 0px 0px!important;
     }
+    .TestseriesAttempt22 .exam_tabdata .accordion-item
+    {
+        margin-bottom: 16px!important;
+    }
+
     /********* Vikash End ************/
 
 

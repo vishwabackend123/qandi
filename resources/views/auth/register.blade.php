@@ -46,21 +46,21 @@
                         <img src="{{URL::asset('public/after_login/current_ui/images/Subject-performance.svg')}}" alt="performance" class="w-100 d-block">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">MyQ Today</h5>
-                            <p>Keep track of your progress inyour subjects</p>
+                            <p>Check out your progress and see what percentage of <br> subjects you are doing well in</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{{URL::asset('public/after_login/current_ui/images/progress-jer.svg')}}" alt="performance" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">Progress journey</h5>
-                            <p>Track your progress visually with a graph that shows you <br>your ideal and actual pace</p>
+                            <p>Track your progress visually with a graph that <br> shows you your ideal and actual pace</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{{URL::asset('public/after_login/current_ui/images/weekly.svg')}}" alt="performance" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="pb-2">Weekly plan</h5>
-                            <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
+                            <p>Check your proficiency in different subjects by planning <br>weekly tests for any chapters </p>
                         </div>
                     </div>
                     <div class="carousel-item">
