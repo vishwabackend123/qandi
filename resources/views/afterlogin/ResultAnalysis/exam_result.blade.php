@@ -410,11 +410,39 @@ $(document).on('click', function(e) {
                 borderRadius: function(context, options) {
                     const index = context.dataIndex;
                     let radius = {};
+                    // if (index == 0) {
+                    //     radius.innerStart = 20;
+                    //     radius.outerStart = 20;
+                    // }
+                    // if (index === context.dataset.data.length - 1) {
+                    //     radius.innerEnd = 20;
+                    //     radius.outerEnd = 20;
+                    // }
                     if (index == 0) {
                         radius.innerStart = 20;
                         radius.outerStart = 20;
+                        if(context.dataset.data[index+ 1]==0 && context.dataset.data[index+ 2]==0){
+                            radius.innerEnd = 20;
+                            radius.outerEnd = 20;
+                        } 
                     }
-                    if (index === context.dataset.data.length - 1) {
+                    if (index == 1) {
+                        if(context.dataset.data[index-1]== 0){
+                            radius.innerStart = 20;
+                            radius.outerStart = 20;
+                        }
+                        if(context.dataset.data[index+ 1]==0){
+                            radius.innerEnd = 20;
+                            radius.outerEnd = 20;
+                        } 
+                    }
+                    if (index == 2) {
+                        if(context.dataset.data[index- 1]==0 && context.dataset.data[index- 2]==0){
+                            radius.innerStart = 20;
+                            radius.outerStart = 20;
+                        }
+                    }
+                    if(index === context.dataset.data.length -1 ){
                         radius.innerEnd = 20;
                         radius.outerEnd = 20;
                     }
