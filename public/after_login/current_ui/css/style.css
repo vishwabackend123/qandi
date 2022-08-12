@@ -4724,6 +4724,23 @@ justify-content: space-between;}
         position: relative;}
         #endExam .btn.btn-common-green{min-width: 104px;}
 .custom-input .form-control.bg-transparent{background-color:  #f9fafb!important;}
+.spinnerblock{    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.spinnerblock:before{background: #0003;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;}
+.spinnerblock .spinner-border{position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 99999;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
