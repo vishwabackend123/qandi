@@ -29,9 +29,22 @@ $question_type = "Numerical";
 }
 @endphp
 <!-- Side bar menu -->
-
+<style>
+.reviewScreenright {
+    display:none;
+}
+.examReviewscreenmob .examLeftpanel {
+    width: 100%;
+}
+.examReviewscreenmob .examLeftpanel{
+    padding-right:0px;
+}
+.examReviewscreenmob .content-wrapper {
+    padding: 40px 16px;
+}
+    </style>
 <!-- sidebar menu end -->
-<div class="exam-wrapper">
+<div class="exam-wrapper examReviewscreenmob">
 
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
@@ -42,7 +55,7 @@ $question_type = "Numerical";
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
