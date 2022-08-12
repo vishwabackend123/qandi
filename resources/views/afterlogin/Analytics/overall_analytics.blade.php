@@ -346,7 +346,7 @@
                                             </div>
                                             <div class="chartspent  bargraph_scroll">
                                                 <div class="graph_padd bargraph_size">
-                                                    <span class="yaxis_label  yaxis_label_2"><small> Accuracy percentage (sec) </small> </span>
+                                                    <span class="yaxis_label  yaxis_label_2"><small> Accuracy percentage  </small> </span>
                                                     <canvas id="accuracy_graph"></canvas>
                                                 </div>
                                             </div>
