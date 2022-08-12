@@ -49,7 +49,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal ! 
+                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal !
                                     </p>
                                 </span>
                             </h3>
@@ -210,7 +210,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!--  <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -385,10 +385,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                             A matrix, created to analyze your attempts in various topics over time and sort
-                                            them into your areas of strengths and weaknesses. This data will keep on 
+                                            them into your areas of strengths and weaknesses. This data will keep on
                                             changing as you progress and diligently work on your identified and
-                                            analyzed weaknesses and strengths. It will also display those topics that can 
-                                            become your strength with a little more effort on your part. Move up the ladder. 
+                                            analyzed weaknesses and strengths. It will also display those topics that can
+                                            become your strength with a little more effort on your part. Move up the ladder.
                                         </p>
                                     </span>
                                 </h3>

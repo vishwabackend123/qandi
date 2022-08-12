@@ -259,19 +259,22 @@ class TestSeriesController extends Controller
                         Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                         $exam_url = route('test_series');
 
+
                         $exam_title = "Test Series Exam";
-                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject','header_title'));
+                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject', 'header_title'));
                     }
 
 
-                    //return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
-                    return view('afterlogin.ExamViews.exam_new', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id','header_title'));
+                    $previous_list_url = route('series_list');
+
+                    return view('afterlogin.ExamViews.exam_new', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id', 'header_title', 'previous_list_url'));
                 } else {
                     //return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                     return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
                 }
             } else {
-                return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
+                return Redirect()->route('series_list');
+                // return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
             }
         } catch (\Exception $e) {
 
