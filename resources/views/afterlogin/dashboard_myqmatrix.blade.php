@@ -280,7 +280,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div> -->
             <div class="modal-body text-center">
-                <p>Give more tests for this <br /> section to be populateddd</p>
+                <p>Give more tests for this <br /> section to be populated</p>
                 <div class="text-center mb-4">
                     <a href="{{url('/dashboard')}}" class="btn btn-danger px-5"> Back</a>
                 </div>
