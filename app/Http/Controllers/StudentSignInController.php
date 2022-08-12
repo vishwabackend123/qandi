@@ -85,6 +85,11 @@ class StudentSignInController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
             $aResponse = json_decode($response_json);
+            if ($httpcode == 503) {
+                $msg = $aResponse->detail->message .' <br>'.$aResponse->detail->note;
+                $response = ["message" => $msg, "error" => $aResponse->detail->note, "success" => false,];
+                return json_encode($response); 
+            }
 
             if ($aResponse->success != true) {
                 $msg = $aResponse->message;
