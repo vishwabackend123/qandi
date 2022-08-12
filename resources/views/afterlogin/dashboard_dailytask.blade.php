@@ -58,7 +58,7 @@ $userData = Session::get('user_data');
                         <div class="task1">
                             <p><span>Task {{$key+1}}</span></p>
                             <h3>{{$skill_task}}</h3>
-                            <p>Quickly sharpen your evaluation skills with this curated test.</p>
+                            <p>Quickly sharpen your {{$skill_category}} skills with this curated test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Question</span>
@@ -174,7 +174,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
-                                    <button  class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
+                                    <button class="btn btn-common-transparent nobg disabled" disabled style="cursor: default;">Already Attempted</button>
                                 </div>
                                 @endif
                             </div>
@@ -243,7 +243,7 @@ $userData = Session::get('user_data');
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="commonboldtext m-0" style="color: #363c4f;">Task completed</h5>
                                     <label class="m-0 commonboldtext" style="color: #363c4f;">4 <span style="font-weight:600;color: rgba(54,60,79,0.5);">/6</span></label>
-                                </div>  
+                                </div>
                                 <ul class="task_center_lists">
                                     <li>
                                         <div class="task1">
@@ -258,8 +258,8 @@ $userData = Session::get('user_data');
                                                     <span>Question</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         </svg>
                                                         <label>10</label>
                                                     </p>
@@ -268,8 +268,8 @@ $userData = Session::get('user_data');
                                                     <span>Duration</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         </svg>
                                                         <label>15 mins</label>
                                                     </p>
@@ -293,8 +293,8 @@ $userData = Session::get('user_data');
                                                     <span>Question</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         </svg>
                                                         <label>10</label>
                                                     </p>
@@ -303,8 +303,8 @@ $userData = Session::get('user_data');
                                                     <span>Duration</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M8 14.665A6.667 6.667 0 1 0 8 1.332a6.667 6.667 0 0 0 0 13.333z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M8 4v4l2.667 1.333" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                                         </svg>
                                                         <label>15 mins</label>
                                                     </p>
@@ -318,11 +318,11 @@ $userData = Session::get('user_data');
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="weekly_tasks" role="tabpanel" aria-labelledby="weekly_tasks-tab">
-                                
+
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
             <!----------------------------------->
         </div>
@@ -409,10 +409,10 @@ $userData = Session::get('user_data');
                 });
                 $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                     $(this).parent("p").hide();
-                }); 
+                });
             });
 
-            $(".skill_para_toggle span").click(function(){
+            $(".skill_para_toggle span").click(function() {
                 $(this).parent().next("p").slideToggle();
                 $(this).children().toggleClass("fa-angle-down fa-angle-up");
             });

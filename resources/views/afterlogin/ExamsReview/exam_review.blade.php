@@ -29,6 +29,7 @@ $question_type = "Numerical";
 }
 @endphp
 <!-- Side bar menu -->
+
 <style>
 .reviewScreenright {
     display:none;
