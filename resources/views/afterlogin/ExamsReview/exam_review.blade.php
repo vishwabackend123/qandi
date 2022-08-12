@@ -29,21 +29,7 @@ $question_type = "Numerical";
 }
 @endphp
 <!-- Side bar menu -->
-
-<style>
-.reviewScreenright {
-    display:none;
-}
-.examReviewscreenmob .examLeftpanel {
-    width: 100%;
-}
-.examReviewscreenmob .examLeftpanel{
-    padding-right:0px;
-}
-.examReviewscreenmob .content-wrapper {
-    padding: 40px 16px;
-}
-    </style>
+ 
 <!-- sidebar menu end -->
 <div class="exam-wrapper examReviewscreenmob">
 
