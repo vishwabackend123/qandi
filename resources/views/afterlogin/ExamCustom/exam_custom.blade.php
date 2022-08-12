@@ -2,10 +2,15 @@
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<div class="spinnerblock">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div class="main-wrapper exam-wrapperBg">    
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper exam-wrapperpadding">
+    <section class="content-wrapper exam-wrapperpadding TestseriesAttempt22">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -140,6 +145,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>    
     $('.topic_form').attr("style", "display: none !important");
+    $('.spinnerblock').hide();
     $(".clearsec").click(function() {
         $(".take-fulltest").removeClass("mobile-test");
     });
@@ -176,6 +182,7 @@
     $('.chapters-expend').hide();
 
     function show_topic(chapt_id, sub_id,subject_name) {
+        $('.spinnerblock').show();
         var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
         if (chapter_ex === true) {
             $('#collapseTwo_custome_' + chapt_id).removeClass('show');
@@ -196,6 +203,7 @@
                 $('#overlay').fadeIn();
             },
             success: function(result) {
+                $('.spinnerblock').hide();
                 $(".chapters-expend  #topic_section_" + chapt_id).html(result);
 
                 $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');

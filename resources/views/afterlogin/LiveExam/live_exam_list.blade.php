@@ -3,7 +3,7 @@
 <div class="main-wrapper exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper MockTestMob LiveExamMob">
+    <section class="content-wrapper MockTestMob LiveExamMob LiveExamMob22">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">

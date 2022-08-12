@@ -1007,11 +1007,16 @@
     .TestseriesContent .test-table h2:nth-child(2)
     {
         text-align: right;
-        padding-bottom: 27px;
+        padding-bottom: 21px;
+        padding-top: 10px;
     }
     .TestseriesContent .test-table h2:last-child
     {
         padding-bottom: 35px;
+    }
+    .TestseriesContent .test-table h2:first-child
+    {
+        padding-bottom: 8px;
     }
     .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
     {
@@ -1021,6 +1026,17 @@
     {
         flex-basis: 0;
     }
+    .LiveExamMob22 .mock_attemptepted_spacing .mock_test_ques_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_dure_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_sub_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content2 {
+        padding-bottom: 0px!important;
+    }
+    .TestseriesAttempt22 .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
+    .TestseriesAttempt22 .exam_tabdata .accordion-item
+    {
+        margin-bottom: 16px!important;
+    }
+
     /********* Vikash End ************/
 
 
@@ -1529,7 +1545,9 @@
             .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
-            .tablescroll{height: calc(100vh - 258px);}
+            .tablescroll{height: calc(100vh - 258px);
+               padding-right: 10px;
+             }
             .contacrus_page_wrapper{
                 padding-bottom: 340px;
                 position: relative;
@@ -1799,7 +1817,10 @@
 }
 .mobilehoriontal400{width:400px;} 
 .mobilehoriontal450{width:450px;}  
-.mobilehoriontal500{width:500px;}            
+.mobilehoriontal500{width:500px;}   
+.hide-text{display: none;}   
+.testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
+.testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
 
 }
 

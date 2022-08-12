@@ -40,7 +40,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
     <div class="selectPlan subscriptionsRightpannel">
         <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3>Self Analysis</h3>
+            <h3 class="pageCountBox">Self Analysis
+            <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
+            </h3>
             <p>Rate your level of proficiency</p>
         </div>
         <div class="performance_rating_wrapper">
