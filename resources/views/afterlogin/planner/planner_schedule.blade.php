@@ -251,7 +251,7 @@ $userData = Session::get('user_data');
             $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error ').fadeOut('fast');
-            }, 10000);
+            }, 5000);
             return false;
         }
 
@@ -265,7 +265,7 @@ $userData = Session::get('user_data');
             $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error').fadeOut('fast');
-            }, 10000);
+            }, 5000);
             return false;
         }
 
