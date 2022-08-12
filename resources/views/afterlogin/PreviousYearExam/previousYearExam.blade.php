@@ -3,6 +3,19 @@
 @section('content')
 
 <script type="text/javascript">
+    /* check browser tab refreshed or reload */
+    if (window.performance) {
+        console.info("window.performance works fine on this browser");
+    }
+    console.info(performance.navigation.type);
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        console.info("This page is reloaded");
+        window.location = "{{url('previous_year_exam')}}";
+    } else {
+        console.info("This page is not reloaded");
+    }
+    /* check browser tab changed or not */
+
     document.addEventListener('visibilitychange', function() {
 
         $endExamCheck = $('#endExam').hasClass('show');
