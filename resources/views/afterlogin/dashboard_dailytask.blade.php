@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -116,7 +116,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -170,7 +170,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
-                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                    <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                 </div>
                                 @else
                                 <div class="task-btn tasklistbtn">
@@ -205,7 +205,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     @if($data['allowed'] == '1')
                                     <div class="task-btn tasklistbtn">
-                                        <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                        <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                     </div>
                                     @else
                                     <div class="task-btn tasklistbtn">
@@ -275,7 +275,7 @@ $userData = Session::get('user_data');
                                                     </p>
                                                 </div>
                                                 <div class="task-btn tasklistbtn">
-                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Take test</a>
+                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Practice</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -310,7 +310,7 @@ $userData = Session::get('user_data');
                                                     </p>
                                                 </div>
                                                 <div class="task-btn tasklistbtn">
-                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Take test</a>
+                                                    <a href="http://localhost/Uniq_web/DailyTask-Skill-Exam/skill/daily/instruction/knowledge" class="btn btn-common-transparent nobg">Practice</a>
                                                 </div>
                                             </div>
                                         </div>

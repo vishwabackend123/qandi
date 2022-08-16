@@ -91,7 +91,7 @@
                                             <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                             <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                             <input type="hidden" name="question_count" value="30">
-                                            <button type="submit" class="btn btn-common-green">Take full test</button>
+                                            <button type="submit" class="btn btn-common-green">Full Practice</button>
                                         </form>
                                     </div>
                                 </div>
