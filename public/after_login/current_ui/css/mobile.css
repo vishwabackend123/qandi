@@ -132,12 +132,17 @@
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 400px;
  }
+ .matrixpage-wrapper .exam_instruction_scrolling {
+    height: calc(100vh - 270px);
+} 
 }
 @media only screen and (max-height: 920px) {
         .anshead-titletext {
             margin-bottom: 0px;
         }
-       
+        .matrixpage-wrapper .exam_instruction_scrolling {
+            height: calc(100vh - 430px);
+        }         
     
 }
 @media only screen and (max-height: 780px) {
