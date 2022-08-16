@@ -318,7 +318,7 @@
 </div>
 <div class="overallMidlle">
     <div class="commonWhiteBox">
-        <h3 class="boxheading">Marks Trends
+        <h3 class="boxheading">Marks Trend
             <span class="tooltipmain">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -327,7 +327,7 @@
                 </svg>
                 <p class="tooltipclass">
                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                    The graphical representation of this section shows the marks scored by you in past months/ past weeks against the top marks scored by other learners and the average marks scored by all the users of the platform. This will show your week-on-week performance and to achieve your goal, you should maintain an increasing trend/graph. 
+                    Get insights on your progress over time. 
                 </p>
             </span>
         </h3>
