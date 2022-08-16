@@ -284,6 +284,7 @@
                         $('.verify_otp').show();
                         $('#otp-verify-btn').show();
                         if (response.otp) {
+                            alert(response.otp + ' is your Q&I verfication code');
                             $('#testing_otp').html(response.otp);
                         }
                         if (otp_type == 'resend') {
