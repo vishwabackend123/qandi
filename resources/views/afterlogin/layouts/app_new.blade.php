@@ -51,6 +51,7 @@
         MathJax.Hub.Config({
         
             menuSettings: {
+                zoom: "None",
     context: "Browser"
   }
             });
