@@ -1048,6 +1048,9 @@
     {
         margin-bottom: 16px!important;
     }
+    .TestseriesAttempt22 .tablescroll {
+        height: calc(100vh - 337px);
+    }
 
     /********* Vikash End ************/
 
