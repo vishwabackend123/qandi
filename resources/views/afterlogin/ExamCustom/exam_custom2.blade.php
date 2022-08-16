@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                   <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
 
                     <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
-                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice for selected topic</button>
                   </div>
                 </form>
               </div>
@@ -209,7 +209,7 @@ $userData = Session::get('user_data');
                         <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                         <input type="hidden" name="question_count" value="30">
 
-                        <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                        <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice</button>
                       </form>
 
                     </div>
