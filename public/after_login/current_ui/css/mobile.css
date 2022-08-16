@@ -8,6 +8,7 @@
     .myqbottomSec h3 .topictext{margin-left: 5px;}
     .myqmatPannel{padding:10px}
     .commonWhiteBox{padding:32px;}
+    .plantitleBox{padding-right:155px;}
 }
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
@@ -121,6 +122,9 @@
     .questionOptionBlock{    padding-top: 25px;}
     .reviewScreenleft .questionOptionBlock{padding-top:25px;}
     .plantitleBox {padding-right: 36px !important;}
+    .matrixpage-wrapper .exam_instruction_scrolling {
+        height: calc(100vh - 262px);
+    }
 }
 
 
