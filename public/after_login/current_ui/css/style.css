@@ -2660,7 +2660,7 @@ a.btn-common-attempted svg {
      justify-content: space-between;
  }
  .plantitleBox {
-     padding-right: 250px;
+     padding-right: 220px;
  }
  .planDetailBox{
      display: flex;
@@ -3836,7 +3836,7 @@ span.greenball-3 {
     min-height: 281px;
     max-height: 281px;
 }
-.codelerninner p{min-height:64px}
+.codelerninner p{min-height:38px}
 .overall_analytics_page .chapter_profici_application_deves_text{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 
 .radial_progress_bar svg {
@@ -4603,7 +4603,7 @@ justify-content: space-between;}
 .codelerninner h5{font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
-    color: #000;margin-bottom:12px;min-height:113px;}
+    color: #000;margin-bottom:12px;min-height:133px;}
     .codelerninner p strong{color:#1f1f1f;margin-bottom:0px;}
     .codelerninner p {font-size: 14px;
         font-weight: 500;

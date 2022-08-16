@@ -74,7 +74,7 @@ class ReferralController extends Controller
             $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
+                CURLOPT_FAILONERROR => false,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 30,
@@ -96,7 +96,8 @@ class ReferralController extends Controller
             } 
             else if ($httpcode == 400) 
             {
-                return json_encode(array('success' => false, 'message' => 'please verify your email first'));
+                $responseData = json_decode($response_json,true);
+                return json_encode(array('success' => false, 'message' => $responseData['message']));
             }  
             else 
             {

@@ -8,6 +8,7 @@
     .myqbottomSec h3 .topictext{margin-left: 5px;}
     .myqmatPannel{padding:10px}
     .commonWhiteBox{padding:32px;}
+    .plantitleBox{padding-right:155px;}
 }
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
@@ -16,7 +17,7 @@
 
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
-.plantitleBox {padding-right: 140px !important;}
+.plantitleBox {padding-right: 90px !important;}
 .graphDetailempty .testScrolltype { margin-right: 9px !important;}
 
 .allSubslider svg{
@@ -120,6 +121,10 @@
     .mock_test_ques_dure_marks_sub{justify-content:space-between;}
     .questionOptionBlock{    padding-top: 25px;}
     .reviewScreenleft .questionOptionBlock{padding-top:25px;}
+    .plantitleBox {padding-right: 36px !important;}
+    .matrixpage-wrapper .exam_instruction_scrolling {
+        height: calc(100vh - 262px);
+    }
 }
 
 
@@ -127,12 +132,17 @@
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 400px;
  }
+ .matrixpage-wrapper .exam_instruction_scrolling {
+    height: calc(100vh - 270px);
+} 
 }
 @media only screen and (max-height: 920px) {
         .anshead-titletext {
             margin-bottom: 0px;
         }
-       
+        .matrixpage-wrapper .exam_instruction_scrolling {
+            height: calc(100vh - 430px);
+        }         
     
 }
 @media only screen and (max-height: 780px) {
@@ -183,7 +193,7 @@
     margin-right: 9px !important;
 }
 .plantitleBox {
-    padding-right: 100px !important;
+    padding-right: 36px !important;
 }   
 }
 @media only screen and (max-width: 1199px){

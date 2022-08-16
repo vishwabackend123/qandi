@@ -112,7 +112,7 @@
                                             <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                                             <input type="hidden" name="question_count" value="30">
 
-                                            <button class="btn btn-green-custom rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                                            <button class="btn btn-green-custom rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice</button>
                                         </form>
 
                                     </div>
@@ -147,7 +147,7 @@
                                 <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
                                 <div id="topic_custom_footer" class="text-right d-flex align-items-right my-3 px-4">
                                     <button type="button" class="btn px-4 ms-auto me-3 btn-secondary-clear rounded-0 align-text-center" onclick="clearTopics();">Clear Selection</button>
-                                    <button type="submit" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                                    <button type="submit" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice for selected topic</button>
                                 </div>
                             </form>
                         </div>

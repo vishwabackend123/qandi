@@ -120,7 +120,7 @@
                      </div>
                      <div class="take-fulltest d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center clrsec">
-                           <button type="button" class="btn btn-common-transparent bg-transparent me-3">Take test for selected topics</button>  
+                           <button type="button" class="btn btn-common-transparent bg-transparent me-3">Practice for selected topics</button>  
                            <a href="javascript:void(0);" class="clearsec">Clear Selection</a>
                         </div>
                         <div>
@@ -131,7 +131,7 @@
                                  <path d="M9 1.5h28v-1H9v1zM44.5 9v28h1V9h-1zM37 44.5H9v1h28v-1zM1.5 37V9h-1v28h1zM9 44.5A7.5 7.5 0 0 1 1.5 37h-1A8.5 8.5 0 0 0 9 45.5v-1zM44.5 37a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1zM37 1.5A7.5 7.5 0 0 1 44.5 9h1A8.5 8.5 0 0 0 37 .5v1zM9 .5A8.5 8.5 0 0 0 .5 9h1A7.5 7.5 0 0 1 9 1.5v-1z" fill="#56B663"/>
                               </svg>
                            </a>
-                           <button type="button" class="btn btn-common-green">Take full test</button> 
+                           <button type="button" class="btn btn-common-green">Full Practice</button> 
                         </div>
                      </div>
                      <div class="accordion mt-4 pt-1" id="accordionExample">
@@ -142,7 +142,7 @@
                                  <h3 class="m-0">Proficiency : <span>65%</span></h3>
                                  <div class="accordion-header d-flex align-items-center" id="headingOne">
                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0">View topics</h4>
-                                    <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                    <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Practice</button>
                                  </div>
                               </div>
                               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -284,7 +284,7 @@
                               <h3 class="m-0">Proficiency : <span>30%</span></h3>
                               <div class="accordion-header d-flex align-items-center" id="headingTwo">
                                  <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0">View topics</h4>
-                                 <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                 <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Practice</button>
                               </div>
                            </div>
                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -425,7 +425,7 @@
                               <h3 class="m-0">Proficiency : <span>22%</span></h3>
                               <div class="accordion-header d-flex align-items-center" id="headingThree">
                                  <h4 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="m-0">View topics</h4>
-                                 <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                 <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Practice</button>
                               </div>
                            </div>
                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
