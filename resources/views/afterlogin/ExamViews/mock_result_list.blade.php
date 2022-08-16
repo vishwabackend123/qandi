@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                                 <div class="exam_card">
                                     <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
                                         <h2 class="mb-0">JEE Main - Full Syllabus- 2022</h2>
-                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice</button>
+                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                     </div>
                                     <div class="d-flex justify-content-between flex-wrap">
                                         <div class="mb-2">
