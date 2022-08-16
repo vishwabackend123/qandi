@@ -25,7 +25,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="toastdata">
+                        <!-- <div class="toastdata">
    <div class="toast-content">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3"/>
@@ -43,7 +43,7 @@
       </svg>
    </div>
    <div class="progress"></div>
-</div>
+</div> -->
 <!--<button class="toast-btn" onclick="toastFunction()">toast</button>        -->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
