@@ -193,53 +193,64 @@
             $('#collapseTwo_custome_' + chapt_id).addClass('show');
             $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
         }
-        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-                $('#overlay').fadeIn();
-            },
-            success: function(result) {
-                $('.spinnerblock').hide();
-                $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+        var slider_open = $("#topic_section_"+chapt_id).hasClass('show_div_' + chapt_id);
+        if (slider_open) {
+            setTimeout(function(){
+                  $('.spinnerblock').hide();
+                }, 1000);
+            
+        }else 
+        {
+          url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
+                success: function(result) {
+                    $('.spinnerblock').hide();
+                    $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+                    $("#topic_section_" + chapt_id).addClass('show_div_' + chapt_id);
 
-                $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
-                $("#topic_section_" + chapt_id).owlCarousel({
+                    $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
+                    $("#topic_section_" + chapt_id).owlCarousel({
 
-                    stagePadding: 0,
-                    loop: false,
-                    margin: 15,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false,
-                            stagePadding: 0,
-                            margin: 5,
-                            loop: true,
-                        },
-                        590: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 3
-                        },
-                        1200: {
-                            items: 4
+                        stagePadding: 0,
+                        loop: false,
+                        margin: 15,
+                        nav: true,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: false,
+                                stagePadding: 0,
+                                margin: 5,
+                                loop: true,
+                            },
+                            590: {
+                                items: 2
+                            },
+                            1000: {
+                                items: 3
+                            },
+                            1200: {
+                                items: 4
+                            }
+
+
                         }
-
-
-                    }
-                });
+                    });
 
 
 
-            }
-        });
+                }
+            });  
+        }
+        
 
     }
 </script>
