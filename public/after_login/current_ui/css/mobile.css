@@ -1107,7 +1107,7 @@
         -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
     }
-    .userprofile span {font-size: 14px;font-weight: 500;color: #868a95;}
+    .userprofile span {font-size: 14px;font-weight: 500;color: #868a95;min-width:70px;text-align: right;}
     .pro_sub_label{ font-size: 14px;font-weight: 600;color: #1f1f1f;margin:24px 0 17px;border-bottom:1px solid #e5eaee;padding-bottom:19px;}
     ul.mob_sidebar_lists li a {height: 50px;padding: 12px 12px 12px 12px;border-radius: 8px;display: block;background-color:#fff;display: flex;align-items: center;}
     ul.mob_sidebar_lists li.active a{background-color:#e0f6e3;}
