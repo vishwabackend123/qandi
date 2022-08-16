@@ -35,7 +35,7 @@
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                        The dashboard also gives you a graphical peak into your chapter-wise progress per week. The graph shows the ideal path of your journey to success and your performance against it. It also gives you a comparative analysis of how your journey is going so far. This is important for you so that you do not lose track of the time against the amount of syllabus you need to cover. 
+                                                        Compare your previous score with your latest score.
                                                     </p>
                                                 </span>
                                             </h3>
@@ -57,7 +57,7 @@
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                            Check your proficiency levels across subjects.
                                                         </p>
                                                     </span>
                                                 </h3>
@@ -173,7 +173,7 @@
                                             </svg>
                                             <p class="tooltipclass">
                                                 <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                You can view the detailed analysis of time management while attempting tests and the average time spent on each question from this part of the screen. 
+                                                Track your time spent on correct and incorrect answers.
                                             </p>
                                         </span>
                                     </h3>

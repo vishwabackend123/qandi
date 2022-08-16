@@ -55,7 +55,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal !
+                                        A progressive score derived from all the assessments attempted in the platform. This score lets you know your probability of success if you appeared for the exam today.
                                     </p>
                                 </span>
                             </h3>
@@ -183,7 +183,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
+                                            A list of daily and weekly recommended personalized tasks to improve your level of preparation.
                                         </p>
                                     </span>
                                 </h3>
@@ -390,11 +390,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A matrix, created to analyze your attempts in various topics over time and sort
-                                            them into your areas of strengths and weaknesses. This data will keep on
-                                            changing as you progress and diligently work on your identified and
-                                            analyzed weaknesses and strengths. It will also display those topics that can
-                                            become your strength with a little more effort on your part. Move up the ladder.
+                                            <label>An actionable matrix of your strengths and weaknesses.</label>
+                                            <label>Q1: Strengths: Your Topics of strengths</label>
+                                            <label>Q2: Opportunity: Topics which are your potential strengths</label>
+                                            <label>Q3: Hurdles: Topics which are not entirely weaknesses but are hurdles in your success.</label>
+                                            <label>Q4: Weaknesses: Your weakest topics</label>
                                         </p>
                                     </span>
                                 </h3>
@@ -533,7 +533,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="plantitleBox">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
-                                                    Weekly Plan
+                                                Weekly Planner
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -542,11 +542,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                            To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
+                                                            Stay in control by scheduling your practice sessions.
                                                         </p>
                                                     </span>
                                                 </h3>
-                                                <p class="dashSubtext">Plan your weekly tests for any chapters</p>
+                                                <p class="dashSubtext">Plan your weekly practice for the chapters of your choice.</p>
                                             </div>
                                             <div class="gotoPlanner gotoplanner_mob mobile_block">
                                                 <a href="{{ url('/planner') }}">
@@ -693,7 +693,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                        Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
+                                                        Map your current vs your ideal preparation.
                                                     </p>
                                                 </span>
                                             </h3>
@@ -755,7 +755,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                        This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
+                                                        Get insights on your progress over time.
                                                     </p>
                                                 </span>
                                             </h3>
