@@ -164,7 +164,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best {{ucwords($userData->user_name)}}!</div>
-                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
+                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Practice</a>
                             </div>
                         </div>
                     </div>

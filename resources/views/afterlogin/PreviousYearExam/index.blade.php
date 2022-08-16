@@ -87,7 +87,7 @@
                                                         @csrf
                                                         <input type="hidden" name="paper_name" value="{{$sche->paper_name}}" />
                                                         <input type="hidden" name="paper_id" value="{{$sche->paper_id}}" />
-                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Practice</button>
                                                     </form>
                                                 </div>
                                             </div>

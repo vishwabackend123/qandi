@@ -207,7 +207,7 @@
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best Sakshi!</div>
-                                <button class="btn exam_inst_take_test_btn">Take Test</button>
+                                <button class="btn exam_inst_take_test_btn">Practice</button>
                             </div>
                         </div>
                     </div>
