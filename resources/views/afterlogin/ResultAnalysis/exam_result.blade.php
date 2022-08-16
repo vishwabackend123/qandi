@@ -34,7 +34,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
                     <span class="d-block mb-2 commontext">Questions Attempted</span>
-                    <label class="m-0 commonboldtext">{{$scoreResponse->no_of_question - $scoreResponse->not_answered}}/{{$scoreResponse->no_of_question}}</label>
+                    <label class="m-0 commonboldtext">{{($scoreResponse->correct_count+$scoreResponse->wrong_count)}}/{{$scoreResponse->no_of_question}}</label>
                 </div>
                 <div class="time-date-block">
                     <span class="d-block mb-2 commontext">{{isset($scoreResponse->total_get_marks)?date('j F Y', strtotime($scoreResponse->test_attempted_date)):''}}</span>
@@ -206,283 +206,276 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
 </div>
-    @php
-    $correct_cnt=isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0;
-    $incorrect_cnt=isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0;
-    $not_attempt=isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0;
+@php
+$correct_cnt=isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0;
+$incorrect_cnt=isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0;
+$not_attempt=isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0;
 
-    $total_question = $scoreResponse->no_of_question;
+$total_question = $scoreResponse->no_of_question;
 
-    $total_makrs=isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0;
-    $correct_score=isset($scoreResponse->correct_score)?$scoreResponse->correct_score:0;
-    $incorrect_score=isset($scoreResponse->incorrect_score)?$scoreResponse->incorrect_score:0;
-    $get_score=(isset($scoreResponse->total_get_marks) && !empty($scoreResponse->total_get_marks))?$scoreResponse->total_get_marks:0;
-    $get_score_json=json_encode($get_score);
-    $class_average=(isset($scoreResponse->class_average) && ($scoreResponse->class_average)>=0)?$scoreResponse->class_average:0;
-    $class_average_json=json_encode($class_average);
+$total_makrs=isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0;
+$correct_score=isset($scoreResponse->correct_score)?$scoreResponse->correct_score:0;
+$incorrect_score=isset($scoreResponse->incorrect_score)?$scoreResponse->incorrect_score:0;
+$get_score=(isset($scoreResponse->total_get_marks) && !empty($scoreResponse->total_get_marks))?$scoreResponse->total_get_marks:0;
+$get_score_json=json_encode($get_score);
+$class_average=(isset($scoreResponse->class_average) && ($scoreResponse->class_average)>=0)?$scoreResponse->class_average:0;
+$class_average_json=json_encode($class_average);
 
-    $correct_per_pie=!empty($total_question)?round((($correct_cnt/$total_question)*100),2):0;
-    $incorrect_per_pie=!empty($total_question)?round((($incorrect_cnt/$total_question)*100),2):0;
+$correct_per_pie=!empty($total_question)?round((($correct_cnt/$total_question)*100),2):0;
+$incorrect_per_pie=!empty($total_question)?round((($incorrect_cnt/$total_question)*100),2):0;
 
-    $not_attempt_per_pie=100-($correct_per_pie+$incorrect_per_pie);
-
-
-    $subject_graph=isset($scoreResponse->subject_graph)?$scoreResponse->subject_graph:0;
-    $stuscore_arr=$clsAvg_arr=[];
-    $stuscore=$clsAvg=0;
-    foreach($subject_graph as $key=>$gh){
-    $stuscore=$stuscore+$gh->student_score;
-    $clsAvg=$clsAvg+$gh->class_score;
-    }
-    $stuscore_arr[]=round($stuscore,2);
-    $stuscore_json=json_encode($stuscore_arr);
-    $clsAvg_arr[]=round($clsAvg,2);
-    $clsAvg_json=json_encode($clsAvg_arr);
+$not_attempt_per_pie=100-($correct_per_pie+$incorrect_per_pie);
 
 
-    @endphp
-     <script type="text/javascript">
-$(document).ready(function() {
-    $(document).on('click', 'span.tooltipmain2 svg', function(event) {
-    //$("span.tooltipmain svg").click(function(event) {
-        console.log("hello");
-        event.stopPropagation();
+$subject_graph=isset($scoreResponse->subject_graph)?$scoreResponse->subject_graph:0;
+$stuscore_arr=$clsAvg_arr=[];
+$stuscore=$clsAvg=0;
+foreach($subject_graph as $key=>$gh){
+$stuscore=$stuscore+$gh->student_score;
+$clsAvg=$clsAvg+$gh->class_score;
+}
+$stuscore_arr[]=round($stuscore,2);
+$stuscore_json=json_encode($stuscore_arr);
+$clsAvg_arr[]=round($clsAvg,2);
+$clsAvg_json=json_encode($clsAvg_arr);
 
-        var card_open = $(this).siblings("p").hasClass('show');
-        if (card_open === true) {
-            $(this).siblings("p").hide();
-            $(this).siblings("p").removeClass('show');
-        } else {
-            $("span.tooltipmain2 p.tooltipclass span").each(function() {
-                $(this).parent("p").hide();
-                $(this).parent("p").removeClass('show');
-            });
-            $(this).siblings("p").show();
-            $(this).siblings("p").addClass('show');
-        }
-        $('.customDropdown').removeClass('active');
 
-    });
-    $("span.tooltipmain2 p.tooltipclass span").click(function() {
-        $(this).parent("p").hide();
-        $(this).parent("p").removeClass('show');
-    });
-});
-$(document).on('click', function(e) {
-    var card_opened = $('.tooltipclass').hasClass('show');
-    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-        $('.tooltipclass').hide();
-        $('.tooltipclass').removeClass('show');
-    }
-
-});
-
-</script>
- @if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
+@endphp
 <script type="text/javascript">
-    var student_scr ='<?php echo $stuscore ?>';
-    var student_bar_color ='#56b663';
-    if(student_scr < 0)
-    {
-        student_bar_color ='#E74969';
+    $(document).ready(function() {
+        $(document).on('click', 'span.tooltipmain2 svg', function(event) {
+            //$("span.tooltipmain svg").click(function(event) {
+            console.log("hello");
+            event.stopPropagation();
+
+            var card_open = $(this).siblings("p").hasClass('show');
+            if (card_open === true) {
+                $(this).siblings("p").hide();
+                $(this).siblings("p").removeClass('show');
+            } else {
+                $("span.tooltipmain2 p.tooltipclass span").each(function() {
+                    $(this).parent("p").hide();
+                    $(this).parent("p").removeClass('show');
+                });
+                $(this).siblings("p").show();
+                $(this).siblings("p").addClass('show');
+            }
+            $('.customDropdown').removeClass('active');
+
+        });
+        $("span.tooltipmain2 p.tooltipclass span").click(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+    });
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+            $('.tooltipclass').removeClass('show');
+        }
+
+    });
+</script>
+@if(isset($test_type) && ($test_type=='Live' || $test_type=='Mocktest'))
+<script type="text/javascript">
+    var student_scr = '<?php echo $stuscore ?>';
+    var student_bar_color = '#56b663';
+    if (student_scr < 0) {
+        student_bar_color = '#E74969';
     }
-            /*********** BarChart ***********/
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['My Percentage', 'Class Average'],
-                datasets: [{
-                    data: ['{{$stuscore}}', '{{$clsAvg}}'],
-                    label: '',
-                    backgroundColor: [
-                        student_bar_color,
-                        '#08d5a1'
-                    ],
-                    barPercentage: 5,
-                    barThickness: 80,
-                    maxBarThickness: 80
-                }]
+    /*********** BarChart ***********/
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['My Percentage', 'Class Average'],
+            datasets: [{
+                data: ['{{$stuscore}}', '{{$clsAvg}}'],
+                label: '',
+                backgroundColor: [
+                    student_bar_color,
+                    '#08d5a1'
+                ],
+                barPercentage: 5,
+                barThickness: 80,
+                maxBarThickness: 80
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
+            scales: {
+                x: {
+                    grid: {
                         display: false
                     }
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    },
 
-                    y: {
-                        beginAtZero: true
-                    }
+                y: {
+                    beginAtZero: true
                 }
-            }
-        });
-
-        function resetData(subject_id) {
-            /* var subject_data_json = JSON.parse($('#subject_data').val()); */
-
-            if (subject_id == 'all') {
-                myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
-                myChart.data.datasets[0].backgroundColor = [student_bar_color,'#08d5a1'];
-                myChart.update();
-                let overall_percent = '<?php echo number_format($scoreResponse->result_percentage, 2); ?>';
-                $("#percentage").val(overall_percent);
-
-            } else {
-                var graphArr = <?php echo json_encode($subject_graph); ?>;
-                var studet_score = [];
-                var class_score = [];
-                const iterator = graphArr.values();
-                for (const value of iterator) {
-                    if (value.subject_id == subject_id) {
-                        studet_score.push(value.student_score)
-                        studet_score.push(value.class_score)
-                        var percentage = value.student_score
-                    }
-                }
-                var student_subject_color ='#56b663';
-                if(percentage < 0)
-                {
-                     student_subject_color ='#E74969';
-                }
-                myChart.data.datasets[0].data = studet_score;
-                myChart.data.datasets[0].backgroundColor = [student_subject_color,'#08d5a1'];
-                myChart.update();
-
-                $("#percentage").val(percentage);
             }
         }
+    });
+
+    function resetData(subject_id) {
+        /* var subject_data_json = JSON.parse($('#subject_data').val()); */
+
+        if (subject_id == 'all') {
+            myChart.data.datasets[0].data = ['{{$stuscore}}', '{{$clsAvg}}'];
+            myChart.data.datasets[0].backgroundColor = [student_bar_color, '#08d5a1'];
+            myChart.update();
+            let overall_percent = '<?php echo number_format($scoreResponse->result_percentage, 2); ?>';
+            $("#percentage").val(overall_percent);
+
+        } else {
+            var graphArr = <?php echo json_encode($subject_graph); ?>;
+            var studet_score = [];
+            var class_score = [];
+            const iterator = graphArr.values();
+            for (const value of iterator) {
+                if (value.subject_id == subject_id) {
+                    studet_score.push(value.student_score)
+                    studet_score.push(value.class_score)
+                    var percentage = value.student_score
+                }
+            }
+            var student_subject_color = '#56b663';
+            if (percentage < 0) {
+                student_subject_color = '#E74969';
+            }
+            myChart.data.datasets[0].data = studet_score;
+            myChart.data.datasets[0].backgroundColor = [student_subject_color, '#08d5a1'];
+            myChart.update();
+
+            $("#percentage").val(percentage);
+        }
+    }
 </script>
 @endif
-    <!-- browser back disable -->
+<!-- browser back disable -->
 
-    <script type="text/javascript">
-        $(document).ready(function() {
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        window.history.pushState(null, "", window.location.href);
+
+        window.onpopstate = function() {
 
             window.history.pushState(null, "", window.location.href);
 
-            window.onpopstate = function() {
-
-                window.history.pushState(null, "", window.location.href);
-
-            };
-
-        });
-    </script>
-    <!-- browser back disable -->
-    <script>
-
-
-
-
-        /***********my-score************************* */
-        const myscorecir = 260;
-        const myscoredata = {
-            labels: ["Correct", "Incorrect", "Not Attempted"],
-            datasets: [{
-                label: "My First Dataset",
-                data: [<?php echo $correct_per_pie; ?>, <?php echo $incorrect_per_pie; ?>, <?php echo $not_attempt_per_pie; ?>],
-                backgroundColor: [
-                    "#08d5a1",
-                    "#fb7686",
-                    "#f2f4f7"
-                ]
-            }]
         };
-        const myscoreconfig = {
-            type: "doughnut",
-            data: myscoredata,
-            options: {
-                reponsive: true,
-                maintainAspectRatio: false,
-                rotation: (myscorecir / 2) * -1,
-                circumference: myscorecir,
-                cutout: "85%",
-                borderWidth: 0,
-                borderRadius: function(context, options) {
-                    const index = context.dataIndex;
-                    let radius = {};
-                    // if (index == 0) {
-                    //     radius.innerStart = 20;
-                    //     radius.outerStart = 20;
-                    // }
-                    // if (index === context.dataset.data.length - 1) {
-                    //     radius.innerEnd = 20;
-                    //     radius.outerEnd = 20;
-                    // }
-                    if (index == 0) {
-                        radius.innerStart = 20;
-                        radius.outerStart = 20;
-                        if(context.dataset.data[index+ 1]==0 && context.dataset.data[index+ 2]==0){
-                            radius.innerEnd = 20;
-                            radius.outerEnd = 20;
-                        } 
-                    }
-                    if (index == 1) {
-                        if(context.dataset.data[index-1]== 0){
-                            radius.innerStart = 20;
-                            radius.outerStart = 20;
-                        }
-                        if(context.dataset.data[index+ 1]==0){
-                            radius.innerEnd = 20;
-                            radius.outerEnd = 20;
-                        } 
-                    }
-                    if (index == 2) {
-                        if(context.dataset.data[index- 1]==0 && context.dataset.data[index- 2]==0){
-                            radius.innerStart = 20;
-                            radius.outerStart = 20;
-                        }
-                    }
-                    if(index === context.dataset.data.length -1 ){
+
+    });
+</script>
+<!-- browser back disable -->
+<script>
+    /***********my-score************************* */
+    const myscorecir = 260;
+    const myscoredata = {
+        labels: ["Correct", "Incorrect", "Not Attempted"],
+        datasets: [{
+            label: "My First Dataset",
+            data: [<?php echo $correct_per_pie; ?>, <?php echo $incorrect_per_pie; ?>, <?php echo $not_attempt_per_pie; ?>],
+            backgroundColor: [
+                "#08d5a1",
+                "#fb7686",
+                "#f2f4f7"
+            ]
+        }]
+    };
+    const myscoreconfig = {
+        type: "doughnut",
+        data: myscoredata,
+        options: {
+            reponsive: true,
+            maintainAspectRatio: false,
+            rotation: (myscorecir / 2) * -1,
+            circumference: myscorecir,
+            cutout: "85%",
+            borderWidth: 0,
+            borderRadius: function(context, options) {
+                const index = context.dataIndex;
+                let radius = {};
+                // if (index == 0) {
+                //     radius.innerStart = 20;
+                //     radius.outerStart = 20;
+                // }
+                // if (index === context.dataset.data.length - 1) {
+                //     radius.innerEnd = 20;
+                //     radius.outerEnd = 20;
+                // }
+                if (index == 0) {
+                    radius.innerStart = 20;
+                    radius.outerStart = 20;
+                    if (context.dataset.data[index + 1] == 0 && context.dataset.data[index + 2] == 0) {
                         radius.innerEnd = 20;
                         radius.outerEnd = 20;
                     }
-                    return radius;
-                },
-                plugins: {
-                    title: false,
-                    subtitle: false,
-                    legend: false
-                },
-            }
-        };
-        const myscore = new Chart("myscoregraph", myscoreconfig)
-
-        /***************** halfdoughnut - end *********************/
-    </script>
-    
-    <script>
-        $(document).ready(function() {
-            url2 = "{{ url('exam_result_analysis_attempt/') }}";
-            $.ajax({
-                url: url2,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function(result) {
-
-                    $("#subject_topic_section").html(result);
-
                 }
-            });
+                if (index == 1) {
+                    if (context.dataset.data[index - 1] == 0) {
+                        radius.innerStart = 20;
+                        radius.outerStart = 20;
+                    }
+                    if (context.dataset.data[index + 1] == 0) {
+                        radius.innerEnd = 20;
+                        radius.outerEnd = 20;
+                    }
+                }
+                if (index == 2) {
+                    if (context.dataset.data[index - 1] == 0 && context.dataset.data[index - 2] == 0) {
+                        radius.innerStart = 20;
+                        radius.outerStart = 20;
+                    }
+                }
+                if (index === context.dataset.data.length - 1) {
+                    radius.innerEnd = 20;
+                    radius.outerEnd = 20;
+                }
+                return radius;
+            },
+            plugins: {
+                title: false,
+                subtitle: false,
+                legend: false
+            },
+        }
+    };
+    const myscore = new Chart("myscoregraph", myscoreconfig)
 
+    /***************** halfdoughnut - end *********************/
+</script>
 
+<script>
+    $(document).ready(function() {
+        url2 = "{{ url('exam_result_analysis_attempt/') }}";
+        $.ajax({
+            url: url2,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+
+                $("#subject_topic_section").html(result);
+
+            }
         });
-        /*$(".topicdiv-scroll").slimscroll({
-            height: "50vh",
-        });*/
-    </script>
 
-    <!-- Footer Section -->
-    @include('afterlogin.layouts.footer_new')
-    <!-- footer Section end  -->
-    @endsection
+
+    });
+    /*$(".topicdiv-scroll").slimscroll({
+        height: "50vh",
+    });*/
+</script>
+
+<!-- Footer Section -->
+@include('afterlogin.layouts.footer_new')
+<!-- footer Section end  -->
+@endsection
