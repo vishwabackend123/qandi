@@ -390,11 +390,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            <label>An actionable matrix of your strengths and weaknesses.</label>
-                                            <label>Q1: Strengths: Your Topics of strengths</label>
-                                            <label>Q2: Opportunity: Topics which are your potential strengths</label>
-                                            <label>Q3: Hurdles: Topics which are not entirely weaknesses but are hurdles in your success.</label>
-                                            <label>Q4: Weaknesses: Your weakest topics</label>
+                                            An actionable matrix of your strengths and weaknesses.
                                         </p>
                                     </span>
                                 </h3>
@@ -409,7 +405,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
+                                                    <p>Your Topics of strengths.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
@@ -433,8 +429,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="#needsfocusmodal" data-bs-toggle="modal" data-bs-target="#needsfocusmodal">
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
-                                                    <h5>Needs focus</h5>
-                                                    <p>Give a little attention to these topics and take another step towards perfection. </p>
+                                                    <h5>Opportunity</h5>
+                                                    <p>Topics which are your potential strengths. </p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
@@ -459,8 +455,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="#hopefulmodal" data-bs-toggle="modal" data-bs-target="#hopefulmodal">
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
-                                                    <h5>Hopeful </h5>
-                                                    <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
+                                                    <h5>Hurdles </h5>
+                                                    <p>Topics which are not entirely weaknesses but are hurdles in your success.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
@@ -484,8 +480,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="#weakmodal" data-bs-toggle="modal" data-bs-target="#weakmodal">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
-                                                    <h5>Weak </h5>
-                                                    <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
+                                                    <h5>Weaknesses </h5>
+                                                    <p>Your weakest topics.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_4">
