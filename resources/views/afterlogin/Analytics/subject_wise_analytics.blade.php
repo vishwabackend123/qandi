@@ -12,7 +12,7 @@
                             </svg>
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                               The dashboard also gives you a graphical peak into your chapter-wise progress per week. The graph shows the ideal path of your journey to success and your performance against it. It also gives you a comparative analysis of how your journey is going so far. This is important for you so that you do not lose track of the time against the amount of syllabus you need to cover. 
+                                Compare your previous score with your latest score.
                             </p>
                         </span>
                     </h3>
@@ -81,7 +81,7 @@
             <div class="col-md-6">
                 <div class="commonWhiteBox">
                     <div class="subjectperform">
-                        <h3 class="boxheading d-flex align-items-center">Core Learning Skill
+                        <h3 class="boxheading d-flex align-items-center">Core Learning Skills
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -90,7 +90,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    The platform gives you an in-depth analysis based on your accuracy in learning skills - Knowledge, Comprehension, Application and Evaluation. These have been inspired by various instructional design models which lay our foundation of cognitive development 
+                                    Get in-depth analysis of your core learning skills.
                                 </p>
                             </span>
                         </h3>
