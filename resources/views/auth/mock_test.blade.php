@@ -108,7 +108,7 @@
                               <div class="mock_exam_jee_main_text">
                                  <h3>JEE Main - Full Syllabus -2021</h3>
                               </div>
-                              <button type="button" class="btn btn-common-green mock_test_take_test_btn">Take test</button>
+                              <button type="button" class="btn btn-common-green mock_test_take_test_btn">Practice</button>
                            </div>
                            <div class="line_696"></div>
                            <div class="mock_test_ques_dure_marks_sub d-flex">
