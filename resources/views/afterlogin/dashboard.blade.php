@@ -71,7 +71,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Attempt more tests to improve your score.</p>
-                                    <a href="{{route('overall_analytics')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('overall_analytics')}}" class="commmongreenLink">See Analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -183,7 +183,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A list of daily and weekly recommended personalized tasks to improve your level of preparation.
+                                            Recommended daily and weekly personalized tasks to improve your level of preparation
                                         </p>
                                     </span>
                                 </h3>
@@ -390,7 +390,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            An actionable matrix of your strengths and weaknesses.
+                                            An actionable matrix of your strengths, weaknesses and your improvement areas.
                                         </p>
                                     </span>
                                 </h3>

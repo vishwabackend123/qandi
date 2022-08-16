@@ -4,7 +4,7 @@ $userData = Session::get('user_data');
 <!-------- Mobile Sidebar -------------->
 <section class="sidebar_block mobile_block mobilemenu">
     <div class="userprofile headericon d-flex align-items-center justify-content-between">
-        <div>
+        <div class="d-flex align-items-center">
             <a href="javascript:void(0)" title="User">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                     <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
@@ -341,7 +341,7 @@ $userData = Session::get('user_data');
                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                             <input type="text" class="refer_email_input emaillink form-control" placeholder="Email address" id="referEmails" name="refer_emails" autocomplete="off" required>
                         </div>
-                        <p class="use-text"><span class="Note">Note:</span>Use “,” between two emails to separate</p>
+                        <p class="use-text"><span class="Note">Note:</span>Use comma (,) between two email addresses</p>
                         <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                         <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
                         <div class="_btn-green"><button type="submit" class="btn btn-common-green"> Send Invite</button></div>
