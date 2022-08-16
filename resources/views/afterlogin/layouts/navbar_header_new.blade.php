@@ -48,12 +48,12 @@ $name = $action;
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobile">
                 <a href="javascript:void(0);">
-                    <img src="public/after_login/current_ui/images/mobile-nav.svg" alt="" class="mobileicon">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/mobile-nav.svg')}}" alt="" class="mobileicon">
                 </a>
             </span>
             <span class="headericon  mobile_block mobilenav" id="menumobilehide">
                 <a href="javascript:void(0);">
-                    <img src="public/after_login/current_ui/images/cross-menu.svg" alt="" class="mobileicon">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/cross-menu.svg')}}" alt="" class="mobileicon">
                 </a>
             </span>
             <span class="headericon dropdown mobile_hide">
