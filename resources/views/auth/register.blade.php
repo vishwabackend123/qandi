@@ -615,8 +615,8 @@ $(document).ready(function() {
     $(document).keypress(function(e){
         e.stopPropagation();
         if (e.keyCode === 13) {
-            if ($('#signup_cnt').hasClass('disabled') != true) {
-                $('#signup_cnt').trigger('click');
+             if (!$('#signup_cnt').prop('disabled')) {
+                $('#studentsignup').submit();
             }
         }
     });
