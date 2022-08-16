@@ -613,10 +613,11 @@ $(document).ready(function() {
         $("#location-error").hide();
     })
     $(document).keypress(function(e){
-        e.stopPropagation();
         if (e.keyCode === 13) {
              if (!$('#signup_cnt').prop('disabled')) {
                 $('#studentsignup').submit();
+                e.preventDefault();
+                return false;
             }
         }
     });
