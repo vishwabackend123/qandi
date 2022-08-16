@@ -104,8 +104,8 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. </h5>
-                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong>  of questions are of evaluation skills. This skill helps you to  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
+                                                <h5>Your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.</h5>
+                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong> of questions solved are of this skill.  <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a></p>
                                             </div>
                                             <div class="codebottom">
                                                 <h6>Your accuracy</h6>
@@ -130,8 +130,8 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Comprehension skill determines your ability to understand or explain ideas or concepts, without necessarily relating it. </h5>
-                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions are of Comprehension/Understanding skills. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
+                                                <h5>Helps you understand the meaning and interpretation of instructions and problems. </h5>
+                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions solved are of this skill. <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a></p>
                                             </div>
                                             <div class="codebottom">
                                                 <h6>Your accuracy</h6>
@@ -156,8 +156,8 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Application skill indicates your ability to use the information in a new way. This involves using acquired knowledge and establish relationships. </h5>
-                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions are of application skills. This skill helps you to  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
+                                                <h5>Helps you to determine your ability to execute or implement the information. </h5>
+                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions solved are of this skill.  <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a></p>
 
                                             </div>
                                             <div class="codebottom">
@@ -183,9 +183,9 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5> Knowledge skill determines your ability to recall, recognize factual information and basic concepts. This skill is memory-dependent. </h5>
+                                                <h5>Helps you determine your ability to recognize and recall factual information and basic concepts. </h5>
 
-                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions are of Knowledge/Remembering skills. This skill    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
+                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions solved are of this skill.    <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a></p>
                                             </div>
                                             <div class="codebottom">
                                                 <h6>Your accuracy</h6>

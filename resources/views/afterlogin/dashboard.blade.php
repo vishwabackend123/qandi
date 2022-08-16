@@ -274,7 +274,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -293,7 +293,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -336,7 +336,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
@@ -354,7 +354,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </div>
                                                         @if($data['allowed'] == '1')
                                                         <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Take test</a>
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
                                                         </div>
                                                         @else
                                                         <div class="tasklistbtn">
