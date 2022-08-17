@@ -67,7 +67,8 @@ class PreviousYearExamController extends Controller
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             ));
 
@@ -157,6 +158,7 @@ class PreviousYearExamController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
+                        "Authorization: Bearer ". $this->getAccessToken()
 
                     ),
                 );

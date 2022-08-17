@@ -33,6 +33,7 @@ class StudentSignInController extends Controller
      */
     public function __construct()
     {
+        
     }
     /**
      * Index
@@ -54,14 +55,15 @@ class StudentSignInController extends Controller
     public function sendotplogin(Request $request)
     {
         try {
+            $this->authLogin();
             $postData = $request->all();
             $email_or_mobile = isset($postData['mobile']) ? (string)$postData['mobile'] : '';
-
-            /*  $exists = StudentUsers::where('mobile', $mobile)->exists();
-             if (isset($mobile) && !empty($mobile) && $exists == true) { */
-
             $request = ['mobile' => $email_or_mobile];
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/Otp/' . $email_or_mobile;
 
@@ -76,6 +78,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -139,7 +144,11 @@ class StudentSignInController extends Controller
                 $request = ['email_or_mobile' => $enteredMobile, 'otp' => $enteredOtp];
 
                 $request_json = json_encode($request);
-
+                $token = '';
+                 if (Session::has('access_token')) {
+                    $access_token =json_decode(Session::get('access_token') , true);
+                    $token = $access_token['access_token'];
+                }
                 $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/studentlogin';
 
@@ -156,7 +165,8 @@ class StudentSignInController extends Controller
                     CURLOPT_POSTFIELDS => $request_json,
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
-                        "content-type: application/json"
+                        "content-type: application/json",
+                        "Authorization: Bearer ". $token
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -214,7 +224,11 @@ class StudentSignInController extends Controller
 
             $request = ['email' => $emailid, 'mobile' => (int)$mobile,];
             $request_json = json_encode($request);
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/register-otp';
 
@@ -231,7 +245,8 @@ class StudentSignInController extends Controller
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $token
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -277,6 +292,7 @@ class StudentSignInController extends Controller
     public function verifyOtpRegister(Request $request)
     {
         try {
+            $this->authLogin();
             $data = $request->all();
 
 
@@ -316,6 +332,11 @@ class StudentSignInController extends Controller
 
             $request_json = json_encode($request);
 
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             /*    $curl_url = $api_URL . 'api/student-signup'; */
             $curl_url = $api_URL . 'api/signup';
@@ -333,7 +354,8 @@ class StudentSignInController extends Controller
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $token
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -372,7 +394,11 @@ class StudentSignInController extends Controller
                     if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
                         $inputjson = ["email" => $email_add, "student_refer_by" => $data['refer_code'],];
                         $request = json_encode($inputjson);
-
+                        $token = '';
+                         if (Session::has('access_token')) {
+                            $access_token =json_decode(Session::get('access_token') , true);
+                            $token = $access_token['access_token'];
+                        }
                         $api_URL = env('API_URL');
                         $curl_url = $api_URL . 'api/update-referr-student';
 
@@ -463,7 +489,11 @@ class StudentSignInController extends Controller
     {
         try {
             $data = $request->all();
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-country';
 
@@ -478,6 +508,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -514,7 +547,11 @@ class StudentSignInController extends Controller
             $data = $request->all();
             $country = isset($data['country']) ? $data['country'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : '';
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-state/' . $country;
 
@@ -528,6 +565,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -580,7 +620,11 @@ class StudentSignInController extends Controller
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : '';
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-all-new-cities/' . $state;
 
@@ -597,6 +641,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -675,7 +722,11 @@ class StudentSignInController extends Controller
             $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country,];
 
             $request_json = json_encode($request);
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/update-address';
 
@@ -692,7 +743,8 @@ class StudentSignInController extends Controller
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $token
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -709,7 +761,11 @@ class StudentSignInController extends Controller
                 $exam_id = 1;
                 $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'],];
                 $request = json_encode($inputjson);
-
+                $token = '';
+                 if (Session::has('access_token')) {
+                    $access_token =json_decode(Session::get('access_token') , true);
+                    $token = $access_token['access_token'];
+                }
                 $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/insert-referr-student';
 
@@ -727,6 +783,7 @@ class StudentSignInController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
+                        "Authorization: Bearer ". $token
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -827,6 +884,12 @@ class StudentSignInController extends Controller
     public function sentMobileOtp($mobile, Request $request)
     {
         try {
+            $this->authLogin();
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/mobile-otp/' . $mobile;
 
@@ -841,6 +904,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -900,7 +966,11 @@ class StudentSignInController extends Controller
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : 'ab';
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-new-address?city=' . $search;
 
@@ -917,6 +987,9 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $token
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -963,7 +1036,11 @@ class StudentSignInController extends Controller
         try {
             $request = ['student_id' => (int)$student_id, 'student_stage_at_sgnup' => (int)$stage];
             $request_json = json_encode($request);
-
+            $token = '';
+             if (Session::has('access_token')) {
+                $access_token =json_decode(Session::get('access_token') , true);
+                $token = $access_token['access_token'];
+            }
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/stage-at-signUp';
             $curl = curl_init();
@@ -996,5 +1073,39 @@ class StudentSignInController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function authLogin()
+    {
+        if (!Session::has('access_token')) {    
+            $request = ['username' => env('AUTH_USERNAME'), 'password' => env('AUTH_PASSWORD')];
+            $request_json = http_build_query($request);
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/client-login';
+            $curl = curl_init();
+            $curl_option = array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/x-www-form-urlencoded"
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            $aResponse = json_decode($response_json,true);
+            if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
+                Session::put('access_token', json_encode($aResponse));
+            }
+         }   
     }
 }

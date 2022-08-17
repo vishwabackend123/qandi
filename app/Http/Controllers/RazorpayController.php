@@ -86,7 +86,8 @@ class RazorpayController extends Controller
                         CURLOPT_POSTFIELDS => $order_request_json,
                         CURLOPT_HTTPHEADER => array(
                             "accept: application/json",
-                            "content-type: application/json"
+                            "content-type: application/json",
+                            "Authorization: Bearer ". $this->getAccessToken()
                         ),
                     );
                 curl_setopt_array($curl, $curl_option);
