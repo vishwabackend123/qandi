@@ -1846,7 +1846,7 @@
 .hide-text{display: none;}   
 .testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
 .testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
-
+.scrollnone .main-wrapper header{width:100%;}
 }
 
 
