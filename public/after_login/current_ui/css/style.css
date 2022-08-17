@@ -2138,7 +2138,8 @@ a.btn-common-attempted svg {
   }
   .reviewScreenleft .fancy-radio-buttons input[type="radio"] ~ .image-bg.correctans {
     border: 1px solid #039855;
-    background: #cbecd0;
+    /* background: #cbecd0; */
+    background-color: #bdf3c5;
 }
 .reviewScreenleft .fancy-radio-buttons input[type="radio"] ~ .image-bg.correctans .seNo {
     background-color: #039855;color:#fff;font-weight: 600;
@@ -7350,4 +7351,10 @@ margin-bottom: 12px;
         background: #f5faf6;
         opacity: 1 !important;
     }
+
+
+    .reviewScreenleft .nav-tabs .nav-link.active,
+    .reviewScreenleft .ReCountActive, 
+    .reviewScreenleft .ReCountActive:before{color: #363c4f !important;}
+    
  

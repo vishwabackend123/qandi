@@ -107,7 +107,7 @@
         max-width: 200px;    height: 241px;}
     .reviewexamType a{font-size: 14px;}
     .reviewScreenleft li.nav-item {
-        margin-right: 15px;
+        margin-right: 45px;
     }
     .subjectblockOverall .textblock{    width: calc(100% - 100px);}
     .subjectperformLegend .bar {
