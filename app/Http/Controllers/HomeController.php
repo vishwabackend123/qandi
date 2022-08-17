@@ -572,7 +572,7 @@ class HomeController extends Controller
                     }
                 }
             }
-            $this->updateStudentStage($user_id,$data['grade']);
+            $this->updateStudentStage($user_id, $data['grade']);
             return Redirect()->route('dashboard');
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -1230,7 +1230,7 @@ class HomeController extends Controller
         $state_list = isset($aResponse->response) ? $aResponse->response : false;
         return view('afterlogin.profile', compact('state_list'));
     }
-    public function updateStudentStage($user_id,$stand_value)
+    public function updateStudentStage($user_id, $stand_value)
     {
         $request = ['student_id' => (int)$user_id, 'student_stage_at_sgnup' => (int)$stand_value,];
         $request_json = json_encode($request);
@@ -1239,20 +1239,20 @@ class HomeController extends Controller
         $curl_url = $api_URL . 'api/stage-at-signUp';
         $curl = curl_init();
         $curl_option = array(
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_FAILONERROR => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "PUT",
-                    CURLOPT_POSTFIELDS => $request_json,
-                    CURLOPT_HTTPHEADER => array(
-                        "accept: application/json",
-                        "content-type: application/json"
-                    ),
-                );
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        );
         curl_setopt_array($curl, $curl_option);
         $response_json = curl_exec($curl);
 

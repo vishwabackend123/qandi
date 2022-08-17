@@ -25,7 +25,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="toastdata">
+                        <!-- <div class="toastdata">
    <div class="toast-content">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3"/>
@@ -43,7 +43,7 @@
       </svg>
    </div>
    <div class="progress"></div>
-</div>
+</div> -->
 <!--<button class="toast-btn" onclick="toastFunction()">toast</button>        -->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
@@ -193,53 +193,64 @@
             $('#collapseTwo_custome_' + chapt_id).addClass('show');
             $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide topics');
         }
-        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-                $('#overlay').fadeIn();
-            },
-            success: function(result) {
-                $('.spinnerblock').hide();
-                $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+        var slider_open = $("#topic_section_"+chapt_id).hasClass('show_div_' + chapt_id);
+        if (slider_open) {
+            setTimeout(function(){
+                  $('.spinnerblock').hide();
+                }, 1000);
+            
+        }else 
+        {
+          url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
+                success: function(result) {
+                    $('.spinnerblock').hide();
+                    $(".chapters-expend  #topic_section_" + chapt_id).html(result);
+                    $("#topic_section_" + chapt_id).addClass('show_div_' + chapt_id);
 
-                $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
-                $("#topic_section_" + chapt_id).owlCarousel({
+                    $("#topic_section_" + chapt_id).trigger('destroy.owl.carousel');
+                    $("#topic_section_" + chapt_id).owlCarousel({
 
-                    stagePadding: 0,
-                    loop: false,
-                    margin: 15,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false,
-                            stagePadding: 0,
-                            margin: 5,
-                            loop: true,
-                        },
-                        590: {
-                            items: 2
-                        },
-                        1000: {
-                            items: 3
-                        },
-                        1200: {
-                            items: 4
+                        stagePadding: 0,
+                        loop: false,
+                        margin: 15,
+                        nav: true,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: false,
+                                stagePadding: 0,
+                                margin: 5,
+                                loop: true,
+                            },
+                            590: {
+                                items: 2
+                            },
+                            1000: {
+                                items: 3
+                            },
+                            1200: {
+                                items: 4
+                            }
+
+
                         }
-
-
-                    }
-                });
+                    });
 
 
 
-            }
-        });
+                }
+            });  
+        }
+        
 
     }
 </script>

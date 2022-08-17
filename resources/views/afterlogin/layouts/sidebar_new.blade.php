@@ -341,7 +341,7 @@ $userData = Session::get('user_data');
                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                             <input type="text" class="refer_email_input emaillink form-control" placeholder="Email address" id="referEmails" name="refer_emails" autocomplete="off" required>
                         </div>
-                        <p class="use-text"><span class="Note">Note:</span>Use “,” between two emails to separate</p>
+                        <p class="use-text"><span class="Note">Note:</span>Use comma (,) between two email addresses</p>
                         <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                         <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
                         <div class="_btn-green"><button type="submit" class="btn btn-common-green"> Send Invite</button></div>
