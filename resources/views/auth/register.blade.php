@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<!-- 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body style="background: #f5faf6;">
 <section class="d-flex login-signup">
@@ -286,12 +284,6 @@ $(function() {
         }
     });
 });
-/*  $('.otp').keyup(function(event) {
-     $(".otp-input input").filter(function() {
-         return $.trim($(this).val()).length == 0
-     }).length == 0;
- }); */
-
 function resentOtp() {
     $('#otp_box input[name="register_otp[]"').val('');
     $('#verifynum').click();
@@ -571,9 +563,6 @@ $(document).ready(function() {
                 return queryParameters;
             },
             processResults: function(response_data, params) {
-
-                // var data = jQuery.parseJSON(response_data);
-
                 var data = $.map(response_data.response, function(obj) {
                     obj.id = obj.id;
                     obj.text = obj.text;
@@ -704,7 +693,6 @@ function resentOtpTime() {
 
     }
 }
-
 </script>
 </body>
 @endsection
