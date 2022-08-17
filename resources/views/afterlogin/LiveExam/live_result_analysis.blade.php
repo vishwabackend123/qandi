@@ -587,6 +587,11 @@ $clsAvg_json=json_encode($clsAvg_arr);
             $('.tooltipclass').removeClass('show');
         }
     });
+    
+    $(".topic_score_bar.dropdown").hover(function() {
+        $(this).children(".progress.dropdown-toggle").trigger('click');
+    });
+   
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

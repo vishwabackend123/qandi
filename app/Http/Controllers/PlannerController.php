@@ -78,7 +78,7 @@ class PlannerController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -126,6 +126,9 @@ class PlannerController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -182,6 +185,9 @@ class PlannerController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -268,8 +274,10 @@ class PlannerController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             );
+
             curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
@@ -482,7 +490,7 @@ class PlannerController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-
+                        "Authorization: Bearer ". $this->getAccessToken()
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -649,6 +657,9 @@ class PlannerController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                    ),
             );
             curl_setopt_array($curl, $curl_option);
 
