@@ -69,7 +69,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -136,7 +136,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -188,7 +188,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -278,7 +278,7 @@ class ExamCustomController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
 
                     ),
                 );
@@ -401,11 +401,11 @@ class ExamCustomController extends Controller
                 $exam_url = route('custom_exam');
 
                 $exam_title = "Custom Subject Exam";
-                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title','header_title'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
-            return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id','header_title'));
+            return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'header_title'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -804,7 +804,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -879,7 +879,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -934,7 +934,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -1100,7 +1100,7 @@ class ExamCustomController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
 
                     ),
                 );
@@ -1187,9 +1187,11 @@ class ExamCustomController extends Controller
 
             $test_type = 'Assessment';
             $exam_type = 'PT';
-            $exam_name = $test_name;
+            // $exam_name = $test_name;
+            $exam_name = 'Custom Exam';
+            Redis::set('exam_name' . $user_id, $exam_name);
 
-            Redis::set('exam_name' . $user_id, $test_name);
+            // Redis::set('exam_name' . $user_id, $test_name);
             Redis::set('test_type' . $user_id, $test_type);
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
@@ -1213,16 +1215,16 @@ class ExamCustomController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title','header_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
             //Session::put('exam_name', $test_name);
 
 
-            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name','header_title'));
+            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name', 'header_title'));
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -1313,7 +1315,7 @@ class ExamCustomController extends Controller
                 return response(array('status' => 'failed'));
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -1550,7 +1552,7 @@ class ExamCustomController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
 
                 ),
             );
