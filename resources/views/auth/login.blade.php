@@ -288,9 +288,6 @@
                             $('#testing_otp').html(response.otp);
                         }
                         if (otp_type == 'resend') {
-                            //$('#resend_opt_msg').removeClass("d-none");
-                            //$("#resend_opt_msg").fadeIn('slow');
-                            //$("#resend_opt_msg").fadeOut(10000);
                             $('#opt_one').val('');
                             $('#opt_two').val('');
                             $('#opt_three').val('');

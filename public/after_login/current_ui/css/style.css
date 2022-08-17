@@ -6479,7 +6479,6 @@ border-color: #56b663;
     background-color: #1f4736;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
-    z-index: 5555;
     padding: 15px 30px 15px 20px;
     position: absolute;
     left: 33px;
@@ -6491,7 +6490,7 @@ border-color: #56b663;
     font-size: 14px;
     color: #fff;
     line-height: 1.8;
-    font-weight: normal;z-index:9;
+    font-weight: normal;z-index:10;
 }
 .tooltipclass > span {display: none;}
 .tooltipclass:before {
