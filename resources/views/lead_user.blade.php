@@ -36,7 +36,7 @@
 
     }
 </style>
-<div class="missing-info-main">
+<div class="missing-info-main body-color">
     <div class="logo-fullpage mobile_hide">
     <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#wign0frmma)">
@@ -258,5 +258,8 @@ function isValidEmail(email) {
         /^(?=.{1,64}@.{4,64}$)(?=.{6,100}$).*/.test(email);
 }
 
+$( document ).ready(function() {
+    $(".body-color").parents("body").css("background", "#e0f6e3")
+});
 </script>
 @endsection

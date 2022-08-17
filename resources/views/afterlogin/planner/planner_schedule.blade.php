@@ -134,11 +134,6 @@ $userData = Session::get('user_data');
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
-                        <!--
-                        <div class="pt-5 mt-5">
-                            <a href="{{route('dashboard')}}" class="btn btn-common-green  w-100">Back to Dashboard</a>
-                        </div>
--->
                     </div>
                 </div>
             </div>
@@ -511,11 +506,6 @@ $userData = Session::get('user_data');
         var start_date = this.value;
         var date = new Date(start_date);
 
-
-        /*  var first = date.getDate() - date.getDay() + 1;
-
-         var last = first + 6; // last day is the first day + 6 */
-
         var firstday = new Date(date.setDate(date.getDate() - date.getDay() + 1));
         var lastday = new Date(date.setDate(date.getDate() - date.getDay() + 7));
 
@@ -561,9 +551,6 @@ $userData = Session::get('user_data');
                                 '<div class = "add-insubchapter me-lg-3 me-2" ><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><p class = "m-0" > <span class="me-2" id="select_chapt_name' + chapter_id + '">' + chapter_name + '</span>' +
 
                                 '</p></div>');
-
-
-
                         } else {
 
                             $('#planner_sub_' + subject_id).append(

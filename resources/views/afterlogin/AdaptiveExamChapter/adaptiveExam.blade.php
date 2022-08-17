@@ -213,7 +213,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
                     </div>
-                    <div class="btnbottom hideondesktop">
+                    <div class="btnbottom hideonmobile">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <!--  <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button> -->
