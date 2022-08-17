@@ -101,7 +101,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                   @if(isset($scoreResponse->test_type) && $scoreResponse->test_type !='Assessment')
+                   @if(isset($scoreResponse->test_type) && ($scoreResponse->test_type =='Live' || $scoreResponse->test_type =='Mocktest' || $scoreResponse->test_type =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain2 ml-2">
@@ -465,9 +465,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
             success: function(result) {
 
                 $("#subject_topic_section").html(result);
-                console.log(test_type);
-                if (test_type == 'Assessment') {
-                    $('.subject_score_card').hide();
+                $('.subject_score_card').hide();
+                if (test_type == 'Mocktest' || test_type == 'Live' || test_type =='PreviousYear') {
+                    $('.subject_score_card').show();
                 }
 
             }
