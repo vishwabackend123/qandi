@@ -1051,7 +1051,17 @@
     .TestseriesAttempt22 .tablescroll {
         height: calc(100vh - 337px);
     }
-
+    .userprofile strong
+    {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width:88px;
+    }
+    .pro_sub_label:link
+    {
+        color: #1f1f1f!important;
+    }
     /********* Vikash End ************/
 
 
