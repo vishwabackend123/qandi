@@ -4743,7 +4743,7 @@ justify-content: space-between;}
     z-index: 99999;}
     .matrixpage-wrapper .exam_instruction_scrolling {
         height: calc(100vh - 501px);}
-        .scrollnone header {
+        .scrollnone .main-wrapper header {
             width: calc(100% - 82px);
         }
 /********* Shubham End ***********/
