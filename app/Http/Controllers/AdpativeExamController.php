@@ -73,6 +73,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
+                     "Authorization: Bearer ". $this->getAccessToken()
 
                 ),
             ));
@@ -461,6 +462,7 @@ class AdpativeExamController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
+                         "Authorization: Bearer ". $this->getAccessToken()
 
                     ),
                 ));
@@ -764,6 +766,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
+                     "Authorization: Bearer ". $this->getAccessToken()
 
                 ),
             ));
@@ -888,6 +891,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
+                     "Authorization: Bearer ". $this->getAccessToken()
 
                 ),
             ));
@@ -974,6 +978,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
+                     "Authorization: Bearer ". $this->getAccessToken()
 
                 ),
             ));

@@ -471,4 +471,13 @@ trait CommonTrait
         }
         return $planner;
     }
+    public function getAccessToken()
+    {
+        $token = '';
+        if (Session::has('access_token')) {
+            $access_token =json_decode(Session::get('access_token') , true);
+            $token = $access_token['access_token'];
+        }
+        return $token;
+    }
 }
