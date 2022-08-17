@@ -86,13 +86,6 @@
         text-indent: 9999px;
         overflow: hidden;
         background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
-        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
- */
-
-
     }
 </style>
 @php
@@ -184,9 +177,6 @@ $questtype='radio';
         </div>
     </div>
 </div>
-
-
-
 <script>
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
@@ -463,21 +453,6 @@ $questtype='radio';
 
 @include('afterlogin.layouts.footer')
 <!-- browser back disable -->
-<!-- <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() {
-        window.location.hash = "no-back-button";
-    }
-</script>
-<script type="text/javascript">
-    history.pushState(null, null, location.href);
-    history.back();
-    history.forward();
-    window.onpopstate = function() {
-        history.go(1);
-    };
-</script> -->
 <script type="text/javascript">
     $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
@@ -523,12 +498,6 @@ $questtype='radio';
             }
         });
     });
-    /* $('.number-block').slimscroll({
-         height: '20vh'
-     });
-     $('.answer-block').slimscroll({
-         height: '30vh'
-     });*/
 
 
     $('#goto-exam-btn').click(function() {
@@ -560,11 +529,6 @@ $questtype='radio';
         if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
             e.preventDefault();
     });
-    /* $('.instructions').slimscroll({
-         height: '33vh',
-         color: '#ff9999',
-
-     });*/
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -652,24 +616,12 @@ $questtype='radio';
     }
 
     function timeIsUp() {
-
-        /*  setDisabled(startBtn);
-         removeDisabled(stopBtn); */
         clearInterval(timerInterval);
         $('#endExam').modal('show');
 
-        /* let confirmReset = confirm("Time is UP! Wanna restart?");
-        if (confirmReset) {
-            reset();
-            startTimer();
-        } else {
-            reset();
-        } */
     }
 
     function resetVars() {
-        // removeDisabled(startBtn);
-        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);
