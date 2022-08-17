@@ -58,7 +58,7 @@ $question_type = "Single Choice";
 $question_type = "Numerical";
 }
 @endphp
-<div class="exam-wrapper">
+<div class="exam-wrapper testscreenmob">
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer" id="myTabContent">
@@ -69,12 +69,12 @@ $question_type = "Numerical";
                 <input type="hidden" id="current_chapter_id" value="{{$chapter_id}}" />
                 <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
 
-                <div class="examLeftpanel">
+                <div class="examLeftpanel examLeftpanelmob">
                     <div class="tabMainblock">
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
@@ -115,7 +115,7 @@ $question_type = "Numerical";
                             <div id="question_section">
                                 <div class="questionType">
                                     <div class="questionTypeinner">
-                                        <div class="questionChoiceType" style="visibility:hidden">
+                                        <div class="questionChoiceType questionChoiceTypehide" style="visibility:hidden">
                                             <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
                                         </div>
                                         <div class="timeCounter">
@@ -223,7 +223,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
                     </div>
-                    <div class="btnbottom">
+                    <div class="btnbottom hideonmobile">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button>
@@ -236,10 +236,24 @@ $question_type = "Numerical";
                         </div>
                     </div>
                 </div>
+                <div class="btnformobietest hideondesktop">
+                    <div class="btnbottom">
+                        <div class="questionbtnBlock">
+                            <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
+                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                            <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                            <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
+                            <!-- <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button> -->
 
-                <div class="examRightpanel">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="overlaydiv"></div>
+
+                <div class="examRightpanel examRightpanelmob">
                     <div class="main-textexam-sec">
-                        <div class="text-examtop-sec d-flex align-items-center justify-content-between">
+                        <div class="text-examtop-sec hideonmobile d-flex align-items-center justify-content-between">
                             <div id="app" class="me-4 pe-2 mb-2">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -342,6 +356,47 @@ $question_type = "Numerical";
 
                     </div>
                     <!-- <div class="bck-btn"><a href="javascript:;"> Back</a></div> -->
+                </div>
+                <div class="btn123 hideondesktop">
+                    <div class="text-examtop-sec d-flex align-items-center ">
+                        <div id="app" class="me-4 pe-2 mb-2">
+                            <div class="base-timer">
+                                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <g class="base-timer__circle">
+                                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                        <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                    M 50, 50
+                                    m -45, 0
+                                    a 45,45 0 1,0 90,0
+                                    a 45,45 0 1,0 -90,0
+                                    "></path>
+                                    </g>
+                                </svg>
+                                <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
+                            </div>
+                        </div>
+
+                        <span id="base-timer-label" class="base-timer__label"> Left</span>
+                        <button type="button" class="btn stop" onclick="stop();">
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
+                        </button>
+                        <button type="button" class="btn start" onclick="start();" style="display: none">
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
+                        </button>
+
+                    </div>
+                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
                 </div>
             </div>
         </div>
@@ -1408,5 +1463,31 @@ $question_type = "Numerical";
         $('#ans_rev_cnt').html(s_r_count);
 
     }
+</script>
+<script>
+    $('.showyes').click(function() {
+        // $('.text-exammid-sec').show(500);
+
+        $('.main-textexam-sec').slideToggle({
+            direction: "up"
+        }, 300);
+
+        $(this).toggleClass('Close');
+
+        $('.showyes').hide(0);
+        $('.hideyes').show(0);
+        $('.overlaydiv').show(0);
+
+    });
+    $('.hideyes').click(function() {
+        $('.main-textexam-sec').slideToggle({
+            direction: "down"
+        }, 300);
+
+        $(this).toggleClass('Close');
+        $('.showyes').show(0);
+        $('.hideyes').hide(0);
+        $('.overlaydiv').hide(0);
+    });
 </script>
 @endsection

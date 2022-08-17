@@ -1,5 +1,4 @@
 @extends('afterlogin.layouts.app_new')
-
 @section('content')
 <script type="text/javascript">
     /* check browser tab refreshed or reload */
@@ -59,7 +58,7 @@ $question_type = "Numerical";
 }
 
 @endphp
-<div class="exam-wrapper">
+<div class="exam-wrapper testscreenmob">
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer" id="myTabContent">
@@ -70,12 +69,12 @@ $question_type = "Numerical";
                 <input type="hidden" id="current_chapter_id" value="{{$chapter_id}}" />
                 <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
 
-                <div class="examLeftpanel">
+                <div class="examLeftpanel examLeftpanelmob">
                     <div class="tabMainblock">
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
@@ -100,7 +99,6 @@ $question_type = "Numerical";
                                                 </svg>
                                             </span>
                                         </button>
-                                        <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
                                     </form>
 
                                 </div>
@@ -108,7 +106,7 @@ $question_type = "Numerical";
                             <div id="question_section">
                                 <div class="questionType">
                                     <div class="questionTypeinner">
-                                        <div class="questionChoiceType" style="visibility:hidden">
+                                        <div class="questionChoiceType questionChoiceTypehide" style="visibility:hidden">
                                             <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
                                         </div>
                                         <div class="timeCounter">
@@ -209,31 +207,38 @@ $question_type = "Numerical";
                                                 </span>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <!-- <div id="application" class="tab-pane">adasdas</div>
-                                <div id="complrehension" class="tab-pane">complrehension</div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="btnbottom">
+                    <div class="btnbottom hideonmobile">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
-                                <!--  <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button> -->
                                 <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
                             </div>
                             <div class="questionRightbtns">
-                                <!-- <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button> -->
                                 <button class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="btnformobietest hideondesktop">
+                    <div class="btnbottom">
+                        <div class="questionbtnBlock">
+                            <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
+                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                            <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                            <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="overlaydiv"></div>
 
-                <div class="examRightpanel">
+                <div class="examRightpanel examRightpanelmob">
                     <div class="main-textexam-sec">
-                        <div class="text-examtop-sec d-flex align-items-center justify-content-between">
+                        <div class="text-examtop-sec hideonmobile d-flex align-items-center justify-content-between">
                             <div id="app" class="me-4 pe-2 mb-2">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -250,13 +255,6 @@ $question_type = "Numerical";
                                     <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
                                 </div>
                             </div>
-                            <!-- <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path id="base-timer-path-remaining" opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
-                                    <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
-                                    <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg> -->
                             <span id="base-timer-label" class="base-timer__label"> Left</span>
                             <button type="button" class="btn stop" onclick="stop();">
                                 <label>
@@ -298,10 +296,6 @@ $question_type = "Numerical";
                         </div>
 
                         <div class="text-exambottom-sec" style="visibility: hidden;">
-                            <!-- <button type="button" class="btn" id="btn-ans">1</button>
-                            <button type="button" class="btn pink-btn" id="btn-ans">11</button>
-                            <button type="button" class="btn blue-btn" id="btn-ans">18</button>
-                            <button type="button" class="btn border-btn" id="btn-ans">23</button> -->
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
                             <button type="button" class="next_button btn btn-ans border-btn " id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
@@ -332,9 +326,48 @@ $question_type = "Numerical";
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="btn123 hideondesktop">
+                    <div class="text-examtop-sec d-flex align-items-center ">
+                        <div id="app" class="me-4 pe-2 mb-2">
+                            <div class="base-timer">
+                                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <g class="base-timer__circle">
+                                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                        <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                    M 50, 50
+                                    m -45, 0
+                                    a 45,45 0 1,0 90,0
+                                    a 45,45 0 1,0 -90,0
+                                    "></path>
+                                    </g>
+                                </svg>
+                                <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
+                            </div>
+                        </div>
+
+                        <span id="base-timer-label" class="base-timer__label"> Left</span>
+                        <button type="button" class="btn stop" onclick="stop();">
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
+                        </button>
+                        <button type="button" class="btn start" onclick="start();" style="display: none">
+                            <label>
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                </svg>
+                            </label>
+                        </button>
 
                     </div>
-                    <!-- <div class="bck-btn"><a href="javascript:;"> Back</a></div> -->
+                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
                 </div>
             </div>
         </div>
@@ -365,14 +398,6 @@ $question_type = "Numerical";
                                 </svg>
                                 <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                             </div>
-                            <!--  <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
-                                    <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
-                                    <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </label> -->
                             <span><span id="lefttime_pop_s"> </span> Left</span>
                         </div>
                     </div>
@@ -494,10 +519,6 @@ $question_type = "Numerical";
         $('.cust-tab-content').css('height', height);
 
     }
-    /*  setboxHeight();
-     $("window").load(function() {
-         setboxHeight();
-     }); */
 
     $(window).resize(function() {
         setboxHeight();
@@ -506,19 +527,6 @@ $question_type = "Numerical";
 
     /* page referesh disabled */
     $(document).ready(function() {
-        /* mouse rightclick */
-        /*   document.oncontextmenu = function() {
-              return false;
-          };
-
-          $(document).mousedown(function(e) {
-              if (e.button == 2) {
-
-                  return false;
-              }
-              return true;
-          }); */
-        /* mouse rightclick */
 
         document.onkeydown = function(e) {
             // disable F12 key
@@ -559,8 +567,6 @@ $question_type = "Numerical";
         $('#quest_option_' + activeques_id).focus();
     });
 </script>
-<!-- /page referesh disabled -->
-<!-- browser back disable -->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -570,15 +576,8 @@ $question_type = "Numerical";
         };
     });
 </script>
-<!-- /browser back disable -->
 
 <script type="text/javascript">
-    /*$('.number-block').slimscroll({
-        height: '20vh'
-    });
-    $('.answer-block').slimscroll({
-        height: '30vh'
-    });*/
 
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
@@ -613,11 +612,6 @@ $question_type = "Numerical";
         if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
             e.preventDefault();
     });
-    /*$('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
-
-    });*/
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -710,25 +704,13 @@ $question_type = "Numerical";
 
     function timeIsUp() {
 
-        /*  setDisabled(startBtn);
-         removeDisabled(stopBtn); */
         clearInterval(timerInterval);
         $('#endMsg').css('font-size', 24 + 'px');
         $('#endMsg').text('Time Out!');
         $('#endExam').modal('show');
-
-        /* let confirmReset = confirm("Time is UP! Wanna restart?");
-        if (confirmReset) {
-            reset();
-            startTimer();
-        } else {
-            reset();
-        } */
     }
 
     function resetVars() {
-        // removeDisabled(startBtn);
-        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);
@@ -775,7 +757,6 @@ $question_type = "Numerical";
 
         timer_countdown = setInterval(function() {
             fsec--;
-            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
             progressBar(fsec, $('.progressBar_first'));
             if (fsec == -1) {
                 clearInterval(timer_countdown);
@@ -789,9 +770,6 @@ $question_type = "Numerical";
         }, 1000);
 
     }
-
-
-
     function progressBar(percent, $element) {
         var progressBarWidth = percent * $element.width() / (time_allowed * 60);
         $element.find('div').animate({
@@ -841,7 +819,6 @@ $question_type = "Numerical";
         var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
-        /*         saveQuestionTime(act_question, q_submit_time); */
 
         url = "{{ url('ajax_adaptive_question_chapter/') }}/" + question_key;
         $.ajax({
@@ -1190,23 +1167,6 @@ $question_type = "Numerical";
         }
     }
 
-    /* function get_subject_question(subject_id) {
-
-        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(result) {
-                $("#question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-            }
-        });
-
-
-    } */
-
     function saveQuestionTime(question_id, time) {
         url = "{{ url('saveAdaptiveTimeSession') }}/" + question_id;
         $.ajax({
@@ -1223,12 +1183,7 @@ $question_type = "Numerical";
                 }
             }
         });
-
-
     }
-
-
-
     $(document).ready(function() {
         $("#form_exam_submit").validate({
 
@@ -1257,8 +1212,6 @@ $question_type = "Numerical";
 
                     }
 
-                    /*   $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
-
                 } else {
                     form.submit();
                 }
@@ -1277,6 +1230,30 @@ $question_type = "Numerical";
 
             $('#form_exam_submit')[0].submit();
         });
+    });
+</script>
+<script>
+    $('.showyes').click(function() {
+        $('.main-textexam-sec').slideToggle({
+            direction: "up"
+        }, 300);
+
+        $(this).toggleClass('Close');
+
+        $('.showyes').hide(0);
+        $('.hideyes').show(0);
+        $('.overlaydiv').show(0);
+
+    });
+    $('.hideyes').click(function() {
+        $('.main-textexam-sec').slideToggle({
+            direction: "down"
+        }, 300);
+
+        $(this).toggleClass('Close');
+        $('.showyes').show(0);
+        $('.hideyes').hide(0);
+        $('.overlaydiv').hide(0);
     });
 </script>
 @include('afterlogin.layouts.footer_new')

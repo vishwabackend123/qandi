@@ -868,7 +868,14 @@ class StudentSignInController extends Controller
                     return $response_json;
                 }
             } else {
-                $response = ["message" => "Mobile number already exist!!", "error" => $err, "success" => false, "status" => 400,];
+                if ($httpcode == 503) {
+                    $aResponse = json_decode($response_json,true);
+                    $response = ["message" => $aResponse['message'].'<br>'.$aResponse['note'], "error" => $err, "success" => false, "status" => 400,];
+                }else
+                {
+                  $response = ["message" => "Mobile number already exist!!", "error" => $err, "success" => false, "status" => 400,];  
+                }
+                
                 return json_encode($response);
             }
         } catch (\Exception $e) {
