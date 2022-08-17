@@ -6813,7 +6813,7 @@ border-color: #56b663;
 .email-sec input#exampleFormControlInput1 {
     background: #fff;
     border: solid 1px #d0d5dd;font-size: 14px;
-    font-weight: 500;height: 48px;
+    font-weight: 500;height: 43px;
 }
 .email-sec label.form-label {
     font-size: 14px;
@@ -6824,7 +6824,7 @@ border-color: #56b663;
     background: #a9e1b0 !important;
     border: 1px solid #a9e1b0;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .email-sec input#exampleFormControlInput1::placeholder {
     color: rgba(54, 60, 79, 0.5);
