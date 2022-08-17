@@ -197,4 +197,8 @@
         const myCharted = new Chart("subjectChart_" + subId, config)
     }
 
+    $(".topic_score_bar.dropdown").hover(function() {
+        $(this).children(".progress.dropdown-toggle").trigger('click');
+    });
+
 </script>
