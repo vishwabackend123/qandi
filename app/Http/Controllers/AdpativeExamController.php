@@ -73,7 +73,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                     "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
 
                 ),
             ));
@@ -462,7 +462,7 @@ class AdpativeExamController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                         "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
 
                     ),
                 ));
@@ -567,9 +567,11 @@ class AdpativeExamController extends Controller
 
             $test_type = 'Assessment';
             $exam_type = 'PT';
-            $exam_name = $test_name;
+            //$exam_name = $test_name;
+            $exam_name = 'Custom Exam';
+            Redis::set('exam_name' . $user_id, $exam_name);
             //Session::put('exam_name', $test_name);
-            Redis::set('exam_name' . $user_id, $test_name);
+            // Redis::set('exam_name' . $user_id, $test_name);
             Redis::set('test_type' . $user_id, $test_type);
 
             if (isset($inst) && $inst == 'instruction') {
@@ -766,7 +768,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                     "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
 
                 ),
             ));
@@ -891,7 +893,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                     "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
 
                 ),
             ));
@@ -978,7 +980,7 @@ class AdpativeExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                     "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
 
                 ),
             ));
