@@ -20,7 +20,7 @@
 
         $endExamCheck = $('#endExam').hasClass('show');
         if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
-            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+            $(".examModal").modal('hide');
 
             stop();
         }
@@ -418,7 +418,7 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade examModal" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
@@ -487,7 +487,7 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-<div class="modal fade" id="endExam" tabindex="-1" role="dialog" aria-labelledby="endExam" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade examModal" id="endExam" tabindex="-1" role="dialog" aria-labelledby="endExam" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
@@ -512,7 +512,7 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade examModal" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
@@ -537,7 +537,7 @@ $question_type = "Numerical";
     </div>
 </div>
 
-<div class="modal fade" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+<div class="modal fade examModal" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
