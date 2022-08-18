@@ -70,6 +70,9 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -112,6 +115,9 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl1, $curl_option);
 
@@ -219,7 +225,8 @@ class SubscriptionController extends Controller
                 CURLOPT_POSTFIELDS => $order_request_json,
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -317,6 +324,10 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
+
             );
                 curl_setopt_array($curl, $curl_option);
 
@@ -364,7 +375,8 @@ class SubscriptionController extends Controller
                 CURLOPT_POSTFIELDS => $order_request_json,
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             );
                 curl_setopt_array($curl, $curl_option);
@@ -460,7 +472,8 @@ class SubscriptionController extends Controller
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
-                    "content-type: application/json"
+                    "content-type: application/json",
+                    "Authorization: Bearer ". $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -530,6 +543,9 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -568,6 +584,9 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
