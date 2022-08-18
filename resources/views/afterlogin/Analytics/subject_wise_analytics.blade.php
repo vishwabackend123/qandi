@@ -32,7 +32,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies! 
+                                    Know your skills, expertise, and proficiency in the topics and chapters you have attempted
                                 </p>
                             </span>
                         </h3>
