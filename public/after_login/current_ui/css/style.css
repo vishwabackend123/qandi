@@ -3408,7 +3408,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background-repeat: no-repeat;
     box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
 }
-.mq_percent_more.noshadow{
+.mq_percent_more.noshadow .mq_circle_inbox{
     box-shadow:none
 }
 
