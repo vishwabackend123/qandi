@@ -94,9 +94,12 @@ else if( headingpercent > 0 &&headingpercent < 40){
 }else if(headingpercent > 39 && headingpercent < 75){
      $('.dashSubHeading').text('It’s time to push your limits.');
      $('.mq_circle_percent').addClass('mq_circle_yellow');
+     $('.mq_circle_percent').addClass('noshadow');
+
 }else if(headingpercent > 75){
     $('.dashSubHeading').text('You are doing great!');
     $('.mq_circle_percent').addClass('mq_circle_green');
+    $('.mq_circle_percent').addClass('noshadow');
 }
 $(".mq_percent_text").text(Math.ceil(percent_data))
 /************ Tooltip *********/
