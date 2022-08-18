@@ -560,13 +560,25 @@ var data8 = {
             label: 'Correct Answers',
             data: <?php print_r($correctTime1); ?>,
             backgroundColor: '#34d399',
-            barThickness: 32
+            borderColor: '#148059',
+            borderWidth: {
+                top: 0,
+                left: 0.6,
+                right: 0.6
+                },
+            barThickness: 26
         },
         {
             label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime1); ?>,
             backgroundColor: '#f7758f',
-            barThickness: 32
+            borderColor: '#c44760',
+            borderWidth: {
+                top: 0.6,
+                left: 0.6,
+                right: 0.6
+                },
+            barThickness: 26
         },
     ]
 };
