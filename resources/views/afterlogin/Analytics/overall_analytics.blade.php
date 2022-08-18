@@ -477,6 +477,9 @@ const config1 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -541,6 +544,9 @@ const config2 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -604,6 +610,9 @@ var config3 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -664,6 +673,9 @@ var config4 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -724,6 +736,9 @@ const config5 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }

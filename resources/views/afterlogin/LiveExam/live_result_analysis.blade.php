@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
+                    @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks Percentage
                             <span class="tooltipmain ml-2">
@@ -180,7 +180,7 @@
                     @endif
                 </div>
                 <div class="col-md-7">
-                    @if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
+                    @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Subject Score
                             <span class="tooltipmain ml-2">
@@ -409,7 +409,7 @@ $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
-@if(isset($type_exam) && !empty($type_exam) && $type_exam !='Assessment')
+@if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
 <script>
     /*********** BarChart ***********/
     var student_scr = '<?php echo $stuscore ?>';

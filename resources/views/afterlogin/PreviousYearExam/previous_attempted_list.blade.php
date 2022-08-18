@@ -5,7 +5,7 @@
     <div class="dropbox previous_dropbox_page">
         <div class="customDropdown dropdown">
             <select class="form-control form-select" id="filter_attemp_year">
-                <option value="">Select Year </option>
+                <option value="">Select year </option>
                 @if(!empty($years_list))
                 @foreach($years_list as $yr)
                 <option value="{{$yr}}">{{$yr}}</option>

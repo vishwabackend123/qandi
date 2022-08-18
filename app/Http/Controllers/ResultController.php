@@ -137,7 +137,7 @@ class ResultController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -207,7 +207,7 @@ class ResultController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -262,7 +262,7 @@ class ResultController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -326,7 +326,7 @@ class ResultController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -380,7 +380,7 @@ class ResultController extends Controller
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
                 "content-type: application/json",
-                "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
@@ -436,7 +436,7 @@ class ResultController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -486,6 +486,7 @@ class ResultController extends Controller
             $exam_name = '';
         }
 
+
         $curl_url = "";
         $curl = curl_init();
         $api_URL = env('API_URL');
@@ -502,7 +503,7 @@ class ResultController extends Controller
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
                 "content-type: application/json",
-                "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
@@ -537,7 +538,7 @@ class ResultController extends Controller
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
                 "content-type: application/json",
-                "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl2, $curl_option2);
@@ -638,7 +639,7 @@ class ResultController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);

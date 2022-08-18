@@ -783,6 +783,9 @@ var configaccuracy = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -843,6 +846,9 @@ var configmarktrend = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -903,6 +909,9 @@ var configmarktrendw = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -963,6 +972,9 @@ var configmarktrendm = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
@@ -1026,6 +1038,9 @@ var configtm2 = {
         },
         scales: {
             x: {
+                ticks: {
+                    align:'start'
+                 },
                 grid: {
                     display: false
                 }
