@@ -7393,5 +7393,24 @@ margin-bottom: 12px;
       .examLeftpanel  .timeCounter .mb-4 {
             margin-bottom: 0px !important;
         }
+        .adaptivescreen .main-textexam-sec div:nth-child(2),
+        .adaptivescreen .main-textexam-sec div:nth-child(3),
+        .adaptivescreen .main-textexam-sec div:nth-child(4)
+        {
+            display: none !important;
+          }
+          .adaptivescreen .main-textexam-sec div:nth-child(1){
+            border:none !important;
+
+          }
+          .adaptivescreen{
+            display: flex;
+            border: none !important;
+            align-items: center;
+          }
+          .adaptivescreen .main-textexam-sec {
+            position: relative;
+            width: 100%;
+        }
     
  
