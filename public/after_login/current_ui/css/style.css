@@ -7357,5 +7357,22 @@ margin-bottom: 12px;
     .reviewScreenleft .nav-tabs .nav-link.active,
     .reviewScreenleft .ReCountActive, 
     .reviewScreenleft .ReCountActive:before{color: #363c4f !important;}
+    .explanationdeteail::after {
+        content: " ";
+        position: sticky;
+        width: 100%;
+        left: 0;
+        height: 40px;
+        bottom: 0;
+        background-image: linear-gradient(transparent, #ffffffe6);
+        z-index: 10;
+        pointer-events: none;
+        display: -ms-flexbox;
+        display: flex;
+    
+        }
+        .explanationdeteail{
+            position: relative;
+        }
     
  
