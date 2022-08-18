@@ -7195,7 +7195,7 @@ label.filter {
 .qcountout{
     position: absolute;
     top: 1px;
-    right: 7px;
+    right: -4px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.6;
