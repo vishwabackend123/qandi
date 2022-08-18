@@ -3,6 +3,7 @@
 @php
 $userData = Session::get('user_data');
 $user_name = isset($userData->first_name)?$userData->first_name:'';
+$user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 @endphp
 <div>
     <div class="plan_faild_wrapper">
@@ -56,9 +57,9 @@ $user_name = isset($userData->first_name)?$userData->first_name:'';
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Subscription type</div>
-                                <div class="plan_subscribption">@if(isset($transaction_data->notes->exam_id) && $transaction_data->notes->exam_id==1)
+                                <div class="plan_subscribption">@if(isset($user_exam_id) && $user_exam_id==1)
                                     JEE 1 year Subscription
-                                    @else
+                                    @elseif(isset($user_exam_id) && $user_exam_id==2)
                                     NEET 1 year Subscription
                                     @endif</div>
                             </div>

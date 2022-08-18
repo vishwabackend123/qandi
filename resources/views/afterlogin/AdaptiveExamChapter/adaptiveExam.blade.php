@@ -241,7 +241,7 @@ $question_type = "Numerical";
                 </div>
                 <div class="overlaydiv"></div>
 
-                <div class="examRightpanel examRightpanelmob">
+                <div class="examRightpanel examRightpanelmob adaptivescreen">
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec hideonmobile d-flex align-items-center justify-content-between">
                             <div id="app" class="me-4 pe-2 mb-2">
