@@ -172,8 +172,11 @@ $question_type = "Numerical";
                                                                         <div class="persent_std">
                                                                             <span class="attend">To answer you need to have</span>
                                                                         </div>
-
-
+                                                                        <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                                                                        <h5>21%</h5>
+                                                                        <h6>of the people got this question right</h6>    
+                                                                        </div>
+                                                                        
                                                                         <div class="attemp_box row mt-0">
                                                                             <div class="sub_att_1 col-md-6">
                                                                                 @if(isset($question_data->topic_name) && !empty($question_data->topic_name))

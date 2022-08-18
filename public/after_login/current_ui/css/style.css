@@ -6916,9 +6916,25 @@ border-color: #56b663;
   max-height: 143px;
   overflow: scroll;
 }
-
+.questionright{
+ padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #bdf3c5;    
+}
+.questionright h5{
+color: #039855;
+font-size: 24px;
+font-weight: 800;
+margin: 0;
+}
+.questionright h6{
+color: #039855;
+font-size: 14px;
+font-weight: 500;
+margin: 0;
+}
 .persent_std {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .propt_text {
@@ -7193,7 +7209,7 @@ label.filter {
 .qcountout{
     position: absolute;
     top: 1px;
-    right: 7px;
+    right: -4px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.6;
