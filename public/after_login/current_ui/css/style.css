@@ -3375,9 +3375,6 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .mq_circle_red .mq_round_per{ background: #f76c6c;}
 .mq_circle_yellow .mq_round_per{background: #f7c86d;}
-
-
-
 .mq_percent_more .mq_circle_inner {
     clip: rect(0 0.5em 1em 0em);
 }
@@ -3391,7 +3388,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     content: "";
 }
-
+.mq_circle_red .circletop:after{ background: #f76c6c;content: "";}
+.mq_circle_yellow .circletop:after{background: #f7c86d;content: "";}
 .mq_circle_inbox {
     position: absolute;
     top: 7px;
