@@ -546,7 +546,6 @@
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
                         }, 5000);
-                        $('#referEmails').val("");
                     }
 
                 },
