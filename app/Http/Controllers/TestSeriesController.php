@@ -56,6 +56,9 @@ class TestSeriesController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -144,7 +147,8 @@ class TestSeriesController extends Controller
 
                         CURLOPT_HTTPHEADER => array(
                             "cache-control: no-cache",
-                            "content-type: application/json"
+                            "content-type: application/json",
+                            "Authorization: Bearer ". $this->getAccessToken()
                         ),
                     );
                     curl_setopt_array($curl, $curl_option);

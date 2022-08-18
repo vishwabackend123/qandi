@@ -532,8 +532,17 @@
                         $('#referedfrnd').modal('show');
 
                     } else {
-                        var errormsg = $("#errRef_auth").show();
-                        errormsg[0].textContent = response.message;
+                         if ((typeof response.duplicate_referrals !== 'undefined') && (response.duplicate_referrals.length > 0)) {
+
+                            const duplicate = response.duplicate_referrals.toString();
+
+                            var errormsg = $("#errRef_auth").show();
+                            errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                        }else
+                        {
+                           var errormsg = $("#errRef_auth").show();
+                           errormsg[0].textContent = response.message; 
+                        }
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
                         }, 5000);
