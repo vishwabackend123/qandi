@@ -98,7 +98,13 @@ class ReferralController extends Controller
             else if ($httpcode == 400) 
             {
                 $responseData = json_decode($response_json,true);
-                return json_encode(array('success' => false, 'message' => $responseData['message']));
+                if (isset($responseData['duplicate_referrals'])) {
+                   return $response_json; 
+                }else
+                {
+                    return json_encode(array('success' => false, 'message' => $responseData['message']));    
+                }
+                
             }  
             else 
             {
