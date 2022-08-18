@@ -199,7 +199,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -215,7 +215,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 
@@ -328,7 +328,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -344,7 +344,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 
@@ -466,7 +466,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -483,7 +483,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 
@@ -608,7 +608,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -624,7 +624,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 
@@ -725,7 +725,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -741,7 +741,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 
@@ -836,7 +836,7 @@ $leadData ='';
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                            ₹{{$subsprice-$discount_price}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -852,7 +852,7 @@ $leadData ='';
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        ₹{{$subsprice-$discount_price}}<span>per year</span>
                     </div>
                 </div>
 

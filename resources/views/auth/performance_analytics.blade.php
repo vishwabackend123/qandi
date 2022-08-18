@@ -42,7 +42,9 @@ $full_body_attempt = Session::get('full_body_attempt');
     <div class="selectPlan subscriptionsRightpannel">
         <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3>Full Body Scan</h3>
+            <h3 class="pageCountBox">Full Body Scan
+            <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
+            </h3>
             <p>To assess your preparedness</p>
         </div>
         <div class="verificationBox mobile_block mt-0">
