@@ -2937,6 +2937,7 @@ line-height: 1.6;
 .examLeftpanel .examScreentab, .examLeftpanel  .tabMainblock{height: 100%;}
 .quesbox p {
     margin-bottom: 0px;
+    color: #1f1f1f;
 }
  /************ Subscription-Responsive-Element-Sachin End Date:20-07-22 ************/
 
@@ -3375,9 +3376,6 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .mq_circle_red .mq_round_per{ background: #f76c6c;}
 .mq_circle_yellow .mq_round_per{background: #f7c86d;}
-
-
-
 .mq_percent_more .mq_circle_inner {
     clip: rect(0 0.5em 1em 0em);
 }
@@ -3391,7 +3389,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     content: "";
 }
-
+.mq_circle_red .circletop:after{ background: #f76c6c;content: "";}
+.mq_circle_yellow .circletop:after{background: #f7c86d;content: "";}
 .mq_circle_inbox {
     position: absolute;
     top: 7px;
@@ -7356,5 +7355,22 @@ margin-bottom: 12px;
     .reviewScreenleft .nav-tabs .nav-link.active,
     .reviewScreenleft .ReCountActive, 
     .reviewScreenleft .ReCountActive:before{color: #363c4f !important;}
+    .explanationdeteail::after {
+        content: " ";
+        position: sticky;
+        width: 100%;
+        left: 0;
+        height: 40px;
+        bottom: 0;
+        background-image: linear-gradient(transparent, #ffffffe6);
+        z-index: 10;
+        pointer-events: none;
+        display: -ms-flexbox;
+        display: flex;
+    
+        }
+        .explanationdeteail{
+            position: relative;
+        }
     
  
