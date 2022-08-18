@@ -3,6 +3,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $option_data = (isset($question_data->question_options) && !empty($question_data->question_options))?json_decode($question_data->question_options):'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$accuracy = isset($question_data->accuracy)?$question_data->accuracy:0;
 
 
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
@@ -110,8 +111,8 @@ $question_type = "Numerical";
                                     <span class="attend">To answer you need to have</span>
                                 </div>
                                 <div class="questionright d-flex align-items-center justify-content-between mb-4">
-                                    <h5>21%</h5>
-                                    <h6>of the people got this question right</h6>    
+                                    <h5>{{$accuracy}}%</h5>
+                                    <h6>of the people got this question right</h6>
                                 </div>
 
 
