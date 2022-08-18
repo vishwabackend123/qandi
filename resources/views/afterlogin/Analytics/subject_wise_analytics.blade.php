@@ -230,7 +230,7 @@
                     </svg>
                     <p class="tooltipclass">
                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                        You can view the detailed analysis of time management while attempting tests and the average time spent on each question from this part of the screen. 
+                        Track your time spent on correct and incorrect answers. 
                     </p>
                 </span>
             </h3>
