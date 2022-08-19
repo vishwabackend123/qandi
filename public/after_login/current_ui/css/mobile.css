@@ -11,6 +11,7 @@
     .plantitleBox{padding-right:155px;}
 }
 @media only screen and (max-width: 1440px) {
+    .myqTodayGraphSec .dashSubtext{max-width: 100%;}
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
 }
@@ -33,6 +34,7 @@
     }
 }
 @media only screen and (max-width: 1366px) { 
+    
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
