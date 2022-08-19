@@ -1,4 +1,6 @@
-@media only screen and (max-width: 1680px){
+@media only screen and (max-width: 1600px){
+    .myqTodayGraphSec .dashSubHeading{width:98%;}
+    .myqTodayGraphSec .dashSubtext{max-width: 78.6%;}
 }
 
 
@@ -11,11 +13,9 @@
     .plantitleBox{padding-right:155px;}
 }
 @media only screen and (max-width: 1440px) {
-    .myqTodayGraphSec .dashSubtext{max-width: 100%;}
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
 }
-
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 90px !important;}
@@ -83,8 +83,11 @@
             min-height: 303px;
             max-height: 303px;
         }
+        .myqTodayGraphSec .dashSubtext{margin-bottom:15px;}
 }
 @media only screen and (max-width: 1300px){
+    .myqTodayGraphSec .dashSubHeading{width:100%;}
+    .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;}
     .selectPlan {
         padding: 0px 40px 45px;
     }
