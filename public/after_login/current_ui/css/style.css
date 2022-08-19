@@ -4411,7 +4411,8 @@ header {
     height: 38px;margin-top: -10px;
     font-size: 13px;
 }
-.subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
+.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel,.subjectScoreBlock .row .col-sm-6:nth-child(4) .SubjectscorePannel{margin-bottom:0px;}
+.myqTodayGraphSec .dashSubtext{max-width: 78.4%;}
 .tasklistbtn .btn.nobg {
     background-color: #fff;
 }
@@ -6741,6 +6742,11 @@ border-color: #56b663;
     display: inline-block;
 }
 
+.price-inc{    
+    font-size: 14px !important;
+    color: #363c4f !important;
+    padding-left: 4px !important;
+    display: inline-block !important;}
 
 /**********  exam_instructions *********/
 .mock-test-mobile{display: none;}
