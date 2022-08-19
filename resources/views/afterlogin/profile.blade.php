@@ -183,12 +183,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line mb-3 pb-1"></div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription type</h2>
-                                @if($subscription_type != "P") <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14 days trial</h3>
+                                @if($subscription_type == "P" || $days >14)
+                                     <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
                                     @else
-                                    <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
+                                    <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14 days trial</h3>
+
                                     @endif
                             </div>
-                            @if($subscription_type == "P")
+                            @if($subscription_type == "P" || $days >14)
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Price</h2>
                                 <h3>₹{{$subsprice}}</h3>
