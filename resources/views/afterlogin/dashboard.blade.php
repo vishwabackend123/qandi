@@ -136,6 +136,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         }
                                         ?>
                                         <div class="col-sm-6">
+                                        <script>
+                                            var percentageComplete = "{{round($sub['score'])}}";
+                                            var strokeDashOffsetValue = 100 - (percentageComplete);
+                                            var progressBar = $("#js-progress-bar{{$key}}");
+                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                                        </script>
                                             <div class="SubjectscorePannel">
                                                 <div class="subjextscoreLeft">
                                                     <h6>{{$sub['subject_name']}}</h6>
@@ -159,12 +165,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                         </div>
-                                        <script>
-                                            var percentageComplete = "{{round($sub['score'])}}";
-                                            var strokeDashOffsetValue = 100 - (percentageComplete);
-                                            var progressBar = $("#js-progress-bar{{$key}}");
-                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-                                        </script>
+                                        
                                         @endforeach
                                         @endif
                                     </div>
