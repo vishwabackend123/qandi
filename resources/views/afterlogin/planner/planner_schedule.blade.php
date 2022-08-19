@@ -14,14 +14,14 @@ $userData = Session::get('user_data');
 </style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
-<div class="main-wrapper">
+<div class="main-wrapper" id="topwrapper">
     @include('afterlogin.layouts.navbar_header_new')
     <section class="content-wrapper" id="planner-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-8">
                     <div id="alert_msg">
-                        <div class="d-sm-flex align-items-center justify-content-between gotodashboard ">
+                        <div id="successMsg" class="d-sm-flex align-items-center justify-content-between gotodashboard ">
                             <p class="m-0">Your weekly schedule has been set</p>
                             <a href="{{route('dashboard')}}">Go to Dashboard</a>
                         </div>
@@ -451,7 +451,9 @@ $userData = Session::get('user_data');
                         setTimeout(function() {
                             $('#alert_msg').fadeOut('fast');
                         }, 180000);
-                        $("#planner-wrapper")[0].scrollIntoView();
+                        $('html, body').animate({
+                            'scrollTop': $('#topwrapper').position().top
+                        }, 500);
                         $('#saveplannerbutton').addClass('disabled');
 
                     } else {
@@ -461,7 +463,9 @@ $userData = Session::get('user_data');
                         /*  setTimeout(function() {
                              $('#alert_msg').fadeOut('fast');
                          }, 8000); */
-                        $("#planner-wrapper")[0].scrollIntoView();
+                        $('html, body').animate({
+                            'scrollTop': $('#topwrapper').position().top
+                        }, 500);
                         return false;
                     }
 
