@@ -2120,7 +2120,7 @@ a.btn-common-attempted svg {
   }
   .reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
       background-color: #039855;
-      color: #1f1f1f;
+      color: #ffffff; 
       font-weight: 600;
   }
   .fancy-radio-buttons.with-image {
