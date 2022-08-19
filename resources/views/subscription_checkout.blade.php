@@ -117,7 +117,7 @@ $userData = Session::get('user_data');
         </div>
         <div class="applyCo">
             <div class="applyCoform">
-                <h3>₹{{$price}} <sub>Inc tax</sub></h3>
+                <h3>₹{{$price}} <span class="price-inc">Inc tax</span></h3>
                     <div class="custom-input" style="display:none">
                         <label>Discount code</label>
                         <div class="input-group">

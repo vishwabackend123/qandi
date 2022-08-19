@@ -6742,6 +6742,11 @@ border-color: #56b663;
     display: inline-block;
 }
 
+.price-inc{    
+    font-size: 14px !important;
+    color: #363c4f !important;
+    padding-left: 4px !important;
+    display: inline-block !important;}
 
 /**********  exam_instructions *********/
 .mock-test-mobile{display: none;}
