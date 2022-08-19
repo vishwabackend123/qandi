@@ -106,10 +106,6 @@ $question_type = "Numerical";
                         <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
                         <div class='expand_block'>
                             <div class="first_screen">
-
-                                <div class="persent_std">
-                                    <span class="attend">To answer you need to have</span>
-                                </div>
                                 <div class="questionright d-flex align-items-center justify-content-between mb-4">
                                     <h5>{{$accuracy}}%</h5>
                                     <h6>of the people got this question right</h6>
@@ -133,6 +129,11 @@ $question_type = "Numerical";
 
                                     </div>
                                 </div>
+                                <div class="box-border"></div>
+                                                                    <div class="learskill d-flex align-items-center justify-content-between">
+                                                                    <p>Learning skill required:</p>
+                                                                    <h3>Comprehension</h3>    
+                                                                    </div>  
                             </div>
                         </div>
                     </div>
@@ -226,6 +227,19 @@ $question_type = "Numerical";
         var question_slider_box_height = $(".questionsliderbox").outerHeight();
         var mid_section_height = question_slider_box_height - answer_main_sec_height;
         $('.questionwrapper ').css('height', mid_section_height);
+
+        var questionwrapper_final_height = $(".questionwrapper").outerHeight();
+var questfinal = question_slider_box_height - questionwrapper_final_height;
+$('.answer-main-sec ').css('height', questfinal);
+var answerfinalheight = $(".answer-main-sec").outerHeight();
+var extra_height = answerfinalheight - 20 + "px";
+$('.answer-main-sec ').css('height', extra_height);
+var answerfinalheight = $(".answer-main-sec").outerHeight();
+var answerfinalheight_145 = answerfinalheight - 145 + "px";
+$('.explanation-sec ').css('height', answerfinalheight_145);
+        
+
+
     }
 
     review_right_Height();

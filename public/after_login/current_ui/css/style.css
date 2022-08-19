@@ -2119,8 +2119,8 @@ a.btn-common-attempted svg {
       font-weight: 600;;
   }
   .reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
-      background-color: #fff;
-      color: #1f1f1f;
+      background-color: #039855;
+      color: #ffffff; 
       font-weight: 600;
   }
   .fancy-radio-buttons.with-image {
@@ -4411,7 +4411,8 @@ header {
     height: 38px;margin-top: -10px;
     font-size: 13px;
 }
-.subjectScoreBlock .row .col-sm-6:nth-child(3),.subjectScoreBlock .row .col-sm-6:nth-child(4){margin-bottom:0px;}
+.subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel,.subjectScoreBlock .row .col-sm-6:nth-child(4) .SubjectscorePannel{margin-bottom:0px;}
+.myqTodayGraphSec .dashSubtext{max-width: 78.4%;}
 .tasklistbtn .btn.nobg {
     background-color: #fff;
 }
@@ -6917,13 +6918,13 @@ border-color: #56b663;
 }
 
 .first_screen {
-    padding: 20px 40px !important;
+    padding: 20px !important;
     /* border-radius: 8px; */
     /* box-shadow: 0 8px 30px 0 rgb(157 170 160 / 30%); */
     /* background-color: #fff; */
     min-width: 541px;
     z-index: 999;
-    max-height: 143px;
+    max-height: 277px;
     overflow: overlay;
 }
 .questionright{
@@ -6942,6 +6943,22 @@ color: #039855;
 font-size: 14px;
 font-weight: 500;
 margin: 0;
+}
+.box-border{
+border-bottom: 1px solid rgba(86, 182, 99, 0.2);  
+padding-top: 23px;
+margin-bottom: 25px;
+}
+.learskill p{
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f1f1f;
+  margin: 0;
+}
+.learskill h3{
+      font-size: 14px;
+  font-weight: bold;
+  color: #1f1f1f;
 }
 .persent_std {
   padding-bottom: 20px;
@@ -6968,7 +6985,7 @@ margin: 0;
   letter-spacing: normal;
   text-align: left;
   color: #1f1f1f;
-  padding: 0px;
+  padding-bottom: 4px;
   margin: 0px;
 }
 
@@ -6985,7 +7002,7 @@ margin: 0;
   cursor: pointer;
   word-break: break-word;
   color: #56b663;
-  line-height: 30px;
+  line-height: 20px;
 }
 
 .questionsliderbox {
