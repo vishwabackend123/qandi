@@ -140,7 +140,7 @@ class StudentSignInController extends Controller
             $timestamp = $_SERVER["REQUEST_TIME"];
             $session_otp_time = Session::get('OTP_time');
 
-            if (($timestamp - $session_otp_time) < 60) {
+            if (($timestamp - $session_otp_time) < 600) {
                 $request = ['email_or_mobile' => $enteredMobile, 'otp' => $enteredOtp];
 
                 $request_json = json_encode($request);
