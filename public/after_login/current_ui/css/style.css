@@ -2119,7 +2119,7 @@ a.btn-common-attempted svg {
       font-weight: 600;;
   }
   .reviewScreenleft .fancy-radio-buttons input[type="radio"].correct:checked ~ .image-bg .seNo {
-      background-color: #fff;
+      background-color: #039855;
       color: #1f1f1f;
       font-weight: 600;
   }
