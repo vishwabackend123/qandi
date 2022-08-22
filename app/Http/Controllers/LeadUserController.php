@@ -161,7 +161,6 @@ class LeadUserController extends Controller
 	public function overallAnalyticsNew()
 	{
 		 $client = new SecretsManagerClient([
-		    'profile' => 'default',
 		    'version' => '2017-10-17',
 		    'region' => 'ap-south-1'
 		]);
