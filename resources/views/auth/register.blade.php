@@ -5,7 +5,7 @@
 <section class="d-flex login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
-            <a href="https://www.qanditoday.com/" target="_blank">
+            <a href="{{env('CMS_URL')}}" target="_blank">
                 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#dxjwe095ea)">
                         <path d="M28 4.8H8.8V24H28V4.8zM47.195 24.001h-19.2v19.2h19.2V24z" fill="#38D430" />
@@ -188,7 +188,7 @@
                 </div>
             </form>
         </div>
-        <h3 class="copyright text-center pb-md-0 pb-5 pt-4 m-0">By clicking continue, you agree to our<br> <a href="https://qanditoday.com/terms-of-use/" target="_blank">Terms & Conditions </a> &nbsp;and &nbsp;<a href="https://qanditoday.com/privacy-policy/" target="_blank">Privacy Policy</a>.</h3>
+        <h3 class="copyright text-center pb-md-0 pb-5 pt-4 m-0">By clicking continue, you agree to our<br> <a href="{{env('CMS_URL')}}terms-of-use/" target="_blank">Terms & Conditions </a> &nbsp;and &nbsp;<a href="{{env('CMS_URL')}}privacy-policy/" target="_blank">Privacy Policy</a>.</h3>
     </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

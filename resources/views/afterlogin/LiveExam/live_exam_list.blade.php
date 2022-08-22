@@ -11,7 +11,7 @@
                         <div class="tablist">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item pe-5 me-2">
-                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="live_exam">Live Exam</a>
+                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="live_exam">Live Test</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted_tab" id="attempted">Attempted</a>
@@ -35,7 +35,7 @@
                                         <div class="live_exam_red_dot me-3"></div>
                                         <h3>{{$schedule_list[0]->exam_name}}</h3>
                                     </div>
-                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn mobile_hide" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take test
+                                    @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="btn btn-common-green mock_test_take_test_btn mobile_hide" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take Test
                                         </a>
                                         @endif
                                 </div>
@@ -69,11 +69,11 @@
                                         <div class="mock_test_qdms_text2">{{$end_date_new}}</div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take test</button>
+                                <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take Test</button>
                                 @endif
                                 @endif
                                 <div>
-                                    <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                    <div class="live_exam_upcoming_text">Upcoming Live Test</div>
                                     <div class="liveexamScroll liveexamScrollContant">
                                     @if(!empty($schedule_list))
                                     @php
@@ -130,12 +130,12 @@
                                 @endforeach
                                 @if(empty($dataAvail))
                                 <div class="text-center">
-                                    <span class="sub-details">No upcoming live exams available</span>
+                                    <span class="sub-details">No upcoming live tests available</span>
                                 </div>
                                 @endif
                                 @else
                                 <div class="text-center">
-                                    <span class="sub-details">No live exam available right now.</span>
+                                    <span class="sub-details">No live test available right now</span>
                                 </div>
                                 @endif
                             </div>
