@@ -451,7 +451,7 @@ $question_type = "Numerical";
                         <div class="ans-in-num" id="rev_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
-                        <div class="ans4">Answered & Marked for review</div>
+                        <div class="ans4">Answered & Marked for Review</div>
                         <div class="ans-in-num" id="ans_rev_cnt_2">0</div>
                     </div>
                     <div class="exam_text_content">
