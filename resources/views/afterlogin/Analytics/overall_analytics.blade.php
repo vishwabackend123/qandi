@@ -26,19 +26,35 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="commonWhiteBox">
-                                            <h3 class="boxheading d-flex align-items-center mb-5">Progress
-                                                <span class="tooltipmain">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                                        </g>
-                                                    </svg>
-                                                    <p class="tooltipclass">
-                                                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                        Compare your previous score with your latest score.
-                                                    </p>
-                                                </span>
-                                            </h3>
+                                            <div class="HeadingWithfilter">
+                                                    <h3 class="boxheading d-flex align-items-center mb-5">Progress
+                                                        <span class="tooltipmain">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                                </g>
+                                                            </svg>
+                                                            <p class="tooltipclass">
+                                                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                                Compare your previous score with your latest score.
+                                                            </p>
+                                                        </span>
+                                                    </h3>
+                                                    <div class="dropbox mb-5">
+                                                        <div class="customDropdown1 dropdown">
+                                                            <input class="text-box markstrend" type="text" placeholder="All Test" readonly>
+                                                            <div class="options">
+                                                                <div style=" overflow-y: auto;  height: 145px;">
+                                                                    <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                                    <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                                    <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                                    <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                                    <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                   </div>
+                                            </div>
                                             <div class="overall_percentage_chart graph_padd">
                                                 <span class="yaxis_label"><small> Score% </small></span>
                                                 <canvas id="myChart"></canvas>
@@ -1074,7 +1090,129 @@ $(document).on('click', '.chapter_topic', function(event) {
     $(".topics_analytics").hide();
 });
 
+/*******dropdown******** */
+let dropdown = document.querySelector(".customDropdown1")
+        dropdown.onclick = function() {
+            dropdown.classList.toggle("active1")
+        }
+/*******dropdown-end******** */
 
 </script>
 @include('afterlogin.layouts.footer_new')
+<style>
+        .customDropdown1 {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            height: 60px;
+        }
+
+        .customDropdown1::before {
+            content: "";
+            background: url(https://app.thomsondigital2021.com/public/after_login/current_ui/images/arrow_drop_down.svg);
+            position: absolute;
+            top: 27px;
+            right: 20px;
+            z-index: 1;
+            width: 21px;
+            height: 8px;
+            transition: 0.5s;
+            pointer-events: none;
+            background-size: revert;
+            background-position: center;
+            width: 13.1px;
+            height: 10px;
+        }
+
+        .customDropdown1.active1::before {
+            top: 22px;
+            transform: rotate(-180deg);
+        }
+
+        .customDropdown1 input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: #f6f9fd;
+            border: none;
+            outline: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: normal;
+        }
+
+        .customDropdown1 .options {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-scrollbar-position: outside;
+            overflow: hidden;
+            display: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: normal;
+            color: #1f1f1f;
+        }
+
+        .customDropdown1.active1 .options {
+            display: block;
+            z-index: 9;
+        }
+
+        .customDropdown1 .options .markstrend {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .journeyBoxcontainer .customDropdown1 .options .markstrend:hover {
+            background: #f0fcf2;
+        }
+
+        .customDropdownpdown1 input::-webkit-input-placeholder {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: left;
+            color: #1f1f1f;
+        }
+
+        .customDropdown1 input::-webkit-input-placeholder {
+            /* Edge */
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: left;
+            color: #1f1f1f;
+        }
+
+        .customDropdown1 input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: left;
+            color: #1f1f1f;
+        }
+
+        .customDropdown1 input::placeholder {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: left;
+            color: #1f1f1f;
+        }
+    </style>
 @endsection
