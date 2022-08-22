@@ -41,7 +41,7 @@ $userData = Session::get('user_data');
                                         <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Your Topics of strengths.</p>
+                                                    <p>Your topics of strengths.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>

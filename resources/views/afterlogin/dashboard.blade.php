@@ -73,7 +73,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score derived from all the assessments attempted in the platform. This score lets you know your probability of success if you appeared for the exam today.
+                                        A progressive score derived from all the assessments attempted on the platform. This score lets you know your probability of success if you appeared for the exam today.
                                     </p>
                                 </span>
                             </h3>
@@ -119,7 +119,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext mb-3">Map your subject journey. Aim for complete circle.</p>
+                                    <p class="dashSubtext mb-3">Map your subject journey. Aim to complete the circle.</p>
                                 </div>
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
@@ -197,7 +197,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            Recommended daily and weekly personalized tasks to improve your level of preparation
+                                            Recommended daily and weekly personalized tasks to improve your level of preparation.
                                         </p>
                                     </span>
                                 </h3>
@@ -403,7 +403,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            An actionable matrix of your strengths, weaknesses and your improvement areas.
+                                            An actionable matrix of your strengths, weaknesses and improvement areas.
                                         </p>
                                     </span>
                                 </h3>
@@ -418,7 +418,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Your Topics of strengths.</p>
+                                                    <p>Your topics of strengths.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
@@ -698,7 +698,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </svg>
                                                     <p class="tooltipclass">
                                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                        Map your current vs your ideal preparation.
+                                                        Map your current vs your ideal preparation pace.
                                                     </p>
                                                 </span>
                                             </h3>
@@ -777,7 +777,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                                 <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                                                 <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
                                                                 <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
                                                             </div>
                                                         </div>
                                                     </div>

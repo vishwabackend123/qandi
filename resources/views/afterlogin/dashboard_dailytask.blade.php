@@ -61,7 +61,7 @@ $userData = Session::get('user_data');
                             <p>Quickly sharpen your {{$skill_category}} skills with this curated test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
-                                    <span>Question</span>
+                                    <span>Questions</span>
                                     <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -97,7 +97,7 @@ $userData = Session::get('user_data');
                             <p>Take this test to improve your time management skills.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
-                                    <span>Question</span>
+                                    <span>Questions</span>
                                     <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -151,7 +151,7 @@ $userData = Session::get('user_data');
                             <p>Work on your accuracy with this test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
-                                    <span>Question</span>
+                                    <span>Questions</span>
                                     <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -183,10 +183,10 @@ $userData = Session::get('user_data');
                             <div class="task1 task2 ">
                                 <p><span>Task {{$wkey+1}} </span></p>
                                 <h3>Weak topic Test</h3>
-                                <p>Take this test to work on your weak topics</p>
+                                <p>Take this test to work on your weak Topics.</p>
                                 <div class="btn-sec">
                                     <div class="qust-sec">
-                                        <span>Question</span>
+                                        <span>Questions</span>
                                         <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                                 <path d="M10 1.332H6a.667.667 0 0 0-.666.667v1.333c0 .368.298.667.667.667h4a.667.667 0 0 0 .666-.667V1.999a.667.667 0 0 0-.666-.667z" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -255,7 +255,7 @@ $userData = Session::get('user_data');
                                             <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
-                                                    <span>Question</span>
+                                                    <span>Questions</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -290,7 +290,7 @@ $userData = Session::get('user_data');
                                             <p style="display:none;" class="m-0">Quickly sharpen your evaluation skills with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
-                                                    <span>Question</span>
+                                                    <span>Questions</span>
                                                     <p>
                                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M10.666 2.668h1.333a1.333 1.333 0 0 1 1.334 1.333v9.334a1.333 1.333 0 0 1-1.334 1.333H4a1.333 1.333 0 0 1-1.333-1.333V4a1.333 1.333 0 0 1 1.333-1.333h1.334" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
