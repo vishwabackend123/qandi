@@ -89,7 +89,7 @@
                                                         <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
                                                         <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
                                                         <input type="hidden" name="exam_mode" value="Live" />
-                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
                                                     </form>
                                                 </div>
                                             </div>
