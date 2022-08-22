@@ -260,7 +260,7 @@
                                                     </div>
                                                     <div class="commonSubjectLeg spaceright">
                                                         <span class="bar greenbar2"></span>
-                                                        <label class="text">Student average</label>
+                                                        <label class="text">Student Average</label>
                                                     </div>
                                                 </div>
                                                 <div class="chartspent bargraph_scroll">
@@ -357,7 +357,7 @@
                                                 </div>
                                                 <div class="commonSubjectLeg spaceright">
                                                     <span class="bar greenbar2"></span>
-                                                    <label class="text">Student average</label>
+                                                    <label class="text">Student Average</label>
                                                 </div>
                                             </div>
                                             <div class="chartspent  bargraph_scroll">
