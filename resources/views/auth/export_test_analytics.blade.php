@@ -213,7 +213,7 @@
                 </div>
                 <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                     <h3 class="boxheading d-flex align-items-center">Subject Score </h3>
-                    <p class="paratext" style="margin-bottom:32px;">Negative marking for incorrect answers is considered</p>
+                    <p class="paratext" style="margin-bottom:32px;">Negative marking for incorrect answers is considered.</p>
                     <div class="row">
                         <div class="col-sm-6 mb-3">
                             <h5 class="mb-0">Maths</h5>
