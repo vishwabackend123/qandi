@@ -323,7 +323,7 @@
                                                 <div class="tab-pane fade show active" id="pills-Day2" role="tabpanel" aria-labelledby="pills-Day2-tab">
                                                     <div class="chartspent  bargraph_scroll">
                                                         <div class="graph_padd bargraph_size">
-                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average Marks </small> </span>
                                                             <canvas id="mark_trend_day"></canvas>
                                                         </div>
                                                     </div>
@@ -331,7 +331,7 @@
                                                 <div class="tab-pane fade" id="pills-Week2" role="tabpanel" aria-labelledby="pills-Week2-tab">
                                                     <div class="chartspent  bargraph_scroll">
                                                         <div class="graph_padd bargraph_size">
-                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average Marks </small> </span>
                                                             <canvas id="mark_trend_week"></canvas>
                                                         </div>
                                                     </div>
@@ -339,7 +339,7 @@
                                                 <div class="tab-pane fade" id="pills-Month2" role="tabpanel" aria-labelledby="pills-Month2-tab">
                                                     <div class="chartspent  bargraph_scroll">
                                                         <div class="graph_padd bargraph_size">
-                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average marks </small> </span>
+                                                            <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average Marks </small> </span>
                                                             <canvas id="mark_trend_month"></canvas>
                                                         </div>
                                                     </div>
