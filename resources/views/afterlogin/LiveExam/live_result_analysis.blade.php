@@ -130,7 +130,7 @@
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
-                                    <span class="d-block mb-1 commontext">Overall percentage</span>
+                                    <span class="d-block mb-1 commontext">Overall Percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
                                         <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small></span>
