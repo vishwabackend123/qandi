@@ -531,7 +531,7 @@ var ctxmath = document.getElementById('mathChart').getContext('2d');
 var myChartmath = new Chart(ctxmath, {
     type: 'bar',
     data: {
-        labels: ['Previous Score', 'Latest score'],
+        labels: ['Previous Score', 'Latest Score'],
         datasets: [{
             data: [<?php echo $preSocre; ?>, <?php echo $currSocre; ?>],
             label: '',

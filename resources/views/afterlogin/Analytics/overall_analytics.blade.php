@@ -396,7 +396,7 @@ const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Previous Score', 'Latest score'],
+        labels: ['Previous Score', 'Latest Score'],
         datasets: [{
             data: [<?php echo $mockTestScorePre; ?>, <?php echo $mockTestScoreCurr; ?>],
             label: '',
