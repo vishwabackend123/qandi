@@ -52,7 +52,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         </div>
         @if($userData->email_verified=='No')
         <div class="verificationBox">
-            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
             <span class="mt-2" id="email_success"></span>
         </div>
@@ -67,7 +67,7 @@ $full_body_attempt = Session::get('full_body_attempt');
             <p>To assess your preparedness</p>
         </div>
         <div class="verificationBox mobile_block mt-0">
-            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
         </div>
         <div class="fullbody_scan_wrapper">

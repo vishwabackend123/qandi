@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Your ability to understand the complexity of information by breaking into parts and examine them individually and judge in accordance with the received information.</h5>
+                                                <h5>Your ability to understand complex information by breaking it into parts, examine the parts individually and judge them according to the received information.</h5>
                                                 <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong> of questions solved are of this skill.
                                                   <!-- <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a> -->
                                                 </p>
@@ -148,7 +148,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Helps you understand the meaning and interpretation of instructions and problems. </h5>
+                                                <h5>Your ability to understand the meaning and correctly interpret, instructions and problems. </h5>
                                                 <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions solved are of this skill. 
                                                 <!-- <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a> -->
                                             </p>
@@ -176,7 +176,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Helps you to determine your ability to execute or implement the information. </h5>
+                                                <h5>You ability to execute or implement the information provided.</h5>
                                                 <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions solved are of this skill.  
                                                 <!-- <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a> -->
                                             </p>
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Helps you determine your ability to recognize and recall factual information and basic concepts. </h5>
+                                                <h5> You ability to recognize and recall factual information and basic concepts. </h5>
 
                                                 <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions solved are of this skill.    
                                                 <!-- <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a> -->

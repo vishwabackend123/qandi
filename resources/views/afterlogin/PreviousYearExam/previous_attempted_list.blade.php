@@ -1,11 +1,11 @@
 <div class="jee_main_text_take_test__btn previous_exam_head_with_drop">
     <div class="mock_exam_jee_main_text d-flex align-items-center">
-        <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>Past year exam papers</p>
+        <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>past year exam papers</p>
     </div>
     <div class="dropbox previous_dropbox_page">
         <div class="customDropdown dropdown">
             <select class="form-control form-select" id="filter_attemp_year">
-                <option value="">Select year </option>
+                <option value="">Select Year </option>
                 @if(!empty($years_list))
                 @foreach($years_list as $yr)
                 <option value="{{$yr}}">{{$yr}}</option>
