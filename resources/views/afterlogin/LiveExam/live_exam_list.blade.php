@@ -11,7 +11,7 @@
                         <div class="tablist">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item pe-5 me-2">
-                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="live_exam">Live Exam</a>
+                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="live_exam">Live Test</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted_tab" id="attempted">Attempted</a>
@@ -73,7 +73,7 @@
                                 @endif
                                 @endif
                                 <div>
-                                    <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                    <div class="live_exam_upcoming_text">Upcoming Live Test</div>
                                     <div class="liveexamScroll liveexamScrollContant">
                                     @if(!empty($schedule_list))
                                     @php
@@ -130,12 +130,12 @@
                                 @endforeach
                                 @if(empty($dataAvail))
                                 <div class="text-center">
-                                    <span class="sub-details">No upcoming live exams available</span>
+                                    <span class="sub-details">No upcoming live tests available</span>
                                 </div>
                                 @endif
                                 @else
                                 <div class="text-center">
-                                    <span class="sub-details">No live exam available right now.</span>
+                                    <span class="sub-details">No live test available right now</span>
                                 </div>
                                 @endif
                             </div>
