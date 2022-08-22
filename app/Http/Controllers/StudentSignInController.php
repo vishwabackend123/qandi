@@ -178,6 +178,12 @@ class StudentSignInController extends Controller
                 curl_close($curl);
                 $aResponse = json_decode($response_json);
                 $success = isset($aResponse->success) ? $aResponse->success : false;
+               if($httpcode == 503)
+                {
+
+                    $response = ["message" => "OTP retry limit exceeded. Try again in 24 hours.", "error" => $err, "success" => false, "status" => 400,];
+                    return json_encode($response);
+                }
 
                 if ($success == false) {
                     $response = ["message" => "You have entered a wrong OTP. Please try again", "error" => $err, "success" => false, "status" => 400,];
