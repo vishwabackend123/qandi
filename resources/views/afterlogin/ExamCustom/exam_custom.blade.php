@@ -83,8 +83,8 @@
                                         <ul class="dropdown-menu filterdropdown">
                                             <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
                                             <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z order</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A order</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z Order</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A Order</a></li>
                                         </ul>
                                         <form method="post" class="fulltestform" action="{{route('custom_exam','instruction')}}">
                                             @csrf

@@ -178,8 +178,8 @@
                                 <div class="exam_inst_col_four_text_contant2">180 Mins</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">No. Of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">90 MCQ Questions</div>
+                                <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
+                                <div class="exam_inst_col_four_text_contant2">90 MCQ</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>

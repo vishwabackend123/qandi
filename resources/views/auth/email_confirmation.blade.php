@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@php
-$userData = Session::get('user_data');
-$user_email = isset($userData->email)?$userData->email:'';
-$user_id = isset($userData->id)?$userData->id:'';
-@endphp
+
 <div class="plan_successfull_wrapper">
     <div class="plan_successfull_heder_icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="66" viewBox="0 0 64 66" fill="none" class="plan_successfull_heder_icon_img">
@@ -33,7 +29,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     </div>
     <div class="email-confirmation">
         <div class="email-profile-pick">
-            @if(isset($response_json['error']) && !empty($response_json['error']))
+            @if(isset($response_json['message']) && !empty($response_json['message']) && ($response_json['message'] == 'Token Expired, please resend email verification' || $response_json['message'] == 'Invald Token'))
             <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50.5" cy="50" r="50" fill="#FEF0C7" />
                 <path d="M50 43.793v-9.655c8.702 0 15.862 7.16 15.862 15.862S58.702 65.862 50 65.862 34.138 58.702 34.138 50c0-4.206 1.672-8.243 4.645-11.217" stroke="#DC6803" stroke-width="2.5" stroke-miterlimit="10" />
@@ -47,16 +43,19 @@ $user_id = isset($userData->id)?$userData->id:'';
             </svg>
             @endif
         </div>
-        @if(isset($response_json['error']) && !empty($response_json['error']))
+        @if(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Token Expired, please resend email verification')
         <p class="email_head"><span>Email link Expired</span></p>
-        <p><label><b>{{$user_email}}</b> is not Verified yet. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is not Verified yet. </label></p>
          <span class="mt-2" id="email_success"></span>
         <div class="d-flex align-items-center justify-content-center">
-            @if(isset($user_id) && !empty($user_id))
             <a href="javascript:void(0)" class="btn btn-common-transparent nobg w-50 resend_email" style="padding: 10px 40px;margin:24px 12px 0px 0px;"> Resend</a>
-            @endif
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
+         @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invald Token')
+        <p class="email_head"><span>Invalid token</span></p>
+        <p><label><b></b> Invalid token</label></p>
+         <span class="mt-2" id="email_success"></span>
+       
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
         @if($message_success == 'Email already Verified')
@@ -70,11 +69,12 @@ $user_id = isset($userData->id)?$userData->id:'';
         @endif
     </div>
 </div>
+@if(isset($response_json['student_id']))
 <script type="text/javascript">
 $('#email_success').hide();
 $('.resend_email').click(function() {
     $('.email-error').hide();
-    var user_id = '<?php echo $user_id; ?>';
+    var user_id = '<?php echo $response_json['student_id']; ?>';
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -113,4 +113,5 @@ $('.resend_email').click(function() {
 });
 
 </script>
+@endif
 @endsection

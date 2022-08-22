@@ -191,7 +191,6 @@
         <h3 class="copyright text-center pb-md-0 pb-5 pt-4 m-0">By clicking continue, you agree to our<br> <a href="https://qanditoday.com/terms-of-use/" target="_blank">Terms & Conditions </a> &nbsp;and &nbsp;<a href="https://qanditoday.com/privacy-policy/" target="_blank">Privacy Policy</a>.</h3>
     </div>
 </section>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 var timerId = '';
@@ -353,7 +352,6 @@ $('#verifynum').click(function() {
                 } else {
                     $("#err_reg_mob").html(response.message);
                     $("#err_reg_mob").fadeIn('fast');
-                    /* $("#err_reg_mob").fadeOut(10000); */
                     $("#mobile_num").focus();
                     return false;
                 }
@@ -417,7 +415,6 @@ $("#studentsignup").validate({
         }
     },
     errorElement: 'div',
-    /* errorLabelContainer: '#errlog_otp', */
     errorPlacement: function(error, element) {
 
         switch (element.attr("name")) {
@@ -428,9 +425,7 @@ $("#studentsignup").validate({
                 error.insertAfter($("#mobile_num_box"));
                 break;
             case 'register_otp[]':
-                //error.add($("#errlog_otp"));
                 $("#errlog_otp").html('Please enter the valid OTP.')
-                /*error.insertAfter($("#otp_box") */
                 break;
             case 'email_add':
                 error.insertAfter($("#email_add"));
@@ -488,7 +483,6 @@ $("#studentsignup").validate({
 
                 if (response.status == 400) {
                     if (response.msg === 'Wrong OTP') {
-                        //$('errlog_otp').html("Invalid OTP");
                         var errormsg = $("#errlog_otp").show();
 
                         errormsg[0].textContent = "Invalid OTP";
@@ -496,7 +490,6 @@ $("#studentsignup").validate({
                             $('#errlog_otp').fadeOut('fast');
                         }, 10000);
                     } else if (response.msg === 'User already registered') {
-                        //$('errlog_otp').html("Invalid OTP");
                         var errormsg = $("#errlog_mail").show();
 
                         errormsg[0].textContent = 'Email address already exist.';
@@ -515,8 +508,6 @@ $("#studentsignup").validate({
                     $('#student_id').val(response.student_id);
                     $('.usernamE').html(response.user_name);
                     $('.student-mobile').html("+91-" + response.mobile);
-                    //$('#otp-verify-box').addClass('open-box');
-
                     $('#login-box').addClass('close-box');
                     $('#address-box').addClass('open-box');
                     window.location.href = '{{url("dashboard")}}';

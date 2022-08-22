@@ -108,12 +108,12 @@ $questtype='radio';
         @endforeach
         @endif
         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-2 d-flex">
-            <span id="avg_text_{{$activeq_id}}" class="avg-time">Average Time :</span>
+            <span id="avg_text_{{$activeq_id}}" class="avg-time">Average Time:</span>
             <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                 <div id="percentBar1_{{$activeq_id}}"></div>
             </div>
-            <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" onclick="" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
+            <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" onclick="" style="display:none;"><span>Time taken: </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
         </div>
     </div>
     <input type="hidden" name="question_spendtime" id="timespend_{{$activeq_id}}" value="" />

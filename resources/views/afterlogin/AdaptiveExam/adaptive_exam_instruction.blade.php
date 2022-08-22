@@ -73,7 +73,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant2">{{$exam_fulltime}} Mins</div>
                             </div>
                             <!--  <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">No. Of Questions</div>
+                                <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ Questions</div>
                             </div> -->
                             <div class="exam_inst_col_four_text_contant">
@@ -101,10 +101,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z" />
                                     </g>
                                 </svg>
-                                <div class="exam_inst_all_the_best">All the Best {{ucwords($userData->user_name)}}!</div>
+                                <div class="exam_inst_all_the_best">All the Best , {{ucwords($userData->user_name)}}!</div>
                                 <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

@@ -3,19 +3,35 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="commonWhiteBox h-auto subj_progress_card">
-                    <h3 class="boxheading d-flex align-items-center mb-5">Progress
-                        <span class="tooltipmain">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                </g>
-                            </svg>
-                            <p class="tooltipclass">
-                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                Compare your previous score with your latest score.
-                            </p>
-                        </span>
-                    </h3>
+                <div class="HeadingWithfilter">
+                        <h3 class="boxheading d-flex align-items-center mb-5">Progress
+                            <span class="tooltipmain">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                    </g>
+                                </svg>
+                                <p class="tooltipclass">
+                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    Compare your previous score with your latest score.
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="dropbox mb-5">
+                            <div class="customDropdown1 dropdown" id ="subjectdeopdown">
+                                <input class="text-box markstrend" type="text" placeholder="All Test" readonly>
+                                <div class="options">
+                                    <div style=" overflow-y: auto;  height: 145px;">
+                                        <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                        <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                        <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                        <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                        <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
                     <div class="overall_percentage_chart graph_padd">
                         <span class="yaxis_label"><small> Score% </small></span>
                         <canvas id="mathChart"></canvas>
@@ -1102,5 +1118,11 @@ $(document).on('click', function(e) {
     }
 
 });
-
+/*******dropdown******** */
+let dropdownsubject = document.querySelector("#subjectdeopdown")
+    
+    dropdownsubject.onclick = function() {
+    dropdownsubject.classList.toggle("active1")
+        }
+/*******dropdown-end******** */
 </script>
