@@ -32,8 +32,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
-                                <li>This test is of <b>{{$total_marks}} marks</b></li>
-                                <li>There will be <b>{{$questions_count}} questions</b> in the test</li>
+                                <li>This test is of <b>{{$total_marks}} marks.</b></li>
+                                <li>There will be <b>{{$questions_count}} questions</b> in the test.</li>
                                 <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
                             </ul>
                         </div>
@@ -57,7 +57,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <ul class="exam_inst_ul_li">
                                 <li>This section contains {{$sec->total_num_of_ques}} <b>questions of {{$sec->question_type_name}}.</b></li>
                                 @if($sec->total_num_of_ques > $sec->num_of_ques_tobeattempted)
-                                <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted</li>
+                                <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted.</li>
                                 @endif
                                 <li><b>For {{$sec->section_name}} questions</b>, {{$marksArr[0]}} marks is allotted for each correct response, {{$marksArr[1]}} mark will be deducted for each incorrect response, and 0 mark will be given for unanswered/ Marked for review questions. </li>
                             </ul>
