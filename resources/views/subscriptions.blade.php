@@ -303,7 +303,8 @@ $leadData ='';
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits
+                    <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
+                    <span class="hide-text">Hide benefits</span>
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                                 <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -432,7 +433,8 @@ $leadData ='';
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits
+                    <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
+                    <span class="hide-text">Hide benefits</span>
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                                 <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -569,7 +571,8 @@ $leadData ='';
                             </li>
                         </ul>
                     </div>
-                    <div class="allbenefitsbtn">Show all benefits
+                    <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
+                    <span class="hide-text">Hide benefits</span>
                     <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                                 <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
