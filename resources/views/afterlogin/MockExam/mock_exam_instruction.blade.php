@@ -34,7 +34,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
                                 <li>This test is of <b>{{$total_marks}} marks.</b></li>
                                 <li>There will be <b>{{$questions_count}} questions</b> in the test.</li>
-                                <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
+                                <!-- <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li> -->
                             </ul>
                         </div>
                         @php $i=1; @endphp
@@ -50,6 +50,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             <div class="line-693"></div>
+
+                            <div class="mt-2">The following are the sections in the test:</div>
+
                             @if(isset($aSections))
                             @foreach($aSections as $sec)
                             @php $marksArr=json_decode($sec->marking_scheme); @endphp

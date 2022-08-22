@@ -102,7 +102,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z" />
                                     </g>
                                 </svg>
-                                <div class="exam_inst_all_the_best">All the Best  , {{ucwords($userData->user_name)}}!</div>
+                                <div class="exam_inst_all_the_best">All the Best , {{ucwords($userData->user_name)}}!</div>
 
                                 <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
                                     @csrf

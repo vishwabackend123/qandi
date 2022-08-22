@@ -33,7 +33,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
                                 <!--  <li>This test is of <b>{{$total_marks}} marks</b></li>
                                 <li>There will be <b>{{$questions_count}} questions</b> in the test</li> -->
-                                <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
+                                <!--  <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li> -->
                             </ul>
                         </div>
                         @php $i=1; @endphp
@@ -50,6 +50,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div> -->
                             </div>
                             <div class="line-693"></div>
+                            <div class="mt-2">The following are the sections in the test:</div>
 
                             <ul class="exam_inst_ul_li">
                                 <li>This section contains <b>question of Single Choice.</b></li>
@@ -104,7 +105,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_all_the_best">All the Best , {{ucwords($userData->user_name)}}!</div>
                                 <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
