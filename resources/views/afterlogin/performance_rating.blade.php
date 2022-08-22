@@ -50,7 +50,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         </div>
          @if($userData->email_verified=='No')
         <div class="verificationBox">
-            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
             <span class="mt-2" id="email_success"></span>
         </div>
@@ -143,7 +143,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <button class="btn btn-common-green @if(empty($aStudentRating)) disabled @endif" @if(empty($aStudentRating)) disabled @endif id="store_rating" onclick="store_rating();">Continue</button>
             </div>
             <div class="verificationBox mobile_block">
-                <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified</p>
+                <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
                 <a href="javascript:void(0);" class="resend_email">Resend</a>
             </div>
         </div>
