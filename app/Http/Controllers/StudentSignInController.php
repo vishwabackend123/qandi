@@ -367,6 +367,16 @@ class StudentSignInController extends Controller
             curl_close($curl);
 
             $aResponse = json_decode($response_json);
+            if($httpcode == 503)
+            {
+                $errmsg = isset($aResponse->message) ? $aResponse->message : "OTP retry limit exceeded. Try again in 24 hours.";
+
+                $response = [
+
+                    "error" => $err, "msg" => $errmsg, "success" => false, "status" => 400,
+                ];
+                 return json_encode($response);
+            }
 
             $success = isset($aResponse->success) ? $aResponse->success : false;
 
@@ -656,7 +666,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $success = isset($aResponse->success) ? $aResponse->success : false;
             $city_list = isset($aResponse->response) ? $aResponse->response : false;
-            sort($city_list);
+            sort($city_list, SORT_NATURAL | SORT_FLAG_CASE);
             return $city_list;
         } catch (\Exception $e) {
             Log::info($e->getMessage());

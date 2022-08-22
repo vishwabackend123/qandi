@@ -115,7 +115,7 @@ $question_type = "Numerical";
                                 <div class="attemp_box row mt-0">
                                     <div class="sub_att_1 col-md-6">
                                         @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
-                                        <p>Knowledge, Application of</p>
+                                        <p>Topic pre-requisite</p>
                                         <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
                                         @endif
 
@@ -123,17 +123,17 @@ $question_type = "Numerical";
                                     <div class="sub_att_1 col-md-6">
 
                                         @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
-                                        <p>Knowledge of</p>
+                                        <p>Concept pre-requisite</p>
                                         <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
                                         @endif
 
                                     </div>
                                 </div>
                                 <div class="box-border"></div>
-                                                                    <div class="learskill d-flex align-items-center justify-content-between">
-                                                                    <p>Learning skill required:</p>
-                                                                    <h3>Comprehension</h3>    
-                                                                    </div>  
+                                <div class="learskill d-flex align-items-center justify-content-between">
+                                    <p>Learning skill required:</p>
+                                    <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,15 +229,15 @@ $question_type = "Numerical";
         $('.questionwrapper ').css('height', mid_section_height);
 
         var questionwrapper_final_height = $(".questionwrapper").outerHeight();
-var questfinal = question_slider_box_height - questionwrapper_final_height;
-$('.answer-main-sec ').css('height', questfinal);
-var answerfinalheight = $(".answer-main-sec").outerHeight();
-var extra_height = answerfinalheight - 20 + "px";
-$('.answer-main-sec ').css('height', extra_height);
-var answerfinalheight = $(".answer-main-sec").outerHeight();
-var answerfinalheight_145 = answerfinalheight - 145 + "px";
-$('.explanation-sec ').css('height', answerfinalheight_145);
-        
+        var questfinal = question_slider_box_height - questionwrapper_final_height;
+        $('.answer-main-sec ').css('height', questfinal);
+        var answerfinalheight = $(".answer-main-sec").outerHeight();
+        var extra_height = answerfinalheight - 20 + "px";
+        $('.answer-main-sec ').css('height', extra_height);
+        var answerfinalheight = $(".answer-main-sec").outerHeight();
+        var answerfinalheight_145 = answerfinalheight - 145 + "px";
+        $('.explanation-sec ').css('height', answerfinalheight_145);
+
 
 
     }
