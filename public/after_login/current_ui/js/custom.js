@@ -83,7 +83,7 @@ $(".mq_circle_percent").each(function() {
 		},1000);
 	} 
 });
-var percent_data =$('.mq_circle_percent').attr('data-percent');
+var percent_data =$('#accurate_percent').val();
 var headingpercent = Math.ceil(percent_data);
 if( headingpercent == 0){
      $('.dashSubHeading').text('Begin your journey to success.');
