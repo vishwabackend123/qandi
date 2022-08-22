@@ -1904,8 +1904,18 @@
         height: 50px !important;
     }
     .anshead-titletext p {
-        margin-bottom: 4px;
+        margin-bottom: 4px; 
     }
+    .examReviewscreenmob .fancy-radio-buttons.with-image{width:100%;--bs-gutter-x: 0px;    gap: 10px;}
+   .examReviewscreenmob .fancy-radio-buttons .colMargin {width: 100%; max-width: 100%; }
+   .examMaincontainer .reviewScreenright {display: block;}
+   .examReviewscreenmob .examMaincontainer{ display: block;}
+   .examReviewscreenmob.examRightpanel, .examReviewscreenmob.reviewans-mainsec {
+    min-width: 100%;
+    max-width: 100%;    
+ 
+}
+   
 }
 
 
