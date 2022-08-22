@@ -958,7 +958,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     <!-- footer Section end  -->
     @php
     $trend_stu_score=$trend_avg_score=$trend_max_score=$aWeeks = $weekdates=[];
-    $i = 1;
+    $month = date('m');
+    $i = $month - count($trendResponse)+1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
     //$week = "W" . $i;
