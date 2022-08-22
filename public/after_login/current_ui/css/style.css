@@ -4751,7 +4751,10 @@ justify-content: space-between;}
             width: calc(100% - 82px);
         }
 .HeadingWithfilter{display:flex;align-items:center;justify-content:space-between;}
-.HeadingWithfilter .dropbox{width:250px;}       
+.HeadingWithfilter .dropbox{width:250px;}    
+.activeFilter {
+    color: #56b663 !important;
+}   
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
