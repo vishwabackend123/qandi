@@ -59,11 +59,11 @@
                     <div class="subjectperformLegend flexleg">
                         <div class="commonSubjectLeg">
                             <span class="bar greenbar"></span>
-                            <label class="text">Correct answer</label>
+                            <label class="text">Correct Answer</label>
                         </div>
                         <div class="commonSubjectLeg">
                             <span class="bar pinkbar"></span>
-                            <label class="text">Incorrect answer</label>
+                            <label class="text">Incorrect Answer</label>
                         </div>
                         <div class="commonSubjectLeg">
                             <span class="bar graybar"></span>
@@ -253,7 +253,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="timemanagement common_greenbadge_tabs">
-                        <h4 class="garphsubheading mt-2 mb-0">Time for correct/incorrect answer</h4>
+                        <h4 class="garphsubheading mt-2 mb-0">Time spent on correct/incorrect answer</h4>
                         <div class="barwithTAb">
                             <div class="subjectperformLegend ">
                                 <div class="commonSubjectLeg">
@@ -262,7 +262,7 @@
                                 </div>
                                 <div class="commonSubjectLeg">
                                     <span class="bar pinkbar2"></span>
-                                    <label class="text">Incorrect answers</label>
+                                    <label class="text">Incorrect Answers</label>
                                 </div>
                             </div>
                             <div class="righttabBlock">
@@ -359,7 +359,7 @@
                             </div>
                             <div class="commonSubjectLeg">
                                 <span class="bar pinkbar2"></span>
-                                <label class="text">Incorrect answers</label>
+                                <label class="text">Incorrect Answers</label>
                             </div>
                         </div>
                         <div class="righttabBlock">
