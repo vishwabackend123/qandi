@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
-use Aws\SecretsManager\SecretsManagerClient; 
+use Aws\SecretsManager\SecretsManagerClient;
 use Aws\Exception\AwsException;
 
 class LeadUserController extends Controller
@@ -94,37 +94,37 @@ class LeadUserController extends Controller
 	}
 	public function emailConfirmation($token)
 	{
-		    $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/email_confirmation/' . $token;
-            $curl_option = array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
-                ),
-            );
-            curl_setopt_array($curl, $curl_option);
+		$curl = curl_init();
+		$api_URL = env('API_URL');
+		$curl_url = $api_URL . 'api/email_confirmation/' . $token;
+		$curl_option = array(
+			CURLOPT_URL => $curl_url,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "GET",
+			CURLOPT_HTTPHEADER => array(
+				"Authorization: Bearer " . $this->getAccessToken()
+			),
+		);
+		curl_setopt_array($curl, $curl_option);
 
-            $response = curl_exec($curl);
-            $response_json = json_decode($response, true);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-            $response_status = isset($response_json['status']) ? $response_json['status'] : false;
-            $email_id = '';
-            $message_success = "";
-            if ($response_status) {
-            	$email_id = isset($response_json['email']) ? $response_json['email'] : ''; 
-            	$message_success = isset($response_json['message']) ? $response_json['message'] : ''; 
-            }
-		return view('auth.email_confirmation',compact('email_id','response_json','message_success'));
+		$response = curl_exec($curl);
+		$response_json = json_decode($response, true);
+		$err = curl_error($curl);
+		$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+		curl_close($curl);
+		$response_status = isset($response_json['status']) ? $response_json['status'] : false;
+		$email_id = '';
+		$message_success = "";
+		if ($response_status) {
+			$email_id = isset($response_json['email']) ? $response_json['email'] : '';
+			$message_success = isset($response_json['message']) ? $response_json['message'] : '';
+		}
+		return view('auth.email_confirmation', compact('email_id', 'response_json', 'message_success'));
 	}
 	public function testAnalyticsMocktest()
 	{
@@ -160,16 +160,18 @@ class LeadUserController extends Controller
 	}
 	public function overallAnalyticsNew()
 	{
-		 $client = new SecretsManagerClient([
-		    'version' => '2017-10-17',
-		    'region' => 'ap-south-1'
-		]);
+		$client = new SecretsManagerClient([			
+    		'version' => '2017-10-17',
+			'region' => 'ap-south-1'
+		]);		
+		
+		$secretName = 'dev/secrets';
 
-	$secretName = 'dev/secrets';
-    $result = $client->getSecretValue([
-        'SecretId' => $secretName,
-    ]);
-    print_r($result);die;
+		$result = $client->getSecretValue([
+			'SecretId' => $secretName,
+		]);
+		print_r($result);
+		die;
 		//return view('auth.overall_analytics_new');
 	}
 	public function exportTestAnalytics()
