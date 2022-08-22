@@ -1572,7 +1572,7 @@
             .codelearningBlock {
                 margin-top: 19px;
             }
-            .boxheading.mb-5{margin-bottom:26px!important;}
+            .boxheading.mb-5,.HeadingWithfilter .dropbox.mb-5{margin-bottom:26px!important;}
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
             .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
@@ -1987,6 +1987,8 @@
     .bargraph_size{width:500px;}
     .colorLabels {margin: 0 22px;}
     /************ Amit end *********/
+    .HeadingWithfilter{flex-wrap:wrap;}
+    .HeadingWithfilter .dropbox{width:100%;}
 }
 @media only screen and (max-width: 400px){
     
