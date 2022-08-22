@@ -28,8 +28,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="info">
-                            <h1 class="main-title">Personal info</h1>
-                            <p>Update your personal details here.</p>
+                            <h1 class="main-title">Personal Information</h1>
+                            <p>Update your personal details here</p>
                             <div class="line d-block d-lg-none"></div>
                         </div>
                     </div>
