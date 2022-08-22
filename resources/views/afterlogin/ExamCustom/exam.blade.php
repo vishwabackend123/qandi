@@ -305,11 +305,11 @@ $question_type = "Numerical";
                                     <div class="ans-in-num" id="unans_cnt">{{$questions_count}}</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for review</div>
+                                    <div class="ans3">Marked for Review</div>
                                     <div class="ans-in-num" id="rev_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; marked for review</div>
+                                    <div class="ans4">Answered &amp; marked for Review</div>
                                     <div class="ans-in-num" id="ans_rev_cnt">0</div>
                                 </div>
                             </div>
