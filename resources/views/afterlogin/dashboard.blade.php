@@ -141,11 +141,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <h6>{{$sub['subject_name']}}</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>{{round($sub['score'])}}%</h4>
-                                                        <!-- <div class="circle_percent mt-3 {{$colorcls}}" data-percent="{{round($sub['score'])}}">
-                                                            <div class="circle_inner">
-                                                                <div class="round_per"></div>
-                                                            </div>
-                                                        </div>  -->
                                                         <div class="radial_progress_bar">
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
 
@@ -235,7 +230,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!--  <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -711,11 +705,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                         <div class="row">
                                             <div class="col-md-7">
-                                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
-                                                <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
-                                                <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
-                                                <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
-                                            </svg> -->
                                                 <div class="progress_journey_chart progressnewjourney">
                                                     <canvas id="progressJourny_graph"></canvas>
                                                 </div>
@@ -771,23 +760,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
-
-                                        <!--div class="dropbox mobile_block dropboxmob">
-                                            <div class="customDropdown dropdown">
-                                                <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                <div class="options">
-                                                    <div style=" overflow-y: auto;  height: 145px;">
-                                                        <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                        <div class="markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                        <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                        <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                        <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div-->
-
-
                                         <div class="journeyBoxcontainer">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
@@ -1248,12 +1220,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             document.getElementById('trend_graph'),
             config2
         );
-
-
-        /* $('#markstrend_graph').change(function() {
-            var value = this.value;
-            alert(value);
-        }); */
     </script>
     <script>
         function show(value, type) {
