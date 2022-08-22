@@ -139,7 +139,7 @@
                            <div class="accordion-item">
                               <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                  <h2 class="m-0">3D Geometry</h2>
-                                 <h3 class="m-0">Proficiency : <span>65%</span></h3>
+                                 <h3 class="m-0">Proficiency: <span>65%</span></h3>
                                  <div class="accordion-header d-flex align-items-center" id="headingOne">
                                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0">View topics</h4>
                                     <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
@@ -152,7 +152,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -177,7 +177,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -202,7 +202,7 @@
                                           <div class="exam-box selectbox">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -227,7 +227,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -252,7 +252,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -281,7 +281,7 @@
                         <div class="accordion-item pt-4">
                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                               <h2 class="m-0">Application of Derivaties</h2>
-                              <h3 class="m-0">Proficiency : <span>30%</span></h3>
+                              <h3 class="m-0">Proficiency: <span>30%</span></h3>
                               <div class="accordion-header d-flex align-items-center" id="headingTwo">
                                  <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0">View topics</h4>
                                  <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
@@ -294,7 +294,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -319,7 +319,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -344,7 +344,7 @@
                                           <div class="exam-box selectbox">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -369,7 +369,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -394,7 +394,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -422,7 +422,7 @@
                            <div class="accordion-item pt-4">
                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                               <h2 class="m-0">Area Under Curves</h2>
-                              <h3 class="m-0">Proficiency : <span>22%</span></h3>
+                              <h3 class="m-0">Proficiency: <span>22%</span></h3>
                               <div class="accordion-header d-flex align-items-center" id="headingThree">
                                  <h4 data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="m-0">View topics</h4>
                                  <button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
@@ -435,7 +435,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -460,7 +460,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -485,7 +485,7 @@
                                           <div class="exam-box selectbox">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -510,7 +510,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
@@ -535,7 +535,7 @@
                                           <div class="exam-box">
                                              <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
                                                 <p>Basics of 3D Ge...</p>
-                                                <h2>Proficiency : <span>65%</span></h2>
+                                                <h2>Proficiency: <span>65%</span></h2>
                                              </div>
                                              <div class="topic_score_bar mb-3">
                                                 <div class="progress">
