@@ -548,11 +548,13 @@ $question_type = "Numerical";
             var coll_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
             var coll_scroll_height = coll_answer_main_sec_height_final - 90 + "px";
             $('.explanation-sec').css('height', coll_scroll_height);
-
-
             var answer_main_sec_height_coll = $(".answer-main-sec").outerHeight();
             var answer_main_sec_height_coll_sub = answer_main_sec_height_coll - 20 + "px";
             $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
+            $('.explanation-sec').css('height', coll_scroll_height);
+            var afterclikecoll = $(".explanation-sec").outerHeight();
+            var afterclikecoll_cal = afterclikecoll - 30 + "px";
+            $('.explanation-sec').css('height', afterclikecoll_cal);
 
 
         });

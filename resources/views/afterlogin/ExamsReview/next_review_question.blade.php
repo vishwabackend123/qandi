@@ -295,8 +295,15 @@ $('.explanation-sec ').css('height', answerfinalheight_145);
             var coll_height_popupSection = coll_answer_main_sec_height - coll_totalpopup_height;
             $('.explanation-sec').css('height', coll_height_popupSection);
             var coll_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
-            var coll_scroll_height = coll_answer_main_sec_height_final - 60 + "px";
+            var coll_scroll_height = coll_answer_main_sec_height_final - 90 + "px";
             $('.explanation-sec').css('height', coll_scroll_height);
+            var answer_main_sec_height_coll = $(".answer-main-sec").outerHeight();
+            var answer_main_sec_height_coll_sub = answer_main_sec_height_coll - 20 + "px";
+            $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
+            $('.explanation-sec').css('height', coll_scroll_height);
+            var afterclikecoll = $(".explanation-sec").outerHeight();
+            var afterclikecoll_cal = afterclikecoll - 30 + "px";
+            $('.explanation-sec').css('height', afterclikecoll_cal);
 
 
         });
@@ -340,7 +347,7 @@ $('.explanation-sec ').css('height', answerfinalheight_145);
             $('.reviewans-mainsec').css('height', min_height_q_list_h);
             var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
             var scroll_height = reviewans_final_height - review_filter_top_height;
-            var scroll_height_20 = scroll_height - 20 + "px";
+            var scroll_height_20 = scroll_height - 30 + "px";
             $('.list-ans').css('height', scroll_height_20)
         });
 
