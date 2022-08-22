@@ -157,12 +157,12 @@
     @endforeach
     @else
     <div class="text-center">
-        <span class="sub-details">No result history available right now.</span>
+        <span class="sub-details">No result history available right now</span>
     </div>
     @endif
     @if(!empty($result_data))
     <div class="no_data_found text-center">
-        <span class="sub-details" id="error_data">No result history available right now.</span>
+        <span class="sub-details" id="error_data">No result history available right now</span>
     </div>
     @endif
 </div>

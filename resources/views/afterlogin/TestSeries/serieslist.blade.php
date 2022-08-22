@@ -101,11 +101,11 @@
                                         @endforeach
                                         @else
                                         <div class="row text-center p-4">
-                                            <h5>No series avialable.</h5>
+                                            <h5>No series available</h5>
                                         </div>
                                         @endif
                                         @if(!empty($live_series) && $i <= 0) <div class="row text-center p-4">
-                                            <h5>No series avialable.</h5>
+                                            <h5>No series available</h5>
                                     </div>
                                     @endif
                                 </div>
@@ -197,7 +197,7 @@ $(document).on('click', '.open_attemp', function() {
         $('.no_data_found').hide();
     } else {
         $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
+        $('#error_data').text('No result history available right now');
     }
 });
 $(document).on('click', '.live_attemp', function() {
@@ -211,7 +211,7 @@ $(document).on('click', '.live_attemp', function() {
         $('.no_data_found').hide();
     } else {
         $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
+        $('#error_data').text('No result history available right now');
     }
 });
 

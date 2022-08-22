@@ -19,6 +19,6 @@
 @endforeach
 @else
 <div class="text-center">
-    <span class="sub-details">No result history available right now.</span>
+    <span class="sub-details">No result history available right now</span>
 </div>
 @endif
