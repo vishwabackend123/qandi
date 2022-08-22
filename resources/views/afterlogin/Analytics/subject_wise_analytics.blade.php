@@ -26,7 +26,7 @@
                                         <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                         <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
                                         <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                        <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                        <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
                                     </div>
                                 </div>
                             </div>

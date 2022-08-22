@@ -49,7 +49,7 @@
                                                                     <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
                                                                     <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
                                                                     <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                    <div class="markstrend" onclick="show('Live', 'Live')">Live </div>
+                                                                    <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -265,7 +265,7 @@
                                                 </div>
                                                 <div class="chartspent bargraph_scroll">
                                                     <div class="graph_padd bargraph_size">
-                                                        <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                        <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small> </span>
                                                         <canvas id="timeSpent_Graph"></canvas>
                                                     </div>
                                                 </div>
