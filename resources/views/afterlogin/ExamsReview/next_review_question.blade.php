@@ -126,7 +126,7 @@ $question_type = "Numerical";
 
                                     </div>
                                 </div>
-                                <div class="questionright d-flex align-items-center justify-content-between mt-2">
+                                <div class="questionright d-flex align-items-center justify-content-between mt-4 mb-2">
                                     <h5>{{$accuracy}}%</h5>
                                     <h6>of the people got this question right</h6>
                                 </div>
