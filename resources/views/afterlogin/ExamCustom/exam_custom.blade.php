@@ -1,13 +1,18 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
+<style>
+    .activeFilter {
+        color: #56b663 !important;
+    }
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="spinnerblock">
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-    <span class="sr-only">Loading...</span>
+        <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div class="main-wrapper exam-wrapperBg">    
+<div class="main-wrapper exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
     <section class="content-wrapper exam-wrapperpadding TestseriesAttempt22">
@@ -44,7 +49,7 @@
    </div>
    <div class="progress"></div>
 </div> -->
-<!--<button class="toast-btn" onclick="toastFunction()">toast</button>        -->
+                        <!--<button class="toast-btn" onclick="toastFunction()">toast</button>        -->
                         <!-- Tab panes -->
                         <div class="tab-content bg-white exam_tabdata">
                             <div id="qq1" class=" tab-pane active">
@@ -81,10 +86,10 @@
                                             </svg>
                                         </a>
                                         <ul class="dropdown-menu filterdropdown">
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z Order</a></li>
-                                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A Order</a></li>
+                                            <li><a class="dropdown-item filterCha_{{$sub->id}} activeFilter" id="prof_asc_{{$sub->id}}" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')"> Low Proficiency</a></li>
+                                            <li><a class="dropdown-item filterCha_{{$sub->id}}" id="prof_desc_{{$sub->id}}" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')"> High Proficiency</a></li>
+                                            <li><a class="dropdown-item filterCha_{{$sub->id}}" id="asc_{{$sub->id}}" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','asc')"> A - Z Order</a></li>
+                                            <li><a class="dropdown-item filterCha_{{$sub->id}}" id="desc_{{$sub->id}}" href="javascript:void(0);" onclick="chapterlist_filter('{{$sub->id}}','desc')"> Z - A Order</a></li>
                                         </ul>
                                         <form method="post" class="fulltestform" action="{{route('custom_exam','instruction')}}">
                                             @csrf
@@ -143,7 +148,7 @@
     </section>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>    
+<script>
     $('.topic_form').attr("style", "display: none !important");
     $('.spinnerblock').hide();
     $(".clearsec").click(function() {
@@ -164,24 +169,23 @@
         $('.topic_form').attr("style", "display: none  !important");
         $('.take-fulltest').attr("style", "display: none  !important");
         $('#' + subject + '_main').attr("style", "display: flex");
-        let is_select=false;
+        let is_select = false;
         $(".topic_" + subject).each(function() {
-        
-        if ($(this).hasClass('topic_selected')) {
-            is_select=true;
-        }
 
-       });
-        if(is_select)
-        {
+            if ($(this).hasClass('topic_selected')) {
+                is_select = true;
+            }
+
+        });
+        if (is_select) {
             $('#' + subject + '_select').attr("style", "display: flex");
         }
-        
+
         //clearTopics();
     }
     $('.chapters-expend').hide();
 
-    function show_topic(chapt_id, sub_id,subject_name) {
+    function show_topic(chapt_id, sub_id, subject_name) {
         $('.spinnerblock').show();
         var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
         if (chapter_ex === true) {
@@ -193,15 +197,14 @@
             $('#collapseTwo_custome_' + chapt_id).addClass('show');
             $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('Hide Topics');
         }
-        var slider_open = $("#topic_section_"+chapt_id).hasClass('show_div_' + chapt_id);
+        var slider_open = $("#topic_section_" + chapt_id).hasClass('show_div_' + chapt_id);
         if (slider_open) {
-            setTimeout(function(){
-                  $('.spinnerblock').hide();
-                }, 1000);
-            
-        }else 
-        {
-          url = "{{ url('ajax_custom_topic/') }}/" + chapt_id+'/'+subject_name;
+            setTimeout(function() {
+                $('.spinnerblock').hide();
+            }, 1000);
+
+        } else {
+            url = "{{ url('ajax_custom_topic/') }}/" + chapt_id + '/' + subject_name;
             $.ajax({
                 url: url,
                 data: {
@@ -248,35 +251,35 @@
 
 
                 }
-            });  
+            });
         }
-        
+
 
     }
 </script>
 <script type="text/javascript">
-$('#attempted').click(function() {
-    url = "{{ url('ajax_exam_result_list') }}/Assessment";
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        beforeSend: function() {
+    $('#attempted').click(function() {
+        url = "{{ url('ajax_exam_result_list') }}/Assessment";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
 
-        },
-        success: function(data) {
-            $("#attempted_tab").show();
-            $('#attempted_tab').html(data.html);
-            $('#testTypeDiv').attr("style", "display: none !important");
-            $('#AssessmentTypeDiv').attr("style", "display: block !important");
-            $('.slot_div').hide();
-        },
-        error: function(data, errorThrown) {
+            },
+            success: function(data) {
+                $("#attempted_tab").show();
+                $('#attempted_tab').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+                $('#AssessmentTypeDiv').attr("style", "display: block !important");
+                $('.slot_div').hide();
+            },
+            error: function(data, errorThrown) {
 
-        }
+            }
+        });
     });
- });
     var aTopics = [];
 
     function addOrRemove(value) {
@@ -359,6 +362,10 @@ $('#attempted').click(function() {
             success: function(result) {
                 $(".chapter_list_" + sub_id).html('');
                 $(".chapter_list_" + sub_id).html(result);
+
+                $('.filterCha_' + sub_id).removeClass('activeFilter');
+                $('#' + filter_type + '_' + sub_id).addClass('activeFilter');
+
             }
         });
     }
@@ -382,7 +389,6 @@ $('#attempted').click(function() {
         });
 
     };
-
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

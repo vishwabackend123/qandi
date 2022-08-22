@@ -96,11 +96,15 @@ class ExamCustomController extends Controller
                 foreach ($subject_list as $row) {
                     $subject_id = $row->id;
                     $aSubject_chapters = $this->getSubjectChapter($subject_id);
+                    $array = collect($aSubject_chapters)->sortBy('chapter_score')->toArray();
+                   
 
-                    $subject_chapter_list[$subject_id] = $aSubject_chapters;
+                    $subject_chapter_list[$subject_id] = $array;
                 }
             }
             $header_title = 'Practice';
+
+          
 
             return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list', 'header_title'));
         } catch (\Exception $e) {
