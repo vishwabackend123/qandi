@@ -49,7 +49,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
-        
+            messageStyle: "none",
             menuSettings: {
                 zoom: "None",
     context: "Browser"
