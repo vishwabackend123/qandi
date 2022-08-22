@@ -44,7 +44,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            {{$rankResponse->test_total_time/60}} min
+                            {{$rankResponse->test_total_time/60}} mins
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: bottom;" class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                    This card represents a combination of your skill, expertise, and knowledge of the topics you have attempted. Build your proficiencies!
                                 </p>
                             </span>
                         </h3>
@@ -142,10 +142,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
-                                    <span class="d-block mb-1 commontext">Overall percentage</span>
+                                    <span class="d-block mb-1 commontext">Overall Percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?number_format($scoreResponse->result_percentage,2):0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small></span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>

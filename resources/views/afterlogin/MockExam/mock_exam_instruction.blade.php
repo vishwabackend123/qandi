@@ -25,13 +25,13 @@ $user_id = isset($userData->id)?$userData->id:'';
 
                     </div>
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
-                    <div class="exam_instruction_text_under_text">Prior to taking the test, please read through all of the instruction sections carefully.</div>
+                    <div class="exam_instruction_text_under_text">Please read the instructions carefully prior to taking the test.</div>
                     <div class="exam_instruction_scrolling">
                         <div>
                             <div class="exam_inst_sec_head"><b>1. <span>General</span></b></div>
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
-                                <li>The total duration of this test is <b>{{$exam_fulltime}} minutes</b></li>
+                                <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
                                 <li>This test is of <b>{{$total_marks}} marks</b></li>
                                 <li>There will be <b>{{$questions_count}} questions</b> in the test</li>
                                 <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
@@ -55,11 +55,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @php $marksArr=json_decode($sec->marking_scheme); @endphp
                             <div class="exam_instruct_section_subject"><b>{{$sec->section_name}}</b></div>
                             <ul class="exam_inst_ul_li">
-                                <li>This section contains {{$sec->total_num_of_ques}} <b>question(s) of {{$sec->question_type_name}}.</b></li>
+                                <li>This section contains {{$sec->total_num_of_ques}} <b>questions of {{$sec->question_type_name}}.</b></li>
                                 @if($sec->total_num_of_ques > $sec->num_of_ques_tobeattempted)
                                 <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted</li>
                                 @endif
-                                <li><b>For {{$sec->section_name}} question</b>, {{$marksArr[0]}} mark(s) is allotted for each correct response, {{$marksArr[1]}} mark(s) will be deducted for each incorrect response, and 0 mark(s) are given for partial answers</li>
+                                <li><b>For {{$sec->section_name}} questions</b>, {{$marksArr[0]}} marks is allotted for each correct response, {{$marksArr[1]}} mark will be deducted for each incorrect response, and 0 mark will be given for unanswered/ Marked for review questions. </li>
                             </ul>
                             @endforeach
                             @endif
@@ -85,11 +85,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant2">{{$exam_fulltime}} Mins</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">No. Of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ Questions</div>
+                                <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
+                                <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">Subject</div>
+                                <div class="exam_inst_col_four_text_contant1">Subjects</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z" />
                                     </g>
                                 </svg>
-                                <div class="exam_inst_all_the_best">All the Best {{ucwords($userData->user_name)}}!</div>
+                                <div class="exam_inst_all_the_best">All the Best , {{ucwords($userData->user_name)}}!</div>
                                 <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
                             </div>
                         </div>

@@ -4,7 +4,7 @@
     <div class="exam-box">
         <div class="exambox-heading d-flex align-items-center justify-content-between pb-3">
             <p title="{{$topic->topic_name}}">{{$topic->topic_name}}</p>
-            <h2>Proficiency : <span>
+            <h2>Proficiency: <span>
                     @if(isset($topic->topic_score))
                     {{round($topic->topic_score)}}%
                     @else

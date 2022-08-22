@@ -106,7 +106,7 @@
             <div class="accordion-body ps-0 pe-0">
                 <div class="mock_test_ques_dure_marks_sub d-flex">
                     <div class="mock_test_ques_content2">
-                        <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                        <div class="mock_test_q_d_m_s_text1">No. of Questions</div>
                         <div class="mock_test_qdms_text2">{{$sche->no_of_question}} MCQ</div>
                     </div>
 
@@ -157,12 +157,12 @@
     @endforeach
     @else
     <div class="text-center">
-        <span class="sub-details">No result history available right now.</span>
+        <span class="sub-details">No result history available right now</span>
     </div>
     @endif
     @if(!empty($result_data))
     <div class="no_data_found text-center">
-        <span class="sub-details" id="error_data">No result history available right now.</span>
+        <span class="sub-details" id="error_data">No result history available right now</span>
     </div>
     @endif
 </div>

@@ -125,7 +125,7 @@
                                  <div class="mock_test_qdms_text2">300</div>
                               </div>
                               <div class="mock_test_sub_content">
-                                 <div class="mock_test_q_d_m_s_text1">Subject</div>
+                                 <div class="mock_test_q_d_m_s_text1">Subjects</div>
                                  <div class="mock_test_qdms_text2">Physics, Chemistry & Mathematics</div>
                               </div>
                            </div>

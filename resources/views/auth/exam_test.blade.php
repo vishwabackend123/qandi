@@ -196,11 +196,11 @@
                                     <div class="ans-in-num">2</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for review</div>
+                                    <div class="ans3">Marked for Review</div>
                                     <div class="ans-in-num">3</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; marked for review</div>
+                                    <div class="ans4">Answered &amp; marked for Review</div>
                                     <div class="ans-in-num">1</div>
                                 </div>
                             </div>

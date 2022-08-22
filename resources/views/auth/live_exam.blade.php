@@ -126,7 +126,7 @@
                               </div>
                            </div>
                            <div>
-                              <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                              <div class="live_exam_upcoming_text">Upcoming Live Tests</div>
                               <div class="row mock_test_ques_dure_marks_sub">
                                  <div class="col live_exam_jee_main_ttext">JEE Mains</div>
                                  <div class="col live_exam_jee_main_date_st_ed_ques">Start Date: <span>22nd Apr 2022</span></div>
@@ -166,7 +166,7 @@
                                        <div class="accordion-body ps-0 pe-0">
                                           <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                              <div class="mock_test_ques_content22">
-                                                <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                <div class="mock_test_qdms_text1">No. of Questions</div>
                                                 <div class="mock_test_qdms_text2">90 MCQ</div>
                                              </div>
                                              <div class="live_exam_diveder_div"></div>

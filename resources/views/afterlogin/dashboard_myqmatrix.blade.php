@@ -161,7 +161,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -190,7 +190,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -219,7 +219,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -248,7 +248,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach

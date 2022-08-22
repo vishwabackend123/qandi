@@ -226,7 +226,7 @@
                                                     <div class="tab-pane fade show active" id="pills-Day1" role="tabpanel" aria-labelledby="pills-Day1-tab">
                                                         <div class="bargraph_scroll">    
                                                             <div class="graph_padd bargraph_size">
-                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small> </span>
                                                                 <canvas id="timeManagementChart"></canvas>
                                                             </div>
                                                         </div>
@@ -234,7 +234,7 @@
                                                     <div class="tab-pane fade" id="pills-Week1" role="tabpanel" aria-labelledby="pills-Week1-tab">
                                                         <div class="bargraph_scroll">    
                                                             <div class="graph_padd bargraph_size">
-                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small> </span>
                                                                 <canvas id="timeManagementChartWeek"></canvas>
                                                             </div>
                                                         </div>
@@ -242,7 +242,7 @@
                                                     <div class="tab-pane fade" id="pills-Month1" role="tabpanel" aria-labelledby="pills-Month1-tab">
                                                         <div class="bargraph_scroll">    
                                                             <div class="graph_padd bargraph_size">
-                                                                <span class="yaxis_label yaxis_label_2"><small> Average time taken (sec) </small> </span>
+                                                                <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small> </span>
                                                                 <canvas id="timeManagementChartMonth"></canvas>
                                                             </div>
                                                         </div>

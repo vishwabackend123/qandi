@@ -309,7 +309,7 @@
                                 </p>
                             </span>
                         </h3>
-                        <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                        <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered.</p>
                         <div class="row">
                             <div class="col-sm-6 mb-3">
                                 <h5 class="mb-0">Maths</h5>

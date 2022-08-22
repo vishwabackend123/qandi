@@ -291,9 +291,9 @@ $question_type = "Numerical";
                                 </label>
                                 <ul class="dropdown-menu filterdropdown">
                                     <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')">All</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Correct</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wrong</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Not Attempted</a></li>
                                 </ul>
                             </div>
 

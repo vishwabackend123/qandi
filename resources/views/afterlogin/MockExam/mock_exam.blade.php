@@ -129,13 +129,13 @@ $question_type = "Numerical";
                                         </div>
                                         <div class="timeCounter">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
-                                                <span id="avg_text" class="avg-time">Average Time :</span>
+                                                <span id="avg_text" class="avg-time">Average Time:</span>
                                                 <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                     <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                     <div id="percentBar_{{$activeq_id}}"></div>
                                                 </div>
                                                 <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
-                                                    <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                                    <span>Time taken: </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
                                                 </div>
                                             </div>
                                             <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
@@ -324,11 +324,11 @@ $question_type = "Numerical";
                                     <div class="ans-in-num" id="unans_cnt">{{$exam_ques_count}}</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for review</div>
+                                    <div class="ans3">Marked for Review</div>
                                     <div class="ans-in-num" id="rev_cnt">0</div>
                                 </div>
                                 <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; marked for review</div>
+                                    <div class="ans4">Answered &amp; marked for Review</div>
                                     <div class="ans-in-num" id="ans_rev_cnt">0</div>
                                 </div>
                             </div>
@@ -462,11 +462,11 @@ $question_type = "Numerical";
                         <div class="ans-in-num" id="unans_cnt_2">{{$exam_ques_count}}</div>
                     </div>
                     <div class="exam-ans-sec">
-                        <div class="ans3">Marked for review</div>
+                        <div class="ans3">Marked for Review</div>
                         <div class="ans-in-num" id="rev_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec">
-                        <div class="ans4">Answered & marked for review</div>
+                        <div class="ans4">Answered & marked for Review</div>
                         <div class="ans-in-num" id="ans_rev_cnt_2">0</div>
                     </div>
                     <div class="exam_text_content">

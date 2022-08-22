@@ -88,7 +88,7 @@
                         
                     </div>
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
-                    <div class="exam_instruction_text_under_text">Prior to taking the test, please read through all of the instruction sections carefully.</div>
+                    <div class="exam_instruction_text_under_text">Please read the instructions carefully prior to taking the test.</div>
                     <div class="exam_instruction_scrolling">
                         <div>
                             <div class="exam_inst_sec_head"><b>1. <span>General</span></b></div>
@@ -97,7 +97,7 @@
                                 <li>The total duration of this test is <b>180 minutes</b></li>
                                 <li>This test is of <b>300 marks</b></li>
                                 <li>There will be <b>90 questions</b> in the test</li>
-                                <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
+                                <!-- <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li> -->
                             </ul>
                         </div>
                         <div>
@@ -178,8 +178,8 @@
                                 <div class="exam_inst_col_four_text_contant2">180 Mins</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">No. Of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">90 MCQ Questions</div>
+                                <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
+                                <div class="exam_inst_col_four_text_contant2">90 MCQ</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>
