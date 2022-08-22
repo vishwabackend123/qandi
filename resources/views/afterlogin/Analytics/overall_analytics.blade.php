@@ -88,7 +88,7 @@
                                                     </div>
                                                     <div class="commonSubjectLeg">
                                                         <span class="bar graybar"></span>
-                                                        <label class="text">Unattempted questions</label>
+                                                        <label class="text">Not Attempted questions</label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
