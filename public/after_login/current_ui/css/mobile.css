@@ -164,7 +164,7 @@
     .questionright {margin-bottom: 10px !important;}
     .first_screen {padding: 13px !important;}
     .box-border {padding-top: 0px;margin-bottom: 10px;}
-    .questionright {padding: 4px 14px;}
+    .questionright {padding: 4px 14px; margin-top: 10px !important;}
     .questionright h5 {font-size: 18px;}
     .attemp_box a , .sub_att_1    {font-size: 12px;}
     
