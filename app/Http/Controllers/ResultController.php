@@ -586,7 +586,7 @@ class ResultController extends Controller
             $id = explode(',', $value->subject_id_list);
             if ($id) {
                 $filtered_subject = $cSubjects->whereIn('id', $id)->all();
-                $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                $result_data[$key]->subject_name = implode(', ', array_column($filtered_subject, 'subject_name'));
             } else {
                 $result_data[$key]->subject_name = "";
             }
@@ -600,10 +600,13 @@ class ResultController extends Controller
             $year = date('Y', strtotime($value->created_at));
             $years_list[] = $year;
         }
+        $subject_count = count($filtered_subject);
+
         if ($exam_type == 'PreviousYear') {
-            $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list'))->render();
+            $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list', 'subject_count'))->render();
         } else {
-            $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();
+
+            $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects', 'subject_count'))->render();
         }
 
 

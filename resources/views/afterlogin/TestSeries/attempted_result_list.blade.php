@@ -134,7 +134,7 @@
                     </div>
                     <div class="live_exam_diveder_div"></div>
                     <div class="mock_test_sub_content">
-                        <div class="mock_test_q_d_m_s_text1">Subject</div>
+                        <div class="mock_test_q_d_m_s_text1">{{($subject_count>1)?'Subjects':'Subject'}}</div>
                         <div class="mock_test_qdms_text2">{{$sche->subject_name}}</div>
                     </div>
                     <div class="live_exam_diveder_div slot_div"></div>

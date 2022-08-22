@@ -96,15 +96,15 @@ class ExamCustomController extends Controller
                 foreach ($subject_list as $row) {
                     $subject_id = $row->id;
                     $aSubject_chapters = $this->getSubjectChapter($subject_id);
-                    $array = collect($aSubject_chapters)->sortBy('chapter_score')->toArray();
-                   
+                    $array = collect($aSubject_chapters)->sortBy([['chapter_score', 'asc'], ['chapter_name', 'asc']])->toArray();
+
 
                     $subject_chapter_list[$subject_id] = $array;
                 }
             }
             $header_title = 'Practice';
 
-          
+
 
             return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list', 'header_title'));
         } catch (\Exception $e) {
@@ -964,10 +964,10 @@ class ExamCustomController extends Controller
                 $sorted = $collection->sortBy([['chapter_name', 'desc']]);
                 $chapters = $sorted->values()->all();
             } elseif ($filter_by == 'prof_asc') {
-                $sorted = $collection->sortBy([['chapter_score', 'asc']]);
+                $sorted = $collection->sortBy([['chapter_score', 'asc'], ['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             } elseif ($filter_by == 'prof_desc') {
-                $sorted = $collection->sortBy([['chapter_score', 'desc']]);
+                $sorted = $collection->sortBy([['chapter_score', 'desc'], ['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             } else {
                 $sorted = $collection->sortBy([['chapter_name', 'asc']]);
