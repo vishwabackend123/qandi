@@ -126,7 +126,7 @@
                               </div>
                            </div>
                            <div>
-                              <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                              <div class="live_exam_upcoming_text">Upcoming Live Tests</div>
                               <div class="row mock_test_ques_dure_marks_sub">
                                  <div class="col live_exam_jee_main_ttext">JEE Mains</div>
                                  <div class="col live_exam_jee_main_date_st_ed_ques">Start Date: <span>22nd Apr 2022</span></div>
