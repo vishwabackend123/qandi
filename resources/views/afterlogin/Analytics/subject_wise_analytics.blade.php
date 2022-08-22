@@ -48,7 +48,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Know your skills, expertise, and proficiency in the topics and chapters you have attempted
+                                    Know your skills, expertise, and proficiency in the topics and chapters you have attempted.
                                 </p>
                             </span>
                         </h3>
@@ -419,7 +419,7 @@
                     </div>
                     <div class="chartspent bargraph_scroll">
                         <div class="graph_padd bargraph_size">
-                            <span class="yaxis_label  yaxis_label_2"><small> Accuracy percentage </small> </span>
+                            <span class="yaxis_label  yaxis_label_2"><small> Accuracy Percentage </small> </span>
                             <canvas id="accuracy_graph2"></canvas>
                         </div>
                     </div>
