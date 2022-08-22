@@ -31,8 +31,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
-                                <li>This test is of <b>{{$total_marks}} marks</b></li>
-                                <li>There will be <b>{{$questions_count}} questions</b> in the test</li>
+                                <li>This test is of <b>{{$total_marks}} marks.</b></li>
+                                <li>There will be <b>{{$questions_count}} questions</b> in the test.</li>
                                 <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li>
                             </ul>
                         </div>
