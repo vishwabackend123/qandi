@@ -95,7 +95,7 @@
                                                 <div class="accordion-body ps-0 pe-0">
                                                     <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                                         <div class="mock_test_ques_content22">
-                                                            <div class="mock_test_qdms_text1">No. Of Questions</div>
+                                                            <div class="mock_test_qdms_text1">No. of Questions</div>
                                                             <div class="mock_test_qdms_text2">{{$sche->total_ques}} MCQ</div>
                                                         </div>
                                                         <div class="live_exam_diveder_div"></div>

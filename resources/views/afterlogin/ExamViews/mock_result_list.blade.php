@@ -55,7 +55,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="d-flex justify-content-between flex-wrap">
                                         <div class="mb-2">
-                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. of Questions</span>
                                             <label style=" font-weight: 600;color: #231f20;">10 Questions</label>
                                         </div>
                                         <div class="mb-2">

@@ -304,8 +304,8 @@
                                 <ul class="dropdown-menu filterdropdown">
                                     <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);"> A - Z order</a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);"> Z - A order</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> A - Z Order</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);"> Z - A Order</a></li>
                                 </ul>
 
 
