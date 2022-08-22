@@ -142,7 +142,7 @@ $userData = Session::get('user_data');
                     </div>
                 <div class="inst">
                     <p>By clicking "Make Payment" you authorise your payment method to be charged in accordance with your subscription plan. For more details</p>
-                    <a href="https://qanditoday.com/terms-of-use/" target="_blank">Terms of Service</a>
+                    <a href="{{env('CMS_URL')}}terms-of-use/" target="_blank">Terms of Service</a>
                 </div>
                 <div class="securedpayment hideondesktop">
                     <div class="secured">

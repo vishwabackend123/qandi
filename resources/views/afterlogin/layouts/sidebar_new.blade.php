@@ -170,7 +170,7 @@ $userData = Session::get('user_data');
 <aside>
     <span class="sidebar-logo d-inline-block">
         <!-- <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"> -->
-        <a href="https://www.qanditoday.com/" target="_blank">
+        <a href="{{env('CMS_URL')}}" target="_blank">
         <svg width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M27.756.894H.926V28h26.83V.894zM54.584 28.001h-26.83v27.105h26.83V28.001z" fill="#38D430" />
             <path d="M54.584.894h-26.83V28h26.83V.894z" fill="#00AB16" />
