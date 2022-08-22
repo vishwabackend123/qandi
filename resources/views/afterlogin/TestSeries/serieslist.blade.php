@@ -89,7 +89,7 @@
                                                         <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
                                                         <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
                                                         <input type="hidden" name="exam_mode" value="Live" />
-                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -101,11 +101,11 @@
                                         @endforeach
                                         @else
                                         <div class="row text-center p-4">
-                                            <h5>No series avialable.</h5>
+                                            <h5>No series available</h5>
                                         </div>
                                         @endif
                                         @if(!empty($live_series) && $i <= 0) <div class="row text-center p-4">
-                                            <h5>No series avialable.</h5>
+                                            <h5>No series available</h5>
                                     </div>
                                     @endif
                                 </div>
@@ -197,7 +197,7 @@ $(document).on('click', '.open_attemp', function() {
         $('.no_data_found').hide();
     } else {
         $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
+        $('#error_data').text('No result history available right now');
     }
 });
 $(document).on('click', '.live_attemp', function() {
@@ -211,7 +211,7 @@ $(document).on('click', '.live_attemp', function() {
         $('.no_data_found').hide();
     } else {
         $('.no_data_found').show();
-        $('#error_data').text('No result history available right now.');
+        $('#error_data').text('No result history available right now');
     }
 });
 

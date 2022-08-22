@@ -12,7 +12,7 @@
             </p>
         </span>
     </h3>
-    <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+    <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered.</p>
     <div class="row">
         @if(isset($response->subject_wise_result))
         @foreach($response->subject_wise_result as $subData)
