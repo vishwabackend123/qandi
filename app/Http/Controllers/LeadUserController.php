@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
+use Aws\SecretsManager\SecretsManagerClient; 
+use Aws\Exception\AwsException;
 
 class LeadUserController extends Controller
 {
@@ -158,7 +160,18 @@ class LeadUserController extends Controller
 	}
 	public function overallAnalyticsNew()
 	{
-		return view('auth.overall_analytics_new');
+		 $client = new SecretsManagerClient([
+		    'profile' => 'default',
+		    'version' => '2017-10-17',
+		    'region' => 'ap-south-1'
+		]);
+
+	$secretName = 'dev/secrets';
+    $result = $client->getSecretValue([
+        'SecretId' => $secretName,
+    ]);
+    print_r($result);die;
+		//return view('auth.overall_analytics_new');
 	}
 	public function exportTestAnalytics()
 	{
