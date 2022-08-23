@@ -298,6 +298,7 @@
             $('#editsignnumber').removeClass("d-block");
             $('#editsignnumber').addClass("d-none");
             $('#otp_box input[name="register_otp[]"').val('');
+            $('.otp').attr('style', 'border: 0.5px solid #d0d5dd !important');
             clearTimeout(timerId);
             $('#wait_otp_div').text('00:59');
             $("#errlog_otp").html('')
