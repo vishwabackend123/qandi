@@ -311,3 +311,5 @@ Route::any('/previousyear_exam', [App\Http\Controllers\LeadUserController::class
 Route::any('/overall_analytics_new', [App\Http\Controllers\LeadUserController::class, 'overallAnalyticsNew']);
 Route::any('/export_test_analytics', [App\Http\Controllers\LeadUserController::class, 'exportTestAnalytics']);
 Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
+Route::any('/overall_progress_graph/{exam_type}', [App\Http\Controllers\AnalyticsController::class, 'overallProgressGraph'])->name('overall_progress_graph')->middleware('auth', 'menu');
+Route::any('/subject_progress_graph/{sub_id}/{exam_type}', [App\Http\Controllers\AnalyticsController::class, 'subjectProgressGraph'])->name('overall_progress_graph')->middleware('auth', 'menu');

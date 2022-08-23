@@ -41,15 +41,15 @@
                                                         </span>
                                                     </h3>
                                                     <div class="dropbox mb-5">
-                                                        <div class="customDropdown1 dropdown">
-                                                            <input class="text-box markstrend" type="text" placeholder="All Test" readonly>
+                                                        <div class="customDropdown1 overall_dropdown dropdown">
+                                                            <input class="text-box markstrend" type="text" placeholder="Practice Test" readonly>
                                                             <div class="options">
                                                                 <div style=" overflow-y: auto;  height: 145px;">
-                                                                    <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                                    <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                                    <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                                    <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                    <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                                     <div class="markstrend" onclick="showProgress('Assessment','Practice Test')">Practice Test</div>
+                                                                    <div class="markstrend" onclick="showProgress('Mocktest','Mock Test')">Mock Test</div>
+                                                                    <div class="markstrend" onclick="showProgress('Test-Series','Test Series')">Test Series</div>
+                                                                    <div class="markstrend" onclick="showProgress('Live','Live Test')">Live Test</div>
+                                                                     <div class="markstrend" onclick="showProgress('PreviousYear','Previous Year')">Previous Year</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1091,11 +1091,24 @@ $(document).on('click', '.chapter_topic', function(event) {
 });
 
 /*******dropdown******** */
-let dropdown = document.querySelector(".customDropdown1")
+var dropdown = document.querySelector(".overall_dropdown")
         dropdown.onclick = function() {
             dropdown.classList.toggle("active1")
         }
 /*******dropdown-end******** */
+function showProgress(exam_type,value) {
+   document.querySelector(".text-box").value = value;
+    url = "{{ url('overall_progress_graph/') }}/" + exam_type;
+            $.ajax({
+                type: 'GET', 
+                url: url, 
+                dataType: "json",
+                success: function(response) {
+                    myChart.data.datasets[0].data = [response.previous_score, response.current_score]; // or you can iterate for multiple 
+                    myChart.update();
+                }
+            });
+}
 
 </script>
 @include('afterlogin.layouts.footer_new')
