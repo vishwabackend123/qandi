@@ -18,15 +18,15 @@
                             </span>
                         </h3>
                         <div class="dropbox mb-5">
-                            <div class="customDropdown1 dropdown" id="subjectdeopdown">
-                                <input class="text-box subject_text_box markstrend" type="text" placeholder="Practice Test" readonly>
+                            <div class="customDropdown1 dropdown" id ="subjectdeopdown">
+                                <input class="text-box markstrend" type="text" placeholder="All Test" readonly>
                                 <div class="options">
                                     <div style=" overflow-y: auto;  height: 145px;">
-                                        <div class="active markstrend" onclick="showSubjectProgress('Assessment','Practice Test')">Practice Test</div>
-                                        <div class="markstrend" onclick="showSubjectProgress('Mocktest','Mock Test')">Mock Test</div>
-                                        <div class="markstrend" onclick="showSubjectProgress('Test-Series','Test Series')">Test Series</div>
-                                        <div class="markstrend" onclick="showSubjectProgress('Live','Live Test')">Live Test</div>
-                                        <div class="markstrend" onclick="showSubjectProgress('PreviousYear','Previous Year')">Previous Year</div>
+                                        <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                        <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                        <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                        <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                        <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +283,7 @@
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartDay2"></canvas>
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartWeek2"></canvas>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartMonth2"></canvas>
                                     </div>
                                 </div>
@@ -322,7 +322,7 @@
                         </div>
                         <div class="chartspent  bargraph_scroll"> 
                             <div class="graph_padd bargraph_size">  
-                                <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
+                                <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
                                 <canvas id="timeSpent_Graph2"></canvas>
                             </div>
                         </div>
@@ -1119,24 +1119,10 @@ $(document).on('click', function(e) {
 
 });
 /*******dropdown******** */
-var dropdownsubject = document.querySelector("#subjectdeopdown")
+let dropdownsubject = document.querySelector("#subjectdeopdown")
+
     dropdownsubject.onclick = function() {
     dropdownsubject.classList.toggle("active1")
-}
-/*******dropdown-end******** */
-function showSubjectProgress(exam_type, value) {
-    var sub_id = '<?php echo $sub_id; ?>';
-    document.querySelector(".subject_text_box").value = value;
-    url = "{{ url('subject_progress_graph/') }}/" + sub_id + '/' + exam_type;
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: "json",
-        success: function(response) {
-            myChartmath.data.datasets[0].data = [response.preSocre, response.currSocre]; // or you can iterate for multiple 
-            myChartmath.update();
         }
-    });
-}
-
+/*******dropdown-end******** */
 </script>
