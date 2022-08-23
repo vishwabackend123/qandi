@@ -182,7 +182,7 @@ $userData = Session::get('user_data');
                             @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
                             <div class="task1 task2 ">
                                 <p><span>Task {{$wkey+1}} </span></p>
-                                <h3>Weak topic Test</h3>
+                                <h3>Weak Topic Test</h3>
                                 <p>Take this test to work on your weak Topics.</p>
                                 <div class="btn-sec">
                                     <div class="qust-sec">
