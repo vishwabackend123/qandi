@@ -177,7 +177,7 @@
                     $('#mobile-input-btn').addClass("disabled");
                 }
             });
-            $('.otp_num').keyup(function(e) {
+            $('.otp_num').on("change keyup paste contextmenu input", function(e) {
                 var opt_one = $('#opt_one').val();
                 var mobile_num = $('#mobile_num').val();
                 var opt_two = $('#opt_two').val();
