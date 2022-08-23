@@ -110,7 +110,7 @@
                                                         </div>
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_sub_content22">
-                                                            <div class="mock_test_qdms_text1">Subject</div>
+                                                            <div class="mock_test_qdms_text1">Subjects</div>
                                                             @php
                                                             $subject_list = implode(',',array_column($sche->subjects, 'subject_name'));
                                                             @endphp
