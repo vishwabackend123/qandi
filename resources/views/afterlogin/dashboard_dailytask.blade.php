@@ -183,7 +183,7 @@ $userData = Session::get('user_data');
                             <div class="task1 task2 ">
                                 <p><span>Task {{$wkey+1}} </span></p>
                                 <h3>Weak Topic Test</h3>
-                                <p>Take this test to work on your weak Topics.</p>
+                                <p>Take this test to work on your weak topics.</p>
                                 <div class="btn-sec">
                                     <div class="qust-sec">
                                         <span>Questions</span>
