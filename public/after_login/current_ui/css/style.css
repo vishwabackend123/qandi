@@ -7280,8 +7280,11 @@ label.filter {
   overflow: hidden;
   transform: translateX(calc(100% + 30px));
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+  z-index: 999;
 }
-
+.wihoutlogintoast .toastdata{
+  top: 12px;
+}
 .toastdata.active{
   transform: translateX(0);
 }
