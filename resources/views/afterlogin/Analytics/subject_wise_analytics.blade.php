@@ -176,7 +176,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>You ability to execute or implement the information provided.</h5>
+                                                <h5>Your ability to execute or implement the information provided.</h5>
                                                 <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions solved are of this skill.  
                                                 <!-- <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a> -->
                                             </p>
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5> You ability to recognize and recall factual information and basic concepts. </h5>
+                                                <h5> Your ability to recognize and recall factual information and basic concepts. </h5>
 
                                                 <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions solved are of this skill.    
                                                 <!-- <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a> -->
@@ -283,7 +283,7 @@
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
                                         <canvas id="timeManagementChartDay2"></canvas>
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
                                         <canvas id="timeManagementChartWeek2"></canvas>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
                                         <canvas id="timeManagementChartMonth2"></canvas>
                                     </div>
                                 </div>
@@ -322,7 +322,7 @@
                         </div>
                         <div class="chartspent  bargraph_scroll"> 
                             <div class="graph_padd bargraph_size">  
-                                <span class="yaxis_label yaxis_label_2"><small> Average  time taken (sec) </small> </span>
+                                <span class="yaxis_label yaxis_label_2"><small> Average  Time taken (sec) </small> </span>
                                 <canvas id="timeSpent_Graph2"></canvas>
                             </div>
                         </div>
@@ -1119,8 +1119,6 @@ $(document).on('click', function(e) {
 
 });
 /*******dropdown******** */
-
-/*******dropdown*******/
 var dropdownsubject = document.querySelector("#subjectdeopdown")
     dropdownsubject.onclick = function() {
     dropdownsubject.classList.toggle("active1")
