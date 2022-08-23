@@ -1,6 +1,22 @@
 <?php
 
 use Illuminate\Support\Str;
+use Aws\SecretsManager\SecretsManagerClient;
+use Aws\Exception\AwsException;
+
+$client = new SecretsManagerClient([
+            'version' => '2017-10-17',
+            'region' => 'ap-south-1'
+        ]);
+
+$secretName = 'rds-db-credentials/cluster-22MKVQMGYNP4BOGCM2UUIBH34A/admin';
+
+$result = $client->getSecretValue([
+    'SecretId' => $secretName,
+]);
+if (isset($result['SecretString']) && !empty($result['SecretString'])) {
+    $db_data=json_decode($result['SecretString'], true);
+};
 
 return [
 
@@ -46,11 +62,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
+            'host' => env('DB_HOST', $db_data['host']),
+            'port' => env('DB_PORT', $db_data['port']),
             'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('DB_USERNAME', $db_data['username']),
+            'password' => env('DB_PASSWORD', $db_data['password']),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
