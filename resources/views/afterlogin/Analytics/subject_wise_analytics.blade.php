@@ -769,16 +769,16 @@ var dataaccuracy = {
     labels: <?php print_r($day); ?>,
     datasets: [{
             label: 'Class Average',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($classAcc); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Student Average',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($stuAcc); ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -1024,16 +1024,16 @@ var datatm2 = {
     labels: <?php print_r($days); ?>,
     datasets: [{
             label: 'Class Average',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($classAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Student Average',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($stuAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4

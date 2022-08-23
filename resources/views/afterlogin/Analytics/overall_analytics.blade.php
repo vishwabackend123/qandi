@@ -450,17 +450,17 @@ const myChart = new Chart(ctx, {
 const data1 = {
     labels: <?php print_r($days); ?>,
     datasets: [{
-            label: 'Ideal Pace',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            label: 'Class Average',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($classAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
-            label: 'Your Pace',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
+            label: 'Student Average',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($stuAccuracy); ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -518,16 +518,16 @@ const data2 = {
     labels: <?php print_r($day); ?>,
     datasets: [{
             label: 'Class Average',
-            backgroundColor: '#56b663',
-            borderColor: '#56b663',
+            backgroundColor: '#7db9ff',
+            borderColor: '#7db9ff',
             data: <?php print_r($classAcc); ?>,
             borderwidth: 0.6,
             tension: 0.4
         },
         {
             label: 'Student Average',
-            backgroundColor: '#7db9ff',
-            borderColor: '#7db9ff',
+            backgroundColor: '#56b663',
+            borderColor: '#56b663',
             data: <?php print_r($stuAcc);  ?>,
             borderwidth: 0.6,
             tension: 0.4
@@ -583,7 +583,7 @@ const myChart2 = new Chart(
 var data3 = {
     labels: <?php print_r($date1); ?>,
     datasets: [{
-            label: 'Ideal Pace',
+            label: 'Correct Answers',
             backgroundColor: '#34d399',
             borderColor: '#34d399',
             data: <?php print_r($correctAns1); ?>,
@@ -591,7 +591,7 @@ var data3 = {
             tension: 0.4
         },
         {
-            label: 'Your Pace',
+            label: 'Incorrect Answers',
             backgroundColor: '#f7758f',
             borderColor: '#f7758f',
             data: <?php print_r($incorrectAns1); ?>,
@@ -646,7 +646,7 @@ var myChart3 = new Chart(
 var data4 = {
     labels: <?php print_r($date2); ?>,
     datasets: [{
-            label: 'Ideal Pace',
+            label: 'Correct Answers',
             backgroundColor: '#34d399',
             borderColor: '#34d399',
             data: <?php print_r($correctAns2); ?>,
@@ -654,7 +654,7 @@ var data4 = {
             tension: 0.4
         },
         {
-            label: 'Your Pace',
+            label: 'Incorrect Answers',
             backgroundColor: '#f7758f',
             borderColor: '#f7758f',
             data: <?php print_r($incorrectAns2); ?>,
@@ -709,7 +709,7 @@ var myChart4 = new Chart(
 const data5 = {
     labels: <?php print_r($date3); ?>,
     datasets: [{
-            label: 'Ideal Pace',
+            label: 'Correct Answers',
             backgroundColor: '#34d399',
             borderColor: '#34d399',
             data: <?php print_r($correctAns3); ?>,
@@ -717,7 +717,7 @@ const data5 = {
             tension: 0.4
         },
         {
-            label: 'Your Pace',
+            label: 'Incorrect Answers',
             backgroundColor: '#f7758f',
             borderColor: '#f7758f',
             data: <?php print_r($incorrectAns3); ?>,

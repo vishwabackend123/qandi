@@ -218,11 +218,11 @@ class HomeController extends Controller
             $ideal = [];
             $your_place = [];
             $progress_cat = [];
-            if (Redis::exists('ideal' . $user_id)) {
+            /*if (Redis::exists('ideal' . $user_id)) {
                 $ideal = json_decode(Redis::get('ideal' . $user_id), true);
                 $your_place = json_decode(Redis::get('your_place' . $user_id), true);
                 $progress_cat = json_decode(Redis::get('progress_cat' . $user_id), true);
-            } else {
+            } else {*/
                 $curl = curl_init();
                 $api_URL = env('API_URL');
                 $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
@@ -264,7 +264,7 @@ class HomeController extends Controller
                     Redis::set('your_place' . $user_id, json_encode($your_place));
                     Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
                 }
-            }
+            // }
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
