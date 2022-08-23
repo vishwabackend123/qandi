@@ -4755,6 +4755,7 @@ justify-content: space-between;}
 .activeFilter {
     color: #56b663 !important;
 }   
+.select2-container--open .select2-dropdown--below{padding-left:0px!important;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
