@@ -112,7 +112,7 @@
                                                         <div class="mock_test_sub_content22">
                                                             <div class="mock_test_qdms_text1">Subjects</div>
                                                             @php
-                                                            $subject_list = implode(',',array_column($sche->subjects, 'subject_name'));
+                                                            $subject_list = implode(', ',array_column($sche->subjects, 'subject_name'));
                                                             @endphp
                                                             <div class="mock_test_qdms_text2">{{$subject_list}}</div>
                                                         </div>

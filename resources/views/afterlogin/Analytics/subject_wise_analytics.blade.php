@@ -1120,7 +1120,7 @@ $(document).on('click', function(e) {
 });
 /*******dropdown******** */
 let dropdownsubject = document.querySelector("#subjectdeopdown")
-    
+
     dropdownsubject.onclick = function() {
     dropdownsubject.classList.toggle("active1")
         }
