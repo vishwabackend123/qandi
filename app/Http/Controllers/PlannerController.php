@@ -78,7 +78,7 @@ class PlannerController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -127,8 +127,8 @@ class PlannerController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
-                    ),
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -186,7 +186,7 @@ class PlannerController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -274,7 +274,7 @@ class PlannerController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
 
@@ -490,7 +490,7 @@ class PlannerController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -614,8 +614,6 @@ class PlannerController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
                 return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
-
-                /* return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'eType')); */
             }
 
 
@@ -658,8 +656,8 @@ class PlannerController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
-                    ),
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 

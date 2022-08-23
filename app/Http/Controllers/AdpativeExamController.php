@@ -563,6 +563,7 @@ class AdpativeExamController extends Controller
             } else {
                 $option_data[] = '';
             }
+            $subCounts = count($aTargets);
             $tagrets = implode(', ', $aTargets);
 
             $test_type = 'Assessment';
@@ -598,7 +599,7 @@ class AdpativeExamController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
 
                 /*  return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime')); */
             }

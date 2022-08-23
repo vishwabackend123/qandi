@@ -254,7 +254,9 @@ class LiveExamController extends Controller
             } else {
                 $option_data[] = '';
             }
+            $subCounts = count($aTargets);
             $tagrets = implode(', ', $aTargets);
+
 
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
@@ -279,7 +281,7 @@ class LiveExamController extends Controller
                 $exam_name = $responsedata->exam_name;
                 $test_type = 'Live';
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type', 'subCounts'));
             }
 
 

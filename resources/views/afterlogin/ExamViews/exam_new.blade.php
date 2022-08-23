@@ -871,7 +871,7 @@ $question_type = "Numerical";
             seconds = `0${seconds}`;
         }
 
-        return `${minutes} min ${seconds} sec`;
+        return `${minutes} mins ${seconds} sec`;
     }
 
     function calculateTimeFraction() {

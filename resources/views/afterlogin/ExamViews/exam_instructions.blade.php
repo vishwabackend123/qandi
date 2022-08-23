@@ -79,7 +79,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">Subject</div>
+                                <div class="exam_inst_col_four_text_contant1">{{(isset($subCounts) && $subCounts>1)?'Subjects':'Subject'}}</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
                             </div>
                         </div>
