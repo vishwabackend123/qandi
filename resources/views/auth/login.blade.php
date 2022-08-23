@@ -166,10 +166,10 @@
             $("#studentlogin").submit(function(e) {
                 e.preventDefault();
             });
-            $('#mobile_num').keyup(function() {
+            $('#mobile_num').on("change keyup paste contextmenu input", function(evt) {
                 var value = this.value;
                 var length = value.length;
-                if (value != '') {
+                if (value != '' && length == 10) {
                     $('#mobile-input-btn').removeAttr("disabled");
                     $('#mobile-input-btn').removeClass("disabled");
                 } else {
