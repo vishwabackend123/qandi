@@ -9,6 +9,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
 $full_body_attempt = Session::get('full_body_attempt');
 
 @endphp
+<div class="wihoutlogintoast">
  <div class="toastdata">
         <div class="toast-content">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +29,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         </div>
         <div class="progress"></div>
     </div>
+</div>
 <section class="subscriptionsPage d-flex fullbody_scan_page">
     <div class="subscriptionsLeftpannel">
         <a href="{{env('CMS_URL')}}" target="_blank"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
