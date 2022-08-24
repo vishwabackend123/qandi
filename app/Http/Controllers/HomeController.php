@@ -1284,8 +1284,10 @@ class HomeController extends Controller
         $aResponse = json_decode($response_json);
 
         $success = isset($aResponse->success) ? $aResponse->success : false;
-        $state_list = isset($aResponse->response) ? $aResponse->response : false;
+        $state_list = isset($aResponse->response) ? $aResponse->response : [];
+
         sort($state_list, SORT_NATURAL | SORT_FLAG_CASE);
+
         return view('afterlogin.profile', compact('state_list'));
     }
     public function updateStudentStage($user_id, $stand_value)
