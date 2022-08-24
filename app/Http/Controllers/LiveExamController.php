@@ -67,7 +67,7 @@ class LiveExamController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -161,7 +161,7 @@ class LiveExamController extends Controller
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
                     CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -254,7 +254,9 @@ class LiveExamController extends Controller
             } else {
                 $option_data[] = '';
             }
+            $subCounts = count($aTargets);
             $tagrets = implode(', ', $aTargets);
+
 
             if (isset($inst) && $inst == 'instruction') {
                 /* set redis for save exam question response */
@@ -277,7 +279,9 @@ class LiveExamController extends Controller
                 $total_marks = $questions_count * 4;
                 $header_title = "Live Exam";
                 $exam_name = $responsedata->exam_name;
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+                $test_type = 'Live';
+
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type', 'subCounts'));
             }
 
 
@@ -426,7 +430,7 @@ class LiveExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);

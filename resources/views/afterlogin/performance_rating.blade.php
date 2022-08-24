@@ -7,7 +7,8 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id) ?$userData->lead_exam_id:'';
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
- <div class="toastdata">
+<div class="wihoutlogintoast">
+  <div class="toastdata">
         <div class="toast-content">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
@@ -26,6 +27,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         </div>
         <div class="progress"></div>
     </div>
+</div>
 <section class="subscriptionsPage d-flex">
     <div class="subscriptionsLeftpannel">
        <a href="{{env('CMS_URL')}}" target="_blank"> <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>

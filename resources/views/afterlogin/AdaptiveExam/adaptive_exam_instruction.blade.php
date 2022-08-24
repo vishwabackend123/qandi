@@ -31,9 +31,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="line-693"></div>
                             <ul class="exam_inst_ul_li">
                                 <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
-                                <!--  <li>This test is of <b>{{$total_marks}} marks</b></li>
-                                <li>There will be <b>{{$questions_count}} questions</b> in the test</li> -->
-                                <!--  <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li> -->
                             </ul>
                         </div>
                         @php $i=1; @endphp
@@ -44,10 +41,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div>
                             <div class="exam_inst_sec_head_flex">
                                 <div class="exam_inst_sec_head"><b>{{$i}}. <span>{{$sub->subject_name}}</span></b></div>
-                                <!--  <div class="exam_inst_sec_head_padding">
-                                    <span>Total Marks:</span>
-                                    <span><b>100</b></span>
-                                </div> -->
+                                
                             </div>
                             <div class="line-693"></div>
                             <div class="mt-2">The following are the sections in the test:</div>
@@ -68,15 +62,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="exam_section_right_side">
                         <div class="exam_section_right_side_padding">
                             <div class="exam_section_right_side_jee_main">{{isset($exam_name)?$exam_name:''}}</div>
-                            <!-- <div class="line-692"></div> -->
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Duration</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$exam_fulltime}} Mins</div>
                             </div>
-                            <!--  <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ Questions</div>
-                            </div> -->
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
@@ -102,8 +91,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z" />
                                     </g>
                                 </svg>
-                                <div class="exam_inst_all_the_best">All the Best , {{ucwords($userData->user_name)}}!</div>
-                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a>
+                                <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
+                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Practice</a>
                             </div>
                         </div>
                     </div>

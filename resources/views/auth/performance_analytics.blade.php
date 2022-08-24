@@ -9,6 +9,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
 $full_body_attempt = Session::get('full_body_attempt');
 
 @endphp
+<div class="wihoutlogintoast">
  <div class="toastdata">
         <div class="toast-content">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +29,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         </div>
         <div class="progress"></div>
     </div>
+</div>
 <section class="subscriptionsPage d-flex fullbody_scan_page">
     <div class="subscriptionsLeftpannel">
         <a href="{{env('CMS_URL')}}" target="_blank"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
@@ -146,7 +148,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full body scan test</h3>
-                    <p class="my-3">to assess your preparation and take your first step to improvement.</p>
+                    <p class="my-3">to assess your preparation. Take your first step to improvement</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                     @else

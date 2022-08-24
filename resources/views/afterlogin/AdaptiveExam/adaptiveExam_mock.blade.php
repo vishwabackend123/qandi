@@ -115,12 +115,6 @@ $questtype='radio';
         overflow: hidden;
         background-color: #44CD7F;
     }
-
-    /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
-        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
- */
     #home a.sectionBtn {
         padding: 0.25rem 0.5rem;
         font-size: .875rem;
@@ -273,7 +267,6 @@ $questtype='radio';
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
                                     </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
-                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
                         <p class="rightSectH">Question</p>
                         <div class="number-block">
@@ -284,22 +277,8 @@ $questtype='radio';
                             @php $i++; @endphp
                             @endforeach
                             @endif
-                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">2</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
-                            <button class="btn btn-light rounded-0 mb-4">5</button>
-                            <button class="btn btn-light mb-4 rounded-0">6</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
-                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
-                            <button class="btn btn-light mb-4 rounded-0">11</button>
-                            <button class="btn btn-light mb-4 rounded-0">12</button>
-                            <button class="btn btn-light mb-4 rounded-0">13</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
+                           
                         </div>
-                        <!--  <p class="rightSectH">Legends</p> -->
                         <div class="row mt-4">
                             <div class="col-md-6 legends">
                                 <button class="btn btn-light p-0 rounded-0"> </button>
@@ -618,18 +597,6 @@ $questtype='radio';
         $('#test_instruction').modal('show');
 
     });
-
-    /* $('#goto-exam-btn').click(function() {
-        $('#mainDiv').show();
-        $('#exam_content_sec').show();
-        setboxHeight();
-        startTimer();
-        questionstartTimer();
-        setEachQuestionTime();
-        if ($('#quest_option_' + activeques_id).length > 0) {
-            $('#quest_option_' + activeques_id).focus();
-        }
-    }); */
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
@@ -784,7 +751,7 @@ $questtype='radio';
             seconds = `0${seconds}`;
         }
 
-        return `${minutes} min ${seconds} sec`;
+        return `${minutes} mins ${seconds} sec`;
     }
 
     function calculateTimeFraction() {

@@ -50,7 +50,7 @@ class AnalyticsController extends Controller
 
             $curl = curl_init();
             $curl_option = array(
-                CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
+                CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id.'?test_type=Assessment',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -58,6 +58,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -89,6 +92,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -195,6 +201,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -269,6 +278,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -296,6 +308,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -402,6 +417,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -445,6 +463,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -506,7 +527,7 @@ class AnalyticsController extends Controller
             $api_URL = env('API_URL');
             $curl = curl_init();
             $curl_option = array(
-                CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $sub_id,
+                CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $sub_id.'?test_type=Assessment',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -514,6 +535,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -537,6 +561,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -560,6 +587,9 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -886,5 +916,75 @@ class AnalyticsController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function overallProgressGraph($exam_type)
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+        $user_subjects = $this->redis_subjects();
+        $api_URL = env('API_URL');
+            $curl = curl_init();
+            $curl_option = array(
+                CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id.'?test_type='.$exam_type,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+            $response = json_decode($response);
+            $mockTestScoreCurr = 0;
+            $mockTestScorePre = 0;
+            if (isset($response->success) && $response->success === true) {
+                $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
+                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+               
+            }
+            $responseData['current_score'] = $mockTestScoreCurr;
+            $responseData['previous_score'] = $mockTestScorePre;
+            return json_encode($responseData);
+    }
+    public function subjectProgressGraph($subject_id,$exam_type)
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        $api_URL = env('API_URL');
+        $curl = curl_init();
+        $curl_option = array(
+            CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $subject_id.'?test_type='.$exam_type,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                        "Authorization: Bearer ". $this->getAccessToken()
+                ),
+        );
+        curl_setopt_array($curl, $curl_option);
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $subAnalytics = json_decode($response);
+        $subScore = isset($subAnalytics->subject_score) ? $subAnalytics->subject_score : [];
+        $preSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+        $currSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
+        $responseData['currSocre'] = $currSocre;
+        $responseData['preSocre'] = $preSocre;
+        return json_encode($responseData);
     }
 }

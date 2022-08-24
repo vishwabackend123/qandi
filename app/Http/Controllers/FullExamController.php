@@ -74,7 +74,7 @@ class FullExamController extends Controller
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
                     CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -121,6 +121,7 @@ class FullExamController extends Controller
                     $sub->count = count($count_arr);
                     $aTargets[] = $sub->subject_name;
                 }
+                $subCounts = count($aTargets);
                 $tagrets = implode(', ', $aTargets);
 
                 $allQuestions = $aQuestionslist->countBy('question_id');
@@ -151,7 +152,7 @@ class FullExamController extends Controller
 
                 $exam_title = "Full Body Exam";
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts'));
             } else {
                 $cacheKey = 'CustomQuestion:all:' . $user_id;
                 $redis_result = Redis::get($cacheKey);

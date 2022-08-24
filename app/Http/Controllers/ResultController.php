@@ -582,6 +582,7 @@ class ResultController extends Controller
         $cSubjects = collect($redis_subjects);
         $result_data = $this->getAllResult($exam_type);
         $years_list = [];
+        $filtered_subject=[];
         foreach ($result_data as $key => $value) {
             $id = explode(',', $value->subject_id_list);
             if ($id) {
