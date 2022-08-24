@@ -6371,6 +6371,10 @@ border-color: #56b663;
     z-index: 999;
     top: 0px;
 }
+.bottom-sec .successRef_copy {
+    top: 30px;
+    right: 10px;
+}
 
 .share-link-input {position: relative;}
 #referfrnd .share-link-input a {

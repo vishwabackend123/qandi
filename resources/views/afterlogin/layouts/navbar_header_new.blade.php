@@ -15,6 +15,7 @@ else
 {
 $name = $action;
 }
+$nitifiCount=0;
 if(isset($notifications) && !empty($notifications) && is_array($notifications)){
 $nitifiCount=count($notifications);
 }
