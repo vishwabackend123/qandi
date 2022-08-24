@@ -787,12 +787,22 @@ class HomeController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response);
             if (isset($aResponse->success) && $aResponse->success == true) {
-                $notifications = $aResponse->response;
+                $notificationsResponse = $aResponse->response;
+                $collection = collect($notificationsResponse);
+
+                $notifications = $collection->sortByDesc('notification_id')->toArray();
             } else {
                 $notifications = [];
             }
 
-            return view('afterlogin.ajax_notification', compact('notifications'));
+            $countNotify = count($notifications);
+
+            //$htmlview = view('afterlogin.ajax_notification', compact('notifications'));
+            $htmlview = view('afterlogin.ajax_notification')->with('notifications', $notifications)->render();
+
+            $response = ["notificationHtml" => $htmlview, "countNotify" => $countNotify];
+
+            return json_encode($response);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
