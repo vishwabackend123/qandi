@@ -5,12 +5,6 @@ $("ul.submenu-lists li.practice-menu>a").click(function(){
     $(this).parent().toggleClass("practice-menu-active");
     $(".practice-submenu").slideToggle();
 });
-// $("ul.sidebar-menu-lists>li").click(function(){
-//     if( !$(this).hasClass("active") ){
-//         $(this).addClass("active");
-//         $(this).siblings().removeClass("active");
-//     }
-// });
 $("ul.sidebar-menu-lists>li.sidebar-exam-menu").click(function(){
     $(this).toggleClass("active");
 });
@@ -102,28 +96,6 @@ else if( headingpercent > 0 &&headingpercent < 40){
     $('.mq_circle_percent').addClass('noshadow');
 }
 $(".mq_percent_text").text(Math.ceil(percent_data))
-/************ Tooltip *********/
-/*$(document).ready(function() {
-    $("span.tooltipmain svg").click(function(event) {
-        event.stopPropagation();
-        $("span.tooltipmain p.tooltipclass span").each(function() {
-            $(this).parent("p").hide();
-            $(this).parent("p").removeClass('show');
-        });
-        $(this).siblings("p").show();
-        $(this).siblings("p").addClass('show');
-
-    });
-    $("span.tooltipmain p.tooltipclass span").click(function() {
-        $(this).parent("p").hide();
-    });
-});
-$(document).on('click', function(e) {
-    var card_opened = $('.tooltipclass').hasClass('show');
-    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-        $('.tooltipclass').hide();
-    }
-});*/
 
 /******Test Analytics-Marks Percentage ******/
 $(document).ready(function(){
@@ -135,6 +107,22 @@ $(document).ready(function(){
   });
 });
 
+function resize() {
+    if ($(window).width() < 767) {
+        $("ul.mob_sidebar_lists li:last-child a").click(function(){
+            $("body").addClass("referpopupBackdrop");
+        });
+    }
+    else{
+        $("body").removeClass("referpopupBackdrop");
+    }
+}
+$(window).on('resize', function() {
+    resize()
+});
+$("#referfrnd .btn-close").click(function(){
+    $("body").removeClass("referpopupBackdrop");
+});
 
 /************************* Amit - End ****************************/
 
