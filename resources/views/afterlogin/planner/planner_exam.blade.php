@@ -230,7 +230,7 @@ $question_type = "Numerical";
                             <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
                             <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
                             <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -578,7 +578,6 @@ $question_type = "Numerical";
 </script>
 
 <script type="text/javascript">
-
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
         setboxHeight();
@@ -726,7 +725,7 @@ $question_type = "Numerical";
             seconds = `0${seconds}`;
         }
 
-        return `${minutes} min ${seconds} sec`;
+        return `${minutes} mins ${seconds} sec`;
     }
 
     function calculateTimeFraction() {
@@ -770,6 +769,7 @@ $question_type = "Numerical";
         }, 1000);
 
     }
+
     function progressBar(percent, $element) {
         var progressBarWidth = percent * $element.width() / (time_allowed * 60);
         $element.find('div').animate({

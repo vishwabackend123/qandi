@@ -50,21 +50,21 @@
                         <div class="carousel-item">
                             <img src="{{URL::asset('public/after_login/current_ui/images/progress-jer.svg')}}" alt="performance" class="d-block w-100">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5 class="pb-2">Progress journey</h5>
+                                <h5 class="pb-2">Progress Journey</h5>
                                 <p>Track your progress visually with a graph that <br> shows you your ideal and actual pace</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{URL::asset('public/after_login/current_ui/images/weekly.svg')}}" alt="performance" class="d-block w-100">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5 class="pb-2">Weekly plan</h5>
+                                <h5 class="pb-2">Weekly Plan</h5>
                                 <p>Check your proficiency in different subjects by planning <br>weekly tests for any chapters </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="{{URL::asset('public/after_login/current_ui/images/Task-center.svg')}}" alt="performance" class="d-block w-100">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5 class="pb-2">Task center</h5>
+                                <h5 class="pb-2">Task Center</h5>
                                 <p>To assess your readiness, set daily or weekly tasks to<br> evaluate your skills </p>
                             </div>
                         </div>
@@ -227,12 +227,19 @@
                 $(this).hide();
                 $("#mobile-input-btn").show();
                 $('.verify_otp').hide();
+                $('#otp-verify-btn').attr('disabled', 'disabled');
+                $('#otp-verify-btn').addClass("disabled");
                 $('#otp-verify-btn').hide();
                 $('#opt_one').val('');
+                $('#opt_one').attr('style', 'border: 0.5px solid #d0d5dd !important');
                 $('#opt_two').val('');
+                $('#opt_two').attr('style', 'border: 0.5px solid #d0d5dd !important');
                 $('#opt_three').val('');
+                $('#opt_three').attr('style', 'border: 0.5px solid #d0d5dd !important');
                 $('#opt_four').val('');
+                $('#opt_four').attr('style', 'border: 0.5px solid #d0d5dd !important');
                 $('#opt_five').val('');
+                $('#opt_five').attr('style', 'border: 0.5px solid #d0d5dd !important');
                 clearTimeout(timerId);
                 $('#wait_otp_div').text('00:59');
             });

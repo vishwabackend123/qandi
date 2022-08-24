@@ -118,7 +118,7 @@ class HomeController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -158,7 +158,7 @@ class HomeController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -200,8 +200,8 @@ class HomeController extends Controller
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
                     CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
-                ),
+                        "Authorization: Bearer " . $this->getAccessToken()
+                    ),
                 );
                 curl_setopt_array($curl, $curl_option);
 
@@ -223,47 +223,47 @@ class HomeController extends Controller
                 $your_place = json_decode(Redis::get('your_place' . $user_id), true);
                 $progress_cat = json_decode(Redis::get('progress_cat' . $user_id), true);
             } else {*/
-                $curl = curl_init();
-                $api_URL = env('API_URL');
-                $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
-                $curl_option = array(
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
+            $curl_option = array(
 
-                    CURLOPT_URL => $curl_prog_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
-                    CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
-                    ),
-                );
-                curl_setopt_array($curl, $curl_option);
+                CURLOPT_URL => $curl_prog_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
 
-                $response_preg_json = curl_exec($curl);
+            $response_preg_json = curl_exec($curl);
 
-                $response_prog = json_decode($response_preg_json, true);
+            $response_prog = json_decode($response_preg_json, true);
 
-                if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
-                    $month = date('m');
-                    $i = $month - count($response_prog['response']['student_progress'])+1;
-                    foreach ($response_prog['response']['student_progress'] as $progData) {
-                        array_push($ideal, $progData['month_index']);
-                        array_push($your_place, $progData['chapter_count']);
-                        $monthName = date('M', mktime(0, 0, 0, $i, 10));
-                        $week = $monthName;
-                        array_push($progress_cat, $week);
-                        $i++;
-                    }
-                    //Session::put('ideal', $ideal);
-                    //Session::put('your_place', $your_place);
-                    //Session::put('progress_cat', $progress_cat);
-                    Redis::set('ideal' . $user_id, json_encode($ideal));
-                    Redis::set('your_place' . $user_id, json_encode($your_place));
-                    Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
+            if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
+                $month = date('m');
+                $i = $month - count($response_prog['response']['student_progress']) + 1;
+                foreach ($response_prog['response']['student_progress'] as $progData) {
+                    array_push($ideal, $progData['month_index']);
+                    array_push($your_place, $progData['chapter_count']);
+                    $monthName = date('M', mktime(0, 0, 0, $i, 10));
+                    $week = $monthName;
+                    array_push($progress_cat, $week);
+                    $i++;
                 }
+                //Session::put('ideal', $ideal);
+                //Session::put('your_place', $your_place);
+                //Session::put('progress_cat', $progress_cat);
+                Redis::set('ideal' . $user_id, json_encode($ideal));
+                Redis::set('your_place' . $user_id, json_encode($your_place));
+                Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
+            }
             // }
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -279,7 +279,7 @@ class HomeController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -331,8 +331,8 @@ class HomeController extends Controller
                 $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
                 $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
-            $accurate_percent = ($myqtodayScore*75)/100;
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask','accurate_percent'));
+            $accurate_percent = ($myqtodayScore * 75) / 100;
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -430,7 +430,7 @@ class HomeController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "accept: application/json",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
                     ),
                 );
                 curl_setopt_array($curl, $curl_option);
@@ -502,7 +502,7 @@ class HomeController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -635,7 +635,7 @@ class HomeController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -836,7 +836,7 @@ class HomeController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -893,7 +893,7 @@ class HomeController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -974,7 +974,7 @@ class HomeController extends Controller
                         CURLOPT_HTTPHEADER => array(
                             "cache-control: no-cache",
                             "content-type: application/json",
-                            "Authorization: Bearer ". $this->getAccessToken()
+                            "Authorization: Bearer " . $this->getAccessToken()
                         ),
                     );
                     curl_setopt_array($curl, $curl_option);
@@ -1072,6 +1072,7 @@ class HomeController extends Controller
                     } else {
                         $option_data[] = '';
                     }
+                    $subCounts = count($aTargets);
                     $tagrets = implode(', ', $aTargets);
 
                     $exam_type = 'PT';
@@ -1103,7 +1104,7 @@ class HomeController extends Controller
                         $header_title = "Task Center";
                         $exam_title = "Task Center";
 
-                        return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title'));
+                        return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title', 'subCounts'));
                     }
 
 
@@ -1155,7 +1156,7 @@ class HomeController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
@@ -1180,7 +1181,7 @@ class HomeController extends Controller
 
         if (!empty($trendResponse)) {
             $month = date('m');
-            $i = $month - count($trendResponse)+1;
+            $i = $month - count($trendResponse) + 1;
             foreach ($trendResponse as $key => $trend) {
                 //$week = "W" . $i;
                 $monthName = date('M', mktime(0, 0, 0, $i, 10));
@@ -1224,7 +1225,7 @@ class HomeController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
@@ -1250,7 +1251,7 @@ class HomeController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                        "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
@@ -1289,7 +1290,7 @@ class HomeController extends Controller
             CURLOPT_HTTPHEADER => array(
                 "accept: application/json",
                 "content-type: application/json",
-                "Authorization: Bearer ". $this->getAccessToken()
+                "Authorization: Bearer " . $this->getAccessToken()
             ),
         );
         curl_setopt_array($curl, $curl_option);
