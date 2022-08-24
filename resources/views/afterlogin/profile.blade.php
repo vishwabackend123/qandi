@@ -193,16 +193,16 @@ $user_id = isset($userData->id)?$userData->id:'';
                             @if($subscription_type == "P" || $days >14)
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Price</h2>
-                                <h3>₹{{$subsprice}}</h3>
+                                <h3>₹{{number_format($subsprice)}}</h3>
                             </div>
                             @endif
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Active date</h2>
-                                <h3>{{!empty($startdate)?date("jS F Y", strtotime($startdate)):''}}</h3>
+                                <h3>{{!empty($startdate)?date("j F Y", strtotime($startdate)):''}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
                                 <h2>End date</h2>
-                                <h3>{{!empty($expirydate)?date("jS F Y", strtotime($expirydate)):''}}</h3>
+                                <h3>{{!empty($expirydate)?date("j F Y", strtotime($expirydate)):''}}</h3>
                             </div>
                             <div id="panel">
                                 <div class="line mb-3 pb-1"></div>
