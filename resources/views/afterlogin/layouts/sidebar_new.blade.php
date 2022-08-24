@@ -463,6 +463,8 @@ function copylinkfunction() {
 $(".backtobtn").click(function() {
     $('#referfrnd').modal('show');
     $('#referedfrnd').modal('hide');
+    $(".successRef_copy").text("");
+    $(".successRef_copy").hide();
 });
 
 $(".testsubmenu_open").click(function(){
