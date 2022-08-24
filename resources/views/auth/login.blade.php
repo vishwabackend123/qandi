@@ -160,7 +160,16 @@
             input.addEventListener("keyup", function(event) {
                 if (event.keyCode === 13) {
                     event.preventDefault();
-                    sentotplogin('send');
+                    var input_value=$('#mobile_num').val();
+                    if (input_value != '' && input_value.length == 10) {
+                        sentotplogin('send');
+                    }else
+                    {
+                        $("#errlog_mob").removeClass("d-none");
+                        $("#errlog_mob").html('Please enter at least 10 characters.');
+                        $("#errlog_mob").fadeIn('fast');
+                        $("#errlog_mob").fadeOut(5000);
+                    }
                 }
             });
             $("#studentlogin").submit(function(e) {
