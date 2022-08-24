@@ -9,7 +9,6 @@ $userData = Session::get('user_data');
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                     <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <!-- <img src="https://student-image1-new.s3.ap-south-1.amazonaws.com/1659422295_703.jpg"> -->
             </a>
             <strong>Hi {{ucwords($userData->user_name)}}! </strong>
         </div>
@@ -83,24 +82,6 @@ $userData = Session::get('user_data');
                     <span>Refer friends</span>
                 </a>
             </li>
-            <!--li>
-                <a href="javascript:void(0)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#fff" d="M0 0h24v24H0z" />
-                        <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#234628" stroke-width="2" stroke-linejoin="round" />
-                        <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#234628" stroke-width="2" />
-                        <path d="M11.505 20.671h4.494a3 3 0 0 0 3-3" stroke="#234628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <rect x="10.449" y="19.347" width="3" height="3" rx="1.5" fill="#234628" stroke="#234628" />
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon-active">
-                        <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#56B663" stroke-width="2" stroke-linejoin="round" />
-                        <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#56B663" stroke-width="2" />
-                        <path d="M11.505 19.671a1 1 0 1 0 0 2v-2zm8.494-2a1 1 0 1 0-2 0h2zm-4 2h-4.494v2H16v-2zm2-2a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4h-2z" fill="#56B663" />
-                        <rect x="10.449" y="19.347" width="3" height="3" rx="1.5" fill="#56B663" stroke="#56B663" />
-                    </svg>
-                    <span>Contact us</span>
-                </a>
-            </li-->
         </ul>
     </div>  
 
@@ -169,7 +150,6 @@ $userData = Session::get('user_data');
 <!-------------- End --------------->
 <aside>
     <span class="sidebar-logo d-inline-block">
-        <!-- <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"> -->
         <a href="{{env('CMS_URL')}}" target="_blank">
         <svg width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M27.756.894H.926V28h26.83V.894zM54.584 28.001h-26.83v27.105h26.83V28.001z" fill="#38D430" />
@@ -240,24 +220,6 @@ $userData = Session::get('user_data');
                 <span class="sidebar-menu-tooltip">Refer a Friend</span>
             </a>
         </li>
-        <!--li class="mb-4">
-            <a href="javascript:void(0)" style="position: absolute;bottom: 30px;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#fff" d="M0 0h24v24H0z" />
-                    <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#234628" stroke-width="2" stroke-linejoin="round" />
-                    <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#234628" stroke-width="2" />
-                    <path d="M11.505 20.671h4.494a3 3 0 0 0 3-3" stroke="#234628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <rect x="10.449" y="19.347" width="3" height="3" rx="1.5" fill="#234628" stroke="#234628" />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon-active">
-                    <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#56B663" stroke-width="2" stroke-linejoin="round" />
-                    <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#56B663" stroke-width="2" />
-                    <path d="M11.505 19.671a1 1 0 1 0 0 2v-2zm8.494-2a1 1 0 1 0-2 0h2zm-4 2h-4.494v2H16v-2zm2-2a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4h-2z" fill="#56B663" />
-                    <rect x="10.449" y="19.347" width="3" height="3" rx="1.5" fill="#56B663" stroke="#56B663" />
-                </svg>
-                <span class="sidebar-menu-tooltip">Contact us</span>
-            </a>
-        </li-->
     </ul>
     <div class="submenu-block">
         <h6 class="mb-5">Exam</h6>
