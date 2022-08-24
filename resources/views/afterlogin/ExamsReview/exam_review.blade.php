@@ -38,6 +38,16 @@ $question_type = "Numerical";
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer">
+                <div class="backbtnformobilebox hideondesktop">
+                    <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
+                    <div class="reviewexamType">
+                        <a href="javascript:void(0);" style="cursor:default">
+                            {{$exam_name}}
+                        </a>
+                    </div>
+                    
+                </div>
+
                 <div class="examLeftpanel reviewScreenleft">
                     <div class="tabMainblock">
                         <div class="examScreentab">
@@ -60,7 +70,7 @@ $question_type = "Numerical";
                                         </li> -->
                                     </ul>
                                 </div>
-                                <div class="reviewexamType">
+                                <div class="reviewexamType hideonmobile">
                                     <a href="javascript:void(0);" style="cursor:default">
                                         {{$exam_name}}
                                     </a>
@@ -160,7 +170,7 @@ $question_type = "Numerical";
                                                         </div>
 
                                                     </div>
-                                                    <div class="answer-main-sec">
+                                                    <div class="answer-main-sec hideonmobile">
                                                         <div class="anshead-top">
                                                             <span>Answer:</span>
 
@@ -169,10 +179,10 @@ $question_type = "Numerical";
                                                                 <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
                                                                 <div class='expand_block'>
                                                                     <div class="first_screen">
-                                                                        <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                                                                        <div class="questionright d-flex align-items-center justify-content-between mb-4">
                                                                             <h5>{{$accuracy}}%</h5>
                                                                             <h6>of the people got this question right</h6>
-                                                                        </div> -->
+                                                                        </div>
 
                                                                         <div class="attemp_box row mt-0">
                                                                             <div class="sub_att_1 col-md-6">
@@ -191,10 +201,10 @@ $question_type = "Numerical";
 
                                                                             </div>
                                                                         </div>
-                                                                        <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
+                                                                        <!-- <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
                                                                             <h5>{{$accuracy}}%</h5>
                                                                             <h6>of the people got this question right</h6>
-                                                                        </div>
+                                                                        </div> -->
                                                                         <div class="box-border"></div>
                                                                         <div class="learskill d-flex align-items-center justify-content-between">
                                                                             <p>Learning skill required:</p>
@@ -255,10 +265,102 @@ $question_type = "Numerical";
                     </div>
 
                 </div>
+                <div class="overlaydiv hideondesktop"></div>
                 <div class="examRightpanel reviewScreenright ans-panel">
-                    <div class="custom-anstop">
-                        <p><span>Answer Palette</span></p>
+
+                <div class="formobileviewdetail hideondesktop">
+                    <div class="answer-main-sec">
+                        <div class="anshead-top">
+                            <span>Answer:</span>
+
+
+                            <div class="review_expand">
+                                <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
+                                <div class='expand_block'>
+                                    <div class="first_screen">
+                                        <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                                            <h5>{{$accuracy}}%</h5>
+                                            <h6>of the people got this question right</h6>
+                                        </div> -->
+
+                                        <div class="attemp_box row mt-0">
+                                            <div class="sub_att_1 col-md-6">
+                                                @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
+                                                <p>Topic pre-requisite</p>
+                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                                                @endif
+
+                                            </div>
+                                            <div class="sub_att_1 col-md-6">
+
+                                                @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
+                                                <p>Concept pre-requisite</p>
+                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                @endif
+
+                                            </div>
+                                        </div>
+                                        <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
+                                            <h5>{{$accuracy}}%</h5>
+                                            <h6>of the people got this question right</h6>
+                                        </div>
+                                        <div class="box-border"></div>
+                                        <div class="learskill d-flex align-items-center justify-content-between">
+                                            <p>Learning skill required:</p>
+                                            <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="expandbtn1" title="Expand">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+                            <label class="collapsebtn1" title="Collapse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="anshead-titletext">
+                            <p> @php $mn=0; @endphp
+                                @foreach($correct_ans as $akey=>$ans_value)
+                                @php
+                                $ans_dom = new DOMDocument();
+                                @$ans_dom->loadHTML($ans_value);
+                                $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
+                                $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
+                                $alatex = "https://math.now.sh?from=".$atext;
+                                $view_ans='<img src="'.$alatex.'" />' ;
+                                @endphp
+                                {!! !empty($atext)?$view_ans:$ans_value; !!}
+                                @php $mn++; @endphp
+                                @endforeach</p>
+                        </div>
+                        <div class="explanation-sec">
+                            <div class="explanationdeteail">
+                                @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                <span>Explanation:</span>
+                                <p>{!! $question_data->explanation !!}</p>
+                                @endif
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+                <!-- <p class="hideonmobile"><span>Answer Palette</span></p> -->
+                    <div class="custom-anstop sachin">
+                        <p class="hideonmobile"><span>Answer Palette</span></p>
+                        <div class="hideondesktop Answerinner"><p><span>Answer Palette</span></p></div>
                         <div class="text-exambottom-sec">
+                         
                             @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
@@ -361,7 +463,12 @@ $question_type = "Numerical";
 
                         </div>
                     </div>
-                    <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
+                    <button class="btn bck-btn hideonmobile" onclick="history.go(-1)">Back</button>
+
+                </div>
+                <div class="clickbtnonreview btn123 hideondesktop">
+                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
                 </div>
             </div>
         </div>
@@ -490,18 +597,12 @@ $question_type = "Numerical";
         var answerfinalheight = $(".answer-main-sec").outerHeight();
         var answerfinalheight_145 = answerfinalheight - 145 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
-
-
-
-
-
     }
 
     review_right_Height();
     $("window").load(function() {
         review_right_Height();
     });
-
 
     $(window).resize(function() {
         review_right_Height();
@@ -512,30 +613,19 @@ $question_type = "Numerical";
         $(".expandbtn1").on('click', function() {
             var expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
             var questionheader_height = $(".questionheader").outerHeight();
-
             $('.answer-main-sec').css('height', expand_question_slider_box_height);
             var expand_answer_main_sec_height = $(".answer-main-sec").outerHeight();
             var final_height = expand_answer_main_sec_height - questionheader_height;
             $('.answer-main-sec').css('height', final_height);
-
-
-
             var ex_answer_main_sec_height = $(".answer-main-sec").outerHeight();
             var expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
             var expand_anshead_top_height = $(".anshead-top").outerHeight();
             var expand_totalpopup_height = expand_anshead_titletext_height + expand_anshead_top_height;
             var expand_height_popupSection = ex_answer_main_sec_height - expand_totalpopup_height;
             $('.explanation-sec').css('height', expand_height_popupSection);
-
             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
-
-
             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
             $('.explanation-sec').css('height', ex_scroll_height);
-
-
-
-
         });
 
         $(".collapsebtn1").on('click', function() {
@@ -559,8 +649,6 @@ $question_type = "Numerical";
             var afterclikecoll = $(".explanation-sec").outerHeight();
             var afterclikecoll_cal = afterclikecoll - 30 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
-
-
         });
     });
 </script>
@@ -672,5 +760,58 @@ $question_type = "Numerical";
     } else {
         // change functionality for larger screens
     }
+</script>
+
+
+
+<script>
+    $('.showyes').click(function() {
+        // $('.text-exammid-sec').show(500);
+
+        $('.sachin').slideToggle({
+            direction: "up"
+        }, 300);
+
+        $(this).toggleClass('Close');
+
+        $('.showyes').hide(0);
+        $('.hideyes').show(0);
+        $('.overlaydiv').show(0);
+
+    });
+    $('.hideyes').click(function() {
+        $('.sachin').slideToggle({
+            direction: "down"
+        }, 300);
+
+        $(this).toggleClass('Close');
+        $('.showyes').show(0);
+        $('.hideyes').hide(0);
+        $('.overlaydiv').hide(0);
+    });
+</script>
+<script>
+$(function() {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+        var exam_Review_screenmob_height = $(".examReviewscreenmob ").outerHeight();
+        $('.examMaincontainer ').css('height', exam_Review_screenmob_height);
+        var test_review_height_div = exam_Review_screenmob_height / 2;
+        var totle_heigh_40 = test_review_height_div - 40 + "px";
+        $('.reviewScreenleft').css('height', totle_heigh_40);
+        $('.reviewScreenright').css('height', totle_heigh_40);
+        var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
+        var Review_second_panel_30 = exam_Review_second_panel - 30 + "px";
+        $('.reviewScreenright').css('height', Review_second_panel_30);
+        var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
+        var extra_height_total = reviewScreenright_call - 100 + "px";
+        $('.reviewscreenquestion').css('height', extra_height_total);
+        $('.questionwrapper').css('height', extra_height_total);
+        $('.questionsliderbox').css('height', extra_height_total);
+        let height = screen.height;
+        $('.examReviewscreenmob').css('height', height);
+        $('.content-wrapper').css('height', height);
+        $('.examSereenwrapper').css('height', height);
+    }
+})
 </script>
 @endsection

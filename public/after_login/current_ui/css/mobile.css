@@ -1875,10 +1875,10 @@
     .examReviewscreenmob .content-wrapper {
         padding: 40px 16px;
     }
-    .reviewexamType{
+    /* .reviewexamType{
         position: relative;
         top: -100px;
-    }
+    } */
     .expand_block {
         display: none;
         position: absolute;
@@ -1909,12 +1909,15 @@
     }
     .explanation-sec {
         padding-left: 0px;
-        height: 50px !important;
+        height: 20px !important;
     }
+ 
+    
+    
     .anshead-titletext p {
         margin-bottom: 4px; 
     }
-    .examReviewscreenmob .fancy-radio-buttons.with-image{width:100%;--bs-gutter-x: 0px;    gap: 10px;}
+    .examReviewscreenmob .fancy-radio-buttons.with-image{width:97%;--bs-gutter-x: 0px;    gap: 10px;}
    .examReviewscreenmob .fancy-radio-buttons .colMargin {width: 100%; max-width: 100%; }
    .examMaincontainer .reviewScreenright {display: block;}
    .examReviewscreenmob .examMaincontainer{ display: block;}
@@ -1923,7 +1926,148 @@
     max-width: 100%;    
  
 }
+
+
+    .examReviewscreenmob .examScreentab .nav-tabs {
+        border-bottom: 1px solid #cde3d0;
+        display: flex;
+        flex-wrap: initial;
+    }
+   .examReviewscreenmob  .backbtnformobilebox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  line-height: 80px;
+    }
+  .examReviewscreenmob  .backbtnformobilebox .reviewexamType{
+        position:static ;
+    }
+ .examReviewscreenmob  .backbtnformobilebox .bck-btn{
+    width: 100px;
+    position: inherit;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    }
+ .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
+        position: initial;
+    }
+     .hideyes {
+        display: none;
+        transform: rotate(270deg)!important;
+    }
+   .examReviewscreenmob   .bottomfixarrow {
+        line-height: 0;
+        font-size: 17px;
+        padding: 0;
+        position: absolute;
+        bottom: 26px;
+        color: #363c4f;
+        background-color: #fff;
+        width: 28px;
+        height: 28px;
+        border: 1px solid #dfe1df;
+        border-radius: 6px;
+        font-weight: 700;
+        box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;
+        right: 32px;
+        transform: rotate(90deg);
+    }
+   .examReviewscreenmob .sachin {
+        display: none;
+        position: absolute;
+        bottom: 0px;
+        background: white;
+        height: 100% !important;
+        z-index: 999;
+        width: 96%;
+        left: 0px;    padding-left: 16px;
+    }
+  .examReviewscreenmob  .btn123 {
+        position: fixed;
+        background: white;
+        width: 100%;
+        bottom: 0;
+        height: 73px;z-index: 99999;border-top: 1px solid rgba(205, 227, 208, 0.5);
+    }
+
+  .examReviewscreenmob   .examRightpanel {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 40px 28px 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px 0 rgb(172 185 176 / 14%);
+        position: relative;
+        padding-top: 14px !important;
+    }
+ 
+    .examReviewscreenmob    .reviewans-mainsec {
+            position: absolute;
+            bottom: 43px;
+            background: #fff;
+            overflow: hidden;
+            margin-right: 15px;
+            min-width: 100%;
+            max-width: 100% !important;
+            left: 0px;
+            height: 200px !important;
+            border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+            padding: 0px 16px;
+        }
+  .examReviewscreenmob  .overlaydiv {
+        content: "";
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.51);
+        display: none;
+    }
+    .examReviewscreenmob .content-wrapper {
+        padding: 0px;
+    }
+    
+    .examReviewscreenmob .examLeftpanel ,.backbtnformobilebox {
+        padding: 0px 16px;
+    }
+  .examReviewscreenmob  .list-ans {
+        height: 20vh;
+    }
+   .examReviewscreenmob .review-filter-top {
+       
+        border-bottom: 1px solid rgba(205, 227, 208, 0.5);
    
+        border-top: 1px solid rgba(205, 227, 208, 0.5);
+    }
+   .examReviewscreenmob .answer-main-sec {
+        padding: 20px;
+        border-radius: 20px;
+        position: relative;
+        bottom: 0px;
+        width: 100%;
+        padding-right: 8px;
+        box-shadow: none;
+        height: 90px !important;
+        padding-top: 0px;
+    padding-bottom: 0px;
+    }
+    .expand_block {
+        display: none;
+        position: absolute;
+        right: -43px;
+        top: -10px;
+        z-index: 999;
+        padding: 5px;
+        box-shadow: 0 8px 30px 0 rgb(157 170 160 / 30%);
+        background: #fff;
+        width: 360px;
+        
+    }
+    
+  
 }
 
 

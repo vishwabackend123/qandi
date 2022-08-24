@@ -106,7 +106,10 @@ $question_type = "Numerical";
                         <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
                         <div class='expand_block'>
                             <div class="first_screen">
-                                
+                                <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                                    <h5>{{$accuracy}}%</h5>
+                                    <h6>of the people got this question right</h6>
+                                </div>
 
 
                                 <div class="attemp_box row mt-0">
@@ -126,10 +129,7 @@ $question_type = "Numerical";
 
                                     </div>
                                 </div>
-                                <div class="questionright d-flex align-items-center justify-content-between mt-4 mb-2">
-                                    <h5>{{$accuracy}}%</h5>
-                                    <h6>of the people got this question right</h6>
-                                </div>
+                                
                                 <div class="box-border"></div>
                                 <div class="learskill d-flex align-items-center justify-content-between">
                                     <p>Learning skill required:</p>
