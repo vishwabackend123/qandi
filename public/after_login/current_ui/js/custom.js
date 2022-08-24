@@ -109,7 +109,9 @@ $(document).ready(function(){
 
 function resize() {
     if ($(window).width() < 767) {
-        $("body").addClass("referpopupBackdrop");
+        $("ul.mob_sidebar_lists li:last-child a").click(function(){
+            $("body").addClass("referpopupBackdrop");
+        });
     }
     else{
         $("body").removeClass("referpopupBackdrop");
@@ -117,7 +119,11 @@ function resize() {
 }
 $(window).on('resize', function() {
     resize()
-  });
+});
+$("#referfrnd .btn-close").click(function(){
+    $("body").removeClass("referpopupBackdrop");
+});
+
 /************************* Amit - End ****************************/
 
 
