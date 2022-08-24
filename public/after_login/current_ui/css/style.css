@@ -6120,8 +6120,9 @@ td.mymatrix_table_point
     font-size: 16px;
     font-weight: 500;
     color: #1f1f1f;
-  line-height: 1.6;margin-bottom:0px;
-
+  line-height: 1.6;
+    margin-bottom:0px;
+    word-break: break-all;
 }
 
 #floatingTextarea2 {
