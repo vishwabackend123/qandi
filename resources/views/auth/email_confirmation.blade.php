@@ -56,9 +56,9 @@
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
         @if($message_success == 'Email already Verified')
-        <p><label><b>{{$email_id}}</b> is Verified. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is Verified. </label></p>
         @else
-        <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is now Verified. </label></p>
         @endif
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
