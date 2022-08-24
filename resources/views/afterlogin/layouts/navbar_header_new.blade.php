@@ -177,12 +177,6 @@ $name = $action;
         $('.sidebar_block').removeClass('showmenu');
         $('html').removeClass("scrollnone");
     });
-
-    // $('.notificationnew').click(function() {
-    //     $('body').removeClass("sidebartoggle")
-    //     $('.sidebar_block').removeClass('showmenu');
-    // });
-
     /*****Mobile-menu js*********** */
     $('#clearAll').click(function() {
         $.ajax({
