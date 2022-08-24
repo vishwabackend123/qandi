@@ -980,6 +980,7 @@ class StudentSignInController extends Controller
     public function newCityList(Request $request)
     {
         try {
+            $this->authLogin();
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : 'ab';

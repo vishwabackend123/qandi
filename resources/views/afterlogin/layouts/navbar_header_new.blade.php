@@ -15,6 +15,12 @@ else
 {
 $name = $action;
 }
+$nitifiCount=0;
+if(isset($notifications) && !empty($notifications) && is_array($notifications)){
+$nitifiCount=count($notifications);
+}
+
+
 @endphp
 <header>
     <div class="headerMain">
@@ -82,7 +88,13 @@ $name = $action;
 
     <div class="planner-wrapper ">
         <div class="notification-main">
-            <h2>Notifications <a href="javascript:void(0);" id="clearAll">Clear all</a></h2>
+
+            <h2>Notifications
+
+                <a href="javascript:void(0);" id="clearAll">Clear all</a>
+
+            </h2>
+
             <div class="new_notification_main_sec" id="recent_notify">
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
@@ -110,7 +122,14 @@ $name = $action;
 <!--main-profile-section-->
 
 <script>
-      
+    var notificationCount = '{{$nitifiCount}}';
+    if (notificationCount > 0) {
+        $('#clearAll').show();
+
+    } else {
+        $('#clearAll').hide();
+
+    }
     $(".notificationOverlay").click(function() {
         $(".notification-block_new").removeClass("activeblock");
         $(".notification-block_new").removeClass("show");
@@ -151,7 +170,14 @@ $name = $action;
                 "_token": "{{ csrf_token() }}",
             },
             success: function(response_data) {
-                $('#recent_notify').html(response_data);
+                var response = jQuery.parseJSON(response_data);
+
+                $('#recent_notify').html(response.notificationHtml);
+                if (response.countNotify > 0) {
+                    $('#clearAll').show();
+                } else {
+                    $('#clearAll').hide();
+                }
 
             },
         });
@@ -167,7 +193,7 @@ $name = $action;
         $('.notificationnew').removeClass('bellactive')
         $('.notification-block_new ').removeClass('activeblock')
         $('.notification-block_new ').removeClass('show')
-         
+
     });
     $("#menumobilehide").click(function() {
         $('html').removeClass("windowhidden")
@@ -191,9 +217,8 @@ $name = $action;
 
                 $('.notificationnew').removeClass('bellactive');
                 $('html').removeClass("scrollnone");
+                $('#clearAll').hide();
             },
         });
     });
 </script>
-
- 
