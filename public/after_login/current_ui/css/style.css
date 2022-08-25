@@ -2728,7 +2728,7 @@ a.btn-common-attempted svg {
  }
  .planewrapper{
      display: flex;
-     align-items: flex-end;
+     /* align-items: flex-end; */
  }
  .subCard{
      padding: 20px !important;
@@ -4884,8 +4884,9 @@ justify-content: space-between;}
     font-weight: 500;
     line-height: 1.6;margin-bottom:5px!important;
     color: #363c4f;}
-    .selectedWeek p:last-child{margin-bottom:0px;}
+    .selectedWeek p:last-child{margin-bottom:0px!important;}
     .plantitleBox .boxheading{margin-bottom:8px;}
+    .planDetailBox{padding-top: 7px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
