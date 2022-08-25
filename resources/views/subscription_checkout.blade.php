@@ -117,7 +117,7 @@ $userData = Session::get('user_data');
         </div>
         <div class="applyCo">
             <div class="applyCoform">
-                <h3>₹{{$price}} <span class="price-inc">Inc tax</span></h3>
+                <h3>₹{{number_format($price)}} <span class="price-inc">Inc tax</span></h3>
                     <div class="custom-input" style="display:none">
                         <label>Discount code</label>
                         <div class="input-group">
@@ -128,7 +128,7 @@ $userData = Session::get('user_data');
                     <div class="payDetail">
                         <p><span class="planL">Plan duration</span><span class="PlanR">1 year</span></p>
                         <p style="display:none"><span class="planL">Discount</span><span class="PlanR">₹0</span></p>
-                        <p><span class="planL">Total</span><span class="PlanR">₹{{$price}}</span></p>
+                        <p><span class="planL">Total</span><span class="PlanR">₹{{number_format($price)}}</span></p>
                     </div>
                     <div class="Paymentbtn">
                         <form action="{{ route('razorpay.payment.store') }}" method="POST">

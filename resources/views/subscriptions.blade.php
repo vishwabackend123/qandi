@@ -94,11 +94,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -107,14 +107,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -214,11 +214,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -227,14 +227,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -344,11 +344,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -357,14 +357,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -483,11 +483,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -497,14 +497,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -626,11 +626,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -639,14 +639,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -743,11 +743,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -756,14 +756,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -854,11 +854,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -867,14 +867,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
