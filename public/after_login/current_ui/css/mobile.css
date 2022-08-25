@@ -346,10 +346,6 @@
     padding:12px;
     margin-top: 16px;height:auto;
     }
-   .chapters-expend .accordion-body {
-    margin-top: 23px;
-    padding: 22px 0 0px 0 !important;
-    }
     .testtablescroll .accordion-header .btn {
     max-width: 111px !important;
     min-width: 111px !important;
@@ -1059,6 +1055,10 @@
     }
     .TestseriesAttempt22 .exam_tabdata .accordion-body {
         padding: 0px 0px 0px 0px!important;
+    }
+    .chapters-expend .accordion-body {
+    margin-top: 23px;
+    padding: 22px 0 0px 0 !important;
     }
     .TestseriesAttempt22 .exam_tabdata .accordion-item
     {
