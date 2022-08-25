@@ -112,10 +112,13 @@ class FullExamController extends Controller
                 $subject_ids = $collection->pluck('subject_id');
                 $subject_list = $subject_ids->unique()->values()->all();
 
+
+
                 $redis_subjects = $this->redis_subjects();
                 $cSubjects = collect($redis_subjects);
                 $aTargets = [];
                 $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+
                 foreach ($filtered_subject as $sub) {
                     $count_arr = $collection->where('subject_id', $sub->id)->all();
                     $sub->count = count($count_arr);

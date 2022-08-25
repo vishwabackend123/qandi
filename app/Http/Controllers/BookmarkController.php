@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Log;
  */
 class BookmarkController extends Controller
 {
+    use CommonTrait;
+
     /**
      * Addbookmark
      *
@@ -50,9 +53,10 @@ class BookmarkController extends Controller
             $request = json_encode($inputjson);
             $api_URL = env('API_URL');
 
+
             $curl_url = $api_URL . 'api/bookmark-questions';
-            $curl_option=array(
-                 CURLOPT_URL => $curl_url,
+            $curl_option = array(
+                CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
                 CURLOPT_ENCODING => "",
@@ -62,8 +66,11 @@ class BookmarkController extends Controller
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $request,
                 CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json"));
+                    "cache-control: no-cache",
+                    "content-type: application/json",
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
+            );
             $curl = curl_init();
             curl_setopt_array($curl, $curl_option);
 
@@ -78,6 +85,7 @@ class BookmarkController extends Controller
                 return $err;
             }
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
