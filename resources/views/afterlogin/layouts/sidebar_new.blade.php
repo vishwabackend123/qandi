@@ -455,7 +455,7 @@ function copylinkfunction() {
     setTimeout(function() {
         $(".successRef_copy").text("");
         $(".successRef_copy").hide();
-    }, 4000);
+    }, 1000);
 }
 
 </script>
