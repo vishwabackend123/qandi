@@ -452,9 +452,12 @@ function copylinkfunction() {
     navigator.clipboard.writeText(copyText.value);
     $(".successRef_copy").text("Copied!");
     $(".successRef_copy").show();
+    $(".successRef_copy").addClass('showtext');
     setTimeout(function() {
         $(".successRef_copy").text("");
         $(".successRef_copy").hide();
+    $(".successRef_copy").removeClass('showtext');
+
     }, 4000);
 }
 
