@@ -4880,7 +4880,12 @@ justify-content: space-between;}
         }
         /* dropdown-css-end */
 
-
+.selectedWeek p{font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;margin-bottom:5px!important;
+    color: #363c4f;}
+    .selectedWeek p:last-child{margin-bottom:0px;}
+    .plantitleBox .boxheading{margin-bottom:8px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
