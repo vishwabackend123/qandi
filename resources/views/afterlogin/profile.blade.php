@@ -92,7 +92,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>Grade</label>
                                     <select class="form-control selectdata js-example-basic-single selectgrade" name="grade" id="grade" required>
-                                        <option class="we" value="" disabled selected hidden>Select grade</option>
+                                        <option class="we" value="" disabled selected hidden>Select Grade</option>
                                         <option class="we2" value="1" @if($student_stage_at_sgnup==1) selected @else '' @endif>10th Standard Pass</option>
                                         <option class="we" value="2" @if($student_stage_at_sgnup==2) selected @else '' @endif>11th Standard Pass</option>
                                         <option class="we" value="3" @if($student_stage_at_sgnup==3) selected @else '' @endif>12th Standard Pass</option>
