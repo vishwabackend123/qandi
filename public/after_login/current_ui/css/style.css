@@ -1379,8 +1379,10 @@ border-color: #56b663;
     padding-top: 40px;
     border-bottom: 1px solid rgba(86, 182, 99, 0.2);
     padding-bottom: 24px;
+/*
     display: flex;
     justify-content: space-between;
+*/
 }
 
 .testType ul {
