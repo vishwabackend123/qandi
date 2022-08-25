@@ -4882,7 +4882,7 @@ justify-content: space-between;}
 
 .selectedWeek p{font-size: 16px;
     font-weight: 500;
-    line-height: 1.6;margin-bottom:5px!important;
+    line-height: 1.6;margin-bottom:3px!important;
     color: #363c4f;}
     .selectedWeek p:last-child{margin-bottom:0px!important;}
     .plantitleBox .boxheading{margin-bottom:8px;}
