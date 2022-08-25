@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}" class="btn btn-danger px-5 rounded-0"><i class="fa fa-download"></i> &nbsp;Download</a>
+                    <a href="javascript:void(0);" class="btn btn-danger px-5 rounded-0"><i class="fa fa-download"></i> &nbsp;Download</a>
                 </div>
                 {{--<p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
