@@ -19,14 +19,14 @@
                         </h3>
                         <div class="dropbox mb-5">
                             <div class="customDropdown1 dropdown" id ="subjectdeopdown">
-                                <input class="text-box markstrend" type="text" placeholder="All Test" readonly>
+                                <input class="text-box markstrend subject_text_box" type="text" placeholder="Practice Test" readonly>
                                 <div class="options">
                                     <div style=" overflow-y: auto;  height: 145px;">
-                                        <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                        <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                        <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                        <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                        <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                        <div class="active markstrend" onclick="showSubjectProgress('Assessment','Practice Test')">Practice Test</div>
+                                        <div class="markstrend" onclick="showSubjectProgress('Mocktest','Mock Test')">Mock Test</div>
+                                        <div class="markstrend" onclick="showSubjectProgress('Test-Series','Test Series')">Test Series</div>
+                                        <div class="markstrend" onclick="showSubjectProgress('Live','Live Test')">Live Test</div>
+                                        <div class="markstrend" onclick="showSubjectProgress('PreviousYear','Previous Year')">Previous Year</div>
                                     </div>
                                 </div>
                             </div>
@@ -1119,10 +1119,24 @@ $(document).on('click', function(e) {
 
 });
 /*******dropdown******** */
-let dropdownsubject = document.querySelector("#subjectdeopdown")
+var dropdownsubject = document.querySelector("#subjectdeopdown")
 
     dropdownsubject.onclick = function() {
     dropdownsubject.classList.toggle("active1")
         }
 /*******dropdown-end******** */
+function showSubjectProgress(exam_type, value) {
+    var sub_id = '<?php echo $sub_id; ?>';
+    document.querySelector(".subject_text_box").value = value;
+    url = "{{ url('subject_progress_graph/') }}/" + sub_id + '/' + exam_type;
+    $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: "json",
+        success: function(response) {
+            myChartmath.data.datasets[0].data = [response.preSocre, response.currSocre]; // or you can iterate for multiple 
+            myChartmath.update();
+        }
+    });
+}
 </script>

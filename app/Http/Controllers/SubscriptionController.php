@@ -20,6 +20,8 @@ use App\Http\Traits\CommonTrait;
 use Carbon\Carbon;
 use App\Models\UserPurchase;
 use Illuminate\Support\Facades\Log;
+use Aws\SecretsManager\SecretsManagerClient;
+use Aws\Exception\AwsException;
 
 /**
  * SubscriptionController
@@ -404,7 +406,8 @@ class SubscriptionController extends Controller
                 $checkout_data['discount_code'] = $discount_code;
                 $checkout_data['discounted_price'] = $discounted_price;
                 Redis::set($cacheKey, json_encode($checkout_data));
-                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
+                $razorData = $this->getSecretName();
+                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price','razorData'));
             } else {
                 $checkout_data = json_decode(Redis::get($cacheKey), true);
                 $subscriptions_data = (object)$checkout_data['subscriptions_data'];
@@ -415,7 +418,8 @@ class SubscriptionController extends Controller
                 $coupon_discount = $checkout_data['coupon_discount'];
                 $discount_code = $checkout_data['discount_code'];
                 $discounted_price = $checkout_data['discounted_price'];
-                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
+                $razorData = $this->getSecretName();
+                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price','razorData'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -611,5 +615,21 @@ class SubscriptionController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function getSecretName()
+    {
+        $client = new SecretsManagerClient([
+                'version' => '2017-10-17',
+                'region' => 'ap-south-1'
+            ]);
+
+        $studentCecretName = 'dev/studentapp';
+        $resultStudent = $client->getSecretValue([
+            'SecretId' => $studentCecretName,
+        ]);
+        if (isset($resultStudent['SecretString']) && !empty($resultStudent['SecretString'])) {
+            $redis_data=json_decode($resultStudent['SecretString'], true);
+        }; 
+        return $redis_data;
     }
 }

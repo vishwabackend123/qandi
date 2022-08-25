@@ -980,6 +980,7 @@ class StudentSignInController extends Controller
     public function newCityList(Request $request)
     {
         try {
+            $this->authLogin();
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : 'ab';
@@ -1093,7 +1094,7 @@ class StudentSignInController extends Controller
     }
     public function authLogin()
     {
-        if (!Session::has('access_token')) {    
+        //if (!Session::has('access_token')) {    
             $request = ['username' => env('AUTH_USERNAME'), 'password' => env('AUTH_PASSWORD')];
             $request_json = http_build_query($request);
             $api_URL = env('API_URL');
@@ -1123,6 +1124,6 @@ class StudentSignInController extends Controller
             if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
                 Session::put('access_token', json_encode($aResponse));
             }
-         }   
+         //}   
     }
 }

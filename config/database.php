@@ -17,6 +17,13 @@ $result = $client->getSecretValue([
 if (isset($result['SecretString']) && !empty($result['SecretString'])) {
     $db_data=json_decode($result['SecretString'], true);
 };
+$studentCecretName = 'dev/studentapp';
+$resultStudent = $client->getSecretValue([
+    'SecretId' => $studentCecretName,
+]);
+if (isset($resultStudent['SecretString']) && !empty($resultStudent['SecretString'])) {
+    $redis_data=json_decode($resultStudent['SecretString'], true);
+};
 
 return [
 
@@ -144,17 +151,17 @@ return [
 
         'default' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', $redis_data['REDIS_HOST']),
             'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', '6379'),
+            'port' => env('REDIS_PORT', $redis_data['REDIS_PORT']),
             'database' => env('REDIS_DB', '0'),
         ],
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', $redis_data['REDIS_HOST']),
             'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', '6379'),
+            'port' => env('REDIS_PORT', $redis_data['REDIS_PORT']),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 

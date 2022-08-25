@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 <div class="plan_successfull_wrapper">
     <div class="plan_successfull_heder_icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="66" viewBox="0 0 64 66" fill="none" class="plan_successfull_heder_icon_img">
@@ -27,7 +26,7 @@
             </defs>
         </svg>
     </div>
-    <div class="email-confirmation">
+    <div class="email-confirmation token_verfiy">
         <div class="email-profile-pick">
             @if(isset($response_json['message']) && !empty($response_json['message']) && ($response_json['message'] == 'Token Expired, please resend email verification' || $response_json['message'] == 'Invald Token'))
             <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,35 +45,52 @@
         @if(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Token Expired, please resend email verification')
         <p class="email_head"><span>Email link Expired</span></p>
         <p><label><b>{{$response_json['email']}}</b> is not Verified yet. </label></p>
-         <span class="mt-2" id="email_success"></span>
+        <span class="mt-2" id="email_success"></span>
         <div class="d-flex align-items-center justify-content-center">
             <a href="javascript:void(0)" class="btn btn-common-transparent nobg w-50 resend_email" style="padding: 10px 40px;margin:24px 12px 0px 0px;"> Resend</a>
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
-         @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invald Token')
+        @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invald Token')
         <p class="email_head"><span>Invalid token</span></p>
         <p><label><b></b> Invalid token</label></p>
-         <span class="mt-2" id="email_success"></span>
-       
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
         @if($message_success == 'Email already Verified')
-        <p><label><b>{{$email_id}}</b>  is Verified. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is Verified. </label></p>
         @else
-         <p><label><b>{{$email_id}}</b> is now Verified. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is now Verified. </label></p>
         @endif
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
         @endif
     </div>
+    @if(isset($response_json['student_id']))
+    <div class="email-confirmation email_send">
+        <div class="email-profile-pick">
+            <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50.5" cy="50" r="50" fill="#E0F6E3" />
+                <path d="M58.834 64.167H42.166c-5 0-8.334-2.5-8.334-8.334V44.168c0-5.834 3.334-8.334 8.334-8.334h16.666c5 0 8.334 2.5 8.334 8.334v11.666c0 5.834-3.334 8.334-8.334 8.334z" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>        
+        <p class="email_head"><span>Email link Sent</span></p>
+        <p><label><b></b> A verification link has been sent to <strong>{{$response_json['email']}}</strong>, please click the link to get your account verified</label></p>
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
+        </div>
+    </div>
+    @endif
 </div>
+<script type="text/javascript">
+    $('.email_send').hide();
+</script>
 @if(isset($response_json['student_id']))
 <script type="text/javascript">
 $('#email_success').hide();
 $('.resend_email').click(function() {
     $('.email-error').hide();
-    var user_id = '<?php echo $response_json['student_id']; ?>';
+    var user_id = '<?php echo $response_json["student_id"]; ?>';
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -90,13 +106,7 @@ $('.resend_email').click(function() {
         success: function(response_data) {
             if (response_data.status === true) {
 
-                $('#email_success').css('color', 'green');
-                $('#email_success').text(response_data.message);
-                $('#email_success').show();
-                $("#email_success").fadeOut(2000);
-                setTimeout(function() {
-                    $('.email-error').show();
-                }, 2000);
+                $('.email_send').show();
 
             } else {
                 $('#email_success').css('color', 'red');

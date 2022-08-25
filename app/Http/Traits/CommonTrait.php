@@ -36,6 +36,9 @@ trait CommonTrait
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             ));
 
             $response_json = curl_exec($curl);
@@ -86,6 +89,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -217,6 +223,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -268,6 +277,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -309,6 +321,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $sub_response_json = curl_exec($curl);
@@ -355,6 +370,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -404,6 +422,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -451,6 +472,9 @@ trait CommonTrait
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
         ));
 
         $response_json = curl_exec($curl);
@@ -477,6 +501,37 @@ trait CommonTrait
         if (Session::has('access_token')) {
             $access_token =json_decode(Session::get('access_token') , true);
             $token = $access_token['access_token'];
+        }else
+        {
+            $request = ['username' => env('AUTH_USERNAME'), 'password' => env('AUTH_PASSWORD')];
+            $request_json = http_build_query($request);
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/client-login';
+            $curl = curl_init();
+            $curl_option = array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/x-www-form-urlencoded"
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            $aResponse = json_decode($response_json,true);
+            if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
+                Session::put('access_token', json_encode($aResponse));
+            }
         }
         return $token;
     }

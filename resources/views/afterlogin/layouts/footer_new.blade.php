@@ -26,21 +26,6 @@
                             </svg>
                             &nbsp;Download PDF</button></a>
                 </div>
-                <!--  <p class="text-center text-secondary mb-5">OR</p>
-                <div class="input-group mb-3">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
-                    </div>
-                    <input type="text" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
-                    <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
-                        <option class="text-secondary">Share it only this time</option>
-                    </select>
-                </div> -->
-                <!-- <div class="text-center my-5">
-                    <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -48,9 +33,7 @@
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" crossorigin="anonymous"></script>
-<!-- <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script> -->
 <script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jquery.slimscroll.min.js')}}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -60,10 +43,6 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/funnel.js"></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
- -->
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-messaging.js"></script>
 <script src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
@@ -324,11 +303,6 @@
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
                 $('.practiceClass').removeClass('practiceopen');
             }
-            /*else {
-                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
-                $(".dash-nav-link a:first-child").addClass("active-navlink");
-                $('.practiceClass').removeClass('practiceopen');
-            } */
 
             $('#submenu').collapse('toggle');
         }
@@ -792,21 +766,6 @@
             $(".log-out-screen , .subscription-box").removeClass("showCard");
         }
     });
-
-    // $(".profile-section ul").on('click', function() {
-    //     $("#LeaDer , .profile-show").removeClass("animateAccountCard");
-    //     if ($(".profile-section ul li:nth-child(2)").hasClass("active")) {
-    //         $(".subscription-box").addClass("showCard");
-    //         $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
-    //     } else if ($(".profile-section ul li:nth-child(3)").hasClass("active")) {
-    //         $(".log-out-screen").addClass("showCard");
-    //         $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
-    //     } else if ($(".profile-section ul li:first-child").hasClass("active")) {
-    //         $("#LeaDer , .profile-show").addClass("showCard");
-    //         $(".log-out-screen , .subscription-box ").removeClass("showCard");
-    //         $(".edit-form").hide();
-    //     }
-    // });
     $(".profile-picture-txt #EdiTbtnnn").click(function() {
         $("#LeaDer , .profile-show").removeClass("showCard");
     });
@@ -835,13 +794,6 @@
     $("a.clear-filter").click(function() {
         $(this).prev().removeClass(" category_selct");
     });
-
-    // $('#plannCal,#nodificbell,.user-pic-block').click(function() {
-    //     $("html, body, .wrapper-dashboard").animate({
-    //         scrollTop: 0
-    //     }, "100");
-    //     $('html').addClass("scrollnone")
-    // });
 
     function searchCity() {
         var input, filter, ul, li, a, i, txtValue;
@@ -917,33 +869,11 @@ $('.headericon.dropdown,.sidebar-menu-lists a').click(function(){
   $('.notification-block_new').removeClass('show');
   $('.notificationnew').removeClass('bellactive');
   $('html').removeClass("scrollnone");
-  // $('.notification-block_new').removeClass('show ')
 });
-
-
 
 /*********Notification-Js*****/
 </script>
 
-
-
-<script>
-/**********************Notification-Overlay Remove Outside Section Click*******************/
-// $(document).on('click', function(e) {
-//     var card_opened = $('.notification-block_top').hasClass('activeblock');
-//     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-//         $('.notification-block_top').removeClass("activeblock");
-//     }
-// });
-
-// $(document).on('click', function(e) {
-//     var card_opened = $('.notification-block_top').hasClass('show');
-//     if (!$(e.target).closest('.notification-main').length && !$(e.target).is('.notification-main') && card_opened === true) {
-//         $('.notification-block_top').removeClass("show");
-//     }
-// });
-/**********************Notification-Overlay Remove Outside Section Click*******************/
-</script>
 
 <script>
 $('.submitBtnlink').click(function() {

@@ -569,6 +569,9 @@ class HomeController extends Controller
                             CURLOPT_FOLLOWLOCATION => true,
                             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                             CURLOPT_CUSTOMREQUEST => 'POST',
+                            CURLOPT_HTTPHEADER => array(
+                                "Authorization: Bearer " . $this->getAccessToken()
+                            ),
                             CURLOPT_POSTFIELDS => array(
                                 'file' => new CURLFILE($file),
                                 'student_id' => $user_id,
@@ -678,6 +681,9 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -771,6 +777,9 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
             );
             curl_setopt_array($curl, $curl_option);
 
@@ -778,12 +787,22 @@ class HomeController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response);
             if (isset($aResponse->success) && $aResponse->success == true) {
-                $notifications = $aResponse->response;
+                $notificationsResponse = $aResponse->response;
+                $collection = collect($notificationsResponse);
+
+                $notifications = $collection->sortByDesc('notification_id')->toArray();
             } else {
                 $notifications = [];
             }
 
-            return view('afterlogin.ajax_notification', compact('notifications'));
+            $countNotify = count($notifications);
+
+            //$htmlview = view('afterlogin.ajax_notification', compact('notifications'));
+            $htmlview = view('afterlogin.ajax_notification')->with('notifications', $notifications)->render();
+
+            $response = ["notificationHtml" => $htmlview, "countNotify" => $countNotify];
+
+            return json_encode($response);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

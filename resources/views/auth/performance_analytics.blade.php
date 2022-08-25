@@ -148,7 +148,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full body scan test</h3>
-                    <p class="my-3">to assess your preparation and take your first step to improvement.</p>
+                    <p class="my-3">to assess your preparation. Take your first step to improvement</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                     @else
