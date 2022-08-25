@@ -6372,8 +6372,14 @@ border-color: #56b663;
     top: 0px;
 }
 .bottom-sec .successRef_copy {
-    top: 30px;
-    right: 10px;
+    top: 18px;
+    left: 50%;
+    background: #56b663;
+    color: #fff!important;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
 }
 
 .share-link-input {position: relative;}
