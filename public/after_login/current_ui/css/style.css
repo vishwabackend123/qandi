@@ -4882,11 +4882,11 @@ justify-content: space-between;}
 
 .selectedWeek p{font-size: 16px;
     font-weight: 500;
-    line-height: 1.6;margin-bottom:3px!important;
+    line-height: 1.6;
     color: #363c4f;}
-    .selectedWeek p:last-child{margin-bottom:0px!important;}
+    /* .selectedWeek p:last-child{margin-bottom:0px!important;}
     .plannedtest p{margin-bottom:3px!important;}
-    .plannedtest p:last-child{margin-bottom:3px!important;}
+    .plannedtest p:last-child{margin-bottom:3px!important;} */
 
     .plantitleBox .boxheading{margin-bottom:8px;}
     .planDetailBox{padding-top: 7px;}
