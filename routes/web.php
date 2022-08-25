@@ -168,7 +168,6 @@ Route::any('/live_next_question/{ques_id}', [App\Http\Controllers\LiveExamContro
 /* AnalyticsController Routes */
 
 Route::any('/overall_analytics/{activeid?}', [App\Http\Controllers\AnalyticsController::class, 'overallAnalytics'])->name('overall_analytics')->middleware('auth', 'menu');
-Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'exportAnalytics'])->name('export_analytics')->middleware('auth', 'menu');
 Route::any('/tutorials_session', [App\Http\Controllers\AnalyticsController::class, 'tutorialsSession'])->name('tutorials_session')->middleware('auth', 'menu');
 Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController::class, 'tutorialsSignup'])->name('tutorials_signup')->middleware('auth', 'menu');
 

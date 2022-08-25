@@ -1090,7 +1090,8 @@ class StudentSignInController extends Controller
     }
     public function authLogin()
     {
-        /* if (!Session::has('access_token')) { */
+
+        //if (!Session::has('access_token')) {    
         $request = ['username' => env('AUTH_USERNAME'), 'password' => env('AUTH_PASSWORD')];
         $request_json = http_build_query($request);
         $api_URL = env('API_URL');
@@ -1117,10 +1118,10 @@ class StudentSignInController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         $aResponse = json_decode($response_json, true);
-
         if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
             Session::put('access_token', json_encode($aResponse));
         }
-        /*  } */
+        //}   
+
     }
 }

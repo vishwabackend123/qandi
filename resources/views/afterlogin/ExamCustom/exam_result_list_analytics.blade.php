@@ -48,7 +48,7 @@ $userData = Session::get('user_data');
                     </div>
                     <div class="modal-body pt-0 px-5 ">
                         <div class="text-center my-5">
-                            <a href="{{route('export_analytics')}}">
+                            <a href="javascript:void(0);">
                                 <button class="btn px-4 top-btn-pop text-white">
                                      <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
                                         <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
