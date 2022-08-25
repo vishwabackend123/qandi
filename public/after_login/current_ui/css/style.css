@@ -745,7 +745,7 @@ font-weight: 500;
     flex-wrap: wrap;
 }
 .add-insubchapter svg{
-vertical-align: super;
+vertical-align: unset;
 }
 .add-insubchapter{
      padding: 15px 11px 13px 13px;
