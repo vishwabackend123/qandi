@@ -4885,6 +4885,9 @@ justify-content: space-between;}
     line-height: 1.6;margin-bottom:3px!important;
     color: #363c4f;}
     .selectedWeek p:last-child{margin-bottom:0px!important;}
+    .plannedtest p{margin-bottom:3px!important;}
+    .plannedtest p:last-child{margin-bottom:3px!important;}
+
     .plantitleBox .boxheading{margin-bottom:8px;}
     .planDetailBox{padding-top: 7px;}
 /********* Shubham End ***********/
