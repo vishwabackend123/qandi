@@ -94,11 +94,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -107,14 +107,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -122,7 +122,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -214,11 +214,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -227,14 +227,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -242,7 +242,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -344,11 +344,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -357,14 +357,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -372,7 +372,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -483,11 +483,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -497,20 +497,20 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
 <!------------------------------------------------------------------------------------>
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -626,11 +626,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -639,19 +639,19 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -743,11 +743,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -756,20 +756,20 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -854,11 +854,11 @@ $leadData ='';
                     <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
-                            <span class="offer_price">₹{{$subsprice}}</span>
+                            <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{$subsprice-$discount_price}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                         </div>
                     </div>
                 </div>
@@ -867,14 +867,14 @@ $leadData ='';
                         <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
-                                <span class="offer_price">₹{{$subsprice}}</span>
+                                <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
                             
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{$subsprice-$discount_price}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
                     </div>
                 </div>
 
@@ -883,7 +883,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
