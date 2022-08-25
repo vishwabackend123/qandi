@@ -2360,7 +2360,7 @@ a.btn-common-attempted svg {
 
     .base-timer__path-elapsed {
         stroke-width: 7px;
-        stroke: grey;
+        stroke: transparent;
     }
 
     .base-timer__path-remaining {
