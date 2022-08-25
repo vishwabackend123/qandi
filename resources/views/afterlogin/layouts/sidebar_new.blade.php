@@ -365,8 +365,9 @@ $userData = Session::get('user_data');
                             </span>Invitation sent!
                         </p>
                     </div>
-                    <p class="successRef_copy" style="color:green;"></p>
+                    
                     <div class="bottom_back-sec">
+                    <p class="successRef_copy" style="color:green;"></p>
                         <label class="backtobtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg> Back</label>
