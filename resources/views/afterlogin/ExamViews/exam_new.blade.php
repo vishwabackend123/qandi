@@ -1260,6 +1260,7 @@ $question_type = "Numerical";
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
+
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("border-btn");
                         $("#btn_" + quest_id).removeClass("pink-btn");
