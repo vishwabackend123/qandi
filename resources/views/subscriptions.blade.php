@@ -122,7 +122,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -242,7 +242,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -372,7 +372,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -510,7 +510,7 @@ $leadData ='';
 
 <!------------------------------------------------------------------------------------>
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -651,7 +651,7 @@ $leadData ='';
                 </div>
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -769,7 +769,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -883,7 +883,7 @@ $leadData ='';
 
 
                 <div class="testType testTypeformob">
-                    <div class="testTypeulbox">
+                    <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

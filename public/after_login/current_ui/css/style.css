@@ -602,7 +602,7 @@ font-weight: 500;
 .gotodashboard{
  padding: 19px 31px;
  border-radius: 20px;
- background: #e0f6e3;
+ background: #c9eece;
 margin-bottom: 20px;
 }
 .gotodashboard p{
@@ -1379,8 +1379,10 @@ border-color: #56b663;
     padding-top: 40px;
     border-bottom: 1px solid rgba(86, 182, 99, 0.2);
     padding-bottom: 24px;
+/*
     display: flex;
     justify-content: space-between;
+*/
 }
 
 .testType ul {
