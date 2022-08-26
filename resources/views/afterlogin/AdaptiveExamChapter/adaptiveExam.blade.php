@@ -922,6 +922,7 @@ $question_type = "Numerical";
                 } else {
                     $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.");
                     $('#endExam').modal('show');
+                    stop();
                 }
             }
         });
@@ -1103,7 +1104,7 @@ $question_type = "Numerical";
             });
             var vld_msg = "Please select your response.";
         }
-        debugger;
+
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
