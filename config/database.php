@@ -9,7 +9,7 @@ $client = new SecretsManagerClient([
             'region' => 'ap-south-1'
         ]);
 
-$secretName = 'rds-db-credentials/cluster-22MKVQMGYNP4BOGCM2UUIBH34A/admin';
+$secretName = env('SECRET_DB');
 
 $result = $client->getSecretValue([
     'SecretId' => $secretName,
@@ -17,7 +17,7 @@ $result = $client->getSecretValue([
 if (isset($result['SecretString']) && !empty($result['SecretString'])) {
     $db_data=json_decode($result['SecretString'], true);
 };
-$studentCecretName = 'dev/studentapp';
+$studentCecretName = env('SECRET_REDIS');
 $resultStudent = $client->getSecretValue([
     'SecretId' => $studentCecretName,
 ]);
