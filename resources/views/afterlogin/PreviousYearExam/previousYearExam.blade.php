@@ -509,20 +509,27 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-<div class="modal fade examModal" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade examModal 10" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
-                <div class="modal-body">
+                <div class="modal-body exam-paused-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
                             <label>Exam Paused</label>
                         </div>
                     </div>
-                    <div class="exam-footer-sec  p-4">
+                    <div class="exam_duration_block text-center">
+                        <img  src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
+                        <label class="d-block">Duration of time paused </label>
+                        <span class="exam_duration d-block">03 mins</span>
+                    </div>
+                    <p>Your last assessment is on hold; click resume to go back to it.</p>
+                    <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn text-center">
-                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259z" fill="#fff"/>
                                     </svg>
                                 </label>
                             </button>
