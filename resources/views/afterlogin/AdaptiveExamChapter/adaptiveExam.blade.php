@@ -921,8 +921,9 @@ $question_type = "Numerical";
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
                     $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.");
+                    stop('submit');
                     $('#endExam').modal('show');
-                    stop();
+
                 }
             }
         });
