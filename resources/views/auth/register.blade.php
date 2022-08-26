@@ -334,7 +334,7 @@
                     success: function(response_data) {
                         var response = jQuery.parseJSON(response_data);
 
-                        console.log(response);
+
                         if (response.success == true) {
                             resentOtpTime();
                             $('#verifynum').removeClass("d-block");
@@ -658,7 +658,7 @@
 
         /* function for select sity */
         document.addEventListener("paste", function(e) {
-            console.log(e.target.id);
+
             if (e.target.type === "text" && e.target.id != 'mobile_num') {
                 var data = e.clipboardData.getData('Text');
                 data = data.split('');

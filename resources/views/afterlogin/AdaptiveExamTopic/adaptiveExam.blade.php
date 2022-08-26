@@ -88,7 +88,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="topic_id" value="{{$topic_id}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
 
-                                        <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
+                                        <button class="btn submitBtnlink" id="submitExam">
                                             <span class="btnText">Submit Test</span>
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -777,7 +777,7 @@ $question_type = "Numerical";
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -802,7 +802,7 @@ $question_type = "Numerical";
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -1226,7 +1226,7 @@ $question_type = "Numerical";
                 option_id.push($(this).val());
             });
         }
-        console.log(option_id);
+
         if (option_id.length > 0) {
             $('#clearBtn_response').attr("disabled", false);
             $('#clearBtn_response').addClass("Clearbtnenable");
