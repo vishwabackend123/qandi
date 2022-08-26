@@ -464,7 +464,7 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <button type="submit" class="btn btn-common-green disabled" disabled id="get-sub-btn"> Get Subscribe</button>
+                            <button type="submit" class="btn btn-common-green disabled" disabled id="get-sub-btn"> Get Subscription</button>
                         </form>
                     </div>
                 </div>
@@ -948,7 +948,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);" style="cursor:default">14 days trial Period expired.</a>
+                        <a href="javascript:void(0);" style="cursor:default">14 day trial Period expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
