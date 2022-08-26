@@ -4887,6 +4887,9 @@ justify-content: space-between;}
     .plantitleBox .boxheading{margin-bottom:8px;}
     .planDetailBox{padding-top: 7px;}
     .fancy-radio-buttons .optionText p:empty{display:none;}
+    .examLeftpanel .counter {
+        margin-bottom: 0!important;
+    }
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
