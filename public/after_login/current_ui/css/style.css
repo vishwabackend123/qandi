@@ -4911,9 +4911,11 @@ justify-content: space-between;}
         text-transform:uppercase;
         
     }
-    .planner-date label.error{font-size: 14px;
+    #StartDate-error{position: absolute;
+        width: 109%;font-size: 14px;
         font-weight: normal;
-        color: #dc6803;}
+        color: #dc6803!important;
+        bottom: -35px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
