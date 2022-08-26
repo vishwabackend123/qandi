@@ -1009,7 +1009,7 @@ $leadData ='';
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
 
                 },
             });

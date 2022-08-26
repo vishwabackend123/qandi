@@ -32,7 +32,7 @@
                     setTimeout(function() {
                         $(".toastdata").removeClass('active');
                         $(".progress").removeClass('active');
-                    }, 5000);
+                    }, 10000);
                 });
             </script>
             @endif

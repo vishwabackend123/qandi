@@ -1035,7 +1035,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
                 },
             });
         });

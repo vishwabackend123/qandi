@@ -186,7 +186,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
 
                 },
             });

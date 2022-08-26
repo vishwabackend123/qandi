@@ -207,7 +207,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
 
                 },
             });
