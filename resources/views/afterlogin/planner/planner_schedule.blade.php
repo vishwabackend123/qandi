@@ -96,7 +96,7 @@ $userData = Session::get('user_data');
                                     <div class="add-insubchapter me-lg-3 me-2">
                                         <input type="hidden" id="select_chapt_id{{$plan->chapter_id}}" name="chapters[]" value="{{$plan->chapter_id}}">
                                         <p class="m-0">
-                                            <span class="me-2" id="select_chapt_name{{$plan->chapter_id}}">{{$plan->chapter_name}}</span>
+                                            <span class="me-2" id="select_chapt_name{{$plan->chapter_id}}" title="{{$plan->chapter_name}}">{{$plan->chapter_name}}</span>
                                             @if($plan->test_completed_yn=="N")
                                             <a href="javascript:void(0)" onclick="Shuffle_Chapter('{{$plan->chapter_id}}','{{$sub->id}}')" title="Shuffle Chapter">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
