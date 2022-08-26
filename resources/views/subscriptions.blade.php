@@ -315,7 +315,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="{{url('/performance-rating')}}">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
+                        <a href="{{url('/performance-rating')}}">Already in {{$sub->trial_subscription_duration}} day trial Period</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -324,7 +324,7 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get subscription</button>
+                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscription</button>
                         </form>
                     </div>
                 </div>
@@ -447,12 +447,12 @@ $leadData ='';
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <div class="freeTrial">
                         @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
                         @endif
                     </div>
                     @else
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trial</a>
+                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} day trial</a>
                     </div>
                     @endif
                     @endif
@@ -587,12 +587,12 @@ $leadData ='';
 
                     <div class="freeTrial">
                          @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
                         @endif
                     </div>
                     @else
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trial ></a>
+                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} day trial ></a>
                     </div>
                     @endif
                     <div class="getSubs">
@@ -602,7 +602,7 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get subscription</button>
+                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscription</button>
                         </form>
                     </div>
                 </div>
@@ -833,7 +833,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);" style="cursor:default">{{$sub->trial_subscription_duration}} days trial Period expired.</a>
+                        <a href="javascript:void(0);" style="cursor:default">{{$sub->trial_subscription_duration}} day trial Period expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -842,7 +842,7 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscribe</button>
+                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscription</button>
                         </form>
                     </div>
                 </div>
@@ -957,7 +957,7 @@ $leadData ='';
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
-                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscribe</button>
+                            <button type="submit" class="btn btn-common-green" id="get-sub-btn">Get Subscription</button>
                         </form>
                     </div>
                 </div>
