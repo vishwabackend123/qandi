@@ -4888,7 +4888,7 @@ justify-content: space-between;}
     .planDetailBox{padding-top: 7px;}
     .fancy-radio-buttons .optionText p:empty{display:none;}
     .examLeftpanel .counter {
-        margin-bottom: 0!important;
+        margin-bottom: 0!important;align-items: center;
     }
 /********* Shubham End ***********/
 
