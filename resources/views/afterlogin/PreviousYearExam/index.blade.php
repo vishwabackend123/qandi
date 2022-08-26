@@ -189,6 +189,10 @@
             $(this).text('View details');
         }
     });
+     function toastClose() {
+       $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+    }
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

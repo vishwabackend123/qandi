@@ -237,5 +237,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             }
         });
     }
+     function toastClose() {
+       $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+  }
 </script>
 @endsection
