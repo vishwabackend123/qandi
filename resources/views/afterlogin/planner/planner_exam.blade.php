@@ -839,7 +839,7 @@ $question_type = "Numerical";
                     $("#question_section").html(result.html);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
-                    $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.'");
+                    $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.");
                     $('#endExam').modal('show');
                 }
             }
