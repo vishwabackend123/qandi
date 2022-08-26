@@ -4916,7 +4916,7 @@ justify-content: space-between;}
         font-weight: normal;
         color: #fb7686 !important;
         bottom: -35px;}
-        .planner-date #EndDate{pointer-events: none;
+        .planner-date .plannerEndDate{pointer-events: none;
             -ms-user-select: none;
             -moz-user-select: none;
             -webkit-user-select: none;
