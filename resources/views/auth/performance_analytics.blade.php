@@ -213,5 +213,9 @@ $full_body_attempt = Session::get('full_body_attempt');
             });
         });
     });
+    function toastClose() {
+        $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+    }
 </script>
 @endsection

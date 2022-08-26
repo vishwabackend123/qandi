@@ -1022,6 +1022,10 @@ $leadData ='';
   $( '.allbenefitsbtn' ).click(function() {
     $( '.testTypeulbox' ).toggleClass('autoHeight');
     });
+  function toastClose() {
+       $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+  }
  </script>
 
 
