@@ -207,11 +207,15 @@ $full_body_attempt = Session::get('full_body_attempt');
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
 
                 },
             });
         });
     });
+    function toastClose() {
+        $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+    }
 </script>
 @endsection

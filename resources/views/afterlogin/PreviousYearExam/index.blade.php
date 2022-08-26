@@ -32,7 +32,7 @@
                     setTimeout(function() {
                         $(".toastdata").removeClass('active');
                         $(".progress").removeClass('active');
-                    }, 5000);
+                    }, 10000);
                 });
             </script>
             @endif
@@ -189,6 +189,10 @@
             $(this).text('View details');
         }
     });
+     function toastClose() {
+       $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+    }
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

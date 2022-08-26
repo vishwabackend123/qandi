@@ -1035,10 +1035,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
                 },
             });
         });
+    function toastClose() {
+        $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+    }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>

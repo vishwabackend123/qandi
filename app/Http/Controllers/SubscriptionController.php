@@ -623,7 +623,7 @@ class SubscriptionController extends Controller
                 'region' => 'ap-south-1'
             ]);
 
-        $studentCecretName = 'dev/studentapp';
+        $studentCecretName = env('SECRET_REDIS');
         $resultStudent = $client->getSecretValue([
             'SecretId' => $studentCecretName,
         ]);
