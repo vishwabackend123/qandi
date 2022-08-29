@@ -87,7 +87,7 @@ $leadData ='';
             @if($subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -100,7 +100,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -207,7 +207,7 @@ $leadData ='';
             @elseif($subscription_type!="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -220,7 +220,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -337,7 +337,7 @@ $leadData ='';
             @endphp
             <div class="selectPlanedetail" style="display:none">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -350,7 +350,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -476,7 +476,7 @@ $leadData ='';
             @endphp
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -490,7 +490,7 @@ $leadData ='';
 
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -619,7 +619,7 @@ $leadData ='';
             @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -632,7 +632,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -736,7 +736,7 @@ $leadData ='';
                 }
                 @endphp
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -749,7 +749,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -847,7 +847,7 @@ $leadData ='';
             @else
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                    <p>{{$sub->subscription_name}} Annual Plan</p>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -860,7 +860,7 @@ $leadData ='';
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
+                        <p>{{$sub->subscription_name}} Annual Plan</p>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
