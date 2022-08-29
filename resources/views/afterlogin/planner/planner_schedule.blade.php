@@ -73,7 +73,7 @@ $userData = Session::get('user_data');
                                 <span class="ms-1"> </span>
                                 &nbsp;
                             </p>
-                            <h2 class="week-select pb-2 mb-0 pt-5">Select Chapters</h2>
+                            <h2 class="week-select chapter_sel pb-2 mb-0 pt-5">Select Chapters</h2>
                             @if(isset($user_subjects) && !empty($user_subjects))
                             @foreach($user_subjects as $sub)
                             @php
