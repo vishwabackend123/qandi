@@ -91,7 +91,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="session_id" value="{{$session_id}}">
                                         <input type="hidden" name="chapter_id" value="{{$chapter_id}}">
 
-                                        <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
+                                        <button class="btn submitBtnlink" id="submitExam">
                                             <span class="btnText">Submit Test</span>
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -495,16 +495,16 @@ $question_type = "Numerical";
                         </div>
                     </div>
                     <div class="exam_duration_block text-center">
-                        <img  src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
+                        <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
                         <label class="d-block">Duration of time paused </label>
-                        <span class="exam_duration d-block">03 mins</span>
+                        <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
                     <p>Your last assessment is on hold; click resume to go back to it.</p>
                     <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259z" fill="#fff"/>
+                                        <path d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259z" fill="#fff" />
                                     </svg>
                                 </label>
                             </button>
@@ -717,6 +717,7 @@ $question_type = "Numerical";
     }
 
     function stop(type = '') {
+
         setDisabled(stopBtn);
         removeDisabled(startBtn);
         $(".stop").hide();
@@ -726,6 +727,8 @@ $question_type = "Numerical";
         clearInterval(timer_countdown);
         clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
+            var pausedTime = $("#base-timer-label").text();
+            $('#pauseTime').text(pausedTime);
             $("#resume-test").modal("show");
             $('body').addClass("make_me_blue");
         }
@@ -786,7 +789,7 @@ $question_type = "Numerical";
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -811,7 +814,7 @@ $question_type = "Numerical";
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -918,7 +921,9 @@ $question_type = "Numerical";
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
                     $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.");
+                    stop('submit');
                     $('#endExam').modal('show');
+
                 }
             }
         });
@@ -980,6 +985,7 @@ $question_type = "Numerical";
             },
         });
     }
+
 
     /* Saved question response */
     function saveAnswer() {
@@ -1099,6 +1105,7 @@ $question_type = "Numerical";
             });
             var vld_msg = "Please select your response.";
         }
+
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -1114,6 +1121,7 @@ $question_type = "Numerical";
 
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
+            async: false,
             url: "{{ route('saveAdaptiveAnswer') }}",
             type: 'POST',
             data: {
@@ -1235,7 +1243,7 @@ $question_type = "Numerical";
                 option_id.push($(this).val());
             });
         }
-        console.log(option_id);
+
         if (option_id.length > 0) {
             $('#clearBtn_response').attr("disabled", false);
             $('#clearBtn_response').addClass("Clearbtnenable");

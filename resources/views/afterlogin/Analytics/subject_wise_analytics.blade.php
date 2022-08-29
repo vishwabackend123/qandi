@@ -67,7 +67,7 @@
                         </div>
                         <div class="commonSubjectLeg">
                             <span class="bar graybar"></span>
-                            <label class="text">Not Attempted questions</label>
+                            <label class="text">Not Attempted Questions</label>
                         </div>
                     </div>
                     <ul class="topic_score_lists mb-0">

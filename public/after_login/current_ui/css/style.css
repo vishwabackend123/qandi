@@ -690,7 +690,7 @@ top: 38px;
   user-select: none;
 }
 .value-button:hover{
- background: #d0d5dd;   
+ background: #f2f4f7;   
 }
 .radius-right:hover{
 border-radius: 0 8px 8px 0px;    
@@ -4911,6 +4911,18 @@ justify-content: space-between;}
         text-transform:uppercase;
         
     }
+    #StartDate-error{position: absolute;
+        width: 109%;font-size: 14px;
+        font-weight: normal;
+        color: #fb7686 !important;
+        bottom: -35px;}
+        .planner-date .plannerEndDate{pointer-events: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            user-select: none;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/

@@ -169,7 +169,7 @@
                                     @php
                                     $number = $response->user_rank;
                                     $ends = array('th','st','nd','rd','th','th','th','th','th','th');
-                                    if (($number %100) >= 11 && ($number%100) <= 13){ $abbreviation='th' ; } else { $abbreviation=$ends[$number % 10]; } @endphp <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;bottom: -1px;margin-left: -2px;">{{$abbreviation}}</sub></label>
+                                    if (($number %100) >= 11 && ($number%100) <= 13){ $abbreviation='th' ; } else { $abbreviation=$ends[$number % 10]; } @endphp <sub style="font-size: 16px;font-weight: 500;color: #1f1f1f;margin-left: -5px;top: -18px;">{{$abbreviation}}</sub></label>
                             </div>
                             <div class="total_participants">
                                 <span class="d-block commontext" style="color: #666;">Total Participants</span>

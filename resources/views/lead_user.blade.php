@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="email-sec">
-            <h2>Provide email to start free trial.</h2>
+            <h2>Provide email to start journey.</h2>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" class="form-control email_input" id="exampleFormControlInput1" placeholder="Email address" maxlength="35">

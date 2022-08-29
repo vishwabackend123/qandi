@@ -42,11 +42,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <p class="error_toast"></p>
             </div>
         </div>
-        <div class="toast-close" onclick="toastClose()">
-            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </div>
+       
         <div class="progress"></div>
     </div>
     <div class="content-wrapper dashbaordContainer">
@@ -211,7 +207,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
-                                    <p>to assess your preparation. Take your first step to improvement.</p>
+                                    <p> to assess your preparation and take your first step to improvement.</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
@@ -1035,14 +1031,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
                 },
             });
         });
-    function toastClose() {
-        $('.toastdata').removeClass('active');
-        $('.progress').removeClass('active');
-    }
+   
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>

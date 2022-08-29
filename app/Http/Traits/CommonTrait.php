@@ -531,6 +531,7 @@ trait CommonTrait
             $aResponse = json_decode($response_json, true);
             if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
                 Session::put('access_token', json_encode($aResponse));
+                $token=$aResponse['access_token'];
             }
         }
 
