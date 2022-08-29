@@ -1954,7 +1954,7 @@
  .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
         position: initial;
     }
-     .hideyes {
+    .examReviewscreenmob  .hideyes {
         display: none;
         transform: rotate(270deg)!important;
     }
@@ -1963,7 +1963,7 @@
         font-size: 17px;
         padding: 0;
         position: absolute;
-        bottom: 26px;
+        bottom: 10px;
         color: #363c4f;
         background-color: #fff;
         width: 28px;
@@ -1972,7 +1972,7 @@
         border-radius: 6px;
         font-weight: 700;
         box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%)!important;
-        right: 32px;
+        right: 16px;
         transform: rotate(90deg);
     }
    .examReviewscreenmob .sachin {
@@ -1980,7 +1980,7 @@
         position: absolute;
         bottom: 0px;
         background: white;
-        height: 100% !important;
+        /* height: 100% !important; */
         z-index: 999;
         width: 96%;
         left: 0px;    padding-left: 16px;
@@ -1990,7 +1990,7 @@
         background: white;
         width: 100%;
         bottom: 0;
-        height: 73px;z-index: 99999;border-top: 1px solid rgba(205, 227, 208, 0.5);
+        height: 50px;z-index: 99999;border-top: 1px solid rgba(205, 227, 208, 0.5);
     }
 
   .examReviewscreenmob   .examRightpanel {
@@ -2000,22 +2000,23 @@
         padding: 40px 28px 10px;
         padding-left: 0px;
         padding-right: 0px;
-        border-radius: 20px;
+        border-radius: 0px;
         box-shadow: 0 8px 30px 0 rgb(172 185 176 / 14%);
-        position: relative;
+        position: absolute;
         padding-top: 14px !important;
+        bottom: 48px;
     }
  
     .examReviewscreenmob    .reviewans-mainsec {
             position: absolute;
-            bottom: 43px;
+            bottom: 4px;
             background: #fff;
             overflow: hidden;
             margin-right: 15px;
             min-width: 100%;
             max-width: 100% !important;
             left: 0px;
-            height: 200px !important;
+          
             border-bottom: 1px solid rgba(205, 227, 208, 0.5);
             padding: 0px 16px;
         }
@@ -2032,11 +2033,11 @@
         padding: 0px;
     }
     
-    .examReviewscreenmob .examLeftpanel ,.backbtnformobilebox {
+    .examReviewscreenmob .examLeftpanel ,.examReviewscreenmob .backbtnformobilebox {
         padding: 0px 16px;
     }
   .examReviewscreenmob  .list-ans {
-        height: 20vh;
+        height: calc( 100% - 80px);
     }
    .examReviewscreenmob .review-filter-top {
        
@@ -2056,7 +2057,7 @@
         padding-top: 0px;
     padding-bottom: 0px;
     }
-    .expand_block {
+    .examReviewscreenmob .expand_block {
         display: none;
         position: absolute;
         right: -43px;
@@ -2067,6 +2068,11 @@
         background: #fff;
         width: 360px;
         
+    }
+
+    .examReviewscreenmob .collapseformob {
+        display: none;
+        cursor: pointer;
     }
     
   
