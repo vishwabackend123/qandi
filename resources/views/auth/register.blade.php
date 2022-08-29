@@ -168,7 +168,7 @@
                         <div class="col-6">
                             <label>Grade</label>
                             <select class="form-control selectdata reqrd js-example-basic-single" name="grade" id="grade" required>
-                                <option class="we" value="" disabled selected hidden>Select grade</option>
+                                <option class="we" value="" disabled selected hidden>Select Grade</option>
                                 <option class="we2" value="1">10th Standard Pass</option>
                                 <option class="we" value="2">11th Standard Pass</option>
                                 <option class="we" value="3">12th Standard Pass</option>
@@ -334,7 +334,7 @@
                     success: function(response_data) {
                         var response = jQuery.parseJSON(response_data);
 
-                        console.log(response);
+
                         if (response.success == true) {
                             resentOtpTime();
                             $('#verifynum').removeClass("d-block");
@@ -527,7 +527,7 @@
         $(document).ready(function() {
             $('.js-example-basic-single').select2({
                 minimumResultsForSearch: -1,
-                placeholder: "Select grade",
+                placeholder: "Select Grade",
             });
             $('.examtype').select2({
                 minimumResultsForSearch: -1,
@@ -658,7 +658,7 @@
 
         /* function for select sity */
         document.addEventListener("paste", function(e) {
-            console.log(e.target.id);
+
             if (e.target.type === "text" && e.target.id != 'mobile_num') {
                 var data = e.clipboardData.getData('Text');
                 data = data.split('');

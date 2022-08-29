@@ -20,11 +20,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <p class="error_toast"></p>
             </div>
         </div>
-        <div class="toast-close" onclick="toastClose()">
-            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </div>
+       
         <div class="progress"></div>
     </div>
 </div>
@@ -186,7 +182,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
 
                 },
             });
@@ -237,5 +233,6 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             }
         });
     }
+     
 </script>
 @endsection

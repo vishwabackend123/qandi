@@ -115,6 +115,7 @@ $questtype='radio';
         overflow: hidden;
         background-color: #44CD7F;
     }
+
     #home a.sectionBtn {
         padding: 0.25rem 0.5rem;
         font-size: .875rem;
@@ -277,7 +278,7 @@ $questtype='radio';
                             @php $i++; @endphp
                             @endforeach
                             @endif
-                           
+
                         </div>
                         <div class="row mt-4">
                             <div class="col-md-6 legends">
@@ -443,14 +444,32 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-lg ">
-        <div class="modal-content rounded-0">
-            <div class="modal-body text-center pt-3 pb-3">
-                <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0" data-bs-dismiss="modal">
-                        Resume Test
-                    </button>
+<div class="modal fade examModal 10" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body exam-paused-body">
+                    <div class="modal-header-exam text-center ">
+                        <div class="exam-overview ">
+                            <label>Exam Paused</label>
+                        </div>
+                    </div>
+                    <div class="exam_duration_block text-center">
+                        <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
+                        <label class="d-block">Duration of time paused </label>
+                        <span class="exam_duration d-block" id="pauseTime">03 mins</span>
+                    </div>
+                    <p>Your last assessment is on hold; click resume to go back to it.</p>
+                    <div class="exam-footer-sec">
+                        <div class="task-btn tasklistbtn text-center">
+                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259z" fill="#fff" />
+                                    </svg>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -678,6 +697,8 @@ $questtype='radio';
         clearInterval(timer_countdown);
         clearInterval(setEachQuestionTimeNext_countdown);
         if (type !== 'submit') {
+            var pausedTime = $("#base-timer-label").text();
+            $('#pauseTime').text(pausedTime);
             $("#resume-test").modal("show");
             $('body').addClass("make_me_blue");
         }

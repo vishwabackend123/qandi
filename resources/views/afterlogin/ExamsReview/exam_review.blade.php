@@ -37,7 +37,7 @@ $question_type = "Numerical";
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
         <div class="examSereenwrapper">
-            <div class="examMaincontainer">
+            <div class="examMaincontainer examreviewMaincontainer">
                 <div class="backbtnformobilebox hideondesktop">
                     <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
                     <div class="reviewexamType">
@@ -403,17 +403,26 @@ $question_type = "Numerical";
                                 </ul>
                             </div>
 
-
-
-
-
-
-                            <label class="expandbtn" title="Expand">
+                            <label class="expandformob hideondesktop" title="Expand">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </label>
-                            <label class="collapsebtn" title="Collapse">
+                            <label class="collapseformob hideondesktop" title="Collapse">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+
+
+
+
+                            <label class="expandbtn hideonmobile" title="Expand">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </label>
+                            <label class="collapsebtn hideonmobile" title="Collapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -673,7 +682,7 @@ $question_type = "Numerical";
         review_right_Height();
     });
 </script>
-
+ 
 <script>
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
@@ -707,7 +716,7 @@ $question_type = "Numerical";
             $('.list-ans').css('height', coll_scroll_final_height)
         });
     });
-</script>
+</script>  
 
 <!-----End__Right_Review_Height_Calculation------->
 <!-----Start-for-expand-btn-click------->
@@ -747,6 +756,28 @@ $question_type = "Numerical";
             display: "block"
         });
     });
+
+
+    $('.expandformob').on('click', function() {
+        $('.collapseformob').css({
+            display: "block"
+        });
+        $('.expandformob').css({
+            display: "none"
+        });
+    });
+
+    $('.collapseformob').on('click', function() {
+        $('.collapseformob').css({
+            display: "none"
+        });
+        $('.expandformob').css({
+            display: "block"
+        });
+    });
+
+
+
 </script>
 <!-----end-for-expand-btn-click------->
 
@@ -766,24 +797,16 @@ $question_type = "Numerical";
 
 <script>
     $('.showyes').click(function() {
-        // $('.text-exammid-sec').show(500);
-
-        $('.sachin').slideToggle({
-            direction: "up"
-        }, 300);
-
+        $('.sachin').slideToggle({direction: "up"}, 300);
         $(this).toggleClass('Close');
-
         $('.showyes').hide(0);
         $('.hideyes').show(0);
         $('.overlaydiv').show(0);
-
     });
     $('.hideyes').click(function() {
         $('.sachin').slideToggle({
             direction: "down"
         }, 300);
-
         $(this).toggleClass('Close');
         $('.showyes').show(0);
         $('.hideyes').hide(0);
@@ -793,24 +816,75 @@ $question_type = "Numerical";
 <script>
 $(function() {
   if (window.matchMedia("(max-width: 767px)").matches) {
-        var exam_Review_screenmob_height = $(".examReviewscreenmob ").outerHeight();
-        $('.examMaincontainer ').css('height', exam_Review_screenmob_height);
-        var test_review_height_div = exam_Review_screenmob_height / 2;
-        var totle_heigh_40 = test_review_height_div - 40 + "px";
-        $('.reviewScreenleft').css('height', totle_heigh_40);
-        $('.reviewScreenright').css('height', totle_heigh_40);
-        var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
-        var Review_second_panel_30 = exam_Review_second_panel - 30 + "px";
-        $('.reviewScreenright').css('height', Review_second_panel_30);
-        var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
-        var extra_height_total = reviewScreenright_call - 100 + "px";
-        $('.reviewscreenquestion').css('height', extra_height_total);
-        $('.questionwrapper').css('height', extra_height_total);
-        $('.questionsliderbox').css('height', extra_height_total);
+
         let height = screen.height;
         $('.examReviewscreenmob').css('height', height);
         $('.content-wrapper').css('height', height);
         $('.examSereenwrapper').css('height', height);
+        $('.examreviewMaincontainer ').css('height', height);
+        var exam_Review_screenmob_height = $(".examreviewMaincontainer ").outerHeight();
+        var test_review_height_div = exam_Review_screenmob_height / 2;
+        var totle_heigh_40 = test_review_height_div - 40 + "px";
+         $('.reviewScreenleft').css('height', totle_heigh_40);
+        $('.reviewScreenright').css('height', totle_heigh_40);
+        var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
+        var Review_second_panel_90 = exam_Review_second_panel - 90 + "px";
+        $('.reviewScreenright').css('height', Review_second_panel_90);
+
+        var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
+        var extra_height_total = reviewScreenright_call - 100 + "px";
+        $('.reviewscreenquestion').css('height', extra_height_total);
+        $('.examReviewscreenmob .questionwrapper').css('height', extra_height_total);
+        $('.examReviewscreenmob .questionsliderbox').css('height', extra_height_total);
+
+        var reviewScreenrightkheight = $(".reviewScreenright  ").outerHeight();
+        var formobileviewdetailkheight = $(".formobileviewdetail  ").outerHeight();
+        var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
+        $('.reviewans-mainsec').css('height', dividereviewboxandformob);
+
+        $(".expandformob").on('click', function() {
+            $('.overlaydiv').show(0);
+            var questionsliderinner_mob = $(".questionsliderinner ").outerHeight();
+            var reviewans_mainsec_mob = $(".reviewans-mainsec ").outerHeight();
+            var questionsld_div_tab_height = questionsliderinner_mob + reviewans_mainsec_mob + reviewans_mainsec_mob;
+            $('.reviewans-mainsec').css('height', questionsld_div_tab_height);
+        });
+       
+        $(".collapseformob").on('click', function() {
+            $('.overlaydiv').hide(0);
+            var reviewScreenrightkheight = $(".reviewScreenright  ").outerHeight();
+            var formobileviewdetailkheight = $(".formobileviewdetail  ").outerHeight();
+            var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
+            $('.reviewans-mainsec').css('height', dividereviewboxandformob);
+        });
+
+
+
+
+
+        $(".showyes").on('click', function() {
+            var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
+            var sachinshowyes = $(".sachin").outerHeight();
+            var combinationdiv = sachinshowyes  + 400 + "px !important";
+            $('.sachin').css('height', combinationdiv);
+
+
+        
+             
+        });
+
+        $(".hideyes").on('click', function() {
+            var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
+            var sachinshowyes = $(".sachin").outerHeight();
+            var combinationdiv = sachinshowyes  - 400 + "px";
+            $('.sachin').css('height', combinationdiv);
+            
+        });
+
+
+      
+
+        
     }
 })
 </script>

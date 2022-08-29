@@ -90,8 +90,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -110,6 +110,7 @@ trait CommonTrait
         } else {
             $subject_list = [];
         }
+
         return $subject_list;
     }
 
@@ -224,8 +225,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -278,8 +279,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -322,8 +323,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $sub_response_json = curl_exec($curl);
@@ -371,8 +372,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -423,8 +424,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -473,8 +474,8 @@ trait CommonTrait
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer " . $this->getAccessToken()
-                ),
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
         ));
 
         $response_json = curl_exec($curl);
@@ -499,10 +500,9 @@ trait CommonTrait
     {
         $token = '';
         if (Session::has('access_token')) {
-            $access_token =json_decode(Session::get('access_token') , true);
+            $access_token = json_decode(Session::get('access_token'), true);
             $token = $access_token['access_token'];
-        }else
-        {
+        } else {
             $request = ['username' => env('AUTH_USERNAME'), 'password' => env('AUTH_PASSWORD')];
             $request_json = http_build_query($request);
             $api_URL = env('API_URL');
@@ -519,8 +519,8 @@ trait CommonTrait
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/x-www-form-urlencoded"
+                    "cache-control: no-cache",
+                    "content-type: application/x-www-form-urlencoded"
                 ),
             );
             curl_setopt_array($curl, $curl_option);
@@ -528,11 +528,13 @@ trait CommonTrait
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
-            $aResponse = json_decode($response_json,true);
+            $aResponse = json_decode($response_json, true);
             if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
                 Session::put('access_token', json_encode($aResponse));
+                $token=$aResponse['access_token'];
             }
         }
+
         return $token;
     }
 }

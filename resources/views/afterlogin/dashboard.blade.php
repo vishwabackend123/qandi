@@ -31,24 +31,20 @@ $user_id = isset($userData->id)?$userData->id:'';
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="toastdata">
-                <div class="toast-content">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
-                        <path d="M23.666 16.387V17a6.667 6.667 0 1 1-3.953-6.093m3.953.76L17 18.34l-2-2" stroke="#039855" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M17 32C8.716 32 2 25.284 2 17H0c0 9.389 7.611 17 17 17v-2zm15-15c0 8.284-6.716 15-15 15v2c9.389 0 17-7.611 17-17h-2zM17 2c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17v2zm0-2C7.611 0 0 7.611 0 17h2C2 8.716 8.716 2 17 2V0z" fill="#BDF3C5" />
-                    </svg>
-                    <div class="message">
-                        <h5 class="mb-2 error_header"></h5>
-                        <p class="error_toast"></p>
-                    </div>
-                </div>
-                <div class="toast-close" onclick="toastClose()">
-                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="progress"></div>
+        <div class="toast-content">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
+                <path d="M23.666 16.387V17a6.667 6.667 0 1 1-3.953-6.093m3.953.76L17 18.34l-2-2" stroke="#039855" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 32C8.716 32 2 25.284 2 17H0c0 9.389 7.611 17 17 17v-2zm15-15c0 8.284-6.716 15-15 15v2c9.389 0 17-7.611 17-17h-2zM17 2c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17v2zm0-2C7.611 0 0 7.611 0 17h2C2 8.716 8.716 2 17 2V0z" fill="#BDF3C5" />
+            </svg>
+            <div class="message">
+                <h5 class="mb-2 error_header"></h5>
+                <p class="error_toast"></p>
             </div>
+        </div>
+       
+        <div class="progress"></div>
+    </div>
     <div class="content-wrapper dashbaordContainer">
         <div class="dashboardTopSection">
             <div class="container-fluid">
@@ -73,7 +69,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal ! 
+                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal !
                                     </p>
                                 </span>
                             </h3>
@@ -155,13 +151,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             <script>
-                                            var percentageComplete = "{{round($sub['score'])}}";
-                                            var strokeDashOffsetValue = 100 - (percentageComplete);
-                                            var progressBar = $("#js-progress-bar{{$key}}");
-                                            progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-                                        </script>
+                                                var percentageComplete = "{{round($sub['score'])}}";
+                                                var strokeDashOffsetValue = 100 - (percentageComplete);
+                                                var progressBar = $("#js-progress-bar{{$key}}");
+                                                progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                                            </script>
                                         </div>
-                                       
+
                                         @endforeach
                                         @endif
                                     </div>
@@ -211,7 +207,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
-                                    <p>to assess your preparation. Take your first step to improvement.</p>
+                                    <p> to assess your preparation and take your first step to improvement.</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
@@ -543,7 +539,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="plantitleBox">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
-                                                Weekly Planner
+                                                    Weekly Planner
                                                     <span class="tooltipmain">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                             <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -1035,10 +1031,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $(".progress").removeClass('active');
                         $('.toastdata').hide();
                         $('.progress').hide();
-                    }, 5000);
+                    }, 10000);
                 },
             });
         });
+   
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
@@ -1250,10 +1247,10 @@ $user_id = isset($userData->id)?$userData->id:'';
             dropdown.classList.toggle("active1")
         }
     </script>
-<script>
-    $('.toastdata').hide();
-    $('.progress').hide();
-</script>
+    <script>
+        $('.toastdata').hide();
+        $('.progress').hide();
+    </script>
 
     <style>
         .customDropdown1 {

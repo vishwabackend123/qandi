@@ -20,11 +20,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="toast-close" onclick="toastClose()">
-                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M26 14 14 26M14 14l12 12" stroke="#1F1F1F" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
+                
                 <div class="progress active"></div>
             </div>
             <script>
@@ -32,7 +28,7 @@
                     setTimeout(function() {
                         $(".toastdata").removeClass('active');
                         $(".progress").removeClass('active');
-                    }, 5000);
+                    }, 10000);
                 });
             </script>
             @endif
@@ -189,6 +185,7 @@
             $(this).text('View details');
         }
     });
+     
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
