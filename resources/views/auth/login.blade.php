@@ -101,7 +101,7 @@
                 </a>
             </figure>
             <div class="loginform m-auto">
-                <h1 class="pb-2 mb-1">Log in</h1>
+                <h1 class="pb-2 mb-1">Log In</h1>
                 <p>Don’t have an account? <a href="{{ route('register') }}">Sign Up</a></p>
                 <form id="studentlogin" method="post">
                     <div class="custom-input changeno pb-4">
