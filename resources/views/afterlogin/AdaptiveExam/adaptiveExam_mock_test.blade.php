@@ -104,6 +104,7 @@
                     $("#attempted2").show();
                     $('#attempted2').html(data.html);
                     $('#testTypeDiv').attr("style", "display: none !important");
+                    $('.slot_div').hide();
                 },
                 error: function(data, errorThrown) {
                 }

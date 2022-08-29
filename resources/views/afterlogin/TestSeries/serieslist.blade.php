@@ -175,6 +175,7 @@ $('#attempted').click(function() {
         success: function(data) {
             $("#attempted_tab").show();
             $('#attempted_tab').html(data.html);
+            $('.slot_div').hide();
         },
         error: function(data, errorThrown) {}
     });
