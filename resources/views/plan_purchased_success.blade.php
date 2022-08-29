@@ -40,7 +40,7 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                         </svg>
                         <div class="plan_success_congrats_msg">
                             <div class="plan_success_congrats_msg_name">Congratulations {{$user_name}}</div>
-                            <div class="plan_success_congrats_msg_text">Thank you for your purchase, you are now fully upgraded to the 1 year plan. we hope you will continue to enjoy using our product.</div>
+                            <div class="plan_success_congrats_msg_text">Thank you for your purchase. You have now been upgraded to the 1-year plan. We hope you continue to enjoy your learning journey.</div>
                         </div>
                     </div>
                     <div class="plan_box_status_contant">
@@ -70,14 +70,14 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Active date:</div>
-                                <div class="plan_subscribption">{{date('jS F Y', $transaction_data->created_at)}}</div>
+                                <div class="plan_subscribption">{{date('j F Y', $transaction_data->created_at)}}</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">End date:</div>
                                 @php
                                 $subscription_month=$transaction_data->notes->month;
                                 @endphp
-                                <div class="plan_subscribption">{{date('jS F Y',strtotime("+$subscription_month month",$transaction_data->created_at))}}</div>
+                                <div class="plan_subscribption">{{date('j F Y',strtotime("+$subscription_month month",$transaction_data->created_at))}}</div>
                             </div>
                         </div>
                         <div class="line-692"></div>
