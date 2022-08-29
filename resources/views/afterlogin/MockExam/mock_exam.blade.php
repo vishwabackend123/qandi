@@ -1160,6 +1160,7 @@ $question_type = "Numerical";
                     }
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
+                    stop('submit');
                     $('#attemptlimit').modal('show');
 
 
@@ -1264,6 +1265,7 @@ $question_type = "Numerical";
 
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
+                    stop("submit");
                     $('#attemptlimit').modal('show');
 
                     //alert(response.message);
