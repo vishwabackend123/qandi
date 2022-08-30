@@ -17,7 +17,8 @@
 <body>
     <div class="error-page-wrapper">
         <div class="error-page-block text-center">
-            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100 mobile_hide">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image-mobile.svg')}}" class="w-100 mobile_block">
             <div class="error-page-content">
                 <h2>Page Not Found</h2>
                 <p>Sorry, the page you’re looking for cannot be accessed or was removed!</p>

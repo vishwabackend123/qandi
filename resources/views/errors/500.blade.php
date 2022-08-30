@@ -17,7 +17,8 @@
 <body>
     <div class="error-page-wrapper">
         <div class="error-page-block text-center">
-            <img  src="{{URL::asset('public/after_login/current_ui/images/500-image.svg')}}" class="w-100">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/500-image.svg')}}" class="w-100 mobile_hide">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/500-image-mobile.svg')}}" class="w-100 mobile_block">
             <div class="error-page-content">
                 <h2>Internal Server Error</h2>
                 <p>We are having some issues at the moment. 

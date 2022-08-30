@@ -3993,7 +3993,8 @@ span.exam_duration {
     display: flex;
     align-items: center;
     justify-content:center;
-    padding: 0 20px;
+    padding: 0 16px;
+    background-color: #e0f6e3;
     
 }
 

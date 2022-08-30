@@ -180,9 +180,9 @@
  }
  .error-page-content p{margin:0 0 40px;}
  .error-page-content h2{margin:-20px 0 18px;}
- .error-page-block img {
+ /* .error-page-block img {
      margin-top: -50px;
- }
+ } */
 
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
@@ -1196,7 +1196,7 @@
     #resume-test .modal-header-exam .exam-overview {padding-bottom: 0;}   
     .exam_duration_block {padding: 20px 0 19px;}
     #resume-test .modal-dialog{margin:16px;}
-    .error-page-content h2{font-size:24px;margin:60px 0 18px;}
+    .error-page-content h2{font-size:24px;margin:40px 0 18px;}
     .error-page-content p{margin:0 0 40px;}
 
     /************ Amit end *********/
