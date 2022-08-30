@@ -93,13 +93,13 @@
      *      -> General -> Scroll Down and Choose CDN for all the details
      */
     var firebaseConfig = {
-        apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
-        authDomain: "uniq-notifications-9891c.firebaseapp.com",
-        projectId: "uniq-notifications-9891c",
-        storageBucket: "uniq-notifications-9891c.appspot.com",
-        messagingSenderId: "426474366022",
-        appId: "1:426474366022:web:0a94e98859fedd92bd9647",
-        measurementId: "G-9QGWSEL82D"
+        apiKey: "{{$secretKeysRedis['apiKey']}}",
+        authDomain: "{{$secretKeysRedis['authDomain']}}",
+        projectId: "{{$secretKeysRedis['projectId']}}",
+        storageBucket: "{{$secretKeysRedis['storageBucket']}}",
+        messagingSenderId: "{{$secretKeysRedis['messagingSenderId']}}",
+        appId: "{{$secretKeysRedis['appId']}}",
+        measurementId: "{{$secretKeysRedis['measurementId']}}"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -506,16 +506,15 @@
                         $('#referedfrnd').modal('show');
 
                     } else {
-                         if ((typeof response.duplicate_referrals !== 'undefined') && (response.duplicate_referrals.length > 0)) {
+                        if ((typeof response.duplicate_referrals !== 'undefined') && (response.duplicate_referrals.length > 0)) {
 
                             const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
                             errormsg[0].textContent = "Already referred Email ids : " + duplicate;
-                        }else
-                        {
-                           var errormsg = $("#errRef_auth").show();
-                           errormsg[0].textContent = response.message; 
+                        } else {
+                            var errormsg = $("#errRef_auth").show();
+                            errormsg[0].textContent = response.message;
                         }
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
@@ -844,39 +843,39 @@
 
 
 <script>
-/*********Notification-Scrolljs*************/
-$('a[href="#referfrnd"]').click(function() {
-    $('.mobilemenu').removeClass("showmenu");
-    $('#menumobilehide').hide();
-    $("#menumobile").show();
-    $('body').removeClass('sidebartoggle');
-});
-$('.notificationnew').click(function() {
-    $('.mobilemenu').removeClass("showmenu");
-    $('#menumobilehide').hide();
-    $("#menumobile").show();
-    $('body').removeClass('sidebartoggle');
-  $(this).toggleClass('bellactive');
-  $('.notification-block_new').toggleClass('activeblock');
-      if ($('.notification-block_new').hasClass('activeblock')) {
-          $('html').addClass("scrollnone");
-      }else {
-          $('html').removeClass("scrollnone");
-      };
-});
-$('.headericon.dropdown,.sidebar-menu-lists a').click(function(){
-  $('.notification-block_new').removeClass('activeblock');
-  $('.notification-block_new').removeClass('show');
-  $('.notificationnew').removeClass('bellactive');
-  $('html').removeClass("scrollnone");
-});
+    /*********Notification-Scrolljs*************/
+    $('a[href="#referfrnd"]').click(function() {
+        $('.mobilemenu').removeClass("showmenu");
+        $('#menumobilehide').hide();
+        $("#menumobile").show();
+        $('body').removeClass('sidebartoggle');
+    });
+    $('.notificationnew').click(function() {
+        $('.mobilemenu').removeClass("showmenu");
+        $('#menumobilehide').hide();
+        $("#menumobile").show();
+        $('body').removeClass('sidebartoggle');
+        $(this).toggleClass('bellactive');
+        $('.notification-block_new').toggleClass('activeblock');
+        if ($('.notification-block_new').hasClass('activeblock')) {
+            $('html').addClass("scrollnone");
+        } else {
+            $('html').removeClass("scrollnone");
+        };
+    });
+    $('.headericon.dropdown,.sidebar-menu-lists a').click(function() {
+        $('.notification-block_new').removeClass('activeblock');
+        $('.notification-block_new').removeClass('show');
+        $('.notificationnew').removeClass('bellactive');
+        $('html').removeClass("scrollnone");
+    });
 
-/*********Notification-Js*****/
+    /*********Notification-Js*****/
 </script>
 
 
 <script>
-$('.submitBtnlink').click(function() {
-    $('body').addClass("make_me_blue");
-});
+    $('.submitBtnlink').click(function() {
+        $('body').addClass("make_me_blue");
+    });
 </script>
