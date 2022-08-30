@@ -96,8 +96,10 @@ class ResultController extends Controller
                     $answerList['section_id'] = isset($attempt_count->$key->section_id) ? (int)$attempt_count->$key->section_id : 0;
 
                     $answersArr[] = $answerList;
+                    $answersArrQID[] = (int)$key;
                 }
             }
+
 
             $inputjson = [];
             $inputjson['answerList'] = $answersArr;
@@ -582,7 +584,7 @@ class ResultController extends Controller
         $cSubjects = collect($redis_subjects);
         $result_data = $this->getAllResult($exam_type);
         $years_list = [];
-        $filtered_subject=[];
+        $filtered_subject = [];
         foreach ($result_data as $key => $value) {
             $id = explode(',', $value->subject_id_list);
             if ($id) {
