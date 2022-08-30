@@ -20,8 +20,8 @@
 
         $endExamCheck = $('#endExam').hasClass('show');
         if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
-            $(".examModal").modal('hide');
-
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+            $('#attemptlimit').modal('hide');
             stop();
         }
     });
