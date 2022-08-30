@@ -14,14 +14,18 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Traits\CommonTrait;
+use Aws\SecretsManager\SecretsManagerClient;
+use Aws\Exception\AwsException;
+
+
 
 class MenuMiddleware
 {
     private static $checkRouteName = [
         'profile',
         'planner',
-        
-    ]; 
+
+    ];
     use CommonTrait;
     /**
      * Handle an incoming request.
@@ -77,7 +81,7 @@ class MenuMiddleware
             $user_subjects = $this->redis_subjects();
 
             $leaderboard_list = $this->leaderBoard();
-            $current_subscription=[];
+            $current_subscription = [];
             if (isset($subscription_packages->all_packages) && !empty($subscription_packages->all_packages)) {
                 foreach ($subscription_packages->all_packages as $key => $value) {
                     if ((isset($latest_pack->subscription_id) && !empty($latest_pack->subscription_id)) && $latest_pack->subscription_id == $value->subscript_id) {
@@ -136,17 +140,40 @@ class MenuMiddleware
                 //expire today
                 $suscription_status = 1;
             }
-            
-             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
+
+            $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
             //if (in_array(Route::getCurrentRoute()->getName(),self::$checkRouteName)) {
-             if (Route::getCurrentRoute()->getName() !='subscriptions') {
+            if (Route::getCurrentRoute()->getName() != 'subscriptions') {
                 if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
                     if (!Session::has('subscription_status')) {
                         return redirect()->route('subscriptions');
                     }
-                    
                 }
             }
+
+            $client = new SecretsManagerClient([
+                'version' => '2017-10-17',
+                'region' => 'ap-south-1'
+            ]);
+
+            $secretName = env('SECRET_DB');
+
+            $result = $client->getSecretValue([
+                'SecretId' => $secretName,
+            ]);
+            if (isset($result['SecretString']) && !empty($result['SecretString'])) {
+                $db_data = json_decode($result['SecretString'], true);
+            };
+
+            $studentCecretName = env('SECRET_REDIS');
+            $resultStudent = $client->getSecretValue([
+                'SecretId' => $studentCecretName,
+            ]);
+            if (isset($resultStudent['SecretString']) && !empty($resultStudent['SecretString'])) {
+                $redis_data = json_decode($resultStudent['SecretString'], true);
+            };
+
+
 
             \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
             \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
@@ -162,6 +189,8 @@ class MenuMiddleware
             \Illuminate\Support\Facades\View::share('notifications', $notifications);
             \Illuminate\Support\Facades\View::share('current_subscription', $current_subscription);
             \Illuminate\Support\Facades\View::share('student_stage_at_sgnup', $student_stage_at_sgnup);
+            \Illuminate\Support\Facades\View::share('secretKeysRedis', $redis_data);
+            \Illuminate\Support\Facades\View::share('secretKeysDB', $db_data);
 
 
             return $next($request);
