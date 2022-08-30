@@ -20,13 +20,12 @@
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 90px !important;}
 .graphDetailempty .testScrolltype { margin-right: 9px !important;}
-
 .allSubslider svg{
     width: 37px !important;
     height: 37px !important;
 }
    .week-select{
-    font-size: 20px;    
+    font-size: 16px;    
     }
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
