@@ -21,7 +21,7 @@
             <div class="error-page-content">
                 <h2>Page Not Found</h2>
                 <p>Sorry, the page you’re looking for cannot be accessed or was removed!</p>
-                <a href="{{url('/dashboard')}}" class="btn btn-common-transparent">Go back</a>
+                <a href="{{url('/dashboard')}}" class="btn btn-common-transparent">Go Back</a>
             </div>
         </div>
     </div>
