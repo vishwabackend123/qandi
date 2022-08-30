@@ -3,15 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 Custom Error Page Example</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>500 Internal Server Error</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
 </head>
 <body>
-    <div class="container mt-5 pt-5">
-        <div class="alert alert-danger text-center">
-            <h2 class="display-3">500</h2>
-            <p class="display-5">Oops! Something is wrong.</p>
+    <div class="error-page-wrapper">
+        <div class="error-page-block text-center">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/500-image.svg')}}" class="w-100">
+            <div class="error-page-content">
+                <h2>Internal Server Error</h2>
+                <p>We are having some issues at the moment. 
+                    We will have it fixed in no time!</p>
+                <a href="javascript:void(0)" id="reloadPage" class="btn btn-common-transparent">Reload 
+                    <svg style="margin-left:8px;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.562 7.084h-3.75a.833.833 0 0 1 0-1.667h2.917V2.5a.833.833 0 1 1 1.667 0v3.75a.833.833 0 0 1-.834.834z" fill="#56B663"/>
+                        <path d="M10 18.334a8.334 8.334 0 1 1 7.21-12.501.833.833 0 0 1-1.442.835A6.658 6.658 0 1 0 16.667 10a.833.833 0 0 1 1.667 0A8.343 8.343 0 0 1 10 18.334z" fill="#56B663"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#reloadPage").click(function () {
+                location.reload();
+            });
+        });
+    </script>
 </body>
 </html>

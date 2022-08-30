@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 Custom Error Page Example</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <style>
-        .btn.btn-backtopage {font-weight: 500;background-color: #00bdff;min-width: 190px;border-radius: 30px;font-size: 14px;padding: 12px;box-shadow: none!important;color:#fff;}
-    </style>
+    <title>404 Page Not Found</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
 </head>
 <body>
-    <div style="padding:20px;"> <img  src="{{URL::asset('public/images_new/QI_Logo.gif')}}" style="width: 50px;"> </div>
-    <div class="error-page text-center" style="padding: 0 15px;">
-        <img  src="{{URL::asset('public/after_login/new_ui/images/404-image.png')}}" style="max-width:500px;width:100%;margin-bottom:25px;">
-        <p style="margin-bottom: 30px;font-size: 30px;color: #231f20;font-weight:bold;">SORRY! THIS PAGE WAS LOST</p>
-        <a href="{{url('/dashboard')}}" class="btn btn-backtopage">Back To Dashboard</a>
+    <div class="error-page-wrapper">
+        <div class="error-page-block text-center">
+            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100">
+            <div class="error-page-content">
+                <h2>Page Not Found</h2>
+                <p>Sorry, the page you’re looking for cannot be accessed or was removed!</p>
+                <a href="{{url('/dashboard')}}" class="btn btn-common-transparent">Go back</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
