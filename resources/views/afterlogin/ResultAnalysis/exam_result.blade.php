@@ -103,7 +103,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                    @if(isset($scoreResponse->test_type) && ($scoreResponse->test_type =='Live' || $scoreResponse->test_type =='Mocktest' || $scoreResponse->test_type =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
-                        <h3 class="boxheading d-flex align-items-center">Marks Percentage
+                        <h3 class="boxheading d-flex align-items-center">Marks
                             <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -145,7 +145,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <span class="d-block mb-1 commontext">Overall Percentage</span>
                                     <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?number_format($scoreResponse->result_percentage,2):0}}%</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average Time Taken (sec) </small></span>
+                                        <span class="yaxis_label yaxis_label_2" style="left:-30px;"><small> Marks </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -289,7 +289,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['My Percentage', 'Class Average'],
+            labels: ['My Marks', 'Class Average'],
             datasets: [{
                 data: ['{{$stuscore}}', '{{$clsAvg}}'],
                 label: '',
