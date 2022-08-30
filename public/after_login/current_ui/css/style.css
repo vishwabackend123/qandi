@@ -3978,6 +3978,24 @@ span.exam_duration {
     color: #56b663;
     line-height: 1.4;
 }
+.error-page-content h2{font-size: 28px;font-weight: 800; line-height: 1.3;color: #363c4f;margin: 20px 0 18px;}
+.error-page-content p{ font-size: 16px;font-weight: 500; line-height: 1.3; color: #363c4f;margin:0 0 60px;}
+.error-page-content a.btn.btn-common-transparent {
+    width: 194px;
+    height: 44px;
+    background-color: #e0f6e3;
+    line-height: 26px;
+}
+.error-page-content{max-width: 322px;margin:0 auto;}
+.error-page-wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 0 15px;
+}
+
+
 /********************* Amit End ****************************/
 
 
