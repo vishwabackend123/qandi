@@ -625,6 +625,7 @@ class ExamCustomController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
+            //  dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
