@@ -42,7 +42,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <p class="error_toast"></p>
             </div>
         </div>
-       
+
         <div class="progress"></div>
     </div>
     <div class="content-wrapper dashbaordContainer">
@@ -1035,7 +1035,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                 },
             });
         });
-   
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
