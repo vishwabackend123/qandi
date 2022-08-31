@@ -70,7 +70,14 @@
         @media(min-width:768px){
             .mobile_block{display:none!important;}
         }
-        @media only screen and (max-height: 700px) {
+        @media only screen and (max-width: 1366px) {
+            .error-page-content p{margin:0 0 40px;}
+            .error-page-content h2{margin:-30px 0 20px;}
+            .error-page-block img {
+                margin-top: -50px;
+            }
+        }
+        @media only screen and (max-width: 1280px) {
             .error-page-content p{margin:0 0 25px;}
             .error-page-content h2{margin:-40px 0 10px;}
             .error-page-block img {
