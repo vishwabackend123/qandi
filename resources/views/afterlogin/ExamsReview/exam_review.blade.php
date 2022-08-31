@@ -312,16 +312,30 @@ $question_type = "Numerical";
                                     </div>
                                 </div>
                             </div>
-                            <label class="expandbtn1" title="Expand">
+                            <label class="expandbtn1 hideonmobile" title="Expand">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </label>
-                            <label class="collapsebtn1" title="Collapse">
+                            <label class="collapsebtn1 hideonmobile" title="Collapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </label>
+
+
+                            <div class="viewdetailmobclik hideondesktop">
+                                <label class="expandbtnmob1" title="Expand">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </label>
+                                <label class="collapsebtnmob1" title="Collapse">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </label>
+                            </div>
                         </div>
                         <div class="anshead-titletext">
                             <p> @php $mn=0; @endphp
@@ -776,6 +790,24 @@ $question_type = "Numerical";
         });
     });
 
+    $('.expandbtnmob1').on('click', function() {
+        $('.collapsebtnmob1').css({
+            display: "block"
+        });
+        $('.expandbtnmob1').css({
+            display: "none"
+        });
+    });
+
+    $('.collapsebtnmob1').on('click', function() {
+        $('.collapsebtnmob1').css({
+            display: "none"
+        });
+        $('.expandbtnmob1').css({
+            display: "block"
+        });
+    });
+
 
 
 </script>
@@ -842,11 +874,18 @@ $(function() {
         var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
         $('.reviewans-mainsec').css('height', dividereviewboxandformob);
 
+
+        var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
+        var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + 90 + "px";
+        $('.answer-main-sec').css('height', answer_main_sec_mob12);
+
+   
+
         $(".expandformob").on('click', function() {
             $('.overlaydiv').show(0);
             var questionsliderinner_mob = $(".questionsliderinner ").outerHeight();
             var reviewans_mainsec_mob = $(".reviewans-mainsec ").outerHeight();
-            var questionsld_div_tab_height = questionsliderinner_mob + reviewans_mainsec_mob + reviewans_mainsec_mob;
+            var questionsld_div_tab_height = questionsliderinner_mob + reviewans_mainsec_mob;
             $('.reviewans-mainsec').css('height', questionsld_div_tab_height);
         });
        
@@ -857,6 +896,48 @@ $(function() {
             var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
             $('.reviewans-mainsec').css('height', dividereviewboxandformob);
         });
+
+
+        $(".expandbtnmob1").on('click', function() {
+            $('.overlaydiv').show(0);
+            $("answer-main-sec").addClass("intro");
+            var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
+            var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
+            var reviewScreenright_mob1 = $(".reviewScreenright").outerHeight();
+            var dividereviewboxandformob = reviewScreenleft_mob1 + reviewScreenright_mob1;
+            $('.answer-main-sec').css('height', dividereviewboxandformob);
+ 
+            
+        });
+       
+        $(".collapsebtnmob1").on('click', function() {
+            $('.overlaydiv').hide(0);
+            $("answer-main-sec").addClass("intro");
+            var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
+            var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
+            var reviewScreenright_mob1 = $(".reviewScreenright").outerHeight();
+            var dividereviewboxandformob = reviewScreenleft_mob1 - reviewScreenright_mob1;
+            $('.answer-main-sec').css('height', dividereviewboxandformob);
+
+
+            var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
+            var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + 90 + "px";
+            $('.answer-main-sec').css('height', answer_main_sec_mob12);
+           
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
