@@ -293,7 +293,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="timemanagement common_greenbadge_tabs">
-                                            <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect answers</h4>
+                                            <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect Answers</h4>
                                             <div class="barwithTAb">
                                                 <div class="subjectperformLegend ">
                                                     <div class="commonSubjectLeg">
