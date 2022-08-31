@@ -76,7 +76,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge of the topics you have attempted. Build your proficiencies!
+                                    Based on your current test, your score indicates your readiness. <br>Score = (Total Number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) 
+
                                 </p>
                             </span>
                         </h3>
