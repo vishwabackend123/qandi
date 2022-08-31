@@ -1013,8 +1013,9 @@ class HomeController extends Controller
 
                 $status = isset($response_data->success) ? $response_data->success : false;
 
+
                 if ($status == true) {
-                    $responsedata = $response_data->data;
+                    $responsedata = isset($response_data->data) ? $response_data->data : [];
 
                     $aQuestions_list = isset($responsedata['questions']) ? $responsedata['questions'] : [];
 
@@ -1135,6 +1136,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
