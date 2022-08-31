@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +15,11 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
     @endif
 </head>
+
 <body>
     <div class="error-page-wrapper">
         <div class="error-page-block text-center">
-            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100">
+            <img src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100">
             <div class="error-page-content">
                 <h2>Page Not Found</h2>
                 <p>Sorry, the page you’re looking for cannot be accessed or was removed!</p>
@@ -26,4 +28,5 @@
         </div>
     </div>
 </body>
+
 </html>
