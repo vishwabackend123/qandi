@@ -193,8 +193,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                </p>
+                                    Total score split into subject-wise performance.                                </p>
                             </span>
                         </h3>
                         <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered.</p>
