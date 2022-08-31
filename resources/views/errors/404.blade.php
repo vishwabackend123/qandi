@@ -92,6 +92,7 @@
         }
 
         @media(max-width:767px) {
+            .error-page-wrapper{height:calc(100vh -50px) ;}
             .mobile_hide {
                 display: none !important
             }
@@ -110,6 +111,7 @@
             .mobile_block {
                 display: none !important;
             }
+            
         }
 
         @media only screen and (max-width: 1366px) {
