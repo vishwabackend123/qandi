@@ -44,7 +44,7 @@
             </svg>
             <p class="tooltipclass">
                 <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                Test analytics broken down to the topic level so that you can see the difference minuscule topics make. 
             </p>
         </span>
     </h3>
