@@ -1104,6 +1104,14 @@ $question_type = "Numerical";
 
                     updateCountValue(question_id, 'saveAns');
 
+                    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                        $("#submitExam").click();
+                    } else {
+                        $("#quesnext" + question_id).click();
+
+                    }
+
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
@@ -1112,13 +1120,7 @@ $question_type = "Numerical";
             }
         });
 
-        if ($("#quesnext" + question_id).is(":disabled") == true) {
 
-            $("#submitExam").click();
-        } else {
-            $("#quesnext" + question_id).click();
-
-        }
     }
 
     /* Saved question response */

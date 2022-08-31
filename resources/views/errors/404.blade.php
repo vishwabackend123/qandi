@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +23,12 @@
             box-sizing: border-box;
 
         }
+
         html {
             min-height: 100%;
             width: 100%;
         }
+
         body {
             min-height: 100%;
             width: 100%;
@@ -33,10 +36,15 @@
             padding: 0;
             font-family: "Manrope", sans-serif !important;
             overflow-x: hidden;
-            font-feature-settings: "liga" 0;
-            background-color: #e0f6e3; 
+            font-feature-settings: "liga"0;
+            background-color: #e0f6e3;
         }
-        a{outline: none !important;text-decoration: none;}
+
+        a {
+            outline: none !important;
+            text-decoration: none;
+        }
+
         .btn.btn-common-transparent {
             padding: 8px 16px;
             border-radius: 8px;
@@ -46,53 +54,101 @@
             font-size: 14px;
             font-weight: 800;
         }
-        .error-page-content h2{font-size: 28px;font-weight: 800; line-height: 1.3;color: #363c4f;margin: 20px 0 18px;}
-        .error-page-content p{ font-size: 16px;font-weight: 500; line-height: 1.3; color: #363c4f;margin:0 0 60px;}
+
+        .error-page-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: #363c4f;
+            margin: 20px 0 18px;
+        }
+
+        .error-page-content p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #363c4f;
+            margin: 0 0 60px;
+        }
+
         .error-page-content a.btn.btn-common-transparent {
             width: 194px;
             height: 44px;
             background-color: #e0f6e3;
             line-height: 26px;
         }
-        .error-page-content{max-width: 322px;margin:0 auto;}
-        .error-page-wrapper{
+
+        .error-page-content {
+            max-width: 322px;
+            margin: 0 auto;
+        }
+
+        .error-page-wrapper {
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content:center;
+            justify-content: center;
             padding: 0 16px;
         }
-        @media(min-width:768px){
-            .mobile_block{display:none!important;}
+
+        @media(max-width:767px) {
+            .mobile_hide {
+                display: none !important
+            }
+
+            .error-page-content h2 {
+                font-size: 24px;
+                margin: 40px 0 18px;
+            }
+
+            .error-page-content p {
+                margin: 0 0 40px;
+            }
         }
+
+        @media(min-width:768px) {
+            .mobile_block {
+                display: none !important;
+            }
+        }
+
         @media only screen and (max-width: 1366px) {
-            .error-page-content p{margin:0 0 40px;}
-            .error-page-content h2{margin:-30px 0 20px;}
+            .error-page-content p {
+                margin: 0 0 40px;
+            }
+
+            .error-page-content h2 {
+                margin: -30px 0 20px;
+            }
+
             .error-page-block img {
                 margin-top: -50px;
             }
         }
+
         @media only screen and (max-width: 1280px) {
-            .error-page-content p{margin:0 0 25px;}
-            .error-page-content h2{margin:-40px 0 10px;}
+            .error-page-content p {
+                margin: 0 0 25px;
+            }
+
+            .error-page-content h2 {
+                margin: -40px 0 10px;
+            }
+
             .error-page-block img {
                 margin-top: -50px;
             }
-        }
-        @media(max-width:767px){
-            .mobile_hide{display:none!important}
-            .error-page-content h2{font-size:24px;margin:40px 0 18px;}
-            .error-page-content p{margin:0 0 40px;}
-            .error-page-block img{margin:0;}
-            .error-page-content {max-width: 100%;}
         }
     </style>
 </head>
+
 <body>
     <div class="error-page-wrapper">
         <div class="error-page-block text-center">
-            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100 mobile_hide">
-            <img  src="{{URL::asset('public/after_login/current_ui/images/404-image-mobile.svg')}}" class="w-100 mobile_block">
+
+            <img src="{{URL::asset('public/after_login/current_ui/images/404-image.svg')}}" class="w-100 mobile_hide">
+            <img src="{{URL::asset('public/after_login/current_ui/images/404-image-mobile.svg')}}" class="w-100 mobile_block">
+
             <div class="error-page-content">
                 <h2>Page Not Found</h2>
                 <p>Sorry, the page you’re looking for cannot be accessed or was removed!</p>
@@ -101,4 +157,5 @@
         </div>
     </div>
 </body>
+
 </html>

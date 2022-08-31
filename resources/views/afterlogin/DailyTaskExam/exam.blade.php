@@ -1105,6 +1105,13 @@ $question_type = "Numerical";
                     $("#btn_" + question_id).removeClass("border-btn");
 
                     updateCountValue(question_id, 'saveAns');
+                    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                        $("#submitExam").click();
+                    } else {
+                        $("#quesnext" + question_id).click();
+
+                    }
 
                 }
             },
@@ -1114,13 +1121,7 @@ $question_type = "Numerical";
             }
         });
 
-        if ($("#quesnext" + question_id).is(":disabled") == true) {
 
-            $("#submitExam").click();
-        } else {
-            $("#quesnext" + question_id).click();
-
-        }
     }
 
     /* Saved question response */
