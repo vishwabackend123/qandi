@@ -62,7 +62,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 @if($sec->total_num_of_ques > $sec->num_of_ques_tobeattempted)
                                 <li>Out of {{$sec->total_num_of_ques}} questions only <b>{{$sec->num_of_ques_tobeattempted}} questions</b> need to be attempted.</li>
                                 @endif
-                                <li><b>For {{$sec->section_name}} questions</b>, {{$marksArr[0]}} marks are allotted for each correct response, {{$marksArr[1]}} mark will be deducted for each incorrect response, and 0 mark will be given for unanswered/ Marked for review questions. </li>
+                                <li><b>For {{$sec->section_name}} questions</b>, {{$marksArr[0]}} marks are allotted for each correct response, {{$marksArr[1]}} mark will be deducted for each incorrect response, and 0 mark will be given for unanswered/ marked for review questions. </li>
                             </ul>
                             @endforeach
                             @endif
