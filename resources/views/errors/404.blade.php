@@ -62,11 +62,6 @@
             justify-content:center;
             padding: 0 16px;
         }
-        @media(max-width:767px){
-            .mobile_hide{display:none!important}
-            .error-page-content h2{font-size:24px;margin:40px 0 18px;}
-            .error-page-content p{margin:0 0 40px;}
-        }
         @media(min-width:768px){
             .mobile_block{display:none!important;}
         }
@@ -83,6 +78,13 @@
             .error-page-block img {
                 margin-top: -50px;
             }
+        }
+        @media(max-width:767px){
+            .mobile_hide{display:none!important}
+            .error-page-content h2{font-size:24px;margin:40px 0 18px;}
+            .error-page-content p{margin:0 0 40px;}
+            .error-page-block img{margin:0;}
+            .error-page-content {max-width: 100%;}
         }
     </style>
 </head>
