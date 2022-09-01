@@ -7691,5 +7691,8 @@ margin-bottom: 12px;
             
             color: #363c4f !important;
         }
+        button#bt-modal-confirm_over {
+            width: 100%;margin-left: 0px;
+        }
     
  
