@@ -463,6 +463,14 @@ $question_type = "Numerical";
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content exammodal_content">
+                <div class="modal-header border-0 " i>
+
+                    <button id="closeBtnEndExam" type="button" class="btn-close border-0 bg-transparent" data-bs-dismiss="modal" aria-label="Close" onclick="start();" style="display:none">
+                        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6 6 18M6 6l12 12" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> -->
+                    </button>
+                </div>
                 <div class="modal-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
@@ -773,6 +781,7 @@ $question_type = "Numerical";
         clearInterval(timerInterval);
         $('#endMsg').css('font-size', 24 + 'px');
         $('#endMsg').text('Time Out!');
+        $('#closeBtnEndExam').hide();
         $('#endExam').modal('show');
 
         /* let confirmReset = confirm("Time is UP! Wanna restart?");
@@ -920,8 +929,9 @@ $question_type = "Numerical";
                     $("#question_section").html(result.html);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
-                    $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.");
+                    $('#endMsg').text("You have practiced enough questions in this chapter. It's time to move to another chapter.");
                     stop('submit');
+                    $('#closeBtnEndExam').show();
                     $('#endExam').modal('show');
 
                 }

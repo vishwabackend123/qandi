@@ -69,6 +69,7 @@
             .error-page-content h2{margin:-40px 0 10px;}
         }
         @media(max-width:767px){
+            .error-page-wrapper{height:calc(100vh -50px) ;}
             .mobile_hide{display:none!important}
             .error-page-content h2{font-size:24px;margin:40px 0 18px;}
             .error-page-content p{margin:0 0 40px;}
@@ -96,7 +97,6 @@
         </div>
     </div>
 
-    <!-- <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script> -->
     <script type="text/javascript">
         function refreshPage(){
             window.location.reload();

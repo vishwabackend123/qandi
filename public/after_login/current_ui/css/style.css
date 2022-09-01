@@ -7110,12 +7110,13 @@ border-color: #56b663;
     padding-left: 78px;
     min-height: 100vh;
     padding-top: 83px;
+
 }
 
 
 .main-wrapper  header {
     padding: 0;
-    z-index: 999;
+    z-index: 9999;
     position: fixed;
     width: calc(100% - 78px);
     top: 0;
