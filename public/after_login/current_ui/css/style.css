@@ -4929,6 +4929,8 @@ justify-content: space-between;}
             -webkit-touch-callout: none;
             -khtml-user-select: none;
             user-select: none;}
+            .modal-backdrop{z-index: 9999;}
+            .modal{z-index: 99999;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -7690,6 +7692,9 @@ margin-bottom: 12px;
         .reviewScreenleft .qcountout {
             
             color: #363c4f !important;
+        }
+        button#bt-modal-confirm_over {
+            width: 100%;margin-left: 0px;
         }
     
  

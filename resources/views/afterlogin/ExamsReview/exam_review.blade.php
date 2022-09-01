@@ -678,7 +678,7 @@ $question_type = "Numerical";
 
 
 <!-----Start__Right_Review_Height_Calculation------->
-<script>
+<!-- <script>
     function review_right_Height() {
         var review_Screen_right_height = $(".reviewScreenright").outerHeight();
         var test_review_height_div = review_Screen_right_height / 2;
@@ -695,7 +695,31 @@ $question_type = "Numerical";
     $(window).resize(function() {
         review_right_Height();
     });
+</script> -->
+
+<script>
+$(function() {
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    function review_right_Height() {
+        var review_Screen_right_height = $(".reviewScreenright").outerHeight();
+        var test_review_height_div = review_Screen_right_height / 2;
+        $('.custom-anstop').css('height', test_review_height_div);
+        $('.reviewans-mainsec').css('height', test_review_height_div);
+    }
+
+    review_right_Height();
+    $("window").load(function() {
+        review_right_Height();
+    });
+
+
+    $(window).resize(function() {
+        review_right_Height();
+    });
+}
+})
 </script>
+ 
  
 <script>
     $(document).ready(function() {
@@ -903,11 +927,11 @@ $(function() {
             $("answer-main-sec").addClass("intro");
             var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
             var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
-            var reviewScreenright_mob1 = $(".reviewScreenright").outerHeight();
-            var dividereviewboxandformob = reviewScreenleft_mob1 + reviewScreenright_mob1;
+            var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
+            var dividereviewboxandformob = reviewScreenleft_mob1 + questionsliderinner_mob1;
             $('.answer-main-sec').css('height', dividereviewboxandformob);
- 
-            
+            $('.answer-main-sec').css('z-index', "1");
+            $('.explanation-sec').attr('style', 'height: 90% !important');
         });
        
         $(".collapsebtnmob1").on('click', function() {
@@ -915,15 +939,14 @@ $(function() {
             $("answer-main-sec").addClass("intro");
             var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
             var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
-            var reviewScreenright_mob1 = $(".reviewScreenright").outerHeight();
-            var dividereviewboxandformob = reviewScreenleft_mob1 - reviewScreenright_mob1;
+            var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
+            var dividereviewboxandformob = reviewScreenleft_mob1 - questionsliderinner_mob1;
             $('.answer-main-sec').css('height', dividereviewboxandformob);
-
-
+            $('.answer-main-sec').css('z-index', "initial");  
             var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
-            var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + 90 + "px";
+            var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + "px";
             $('.answer-main-sec').css('height', answer_main_sec_mob12);
-           
+            $('.explanation-sec').attr('style', 'height: 20px !important');
         });
 
 
@@ -944,10 +967,21 @@ $(function() {
 
 
         $(".showyes").on('click', function() {
-            var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
-            var sachinshowyes = $(".sachin").outerHeight();
-            var combinationdiv = sachinshowyes  + 400 + "px !important";
-            $('.sachin').css('height', combinationdiv);
+            // var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
+            // var sachinshowyes = $(".sachin").outerHeight();
+            // var combinationdiv = sachinshowyes  + 400 + "px !important";
+            // $('.sachin').css('height', combinationdiv);
+
+            var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
+            var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
+            var combinationdiv = sachinshowyes  + questionsliderinnershowyes;
+           
+            
+            $('.custom-anstop').css('height', combinationdiv);
+
+
+
+           
 
 
         
@@ -955,10 +989,10 @@ $(function() {
         });
 
         $(".hideyes").on('click', function() {
-            var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
-            var sachinshowyes = $(".sachin").outerHeight();
-            var combinationdiv = sachinshowyes  - 400 + "px";
-            $('.sachin').css('height', combinationdiv);
+            // var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
+            // var sachinshowyes = $(".sachin").outerHeight();
+            // var combinationdiv = sachinshowyes  - 400 + "px";
+            // $('.sachin').css('height', combinationdiv);
             
         });
 

@@ -455,7 +455,7 @@ $userData = Session::get('user_data');
 
                 </p> -->
                 <p class="h1-p text-success text-uppercase">Just one more step!</p>
-                <p>Take a full body scan test to assess your preparation and take your first step to improvement.</p>
+                <p>Take a full body scan test to assess your preparation. Take your first step to improvement.</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
 
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
