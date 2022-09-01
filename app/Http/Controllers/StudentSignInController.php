@@ -429,6 +429,7 @@ class StudentSignInController extends Controller
                             CURLOPT_HTTPHEADER => array(
                                 "cache-control: no-cache",
                                 "content-type: application/json",
+                                "Authorization: Bearer " . $token
                             ),
                         );
                         curl_setopt_array($curl, $curl_option);
@@ -448,6 +449,7 @@ class StudentSignInController extends Controller
                         $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
                         $headers = array(
                             'x-api-key: ' . $apiKey,
+                            "Authorization: Bearer " . $token
                         );
                         $curl_option = array(
                             CURLOPT_URL => $curl_url,

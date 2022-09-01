@@ -24,6 +24,7 @@ class LeadUserController extends Controller
 			$apiKey = '16c6df40-195d-4480-b735-56f65a19389a';
 			$headers = array(
 				'x-api-key: ' . $apiKey,
+				"Authorization: Bearer " . $this->getAccessToken()
 			);
 			$curl_option = array(
 				CURLOPT_URL => $curl_url,
