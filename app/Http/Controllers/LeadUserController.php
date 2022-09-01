@@ -141,6 +141,7 @@ class LeadUserController extends Controller
 	}
 	public function exportOverallAnalytics()
 	{
+		die("hello");
 		return view('auth.export_overall_analytics');
 	}
 	public function mock_test()
