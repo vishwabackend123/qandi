@@ -2043,14 +2043,14 @@
     }
    .examReviewscreenmob .answer-main-sec {
         padding: 20px;
-        border-radius: 20px;
+        border-radius: 00px;
         /* position: relative; */
         bottom: 0px;
         width: 100%;
         padding-right: 8px;
         box-shadow: none;
         height: 90px;
-        padding-top: 0px;
+        padding-top: 14px;
         padding-bottom: 0px;
     }
     .examReviewscreenmob .expand_block {
@@ -2073,6 +2073,9 @@
     .examReviewscreenmob .collapsebtnmob1 {
         display: none;
         cursor: pointer;
+    }
+    .explanationdeteail {
+        padding-top: 16px;
     }
     
   
