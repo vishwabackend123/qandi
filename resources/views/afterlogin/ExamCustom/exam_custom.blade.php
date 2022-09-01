@@ -384,6 +384,9 @@
         });
 
     };
+$(document).on('click', '.addremovetopic', function(event) {
+    $(this).parent().parent().toggleClass('examborderchange');
+});
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

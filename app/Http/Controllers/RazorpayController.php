@@ -117,6 +117,7 @@ class RazorpayController extends Controller
                     $apiKey = '998da5ee-90de-4cfa-832d-aea9dfee1ccf';
                     $headers = array(
                             'x-api-key: ' . $apiKey,
+                            "Authorization: Bearer " . $this->getAccessToken()
                         );
                     $curl_option = array(
                             CURLOPT_URL => $curl_url,

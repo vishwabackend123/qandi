@@ -856,7 +856,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="modal-body">
                         <div class="intraction_text_q1">Q2</div>
-                        <div class="intraction_text_strength">Needs focus</div>
+                        <div class="intraction_text_strength">Opportunity</div>
                         <hr>
                         <div class="instruction_text_content">
                             Give a little attention to these topics and take another step towards perfection.
@@ -875,7 +875,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="modal-body">
                         <div class="intraction_text_q1">Q3</div>
-                        <div class="intraction_text_strength">Hopeful</div>
+                        <div class="intraction_text_strength">Hurdles</div>
                         <hr>
                         <div class="instruction_text_content">
                             Topics that are hurdles in your journey. Do not save them for the last.
@@ -894,7 +894,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="modal-body">
                         <div class="intraction_text_q1">Q4</div>
-                        <div class="intraction_text_strength">Weak</div>
+                        <div class="intraction_text_strength">Weaknesses</div>
                         <hr>
                         <div class="instruction_text_content">
                             Find your weak topics here. Work hard to move these topics to other quadrants.

@@ -4,15 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>500 Internal Server Error</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <!-- @if(env('MINIFY_STATIC_ASSETS') == 'true')
-    <link rel="stylesheet" href="https://app.thomsondigital2021.com/public/after_login/current_ui/css/style.min.css">
-    <link rel="stylesheet" href="https://app.thomsondigital2021.com/public/after_login/current_ui/css/mobile.min.css">
-    @else
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
-    @endif -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
     <style>
         *,
@@ -55,11 +47,11 @@
             line-height: 26px;
         }
         .error-page-content{max-width: 322px;margin:0 auto;}
-        .error-page-wrapper{
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content:center;
+        .error-page-wrapper {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            place-items: center;
             padding: 0 16px;
         }
         @media(min-width:768px){
@@ -77,6 +69,7 @@
             .error-page-content h2{margin:-40px 0 10px;}
         }
         @media(max-width:767px){
+            .error-page-wrapper{height:calc(100vh -50px) ;}
             .mobile_hide{display:none!important}
             .error-page-content h2{font-size:24px;margin:40px 0 18px;}
             .error-page-content p{margin:0 0 40px;}
@@ -104,7 +97,6 @@
         </div>
     </div>
 
-    <!-- <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script> -->
     <script type="text/javascript">
         function refreshPage(){
             window.location.reload();
