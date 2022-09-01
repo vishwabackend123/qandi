@@ -70,7 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score that gives a clear understanding of your current level of preparation. Measure your readiness towards reaching the goal with your current pattern of preparation. Set your goal !
+                                        A progressive score derived from all the assessments attempted in the platform. This score lets you know your probability of success if you appeared for the exam today.
                                     </p>
                                 </span>
                             </h3>
@@ -208,7 +208,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
-                                    <p> to assess your preparation and take your first step to improvement.</p>
+                                    <p> to assess your preparation. Take your first step to improvement</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
@@ -402,8 +402,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses. This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. It will also display those topics that can become your strength with a little more effort on your part. Move up the ladder.
-                                        </p>
+                                            An actionable matrix of your strengths, weaknesses and your improvement areas.                                        </p>
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
