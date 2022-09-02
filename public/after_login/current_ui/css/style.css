@@ -15,7 +15,7 @@ html {
 body {
     min-height: 100%;
     width: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     font-family: "Manrope", sans-serif !important;
     /* font-family: 'Inter', sans-serif; */
@@ -644,7 +644,7 @@ font-size: 20px !important;
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     color: rgba(54, 60, 79, 0.5);
-    padding: 0 14px;
+    padding: 9px 14px 0px;
     border-radius: 8px;
     font-weight: 500;
     z-index: 2;
@@ -3606,7 +3606,6 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     left: auto!important;
     z-index: 9;
 }
-/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
@@ -4931,6 +4930,13 @@ justify-content: space-between;}
             user-select: none;}
             .modal-backdrop{z-index: 9999;}
             .modal{z-index: 99999;}
+            .mock_inst_text_mock_testmobile{margin-bottom:24px;}
+            .mock_inst_text_mock_testmobile  a {
+                font-size: 16px;
+                font-weight: 800;
+                line-height: 1.6;
+                color: #56b663;
+            }
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -7695,7 +7701,4 @@ margin-bottom: 12px;
         }
         button#bt-modal-confirm_over {
             width: 100%;margin-left: 0px;
-        }
-        
-    
- 
+        }  

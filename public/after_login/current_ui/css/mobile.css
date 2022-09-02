@@ -1191,6 +1191,7 @@
     #resume-test .modal-header-exam .exam-overview {padding-bottom: 0;}   
     .exam_duration_block {padding: 20px 0 19px;}
     #resume-test .modal-dialog{margin:16px;}
+    .noofquestions-block.dropdown-menu{left:0!important;right: auto!important;}
     
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -2077,8 +2078,13 @@
     .explanationdeteail {
         padding-top: 16px;
     }
-    
-  
+  .smalltextheading .tooltipclass{    left: -43px;}  
+  .smalltextheading .tooltipclass::before{
+    left: 18%;
+}
+.aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before,.aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
+    bottom: -5.4px;}
+    .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
 }
 
 
@@ -2137,7 +2143,6 @@
 
 }
 @media only screen and (max-width: 460px){
-    .codelerninner p{min-height:113px;}
     .test-table h2 {
     width: 140px;
 }
@@ -2165,7 +2170,7 @@
 }
 @media only screen and (max-width: 400px){
     
-    .codelerninner p{    word-break: break-word;    min-height: 162px;}
+    .codelerninner p{    word-break: break-word;    min-height: 115px;}
     .common_greenbadge_tabs.exam_topicbtn ul.nav li {
     margin-left: 10px;
     }
