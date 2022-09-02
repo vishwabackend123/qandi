@@ -4931,6 +4931,13 @@ justify-content: space-between;}
             user-select: none;}
             .modal-backdrop{z-index: 9999;}
             .modal{z-index: 99999;}
+            .mock_inst_text_mock_testmobile{margin-bottom:24px;}
+            .mock_inst_text_mock_testmobile  a {
+                font-size: 16px;
+                font-weight: 800;
+                line-height: 1.6;
+                color: #56b663;
+            }
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
