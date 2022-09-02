@@ -1074,6 +1074,14 @@
     {
         color: #1f1f1f!important;
     }
+    .Testseriesattemb .align_left_text_div, .TestseriesAttempt22 .align_left_text_div
+    {
+        text-align: left!important;
+    }
+    .LiveExamMob22 .align_left_text_div
+    {
+        text-align: right!important;
+    }
     /********* Vikash End ************/
 
 
