@@ -1,5 +1,5 @@
 <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1 m mobilescrolltab" id="testTypeDiv">
-    <div class="mobilehoriontal400">
+    <div class="mobilehoriontal450">
         <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
             <li class="nav-item" role="presentation" type="button">
                 <button class="nav-link btn pt-0 pb-0 all_attemp active">All Test Series</button>
@@ -144,7 +144,7 @@
                     </div>
                     @endif
                     <div class="live_exam_diveder_div"></div>
-                    <div class="mock_test_dure_content2">
+                    <div class="mock_test_dure_content2 align_left_text_div">
                         <div class="mock_test_q_d_m_s_text1">Score</div>
                         <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
                     </div>
