@@ -221,6 +221,7 @@
                         margin: 15,
                         nav: true,
                         dots: false,
+                        autoplay:false,
                         responsive: {
                             0: {
                                 items: 1,
