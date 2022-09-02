@@ -59,6 +59,7 @@ $question_type = "Single Choice";
 }elseif ($template_type == 11) {
 $question_type = "Numerical";
 }
+
 @endphp
 <div class="exam-wrapper testscreenmob">
     <div class="content-wrapper">
@@ -120,16 +121,16 @@ $question_type = "Numerical";
                                 <div class="questionType">
                                     <div class="questionTypeinner">
                                         <div class="questionChoiceType">
+                                            @if(isset($aSections) && !empty($aSections))
                                             <div class="questionChoice">
-                                                @if(isset($aSections) && !empty($aSections))
                                                 @foreach($aSections as $sKey=>$section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
                                                 <a class="singleChoice @if($sKey==0) single_Choice_active @endif" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
-
                                                 @endif
                                                 @endforeach
-                                                @endif
+
                                             </div>
+                                            @endif
                                         </div>
                                         <div class="timeCounter">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">

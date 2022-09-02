@@ -105,8 +105,9 @@ $question_type = "Numerical";
 <div class="questionType">
     <div class="questionTypeinner">
         <div class="questionChoiceType">
+            @if(isset($aSections) && !empty($aSections))
             <div class="questionChoice">
-                @if(isset($aSections) && !empty($aSections))
+
                 @foreach($aSections as $Vsec)
                 @php $secId=$Vsec->id;@endphp
                 @if(isset($aSubSecCount->$subject_id->$secId) && $aSubSecCount->$subject_id->$secId>0)
@@ -114,8 +115,9 @@ $question_type = "Numerical";
 
                 @endif
                 @endforeach
-                @endif
+
             </div>
+            @endif
         </div>
         <div class="timeCounter">
             <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
