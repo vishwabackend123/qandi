@@ -2143,7 +2143,6 @@
 
 }
 @media only screen and (max-width: 460px){
-    .codelerninner p{min-height:113px;}
     .test-table h2 {
     width: 140px;
 }
@@ -2171,7 +2170,7 @@
 }
 @media only screen and (max-width: 400px){
     
-    .codelerninner p{    word-break: break-word;    min-height: 162px;}
+    .codelerninner p{    word-break: break-word;    min-height: 115px;}
     .common_greenbadge_tabs.exam_topicbtn ul.nav li {
     margin-left: 10px;
     }
