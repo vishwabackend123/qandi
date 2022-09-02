@@ -1191,6 +1191,7 @@
     #resume-test .modal-header-exam .exam-overview {padding-bottom: 0;}   
     .exam_duration_block {padding: 20px 0 19px;}
     #resume-test .modal-dialog{margin:16px;}
+    .noofquestions-block.dropdown-menu{left:0!important;right: auto!important;}
     
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
