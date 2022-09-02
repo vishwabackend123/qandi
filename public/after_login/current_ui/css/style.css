@@ -3606,7 +3606,6 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     left: auto!important;
     z-index: 9;
 }
-/* ul.topic_score_lists li:hover .noofquestions-block{display: block;} */
 .noofquestions-block .color_labels span b {
     font-size: 14px;
     font-weight: 800;
