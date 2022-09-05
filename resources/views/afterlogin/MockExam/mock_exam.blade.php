@@ -116,16 +116,18 @@ $question_type = "Numerical";
                                 <div class="questionType">
                                     <div class="questionTypeinner">
                                         <div class="questionChoiceType">
+                                            @if(isset($aSections) && !empty($aSections))
                                             <div class="questionChoice">
-                                                @if(isset($aSections) && !empty($aSections))
+
                                                 @foreach($aSections as $skey=>$section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
                                                 <a class="singleChoice @if($skey==0) single_Choice_active @endif section_{{$section->id}}" href="javascript:;" id="section_{{$subject_id}}_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
 
                                                 @endif
                                                 @endforeach
-                                                @endif
+
                                             </div>
+                                            @endif
                                         </div>
                                         <div class="timeCounter">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
