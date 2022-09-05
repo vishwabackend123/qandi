@@ -156,7 +156,7 @@
 @media only screen and (max-height: 780px) {
     .exam-ans-sec.top-first{    padding: 15px 0px 15px 0px;} 
     .overviewtest { height: 25vh; min-height: 173px; }
-    .reviewScreenright .text-exambottom-sec {height: 24vh;    width: 97%;}
+    .reviewScreenright .text-exambottom-sec {height: 24vh;}
     .text-exambottom-sec {height: 30vh;}
     .matrixpage-wrapper .exam_instruction_scrolling {  height: 474px }
     .first_screen {max-height: 183px;}
