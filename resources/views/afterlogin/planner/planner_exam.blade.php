@@ -664,6 +664,12 @@ $question_type = "Numerical";
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if (typeof questionstartTimerNext === "function") {
+            questionstartTimerNext();
+        }
+        if (typeof setEachQuestionTimeNext === "function") {
+            setEachQuestionTimeNext();
+        }
         $('body').addClass("make_me_blue");
 
     }
@@ -676,7 +682,9 @@ $question_type = "Numerical";
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
         clearInterval(timer_countdown);
+        clearInterval(ctimer);
         clearInterval(setEachQuestionTimeNext_countdown);
+        clearInterval(setEachQuestionTimeNext_countdownNext);
         if (type !== 'submit') {
             var pausedTime = $("#base-timer-label").text();
             $('#pauseTime').text(pausedTime);
@@ -767,6 +775,7 @@ $question_type = "Numerical";
     var upcounter_txt = " Mins";
     var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var setEachQuestionTimeNext_countdownNext;
     var timer_countdown;
 
     function questionstartTimer() {
