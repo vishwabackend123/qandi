@@ -22,27 +22,28 @@ $question_type = "Numerical";
 
 @endphp
 <script>
-    $(document).ready(function() {
+    var ctimer;
+    var setEachQuestionTimeNext_countdownNext;
 
-        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-        var questionTime = parseInt(time_allowed) * 60;
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var questionTime = parseInt(time_allowed) * 60;
 
-        var sec = parseInt(time_allowed) * 60;
-        var interval = 1000;
-        var qest = '{{$activeq_id}}';
-        var aj_up_timer = '{{$aquestionTakenTime}}';
+    var sec = parseInt(time_allowed) * 60;
+    var interval = 1000;
+    var qest = '{{$activeq_id}}';
+    var aj_up_timer = '{{$aquestionTakenTime}}';
 
-        var ctxt = " Seconds";
-        if (aj_up_timer >= questionTime) {
-            var sec = 0;
-        } else {
-            var sec = questionTime - aj_up_timer;
-        }
+    var ctxt = " Seconds";
+    if (aj_up_timer >= questionTime) {
+        var sec = 0;
+    } else {
+        var sec = questionTime - aj_up_timer;
+    }
 
-        $('#percentBar_{{$activeq_id}}').html('')
-        $('#timespend_{{$activeq_id}}').val("");
+    $('#percentBar_{{$activeq_id}}').html('')
+    $('#timespend_{{$activeq_id}}').val("");
 
-
+    function questionstartTimerNext() {
         ctimer = setInterval(function() {
             sec--;
 
@@ -58,48 +59,49 @@ $question_type = "Numerical";
 
             }
         }, interval);
+    }
+    questionstartTimerNext();
 
 
-        function progressBar_next(percent, $element) {
-            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+    function progressBar_next(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
 
-            $element.find('div').animate({
-                width: progressBarWidth
-            }, 500).html(percent + "%&nbsp;");
-            if (percent <= 20) {
-                $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
-            }
-            if (percent <= 0) {
-                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-            }
-
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
         }
-        var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
-        var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
-        //var totalSec = document.getElementById("tsec");
-        var totalSeconds = aj_up_timer;
-
-        function setEachQuestionTimeNext() {
-            setEachQuestionTimeNext_countdown = setInterval(function() {
-                ++totalSeconds;
-                $('#timespend_{{$activeq_id}}').val(totalSeconds);
-                secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-                //totalSec.innerHTML = pad(totalSeconds);
-            }, 1000);
+        if (percent <= 0) {
+            $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
         }
-        setEachQuestionTimeNext();
 
-        function pad(val) {
-            var valString = val + "";
-            if (valString.length < 2) {
-                return "0" + valString;
-            } else {
-                return valString;
-            }
+    }
+    var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
+    var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
+    //var totalSec = document.getElementById("tsec");
+    var totalSecondsNext = aj_up_timer;
+
+    function setEachQuestionTimeNext() {
+        setEachQuestionTimeNext_countdownNext = setInterval(function() {
+            ++totalSecondsNext;
+            $('#timespend_{{$activeq_id}}').val(totalSecondsNext);
+            secondsLabel.innerHTML = padNext(totalSecondsNext % 60);
+
+            minutesLabel.innerHTML = padNext(parseInt(totalSecondsNext / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }, 1000);
+    }
+    setEachQuestionTimeNext();
+
+    function padNext(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
         }
-    });
+    }
 </script>
 
 <div class="questionType">
