@@ -103,6 +103,8 @@
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
 }
 @media only screen and (max-width: 1280px){
+    .myqTodayGraphSec .textblock {padding-left: 13px;}
+    /* .myqTodayGraphSec .dashSubtext{font-size:13px;} */
     .tooltipclass{min-width: 320px;}
     .contacrus_page_wrapper {
         padding-bottom: 200px;

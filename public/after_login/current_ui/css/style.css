@@ -3996,7 +3996,7 @@ span.exam_duration {
     display: flex;
     align-items: center;    
     justify-content: space-between;
-    padding: 20px 40px 20px 32px;
+    padding: 20px 40px 20px 36px;
     box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
@@ -4163,7 +4163,7 @@ header {
 }
 
 .content-wrapper {
-    padding: 40px 30px ;
+    padding: 40px 25px ;
 }
 
 .commondashboardTop {
