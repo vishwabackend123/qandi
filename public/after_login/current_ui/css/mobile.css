@@ -1204,7 +1204,7 @@
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px;
+        padding: 39px 6px 59px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -2127,7 +2127,7 @@
     width: 100%;
 }
     .add-insubchapter {
-    padding: 14px 12px 8px 15px;
+    padding: 10px 12px 8px 15px;
 }
     .fliparrow {
     transform: rotate(90deg);
