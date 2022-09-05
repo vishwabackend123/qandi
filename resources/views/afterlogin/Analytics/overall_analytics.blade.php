@@ -1079,7 +1079,8 @@
             success: function(data) {
                 $('html, body').animate({
                     'scrollTop': $('.main-wrapper').position().top
-                }, 100);
+                }, 0);
+
                 $(".chapter_analytics").show();
                 $('.chapter_analytics').html(data.html);
 
