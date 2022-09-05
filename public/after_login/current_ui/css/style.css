@@ -3978,6 +3978,12 @@ span.exam_duration {
     color: #56b663;
     line-height: 1.4;
 }
+/* #mobileTabs {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap !important;
+  } */
 
 /********************* Amit End ****************************/
 
@@ -4757,7 +4763,7 @@ justify-content: space-between;}
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 99999;
 }
 .spinnerblock:before{background: #0003;
     width: 100%;
