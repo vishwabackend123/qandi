@@ -1074,14 +1074,6 @@
     {
         color: #1f1f1f!important;
     }
-    .Testseriesattemb .align_left_text_div, .TestseriesAttempt22 .align_left_text_div
-    {
-        text-align: left!important;
-    }
-    .LiveExamMob22 .align_left_text_div
-    {
-        text-align: right!important;
-    }
     /********* Vikash End ************/
 
 
@@ -2093,7 +2085,6 @@
 .aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before,.aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
     bottom: -5.4px;}
     .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
-    .planner-date .form-control {padding: 9px 14px 0px;}
 }
 
 

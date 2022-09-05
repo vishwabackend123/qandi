@@ -3979,6 +3979,12 @@ span.exam_duration {
     color: #56b663;
     line-height: 1.4;
 }
+/* #mobileTabs {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap !important;
+  } */
 
 /********************* Amit End ****************************/
 
