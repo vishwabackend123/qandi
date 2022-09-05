@@ -986,8 +986,14 @@ $question_type = "Numerical";
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
 
+        
+
                 var sachinhides = $(".sachin").outerHeight();
-                var questionsliderhideinner = $(".questionsliderinner").outerHeight();
+                var questionsliderhideinner1 = $(".questionsliderinner").outerHeight();
+                var combi  = sachinhides - questionsliderhideinner1;
+
+                $('.sachin').css('height', combi);
+                $('.sachin').attr('style', 'display: none !important');
                
 
                
