@@ -4569,7 +4569,7 @@ header {
     text-align: center;}
 .modal-header1{display:flex;justify-content:flex-end;height: 34px;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:635px;}
+#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog,#needsfocusmodal .modal-dialog,#hopefulmodal .modal-dialog,#weakmodal .modal-dialog{max-width:635px;}
 .strengthmodal_content hr{background-color:#868a95;opacity: 0.5;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
