@@ -4561,13 +4561,13 @@ header {
     overflow: hidden;}
 .strengthmodal_content .btn-close{    background: none;
     font-size: 40px;
-    line-height: 23px;
+    line-height: 14px;
     color: #000;
     padding-bottom: 0;
     padding-top: 20px;
     height: auto;
     text-align: center;}
-.modal-header1{display:flex;justify-content:flex-end;height: 32px;}
+.modal-header1{display:flex;justify-content:flex-end;height: 34px;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
 #strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:635px;}
 .strengthmodal_content hr{background-color:#868a95;opacity: 0.5;}
