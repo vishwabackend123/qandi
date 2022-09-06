@@ -6249,7 +6249,7 @@ td.mymatrix_table_point
 .new_notification_main_sec {
     height: calc(100vh - 180px);
     overflow-y: auto;
-    padding-right: 30px;
+    padding-right: 14px;
 }
 
 .notification-main>h2 {
@@ -6259,6 +6259,7 @@ td.mymatrix_table_point
     display: flex;
     align-items: baseline;
     justify-content: space-between;margin-bottom:20px;
+    padding-right:20px;
 }
 
 .notification-main>h2 a {
