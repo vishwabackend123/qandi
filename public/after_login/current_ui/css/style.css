@@ -2730,7 +2730,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: end;
+     align-items: flex-end;
  }
  .planewrapper{
      display: flex;
@@ -4290,7 +4290,7 @@ header {
     background-color: #56b663;
     border-radius: 10px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     margin-top: 10.1px;
     overflow: hidden;margin-bottom:16px;
 }
@@ -4420,7 +4420,7 @@ header {
 
 .commonlisting li {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     position: relative;
     padding-left: 12px;
@@ -4564,7 +4564,6 @@ font-size: 40px;
 line-height: 23px;
 color: #000;
 padding-bottom: 0px;
-padding-top: 30px;
 height: auto;}
 .modal-header1{display:flex;justify-content:flex-end;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
