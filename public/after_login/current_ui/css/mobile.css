@@ -190,6 +190,9 @@
     padding: 20px 0px 5px;
 }
 
+.user-profile-sec svg{height:75px!important;width: 75px!important;}
+
+
 }
 
 @media only screen and (max-height: 600px) {
@@ -1026,6 +1029,10 @@
     }
     .CoustomAttempted .mock_test_dure_content2:last-child {
         width: 50%;
+        text-align: left!important;
+    }
+    .TestseriesAttempt22Score .align_left_text_div
+    {
         text-align: left!important;
     }
     .Testseriesattemb .mock_test_dure_content2 {

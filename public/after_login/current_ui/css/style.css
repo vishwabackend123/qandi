@@ -1454,7 +1454,7 @@ a.btn-common-attempted svg {
     padding: 20px 131px;
     display: flex;
     align-items: center;
-    height: 100%;
+    height: auto;
 }
 .getDiscount .testType ul{margin-bottom:80px;}
 .planPayment .testType {
@@ -2730,7 +2730,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: flex-end;
+     align-items: end;
  }
  .planewrapper{
      display: flex;
@@ -4292,7 +4292,7 @@ header {
     background-color: #56b663;
     border-radius: 10px;
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     margin-top: 10.1px;
     overflow: hidden;margin-bottom:16px;
 }
@@ -4422,7 +4422,7 @@ header {
 
 .commonlisting li {
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     justify-content: space-between;
     position: relative;
     padding-left: 12px;
