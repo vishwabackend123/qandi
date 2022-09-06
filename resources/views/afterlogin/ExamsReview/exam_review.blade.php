@@ -492,8 +492,11 @@ $question_type = "Numerical";
 
                 </div>
                 <div class="clickbtnonreview btn123 hideondesktop">
-                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
-                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    <div class="clickbtnboxinner">
+                        <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                        <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -807,7 +810,7 @@ $question_type = "Numerical";
         $('.expandformob').css({
             display: "none"
         });
-        $('.bottomfixarrow').css({
+        $('.clickbtnboxinner ').css({
             display: "none"
         });
       
@@ -821,7 +824,7 @@ $question_type = "Numerical";
         $('.expandformob').css({
             display: "block"
         });
-        $('.bottomfixarrow').css({
+        $('.clickbtnboxinner ').css({
             display: "block"
         });
     });
@@ -833,7 +836,7 @@ $question_type = "Numerical";
         $('.expandbtnmob1').css({
             display: "none"
         });
-        $('.bottomfixarrow').css({
+        $('.clickbtnboxinner ').css({
             display: "none"
         });
     });
@@ -845,7 +848,7 @@ $question_type = "Numerical";
         $('.expandbtnmob1').css({
             display: "block"
         });
-        $('.bottomfixarrow').css({
+        $('.clickbtnboxinner ').css({
             display: "block"
         });
     });
