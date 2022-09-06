@@ -2730,7 +2730,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: end;
+     align-items: flex-end;
  }
  .planewrapper{
      display: flex;
@@ -4420,7 +4420,7 @@ header {
 
 .commonlisting li {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     position: relative;
     padding-left: 12px;
@@ -4559,16 +4559,18 @@ header {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;}
-.strengthmodal_content .btn-close{background: none;
-font-size: 40px;
-line-height: 23px;
-color: #000;
-padding-bottom: 0px;
-height: auto;}
+.strengthmodal_content .btn-close{    background: none;
+    font-size: 40px;
+    line-height: 23px;
+    color: #000;
+    padding-bottom: 0;
+    padding-top: 20px;
+    height: auto;
+    text-align: center;}
 .modal-header1{display:flex;justify-content:flex-end;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:600px;}
-.strengthmodal_content hr{background-color:#868a95;}
+#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog{max-width:635px;}
+.strengthmodal_content hr{background-color:#868a95;opacity: 0.5;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
@@ -5431,7 +5433,7 @@ justify-content: space-between;}
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #363c4f;
+    color: #363c4f; opacity: 0.6;
 }
 
 .intraction_text_strength {
