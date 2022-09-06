@@ -181,7 +181,7 @@
  }
  .progress-box{margin-top:20px;}
  .user-profile-sec {
-    padding: 0 0 10px;
+    padding: 0 0 0px;
 }
 ._btn-green {
     padding: 10px 0 20px;
@@ -189,7 +189,7 @@
 .bottom-sec {
     padding: 20px 0px 5px;
 }
-.user-profile-sec .svg{height:75px!important;width: 75px!important;}
+.user-profile-sec svg{height:75px!important;width: 75px!important;}
 
 }
 
