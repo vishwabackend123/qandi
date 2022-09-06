@@ -6152,7 +6152,8 @@ td.mymatrix_table_point
     border: 0px!important;
 }
 .model_popup_live_result
-{z-index: 9999;
+{
+    /* z-index: 9999; */
     position: relative;
     background-color: #6d6d6d;
 }
