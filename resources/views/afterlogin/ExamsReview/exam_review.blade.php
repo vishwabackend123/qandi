@@ -807,6 +807,11 @@ $question_type = "Numerical";
         $('.expandformob').css({
             display: "none"
         });
+        $('.bottomfixarrow').css({
+            display: "none"
+        });
+      
+
     });
 
     $('.collapseformob').on('click', function() {
@@ -814,6 +819,9 @@ $question_type = "Numerical";
             display: "none"
         });
         $('.expandformob').css({
+            display: "block"
+        });
+        $('.bottomfixarrow').css({
             display: "block"
         });
     });
@@ -825,6 +833,9 @@ $question_type = "Numerical";
         $('.expandbtnmob1').css({
             display: "none"
         });
+        $('.bottomfixarrow').css({
+            display: "none"
+        });
     });
 
     $('.collapsebtnmob1').on('click', function() {
@@ -832,6 +843,9 @@ $question_type = "Numerical";
             display: "none"
         });
         $('.expandbtnmob1').css({
+            display: "block"
+        });
+        $('.bottomfixarrow').css({
             display: "block"
         });
     });
