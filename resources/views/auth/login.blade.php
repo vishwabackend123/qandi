@@ -385,10 +385,16 @@
         document.addEventListener("paste", function(e) {
             if (e.target.type === "text") {
                 var data = e.clipboardData.getData('Text');
-                data = data.split('');
-                [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
-                    node.value = data[index];
-                });
+                if(!isNaN(data)){
+                     data = data.split('');
+                    [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
+                        node.value = data[index];
+                    });
+                }else
+                {
+                    return false;
+                }
+               
             }
         });
 

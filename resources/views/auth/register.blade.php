@@ -661,10 +661,15 @@
 
             if (e.target.type === "text" && e.target.id != 'mobile_num') {
                 var data = e.clipboardData.getData('Text');
-                data = data.split('');
-                [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
-                    node.value = data[index];
-                });
+                if(!isNaN(data)){
+                    data = data.split('');
+                    [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
+                        node.value = data[index];
+                    });
+                }else
+                {
+                    return false;
+                }   
             }
         });
 
