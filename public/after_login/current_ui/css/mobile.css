@@ -179,8 +179,18 @@
  .list-ans{
     height: 27vh;
  }
+ .progress-box{margin-top:20px;}
  
 }
+
+@media only screen and (max-height: 600px) {
+.subscriptionsLeftpannel {padding: 20px 40px;}
+.verificationBox{padding:10px 20px;}
+.verificationBox p {margin-bottom: 10px;}
+.verificationBox{bottom:20px;}
+
+}
+
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
@@ -1827,7 +1837,7 @@
             }
             .testscreenmob .main-textexam-sec {
                 position: absolute;
-                bottom: -109px;
+                bottom: -112px;
                 width: 100%;
                 background: #fff;
             }
