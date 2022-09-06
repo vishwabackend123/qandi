@@ -966,23 +966,7 @@ $question_type = "Numerical";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             $(".showyes").on('click', function() {
-               
-
-
                 $('.showyes').hide(0);
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
@@ -990,9 +974,19 @@ $question_type = "Numerical";
                 var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
                 var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
                 var combinationdiv = sachinshowyes + questionsliderinnershowyes;
-                
+            
                 $('.sachin').attr('style', 'display: block !important');
                 $('.sachin').css('height', combinationdiv);
+
+                var Answerinnershowyes = $(".Answerinner").outerHeight();
+                var text_exambottom_seshowyes = $(".text-exambottom-sec").outerHeight();
+                var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
+                var fortextexambottomseshowyes = sachinshowyes - Answerinnershowyes - 40 + "px";
+
+                $('.text-exambottom-sec').attr('style', 'display: block !important');
+
+                $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
+               
             
       
 
@@ -1011,6 +1005,13 @@ $question_type = "Numerical";
 
                 $('.sachin').css('height', combi);
                 $('.sachin').attr('style', 'display: none !important');
+
+                // var Answerinnershowyes1 = $(".Answerinner").outerHeight();
+                // var text_exambottom_seshowye1 = $(".text-exambottom-sec").outerHeight();
+                // var sachinshowyes1 = $(".reviewScreenright .custom-anstop").outerHeight();
+
+                // $('.text-exambottom-sec').css('height', combi);
+              
                
 
                
