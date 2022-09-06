@@ -3,7 +3,7 @@
 <div class="main-wrapper  exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper TestseriesAttempt22">
+    <section class="content-wrapper TestseriesAttempt22 TestseriesAttempt22Score">
         @if(session()->has('message'))
         <div class="alert alert-danger">
             {{ session()->get('message') }}
