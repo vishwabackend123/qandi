@@ -2096,6 +2096,16 @@
         padding-top: 20px;
 
     }
+   
+   .examReviewscreenmob  .reviewScreenright .text-exambottom-sec {
+        height: 33vh;
+        width: 97%;
+    }
+    .examReviewscreenmob .reviewScreenright  button.btn-ans {
+        margin: 6px !important;
+    }
+
+
 }
 
 
