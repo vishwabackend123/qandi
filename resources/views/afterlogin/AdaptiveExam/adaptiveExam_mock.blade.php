@@ -972,7 +972,12 @@ $questtype='radio';
                 const last = str.charAt(str.length - 1);
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
@@ -1075,7 +1080,12 @@ $questtype='radio';
                 const last = str.charAt(str.length - 1);
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
