@@ -902,9 +902,11 @@ $question_type = "Numerical";
             var totle_heigh_40 = test_review_height_div - 40 + "px";
             $('.reviewScreenleft').css('height', totle_heigh_40);
             $('.reviewScreenright').css('height', totle_heigh_40);
+
             var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
-            var Review_second_panel_90 = exam_Review_second_panel - 90 + "px";
+            var Review_second_panel_90 = exam_Review_second_panel - 230 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
+            
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
             var extra_height_total = reviewScreenright_call - 100 + "px";
             $('.reviewscreenquestion').css('height', extra_height_total);
@@ -944,7 +946,7 @@ $question_type = "Numerical";
                 var dividereviewboxandformob = reviewScreenleft_mob1 + questionsliderinner_mob1;
                 $('.answer-main-sec').css('height', dividereviewboxandformob);
                 $('.answer-main-sec').css('z-index', "1");
-                $('.explanation-sec').attr('style', 'height: 90% !important');
+                $('.explanation-sec').attr('style', 'height: calc(100vh - 290px) !important');
             });
 
             $(".collapsebtnmob1").on('click', function() {
@@ -964,8 +966,6 @@ $question_type = "Numerical";
 
 
 
-
-
             $(".showyes").on('click', function() {
                 $('.showyes').hide(0);
                 $('.hideyes').show(0);
@@ -978,14 +978,14 @@ $question_type = "Numerical";
                 $('.sachin').attr('style', 'display: block !important');
                 $('.sachin').css('height', combinationdiv);
 
-                var Answerinnershowyes = $(".Answerinner").outerHeight();
-                var text_exambottom_seshowyes = $(".text-exambottom-sec").outerHeight();
-                var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
-                var fortextexambottomseshowyes = sachinshowyes - Answerinnershowyes - 40 + "px";
+                // var Answerinnershowyes = $(".Answerinner").outerHeight();
+                // var text_exambottom_seshowyes = $(".text-exambottom-sec").outerHeight();
+                // var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
+                // var fortextexambottomseshowyes = sachinshowyes - Answerinnershowyes - 40 + "px";
 
-                $('.text-exambottom-sec').attr('style', 'display: block !important');
+                // $('.text-exambottom-sec').attr('style', 'display: block !important');
 
-                $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
+                // $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
                
             
       
