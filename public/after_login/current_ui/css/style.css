@@ -3469,7 +3469,7 @@ h3.commonheading{
 .common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
 
 .common_greenbadge_tabs ul.nav .btn.nav-link {
-    background-color: transparent;
+    background-color: #CBECD0;
     color: #363c4f;
     font-size: 14px;
     font-weight: 500;
@@ -7676,6 +7676,12 @@ margin-bottom: 12px;
         height: 40px;
         bottom: 0;
         background-image: linear-gradient(transparent, #ffffffe6);
+        background: -moz-linear-gradient(transparent, #ffffffe6);
+        background: -webkit-gradient(transparent, #ffffffe6);
+        background: -webkit-linear-gradient(transparent, #ffffffe6);
+        background: -o-linear-gradient(transparent, #ffffffe6);
+        background: -ms-linear-gradient(transparent, #ffffffe6);
+        background: linear-gradient(transparent, #ffffffe6);
         z-index: 10;
         pointer-events: none;
         display: -ms-flexbox;
