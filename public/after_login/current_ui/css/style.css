@@ -1454,7 +1454,7 @@ a.btn-common-attempted svg {
     padding: 20px 131px;
     display: flex;
     align-items: center;
-    height: 100%;
+    height: auto;
 }
 .getDiscount .testType ul{margin-bottom:80px;}
 .planPayment .testType {
