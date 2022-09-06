@@ -905,7 +905,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     </div>
     <!-- Strengths-popup end -->
 
-    <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+    <div class="modal fade" id="matrix">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-0 bg-light">
                 <div class="modal-header pb-0 border-0">
