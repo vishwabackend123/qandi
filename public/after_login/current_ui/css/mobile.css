@@ -181,7 +181,7 @@
  }
  .progress-box{margin-top:20px;}
  .user-profile-sec {
-    padding: 0 0 10px;
+    padding: 0 0 0px;
 }
 ._btn-green {
     padding: 10px 0 20px;
@@ -189,11 +189,17 @@
 .bottom-sec {
     padding: 20px 0px 5px;
 }
+
 .user-profile-sec svg{height:75px!important;width: 75px!important;}
+
 
 }
 
 @media only screen and (max-height: 600px) {
+    .user-profile-sec svg{height:75px!important;width: 75px!important;}
+#referfrnd .modal-dialog, #referedfrnd .modal-dialog {
+    margin: 30px auto 30px;
+}
 .subscriptionsLeftpannel {padding: 20px 40px;}
 .verificationBox{padding:10px 20px;}
 .verificationBox p {margin-bottom: 10px;}
