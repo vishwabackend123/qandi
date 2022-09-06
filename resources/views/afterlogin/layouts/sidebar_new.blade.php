@@ -399,6 +399,13 @@ if (action_method == 'overall_analytics') {
     $('.current_dashboard').removeClass('active');
     $('.current_practice').addClass('active');
 }
+if (action_method == 'profile') {
+    $('.user_profile_tab').addClass('active_usericon');
+    $('.current_dashboard').removeClass('active');
+}else
+{
+    $('.user_profile_tab').removeClass('active_usericon');
+}
 
 function stateHandle() {
     if (document.querySelector(".emaillink").value === "") {
