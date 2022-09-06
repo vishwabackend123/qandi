@@ -3998,9 +3998,11 @@ span.exam_duration {
     justify-content: space-between;
     padding: 20px 30px 20px 36px;
     box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
+    -moz-box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
+    -webkit-box-shadow:0 4px 8px -4px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
-}
+}   
 
 .headerLeft {
     display: inline-flex;
