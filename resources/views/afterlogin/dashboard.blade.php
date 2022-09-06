@@ -907,7 +907,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
     <div class="modal fade" id="matrix">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-0 bg-light">
+            <div class="modal-content bg-light">
                 <div class="modal-header pb-0 border-0">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
                 </div>

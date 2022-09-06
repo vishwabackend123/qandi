@@ -4949,6 +4949,8 @@ justify-content: space-between;}
                 line-height: 1.6;
                 color: #56b663;
             }
+            #matrix .modal-content{border-radius: 10px;
+                border: 0px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
