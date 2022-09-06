@@ -201,8 +201,10 @@
 @media only screen and (max-height: 600px) {
     .user-profile-sec svg{height:75px!important;width: 75px!important;}
 #referfrnd .modal-dialog, #referedfrnd .modal-dialog {
-    margin: 30px auto 30px;
+    margin: 20px auto 20px;
 }
+#referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
+.user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
 .subscriptionsLeftpannel {padding: 20px 40px;}
 .verificationBox{padding:10px 20px;}
 .verificationBox p {margin-bottom: 10px;}
