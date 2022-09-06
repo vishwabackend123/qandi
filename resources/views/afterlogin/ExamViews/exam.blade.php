@@ -990,7 +990,7 @@ $question_type = "Numerical";
 
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
@@ -1079,7 +1079,7 @@ $question_type = "Numerical";
 
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
