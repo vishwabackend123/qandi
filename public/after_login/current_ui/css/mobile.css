@@ -182,6 +182,15 @@
  .progress-box{margin-top:20px;}
  
 }
+
+@media only screen and (max-height: 600px) {
+.subscriptionsLeftpannel {padding: 20px 40px;}
+.verificationBox{padding:10px 20px;}
+.verificationBox p {margin-bottom: 10px;}
+.verificationBox{bottom:20px;}
+
+}
+
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
