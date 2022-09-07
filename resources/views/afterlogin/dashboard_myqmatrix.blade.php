@@ -28,7 +28,9 @@ $userData = Session::get('user_data');
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        An actionable matrix of your strengths, weaknesses and your improvement areas.
+                                        A matrix, created to analyze your attempts in various topics over time and sort them into your areas of strengths and weaknesses. 
+                                        This data will keep on changing as you progress and diligently work on your identified and analyzed weaknesses and strengths. 
+                                        It will also exhibit/display those topics that can become your strength with a little more effort on your part. Move up the ladder.  
                                     </p>
                                 </span>
                             </h3>
@@ -39,9 +41,9 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor1">
                                         <div class="myqinner">
-                                                    <h6>Q1</h6>
-                                                    <h5>Strengths</h5>
-                                                    <p>Your topics of strengths.</p>
+                                            <h6>Q1</h6>
+                                            <h5>Strengths</h5>
+                                            <p>Going great. Find your strong topics here. Stay in the lead by revision.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>
@@ -62,9 +64,9 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor2">
                                         <div class="myqinner">
-                                                    <h6>Q2</h6>
-                                                    <h5>Opportunity</h5>
-                                                    <p>Topics which are your potential strengths. </p>
+                                            <h6>Q2</h6>
+                                            <h5>Needs focus</h5>
+                                            <p>Give a little attention to these topics and take another step towards perfection. </p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[1]))
@@ -82,9 +84,9 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor3 mb-0">
                                         <div class="myqinner">
-                                                    <h6>Q3</h6>
-                                                    <h5>Hurdles </h5>
-                                                    <p>Topics which are not entirely weaknesses but are hurdles in your success.</p>
+                                            <h6>Q3</h6>
+                                            <h5>Hopeful </h5>
+                                            <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[2]))
@@ -102,9 +104,9 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor4 mb-0">
                                         <div class="myqinner">
-                                                    <h6>Q4</h6>
-                                                    <h5>Weaknesses </h5>
-                                                    <p>Your weakest topics.</p>
+                                            <h6>Q4</h6>
+                                            <h5>Weak </h5>
+                                            <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[3]))
@@ -161,7 +163,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -190,7 +192,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -219,7 +221,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -248,7 +250,7 @@ $userData = Session::get('user_data');
                                                             {{$matrix_one['topic_name']}}
                                                         </td>
                                                         <td>
-                                                            <span class="mymatrix_proficiency me-2">Proficiency: </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
+                                                            <span class="mymatrix_proficiency me-2">Proficiency : </span><span><b>{{$matrix_one['proficiency']}}%</b></span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -278,7 +280,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div> -->
             <div class="modal-body text-center">
-                <p>Give more tests for this <br /> section to be populated</p>
+                <p>Give more tests for this <br /> section to be populateddd</p>
                 <div class="text-center mb-4">
                     <a href="{{url('/dashboard')}}" class="btn btn-danger px-5"> Back</a>
                 </div>
