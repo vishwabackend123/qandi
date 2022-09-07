@@ -904,7 +904,7 @@ $question_type = "Numerical";
             $('.reviewScreenright').css('height', totle_heigh_40);
 
             var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
-            var Review_second_panel_90 = exam_Review_second_panel - 230 + "px";
+            var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
             
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
