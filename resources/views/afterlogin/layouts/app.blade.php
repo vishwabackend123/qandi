@@ -23,15 +23,7 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
     <link href='{{URL::asset("public/after_login/css/style-slider.css")}}' rel='stylesheet' />
     <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
-    <script type="text/javascript">
-        function preventBack() {
-            window.history.forward();
-        }
-        setTimeout("preventBack()", 0);
-        window.onunload = function() {
-            null
-        };
-    </script>
+    
     <style>
         #overlay {
             background: #ffffff;
