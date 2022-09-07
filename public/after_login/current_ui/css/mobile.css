@@ -33,7 +33,7 @@
     }
 }
 @media only screen and (max-width: 1366px) { 
-    
+    .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
@@ -103,6 +103,7 @@
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
 }
 @media only screen and (max-width: 1280px){
+    .myqTodayGraphSec .textblock {padding-left: 13px;}
     .tooltipclass{min-width: 320px;}
     .contacrus_page_wrapper {
         padding-bottom: 200px;
@@ -178,15 +179,53 @@
  .list-ans{
     height: 27vh;
  }
- 
+ .progress-box{margin-top:20px;}
+ .user-profile-sec {
+    padding: 0 0 0px;
 }
+._btn-green {
+    padding: 10px 0 20px;
+}
+.bottom-sec {
+    padding: 20px 0px 5px;
+}
+
+.user-profile-sec svg{height:75px!important;width: 75px!important;}
+.invation-sec {
+    text-align: center;
+    padding: 90px 0 100px;
+}
+
+}
+
+@media only screen and (max-height: 600px) {
+    .user-profile-sec svg{height:75px!important;width: 75px!important;}
+#referfrnd .modal-dialog, #referedfrnd .modal-dialog {
+    margin: 20px auto 20px;
+}
+#referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
+.user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
+.subscriptionsLeftpannel {padding: 20px 40px;}
+.verificationBox{padding:10px 20px;}
+.verificationBox p {margin-bottom: 10px;}
+.verificationBox{bottom:20px;}
+.invation-sec {  padding: 50px 0 60px;}
+._btn-green {
+    padding: 0px 0 10px;
+}
+.successRef_copy.showtext{top: 4px;}
+.bottom-sec {
+    padding: 10px 0 0px;
+}
+}
+
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
 }
 
 .signuprightpannel {
-    padding: 50px 140px 0;
+    padding: 50px 140px 20px;
 }
 .loginrightpannel {
     padding-top: 160px;
@@ -1004,6 +1043,10 @@
         width: 50%;
         text-align: left!important;
     }
+    .TestseriesAttempt22Score .align_left_text_div
+    {
+        text-align: left!important;
+    }
     .Testseriesattemb .mock_test_dure_content2 {
         width: 50%;
         text-align: right;
@@ -1191,6 +1234,7 @@
     #resume-test .modal-header-exam .exam-overview {padding-bottom: 0;}   
     .exam_duration_block {padding: 20px 0 19px;}
     #resume-test .modal-dialog{margin:16px;}
+    .noofquestions-block.dropdown-menu{left:0!important;right: auto!important;}
     
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -1203,7 +1247,7 @@
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px;
+        padding: 39px 6px 59px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -1346,7 +1390,7 @@
 
     #referfrnd .modalcenter {
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         margin-top: 70px;
         height: 100%;
     }
@@ -1825,7 +1869,7 @@
             }
             .testscreenmob .main-textexam-sec {
                 position: absolute;
-                bottom: -109px;
+                bottom: -112px;
                 width: 100%;
                 background: #fff;
             }
@@ -1978,7 +2022,7 @@
         background: white;
         /* height: 100% !important; */
         z-index: 999;
-        width: 96%;
+        width: 100%;
         left: 0px;    padding-left: 16px;
     }
   .examReviewscreenmob  .btn123 {
@@ -2077,8 +2121,33 @@
     .explanationdeteail {
         padding-top: 16px;
     }
-    
-  
+  .smalltextheading .tooltipclass{    left: -43px;}  
+  .smalltextheading .tooltipclass::before{
+    left: 18%;
+}
+.aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before,.aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
+    bottom: -5.4px;}
+    .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
+    .planner-date .form-control {padding: 9px 14px 0px;line-height: inherit;}
+    .examReviewscreenmob .Answerinner p{
+        margin: 0;
+        padding-bottom: 20px;
+        font-weight: 800;
+        border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+        color: #363c4f;
+        padding-top: 20px;
+
+    }
+   
+   .examReviewscreenmob  .reviewScreenright .text-exambottom-sec {
+        height: 33vh;
+        width: 97%;
+    }
+    .examReviewscreenmob .reviewScreenright  button.btn-ans {
+        margin: 6px !important;
+    }
+
+
 }
 
 
@@ -2111,7 +2180,7 @@
     width: 100%;
 }
     .add-insubchapter {
-    padding: 14px 12px 8px 15px;
+    padding: 10px 12px 8px 15px;
 }
     .fliparrow {
     transform: rotate(90deg);
@@ -2137,7 +2206,6 @@
 
 }
 @media only screen and (max-width: 460px){
-    .codelerninner p{min-height:113px;}
     .test-table h2 {
     width: 140px;
 }
@@ -2165,7 +2233,7 @@
 }
 @media only screen and (max-width: 400px){
     
-    .codelerninner p{    word-break: break-word;    min-height: 162px;}
+    .codelerninner p{    word-break: break-word;    min-height: 115px;}
     .common_greenbadge_tabs.exam_topicbtn ul.nav li {
     margin-left: 10px;
     }

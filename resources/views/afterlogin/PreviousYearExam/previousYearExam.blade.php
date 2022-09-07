@@ -59,6 +59,7 @@ $question_type = "Single Choice";
 }elseif ($template_type == 11) {
 $question_type = "Numerical";
 }
+
 @endphp
 <div class="exam-wrapper testscreenmob">
     <div class="content-wrapper">
@@ -120,16 +121,16 @@ $question_type = "Numerical";
                                 <div class="questionType">
                                     <div class="questionTypeinner">
                                         <div class="questionChoiceType">
+                                            @if(isset($aSections) && !empty($aSections))
                                             <div class="questionChoice">
-                                                @if(isset($aSections) && !empty($aSections))
                                                 @foreach($aSections as $sKey=>$section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
                                                 <a class="singleChoice @if($sKey==0) single_Choice_active @endif" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
-
                                                 @endif
                                                 @endforeach
-                                                @endif
+
                                             </div>
+                                            @endif
                                         </div>
                                         <div class="timeCounter">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -784,6 +785,14 @@ $question_type = "Numerical";
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if (typeof questionstartTimerNext === "function") {
+            questionstartTimerNext();
+
+        }
+        if (typeof setEachQuestionTimeNext === "function") {
+
+            setEachQuestionTimeNext();
+        }
         $('body').removeClass("make_me_blue");
 
     }
@@ -796,7 +805,9 @@ $question_type = "Numerical";
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
         clearInterval(timer_countdown);
+        clearInterval(ctimer);
         clearInterval(setEachQuestionTimeNext_countdown);
+        clearInterval(setEachQuestionTimeNext_countdownNext);
         if (type !== 'submit') {
             var pausedTime = $("#base-timer-label").text();
             $('#pauseTime').text(pausedTime);
@@ -909,6 +920,7 @@ $question_type = "Numerical";
     var upcounter_txt = " Mins";
     var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var setEachQuestionTimeNext_countdownNext;
     var timer_countdown;
 
     function questionstartTimer() {
@@ -993,6 +1005,7 @@ $question_type = "Numerical";
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
+                clearInterval(setEachQuestionTimeNext_countdownNext);
 
                 $("#question_section div").remove();
                 $("#question_section").html(result);
@@ -1089,7 +1102,12 @@ $question_type = "Numerical";
                 const last = str.charAt(str.length - 1);
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
@@ -1197,7 +1215,12 @@ $question_type = "Numerical";
                 const last = str.charAt(str.length - 1);
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
@@ -1428,6 +1451,7 @@ $question_type = "Numerical";
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
+                clearInterval(setEachQuestionTimeNext_countdownNext);
 
                 $("#myTabContent #question_section div").remove();
                 $("#myTabContent #question_section").html(result);
@@ -1454,6 +1478,7 @@ $question_type = "Numerical";
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
+                clearInterval(setEachQuestionTimeNext_countdownNext);
 
                 $("#myTabContent #question_section div").remove();
                 $("#myTabContent #question_section").html(result);

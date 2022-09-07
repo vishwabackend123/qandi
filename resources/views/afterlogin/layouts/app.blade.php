@@ -9,6 +9,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Q&I</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="csrf-token" value="{{ csrf_token() }}" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,15 +23,7 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
     <link href='{{URL::asset("public/after_login/css/style-slider.css")}}' rel='stylesheet' />
     <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
-    <script type="text/javascript">
-        function preventBack() {
-            window.history.forward();
-        }
-        setTimeout("preventBack()", 0);
-        window.onunload = function() {
-            null
-        };
-    </script>
+    
     <style>
         #overlay {
             background: #ffffff;

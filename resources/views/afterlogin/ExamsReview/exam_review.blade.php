@@ -45,7 +45,7 @@ $question_type = "Numerical";
                             {{$exam_name}}
                         </a>
                     </div>
-                    
+
                 </div>
 
                 <div class="examLeftpanel reviewScreenleft">
@@ -268,113 +268,115 @@ $question_type = "Numerical";
                 <div class="overlaydiv hideondesktop"></div>
                 <div class="examRightpanel reviewScreenright ans-panel">
 
-                <div class="formobileviewdetail hideondesktop">
-                    <div class="answer-main-sec">
-                        <div class="anshead-top">
-                            <span>Answer:</span>
+                    <div class="formobileviewdetail hideondesktop">
+                        <div class="answer-main-sec">
+                            <div class="anshead-top">
+                                <span>Answer:</span>
 
 
-                            <div class="review_expand">
-                                <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
-                                <div class='expand_block'>
-                                    <div class="first_screen">
-                                        <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                                <div class="review_expand">
+                                    <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
+                                    <div class='expand_block'>
+                                        <div class="first_screen">
+                                            <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
                                             <h5>{{$accuracy}}%</h5>
                                             <h6>of the people got this question right</h6>
                                         </div> -->
 
-                                        <div class="attemp_box row mt-0">
-                                            <div class="sub_att_1 col-md-6">
-                                                @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
-                                                <p>Topic pre-requisite</p>
-                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
-                                                @endif
+                                            <div class="attemp_box row mt-0">
+                                                <div class="sub_att_1 col-md-6">
+                                                    @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
+                                                    <p>Topic pre-requisite</p>
+                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                                                    @endif
 
+                                                </div>
+                                                <div class="sub_att_1 col-md-6">
+
+                                                    @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
+                                                    <p>Concept pre-requisite</p>
+                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                    @endif
+
+                                                </div>
                                             </div>
-                                            <div class="sub_att_1 col-md-6">
-
-                                                @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
-                                                <p>Concept pre-requisite</p>
-                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
-                                                @endif
-
+                                            <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
+                                                <h5>{{$accuracy}}%</h5>
+                                                <h6>of the people got this question right</h6>
                                             </div>
-                                        </div>
-                                        <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
-                                            <h5>{{$accuracy}}%</h5>
-                                            <h6>of the people got this question right</h6>
-                                        </div>
-                                        <div class="box-border"></div>
-                                        <div class="learskill d-flex align-items-center justify-content-between">
-                                            <p>Learning skill required:</p>
-                                            <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                            <div class="box-border"></div>
+                                            <div class="learskill d-flex align-items-center justify-content-between">
+                                                <p>Learning skill required:</p>
+                                                <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <label class="expandbtn1 hideonmobile" title="Expand">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </label>
-                            <label class="collapsebtn1 hideonmobile" title="Collapse">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                    <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </label>
-
-
-                            <div class="viewdetailmobclik hideondesktop">
-                                <label class="expandbtnmob1" title="Expand">
+                                <label class="expandbtn1 hideonmobile" title="Expand">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </label>
-                                <label class="collapsebtnmob1" title="Collapse">
+                                <label class="collapsebtn1 hideonmobile" title="Collapse">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                         <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </label>
+
+
+                                <div class="viewdetailmobclik hideondesktop">
+                                    <label class="expandbtnmob1" title="Expand">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </label>
+                                    <label class="collapsebtnmob1" title="Collapse">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="anshead-titletext">
-                            <p> @php $mn=0; @endphp
-                                @foreach($correct_ans as $akey=>$ans_value)
-                                @php
-                                $ans_dom = new DOMDocument();
-                                @$ans_dom->loadHTML($ans_value);
-                                $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
-                                $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
-                                $alatex = "https://math.now.sh?from=".$atext;
-                                $view_ans='<img src="'.$alatex.'" />' ;
-                                @endphp
-                                {!! !empty($atext)?$view_ans:$ans_value; !!}
-                                @php $mn++; @endphp
-                                @endforeach</p>
-                        </div>
-                        <div class="explanation-sec">
-                            <div class="explanationdeteail">
-                                @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
-                                <span>Explanation:</span>
-                                <p>{!! $question_data->explanation !!}</p>
-                                @endif
+                            <div class="anshead-titletext">
+                                <p> @php $mn=0; @endphp
+                                    @foreach($correct_ans as $akey=>$ans_value)
+                                    @php
+                                    $ans_dom = new DOMDocument();
+                                    @$ans_dom->loadHTML($ans_value);
+                                    $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
+                                    $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
+                                    $alatex = "https://math.now.sh?from=".$atext;
+                                    $view_ans='<img src="'.$alatex.'" />' ;
+                                    @endphp
+                                    {!! !empty($atext)?$view_ans:$ans_value; !!}
+                                    @php $mn++; @endphp
+                                    @endforeach</p>
+                            </div>
+                            <div class="explanation-sec">
+                                <div class="explanationdeteail">
+                                    @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                    <span>Explanation:</span>
+                                    <p>{!! $question_data->explanation !!}</p>
+                                    @endif
+                                </div>
+
                             </div>
 
+
                         </div>
-
-
                     </div>
-                </div>
 
 
 
 
-                <!-- <p class="hideonmobile"><span>Answer Palette</span></p> -->
+                    <!-- <p class="hideonmobile"><span>Answer Palette</span></p> -->
                     <div class="custom-anstop sachin">
                         <p class="hideonmobile"><span>Answer Palette</span></p>
-                        <div class="hideondesktop Answerinner"><p><span>Answer Palette</span></p></div>
+                        <div class="hideondesktop Answerinner">
+                            <p><span>Answer Palette</span></p>
+                        </div>
                         <div class="text-exambottom-sec">
-                         
+
                             @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
@@ -490,8 +492,11 @@ $question_type = "Numerical";
 
                 </div>
                 <div class="clickbtnonreview btn123 hideondesktop">
-                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
-                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    <div class="clickbtnboxinner">
+                        <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                        <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -561,6 +566,7 @@ $question_type = "Numerical";
             },
             success: function(result) {
                 $("#review_rques_blk").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
             }
         });
     }
@@ -574,6 +580,7 @@ $question_type = "Numerical";
             },
             success: function(result) {
                 $("#filter_questions").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "filter_questions"]);
             }
         });
     }
@@ -698,29 +705,29 @@ $question_type = "Numerical";
 </script> -->
 
 <script>
-$(function() {
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    function review_right_Height() {
-        var review_Screen_right_height = $(".reviewScreenright").outerHeight();
-        var test_review_height_div = review_Screen_right_height / 2;
-        $('.custom-anstop').css('height', test_review_height_div);
-        $('.reviewans-mainsec').css('height', test_review_height_div);
-    }
+    $(function() {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            function review_right_Height() {
+                var review_Screen_right_height = $(".reviewScreenright").outerHeight();
+                var test_review_height_div = review_Screen_right_height / 2;
+                $('.custom-anstop').css('height', test_review_height_div);
+                $('.reviewans-mainsec').css('height', test_review_height_div);
+            }
 
-    review_right_Height();
-    $("window").load(function() {
-        review_right_Height();
-    });
+            review_right_Height();
+            $("window").load(function() {
+                review_right_Height();
+            });
 
 
-    $(window).resize(function() {
-        review_right_Height();
-    });
-}
-})
+            $(window).resize(function() {
+                review_right_Height();
+            });
+        }
+    })
 </script>
- 
- 
+
+
 <script>
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
@@ -754,7 +761,7 @@ $(function() {
             $('.list-ans').css('height', coll_scroll_final_height)
         });
     });
-</script>  
+</script>
 
 <!-----End__Right_Review_Height_Calculation------->
 <!-----Start-for-expand-btn-click------->
@@ -803,6 +810,11 @@ $(function() {
         $('.expandformob').css({
             display: "none"
         });
+        $('.clickbtnboxinner ').css({
+            display: "none"
+        });
+      
+
     });
 
     $('.collapseformob').on('click', function() {
@@ -810,6 +822,9 @@ $(function() {
             display: "none"
         });
         $('.expandformob').css({
+            display: "block"
+        });
+        $('.clickbtnboxinner ').css({
             display: "block"
         });
     });
@@ -821,6 +836,9 @@ $(function() {
         $('.expandbtnmob1').css({
             display: "none"
         });
+        $('.clickbtnboxinner ').css({
+            display: "none"
+        });
     });
 
     $('.collapsebtnmob1').on('click', function() {
@@ -830,10 +848,10 @@ $(function() {
         $('.expandbtnmob1').css({
             display: "block"
         });
+        $('.clickbtnboxinner ').css({
+            display: "block"
+        });
     });
-
-
-
 </script>
 <!-----end-for-expand-btn-click------->
 
@@ -851,9 +869,11 @@ $(function() {
 
 
 
-<script>
+<!-- <script>
     $('.showyes').click(function() {
-        $('.sachin').slideToggle({direction: "up"}, 300);
+        $('.sachin').slideToggle({
+            direction: "up"
+        }, 300);
         $(this).toggleClass('Close');
         $('.showyes').hide(0);
         $('.hideyes').show(0);
@@ -868,139 +888,143 @@ $(function() {
         $('.hideyes').hide(0);
         $('.overlaydiv').hide(0);
     });
-</script>
+</script> -->
 <script>
-$(function() {
-  if (window.matchMedia("(max-width: 767px)").matches) {
+    $(function() {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            let height = screen.height;
+            $('.examReviewscreenmob').css('height', height);
+            $('.content-wrapper').css('height', height);
+            $('.examSereenwrapper').css('height', height);
+            $('.examreviewMaincontainer ').css('height', height);
+            var exam_Review_screenmob_height = $(".examreviewMaincontainer ").outerHeight();
+            var test_review_height_div = exam_Review_screenmob_height / 2;
+            var totle_heigh_40 = test_review_height_div - 40 + "px";
+            $('.reviewScreenleft').css('height', totle_heigh_40);
+            $('.reviewScreenright').css('height', totle_heigh_40);
 
-        let height = screen.height;
-        $('.examReviewscreenmob').css('height', height);
-        $('.content-wrapper').css('height', height);
-        $('.examSereenwrapper').css('height', height);
-        $('.examreviewMaincontainer ').css('height', height);
-        var exam_Review_screenmob_height = $(".examreviewMaincontainer ").outerHeight();
-        var test_review_height_div = exam_Review_screenmob_height / 2;
-        var totle_heigh_40 = test_review_height_div - 40 + "px";
-         $('.reviewScreenleft').css('height', totle_heigh_40);
-        $('.reviewScreenright').css('height', totle_heigh_40);
-        var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
-        var Review_second_panel_90 = exam_Review_second_panel - 90 + "px";
-        $('.reviewScreenright').css('height', Review_second_panel_90);
-
-        var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
-        var extra_height_total = reviewScreenright_call - 100 + "px";
-        $('.reviewscreenquestion').css('height', extra_height_total);
-        $('.examReviewscreenmob .questionwrapper').css('height', extra_height_total);
-        $('.examReviewscreenmob .questionsliderbox').css('height', extra_height_total);
-
-        var reviewScreenrightkheight = $(".reviewScreenright  ").outerHeight();
-        var formobileviewdetailkheight = $(".formobileviewdetail  ").outerHeight();
-        var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
-        $('.reviewans-mainsec').css('height', dividereviewboxandformob);
-
-
-        var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
-        var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + 90 + "px";
-        $('.answer-main-sec').css('height', answer_main_sec_mob12);
-
-   
-
-        $(".expandformob").on('click', function() {
-            $('.overlaydiv').show(0);
-            var questionsliderinner_mob = $(".questionsliderinner ").outerHeight();
-            var reviewans_mainsec_mob = $(".reviewans-mainsec ").outerHeight();
-            var questionsld_div_tab_height = questionsliderinner_mob + reviewans_mainsec_mob;
-            $('.reviewans-mainsec').css('height', questionsld_div_tab_height);
-        });
-       
-        $(".collapseformob").on('click', function() {
-            $('.overlaydiv').hide(0);
+            var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
+            var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
+            $('.reviewScreenright').css('height', Review_second_panel_90);
+            
+            var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
+            var extra_height_total = reviewScreenright_call - 100 + "px";
+            $('.reviewscreenquestion').css('height', extra_height_total);
+            $('.examReviewscreenmob .questionwrapper').css('height', extra_height_total);
+            $('.examReviewscreenmob .questionsliderbox').css('height', extra_height_total);
             var reviewScreenrightkheight = $(".reviewScreenright  ").outerHeight();
             var formobileviewdetailkheight = $(".formobileviewdetail  ").outerHeight();
             var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
             $('.reviewans-mainsec').css('height', dividereviewboxandformob);
-        });
-
-
-        $(".expandbtnmob1").on('click', function() {
-            $('.overlaydiv').show(0);
-            $("answer-main-sec").addClass("intro");
-            var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
-            var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
-            var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
-            var dividereviewboxandformob = reviewScreenleft_mob1 + questionsliderinner_mob1;
-            $('.answer-main-sec').css('height', dividereviewboxandformob);
-            $('.answer-main-sec').css('z-index', "1");
-            $('.explanation-sec').attr('style', 'height: 90% !important');
-        });
-       
-        $(".collapsebtnmob1").on('click', function() {
-            $('.overlaydiv').hide(0);
-            $("answer-main-sec").addClass("intro");
-            var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
-            var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
-            var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
-            var dividereviewboxandformob = reviewScreenleft_mob1 - questionsliderinner_mob1;
-            $('.answer-main-sec').css('height', dividereviewboxandformob);
-            $('.answer-main-sec').css('z-index', "initial");  
             var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
-            var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + "px";
+            var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + 90 + "px";
             $('.answer-main-sec').css('height', answer_main_sec_mob12);
-            $('.explanation-sec').attr('style', 'height: 20px !important');
-        });
+
+            $(".expandformob").on('click', function() {
+                $('.overlaydiv').show(0);
+                var questionsliderinner_mob = $(".questionsliderinner ").outerHeight();
+                var reviewans_mainsec_mob = $(".reviewans-mainsec ").outerHeight();
+                var questionsld_div_tab_height = questionsliderinner_mob + reviewans_mainsec_mob;
+                $('.reviewans-mainsec').css('height', questionsld_div_tab_height);
+            });
+
+            $(".collapseformob").on('click', function() {
+                $('.overlaydiv').hide(0);
+                var reviewScreenrightkheight = $(".reviewScreenright  ").outerHeight();
+                var formobileviewdetailkheight = $(".formobileviewdetail  ").outerHeight();
+                var dividereviewboxandformob = reviewScreenrightkheight - formobileviewdetailkheight;
+                $('.reviewans-mainsec').css('height', dividereviewboxandformob);
+            });
+
+
+            $(".expandbtnmob1").on('click', function() {
+                $('.overlaydiv').show(0);
+                $("answer-main-sec").addClass("intro");
+                var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
+                var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
+                var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
+                var dividereviewboxandformob = reviewScreenleft_mob1 + questionsliderinner_mob1;
+                $('.answer-main-sec').css('height', dividereviewboxandformob);
+                $('.answer-main-sec').css('z-index', "1");
+                $('.explanation-sec').attr('style', 'height: calc(100vh - 290px) !important');
+            });
+
+            $(".collapsebtnmob1").on('click', function() {
+                $('.overlaydiv').hide(0);
+                $("answer-main-sec").addClass("intro");
+                var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
+                var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
+                var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
+                var dividereviewboxandformob = reviewScreenleft_mob1 - questionsliderinner_mob1;
+                $('.answer-main-sec').css('height', dividereviewboxandformob);
+                $('.answer-main-sec').css('z-index', "initial");
+                var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
+                var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + "px";
+                $('.answer-main-sec').css('height', answer_main_sec_mob12);
+                $('.explanation-sec').attr('style', 'height: 20px !important');
+            });
 
 
 
+            $(".showyes").on('click', function() {
+                $('.showyes').hide(0);
+                $('.hideyes').show(0);
+                $('.overlaydiv').show(0);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $(".showyes").on('click', function() {
-            // var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
-            // var sachinshowyes = $(".sachin").outerHeight();
-            // var combinationdiv = sachinshowyes  + 400 + "px !important";
-            // $('.sachin').css('height', combinationdiv);
-
-            var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
-            var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
-            var combinationdiv = sachinshowyes  + questionsliderinnershowyes;
-           
+                var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
+                var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
+                var combinationdiv = sachinshowyes + questionsliderinnershowyes;
             
-            $('.custom-anstop').css('height', combinationdiv);
+                $('.sachin').attr('style', 'display: block !important');
+                $('.sachin').css('height', combinationdiv);
 
+                // var Answerinnershowyes = $(".Answerinner").outerHeight();
+                // var text_exambottom_seshowyes = $(".text-exambottom-sec").outerHeight();
+                // var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
+                // var fortextexambottomseshowyes = sachinshowyes - Answerinnershowyes - 40 + "px";
 
+                // $('.text-exambottom-sec').attr('style', 'display: block !important');
 
-           
-
-
-        
-             
-        });
-
-        $(".hideyes").on('click', function() {
-            // var reviewScreenleftshowyes = $(".reviewScreenleft").outerHeight();
-            // var sachinshowyes = $(".sachin").outerHeight();
-            // var combinationdiv = sachinshowyes  - 400 + "px";
-            // $('.sachin').css('height', combinationdiv);
+                // $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
+               
             
-        });
-
-
       
 
+            });
+
+            $(".hideyes").on('click', function() {
+                $('.showyes').show(0);
+                $('.hideyes').hide(0);
+                $('.overlaydiv').hide(0);
+
         
-    }
-})
+
+                var sachinhides = $(".sachin").outerHeight();
+                var questionsliderhideinner1 = $(".questionsliderinner").outerHeight();
+                var combi  = sachinhides - questionsliderhideinner1;
+
+                $('.sachin').css('height', combi);
+                $('.sachin').attr('style', 'display: none !important');
+
+                // var Answerinnershowyes1 = $(".Answerinner").outerHeight();
+                // var text_exambottom_seshowye1 = $(".text-exambottom-sec").outerHeight();
+                // var sachinshowyes1 = $(".reviewScreenright .custom-anstop").outerHeight();
+
+                // $('.text-exambottom-sec').css('height', combi);
+              
+               
+
+               
+
+               
+
+            });
+
+
+
+
+
+        }
+    })
 </script>
 @endsection

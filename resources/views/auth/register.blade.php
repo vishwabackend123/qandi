@@ -623,6 +623,7 @@ $(document).ready(function() {
 
 $('.otp').keyup(function() {
 
+<<<<<<< HEAD
     var isEmptyOTP = false;
     $('.otp').each(function() {
         if ($(this).val() == '') {
@@ -630,6 +631,41 @@ $('.otp').keyup(function() {
             $(this).attr('style', 'border: 0.5px solid #d0d5dd !important');
         } else {
             $(this).attr('style', 'border: 1px solid #56b66380 !important;');
+=======
+            if (e.target.type === "text" && e.target.id != 'mobile_num') {
+                var data = e.clipboardData.getData('Text');
+                if(!isNaN(data)){
+                    data = data.split('');
+                    [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
+                        node.value = data[index];
+                    });
+                }else
+                {
+                    return false;
+                }   
+            }
+        });
+
+        function resentOtpTime() {
+            $('.resend_again').hide();
+            var timeLeft = 58;
+            var elem = document.getElementById('wait_otp_div');
+            timerId = setInterval(countdown, 1000);
+
+            function countdown() {
+
+                if (timeLeft == -1) {
+                    clearTimeout(timerId);
+                    $('.resend_again').show();
+                    $('.resend_timer').hide();
+                } else {
+                    $('.resend_timer').show();
+                    elem.innerHTML = "00:" + timeLeft;
+                    timeLeft--;
+                }
+
+            }
+>>>>>>> 83a797f71580d1bea33b098c42ac7725a6b6f700
         }
     });
     if (isEmptyOTP) {

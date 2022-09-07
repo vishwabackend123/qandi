@@ -22,27 +22,28 @@ $question_type = "Numerical";
 
 @endphp
 <script>
-    $(document).ready(function() {
+    var ctimer;
+    var setEachQuestionTimeNext_countdownNext;
 
-        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-        var questionTime = parseInt(time_allowed) * 60;
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var questionTime = parseInt(time_allowed) * 60;
 
-        var sec = parseInt(time_allowed) * 60;
-        var interval = 1000;
-        var qest = '{{$activeq_id}}';
-        var aj_up_timer = '{{$aquestionTakenTime}}';
+    var sec = parseInt(time_allowed) * 60;
+    var interval = 1000;
+    var qest = '{{$activeq_id}}';
+    var aj_up_timer = '{{$aquestionTakenTime}}';
 
-        var ctxt = " Seconds";
-        if (aj_up_timer >= questionTime) {
-            var sec = 0;
-        } else {
-            var sec = questionTime - aj_up_timer;
-        }
+    var ctxt = " Seconds";
+    if (aj_up_timer >= questionTime) {
+        var sec = 0;
+    } else {
+        var sec = questionTime - aj_up_timer;
+    }
 
-        $('#percentBar_{{$activeq_id}}').html('')
-        $('#timespend_{{$activeq_id}}').val("");
+    $('#percentBar_{{$activeq_id}}').html('')
+    $('#timespend_{{$activeq_id}}').val("");
 
-
+    function questionstartTimerNext() {
         ctimer = setInterval(function() {
             sec--;
 
@@ -58,55 +59,57 @@ $question_type = "Numerical";
 
             }
         }, interval);
+    }
+    questionstartTimerNext();
 
 
-        function progressBar_next(percent, $element) {
-            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+    function progressBar_next(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
 
-            $element.find('div').animate({
-                width: progressBarWidth
-            }, 500).html(percent + "%&nbsp;");
-            if (percent <= 20) {
-                $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
-            }
-            if (percent <= 0) {
-                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-            }
-
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar1_{{$activeq_id}}').css('background-color', '#FFDC34');
         }
-        var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
-        var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
-        //var totalSec = document.getElementById("tsec");
-        var totalSeconds = aj_up_timer;
-
-        function setEachQuestionTimeNext() {
-            setEachQuestionTimeNext_countdown = setInterval(function() {
-                ++totalSeconds;
-                $('#timespend_{{$activeq_id}}').val(totalSeconds);
-                secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-                //totalSec.innerHTML = pad(totalSeconds);
-            }, 1000);
+        if (percent <= 0) {
+            $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
         }
-        setEachQuestionTimeNext();
 
-        function pad(val) {
-            var valString = val + "";
-            if (valString.length < 2) {
-                return "0" + valString;
-            } else {
-                return valString;
-            }
+    }
+    var minutesLabel = document.getElementById("up_minutes_{{$activeq_id}}");
+    var secondsLabel = document.getElementById("up_seconds_{{$activeq_id}}");
+    //var totalSec = document.getElementById("tsec");
+    var totalSecondsNext = aj_up_timer;
+
+    function setEachQuestionTimeNext() {
+        setEachQuestionTimeNext_countdownNext = setInterval(function() {
+            ++totalSecondsNext;
+            $('#timespend_{{$activeq_id}}').val(totalSecondsNext);
+            secondsLabel.innerHTML = padNext(totalSecondsNext % 60);
+
+            minutesLabel.innerHTML = padNext(parseInt(totalSecondsNext / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }, 1000);
+    }
+    setEachQuestionTimeNext();
+
+    function padNext(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
         }
-    });
+    }
 </script>
 
 <div class="questionType">
     <div class="questionTypeinner">
         <div class="questionChoiceType">
+            @if(isset($aSections) && !empty($aSections))
             <div class="questionChoice">
-                @if(isset($aSections) && !empty($aSections))
+
                 @foreach($aSections as $Vsec)
                 @php $secId=$Vsec->id;@endphp
                 @if(isset($aSubSecCount->$subject_id->$secId) && $aSubSecCount->$subject_id->$secId>0)
@@ -114,8 +117,9 @@ $question_type = "Numerical";
 
                 @endif
                 @endforeach
-                @endif
+
             </div>
+            @endif
         </div>
         <div class="timeCounter">
             <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
@@ -183,7 +187,7 @@ $question_type = "Numerical";
                                     <div class="colMargin">
                                         <div class="inputAns">
                                             <label for="story">Answer</label>
-                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
                                         </div>
                                     </div>
                                     @endif
@@ -286,6 +290,7 @@ $question_type = "Numerical";
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
+
 
         if (event.charCode === 46) {
             // if dot is the first symbol

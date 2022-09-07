@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="commonWhiteBox h-auto subj_progress_card">
                 <div class="HeadingWithfilter">
-                        <h3 class="boxheading d-flex align-items-center mb-5">Progress
+                        <h3 class="boxheading d-flex align-items-center mb-5 smalltextheading">Progress
                             <span class="tooltipmain">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                     <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">

@@ -62,7 +62,7 @@ $nitifiCount=count($notifications);
                     <img src="{{URL::asset('public/after_login/current_ui/images/cross-menu.svg')}}" alt="" class="mobileicon">
                 </a>
             </span>
-            <span class="headericon dropdown mobile_hide">
+            <span class="headericon dropdown mobile_hide user_profile_tab">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
                     @if(isset($userData->user_profile_img))
                     <img src="{{ $imgPath ?? '' }}" class="profileicon" />

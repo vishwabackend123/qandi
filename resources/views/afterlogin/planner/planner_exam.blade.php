@@ -664,6 +664,12 @@ $question_type = "Numerical";
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if (typeof questionstartTimerNext === "function") {
+            questionstartTimerNext();
+        }
+        if (typeof setEachQuestionTimeNext === "function") {
+            setEachQuestionTimeNext();
+        }
         $('body').addClass("make_me_blue");
 
     }
@@ -676,7 +682,9 @@ $question_type = "Numerical";
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
         clearInterval(timer_countdown);
+        clearInterval(ctimer);
         clearInterval(setEachQuestionTimeNext_countdown);
+        clearInterval(setEachQuestionTimeNext_countdownNext);
         if (type !== 'submit') {
             var pausedTime = $("#base-timer-label").text();
             $('#pauseTime').text(pausedTime);
@@ -767,6 +775,7 @@ $question_type = "Numerical";
     var upcounter_txt = " Mins";
     var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var setEachQuestionTimeNext_countdownNext;
     var timer_countdown;
 
     function questionstartTimer() {
@@ -944,7 +953,12 @@ $question_type = "Numerical";
 
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
@@ -1021,7 +1035,12 @@ $question_type = "Numerical";
                 const last = str.charAt(str.length - 1);
                 var decarr = res_value.split(".");
 
-                if (res_value == '-' || res_value == '-.') {
+                const noSpecialCharacters = str.replace(/[^0-9 ]/g, '');
+                var subject = /^0+$/;
+
+                if (noSpecialCharacters.match(subject) && noSpecialCharacters.length > 1) {
+                    var vld_msg = "Enter valid answer.";
+                } else if (res_value == '-' || res_value == '-.' || res_value == '-.0' || res_value == '-0') {
                     var vld_msg = "Enter valid answer.";
                 } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
