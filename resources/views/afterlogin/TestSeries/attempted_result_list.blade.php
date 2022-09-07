@@ -146,7 +146,7 @@
                     <div class="live_exam_diveder_div"></div>
                     <div class="mock_test_dure_content2 align_left_text_div">
                         <div class="mock_test_q_d_m_s_text1">Score</div>
-                        <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
+                        <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$marks}}</span></div>
                     </div>
                 </div>
             </div>
