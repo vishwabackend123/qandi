@@ -52,7 +52,7 @@
     <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        /*window.dataLayer = window.dataLayer || [];
 
         function gtag() {
             dataLayer.push(arguments);
@@ -60,7 +60,7 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'G-5M3C3F04YY',{cookie_flags: 'SameSite=None;Secure'});
+        gtag('config', 'G-5M3C3F04YY',{cookie_flags: 'SameSite=None;'});*/
 
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
