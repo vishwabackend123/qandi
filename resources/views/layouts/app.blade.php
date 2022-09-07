@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +60,7 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'G-5M3C3F04YY');
+        gtag('config', 'G-5M3C3F04YY',{cookie_flags: 'SameSite=None;Secure'});
 
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
