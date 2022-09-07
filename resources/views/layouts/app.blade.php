@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +35,7 @@
     @endif
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src=https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY> </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY"> </script>
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
@@ -60,7 +60,7 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'G-5M3C3F04YY');
+        gtag('config', 'G-5M3C3F04YY',{cookie_flags: 'SameSite=None;'});
 
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
