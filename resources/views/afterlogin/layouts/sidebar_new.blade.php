@@ -388,6 +388,7 @@ $userData = Session::get('user_data');
 <script>
 var url = window.location.pathname.split("/");
 var action_method = url[1];
+var exam_flow = ['exam_custom', 'series_list', 'mockExamTest','previous_year_exam','live_exam_list','custom_exam','exam_result_analytics','get_exam_result_analytics','custom_exam_chapter','custom_exam_topic','test_series','mock_exam','live_exam','previousYearExam'];
 console.log(url);
 if (action_method == 'overall_analytics') {
     $('.current_dashboard').removeClass('active');
@@ -395,7 +396,7 @@ if (action_method == 'overall_analytics') {
 } else if (action_method == 'planner') {
     $('.current_dashboard').removeClass('active');
     $('.current_planner').addClass('active');
-} else if (action_method == 'exam_custom' || action_method == 'series_list' || action_method == 'mockExamTest' || action_method == 'previous_year_exam' || action_method == 'live_exam_list') {
+} else if (exam_flow.includes(action_method)) {
     $('.current_dashboard').removeClass('active');
     $('.current_practice').addClass('active');
 }
