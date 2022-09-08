@@ -1684,6 +1684,7 @@
             .testscreenmob   .examLeftpanelmob {
                     width: 100%;
                     padding-top: 116px;
+                    padding-top: 85px;
                     height: 100%;
             }
             .testscreenmob .examLeftpanelmob  .submitBtn {
@@ -1869,7 +1870,8 @@
             }
             .testscreenmob .main-textexam-sec {
                 position: absolute;
-                bottom: -112px;
+                /* bottom: -112px; */ 
+                bottom: -132px;
                 width: 100%;
                 background: #fff;
             }
