@@ -2343,9 +2343,13 @@ a.btn-common-attempted svg {
     }
 
     .base-timer {
+
         position: relative;
         width: 70px;
         height: 70px;
+        background: #ebebed;
+        border-radius: 50%;
+        padding: 3px;
     }
     .exam-overview-time span {
     font-weight: 600;
@@ -2356,8 +2360,9 @@ a.btn-common-attempted svg {
         transform: scaleX(1);
         background: #ebebed;
         border-radius: 50%;
-        padding: 3px;
+        /* padding: 3px; */
     }
+  
 
     .base-timer__circle {
         fill: none;
@@ -2399,11 +2404,7 @@ a.btn-common-attempted svg {
         top: 50%;
         left: 50%;
         width: 35px;
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        /* transform: translate(-50%, -50%); */
+        transform: translate(-50%, -50%);
     }
 
     .number-block .btn {
@@ -4963,10 +4964,9 @@ justify-content: space-between;}
 }
 
 .plan_successfull_wrapper {
-    height: 100%;
+    height: 100vh;
     background: #f5faf6;
     padding-bottom: 30px;
-    min-height: 625px;
 }
 
 .plan_faild_wrapper {
@@ -5189,7 +5189,7 @@ justify-content: space-between;}
     /* height: 430px; */
     height: calc(100vh - 287px);
     overflow-y: auto;
-    padding-right: 150px;
+    padding-right: 150px;    margin-top: 15px;
 }
 
 .exam_instruction_scrolling::-webkit-scrollbar {
