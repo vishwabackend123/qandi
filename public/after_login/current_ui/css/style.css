@@ -4964,10 +4964,10 @@ justify-content: space-between;}
 }
 
 .plan_successfull_wrapper {
-    height: 100%;
+    height: 100vh;
     background: #f5faf6;
     padding-bottom: 30px;
-    min-height: 568px;
+    min-height: 625px;
 }
 
 .plan_faild_wrapper {
