@@ -3470,7 +3470,7 @@ h3.commonheading{
     background-color: #CBECD0;
     height: 36px;
 }
-.common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px;}
+.common_greenbadge_tabs.exam_topicbtn ul.nav li{margin-left:20px; -webkit-appearance: none !important;}
 .common_greenbadge_tabs.exam_topicbtn ul.nav li:first-child{margin-left:0px;}
 
 .common_greenbadge_tabs ul.nav .btn.nav-link {
