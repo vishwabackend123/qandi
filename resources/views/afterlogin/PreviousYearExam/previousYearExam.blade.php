@@ -125,12 +125,12 @@ $question_type = "Numerical";
                                             <div class="questionChoice">
                                                 @foreach($aSections as $sKey=>$section)
                                                 @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
-                                                <a class="singleChoice @if($sKey==0) single_Choice_active @endif" href="javascript:;" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
+                                                <a class="singleChoice @if($sKey==0) single_Choice_active @endif" href="javascript:void(0);" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}} ({{$aSubSecCount[$subject_id][$section->id]."Q"}}) - {{$section->question_type_name}}</a>
                                                 @endif
                                                 @endforeach
-
                                             </div>
                                             @endif
+
                                         </div>
                                         <div class="timeCounter">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
