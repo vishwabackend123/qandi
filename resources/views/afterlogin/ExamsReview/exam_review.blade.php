@@ -897,7 +897,7 @@ $question_type = "Numerical";
             $('.content-wrapper').css('height', height);
             $('.examSereenwrapper').css('height', height);
             $('.examreviewMaincontainer ').css('height', height);
-            var exam_Review_screenmob_height = $(".examreviewMaincontainer ").outerHeight();
+            var exam_Review_screenmob_height = $(".examreviewMaincontainer").outerHeight();
             var test_review_height_div = exam_Review_screenmob_height / 2;
             var totle_heigh_40 = test_review_height_div - 40 + "px";
             $('.reviewScreenleft').css('height', totle_heigh_40);
