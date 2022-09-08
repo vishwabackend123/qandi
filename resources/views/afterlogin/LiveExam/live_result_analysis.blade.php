@@ -405,6 +405,13 @@ foreach($subject_graph as $key=>$gh){
 $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
+$total_sub=count($subject_graph);
+$total_sub=count($subject_graph);
+if($total_sub > 0)
+{
+    $stuscore=$stuscore/$total_sub;
+    $clsAvg=$clsAvg/$total_sub;
+}
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
 $clsAvg_arr[]=round($clsAvg,2);
