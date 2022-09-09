@@ -2326,6 +2326,10 @@ a.btn-common-attempted svg {
     font-weight: 800;
     color: #56b663;
 }
+.bck-btn  span.bckbtninner{border: solid 1px #56b663;    padding: 5px 10px;
+    border-radius: 8px;
+    width: 60%;display: inline-block;
+    margin: 3px 0px 0px;}
   .bck-btn a{
       font-weight: 800;
       color: rgba(54, 60, 79, 0.8);text-decoration:none;

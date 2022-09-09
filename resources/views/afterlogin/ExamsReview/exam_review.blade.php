@@ -488,7 +488,7 @@ $question_type = "Numerical";
 
                         </div>
                     </div>
-                    <button class="btn bck-btn hideonmobile" onclick="history.go(-1)">Back</button>
+                    <button class="btn bck-btn hideonmobile" onclick="history.go(-1)"><span class="bckbtninner">Back<span></button>
 
                 </div>
                 <div class="clickbtnonreview btn123 hideondesktop">
