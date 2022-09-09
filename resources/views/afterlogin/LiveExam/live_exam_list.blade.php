@@ -87,7 +87,7 @@
                                 @endif
                                 @endif
                                 <div>
-                                    <div class="live_exam_upcoming_text">Upcoming Live Test</div>
+                                    <div class="live_exam_upcoming_text">Upcoming Live Exam</div>
                                     <div class="liveexamScroll liveexamScrollContant">
                                         @if(!empty($schedule_list))
                                         @php
@@ -144,12 +144,12 @@
                                     @endforeach
                                     @if(empty($dataAvail))
                                     <div class="text-center">
-                                        <span class="sub-details">No upcoming live tests available</span>
+                                        <span class="sub-details">No upcoming live exams available</span>
                                     </div>
                                     @endif
                                     @else
                                     <div class="text-center">
-                                        <span class="sub-details">No live test available right now</span>
+                                        <span class="sub-details">No live exam available right now</span>
                                     </div>
                                     @endif
                                 </div>
