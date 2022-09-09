@@ -164,6 +164,7 @@ Route::any('/live_exam_list', [App\Http\Controllers\LiveExamController::class, '
 Route::any('/live_exam/{id}/{instruction?}', [App\Http\Controllers\LiveExamController::class, 'liveExam'])->name('live_exam')->middleware('auth', 'menu');
 Route::any('/live_exam_result/{result_id}', [App\Http\Controllers\LiveExamController::class, 'liveExamResult'])->name('live_exam_result')->middleware('auth', 'menu');
 Route::any('/live_next_question/{ques_id}', [App\Http\Controllers\LiveExamController::class, 'nextLiveQuestion'])->name('live_next_question')->middleware('auth');
+Route::any('/live_next_subject_question/{subject_id}', [App\Http\Controllers\LiveExamController::class, 'nextLiveSubjectQuestion'])->name('live_next_subject_question')->middleware('auth');
 
 /* AnalyticsController Routes */
 

@@ -1351,7 +1351,7 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_subject_question/') }}/" + subject_id;
+        url = "{{ url('live_next_subject_question/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {
