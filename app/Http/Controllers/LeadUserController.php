@@ -161,19 +161,16 @@ class LeadUserController extends Controller
 	}
 	public function overallAnalyticsNew()
 	{
-		$client = new SecretsManagerClient([			
-    		'version' => '2017-10-17',
+		$client = new SecretsManagerClient([
+			'version' => '2017-10-17',
 			'region' => 'ap-south-1'
-		]);		
-		
+		]);
+
 		$secretName = 'dev/secrets';
 
 		$result = $client->getSecretValue([
 			'SecretId' => $secretName,
 		]);
-		print_r($result);
-		die;
-		//return view('auth.overall_analytics_new');
 	}
 	public function exportTestAnalytics()
 	{
