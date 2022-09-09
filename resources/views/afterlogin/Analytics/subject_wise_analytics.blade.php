@@ -59,11 +59,11 @@
                     <div class="subjectperformLegend flexleg">
                         <div class="commonSubjectLeg">
                             <span class="bar greenbar"></span>
-                            <label class="text">Correct Answer</label>
+                            <label class="text">Correct Answers</label>
                         </div>
                         <div class="commonSubjectLeg">
                             <span class="bar pinkbar"></span>
-                            <label class="text">Incorrect Answer</label>
+                            <label class="text">Incorrect Answers</label>
                         </div>
                         <div class="commonSubjectLeg">
                             <span class="bar graybar"></span>
@@ -253,7 +253,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="timemanagement common_greenbadge_tabs">
-                        <h4 class="garphsubheading mt-2 mb-0">Time spent on correct/incorrect answer</h4>
+                        <h4 class="garphsubheading mt-2 mb-0">Time spent on correct/incorrect answers</h4>
                         <div class="barwithTAb">
                             <div class="subjectperformLegend ">
                                 <div class="commonSubjectLeg">
