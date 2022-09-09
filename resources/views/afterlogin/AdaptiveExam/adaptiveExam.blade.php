@@ -363,7 +363,7 @@ $question_type = "Numerical";
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. of Questions</small>
-                                            <span class="d-block inst-text"><span>{{$questions_count}} MCQ </span></span>
+                                            <span class="d-block inst-text"><span>{{$questions_count}} Questions </span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4">
