@@ -167,7 +167,7 @@
                                           <div class="mock_test_ques_dure_marks_sub d-flex justify-content-between">
                                              <div class="mock_test_ques_content22">
                                                 <div class="mock_test_qdms_text1">No. of Questions</div>
-                                                <div class="mock_test_qdms_text2">90 MCQ</div>
+                                                <div class="mock_test_qdms_text2">90 Questions</div>
                                              </div>
                                              <div class="live_exam_diveder_div"></div>
                                              <div class="mock_test_dure_content22">
