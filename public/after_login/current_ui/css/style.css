@@ -4959,7 +4959,7 @@ justify-content: space-between;}
             }
             #matrix .modal-content{border-radius: 10px;
                 border: 0px;}
-                .customDropdown1.overall_dropdown.active1 .options{z-index: 1;}
+                .customDropdown1.overall_dropdown.active1 .options,.HeadingWithfilter .customDropdown1.active1 .options{z-index: 1;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
