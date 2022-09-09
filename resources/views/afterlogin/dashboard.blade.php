@@ -266,7 +266,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     $skill_category = 'evaluation';
                                                     }
                                                     else if($current_date % 4 == 1){
-                                                    $skill_task = 'Knowledge Skills';
+                                                    $skill_task = 'Knowledge Skill';
                                                     $skill_category = 'knowledge';
                                                     }
                                                     elseif($current_date % 4 == 2){
