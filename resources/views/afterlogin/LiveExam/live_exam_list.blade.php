@@ -144,7 +144,7 @@
                                     @endforeach
                                     @if(empty($dataAvail))
                                     <div class="text-center">
-                                        <span class="sub-details">No upcoming live exams available</span>
+                                        <span class="sub-details">No upcoming live exam available</span>
                                     </div>
                                     @endif
                                     @else
