@@ -262,7 +262,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     @php
                                                     $current_date=date("d");
                                                     if($current_date % 4 == 0){
-                                                    $skill_task = 'Evaluation Skills';
+                                                    $skill_task = 'Evaluation Skill';
                                                     $skill_category = 'evaluation';
                                                     }
                                                     else if($current_date % 4 == 1){
@@ -270,11 +270,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     $skill_category = 'knowledge';
                                                     }
                                                     elseif($current_date % 4 == 2){
-                                                    $skill_task = 'Application Skills';
+                                                    $skill_task = 'Application Skill';
                                                     $skill_category = 'application';
                                                     }
                                                     else{
-                                                    $skill_task = 'Comprehension Skills';
+                                                    $skill_task = 'Comprehension Skill';
                                                     $skill_category = 'comprehension';
                                                     }
                                                     @endphp
@@ -402,7 +402,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            An actionable matrix of your strengths, weaknesses and your improvement areas.                                        </p>
+                                            An actionable matrix of your strengths, weaknesses and your improvement areas.
+                                        </p>
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
