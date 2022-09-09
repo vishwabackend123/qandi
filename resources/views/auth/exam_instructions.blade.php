@@ -182,7 +182,7 @@
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">90 MCQ</div>
+                                <div class="exam_inst_col_four_text_contant2">90 Questions</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>
