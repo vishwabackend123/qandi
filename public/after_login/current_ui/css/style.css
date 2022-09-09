@@ -425,6 +425,9 @@ span.select2.select2-container.select2-container--default {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+.loginrightpannel{height: 100vh;}
+
+
 .select2-results__option{font-size:14px;font-size: 14px;
     font-weight: 500;
     line-height: 1.3;
