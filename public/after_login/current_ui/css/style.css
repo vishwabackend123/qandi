@@ -2322,7 +2322,9 @@ a.btn-common-attempted svg {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
-    color: #363c4f;
+    /* color: #363c4f; */
+    font-weight: 800;
+    color: #56b663;
 }
   .bck-btn a{
       font-weight: 800;
