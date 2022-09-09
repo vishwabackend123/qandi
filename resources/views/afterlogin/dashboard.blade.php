@@ -70,7 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                        A progressive score derived from all the assessments attempted in the platform. This score lets you know your probability of success if you appeared for the exam today.
+                                        A progressive score derived from all the assessments attempted on the platform. This score lets you know your probability of success if you appeared for the exam today.
                                     </p>
                                 </span>
                             </h3>
