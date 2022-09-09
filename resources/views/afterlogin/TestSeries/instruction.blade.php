@@ -78,7 +78,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">No. of Questions</div>
-                                <div class="exam_inst_col_four_text_contant2">{{$questions_count}} MCQ</div>
+                                <div class="exam_inst_col_four_text_contant2">{{$questions_count}} Questions</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
                                 <div class="exam_inst_col_four_text_contant1">Subject</div>
