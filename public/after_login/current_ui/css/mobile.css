@@ -2280,4 +2280,7 @@
     .examScreentab .nav-tabs .nav-link{
         display: flex;
     }
+    .examLeftpanel .nav-item {
+        position: relative;
+    }
 }
