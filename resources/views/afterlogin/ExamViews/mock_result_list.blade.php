@@ -133,7 +133,7 @@ $userData = Session::get('user_data');
                                                 <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                                                     <div class="paper-sub">
                                                         <small>No of Question</small>
-                                                        <span>{{$sche->no_of_question}} MCQ</span>
+                                                        <span>{{$sche->no_of_question}} Questions</span>
                                                     </div>
                                                     <div class="paper-sub">
                                                         <small>Duration</small>
