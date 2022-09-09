@@ -4768,7 +4768,7 @@ justify-content: space-between;}
     .dropdown.show .dropdown-menu{display:block;}
     .exam-wrapperBg,#planner-wrapper{background-color:#e0f6e3;    min-height: 100vh;}
     .nocontentmodal .exam_text_content{border-top:0px!important;}
-    #myscoregraph{    z-index: 9;
+    #myscoregraph{    z-index: 1;
         position: relative;}
         #endExam .btn.btn-common-green{min-width: 104px;}
 .custom-input .form-control.bg-transparent{background-color:  #f9fafb!important;}
