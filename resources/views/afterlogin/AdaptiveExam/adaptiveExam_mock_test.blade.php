@@ -48,7 +48,7 @@
                                         <div class="mock_test_ques_dure_marks_sub d-flex">
                                             <div class="mock_test_ques_content">
                                                 <div class="mock_test_q_d_m_s_text1">No. of Questions</div>
-                                                <div class="mock_test_qdms_text2">{{$questions_count}} MCQ</div>
+                                                <div class="mock_test_qdms_text2">{{$questions_count}} Questions</div>
                                             </div>
                                             <div class="live_exam_diveder_div"></div>
                                             <div class="mock_test_dure_content">
