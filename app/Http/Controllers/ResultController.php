@@ -395,6 +395,7 @@ class ResultController extends Controller
         if ($httpcode == 200 || $httpcode == 201) {
             $response_data = (json_decode($response_json));
             $result_data = isset($response_data->response) ? $response_data->response : [];
+
             return $result_data;
         } else {
             return false;
@@ -600,12 +601,19 @@ class ResultController extends Controller
                     unset($result_data[$key]);
                 }
             }
-            $year = date('Y', strtotime($value->created_at));
+            if ($exam_type == 'PreviousYear') {
+                $year = isset($value->paper_year) ? $value->paper_year : '';
+            } else {
+                $year = date('Y', strtotime($value->created_at));
+            }
+
             $years_list[] = $year;
         }
         $subject_count = count($filtered_subject);
 
         if ($exam_type == 'PreviousYear') {
+            $years_list = array_unique($years_list);
+
             $html = view('afterlogin.PreviousYearExam.previous_attempted_list', compact('result_data', 'cSubjects', 'years_list', 'subject_count'))->render();
         } else {
 

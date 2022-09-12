@@ -68,7 +68,7 @@ class PreviousYearExamController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json",
-                    "Authorization: Bearer ". $this->getAccessToken()
+                    "Authorization: Bearer " . $this->getAccessToken()
                 ),
             ));
 
@@ -158,7 +158,7 @@ class PreviousYearExamController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
 
                     ),
                 );
@@ -316,7 +316,7 @@ class PreviousYearExamController extends Controller
             Redis::set('test_type' . $user_id, $test_type);
             return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id', 'header_title'));
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
