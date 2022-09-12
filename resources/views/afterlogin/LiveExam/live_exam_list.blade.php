@@ -1,5 +1,10 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
+<div class="spinnerblock">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div class="main-wrapper exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
@@ -166,8 +171,10 @@
 </section>
 </div>
 <script type="text/javascript">
+    $('.spinnerblock').hide();
     $('#attempted').click(function() {
         $("#attempted_tab").show();
+        $('.spinnerblock').show();
         url = "{{ url('ajax_exam_result_list') }}/Live";
         $.ajax({
             url: url,
@@ -178,17 +185,23 @@
 
             },
             success: function(data) {
-
+                $('.spinnerblock').hide();
                 $('#attempted_tab').html(data.html);
                 $('#testTypeDiv').attr("style", "display: none !important");
                 $('#mock_test').hide();
             },
-            error: function(data, errorThrown) {}
+            error: function(data, errorThrown) {
+                $('.spinnerblock').hide();
+            }
         });
     });
     $('#live_exam').click(function() {
+        $('.spinnerblock').show();
         $("#attempted_tab").hide();
         $('#mock_test').show();
+        setTimeout(function() {
+            $('.spinnerblock').hide();
+            }, 1000);
     });
 </script>
 @include('afterlogin.layouts.footer_new')
