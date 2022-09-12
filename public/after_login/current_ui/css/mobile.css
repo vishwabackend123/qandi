@@ -2302,5 +2302,6 @@
     }
     .examLeftpanel .nav-item {
         position: relative;
+        margin-right: 20px !important;
     }
 }
