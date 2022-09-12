@@ -346,6 +346,26 @@
         display: none;
     }
 }
+/* *************Tab  Css Start ***************** */
+@media(max-width:1024px) and (min-width:768px)
+{
+    .right-seidepannel
+    {
+        padding: unset!important;
+    }
+    .left-sidepannel
+    {
+        width: 75%;
+    }
+    .verifiaction-link p > a
+    {
+        width: 115px;
+        display: block;
+        margin: 10px auto 0px;
+    }
+}
+/* *************Tab  Css End ***************** */
+
 @media(max-width:767px){
     .take-fulltest .btn {
     font-size: 14px !important;
