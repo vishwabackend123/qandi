@@ -208,7 +208,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
-                                    <p> to assess your preparation. Take your first step to improvement</p>
+                                    <p> to assess your preparation. Take your first step to improvement.</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
