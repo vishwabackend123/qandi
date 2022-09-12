@@ -122,7 +122,7 @@
                     <input type="hidden" name="city" id="city_name" value="">
                     <div class="custom-input pb-3">
                         <label>Name </label>
-                        <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
+                        <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return onlyAlphabetsDisplay(event,this);" required>
                     </div>
                     <div class=" custom-input changeno pb-3 ">
                         <label>Mobile</label>
@@ -205,15 +205,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        /* safari cursor jump issue */
-        document.getElementById('user_name').addEventListener('input', function(e) {
-            var target = e.target,
-                position = target.selectionStart; // Capture initial position
-            target.value = target.value.replace(/\s/g, ''); // This triggers the cursor to move.
-            target.selectionEnd = position; // Set the cursor back to the initial position.
-        });
-        /* safari cursor jump issue */
-
         var timerId = '';
         /* name input validation */
         /* only letter number */
@@ -226,28 +217,16 @@
             return true;
         }
         /* only letter input */
-        function lettersOnly(evt) {
-
-            evt = (evt) ? evt : event;
-            var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
-                ((evt.which) ? evt.which : 0));
-
-            if (charCode > 32 && (charCode < 65 || charCode > 90) &&
-                (charCode < 97 || charCode > 122)) {
-
-                return false;
-            }
-            return true;
+        function onlyAlphabetsDisplay(e, t) {
+            return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
         }
-        $(document).on("keydown", "#user_name", function(evt) {
-            var firstChar = $("#user_name").val();
-            var val = $("#user_name").val();
-            if (evt.keyCode == 32 && firstChar == "") {
-                return false;
-            }
-            $("#user_name").val(val.replace(/  +/g, ' '));
-
+        $("#user_name").keyup(function() {
+            var myValue = $(this).val();
+            var test = myValue.replace(/  +/g, ' ');
+            $("#user_name").val(test);
         });
+
+
         /* convert text in to capitalized text */
         $.fn.capitalize = function() {
             $.each(this, function() {
