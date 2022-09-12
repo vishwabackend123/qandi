@@ -799,6 +799,7 @@ vertical-align: unset;
     background-image: none;
     margin-right: 0px;
     opacity: 1;
+    -webkit-appearance: none;
 }
 .closesvg{
     right: 30px !important;
@@ -1437,6 +1438,7 @@ border-color: #56b663;
     min-width: 280px;
     padding: 10px 16px;
     border: solid 1px #56b663;
+    -webkit-appearance: none;
 }
 
 .freeTrial a:hover,.btn-common-attempted:hover {
