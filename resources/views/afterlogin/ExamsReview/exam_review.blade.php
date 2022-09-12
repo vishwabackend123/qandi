@@ -625,7 +625,7 @@ $question_type = "Numerical";
         var extra_height = answerfinalheight - 20 + "px";
         $('.answer-main-sec ').css('height', extra_height);
         var answerfinalheight = $(".answer-main-sec").outerHeight();
-        var answerfinalheight_145 = answerfinalheight - 145 + "px";
+        var answerfinalheight_145 = answerfinalheight - 165 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
     }
 
