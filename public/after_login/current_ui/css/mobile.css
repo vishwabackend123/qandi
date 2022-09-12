@@ -384,7 +384,24 @@
     .testTypeulbox {
         display: block!important;
     }
+    .freeTrial {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .planType
+    {
+        flex-wrap: wrap;
+    }
+    .offer
+    {
+        padding: 2px 0px;
+    }
+    .subscriptionsLeftpannel
+    {
+        padding: 20px 20px;
+    }
 }
+
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
