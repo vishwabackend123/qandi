@@ -381,6 +381,9 @@
         padding: 25px 20px;
     }
     
+    .testTypeulbox {
+        display: block!important;
+    }
 }
 /* *************Tab  Css End ***************** */
 
@@ -2320,6 +2323,6 @@
     }
     .examLeftpanel .nav-item {
         position: relative;
-        margin-right: 20px !important;
+        margin-right: 40px !important;
     }
 }
