@@ -205,6 +205,15 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        /* safari cursor jump issue */
+        document.getElementById('user_name').addEventListener('input', function(e) {
+            var target = e.target,
+                position = target.selectionStart; // Capture initial position
+            target.value = target.value.replace(/\s/g, ''); // This triggers the cursor to move.
+            target.selectionEnd = position; // Set the cursor back to the initial position.
+        });
+        /* safari cursor jump issue */
+
         var timerId = '';
         /* name input validation */
         /* only letter number */

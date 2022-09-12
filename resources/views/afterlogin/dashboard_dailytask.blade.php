@@ -26,19 +26,19 @@ $userData = Session::get('user_data');
                     @php
                     $current_date=date("d");
                     if($current_date % 4 == 0){
-                    $skill_task = 'Evaluation Skills';
+                    $skill_task = 'Evaluation Skill';
                     $skill_category = 'evaluation';
                     }
                     else if($current_date % 4 == 1){
-                    $skill_task = 'Knowledge Skills';
+                    $skill_task = 'Knowledge Skill';
                     $skill_category = 'knowledge';
                     }
                     elseif($current_date % 4 == 2){
-                    $skill_task = 'Application Skills';
+                    $skill_task = 'Application Skill';
                     $skill_category = 'application';
                     }
                     else{
-                    $skill_task = 'Comprehension Skills';
+                    $skill_task = 'Comprehension Skill';
                     $skill_category = 'comprehension';
                     }
                     @endphp
@@ -58,7 +58,7 @@ $userData = Session::get('user_data');
                         <div class="task1">
                             <p><span>Task {{$key+1}}</span></p>
                             <h3>{{$skill_task}}</h3>
-                            <p>Quickly sharpen your {{$skill_category}} skills with this curated test.</p>
+                            <p>Quickly sharpen your {{$skill_category}} skill with this curated test.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Questions</span>
