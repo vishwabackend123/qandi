@@ -1455,7 +1455,7 @@ a.btn-common-attempted svg {
 }
 .getDiscount {
     background: #f5faf6;
-    min-height: 100%;
+    min-height: 100vh;
     padding: 20px 131px;
     display: flex;
     align-items: center;
