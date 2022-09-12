@@ -49,7 +49,7 @@ input,
 button,
 a:focus,
 input:focus,
-button:focus {
+button:focus,svg:focus {
     outline: none !important;
 }
 :focus {
