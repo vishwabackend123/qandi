@@ -1,5 +1,10 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
+<div class="spinnerblock">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div class="main-wrapper  exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
@@ -150,6 +155,7 @@ $('.testslider').owlCarousel({
     }
 });
 $('#live_test_div').hide();
+$('.spinnerblock').hide();
 $('.open_test').click(function() {
     $('#open_test_div').show();
     $('#live_test_div').hide();
@@ -162,7 +168,18 @@ $('.live_test').click(function() {
     $(this).addClass('active');
     $('.open_test').removeClass('active');
 });
+$('#test_series').click(function() {
+    $('.spinnerblock').show();
+    $('#qq1').show();
+    $('#attempted_tab').hide();
+    setTimeout(function() {
+            $('.spinnerblock').hide();
+            }, 1000);
+});
 $('#attempted').click(function() {
+    $('.spinnerblock').show();
+    $('#attempted_tab').show();
+    $('#qq1').hide();
     url = "{{ url('ajax_exam_result_list') }}/Test-Series";
     $.ajax({
         url: url,
@@ -173,11 +190,14 @@ $('#attempted').click(function() {
 
         },
         success: function(data) {
+            $('.spinnerblock').hide();
             $("#attempted_tab").show();
             $('#attempted_tab').html(data.html);
             $('.slot_div').hide();
         },
-        error: function(data, errorThrown) {}
+        error: function(data, errorThrown) {
+            $('.spinnerblock').hide();
+        }
     });
 });
 $(document).on('click', '.all_attemp', function() {

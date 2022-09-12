@@ -18,7 +18,7 @@
                         <div class="tablist">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item pe-md-5 pe-4 me-2">
-                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Custom</a>
+                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1" id="custom_tab">Custom</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted_tab" id="attempted">Attempted</a>
@@ -254,7 +254,16 @@
     }
 </script>
 <script type="text/javascript">
+$('#custom_tab').click(function() {
+    $('.spinnerblock').show();
+    $('#qq1').show();
+    $('#attempted_tab').hide();
+    setTimeout(function() {
+            $('.spinnerblock').hide();
+            }, 1000);
+});
     $('#attempted').click(function() {
+        $('.spinnerblock').show();
         url = "{{ url('ajax_exam_result_list') }}/Assessment";
         $.ajax({
             url: url,
@@ -265,6 +274,7 @@
 
             },
             success: function(data) {
+                $('.spinnerblock').hide();
                 $("#attempted_tab").show();
                 $('#attempted_tab').html(data.html);
                 $('#testTypeDiv').attr("style", "display: none !important");
@@ -272,7 +282,7 @@
                 $('.slot_div').hide();
             },
             error: function(data, errorThrown) {
-
+                $('.spinnerblock').hide();
             }
         });
     });
