@@ -363,6 +363,10 @@
         display: block;
         margin: 10px auto 0px;
     }
+    .commonblockDash.myqTodayPannel .commonWhiteBox
+    {
+        padding-bottom: 20px;
+    }
 }
 /* *************Tab  Css End ***************** */
 
