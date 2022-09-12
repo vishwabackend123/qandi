@@ -400,6 +400,10 @@
     {
         padding: 20px 20px;
     }
+    .testType ul li
+    {
+        display: flex;
+    }
 }
 
 /* *************Tab  Css End ***************** */
