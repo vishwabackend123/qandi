@@ -367,6 +367,9 @@
     {
         padding-bottom: 20px;
     }
+    .testTypeulbox {
+        display: block!important;
+    }
 }
 /* *************Tab  Css End ***************** */
 
