@@ -1,6 +1,10 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
-
+<div class="spinnerblock">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <body class="bg-content">
     <div class="main-wrapper exam-wrapperBg">
         @include('afterlogin.layouts.navbar_header_new')
@@ -82,15 +86,22 @@
     </div>
 </body>
 <script type="text/javascript">
+    $('.spinnerblock').hide();
     $('#take_test').click(function() {
         var url = "{{ route('mockExam','instruction') }}";
         window.location.href = url;
     });
     $('#mcoktest').click(function() {
+        $('.spinnerblock').show();
         $('#mock_test').addClass('active');
         $('#attempted2').removeClass('active');
+        $("#attempted2").hide();
+        setTimeout(function() {
+            $('.spinnerblock').hide();
+            }, 1000);
     });
     $('#attempted').click(function() {
+        $('.spinnerblock').show();
         url = "{{ url('ajax_exam_result_list') }}/Mocktest";
         $.ajax({
             url: url,
@@ -105,8 +116,10 @@
                     $('#attempted2').html(data.html);
                     $('#testTypeDiv').attr("style", "display: none !important");
                     $('.slot_div').hide();
+                     $('.spinnerblock').hide();
                 },
                 error: function(data, errorThrown) {
+                     $('.spinnerblock').hide();
                 }
             });
         });
