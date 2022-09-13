@@ -4769,7 +4769,7 @@ justify-content: space-between;}
     .d-lg-flex2{display:flex;}
     .d-none2{display:none;}
     .attemptedscroll {
-        height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
+        height: calc(100vh - 381px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
     }
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;height: 455px;}
     #resume-test  .modal-content{border:0px}
