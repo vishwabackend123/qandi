@@ -5004,7 +5004,7 @@ justify-content: space-between;}
 
 .plan_faild_wrapper {
     background: #f5faf6;
-    min-height: 100vh;
+    min-height: 100vh; padding-bottom: 30px;
 }
 
 .plan_box_status {
@@ -5281,7 +5281,7 @@ justify-content: space-between;}
     background-color: rgba(3, 152, 85, 0.2);
     margin-left: 20px;
 }
-
+.plan_faild_wrapper .line-692_field{margin-bottom:10px;}
 .exam_section_right_side_jee_main {
     font-size: 20px;
     font-weight: 800;
