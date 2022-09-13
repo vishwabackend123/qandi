@@ -85,7 +85,7 @@ class MockExamController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                        "Authorization: Bearer ". $this->getAccessToken()
+                        "Authorization: Bearer " . $this->getAccessToken()
 
                     ),
                 );
@@ -151,10 +151,11 @@ class MockExamController extends Controller
 
             $redis_subjects = $this->redis_subjects();
             $cSubjects = collect($redis_subjects);
-            $aTargets = $aSectionSub = $aSubSecCount = [];
+            $aTargets = $aSectionSub = $aSubSecCount = $aSubIds = [];
             $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
             foreach ($filtered_subject as $sub) {
                 $count_arr = $collection->where('subject_id', $sub->id)->all();
+                $aSubIds[] = $sub->id;
                 $sub->count = count($count_arr);
                 $aTargets[] = $sub->subject_name;
                 $aSectionIds = $collection->where('subject_id', $sub->id)->pluck('section_id');
@@ -228,6 +229,7 @@ class MockExamController extends Controller
                     'attempt_count' => $attempt_sub_section_cnt,
                     'aSectionSub' => $aSectionSub,
                     'aSubSecCount' => $aSubSecCount,
+                    'aSubjectIds' => $aSubIds,
                 ];
 
 
@@ -237,7 +239,7 @@ class MockExamController extends Controller
                 $exam_url = route('mockExam');
 
                 $exam_title = "Mock Test";
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title','header_title'));
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title'));
             }
 
             //Session::put('exam_name', $exam_name);
@@ -251,7 +253,7 @@ class MockExamController extends Controller
                 return view('afterlogin.MockExam.mock_exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'header_title'));
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -336,6 +338,11 @@ class MockExamController extends Controller
             $session_result = Redis::get('custom_answer_time_' . $user_id);
             $sessionResult = json_decode($session_result);
 
+
+            $keyactSub = array_search($que_sub_id, $sessionResult->aSubjectIds);
+            $nextSubId = isset($sessionResult->aSubjectIds[$keyactSub + 1]) ? $sessionResult->aSubjectIds[$keyactSub + 1] : '';
+
+
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
             $aSections = isset($sessionResult->section_data) ? $sessionResult->section_data : [];
@@ -344,7 +351,7 @@ class MockExamController extends Controller
 
 
             // return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
-            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount', 'nextSubId'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -444,6 +451,9 @@ class MockExamController extends Controller
             $session_result = Redis::get('custom_answer_time_' . $user_id);
             $sessionResult = json_decode($session_result);
 
+            $keyactSub = array_search($que_sub_id, $sessionResult->aSubjectIds);
+            $nextSubId = isset($sessionResult->aSubjectIds[$keyactSub + 1]) ? $sessionResult->aSubjectIds[$keyactSub + 1] : '';
+
             $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
@@ -452,7 +462,7 @@ class MockExamController extends Controller
             $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount : [];
 
 
-            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            return view('afterlogin.MockExam.next_mock_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount', 'nextSubId'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

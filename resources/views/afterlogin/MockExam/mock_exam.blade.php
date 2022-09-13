@@ -71,6 +71,7 @@ $question_type = "Numerical";
                 <input type="hidden" id="current_chapter_id" value="{{$chapter_id}}" />
                 <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
                 <input type="hidden" id="current_section_id" value="{{$section_id}}" />
+                <input type="hidden" id="next_sub_id" value="" />
 
                 <div class="examLeftpanel examLeftpanelmob">
                     <div class="tabMainblock">
@@ -558,7 +559,7 @@ $question_type = "Numerical";
                     </div>
                     <div class="exam-footer-sec  p-4">
                         <div class="task-btn tasklistbtn text-center">
-                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> OK <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button id="bt-modal-limit" class="btn btn-common-green" data-bs-dismiss="modal"> OK <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg>
                                 </label>
@@ -1645,6 +1646,18 @@ $question_type = "Numerical";
         $('.showyes').show(0);
         $('.hideyes').hide(0);
         $('.overlaydiv').hide(0);
+    });
+    $('#bt-modal-limit').click(function() {
+        var nxtSubVal = $('#next_sub_id').val();
+
+        if (nxtSubVal != '') {
+
+            get_subject_question(nxtSubVal);
+        } else {
+
+            start();
+        }
+
     });
 </script>
 

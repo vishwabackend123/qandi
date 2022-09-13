@@ -229,6 +229,7 @@ $question_type = "Numerical";
     var chapter_id = '{{$chapter_id}}';
     var subject_id = '{{$subject_id}}';
     var curr_section_id = '{{$section_id}}';
+    var next_sub_id = '{{$nextSubId}}';
     /*  $(".next_button").removeClass("activequestion");
      */
     /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
@@ -241,6 +242,7 @@ $question_type = "Numerical";
     $("#current_chapter_id").val(chapter_id);
     $("#current_subject_id").val(subject_id);
     $("#current_section_id").val(curr_section_id);
+    $("#next_sub_id").val(next_sub_id);
 
     var last_qId = '{{$last_qid}}';
 
