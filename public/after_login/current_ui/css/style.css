@@ -832,11 +832,11 @@ border-radius: 32px;
 margin-top: 28px;
 padding: 32px 24px 32px 32px !important;
 }
-.testtablescroll{
+/* .testtablescroll{
     overflow-y: auto;
     height: calc(100vh - 480px);
     padding-right: 10px;    
-}
+} */
 .exam_topicbtn ul.nav {
     height: 36px;
 }
@@ -4021,6 +4021,31 @@ span.proficiency_value {
 }
 .radial_progress_bar.proficiency_graph .progress-bar__background {stroke-width:5;}
 .radial_progress_bar.proficiency_graph .progress-bar__progress{stroke-width:5;filter: none;}
+.customSlider {
+    padding: 0 44px;
+}
+.testslider.customSlider .owl-nav .disabled{opacity: 1!important;}
+.testslider.customSlider .owl-nav button.owl-next, .testslider.customSlider .owl-nav button.owl-prev{
+    border-radius: 8px !important; 
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05)!important;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+    -moz-box-shadow:0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+    height: 32px;
+    width: 32px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #56b663;
+    color: #363C4F !important;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.testslider.customSlider .owl-nav button.owl-next.disabled, .testslider.customSlider .owl-nav button.owl-prev.disabled{ 
+    border: solid 1px rgba(208, 213, 221, 0.5);
+    color: #777!important;
+}
+
 /********************* Amit End ****************************/
 
 

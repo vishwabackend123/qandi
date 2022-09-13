@@ -121,7 +121,7 @@
                                             </div>
                                             <div id="collapseTwo_custome_{{$chapters->chapter_id}}" class=" chapters-expend">
                                                 <div class="accordion-body ps-0 pe-0 pt-4">
-                                                    <div class="testslider owl-carousel owl-theme" id="topic_section_{{$chapters->chapter_id}}">
+                                                    <div class="testslider owl-carousel owl-theme customSlider" id="topic_section_{{$chapters->chapter_id}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,17 +218,18 @@
 
                         stagePadding: 0,
                         loop: false,
-                        margin: 15,
+                        responsiveClass:true,
+                        margin: 14,
                         nav: true,
                         dots: false,
                         autoplay:false,
                         responsive: {
                             0: {
                                 items: 1,
-                                nav: false,
-                                stagePadding: 0,
+                                // nav: false,
+                                // stagePadding: 0,
                                 margin: 5,
-                                loop: true,
+                                // loop: true,
                             },
                             590: {
                                 items: 2
