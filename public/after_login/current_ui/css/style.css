@@ -4803,6 +4803,7 @@ justify-content: space-between;}
         .scrollnone .main-wrapper header {
             width: calc(100% - 82px);
         }
+        .scrollnone .main-wrapper.exam-wrapperBg header{width: calc(100% - 78px);}
 .HeadingWithfilter{display:flex;align-items:center;justify-content:space-between;}
 .HeadingWithfilter .dropbox{width:250px;}    
 .activeFilter {
