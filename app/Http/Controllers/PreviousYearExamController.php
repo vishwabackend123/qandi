@@ -225,10 +225,11 @@ class PreviousYearExamController extends Controller
 
             $redis_subjects = $this->redis_subjects();
             $cSubjects = collect($redis_subjects);
-            $aTargets = $aSectionSub = $aSubSecCount = [];
+            $aTargets = $aSectionSub = $aSubSecCount = $aSubIds = [];
             $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
             foreach ($filtered_subject as $sub) {
                 $count_arr = $collection->where('subject_id', $sub->id)->all();
+                $aSubIds[] = $sub->id;
                 $sub->count = count($count_arr);
                 $aTargets[] = $sub->subject_name;
                 $aSectionIds = $collection->where('subject_id', $sub->id)->pluck('section_id');
@@ -295,6 +296,7 @@ class PreviousYearExamController extends Controller
                     'attempt_count' => $attempt_sub_section_cnt,
                     'aSectionSub' => $aSectionSub,
                     'aSubSecCount' => $aSubSecCount,
+                    'aSubjectIds' => $aSubIds,
                 ];
 
 
