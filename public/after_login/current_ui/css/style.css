@@ -832,11 +832,11 @@ border-radius: 32px;
 margin-top: 28px;
 padding: 32px 24px 32px 32px !important;
 }
-/* .testtablescroll{
+.testtablescroll{
     overflow-y: auto;
     height: calc(100vh - 480px);
     padding-right: 10px;    
-} */
+}
 .exam_topicbtn ul.nav {
     height: 36px;
 }
