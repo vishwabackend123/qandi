@@ -6288,7 +6288,7 @@ td.mymatrix_table_point
     content: "";
 }
 
-.activeblock .notificationOverlay::before{
+.activeblock .notificationOverlay::before,.notification-block_new.show .notificationOverlay::before{
     display: block;
 }
 
