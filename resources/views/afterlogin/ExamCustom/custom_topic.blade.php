@@ -34,15 +34,18 @@
         </div>
     </div>
 </div>
-<script>
-    var percentageComplete = "{{round($topic->topic_score)}}";
-    var strokeDashOffsetValue = 100 - percentageComplete;
-    var progressBar = $("#js-progress-bar{{$topic->id}}");
-    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-</script>
+
 @endforeach
 @else
 <div class="p-3 text-center">
     <h5>Topic not available</h5>
 </div>
 @endif
+
+
+<script>
+    var percentageComplete = "{{round($topic->topic_score)}}";
+    var strokeDashOffsetValue = 100 - percentageComplete;
+    var progressBar = $("#js-progress-bar{{$topic->id}}");
+    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+</script>

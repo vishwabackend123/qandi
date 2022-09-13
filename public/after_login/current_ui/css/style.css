@@ -4019,8 +4019,8 @@ span.proficiency_value {
     top: 50%;
     transform: translate(-50% , -50%);
 }
-.radial_progress_bar.proficiency_graph .progress-bar__background {stroke-width:6;}
-.radial_progress_bar.proficiency_graph .progress-bar__progress{stroke-width: 6;}
+.radial_progress_bar.proficiency_graph .progress-bar__background {stroke-width:5;}
+.radial_progress_bar.proficiency_graph .progress-bar__progress{stroke-width:5;filter: none;}
 /********************* Amit End ****************************/
 
 
