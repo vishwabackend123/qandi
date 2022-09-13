@@ -1633,7 +1633,7 @@
         padding-bottom: 0px!important;
     }
     .TestseriesAttempt22 .exam_tabdata .accordion-body {
-        padding: 0px 0px 0px 0px!important;
+        padding: 24px 0px 0px 0px!important;
     }
     .chapters-expend .accordion-body {
     margin-top: 23px;
@@ -1775,7 +1775,9 @@
     .exam_duration_block {padding: 20px 0 19px;}
     #resume-test .modal-dialog{margin:16px;}
     .noofquestions-block.dropdown-menu{left:0!important;right: auto!important;}
-    
+    .exambox-heading p {font-size: 12px;font-weight: 600;margin: 0 0 12px;}
+    .proficiency_graph_block h2{margin: 0 0 6px;}
+
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
     .subjextscoreLeft h4 {
@@ -2825,4 +2827,8 @@
         position: relative;
         margin-right: 40px !important;
     }
+  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
+  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
+  .plan_order_sumry_subscription{padding:5px 0px;}
+  .plan_order_sumry_subscription{padding:4px 0px}
 }

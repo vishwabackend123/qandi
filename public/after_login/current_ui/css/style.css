@@ -949,21 +949,21 @@ margin-top: 0;
 .exam-box{
 background: #fcfdfd;
 border: 1px solid #e5eaee;
-padding: 10px;
+padding: 12px 18px 12px 12px;
 border-radius: 12px;
 }
 .examborderchange{
 border-color: #56b663;    
 }
 .exambox-heading p {
-    font-size: 14px;
-    font-weight: 600;
-    color: #363c4f;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f1f1f;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 0;
-    width: 110px;
+    margin: 0 0 10px;
+    width: 100%;
 }
 .exambox-heading h2{
     font-size: 14px;
@@ -3996,12 +3996,55 @@ span.exam_duration {
     color: #56b663;
     line-height: 1.4;
 }
-/* #mobileTabs {
+.proficiency_graph_block h2 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #363c4f;
+    margin: 0 0 8px;
+}
+.radial_progress_bar.proficiency_graph svg {height: 47px;width: 47px;}
+.radial_progress_bar.proficiency_graph {
+    margin-top: 0rem!important;
+    position: relative;
+    height: 47px;
+    width: 47px;    
+}
+span.proficiency_value {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f1f1f;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+.radial_progress_bar.proficiency_graph .progress-bar__background {stroke-width:5;}
+.radial_progress_bar.proficiency_graph .progress-bar__progress{stroke-width:5;filter: none;}
+.customSlider {
+    padding: 0 44px;
+}
+.testslider.customSlider .owl-nav .disabled{opacity: 1!important;}
+.testslider.customSlider .owl-nav button.owl-next, .testslider.customSlider .owl-nav button.owl-prev{
+    border-radius: 8px !important; 
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05)!important;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+    -moz-box-shadow:0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+    height: 32px;
+    width: 32px;
+    margin: 0;
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    flex-wrap: nowrap !important;
-  } */
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #56b663;
+    color: #363C4F !important;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.testslider.customSlider .owl-nav button.owl-next.disabled, .testslider.customSlider .owl-nav button.owl-prev.disabled{ 
+    border: solid 1px rgba(208, 213, 221, 0.5);
+    color: #777!important;
+}
 
 /********************* Amit End ****************************/
 
@@ -4769,7 +4812,7 @@ justify-content: space-between;}
     .d-lg-flex2{display:flex;}
     .d-none2{display:none;}
     .attemptedscroll {
-        height: calc(100vh - 375px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
+        height: calc(100vh - 381px);overflow-y: auto;    margin-top: 10px;padding-right:10px;
     }
     #resume-test .modal-dialog{border:0px;max-width:554px;width:100%;height: 455px;}
     #resume-test  .modal-content{border:0px}
@@ -4979,15 +5022,14 @@ justify-content: space-between;}
 }
 
 .plan_successfull_wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background: #f5faf6;
     padding-bottom: 30px;
 }
 
 .plan_faild_wrapper {
-    min-height: 100%;
     background: #f5faf6;
-    height: 100vh;
+    min-height: 100vh; padding-bottom: 30px;
 }
 
 .plan_box_status {
@@ -5264,7 +5306,7 @@ justify-content: space-between;}
     background-color: rgba(3, 152, 85, 0.2);
     margin-left: 20px;
 }
-
+.plan_faild_wrapper .line-692_field{margin-bottom:10px;}
 .exam_section_right_side_jee_main {
     font-size: 20px;
     font-weight: 800;
@@ -6270,7 +6312,7 @@ td.mymatrix_table_point
     content: "";
 }
 
-.activeblock .notificationOverlay::before{
+.activeblock .notificationOverlay::before,.notification-block_new.show .notificationOverlay::before{
     display: block;
 }
 
