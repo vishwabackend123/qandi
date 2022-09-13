@@ -10,6 +10,15 @@
             
             <div class="proficiency_graph_block">
                 <h2>Proficiency:  </h2>
+                    <?php
+                    if (round($topic->topic_score) <= 40) {
+                        $colorcls = "";
+                    } elseif (round($topic->topic_score) <= 75) {
+                        $colorcls = "yellowgraph";
+                    } else {
+                        $colorcls = "greengraph";
+                    }
+                    ?>
                 <div class="proficiency_graph radial_progress_bar">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="-1 -1 34 34">
@@ -19,7 +28,7 @@
                         
                         <circle cx="16" cy="16" r="15.9155"
                                 class="progress-bar__progress 
-                                        js-progress-bar" id="js-progress-bar{{$topic->id}}" />
+                                        js-progress-bar {{$colorcls}}" id="js-progress-bar{{$topic->id}}"  data-score="{{round($topic->topic_score)}}"/>
                     </svg>
                     <span class="proficiency_value">
                         @if(isset($topic->topic_score))
@@ -44,8 +53,13 @@
 
 
 <script>
-    var percentageComplete = "{{round($topic->topic_score)}}";
-    var strokeDashOffsetValue = 100 - percentageComplete;
-    var progressBar = $("#js-progress-bar{{$topic->id}}");
-    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+    $('.js-progress-bar').each(function () {
+        var ids=this.id;
+        var scrore_val =$(this).attr('data-score');
+        var percentageComplete = scrore_val;
+        var strokeDashOffsetValue = 100 - percentageComplete;
+        var progressBar = $("#"+ids);
+        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+    });
+    
 </script>
