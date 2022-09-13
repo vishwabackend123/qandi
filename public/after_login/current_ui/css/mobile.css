@@ -335,6 +335,487 @@
 }
 .matrixpage-wrapper .exam_instruction_scrolling {
     height:100%}
+    
+}
+@media screen and (max-width:991px) and (min-width:768px) {
+    .mock_btn_vie_detail {
+        flex-basis: 405px!important;}
+        .view_detail_text_colleps {
+            flex-basis: 110px;
+        }
+}
+@media screen and (max-width:850px) {
+    .mobile_hide {
+        display: none!important;
+    }
+}
+@media screen and (max-width:850px) and (min-width:768px) {
+    .MockTestMob .mobile_block {
+        display: flex !important;
+    }
+    .MockTestMob .exam_tabdata {
+        border-radius: 10px;
+    }
+    .live_exam_diveder_div
+    {
+        display: none;
+    }
+    .MockTestMob .exam_tabdata #mock_test
+    {
+        padding: 12px;
+        border-radius: 10px!important;
+    }
+    .MockTestMob .bg-white-bg_mob
+    {
+        background: #fff!important;
+    }
+    .MockTestMob .mock_test_ques_dure_marks_sub
+    {
+        flex-wrap: wrap;
+    }
+    .mock_test_take_test_btn_for_mob
+    {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 24px;
+        height: unset!important;
+        font-size: 14px!important;
+
+    }
+    .MockTestMob .mock_test_qdms_text2, .MockTestMob .mock_test_q_d_m_s_text1
+    {
+        font-size: 12px;
+    }
+    .MockTestMob .mock_exam_jee_main_text h3
+    {
+        font-size: 16px;
+    }
+    .MockTestMob .mock_test_ques_dure_marks_sub
+    {
+        margin-top: 16px;
+    }
+    
+    .MockTestMob .mock_test_ques_content, .MockTestMob .mock_test_dure_content, .MockTestMob .mock_test_marks_content,.MockTestMob .mock_test_sub_content
+    {
+        padding: unset;
+        border-right: none;
+    }
+    .MockTestMob .mock_test_ques_content
+    {
+        width: 50%;
+        padding-bottom: 18px;
+    }
+    .MockTestMob .mock_test_dure_content
+    {
+        width: 50%;
+        text-align: right;
+    }
+    .MockTestMob .mock_test_marks_content
+    {
+        width: 20%;
+    }
+    .MockTestMob .mock_test_sub_content
+    {
+        text-align: right;
+        width: 80%;
+    }
+    .MockTestMob .test-table h3
+    {
+        position: inherit;
+        text-align: right;
+        width: 100%;
+    }
+    .mock_attempetd_head_wraper .MockTestMob .test-table h3
+    {
+        padding-bottom: 0px!important;
+    }
+    .MockTestMob .test-table h2
+    {
+        float: left;
+        width: 50%;
+    }
+    .MockTestMob .test-table .accordion-header .btn {
+        max-width: 100%;
+        min-width: 100%;
+        margin-left: 0px!important;
+        margin-top: 16px;
+    }
+    .MockTestMob .live_mock_exam_section
+    {
+        flex-wrap: wrap;
+    }
+    .MockTestMob .mock_test_marks_content2:nth-child(1)
+    {
+        width: 20%;
+    }
+    .MockTestMob .btn.btn-common-transparent
+    {
+        padding: 10px 22px;
+        width: 100%;
+    }
+    .MockTestMob .mock_btn_vie_detail
+    {
+        flex-wrap: wrap;
+    }
+    .MockTestMob .view_detail_text_colleps {
+        flex-basis: initial;
+    }
+    .MockTestMob .live_mock_exam_section
+    {
+        margin-bottom: 0px;
+    }
+    .MockTestMob .mock_btn_vie_detail {
+        flex-basis: 682px!important;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .MockTestMob .mock_test_qdms_text2
+    {
+        margin-top: 4px;
+    }
+    .MockTestMob .exam_tabdata .accordion-body
+    {
+        padding: 0px;
+    }
+    .mock_attemptepted_spacing .mock_test_ques_content2, .mock_attemptepted_spacing .mock_test_dure_content2, .mock_attemptepted_spacing .mock_test_marks_content, .mock_attemptepted_spacing .mock_test_sub_content, .mock_attemptepted_spacing .mock_test_marks_content2
+    {
+        padding-bottom: 16px!important;
+    }
+
+    .mock_attempetd_head_wraper .mock_test_ques_content2
+    {
+        padding: 0px;
+        border-right: 0px;
+    }
+    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_sub_content2, .mock_attempetd_head_wraper .mock_test_ques_content2
+    {
+        padding: 0px;
+        border-right: 0px;
+        width: 50%;
+    }
+    .mock_attempetd_head_wraper .mock_test_dure_content2, .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(2), .mock_attempetd_head_wraper .mock_test_sub_content2
+    {
+        text-align: end;
+    }
+    .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(4)
+    {
+        text-align: end;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 80%!important;
+    }
+    .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(3)
+    {
+        padding: 0px;
+        border-right: 0px;
+        width: 20%;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+    .mock_attempetd_head_wraper .mock_test_qdms_text2
+    {
+        margin-top: 0px;
+    }
+    /* Live exam */
+
+    .LiveExamMob .mock_attempetd_head_wraper .mock_test_marks_content2:nth-child(3)
+    {
+        width: 50%!important;
+        padding-bottom: 0px!important;
+    }
+    .LiveExamMob .mock_test_dure_content2:last-child
+    {
+        padding-top:16px;
+    }
+    .LiveExamMob .mock_test_sub_content {
+        text-align: right;
+        width: 50%!important;
+    }
+    .LiveExamMob .btn.btn-common-transparent
+    {
+        margin-top: 16px;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_dure_content, .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_marks_content
+    {
+        margin-top: 16px;
+        padding: 0px;
+        border-right: unset;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
+    {
+        margin-top: 16px;
+    }
+    .LiveExamMob .mock_test_ques_dure_marks_sub.nojusify .mock_test_ques_content
+    {
+        padding: 0px;
+        border-right: unset;
+    }
+    .LiveExamMob .mock_test_dure_content
+    {
+        text-align: left!important;
+    }
+    .LiveExamMob .mock_test_ques_content
+    {
+        width: 100%;
+    }
+    .live_exam_jee_main_date_st_ed_ques
+    {
+        flex: auto!important;
+    }
+    .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(1)
+    {
+        width: 100%;
+    }
+    .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(2), .LiveExamMob .live_exam_jee_main_date_st_ed_ques:nth-child(3)
+    {
+        width: 50%;
+    }
+    .LiveExamMob .mock_test_sub_content2, .LiveExamMob .mock_attempetd_head_wraper .mock_test_marks_content2
+    {
+        padding-top: 16px;
+    }
+    .MockTestMob .mock_btn_vie_detail
+    {
+        padding-top: 16px;
+    }
+    .form-select{
+    padding: 6px 10px 6px 24px;
+    border-radius: 10px;
+    border: solid 1px #cde3d0;
+    background-color: white;
+    }
+    .previous_exam_head_with_drop .customDropdown select.form-control:not([size]):not([multiple])
+    {
+    width: 161px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: solid 1px #cde3d0;
+    background-color: white;
+    font-size: 14px;
+    }
+    .PrevousYearExam_wraper_contant2 .tablescroll
+    {
+        padding-right: 10px!important;    height: calc(100vh - 354px);
+    }
+    .PrevousYearExam_wraper_contant1 .exam_tabdata #mock_test
+    {
+        background-color: unset!important;
+    }
+    .PrevousYearExam_wraper_contant1 .btn.btn-common-transparent
+    {
+        padding: 7px 22px;
+    }
+
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_marks_con
+    {
+        margin-bottom: 16px!important;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22.mock_test_sub_content
+    {
+        margin-bottom: 16px!important;
+    }
+    /*  */
+    .previous_exam_page_contain .live_mock_exam_section h3{
+
+        font-weight: 600;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .previous_exam_year_exam_paper_text
+    {
+        margin-bottom: 13px;
+    }
+    .previous_exam_year_exam_paper_text
+    {
+        font-size: 14px;
+        font-weight: bold;
+        color: #1f1f1f;
+    }
+    .PrevousYearExam_wraper_contant1 .test-table h4
+    {
+        margin-top: 11px!important;
+        flex-basis: 100px;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_ques_content22
+    {
+        width: 50%;
+    }
+    .previous_exam_page_contain .mock_test_ques_dure_marks_sub
+    {
+        padding-bottom: 16px;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_marks_content22
+    {
+        width: 20%;
+        padding-top: 16px;
+    }
+    .PrevousYearExam_wraper_contant1 .live_exam_diveder_div
+    {
+        border-right: unset;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_dure_content22
+    {
+        width: 50%;
+        text-align: right;
+    }
+    .PrevousYearExam_wraper_contant1 .mock_test_sub_content22
+    {
+        width: 80%;
+        text-align: right;
+        padding-top: 16px;
+    }
+    .previous_attempt_exam_mob_block b
+    {
+        font-size: 14px;
+        font-weight: 800;
+        color: #56b663;
+        margin-bottom: 0px;
+        margin-left: 4px;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_ques_content22
+    {
+        width: 50%;
+        margin-bottom: 16px;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_dure_content22
+    {
+        width: 50%;
+        text-align: right;
+        margin-bottom: 16px;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22:nth-child(3)
+    {
+        width: 20%!important;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22:nth-child(4)
+    {
+        width: 80%!important;
+        text-align: right!important;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_marks_content22
+    {
+        width: 50%;
+    }
+    .PrevousYearExam_wraper_contant2 .mock_test_sub_content22:nth-child(6)
+    {
+        width: 50%;
+    }
+    .PrevousYearExam_wraper_contant2 .live_exam_diveder_div
+    {
+        border: unset;
+    }
+
+
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(1)
+    {
+        width: 100%;
+    }
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(2)
+    {
+        width: 100%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3)
+    {
+        width: 70%;
+    }
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(4)
+    {
+        text-align: right;
+        width: 30%;
+    }
+    .CoustomAttempted .mock_test_ques_content2
+    {
+        width: 50%;
+        padding-bottom: 16px;
+    }
+    .CoustomAttempted .mock_test_dure_content2 {
+        width: 50%;
+        text-align: right;
+    }
+    .CoustomAttempted .mock_test_dure_content2:last-child {
+        width: 50%;
+        text-align: left!important;
+    }
+    .TestseriesAttempt22Score .align_left_text_div
+    {
+        text-align: left!important;
+    }
+    .Testseriesattemb .mock_test_dure_content2 {
+        width: 50%;
+        text-align: right;
+    }
+    .Testseriesattemb .mock_test_ques_content2 {
+        width: 50%;
+    }
+    .TestseriesContent .test-table
+    {
+        flex-wrap: wrap;
+    }
+    .TestseriesContent .test-table h2
+    {
+        flex:auto;
+        width: 50%;
+    }
+    .TestseriesContent .test-table h2:nth-child(3)
+    {
+        width: 30%!important;
+    }
+    .TestseriesContent .test-table h2:nth-child(2)
+    {
+        text-align: right;
+        padding-bottom: 21px;
+        padding-top: 10px;
+    }
+    .TestseriesContent .test-table h2:last-child
+    {
+        padding-bottom: 35px;
+    }
+    .TestseriesContent .test-table h2:first-child
+    {
+        padding-bottom: 8px;
+    }
+    .mock_test_ques_dure_marks_sub.nojusify .mock_test_sub_content
+    {
+        padding: 0px;
+    }
+    .TestseriesContent .test-table .accordion-header
+    {
+        flex-basis: 0;
+    }
+    .LiveExamMob22 .mock_attemptepted_spacing .mock_test_ques_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_dure_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_sub_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content2 {
+        padding-bottom: 0px!important;
+    }
+    .TestseriesAttempt22 .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
+    .chapters-expend .accordion-body {
+    margin-top: 23px;
+    padding: 22px 0 0px 0 !important;
+    }
+    .TestseriesAttempt22 .exam_tabdata .accordion-item
+    {
+        margin-bottom: 16px!important;
+    }
+    .TestseriesAttempt22 .tablescroll {
+        height: calc(100vh - 337px);
+    }
+    .userprofile strong
+    {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width:88px;
+    }
+    .pro_sub_label:link
+    {
+        color: #1f1f1f!important;
+    }
+
+    
+
 }
 @media(min-width:768px){
     .mobile_block{display:none!important;}
@@ -474,7 +955,7 @@
     padding: 20px;
     border-radius: 8px;
 }
-    .mobile_hide{display:none!important}
+    /* .mobile_hide{display:none!important} */
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;
@@ -1418,7 +1899,8 @@
 .exam_instruction_text{padding-top: 44px;padding-bottom: 8px;}
 .exam_inst_sec_head{padding-top: 32px;}
 .exam_inst_ul_li li {padding-top: 20px;}
-.main-wrapper header{width:100%;}     
+.main-wrapper header,.scrollnone .main-wrapper.exam-wrapperBg header,.scrollnone .main-wrapper header{width:100%;}  
+
 .boxheading{    min-width: 187px;}
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
 .commontab .nav-tabs .nav-link{padding-bottom:19px;}
