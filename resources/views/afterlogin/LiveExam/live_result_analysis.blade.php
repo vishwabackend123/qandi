@@ -402,7 +402,7 @@ $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
 $stuscore_arr=$clsAvg_arr=[];
 $stuscore=$clsAvg=0;
 foreach($subject_graph as $key=>$gh){
-$stuscore=$stuscore+$gh->student_score;
+$stuscore=$stuscore+$gh->student_score_percentage;
 $clsAvg=$clsAvg+$gh->class_score;
 }
 $total_sub=count($subject_graph);
@@ -479,9 +479,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
             const iterator = graphArr.values();
             for (const value of iterator) {
                 if (value.subject_id == subject_id) {
-                    studet_score.push(value.student_score)
+                    studet_score.push(value.student_score_percentage)
                     studet_score.push(value.class_score)
-                    var percentage = value.student_score
+                    var percentage = value.student_score_percentage
                 }
             }
             var student_subject_color = '#56b663';
