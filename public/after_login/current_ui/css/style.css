@@ -4997,15 +4997,14 @@ justify-content: space-between;}
 }
 
 .plan_successfull_wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background: #f5faf6;
     padding-bottom: 30px;
 }
 
 .plan_faild_wrapper {
-    min-height: 100%;
     background: #f5faf6;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .plan_box_status {
