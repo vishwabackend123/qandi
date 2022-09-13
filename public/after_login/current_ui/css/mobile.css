@@ -2828,6 +2828,7 @@
         margin-right: 40px !important;
     }
   .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
-  .plan_success_congrats_msg{padding:10px 27px;}
+  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
   .plan_order_sumry_subscription{padding:5px 0px;}
+  .plan_order_sumry_subscription{padding:4px 0px}
 }
