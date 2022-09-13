@@ -4,40 +4,12 @@
     <div class="exam-box">
         <div class="exambox-heading d-flex align-items-center justify-content-between">
             <p title="{{$topic->topic_name}}">{{$topic->topic_name}}</p>
-            <!-- <h2>Proficiency: <span>
-                    @if(isset($topic->topic_score))
-                    {{round($topic->topic_score)}}%
-                    @else
-                    0%
-                    @endif
-                </span>
-            </h2> -->
         </div>
-        <!-- <div class="topic_score_bar mb-3">
-            <div class="progress">
-                <div class="progress-bar examE" role="progressbar" style="width: {{$topic->E_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar examA" role="progressbar" style="width:{{$topic->A_ques_attempted}} %" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar examC" role="progressbar" style="width: {{$topic->C_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar examK" role="progressbar" style="width: {{$topic->K_ques_attempted}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div> -->
+        
         <div class="exam-cate d-flex align-items-end justify-content-between">
-            <!-- <div class="d-flex align-items-center">
-                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">E</a>
-                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">A</a>
-                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">C</a>
-                <a href="javascript:void(0)" style="cursor:default;pointer-events: none;">K</a>
-            </div> -->
+            
             <div class="proficiency_graph_block">
-                <h2>Proficiency: 
-                    <!-- <span>
-                        @if(isset($topic->topic_score))
-                        {{round($topic->topic_score)}}%
-                        @else
-                        0%
-                        @endif
-                    </span> -->
-                </h2>
+                <h2>Proficiency:  </h2>
                 <div class="proficiency_graph radial_progress_bar">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="-1 -1 34 34">
@@ -47,7 +19,7 @@
                         
                         <circle cx="16" cy="16" r="15.9155"
                                 class="progress-bar__progress 
-                                        js-progress-bar" />
+                                        js-progress-bar" id="js-progress-bar{{$topic->id}}" />
                     </svg>
                     <span class="proficiency_value">
                         @if(isset($topic->topic_score))
@@ -62,16 +34,15 @@
         </div>
     </div>
 </div>
+<script>
+    var percentageComplete = "{{round($topic->topic_score)}}";
+    var strokeDashOffsetValue = 100 - percentageComplete;
+    var progressBar = $("#js-progress-bar{{$topic->id}}");
+    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+</script>
 @endforeach
 @else
 <div class="p-3 text-center">
     <h5>Topic not available</h5>
 </div>
-<script>
-    var percentageComplete = 0.9;
-    var strokeDashOffsetValue = 100 - (percentageComplete * 100);
-    var progressBar = $(".js-progress-bar");
-    progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-</script>
-
 @endif
