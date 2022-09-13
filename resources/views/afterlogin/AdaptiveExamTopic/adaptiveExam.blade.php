@@ -237,7 +237,7 @@ $question_type = "Numerical";
                 </div>
                 <div class="overlaydiv"></div>
 
-                <div class="examRightpanel examRightpanelmob adaptivescreen">
+                <div class="examRightpanel examRightpanelmob adaptivescreen_no">
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec hideonmobile d-flex align-items-center justify-content-between">
                             <div id="app" class="me-4 pe-2 mb-2">
@@ -281,111 +281,90 @@ $question_type = "Numerical";
                                 </label>
                             </button>
                         </div>
-                        <div class="text-exammid-sec borederbot" style="visibility: hidden;">
+                        <div class="text-exammid-sec borederbot" ">
                             <p>Overview</p>
-                            <div class="overviewtest">
-                                <div class="exam-ans-sec top-first">
-                                    <div class="ans1">Answered</div>
-                                    <div class="ans-in-num">24</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans2">Unanswered</div>
-                                    <div class="ans-in-num">2</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for Review</div>
-                                    <div class="ans-in-num">3</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; Marked for Review</div>
-                                    <div class="ans-in-num">1</div>
-                                </div>
+                            <div class=" overviewtest">
+                            <div class="exam-ans-sec top-first">
+                                <div class="ans1">Answered</div>
+                                <div class="ans-in-num" id="ans_cnt">0</div>
                             </div>
-                        </div>
-
-                        <div class="text-exambottom-sec" style="visibility: hidden;">
-                            <!-- <button type="button" class="btn" id="btn-ans">1</button>
-                            <button type="button" class="btn pink-btn" id="btn-ans">11</button>
-                            <button type="button" class="btn blue-btn" id="btn-ans">18</button>
-                            <button type="button" class="btn border-btn" id="btn-ans">23</button> -->
-                            @if(isset($keys) && !empty($keys))
-                            @foreach($keys as $ke=>$val)
-                            <button type="button" class="next_button btn btn-ans border-btn " id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
-
-
-                            @endforeach
-                            @endif
 
                         </div>
+                    </div>
 
-                        <div class="custom-exam d-none">
-                            <div class="text-examtop-sec">
-                                <p>
-                                    <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
-                                        <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
-                                        <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
-                                        <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    <span>112 mins Left</span>
-                                    <label>
-                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                        </svg>
-                                    </label>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="text-exambottom-sec" id="exam_content_sec">
+
+                        <button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_{{$activeq_id}}" onclick="qnext('{{$activeq_id}}')">1</button>
 
                     </div>
-                    <!-- <div class="bck-btn"><a href="javascript:;"> Back</a></div> -->
+                    <div class="custom-exam d-none">
+                        <div class="text-examtop-sec">
+                            <p>
+                                <svg width="70" height="70" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F" />
+                                    <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F" />
+                                    <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED" />
+                                    <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>112 mins Left</span>
+                                <label>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                                    </svg>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="btn123 hideondesktop">
-                    <div class="text-examtop-sec d-flex align-items-center ">
-                        <div id="app" class="me-4 pe-2 mb-2">
-                            <div class="base-timer">
-                                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                    <g class="base-timer__circle">
-                                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                        <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                <!-- <div class="bck-btn"><a href="javascript:;"> Back</a></div> -->
+            </div>
+            <div class="btn123 hideondesktop">
+                <div class="text-examtop-sec d-flex align-items-center ">
+                    <div id="app" class="me-4 pe-2 mb-2">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
                                     M 50, 50
                                     m -45, 0
                                     a 45,45 0 1,0 90,0
                                     a 45,45 0 1,0 -90,0
                                     "></path>
-                                    </g>
-                                </svg>
-                                <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
-                            </div>
+                                </g>
+                            </svg>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic@2x.png')}}" />
                         </div>
-
-                        <span id="base-timer-label" class="base-timer__label"> Left</span>
-                        <button type="button" class="btn stop" onclick="stop();">
-                            <label>
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                </svg>
-                            </label>
-                        </button>
-                        <button type="button" class="btn start" onclick="start();" style="display: none">
-                            <label>
-                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="14" cy="14" r="8.4" fill="#fff" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
-                                </svg>
-                            </label>
-                        </button>
-
                     </div>
-                    <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
-                    <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
+
+                    <span id="base-timer-label" class="base-timer__label"> Left</span>
+                    <button type="button" class="btn stop" onclick="stop();">
+                        <label>
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                            </svg>
+                        </label>
+                    </button>
+                    <button type="button" class="btn start" onclick="start();" style="display: none">
+                        <label>
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="8.4" fill="#fff" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2 14a11.2 11.2 0 1 1-22.4 0 11.2 11.2 0 0 1 22.4 0zM9.8 11.2a1.4 1.4 0 1 1 2.8 0v5.6a1.4 1.4 0 0 1-2.8 0v-5.6zm7-1.4a1.4 1.4 0 0 0-1.4 1.4v5.6a1.4 1.4 0 0 0 2.8 0v-5.6a1.4 1.4 0 0 0-1.4-1.4z" fill="#00AB16" />
+                            </svg>
+                        </label>
+                    </button>
+
                 </div>
+                <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
+                <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
@@ -423,9 +402,9 @@ $question_type = "Numerical";
                             <span><span id="lefttime_pop_s"> </span> Left</span>
                         </div>
                     </div>
-                    <div class="exam-ans-sec top-first d-none">
+                    <div class="exam-ans-sec top-first ">
                         <div class="ans1">Answered</div>
-                        <div class="ans-in-num">24</div>
+                        <div class="ans-in-num" id="ans_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec d-none">
                         <div class="ans2">Unanswered</div>
@@ -524,6 +503,7 @@ $question_type = "Numerical";
 
 <script>
     var activeques_id = '{{$activeq_id}}';
+    var saveArr = [];
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -1078,10 +1058,12 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
-                    $("#btn_" + question_id).find('i').remove();
-                    $("#btn_" + question_id).html(qNo);
-                    $("#btn_" + question_id).removeClass("btn-light");
-                    $("#btn_" + question_id).addClass("btn-light-green");
+
+                    $("#btn_" + question_id).removeClass("pink-btn");
+                    $("#btn_" + question_id).removeClass("blue-btn");
+                    $("#btn_" + question_id).removeClass("border-btn");
+
+                    updateCountValue(question_id, 'saveAns');
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
@@ -1365,6 +1347,25 @@ $question_type = "Numerical";
             $('#form_exam_submit')[0].submit();
         });
     });
+
+    function updateCountValue(quest_id, type) {
+
+        var saveArrIndex = saveArr.indexOf(quest_id);
+        if (saveArrIndex !== -1) {
+            saveArr.splice(saveArrIndex, 1);
+        }
+
+        var arrlength = saveArr.length;
+        saveArr.push(quest_id);
+
+
+        var save_count = saveArr.length;
+
+        $('#ans_cnt_2').html(save_count);
+        $('#ans_cnt').html(save_count);
+
+
+    }
 </script>
 
 <script>

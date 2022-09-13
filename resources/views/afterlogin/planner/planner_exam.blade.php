@@ -236,7 +236,7 @@ $question_type = "Numerical";
                 </div>
                 <div class="overlaydiv"></div>
 
-                <div class="examRightpanel examRightpanelmob adaptivescreen">
+                <div class="examRightpanel examRightpanelmob adaptivescreen_2">
                     <div class="main-textexam-sec">
                         <div class="text-examtop-sec hideonmobile d-flex align-items-center justify-content-between">
                             <div id="app" class="me-4 pe-2 mb-2">
@@ -273,39 +273,22 @@ $question_type = "Numerical";
                                 </label>
                             </button>
                         </div>
-                        <div class="text-exammid-sec borederbot" style="visibility: hidden;">
+                        <div class="text-exammid-sec borederbot">
                             <p>Overview</p>
                             <div class="overviewtest">
                                 <div class="exam-ans-sec top-first">
                                     <div class="ans1">Answered</div>
-                                    <div class="ans-in-num">24</div>
+                                    <div class="ans-in-num" id="ans_cnt">0</div>
                                 </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans2">Unanswered</div>
-                                    <div class="ans-in-num">2</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans3">Marked for Review</div>
-                                    <div class="ans-in-num">3</div>
-                                </div>
-                                <div class="exam-ans-sec">
-                                    <div class="ans4">Answered &amp; Marked for Review</div>
-                                    <div class="ans-in-num">1</div>
-                                </div>
+
                             </div>
                         </div>
 
-                        <div class="text-exambottom-sec" style="visibility: hidden;">
-                            @if(isset($keys) && !empty($keys))
-                            @foreach($keys as $ke=>$val)
-                            <button type="button" class="next_button btn btn-ans border-btn " id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
+                        <div class="text-exambottom-sec" id="exam_content_sec">
 
-
-                            @endforeach
-                            @endif
+                            <button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_{{$activeq_id}}" onclick="qnext('{{$activeq_id}}')">1</button>
 
                         </div>
-
                         <div class="custom-exam d-none">
                             <div class="text-examtop-sec">
                                 <p>
@@ -401,9 +384,9 @@ $question_type = "Numerical";
                             <span><span id="lefttime_pop_s"> </span> Left</span>
                         </div>
                     </div>
-                    <div class="exam-ans-sec top-first d-none">
+                    <div class="exam-ans-sec top-first ">
                         <div class="ans1">Answered</div>
-                        <div class="ans-in-num">24</div>
+                        <div class="ans-in-num" id="ans_cnt_2">0</div>
                     </div>
                     <div class="exam-ans-sec d-none">
                         <div class="ans2">Unanswered</div>
@@ -502,6 +485,7 @@ $question_type = "Numerical";
 
 <script>
     var activeques_id = '{{$activeq_id}}';
+    var saveArr = [];
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -1006,10 +990,12 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
-                    $("#btn_" + question_id).find('i').remove();
-                    $("#btn_" + question_id).html(qNo);
-                    $("#btn_" + question_id).removeClass("btn-light");
-                    $("#btn_" + question_id).addClass("btn-light-green");
+
+                    $("#btn_" + question_id).removeClass("pink-btn");
+                    $("#btn_" + question_id).removeClass("blue-btn");
+                    $("#btn_" + question_id).removeClass("border-btn");
+
+                    updateCountValue(question_id, 'saveAns');
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
@@ -1269,6 +1255,25 @@ $question_type = "Numerical";
             $('#form_exam_submit')[0].submit();
         });
     });
+
+    function updateCountValue(quest_id, type) {
+
+        var saveArrIndex = saveArr.indexOf(quest_id);
+        if (saveArrIndex !== -1) {
+            saveArr.splice(saveArrIndex, 1);
+        }
+
+        var arrlength = saveArr.length;
+        saveArr.push(quest_id);
+
+
+        var save_count = saveArr.length;
+
+        $('#ans_cnt_2').html(save_count);
+        $('#ans_cnt').html(save_count);
+
+
+    }
 </script>
 <script>
     $('.showyes').click(function() {
