@@ -949,21 +949,21 @@ margin-top: 0;
 .exam-box{
 background: #fcfdfd;
 border: 1px solid #e5eaee;
-padding: 10px;
+padding: 12px 18px 12px 12px;
 border-radius: 12px;
 }
 .examborderchange{
 border-color: #56b663;    
 }
 .exambox-heading p {
-    font-size: 14px;
-    font-weight: 600;
-    color: #363c4f;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f1f1f;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 0;
-    width: 110px;
+    margin: 0 0 10px;
+    width: 100%;
 }
 .exambox-heading h2{
     font-size: 14px;
@@ -3996,12 +3996,29 @@ span.exam_duration {
     color: #56b663;
     line-height: 1.4;
 }
-/* #mobileTabs {
-    display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    flex-wrap: nowrap !important;
-  } */
+.proficiency_graph_block h2 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #363c4f;
+    margin: 0 0 8px;
+}
+.radial_progress_bar.proficiency_graph svg {height: 47px;width: 47px;}
+.radial_progress_bar.proficiency_graph {
+    margin-top: 0rem!important;
+    position: relative;
+    height: 47px;
+    width: 47px;    
+}
+span.proficiency_value {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f1f1f;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
 
 /********************* Amit End ****************************/
 
