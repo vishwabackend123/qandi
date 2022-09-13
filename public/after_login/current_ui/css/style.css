@@ -3134,12 +3134,13 @@ aside {
 }
 
 ul.sidebar-menu-lists {
-    padding: 40px 14px 15px 14px;
+    padding: 42px 16px 15px 16px;
+    margin:0;
 }
 
 ul.sidebar-menu-lists li a {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
