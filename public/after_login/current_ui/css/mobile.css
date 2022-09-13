@@ -1418,7 +1418,8 @@
 .exam_instruction_text{padding-top: 44px;padding-bottom: 8px;}
 .exam_inst_sec_head{padding-top: 32px;}
 .exam_inst_ul_li li {padding-top: 20px;}
-.main-wrapper header{width:100%;}     
+.main-wrapper header,.scrollnone .main-wrapper.exam-wrapperBg header,.scrollnone .main-wrapper header{width:100%;}  
+
 .boxheading{    min-width: 187px;}
 .dashbaordContainer .tabMainblock{margin-top:14px;} 
 .commontab .nav-tabs .nav-link{padding-bottom:19px;}
