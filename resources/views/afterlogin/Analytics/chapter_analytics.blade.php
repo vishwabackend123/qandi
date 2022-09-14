@@ -1,22 +1,19 @@
-<div class="chapter_profici_nav__right_contant">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+<div class="chapter_profici_nav__right_contant mb-0 chapterlistTop">
+    <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0);" class="chapter_subject">{{$subject}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">Chapters</li>
         </ol>
-    </nav>
-    <div class="knowledge_left_clr_with_text_right_div mb-3">
-        <div class=" knowledge_left_clr_with_text">
-            <span class="knowledge_left_clr"></span> <span class="cotogaty_right_text">Knowledge</span>
+    </nav> -->
+    <div class="topicHeadingNew">Chapters</div>
+    <div class="knowledge_left_clr_with_text_right_div KnowledgeNewBar">
+        <div class=" knowledge_left_clr_with_text"><span class="cotogaty_right_text"> <strong>A:</strong> Application</span>
         </div>
-        <div class=" knowledge_left_clr_with_text">
-            <span class="aomprehension_left_clr"></span> <span class="cotogaty_right_text">Comprehension</span>
+        <div class=" knowledge_left_clr_with_text"><span class="cotogaty_right_text"><strong>E:</strong>  Evaluation</span>
         </div>
-        <div class=" knowledge_left_clr_with_text">
-            <span class="application_left_clr"></span> <span class="cotogaty_right_text">Application</span>
+        <div class=" knowledge_left_clr_with_text"><span class="cotogaty_right_text"><strong>C:</strong>  Comprehension</span>
         </div>
-        <div class=" knowledge_left_clr_with_text">
-            <span class="evaluation_left_clr"></span> <span class="cotogaty_right_text">Evaluation</span>
+        <div class=" knowledge_left_clr_with_text"><span class="cotogaty_right_text"><strong>K:</strong>  Knowledge</span>
         </div>
     </div>
 </div>
