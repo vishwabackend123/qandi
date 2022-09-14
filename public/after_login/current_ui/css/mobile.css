@@ -346,6 +346,22 @@
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
+    .accordion-item:not(:first-of-type) {
+        border-top: 0;
+        padding-top: 0px!important;
+    }
+    .see_analytics_mock_exam_previoues_border
+    {
+        display: none!important;
+    }
+    .MockTestMob .test-table .accordion-header .btn
+    {
+        display: none;
+    }
+    .MockTestMob .btn.btn-common-transparent
+    {
+        justify-content: center;
+    }
     .MockTestMob .mobile_block {
         display: flex !important;
     }
@@ -461,7 +477,7 @@
         margin-bottom: 0px;
     }
     .MockTestMob .mock_btn_vie_detail {
-        flex-basis: 682px!important;
+        flex-basis: 752px!important;
         justify-content: space-between;
         padding-top: 16px;
         padding-bottom: 16px;
