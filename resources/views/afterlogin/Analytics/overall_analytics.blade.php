@@ -161,8 +161,16 @@
                                                                             plugins: {
                                                                                 title: false,
                                                                                 subtitle: false,
-                                                                                legend: false
+                                                                                legend: false,
+                                                                                tooltip: {
+                                                                                    bodyFont: {
+                                                                                        "weight": "bold",
+                                                                                        "size": 10,
+                                                                                        "width" : 50,
+                                                                                        }
+                                                                                }
                                                                             },
+
                                                                         }
                                                                     };
                                                                     var myCharted = new Chart("subjectChart_{{$sub->subject_name}}", config)
