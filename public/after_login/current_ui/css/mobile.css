@@ -346,10 +346,6 @@
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
-    /* .topic_list_form .btn.btn-common-transparent
-    {
-        font-size: 13px;
-    } */
     .owl-stage
     {
         padding-top: 10px;
