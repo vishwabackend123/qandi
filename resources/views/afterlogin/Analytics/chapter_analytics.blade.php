@@ -25,7 +25,7 @@
     <div id="overall_analytics" class="tab-pane">
     </div>
     <div id="maths" class="tab-pane active">
-        <div class="row chapter_of_row_col_paddin_zero">
+        <!-- <div class="row chapter_of_row_col_paddin_zero">
             @foreach($chapterList as $list)
             @php
             $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 35, $end='...');
@@ -53,6 +53,52 @@
                 </div>
             </div>
             @endforeach
+        </div> -->
+        
+        <div class="accordion performance_chapter_accordion" id="accordionChapter">
+            <div class="accordion-item">
+                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                    <h3>Units and Dimentions</h3>
+                    <label><b>80%</b> Proficiency</label>
+                    <div></div>
+                    <div class="accordion-header" id="headingOne">
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            View Topics <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionChapter">
+                    <div class="accordion-body">
+                        amitbhoj
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                    <h3>Complex Numbers</h3>
+                    <label><b>34%</b> Proficiency</label>
+                    <div></div>
+                    <div class="accordion-header" id="headingTwo">
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            View Topics <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionChapter">
+                    <div class="accordion-body">
+                        amitbhoj
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
+<script>
+
+    $(".accordion-header").click(function(){
+        $(this).parents(".accordion-item").toggleClass("accordion-open");
+    });
+
+</script>   
