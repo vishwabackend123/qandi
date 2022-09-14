@@ -969,7 +969,7 @@
     padding: 20px;
     border-radius: 8px;
 }
-    /* .mobile_hide{display:none!important} */
+    .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;
