@@ -808,8 +808,26 @@
     {
         color: #1f1f1f!important;
     }
+<<<<<<< HEAD
 
     
+=======
+    .exam_inst_take_test_btn
+    {
+        width: 116px;
+    }
+    .MockTestMob .btn.btn-common-green
+    {
+        justify-content: center;
+    }
+    .Testseriesattemb .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
+    .TestseriesAttempt22 .take-ful
+    {
+            padding: 0px 16px!important;
+    }
+>>>>>>> 5a2d06437 (tab responsive)
 
 }
 @media(min-width:768px){
