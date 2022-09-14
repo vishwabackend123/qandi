@@ -130,6 +130,8 @@ Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController:
 Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
 Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'examReview'])->name('examreview')->middleware('auth', 'menu');
+Route::any('/saveAnswerProfiling', [App\Http\Controllers\FullExamController::class, 'saveAnswerProfiling'])->name('saveAnswerProfiling')->middleware('auth');
+Route::any('/clearResponseProfiling', [App\Http\Controllers\FullExamController::class, 'clearResponseProfiling'])->name('clearResponseProfiling')->middleware('auth');
 
 
 /* Full exam Controller Routes */
@@ -175,6 +177,10 @@ Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController
 /* TestSeries Routes */
 Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'seriesList'])->name('series_list')->middleware('auth', 'menu');
 Route::any('/test_series/{instruction?}', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth', 'menu');
+Route::any('/saveAnswerTs', [App\Http\Controllers\TestSeriesController::class, 'saveAnswerTs'])->name('saveAnswerTs')->middleware('auth');
+Route::any('/clearResponseTs', [App\Http\Controllers\TestSeriesController::class, 'clearResponseTs'])->name('clearResponseTs')->middleware('auth');
+Route::any('/next_question_ts/{ques_id}', [App\Http\Controllers\TestSeriesController::class, 'nextQuestionTs'])->name('next_question_ts')->middleware('auth');
+Route::any('/next_subject_question_ts/{subject_id}', [App\Http\Controllers\TestSeriesController::class, 'nextSubjectQuestionTs'])->name('next_subject_question_ts')->middleware('auth');
 
 /* Referal Controller Routes */
 Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'storeReferralFriend'])->name('store_referral')->middleware('auth', 'menu');
@@ -263,15 +269,14 @@ Route::any('/get_exam_result_analytics/{result_id}/{testType?}/{testName?}', [Ap
 /* mock exam Routes */
 Route::any('/mock_exam/{instruction?}', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExam')->middleware('auth', 'menu');
 Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExamTest')->middleware('auth', 'menu');
-
+Route::any('/saveAnswerMock', [App\Http\Controllers\MockExamController::class, 'saveAnswerMock'])->name('saveAnswerMock')->middleware('auth');
+Route::any('/clearResponseMock', [App\Http\Controllers\MockExamController::class, 'clearResponseMock'])->name('clearResponseMock')->middleware('auth');
 Route::any('/mock_next_question/{ques_id}', [App\Http\Controllers\MockExamController::class, 'mockNextQuestion'])->name('mockNextQuestion')->middleware('auth');
 Route::any('/mock_next_subject_question/{subject_id}/{sec_id?}', [App\Http\Controllers\MockExamController::class, 'mockNextSubjectQuestion'])->name('mockNextSubjectQuestion')->middleware('auth');
 Route::any('/mock_next_sub_sec_question/{sub_id}/{sec_id}', [App\Http\Controllers\MockExamController::class, 'adaptive_next_subject_question'])->name('adaptive_next_subject_question')->middleware('auth');
 
 Route::any('/exam_result_analytics/{result_id}', [App\Http\Controllers\ResultController::class, 'examResultAnalytics'])->name('exam_result_analytics')->middleware('auth', 'menu');
 
-Route::any('/previous_year_exam', [App\Http\Controllers\PreviousYearExamController::class, 'index'])->name('previous_year_exam')->middleware('auth', 'menu');
-Route::any('/previousYearExam/{instruction?}', [App\Http\Controllers\PreviousYearExamController::class, 'previousYearExam'])->name('previousYearExam')->middleware('auth', 'menu');
 
 Route::any('/chapter-analytics/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'chapterAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');
 Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultController::class, 'ajaxExamResultList'])->middleware('auth', 'menu');
@@ -280,6 +285,13 @@ Route::any('/send_verfication_email', [App\Http\Controllers\SubscriptionControll
 Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, 'performanceRating'])->name('performance-rating')->middleware('auth');
 Route::any('/trendGraphUpdate/{type}', [App\Http\Controllers\HomeController::class, 'trendGraphUpdate'])->name('trendGraphUpdate')->middleware('auth');
 
+/* Previous Year exam Routes */
+Route::any('/previous_year_exam', [App\Http\Controllers\PreviousYearExamController::class, 'index'])->name('previous_year_exam')->middleware('auth', 'menu');
+Route::any('/previousYearExam/{instruction?}', [App\Http\Controllers\PreviousYearExamController::class, 'previousYearExam'])->name('previousYearExam')->middleware('auth', 'menu');
+Route::any('/saveAnswerPy', [App\Http\Controllers\PreviousYearExamController::class, 'saveAnswerPy'])->name('saveAnswerPy')->middleware('auth');
+Route::any('/clearResponsePy', [App\Http\Controllers\PreviousYearExamController::class, 'clearResponsePy'])->name('clearResponsePy')->middleware('auth');
+Route::any('/py_next_question/{ques_id}', [App\Http\Controllers\PreviousYearExamController::class, 'pyNextQuestion'])->name('pyNextQuestion')->middleware('auth');
+Route::any('/py_next_subject_question/{subject_id}/{sec_id?}', [App\Http\Controllers\PreviousYearExamController::class, 'pyNextSubjectQuestion'])->name('pyNextSubjectQuestion')->middleware('auth');
 
 
 
@@ -289,6 +301,14 @@ Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 
 Route::any('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 Route::any('/DailyTask-exam/{category}/{tasktype}/{instruction?}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{instruction?}/{skill_category?}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
+Route::any('/next_question_task/{ques_id}', [App\Http\Controllers\HomeController::class, 'nextQuestion'])->name('next_question_task')->middleware('auth');
+Route::any('/next_subject_question_task/{subject_id}', [App\Http\Controllers\HomeController::class, 'nextSubjectQuestion'])->name('next_subject_question_task')->middleware('auth');
+Route::any('/saveAnswerTask', [App\Http\Controllers\HomeController::class, 'saveAnswerTask'])->name('saveAnswerTask')->middleware('auth');
+Route::any('/clearResponseTask', [App\Http\Controllers\HomeController::class, 'clearResponseTask'])->name('clearResponseTask')->middleware('auth');
+
+
+
+
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);

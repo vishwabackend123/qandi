@@ -953,7 +953,7 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_question/') }}/" + question_id;
+        url = "{{ url('next_question_task/') }}/" + question_id;
         $.ajax({
             url: url,
             data: {
@@ -1102,7 +1102,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerTask') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1200,7 +1200,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerTask') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1304,7 +1304,7 @@ $question_type = "Numerical";
         $("#btn_" + quest_id).removeClass("blue-btn");
 
         $.ajax({
-            url: "{{ route('clearResponse') }}",
+            url: "{{ route('clearResponseTask') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1355,7 +1355,7 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_subject_question/') }}/" + subject_id;
+        url = "{{ url('next_subject_question_task/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {
