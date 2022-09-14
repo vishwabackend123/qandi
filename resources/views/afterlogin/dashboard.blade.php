@@ -117,7 +117,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext mb-3">Map your subject journey. Aim to complete the circle.</p>
+                                    <p class="dashSubtext mb-3">Map your subject journey. Aim to complete each circle.</p>
                                 </div>
                                 @if(!empty($subject_proficiency))
                                 <div class="subjectScoreBlock">
