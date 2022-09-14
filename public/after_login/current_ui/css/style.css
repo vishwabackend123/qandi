@@ -7810,3 +7810,7 @@ margin-bottom: 12px;
             height: auto;
             min-height: auto;
         }
+        .adaptiveexamnewwrapper .examRightpanel  .btn-light.disabled  {
+            color: #000;
+            border: 1px solid #56b663;
+        }
