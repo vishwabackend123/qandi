@@ -164,10 +164,10 @@
                                                                                 legend: false,
                                                                                 tooltip: {
                                                                                     bodyFont: {
-                                                                                        "weight": "bold",
+                                                                                        // "weight": "bold",
                                                                                         "size": 10,
-                                                                                        "width" : 50,
-                                                                                        }
+                                                                                        // "width" : 50,
+                                                                                    }
                                                                                 }
                                                                             },
 
