@@ -257,7 +257,13 @@ $userData = Session::get('user_data');
 
         if (chapters >= limit) {
             $('#limit_error span').html('');
-            var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
+            if (limit == '1') {
+                var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
+            }else
+            {
+                var error_txt = 'You can not select more than ' + limit + ' chapters for selected week';
+            }
+            
 
             $('#limit_error span').html(error_txt);
             $('#limit_error').show();
