@@ -251,7 +251,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become prepared.
                                             </p>
                                             @endif
                                             @if(isset($dailyTask) && !empty($dailyTask))
@@ -332,7 +332,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more exam-ready overall.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
                                             </p>
                                             @endif
 
@@ -417,7 +417,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Your topics of strengths.</p>
+                                                    <p>Topics which are your strengths.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
@@ -468,7 +468,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
                                                     <h5>Hurdles </h5>
-                                                    <p>Topics which are not entirely weaknesses but are hurdles in your success.</p>
+                                                    <p>Topics which are not entirely weaknesses but are hurdles in your journey.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
@@ -550,7 +550,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                            Stay in control by scheduling your practice sessions.
+                                                            Schedule your practice sessions as per your needs.
                                                         </p>
                                                     </span>
                                                 </h3>
@@ -729,7 +729,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </div>
 
                                                     <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
+                                                        <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
                                                     </div>
 
                                                 </div>

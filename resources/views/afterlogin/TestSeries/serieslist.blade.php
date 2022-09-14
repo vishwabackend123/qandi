@@ -59,7 +59,7 @@
                                                         <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
                                                         <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
                                                         <input type="hidden" name="exam_mode" value="Open" />
-                                                        <button class="btn btn-common-transparent bg-transparent ms-4"> TAKE TEST</button>
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
                                                     </form>
                                                 </div>
                                             </div>
