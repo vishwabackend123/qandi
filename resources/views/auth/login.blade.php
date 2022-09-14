@@ -392,6 +392,7 @@
             });
         }
         document.addEventListener("paste", function(e) {
+            console.log("hello");
             if (e.target.type === "text") {
                 var data = e.clipboardData.getData('Text');
                 if(!isNaN(data)){
