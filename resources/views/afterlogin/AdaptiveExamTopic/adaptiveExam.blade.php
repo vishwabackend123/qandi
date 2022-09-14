@@ -57,7 +57,7 @@ $question_type = "Single Choice";
 $question_type = "Numerical";
 }
 @endphp
-<div class="exam-wrapper testscreenmob">
+<div class="exam-wrapper testscreenmob adaptiveexamnewwrapper">
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer" id="myTabContent">
@@ -135,8 +135,12 @@ $question_type = "Numerical";
                                                             <div class="questionheader">
                                                                 <div class="question">
                                                                     <span class="q-no">Q1.</span>
-                                                                    <p>{!! $question_text !!}
-                                                                    </p>
+                                                                    <!-- <p>{!! $question_text !!}
+                                                                    </p> -->
+                                                                    <div class="quesbox">
+                                                                        <p>{!! $question_text !!}
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="questionImggraph">

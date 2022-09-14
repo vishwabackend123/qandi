@@ -7794,3 +7794,19 @@ margin-bottom: 12px;
         .examRightpanel  .top-first{
             padding-top: 20px;
         }
+        .adaptiveexamnewwrapper .examRightpanel .btn.disabled{
+            opacity: initial;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .borederbot {
+            border-bottom: 1px solid rgba(172, 185, 176, 0.14);
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .text-exambottom-sec {
+            margin-top: 40px !important;
+           
+        }
+        .adaptiveexamnewwrapper .examRightpanel .overviewtest {
+            height: auto;
+            min-height: auto;
+        }

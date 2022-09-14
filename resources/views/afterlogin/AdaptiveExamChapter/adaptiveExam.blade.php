@@ -59,7 +59,7 @@ $question_type = "Numerical";
 }
 
 @endphp
-<div class="exam-wrapper testscreenmob">
+<div class="exam-wrapper testscreenmob adaptiveexamnewwrapper">
     <div class="content-wrapper">
         <div class="examSereenwrapper">
             <div class="examMaincontainer" id="myTabContent">
