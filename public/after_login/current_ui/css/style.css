@@ -4024,6 +4024,9 @@ span.proficiency_value {
 .customSlider {
     padding: 0 44px;
 }
+.radial_progress_bar.proficiency_graph .progress-bar__progress.greengraph{
+    stroke : #34d399;
+}
 .testslider.customSlider .owl-nav .disabled{opacity: 1!important;}
 .testslider.customSlider .owl-nav button.owl-next, .testslider.customSlider .owl-nav button.owl-prev{
     border-radius: 8px !important; 

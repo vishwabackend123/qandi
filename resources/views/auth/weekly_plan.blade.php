@@ -193,7 +193,7 @@
                         </p>
                      </div>
                      <div class="note">
-                         <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
+                         <b>Note:</b> To achieve the ideal pace, you have to complete 2 chapters this week
                      </div>
                   </div> 
                   <div class="graphDetailempty">
