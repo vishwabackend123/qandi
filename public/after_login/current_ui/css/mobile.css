@@ -452,6 +452,7 @@
     {
         padding: 10px 22px;
         width: 100%;
+        justify-content: center;
     }
     .MockTestMob .mock_btn_vie_detail
     {
@@ -813,8 +814,21 @@
     {
         color: #1f1f1f!important;
     }
-
-    
+    .exam_inst_take_test_btn
+    {
+        width: 116px;
+    }
+    .MockTestMob .btn.btn-common-green
+    {
+        justify-content: center;
+    }
+    .Testseriesattemb .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
+    .take-ful
+    {
+            padding: 0px 16px;
+    }
 
 }
 @media(min-width:768px){
