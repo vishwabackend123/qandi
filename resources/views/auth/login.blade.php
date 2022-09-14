@@ -10,7 +10,7 @@
 
 </script>
 
-<body style="background: #f5faf6;" onpaste="MyBodyPasteFunction()">
+<body style="background: #f5faf6;">
     <section class="d-flex login-signup">
         <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
             <figure class="pb-4">
