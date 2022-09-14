@@ -154,8 +154,9 @@ class FullExamController extends Controller
                 $exam_url = route('exam', ['full_exam']);
 
                 $exam_title = "Full Body Exam";
+                $test_type = 'Profiling';
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
             } else {
                 $cacheKey = 'CustomQuestion:full:' . $user_id;
                 $redis_result = Redis::get($cacheKey);
