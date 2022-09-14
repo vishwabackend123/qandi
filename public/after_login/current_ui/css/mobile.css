@@ -344,12 +344,12 @@
             flex-basis: 110px;
         }
 }
-@media screen and (max-width:850px) {
-    .mobile_hide {
+@media screen and (max-width:991px) {
+    .MockTestMob .mobile_hide {
         display: none!important;
     }
 }
-@media screen and (max-width:850px) and (min-width:768px) {
+@media screen and (max-width:991px) and (min-width:768px) {
     .MockTestMob .mobile_block {
         display: flex !important;
     }
