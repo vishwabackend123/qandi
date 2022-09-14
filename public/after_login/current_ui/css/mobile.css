@@ -132,6 +132,17 @@
     .matrixpage-wrapper .exam_instruction_scrolling {
         height: calc(100vh - 262px);
     }
+    .examScreentab .nav-tabs .nav-link{
+        display: flex;
+    }
+    .examLeftpanel .nav-item {
+        position: relative;
+        margin-right: 40px !important;
+    }
+  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
+  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
+  .plan_order_sumry_subscription{padding:5px 0px;}
+  .plan_order_sumry_subscription{padding:4px 0px}
 }
 
 @media only screen and (max-height: 920px) {
@@ -897,6 +908,19 @@
     }
     .task-day.commonWhiteBox {margin-bottom: 40px;}
 }
+
+@media(max-width:991px) and (min-width:768px)
+{
+    .chapter_profici_nav__right_contant {
+        display: block;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 17px;
+    }
+}
+
+
 
 /* *************Tab  Css End ***************** */
 
@@ -2476,10 +2500,6 @@
     .examReviewscreenmob .content-wrapper {
         padding: 40px 16px;
     }
-    /* .reviewexamType{
-        position: relative;
-        top: -100px;
-    } */
     .expand_block {
         display: none;
         position: absolute;
@@ -2821,28 +2841,6 @@
 
 }
 
-@media(max-width:890px) and (min-width:768px)
-{
-    .chapter_profici_nav__right_contant {
-        display: block;
-    }
-    .chapter_profici_application_deves_text
-    {
-        font-size: 17px;
-    }
-}
 
-@media(max-width:1280px) 
-{
-    .examScreentab .nav-tabs .nav-link{
-        display: flex;
-    }
-    .examLeftpanel .nav-item {
-        position: relative;
-        margin-right: 40px !important;
-    }
-  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
-  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
-  .plan_order_sumry_subscription{padding:5px 0px;}
-  .plan_order_sumry_subscription{padding:4px 0px}
-}
+
+
