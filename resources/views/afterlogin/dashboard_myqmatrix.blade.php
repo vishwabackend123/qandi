@@ -65,7 +65,7 @@ $userData = Session::get('user_data');
                                     <div class="myqmatPannel myqcolor2">
                                         <div class="myqinner">
                                             <h6>Q2</h6>
-                                            <h5>Needs focus</h5>
+                                            <h5>Opportunity</h5>
                                             <p>Give a little attention to these topics and take another step towards perfection. </p>
                                         </div>
                                         <div class="myqbottomSec">
@@ -85,7 +85,7 @@ $userData = Session::get('user_data');
                                     <div class="myqmatPannel myqcolor3 mb-0">
                                         <div class="myqinner">
                                             <h6>Q3</h6>
-                                            <h5>Hopeful </h5>
+                                            <h5>Hurdles </h5>
                                             <p>Topics that are hurdles in your journey. Do not save them for the last. </p>
                                         </div>
                                         <div class="myqbottomSec">
@@ -105,7 +105,7 @@ $userData = Session::get('user_data');
                                     <div class="myqmatPannel myqcolor4 mb-0">
                                         <div class="myqinner">
                                             <h6>Q4</h6>
-                                            <h5>Weak </h5>
+                                            <h5>Weaknesses </h5>
                                             <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
                                         </div>
                                         <div class="myqbottomSec">
