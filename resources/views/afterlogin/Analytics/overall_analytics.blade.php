@@ -24,7 +24,7 @@
                         <div class="overallmain">
                             <div class="overalltop">
                                 <div class="row">
-                                    <div class="col-md-12 col-lg-6">
+                                    <div class="col-lg-12 col-xl-6">
                                         <div class="commonWhiteBox">
                                             <div class="HeadingWithfilter">
                                                 <h3 class="boxheading d-flex align-items-center mb-5 smalltextheading">Progress
@@ -62,7 +62,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-lg-6">
+                                    <div class="col-lg-12 col-xl-6">
                                         <div class="commonWhiteBox">
                                             <div class="subjectperform">
                                                 <h3 class="boxheading d-flex align-items-center">Subject Performance
@@ -161,8 +161,14 @@
                                                                             plugins: {
                                                                                 title: false,
                                                                                 subtitle: false,
-                                                                                legend: false
+                                                                                legend: false,
+                                                                                tooltip: {
+                                                                                    bodyFont: {
+                                                                                        "size": 10,
+                                                                                    }
+                                                                                }
                                                                             },
+
                                                                         }
                                                                     };
                                                                     var myCharted = new Chart("subjectChart_{{$sub->subject_name}}", config)
@@ -194,7 +200,7 @@
                                         </span>
                                     </h3>
                                     <div class="row">
-                                        <div class="col-md-12 col-lg-6">
+                                        <div class="col-lg-12 col-xl-6">
                                             <div class="timemanagement common_greenbadge_tabs">
                                                 <h4 class="garphsubheading mb-0 mt-2">Time spent on correct/incorrect answers</h4>
                                                 <div class="barwithTAb">
@@ -250,7 +256,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 col-lg-6">
+                                        <div class="col-lg-12 col-xl-6">
                                             <div class="timemanagement">
                                                 <h4 class="garphsubheading mb-0 mt-2">Time spent on each question <span>(in Last week)</span></h4>
                                                 <div class="subjectperformLegend ">
@@ -291,7 +297,7 @@
                                     </span>
                                 </h3>
                                 <div class="row">
-                                    <div class="col-md-12 col-lg-6">
+                                    <div class="col-lg-12 col-xl-6">
                                         <div class="timemanagement common_greenbadge_tabs">
                                             <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect Answers</h4>
                                             <div class="barwithTAb">
@@ -347,7 +353,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-lg-6">
+                                    <div class="col-lg-12 col-xl-6">
                                         <div class="timemanagement">
                                             <h4 class="garphsubheading mt-2 mb-0">Accuracy Percentage <span>(in Last week)</span></h4>
                                             <div class="subjectperformLegend ">

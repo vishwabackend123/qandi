@@ -1,7 +1,7 @@
 <div class="overallmain">
     <div class="overalltop">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-12 col-xl-6">
                 <div class="commonWhiteBox h-auto subj_progress_card">
                 <div class="HeadingWithfilter">
                         <h3 class="boxheading d-flex align-items-center mb-5 smalltextheading">Progress
@@ -94,7 +94,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-12 col-xl-6">
                 <div class="commonWhiteBox">
                     <div class="subjectperform">
                         <h3 class="boxheading d-flex align-items-center">Core Learning Skills
@@ -106,7 +106,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Get in-depth analysis of your core learning skills.
+                                    Get an-depth analysis of your core learning skill.
                                 </p>
                             </span>
                         </h3>
@@ -120,8 +120,8 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Your ability to understand complex information by breaking it into parts, examine the parts individually and judge them according to the received information.</h5>
-                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong> of questions solved are of this skill.
+                                                <h5>Your ability to understand complex information by breaking it into parts, examining the parts individually and judging them according to the received information.</h5>
+                                                <p> <strong>{{(int)$skillPer[0]->percentage}}%</strong> of all questions solved are of this skill.
                                                   <!-- <a href="#Evaluationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluationmodal">read more...</a> -->
                                                 </p>
                                             </div>
@@ -148,8 +148,8 @@
                                         </div>
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
-                                                <h5>Your ability to understand the meaning and correctly interpret, instructions and problems. </h5>
-                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of questions solved are of this skill. 
+                                                <h5>Your ability to understand the meaning and correctly interpret instructions and problems. </h5>
+                                                <p> <strong>{{(int)$skillPer[1]->percentage}}%</strong>  of all questions solved are of this skill. 
                                                 <!-- <a href="#Comprehensionmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehensionmodal">read more...</a> -->
                                             </p>
                                             </div>
@@ -177,7 +177,7 @@
                                         <div class="commoncodeblock_content">
                                             <div class="codelerninner">
                                                 <h5>Your ability to execute or implement the information provided.</h5>
-                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of questions solved are of this skill.  
+                                                <p> <strong>{{(int)$skillPer[2]->percentage}}%</strong>  of all questions solved are of this skill.  
                                                 <!-- <a href="#Applicationmodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Applicationmodal">read more...</a> -->
                                             </p>
 
@@ -207,7 +207,7 @@
                                             <div class="codelerninner">
                                                 <h5> Your ability to recognize and recall factual information and basic concepts. </h5>
 
-                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of questions solved are of this skill.    
+                                                <p> <strong>{{(int)$skillPer[3]->percentage}}%</strong> of all questions solved are of this skill.    
                                                 <!-- <a href="#Knowledgemodal" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledgemodal">read more...</a> -->
                                             </p>
                                             </div>
@@ -251,7 +251,7 @@
                 </span>
             </h3>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-12 col-xl-6">
                     <div class="timemanagement common_greenbadge_tabs">
                         <h4 class="garphsubheading mt-2 mb-0">Time spent on correct/incorrect answers</h4>
                         <div class="barwithTAb">
@@ -307,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-12 col-xl-6">
                     <div class="timemanagement">
                         <h4 class="garphsubheading mb-0 mt-2">Time spent on each question <span>(in Last week)</span></h4>
                         <div class="subjectperformLegend ">
@@ -348,7 +348,7 @@
             </span>
         </h3>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-12 col-xl-6">
                 <div class="timemanagement common_greenbadge_tabs">
                     <h4 class="garphsubheading mt-2 mb-0">Correct and Incorrect Answers</h4>
                     <div class="barwithTAb">
@@ -404,7 +404,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-12 col-xl-6">
                 <div class="timemanagement">
                     <h4 class="garphsubheading mt-2 mb-0">Accuracy Percentage <span>(in Last week)</span></h4>
                     <div class="subjectperformLegend ">
