@@ -550,7 +550,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                            Stay in control by scheduling your practice sessions.
+                                                            Schedule your practice sessions as per your needs.
                                                         </p>
                                                     </span>
                                                 </h3>
