@@ -344,12 +344,52 @@
             flex-basis: 110px;
         }
 }
-@media screen and (max-width:850px) {
-    .mobile_hide {
+
+@media screen and (max-width:991px) and (min-width:768px) {
+    .owl-stage
+    {
+        padding-top: 10px;
+    }
+    .clearsec
+    {
+        margin-right: 10px;
+    }
+    .take-fulltest
+    {
+        padding: 0px!important;
+    }
+    .mobile-test .topic_form
+    {
+        display: flex!important;
+        justify-content: flex-start;
+    }
+    .take-fulltest .btn {
+        min-width: 93% !important;
+    }
+    .mobile-test .topic_form .btn.btn-common-transparent
+    {
+        padding: 8px 6px;
+    }
+    .mobile-test .topic_form
+    {
+        margin-bottom: 0px!important;
+    }
+    .accordion-item:not(:first-of-type) {
+        border-top: 0;
+        padding-top: 0px!important;
+    }
+    .see_analytics_mock_exam_previoues_border
+    {
         display: none!important;
     }
-}
-@media screen and (max-width:991px) and (min-width:768px) {
+    .MockTestMob .test-table .accordion-header .btn
+    {
+        display: none;
+    }
+    .MockTestMob .btn.btn-common-transparent
+    {
+        justify-content: center;
+    }
     .MockTestMob .mobile_block {
         display: flex !important;
     }
@@ -465,7 +505,7 @@
         margin-bottom: 0px;
     }
     .MockTestMob .mock_btn_vie_detail {
-        flex-basis: 682px!important;
+        flex-basis: 752px!important;
         justify-content: space-between;
         padding-top: 16px;
         padding-bottom: 16px;
@@ -828,7 +868,7 @@
     }
     .TestseriesAttempt22 .take-ful
    {
-            padding: 0px 16px!important;
+            padding: 0px 0px!important;
     }
 
 }
@@ -970,7 +1010,7 @@
     padding: 20px;
     border-radius: 8px;
 }
-    /* .mobile_hide{display:none!important} */
+    .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;

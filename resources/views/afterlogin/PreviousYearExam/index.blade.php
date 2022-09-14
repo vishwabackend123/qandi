@@ -43,7 +43,7 @@
                         <div class="tablist">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item pe-5 me-2">
-                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="previous_year_tab">Previous Year Exam</a>
+                                    <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#mock_test" id="previous_year_tab">Previous Year Exams</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#attempted_tab" id="attempted">Attempted</a>
@@ -102,7 +102,7 @@
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_dure_content22">
                                                             <div class="mock_test_qdms_text1">Duration</div>
-                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span><span>Mins</span></div>
+                                                            <div class="mock_test_qdms_text2"><span>{{$sche->test_duration}}</span> <span>Mins</span></div>
                                                         </div>
                                                         <div class="live_exam_diveder_div"></div>
                                                         <div class="mock_test_marks_content22">

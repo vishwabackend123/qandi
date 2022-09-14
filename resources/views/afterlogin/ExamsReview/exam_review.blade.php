@@ -620,12 +620,19 @@ $question_type = "Numerical";
         $('.questionwrapper ').css('height', mid_section_height);
         var questionwrapper_final_height = $(".questionwrapper").outerHeight();
         var questfinal = question_slider_box_height - questionwrapper_final_height;
+
         $('.answer-main-sec ').css('height', questfinal);
         var answerfinalheight = $(".answer-main-sec").outerHeight();
         var extra_height = answerfinalheight - 20 + "px";
+
         $('.answer-main-sec ').css('height', extra_height);
-        var answerfinalheight = $(".answer-main-sec").outerHeight();
-        var answerfinalheight_145 = answerfinalheight - 165 + "px";
+
+        var answer_final_height = $(".answer-main-sec").outerHeight();
+        var anshead_top_finalheight = $(".anshead-top").outerHeight();
+        var anshead_title_textfinalheight = $(".anshead-titletext").outerHeight();
+        var ansheadercomb_height = anshead_top_finalheight + anshead_title_textfinalheight;
+        var customcomb_height = answer_final_height - ansheadercomb_height;
+        var answerfinalheight_145 = customcomb_height - 110 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
     }
 

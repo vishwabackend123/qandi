@@ -48,7 +48,7 @@
                         </div>
                         @php $chpatername=base64_encode($list['chapter_name']);
                         @endphp
-                        <div class="chapter_profici_open_topic"><a href="javascript:void(0);" onclick="expandTopicAnalytics({{$list['chapter_id']}},'{{$subject}}','{{$chpatername}}')">Open topics <b>></b></a></div>
+                        <div class="chapter_profici_open_topic"><a href="javascript:void(0);" onclick="expandTopicAnalytics({{$list['chapter_id']}},'{{$subject}}','{{$chpatername}}')">Open Topics <b>></b></a></div>
                     </div>
                 </div>
             </div>

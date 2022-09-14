@@ -4024,6 +4024,9 @@ span.proficiency_value {
 .customSlider {
     padding: 0 44px;
 }
+.radial_progress_bar.proficiency_graph .progress-bar__progress.greengraph{
+    stroke : #34d399;
+}
 .testslider.customSlider .owl-nav .disabled{opacity: 1!important;}
 .testslider.customSlider .owl-nav button.owl-next, .testslider.customSlider .owl-nav button.owl-prev{
     border-radius: 8px !important; 
@@ -4118,9 +4121,9 @@ span.proficiency_value {
     align-items: center;    
     justify-content: space-between;
     padding: 20px 30px 20px 36px;
-    box-shadow: 0 4px 20px -4px rgba(62, 96, 121, 0.1);
-    -moz-box-shadow: 0 4px 8px -4px rgba(62, 96, 121, 0.1);
-    -webkit-box-shadow:0 4px 20px -4px rgba(62, 96, 121, 0.1);
+    box-shadow: 0 4px 20px -7px rgba(62, 96, 121, 0.1);
+    -moz-box-shadow: 0 4px 8px -7px rgba(62, 96, 121, 0.1);
+    -webkit-box-shadow:0 4px 20px -7px rgba(62, 96, 121, 0.1);
     background: #fff;    position: relative;
     z-index: 99;
 }   
@@ -4812,6 +4815,7 @@ justify-content: space-between;}
                 background-color: #56b663;
                 border-top-right-radius: 11px;
             }
+          .tabMainblock_myqmatric  .qq1_2_3_4.active:before,.tabMainblock_myqmatric  .qq1_2_3_4.active:after{ height: 4px;}
 .blackcolor{color: #1f1f1f    ;}
 .matrixpage-wrapper .fortab .commonWhiteBox{height:100%;}
 .select2-container--open .select2-dropdown--above{border:0px;}
@@ -7854,4 +7858,27 @@ margin-bottom: 12px;
         }
         .examRightpanel  .top-first{
             padding-top: 20px;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .btn.disabled{
+            opacity: initial;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .borederbot {
+            border-bottom: 1px solid rgba(172, 185, 176, 0.14);
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .text-exambottom-sec {
+            margin-top: 35px !important;
+           
+        }
+        .adaptiveexamnewwrapper .examRightpanel .overviewtest {
+            height: auto;
+            min-height: auto;
+        }
+        .adaptiveexamnewwrapper .examRightpanel  .btn-light.disabled  {
+           
+            border: 1px solid #56b663;
+        }
+        .adaptiveexamnewwrapper .examRightpanel .text-examtop-sec{
+            padding-bottom: 40px
         }
