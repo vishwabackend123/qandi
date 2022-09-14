@@ -729,7 +729,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </div>
 
                                                     <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
+                                                        <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
                                                     </div>
 
                                                 </div>
