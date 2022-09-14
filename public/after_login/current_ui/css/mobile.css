@@ -265,7 +265,7 @@
 .graphCard.my-4{margin-top:16px!important;}
 .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
 .journeyGraph {padding: 20px;}
-
+.codelerninner h5 {min-height: 65px;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
