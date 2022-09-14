@@ -344,12 +344,7 @@
             flex-basis: 110px;
         }
 }
-@media screen and (max-width:991px) {
-    .MockTestMob .mobile_hide {
-        display: none!important;
-    }
-}
-@media screen and (max-width:991px) and (min-width:768px) {
+@media screen and (max-width:850px) and (min-width:768px) {
     .MockTestMob .mobile_block {
         display: flex !important;
     }
@@ -452,7 +447,6 @@
     {
         padding: 10px 22px;
         width: 100%;
-        justify-content: center;
     }
     .MockTestMob .mock_btn_vie_detail
     {
@@ -789,13 +783,13 @@
     .LiveExamMob22 .mock_attemptepted_spacing .mock_test_ques_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_dure_content2, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_sub_content, .LiveExamMob22 .mock_attemptepted_spacing .mock_test_marks_content2 {
         padding-bottom: 0px!important;
     }
-    /* .TestseriesAttempt22 .exam_tabdata .accordion-body {
+    .TestseriesAttempt22 .exam_tabdata .accordion-body {
         padding: 0px 0px 0px 0px!important;
-    } */
-    /* .chapters-expend .accordion-body {
+    }
+    .chapters-expend .accordion-body {
     margin-top: 23px;
     padding: 22px 0 0px 0 !important;
-    } */
+    }
     .TestseriesAttempt22 .exam_tabdata .accordion-item
     {
         margin-bottom: 16px!important;
@@ -814,21 +808,8 @@
     {
         color: #1f1f1f!important;
     }
-    .exam_inst_take_test_btn
-    {
-        width: 116px;
-    }
-    .MockTestMob .btn.btn-common-green
-    {
-        justify-content: center;
-    }
-    .Testseriesattemb .exam_tabdata .accordion-body {
-        padding: 0px 0px 0px 0px!important;
-    }
-    .take-ful
-    {
-            padding: 0px 16px;
-    }
+
+    
 
 }
 @media(min-width:768px){
@@ -969,7 +950,7 @@
     padding: 20px;
     border-radius: 8px;
 }
-    /* .mobile_hide{display:none!important} */
+    .mobile_hide{display:none!important}
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;
