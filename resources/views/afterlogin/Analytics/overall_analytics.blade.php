@@ -164,9 +164,7 @@
                                                                                 legend: false,
                                                                                 tooltip: {
                                                                                     bodyFont: {
-                                                                                        // "weight": "bold",
                                                                                         "size": 10,
-                                                                                        // "width" : 50,
                                                                                     }
                                                                                 }
                                                                             },
