@@ -10,7 +10,7 @@
 
 </script>
 
-<body style="background: #f5faf6;">
+<body style="background: #f5faf6;" onpaste="MyBodyPasteFunction()">
     <section class="d-flex login-signup">
         <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
             <figure class="pb-4">
@@ -392,7 +392,6 @@
             });
         }
         document.addEventListener("paste", function(e) {
-            console.log("hello");
             if (e.target.type === "text") {
                 var data = e.clipboardData.getData('Text');
                 if(!isNaN(data)){
