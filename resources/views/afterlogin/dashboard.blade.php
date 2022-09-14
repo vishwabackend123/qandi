@@ -417,7 +417,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q1</h6>
                                                     <h5>Strengths</h5>
-                                                    <p>Your topics of strengths.</p>
+                                                    <p>Topics which are your strengths.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_1">
@@ -468,7 +468,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q3</h6>
                                                     <h5>Hurdles </h5>
-                                                    <p>Topics which are not entirely weaknesses but are hurdles in your success.</p>
+                                                    <p>Topics which are not entirely weaknesses but are hurdles in your journey.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_3">
