@@ -344,7 +344,12 @@
             flex-basis: 110px;
         }
 }
-@media screen and (max-width:850px) and (min-width:768px) {
+@media screen and (max-width:850px) {
+    .mobile_hide {
+        display: none!important;
+    }
+}
+@media screen and (max-width:991px) and (min-width:768px) {
     .MockTestMob .mobile_block {
         display: flex !important;
     }
@@ -810,6 +815,21 @@
     }
 
     
+    .exam_inst_take_test_btn
+    {
+        width: 116px;
+    }
+    .MockTestMob .btn.btn-common-green
+    {
+        justify-content: center;
+    }
+    .Testseriesattemb .exam_tabdata .accordion-body {
+        padding: 0px 0px 0px 0px!important;
+    }
+    .TestseriesAttempt22 .take-ful
+   {
+            padding: 0px 16px!important;
+    }
 
 }
 @media(min-width:768px){
@@ -950,7 +970,7 @@
     padding: 20px;
     border-radius: 8px;
 }
-    .mobile_hide{display:none!important}
+    /* .mobile_hide{display:none!important} */
     .btn.btn-common-transparent{min-width: 156px;padding: 10px 18px;height: 44px;}
     .left-sidepannel {
     display: none !important;
