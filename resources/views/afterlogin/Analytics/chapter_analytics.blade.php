@@ -22,7 +22,6 @@
     <div id="overall_analytics" class="tab-pane">
     </div>
     <div id="maths" class="tab-pane active">
-
         <div class="accordion performance_chapter_accordion">
             @foreach($chapterList as $list)
             <div class="accordion-item">
@@ -268,7 +267,6 @@
                     </div>
                 </div>
                 <div id="collapseOne_{{$list['chapter_id']}}" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                    
                 </div>
             </div>
             @endforeach
@@ -279,22 +277,23 @@
 $(".accordion-header").click(function() {
     $(this).parents(".accordion-item").toggleClass("accordion-open");
 });
-function show_topic_list(chapter_id) {
-     url = "{{ url('topic-analytics/') }}/" + chapter_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
 
-                },
-                beforeSend: function() {
-                    
-                },
-                success: function(result) {
-                    $("#collapseOne_"+chapter_id).html(result.html);
-                },
-                error: function(data, errorThrown) {}
-            });
+function show_topic_list(chapter_id) {
+    url = "{{ url('topic-analytics/') }}/" + chapter_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+
+        },
+        beforeSend: function() {
+
+        },
+        success: function(result) {
+            $("#collapseOne_" + chapter_id).html(result.html);
+        },
+        error: function(data, errorThrown) {}
+    });
 }
 
 </script>

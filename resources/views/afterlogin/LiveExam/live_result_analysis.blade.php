@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-lg-12 col-xl-5">
                     <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
                         <h3 class="boxheading d-flex align-items-center">My Score
                             <span class="tooltipmain ml-2">
@@ -181,7 +181,7 @@
                     </div>
                     @endif
                 </div>
-                <div class="col-md-7">
+                <div class="col-lg-12 col-xl-7">
                     @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Subject Score

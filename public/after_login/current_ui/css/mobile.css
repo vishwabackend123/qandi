@@ -265,7 +265,7 @@
 .graphCard.my-4{margin-top:16px!important;}
 .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
 .journeyGraph {padding: 20px;}
-
+.Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -335,7 +335,8 @@
 }
 .matrixpage-wrapper .exam_instruction_scrolling {
     height:100%}
-    
+    .performance_chapter_accordion .accordion-item .performance_chapter_block{flex-wrap:wrap;justify-content: space-between;height:auto;} 
+    .chapter_Perfrom_Graph{    justify-content: initial;margin-top:20px;} 
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .mock_btn_vie_detail {
