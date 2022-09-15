@@ -442,7 +442,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
                                                     <h5>Opportunity</h5>
-                                                    <p>Topics which are your potential strengths. </p>
+                                                    <p>Potentially strong topics that need a little attention.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
