@@ -63,10 +63,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Based on your current test, your score indicates your readiness. <br>Score = (Total Number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) 
-
-
-</p>
+                                    This score indicates your readiness, based on your most recent test. <br> Score = (Total number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) </p>
                             </span>
                         </h3>
                         <div class="row align-items-center">
@@ -281,12 +278,12 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Test analytics broken down to the topic level so that you can see the difference minuscule topics make. 
+                                    Test analytics broken down to the topic level so that you can see the difference each topic makes.
                                 </p>
                             </span>
                         </h3>
                         <div class="common_greenbadge_tabs">
-                            <div class="row mt-4 align-items-center"
+                            <div class="row mt-4 align-items-center">
                                 <div class="col-12">
                                     <div class="d-flex  color_labels mb-4">
                                         <span style="margin-left: 4px;"><small></small> Correct</span>
