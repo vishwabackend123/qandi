@@ -4074,6 +4074,7 @@ span.proficiency_value {
     /* flex: 1; */
     width: 45%;
     max-width: 45%;
+    padding-right: 20px;
 }
 .performance_chapter_block label b {
     font-weight: 800;

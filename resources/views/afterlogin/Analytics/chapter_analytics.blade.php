@@ -25,7 +25,7 @@
         <div class="accordion performance_chapter_accordion">
             @foreach($chapterList as $list)
             <div class="accordion-item">
-                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                <div class="performance_chapter_block d-md-flex align-items-center">
                     @php
                     $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 35, $end='...');
                     $topicnametitle = $list['chapter_name'];

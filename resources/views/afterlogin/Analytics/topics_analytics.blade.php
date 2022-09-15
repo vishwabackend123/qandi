@@ -6,7 +6,7 @@
         $topicnametitle = $list['topic_name'];
         @endphp
         <li>
-            <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+            <div class="performance_chapter_block d-md-flex align-items-center">
                 <h3><span><img src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span> {{$topicnametitle}}</h3>
                 <label><b>{{round($list['topic_score'])}}%</b> Proficiency</label>
                 <div class="chapter_Perfrom_Graph">
@@ -231,6 +231,7 @@
                         </script>
                     </div>
                 </div>
+                <div class="accordion-header"></div>
             </div>
         </li>
         @endforeach
