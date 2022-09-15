@@ -942,6 +942,8 @@
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
+        width: 220px;}
     .take-fulltest .btn {
     font-size: 14px !important;
     }
