@@ -7803,8 +7803,8 @@ margin-bottom: 12px;
         }
         .adaptiveexamnewwrapper .examRightpanel .borederbot {
             border-bottom: 1px solid rgba(172, 185, 176, 0.14);
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         .adaptiveexamnewwrapper .examRightpanel .text-exambottom-sec {
             margin-top: 35px !important;
@@ -7819,5 +7819,5 @@ margin-bottom: 12px;
             border: 1px solid #56b663;
         }
         .adaptiveexamnewwrapper .examRightpanel .text-examtop-sec{
-            padding-bottom: 40px
+            padding-bottom: 39px
         }
