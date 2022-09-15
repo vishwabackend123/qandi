@@ -34,8 +34,6 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
     @endif
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY"> </script>
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
@@ -52,16 +50,6 @@
     <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'G-5M3C3F04YY',{cookie_flags: 'SameSite=None;'});
-
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
             window.onpopstate = function() {
@@ -78,6 +66,14 @@
             null
         };
     </script>
+    <!-- Google tag (gtag.js) -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=G-2HBNQEQHDQ></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ gtag('config', 'G-2HBNQEQHDQ');
+</script>
    
 </head>
 

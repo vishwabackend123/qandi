@@ -18,9 +18,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     @include('afterlogin.layouts.navbar_header_new')
     <div class="content-wrapper">
         <div class="exam_instruction_wrapper">
-        <div class="mock_inst_text_mock_testmobile mobile_block">
-                    <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
-                </div>
+            <div class="mock_inst_text_mock_testmobile mobile_block">
+                <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
+            </div>
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
@@ -107,7 +107,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
-                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && $test_type=='Live')?'Take Test': 'Practice' }}</a>
+                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</a>
                             </div>
                         </div>
                     </div>

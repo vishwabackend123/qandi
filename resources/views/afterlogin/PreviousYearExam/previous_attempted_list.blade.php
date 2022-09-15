@@ -21,7 +21,7 @@
         @if(!empty($result_data))
         @foreach($result_data as $sche)
         @php
-        $year = date('Y', strtotime($sche->created_at));
+        $year = isset($sche->paper_year) ? $sche->paper_year : '';
         @endphp
         <div class="accordion-item pt-4 compLeteA filter_year_{{$year}}">
             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">

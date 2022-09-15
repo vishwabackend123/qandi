@@ -1145,7 +1145,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1260,7 +1260,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1399,7 +1399,7 @@ $question_type = "Numerical";
         $("#btn_" + quest_id).addClass("border-btn");
 
         $.ajax({
-            url: "{{ route('clearResponse') }}",
+            url: "{{ route('clearResponseMock') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
