@@ -155,6 +155,54 @@ trait CommonTrait
         return [];
     }
 
+    public function allMockQlist($user_id, $question_data, $redis_set)
+    {
+
+
+        if (!empty($user_id) &&  !empty($question_data)) {
+
+            $cacheKey = 'CustomQuestion:mock:' . $user_id;
+            if (Redis::exists($cacheKey)) {
+                if ($redis_set == 'True') {
+                    Redis::del(Redis::keys($cacheKey));
+                    //Redis::del($cacheKey);
+                } else {
+                    $data = Redis::get($cacheKey);
+
+                    return json_decode($data);
+                }
+            }
+            $data = collect($question_data);
+            Redis::set($cacheKey, $data);
+            return $data->all();
+        }
+        return [];
+    }
+
+    public function allPyQlist($user_id, $question_data, $redis_set)
+    {
+
+
+        if (!empty($user_id) &&  !empty($question_data)) {
+
+            $cacheKey = 'CustomQuestion:py:' . $user_id;
+            if (Redis::exists($cacheKey)) {
+                if ($redis_set == 'True') {
+                    Redis::del(Redis::keys($cacheKey));
+                    //Redis::del($cacheKey);
+                } else {
+                    $data = Redis::get($cacheKey);
+
+                    return json_decode($data);
+                }
+            }
+            $data = collect($question_data);
+            Redis::set($cacheKey, $data);
+            return $data->all();
+        }
+        return [];
+    }
+
     public function adaptiveCustomQlist($user_id, $question_data, $redis_set)
     {
         if (!empty($user_id) &&  !empty($question_data)) {
@@ -531,7 +579,7 @@ trait CommonTrait
             $aResponse = json_decode($response_json, true);
             if (isset($aResponse['access_token']) && !empty($aResponse['access_token'])) {
                 Session::put('access_token', json_encode($aResponse));
-                $token=$aResponse['access_token'];
+                $token = $aResponse['access_token'];
             }
         }
 
