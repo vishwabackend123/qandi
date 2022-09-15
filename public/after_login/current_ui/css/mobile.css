@@ -2676,6 +2676,7 @@
     
     .examReviewscreenmob .examLeftpanel ,.examReviewscreenmob .backbtnformobilebox {
         padding: 0px 16px;
+        padding-top: 16px;;
     }
   .examReviewscreenmob  .list-ans {
         height: calc( 100% - 80px);
