@@ -1063,6 +1063,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
+
+            $('#smtBtns .quesBtns').attr("disabled", false);
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
