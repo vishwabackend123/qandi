@@ -3893,7 +3893,7 @@ padding: 20px;
     margin-top: 1rem!important;
 }
 .flexgrow{flex-grow: 1;}
-.test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 209px;height: 44px;font-size: 16px;}
+.test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: inherit;height: 44px;font-size: 16px;}
 .test_analytics_wrapper .dashSubtext{color:#868a95;opacity: 1;}
 .test_analytics_wrapper .subject_score_card .color_labels span b {color: #111;}
 .test_analytics_wrapper .topic_score_lists .topic_score_bar h4 {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}

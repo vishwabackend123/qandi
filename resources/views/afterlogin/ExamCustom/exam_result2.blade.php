@@ -43,7 +43,7 @@
             </svg>
             <p class="tooltipclass">
                 <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                Test analytics broken down to the topic level so that you can see the difference minuscule topics make. 
+                Test analytics broken down to the topic level so that you can see the difference each topic makes. 
             </p>
         </span>
     </h3>

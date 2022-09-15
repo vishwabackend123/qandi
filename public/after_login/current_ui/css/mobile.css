@@ -942,6 +942,8 @@
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
+        width: 220px;}
     .take-fulltest .btn {
     font-size: 14px !important;
     }
@@ -1034,7 +1036,7 @@
         height:auto;
     }
     .exam_instruction_col_four {
-        padding-left: 18px;
+        padding-left: 14px;
         padding-top:30px;
     }
 
@@ -2042,7 +2044,7 @@
         max-height: 100% !important;
     }
     .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {
-        padding: 8px 16px !important;
+        padding: 8px 8px !important;
         height: 44px !important;
     }
 
