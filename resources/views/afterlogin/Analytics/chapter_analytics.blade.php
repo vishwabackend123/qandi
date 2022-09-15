@@ -72,7 +72,62 @@
                                     <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
-                                    <div></div>
+                                    <div class="chapter_Perfrom_Graph">
+                                         <div class="Chapter_Main_Graph">
+                                            <canvas id="chapter2"></canvas>
+                                         </div>
+                                    </div>
+                                    
+                                        <script type="text/javascript">
+                                             var circuference = 360;
+                                            var data = {
+                                                labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
+                                                datasets: [{
+                                                    label: "My First Dataset",
+                                                    data: [300, 50, 100, 40, 10],
+                                                    backgroundColor: [
+                                                        "#34d399",
+                                                        "#fb7686",
+                                                        "#f2f4f7",
+                                                        "#f2f447",
+                                                        "#f2f437",
+                                                    ]
+                                                }]
+                                            };
+                                            var config = {
+                                                type: "doughnut",
+                                                data: data,
+                                                options: {
+                                                    reponsive: true,
+                                                    maintainAspectRatio: false,
+                                                    circumference: circuference,
+                                                    cutout: "80%",
+                                                    borderWidth: 0,
+                                                    borderRadius: function(context, options) {
+                                                        const index = context.dataIndex;
+                                                        let radius = {};
+                                                        if (index == 0) {
+                                                            radius.innerStart = 0;
+                                                            radius.outerStart = 0;
+                                                        }
+                                                        if (index === context.dataset.data.length - 1) {
+                                                            radius.innerEnd = 0;
+                                                            radius.outerEnd = 0;
+                                                        }
+                                                        return radius;
+                                                    },
+                                                    plugins: {
+                                                        title: false,
+                                                        subtitle: false,
+                                                        legend: false,
+                                                        tooltip:false
+                                                        
+                                                    },
+
+                                                }
+                                            };
+                                            var myCharted = new Chart("chapter2", config)
+                                            </script>
                                 </div>
                             </li>
                             <li>
