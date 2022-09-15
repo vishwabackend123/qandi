@@ -4064,16 +4064,11 @@ span.proficiency_value {
     border-bottom-right-radius:0;
 }
 .performance_chapter_accordion .accordion-item .accordion-collapse .accordion-body {
-    padding: 0;
+    padding: 0px;
 }
 .performance_chapter_block h3 {
     font-size: 18px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
     color: #363c4f;
     margin: 0;
     flex: 1;
@@ -4110,6 +4105,24 @@ span.proficiency_value {
     margin-left: 8px;
     font-size: 16px;
 }
+.performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block {
+    height: auto;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e5eaee;
+    padding: 31px 12px 29px 12px;
+}
+.performance_chapter_sublists li {
+    padding: 0 20px;
+}
+.performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_sublists li:last-child .performance_chapter_block {
+    border: 0;
+}
+.performance_chapter_sublists li .performance_chapter_block h3 {font-size: 16px;font-weight: 600;margin-left: 16px;}
+.accordion-item.accordion-open .performance_chapter_block .accordion-header .accordion-button i{transform: rotate(180deg);}
+
+
+
 /********************* Amit End ****************************/
 
 

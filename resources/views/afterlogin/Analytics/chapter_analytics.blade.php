@@ -55,7 +55,7 @@
             @endforeach
         </div> -->
         
-        <div class="accordion performance_chapter_accordion" id="accordionChapter">
+        <div class="accordion performance_chapter_accordion">
             <div class="accordion-item">
                 <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
                     <h3>Units and Dimentions</h3>
@@ -67,9 +67,34 @@
                         </span>
                     </div>
                 </div>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionChapter">
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                     <div class="accordion-body">
-                        amitbhoj
+                        <ul class="performance_chapter_sublists m-0">
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -84,9 +109,31 @@
                         </span>
                     </div>
                 </div>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionChapter">
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                     <div class="accordion-body">
-                        amitbhoj
+                        <ul class="performance_chapter_sublists">
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                    <h3>Complex Numbers</h3>
+                                    <label><b>34%</b> Proficiency</label>
+                                    <div></div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -96,9 +143,8 @@
 
 
 <script>
-
     $(".accordion-header").click(function(){
         $(this).parents(".accordion-item").toggleClass("accordion-open");
-    });
-
+        // $(this).children().toggleHTML('View Topics','Hide Topics');
+    }); 
 </script>   
