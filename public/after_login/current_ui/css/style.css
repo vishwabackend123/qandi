@@ -5092,6 +5092,15 @@ justify-content: space-between;}
                 border: 0px;}
                 .customDropdown1.active1 .options{z-index: 1!important;}
                 .backBtn a span{margin-top: 5px;}
+                .topicHeadingNew{ font-size: 20px;
+                    font-weight: 800;color:#1f1f1f;
+                    line-height: 1.6;}
+                    .KnowledgeNewBar .cotogaty_right_text{  font-size: 16px;
+                        font-weight: 500;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.6;}
+                       .chapterlistTop{padding:32px 0px 21px;} 
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
