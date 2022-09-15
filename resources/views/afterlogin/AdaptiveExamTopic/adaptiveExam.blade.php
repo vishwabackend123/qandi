@@ -1141,6 +1141,11 @@ $question_type = "Numerical";
                 q_submit_time: q_submit_time
             },
             success: function(response_data) {
+                $("#btn_" + question_id).removeClass("pink-btn");
+                $("#btn_" + question_id).removeClass("blue-btn");
+                $("#btn_" + question_id).removeClass("border-btn");
+
+                updateCountValue(question_id, 'saveAns');
                 return true;
             },
         });
@@ -1213,9 +1218,6 @@ $question_type = "Numerical";
         }
 
 
-        $("#btn_" + quest_id).addClass("btn-light");
-        $("#btn_" + quest_id).removeClass("btn-light-green");
-        $("#btn_" + quest_id).removeClass("btn-secondary");
 
         $.ajax({
             url: "{{ route('adaptiveClearResponse') }}",
@@ -1228,8 +1230,7 @@ $question_type = "Numerical";
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-                    $("#btn_" + quest_id).find('i').remove();
-                    $("#btn_" + quest_id).html(qNo);
+
                 }
                 checkResponse(quest_id);
             },
