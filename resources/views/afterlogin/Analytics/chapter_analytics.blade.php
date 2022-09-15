@@ -524,7 +524,7 @@
                                             </script>
                                         </div>
                                     </div>  
-                                    
+                                    <div class="accordion-header"> </div>
                                 </div>
                             </li>
                             <li>
@@ -533,6 +533,7 @@
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
                                 </div>
+                                <div class="accordion-header"> </div>
                             </li>
                             
                         </ul>
@@ -558,6 +559,7 @@
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
+                                    <div class="accordion-header"> </div>
                                 </div>
                             </li>
                             <li>
@@ -565,6 +567,7 @@
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
+                                    <div class="accordion-header"> </div>
                                 </div>
                             </li>
                             <li>
@@ -572,6 +575,7 @@
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
+                                    <div class="accordion-header"> </div>
                                 </div>
                             </li>
                         </ul>
