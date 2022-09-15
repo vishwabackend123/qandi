@@ -54,7 +54,7 @@
         
         <div class="accordion performance_chapter_accordion">
             <div class="accordion-item">
-                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                <div class="performance_chapter_block d-md-flex align-items-center ">
                     <h3>Units and Dimentions</h3>
                     <label><b>80%</b> Proficiency</label>
                     <div class="chapter_Perfrom_Graph">
@@ -291,7 +291,7 @@
                     <div class="accordion-body">
                         <ul class="performance_chapter_sublists m-0">
                             <li>
-                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                <div class="performance_chapter_block d-md-flex align-items-center ">
                                     <h3><span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span> Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div class="chapter_Perfrom_Graph">
@@ -524,13 +524,16 @@
                                             </script>
                                         </div>
                                     </div>  
+                                    <div class="accordion-header" > </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                <div class="performance_chapter_block d-md-flex align-items-center ">
                                     <h3> <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
+                                    <div class="accordion-header" > </div>
+
                                 </div>
                             </li>
                             
@@ -539,7 +542,7 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                <div class="performance_chapter_block d-md-flex align-items-center ">
                     <h3>Complex Numbers</h3>
                     <label><b>34%</b> Proficiency</label>
                     <div></div>
@@ -553,21 +556,21 @@
                     <div class="accordion-body">
                         <ul class="performance_chapter_sublists">
                             <li>
-                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                <div class="performance_chapter_block d-md-flex align-items-center ">
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
                                 </div>
                             </li>
                             <li>
-                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                <div class="performance_chapter_block d-md-flex align-items-center ">
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
                                 </div>
                             </li>
                             <li>
-                                <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
+                                <div class="performance_chapter_block d-md-flex align-items-center ">
                                     <h3>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
