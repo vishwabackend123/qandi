@@ -524,7 +524,7 @@
                                             </script>
                                         </div>
                                     </div>  
-                                    <div class="accordion-header" > </div>
+                                    
                                 </div>
                             </li>
                             <li>
@@ -532,8 +532,6 @@
                                     <h3> <span><img  src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span>Complex Numbers</h3>
                                     <label><b>34%</b> Proficiency</label>
                                     <div></div>
-                                    <div class="accordion-header" > </div>
-
                                 </div>
                             </li>
                             
