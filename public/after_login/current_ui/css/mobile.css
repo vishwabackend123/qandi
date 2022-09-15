@@ -2762,6 +2762,7 @@
         .KnowledgeNewBar .cotogaty_right_text{font-size: 14px;margin-bottom:8px;}
         .topicHeadingNew{font-size:16px;margin-bottom:12px;}
         .chapter_profici_nav__right_contant{padding-bottom:10px;}
+        .accordion-header{min-width:auto;}
 
 }
 
