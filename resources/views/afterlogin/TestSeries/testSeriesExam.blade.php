@@ -998,11 +998,12 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_question/') }}/" + question_id;
+        url = "{{ url('next_question_ts/') }}/" + question_id;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                series_type: "{{$exam_mode}}"
             },
             success: function(result) {
                 clearInterval(ctimer);
@@ -1147,13 +1148,14 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswerProfiling') }}",
+            url: "{{ route('saveAnswerTs') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                series_type: "{{$exam_mode}}"
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1254,13 +1256,14 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswerProfiling') }}",
+            url: "{{ route('saveAnswerTs') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                series_type: "{{$exam_mode}}"
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1361,12 +1364,13 @@ $question_type = "Numerical";
         $("#btn_" + quest_id).removeClass("blue-btn");
 
         $.ajax({
-            url: "{{ route('clearResponseProfiling') }}",
+            url: "{{ route('clearResponseTs') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                series_type: "{{$exam_mode}}"
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1412,11 +1416,12 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_subject_question/') }}/" + subject_id;
+        url = "{{ url('next_subject_question_ts/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                series_type: "{{$exam_mode}}"
             },
             success: function(result) {
                 clearInterval(ctimer);

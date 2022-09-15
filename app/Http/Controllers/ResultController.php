@@ -48,6 +48,7 @@ class ResultController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
             $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
             $total_marks = isset($request->total_marks) ? $request->total_marks : '';
             $submit_time = isset($request->submit_time) ? (string)gmdate('H:i:s', $request->submit_time) : '00:00:00';
@@ -68,8 +69,26 @@ class ResultController extends Controller
             $category = isset($request->category) ? $request->category : "";
             /* end parameter for dailyTaskExam result */
 
+            if ($test_type == 'Mocktest') {
+                $redis_json = Redis::get('custom_answer_time_mock' . $user_id);
+            } elseif ($test_type == 'Profiling') {
+                $redis_json = Redis::get('custom_answer_time_full' . $user_id);
+            } elseif ($test_type == 'PreviousYear') {
+                $redis_json = Redis::get('custom_answer_time_py' . $user_id);
+            } elseif ($test_type == 'Test-Series') {
+                if ($exam_mode == 'Open') {
+                    $redis_json = Redis::get('custom_answer_time_ts' . $user_id);
+                } else {
+                    $redis_json = Redis::get('custom_answer_time_tsl' . $user_id);
+                }
+            } elseif ($tasktype == 'daily') {
 
-            $redis_json = Redis::get('custom_answer_time_' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_task' . $user_id);
+            } else {
+                //custom subject exam
+                $redis_json = Redis::get('custom_answer_time_' . $user_id);
+            }
+
 
             $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
 

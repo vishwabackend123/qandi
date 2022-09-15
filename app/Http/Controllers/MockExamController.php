@@ -43,8 +43,8 @@ class MockExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            if (Redis::exists('custom_answer_time_' . $user_id)) {
-                Redis::del(Redis::keys('custom_answer_time_' . $user_id));
+            if (Redis::exists('custom_answer_time_mock' . $user_id)) {
+                Redis::del(Redis::keys('custom_answer_time_mock' . $user_id));
             }
 
             $exam_name = 'Mock Test';
@@ -172,7 +172,7 @@ class MockExamController extends Controller
 
             $aQuestions_list = $aQuestionslist->values()->all();
 
-            $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
+            $allQuestionDetails = $this->allMockQlist($user_id, $allQuestions->all(), $redis_set);
 
             $keys = $allQuestions->keys('question_id')->all();
 
@@ -234,7 +234,7 @@ class MockExamController extends Controller
 
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                Redis::set('custom_answer_time_mock' . $user_id, json_encode($redis_data));
 
                 $exam_url = route('mockExam');
 
@@ -272,7 +272,7 @@ class MockExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
-            $cacheKey = 'CustomQuestion:all:' . $user_id;
+            $cacheKey = 'CustomQuestion:mock:' . $user_id;
 
             $redis_result = Redis::get($cacheKey);
             if (isset($redis_result) && !empty($redis_result)) :
@@ -335,7 +335,7 @@ class MockExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-            $session_result = Redis::get('custom_answer_time_' . $user_id);
+            $session_result = Redis::get('custom_answer_time_mock' . $user_id);
             $sessionResult = json_decode($session_result);
 
 
@@ -372,7 +372,7 @@ class MockExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'CustomQuestion:all:' . $user_id;
+            $cacheKey = 'CustomQuestion:mock:' . $user_id;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -448,7 +448,7 @@ class MockExamController extends Controller
                 $option_data[] = '';
             }
 
-            $session_result = Redis::get('custom_answer_time_' . $user_id);
+            $session_result = Redis::get('custom_answer_time_mock' . $user_id);
             $sessionResult = json_decode($session_result);
 
             $keyactSub = array_search($que_sub_id, $sessionResult->aSubjectIds);
@@ -468,13 +468,13 @@ class MockExamController extends Controller
         }
     }
     /**
-     * Save Answer
+     * saveAnswerMock
      *
      * @param Request $request recieve the body request data
      *
      * @return void
      */
-    public function saveAnswer(Request $request)
+    public function saveAnswerMock(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -488,7 +488,9 @@ class MockExamController extends Controller
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
 
-            $redis_result = Redis::get('custom_answer_time_' . $user_id);
+
+
+            $redis_result = Redis::get('custom_answer_time_mock' . $user_id);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -499,6 +501,7 @@ class MockExamController extends Controller
                 $retrive_time_sec = $redisArray['taken_time_sec'];
 
                 $sectionData = isset($redisArray['section_data']) ? $redisArray['section_data'] : [];
+
                 $sectionData = collect($sectionData);
                 $limit_data = $sectionData->where("id", $section_id)->first();
                 $max_attempt_limit = isset($limit_data['num_of_ques_tobeattempted']) ? $limit_data['num_of_ques_tobeattempted'] : 0;
@@ -515,11 +518,11 @@ class MockExamController extends Controller
 
 
 
-                if (($sec_q_attmpt_count >= $max_attempt_limit)) {
+                if (($sec_q_attmpt_count >= $max_attempt_limit) && $max_attempt_limit > 0) {
                     $response['status'] = 400;
-                    $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
+                    /*   $response['sec_q_attmpt_count'] = $sec_q_attmpt_count; */
 
-                    $response['message'] = "This section allows a maximum of " . $max_attempt_limit . "question attempts.";
+                    $response['message'] = "This section allows a maximum of " . $max_attempt_limit . " question attempts.";
                     return json_encode($response);
                 }
 
@@ -556,7 +559,7 @@ class MockExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_mock' . $user_id, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
@@ -566,6 +569,7 @@ class MockExamController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
+            //  dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -586,7 +590,7 @@ class MockExamController extends Controller
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
 
-            $redis_result = Redis::get('custom_answer_time_' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_mock' . $user_id);
 
 
             if (!empty($redis_result)) {
@@ -612,7 +616,7 @@ class MockExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_mock' . $user_id, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
