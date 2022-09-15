@@ -917,7 +917,7 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer() {
-        $('#smtBtns .quesBtns').attr("disabled", false);
+        $('#smtBtns .quesBtns').attr("disabled", true);
         var question_id = $("#current_question").val();
         var qNo = $("#current_question_no").val();
 
