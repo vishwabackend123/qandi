@@ -1,3 +1,8 @@
+<div class="spinnerblock">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
 <div class="chapter_profici_nav__right_contant mb-0 chapterlistTop">
     <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb chapter_breadcrumb">
@@ -29,6 +34,35 @@
                     @php
                     $topicname = Illuminate\Support\Str::limit($list['chapter_name'], 35, $end='...');
                     $topicnametitle = $list['chapter_name'];
+                    $correct_score = 0;
+                    $incorrect = 0;
+                    $attempted = 0;
+                    $not_attempted = 0;
+                    $color_code='';
+                    if($list['A_ques_attempted'] < 40)
+                    {
+                        $correct_score=$list['A_ques_attempted'];
+                        $incorrect =40-$list['A_ques_attempted'];
+                        $attempted = 35;
+                        $not_attempted = 25;
+                        $color_code= "#f66c6c";
+                        
+                    }
+                    if($list['A_ques_attempted'] >= 40 && $list['A_ques_attempted'] <= 75)
+                    {
+                        $correct_score=$list['A_ques_attempted'];
+                        $attempted = 75-$list['A_ques_attempted'];
+                        $not_attempted = 25;
+                        $color_code= "#f6c86d";
+                        
+                    }
+                    if($list['A_ques_attempted'] > 75)
+                    {
+                        $correct_score=$list['A_ques_attempted'];
+                        $not_attempted = 100-$list['A_ques_attempted'];
+                        $color_code= "#04c894";
+                        
+                    }
                     @endphp
                     <h3>{{$topicnametitle}}</h3>
                     <label><b>{{round($list['chapter_score'])}}%</b> Proficiency</label>
@@ -42,9 +76,9 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [10, 10, 10, 10],
+                                    data: [<?php echo $correct_score; ?>, <?php echo $incorrect; ?>, <?php echo $attempted; ?>, <?php echo $not_attempted; ?>],
                                     backgroundColor: [
-                                        "#04c894",
+                                        "<?php echo $color_code; ?>",
                                         "#fcdbdb",
                                         "#fcf2de",
                                         "#d7efe9",
@@ -87,6 +121,37 @@
 
                             </script>
                         </div>
+                        @php
+                        $correct_score = 0;
+                        $incorrect = 0;
+                        $attempted = 0;
+                        $not_attempted = 0;
+                        $color_code='';
+                        if($list['E_ques_attempted'] < 40)
+                        {
+                            $correct_score=$list['E_ques_attempted'];
+                            $incorrect =40-$list['E_ques_attempted'];
+                            $attempted = 35;
+                            $not_attempted = 25;
+                            $color_code= "#f66c6c";
+                            
+                        }
+                        if($list['E_ques_attempted'] >= 40 && $list['E_ques_attempted'] <= 75)
+                        {
+                            $correct_score=$list['E_ques_attempted'];
+                            $attempted = 75-$list['E_ques_attempted'];
+                            $not_attempted = 25;
+                            $color_code= "#f6c86d";
+                            
+                        }
+                        if($list['E_ques_attempted'] > 75)
+                        {
+                            $correct_score=$list['E_ques_attempted'];
+                            $not_attempted = 100-$list['E_ques_attempted'];
+                            $color_code= "#04c894";
+                            
+                        }
+                        @endphp
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_2_{{$list['chapter_id']}}"></canvas>
                             <span>E</span>
@@ -96,9 +161,9 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [0, 0, 0, 0],
+                                    data: [<?php echo $correct_score; ?>, <?php echo $incorrect; ?>, <?php echo $attempted; ?>, <?php echo $not_attempted; ?>],
                                     backgroundColor: [
-                                        "#f6c86d",
+                                        "<?php echo $color_code; ?>",
                                         "#fcdbdb",
                                         "#fcf2de",
                                         "#d7efe9",
@@ -141,6 +206,37 @@
 
                             </script>
                         </div>
+                        @php
+                        $correct_score = 0;
+                        $incorrect = 0;
+                        $attempted = 0;
+                        $not_attempted = 0;
+                        $color_code='';
+                        if($list['C_ques_attempted'] < 40)
+                        {
+                            $correct_score=$list['C_ques_attempted'];
+                            $incorrect =40-$list['C_ques_attempted'];
+                            $attempted = 35;
+                            $not_attempted = 25;
+                            $color_code= "#f66c6c";
+                            
+                        }
+                        if($list['C_ques_attempted'] >= 40 && $list['C_ques_attempted'] <= 75)
+                        {
+                            $correct_score=$list['C_ques_attempted'];
+                            $attempted = 75-$list['C_ques_attempted'];
+                            $not_attempted = 25;
+                            $color_code= "#f6c86d";
+                            
+                        }
+                        if($list['C_ques_attempted'] > 75)
+                        {
+                            $correct_score=$list['C_ques_attempted'];
+                            $not_attempted = 100-$list['C_ques_attempted'];
+                            $color_code= "#04c894";
+                            
+                        }
+                        @endphp
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_3_{{$list['chapter_id']}}"></canvas>
                             <span>C</span>
@@ -150,13 +246,10 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [0, 0, 0, 0],
+                                   data: [<?php echo $correct_score; ?>, <?php echo $incorrect; ?>, <?php echo $attempted; ?>, <?php echo $not_attempted; ?>],
                                     backgroundColor: [
-                                        "#f66c6c",
-                                        // "#04c894", green color
-                                        // "#f6c86d", yellow color
+                                        "<?php echo $color_code; ?>",
                                         "#fcdbdb",
-
                                         "#fcf2de",
                                         "#d7efe9",
                                     ]
@@ -198,6 +291,37 @@
 
                             </script>
                         </div>
+                        @php                    
+                        $correct_score = 0;
+                        $incorrect = 0;
+                        $attempted = 0;
+                        $not_attempted = 0;
+                        $color_code='';
+                        if($list['K_ques_attempted'] < 40)
+                        {
+                            $correct_score=$list['K_ques_attempted'];
+                            $incorrect =40-$list['K_ques_attempted'];
+                            $attempted = 35;
+                            $not_attempted = 25;
+                            $color_code= "#f66c6c";
+                            
+                        }
+                        if($list['K_ques_attempted'] >= 40 && $list['K_ques_attempted'] <= 75)
+                        {
+                            $correct_score=$list['K_ques_attempted'];
+                            $attempted = 75-$list['K_ques_attempted'];
+                            $not_attempted = 25;
+                            $color_code= "#f6c86d";
+                            
+                        }
+                        if($list['K_ques_attempted'] > 75)
+                        {
+                            $correct_score=$list['K_ques_attempted'];
+                            $not_attempted = 100-$list['K_ques_attempted'];
+                            $color_code= "#04c894";
+                            
+                        }
+                        @endphp
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_4_{{$list['chapter_id']}}"></canvas>
                             <span>K</span>
@@ -207,13 +331,10 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [0, 0, 0, 0],
+                                    data: [<?php echo $correct_score; ?>, <?php echo $incorrect; ?>, <?php echo $attempted; ?>, <?php echo $not_attempted; ?>],
                                     backgroundColor: [
-                                        "#f66c6c",
-                                        // "#04c894", green color
-                                        // "#f6c86d", yellow color
+                                        "<?php echo $color_code; ?>",
                                         "#fcdbdb",
-
                                         "#fcf2de",
                                         "#d7efe9",
                                     ]
@@ -258,7 +379,7 @@
                     </div>
                     <div class="accordion-header" id="headingOne">
                         <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne_{{$list['chapter_id']}}" aria-expanded="false" aria-controls="collapseOne" onclick="show_topic_list({{$list['chapter_id']}})">
-                            View Topics <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span id="topic_title_{{$list['chapter_id']}}">View Topics</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </span>
                     </div>
                 </div>
@@ -270,11 +391,21 @@
     </div>
 </div>
 <script>
+$('.spinnerblock').hide();
 $(".accordion-header").click(function() {
     $(this).parents(".accordion-item").toggleClass("accordion-open");
 });
 
 function show_topic_list(chapter_id) {
+    $('.spinnerblock').show();
+    var title_text=$('#topic_title_'+chapter_id).text();
+    if (title_text == 'View Topics') {
+        $('#topic_title_'+chapter_id).text('Hide Topics');
+    }
+    if (title_text == 'Hide Topics') {
+        $('#topic_title_'+chapter_id).text('View Topics');
+    }
+    console.log(title_text);
     url = "{{ url('topic-analytics/') }}/" + chapter_id;
     $.ajax({
         url: url,
@@ -286,9 +417,12 @@ function show_topic_list(chapter_id) {
 
         },
         success: function(result) {
+            $('.spinnerblock').hide();
             $("#collapseOne_" + chapter_id).html(result.html);
         },
-        error: function(data, errorThrown) {}
+        error: function(data, errorThrown) {
+            $('.spinnerblock').hide();
+        }
     });
 }
 
