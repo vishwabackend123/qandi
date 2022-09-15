@@ -1,12 +1,17 @@
 <div class="accordion-body">
     <ul class="performance_chapter_sublists m-0">
+        @foreach($topicList as $list)
+        @php
+        $topicname = Illuminate\Support\Str::limit($list['topic_name'], 35, $end='...');
+        $topicnametitle = $list['topic_name'];
+        @endphp
         <li>
             <div class="performance_chapter_block d-md-flex align-items-center justify-content-between">
-                <h3><span><img src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span> Complex Numbers</h3>
-                <label><b>34%</b> Proficiency</label>
+                <h3><span><img src="{{URL::asset('public/after_login/current_ui/images/dot.svg')}}"></span> {{$topicnametitle}}</h3>
+                <label><b>{{round($list['topic_score'])}}%</b> Proficiency</label>
                 <div class="chapter_Perfrom_Graph">
                     <div class="Chapter_Main_Graph">
-                        <canvas id="chapterPerformance_5"></canvas>
+                        <canvas id="chapterPerformance_5_{{$list['id']}}"></canvas>
                         <span>A</span>
                         <script type="text/javascript">
                         var circuference = 360;
@@ -14,13 +19,10 @@
                             labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                             datasets: [{
                                 label: "My First Dataset",
-                                data: [30, 20, 10, 5],
+                                data: [0, 0, 0, 0],
                                 backgroundColor: [
                                     "#f66c6c",
-                                    // "#04c894", green color
-                                    // "#f6c86d", yellow color
                                     "#fcdbdb",
-
                                     "#fcf2de",
                                     "#d7efe9",
 
@@ -59,12 +61,12 @@
 
                             }
                         };
-                        var myCharted = new Chart("chapterPerformance_5", config)
+                        var myCharted = new Chart("chapterPerformance_5_{{$list['id']}}", config)
 
                         </script>
                     </div>
                     <div class="Chapter_Main_Graph">
-                        <canvas id="chapterPerformance_6"></canvas>
+                        <canvas id="chapterPerformance_6_{{$list['id']}}"></canvas>
                         <span>E</span>
                         <script type="text/javascript">
                         var circuference = 360;
@@ -72,13 +74,10 @@
                             labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                             datasets: [{
                                 label: "My First Dataset",
-                                data: [30, 20, 10, 5],
+                                data: [0, 0, 0, 0],
                                 backgroundColor: [
                                     "#f66c6c",
-                                    // "#04c894", green color
-                                    // "#f6c86d", yellow color
                                     "#fcdbdb",
-
                                     "#fcf2de",
                                     "#d7efe9",
 
@@ -117,12 +116,12 @@
 
                             }
                         };
-                        var myCharted = new Chart("chapterPerformance_6", config)
+                        var myCharted = new Chart("chapterPerformance_6_{{$list['id']}}", config)
 
                         </script>
                     </div>
                     <div class="Chapter_Main_Graph">
-                        <canvas id="chapterPerformance_7"></canvas>
+                        <canvas id="chapterPerformance_7_{{$list['id']}}"></canvas>
                         <span>C</span>
                         <script type="text/javascript">
                         var circuference = 360;
@@ -130,13 +129,10 @@
                             labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                             datasets: [{
                                 label: "My First Dataset",
-                                data: [30, 20, 10, 5],
+                                data: [0, 0, 0, 0],
                                 backgroundColor: [
                                     "#f66c6c",
-                                    // "#04c894", green color
-                                    // "#f6c86d", yellow color
                                     "#fcdbdb",
-
                                     "#fcf2de",
                                     "#d7efe9",
 
@@ -175,12 +171,12 @@
 
                             }
                         };
-                        var myCharted = new Chart("chapterPerformance_7", config)
+                        var myCharted = new Chart("chapterPerformance_7_{{$list['id']}}", config)
 
                         </script>
                     </div>
                     <div class="Chapter_Main_Graph">
-                        <canvas id="chapterPerformance_8"></canvas>
+                        <canvas id="chapterPerformance_8_{{$list['id']}}"></canvas>
                         <span>K</span>
                         <script type="text/javascript">
                         var circuference = 360;
@@ -188,13 +184,10 @@
                             labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                             datasets: [{
                                 label: "My First Dataset",
-                                data: [30, 20, 10, 5],
+                                data: [0, 0, 0, 0],
                                 backgroundColor: [
                                     "#f66c6c",
-                                    // "#04c894", green color
-                                    // "#f6c86d", yellow color
                                     "#fcdbdb",
-
                                     "#fcf2de",
                                     "#d7efe9",
 
@@ -233,12 +226,13 @@
 
                             }
                         };
-                        var myCharted = new Chart("chapterPerformance_8", config)
+                        var myCharted = new Chart("chapterPerformance_8_{{$list['id']}}", config)
 
                         </script>
                     </div>
                 </div>
             </div>
         </li>
+        @endforeach
     </ul>
 </div>

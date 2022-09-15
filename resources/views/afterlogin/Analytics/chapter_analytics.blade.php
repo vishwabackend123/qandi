@@ -42,11 +42,9 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [80, 0, 0, 5],
+                                    data: [10, 10, 10, 10],
                                     backgroundColor: [
-                                        // "#f66c6c",
                                         "#04c894",
-                                        // "#f6c86d", yellow color
                                         "#fcdbdb",
                                         "#fcf2de",
                                         "#d7efe9",
@@ -98,10 +96,8 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [30, 0, 10, 5],
+                                    data: [0, 0, 0, 0],
                                     backgroundColor: [
-                                        // "#f66c6c",
-                                        // "#04c894", green color
                                         "#f6c86d",
                                         "#fcdbdb",
                                         "#fcf2de",
@@ -154,7 +150,7 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [30, 20, 10, 5],
+                                    data: [0, 0, 0, 0],
                                     backgroundColor: [
                                         "#f66c6c",
                                         // "#04c894", green color
@@ -211,7 +207,7 @@
                                 labels: ["Correct", "Incorrect", "Not Attempted", "Not Attempted2", "Not Attempted3"],
                                 datasets: [{
                                     label: "My First Dataset",
-                                    data: [30, 20, 10, 5],
+                                    data: [0, 0, 0, 0],
                                     backgroundColor: [
                                         "#f66c6c",
                                         // "#04c894", green color
