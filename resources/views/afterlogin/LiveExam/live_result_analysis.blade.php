@@ -63,10 +63,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Based on your current test, your score indicates your readiness. <br>Score = (Total Number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) 
-
-
-</p>
+                                    This score indicates your readiness, based on your most recent test. <br> Score = (Total number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) </p>
                             </span>
                         </h3>
                         <div class="row align-items-center">
