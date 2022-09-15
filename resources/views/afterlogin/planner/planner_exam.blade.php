@@ -212,7 +212,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
                     </div>
-                    <div class="btnbottom hideonmobile">
+                    <div class="btnbottom hideonmobile" id="smtBtns">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
@@ -917,6 +917,7 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer() {
+        $('#smtBtns .quesBtns').attr("disabled", false);
         var question_id = $("#current_question").val();
         var qNo = $("#current_question_no").val();
 
@@ -990,12 +991,15 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
+                    $('#smtBtns .quesBtns').attr("disabled", false);
 
                     $("#btn_" + question_id).removeClass("pink-btn");
                     $("#btn_" + question_id).removeClass("blue-btn");
                     $("#btn_" + question_id).removeClass("border-btn");
 
                     updateCountValue(question_id, 'saveAns');
+                } else {
+                    $('#smtBtns .quesBtns').attr("disabled", false);
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
