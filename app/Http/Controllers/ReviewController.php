@@ -212,6 +212,7 @@ class ReviewController extends Controller
                     }
                 }
 
+
                 $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true), 'subject_id');
 
                 return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name', 'all_question_array', 'result_id'));
