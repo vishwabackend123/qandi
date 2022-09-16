@@ -970,6 +970,9 @@
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .headerRight span.headericon, .headerRight span.usertext {
+        margin: 0px 5px;
+    }
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
         width: 220px;}
     .take-fulltest .btn {
