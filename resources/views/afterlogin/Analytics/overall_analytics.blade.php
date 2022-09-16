@@ -615,7 +615,7 @@
             maintainAspectRatio: false,
             elements: {
                 point: {
-                    radius: 0
+                    radius: 4
                 }
             },
             plugins: {
