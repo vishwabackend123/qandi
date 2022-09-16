@@ -343,6 +343,16 @@
         .view_detail_text_colleps {
             flex-basis: 110px;
         }
+        .question-attempted-block {
+            padding-right: 10px;
+            margin-right: 26px;
+        }
+        .time-date-block .commontext {
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
+            width: 220px;}
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
