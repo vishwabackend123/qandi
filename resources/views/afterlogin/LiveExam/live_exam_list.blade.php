@@ -54,7 +54,7 @@
                                         <div class="live_exam_red_dot me-3"></div>
                                         <h3>{{$schedule_list[0]->exam_name}}</h3>
                                     </div>
-                                    @if(($startDate <= $now && $now <=$endDate)) <a class="btn btn-common-green mock_test_take_test_btn mobile_hide" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take Test
+                                    @if(($startDate <= $now && $now <=$endDate)) <a class="btn btn-common-green mock_test_take_test_btn mobile_hide tab_hide" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take Test
                                         </a>
                                         @endif
                                 </div>

@@ -368,6 +368,20 @@
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
+    .tab_hide {
+        display: none;
+    }
+    .tab_show{
+        display: block!important;
+    }
+    .analytics_first_groph_box
+    {
+        margin-bottom: 20px;
+    }
+    .aeck_commontab .nav-tabs .nav-link
+    {
+        margin-right: 40px!important;
+    }
     .owl-stage
     {
         padding-top: 10px;
@@ -964,6 +978,9 @@
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .headerRight span.headericon, .headerRight span.usertext {
+        margin: 0px 5px;
+    }
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
         width: 220px;}
     .take-fulltest .btn {
