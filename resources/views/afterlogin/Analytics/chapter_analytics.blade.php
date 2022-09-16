@@ -400,30 +400,32 @@ function show_topic_list(chapter_id) {
     $('.spinnerblock').show();
     var title_text=$('#topic_title_'+chapter_id).text();
     if (title_text == 'View Topics') {
+
         $('#topic_title_'+chapter_id).text('Hide Topics');
+        url = "{{ url('topic-analytics/') }}/" + chapter_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+
+            },
+            beforeSend: function() {
+
+            },
+            success: function(result) {
+                $('.spinnerblock').hide();
+                $("#collapseOne_" + chapter_id).html(result.html);
+            },
+            error: function(data, errorThrown) {
+                $('.spinnerblock').hide();
+            }
+        });
     }
     if (title_text == 'Hide Topics') {
         $('#topic_title_'+chapter_id).text('View Topics');
+        $('.spinnerblock').hide();
     }
-    console.log(title_text);
-    url = "{{ url('topic-analytics/') }}/" + chapter_id;
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-
-        },
-        beforeSend: function() {
-
-        },
-        success: function(result) {
-            $('.spinnerblock').hide();
-            $("#collapseOne_" + chapter_id).html(result.html);
-        },
-        error: function(data, errorThrown) {
-            $('.spinnerblock').hide();
-        }
-    });
+    
 }
 
 </script>
