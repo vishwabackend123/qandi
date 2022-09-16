@@ -396,6 +396,12 @@
                 margin: 0 5px;
             }
 }
+@media (min-width:991px){
+    .desktop_hide_performence_analytics
+    {
+        display:none;
+    }
+}
 @media screen and (max-width:991px) and (min-width:768px) {
     .tab_hide {
         display: none;

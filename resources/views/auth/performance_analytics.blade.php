@@ -49,7 +49,7 @@ $full_body_attempt = Session::get('full_body_attempt');
             </ul>
         </div>
         @if($userData->email_verified=='No')
-        <div class="verificationBox">
+        <div class="verificationBox tab_show_performence_analytics tab_show">
             <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
             <span class="mt-2" id="email_success"></span>
@@ -57,14 +57,14 @@ $full_body_attempt = Session::get('full_body_attempt');
         @endif
     </div>
     <div class="selectPlan subscriptionsRightpannel">
-        <span class="tab_show_performence_analytics tab_show"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
+        <span class="tab_show_performence_analytics tab_show desktop_hide_performence_analytics"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
             <h3 class="pageCountBox">Full Body Scan
             <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
             <p>To assess your preparedness</p>
         </div>
-        <div class="verificationBox tab_show_performence_analytics tab_show mt-0">
+        <div class="verificationBox mt-0 desktop_hide_performence_analytics">
             <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
         </div>
