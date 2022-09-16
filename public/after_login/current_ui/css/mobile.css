@@ -418,6 +418,7 @@
         position: inherit!important;
         max-width: 100%!important;
         display: flex!important;
+        margin-top: 15px;
     }
     .analytics_first_groph_box
     {
