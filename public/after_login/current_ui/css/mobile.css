@@ -353,6 +353,9 @@
         }
         .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
             width: 220px;}
+            .headerRight span.headericon {
+                margin: 0 5px;
+            }
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
