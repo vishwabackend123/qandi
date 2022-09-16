@@ -217,9 +217,11 @@ $question_type = "Numerical";
     /*  $("#myTab .all_div").removeClass("active");
      $("#myTab .class_" + subject_id).addClass("active"); */
 
-
-    $('#exam_content_sec').append(
-        '<button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_' + question_id + '" onclick="qnext(' + question_id + ')">' + curr_ques_no + '</button>');
+    var nextQidDiv = document.getElementById('btn_' + question_id);
+    if (nextQidDiv === null) {
+        $('#exam_content_sec').append(
+            '<button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_' + question_id + '" onclick="qnext(' + question_id + ')">' + curr_ques_no + '</button>');
+    }
 </script>
 <!-- check size of screen -->
 <script>
