@@ -580,7 +580,7 @@ class MockExamController extends Controller
      *
      * @return void
      */
-    public function clearResponse(Request $request)
+    public function clearResponseMock(Request $request)
     {
         try {
             $userData = Session::get('user_data');
