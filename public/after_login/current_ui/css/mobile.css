@@ -1871,8 +1871,8 @@
     .subjextscoreLeft h4 {
         font-size: 24px;
     }
-    .commonWhiteBox{padding:20px}
-    .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:4px;}
+    .commonWhiteBox{padding:20px} 
+    .commonblockDash.myqTodayPannel .commonWhiteBox{padding-bottom:20px;}
     .myqTodayGraphSec{padding-top:30px;padding-bottom:20px;}
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
