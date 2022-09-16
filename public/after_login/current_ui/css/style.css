@@ -2328,7 +2328,7 @@ a.btn-common-attempted svg {
     font-weight: 800;
     color: #56b663;
 }
-.reviewScreenright .bck-btn{border-radius:0px;}
+.reviewScreenright .bck-btn{border-radius:0px;color: #56b663!important;}
 .bck-btn  span.bckbtninner{border: solid 1px #56b663;    padding: 5px 10px;
     border-radius: 8px;
     width: 60%;display: inline-block;
@@ -4082,14 +4082,16 @@ span.proficiency_value {
     font-weight: 800;
     color: #1f1f1f;
     margin-right: 10px;
+    min-width:45px;display:inline-block;
 }
 .performance_chapter_block label {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     /* flex: 1; */
-    min-width: 145px;
+    min-width: 153px;
 }
+.performance_chapter_sublists .performance_chapter_block label b{margin-left:-4px;}
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
