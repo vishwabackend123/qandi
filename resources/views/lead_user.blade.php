@@ -254,7 +254,7 @@ $('.trail').click(function() {
 });
 
 function isValidEmail(email) {
-    return /^[a-z0-9]+([-._][a-z0-9]+)*@([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,4}$/.test(email) &&
+    return /^([A-Za-z0-9_\-\.]+)@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,3})$/.test(email) &&
         /^(?=.{1,64}@.{4,64}$)(?=.{6,100}$).*/.test(email);
 }
 
