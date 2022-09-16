@@ -951,7 +951,7 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_question/') }}/" + question_id;
+        url = "{{ url('ajax_next_question/') }}/" + question_id;
         $.ajax({
             url: url,
             data: {
