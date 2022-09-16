@@ -366,6 +366,10 @@
     .tab_show{
         display: block!important;
     }
+    .analytics_first_groph_box
+    {
+        margin-bottom: 20px;
+    }
     .aeck_commontab .nav-tabs .nav-link
     {
         margin-right: 40px!important;
