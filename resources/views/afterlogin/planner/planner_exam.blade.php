@@ -844,6 +844,8 @@ $question_type = "Numerical";
                     clearInterval(ctimer);
                     clearInterval(timer_countdown);
                     clearInterval(setEachQuestionTimeNext_countdown);
+                    clearInterval(setEachQuestionTimeNext_countdownNext);
+
 
                     $("#question_section div").remove();
                     $("#question_section").html(result.html);

@@ -1385,15 +1385,10 @@ $question_type = "Numerical";
             if (response.length == 0) {
                 $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
                 $('#qoption_err_' + quest_id).addClass('text-danger');
-                $('#qoption_err_' + quest_id).fadeIn('fast');
+                $('#qoption_err_' + quest_id).h('fast');
                 $('#qoption_err_' + quest_id)[0].scrollIntoView();
-
-
-
             }
         }
-
-
         $("#btn_" + quest_id).removeClass("pink-btn");
         $("#btn_" + quest_id).removeClass("blue-btn");
         $("#btn_" + quest_id).addClass("border-btn");
@@ -1435,7 +1430,7 @@ $question_type = "Numerical";
                 option_id.push($(this).val());
             });
         }
-        /*      console.log(option_id); */
+
         if (option_id.length > 0) {
             $('#clearBtn_response').attr("disabled", false);
             $('#clearBtn_response').addClass("Clearbtnenable");

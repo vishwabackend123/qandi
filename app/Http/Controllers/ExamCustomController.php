@@ -1223,8 +1223,8 @@ class ExamCustomController extends Controller
 
             $test_type = 'Assessment';
             $exam_type = 'PT';
-            // $exam_name = $test_name;
-            $exam_name = 'Custom Exam';
+            $exam_name = $test_name;
+            //$exam_name = 'Custom Exam';
             Redis::set('exam_name' . $user_id, $exam_name);
 
             // Redis::set('exam_name' . $user_id, $test_name);

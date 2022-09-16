@@ -55,7 +55,7 @@ class ReviewController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'exam_review:' . $user_id;
+            $cacheKey = 'exam_review:' . $result_id;
             if (Redis::exists($cacheKey)) {
                 Redis::del(Redis::keys($cacheKey));
             }
@@ -212,6 +212,7 @@ class ReviewController extends Controller
                     }
                 }
 
+
                 $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true), 'subject_id');
 
                 return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name', 'all_question_array', 'result_id'));
@@ -234,14 +235,16 @@ class ReviewController extends Controller
      *
      * @return void
      */
-    public function nextReviewQuestion($question_id)
+    public function nextReviewQuestion($question_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'exam_review:' . $user_id;
+
+            $result_id = isset($request->result_id) ? $request->result_id : '';
+            $cacheKey = 'exam_review:' . $result_id;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -353,9 +356,9 @@ class ReviewController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+            $result_id = isset($request->result_id) ? $request->result_id : '';
 
-
-            $cacheKey = 'exam_review:' . $user_id;
+            $cacheKey = 'exam_review:' . $result_id;
             $redis_result = Redis::get($cacheKey);
 
             if ($data = Redis::get($cacheKey)) {
@@ -454,14 +457,16 @@ class ReviewController extends Controller
      *
      * @return void
      */
-    public function filterReviewQuestion($filter_by)
+    public function filterReviewQuestion($filter_by, Request $request)
     {
         try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'exam_review:' . $user_id;
+
+            $result_id = isset($request->result_id) ? $request->result_id : '';
+            $cacheKey = 'exam_review:' . $result_id;
 
             //$cacheKey = 'review_question:';
             $redis_result = Redis::get($cacheKey);
