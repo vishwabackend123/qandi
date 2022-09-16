@@ -4076,6 +4076,7 @@ span.proficiency_value {
     width: 45%;
     max-width: 45%;
     padding-right: 20px;
+    line-height: 22px;
 }
 .performance_chapter_block label b {
     font-weight: 800;
@@ -4115,7 +4116,7 @@ span.proficiency_value {
     box-shadow: none;
     border-radius: 0;
     border-bottom: 1px solid #e5eaee;
-    padding: 31px 12px 29px 12px;
+    padding: 18px 12px 17px 12px;
 }
 .performance_chapter_sublists li {
     padding: 0 20px;
@@ -4123,8 +4124,8 @@ span.proficiency_value {
 .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_sublists li:last-child .performance_chapter_block {
     border: 0;
 }
-.performance_chapter_sublists li .performance_chapter_block h3 {font-size: 16px;font-weight: 600;}
-.performance_chapter_sublists li .performance_chapter_block h3 span{margin-right: 16px;    }
+.performance_chapter_sublists li .performance_chapter_block h3 {font-size: 16px;font-weight: 600;position: relative;padding-left: 30px;}
+.performance_chapter_sublists li .performance_chapter_block h3 span{position: absolute;left: 0;top: -1px;}
 .accordion-item.accordion-open .performance_chapter_block .accordion-header .accordion-button i{transform: rotate(180deg);}
 .Chapter_Main_Graph span {
     font-size: 16px;
@@ -4143,6 +4144,13 @@ span.proficiency_value {
 }
 .accordion-header{min-width:120px;}
 /* .performance_chapter_sublists li .performance_chapter_block label{min-width:168px;} */
+/* .accordion.performance_chapter_accordion {
+    overflow-y: auto;
+    height: calc(100vh - 330px);
+    padding-right: 10px;
+} */
+
+
 /********************* Amit End ****************************/
 
 

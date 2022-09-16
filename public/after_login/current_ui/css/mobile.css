@@ -335,11 +335,14 @@
 }
 .matrixpage-wrapper .exam_instruction_scrolling {
     height:100%}
-    .performance_chapter_accordion .accordion-item .performance_chapter_block{flex-wrap:wrap;justify-content: space-between;height:auto;} 
+    .performance_chapter_accordion .accordion-item .performance_chapter_block{flex-wrap:wrap;justify-content: space-between;height:auto;    padding: 17px 18px 15px 16px;} 
     .chapter_Perfrom_Graph{    justify-content: initial;margin-top:20px;} 
-    .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block{padding-left:0px;padding-right:0px;}
+    .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block{    padding: 20px 0px 15px 0px;}
     .Chapter_Main_Graph{margin-right:40px;width:44px;height:44px;}
     .Chapter_Main_Graph:last-child{margin-right:0px;}
+    .performance_chapter_sublists li {
+        padding:0 20px;
+    }
 
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -1133,7 +1136,7 @@
         flex-wrap: wrap;
     }
     .knowledge_left_clr_with_text {
-        padding-right: 16px;
+        padding-right: 24px;
     }
     .cotogaty_right_text {
         font-size: 14px;
@@ -2770,7 +2773,7 @@
         margin: 6px !important;
     }
     .performance_chapter_block h3{    width: 100%;
-        max-width: 100%;}
+        max-width: 100%;padding-right:0;}
         .performance_chapter_accordion .accordion-item .performance_chapter_block{display:flex;}
         .chapter_Perfrom_Graph{width:100%;order: 2;margin:16px 0px;}
         .Chapter_Main_Graph{margin-right:40px;}
@@ -2779,7 +2782,7 @@
         .accordion-header{order:4;}
         .KnowledgeNewBar .cotogaty_right_text{font-size: 14px;margin-bottom:8px;}
         .topicHeadingNew{font-size:16px;margin-bottom:12px;}
-        .chapter_profici_nav__right_contant{padding-bottom:10px;}
+        .chapter_profici_nav__right_contant{padding-bottom:8px;}
         .accordion-header{min-width:auto;}
 
 }
