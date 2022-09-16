@@ -41,7 +41,7 @@ $question_type = "Numerical";
                 <div class="backbtnformobilebox hideondesktop">
                     <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
                     <div class="reviewexamType">
-                        <a href="javascript:void(0);"  title="{{$exam_name}}" style="cursor:default">
+                        <a href="javascript:void(0);" title="{{$exam_name}}" style="cursor:default">
                             {{$exam_name}}
                         </a>
                     </div>
@@ -546,7 +546,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
-                /* result_id: "{{$result_id}}" */
+                result_id: "{{$result_id}}"
             },
             success: function(result) {
 
@@ -564,7 +564,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
-                /*  result_id: "{{$result_id}}" */
+                result_id: "{{$result_id}}"
             },
             success: function(result) {
                 $("#review_rques_blk").html(result);
@@ -579,7 +579,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
-                /* result_id : "{{$result_id}}" */
+                result_id: "{{$result_id}}"
             },
             success: function(result) {
                 $("#filter_questions").html(result);
