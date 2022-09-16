@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                                         <div class="myqinner">
                                                 <h6>Q2</h6>
                                                 <h5>Opportunity</h5>
-                                                <p>Topics which are your potential strengths. </p>
+                                                <p>Potentially strong topics that need a little attention.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[1]))

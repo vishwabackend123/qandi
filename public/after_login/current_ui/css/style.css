@@ -2328,6 +2328,7 @@ a.btn-common-attempted svg {
     font-weight: 800;
     color: #56b663;
 }
+.reviewScreenright .bck-btn{border-radius:0px;}
 .bck-btn  span.bckbtninner{border: solid 1px #56b663;    padding: 5px 10px;
     border-radius: 8px;
     width: 60%;display: inline-block;
