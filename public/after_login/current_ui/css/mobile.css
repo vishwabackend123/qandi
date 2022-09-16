@@ -360,6 +360,16 @@
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
+    .tab_hide {
+        display: none;
+    }
+    .tab_show{
+        display: block!important;
+    }
+    .aeck_commontab .nav-tabs .nav-link
+    {
+        margin-right: 40px!important;
+    }
     .owl-stage
     {
         padding-top: 10px;
