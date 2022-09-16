@@ -70,6 +70,7 @@
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_1_{{$list['chapter_id']}}"></canvas>
                             <span>A</span>
+                            <div class="scoreTooltip">Application: <small>80%</small></div>
                             <script type="text/javascript">
                             var circuference = 360;
                             var data = {
@@ -155,6 +156,7 @@
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_2_{{$list['chapter_id']}}"></canvas>
                             <span>E</span>
+                            <div class="scoreTooltip">Evaluation: <small>80%</small></div>
                             <script type="text/javascript">
                             var circuference = 360;
                             var data = {
@@ -240,6 +242,7 @@
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_3_{{$list['chapter_id']}}"></canvas>
                             <span>C</span>
+                            <div class="scoreTooltip">Comprehension: <small>80%</small></div>
                             <script type="text/javascript">
                             var circuference = 360;
                             var data = {
@@ -325,6 +328,7 @@
                         <div class="Chapter_Main_Graph">
                             <canvas id="chapterPerformance_4_{{$list['chapter_id']}}"></canvas>
                             <span>K</span>
+                            <div class="scoreTooltip"> Knowledge: <small>80%</small></div>
                             <script type="text/javascript">
                             var circuference = 360;
                             var data = {
