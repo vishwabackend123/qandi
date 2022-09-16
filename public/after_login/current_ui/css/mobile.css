@@ -353,7 +353,8 @@
         }
         .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
             width: 220px;}
-            .headerRight span.headericon {
+            .headerRight span.headericon,
+            .headerRight span.usertext {
                 margin: 0 5px;
             }
 }
