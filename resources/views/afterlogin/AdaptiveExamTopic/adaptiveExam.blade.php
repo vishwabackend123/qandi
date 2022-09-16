@@ -213,7 +213,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
                     </div>
-                    <div class="btnbottom hideonmobile">
+                    <div class="btnbottom hideonmobile" id="smtBtns">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
                                 <!--  <button class="btn questionbtn quesBtn" onclick="markforreview()">Mark for Review</button> -->
@@ -989,6 +989,7 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer() {
+        $('#smtBtns .quesBtns').attr("disabled", true);
         var question_id = $("#current_question").val();
         var qNo = $("#current_question_no").val();
 
@@ -1040,6 +1041,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
+            $('#smtBtns .quesBtns').attr("disabled", false);
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1062,12 +1064,15 @@ $question_type = "Numerical";
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
+                    $('#smtBtns .quesBtns').attr("disabled", false);
 
                     $("#btn_" + question_id).removeClass("pink-btn");
                     $("#btn_" + question_id).removeClass("blue-btn");
                     $("#btn_" + question_id).removeClass("border-btn");
 
                     updateCountValue(question_id, 'saveAns');
+                } else {
+                    $('#smtBtns .quesBtns').attr("disabled", false);
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 

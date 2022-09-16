@@ -41,7 +41,7 @@ $question_type = "Numerical";
                 <div class="backbtnformobilebox hideondesktop">
                     <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
                     <div class="reviewexamType">
-                        <a href="javascript:void(0);" style="cursor:default">
+                        <a href="javascript:void(0);"  title="{{$exam_name}}" style="cursor:default">
                             {{$exam_name}}
                         </a>
                     </div>
@@ -71,7 +71,7 @@ $question_type = "Numerical";
                                     </ul>
                                 </div>
                                 <div class="reviewexamType hideonmobile">
-                                    <a href="javascript:void(0);" style="cursor:default">
+                                    <a href="javascript:void(0);" title="{{$exam_name}}" style="cursor:default">
                                         {{$exam_name}}
                                     </a>
                                 </div>
@@ -496,7 +496,7 @@ $question_type = "Numerical";
                         <button type="button" class="showyes bottomfixarrow"><span class="Previous">‹</span></button>
                         <button class="hideyes bottomfixarrow"><span class="Previous">‹</span></button>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -546,6 +546,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                /* result_id: "{{$result_id}}" */
             },
             success: function(result) {
 
@@ -563,6 +564,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                /*  result_id: "{{$result_id}}" */
             },
             success: function(result) {
                 $("#review_rques_blk").html(result);
@@ -577,6 +579,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                /* result_id : "{{$result_id}}" */
             },
             success: function(result) {
                 $("#filter_questions").html(result);
@@ -751,7 +754,7 @@ $question_type = "Numerical";
             $('.reviewans-mainsec').css('height', min_height_q_list_h);
             var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
             var scroll_height = reviewans_final_height - review_filter_top_height;
-            var scroll_height_20 = scroll_height - 30 + "px";
+            var scroll_height_20 = scroll_height - 45 + "px";
             $('.list-ans').css('height', scroll_height_20)
         });
 
@@ -764,7 +767,7 @@ $question_type = "Numerical";
             var coll_outer_height = $(".reviewans-mainsec").outerHeight();
             var coll_review_filter_to_height = $(".review-filter-top").outerHeight();
             var coll_review_divide_height = coll_outer_height - coll_review_filter_to_height;
-            var coll_scroll_final_height = coll_review_divide_height - 30 + "px";
+            var coll_scroll_final_height = coll_review_divide_height - 45 + "px";
             $('.list-ans').css('height', coll_scroll_final_height)
         });
     });
@@ -820,7 +823,7 @@ $question_type = "Numerical";
         $('.clickbtnboxinner ').css({
             display: "none"
         });
-      
+
 
     });
 
@@ -913,7 +916,7 @@ $question_type = "Numerical";
             var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
             var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
-            
+
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
             var extra_height_total = reviewScreenright_call - 100 + "px";
             $('.reviewscreenquestion').css('height', extra_height_total);
@@ -981,7 +984,7 @@ $question_type = "Numerical";
                 var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
                 var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
                 var combinationdiv = sachinshowyes + questionsliderinnershowyes;
-            
+
                 $('.sachin').attr('style', 'display: block !important');
                 $('.sachin').css('height', combinationdiv);
 
@@ -993,9 +996,9 @@ $question_type = "Numerical";
                 // $('.text-exambottom-sec').attr('style', 'display: block !important');
 
                 // $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
-               
-            
-      
+
+
+
 
             });
 
@@ -1004,11 +1007,11 @@ $question_type = "Numerical";
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
 
-        
+
 
                 var sachinhides = $(".sachin").outerHeight();
                 var questionsliderhideinner1 = $(".questionsliderinner").outerHeight();
-                var combi  = sachinhides - questionsliderhideinner1;
+                var combi = sachinhides - questionsliderhideinner1;
 
                 $('.sachin').css('height', combi);
                 $('.sachin').attr('style', 'display: none !important');
@@ -1018,12 +1021,12 @@ $question_type = "Numerical";
                 // var sachinshowyes1 = $(".reviewScreenright .custom-anstop").outerHeight();
 
                 // $('.text-exambottom-sec').css('height', combi);
-              
-               
 
-               
 
-               
+
+
+
+
 
             });
 

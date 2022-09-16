@@ -564,12 +564,8 @@ class AnalyticsController extends Controller
     public function topicAnalyticsList($sub_id, Request $request)
     {
         try {
-            $input = $request->all();
             $userData = Session::get('user_data');
             $user_id = $userData->id;
-            $subject = $input['subject_name'];
-            $chapter_name = base64_decode($input['chapter_name']);
-
             $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/'  . $sub_id;
 
             $curl = curl_init();
@@ -594,7 +590,7 @@ class AnalyticsController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response_json, true);
             $topicList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
-            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList', 'chapter_name'))->render();
+            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'topicList'))->render();
 
             return response()->json(['status' => true, 'html' => $html, 'message' => 'Coupon code applied successfully.']);
         } catch (\Exception $e) {
