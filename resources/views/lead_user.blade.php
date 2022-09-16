@@ -172,7 +172,7 @@ $('.trail').click(function() {
     if (email) {
         var mobile_num = <?php echo $lead_user_data['Mobile'] ?>;
         url = "{{ url('sentMobileOtp/') }}/" + mobile_num;
-        /*$.ajax({
+        $.ajax({
             url: url,
             type: 'GET',
             data: {
@@ -248,7 +248,7 @@ $('.trail').click(function() {
                 }
 
             },
-        });*/
+        });
     }
 
 });
