@@ -45,7 +45,7 @@
                                         <div class="mock_exam_jee_main_text">
                                             <h3>{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h3>
                                         </div>
-                                        <button type="button" class="btn btn-common-green mock_test_take_test_btn mobile_hide" id="take_test">Take Test</button>
+                                        <button type="button" class="btn btn-common-green mock_test_take_test_btn mobile_hide tab_hide" id="take_test">Take Test</button>
                                     </div>
                                     <div class="line_696"></div>
                                     <div class="attemptedscroll">

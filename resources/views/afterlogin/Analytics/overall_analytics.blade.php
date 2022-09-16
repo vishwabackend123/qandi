@@ -24,7 +24,7 @@
                         <div class="overallmain">
                             <div class="overalltop">
                                 <div class="row">
-                                    <div class="col-lg-12 col-xl-6">
+                                    <div class="col-lg-12 col-xl-6 analytics_first_groph_box">
                                         <div class="commonWhiteBox">
                                             <div class="HeadingWithfilter">
                                                 <h3 class="boxheading d-flex align-items-center mb-5 smalltextheading">Progress
