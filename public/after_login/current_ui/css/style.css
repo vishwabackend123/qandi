@@ -2328,6 +2328,7 @@ a.btn-common-attempted svg {
     font-weight: 800;
     color: #56b663;
 }
+.reviewScreenright .bck-btn{border-radius:0px;}
 .bck-btn  span.bckbtninner{border: solid 1px #56b663;    padding: 5px 10px;
     border-radius: 8px;
     width: 60%;display: inline-block;
@@ -3893,7 +3894,7 @@ padding: 20px;
     margin-top: 1rem!important;
 }
 .flexgrow{flex-grow: 1;}
-.test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: 209px;height: 44px;font-size: 16px;}
+.test_analytics_wrapper .flexgrow .btn.btn-common-transparent {width: inherit;height: 44px;font-size: 16px;}
 .test_analytics_wrapper .dashSubtext{color:#868a95;opacity: 1;}
 .test_analytics_wrapper .subject_score_card .color_labels span b {color: #111;}
 .test_analytics_wrapper .topic_score_lists .topic_score_bar h4 {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
@@ -7907,8 +7908,8 @@ margin-bottom: 12px;
         }
         .adaptiveexamnewwrapper .examRightpanel .borederbot {
             border-bottom: 1px solid rgba(172, 185, 176, 0.14);
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         .adaptiveexamnewwrapper .examRightpanel .text-exambottom-sec {
             margin-top: 35px !important;
@@ -7923,5 +7924,5 @@ margin-bottom: 12px;
             border: 1px solid #56b663;
         }
         .adaptiveexamnewwrapper .examRightpanel .text-examtop-sec{
-            padding-bottom: 40px
+            padding-bottom: 39px
         }

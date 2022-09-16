@@ -348,6 +348,20 @@
         .view_detail_text_colleps {
             flex-basis: 110px;
         }
+        .question-attempted-block {
+            padding-right: 10px;
+            margin-right: 26px;
+        }
+        .time-date-block .commontext {
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
+            width: 220px;}
+            .headerRight span.headericon,
+            .headerRight span.usertext {
+                margin: 0 5px;
+            }
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -947,6 +961,8 @@
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
+        width: 220px;}
     .take-fulltest .btn {
     font-size: 14px !important;
     }
@@ -1039,7 +1055,7 @@
         height:auto;
     }
     .exam_instruction_col_four {
-        padding-left: 18px;
+        padding-left: 14px;
         padding-top:30px;
     }
 
@@ -2047,7 +2063,7 @@
         max-height: 100% !important;
     }
     .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {
-        padding: 8px 16px !important;
+        padding: 8px 8px !important;
         height: 44px !important;
     }
 
@@ -2583,7 +2599,8 @@
    .examReviewscreenmob  .backbtnformobilebox{
         display: flex;
         justify-content: space-between;
-        align-items: center;  line-height: 80px;
+        align-items: center; 
+         /* line-height: 80px; */
     }
   .examReviewscreenmob  .backbtnformobilebox .reviewexamType{
         position:static ;
@@ -2680,6 +2697,7 @@
     
     .examReviewscreenmob .examLeftpanel ,.examReviewscreenmob .backbtnformobilebox {
         padding: 0px 16px;
+        padding-top: 16px;;
     }
   .examReviewscreenmob  .list-ans {
         height: calc( 100% - 80px);

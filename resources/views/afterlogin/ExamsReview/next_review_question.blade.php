@@ -359,7 +359,7 @@ $question_type = "Numerical";
             $('.reviewans-mainsec').css('height', min_height_q_list_h);
             var reviewans_final_height = $(".reviewans-mainsec").outerHeight();
             var scroll_height = reviewans_final_height - review_filter_top_height;
-            var scroll_height_20 = scroll_height - 30 + "px";
+            var scroll_height_20 = scroll_height - 45 + "px";
             $('.list-ans').css('height', scroll_height_20)
         });
 

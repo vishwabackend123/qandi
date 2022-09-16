@@ -228,7 +228,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
+                            <!-- <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -442,7 +442,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <div class="myqinner">
                                                     <h6>Q2</h6>
                                                     <h5>Opportunity</h5>
-                                                    <p>Topics which are your potential strengths. </p>
+                                                    <p>Potentially strong topics that need a little attention.</p>
                                                 </div>
                                             </a>
                                             <a href="javascript:void(0);" class="myq_matrix_quadrant" data-name="q_2">
