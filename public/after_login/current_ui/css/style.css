@@ -4082,14 +4082,16 @@ span.proficiency_value {
     font-weight: 800;
     color: #1f1f1f;
     margin-right: 10px;
+    min-width:45px;display:inline-block;
 }
 .performance_chapter_block label {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     /* flex: 1; */
-    min-width: 145px;
+    min-width: 153px;
 }
+.performance_chapter_sublists .performance_chapter_block label b{margin-left:-4px;}
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
