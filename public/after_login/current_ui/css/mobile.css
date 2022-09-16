@@ -133,6 +133,20 @@
         height: calc(100vh - 262px);
     }
 }
+@media only screen and (max-height: 1200px) {
+        .subscriptionsLeftpannel {
+            max-width: 300px;
+            padding: 20px 20px
+        }
+        .verificationBox{
+            max-width: 254px;
+        }
+        .fullbody_scan_test .btn.btn-common-white
+        {
+            position: relative;
+            z-index: 1;
+        }
+    }
 
 @media only screen and (max-height: 920px) {
     .anshead-titletext {
@@ -980,6 +994,10 @@
 @media(max-width:767px){
     .headerRight span.headericon, .headerRight span.usertext {
         margin: 0px 5px;
+    }
+    .verificationBox
+    {
+        max-width: 100%;
     }
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
         width: 220px;}
