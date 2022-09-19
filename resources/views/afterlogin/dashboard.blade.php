@@ -894,7 +894,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="modal-body">
                         <div class="intraction_text_q1">Q4</div>
-                        <div class="intraction_text_strength">Weaknesses</div>
+                        <div class="intraction_text_strength">Weakness</div>
                         <hr>
                         <div class="instruction_text_content">
                             Find your weak topics here. Work hard to move these topics to other quadrants.
