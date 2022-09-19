@@ -37,7 +37,7 @@ class MockExamController extends Controller
     public function mockExam(Request $request, $inst = '')
     {
         try {
-            $header_title = "Mock Test";
+            $header_title = "Mock Exam";
             $filtered_subject = [];
             $userData = Session::get('user_data');
 
@@ -47,7 +47,7 @@ class MockExamController extends Controller
                 Redis::del(Redis::keys('custom_answer_time_mock' . $user_id));
             }
 
-            $exam_name = 'Mock Test';
+            $exam_name = 'Mock Exam';
 
             $inputjson['student_id'] = $user_id;
             $inputjson['exam_id'] = $exam_id;
@@ -238,7 +238,7 @@ class MockExamController extends Controller
 
                 $exam_url = route('mockExam');
 
-                $exam_title = "Mock Test";
+                $exam_title = "Mock Exam";
                 return view('afterlogin.MockExam.mock_exam_instruction', compact('aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title'));
             }
 
