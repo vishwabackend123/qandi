@@ -1301,7 +1301,7 @@ $question_type = "Numerical";
         $("#btn_" + quest_id).removeClass("blue-btn");
 
         $.ajax({
-            url: "{{ route('clearResponse') }}",
+            url: "{{ route('clearResponselive') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
