@@ -118,8 +118,8 @@ class LiveExamController extends Controller
             $exam_id = $userData->grade_id;
             $live_exam_id = $schedule_id;
 
-            if (Redis::exists('custom_answer_time_live_live_' . $user_id)) {
-                Redis::del(Redis::keys('custom_answer_time_live_live_' . $user_id));
+            if (Redis::exists('custom_answer_time_live_' . $user_id)) {
+                Redis::del(Redis::keys('custom_answer_time_live_' . $user_id));
             }
 
             $exam_name = 'Live Exam';
@@ -272,7 +272,7 @@ class LiveExamController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_live_live_' . $user_id, json_encode($redis_data));
+                Redis::set('custom_answer_time_live_' . $user_id, json_encode($redis_data));
                 $exam_url = route('live_exam', $schedule_id);
 
                 $exam_title = "Live Exam";
@@ -288,7 +288,7 @@ class LiveExamController extends Controller
 
             return view('afterlogin.LiveExam.live_exam', compact('live_exam_id', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -385,7 +385,7 @@ class LiveExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-            $session_result = Redis::get('custom_answer_time_live_live_' . $user_id);
+            $session_result = Redis::get('custom_answer_time_live_' . $user_id);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -451,7 +451,7 @@ class LiveExamController extends Controller
                 return redirect()->back();
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -550,7 +550,7 @@ class LiveExamController extends Controller
                 $option_data[] = '';
             }
 
-            $session_result = Redis::get('custom_answer_time_live_live_' . $user_id);
+            $session_result = Redis::get('custom_answer_time_live_' . $user_id);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
@@ -692,7 +692,7 @@ class LiveExamController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -745,10 +745,9 @@ class LiveExamController extends Controller
             $response['status'] = 200;
             $response['message'] = "save response successfully";
 
-
-
             return json_encode($response);
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }

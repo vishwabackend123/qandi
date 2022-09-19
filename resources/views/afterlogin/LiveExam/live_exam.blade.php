@@ -1099,7 +1099,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerLive') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1198,7 +1198,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
 
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAnswerLive') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1301,7 +1301,7 @@ $question_type = "Numerical";
         $("#btn_" + quest_id).removeClass("blue-btn");
 
         $.ajax({
-            url: "{{ route('clearResponselive') }}",
+            url: "{{ route('clearResponseLive') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -1309,6 +1309,7 @@ $question_type = "Numerical";
                 subject_id: subject_id,
             },
             success: function(response_data) {
+                console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
