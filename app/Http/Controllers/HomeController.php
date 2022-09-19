@@ -331,7 +331,8 @@ class HomeController extends Controller
                 $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
                 $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
-            $accurate_percent = ($myqtodayScore * 75) / 100;
+            $accurate_percent = $myqtodayScore;
+            // $accurate_percent = ($myqtodayScore * 75) / 100;
             return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -512,20 +513,23 @@ class HomeController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
             if ($useremailexists == 1) {
-                $response['success'] = false;
+                /*$response['success'] = false;
                 $response['error'] = "";
-                $response['message'] = "email id or mobile number already exist";
-                return json_encode($response);
+                $response['message'] = "email id or mobile number already exist"; */
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
+                //return json_encode($response);
             } elseif ($mobileexists == 1) {
-                $response['success'] = false;
+                /*$response['success'] = false;
                 $response['error'] = "";
                 $response['message'] = "email id or mobile number already exist";
-                return json_encode($response);
+                return json_encode($response); */
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
             }
             if ($httpcode != 200 && $httpcode != 201) {
-                $response['success'] = false;
-                $response['error'] = "";
-                return json_encode($response);
+                //$response['success'] = false;
+                //$response['error'] = "";
+                //return json_encode($response);
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
             } else {
                 $response = json_decode($response_json);
 

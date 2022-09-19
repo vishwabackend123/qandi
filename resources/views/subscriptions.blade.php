@@ -443,7 +443,7 @@ $leadData ='';
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <div class="freeTrial">
                         @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start your {{$sub->trial_subscription_duration}}-day free trial.</a>
                         @endif
                     </div>
                     @else
@@ -583,7 +583,7 @@ $leadData ='';
 
                     <div class="freeTrial">
                          @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start your {{$sub->trial_subscription_duration}}-day free trial</a>
                         @endif
                     </div>
                     @else

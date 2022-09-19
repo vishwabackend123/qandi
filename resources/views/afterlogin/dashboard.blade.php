@@ -492,7 +492,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="#weakmodal" data-bs-toggle="modal" data-bs-target="#weakmodal">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
-                                                    <h5>Weaknesses </h5>
+                                                    <h5>Weakness</h5>
                                                     <p>Your weakest topics.</p>
                                                 </div>
                                             </a>
@@ -894,7 +894,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     </div>
                     <div class="modal-body">
                         <div class="intraction_text_q1">Q4</div>
-                        <div class="intraction_text_strength">Weaknesses</div>
+                        <div class="intraction_text_strength">Weakness</div>
                         <hr>
                         <div class="instruction_text_content">
                             Find your weak topics here. Work hard to move these topics to other quadrants.
