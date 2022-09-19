@@ -373,7 +373,7 @@
     .performance_chapter_sublists li {
         padding:0 20px;
     }
-
+    .main-wrapper header{width:100%;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .mock_btn_vie_detail {
