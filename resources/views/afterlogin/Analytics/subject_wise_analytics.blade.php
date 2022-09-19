@@ -106,7 +106,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Get an-depth analysis of your core learning skill.
+                                    Get an in-depth analysis of your core learning skill.
                                 </p>
                             </span>
                         </h3>
