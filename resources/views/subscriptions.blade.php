@@ -829,7 +829,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);" style="cursor:default">{{$sub->trial_subscription_duration}} day trial Period expired.</a>
+                        <a href="javascript:void(0);" style="cursor:default">Your {{$sub->trial_subscription_duration}}-day free trial has expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
