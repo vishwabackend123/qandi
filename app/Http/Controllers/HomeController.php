@@ -331,7 +331,8 @@ class HomeController extends Controller
                 $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
                 $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
-            $accurate_percent = ($myqtodayScore * 75) / 100;
+            $accurate_percent = $myqtodayScore;
+            // $accurate_percent = ($myqtodayScore * 75) / 100;
             return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());

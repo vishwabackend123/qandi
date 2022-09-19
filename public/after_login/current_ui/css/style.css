@@ -3409,7 +3409,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .mq_percent_more .circletop:after{
     position: absolute;
-    left: 0.5em;
+    left: 0.4em;
     top: 0em;
     right: 0;
     bottom: 0;
