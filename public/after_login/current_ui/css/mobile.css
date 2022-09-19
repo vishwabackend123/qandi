@@ -1979,6 +1979,13 @@ transform: translateX(100%);
     .noofquestions-block.dropdown-menu{left:0!important;right: auto!important;}
     .exambox-heading p {font-size: 12px;font-weight: 600;margin: 0 0 12px;}
     .proficiency_graph_block h2{margin: 0 0 6px;}
+    .scoreTooltip{padding:8px 12px;font-size: 14px;}
+    .scoreTooltip:before{top: 12px;border: 7px solid transparent;border-left: 0;border-right: 15px solid #1f4736;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip ,
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip{right: 52px;left: auto;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip:before , 
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip:before
+    {right: -14px;left: auto;border-left: 15px solid #1f4736;border-right:0;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
