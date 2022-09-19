@@ -492,7 +492,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <a href="#weakmodal" data-bs-toggle="modal" data-bs-target="#weakmodal">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
-                                                    <h5>Weaknesses </h5>
+                                                    <h5>Weakness</h5>
                                                     <p>Your weakest topics.</p>
                                                 </div>
                                             </a>

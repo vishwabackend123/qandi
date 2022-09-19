@@ -103,7 +103,7 @@ $userData = Session::get('user_data');
                                     <div class="myqmatPannel myqcolor4 mb-0">
                                         <div class="myqinner">
                                                     <h6>Q4</h6>
-                                                    <h5>Weaknesses </h5>
+                                                    <h5>Weakness</h5>
                                                     <p>Your weakest topics.</p>
                                         </div>
                                         <div class="myqbottomSec">
