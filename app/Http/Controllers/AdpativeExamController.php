@@ -488,6 +488,7 @@ class AdpativeExamController extends Controller
             $test_name = isset($responsedata->test_name) ? $responsedata->test_name : [];
 
 
+
             if ($httpcode_response == true) {
                 if (!empty($aQuestionslist)) {
                     $exam_fulltime = $responsedata->time_allowed;
@@ -568,9 +569,16 @@ class AdpativeExamController extends Controller
 
             $test_type = 'Assessment';
             $exam_type = 'PT';
-            //$exam_name = $test_name;
-            $exam_name = 'Custom Exam';
-            Redis::set('exam_name' . $user_id, $exam_name);
+            $exam_name = $test_name;
+            //$exam_name = 'Custom Exam';
+            if (count($select_topic) > 1) {
+                $exam_name = "Multi Topic Adaptive Exam";
+                Redis::set('exam_name' . $user_id, $exam_name);
+            } else {
+                $exam_name = "Single Topic Adaptive Exam";
+                Redis::set('exam_name' . $user_id, $exam_name);
+            }
+
             //Session::put('exam_name', $test_name);
             // Redis::set('exam_name' . $user_id, $test_name);
             Redis::set('test_type' . $user_id, $test_type);
