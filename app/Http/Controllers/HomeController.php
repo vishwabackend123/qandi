@@ -512,20 +512,23 @@ class HomeController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
             if ($useremailexists == 1) {
-                $response['success'] = false;
+                /*$response['success'] = false;
                 $response['error'] = "";
-                $response['message'] = "email id or mobile number already exist";
-                return json_encode($response);
+                $response['message'] = "email id or mobile number already exist"; */
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
+                //return json_encode($response);
             } elseif ($mobileexists == 1) {
-                $response['success'] = false;
+                /*$response['success'] = false;
                 $response['error'] = "";
                 $response['message'] = "email id or mobile number already exist";
-                return json_encode($response);
+                return json_encode($response); */
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
             }
             if ($httpcode != 200 && $httpcode != 201) {
-                $response['success'] = false;
-                $response['error'] = "";
-                return json_encode($response);
+                //$response['success'] = false;
+                //$response['error'] = "";
+                //return json_encode($response);
+                return Redirect::back()->withErrors(['email id or mobile number already exist.']);
             } else {
                 $response = json_decode($response_json);
 
