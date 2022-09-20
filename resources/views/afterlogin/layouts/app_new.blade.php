@@ -52,9 +52,9 @@
         MathJax.Hub.Config({
             messageStyle: "none",
             menuSettings: {
-                zoom: 'NoZoom',
-                context: "Browser",
-              }
+                zoom: "None",
+    context: "Browser"
+  }
             });
 </script>
     <script>
