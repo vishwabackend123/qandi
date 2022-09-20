@@ -83,7 +83,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                     </div>
                                 </div>
-                                @if(!empty($subject_proficiency))
+                                @if($userStatus==false)
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Practice more to improve your score</p>
@@ -119,7 +119,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </h3>
                                     <p class="dashSubtext mb-3">Map your subject journey. Aim to complete each circle.</p>
                                 </div>
-                                @if(!empty($subject_proficiency))
+                                @if($userStatus==false)
                                 <div class="subjectScoreBlock">
                                     <div class="row">
                                         @if(!empty($subject_proficiency))
@@ -204,7 +204,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg></span></a>
                             </div>
 
-                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                            @if((isset($prof_asst_test) && $prof_asst_test=='N') || $userStatus==false)
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
@@ -247,14 +247,16 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/2</span>
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
                                                 </div>
                                             </div>
-                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+
+                                            @if((isset($userStatus) && $userStatus==true))
+                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
                                             <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become prepared.
                                             </p>
                                             @endif
-                                            @if(isset($dailyTask) && !empty($dailyTask))
+                                            @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($dailyTask as $key=>$data)
@@ -328,14 +330,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
-                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/2</span>
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
                                                 </div>
                                             </div>
-                                            @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                                            @if((isset($userStatus) && $userStatus==true))
+                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
                                             <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
                                             </p>
                                             @endif
-
+                                            @if((isset($weekTask) && !empty($weekTask)) && $userStatus==false)
                                             <div class="tasklisting">
                                                 <ul class="commonlisting">
                                                     @foreach($weekTask as $wkey=>$data)
@@ -383,7 +386,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             </svg></span></a>
                                                 </div>
                                             </div>
-
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -408,7 +411,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </h3>
                                 <p class="dashSubtext">Know your strengths and weaknesses and step up your game.</p>
                             </div>
-                            @if(!empty($myq_matrix))
+                            @if(!empty($myq_matrix) && $userStatus==false)
                             <div class="MyqMatrixMain mt-3">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -709,7 +712,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                                @if (isset($ideal) && !empty($ideal))
+                                                @if (isset($ideal) && !empty($ideal) && $userStatus==false)
                                                 <div class="graphDetail w-100">
                                                     <div class="yourPacebox">
                                                         <p class="graphTitle">Ideal Pace</p>
@@ -765,7 +768,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
                                             </div>
-                                            @if (!empty($trendResponse))
+                                            @if (!empty($trendResponse) && $userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide ">
                                                     <div class="customDropdown1 dropdown">

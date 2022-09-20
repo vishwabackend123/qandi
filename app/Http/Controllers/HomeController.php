@@ -59,6 +59,7 @@ class HomeController extends Controller
             $user_id = $userData->id;
             //$user_id = 685;
             $exam_id = $userData->grade_id;
+
             $user_subjects = $this->redis_subjects();
 
             $uSubjects = [];
@@ -246,6 +247,7 @@ class HomeController extends Controller
 
             $response_prog = json_decode($response_preg_json, true);
 
+
             if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
                 $month = date('m');
                 $i = $month - count($response_prog['response']['student_progress']) + 1;
@@ -332,8 +334,39 @@ class HomeController extends Controller
                 $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
             $accurate_percent = $myqtodayScore;
+
+
+            /* check user status new or old */
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_url_check = $api_URL . 'api/check-if-fresh-user/' . $user_id;
+            $curl_option = array(
+                CURLOPT_URL => $curl_url_check,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $statusCheck_json = curl_exec($curl);
+            $statusCheck = json_decode($statusCheck_json);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+
+            $userStatus = isset($statusCheck->fresh_user) ? $statusCheck->fresh_user : false;
+
+
             // $accurate_percent = ($myqtodayScore * 75) / 100;
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
+            return view('afterlogin.dashboard', compact('userStatus', 'myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -904,6 +937,7 @@ class HomeController extends Controller
         try {
             $curl = curl_init();
             $api_URL = env('API_URL');
+
             $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-dashboard-values/' . $user_id . '/' . $exam_id;
             $curl_option = array(
 
@@ -927,6 +961,7 @@ class HomeController extends Controller
             if ($response_myq_matrix['success']) {
                 $myq_matrix = $response_myq_matrix['data'];
             }
+
             return $myq_matrix;
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -1431,7 +1466,7 @@ class HomeController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
