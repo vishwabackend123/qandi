@@ -204,7 +204,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg></span></a>
                             </div>
 
-                            @if((isset($prof_asst_test) && $prof_asst_test=='N') || $userStatus==false)
+                            @if((isset($prof_asst_test) && $prof_asst_test=='N'))
                             <div class="fullbodyBox">
                                 <div class="leftBox">
                                     <h4>Full body scan test</h4>
