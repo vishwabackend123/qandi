@@ -4184,7 +4184,10 @@ span.proficiency_value {
     border-left: 0;
     border-right: 15px solid #1f4736;
 }
-
+.tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
+    margin-right: 60px;
+    padding: 0 8px 20px;
+}
 /********************* Amit End ****************************/
 
 
