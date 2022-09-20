@@ -4184,7 +4184,10 @@ span.proficiency_value {
     border-left: 0;
     border-right: 15px solid #1f4736;
 }
-
+.tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
+    margin-right: 60px;
+    padding: 0 8px 20px;
+}
 /********************* Amit End ****************************/
 
 
@@ -7261,14 +7264,16 @@ border-color: #56b663;
     font-size: 22px;
     font-weight: 800;
     padding-left: 14px;
+    vertical-align: bottom;
 }
-.name-title > span {
+/* .name-title > span {
     vertical-align: middle;
-}
+} */
 .contact-section {
     display: flex;
     padding: 20px 0px 0px;
     justify-content: space-between;
+    align-items: flex-end;
 }
 /* .contact-num { width: 50%;} */
 .contact-num > span,.city-sec > span {

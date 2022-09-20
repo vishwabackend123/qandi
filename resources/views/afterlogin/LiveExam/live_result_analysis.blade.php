@@ -27,14 +27,14 @@
                                 <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            {{$response->total_test_time/60}} mins
+                            {{$response->total_test_time/60}} Mins
                         </small>
                         <small class="commontext">
                             <svg style="vertical-align: bottom;" class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            {{$response->total_exam_marks}} marks
+                            {{$response->total_exam_marks}} Marks
                         </small>
                     </p>
                 </div>
