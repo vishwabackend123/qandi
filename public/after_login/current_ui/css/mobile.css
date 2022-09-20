@@ -376,6 +376,7 @@
     .main-wrapper header{width:100%;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
+    .scrollnone .main-wrapper header{width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
         .view_detail_text_colleps {
