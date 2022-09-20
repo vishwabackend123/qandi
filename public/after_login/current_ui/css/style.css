@@ -3788,7 +3788,7 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
 .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox {
     width: 96px!important;
     position: relative;
-    bottom: -2px;
+    bottom: -2px;right:0;
 }
 .commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
 input.text-box.markstrend::-webkit-input-placeholder { /* Chrome/Opera/Safari */
