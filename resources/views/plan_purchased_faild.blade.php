@@ -56,7 +56,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <div class="plan_subscribption">@if(isset($transaction_data->id)) {{$transaction_data->id}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Subscription Type</div>
+                                <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">@if(isset($user_exam_id) && $user_exam_id==1)
                                     JEE 1 year Subscription
                                     @elseif(isset($user_exam_id) && $user_exam_id==2)
@@ -64,7 +64,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                     @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Date</div>
+                                <div class="plan_order_summary">Date:</div>
                                 <div class="plan_subscribption">@if(isset($transaction_data->created_at)) {{date('d F Y', $transaction_data->created_at)}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">

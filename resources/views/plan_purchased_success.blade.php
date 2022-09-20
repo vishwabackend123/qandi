@@ -62,9 +62,9 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                                 <div class="plan_order_summary">Subscription Type :</div>
                                 <div class="plan_subscribption">
                                     @if(isset($transaction_data->notes->exam_id) && $transaction_data->notes->exam_id==1)
-                                    JEE Main 1 year Subscription
+                                    JEE Main 1 Year Subscription
                                     @else
-                                    NEET 1 year Subscription
+                                    NEET 1 Year Subscription
                                     @endif
                                 </div>
                             </div>
