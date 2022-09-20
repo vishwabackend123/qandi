@@ -417,6 +417,10 @@ function stateHandle() {
 }
 $('.current_refer').click(function() {
     $('.mb-4').removeClass('active');
+    $('.current_planner').removeClass('active');
+    $('.current_analytics').removeClass('active');
+    $('.current_practice').removeClass('active');
+    $('.current_dashboard').removeClass('active');
     $('.current_refer').addClass('active');
 })
 $('.btn-close').click(function() {
