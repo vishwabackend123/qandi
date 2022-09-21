@@ -259,11 +259,10 @@ $userData = Session::get('user_data');
             $('#limit_error span').html('');
             if (limit == '1') {
                 var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
-            }else
-            {
+            } else {
                 var error_txt = 'You can not select more than ' + limit + ' chapters for selected week';
             }
-            
+
 
             $('#limit_error span').html(error_txt);
             $('#limit_error').show();
@@ -374,9 +373,8 @@ $userData = Session::get('user_data');
 
                 $('#select_chapt_id' + chapt_id).val(res_chpter_id);
                 $('#select_chapt_name' + chapt_id).html(res_chpter_name);
-                /*   $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
-                 */
-                console.log(res_chpter_id, res_chpter_name);
+                $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
+
             },
 
 
