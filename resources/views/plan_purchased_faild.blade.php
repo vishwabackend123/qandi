@@ -56,7 +56,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <div class="plan_subscribption">@if(isset($transaction_data->id)) {{$transaction_data->id}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Subscription type</div>
+                                <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">@if(isset($user_exam_id) && $user_exam_id==1)
                                     JEE 1 year Subscription
                                     @elseif(isset($user_exam_id) && $user_exam_id==2)
@@ -64,12 +64,12 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                     @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Date</div>
+                                <div class="plan_order_summary">Date:</div>
                                 <div class="plan_subscribption">@if(isset($transaction_data->created_at)) {{date('d F Y', $transaction_data->created_at)}} @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Order Status:</div>
-                                <div class="plan_subscribption">Payment failed</div>
+                                <div class="plan_subscribption">Payment Failed</div>
                             </div>
                         </div>
                         <div class="line-692_field"></div>
@@ -82,7 +82,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <input type="hidden" name="exam_period" value="12">
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$transaction_data->amount/100}}">
-                                <button type="submit" class="btn btn-common-green " id="get-sub-btn"> Retry payment</button>
+                                <button type="submit" class="btn btn-common-green " id="get-sub-btn"> Retry Payment</button>
                             </form>
                             @endif
                             <div class="plan_back_to_subscription">

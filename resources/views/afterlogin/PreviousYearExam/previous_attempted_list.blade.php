@@ -22,6 +22,7 @@
         @foreach($result_data as $sche)
         @php
         $year = isset($sche->paper_year) ? $sche->paper_year : '';
+        $marks =$sche->no_of_question * 4;
         if($sche->no_of_question == 90)
             {
             $marks=300;
