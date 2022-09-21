@@ -2,7 +2,7 @@
 $userData = Session::get('user_data');
 @endphp
 <!-------- Mobile Sidebar -------------->
-<section class="sidebar_block mobile_block mobilemenu">
+<section class="sidebar_block mobile_block_tab mobilemenu">
     <div class="userprofile headericon d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
             <a href="javascript:void(0)" title="User">
