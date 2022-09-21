@@ -2433,10 +2433,10 @@ a.btn-common-attempted svg {
 /********************Start-Dashboard-By-Sachin-Date-06-07-22**************/
 
  
- .graphDetailempty .testScrolltype {
+ /* .graphDetailempty .testScrolltype {
      margin-right: 30px;
      padding-top:0px;
- }
+ } */
  .h{
     display:flex;
     margin-bottom: 1rem;
@@ -2459,6 +2459,7 @@ a.btn-common-attempted svg {
    color: #363c4f;
     padding-left: 20px;
     width: 50%;
+    min-height:230px;
  }
  
  .journeyGraph .boxheading {

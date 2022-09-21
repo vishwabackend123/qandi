@@ -376,7 +376,7 @@
     .main-wrapper header{width:100%;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
-    .scrollnone .main-wrapper header{width:100%;}
+    .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
         .view_detail_text_colleps {
@@ -2343,7 +2343,7 @@ transform: translateX(100%);
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
         .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{width:560px;}
+        .mobilescrolltab .nav-tabs{min-width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:38px;}
