@@ -2676,7 +2676,7 @@
         transform: rotate(90deg);
     }
    .examReviewscreenmob .sachin {
-        display: none;
+        /* display: none; */
         position: absolute;
         bottom: 0px;
         background: white;
@@ -2684,6 +2684,7 @@
         z-index: 999;
         width: 100%;
         left: 0px;    padding-left: 16px;
+        height: 0px;
     }
   .examReviewscreenmob  .btn123 {
         position: fixed;
@@ -2709,7 +2710,7 @@
  
     .examReviewscreenmob    .reviewans-mainsec {
             position: absolute;
-            bottom: 4px;
+            bottom: -5px;
             background: #fff;
             overflow: hidden;
             margin-right: 15px;
@@ -2796,12 +2797,12 @@
         font-weight: 800;
         border-bottom: 1px solid rgba(205, 227, 208, 0.5);
         color: #363c4f;
-        padding-top: 20px;
+       
 
     }
    
    .examReviewscreenmob  .reviewScreenright .text-exambottom-sec {
-        height: 33vh;
+        height:0px;
         width: 97%;
     }
     .examReviewscreenmob .reviewScreenright  button.btn-ans {

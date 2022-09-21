@@ -912,11 +912,9 @@ $question_type = "Numerical";
             var totle_heigh_40 = test_review_height_div - 40 + "px";
             $('.reviewScreenleft').css('height', totle_heigh_40);
             $('.reviewScreenright').css('height', totle_heigh_40);
-
             var exam_Review_second_panel = $(".reviewScreenright ").outerHeight();
             var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
-
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
             var extra_height_total = reviewScreenright_call - 100 + "px";
             $('.reviewscreenquestion').css('height', extra_height_total);
@@ -951,7 +949,9 @@ $question_type = "Numerical";
                 $('.overlaydiv').show(0);
                 $("answer-main-sec").addClass("intro");
                 var answer_main_sec_mob1 = $(".answer-main-sec").outerHeight();
+
                 var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
+
                 var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
                 var dividereviewboxandformob = reviewScreenleft_mob1 + questionsliderinner_mob1;
                 $('.answer-main-sec').css('height', dividereviewboxandformob);
@@ -975,29 +975,48 @@ $question_type = "Numerical";
             });
 
 
-
             $(".showyes").on('click', function() {
                 $('.showyes').hide(0);
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
-
-                var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
-                var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
-                var combinationdiv = sachinshowyes + questionsliderinnershowyes;
-
-                $('.sachin').attr('style', 'display: block !important');
-                $('.sachin').css('height', combinationdiv);
-
-                // var Answerinnershowyes = $(".Answerinner").outerHeight();
-                // var text_exambottom_seshowyes = $(".text-exambottom-sec").outerHeight();
+                // var questionsliderinnershowyes = $(".questionsliderinner").outerHeight();
                 // var sachinshowyes = $(".reviewScreenright .custom-anstop").outerHeight();
-                // var fortextexambottomseshowyes = sachinshowyes - Answerinnershowyes - 40 + "px";
+                // var combinationdiv = sachinshowyes + questionsliderinnershowyes;
+                // $('.sachin').attr('style', 'display: block !important');
+                // $('.sachin').css('height', combinationdiv);
 
-                // $('.text-exambottom-sec').attr('style', 'display: block !important');
+                var customanstop_n = $(".custom-anstop").outerHeight();
+                var reviewScreenleft_n = $(".reviewScreenleft").outerHeight();
+                var questionsliderinner_n = $(".questionsliderinner").outerHeight();
+                var dividereviewboxandformob_n = reviewScreenleft_n + questionsliderinner_n;
+                $('.custom-anstop').css('height', dividereviewboxandformob_n);
+                $('.custom-anstop').css('z-index', "1");
+                $('.custom-anstop').attr('style', 'height: calc(100vh - 200px) !important');
 
-                // $('.text-exambottom-sec').css('height', fortextexambottomseshowyes);
+                var custop_update = $(".custom-anstop").outerHeight();
+                var Answerinner_update = $(".Answerinner").outerHeight();
+                var custmizeheight = custop_update - Answerinner_update;
+                $('.text-exambottom-sec').css('height', custmizeheight);
+
+                var textexambottomsec20 = $(".text-exambottom-sec").outerHeight();
 
 
+
+
+                var extra_height_total = textexambottomsec20 - 30 + "px";
+                $('.text-exambottom-sec').css('height', extra_height_total);
+
+
+
+
+
+ 
+                
+
+           
+
+
+                
 
 
             });
@@ -1006,33 +1025,24 @@ $question_type = "Numerical";
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
+                // var sachinhides = $(".sachin").outerHeight();
+                // var questionsliderhideinner1 = $(".questionsliderinner").outerHeight();
+                // var combi = sachinhides - questionsliderhideinner1;
+                // $('.sachin').css('height', combi);
+                // $('.sachin').attr('style', 'display: none !important');
+                $('.custom-anstop').attr('style', 'height: 0px !important');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important');
 
+                
 
+                
 
-                var sachinhides = $(".sachin").outerHeight();
-                var questionsliderhideinner1 = $(".questionsliderinner").outerHeight();
-                var combi = sachinhides - questionsliderhideinner1;
+             
 
-                $('.sachin').css('height', combi);
-                $('.sachin').attr('style', 'display: none !important');
-
-                // var Answerinnershowyes1 = $(".Answerinner").outerHeight();
-                // var text_exambottom_seshowye1 = $(".text-exambottom-sec").outerHeight();
-                // var sachinshowyes1 = $(".reviewScreenright .custom-anstop").outerHeight();
-
-                // $('.text-exambottom-sec').css('height', combi);
-
-
-
-
-
-
+           
+                
 
             });
-
-
-
-
 
         }
     })
