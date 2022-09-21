@@ -1030,7 +1030,7 @@ span.greenball-1{top:-10px;}
 .fullbody_scan_wrapper {margin-top: 44px;}
 .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
 .userprofile strong {font-size: 16px;font-weight: 800;line-height: 1.6;color: #1f1f1f;margin-left: 12px;}
-.sidebar_block {width: 258px;right: 0;top: 72px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
+/* .sidebar_block {width: 258px;right: 0;top: 72px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
 position: fixed;transition: 400ms;
 transform: translateX(100%);
 -webkit-transform: translateX(100%);
@@ -1039,7 +1039,7 @@ transform: translateX(100%);
     transform: translate(0%);
     -webkit-transform: translateY(0%);
     -ms-transform: translateY(0%);
-}
+} */
 }
 @media(min-width:768px){
     .mobile_block{display:none!important;}
