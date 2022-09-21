@@ -88,7 +88,7 @@
 @media only screen and (max-width: 1300px){
     .subject_performance_card .dashSubtext{font-size:13px;}
     .myqTodayGraphSec .dashSubHeading{width:100%;}
-    .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;}
+    .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;font-size:13px;}
     .selectPlan {
         padding: 0px 40px 45px;
     }
