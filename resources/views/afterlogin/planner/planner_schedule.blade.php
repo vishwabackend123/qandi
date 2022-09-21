@@ -366,7 +366,7 @@ $userData = Session::get('user_data');
             },
 
             success: function(response_data) {
-                console.log(response_data);
+
                 var response = jQuery.parseJSON(response_data);
                 res_chpter_id = response.chapter_id;
                 res_chpter_name = response.chapter_name;
@@ -374,6 +374,8 @@ $userData = Session::get('user_data');
                 $('#select_chapt_id' + chapt_id).val(res_chpter_id);
                 $('#select_chapt_name' + chapt_id).html(res_chpter_name);
                 $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
+
+                $('#saveplannerbutton').removeClass('disabled');
 
             },
 
@@ -542,7 +544,7 @@ $userData = Session::get('user_data');
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
-                console.log(response);
+
                 if (response.range > 0) {
 
                     $('#number').val(response.range);
@@ -552,7 +554,7 @@ $userData = Session::get('user_data');
                     var planned_edit = response.planner;
                     var result = Object.values(planned_edit);
                     result.forEach(function(item) {
-                        console.log(item);
+
                         var subject_id = item.subject_id;
                         var chapter_id = item.chapter_id;
                         var chapter_name = item.chapter_name;
