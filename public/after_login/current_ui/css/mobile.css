@@ -376,7 +376,7 @@
     .main-wrapper header{width:100%;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
-    .scrollnone .main-wrapper header{width:100%;}
+    .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
         .view_detail_text_colleps {
@@ -2343,7 +2343,7 @@ transform: translateX(100%);
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
         .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{width:560px;}
+        .mobilescrolltab .nav-tabs{min-width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:38px;}
@@ -2776,7 +2776,7 @@ transform: translateX(100%);
         transform: rotate(90deg);
     }
    .examReviewscreenmob .sachin {
-        display: none;
+        /* display: none; */
         position: absolute;
         bottom: 0px;
         background: white;
@@ -2784,6 +2784,7 @@ transform: translateX(100%);
         z-index: 999;
         width: 100%;
         left: 0px;    padding-left: 16px;
+        height: 0px;
     }
   .examReviewscreenmob  .btn123 {
         position: fixed;
@@ -2809,7 +2810,7 @@ transform: translateX(100%);
  
     .examReviewscreenmob    .reviewans-mainsec {
             position: absolute;
-            bottom: 4px;
+            bottom: -5px;
             background: #fff;
             overflow: hidden;
             margin-right: 15px;
@@ -2896,12 +2897,12 @@ transform: translateX(100%);
         font-weight: 800;
         border-bottom: 1px solid rgba(205, 227, 208, 0.5);
         color: #363c4f;
-        padding-top: 20px;
+       
 
     }
    
    .examReviewscreenmob  .reviewScreenright .text-exambottom-sec {
-        height: 33vh;
+        height:0px;
         width: 97%;
     }
     .examReviewscreenmob .reviewScreenright  button.btn-ans {
