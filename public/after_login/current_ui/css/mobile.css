@@ -396,8 +396,14 @@
             .headerRight span.usertext {
                 margin: 0 5px;
             }
+            #menumobilehide {
+                display: none;
+            }
+            .headerLeft h2{margin-left:30px;}
 }
 @media (min-width:991px){
+    .mobile_block_tab {display:none!important;}
+   
     .desktop_hide_performence_analytics
     {
         display:none;

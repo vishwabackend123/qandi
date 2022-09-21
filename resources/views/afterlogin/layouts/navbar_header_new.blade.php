@@ -25,7 +25,7 @@ $nitifiCount=count($notifications);
 <header>
     <div class="headerMain">
         <div class="headerLeft">
-            <span class="sidebar-logo d-inline-block mobile_block">
+            <span class="sidebar-logo d-inline-block mobile_block_tab">
                 <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
             </span>
             <h2 class="text-capitalize mobile_hide">{{isset($header_title)?$header_title:$name}}</h2>
@@ -67,12 +67,12 @@ $nitifiCount=count($notifications);
                     <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </span>
-            <span class="headericon  mobile_block mobilenav" id="menumobile">
+            <span class="headericon  mobile_block_tab mobilenav" id="menumobile">
                 <a href="javascript:void(0);">
                     <img src="{{URL::asset('public/after_login/current_ui/images/mobile-nav.svg')}}" alt="" class="mobileicon">
                 </a>
             </span>
-            <span class="headericon  mobile_block mobilenav" id="menumobilehide">
+            <span class="headericon   mobile_block_tab  mobilenav" id="menumobilehide">
                 <a href="javascript:void(0);">
                     <img src="{{URL::asset('public/after_login/current_ui/images/cross-menu.svg')}}" alt="" class="mobileicon">
                 </a>
