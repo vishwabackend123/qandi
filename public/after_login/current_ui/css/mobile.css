@@ -2482,7 +2482,7 @@ transform: translateX(100%);
             .testscreenmob .questionwrapper {
                 padding: 0px;
                 margin: auto;
-                max-height: calc(100vh - 520px);
+                max-height: calc(100vh - 480px);
                 overflow: overlay;
             }
 
@@ -2548,7 +2548,7 @@ transform: translateX(100%);
                 overflow-x:auto;
             }
             .testscreenmob .questionChoice {
-                margin: 28px 0px 2px 0;
+                margin: 15px 0px 2px 0;
                 min-width: 500px;
             }
 
@@ -2613,10 +2613,11 @@ transform: translateX(100%);
             }
             .testscreenmob .text-exambottom-sec {
                 margin-top: 20px !important;
-                height: 30vh;
+                height: 20vh;
                 margin-right: 0px;
                 text-align: center;
-                width: 95%;margin-bottom: 20px;
+                width: 95%;
+                margin-bottom: 47px;
             }
             .testscreenmob .btn123{
                 position: fixed;
@@ -2893,7 +2894,8 @@ transform: translateX(100%);
     .planner-date .form-control {padding: 9px 14px 0px;line-height: inherit;}
     .examReviewscreenmob .Answerinner p{
         margin: 0;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
         font-weight: 800;
         border-bottom: 1px solid rgba(205, 227, 208, 0.5);
         color: #363c4f;
@@ -2920,6 +2922,7 @@ transform: translateX(100%);
         .topicHeadingNew{font-size:16px;margin-bottom:12px;}
         .chapter_profici_nav__right_contant{padding-bottom:8px;}
         .accordion-header{min-width:auto;}
+        button.btn-ans:nth-child(7n) { margin-right: 18px;}
 
 }
 
@@ -3016,6 +3019,7 @@ transform: translateX(100%);
     .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
     .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
     /************ Amit end *********/
+    
 }
 
 @media(max-width:360px){
@@ -3032,6 +3036,9 @@ transform: translateX(100%);
     .subject_score_card .col-sm-6.mb-5:last-child{margin: 0 !important;}
 
     /************ Amit end *********/
+    button.btn-ans:nth-child(7n) {
+        margin-right: 0px;
+    }
 
 }
 
