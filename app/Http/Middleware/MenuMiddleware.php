@@ -174,6 +174,37 @@ class MenuMiddleware
             };
 
 
+            /* check user status new or old */
+
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_url_check = $api_URL . 'api/check-if-fresh-user/' . $user_id;
+            $curl_option = array(
+                CURLOPT_URL => $curl_url_check,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Authorization: Bearer " . $this->getAccessToken()
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $statusCheck_json = curl_exec($curl);
+            $statusCheck = json_decode($statusCheck_json);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+
+            $userStatus = isset($statusCheck->fresh_user) ? $statusCheck->fresh_user : false;
+            /* check user status new or old */
+
+
 
             \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
             \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
@@ -191,6 +222,7 @@ class MenuMiddleware
             \Illuminate\Support\Facades\View::share('student_stage_at_sgnup', $student_stage_at_sgnup);
             \Illuminate\Support\Facades\View::share('secretKeysRedis', $redis_data);
             \Illuminate\Support\Facades\View::share('secretKeysDB', $db_data);
+            \Illuminate\Support\Facades\View::share('userStatus', $userStatus);
 
 
             return $next($request);
