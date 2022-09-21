@@ -52,16 +52,6 @@ $nitifiCount=count($notifications);
                     </svg>
                 </a>
             </span>
-            <span class="headericon  mobile_block mobilenav" id="menumobile">
-                <a href="javascript:void(0);">
-                    <img src="{{URL::asset('public/after_login/current_ui/images/mobile-nav.svg')}}" alt="" class="mobileicon">
-                </a>
-            </span>
-            <span class="headericon  mobile_block mobilenav" id="menumobilehide">
-                <a href="javascript:void(0);">
-                    <img src="{{URL::asset('public/after_login/current_ui/images/cross-menu.svg')}}" alt="" class="mobileicon">
-                </a>
-            </span>
             <span class="headericon dropdown mobile_hide user_profile_tab">
                 <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="User">
                     @if(isset($userData->user_profile_img))
@@ -77,6 +67,17 @@ $nitifiCount=count($notifications);
                     <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </span>
+            <span class="headericon  mobile_block mobilenav" id="menumobile">
+                <a href="javascript:void(0);">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/mobile-nav.svg')}}" alt="" class="mobileicon">
+                </a>
+            </span>
+            <span class="headericon  mobile_block mobilenav" id="menumobilehide">
+                <a href="javascript:void(0);">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/cross-menu.svg')}}" alt="" class="mobileicon">
+                </a>
+            </span>
+            
         </div>
     </div>
     <div class="mobilemenu"></div>
