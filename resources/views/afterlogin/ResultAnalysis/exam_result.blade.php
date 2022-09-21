@@ -66,7 +66,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">My Score
                             <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -83,7 +83,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </span>
                         </h3>
                         <div class="row align-items-center">
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
                                     <div class="myScore">
@@ -92,7 +92,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="color_labels">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span>Correct <b><small></small>{{isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0}}</b></span>

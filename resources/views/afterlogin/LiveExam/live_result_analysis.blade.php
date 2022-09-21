@@ -52,8 +52,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-xl-5">
-                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius" style=" height: 292px;">
+                <div class="col-md-5">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">My Score
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -67,7 +67,7 @@
                             </span>
                         </h3>
                         <div class="row align-items-center">
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
                                     <div class="myScore">
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="color_labels">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span>Correct <b><small></small>{{$response->correct_count}}</b></span>
@@ -178,7 +178,7 @@
                     </div>
                     @endif
                 </div>
-                <div class="col-lg-12 col-xl-7">
+                <div class="col-md-7">
                     @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash subject_score_card borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Subject Score
