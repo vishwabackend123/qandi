@@ -24,16 +24,16 @@
             stop();
         }
     });
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $("#FullTest_Exam_Panel_Interface_A").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-    });
+    /*   $(window).load(function() {
+          $("#endExam").modal({
+              backdrop: "static",
+              keyboard: false
+          });
+          $("#FullTest_Exam_Panel_Interface_A").modal({
+              backdrop: "static",
+              keyboard: false
+          });
+      }); */
 </script>
 <style>
     .time_taken_css span:first-child {
@@ -800,6 +800,11 @@ $question_type = "Numerical";
         if (typeof setEachQuestionTimeNext === "function") {
             setEachQuestionTimeNext();
         }
+        $fExamCheck = $('#FullTest_Exam_Panel_Interface_A').hasClass('show');
+        if ($fExamCheck == true) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+        }
+
         $('body').removeClass("make_me_blue");
     }
 
@@ -815,9 +820,12 @@ $question_type = "Numerical";
         clearInterval(setEachQuestionTimeNext_countdown);
         clearInterval(setEachQuestionTimeNext_countdownNext);
         if (type !== 'submit') {
+
             var pausedTime = $("#base-timer-label").text();
             $('#pauseTime').text(pausedTime);
             $("#resume-test").modal("show");
+
+
             $('body').addClass("make_me_blue");
         }
     }
@@ -1184,7 +1192,7 @@ $question_type = "Numerical";
         });
 
         /*   if ($("#quesnext" + question_id).is(":disabled") == true) {
-
+$("#resume-test").modal("show");
               $("#submitExam").click();
 
           } else {
@@ -1471,7 +1479,11 @@ $question_type = "Numerical";
 
                     let lefttime_exam_s = document.getElementById("lefttime_pop_s");
                     lefttime_exam_s.innerHTML = formatTime(timeLeft);
-                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                    $tabCheck = $('#resume-test').hasClass('show');
+                    if ($tabCheck == false) {
+                        $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                    }
 
 
                 } else {
