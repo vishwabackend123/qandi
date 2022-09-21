@@ -1144,6 +1144,11 @@ transform: translateX(100%);
     padding: 16px 0 !important;
     background: transparent !Important;   
     }
+    .exam_inst_all_the_best {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 18px;
+    }
     .take-fulltest {
     padding: 0 0;
     border-radius: 0;
