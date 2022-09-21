@@ -375,7 +375,12 @@ $userData = Session::get('user_data');
                 $('#select_chapt_name' + chapt_id).html(res_chpter_name);
                 $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
 
-                $('#saveplannerbutton').removeClass('disabled');
+                var limitrange = $("#number").val();
+                var chapterscount = $('input[name="chapters[]"]').length;
+
+                if (limitrange == chapterscount) {
+                    $('#saveplannerbutton').removeClass('disabled');
+                }
 
             },
 
