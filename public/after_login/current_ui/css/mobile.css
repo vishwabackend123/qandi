@@ -1,5 +1,5 @@
 @media only screen and (max-width: 1600px){
-    .myqTodayGraphSec .dashSubHeading{width:98%;}
+    /* .myqTodayGraphSec .dashSubHeading{width:98%;} */
     .myqTodayGraphSec .dashSubtext{max-width: 77.6%;}
 }
 
