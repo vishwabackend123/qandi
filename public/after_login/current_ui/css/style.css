@@ -3980,7 +3980,7 @@ ul.task_center_lists .task1 {
 .test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
 .colorLabels{margin:0 28px;}
 /* .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto} */
-.tabMainblock .commontab .nav-tabs .nav-link {font-weight: 500;}
+.tabMainblock .commontab .nav-tabs .nav-link {font-weight: 500;color: rgba(54,60,79,0.6);}
 .referpopupBackdrop .modal-backdrop {background:none;}
 .exam_duration_block {padding: 24px 0 19px;border-bottom: 1px solid rgba(205, 227, 208, 0.5);margin-bottom: 20px;}
 .exam_duration_block label{ color: #363c4f;line-height: 1.4;font-size: 14px;font-weight: 500;margin: 20px 0 2px;}
