@@ -63,6 +63,7 @@ class ReviewController extends Controller
                 Redis::del(Redis::keys('review_question:' . $user_id));
             } */
 
+
             if (!empty($result_id)) {
                 $curl = curl_init();
                 $api_URL = env('API_URL');
@@ -218,7 +219,8 @@ class ReviewController extends Controller
                 return view('afterlogin.ExamsReview.exam_review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name', 'all_question_array', 'result_id'));
             } else {
                 if ($pageName == 'attempted') {
-                    return Redirect::back()->withErrors(['Data does not exist for this result id.']);
+                    // return Redirect::back()->withErrors(['Data does not exist for this result id.']);
+                    return redirect()->back()->withErrors(['errors' => 'Data does not exist for this result id.']);
                 } else {
                     return redirect()->route('dashboard');
                 }
