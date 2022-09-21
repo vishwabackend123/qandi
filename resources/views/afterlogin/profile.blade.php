@@ -166,7 +166,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </form>
                     </div>
                 </div>
-                <div class="pb-sm-5 mb-3">
+                <div class="pb-sm-5 mb-3 profile_line">
                     <div class="line"></div>
                 </div>
                 <div class="row">

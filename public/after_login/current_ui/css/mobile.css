@@ -345,6 +345,12 @@
     
 }
 @media only screen and (max-width: 991px){
+    form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
+        margin-bottom: 0px !important;
+    }
+    .pb-sm-5.mb-3.profile_line {
+        padding-bottom: 0rem!important;
+    }
     .matrix-page-wrapper .col-lg-8.fortab,.aeck_mqmatrix_wrapper .col-lg-8.fortab{margin-top:16px;}
    .topic_form{
     display: none !Important;
