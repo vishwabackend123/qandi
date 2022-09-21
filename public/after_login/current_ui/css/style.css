@@ -5174,6 +5174,7 @@ justify-content: space-between;}
                        .chapterlistTop{padding:32px 0px 21px;} 
                        .Chapter_Main_Graph{width:50px;height:50px;position: relative;margin-right: 32px;}
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
+                       .timemanagement .tab-content{padding:0px}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/

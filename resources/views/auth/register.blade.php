@@ -112,7 +112,7 @@
                 </a>
             </figure>
             <div class="loginform m-auto">
-                <h1 class="pb-2 mb-1">Sign up</h1>
+                <h1 class="pb-2 mb-1">Sign Up</h1>
                 <p>Already have an account? <a href="{{route('login')}}">Login</a></p>
                 <form id="studentsignup" method="post">
                     @csrf
