@@ -17,19 +17,26 @@ $(document).on('click', function (e) {
         $(".submenu-block").hide();
         $(".sidebar-exam-menu").removeClass("active");
     }
-    var exam_flow = ['exam_custom', 'series_list', 'mockExamTest','previous_year_exam','live_exam_list','custom_exam','exam_result_analytics','get_exam_result_analytics','custom_exam_chapter','custom_exam_topic','test_series','mock_exam','live_exam','previousYearExam'];
-    var url = window.location.pathname.split("/");
-    var action_method = url[1];
-    if (action_method == 'overall_analytics') {
-        $('.current_dashboard').removeClass('active');
-        $('.current_analytics').addClass('active');
-    } else if (action_method == 'planner') {
-        $('.current_dashboard').removeClass('active');
-        $('.current_planner').addClass('active');
-    }  else if (exam_flow.includes(action_method)) {
-        $('.current_dashboard').removeClass('active');
-        $('.current_practice').addClass('active');
+    if (e.target.classList.contains('ref_class')) {
+        $('.mb-4').removeClass('active');
+        $('.current_refer').addClass('active');
+    }else
+    {
+        var exam_flow = ['exam_custom', 'series_list', 'mockExamTest','previous_year_exam','live_exam_list','custom_exam','exam_result_analytics','get_exam_result_analytics','custom_exam_chapter','custom_exam_topic','test_series','mock_exam','live_exam','previousYearExam'];
+        var url = window.location.pathname.split("/");
+        var action_method = url[1];
+        if (action_method == 'overall_analytics') {
+            $('.current_dashboard').removeClass('active');
+            $('.current_analytics').addClass('active');
+        } else if (action_method == 'planner') {
+            $('.current_dashboard').removeClass('active');
+            $('.current_planner').addClass('active');
+        }  else if (exam_flow.includes(action_method)) {
+            $('.current_dashboard').removeClass('active');
+            $('.current_practice').addClass('active');
+        }  
     }
+    
 });
 
 /************* Dashboard- Subject Performance Circular Progress Bar ************/

@@ -155,7 +155,7 @@ $question_type = "Numerical";
                                                 <div id="percentBar_{{$activeq_id}}"></div>
                                             </div>
                                             <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
-                                                <span>Time taken: </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                                <span>Time taken: </span><span id="up_minutes"></span>:<span id="up_seconds"></span> mins
                                             </div>
                                         </div>
                                         <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />

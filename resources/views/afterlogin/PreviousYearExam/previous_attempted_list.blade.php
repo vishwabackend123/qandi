@@ -22,6 +22,15 @@
         @foreach($result_data as $sche)
         @php
         $year = isset($sche->paper_year) ? $sche->paper_year : '';
+        $marks =$sche->no_of_question * 4;
+        if($sche->no_of_question == 90)
+            {
+            $marks=300;
+            }
+            if($sche->no_of_question == 200)
+            {
+            $marks=720;
+            }
         @endphp
         <div class="accordion-item pt-4 compLeteA filter_year_{{$year}}">
             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
@@ -81,7 +90,7 @@
                         <div class="live_exam_diveder_div"></div>
                         <div class="mock_test_sub_content22 mock_test_marks_content">
                             <div class="mock_test_qdms_text1">Marks</div>
-                            <div class="mock_test_qdms_text2">{{$sche->no_of_question * 4}}</div>
+                            <div class="mock_test_qdms_text2">{{$marks}}</div>
                         </div>
                         <div class="live_exam_diveder_div"></div>
                         <div class="mock_test_sub_content22 mock_test_sub_content ">
@@ -96,7 +105,7 @@
                         <div class="live_exam_diveder_div"></div>
                         <div class="mock_test_sub_content22">
                             <div class="mock_test_qdms_text1">Score</div>
-                            <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$sche->no_of_question * 4}}</span></div>
+                            <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$marks}}</span></div>
                         </div>
                     </div>
                 </div>

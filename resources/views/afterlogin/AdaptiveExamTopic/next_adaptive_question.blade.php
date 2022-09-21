@@ -107,7 +107,7 @@ $question_type = "Numerical";
                     <div id="percentBar_{{$active_q_id}}"></div>
 
                 </div>
-                <div class="time_taken_css" id="q_time_taken_{{$active_q_id}}" style="display:none;"><span>Time taken: </span><span id="up_minutes_{{$active_q_id}}"></span>:<span id="up_seconds_{{$active_q_id}}"></span>mins</div>
+                <div class="time_taken_css" id="q_time_taken_{{$active_q_id}}" style="display:none;"><span>Time taken: </span><span id="up_minutes_{{$active_q_id}}"></span>:<span id="up_seconds_{{$active_q_id}}"></span> mins</div>
 
             </div>
             <input type="hidden" name="question_spendtime" id="timespend_{{$active_q_id}}" value="" />
@@ -217,9 +217,11 @@ $question_type = "Numerical";
     /*  $("#myTab .all_div").removeClass("active");
      $("#myTab .class_" + subject_id).addClass("active"); */
 
-
-    $('#exam_content_sec').append(
-        '<button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_' + question_id + '" onclick="qnext(' + question_id + ')">' + curr_ques_no + '</button>');
+    var nextQidDiv = document.getElementById('btn_' + question_id);
+    if (nextQidDiv === null) {
+        $('#exam_content_sec').append(
+            '<button type="button" class="next_button btn btn-ans border-btn disabled" id="btn_' + question_id + '" onclick="qnext(' + question_id + ')">' + curr_ques_no + '</button>');
+    }
 </script>
 <!-- check size of screen -->
 <script>

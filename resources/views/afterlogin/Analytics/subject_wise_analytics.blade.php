@@ -106,7 +106,7 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Get an-depth analysis of your core learning skill.
+                                    Get an in-depth analysis of your core learning skill.
                                 </p>
                             </span>
                         </h3>
@@ -283,7 +283,7 @@
                             <div class="tab-pane fade show active" id="pills-Day3" role="tabpanel" aria-labelledby="pills-Day3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Total Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartDay2"></canvas>
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@
                             <div class="tab-pane fade" id="pills-Week3" role="tabpanel" aria-labelledby="pills-Week3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Total Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartWeek2"></canvas>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
                             <div class="tab-pane fade" id="pills-Month3" role="tabpanel" aria-labelledby="pills-Month3-tab">
                                 <div class="bargraph_scroll">    
                                     <div class="graph_padd bargraph_size">
-                                        <span class="yaxis_label yaxis_label_2"><small> Average  Time Taken (sec) </small> </span>
+                                        <span class="yaxis_label yaxis_label_2"><small> Total Time Taken (sec) </small> </span>
                                         <canvas id="timeManagementChartMonth2"></canvas>
                                     </div>
                                 </div>

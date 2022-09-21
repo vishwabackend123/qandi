@@ -68,8 +68,9 @@ class ResultController extends Controller
             $tasktype = isset($request->tasktype) ? $request->tasktype : "";
             $category = isset($request->category) ? $request->category : "";
             /* end parameter for dailyTaskExam result */
-
-            if ($test_type == 'Mocktest') {
+            if ($test_type == 'Live') {
+                $redis_json = Redis::get('custom_answer_time_live_' . $user_id);
+            } elseif ($test_type == 'Mocktest') {
                 $redis_json = Redis::get('custom_answer_time_mock' . $user_id);
             } elseif ($test_type == 'Profiling') {
                 $redis_json = Redis::get('custom_answer_time_full' . $user_id);

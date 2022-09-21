@@ -443,7 +443,7 @@ $leadData ='';
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <div class="freeTrial">
                         @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start your {{$sub->trial_subscription_duration}}-day free trial.</a>
                         @endif
                     </div>
                     @else
@@ -583,7 +583,7 @@ $leadData ='';
 
                     <div class="freeTrial">
                          @if(isset($leadData) && $leadData !=2)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} day free trial</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start your {{$sub->trial_subscription_duration}}-day free trial</a>
                         @endif
                     </div>
                     @else
@@ -829,7 +829,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);" style="cursor:default">{{$sub->trial_subscription_duration}} day trial Period expired.</a>
+                        <a href="javascript:void(0);" style="cursor:default">Your {{$sub->trial_subscription_duration}}-day free trial has expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -944,7 +944,7 @@ $leadData ='';
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);" style="cursor:default">14 day trial Period expired.</a>
+                        <a href="javascript:void(0);" style="cursor:default">Your 14-day free trial has expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">

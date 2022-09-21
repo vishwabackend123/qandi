@@ -2328,7 +2328,7 @@ a.btn-common-attempted svg {
     font-weight: 800;
     color: #56b663;
 }
-.reviewScreenright .bck-btn{border-radius:0px;}
+.reviewScreenright .bck-btn{border-radius:0px;color: #56b663!important;}
 .bck-btn  span.bckbtninner{border: solid 1px #56b663;    padding: 5px 10px;
     border-radius: 8px;
     width: 60%;display: inline-block;
@@ -2433,10 +2433,10 @@ a.btn-common-attempted svg {
 /********************Start-Dashboard-By-Sachin-Date-06-07-22**************/
 
  
- .graphDetailempty .testScrolltype {
+ /* .graphDetailempty .testScrolltype {
      margin-right: 30px;
      padding-top:0px;
- }
+ } */
  .h{
     display:flex;
     margin-bottom: 1rem;
@@ -2459,6 +2459,7 @@ a.btn-common-attempted svg {
    color: #363c4f;
     padding-left: 20px;
     width: 50%;
+    min-height:230px;
  }
  
  .journeyGraph .boxheading {
@@ -3378,7 +3379,9 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     height: 1em;
     border-radius: 50%;
     display: inline-block;
-    top: -15px;transform: rotate(-133deg);}
+    top: -15px;
+    /* transform: rotate(-133deg); */
+}
 
 .mq_circle_inner {
     position: absolute;
@@ -3409,7 +3412,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .mq_percent_more .circletop:after{
     position: absolute;
-    left: 0.5em;
+    left: 0.4em;
     top: 0em;
     right: 0;
     bottom: 0;
@@ -3786,7 +3789,7 @@ a.btn-close,a.btn-close:hover{opacity: 1;}
 .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox {
     width: 96px!important;
     position: relative;
-    bottom: -2px;
+    bottom: -2px;right:0;
 }
 .commontab .nav-tabs .nav-item{    margin-bottom: -1px;}
 input.text-box.markstrend::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -3978,7 +3981,7 @@ ul.task_center_lists .task1 {
 .test_analytics_wrapper ul#topic-tab.nav.nav-pills.d-inline-flex {margin: 0 0 27px!important;}
 .colorLabels{margin:0 28px;}
 /* .dropup .noofquestions-block.dropdown-menu{transform:none!important;bottom:43%!important;top:auto} */
-.tabMainblock .commontab .nav-tabs .nav-link {font-weight: 500;}
+.tabMainblock .commontab .nav-tabs .nav-link {font-weight: 500;color: rgba(54,60,79,0.6);}
 .referpopupBackdrop .modal-backdrop {background:none;}
 .exam_duration_block {padding: 24px 0 19px;border-bottom: 1px solid rgba(205, 227, 208, 0.5);margin-bottom: 20px;}
 .exam_duration_block label{ color: #363c4f;line-height: 1.4;font-size: 14px;font-weight: 500;margin: 20px 0 2px;}
@@ -4082,14 +4085,16 @@ span.proficiency_value {
     font-weight: 800;
     color: #1f1f1f;
     margin-right: 10px;
+    min-width:45px;display:inline-block;
 }
 .performance_chapter_block label {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     /* flex: 1; */
-    min-width: 145px;
+    min-width: 153px;
 }
+.performance_chapter_sublists .performance_chapter_block label b{margin-left:-4px;}
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
@@ -4149,8 +4154,41 @@ span.proficiency_value {
     height: calc(100vh - 330px);
     padding-right: 10px;
 } */
-
-
+.Chapter_Main_Graph:hover .scoreTooltip {
+    display: block;
+}
+.scoreTooltip {
+    padding: 12px 16px 12px 16px;
+    box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
+    background-color: #1f4736;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    position: absolute;
+    display: none;
+    border-radius: 12px;
+    white-space: nowrap;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.scoreTooltip:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 15px;
+    border: 10px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+.tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
+    margin-right: 60px;
+    padding: 0 8px 20px;
+}
 /********************* Amit End ****************************/
 
 
@@ -7227,14 +7265,16 @@ border-color: #56b663;
     font-size: 22px;
     font-weight: 800;
     padding-left: 14px;
+    vertical-align: bottom;
 }
-.name-title > span {
+/* .name-title > span {
     vertical-align: middle;
-}
+} */
 .contact-section {
     display: flex;
     padding: 20px 0px 0px;
     justify-content: space-between;
+    align-items: flex-end;
 }
 /* .contact-num { width: 50%;} */
 .contact-num > span,.city-sec > span {
