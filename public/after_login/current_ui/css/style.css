@@ -3600,7 +3600,11 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .chapter_performance_card ul.topic_score_lists li:last-child {
     margin-bottom: 0;
 }
-.chapter_performance_card .subjectperformLegend.flexleg{margin-bottom:23px;}
+.chapter_performance_card .subjectperformLegend.flexleg {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5eaee;
+    padding-bottom: 23px;
+}
 .overall_percentage_chart{height:280px!important;}
 /* .overall_percentage_chart canvas{height:100%!important;width: 100%!important;} */
 .halfdoughnut {
