@@ -802,7 +802,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @else
                                             <div class="graphDetailempty">
                                                 <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                                <div class="h">
+                                                <div class="yourPacebox">
                                                     <p class="testScrolltype">
                                                         <span class="weekCountlineH myscore"></span>
                                                         <span class="weekText">My score</span>
@@ -816,7 +816,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <span class="weekText">Top score</span>
                                                     </p>
                                                 </div>
-                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
+                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
                                             </div>
                                             @endif
                                         </div>
