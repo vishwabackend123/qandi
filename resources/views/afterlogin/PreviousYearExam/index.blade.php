@@ -192,6 +192,7 @@
     $('.view_detail_text_colleps2').click(function() {
         var text_data = $(this).text();
         $('.view_detail_text_colleps2').text('View details');
+        $('.compLeteS').removeClass('list_active');
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
             $(this).text('Hide details');

@@ -539,6 +539,7 @@
                 allowClear: false,
                 minimumInputLength: 3,
                 minimumResultsForSearch: -1,
+                maximumInputLength: 28,
                 tokenSeparators: [',', ' '],
                 placeholder: "Select a City",
                 selectOnClose: false,

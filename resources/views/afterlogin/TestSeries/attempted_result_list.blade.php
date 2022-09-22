@@ -102,7 +102,7 @@
                 <a href="{{route('exam_review',[$sche->id,'attempted',$test_name])}}" class="btn btn-common-transparent bg-transparent ms-4 mobile_hide">Review exam</a>
             </div>
         </div>
-        <div id="chapter_{{$sche->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="chapter_{{$sche->id}}" class="accordion-collapse collapse all_show_hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body ps-0 pe-0">
                 <div class="mock_test_ques_dure_marks_sub d-flex">
                     <div class="mock_test_ques_content2">
@@ -173,6 +173,10 @@
         var text_data = $(this).text();
         var ids = parseInt($(this).attr('data-id'));
         var toggel = $('#chapter_' + ids).hasClass('show');
+        $('.compLeteS').removeClass('list_active');
+
+        $('.all_show_hide').removeClass('show');
+        $('.view_details').text('View details');
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
             $(this).text('Hide details');
