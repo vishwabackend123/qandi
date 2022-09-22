@@ -26,7 +26,9 @@ $nitifiCount=count($notifications);
     <div class="headerMain">
         <div class="headerLeft">
             <span class="sidebar-logo d-inline-block mobile_block_tab">
-                <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+                <a href="{{env('CMS_URL')}}" target="_blank">
+                    <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
+                </a>
             </span>
             <h2 class="text-capitalize mobile_hide">{{isset($header_title)?$header_title:$name}}</h2>
             <h6 class="mobile_hide"><label>Course:</label>
