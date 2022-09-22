@@ -158,7 +158,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </div>
                                 </div>
                             </div>
-                            <div class="line mt-4 mb-3"></div>
+                            <div class="line mt-4 mb-4"></div>
                             <div class="d-flex justify-content-end mb-md-5 mb-2 pb-5">
                                 <button type="button" id="cancelEdit" class="btn cancle me-2 bg-transparent ">Cancel</button>
                                 <button type="submit" id="saveEdit" class="btn savebtn text-white border-0 ms-1 ">Save</button>
