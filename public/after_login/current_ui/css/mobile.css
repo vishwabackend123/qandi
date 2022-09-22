@@ -2370,7 +2370,7 @@ transform: translateX(100%);
         .mobilescrolltab .nav-tabs{min-width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
-        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:38px;}
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:36px;}
         .overallmain .commonWhiteBox{height:auto;}
         .codelearningBlock .col-md-6{    flex: 0 0 auto;
             width: 50%;padding: 0px 8px;}
