@@ -207,6 +207,12 @@
                 } else if (e.which == 8) {
                     $(e.target).prev('.otp_num').focus();
                 }
+                if (e.which == 37) {
+                    $(e.target).prev('.otp_num').focus();
+                }
+                if (e.which == 39) {
+                    $(e.target).next('.otp_num').focus();
+                }
                 if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
                     $('#otp-verify-btn').removeAttr("disabled");
                     $('#otp-verify-btn').removeClass("disabled");

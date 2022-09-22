@@ -613,7 +613,7 @@
             });
         });
 
-        $('.otp').keyup(function() {
+        $('.otp').keyup(function(e) {
 
             var isEmptyOTP = false;
             $('.otp').each(function() {
@@ -629,6 +629,12 @@
 
             } else {
                 $("#errlog_otp").html("");
+            }
+            if (e.which == 37) {
+                $(e.target).prev('.otp').focus();
+            }
+            if (e.which == 39) {
+                $(e.target).next('.otp').focus();
             }
         });
 
