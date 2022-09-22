@@ -539,7 +539,7 @@
                 allowClear: false,
                 minimumInputLength: 3,
                 minimumResultsForSearch: -1,
-                maximumInputLength: 28,
+                maximumInputLength: 29,
                 tokenSeparators: [',', ' '],
                 placeholder: "Select a City",
                 selectOnClose: false,
@@ -593,7 +593,7 @@
                 }
             });
             $(document).on('input', '.select2-search__field', function(event) {
-                if (event.target.value.length > 28) {
+                if (event.target.value.length >= 28) {
                     var search_value = event.target.value;
                     search_value = search_value.substring(0, 28);
                     $(this).val(search_value);
