@@ -7982,3 +7982,6 @@ margin-bottom: 12px;
         .adaptiveexamnewwrapper .examRightpanel .text-examtop-sec{
             padding-bottom: 39px
         }
+        .arrowroted svg{
+            transform: rotate(180deg);
+        }
