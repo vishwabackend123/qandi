@@ -2748,7 +2748,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: end;
+     align-items: unset;
  }
  .planewrapper{
      display: flex;
@@ -5174,6 +5174,7 @@ justify-content: space-between;}
                        .chapterlistTop{padding:32px 0px 21px;} 
                        .Chapter_Main_Graph{width:50px;height:50px;position: relative;margin-right: 32px;}
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
+                       .timemanagement .tab-content{padding:0px}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -7453,7 +7454,7 @@ margin-bottom: 25px;
 .learskill h3{
       font-size: 14px;
   font-weight: bold;
-  color: #1f1f1f;
+  color: #1f1f1f;margin-bottom:0px;
 }
 .persent_std {
   padding-bottom: 20px;
@@ -7818,7 +7819,7 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.quesbox img{max-width: 400px;}
+.quesbox img{max-width: 400px; max-height: 170px !important;}
 .wronganswer .seNo {
     background-color: #d92d20 !important;
     color: #fff !important;

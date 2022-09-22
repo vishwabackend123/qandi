@@ -13,6 +13,7 @@
     .plantitleBox{padding-right:155px;}
 }
 @media only screen and (max-width: 1440px) {
+    .myqTodayGraphSec .dashSubtext{max-width:100%;}
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
 }
@@ -82,12 +83,12 @@
             min-height: 303px;
             max-height: 303px;
         }
-        .myqTodayGraphSec .dashSubtext{margin-bottom:15px;}
+        .myqTodayGraphSec .dashSubtext{margin-bottom:15px;max-width:100%;}
 }
 @media only screen and (max-width: 1300px){
     .subject_performance_card .dashSubtext{font-size:13px;}
     .myqTodayGraphSec .dashSubHeading{width:100%;}
-    .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;}
+    .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;font-size:13px;}
     .selectPlan {
         padding: 0px 40px 45px;
     }
@@ -103,7 +104,7 @@
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
 }
 @media only screen and (max-width: 1280px){
-    .myqTodayGraphSec .textblock {padding-left: 13px;}
+    .myqTodayGraphSec .textblock {padding-left: 8px;}
     .tooltipclass{min-width: 320px;}
     .contacrus_page_wrapper {
         padding-bottom: 200px;
@@ -296,6 +297,7 @@
 .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
 .journeyGraph {padding: 20px;}
 .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
+.fullbodyBox{justify-content:space-between;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -345,6 +347,12 @@
     
 }
 @media only screen and (max-width: 991px){
+    form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
+        margin-bottom: 0px !important;
+    }
+    .pb-sm-5.mb-3.profile_line {
+        padding-bottom: 0rem!important;
+    }
     .matrix-page-wrapper .col-lg-8.fortab,.aeck_mqmatrix_wrapper .col-lg-8.fortab{margin-top:16px;}
    .topic_form{
     display: none !Important;
@@ -1111,6 +1119,10 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    h3.copyright.position-absolute {
+        position: relative !important;
+        bottom: 0;
+    }
     .headerRight span.headericon, .headerRight span.usertext {
         margin: 0px 5px;
     }
@@ -2276,7 +2288,7 @@ transform: translateX(100%);
         z-index: 9;
         padding: 15px 30px 15px 20px;
         position: absolute;
-        left: -160px;
+        left: -108px;
         top: 36px;
         min-width: 250px;
         max-width: 250px;
@@ -2294,7 +2306,7 @@ transform: translateX(100%);
         position: absolute;
         display: block;
         width: 0px;
-        left: 65%;
+        left: 43%;
         top: -18px;
         border: 12px solid transparent;
         border-left: 0;
@@ -2834,7 +2846,7 @@ transform: translateX(100%);
             min-width: 100%;
             max-width: 100% !important;
             left: 0px;
-          
+            z-index: 999;
             border-bottom: 1px solid rgba(205, 227, 208, 0.5);
             padding: 0px 16px;
         }
@@ -2939,6 +2951,7 @@ transform: translateX(100%);
         .chapter_profici_nav__right_contant{padding-bottom:8px;}
         .accordion-header{min-width:auto;}
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
+        .graphDetailempty{min-height:auto;}
 
 }
 

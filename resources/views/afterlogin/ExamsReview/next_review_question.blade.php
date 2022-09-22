@@ -610,7 +610,7 @@ $question_type = "Numerical";
             var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
-            var extra_height_total = reviewScreenright_call - 100 + "px";
+            var extra_height_total = reviewScreenright_call - 50 + "px";
             $('.reviewscreenquestion').css('height', extra_height_total);
             $('.examReviewscreenmob .questionwrapper').css('height', extra_height_total);
             $('.examReviewscreenmob .questionsliderbox').css('height', extra_height_total);
