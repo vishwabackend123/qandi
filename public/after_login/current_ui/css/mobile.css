@@ -198,6 +198,7 @@
     .questionright {padding: 4px 14px; margin-top: 10px !important;}
     .questionright h5 {font-size: 18px;}
     .attemp_box a , .sub_att_1    {font-size: 12px;}
+    .quesbox img {max-height: 90px!important;}
     
 }
 @media only screen and (max-height: 720px) {
