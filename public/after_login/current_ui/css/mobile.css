@@ -1117,6 +1117,10 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    h3.copyright.position-absolute {
+        position: relative !important;
+        bottom: 0;
+    }
     .headerRight span.headericon, .headerRight span.usertext {
         margin: 0px 5px;
     }
