@@ -7819,7 +7819,7 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.quesbox img{max-width: 400px;}
+.quesbox img{max-width: 400px; max-height: 170px !important;}
 .wronganswer .seNo {
     background-color: #d92d20 !important;
     color: #fff !important;
