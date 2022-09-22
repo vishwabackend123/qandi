@@ -18,9 +18,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     @include('afterlogin.layouts.navbar_header_new')
     <div class="content-wrapper">
         <div class="exam_instruction_wrapper">
-        <div class="mock_inst_text_mock_testmobile mobile_block">
-                    <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
-                </div>
+            <div class="mock_inst_text_mock_testmobile mobile_block">
+                <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
+            </div>
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
@@ -115,6 +115,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <input type="hidden" name="time_allowed" value="{{$requestData->time_allowed}}" />
                                     <input type="hidden" name="questions_count" value="{{$requestData->questions_count}}" />
                                     <input type="hidden" name="exam_mode" value="{{$requestData->exam_mode}}" />
+                                    <input type="hidden" name="ranSession" value="{{$ranSession}}" />
 
                                     <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
                                 </form>
