@@ -173,6 +173,8 @@
         var text_data = $(this).text();
         var ids = parseInt($(this).attr('data-id'));
         var toggel = $('#chapter_' + ids).hasClass('show');
+        $('.compLeteS').removeClass('list_active');
+
         if (text_data === 'View details') {
             $(this).parents('.compLeteS').addClass('list_active');
             $(this).text('Hide details');

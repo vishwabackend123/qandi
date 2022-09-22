@@ -126,6 +126,8 @@
 
         var text_data = $(this).text();
         $('.view_details').text('View details');
+        $('.compLeteA').removeClass('list_active');
+
         if (text_data === 'View details') {
             $(this).parents('.compLeteA').addClass('list_active');
             $(this).text('Hide details');
