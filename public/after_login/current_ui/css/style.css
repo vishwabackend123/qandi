@@ -4194,7 +4194,12 @@ span.proficiency_value {
     padding: 0 8px 20px;
 }
 .test_myscrore_card {height: 292px;}
-.test_analytics_wrapper .common_greenbadge_tabs ul.nav{height:auto;}
+.test_analytics_wrapper .common_greenbadge_tabs ul.nav {
+    height: auto;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
 /********************* Amit End ****************************/
 
 

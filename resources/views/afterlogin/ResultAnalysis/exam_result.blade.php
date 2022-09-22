@@ -83,7 +83,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </span>
                         </h3>
                         <div class="row align-items-center">
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
                                     <div class="myScore">
@@ -92,7 +92,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                                 <div class="color_labels">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span>Correct <b><small></small>{{isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0}}</b></span>
