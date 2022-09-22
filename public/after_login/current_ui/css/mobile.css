@@ -164,6 +164,7 @@
             bottom: 28px;
             width: 17%;
         }
+        .test_myscrore_card{height: auto;}
     }
 
 @media only screen and (max-height: 920px) {
@@ -405,7 +406,7 @@
         ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
         .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
         .mobileview_logout {height: calc(100vh - 525px);}
-        .test_myscrore_card{height: auto;}
+        
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
@@ -421,6 +422,7 @@
         .time-date-block .commontext {
             margin-bottom: 8px;
             display: inline-block;
+            margin-right: 20px!important;
         }
         .test_analytics_wrapper .flexgrow .btn.btn-common-transparent {
             width: 220px;}
@@ -2376,7 +2378,7 @@ transform: translateX(100%);
         .mobilescrolltab .nav-tabs{min-width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
-        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;height:36px;}
+        .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
         .overallmain .commonWhiteBox{height:auto;}
         .codelearningBlock .col-md-6{    flex: 0 0 auto;
             width: 50%;padding: 0px 8px;}
@@ -3024,11 +3026,6 @@ transform: translateX(100%);
     text-align: center;
     }
     /************ Amit start *********/
-    .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        max-width: 100%;
-    }
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
     .bargraph_size canvas {position: absolute;left: 18px;top: 0; pointer-events:none; }
