@@ -141,7 +141,7 @@
                     </div>
                     @endif
                     @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
-                    <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
+                    <div class="commonWhiteBox commonblockDash borderRadius rank_analysis_block" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
