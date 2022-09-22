@@ -2748,7 +2748,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: unset;
+     align-items:self-end;
  }
  .planewrapper{
      display: flex;
@@ -4194,6 +4194,12 @@ span.proficiency_value {
     padding: 0 8px 20px;
 }
 .test_myscrore_card {height: 292px;}
+.test_analytics_wrapper .common_greenbadge_tabs ul.nav {
+    height: auto;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
 /********************* Amit End ****************************/
 
 
@@ -4955,6 +4961,7 @@ justify-content: space-between;}
     .previous_exam_page_contain .live_mock_exam_section h3.notbold{font-weight:600;}
     .compLeteS.list_active .test-table h2,.compLeteS.list_active .test-table  h3,.compLeteA.list_active .test-table  h3,.compLeteA.list_active 
     .test-table  h3{font-weight: 800!important;}
+    .compLeteA.list_active .test-table h2,.compLeteS.list_active .test-table h2{font-weight:800;}
     .exam_tabdata .accordion-item:last-child{border-bottom:0px;}
     .exam-select{position: relative;}
     .exam-select  .error{position: absolute;bottom:-14px;}
@@ -7819,7 +7826,7 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.quesbox img{max-width: 400px;}
+.quesbox img{max-width: 400px; max-height: 110px !important;}
 .wronganswer .seNo {
     background-color: #d92d20 !important;
     color: #fff !important;
@@ -7979,4 +7986,7 @@ margin-bottom: 12px;
         }
         .adaptiveexamnewwrapper .examRightpanel .text-examtop-sec{
             padding-bottom: 39px
+        }
+        .arrowroted svg{
+            transform: rotate(180deg);
         }

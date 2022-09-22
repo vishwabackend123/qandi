@@ -67,7 +67,7 @@
                             </span>
                         </h3>
                         <div class="row align-items-center">
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
                                     <div class="myScore">
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-xl-6">
                                 <div class="color_labels">
                                     <div class="d-flex justify-content-between mb-3">
                                         <span>Correct <b><small></small>{{$response->correct_count}}</b></span>
@@ -141,7 +141,7 @@
                     </div>
                     @endif
                     @if(isset($type_exam) && !empty($type_exam) && $type_exam =='Live')
-                    <div class="commonWhiteBox commonblockDash borderRadius" style=" height: 180px;">
+                    <div class="commonWhiteBox commonblockDash borderRadius rank_analysis_block" style=" height: 180px;">
                         <h3 class="boxheading d-flex align-items-center">Rank Analysis
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -203,7 +203,7 @@
                             $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
                             $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
                             @endphp
-                            <div class="col-sm-6 mb-5">
+                            <div class="col-sm-6 mb-5 col-md-12 col-lg-6"">
                                 <h5 class="mb-0">{{$subject->subject_name}}</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="halfdoughnut">

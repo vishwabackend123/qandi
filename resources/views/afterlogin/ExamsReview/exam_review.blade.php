@@ -651,12 +651,10 @@ $question_type = "Numerical";
 <script>
     $(document).ready(function() {
         $(".expandbtn1").on('click', function() {
-            var expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
-            var questionheader_height = $(".questionheader").outerHeight();
-            $('.answer-main-sec').css('height', expand_question_slider_box_height);
-            var expand_answer_main_sec_height = $(".answer-main-sec").outerHeight();
-            var final_height = expand_answer_main_sec_height - questionheader_height;
-            $('.answer-main-sec').css('height', final_height);
+
+            var expand_tab_content_height = $(".tab-content").outerHeight();
+            var expand_tab_content_heigh_50 = expand_tab_content_height - 50 + "px";
+            $('.answer-main-sec').css('height', expand_tab_content_heigh_50);
             var ex_answer_main_sec_height = $(".answer-main-sec").outerHeight();
             var expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
             var expand_anshead_top_height = $(".anshead-top").outerHeight();
@@ -666,6 +664,34 @@ $question_type = "Numerical";
             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
             $('.explanation-sec').css('height', ex_scroll_height);
+          
+          
+            
+           
+
+
+
+            // var expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
+            // var questionheader_height = $(".questionheader").outerHeight();
+            // $('.answer-main-sec').css('height', expand_question_slider_box_height);
+            // var expand_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+            // var final_height = expand_answer_main_sec_height - questionheader_height;
+
+
+
+            // $('.answer-main-sec').css('height', final_height);
+            // var ex_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+
+            // var expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
+            // var expand_anshead_top_height = $(".anshead-top").outerHeight();
+
+            // var expand_totalpopup_height = expand_anshead_titletext_height + expand_anshead_top_height;
+            // var expand_height_popupSection = ex_answer_main_sec_height - expand_totalpopup_height;
+            // $('.explanation-sec').css('height', expand_height_popupSection);
+
+            // var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
+            // var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
+            // $('.explanation-sec').css('height', ex_scroll_height);
         });
 
         $(".collapsebtn1").on('click', function() {
@@ -916,7 +942,7 @@ $question_type = "Numerical";
             var Review_second_panel_90 = exam_Review_second_panel - 200 + "px";
             $('.reviewScreenright').css('height', Review_second_panel_90);
             var reviewScreenright_call = $(".reviewScreenleft ").outerHeight();
-            var extra_height_total = reviewScreenright_call - 100 + "px";
+            var extra_height_total = reviewScreenright_call - 50 + "px";
             $('.reviewscreenquestion').css('height', extra_height_total);
             $('.examReviewscreenmob .questionwrapper').css('height', extra_height_total);
             $('.examReviewscreenmob .questionsliderbox').css('height', extra_height_total);
@@ -966,11 +992,15 @@ $question_type = "Numerical";
                 var reviewScreenleft_mob1 = $(".reviewScreenleft").outerHeight();
                 var questionsliderinner_mob1 = $(".questionsliderinner").outerHeight();
                 var dividereviewboxandformob = reviewScreenleft_mob1 - questionsliderinner_mob1;
+                
                 $('.answer-main-sec').css('height', dividereviewboxandformob);
                 $('.answer-main-sec').css('z-index', "initial");
+                
                 var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
+              
                 var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + "px";
                 $('.answer-main-sec').css('height', answer_main_sec_mob12);
+
                 $('.explanation-sec').attr('style', 'height: 20px !important');
             });
 

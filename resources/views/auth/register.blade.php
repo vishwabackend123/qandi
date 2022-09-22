@@ -539,7 +539,7 @@
                 allowClear: false,
                 minimumInputLength: 3,
                 minimumResultsForSearch: -1,
-                maximumInputLength: 28,
+                maximumInputLength: 29,
                 tokenSeparators: [',', ' '],
                 placeholder: "Select a City",
                 selectOnClose: false,
@@ -592,6 +592,13 @@
                     event.preventDefault();
                 }
             });
+            $(document).on('input', '.select2-search__field', function(event) {
+                if (event.target.value.length >= 28) {
+                    var search_value = event.target.value;
+                    search_value = search_value.substring(0, 28);
+                    $(this).val(search_value);
+                }
+            });
             $('#location').change(function() {
                 $("#location-error").hide();
             })
@@ -606,7 +613,7 @@
             });
         });
 
-        $('.otp').keyup(function() {
+        $('.otp').keyup(function(e) {
 
             var isEmptyOTP = false;
             $('.otp').each(function() {
@@ -622,6 +629,12 @@
 
             } else {
                 $("#errlog_otp").html("");
+            }
+            if (e.which == 37) {
+                $(e.target).prev('.otp').focus();
+            }
+            if (e.which == 39) {
+                $(e.target).next('.otp').focus();
             }
         });
 

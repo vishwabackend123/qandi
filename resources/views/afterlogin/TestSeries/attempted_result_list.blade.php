@@ -173,6 +173,8 @@
         var text_data = $(this).text();
         var ids = parseInt($(this).attr('data-id'));
         var toggel = $('#chapter_' + ids).hasClass('show');
+        $('.compLeteS').removeClass('list_active');
+
         $('.all_show_hide').removeClass('show');
         $('.view_details').text('View details');
         if (text_data === 'View details') {
