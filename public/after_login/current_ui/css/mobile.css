@@ -3067,6 +3067,9 @@ transform: translateX(100%);
     button.btn-ans:nth-child(7n) {
         margin-right: 0px;
     }
+    .rank_analysis_block {
+        height: auto!important;
+    }
 
 }
 
@@ -3078,6 +3081,15 @@ transform: translateX(100%);
     .chapter_profici_application_deves_text
     {
         font-size: 17px;
+    }
+    .rank_analysis_block .d-flex.justify-content-between {
+        display: block!important;
+    }
+    .rank_analysis_block {
+        height: auto!important;
+    }
+    .total_participants {
+        margin-top: 20px;
     }
 }
 
