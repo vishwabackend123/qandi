@@ -350,6 +350,7 @@
     
 }
 @media only screen and (max-width: 991px){
+    
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
     }
@@ -409,6 +410,12 @@
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
+    .vLine{display: none}
+    .gotoPlanner {
+        min-width: 126px;
+    }
+    .planDetailBox{padding-top:15px;}
+    .planewrapper{flex-wrap:wrap;}
     .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
