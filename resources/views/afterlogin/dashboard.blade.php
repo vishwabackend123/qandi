@@ -199,9 +199,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </p>
                                     </span>
                                 </h3>
+                                @if((isset($userStatus) && $userStatus==false))
                                 <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
+                                @endif
                             </div>
 
                             @if((isset($prof_asst_test) && $prof_asst_test=='N'))
@@ -244,16 +246,17 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div id="daily" class=" tab-pane active">
+                                            @if((isset($userStatus) && $userStatus==false))
                                             <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
                                                 </div>
                                             </div>
-
+                                            @endif
                                             @if((isset($userStatus) && $userStatus==true))
                                             <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
-                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become prepared.
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
                                             </p>
                                             @endif
                                             @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
@@ -327,12 +330,14 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @endif
                                         </div>
                                         <div id="weekly" class=" tab-pane">
+                                            @if((isset($userStatus) && $userStatus==false))
                                             <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
                                                 </div>
                                             </div>
+                                            @endif
                                             @if((isset($userStatus) && $userStatus==true))
                                             <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
                                             <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.

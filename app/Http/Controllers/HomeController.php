@@ -337,7 +337,7 @@ class HomeController extends Controller
 
 
             /* check user status new or old */
-            $curl = curl_init();
+            /*  $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url_check = $api_URL . 'api/check-if-fresh-user/' . $user_id;
             $curl_option = array(
@@ -362,11 +362,11 @@ class HomeController extends Controller
             curl_close($curl);
 
 
-            $userStatus = isset($statusCheck->fresh_user) ? $statusCheck->fresh_user : false;
-
+            $userStatus = isset($statusCheck->fresh_user) ? $statusCheck->fresh_user : false; */
+            /* check user status new or old */
 
             // $accurate_percent = ($myqtodayScore * 75) / 100;
-            return view('afterlogin.dashboard', compact('userStatus', 'myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

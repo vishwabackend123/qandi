@@ -3,9 +3,9 @@
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
-        $insCheck = $('#test_instruction').hasClass('show');
+        /*  $insCheck = $('#test_instruction').hasClass('show'); */
         $endExamCheck = $('#endExam').hasClass('show');
-        if ((document.visibilityState == 'hidden') && $insCheck == false && $endExamCheck == false) {
+        if ((document.visibilityState == 'hidden') && $endExamCheck == false) {
 
             $('#FullTest_Exam_Panel_Interface_A').modal('hide');
             stop();

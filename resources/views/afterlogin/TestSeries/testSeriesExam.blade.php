@@ -800,6 +800,10 @@ $question_type = "Numerical";
         if (typeof setEachQuestionTimeNext === "function") {
             setEachQuestionTimeNext();
         }
+        $fExamCheck = $('#FullTest_Exam_Panel_Interface_A').hasClass('show');
+        if ($fExamCheck == true) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+        }
         $('body').removeClass("make_me_blue");
     }
 
