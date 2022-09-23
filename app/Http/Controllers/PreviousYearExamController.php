@@ -117,28 +117,34 @@ class PreviousYearExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            if (Redis::exists('custom_answer_time_py' . $user_id)) {
-                Redis::del(Redis::keys('custom_answer_time_py' . $user_id));
+
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
+
+
+
+            if (Redis::exists('custom_answer_time_py' . $user_id . '_' . $ranSession)) {
+                Redis::del(Redis::keys('custom_answer_time_py' . $user_id . '_' . $ranSession));
             }
 
 
             $paper_id = isset($request->paper_id) ? $request->paper_id : '';
 
 
-            $pyCacheKey = 'PreviousYearExam:' . $user_id;
+            $pyCacheKey = 'PreviousYearExam:' . $user_id . '_' . $ranSession;
+
             if ($inst == 'instruction') {
-                if (Redis::exists($pyCacheKey)) {
-                    Redis::del($pyCacheKey);
+
+                if (Redis::exists('PreviousYearExam:' . $user_id . '_' . $ranSession)) {
+                    Redis::del('PreviousYearExam:' . $user_id . '_' . $ranSession);
                 }
             }
 
-            if (Redis::exists($pyCacheKey)) {
-                $response_json = Redis::get($pyCacheKey);
+            if (Redis::exists('PreviousYearExam:' . $user_id . '_' . $ranSession)) {
+
+                $response_json = Redis::get('PreviousYearExam:' . $user_id . '_' . $ranSession);
+
                 $paper_id = Session::get('paper_id');
             } else {
-
-
-
 
                 $curl_url = "";
                 $curl = curl_init();
@@ -169,7 +175,7 @@ class PreviousYearExamController extends Controller
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
 
-                Redis::set($pyCacheKey, $response_json);
+                Redis::set('PreviousYearExam:' . $user_id . '_' . $ranSession, $response_json);
                 Session::put('paper_id', $paper_id);
             }
 
@@ -246,7 +252,7 @@ class PreviousYearExamController extends Controller
 
             $aQuestions_list = $aQuestionslist->values()->all();
 
-            $allQuestionDetails = $this->allPyQlist($user_id, $allQuestions->all(), $redis_set);
+            $allQuestionDetails = $this->allPyQlist($user_id, $allQuestions->all(), $redis_set, $ranSession);
 
             $keys = $allQuestions->keys('question_id')->all();
 
@@ -282,6 +288,15 @@ class PreviousYearExamController extends Controller
 
             if (isset($inst) && $inst == 'instruction') {
 
+
+                $exam_url = route('previousYearExam');
+
+                $exam_title = "Previous Year Test";
+
+
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
+            } else {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];
                 $redis_data = [
@@ -301,14 +316,7 @@ class PreviousYearExamController extends Controller
 
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_py' . $user_id, json_encode($redis_data));
-                $exam_url = route('previousYearExam');
-
-                $exam_title = "Previous Year Test";
-
-
-
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
+                Redis::set('custom_answer_time_py' . $user_id . '_' . $ranSession, json_encode($redis_data));
             }
 
 
@@ -316,7 +324,7 @@ class PreviousYearExamController extends Controller
             //Session::put('exam_name', $exam_name);
             Redis::set('exam_name' . $user_id, $exam_name);
             Redis::set('test_type' . $user_id, $test_type);
-            return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id', 'header_title'));
+            return view('afterlogin.PreviousYearExam.previousYearExam', compact('ranSession', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id', 'header_title'));
         } catch (\Exception $e) {
 
             Log::info($e->getMessage());
@@ -338,8 +346,9 @@ class PreviousYearExamController extends Controller
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
-            $cacheKey = 'CustomQuestion:py:' . $user_id;
+            $cacheKey = 'CustomQuestion:py:' . $user_id . '_' . $ranSession;
 
             $redis_result = Redis::get($cacheKey);
             if (isset($redis_result) && !empty($redis_result)) :
@@ -402,7 +411,7 @@ class PreviousYearExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-            $session_result = Redis::get('custom_answer_time_py' . $user_id);
+            $session_result = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
 
@@ -441,7 +450,8 @@ class PreviousYearExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'CustomQuestion:py:' . $user_id;
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $cacheKey = 'CustomQuestion:py:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -517,7 +527,7 @@ class PreviousYearExamController extends Controller
                 $option_data[] = '';
             }
 
-            $session_result = Redis::get('custom_answer_time_py' . $user_id);
+            $session_result = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
             $keyactSub = array_search($que_sub_id, $sessionResult->aSubjectIds);
@@ -556,10 +566,9 @@ class PreviousYearExamController extends Controller
             $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
-
-
-            $redis_result = Redis::get('custom_answer_time_py' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -628,7 +637,7 @@ class PreviousYearExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_py' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_py' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
@@ -638,7 +647,7 @@ class PreviousYearExamController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -658,8 +667,10 @@ class PreviousYearExamController extends Controller
             $data = $request->all();
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
-            $redis_result = Redis::get('custom_answer_time_py' . $user_id);
+
+            $redis_result = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
 
 
             if (!empty($redis_result)) {
@@ -685,7 +696,7 @@ class PreviousYearExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_py' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_py' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";

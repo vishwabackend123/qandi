@@ -169,10 +169,11 @@
 <script type="text/javascript">
     $('.no_data_found').hide();
     $('.view_details').click(function() {
-
+       
         var text_data = $(this).text();
         var ids = parseInt($(this).attr('data-id'));
         var toggel = $('#chapter_' + ids).hasClass('show');
+        $('#chapter_' + ids).hasClass('show');
         $('.compLeteS').removeClass('list_active');
 
         $('.all_show_hide').removeClass('show');

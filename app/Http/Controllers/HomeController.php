@@ -986,9 +986,10 @@ class HomeController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $filtered_subject = [];
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
-            if (Redis::exists('custom_answer_time_task' . $user_id)) {
-                Redis::del(Redis::keys('custom_answer_time_task' . $user_id));
+            if (Redis::exists('custom_answer_time_task' . $user_id . '_' . $ranSession)) {
+                Redis::del(Redis::keys('custom_answer_time_task' . $user_id . '_' . $ranSession));
             }
 
             if (!empty($category)) {
@@ -1003,7 +1004,7 @@ class HomeController extends Controller
                     $test_type = 'Task-Center-' . ucwords($category);
                 }
 
-                $dTaskCacheKey = 'DailyTaskExam:' . $user_id;
+                $dTaskCacheKey = 'DailyTaskExam:' . $user_id . '_' . $ranSession;
                 if ($inst == 'instruction') {
                     if (Redis::exists($dTaskCacheKey)) {
                         Redis::del($dTaskCacheKey);
@@ -1095,7 +1096,7 @@ class HomeController extends Controller
                     $allQuestions = $collection->keyBy('question_id');
                     $aQuestions_list =  $allQuestions->all();
 
-                    $allQuestionDetails = $this->allDailyTaskQlist($user_id, $allQuestions->all(), $redis_set);
+                    $allQuestionDetails = $this->allDailyTaskQlist($user_id, $allQuestions->all(), $redis_set, $ranSession);
                     $keys = $allQuestions->keys('question_id')->all();
 
                     $question_data = (object)current($allQuestions->all());
@@ -1141,6 +1142,18 @@ class HomeController extends Controller
                     Redis::set('test_type' . $user_id, $test_type);
 
                     if (isset($inst) && $inst == 'instruction') {
+
+                        if ($category == 'skill') {
+                            $exam_url = route('dailyTaskExamSkill', ['category' => $category, 'tasktype' => $tasktype, 'instruction' => 'exam', 'skill_category' => $skill_category]);
+                        } else {
+                            $exam_url = route('dailyTaskExam', ['category' => $category, 'tasktype' => $tasktype]);
+                        }
+
+                        $header_title = "Task Center";
+                        $exam_title = "Task Center";
+
+                        return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title', 'subCounts'));
+                    } else {
                         /* set redis for save exam question response */
                         $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
                         $redis_data = [
@@ -1153,21 +1166,11 @@ class HomeController extends Controller
                             'full_time' => $exam_fulltime
                         ];
                         // Push Value in Redis
-                        Redis::set('custom_answer_time_task' . $user_id, json_encode($redis_data));
-                        if ($category == 'skill') {
-                            $exam_url = route('dailyTaskExamSkill', ['category' => $category, 'tasktype' => $tasktype, 'instruction' => 'exam', 'skill_category' => $skill_category]);
-                        } else {
-                            $exam_url = route('dailyTaskExam', ['category' => $category, 'tasktype' => $tasktype]);
-                        }
-
-                        $header_title = "Task Center";
-                        $exam_title = "Task Center";
-
-                        return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title', 'subCounts'));
+                        Redis::set('custom_answer_time_task' . $user_id . '_' . $ranSession, json_encode($redis_data));
                     }
 
 
-                    return view('afterlogin.DailyTaskExam.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
+                    return view('afterlogin.DailyTaskExam.exam', compact('ranSession', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
                 } else {
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
@@ -1384,10 +1387,10 @@ class HomeController extends Controller
             $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
 
-
-            $redis_result = Redis::get('custom_answer_time_task' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -1456,7 +1459,7 @@ class HomeController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_task' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_task' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
@@ -1486,8 +1489,9 @@ class HomeController extends Controller
             $data = $request->all();
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
-            $redis_result = Redis::get('custom_answer_time_task' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
 
 
             if (!empty($redis_result)) {
@@ -1514,7 +1518,7 @@ class HomeController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_task' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_task' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
@@ -1541,9 +1545,9 @@ class HomeController extends Controller
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
-
-            $cacheKey = 'CustomQuestion:task:' . $user_id;
+            $cacheKey = 'CustomQuestion:task:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -1617,7 +1621,7 @@ class HomeController extends Controller
             } else {
                 $option_data[] = '';
             }
-            $session_result = Redis::get('custom_answer_time_task' . $user_id);
+            $session_result = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -1644,7 +1648,9 @@ class HomeController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'CustomQuestion:task:' . $user_id;
+
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $cacheKey = 'CustomQuestion:task:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -1723,7 +1729,7 @@ class HomeController extends Controller
                 $option_data[] = '';
             }
 
-            $session_result = Redis::get('custom_answer_time_task' . $user_id);
+            $session_result = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
@@ -1737,10 +1743,10 @@ class HomeController extends Controller
     }
 
 
-    public function allDailyTaskQlist($user_id, $question_data, $redis_set)
+    public function allDailyTaskQlist($user_id, $question_data, $redis_set, $ranSession)
     {
         if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestion:task:' . $user_id;
+            $cacheKey = 'CustomQuestion:task:' . $user_id . '_' . $ranSession;
 
 
             if (Redis::exists($cacheKey)) {

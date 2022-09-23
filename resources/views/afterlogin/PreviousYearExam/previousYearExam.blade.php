@@ -103,6 +103,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
                                         <input type="hidden" name="py_paperid" value="{{isset($paper_id)?$paper_id:0}}">
+                                        <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>
@@ -1004,6 +1005,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);
@@ -1157,6 +1159,7 @@ $question_type = "Numerical";
                 q_submit_time: q_submit_time,
                 current_subject_id: current_subject_id,
                 current_section_id: current_section_id,
+                ranSession: '{{$ranSession}}'
             },
             beforeSend: function() {
                 //$('.loader-block').show();
@@ -1269,6 +1272,7 @@ $question_type = "Numerical";
                 q_submit_time: q_submit_time,
                 current_subject_id: current_subject_id,
                 current_section_id: current_section_id,
+                ranSession: '{{$ranSession}}'
             },
             beforeSend: function() {
                 //$('.loader-block').show();
@@ -1399,6 +1403,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1450,6 +1455,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);
@@ -1477,6 +1483,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);

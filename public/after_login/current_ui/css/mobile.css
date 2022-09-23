@@ -350,6 +350,7 @@
     
 }
 @media only screen and (max-width: 991px){
+    
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
     }
@@ -384,7 +385,7 @@
     .performance_chapter_sublists li {
         padding:0 20px;
     }
-    .main-wrapper header{width:100%;}
+    .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
     .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
         position: fixed;transition: 400ms;
         transform: translateX(100%);
@@ -409,6 +410,12 @@
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
+    .vLine{display: none}
+    .gotoPlanner {
+        min-width: 126px;
+    }
+    .planDetailBox{padding-top:15px;}
+    .planewrapper{flex-wrap:wrap;}
     .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
@@ -1237,7 +1244,7 @@ transform: translateX(100%);
         padding-left: 14px;
         padding-top:30px;
     }
-
+    .plan_order_sumry_subscription {font-size: 13px;}
     /********* Vikash Start ************/
     /* contect us */
     .contactus_customer_support_text
@@ -1929,7 +1936,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;justify-content: space-between!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
@@ -2690,13 +2697,13 @@ transform: translateX(100%);
                 .exam_tabdata .accordion-item:nth-child(1) {
     margin-top: 0!important;
 }
-.mobilehoriontal400{width:400px;} 
-.mobilehoriontal450{width:450px;}  
-.mobilehoriontal500{width:500px;}   
+.mobilehoriontal400{min-width:400px;} 
+.mobilehoriontal450{min-width:450px;}  
+.mobilehoriontal500{min-width:500px;}   
 .hide-text{display: none;}   
 .testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
 .testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
-.scrollnone .main-wrapper header{width:100%;}
+.scrollnone .main-wrapper header{width:100%!important;}
     .reviewScreenright {
         display:none;
     }
