@@ -118,7 +118,7 @@ class PreviousYearExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
-            $ranSession =  isset($request->ranSession) ? $request->ranSession : date('ymdhis');
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
 
 
