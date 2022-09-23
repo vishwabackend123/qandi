@@ -44,7 +44,7 @@ class MockExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
-            $ranSession =  isset($request->ranSession) ? $request->ranSession : date('ymdhis');
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
             if (Redis::exists('custom_answer_time_mock' . $user_id . '_' . $ranSession)) {
                 Redis::del(Redis::keys('custom_answer_time_mock' . $user_id . '_' . $ranSession));
@@ -377,7 +377,9 @@ class MockExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
             $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+
             $cacheKey = 'CustomQuestion:mock:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 

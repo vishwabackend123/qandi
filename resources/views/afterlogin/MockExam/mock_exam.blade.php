@@ -1460,6 +1460,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);
