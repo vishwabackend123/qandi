@@ -307,6 +307,9 @@
 .exam_instruction_scrolling{padding-right: 30px;}
 }
 @media only screen and (max-width: 1024px){
+    .planewrapper {
+        flex-wrap: wrap;
+    }
     .plantitleBox {
         padding-right: 50px !important;
     }
@@ -2967,6 +2970,7 @@ transform: translateX(100%);
         .accordion-header{min-width:auto;}
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
 
 }
 
