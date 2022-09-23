@@ -1029,7 +1029,8 @@ class ExamCustomController extends Controller
             $user_id = $userData->id;
 
             $question_time = $request->q_time;
-            $redis_result = Redis::get('custom_answer_time_' . $user_id);
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $redis_result = Redis::get('custom_answer_time_' . $user_id . '_' . $ranSession);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -1056,7 +1057,7 @@ class ExamCustomController extends Controller
             $redisArray['taken_time_sec'] = $retrive_time_sec;
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";

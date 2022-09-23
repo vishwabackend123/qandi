@@ -42,8 +42,10 @@ class FullExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
-            if (Redis::exists('custom_answer_time_full' . $user_id)) {
-                Redis::del(Redis::keys('custom_answer_time_full' . $user_id));
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
+
+            if (Redis::exists('custom_answer_time_full' . $user_id . '_' . $ranSession)) {
+                Redis::del(Redis::keys('custom_answer_time_full' . $user_id . '_' . $ranSession));
             }
 
             if ($exam_name == 'full_exam') {
@@ -131,7 +133,7 @@ class FullExamController extends Controller
                 $allQuestions = $aQuestionslist->keyBy('question_id');
                 $aQuestions_list = $aQuestionslist->values()->all();
 
-                $allQuestionDetails = $this->allProfilingQlist($user_id, $allQuestions->all(), $redis_set);
+                $allQuestionDetails = $this->allProfilingQlist($user_id, $allQuestions->all(), $redis_set, $ranSession);
 
                 $keys = $allQuestions->keys('question_id')->all();
 
@@ -147,23 +149,22 @@ class FullExamController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_full' . $user_id, json_encode($redis_data));
-
-
+                Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
 
                 $exam_url = route('exam', ['full_exam']);
 
                 $exam_title = "Full Body Exam";
                 $test_type = 'Profiling';
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
+                return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
             } else {
-                $cacheKey = 'CustomQuestion:full:' . $user_id;
+                $cacheKey = 'CustomQuestion:full:' . $user_id . '_' . $ranSession;
                 $redis_result = Redis::get($cacheKey);
 
                 if (isset($redis_result) && !empty($redis_result)) :
                     $response = json_decode($redis_result);
                 endif;
+
 
                 $aQuestionslist = isset($response) ? collect($response) : [];
 
@@ -220,7 +221,7 @@ class FullExamController extends Controller
                 }
                 $tagrets = implode(', ', $aTargets);
 
-                $session_result = Redis::get('custom_answer_time_full' . $user_id);
+                $session_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
                 $sessionResult = json_decode($session_result);
 
                 $exam_fulltime = (isset($sessionResult->full_time) && !empty($sessionResult->full_time)) ? $sessionResult->full_time : 0;
@@ -228,7 +229,7 @@ class FullExamController extends Controller
                 $series_id = "";
                 Redis::set('exam_name' . $user_id, $exam_name);
                 Redis::set('test_type' . $user_id, $test_type);
-                return view('afterlogin.ExamViews.exam_new', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime',  'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
+                return view('afterlogin.ExamViews.exam_new', compact('ranSession', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime',  'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
             }
         } catch (\Exception $e) {
 
@@ -268,8 +269,9 @@ class FullExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
-            $cacheKey = 'CustomQuestion:full:' . $user_id;
+            $cacheKey = 'CustomQuestion:full:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -343,7 +345,7 @@ class FullExamController extends Controller
             } else {
                 $option_data[] = '';
             }
-            $session_result = Redis::get('custom_answer_time_full' . $user_id);
+            $session_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -370,7 +372,8 @@ class FullExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'CustomQuestion:full:' . $user_id;
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $cacheKey = 'CustomQuestion:full:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -449,7 +452,7 @@ class FullExamController extends Controller
                 $option_data[] = '';
             }
 
-            $session_result = Redis::get('custom_answer_time_full' . $user_id);
+            $session_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
@@ -482,10 +485,10 @@ class FullExamController extends Controller
             $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
 
-
-            $redis_result = Redis::get('custom_answer_time_full' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -554,7 +557,7 @@ class FullExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_full' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
@@ -584,8 +587,9 @@ class FullExamController extends Controller
             $data = $request->all();
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
-            $redis_result = Redis::get('custom_answer_time_full' . $user_id);
+            $redis_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
 
 
             if (!empty($redis_result)) {
@@ -612,7 +616,7 @@ class FullExamController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('custom_answer_time_full' . $user_id, json_encode($redisArray));
+            Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
@@ -625,12 +629,12 @@ class FullExamController extends Controller
         }
     }
 
-    public function allProfilingQlist($user_id, $question_data, $redis_set)
+    public function allProfilingQlist($user_id, $question_data, $redis_set, $ranSession)
     {
 
 
         if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestion:full:' . $user_id;
+            $cacheKey = 'CustomQuestion:full:' . $user_id . '_' . $ranSession;
 
 
             if (Redis::exists($cacheKey)) {
@@ -648,5 +652,61 @@ class FullExamController extends Controller
             return $data->all();
         }
         return [];
+    }
+
+
+    /**
+     * SaveQuestionTimeSession
+     *
+     * @param Request $request     recieve the body request data
+     * @param mixed   $question_id question id
+     *
+     * @return void
+     */
+    public function saveQuestionTimeSession(Request $request, $question_id)
+    {
+        try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+
+            $question_time = $request->q_time;
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $redis_result = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
+
+            if (!empty($redis_result)) {
+                $redisArray = json_decode($redis_result, true);
+
+                $retrive_array = $redisArray['given_ans'];
+                $retrive_time_array = $redisArray['taken_time'];
+                $answer_swap_cnt = $redisArray['answer_swap_cnt'];
+                $retrive_time_sec = $redisArray['taken_time_sec'];
+
+                $retrive_time_sec[$question_id] = (int)$question_time;
+                $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+            } else {
+                $retrive_time_sec = [];
+                $retrive_time_array = [];
+
+                $retrive_time_sec[$question_id] = (int)$question_time;
+                $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+            }
+
+
+            $redisArray['given_ans'] = $retrive_array;
+            $redisArray['taken_time'] = $retrive_time_array;
+            $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+            $redisArray['taken_time_sec'] = $retrive_time_sec;
+
+            // Push Value in Redis
+            Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redisArray));
+
+            $response['status'] = 200;
+            $response['message'] = "save response successfully";
+
+
+            return json_encode($response);
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 }
