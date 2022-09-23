@@ -3064,7 +3064,6 @@ line-height: 1.6;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
-
 }
 
 /********* Performance Rating ***************/
@@ -3860,7 +3859,7 @@ span.greenball-3 {
     font-size: 12px;
 }
 .graph_padd{padding-left: 20px;    position: relative;}
-.subjectblockOverall .halfdoughnutsmall {margin-bottom: -20px;min-width: 110px;}
+.subjectblockOverall .halfdoughnutsmall {margin-bottom: -20px;min-width: 120px;}
 .yaxis_label.yaxis_label_3 {
     left: -36px;
 }
@@ -6434,16 +6433,16 @@ td.mymatrix_table_point
     right: 0%!important;
     transition: 0.4s; 
 }
-.show .notification-main{
+/* .show .notification-main{
     right: 0%!important;
     transition: 0.4s; 
-}
+} */
 .activeblock.notification-block_new {
     position: fixed;right: auto !important;
 }
-.show.notification-block_new {
+/* .show.notification-block_new {
     position: fixed;right: auto !important;
-}
+} */
 .notification-block_new{
     position: relative;
     width: 95.8%;
@@ -6482,7 +6481,7 @@ td.mymatrix_table_point
     content: "";
 }
 
-.activeblock .notificationOverlay::before,.notification-block_new.show .notificationOverlay::before{
+.activeblock .notificationOverlay::before{
     display: block;
 }
 
@@ -7924,8 +7923,7 @@ margin-bottom: 12px;
         z-index: 10;
         pointer-events: none;
         display: -ms-flexbox;
-        display: flex;
-    
+        display: none; 
         }
         .explanationdeteail{
             position: relative;
@@ -7992,3 +7990,4 @@ margin-bottom: 12px;
         .arrowroted svg{
             transform: rotate(180deg);
         }
+.desktop_hide {display: none;}

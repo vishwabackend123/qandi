@@ -635,7 +635,7 @@ $question_type = "Numerical";
         var anshead_title_textfinalheight = $(".anshead-titletext").outerHeight();
         var ansheadercomb_height = anshead_top_finalheight + anshead_title_textfinalheight;
         var customcomb_height = answer_final_height - ansheadercomb_height;
-        var answerfinalheight_145 = customcomb_height - 90 + "px";
+        var answerfinalheight_145 = customcomb_height - 80 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
     }
 
@@ -706,8 +706,9 @@ $question_type = "Numerical";
             $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
             $('.explanation-sec').css('height', coll_scroll_height);
             var afterclikecoll = $(".explanation-sec").outerHeight();
-            var afterclikecoll_cal = afterclikecoll - 20 + "px";
+            var afterclikecoll_cal = afterclikecoll - 10 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
+            
         });
     });
 </script>

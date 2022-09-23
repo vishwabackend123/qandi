@@ -324,7 +324,7 @@ $question_type = "Numerical";
         var anshead_title_textfinalheight = $(".anshead-titletext").outerHeight();
         var ansheadercomb_height = anshead_top_finalheight + anshead_title_textfinalheight;
         var customcomb_height = answer_final_height - ansheadercomb_height;
-        var answerfinalheight_145 = customcomb_height - 90 + "px";
+        var answerfinalheight_145 = customcomb_height - 80 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
     }
 
@@ -352,7 +352,6 @@ $question_type = "Numerical";
             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
             $('.explanation-sec').css('height', ex_scroll_height);
-
 
             // var expand_question_slider_box_height = $(".questionsliderbox").outerHeight();
             // var questionheader_height = $(".questionheader").outerHeight();
@@ -412,8 +411,9 @@ $question_type = "Numerical";
             $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
             $('.explanation-sec').css('height', coll_scroll_height);
             var afterclikecoll = $(".explanation-sec").outerHeight();
-            var afterclikecoll_cal = afterclikecoll - 20 + "px";
-            $('.explanation-sec').css('height', afterclikecoll_cal);
+            var afterclikecoll_cal = afterclikecoll - 10 + "px";
+            $('.explanation-sec').css('height', afterclikecoll_cal); 
+            
         });
     });
 </script>

@@ -320,15 +320,15 @@
         padding-right: 24px !important;
         font-size: 12px !important;
     }
-    .AttempType {
+    /* .AttempType {
         font-size: 12px !important;
-    }
+    } */
     .testCount {
         font-size: 15px  !important;
     }
-    .gotoPlanner a {
+    /* .gotoPlanner a {
         font-size: 12px !important;
-    }
+    } */
     .h {
         display: block !important;
     }
@@ -1137,6 +1137,19 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    canvas#progressJourny_graph {
+        height: 200px !important;
+    }
+    .desktop_hide {display: inline-block;}
+    .row_repeate {
+        flex-direction: column-reverse;
+    }
+    .gotoPlanner a {align-items: center;}
+    .gotoPlanner a svg {
+        margin-bottom: 0px;
+        top: 0px;
+    }
+    .tabMainblock .commontab .nav-tabs .nav-link {text-transform: capitalize;}
     h3.copyright.position-absolute {
         position: relative !important;
         bottom: 0;
@@ -2971,6 +2984,7 @@ transform: translateX(100%);
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
+        .graphDetailempty{width:100%;}
 
 }
 
