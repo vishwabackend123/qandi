@@ -1017,7 +1017,7 @@ ul.proficiency-level-lists li span.mr-3{display:none;}
 ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
 .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
 .btn.btn-common-green{min-width:156px;}
-.performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
+.performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;justify-content: space-between!important;}
 .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
 .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
 .backBtn.mr-2 {margin-right: 0!important;}
