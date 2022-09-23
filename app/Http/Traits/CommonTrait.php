@@ -155,13 +155,13 @@ trait CommonTrait
         return [];
     }
 
-    public function allMockQlist($user_id, $question_data, $redis_set)
+    public function allMockQlist($user_id, $question_data, $redis_set, $ranSession)
     {
 
 
         if (!empty($user_id) &&  !empty($question_data)) {
 
-            $cacheKey = 'CustomQuestion:mock:' . $user_id;
+            $cacheKey = 'CustomQuestion:mock:' . $user_id . '_' . $ranSession;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));
@@ -179,13 +179,13 @@ trait CommonTrait
         return [];
     }
 
-    public function allPyQlist($user_id, $question_data, $redis_set)
+    public function allPyQlist($user_id, $question_data, $redis_set, $ranSession)
     {
 
 
         if (!empty($user_id) &&  !empty($question_data)) {
 
-            $cacheKey = 'CustomQuestion:py:' . $user_id;
+            $cacheKey = 'CustomQuestion:py:' . $user_id . '_' . $ranSession;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));

@@ -115,19 +115,22 @@ class TestSeriesController extends Controller
             $questions_count = isset($request->questions_count) ? $request->questions_count : '';
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
 
+
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : date('ymdhis');
+
             if ($series_type == 'Open') {
-                if (Redis::exists('custom_answer_time_ts' . $user_id)) {
-                    Redis::del(Redis::keys('custom_answer_time_ts' . $user_id));
+                if (Redis::exists('custom_answer_time_ts' . $user_id . '_' . $ranSession)) {
+                    Redis::del(Redis::keys('custom_answer_time_ts' . $user_id . '_' . $ranSession));
                 }
             } else {
-                if (Redis::exists('custom_answer_time_tsl' . $user_id)) {
-                    Redis::del(Redis::keys('custom_answer_time_tsl' . $user_id));
+                if (Redis::exists('custom_answer_time_tsl' . $user_id . '_' . $ranSession)) {
+                    Redis::del(Redis::keys('custom_answer_time_tsl' . $user_id . '_' . $ranSession));
                 }
             }
 
             if (!empty($series_id)) {
 
-                $tSCacheKey = 'TestSeriesExam:' . $user_id;
+                $tSCacheKey = 'TestSeriesExam:' . $user_id . '_' . $ranSession;
                 if ($inst == 'instruction') {
                     if (Redis::exists($tSCacheKey)) {
                         Redis::del($tSCacheKey);
@@ -175,6 +178,7 @@ class TestSeriesController extends Controller
 
                 $responsedata = (object)json_decode($response_json, true);
 
+
                 $status = isset($responsedata->success) ? $responsedata->success : false;
 
                 if ($status == true) {
@@ -212,7 +216,7 @@ class TestSeriesController extends Controller
                     $allQuestions = $collection->keyBy('question_id');
                     $aQuestions_list =  $allQuestions->all();
 
-                    $allQuestionDetails = $this->allTestSeriesQlist($user_id, $allQuestions->all(), $redis_set, $series_type);
+                    $allQuestionDetails = $this->allTestSeriesQlist($user_id, $allQuestions->all(), $redis_set, $series_type, $ranSession);
                     $keys = $allQuestions->keys('question_id')->all();
 
                     $question_data = (object)current($allQuestions->all());
@@ -269,22 +273,22 @@ class TestSeriesController extends Controller
                         ];
                         // Push Value in Redis
                         if ($series_type == 'Open') {
-                            Redis::set('custom_answer_time_ts' . $user_id, json_encode($redis_data));
+                            Redis::set('custom_answer_time_ts' . $user_id . '_' . $ranSession, json_encode($redis_data));
                         } else {
-                            Redis::set('custom_answer_time_tsl' . $user_id, json_encode($redis_data));
+                            Redis::set('custom_answer_time_tsl' . $user_id . '_' . $ranSession, json_encode($redis_data));
                         }
 
                         $exam_url = route('test_series');
 
 
                         $exam_title = "Test Series Exam";
-                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject', 'header_title'));
+                        return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject', 'header_title', 'ranSession'));
                     }
 
 
                     $previous_list_url = route('series_list');
 
-                    return view('afterlogin.TestSeries.testSeriesExam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id', 'header_title', 'previous_list_url'));
+                    return view('afterlogin.TestSeries.testSeriesExam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id', 'header_title', 'previous_list_url', 'ranSession'));
                 } else {
                     //return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                     return Redirect::back()->with('message', 'Question not available With these filters! Please try Again.');
@@ -322,15 +326,15 @@ class TestSeriesController extends Controller
     }
 
 
-    public function allTestSeriesQlist($user_id, $question_data, $redis_set, $series_type)
+    public function allTestSeriesQlist($user_id, $question_data, $redis_set, $series_type, $ranSession)
     {
 
 
         if (!empty($user_id) &&  !empty($question_data)) {
             if ($series_type == 'Open') {
-                $cacheKey = 'CustomQuestion:ts:' . $user_id;
+                $cacheKey = 'CustomQuestion:ts:' . $user_id . '_' . $ranSession;
             } else {
-                $cacheKey = 'CustomQuestion:tsl:' . $user_id;
+                $cacheKey = 'CustomQuestion:tsl:' . $user_id . '_' . $ranSession;
             }
 
 
@@ -373,14 +377,14 @@ class TestSeriesController extends Controller
             $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
             $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
             $series_type = isset($data['series_type']) ? $data['series_type'] : 'Open';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
 
             if ($series_type == 'Open') {
-                $redis_result = Redis::get('custom_answer_time_ts' . $user_id);
+                $redis_result = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
             } else {
-                $redis_result = Redis::get('custom_answer_time_tsl' . $user_id);
+                $redis_result = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
             }
-
 
 
             if (!empty($redis_result)) {
@@ -451,9 +455,9 @@ class TestSeriesController extends Controller
 
             // Push Value in Redis
             if ($series_type == 'Open') {
-                Redis::set('custom_answer_time_ts' . $user_id, json_encode($redisArray));
+                Redis::set('custom_answer_time_ts' . $user_id . '_' . $ranSession, json_encode($redisArray));
             } else {
-                Redis::set('custom_answer_time_tsl' . $user_id, json_encode($redisArray));
+                Redis::set('custom_answer_time_tsl' . $user_id . '_' . $ranSession, json_encode($redisArray));
             }
 
 
@@ -465,7 +469,7 @@ class TestSeriesController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -486,11 +490,12 @@ class TestSeriesController extends Controller
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
             $series_type = isset($data['series_type']) ? $data['series_type'] : 'Open';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : 'Open';
 
             if ($series_type == 'Open') {
-                $redis_result = Redis::get('custom_answer_time_ts' . $user_id);
+                $redis_result = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
             } else {
-                $redis_result = Redis::get('custom_answer_time_tsl' . $user_id);
+                $redis_result = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
             }
 
             if (!empty($redis_result)) {
@@ -518,9 +523,9 @@ class TestSeriesController extends Controller
 
             // Push Value in Redis
             if ($series_type == 'Open') {
-                Redis::set('custom_answer_time_ts' . $user_id, json_encode($redisArray));
+                Redis::set('custom_answer_time_ts' . $user_id . '_' . $ranSession, json_encode($redisArray));
             } else {
-                Redis::set('custom_answer_time_tsl' . $user_id, json_encode($redisArray));
+                Redis::set('custom_answer_time_tsl' . $user_id . '_' . $ranSession, json_encode($redisArray));
             }
 
 
@@ -552,11 +557,12 @@ class TestSeriesController extends Controller
 
             $data = $request->all();
             $series_type = isset($data['series_type']) ? $data['series_type'] : 'Open';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
             if ($series_type == 'Open') {
-                $cacheKey = 'CustomQuestion:ts:' . $user_id;
+                $cacheKey = 'CustomQuestion:ts:' . $user_id . '_' . $ranSession;
             } else {
-                $cacheKey = 'CustomQuestion:tsl:' . $user_id;
+                $cacheKey = 'CustomQuestion:tsl:' . $user_id . '_' . $ranSession;
             }
 
             $redis_result = Redis::get($cacheKey);
@@ -633,9 +639,9 @@ class TestSeriesController extends Controller
                 $option_data[] = '';
             }
             if ($series_type == 'Open') {
-                $session_result = Redis::get('custom_answer_time_ts' . $user_id);
+                $session_result = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
             } else {
-                $session_result = Redis::get('custom_answer_time_tsl' . $user_id);
+                $session_result = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
             }
 
             $sessionResult = json_decode($session_result);
@@ -668,11 +674,12 @@ class TestSeriesController extends Controller
 
             $data = $request->all();
             $series_type = isset($data['series_type']) ? $data['series_type'] : 'Open';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
             if ($series_type == 'Open') {
-                $cacheKey = 'CustomQuestion:ts:' . $user_id;
+                $cacheKey = 'CustomQuestion:ts:' . $user_id . '_' . $ranSession;
             } else {
-                $cacheKey = 'CustomQuestion:tsl:' . $user_id;
+                $cacheKey = 'CustomQuestion:tsl:' . $user_id . '_' . $ranSession;
             }
 
             $redis_result = Redis::get($cacheKey);
@@ -753,9 +760,9 @@ class TestSeriesController extends Controller
                 $option_data[] = '';
             }
             if ($series_type == 'Open') {
-                $session_result = Redis::get('custom_answer_time_ts' . $user_id);
+                $session_result = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
             } else {
-                $session_result = Redis::get('custom_answer_time_tsl' . $user_id);
+                $session_result = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
             }
 
             $sessionResult = json_decode($session_result);

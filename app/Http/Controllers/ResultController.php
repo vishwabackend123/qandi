@@ -60,6 +60,8 @@ class ResultController extends Controller
             $test_series_id = isset($request->series_id) ? $request->series_id : 0;
             $py_paper_id = isset($request->py_paperid) ? $request->py_paperid : 0;
 
+            $ranSession = isset($request->ranSession) ? $request->ranSession : 0;
+
             $autosubmit = isset($request->autosubmit) ? $request->autosubmit : false;
 
 
@@ -71,16 +73,16 @@ class ResultController extends Controller
             if ($test_type == 'Live') {
                 $redis_json = Redis::get('custom_answer_time_live_' . $user_id);
             } elseif ($test_type == 'Mocktest') {
-                $redis_json = Redis::get('custom_answer_time_mock' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_mock' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Profiling') {
                 $redis_json = Redis::get('custom_answer_time_full' . $user_id);
             } elseif ($test_type == 'PreviousYear') {
-                $redis_json = Redis::get('custom_answer_time_py' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Test-Series') {
                 if ($exam_mode == 'Open') {
-                    $redis_json = Redis::get('custom_answer_time_ts' . $user_id);
+                    $redis_json = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
                 } else {
-                    $redis_json = Redis::get('custom_answer_time_tsl' . $user_id);
+                    $redis_json = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
                 }
             } elseif ($tasktype == 'daily') {
 
@@ -96,6 +98,7 @@ class ResultController extends Controller
 
             $given_ans = $answerList = $answersArr = [];
             $given_ans = isset($redisArray->given_ans) ? $redisArray->given_ans : [];
+
             $attempt_count = isset($redisArray->attempt_count) ? $redisArray->attempt_count : [];
             $taken_time = isset($redisArray->taken_time) ? $redisArray->taken_time : [];
             $answer_swap_cnt = isset($redisArray->answer_swap_cnt) ? $redisArray->answer_swap_cnt : [];
@@ -139,6 +142,7 @@ class ResultController extends Controller
             $inputjson['py_paper_id'] = $py_paper_id;
 
             $request = json_encode($inputjson);
+
 
             $curl_url = "";
             $curl = curl_init();

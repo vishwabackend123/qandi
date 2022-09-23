@@ -2748,7 +2748,7 @@ a.btn-common-attempted svg {
  }
  .gotoPlanner{
      display: flex;
-     align-items: unset;
+     align-items:self-end;
  }
  .planewrapper{
      display: flex;
