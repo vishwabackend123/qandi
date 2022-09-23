@@ -22,7 +22,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
+                <div class="col-xl-8 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
                         <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
                     </div>
@@ -68,7 +68,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 exam_instruction_col_four">
+                <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                     <div class="exam_section_right_side">
                         <div class="exam_section_right_side_padding">
                             <div class="exam_section_right_side_jee_main">{{isset($exam_name)?$exam_name:''}}</div>

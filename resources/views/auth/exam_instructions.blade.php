@@ -85,7 +85,7 @@
                     <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
                 </div>
             <div class="row flex-column-reverse flex-lg-row">
-                <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
+                <div class="col-xl-8 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
                     <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
                         
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 exam_instruction_col_four">
+                <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                 <div class="mock-test-mobile">
                 <i class="fas fa-chevron-left"></i><a href="javascript:void(0)"> Mock Test</a>
                             </div>
