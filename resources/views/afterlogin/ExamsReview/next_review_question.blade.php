@@ -267,6 +267,36 @@ $question_type = "Numerical";
 
 <script>
     function review_right_Height() {
+        // var total_right_height = $(".reviewScreenright ").outerHeight();
+        // $('.reviewScreenleft ').css('height', total_right_height);
+        // $('.examScreentab ').css('height', total_right_height);
+        // var examTabheader_height = $(".examTabheader").outerHeight();
+        // var questionType_height = $(".questionType").outerHeight();
+        // var topheader_height = examTabheader_height + questionType_height;
+        // var cal_height = total_right_height - topheader_height;
+        // $('.tab-content ').css('height', cal_height);
+        // $('.questionsliderbox').css('height', cal_height);
+        // var answer_main_sec_height = $(".answer-main-sec ").outerHeight();
+        // var question_slider_box_height = $(".questionsliderbox").outerHeight();
+        // var mid_section_height = question_slider_box_height - answer_main_sec_height;
+        // $('.questionwrapper ').css('height', mid_section_height);
+        // var questionwrapper_final_height = $(".questionwrapper").outerHeight();
+        // var questfinal = question_slider_box_height - questionwrapper_final_height;
+
+        // $('.answer-main-sec ').css('height', questfinal);
+        // var answerfinalheight = $(".answer-main-sec").outerHeight();
+        // var extra_height = answerfinalheight - 20 + "px";
+
+        // $('.answer-main-sec ').css('height', extra_height);
+
+        // var answer_final_height = $(".answer-main-sec").outerHeight();
+        // var anshead_top_finalheight = $(".anshead-top").outerHeight();
+        // var anshead_title_textfinalheight = $(".anshead-titletext").outerHeight();
+        // var ansheadercomb_height = anshead_top_finalheight + anshead_title_textfinalheight;
+        // var customcomb_height = answer_final_height - ansheadercomb_height;
+        // var answerfinalheight_145 = customcomb_height - 80 + "px";
+        // $('.explanation-sec ').css('height', answerfinalheight_145);
+
         var total_right_height = $(".reviewScreenright ").outerHeight();
         $('.reviewScreenleft ').css('height', total_right_height);
         $('.examScreentab ').css('height', total_right_height);
@@ -294,7 +324,7 @@ $question_type = "Numerical";
         var anshead_title_textfinalheight = $(".anshead-titletext").outerHeight();
         var ansheadercomb_height = anshead_top_finalheight + anshead_title_textfinalheight;
         var customcomb_height = answer_final_height - ansheadercomb_height;
-        var answerfinalheight_145 = customcomb_height - 110 + "px";
+        var answerfinalheight_145 = customcomb_height - 90 + "px";
         $('.explanation-sec ').css('height', answerfinalheight_145);
     }
 
@@ -342,6 +372,28 @@ $question_type = "Numerical";
         });
 
         $(".collapsebtn1").on('click', function() {
+            // var coll_questionsliderbox_height = $(".questionsliderbox").outerHeight();
+            // var coll_questionwrapper_height = $(".questionwrapper").outerHeight();
+            // var coll_final_height = coll_questionsliderbox_height - coll_questionwrapper_height;
+            // $('.answer-main-sec').css('height', coll_final_height);
+            // var coll_answer_main_sec_height = $(".answer-main-sec").outerHeight();
+            // var coll_expand_anshead_titletext_height = $(".anshead-titletext").outerHeight();
+            // var coll_expand_anshead_top_height = $(".anshead-top").outerHeight();
+            // var coll_totalpopup_height = coll_expand_anshead_titletext_height + coll_expand_anshead_top_height;
+            // var coll_height_popupSection = coll_answer_main_sec_height - coll_totalpopup_height;
+            // $('.explanation-sec').css('height', coll_height_popupSection);
+            // var coll_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
+            // var coll_scroll_height = coll_answer_main_sec_height_final - 90 + "px";
+            // $('.explanation-sec').css('height', coll_scroll_height);
+            // var answer_main_sec_height_coll = $(".answer-main-sec").outerHeight();
+            // var answer_main_sec_height_coll_sub = answer_main_sec_height_coll - 20 + "px";
+            // $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
+            // $('.explanation-sec').css('height', coll_scroll_height);
+            // var afterclikecoll = $(".explanation-sec").outerHeight();
+            // var afterclikecoll_cal = afterclikecoll - 14 + "px";
+            // $('.explanation-sec').css('height', afterclikecoll_cal);
+
+
             var coll_questionsliderbox_height = $(".questionsliderbox").outerHeight();
             var coll_questionwrapper_height = $(".questionwrapper").outerHeight();
             var coll_final_height = coll_questionsliderbox_height - coll_questionwrapper_height;
@@ -360,7 +412,7 @@ $question_type = "Numerical";
             $('.answer-main-sec ').css('height', answer_main_sec_height_coll_sub);
             $('.explanation-sec').css('height', coll_scroll_height);
             var afterclikecoll = $(".explanation-sec").outerHeight();
-            var afterclikecoll_cal = afterclikecoll - 30 + "px";
+            var afterclikecoll_cal = afterclikecoll - 20 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
         });
     });
