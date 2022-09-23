@@ -91,7 +91,7 @@ class ResultController extends Controller
                 $redis_json = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             } else {
                 //custom subject exam
-                $redis_json = Redis::get('custom_answer_time_' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_' . $user_id . '_' . $ranSession);
             }
 
 
