@@ -3064,7 +3064,6 @@ line-height: 1.6;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
-
 }
 
 /********* Performance Rating ***************/
@@ -7992,3 +7991,4 @@ margin-bottom: 12px;
         .arrowroted svg{
             transform: rotate(180deg);
         }
+.desktop_hide {display: none;}

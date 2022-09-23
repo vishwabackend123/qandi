@@ -710,7 +710,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
-                                        <div class="row">
+                                        <div class="row row_repeate">
                                             <div class="col-md-7">
                                                 <div class="progress_journey_chart progressnewjourney">
                                                     <canvas id="progressJourny_graph"></canvas>
@@ -747,6 +747,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                 </div>
                                                 @endif
+                                                <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3">Attempt Now</a>
                                             </div>
                                         </div>
                                     </div>
