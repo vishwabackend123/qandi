@@ -96,6 +96,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                                         <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
+                                        <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>
@@ -960,6 +961,7 @@ $question_type = "Numerical";
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);
@@ -1110,7 +1112,8 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1209,7 +1212,8 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1312,6 +1316,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1357,11 +1362,12 @@ $question_type = "Numerical";
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_subject_question/') }}/" + subject_id;
+        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                ranSession: '{{$ranSession}}'
             },
             success: function(result) {
                 clearInterval(ctimer);
@@ -1387,7 +1393,8 @@ $question_type = "Numerical";
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                'q_time': time
+                'q_time': time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
