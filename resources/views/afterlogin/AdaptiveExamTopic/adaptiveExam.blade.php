@@ -1274,22 +1274,7 @@ $question_type = "Numerical";
         }
     }
 
-    /* function get_subject_question(subject_id) {
 
-        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(result) {
-                $("#question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-            }
-        });
-
-
-    } */
 
     function saveQuestionTime(question_id, time) {
         url = "{{ url('saveAdaptiveTimeSession') }}/" + question_id;
