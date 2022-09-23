@@ -70,11 +70,13 @@ class ResultController extends Controller
             $tasktype = isset($request->tasktype) ? $request->tasktype : "";
             $category = isset($request->category) ? $request->category : "";
             /* end parameter for dailyTaskExam result */
+
             if ($test_type == 'Live') {
                 $redis_json = Redis::get('custom_answer_time_live_' . $user_id);
             } elseif ($test_type == 'Mocktest') {
                 $redis_json = Redis::get('custom_answer_time_mock' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Profiling') {
+
                 $redis_json = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'PreviousYear') {
                 $redis_json = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
@@ -84,13 +86,14 @@ class ResultController extends Controller
                 } else {
                     $redis_json = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
                 }
-            } elseif ($tasktype == 'daily') {
+            } elseif ($tasktype == 'daily' || $tasktype == 'weekly') {
 
                 $redis_json = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             } else {
                 //custom subject exam
                 $redis_json = Redis::get('custom_answer_time_' . $user_id);
             }
+
 
 
             $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
