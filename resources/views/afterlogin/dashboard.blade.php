@@ -965,7 +965,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     $avg_score_json = isset($trend_avg_score) ? json_encode($trend_avg_score) : [];
     $max_score_json = isset($trend_max_score) ? json_encode($trend_max_score) : [];
     $ideal = isset($ideal) ? json_encode($ideal) : [];
-    $your_place = isset($your_place) ? json_encode($your_place) : [];
+    $your_place = (isset($your_place) && ($userStatus==false)) ? json_encode($your_place) : [];
+
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
     @endphp
