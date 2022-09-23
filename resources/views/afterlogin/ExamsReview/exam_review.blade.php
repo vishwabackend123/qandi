@@ -708,6 +708,7 @@ $question_type = "Numerical";
             var afterclikecoll = $(".explanation-sec").outerHeight();
             var afterclikecoll_cal = afterclikecoll - 10 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
+            
         });
     });
 </script>
