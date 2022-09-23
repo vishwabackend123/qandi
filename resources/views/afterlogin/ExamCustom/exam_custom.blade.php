@@ -99,7 +99,7 @@
                                     <div class="testtablescroll allscrollbar">
                                         @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                         @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" id="collapseTwo_accordian_{{$chapters->chapter_id}}">
                                             <div class="test-table d-md-flex align-items-center justify-content-between pb-md-3 mb-md-1 position-relative">
                                                 <h2 class="m-0" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</h2>
                                                 <h3 class="m-0">Proficiency: <span> @if(isset($chapters->chapter_score))
@@ -181,7 +181,9 @@
     $('.chapters-expend').hide();
 
     function show_topic(chapt_id, sub_id, subject_name) {
+   
         $('.spinnerblock').show();
+       
         var chapter_ex = $('#collapseTwo_custome_' + chapt_id).hasClass('show');
         if (chapter_ex === true) {
             $('#collapseTwo_custome_' + chapt_id).removeClass('show');
@@ -249,9 +251,9 @@
 
                 }
             });
-        }
-
-
+        };
+      $('.testtablescroll #collapseTwo_accordian_' + chapt_id)[0].scrollIntoView();
+        
     }
 </script>
 <script type="text/javascript">
