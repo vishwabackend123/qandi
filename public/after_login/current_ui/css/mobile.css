@@ -384,7 +384,7 @@
     .performance_chapter_sublists li {
         padding:0 20px;
     }
-    .main-wrapper header{width:100%;}
+    .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
     .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
         position: fixed;transition: 400ms;
         transform: translateX(100%);
@@ -2696,7 +2696,7 @@ transform: translateX(100%);
 .hide-text{display: none;}   
 .testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
 .testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
-.scrollnone .main-wrapper header{width:100%;}
+.scrollnone .main-wrapper header{width:100%!important;}
     .reviewScreenright {
         display:none;
     }
