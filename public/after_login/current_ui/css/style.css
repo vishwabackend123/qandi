@@ -7924,7 +7924,7 @@ margin-bottom: 12px;
         z-index: 10;
         pointer-events: none;
         display: -ms-flexbox;
-        display: flex;
+        display: none;
     
         }
         .explanationdeteail{
