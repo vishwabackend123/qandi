@@ -6434,16 +6434,16 @@ td.mymatrix_table_point
     right: 0%!important;
     transition: 0.4s; 
 }
-.show .notification-main{
+/* .show .notification-main{
     right: 0%!important;
     transition: 0.4s; 
-}
+} */
 .activeblock.notification-block_new {
     position: fixed;right: auto !important;
 }
-.show.notification-block_new {
+/* .show.notification-block_new {
     position: fixed;right: auto !important;
-}
+} */
 .notification-block_new{
     position: relative;
     width: 95.8%;
@@ -6482,7 +6482,7 @@ td.mymatrix_table_point
     content: "";
 }
 
-.activeblock .notificationOverlay::before,.notification-block_new.show .notificationOverlay::before{
+.activeblock .notificationOverlay::before{
     display: block;
 }
 
