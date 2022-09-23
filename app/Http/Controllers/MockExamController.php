@@ -377,7 +377,9 @@ class MockExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
             $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+
             $cacheKey = 'CustomQuestion:mock:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
