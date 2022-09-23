@@ -87,7 +87,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="session_id" value="{{$session_id}}">
                                         <input type="hidden" name="topic_id" value="{{$topic_id}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-
+                                        <input type="hidden" name="ranSession" value="{{$ranSession}}">
                                         <button class="btn submitBtnlink" id="submitExam">
                                             <span class="btnText">Submit Test</span>
                                             <span>
@@ -913,6 +913,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 "session_id": "{{$session_id}}",
                 "chapter_id": "{{$chapter_id}}",
+                ranSession: '{{$ranSession}}'
 
             },
             success: function(result) {
@@ -1062,7 +1063,8 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1148,7 +1150,8 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 $("#btn_" + question_id).removeClass("pink-btn");
@@ -1178,7 +1181,8 @@ $question_type = "Numerical";
                     "_token": "{{ csrf_token() }}",
                     question_id: quest_id,
                     subject_id: subject_id,
-                    chapter_id: chapt_id
+                    chapter_id: chapt_id,
+
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
@@ -1236,6 +1240,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -1283,7 +1288,8 @@ $question_type = "Numerical";
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                'q_time': time
+                'q_time': time,
+                ranSession: '{{$ranSession}}'
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);

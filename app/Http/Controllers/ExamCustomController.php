@@ -1088,11 +1088,12 @@ class ExamCustomController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
-            if (Redis::exists('adaptive_session:' . $user_id)) {
-                Redis::del(Redis::keys('adaptive_session:' . $user_id));
+            if (Redis::exists('adaptive_session:' . $user_id . '_' . $ranSession)) {
+                Redis::del(Redis::keys('adaptive_session:' . $user_id . '_' . $ranSession));
             }
-            $chapterAdaptiveCacheKey = 'ChapterAdaptiveExam:' . $user_id;
+            $chapterAdaptiveCacheKey = 'ChapterAdaptiveExam:' . $user_id . '_' . $ranSession;
             if ($inst == 'instruction') {
                 if (Redis::exists($chapterAdaptiveCacheKey)) {
                     Redis::del($chapterAdaptiveCacheKey);
@@ -1193,7 +1194,7 @@ class ExamCustomController extends Controller
             }
 
 
-            $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set);
+            $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set, $ranSession);
             $keys = array_keys($allQuestionDetails);
 
             $question_data = (object)current($allQuestionDetails);
@@ -1247,7 +1248,7 @@ class ExamCustomController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
+                Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redis_data));
 
                 $exam_url = route('custom_exam_chapter');
 
@@ -1255,14 +1256,14 @@ class ExamCustomController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
             //Session::put('exam_name', $test_name);
 
 
-            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name', 'header_title'));
+            return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('ranSession', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name', 'header_title'));
         } catch (\Exception $e) {
 
             Log::info($e->getMessage());
@@ -1285,12 +1286,13 @@ class ExamCustomController extends Controller
 
             $session_id = isset($request->session_id) ? $request->session_id : [];
             $chapter_id = isset($request->chapter_id) ? $request->chapter_id : [];
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
 
-            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
+            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
 
             if (isset($redis_result) && !empty($redis_result)) :
@@ -1306,7 +1308,7 @@ class ExamCustomController extends Controller
             $next_question_data = isset($allQuestions[$key]) ? $allQuestions[$key] : []; // required question all data
 
             if (empty($next_question_data)) {
-                $question_data = $this->getNextAdpativeQues($session_id, $key, $chapter_id);
+                $question_data = $this->getNextAdpativeQues($session_id, $key, $chapter_id, $ranSession);
             } else {
                 $question_data = $next_question_data;
             }
@@ -1340,7 +1342,7 @@ class ExamCustomController extends Controller
                 $optionArray = $opArr;
                 $option_data = $optionArray;
 
-                $session_result = Redis::get('adaptive_session:' . $user_id);
+                $session_result = Redis::get('adaptive_session:' . $user_id . '_' . $ranSession);
                 $sessionResult = json_decode($session_result);
 
                 $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
@@ -1374,7 +1376,8 @@ class ExamCustomController extends Controller
             $user_id = $userData->id;
 
             $question_time = $request->q_time;
-            $redis_result = Redis::get('adaptive_session:' . $user_id);
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            $redis_result = Redis::get('adaptive_session:' . $user_id) . '_' . $ranSession;
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -1404,7 +1407,7 @@ class ExamCustomController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
+            Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
@@ -1431,8 +1434,9 @@ class ExamCustomController extends Controller
             $data = $request->all();
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
-            $redis_result = Redis::get('adaptive_session:' . $user_id);
+            $redis_result = Redis::get('adaptive_session:' . $user_id . '_' . $ranSession);
 
 
             if (!empty($redis_result)) {
@@ -1457,7 +1461,7 @@ class ExamCustomController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
+            Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
@@ -1485,8 +1489,9 @@ class ExamCustomController extends Controller
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
             $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
+            $ranSession = isset($data['ranSession']) ? $data['ranSession'] : '';
 
-            $redis_result = Redis::get('adaptive_session:' . $user_id);
+            $redis_result = Redis::get('adaptive_session:' . $user_id . '_' . $ranSession);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
@@ -1526,7 +1531,7 @@ class ExamCustomController extends Controller
 
 
             // Push Value in Redis
-            Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
+            Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redisArray));
 
             $response['status'] = 200;
             $response['message'] = "save response successfully";
@@ -1546,18 +1551,18 @@ class ExamCustomController extends Controller
      *
      * @return void
      */
-    public function getNextAdpativeQues($session_id, $nextkey, $chapter_id)
+    public function getNextAdpativeQues($session_id, $nextkey, $chapter_id, $ranSession)
     {
         try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
+            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id . '_' . $ranSession;
             $redis_result = Redis::get($cacheKey);
             $redisQuestionArray = json_decode($redis_result);
 
-            $session_result = Redis::get('adaptive_session:' . $user_id);
+            $session_result = Redis::get('adaptive_session:' . $user_id . '_' . $ranSession);
             $sessionResult = json_decode($session_result);
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
@@ -1608,8 +1613,8 @@ class ExamCustomController extends Controller
             $res_questions = isset($responsedata->questions) ? $responsedata->questions : [];
 
             if ($res_status == true && !empty($res_questions)) {
-                if (Redis::exists('adaptive_session:' . $user_id)) {
-                    Redis::del(Redis::keys('adaptive_session:' . $user_id));
+                if (Redis::exists('adaptive_session:' . $user_id . '_' . $ranSession)) {
+                    Redis::del(Redis::keys('adaptive_session:' . $user_id . '_' . $ranSession));
 
                     $questions_count = count($res_questions);
                     $newQuestions = collect($res_questions);
@@ -1628,12 +1633,12 @@ class ExamCustomController extends Controller
                     ];
 
                     // Push Value in Redis
-                    Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
+                    Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redis_data));
                 }
 
                 $nArray = array_merge($redisQuestionArray, $res_questions);
 
-                $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $nArray, 'True');
+                $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $nArray, 'True', $ranSession);
                 $next_question_data = isset($allQuestionDetails[$nextkey]) ? $allQuestionDetails[$nextkey] : []; // required question all data
 
                 return $next_question_data;

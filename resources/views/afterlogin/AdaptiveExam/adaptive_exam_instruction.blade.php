@@ -18,9 +18,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     @include('afterlogin.layouts.navbar_header_new')
     <div class="content-wrapper">
         <div class="exam_instruction_wrapper">
-                <div class="mock_inst_text_mock_testmobile mobile_block">
-                    <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
-                </div>
+            <div class="mock_inst_text_mock_testmobile mobile_block">
+                <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i>Back</a>
+            </div>
             <div class="row">
                 <div class="col-xl-8 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
@@ -44,7 +44,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div>
                             <div class="exam_inst_sec_head_flex">
                                 <div class="exam_inst_sec_head"><b>{{$i}}. <span>{{$sub->subject_name}}</span></b></div>
-                                
+
                             </div>
                             <div class="line-693"></div>
                             <div class="mt-2">The following are the sections in the test:</div>
@@ -95,7 +95,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
-                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Practice</a>
+                                <form class="form-horizontal ms-auto " action="{{$exam_url}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="ranSession" value="{{$ranSession}}" />
+                                    <button type="submit" class="btn exam_inst_take_test_btn">Practice</button>
+                                </form>
+                                {{--<a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Practice</a>--}}
                             </div>
                         </div>
                     </div>

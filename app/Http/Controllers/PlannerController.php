@@ -436,12 +436,12 @@ class PlannerController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-
-            if (Redis::exists('adaptive_session:' . $user_id)) {
-                Redis::del(Redis::keys('adaptive_session:' . $user_id));
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
+            if (Redis::exists('adaptive_session:' . $user_id . '_' . $ranSession)) {
+                Redis::del(Redis::keys('adaptive_session:' . $user_id . '_' . $ranSession));
             }
 
-            $plannerCacheKey = 'PlannerExam:' . $user_id;
+            $plannerCacheKey = 'PlannerExam:' . $user_id . '_' . $ranSession;
             if ($inst == 'instruction') {
                 if (Redis::exists($plannerCacheKey)) {
                     Redis::del($plannerCacheKey);
@@ -545,7 +545,7 @@ class PlannerController extends Controller
             }
 
 
-            $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set);
+            $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set, $ranSession);
 
             $keys = array_keys($allQuestionDetails);
 
@@ -604,7 +604,7 @@ class PlannerController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
+                Redis::set('adaptive_session:' . $user_id . '_' . $ranSession, json_encode($redis_data));
 
                 Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
 
@@ -613,11 +613,11 @@ class PlannerController extends Controller
                 $exam_title = "Planner Exam";
                 $eType = "Adaptive";
                 $total_marks = 0;
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
-            return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name', 'header_title'));
+            return view('afterlogin.planner.planner_exam', compact('ranSession', 'planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name', 'header_title'));
         } catch (\Exception $e) {
 
             Log::info($e->getMessage());
