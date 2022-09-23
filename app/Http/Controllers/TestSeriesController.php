@@ -469,7 +469,7 @@ class TestSeriesController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            dd($e->getMessage());
+            // dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }
@@ -772,6 +772,76 @@ class TestSeriesController extends Controller
 
 
             return view('afterlogin.ExamViews.next_question_new', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
+
+    /**
+     * SaveQuestionTimeSession
+     *
+     * @param Request $request     recieve the body request data
+     * @param mixed   $question_id question id
+     *
+     * @return void
+     */
+    public function saveQuestionTimeSession(Request $request, $question_id)
+    {
+        try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+
+            $question_time = $request->q_time;
+
+            $series_type = isset($request->series_type) ? $request->series_type :  'Open';
+            $ranSession = isset($request->ranSession) ? $request->ranSession : '';
+            //  $redis_result = Redis::get('custom_answer_time_' . $user_id . '_' . $ranSession);
+            if ($series_type == 'Open') {
+                $redis_result = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
+            } else {
+                $redis_result = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
+            }
+
+            if (!empty($redis_result)) {
+                $redisArray = json_decode($redis_result, true);
+
+                $retrive_array = $redisArray['given_ans'];
+                $retrive_time_array = $redisArray['taken_time'];
+                $answer_swap_cnt = $redisArray['answer_swap_cnt'];
+                $retrive_time_sec = $redisArray['taken_time_sec'];
+
+                $retrive_time_sec[$question_id] = (int)$question_time;
+                $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+            } else {
+                $retrive_time_sec = [];
+                $retrive_time_array = [];
+
+                $retrive_time_sec[$question_id] = (int)$question_time;
+                $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+            }
+
+
+            $redisArray['given_ans'] = $retrive_array;
+            $redisArray['taken_time'] = $retrive_time_array;
+            $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+            $redisArray['taken_time_sec'] = $retrive_time_sec;
+
+            // Push Value in Redis
+            // Redis::set('custom_answer_time_' . $user_id . '_' . $ranSession, json_encode($redisArray));
+
+            if ($series_type == 'Open') {
+                Redis::set('custom_answer_time_ts' . $user_id . '_' . $ranSession, json_encode($redisArray));
+            } else {
+                Redis::set('custom_answer_time_tsl' . $user_id . '_' . $ranSession, json_encode($redisArray));
+            }
+
+
+            $response['status'] = 200;
+            $response['message'] = "save response successfully";
+
+
+            return json_encode($response);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

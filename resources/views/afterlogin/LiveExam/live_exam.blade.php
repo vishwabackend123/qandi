@@ -1376,13 +1376,14 @@ $question_type = "Numerical";
 
     function saveQuestionTime(question_id, time) {
 
-        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+        url = "{{ url('saveQuestionTimeSessionLive') }}/" + question_id;
         $.ajax({
             url: url,
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                'q_time': time
+                'q_time': time,
+
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);

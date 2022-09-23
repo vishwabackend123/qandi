@@ -107,7 +107,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
-                                <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</a>
+                                <form class="form-horizontal ms-auto " action="{{$exam_url}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="ranSession" value="{{$ranSession}}" />
+                                    <button type="submit" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</button>
+                                </form>
+                                {{-- <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</a> --}}
                             </div>
                         </div>
                     </div>

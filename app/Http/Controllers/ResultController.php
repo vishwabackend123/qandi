@@ -75,7 +75,7 @@ class ResultController extends Controller
             } elseif ($test_type == 'Mocktest') {
                 $redis_json = Redis::get('custom_answer_time_mock' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Profiling') {
-                $redis_json = Redis::get('custom_answer_time_full' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'PreviousYear') {
                 $redis_json = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Test-Series') {
@@ -86,7 +86,7 @@ class ResultController extends Controller
                 }
             } elseif ($tasktype == 'daily') {
 
-                $redis_json = Redis::get('custom_answer_time_task' . $user_id);
+                $redis_json = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             } else {
                 //custom subject exam
                 $redis_json = Redis::get('custom_answer_time_' . $user_id);
@@ -169,7 +169,6 @@ class ResultController extends Controller
             curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
-
 
 
             $err = curl_error($curl);
