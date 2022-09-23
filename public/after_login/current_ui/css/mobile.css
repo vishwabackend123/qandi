@@ -2967,6 +2967,7 @@ transform: translateX(100%);
         .accordion-header{min-width:auto;}
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
 
 }
 
