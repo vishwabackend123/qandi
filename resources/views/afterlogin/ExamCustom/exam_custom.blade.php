@@ -346,6 +346,7 @@ $('#custom_tab').click(function() {
     function showSubfilter(subject) {
         $('.SubattemptActBtn').removeClass('active');
         $('.compLeteS').hide();
+        $('.no_data_found').hide();
         if (subject == "all_subject") {
             $('.compLeteS').show();
             $("#all_subject_flt").addClass('active');
@@ -353,6 +354,14 @@ $('#custom_tab').click(function() {
             $('#' + subject + '_flt').addClass('active');
             $("#all_subject_flt").removeClass('active');
             $('.' + subject + '-rlt').show();
+            var data_list =$('.' + subject + '-rlt').length;
+            if(data_list > 0)
+            {
+                $('.no_data_found').hide();
+            } else {
+                $('.no_data_found').show();
+                $('#error_data').text('No result history available right now.');
+            }
         }
 
     }
