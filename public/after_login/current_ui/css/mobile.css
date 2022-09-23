@@ -2971,6 +2971,7 @@ transform: translateX(100%);
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
+        .graphDetailempty{width:100%;}
 
 }
 
