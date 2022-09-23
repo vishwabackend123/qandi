@@ -488,6 +488,9 @@ $question_type = "Numerical";
     var activeques_id = '{{$activeq_id}}';
     var saveArr = [];
     /* Allow only numeric with decimal */
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));

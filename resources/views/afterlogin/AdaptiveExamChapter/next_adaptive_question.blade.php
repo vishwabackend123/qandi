@@ -248,6 +248,9 @@ $question_type = "Numerical";
         $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
