@@ -116,7 +116,7 @@ class TestSeriesController extends Controller
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
 
 
-            $ranSession =  isset($request->ranSession) ? $request->ranSession : date('ymdhis');
+            $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
             if ($series_type == 'Open') {
                 if (Redis::exists('custom_answer_time_ts' . $user_id . '_' . $ranSession)) {

@@ -122,7 +122,7 @@
                     <input type="hidden" name="city" id="city_name" value="">
                     <div class="custom-input pb-3">
                         <label>Name </label>
-                        <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return onlyAlphabetsDisplay(event,this);" required>
+                        <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return onlyAlphabetsDisplay(event,this);" onpaste="validatePaste(this, event)" required>
                     </div>
                     <div class=" custom-input changeno pb-3 ">
                         <label>Mobile</label>
@@ -705,6 +705,14 @@
 
             }
         }
+    function validatePaste(el, e) {
+        var regex = /^[a-z .'-]+$/gi;
+        var key = e.clipboardData.getData('text')
+        if (!regex.test(key)) {
+            e.preventDefault();
+            return false;
+        }
+    }
     </script>
 </body>
 @endsection
