@@ -671,8 +671,7 @@
 
         /* function for select sity */
         document.addEventListener("paste", function(e) {
-
-            if (e.target.type === "text" && e.target.id != 'mobile_num') {
+            if (e.target.type === "text" && e.target.id != 'mobile_num' && e.target.id != 'user_name' && e.target.id != 'email_add') {
                 var data = e.clipboardData.getData('Text');
                 if (!isNaN(data)) {
                     data = data.split('');

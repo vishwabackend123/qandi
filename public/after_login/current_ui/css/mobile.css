@@ -301,6 +301,10 @@
 .journeyGraph {padding: 20px;}
 .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
 .fullbodyBox{justify-content:space-between;}
+.exam_instruction_col_four {
+    padding-left: 2%;
+}
+.exam_instruction_scrolling{padding-right: 30px;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -1244,7 +1248,7 @@ transform: translateX(100%);
         padding-left: 14px;
         padding-top:30px;
     }
-
+    .plan_order_sumry_subscription {font-size: 13px;}
     /********* Vikash Start ************/
     /* contect us */
     .contactus_customer_support_text
@@ -1936,7 +1940,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;justify-content: space-between!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
