@@ -84,7 +84,8 @@
             <h3 class="m-0">{{date('d F Y', strtotime($sche->created_at));}}</h3>
             <div class="accordion-header mock_btn_vie_detail d-flex align-items-center justify-content-between;" id="headingTwo">
                 <a href="javascript:void(0);" class="m-0 view_detail_text_colleps">
-                    <h4 class="view_details" data-id="{{$sche->id}}">View details</h4>
+                    <!-- <h4 class="view_details" data-id="{{$sche->id}}">View details</h4> -->
+                    <h4 data-bs-toggle="collapse" data-bs-target="#chapter_{{$sche->id}}" aria-expanded="true" aria-controls="collapseTwoTwo" class="view_details" data-id="{{$sche->id}}">View details</h4>
                 </a>
                 <div class="d-flex align-items-center see_analytics_mock_exam">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
