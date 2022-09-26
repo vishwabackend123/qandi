@@ -1071,9 +1071,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                     items: 1
                 },
                 600: {
+                    items: 2
+                },
+                767: {
                     items: 3
                 },
-                1000: {
+                1199: {
                     items: 4
                 }
 
