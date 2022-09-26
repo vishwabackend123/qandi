@@ -282,6 +282,7 @@
                                 </p>
                             </span>
                         </h3>
+
                         <div class="common_greenbadge_tabs">
                             <div class="row mt-4 align-items-center">
                                 <div class="col-12">
@@ -326,7 +327,7 @@
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
                                             <div class="topic_score_bar dropdown">
-                                                <h4>@if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
+                                                <h4>@if(!empty($topic->topic_name)) {{$topic->topic_name}}
                                                     @else
                                                     ""
                                                     @endif</h4>
