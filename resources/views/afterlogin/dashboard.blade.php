@@ -1116,7 +1116,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {
@@ -1191,7 +1191,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {
