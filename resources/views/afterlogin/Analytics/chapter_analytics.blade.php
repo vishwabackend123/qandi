@@ -382,7 +382,7 @@
                         </div>
                     </div>
                     <div class="accordion-header" id="headingOne">
-                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne_{{$list['chapter_id']}}" aria-expanded="false" aria-controls="collapseOne" onclick="show_topic_list({{$list['chapter_id']}})">
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  aria-expanded="false" aria-controls="collapseOne" onclick="show_topic_list({{$list['chapter_id']}})">
                             <span id="topic_title_{{$list['chapter_id']}}">View Topics</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </span>
                     </div>
@@ -417,10 +417,10 @@ function show_topic_list(chapter_id) {
 
             },
             success: function(result) {
+                $("#collapseOne_"+chapter_id).collapse('show');
                 $('.spinnerblock').hide();
                 $("#collapseOne_" + chapter_id).html(result.html);
-                $("#collapseOne_"+chapter_id).collapse('show');
-                $('#topic_title_'+chapter_id).text('Hide Topics');
+
             },
             error: function(data, errorThrown) {
                 $('.spinnerblock').hide();
@@ -429,8 +429,11 @@ function show_topic_list(chapter_id) {
     }
     if (title_text == 'Hide Topics') {
         $('#topic_title_'+chapter_id).text('View Topics');
-        $('.spinnerblock').hide();
-         $("#collapseOne_"+chapter_id).collapse('hide');
+        $("#collapseOne_"+chapter_id).collapse('hide');
+        setTimeout(function(){
+            $('.spinnerblock').hide();
+        },5000)
+        
     }
     
 }
