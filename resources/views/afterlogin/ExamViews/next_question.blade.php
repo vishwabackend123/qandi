@@ -225,7 +225,9 @@ $question_type = "Numerical";
         }
         $('#quest_option_' + question_id).focus();
     });
-
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
 
