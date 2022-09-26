@@ -1134,7 +1134,7 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){ 
-    .graphDetailempty {padding-left: 0px;padding-bottom:20px;}
+    .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
     }
