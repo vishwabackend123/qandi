@@ -281,7 +281,7 @@
     padding-right: 36px !important;
 }   
 }
-@media only screen and (max-width: 1199px){
+@media screen and (max-width: 1199px){
     .myqTodayPannel .commondashboardTop{background-color: transparent;}
     .clander-box {margin-top: 40px;}
     .calendar-wrapper {max-width: 100%;}
@@ -296,6 +296,12 @@
     .exam_instruction_col_four {padding-left: 2%;}
     .exam_instruction_scrolling{padding-right: 30px;}
     .planewrapper{flex-wrap:wrap;}
+    .plantitleBox {width:100%;}
+    .planDetailBox {padding-top: 15px;}
+    .gotoPlanner {
+        width: -webkit-fill-available; 
+        max-width: fit-content;
+    }
 }
 @media only screen and (max-width: 1024px){
     .planewrapper {

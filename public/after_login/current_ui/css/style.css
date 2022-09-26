@@ -7991,3 +7991,7 @@ margin-bottom: 12px;
             transform: rotate(180deg);
         }
 .desktop_hide {display: none;}
+.gotoPlanner {
+    width: -webkit-fill-available;
+    max-width: fit-content;
+} 
