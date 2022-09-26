@@ -789,7 +789,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </p>
                                                 </div>
                                             </div>
-                                            </div>
+                                            </div> 
                                             @if (!empty($trendResponse) && $userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide ">
