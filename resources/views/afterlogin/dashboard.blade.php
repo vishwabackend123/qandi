@@ -717,7 +717,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                                @if (isset($ideal) && !empty($ideal) && $userStatus==false)
+                                                <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
+                                                @if($userStatus==false)
                                                 <div class="graphDetail w-100">
                                                     <div class="yourPacebox">
                                                         <p class="graphTitle">Ideal Pace</p>
@@ -789,8 +790,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </p>
                                                 </div>
                                             </div>
-                                            </div> 
-                                            @if (!empty($trendResponse) && $userStatus==false)
+
+                                            <!-- if (!empty($trendResponse) && $userStatus==false) -->
+                                            @if($userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide ">
                                                     <div class="customDropdown1 dropdown">
@@ -1133,7 +1135,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {
@@ -1208,7 +1210,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {
