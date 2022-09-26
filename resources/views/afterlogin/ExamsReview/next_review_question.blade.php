@@ -729,6 +729,12 @@ $question_type = "Numerical";
                 var answer1mainsec_height = $(".answer-main-sec ").outerHeight();
                 var answer_main_sec_mob12 = reviewScreenrightkheight + answer1mainsec_height + "px";
                 $('.answer-main-sec').css('height', answer_main_sec_mob12);
+
+                var answermain_sec_devide_height = $(".answer-main-sec").outerHeight();
+                var answercollapseadd54 = answermain_sec_devide_height + 54 + "px";
+                $('.answer-main-sec ').css('height', answercollapseadd54);
+
+
                 $('.explanation-sec').attr('style', 'height: 20px !important');
             });
 

@@ -281,30 +281,27 @@
     padding-right: 36px !important;
 }   
 }
-@media only screen and (max-width: 1199px){
-    .myqTodayPannel .commondashboardTop{
-        background-color: transparent;
+@media screen and (max-width: 1199px){
+    .myqTodayPannel .commondashboardTop{background-color: transparent;}
+    .clander-box {margin-top: 40px;}
+    .calendar-wrapper {max-width: 100%;}
+    .graphCardwrapper{flex-wrap:wrap;}
+    .journeyGraph {width: 100%;}
+    .graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
+    .graphCard.my-4{margin-top:16px!important;}
+    .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
+    .journeyGraph {padding: 20px;}
+    .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
+    .fullbodyBox{justify-content:space-between;}
+    .exam_instruction_col_four {padding-left: 2%;}
+    .exam_instruction_scrolling{padding-right: 30px;}
+    .planewrapper{flex-wrap:wrap;}
+    .plantitleBox {width:100%;}
+    .planDetailBox {padding-top: 15px;}
+    .gotoPlanner {
+        width: -webkit-fill-available; 
+        max-width: fit-content;
     }
-    .clander-box {
-    margin-top: 40px;
-}
-.calendar-wrapper {
-    max-width: 100%;
-}
-.graphCardwrapper{flex-wrap:wrap;}
-.journeyGraph {
-    width: 100%;
-}
-.graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
-.graphCard.my-4{margin-top:16px!important;}
-.dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
-.journeyGraph {padding: 20px;}
-.Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
-.fullbodyBox{justify-content:space-between;}
-.exam_instruction_col_four {
-    padding-left: 2%;
-}
-.exam_instruction_scrolling{padding-right: 30px;}
 }
 @media only screen and (max-width: 1024px){
     .planewrapper {
@@ -1137,6 +1134,9 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .loginform {
+        height: 70%;
+    }
     canvas#progressJourny_graph {
         height: 200px !important;
     }
@@ -2085,7 +2085,6 @@ transform: translateX(100%);
     .new_notification_main_sec { height: calc(100vh - 228px);margin-top:20px;}
     .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
     .verifiaction-link{padding:16px 12px;}
-    .planewrapper{flex-wrap:wrap;}
     .journeyBoxcontainer{flex-wrap:wrap}
     .graphimg{width: 100%;}
     .graphDetail {  padding-left:0px; width: 100%;}
