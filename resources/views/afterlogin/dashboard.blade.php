@@ -776,18 +776,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                                 <div class="desktop_hide">
                                                     <div class="yourPacebox">
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH myscore"></span>
-                                                        <span class="weekText">My score</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  peerAvg"></span>
-                                                        <span class="weekText">Peer average</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  topScroe"></span>
-                                                        <span class="weekText">Top score</span>
-                                                    </p>
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH myscore"></span>
+                                                            <span class="weekText">My score</span>
+                                                        </p>
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH  peerAvg"></span>
+                                                            <span class="weekText">Peer average</span>
+                                                        </p>
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH  topScroe"></span>
+                                                            <span class="weekText">Top score</span>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
 
