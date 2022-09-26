@@ -1134,6 +1134,9 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .loginform {
+        height: 70%;
+    }
     canvas#progressJourny_graph {
         height: 200px !important;
     }
