@@ -436,7 +436,7 @@ function show_topic_list(chapter_id) {
         setTimeout(function(){
             $('.spinnerblock').hide();
             $('#topic_spam_'+chapter_id).css("cursor","pointer");
-        },5000)
+        },1000)
         
     }
     
