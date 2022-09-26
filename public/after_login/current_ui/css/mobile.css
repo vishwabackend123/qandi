@@ -2058,6 +2058,7 @@ transform: translateX(100%);
         margin-right: 40px;
         padding: 0 5px 20px;
     }
+    .modal-popup-customize .modal-content{max-width: 100%;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
