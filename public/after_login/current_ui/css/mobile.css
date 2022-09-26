@@ -1134,6 +1134,14 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
+    .graphDetailempty {padding-left: 0px;padding-bottom:20px;}
+    .graphDetailempty .yourPacebox {
+        display: none;
+    }
+    .graphDetailempty .mt-4 {
+        margin-top: 0px !important;
+    }
+    .dateformate {min-width: 120px;}
     .loginform {
         height: 70%;
     }
