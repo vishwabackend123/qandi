@@ -203,10 +203,11 @@ trait CommonTrait
         return [];
     }
 
-    public function adaptiveCustomQlist($user_id, $question_data, $redis_set)
+    public function adaptiveCustomQlist($user_id, $question_data, $redis_set, $ranSession)
     {
         if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
+            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id . '_' . $ranSession;
+            $redis_result = Redis::get($cacheKey);;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));

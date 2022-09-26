@@ -257,6 +257,9 @@ $question_type = "Numerical";
     });
 
     /* Allow only numeric with decimal */
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
 
         //this.value = this.value.replace(/[^0-9\.]/g,'');

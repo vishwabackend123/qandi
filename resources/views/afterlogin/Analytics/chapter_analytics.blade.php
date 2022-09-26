@@ -419,6 +419,8 @@ function show_topic_list(chapter_id) {
             success: function(result) {
                 $('.spinnerblock').hide();
                 $("#collapseOne_" + chapter_id).html(result.html);
+                $("#collapseOne_"+chapter_id).collapse('show');
+                $('#topic_title_'+chapter_id).text('Hide Topics');
             },
             error: function(data, errorThrown) {
                 $('.spinnerblock').hide();
@@ -428,6 +430,7 @@ function show_topic_list(chapter_id) {
     if (title_text == 'Hide Topics') {
         $('#topic_title_'+chapter_id).text('View Topics');
         $('.spinnerblock').hide();
+         $("#collapseOne_"+chapter_id).collapse('hide');
     }
     
 }

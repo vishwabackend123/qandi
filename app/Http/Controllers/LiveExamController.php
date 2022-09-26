@@ -281,7 +281,8 @@ class LiveExamController extends Controller
                 $exam_name = $responsedata->exam_name;
                 $test_type = 'Live';
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type', 'subCounts'));
+                $ranSession = '';
+                return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type', 'subCounts'));
             }
 
 

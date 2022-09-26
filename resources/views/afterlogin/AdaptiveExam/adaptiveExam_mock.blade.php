@@ -502,6 +502,10 @@ $questtype='radio';
 
 <script>
     var activeques_id = '{{$activeq_id}}';
+
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');

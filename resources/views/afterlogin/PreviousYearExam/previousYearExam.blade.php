@@ -593,6 +593,9 @@ $question_type = "Numerical";
     var totalQCount = '{{$exam_ques_count}}';
 
     /* Allow only numeric with decimal */
+    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    })
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
 
