@@ -3004,6 +3004,8 @@ transform: translateX(100%);
         .graphDetailempty{min-height:auto;}
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
         .graphDetailempty{width:100%;}
+        .anshead-titletext{max-width: 50%;}
+        label.filter{padding-right:0px;margin-right:20px;}
 
 }
 
