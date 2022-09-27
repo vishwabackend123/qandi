@@ -3007,8 +3007,8 @@ transform: translateX(100%);
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
         #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
-        .filterdropdown .dropdown-item{margin-bottom:5px;}
-       .expandbtnmob1{position: relative;top:15px}
+        .filterdropdown .dropdown-item{padding-bottom:5px;}
+       .expandbtnmob1,.examReviewscreenmob .collapsebtnmob1{position: relative;top:15px}
 }
 
 
