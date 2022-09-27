@@ -1151,9 +1151,9 @@ transform: translateX(100%);
         margin-top: 0px !important;
     }
     .dateformate {min-width: 120px;}
-    /* .loginform {
-        height: 70%;
-    } */
+    .loginform {
+        min-height: 70%;
+    }
     .Get-otp.pt-4 {
         padding-top: 44px!important;
     }
@@ -3009,9 +3009,9 @@ transform: translateX(100%);
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
-        #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 5px 10px 5px;}
-        .filterdropdown .dropdown-item{padding-bottom:5px;}
-       .expandbtnmob1,.examReviewscreenmob .collapsebtnmob1{position: relative;top:15px}
+        #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
+        .filterdropdown .dropdown-item{margin-bottom:5px;}
+       .expandbtnmob1{position: relative;top:15px}
 }
 
 
