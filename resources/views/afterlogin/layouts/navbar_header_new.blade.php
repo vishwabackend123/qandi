@@ -36,7 +36,7 @@ $nitifiCount=count($notifications);
             </h6>
         </div>
         <div class="headerRight">
-            <span class="usertext mobile_hide"><a href="javascript:void(0);" style="cursor: default;">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
+            <span class="usertext mobile_hide"><a href="javascript:void(0);" style="cursor: default;" title="Hi {{ucwords($userData->user_name)}} !">Hi {{ucwords($userData->user_name)}}<span>!</span></a></span>
             <span class="headericon notificationnew">
                 <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
