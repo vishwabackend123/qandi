@@ -2217,11 +2217,11 @@ transform: translateX(100%);
     .modal-popup-customize .modal-content {
         border: 0 !important;
         height: 100%;
-        background: #f5faf6;
+        background: #f5faf6;border-radius:0px;
     }
     
 
-    #referfrnd .modalcenter {
+    #referfrnd .modalcenter ,#referedfrnd .modalcenter{
         display: flex;
         align-items: flex-start;
         margin-top: 70px;
