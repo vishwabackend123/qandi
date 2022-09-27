@@ -2199,7 +2199,7 @@ transform: translateX(100%);
     .modal-popup-customize .modal-content {
         border: 0 !important;
         height: 100%;
-        background: #f5faf6;
+        background: #f5faf6;border-radius:0px;
     }
     
 
