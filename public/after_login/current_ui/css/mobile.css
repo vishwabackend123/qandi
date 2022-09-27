@@ -3012,6 +3012,9 @@ transform: translateX(100%);
         #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
         .filterdropdown .dropdown-item{margin-bottom:5px;}
        .expandbtnmob1{position: relative;top:15px}
+       #clearBtn_response {
+        border: none;
+    }
 }
 
 
