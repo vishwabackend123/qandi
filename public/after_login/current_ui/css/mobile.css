@@ -2692,9 +2692,10 @@ transform: translateX(100%);
                 margin-top: 20px !important;
                 height: 20vh;
                 margin-right: 0px;
-                text-align: center;
+                /* text-align: center; */
                 width: 95%;
                 margin-bottom: 47px;
+                margin-left: auto;
             }
             .testscreenmob .btn123{
                 position: fixed;
