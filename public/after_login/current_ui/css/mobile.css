@@ -1151,8 +1151,11 @@ transform: translateX(100%);
         margin-top: 0px !important;
     }
     .dateformate {min-width: 120px;}
-    .loginform {
+    /* .loginform {
         height: 70%;
+    } */
+    .Get-otp.pt-4 {
+        padding-top: 44px!important;
     }
     canvas#progressJourny_graph {
         height: 200px !important;
