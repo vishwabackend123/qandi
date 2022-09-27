@@ -3013,7 +3013,7 @@ transform: translateX(100%);
         .filterdropdown .dropdown-item{margin-bottom:5px;}
        .expandbtnmob1{position: relative;top:15px}
        #clearBtn_response {
-        border: none;
+        border: none;color: gray;
     }
 }
 
