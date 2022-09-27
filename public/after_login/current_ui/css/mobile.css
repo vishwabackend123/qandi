@@ -2706,7 +2706,7 @@ transform: translateX(100%);
             .testscreenmob .main-textexam-sec {
                 position: absolute;
                 /* bottom: -112px; */ 
-                bottom: -24px;
+                bottom: -27px;
                 width: 100%;
                 background: #fff;
             }
