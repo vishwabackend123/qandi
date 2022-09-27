@@ -458,6 +458,10 @@
     }
 }
 @media screen and (max-width:991px) and (min-width:768px) {
+    .TestseriesAttempt22 .test-table .accordion-header .btn.btn-common-transparent
+    {
+        margin-left: -10px!important;
+    }
     .tab_hide {
         display: none;
     }
@@ -642,7 +646,7 @@
         margin-bottom: 0px;
     }
     .MockTestMob .mock_btn_vie_detail {
-        flex-basis: 752px!important;
+        flex-basis: 833px!important;
         justify-content: space-between;
         padding-top: 16px;
         padding-bottom: 16px;
