@@ -276,12 +276,14 @@ $user_id = isset($userData->id)?$userData->id:'';
         });
         $(".flip").click(function() {
             $("#panel").slideToggle("slow");
+            $(".fliparrow").toggleClass("arrowToggle");
             $(this).text(function(i, v) {
                 return v === 'Show details' ? 'Hide details' : 'Show details'
             })
         });
         $(".fliparrow").click(function() {
             $("#panel").slideToggle("slow");
+            $(this).toggleClass("arrowToggle");
             $('.flip').text(function(i, v) {
                 return v === 'Show details' ? 'Hide details' : 'Show details'
             })

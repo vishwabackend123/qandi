@@ -1129,11 +1129,28 @@ transform: translateX(100%);
         padding: 20px 20px;
     }
     .task-day.commonWhiteBox {margin-bottom: 40px;}
+    .usertext a {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width:200px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: right;
+    }
 }
 
 /* *************Tab  Css End ***************** */
 
-@media(max-width:767px){
+@media(max-width:767px){ 
+    .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
+    .graphDetailempty .yourPacebox {
+        display: none;
+    }
+    .graphDetailempty .mt-4 {
+        margin-top: 0px !important;
+    }
+    .dateformate {min-width: 120px;}
     .loginform {
         height: 70%;
     }
@@ -2050,6 +2067,7 @@ transform: translateX(100%);
         margin-right: 40px;
         padding: 0 5px 20px;
     }
+    .modal-popup-customize .modal-content{max-width: 100%;}
 
     /************ Amit end *********/
     .SubjectscorePannel{margin-bottom:16px;}
@@ -3023,6 +3041,9 @@ transform: translateX(100%);
     transform: rotate(90deg);
     top: 2px;
     position: relative;
+}
+.fliparrow.arrowToggle {
+    transform: rotate(270deg);
 }
     .loginform {
     width: 100%;
