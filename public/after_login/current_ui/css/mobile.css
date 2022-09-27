@@ -2221,7 +2221,7 @@ transform: translateX(100%);
     }
     
 
-    #referfrnd .modalcenter {
+    #referfrnd .modalcenter ,#referedfrnd .modalcenter{
         display: flex;
         align-items: flex-start;
         margin-top: 70px;
