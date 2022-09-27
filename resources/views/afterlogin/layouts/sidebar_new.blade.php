@@ -243,11 +243,12 @@ $userData = Session::get('user_data');
         <li class="contactus-menu">
             <a href="https://www.qanditoday.com/contact-us/" target="_blank">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.832 7.5h.833a2.5 2.5 0 0 1 2.5 2.5v1.667a2.5 2.5 0 0 1-2.5 2.5h-.833V7.5zM4.166 7.5h-.833a2.5 2.5 0 0 0-2.5 2.5v1.667a2.5 2.5 0 0 0 2.5 2.5h.833V7.5z" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M15.832 7.942c0-3.476-2.612-6.295-5.833-6.295S4.166 4.466 4.166 7.942" stroke="#1F1F1F" stroke-width="1.5"/>
-                    <path d="M9.586 17.226h3.745a2.5 2.5 0 0 0 2.5-2.5" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <rect x="8.706" y="16.123" width="2.5" height="2.5" rx="1.25" fill="#1F1F1F" stroke="#1F1F1F" stroke-width=".833"/>
-                </svg>
+                    <path fill="#fff" d="M0 0h24v24H0z"/>
+                    <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#234628" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#234628" stroke-width="2"/>
+                    <path d="M11.505 20.671h4.494a3 3 0 0 0 3-3" stroke="#234628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="10.449" y="19.347" width="3" height="3" rx="1.5" fill="#234628" stroke="#234628"/>
+                </svg>  
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon-active">
                     <path d="M19 9h1a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-1V9zM5 9H4a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1V9z" stroke="#56B663" stroke-width="2" stroke-linejoin="round"/>
                     <path d="M19 9.531c0-4.172-3.135-7.554-7-7.554-3.866 0-7 3.382-7 7.554" stroke="#56B663" stroke-width="2"/>
