@@ -398,6 +398,16 @@
     $(".topics_analytics").hide();
     /*********** BarChart ***********/
     /***overall-progress chart***** */
+    var mockTestScorePre = '<?php echo $mockTestScorePre ?>';
+    var mockTestScorePre_color = '#6ee7b7';
+    if (mockTestScorePre < 0) {
+        mockTestScorePre_color = '#E74969';
+    }
+     var mockTestScoreCurr = '<?php echo $mockTestScoreCurr ?>';
+     var mockTestScoreCurr_color = '#56b663';
+     if (mockTestScoreCurr < 0) {
+        mockTestScoreCurr_color = '#E74969';
+     }
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -407,8 +417,8 @@
                 data: [<?php echo $mockTestScorePre; ?>, <?php echo $mockTestScoreCurr; ?>],
                 label: '',
                 backgroundColor: [
-                    '#6ee7b7',
-                    '#56b663'
+                    mockTestScorePre_color,
+                    mockTestScoreCurr_color
                 ],
                 barPercentage: 5,
                 barThickness: 80,
@@ -1143,7 +1153,18 @@
             url: url,
             dataType: "json",
             success: function(response) {
-                myChart.data.datasets[0].data = [response.previous_score, response.current_score]; // or you can iterate for multiple 
+                myChart.data.datasets[0].data = [response.previous_score, response.current_score]; // or you can iterate for multiple
+                var mockTestScorePre = response.previous_score;
+                var mockTestScorePre_color = '#6ee7b7';
+                if (mockTestScorePre < 0) {
+                    mockTestScorePre_color = '#E74969';
+                }
+                var mockTestScoreCurr = response.current_score;
+                var mockTestScoreCurr_color = '#56b663';
+                if (mockTestScoreCurr < 0) {
+                    mockTestScoreCurr_color = '#E74969';
+                }
+                myChart.data.datasets[0].backgroundColor = [mockTestScorePre_color, mockTestScoreCurr_color];   
                 myChart.update();
             }
         });
