@@ -882,8 +882,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
     <div class="modal fade" id="needsfocusmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
@@ -901,8 +901,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
     <div class="modal fade" id="hopefulmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
@@ -920,8 +920,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
     <div class="modal fade" id="weakmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
