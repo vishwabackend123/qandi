@@ -29,7 +29,7 @@
 }
 .name-title {
     background: #e0f6e3;
-    padding: 20px 0px;
+    padding: 15px;
     border-radius: 10px;
 }
 .logo_sec {

@@ -7324,7 +7324,7 @@ border-color: #56b663;
 .email-sec input#exampleFormControlInput1 {
     background: #fff;
     border: solid 1px #d0d5dd;font-size: 14px;
-    font-weight: 500;height: 43px;
+    font-weight: 500;height: 43px;border-radius: 8px;
 }
 .email-sec label.form-label {
     font-size: 14px;
