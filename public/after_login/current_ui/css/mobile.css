@@ -3022,8 +3022,7 @@ transform: translateX(100%);
     .graphDetail .dropbox{margin-bottom:30px;}
     .testScrolltype:first-child{padding-top:0px;}
     .journeyGraph .row_repeate{flex-direction: initial;}
-    .gotoPlanner{    width: 100%;
-        max-width: 100%;}
+    .gotoPlanner{width: 100%; max-width: 100%;}
 }
 
 
