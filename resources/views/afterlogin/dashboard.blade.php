@@ -862,8 +862,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     </div>
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
