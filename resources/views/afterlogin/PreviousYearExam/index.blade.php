@@ -25,7 +25,7 @@
                         @endforeach
                     </div>
                 </div>
-                
+
                 <div class="progress active"></div>
             </div>
             <script>
@@ -88,6 +88,7 @@
                                                         @csrf
                                                         <input type="hidden" name="paper_name" value="{{$sche->paper_name}}" />
                                                         <input type="hidden" name="paper_id" value="{{$sche->paper_id}}" />
+                                                        <input type="hidden" name="paper_year" value="{{$sche->paper_year}}" />
                                                         <button class="btn btn-common-transparent bg-transparent ms-4 tab_show">Take Test</button>
                                                     </form>
                                                 </div>
@@ -161,9 +162,9 @@
         $('.spinnerblock').show();
         $('#mock_test').show();
         $('#attempted_tab').hide();
-            setTimeout(function() {
+        setTimeout(function() {
             $('.spinnerblock').hide();
-            }, 1000);
+        }, 1000);
 
     });
     $('#attempted').click(function() {
@@ -180,7 +181,7 @@
 
             },
             success: function(data) {
-               $('.spinnerblock').hide();
+                $('.spinnerblock').hide();
                 $('#attempted_tab').html(data.html);
                 $('#testTypeDiv').attr("style", "display: none !important");
             },
@@ -201,7 +202,6 @@
             $(this).text('View details');
         }
     });
-     
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
