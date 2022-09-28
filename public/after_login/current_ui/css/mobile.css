@@ -3015,6 +3015,7 @@ transform: translateX(100%);
        #clearBtn_response {
         border: none;color: gray;
     }
+    .mytaskdash .boxHeadingBlock.flexblock {display:block;}
 }
 
 
