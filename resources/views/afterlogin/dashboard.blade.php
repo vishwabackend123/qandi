@@ -577,7 +577,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <div class="vLine"></div>
                                             <div class="selectedWeek">
                                                 <p class="m-0">This week </p>
-                                                <p class="m-0">{{date('j M', strtotime('monday this week'))}} - {{date('j M', strtotime('sunday this week'))}}</p>
+                                                <p class="m-0 dateformate">{{date('j M', strtotime('monday this week'))}} - {{date('j M', strtotime('sunday this week'))}}</p>
                                             </div>
                                             <div class="plannedtestbox">
                                                 <div class="plannedtest">
@@ -613,10 +613,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
                                             <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
-                                                <span>
+                                                <span class="mobile_hide">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
+                                                </span>
+                                                <span class="desktop_hide">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                      <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                   </svg>
                                                 </span>
                                                 <span>Add
                                                 </span>
@@ -717,7 +722,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                                @if (isset($ideal) && !empty($ideal) && $userStatus==false)
+                                                <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
+                                                @if($userStatus==false)
                                                 <div class="graphDetail w-100">
                                                     <div class="yourPacebox">
                                                         <p class="graphTitle">Ideal Pace</p>
@@ -747,7 +753,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                 </div>
                                                 @endif
-                                                <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3">Attempt Now</a>
+                                                <!-- <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3 white_bg">Attempt Now</a> -->
                                             </div>
                                         </div>
                                     </div>
@@ -768,13 +774,31 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
-                                        <div class="journeyBoxcontainer">
+                                        <div class="journeyBoxcontainer row_repeate">
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
+                                                <div class="desktop_hide">
+                                                    <div class="yourPacebox">
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH myscore"></span>
+                                                            <span class="weekText">My score</span>
+                                                        </p>
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH  peerAvg"></span>
+                                                            <span class="weekText">Peer average</span>
+                                                        </p>
+                                                        <p class="testScrolltype">
+                                                            <span class="weekCountlineH  topScroe"></span>
+                                                            <span class="weekText">Top score</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            @if (!empty($trendResponse) && $userStatus==false)
+
+                                            <!-- if (!empty($trendResponse) && $userStatus==false) -->
+                                            @if($userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide ">
                                                     <div class="customDropdown1 dropdown">
@@ -825,6 +849,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
                                             </div>
                                             @endif
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -837,8 +862,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     </div>
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
@@ -1116,7 +1141,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {
@@ -1191,7 +1216,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 responsive: true,
                 elements: {
                     point: {
-                        radius: 0
+                        radius: 2
                     }
                 },
                 plugins: {

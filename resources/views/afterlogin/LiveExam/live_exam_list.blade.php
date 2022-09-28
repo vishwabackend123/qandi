@@ -92,7 +92,9 @@
                                 @endif
                                 @endif
                                 <div>
+                                     @if(!empty($schedule_list))
                                     <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                    @endif
                                     <div class="liveexamScroll liveexamScrollContant">
                                         @if(!empty($schedule_list))
                                         @php

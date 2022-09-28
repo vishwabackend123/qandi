@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Q&I</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
