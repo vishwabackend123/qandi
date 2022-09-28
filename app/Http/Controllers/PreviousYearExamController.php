@@ -145,7 +145,7 @@ class PreviousYearExamController extends Controller
                 $paper_id = Session::get('paper_id');
             } else {
 
-                if (Session::has('paper_id')){
+                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')){
                     $paper_id = Session::get('paper_id');
                 }
                 $curl_url = "";
