@@ -1072,7 +1072,7 @@ transform: translateX(100%);
     }
     .mobile_text_topics_proficiency{display: none!important;}
     .back_button_waraper_text {
-        display: none;
+        display: none!important;
     }
 }
 /* *************Tab  Css Start ***************** */
