@@ -1065,6 +1065,7 @@ transform: translateX(100%);
 } */
 }
 @media(min-width:768px){
+    .addPlanbtn .btn span.desktop_hide{display:none;}
     .mobile_block{display:none!important;}
     .back_button_waraper_tex{
         display: none;
@@ -3027,7 +3028,7 @@ transform: translateX(100%);
         flex-direction: column-reverse;
     }
     .graphimg .dropbox{margin-bottom:37px;}
-    .addPlanbtn .btn span.desktop_hide{display:none;}
+    
 }
 
 
