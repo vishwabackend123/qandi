@@ -784,7 +784,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer row_repeate emptyrow">
                                         @endif
                                         @if($userStatus==false)
-                                        <div class="dropbox destop_hide">
+                                        <div></div>
+                                            @else
+                                            <div class="dropbox destop_hide">
                                                 <div class="customDropdown1 dropdown">
                                                     <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                     <div class="options">
