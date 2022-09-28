@@ -778,7 +778,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                        @if($userStatus==false)
                                         <div class="journeyBoxcontainer row_repeate">
+                                        @else
+                                        <div class="journeyBoxcontainer row_repeate emptyrow">
+                                        @endif
+                                        
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>

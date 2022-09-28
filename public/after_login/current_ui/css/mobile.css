@@ -3023,6 +3023,9 @@ transform: translateX(100%);
     .testScrolltype:first-child{padding-top:0px;}
     .journeyGraph .row_repeate{flex-direction: initial;}
     .gotoPlanner{width: 100%; max-width: 100%;}
+    .journeyGraph .row_repeate.emptyrow ,.journeyBoxcontainer.row_repeate.emptyrow{
+        flex-direction: column-reverse;
+    }
 }
 
 
