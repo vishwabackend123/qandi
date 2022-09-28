@@ -117,7 +117,6 @@ class PreviousYearExamController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-
             $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
 
@@ -146,6 +145,9 @@ class PreviousYearExamController extends Controller
                 $paper_id = Session::get('paper_id');
             } else {
 
+                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')){
+                    $paper_id = Session::get('paper_id');
+                }
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
@@ -199,6 +201,7 @@ class PreviousYearExamController extends Controller
                 $questions_count = 0;
                 $exam_fulltime = 0;
                 $total_marks = 0;
+
                 return Redirect::back()->withErrors(["question isn't available for this exam ."]);
             }
             $exam_ques_count = $questions_count;
