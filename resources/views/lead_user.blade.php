@@ -19,6 +19,7 @@
     margin: 0 auto;
     width: 100%;
 }
+.contact-num label > a {color: #363c4f !important;}
 .contact-num > label, .city-sec > label {
     font-size: 14px;
     font-weight: 800;
@@ -27,7 +28,7 @@
 }
 .name-title {
     background: #e0f6e3;
-    padding: 20px;
+    padding: 20px 0px;
     border-radius: 10px;
 }
 .logo_sec {
