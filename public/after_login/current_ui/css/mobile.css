@@ -3019,6 +3019,7 @@ transform: translateX(100%);
     .mytaskdash .boxHeadingBlock.flexblock {display:block;}
     .graphDetail .dropbox{margin-bottom:30px;}
     .testScrolltype:first-child{padding-top:0px;}
+    .journeyGraph .row_repeate{flex-direction: initial;}
 }
 
 
