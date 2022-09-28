@@ -3017,6 +3017,8 @@ transform: translateX(100%);
         border: none;color: gray;
     }
     .mytaskdash .boxHeadingBlock.flexblock {display:block;}
+    .graphDetail .dropbox{margin-bottom:30px;}
+    .testScrolltype:first-child{padding-top:0px;}
 }
 
 
