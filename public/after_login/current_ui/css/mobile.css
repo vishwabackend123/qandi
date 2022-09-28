@@ -281,32 +281,28 @@
     padding-right: 36px !important;
 }   
 }
-@media screen and (max-width: 1199px){
-    .myqTodayPannel .commondashboardTop{background-color: transparent;}
-    .clander-box {margin-top: 40px;}
-    .calendar-wrapper {max-width: 100%;}
-    .graphCardwrapper{flex-wrap:wrap;}
-    .journeyGraph {width: 100%;}
-    .graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
-    .graphCard.my-4{margin-top:16px!important;}
-    .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
-    .journeyGraph {padding: 20px;}
-    .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
-    .fullbodyBox{justify-content:space-between;}
-    .exam_instruction_col_four {padding-left: 2%;}
-    .exam_instruction_scrolling{padding-right: 30px;}
-    .planewrapper{flex-wrap:wrap;}
-    .plantitleBox {width:100%;}
-    .planDetailBox {padding-top: 15px;}
-    .gotoPlanner {
-        width: -webkit-fill-available; 
-        max-width: fit-content;
+@media only screen and (max-width: 1199px){
+    .myqTodayPannel .commondashboardTop{
+        background-color: transparent;
     }
+    .clander-box {
+    margin-top: 40px;
+}
+.calendar-wrapper {
+    max-width: 100%;
+}
+.graphCardwrapper{flex-wrap:wrap;}
+.journeyGraph {
+    width: 100%;
+}
+.graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
+.graphCard.my-4{margin-top:16px!important;}
+.dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
+.journeyGraph {padding: 20px;}
+.Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
+.fullbodyBox{justify-content:space-between;}
 }
 @media only screen and (max-width: 1024px){
-    .planewrapper {
-        flex-wrap: wrap;
-    }
     .plantitleBox {
         padding-right: 50px !important;
     }
@@ -317,15 +313,15 @@
         padding-right: 24px !important;
         font-size: 12px !important;
     }
-    /* .AttempType {
+    .AttempType {
         font-size: 12px !important;
-    } */
+    }
     .testCount {
         font-size: 15px  !important;
     }
-    /* .gotoPlanner a {
+    .gotoPlanner a {
         font-size: 12px !important;
-    } */
+    }
     .h {
         display: block !important;
     }
@@ -1134,22 +1130,6 @@ transform: translateX(100%);
 /* *************Tab  Css End ***************** */
 
 @media(max-width:767px){
-    .loginform {
-        height: 70%;
-    }
-    canvas#progressJourny_graph {
-        height: 200px !important;
-    }
-    .desktop_hide {display: inline-block;}
-    .row_repeate {
-        flex-direction: column-reverse;
-    }
-    .gotoPlanner a {align-items: center;}
-    .gotoPlanner a svg {
-        margin-bottom: 0px;
-        top: 0px;
-    }
-    .tabMainblock .commontab .nav-tabs .nav-link {text-transform: capitalize;}
     h3.copyright.position-absolute {
         position: relative !important;
         bottom: 0;
@@ -1956,7 +1936,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;justify-content: space-between!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
@@ -2085,6 +2065,7 @@ transform: translateX(100%);
     .new_notification_main_sec { height: calc(100vh - 228px);margin-top:20px;}
     .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
     .verifiaction-link{padding:16px 12px;}
+    .planewrapper{flex-wrap:wrap;}
     .journeyBoxcontainer{flex-wrap:wrap}
     .graphimg{width: 100%;}
     .graphDetail {  padding-left:0px; width: 100%;}
@@ -2716,9 +2697,9 @@ transform: translateX(100%);
                 .exam_tabdata .accordion-item:nth-child(1) {
     margin-top: 0!important;
 }
-.mobilehoriontal400{min-width:400px;} 
-.mobilehoriontal450{min-width:450px;}  
-.mobilehoriontal500{min-width:500px;}   
+.mobilehoriontal400{width:400px;} 
+.mobilehoriontal450{width:450px;}  
+.mobilehoriontal500{width:500px;}   
 .hide-text{display: none;}   
 .testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
 .testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
@@ -2982,8 +2963,6 @@ transform: translateX(100%);
         .accordion-header{min-width:auto;}
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
-        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
-        .graphDetailempty{width:100%;}
 
 }
 
