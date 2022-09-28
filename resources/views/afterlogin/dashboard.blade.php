@@ -779,12 +779,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </h3>
                                         </div>
                                         @if($userStatus==false)
-                                        <div class="journeyBoxcontainer row_repeate">
-                                        @else
-                                        <div class="journeyBoxcontainer row_repeate emptyrow">
-                                        @endif
-                                        @if($userStatus==false)
-                                        <div></div>
+                                           <div></div>
                                             @else
                                             <div class="dropbox destop_hide">
                                                 <div class="customDropdown1 dropdown">
@@ -800,7 +795,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </div>
                                                 </div>
                                             </div>
-                                                @endif
+                                         @endif
+                                        @if($userStatus==false)
+                                        <div class="journeyBoxcontainer row_repeate">
+                                        @else
+                                        <div class="journeyBoxcontainer row_repeate emptyrow">
+                                        @endif
+                                        
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
