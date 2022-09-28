@@ -576,7 +576,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="planDetailBox">
                                             <div class="vLine"></div>
                                             <div class="selectedWeek">
-                                                <p class="m-0">This week </p>
+                                                <p class="m-0">This week</p>
                                                 <p class="m-0 dateformate">{{date('j M', strtotime('monday this week'))}} - {{date('j M', strtotime('sunday this week'))}}</p>
                                             </div>
                                             <div class="plannedtestbox">
@@ -715,7 +715,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                        @if($userStatus==false)
                                         <div class="row row_repeate">
+                                        @else
+                                        <div class="row row_repeate emptyrow">
+                                        @endif
                                             <div class="col-md-7">
                                                 <div class="progress_journey_chart progressnewjourney">
                                                     <canvas id="progressJourny_graph"></canvas>
@@ -774,7 +778,30 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                        @if($userStatus==false)
+                                           <div></div>
+                                            @else
+                                            <div class="dropbox destop_hide">
+                                                <div class="customDropdown1 dropdown">
+                                                    <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                    <div class="options">
+                                                        <div style=" overflow-y: auto;  height: 145px;">
+                                                            <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                            <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                            <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                            <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                            <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         @endif
+                                        @if($userStatus==false)
                                         <div class="journeyBoxcontainer row_repeate">
+                                        @else
+                                        <div class="journeyBoxcontainer row_repeate emptyrow">
+                                        @endif
+                                        
                                             <div class="graphimg">
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
@@ -800,7 +827,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <!-- if (!empty($trendResponse) && $userStatus==false) -->
                                             @if($userStatus==false)
                                             <div class="graphDetail">
-                                                <div class="dropbox">
+                                                <div class="dropbox mobile_hide">
                                                     <div class="customDropdown1 dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
