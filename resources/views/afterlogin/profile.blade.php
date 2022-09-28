@@ -230,8 +230,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="line mb-3 pb-1"></div>
                                 <p>{{$subscription_desc}}</p>
                             </div>
-                            <div class="flip d-inline-block">Show details</div>
-                            &nbsp;<i class="fa fa-angle-right fliparrow" aria-hidden="true" style="cursor:pointer"></i>
+                            <div class="flip d-inline-block arrow-rotate">Show details</div>
+                            &nbsp;<i class="fa fa-angle-right fliparrow   " aria-hidden="true" style="cursor:pointer"></i>
                             <!--a href="javascript:void(0);" class="btn savebtn text-white border-0 upgradebtn d-sm-none d-block w-100 mt-4">Upgrade Plan</a-->
                         </div>
                     </div>
@@ -282,12 +282,16 @@ $user_id = isset($userData->id)?$userData->id:'';
             })
         });
         $(".fliparrow").click(function() {
+            $( '.arrowbtn1' ).toggleClass('arrowroted');
             $("#panel").slideToggle("slow");
             $(this).toggleClass("arrowToggle");
             $('.flip').text(function(i, v) {
                 return v === 'Show details' ? 'Hide details' : 'Show details'
             })
         });
+
+
+        
     });
     $('#email_success').hide();
     $('.resend_email').click(function() {
