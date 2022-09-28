@@ -786,7 +786,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         @endif
                                             <div class="graphimg">
                                                 @if($userStatus==false)
-                                                <div class="dropbox destop_hide">
+                                                <div class="dropbox desktop_hide">
                                                     <div class="customDropdown1 dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">

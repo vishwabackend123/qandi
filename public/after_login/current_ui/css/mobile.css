@@ -3026,6 +3026,7 @@ transform: translateX(100%);
     .journeyGraph .row_repeate.emptyrow ,.journeyBoxcontainer.row_repeate.emptyrow{
         flex-direction: column-reverse;
     }
+    .graphimg .dropbox{margin-bottom:37px;}
 }
 
 
