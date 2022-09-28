@@ -715,7 +715,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                        @if($userStatus==false)
                                         <div class="row row_repeate">
+                                        @else
+                                        <div class="row row_repeate emptyrow">
+                                        @endif
                                             <div class="col-md-7">
                                                 <div class="progress_journey_chart progressnewjourney">
                                                     <canvas id="progressJourny_graph"></canvas>
