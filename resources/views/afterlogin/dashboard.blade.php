@@ -576,7 +576,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="planDetailBox">
                                             <div class="vLine"></div>
                                             <div class="selectedWeek">
-                                                <p class="m-0">This week </p>
+                                                <p class="m-0">This week<span class="desktop_hide">:</span></p>
                                                 <p class="m-0 dateformate">{{date('j M', strtotime('monday this week'))}} - {{date('j M', strtotime('sunday this week'))}}</p>
                                             </div>
                                             <div class="plannedtestbox">
