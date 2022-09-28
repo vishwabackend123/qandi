@@ -800,7 +800,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <!-- if (!empty($trendResponse) && $userStatus==false) -->
                                             @if($userStatus==false)
                                             <div class="graphDetail">
-                                                <div class="dropbox">
+                                                <div class="dropbox mobile_hide">
                                                     <div class="customDropdown1 dropdown">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
