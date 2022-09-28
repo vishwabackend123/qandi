@@ -5182,7 +5182,7 @@ justify-content: space-between;}
                        .Chapter_Main_Graph{width:50px;height:50px;position: relative;margin-right: 32px;}
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
                        .timemanagement .tab-content{padding:0px}
-
+                       .taskcenter_wrapper .commontab .nav-tabs .nav-link{-webkit-appearance: none;}
                        
 /********* Shubham End ***********/
 
