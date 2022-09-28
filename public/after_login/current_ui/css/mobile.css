@@ -3027,6 +3027,7 @@ transform: translateX(100%);
         flex-direction: column-reverse;
     }
     .graphimg .dropbox{margin-bottom:37px;}
+    .addPlanbtn .btn span.desktop_hide{display:none;}
 }
 
 
