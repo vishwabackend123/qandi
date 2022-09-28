@@ -2087,7 +2087,7 @@ transform: translateX(100%);
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px 59px 0px;
+        padding: 39px 6px 37px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -2163,12 +2163,15 @@ transform: translateX(100%);
 .vLine{display: none;}
 .plantitleBox {padding-right: 0px !important;width: 100%;}
 .planDetail {display: block;width: 100%;}
-.selectedWeek {display: flex;justify-content: space-between; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
+.selectedWeek {display: flex;justify-content:initial; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
 .plannedtestbox {display: flex;justify-content: space-between;}
 .weeklyPlanWrapper {padding: 20px;}
 .gotoplanner_mob{display: block;padding-top: 16px;border-bottom: 1px solid #e5eaee;padding-bottom: 10px;}
 .journeyGraph .boxheading {margin-bottom: 21px;}
 .dropboxmob{margin-bottom: 30px;}
+.selectedWeek p{font-size:14px;}
+.selectedWeek p.dateformate{margin-left:3px!important;color:#868a95;font-size: 14px;
+    font-weight: 500;}
  /************ Sachin End Date:20-07-22 ************/
 
  /************ Shiv start for exam-insturction Date:25-07-22 ************/
@@ -3020,6 +3023,10 @@ transform: translateX(100%);
         border: none;color: gray;
     }
     .mytaskdash .boxHeadingBlock.flexblock {display:block;}
+    .graphDetail .dropbox{margin-bottom:30px;}
+    .testScrolltype:first-child{padding-top:0px;}
+    .journeyGraph .row_repeate{flex-direction: initial;}
+    .gotoPlanner{width: 100%; max-width: 100%;}
 }
 
 
