@@ -8013,3 +8013,17 @@ margin-bottom: 12px;
     max-width: fit-content;
 } 
 .white_bg {background-color: #fff !important;}
+
+/* Gourav Css */
+.jee_table {
+    margin: 20px 0px 20px 20px;
+}
+.jee_table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #efefef;
+}
+.jee_table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
