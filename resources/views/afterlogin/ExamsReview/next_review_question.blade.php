@@ -489,7 +489,7 @@ $(function() {
             $('.reviewScreenleft').css('height', cal_height_for_right_Height_767);
             var afterdivide_reviewScreenleft_height = $(".reviewScreenleft").outerHeight();
             var afterexamTabheader_height = $(".examTabheader").outerHeight();
-            var height_for_ques_box = afterdivide_reviewScreenleft_height - 110 + "px";
+            var height_for_ques_box = afterdivide_reviewScreenleft_height - 130 + "px";
             $('.questionwrapper').css('height', height_for_ques_box);
 
 
