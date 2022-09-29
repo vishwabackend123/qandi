@@ -956,11 +956,6 @@ $question_type = "Numerical";
             
         }
 
-        .custom-anstop {
-            display:none;
-        }
-
-
     }
    
 </style>
