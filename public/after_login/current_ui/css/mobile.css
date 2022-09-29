@@ -3029,7 +3029,11 @@ transform: translateX(100%);
     }
     .graphimg .dropbox{margin-bottom:37px;}
     .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
-    
+    .upgradebtn {
+        width: auto;
+        padding: 6px 10px;
+        height: auto;
+    }
 }
 
 

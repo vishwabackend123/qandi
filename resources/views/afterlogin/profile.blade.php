@@ -198,7 +198,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <input type="hidden" name="exam_period" value="12">
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                                    <button type="submit" class="btn savebtn text-white border-0 upgradebtn d-sm-block d-none" id="get-sub-btn">Upgrade Plan</button>
+                                    <button type="submit" class="btn savebtn text-white border-0 upgradebtn" id="get-sub-btn">Upgrade Plan</button>
                                     </form>
                                     @endif
                             </div>
