@@ -791,11 +791,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
                                                             <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                                <div class="active markstrend" onclick="show('All Test', 'all','markstrend_graph2')">All Test</div>
+                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
+                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
+                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
+                                                                <div class="markstrend" onclick="show('Live', 'Live','markstrend_graph2')">Live Test</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -832,11 +832,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
                                                             <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                                <div class="active markstrend" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
+                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
+                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
+                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
+                                                                <div class="markstrend" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1287,8 +1287,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         );
     </script>
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
+        function show(value, type,ids) {
+            document.querySelector("#"+ids).value = value;
 
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
