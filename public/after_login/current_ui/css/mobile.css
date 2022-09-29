@@ -2655,7 +2655,7 @@ transform: translateX(100%);
                 height: 34px;
                 width: 47%;
             }
-            .testscreenmob .btn.questionbtn.Clearbtn{ background: transparent;}
+            .testscreenmob .btn.questionbtn.Clearbtn{ background: transparent;border:none;}
 
             /* .testscreenmob #saveNext ,.testscreenmob .markReviwebtn{
                 min-width: 130px;
@@ -2796,7 +2796,7 @@ transform: translateX(100%);
     }
     .explanation-sec {
         padding-left: 0px;
-        height: 20px !important;
+        height: 20px;
     }
  
     
