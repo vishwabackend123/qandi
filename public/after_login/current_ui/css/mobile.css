@@ -365,7 +365,7 @@
         padding:0 20px;
     }
     .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
-    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 0px;background-color: #fff;height:calc(100vh - 72px);z-index:10000;
+    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);z-index:10000;
         position: fixed;transition: 400ms;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -384,8 +384,21 @@
         ul.mob_sidebar_lists li.active a svg.menu-icon-active{display: inline-block;}
         ul.mob_sidebar_lists li.active a svg:first-child{display: none;}
         ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
-        .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
-        .mobileview_logout {height: calc(100vh - 525px);}
+        .mobileview_logout .btn.btn-common-transparent {
+            min-width: 114px;
+            padding: 8px 16px;
+            height: 38px;
+            background-color: #fff;
+            /* position: absolute;
+            bottom: 20px;
+            left: 0; */
+        }
+        .mobileview_logout {
+            /* height: calc(100vh - 525px); */
+            position: absolute!important;
+            bottom: 20px;
+            left: 24px;
+        }
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -1975,7 +1988,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {padding-top: 0!important;margin-top: 32px!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
@@ -3039,6 +3052,8 @@ transform: translateX(100%);
         padding: 6px 10px;
         height: auto;
     }
+
+    .examReviewscreenmob{overflow-y:hidden;}
 }
 
 
