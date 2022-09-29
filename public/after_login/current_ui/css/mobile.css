@@ -384,8 +384,21 @@
         ul.mob_sidebar_lists li.active a svg.menu-icon-active{display: inline-block;}
         ul.mob_sidebar_lists li.active a svg:first-child{display: none;}
         ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
-        .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
-        .mobileview_logout {height: calc(100vh - 525px);}
+        .mobileview_logout .btn.btn-common-transparent {
+            min-width: 114px;
+            padding: 8px 16px;
+            height: 38px;
+            background-color: #fff;
+            /* position: absolute;
+            bottom: 20px;
+            left: 0; */
+        }
+        .mobileview_logout {
+            /* height: calc(100vh - 525px); */
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+        }
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
