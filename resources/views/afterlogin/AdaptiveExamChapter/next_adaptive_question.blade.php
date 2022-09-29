@@ -291,8 +291,6 @@ $question_type = "Numerical";
     });
 </script>
 <script type="text/javascript">
-    /*  $('#clearBtn_response').attr("disabled", true);
-    $('#clearBtn_response').removeClass("Clearbtnenable"); */
     var quest_id = '{{$activeq_id}}';
 
     var option_id = [];
@@ -312,11 +310,11 @@ $question_type = "Numerical";
     }
     console.log(option_id);
     if (option_id.length > 0) {
-        $('#clearBtn_response').attr("disabled", false);
-        $('#clearBtn_response').addClass("Clearbtnenable");
+        $('.clearBtn_response').attr("disabled", false);
+        $('.clearBtn_response').addClass("Clearbtnenable");
     } else {
-        $('#clearBtn_response').attr("disabled", true);
-        $('#clearBtn_response').removeClass("Clearbtnenable");
+        $('.clearBtn_response').attr("disabled", true);
+        $('.clearBtn_response').removeClass("Clearbtnenable");
     }
 </script>
 <!-- End check size of screen -->
