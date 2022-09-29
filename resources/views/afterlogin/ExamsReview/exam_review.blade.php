@@ -916,8 +916,7 @@ $question_type = "Numerical";
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
 
-                $('.custom-anstop').attr('style', 'display:block !important;');
-                $('.text-exambottom-sec').attr('style', 'display:block !important;');
+            
 
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
@@ -934,9 +933,9 @@ $question_type = "Numerical";
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                
-                $('.custom-anstop').attr('style', 'height:0px !important;display:none;');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important; display:none;');
+
+                $('.custom-anstop').attr('style', 'height:0px !important; ');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
                 
             });
         }
@@ -955,6 +954,10 @@ $question_type = "Numerical";
             position: relative;
             top: 15px;
             
+        }
+
+        .custom-anstop {
+            display:none;
         }
 
 
