@@ -2839,7 +2839,11 @@ transform: translateX(100%);
     border: none;
     }
  .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
-        position: initial;
+        position: initial;text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 260px;
+        display: inline-block;
     }
     .examReviewscreenmob  .hideyes {
         display: none;
