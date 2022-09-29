@@ -593,7 +593,7 @@ trait CommonTrait
         $userData = Session::get('user_data');
         $user_id = isset($userData->id) ? $userData->id : 0;
         $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
-        $grade_id = 1;
+
         $curl = curl_init();
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType . '&year=' . $py_year;
