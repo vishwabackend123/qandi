@@ -915,19 +915,29 @@ $question_type = "Numerical";
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
+
+                $('.custom-anstop').attr('style', 'display:block !important;');
+                $('.text-exambottom-sec').attr('style', 'display:block !important;');
+
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
+
+                
+            
+                
             });
 
             $(".hideyes").on('click', function() {
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                $('.custom-anstop').attr('style', 'height:0px !important');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important');
+                
+                $('.custom-anstop').attr('style', 'height:0px !important;display:none;');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; display:none;');
+                
             });
         }
     })
@@ -946,6 +956,8 @@ $question_type = "Numerical";
             top: 15px;
             
         }
+
+
     }
    
 </style>
