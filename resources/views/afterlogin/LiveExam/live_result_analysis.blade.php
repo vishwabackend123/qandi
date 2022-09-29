@@ -397,14 +397,22 @@ $incorrect_per_pie=!empty($total_question)?round((($incorrect_cnt/$total_questio
 $not_attempt_per_pie=(100-($correct_per_pie+$incorrect_per_pie)>=0)? 100-($correct_per_pie+$incorrect_per_pie):0;
 
 $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
+$subject_wise_result=isset($response->subject_wise_result)?$response->subject_wise_result:0;
+$subject_id = array_map(function($e) {
+    return is_object($e) ? $e->subject_id : $e['subject_id'];
+}, $subject_wise_result);
 $stuscore_arr=$clsAvg_arr=[];
 $stuscore=$clsAvg=0;
 foreach($subject_graph as $key=>$gh){
-$stuscore=$stuscore+$gh->student_score_percentage;
-$clsAvg=$clsAvg+$gh->class_score;
+    if (in_array($gh->subject_id, $subject_id))
+    {
+        $stuscore=$stuscore+$gh->student_score_percentage;
+        $clsAvg=$clsAvg+$gh->class_score;
+    }
 }
-$total_sub=count($subject_graph);
-$total_sub=count($subject_graph);
+//$total_sub=count($subject_graph);
+$total_sub=count($subject_wise_result);
+
 if($total_sub > 0)
 {
     $stuscore=$stuscore/$total_sub;

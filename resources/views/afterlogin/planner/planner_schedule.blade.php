@@ -184,6 +184,24 @@ $userData = Session::get('user_data');
 
 <!-- footer Section end  -->
 <script type="text/javascript">
+    function rangeCheck() {
+
+        var max = parseInt($('#number').attr('max'));
+        var min = parseInt($('#number').attr('min'));
+        var val = parseInt($('#number').val());
+
+        var chapterscount = $('input[name="chapters[]"]').length;
+
+        if (chapterscount >= val) {
+            $('#number').val(chapterscount);
+        } else if (val > max) {
+            $('#number').val(max);
+        } else if (val < min) {
+            $('#number').val(min);
+        }
+    };
+
+
     function increaseValue() {
         var value = parseInt(document.getElementById('number').value, 10);
         value = isNaN(value) ? 0 : value;
@@ -503,7 +521,7 @@ $userData = Session::get('user_data');
         if ($("#number").val() > 0) {
             $("#number").val(parseInt($("#number").val()) - 1);
         }
-
+        rangeCheck();
         var limitrange = $("#number").val();
 
         var chapterscount = $('input[name="chapters[]"]').length;

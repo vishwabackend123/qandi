@@ -15,74 +15,43 @@
 @media only screen and (max-width: 1440px) {
     .myqTodayGraphSec .dashSubtext{max-width:100%;}
   .left-sidepannel .carousel-inner .carousel-item img{
-   height: 350px;
-}
+   height: 350px;}
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 90px !important;}
 .graphDetailempty .testScrolltype { margin-right: 9px !important;}
 .allSubslider svg{
     width: 37px !important;
-    height: 37px !important;
-}
+    height: 37px !important;}
    .week-select{
-    font-size: 16px;    
-    }
+    font-size: 16px;    }
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
-        max-height: 287px;
-    }
+        max-height: 287px;}
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
-.subCard h3 {
-    font-size: 15px;
-    font-weight: 800;
-    width: calc(100% - 58px);
-}
-  
-.inst {
-    padding: 20px 0px;
-}
-.planPayment .testType h2 {
-    padding-top: 32px;
-}
-.applyCo {
-    padding-top: 90px;
-}
-
-.subjextscoreLeft h4 {font-size: 20px;}
-
-    .graphDetailempty .weekText{
-        padding-left: 0px;
-    }
-    .graph_head_label h4  {
-        font-size: 17px;}
-        .boxheading.subheading {
-            font-size: 17px;
-        }
-        .SelectPlane_text {
-            padding: 30px 0px 20px 0px;
-        }
-        .planType {
-            padding-top: 35px;
-        }
+        .subCard h3 { font-size: 15px;  font-weight: 800; width: calc(100% - 58px);}
+        .inst { padding: 20px 0px;}
+        .planPayment .testType h2 { padding-top: 32px;}
+        .applyCo { padding-top: 90px; }
+    .subjextscoreLeft h4 {font-size: 20px;}
+    .graphDetailempty .weekText{ padding-left: 0px;}
+    .graph_head_label h4  {   font-size: 17px;}
+        .boxheading.subheading {font-size: 17px; }
+        .SelectPlane_text {  padding: 30px 0px 20px 0px;}
+        .planType { padding-top: 35px;}
         .planeName{padding-bottom:20px;}
         .selectPlanedetail {padding: 30px 40px;}
         .selectPlan {padding: 0px 40px 50px;}
-        .owl-carousel .owl-item .subIcon img {
-            width: 50px;
-        }
+        .owl-carousel .owl-item .subIcon img {  width: 50px;}
         .questionOptionBlock {padding-left: 25px;}
         .reviewScreenleft li.nav-item { margin-right: 35px;}
         .overallMidlle .commonWhiteBox .garphsubheading span{font-size: 14px;}
-        .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
-            min-height: 303px;
-            max-height: 303px;
-        }
+        .overall_analytics_page .chapter_performance_card ul.topic_score_lists { min-height: 303px; max-height: 303px;}
         .myqTodayGraphSec .dashSubtext{margin-bottom:15px;max-width:100%;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
 }
@@ -90,9 +59,7 @@
     .subject_performance_card .dashSubtext{font-size:13px;}
     .myqTodayGraphSec .dashSubHeading{width:100%;}
     .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;font-size:13px;}
-    .selectPlan {
-        padding: 0px 40px 45px;
-    }
+    .selectPlan { padding: 0px 40px 45px; }
     .fullbodyBox .rightImgBox svg{width: 75px;}
     .planType {
         padding-top: 25px;
@@ -134,6 +101,18 @@
     .matrixpage-wrapper .exam_instruction_scrolling {
         height: calc(100vh - 262px);
     }
+
+    .examScreentab .nav-tabs .nav-link{
+        display: flex;
+    }
+    .examLeftpanel .nav-item {
+        position: relative;
+        margin-right: 40px !important;
+    }
+  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
+  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
+  .plan_order_sumry_subscription{padding:5px 0px;}
+  .plan_order_sumry_subscription{padding:4px 0px}
 }
 @media only screen and (max-width: 1200px) {
         .subscriptionsLeftpannel {
@@ -209,104 +188,100 @@
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 350px;
- }
- .list-ans{
-    height: 27vh;
- }
- .progress-box{margin-top:20px;}
- .user-profile-sec {
-    padding: 0 0 0px;
-}
-._btn-green {
-    padding: 10px 0 20px;
-}
-.bottom-sec {
-    padding: 20px 0px 5px;
-}
+    }
+    .list-ans{
+        height: 27vh;
+    }
+    .progress-box{margin-top:20px;}
+    .user-profile-sec {
+        padding: 0 0 0px;
+    }
+    ._btn-green {
+        padding: 10px 0 20px;
+    }
+    .bottom-sec {
+        padding: 20px 0px 5px;
+    }
 
-.user-profile-sec svg{height:75px!important;width: 75px!important;}
-.invation-sec {
-    text-align: center;
-    padding: 90px 0 100px;
-}
+    .user-profile-sec svg{height:75px!important;width: 75px!important;}
+    .invation-sec {
+        text-align: center;
+        padding: 90px 0 100px;
+    }
 
 }
 
 @media only screen and (max-height: 600px) {
     .user-profile-sec svg{height:75px!important;width: 75px!important;}
-#referfrnd .modal-dialog, #referedfrnd .modal-dialog {
-    margin: 20px auto 20px;
-}
-#referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
-.user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
-.subscriptionsLeftpannel {padding: 20px 40px;}
-.verificationBox{padding:10px 20px;}
-.verificationBox p {margin-bottom: 10px;}
-.verificationBox{bottom:20px;}
-.invation-sec {  padding: 50px 0 60px;}
-._btn-green {
-    padding: 0px 0 10px;
-}
-.successRef_copy.showtext{top: 4px;}
-.bottom-sec {
-    padding: 10px 0 0px;
-}
+    #referfrnd .modal-dialog, #referedfrnd .modal-dialog {
+        margin: 20px auto 20px;
+    }
+    #referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
+    .user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
+    .subscriptionsLeftpannel {padding: 20px 40px;}
+    .verificationBox{padding:10px 20px;}
+    .verificationBox p {margin-bottom: 10px;}
+    .verificationBox{bottom:20px;}
+    .invation-sec {  padding: 50px 0 60px;}
+    ._btn-green {
+        padding: 0px 0 10px;
+    }
+    .successRef_copy.showtext{top: 4px;}
+    .bottom-sec {
+        padding: 10px 0 0px;
+    }
 }
 
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
-}
+    }
 
-.signuprightpannel {
-    padding: 50px 140px 20px;
+    .signuprightpannel {
+        padding: 50px 140px 20px;
+    }
+    .loginrightpannel {
+        padding-top: 160px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .copyright {
+        bottom: 0px;
+        position: relative !important;
+        padding-top: 20px;
+    }
+    .subCard h3 {
+        font-size: 16px !important;
+    }
+    .graphDetailempty .testScrolltype {
+        margin-right: 9px !important;
+    }
+    .plantitleBox {
+        padding-right: 36px !important;
+    }   
 }
-.loginrightpannel {
-    padding-top: 160px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.copyright {
-    bottom: 0px;
-    position: relative !important;
-    padding-top: 20px;
-}
-.subCard h3 {
-    font-size: 16px !important;
-}
-.graphDetailempty .testScrolltype {
-    margin-right: 9px !important;
-}
-.plantitleBox {
-    padding-right: 36px !important;
-}   
-}
-@media screen and (max-width: 1199px){
-    .myqTodayPannel .commondashboardTop{background-color: transparent;}
-    .clander-box {margin-top: 40px;}
-    .calendar-wrapper {max-width: 100%;}
+@media only screen and (max-width: 1199px){
+    .myqTodayPannel .commondashboardTop{
+        background-color: transparent;
+    }
+    .clander-box {
+    margin-top: 40px;
+    }
+    .calendar-wrapper {
+        max-width: 100%;
+    }
     .graphCardwrapper{flex-wrap:wrap;}
-    .journeyGraph {width: 100%;}
+    .journeyGraph {
+        width: 100%;
+    }
     .graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
     .graphCard.my-4{margin-top:16px!important;}
     .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
     .journeyGraph {padding: 20px;}
     .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
     .fullbodyBox{justify-content:space-between;}
-    .exam_instruction_col_four {padding-left: 2%;}
-    .exam_instruction_scrolling{padding-right: 30px;}
-    .planewrapper{flex-wrap:wrap;}
-    .plantitleBox {width:100%;}
-    .planDetailBox {padding-top: 15px;}
-    .gotoPlanner {
-        width: -webkit-fill-available; 
-        max-width: fit-content;
-    }
 }
 @media only screen and (max-width: 1024px){
-    .planewrapper {
-        flex-wrap: wrap;
-    }
     .plantitleBox {
         padding-right: 50px !important;
     }
@@ -317,15 +292,15 @@
         padding-right: 24px !important;
         font-size: 12px !important;
     }
-    /* .AttempType {
+    .AttempType {
         font-size: 12px !important;
-    } */
+    }
     .testCount {
         font-size: 15px  !important;
     }
-    /* .gotoPlanner a {
+    .gotoPlanner a {
         font-size: 12px !important;
-    } */
+    }
     .h {
         display: block !important;
     }
@@ -458,6 +433,10 @@
     }
 }
 @media screen and (max-width:991px) and (min-width:768px) {
+    .TestseriesAttempt22 .test-table .accordion-header .btn.btn-common-transparent
+    {
+        margin-left: -10px!important;
+    }
     .tab_hide {
         display: none;
     }
@@ -642,7 +621,7 @@
         margin-bottom: 0px;
     }
     .MockTestMob .mock_btn_vie_detail {
-        flex-basis: 752px!important;
+        flex-basis: 833px!important;
         justify-content: space-between;
         padding-top: 16px;
         padding-bottom: 16px;
@@ -1065,13 +1044,14 @@ transform: translateX(100%);
 } */
 }
 @media(min-width:768px){
+    .addPlanbtn .btn span.desktop_hide{display:none;}
     .mobile_block{display:none!important;}
     .back_button_waraper_tex{
         display: none;
     }
     .mobile_text_topics_proficiency{display: none!important;}
     .back_button_waraper_text {
-        display: none;
+        display: none!important;
     }
 }
 /* *************Tab  Css Start ***************** */
@@ -1142,6 +1122,25 @@ transform: translateX(100%);
 
 /* *************Tab  Css End ***************** */
 
+@media(max-width:890px) and (min-width:768px)
+{
+    .chapter_profici_nav__right_contant {
+        display: block;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 17px;
+    }
+    .rank_analysis_block .d-flex.justify-content-between {
+        display: block!important;
+    }
+    .rank_analysis_block {
+        height: auto!important;
+    }
+    .total_participants {
+        margin-top: 20px;
+    }
+}
 @media(max-width:767px){ 
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
@@ -1976,7 +1975,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;justify-content: space-between!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
@@ -2083,7 +2082,7 @@ transform: translateX(100%);
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px 59px 0px;
+        padding: 39px 6px 28px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -2106,6 +2105,7 @@ transform: translateX(100%);
     .new_notification_main_sec { height: calc(100vh - 228px);margin-top:20px;}
     .verifiaction-link p > a{padding: 8px 31px; width: 115px;display: block; margin: 10px auto 0px;}
     .verifiaction-link{padding:16px 12px;}
+    .planewrapper{flex-wrap:wrap;}
     .journeyBoxcontainer{flex-wrap:wrap}
     .graphimg{width: 100%;}
     .graphDetail {  padding-left:0px; width: 100%;}
@@ -2159,12 +2159,15 @@ transform: translateX(100%);
 .vLine{display: none;}
 .plantitleBox {padding-right: 0px !important;width: 100%;}
 .planDetail {display: block;width: 100%;}
-.selectedWeek {display: flex;justify-content: space-between; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
+.selectedWeek {display: flex;justify-content:space-between; padding: 0px !important;margin-bottom: 12px;margin-top: 12px;}
 .plannedtestbox {display: flex;justify-content: space-between;}
 .weeklyPlanWrapper {padding: 20px;}
 .gotoplanner_mob{display: block;padding-top: 16px;border-bottom: 1px solid #e5eaee;padding-bottom: 10px;}
 .journeyGraph .boxheading {margin-bottom: 21px;}
 .dropboxmob{margin-bottom: 30px;}
+.selectedWeek p{font-size:14px;}
+/* .selectedWeek p.dateformate{margin-left:3px!important;color:#868a95;font-size: 14px;
+    font-weight: 500;} */
  /************ Sachin End Date:20-07-22 ************/
 
  /************ Shiv start for exam-insturction Date:25-07-22 ************/
@@ -2739,9 +2742,9 @@ transform: translateX(100%);
                 .exam_tabdata .accordion-item:nth-child(1) {
     margin-top: 0!important;
 }
-.mobilehoriontal400{min-width:400px;} 
-.mobilehoriontal450{min-width:450px;}  
-.mobilehoriontal500{min-width:500px;}   
+.mobilehoriontal400{width:400px;} 
+.mobilehoriontal450{width:450px;}  
+.mobilehoriontal500{width:500px;}   
 .hide-text{display: none;}   
 .testTypeulbox.autoHeight + .allbenefitsbtn .hide-text{display: inline-block;}
 .testTypeulbox.autoHeight + .allbenefitsbtn .show-text{display: none;}     
@@ -3005,6 +3008,7 @@ transform: translateX(100%);
         .accordion-header{min-width:auto;}
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
+
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
@@ -3012,6 +3016,24 @@ transform: translateX(100%);
         #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
         .filterdropdown .dropdown-item{margin-bottom:5px;}
        .expandbtnmob1{position: relative;top:15px}
+       #clearBtn_response {
+        border: none;color: gray;
+    }
+    .mytaskdash .boxHeadingBlock.flexblock {display:block;}
+    .graphDetail .dropbox{margin-bottom:30px;}
+    .testScrolltype:first-child{padding-top:0px;}
+    .journeyGraph .row_repeate{flex-direction: initial;}
+    .gotoPlanner{width: 100%; max-width: 100%;}
+    .journeyGraph .row_repeate.emptyrow ,.journeyBoxcontainer.row_repeate.emptyrow{
+        flex-direction: column-reverse;
+    }
+    .graphimg .dropbox{margin-bottom:37px;}
+    .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
+    .upgradebtn {
+        width: auto;
+        padding: 6px 10px;
+        height: auto;
+    }
 }
 
 
@@ -3129,39 +3151,4 @@ transform: translateX(100%);
         height: auto!important;
     }
 
-}
-
-@media(max-width:890px) and (min-width:768px)
-{
-    .chapter_profici_nav__right_contant {
-        display: block;
-    }
-    .chapter_profici_application_deves_text
-    {
-        font-size: 17px;
-    }
-    .rank_analysis_block .d-flex.justify-content-between {
-        display: block!important;
-    }
-    .rank_analysis_block {
-        height: auto!important;
-    }
-    .total_participants {
-        margin-top: 20px;
-    }
-}
-
-@media(max-width:1280px) 
-{
-    .examScreentab .nav-tabs .nav-link{
-        display: flex;
-    }
-    .examLeftpanel .nav-item {
-        position: relative;
-        margin-right: 40px !important;
-    }
-  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
-  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
-  .plan_order_sumry_subscription{padding:5px 0px;}
-  .plan_order_sumry_subscription{padding:4px 0px}
 }
