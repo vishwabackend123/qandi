@@ -876,7 +876,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
                                             </div>
                                             @endif
-                                            
+
                                         </div>
                                     </div>
                                 </div>
