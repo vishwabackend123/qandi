@@ -216,7 +216,7 @@ $question_type = "Numerical";
                     <div class="btnbottom hideonmobile" id="smtBtns">
                         <div class="questionbtnBlock">
                             <div class="questionLeftbtns">
-                                <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                                <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
@@ -229,7 +229,7 @@ $question_type = "Numerical";
                         <div class="questionbtnBlock">
                             <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
                             <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
-                            <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn" disabled onclick="clearResponse()">Clear Response</button>
+                            <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
                             <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
 
                         </div>
@@ -1204,11 +1204,11 @@ $question_type = "Numerical";
         }
 
         if (option_id.length > 0) {
-            $('#clearBtn_response').attr("disabled", false);
-            $('#clearBtn_response').addClass("Clearbtnenable");
+            $('.clearBtn_response').attr("disabled", false);
+            $('.clearBtn_response').addClass("Clearbtnenable");
         } else {
-            $('#clearBtn_response').attr("disabled", true);
-            $('#clearBtn_response').removeClass("Clearbtnenable");
+            $('.clearBtn_response').attr("disabled", true);
+            $('.clearBtn_response').removeClass("Clearbtnenable");
         }
     }
 
