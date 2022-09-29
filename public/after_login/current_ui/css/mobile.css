@@ -395,7 +395,7 @@
         }
         .mobileview_logout {
             /* height: calc(100vh - 525px); */
-            position: absolute;
+            position: absolute!important;
             bottom: 20px;
             left: 24px;
         }
