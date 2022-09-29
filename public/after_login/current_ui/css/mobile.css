@@ -15,74 +15,43 @@
 @media only screen and (max-width: 1440px) {
     .myqTodayGraphSec .dashSubtext{max-width:100%;}
   .left-sidepannel .carousel-inner .carousel-item img{
-   height: 350px;
-}
+   height: 350px;}
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
 .plantitleBox {padding-right: 90px !important;}
 .graphDetailempty .testScrolltype { margin-right: 9px !important;}
 .allSubslider svg{
     width: 37px !important;
-    height: 37px !important;
-}
+    height: 37px !important;}
    .week-select{
-    font-size: 16px;    
-    }
+    font-size: 16px;    }
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
-        max-height: 287px;
-    }
+        max-height: 287px;}
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
     .overallMidlle .commonWhiteBox .garphsubheading{font-size: 17px;}
-.subCard h3 {
-    font-size: 15px;
-    font-weight: 800;
-    width: calc(100% - 58px);
-}
-  
-.inst {
-    padding: 20px 0px;
-}
-.planPayment .testType h2 {
-    padding-top: 32px;
-}
-.applyCo {
-    padding-top: 90px;
-}
-
-.subjextscoreLeft h4 {font-size: 20px;}
-
-    .graphDetailempty .weekText{
-        padding-left: 0px;
-    }
-    .graph_head_label h4  {
-        font-size: 17px;}
-        .boxheading.subheading {
-            font-size: 17px;
-        }
-        .SelectPlane_text {
-            padding: 30px 0px 20px 0px;
-        }
-        .planType {
-            padding-top: 35px;
-        }
+        .subCard h3 { font-size: 15px;  font-weight: 800; width: calc(100% - 58px);}
+        .inst { padding: 20px 0px;}
+        .planPayment .testType h2 { padding-top: 32px;}
+        .applyCo { padding-top: 90px; }
+    .subjextscoreLeft h4 {font-size: 20px;}
+    .graphDetailempty .weekText{ padding-left: 0px;}
+    .graph_head_label h4  {   font-size: 17px;}
+        .boxheading.subheading {font-size: 17px; }
+        .SelectPlane_text {  padding: 30px 0px 20px 0px;}
+        .planType { padding-top: 35px;}
         .planeName{padding-bottom:20px;}
         .selectPlanedetail {padding: 30px 40px;}
         .selectPlan {padding: 0px 40px 50px;}
-        .owl-carousel .owl-item .subIcon img {
-            width: 50px;
-        }
+        .owl-carousel .owl-item .subIcon img {  width: 50px;}
         .questionOptionBlock {padding-left: 25px;}
         .reviewScreenleft li.nav-item { margin-right: 35px;}
         .overallMidlle .commonWhiteBox .garphsubheading span{font-size: 14px;}
-        .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
-            min-height: 303px;
-            max-height: 303px;
-        }
+        .overall_analytics_page .chapter_performance_card ul.topic_score_lists { min-height: 303px; max-height: 303px;}
         .myqTodayGraphSec .dashSubtext{margin-bottom:15px;max-width:100%;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
 }
@@ -90,9 +59,7 @@
     .subject_performance_card .dashSubtext{font-size:13px;}
     .myqTodayGraphSec .dashSubHeading{width:100%;}
     .myqTodayGraphSec .dashSubtext{max-width: 100%;margin-bottom:15px;font-size:13px;}
-    .selectPlan {
-        padding: 0px 40px 45px;
-    }
+    .selectPlan { padding: 0px 40px 45px; }
     .fullbodyBox .rightImgBox svg{width: 75px;}
     .planType {
         padding-top: 25px;
@@ -221,77 +188,77 @@
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 350px;
- }
- .list-ans{
-    height: 27vh;
- }
- .progress-box{margin-top:20px;}
- .user-profile-sec {
-    padding: 0 0 0px;
-}
-._btn-green {
-    padding: 10px 0 20px;
-}
-.bottom-sec {
-    padding: 20px 0px 5px;
-}
+    }
+    .list-ans{
+        height: 27vh;
+    }
+    .progress-box{margin-top:20px;}
+    .user-profile-sec {
+        padding: 0 0 0px;
+    }
+    ._btn-green {
+        padding: 10px 0 20px;
+    }
+    .bottom-sec {
+        padding: 20px 0px 5px;
+    }
 
-.user-profile-sec svg{height:75px!important;width: 75px!important;}
-.invation-sec {
-    text-align: center;
-    padding: 90px 0 100px;
-}
+    .user-profile-sec svg{height:75px!important;width: 75px!important;}
+    .invation-sec {
+        text-align: center;
+        padding: 90px 0 100px;
+    }
 
 }
 
 @media only screen and (max-height: 600px) {
     .user-profile-sec svg{height:75px!important;width: 75px!important;}
-#referfrnd .modal-dialog, #referedfrnd .modal-dialog {
-    margin: 20px auto 20px;
-}
-#referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
-.user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
-.subscriptionsLeftpannel {padding: 20px 40px;}
-.verificationBox{padding:10px 20px;}
-.verificationBox p {margin-bottom: 10px;}
-.verificationBox{bottom:20px;}
-.invation-sec {  padding: 50px 0 60px;}
-._btn-green {
-    padding: 0px 0 10px;
-}
-.successRef_copy.showtext{top: 4px;}
-.bottom-sec {
-    padding: 10px 0 0px;
-}
+    #referfrnd .modal-dialog, #referedfrnd .modal-dialog {
+        margin: 20px auto 20px;
+    }
+    #referfrnd .modal-body,#referedfrnd .modal-body{padding-bottom:18px;}
+    .user-profile-sec>h2{margin-bottom:0px;padding-top:10px;}
+    .subscriptionsLeftpannel {padding: 20px 40px;}
+    .verificationBox{padding:10px 20px;}
+    .verificationBox p {margin-bottom: 10px;}
+    .verificationBox{bottom:20px;}
+    .invation-sec {  padding: 50px 0 60px;}
+    ._btn-green {
+        padding: 0px 0 10px;
+    }
+    .successRef_copy.showtext{top: 4px;}
+    .bottom-sec {
+        padding: 10px 0 0px;
+    }
 }
 
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
-}
+    }
 
-.signuprightpannel {
-    padding: 50px 140px 20px;
-}
-.loginrightpannel {
-    padding-top: 160px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.copyright {
-    bottom: 0px;
-    position: relative !important;
-    padding-top: 20px;
-}
-.subCard h3 {
-    font-size: 16px !important;
-}
-.graphDetailempty .testScrolltype {
-    margin-right: 9px !important;
-}
-.plantitleBox {
-    padding-right: 36px !important;
-}   
+    .signuprightpannel {
+        padding: 50px 140px 20px;
+    }
+    .loginrightpannel {
+        padding-top: 160px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .copyright {
+        bottom: 0px;
+        position: relative !important;
+        padding-top: 20px;
+    }
+    .subCard h3 {
+        font-size: 16px !important;
+    }
+    .graphDetailempty .testScrolltype {
+        margin-right: 9px !important;
+    }
+    .plantitleBox {
+        padding-right: 36px !important;
+    }   
 }
 @media only screen and (max-width: 1199px){
     .myqTodayPannel .commondashboardTop{
@@ -299,20 +266,20 @@
     }
     .clander-box {
     margin-top: 40px;
-}
-.calendar-wrapper {
-    max-width: 100%;
-}
-.graphCardwrapper{flex-wrap:wrap;}
-.journeyGraph {
-    width: 100%;
-}
-.graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
-.graphCard.my-4{margin-top:16px!important;}
-.dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
-.journeyGraph {padding: 20px;}
-.Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
-.fullbodyBox{justify-content:space-between;}
+    }
+    .calendar-wrapper {
+        max-width: 100%;
+    }
+    .graphCardwrapper{flex-wrap:wrap;}
+    .journeyGraph {
+        width: 100%;
+    }
+    .graphCardwrapper .journeyGraph:first-child{margin-bottom:16px;}
+    .graphCard.my-4{margin-top:16px!important;}
+    .dashboardTopSection .commonblockDash{max-width:100%;    width: 100%;}
+    .journeyGraph {padding: 20px;}
+    .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
+    .fullbodyBox{justify-content:space-between;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -3062,6 +3029,7 @@ transform: translateX(100%);
         flex-direction: column-reverse;
     }
     .graphimg .dropbox{margin-bottom:37px;}
+    .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
     
 }
 
