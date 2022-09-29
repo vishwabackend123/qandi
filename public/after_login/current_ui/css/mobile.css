@@ -3033,6 +3033,7 @@ transform: translateX(100%);
         flex-direction: column-reverse;
     }
     .graphimg .dropbox{margin-bottom:37px;}
+    .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
     
 }
 
