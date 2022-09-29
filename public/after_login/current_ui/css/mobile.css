@@ -2807,7 +2807,7 @@ transform: translateX(100%);
     .examReviewscreenmob .fancy-radio-buttons.with-image{width:97%;--bs-gutter-x: 0px;    gap: 10px;}
    .examReviewscreenmob .fancy-radio-buttons .colMargin {width: 100%; max-width: 100%; }
    .examMaincontainer .reviewScreenright {display: block;}
-   .examReviewscreenmob .examMaincontainer{ display: block;}
+   .examReviewscreenmob .examMaincontainer{ display: block; overflow: hidden;}
    .examReviewscreenmob.examRightpanel, .examReviewscreenmob.reviewans-mainsec {
     min-width: 100%;
     max-width: 100%;    
