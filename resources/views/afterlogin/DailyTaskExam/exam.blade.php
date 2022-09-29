@@ -377,7 +377,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
 
-                        <span id="base-timer-label" class="base-timer__label"> Left</span>
+                        <span id="base-timer-label-mobile" class="base-timer__label"> Left</span>
                         <button type="button" class="btn stop" onclick="stop();">
                             <label>
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -727,6 +727,7 @@ $question_type = "Numerical";
     //DOM elements
     let timer = document.querySelector("#base-timer-path-remaining");
     let timeLabel = document.getElementById("base-timer-label");
+    let timeLabelmobile = document.getElementById("base-timer-label-mobile");
 
     //Time related vars
     const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
@@ -792,6 +793,7 @@ $question_type = "Numerical";
             timeLeft = TIME_LIMIT - timePassed;
             $('#final_submit_time').val(timePassed);
             timeLabel.innerHTML = formatTime(timeLeft);
+            timeLabelmobile.innerHTML = formatTime(timeLeft);
             setCircleDasharray();
 
             if (timeLeft === 0) {
@@ -804,6 +806,7 @@ $question_type = "Numerical";
     window.addEventListener("load", () => {
         // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
+        timeLabelmobile.innerHTML = formatTime(TIME_LIMIT);
         // setDisabled(stopBtn);
     });
 
@@ -842,6 +845,7 @@ $question_type = "Numerical";
         //console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
+        timeLabelmobile.innerHTML = formatTime(TIME_LIMIT);
     }
 
     function formatTime(time) {
