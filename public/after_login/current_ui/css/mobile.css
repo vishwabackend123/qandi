@@ -3052,6 +3052,8 @@ transform: translateX(100%);
         padding: 6px 10px;
         height: auto;
     }
+
+    .examReviewscreenmob{overflow-y:hidden;}
 }
 
 
