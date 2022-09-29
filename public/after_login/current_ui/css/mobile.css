@@ -3054,7 +3054,7 @@ transform: translateX(100%);
     }
 
     .examReviewscreenmob{overflow-y:hidden;}
-    .examReviewscreenmob .examMaincontainer{height:calc(100vh - 80px);}
+    .examReviewscreenmob .examMaincontainer{height:calc(100vh - 80px)!important;}
 }
 
 
