@@ -863,10 +863,10 @@ $question_type = "Numerical";
     $(function() {
         if (window.matchMedia("(max-width: 767px)").matches) {
             let height = screen.height;
-            $('.examReviewscreenmob').css('height', height);
-            $('.content-wrapper').css('height', height);
-            $('.examSereenwrapper').css('height', height);
-            $('.examreviewMaincontainer ').css('height', height);
+            // $('.examReviewscreenmob').css('height', height);
+            // $('.content-wrapper').css('height', height);
+            // $('.examSereenwrapper').css('height', height);
+            // $('.examreviewMaincontainer ').css('height', height);
             var exam_Review_screenmob_height_767 = $(".examreviewMaincontainer").outerHeight();
             var answer_main_secmob_height_767 = $(".answer-main-sec").outerHeight();
             var cal_height_for_right_767 = exam_Review_screenmob_height_767 - answer_main_secmob_height_767;
