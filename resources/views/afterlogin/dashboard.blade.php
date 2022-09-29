@@ -785,6 +785,24 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer row_repeate emptyrow">
                                         @endif
                                             <div class="graphimg">
+                                              @if($userStatus==false)
+                                                <div class="dropbox desktop_hide">
+                                                    <div class="customDropdown1 dropdown" id="dropdown2">
+                                                        <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
+                                                        <div class="options">
+                                                            <div style=" overflow-y: auto;  height: 145px;">
+                                                                <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                                 @else
+                                                <div></div>
+                                               @endif
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
@@ -810,15 +828,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @if($userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide">
-                                                    <div class="customDropdown1 dropdown">
+                                                    <div class="customDropdown1 dropdown" id="dropdown1">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
                                                             <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                                <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1269,9 +1287,25 @@ $user_id = isset($userData->id)?$userData->id:'';
         );
     </script>
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
-
+        function show(value, type,ids) {
+            document.querySelector("#markstrend_graph").value = value;
+            url = "{{ url('trendGraphUpdate/') }}/" + type;
+            $.ajax({
+                type: 'GET', //post method
+                url: url, //ajaxformexample url
+                dataType: "json",
+                success: function(response) {
+                    console.log(response.student_score);
+                    myChart2.data.labels = response.labels;
+                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.update(); // finally update our chart
+                }
+            });
+        }
+        function showMobile(value, type,ids) {
+            document.querySelector("#markstrend_graph2").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
                 type: 'GET', //post method
@@ -1290,11 +1324,16 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
 
-        let dropdown = document.querySelector(".customDropdown1")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active1")
+        let dropdown1 = document.querySelector("#dropdown1")
+        dropdown1.onclick = function() {
+            dropdown1.classList.toggle("active1")
+        }
+        let dropdown2 = document.querySelector("#dropdown2")
+        dropdown2.onclick = function() {
+            dropdown2.classList.toggle("active1")
         }
     </script>
+
     <script>
         $('.toastdata').hide();
         $('.progress').hide();
