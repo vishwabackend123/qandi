@@ -957,7 +957,7 @@ $question_type = "Numerical";
         }
 
         .custom-anstop {
-            display:none;
+            display:none;   
         }
 
 
