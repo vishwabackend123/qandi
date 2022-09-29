@@ -785,6 +785,24 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="journeyBoxcontainer row_repeate emptyrow">
                                         @endif
                                             <div class="graphimg">
+                                              @if($userStatus==false)
+                                                <div class="dropbox desktop_hide">
+                                                    <div class="customDropdown1 dropdown" id="dropdown2">
+                                                        <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                        <div class="options">
+                                                            <div style=" overflow-y: auto;  height: 145px;">
+                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
+                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                                 @else
+                                                <div></div>
+                                               @endif
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
@@ -810,7 +828,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @if($userStatus==false)
                                             <div class="graphDetail">
                                                 <div class="dropbox mobile_hide">
-                                                    <div class="customDropdown1 dropdown">
+                                                    <div class="customDropdown1 dropdown" id="dropdown1">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
                                                             <div style=" overflow-y: auto;  height: 145px;">
@@ -1290,9 +1308,13 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
 
-        let dropdown = document.querySelector(".customDropdown1")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active1")
+        let dropdown1 = document.querySelector("#dropdown1")
+        dropdown1.onclick = function() {
+            dropdown1.classList.toggle("active1")
+        }
+        let dropdown2 = document.querySelector("#dropdown2")
+        dropdown2.onclick = function() {
+            dropdown2.classList.toggle("active1")
         }
     </script>
     <script>
