@@ -12,7 +12,7 @@
 .missing-info-section {
     position: static;
     max-width: 390px;
-    background: #f5faf6 !important;
+    background: #e0f6e3 !important;
     padding: 40px 16px 20px;
     top: inherit;
     left: inherit;
@@ -28,9 +28,10 @@
     padding-left: 6px;
 }
 .name-title {
-    background: #e0f6e3;
-    padding: 20px 0px;
+    background: #ffffff;
+    padding: 15px;
     border-radius: 10px;
+    border: solid 1px #e9eef4;
 }
 .logo_sec {
     padding-bottom: 40px;
