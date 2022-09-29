@@ -134,6 +134,18 @@
     .matrixpage-wrapper .exam_instruction_scrolling {
         height: calc(100vh - 262px);
     }
+
+    .examScreentab .nav-tabs .nav-link{
+        display: flex;
+    }
+    .examLeftpanel .nav-item {
+        position: relative;
+        margin-right: 40px !important;
+    }
+  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
+  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
+  .plan_order_sumry_subscription{padding:5px 0px;}
+  .plan_order_sumry_subscription{padding:4px 0px}
 }
 @media only screen and (max-width: 1200px) {
         .subscriptionsLeftpannel {
@@ -1143,9 +1155,25 @@ transform: translateX(100%);
 
 /* *************Tab  Css End ***************** */
 
-
-@media(max-width:767px){
-
+@media(max-width:890px) and (min-width:768px)
+{
+    .chapter_profici_nav__right_contant {
+        display: block;
+    }
+    .chapter_profici_application_deves_text
+    {
+        font-size: 17px;
+    }
+    .rank_analysis_block .d-flex.justify-content-between {
+        display: block!important;
+    }
+    .rank_analysis_block {
+        height: auto!important;
+    }
+    .total_participants {
+        margin-top: 20px;
+    }
+}
 @media(max-width:767px){ 
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
@@ -3151,39 +3179,4 @@ transform: translateX(100%);
         height: auto!important;
     }
 
-}
-
-@media(max-width:890px) and (min-width:768px)
-{
-    .chapter_profici_nav__right_contant {
-        display: block;
-    }
-    .chapter_profici_application_deves_text
-    {
-        font-size: 17px;
-    }
-    .rank_analysis_block .d-flex.justify-content-between {
-        display: block!important;
-    }
-    .rank_analysis_block {
-        height: auto!important;
-    }
-    .total_participants {
-        margin-top: 20px;
-    }
-}
-
-@media(max-width:1280px) 
-{
-    .examScreentab .nav-tabs .nav-link{
-        display: flex;
-    }
-    .examLeftpanel .nav-item {
-        position: relative;
-        margin-right: 40px !important;
-    }
-  .plan_successfull_go_to_dashboard{ margin-top: 5px;}  
-  .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
-  .plan_order_sumry_subscription{padding:5px 0px;}
-  .plan_order_sumry_subscription{padding:4px 0px}
 }
