@@ -576,7 +576,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <div class="planDetailBox">
                                             <div class="vLine"></div>
                                             <div class="selectedWeek">
-                                                <p class="m-0">This week </p>
+                                                <p class="m-0">This week</p>
                                                 <p class="m-0 dateformate">{{date('j M', strtotime('monday this week'))}} - {{date('j M', strtotime('sunday this week'))}}</p>
                                             </div>
                                             <div class="plannedtestbox">
@@ -613,10 +613,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
                                             <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
-                                                <span>
+                                                <span class="mobile_hide">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
+                                                </span>
+                                                <span class="desktop_hide">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                      <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                   </svg>
                                                 </span>
                                                 <span>Add
                                                 </span>
@@ -710,7 +715,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                        @if($userStatus==false)
                                         <div class="row row_repeate">
+                                        @else
+                                        <div class="row row_repeate emptyrow">
+                                        @endif
                                             <div class="col-md-7">
                                                 <div class="progress_journey_chart progressnewjourney">
                                                     <canvas id="progressJourny_graph"></canvas>
@@ -769,8 +778,31 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </span>
                                             </h3>
                                         </div>
+                                       
+                                        @if($userStatus==false)
                                         <div class="journeyBoxcontainer row_repeate">
+                                        @else
+                                        <div class="journeyBoxcontainer row_repeate emptyrow">
+                                        @endif
                                             <div class="graphimg">
+                                              @if($userStatus==false)
+                                                <div class="dropbox desktop_hide">
+                                                    <div class="customDropdown1 dropdown" id="dropdown2">
+                                                        <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
+                                                        <div class="options">
+                                                            <div style=" overflow-y: auto;  height: 145px;">
+                                                                <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
+                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                                 @else
+                                                <div></div>
+                                               @endif
                                                 <div class="progress_journey_chart">
                                                     <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                 </div>
@@ -795,21 +827,21 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <!-- if (!empty($trendResponse) && $userStatus==false) -->
                                             @if($userStatus==false)
                                             <div class="graphDetail">
-                                                <div class="dropbox mobile_hide ">
-                                                    <div class="customDropdown1 dropdown">
+                                                <div class="dropbox mobile_hide">
+                                                    <div class="customDropdown1 dropdown" id="dropdown1">
                                                         <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
                                                             <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend" onclick="show('All Test', 'all')">All Test</div>
-                                                                <div class="active markstrend" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
-                                                                <div class="markstrend" onclick="show('Practice Test', 'Assessment')">Practice Test</div>
-                                                                <div class="markstrend" onclick="show('Test Series', 'Test-Series')">Test Series</div>
-                                                                <div class="markstrend" onclick="show('Live', 'Live')">Live Test</div>
+                                                                <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
+                                                                <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="yourPacebox scoretype">
+                                                <div class="yourPacebox scoretype mobile_hide">
                                                     <p class="testScrolltype">
                                                         <span class="weekCountlineH myscore"></span>
                                                         <span class="weekText">My score</span>
@@ -857,8 +889,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     </div>
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
-        <div class="modalcenter">
-            <div class="modal-dialog">
+        <div class="modal-dialog">
+            <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
                         <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
@@ -1255,9 +1287,25 @@ $user_id = isset($userData->id)?$userData->id:'';
         );
     </script>
     <script>
-        function show(value, type) {
-            document.querySelector(".text-box").value = value;
-
+        function show(value, type,ids) {
+            document.querySelector("#markstrend_graph").value = value;
+            url = "{{ url('trendGraphUpdate/') }}/" + type;
+            $.ajax({
+                type: 'GET', //post method
+                url: url, //ajaxformexample url
+                dataType: "json",
+                success: function(response) {
+                    console.log(response.student_score);
+                    myChart2.data.labels = response.labels;
+                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.update(); // finally update our chart
+                }
+            });
+        }
+        function showMobile(value, type,ids) {
+            document.querySelector("#markstrend_graph2").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
                 type: 'GET', //post method
@@ -1276,11 +1324,16 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 
 
-        let dropdown = document.querySelector(".customDropdown1")
-        dropdown.onclick = function() {
-            dropdown.classList.toggle("active1")
+        let dropdown1 = document.querySelector("#dropdown1")
+        dropdown1.onclick = function() {
+            dropdown1.classList.toggle("active1")
+        }
+        let dropdown2 = document.querySelector("#dropdown2")
+        dropdown2.onclick = function() {
+            dropdown2.classList.toggle("active1")
         }
     </script>
+
     <script>
         $('.toastdata').hide();
         $('.progress').hide();
