@@ -2437,7 +2437,7 @@ transform: translateX(100%);
         .timemanagement.common_greenbadge_tabs{padding-right:0px;margin-bottom: 26px;}
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
-        .mobilescrolltab{overflow-x: auto;}
+        .mobilescrolltab,.mobilescrolltabNew{overflow-x: auto;}
         .mobilescrolltab .nav-tabs{min-width:560px;}
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
