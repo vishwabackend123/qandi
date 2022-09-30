@@ -863,10 +863,10 @@ $question_type = "Numerical";
     $(function() {
         if (window.matchMedia("(max-width: 767px)").matches) {
             let height = screen.height;
-            $('.examReviewscreenmob').css('height', height);
-            $('.content-wrapper').css('height', height);
-            $('.examSereenwrapper').css('height', height);
-            $('.examreviewMaincontainer ').css('height', height);
+            // $('.examReviewscreenmob').css('height', height);
+            // $('.content-wrapper').css('height', height);
+            // $('.examSereenwrapper').css('height', height);
+            // $('.examreviewMaincontainer ').css('height', height);
             var exam_Review_screenmob_height_767 = $(".examreviewMaincontainer").outerHeight();
             var answer_main_secmob_height_767 = $(".answer-main-sec").outerHeight();
             var cal_height_for_right_767 = exam_Review_screenmob_height_767 - answer_main_secmob_height_767;
@@ -916,8 +916,7 @@ $question_type = "Numerical";
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
 
-                $('.custom-anstop').attr('style', 'display:block !important;');
-                $('.text-exambottom-sec').attr('style', 'display:block !important;');
+
 
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
@@ -935,8 +934,8 @@ $question_type = "Numerical";
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
 
-                $('.custom-anstop').attr('style', 'height:0px !important;display:none;');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important; display:none;');
+                $('.custom-anstop').attr('style', 'height:0px !important; ');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
 
             });
         }
@@ -958,7 +957,6 @@ $question_type = "Numerical";
             top: 15px;
 
         }
-
 
     }
 </style>
