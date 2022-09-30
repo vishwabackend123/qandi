@@ -1423,6 +1423,7 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .exam_instruction_scrolling
     {
         height:485px;
+        margin-top: 7px;
     }
     .tabMainblock_myqmatric .exam_instruction_scrolling::-webkit-scrollbar {
         width: 4px;
@@ -1436,7 +1437,7 @@ transform: translateX(100%);
     }
     .dashboad_mqmatrix_text_back_to_dashboard
     {
-        padding: 4px 0px 24px 7px;
+        padding: 0px 0px 24px 2px;
     }
     .knowledge_left_clr_with_text
     {
@@ -2095,7 +2096,7 @@ transform: translateX(100%);
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 20px 6px 28px 0px;
+        padding: 20px 0px 28px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -2230,7 +2231,7 @@ transform: translateX(100%);
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
-    .fullbodyBox .leftBox h4{margin-bottom:0px;}
+    .fullbodyBox .leftBox h4{margin-bottom:0px;white-space:nowrap;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
     /************ Shiv start for refer and friend************/
     .modal-popup-customize .modal-content {
@@ -3031,7 +3032,7 @@ transform: translateX(100%);
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
 
-        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;padding-bottom:12px;}
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
@@ -3062,6 +3063,24 @@ transform: translateX(100%);
     .examReviewscreenmob.exam-wrapper{min-height:initial;}
     .taskcenter_wrapper .mock_inst_text_mock_test{padding-top:0px}
     .content-wrapper {padding-top:32px;}
+    .matrix-page-wrapper .commonWhiteBox h3.boxheading {
+        margin-bottom: 17px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:first-child td {
+        padding-top: 0;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:last-child td {
+        border-bottom: 0;
+        padding-bottom: 7px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table{margin-bottom:0;}
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td {
+        padding: 23px 0px;
+    }
+    .content-wrapper.matrixpage-wrapper.matrix-page-wrapper {
+        padding-bottom: 16px;
+    }
+    .myqbottomSec h3 .topictext{margin-left:0;}
 
     .skill_para_toggle span {
         font-size: 28px;
@@ -3072,7 +3091,22 @@ transform: translateX(100%);
         line-height: 17px;
         margin-top: -2px;
     }
-    
+    .fullbodyBox {
+        margin-bottom: 24px;
+    }
+    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{bottom:-6px;}
+    .commonWhiteBox.subject_performance_card .tooltipclass {
+        left: auto;
+        right: -74px;
+    }
+    .commonWhiteBox.subject_performance_card .tooltipclass:before{left: 64%;    top: -16px;}
+    .gotoPlanner a {
+        font-size: 16px!important;
+    }
+    .testCount {
+        font-size: 20px !important;
+    }
+
 }
 
 
