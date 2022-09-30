@@ -221,7 +221,11 @@ class MockExamController extends Controller
                 $exam_url = route('mockExam');
 
                 $exam_title = "Mock Exam";
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('ranSession', 'aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title'));
+                $examType = 'mock';
+                $instructions = $this->getInstructions($examType);
+
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('instructions', 'ranSession', 'aSections', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title'));
             } else {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];

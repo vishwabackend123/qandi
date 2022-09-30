@@ -2928,9 +2928,9 @@ line-height: 1.6;
  .addPlanbtn .btn span {
      display: flex;
  }
- .addPlanbtn .btn span:nth-child(2) {
-     padding-left: 5px;  
- }
+ .addPlanbtn .btn span.mobile_hide,
+ .addPlanbtn .btn span.desktop_hide{margin-right:8px;}
+
  
 /********************End-Dashboard-By-Sachin-Date-06-07-22**************/
  /************Subscription-Responsive-Element Sachin Start Date:20-07-22 *********/
@@ -3862,6 +3862,9 @@ span.greenball-3 {
 .subjectblockOverall .halfdoughnutsmall {margin-bottom: -20px;min-width: 120px;}
 .yaxis_label.yaxis_label_3 {
     left: -36px;
+}
+.yaxis_label.yaxis_label_4 {
+    left: -54px;
 }
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
 .chapter_performance_card ul.topic_score_lists {
@@ -8017,13 +8020,14 @@ margin-bottom: 12px;
 /* Gourav Css */
 .jee_table {
     margin: 20px 0px 20px 20px;
+    width:100%;
 }
 .jee_table th {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
-    background-color: #efefef;
+    background-color: #cceed0;
 }
 .jee_table td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
 }

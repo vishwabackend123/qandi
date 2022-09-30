@@ -230,172 +230,172 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!--   <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
-                            <div class="tabMainblock">
-                                <div class="commontab mobilejustify">
-                                    <div class="tablist">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div id="daily" class=" tab-pane active">
-                                            @if((isset($userStatus) && $userStatus==false))
-                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
-                                                <h4>Task completed</h4>
-                                                <div class="statusvalue">
-                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
-                                                </div>
-                                            </div>
-                                            @endif
-                                            @if((isset($userStatus) && $userStatus==true))
-                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
-                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
-                                            </p>
-                                            @endif
-                                            @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
-                                            <div class="tasklisting">
-                                                <ul class="commonlisting">
-                                                    @foreach($dailyTask as $key=>$data)
-                                                    @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
-                                                    @php
-                                                    $current_date=date("d");
-                                                    if($current_date % 4 == 0){
-                                                    $skill_task = 'Evaluation Skill';
-                                                    $skill_category = 'evaluation';
-                                                    }
-                                                    else if($current_date % 4 == 1){
-                                                    $skill_task = 'Knowledge Skill';
-                                                    $skill_category = 'knowledge';
-                                                    }
-                                                    elseif($current_date % 4 == 2){
-                                                    $skill_task = 'Application Skill';
-                                                    $skill_category = 'application';
-                                                    }
-                                                    else{
-                                                    $skill_task = 'Comprehension Skill';
-                                                    $skill_category = 'comprehension';
-                                                    }
-                                                    @endphp
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task {{$key+1}}</h6>
-                                                            <h4>{{$skill_task}}</h4>
-                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                        </div>
-                                                        @if($data['allowed'] == '1')
-                                                        <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                        </div>
-                                                        @else
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                        </div>
-                                                        @endif
-
-                                                    </li>
-                                                    @endif
-                                                    @if($data['category'] == 'time' && $data['task_type'] == 'daily')
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task {{$key+1}}</h6>
-                                                            <h4>Time Management</h4>
-                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                        </div>
-                                                        @if($data['allowed'] == '1')
-                                                        <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                        </div>
-                                                        @else
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                        </div>
-                                                        @endif
-                                                    </li>
-                                                    @endif
-                                                    @endforeach
-                                                </ul>
-                                                <div class="moreTaskLink bottomlikabs">
-                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                            </svg></span></a>
-                                                </div>
-                                            </div>
-                                            @endif
+                            <!-- a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                                <div class="tabMainblock">
+                                    <div class="commontab mobilejustify">
+                                        <div class="tablist">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div id="weekly" class=" tab-pane">
-                                            @if((isset($userStatus) && $userStatus==false))
-                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
-                                                <h4>Task completed</h4>
-                                                <div class="statusvalue">
-                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div id="daily" class=" tab-pane active">
+                                                @if((isset($userStatus) && $userStatus==false))
+                                                <div class="taskstatusBlock" style="margin-bottom:12px;">
+                                                    <h4>Task completed</h4>
+                                                    <div class="statusvalue">
+                                                        <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            @endif
-                                            @if((isset($userStatus) && $userStatus==true))
-                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
-                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
-                                            </p>
-                                            @endif
-                                            @if((isset($weekTask) && !empty($weekTask)) && $userStatus==false)
-                                            <div class="tasklisting">
-                                                <ul class="commonlisting">
-                                                    @foreach($weekTask as $wkey=>$data)
-                                                    @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task {{$wkey+1}}</h6>
-                                                            <h4>Accuracy Test</h4>
-                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                        </div>
-                                                        @if($data['allowed'] == '1')
-                                                        <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                        </div>
-                                                        @else
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                        </div>
+                                                @endif
+                                                @if((isset($userStatus) && $userStatus==true))
+                                                <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
+                                                <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
+                                                </p>
+                                                @endif
+                                                @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
+                                                <div class="tasklisting">
+                                                    <ul class="commonlisting">
+                                                        @foreach($dailyTask as $key=>$data)
+                                                        @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
+                                                        @php
+                                                        $current_date=date("d");
+                                                        if($current_date % 4 == 0){
+                                                        $skill_task = 'Evaluation Skill';
+                                                        $skill_category = 'evaluation';
+                                                        }
+                                                        else if($current_date % 4 == 1){
+                                                        $skill_task = 'Knowledge Skill';
+                                                        $skill_category = 'knowledge';
+                                                        }
+                                                        elseif($current_date % 4 == 2){
+                                                        $skill_task = 'Application Skill';
+                                                        $skill_category = 'application';
+                                                        }
+                                                        else{
+                                                        $skill_task = 'Comprehension Skill';
+                                                        $skill_category = 'comprehension';
+                                                        }
+                                                        @endphp
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                                <h6>Task {{$key+1}}</h6>
+                                                                <h4>{{$skill_task}}</h4>
+                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                            </div>
+                                                            @if($data['allowed'] == '1')
+                                                            <div class="tasklistbtn">
+                                                                <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                            </div>
+                                                            @else
+                                                            <div class="tasklistbtn">
+                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                            </div>
+                                                            @endif
+
+                                                        </li>
                                                         @endif
-                                                    </li>
-                                                    @endif
-                                                    @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
-                                                    <li>
-                                                        <div class="tasklistleft">
-                                                            <h6>Task {{$wkey+1}}</h6>
-                                                            <h4>Weak Topic Test</h4>
-                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                        </div>
-                                                        @if($data['allowed'] == '1')
-                                                        <div class="tasklistbtn">
-                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                        </div>
-                                                        @else
-                                                        <div class="tasklistbtn">
-                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                        </div>
+                                                        @if($data['category'] == 'time' && $data['task_type'] == 'daily')
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                                <h6>Task {{$key+1}}</h6>
+                                                                <h4>Time Management</h4>
+                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                            </div>
+                                                            @if($data['allowed'] == '1')
+                                                            <div class="tasklistbtn">
+                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                            </div>
+                                                            @else
+                                                            <div class="tasklistbtn">
+                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                            </div>
+                                                            @endif
+                                                        </li>
                                                         @endif
-                                                    </li>
-                                                    @endif
-                                                    @endforeach
-                                                </ul>
-                                                <div class="moreTaskLink bottomlikabs">
-                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                            </svg></span></a>
+                                                        @endforeach
+                                                    </ul>
+                                                    <div class="moreTaskLink bottomlikabs">
+                                                        <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                    <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg></span></a>
+                                                    </div>
                                                 </div>
+                                                @endif
                                             </div>
-                                            @endif
+                                            <div id="weekly" class=" tab-pane">
+                                                @if((isset($userStatus) && $userStatus==false))
+                                                <div class="taskstatusBlock" style="margin-bottom:12px;">
+                                                    <h4>Task completed</h4>
+                                                    <div class="statusvalue">
+                                                        <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                                @if((isset($userStatus) && $userStatus==true))
+                                                <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
+                                                <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
+                                                </p>
+                                                @endif
+                                                @if((isset($weekTask) && !empty($weekTask)) && $userStatus==false)
+                                                <div class="tasklisting">
+                                                    <ul class="commonlisting">
+                                                        @foreach($weekTask as $wkey=>$data)
+                                                        @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                                <h6>Task {{$wkey+1}}</h6>
+                                                                <h4>Accuracy Test</h4>
+                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                            </div>
+                                                            @if($data['allowed'] == '1')
+                                                            <div class="tasklistbtn">
+                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                            </div>
+                                                            @else
+                                                            <div class="tasklistbtn">
+                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                            </div>
+                                                            @endif
+                                                        </li>
+                                                        @endif
+                                                        @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                                <h6>Task {{$wkey+1}}</h6>
+                                                                <h4>Weak Topic Test</h4>
+                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                            </div>
+                                                            @if($data['allowed'] == '1')
+                                                            <div class="tasklistbtn">
+                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                            </div>
+                                                            @else
+                                                            <div class="tasklistbtn">
+                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                            </div>
+                                                            @endif
+                                                        </li>
+                                                        @endif
+                                                        @endforeach
+                                                    </ul>
+                                                    <div class="moreTaskLink bottomlikabs">
+                                                        <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                    <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                </svg></span></a>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 commonblockDash">
@@ -619,9 +619,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </svg>
                                                 </span>
                                                 <span class="desktop_hide">
-                                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                      <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                   </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                        <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
                                                 </span>
                                                 <span>Add
                                                 </span>
@@ -717,169 +717,169 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                         @if($userStatus==false)
                                         <div class="row row_repeate">
-                                        @else
-                                        <div class="row row_repeate emptyrow">
-                                        @endif
-                                            <div class="col-md-7">
-                                                <div class="progress_journey_chart progressnewjourney">
-                                                    <canvas id="progressJourny_graph"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
-                                                @if($userStatus==false)
-                                                <div class="graphDetail w-100">
-                                                    <div class="yourPacebox">
-                                                        <p class="graphTitle">Ideal Pace</p>
-                                                        <p>
-                                                            <span class="weekCountline myscore"></span>
-                                                            <span class="weekCount">{{round($ideal_avg)}}</span>
-                                                            <span class="weekText">chapters per week</span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="yourPacebox">
-                                                        <p class="graphTitle">Your Pace</p>
-                                                        <p>
-                                                            <span class="weekCountline colorHline"></span>
-                                                            <span class="weekCount">{{round($your_place_avg)}}</span>
-                                                            <span class="weekText">chapters per week</span>
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
-                                                    </div>
-
-                                                </div>
-                                                @else
-                                                <div class="graphDetailempty w-100">
-                                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
-                                                    <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
-                                                </div>
-                                                @endif
-                                                <!-- <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3 white_bg">Attempt Now</a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="journeyGraph cardWhiteBg">
-                                        <div class="boxHeadingBlock">
-                                            <h3 class="boxheading">
-                                                Marks Trend
-                                                <span class="tooltipmain">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                                        </g>
-                                                    </svg>
-                                                    <p class="tooltipclass">
-                                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                        Get insights on your progress over time.
-                                                    </p>
-                                                </span>
-                                            </h3>
-                                        </div>
-                                       
-                                        @if($userStatus==false)
-                                        <div class="journeyBoxcontainer row_repeate">
-                                        @else
-                                        <div class="journeyBoxcontainer row_repeate emptyrow">
-                                        @endif
-                                            <div class="graphimg">
-                                              @if($userStatus==false)
-                                                <div class="dropbox desktop_hide">
-                                                    <div class="customDropdown1 dropdown" id="dropdown2">
-                                                        <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
-                                                        <div class="options">
-                                                            <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                 </div>
-                                                 @else
-                                                <div></div>
-                                               @endif
-                                                <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph" style="height: 270px;"></canvas>
-                                                </div>
-                                                <div class="desktop_hide">
-                                                    <div class="yourPacebox">
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH myscore"></span>
-                                                            <span class="weekText">My score</span>
-                                                        </p>
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH  peerAvg"></span>
-                                                            <span class="weekText">Peer average</span>
-                                                        </p>
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH  topScroe"></span>
-                                                            <span class="weekText">Top score</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- if (!empty($trendResponse) && $userStatus==false) -->
-                                            @if($userStatus==false)
-                                            <div class="graphDetail">
-                                                <div class="dropbox mobile_hide">
-                                                    <div class="customDropdown1 dropdown" id="dropdown1">
-                                                        <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                        <div class="options">
-                                                            <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="yourPacebox scoretype mobile_hide">
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH myscore"></span>
-                                                        <span class="weekText">My score</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  peerAvg"></span>
-                                                        <span class="weekText">Peer average</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  topScroe"></span>
-                                                        <span class="weekText">Top score</span>
-                                                    </p>
-                                                </div>
-                                            </div>
                                             @else
-                                            <div class="graphDetailempty">
-                                                <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                                <div class="yourPacebox">
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH myscore"></span>
-                                                        <span class="weekText">My score</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  peerAvg"></span>
-                                                        <span class="weekText">Peer average</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  topScroe"></span>
-                                                        <span class="weekText">Top score</span>
-                                                    </p>
+                                            <div class="row row_repeate emptyrow">
+                                                @endif
+                                                <div class="col-md-7">
+                                                    <div class="progress_journey_chart progressnewjourney">
+                                                        <canvas id="progressJourny_graph"></canvas>
+                                                    </div>
                                                 </div>
-                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
-                                            </div>
-                                            @endif
+                                                <div class="col-md-5">
+                                                    <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
+                                                    @if($userStatus==false)
+                                                    <div class="graphDetail w-100">
+                                                        <div class="yourPacebox">
+                                                            <p class="graphTitle">Ideal Pace</p>
+                                                            <p>
+                                                                <span class="weekCountline myscore"></span>
+                                                                <span class="weekCount">{{round($ideal_avg)}}</span>
+                                                                <span class="weekText">chapters per week</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="yourPacebox">
+                                                            <p class="graphTitle">Your Pace</p>
+                                                            <p>
+                                                                <span class="weekCountline colorHline"></span>
+                                                                <span class="weekCount">{{round($your_place_avg)}}</span>
+                                                                <span class="weekText">chapters per week</span>
+                                                            </p>
+                                                        </div>
 
+                                                        <div class="note">
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
+                                                        </div>
+
+                                                    </div>
+                                                    @else
+                                                    <div class="graphDetailempty w-100">
+                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
+                                                        <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
+                                                    </div>
+                                                    @endif
+                                                    <!-- <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3 white_bg">Attempt Now</a> -->
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="journeyGraph cardWhiteBg">
+                                            <div class="boxHeadingBlock">
+                                                <h3 class="boxheading">
+                                                    Marks Trend
+                                                    <span class="tooltipmain">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                            </g>
+                                                        </svg>
+                                                        <p class="tooltipclass">
+                                                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                            Get insights on your progress over time.
+                                                        </p>
+                                                    </span>
+                                                </h3>
+                                            </div>
+
+                                            @if($userStatus==false)
+                                            <div class="journeyBoxcontainer row_repeate">
+                                                @else
+                                                <div class="journeyBoxcontainer row_repeate emptyrow">
+                                                    @endif
+                                                    <div class="graphimg">
+                                                        @if($userStatus==false)
+                                                        <div class="dropbox desktop_hide">
+                                                            <div class="customDropdown1 dropdown" id="dropdown2">
+                                                                <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
+                                                                <div class="options">
+                                                                    <div style=" overflow-y: auto;  height: 145px;">
+                                                                        <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @else
+                                                        <div></div>
+                                                        @endif
+                                                        <div class="progress_journey_chart">
+                                                            <canvas id="trend_graph" style="height: 270px;"></canvas>
+                                                        </div>
+                                                        <div class="desktop_hide">
+                                                            <div class="yourPacebox">
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH myscore"></span>
+                                                                    <span class="weekText">My score</span>
+                                                                </p>
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH  peerAvg"></span>
+                                                                    <span class="weekText">Peer average</span>
+                                                                </p>
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH  topScroe"></span>
+                                                                    <span class="weekText">Top score</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- if (!empty($trendResponse) && $userStatus==false) -->
+                                                    @if($userStatus==false)
+                                                    <div class="graphDetail">
+                                                        <div class="dropbox mobile_hide">
+                                                            <div class="customDropdown1 dropdown" id="dropdown1">
+                                                                <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                                <div class="options">
+                                                                    <div style=" overflow-y: auto;  height: 145px;">
+                                                                        <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="yourPacebox scoretype mobile_hide">
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH myscore"></span>
+                                                                <span class="weekText">My score</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  peerAvg"></span>
+                                                                <span class="weekText">Peer average</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  topScroe"></span>
+                                                                <span class="weekText">Top score</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    @else
+                                                    <div class="graphDetailempty">
+                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                                        <div class="yourPacebox">
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH myscore"></span>
+                                                                <span class="weekText">My score</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  peerAvg"></span>
+                                                                <span class="weekText">Peer average</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  topScroe"></span>
+                                                                <span class="weekText">Top score</span>
+                                                            </p>
+                                                        </div>
+                                                        <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
+                                                    </div>
+                                                    @endif
+
+                                                </div>
+                                            </div>
+                                        </div>
                             </section>
                         </div>
                     </div>
@@ -1287,7 +1287,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         );
     </script>
     <script>
-        function show(value, type,ids) {
+        function show(value, type, ids) {
             document.querySelector("#markstrend_graph").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
@@ -1304,7 +1304,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 }
             });
         }
-        function showMobile(value, type,ids) {
+
+        function showMobile(value, type, ids) {
             document.querySelector("#markstrend_graph2").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
