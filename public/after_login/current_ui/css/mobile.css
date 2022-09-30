@@ -2437,8 +2437,8 @@ transform: translateX(100%);
         .timemanagement.common_greenbadge_tabs{padding-right:0px;margin-bottom: 26px;}
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
-        .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{min-width:560px;}
+        .mobilescrolltab,.mobilescrolltabNew{overflow-x: auto;}
+        /* .mobilescrolltab .nav-tabs{min-width:560px;} */
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
@@ -2477,7 +2477,7 @@ transform: translateX(100%);
             .boxheading.mb-5,.HeadingWithfilter .dropbox.mb-5{margin-bottom:26px!important;}
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
-            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
+            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar, .mobilescrolltabNew::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
             .tablescroll{height: calc(100vh - 258px);
@@ -2573,7 +2573,11 @@ transform: translateX(100%);
                 display: flex;
                 flex-wrap: initial;
             }
-            
+            .mobilescrolltabNew {
+                flex-wrap: initial;
+            }
+            .commontab .mobilescrolltabNew .nav-tabs .nav-link{white-space: nowrap;}
+            /* .mobilescrolltabNew .nav-item{min-width:127px;} */
             .testscreenmob .questionwrapper {
                 padding: 0px;
                 margin: auto;

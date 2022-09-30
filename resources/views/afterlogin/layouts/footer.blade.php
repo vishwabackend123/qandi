@@ -296,7 +296,7 @@ $("#referalStudent_form").validate({
                         const duplicate = response.duplicate_referrals.toString();
 
                         var errormsg = $("#errRef_auth").show();
-                        errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                        errormsg[0].textContent = "Already referred Email id : " + duplicate;
                     }
                     setTimeout(function() {
                         $('.errRef').fadeOut('fast');
