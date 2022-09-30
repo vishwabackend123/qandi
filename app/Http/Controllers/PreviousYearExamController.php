@@ -146,7 +146,7 @@ class PreviousYearExamController extends Controller
                 $paper_id = Session::get('paper_id');
             } else {
 
-                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')){
+                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')) {
                     $paper_id = Session::get('paper_id');
                 }
                 $curl_url = "";
@@ -298,8 +298,6 @@ class PreviousYearExamController extends Controller
                 $exam_title = "Previous Year Test";
                 $examType = 'prev_year_paper';
                 $instructions = $this->getInstructions($examType, $paper_year);
-
-                //dd($instructions);
 
                 return view('afterlogin.PreviousYearExam.py_instruction', compact('instructions', 'ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
 
