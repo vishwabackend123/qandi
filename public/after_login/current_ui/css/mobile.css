@@ -3120,6 +3120,7 @@ transform: translateX(100%);
         .text-right.flexgrow {margin: 17px 0 0 0px;text-align: left;}
 
         /************ Amit end *********/
+        .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
 
 }
 @media only screen and (max-width: 460px){
@@ -3142,6 +3143,7 @@ transform: translateX(100%);
     /************ Amit end *********/
     .HeadingWithfilter{flex-wrap:wrap;}
     .HeadingWithfilter .dropbox{width:100%;}
+    
 }
 @media only screen and (max-width: 400px){
     
