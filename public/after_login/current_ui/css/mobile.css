@@ -2095,7 +2095,7 @@ transform: translateX(100%);
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px 28px 0px;
+        padding: 20px 6px 28px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -3060,6 +3060,8 @@ transform: translateX(100%);
     .examReviewscreenmob{overflow-y:hidden;}
     .examReviewscreenmob .examMaincontainer,.exam-wrapper{height:calc(100vh - 80px)!important;}
     .examReviewscreenmob.exam-wrapper{min-height:initial;}
+    .mock_inst_text_mock_test{padding-top:0px}
+    .content-wrapper {padding-top:32px;}
 }
 
 
