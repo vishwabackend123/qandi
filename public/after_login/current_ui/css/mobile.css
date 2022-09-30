@@ -3062,6 +3062,16 @@ transform: translateX(100%);
     .examReviewscreenmob.exam-wrapper{min-height:initial;}
     .taskcenter_wrapper .mock_inst_text_mock_test{padding-top:0px}
     .content-wrapper {padding-top:32px;}
+
+    .skill_para_toggle span {
+        font-size: 28px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 17px;
+        margin-top: -2px;
+    }
     
 }
 
