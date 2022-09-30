@@ -3122,6 +3122,9 @@ transform: translateX(100%);
 
         /************ Amit end *********/
         .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
+        .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
+        .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
+        .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
 
 }
 @media only screen and (max-width: 460px){
@@ -3153,10 +3156,10 @@ transform: translateX(100%);
     margin-left: 10px;
     }
     /************ Amit start *********/
-    .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
+    /* .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
     .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
     .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
-    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
+    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;} */
     /************ Amit end *********/
     
 }
