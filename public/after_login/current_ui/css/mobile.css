@@ -3100,6 +3100,12 @@ transform: translateX(100%);
         right: -74px;
     }
     .commonWhiteBox.subject_performance_card .tooltipclass:before{left: 64%;    top: -16px;}
+    .gotoPlanner a {
+        font-size: 16px!important;
+    }
+    .testCount {
+        font-size: 20px !important;
+    }
 
 }
 
