@@ -860,9 +860,11 @@ class HomeController extends Controller
                 $collection = collect($data_task);
                 $dailyTask = $collection->where('task_type', 'daily')->sortBy('category')->values()->all();
                 $weekTask = $collection->where('task_type', 'weekly')->sortBy('category')->values()->all();
+                $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
+                $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
 
-            return view('afterlogin.dashboard_dailytask', compact('dailyTask', 'weekTask'));
+            return view('afterlogin.dashboard_dailytask', compact('dailyTask', 'weekTask', 'completeddailyTask', 'completedweekTask'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
