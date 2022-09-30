@@ -3060,8 +3060,9 @@ transform: translateX(100%);
     .examReviewscreenmob{overflow-y:hidden;}
     .examReviewscreenmob .examMaincontainer,.exam-wrapper{height:calc(100vh - 80px)!important;}
     .examReviewscreenmob.exam-wrapper{min-height:initial;}
-    .mock_inst_text_mock_test{padding-top:0px}
+    .taskcenter_wrapper .mock_inst_text_mock_test{padding-top:0px}
     .content-wrapper {padding-top:32px;}
+    
 }
 
 
