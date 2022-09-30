@@ -588,7 +588,7 @@ trait CommonTrait
     }
 
 
-    public function getInstructions($examType, $py_year)
+    public function getInstructions($examType, $py_year = '')
     {
         $userData = Session::get('user_data');
         $user_id = isset($userData->id) ? $userData->id : 0;
@@ -596,7 +596,10 @@ trait CommonTrait
 
         $curl = curl_init();
         $api_URL = env('API_URL');
-        $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType . '&year=' . $py_year;
+        $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType;
+        if ($examType == 'prev_year_paper') {
+            $curl_url =  $curl_url . '&year=' . $py_year;
+        }
         // $curl_url = $api_URL . 'api/get-leadershipBoard/73/1';
 
 
@@ -626,7 +629,6 @@ trait CommonTrait
 
         $instHtml = isset($aResponse->instructions) ? $aResponse->instructions : '';
 
-        // dd($instHtml, $curl_url);
         return $instHtml;
     }
 }
