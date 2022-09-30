@@ -1423,6 +1423,7 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .exam_instruction_scrolling
     {
         height:485px;
+        margin-top: 7px;
     }
     .tabMainblock_myqmatric .exam_instruction_scrolling::-webkit-scrollbar {
         width: 4px;
@@ -1436,7 +1437,7 @@ transform: translateX(100%);
     }
     .dashboad_mqmatrix_text_back_to_dashboard
     {
-        padding: 4px 0px 24px 7px;
+        padding: 0px 0px 24px 2px;
     }
     .knowledge_left_clr_with_text
     {
@@ -3062,7 +3063,24 @@ transform: translateX(100%);
     .examReviewscreenmob.exam-wrapper{min-height:initial;}
     .taskcenter_wrapper .mock_inst_text_mock_test{padding-top:0px}
     .content-wrapper {padding-top:32px;}
-    
+    .matrix-page-wrapper .commonWhiteBox h3.boxheading {
+        margin-bottom: 17px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:first-child td {
+        padding-top: 0;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:last-child td {
+        border-bottom: 0;
+        padding-bottom: 7px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table{margin-bottom:0;}
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td {
+        padding: 23px 0px;
+    }
+    .content-wrapper.matrixpage-wrapper.matrix-page-wrapper {
+        padding-bottom: 16px;
+    }
+    .myqbottomSec h3 .topictext{margin-left:0;}
 }
 
 
