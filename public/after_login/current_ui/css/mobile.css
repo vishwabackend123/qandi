@@ -3081,6 +3081,17 @@ transform: translateX(100%);
         padding-bottom: 16px;
     }
     .myqbottomSec h3 .topictext{margin-left:0;}
+
+    .skill_para_toggle span {
+        font-size: 28px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 17px;
+        margin-top: -2px;
+    }
+    
 }
 
 
