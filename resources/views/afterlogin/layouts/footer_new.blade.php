@@ -486,7 +486,7 @@
                             const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
-                            errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                            errormsg[0].textContent = "Already referred Email id : " + duplicate;
                         }
 
                         if (response.message != '') {
@@ -511,7 +511,7 @@
                             const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
-                            errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                            errormsg[0].textContent = "Already referred Email id : " + duplicate;
                         } else {
                             var errormsg = $("#errRef_auth").show();
                             errormsg[0].textContent = response.message;
