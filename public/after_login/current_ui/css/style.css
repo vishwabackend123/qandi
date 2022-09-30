@@ -8004,13 +8004,14 @@ margin-bottom: 12px;
 /* Gourav Css */
 .jee_table {
     margin: 20px 0px 20px 20px;
+    width:100%;
 }
 .jee_table th {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
-    background-color: #efefef;
+    background-color: #cceed0;
 }
 .jee_table td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
 }
