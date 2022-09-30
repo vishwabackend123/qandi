@@ -53,7 +53,7 @@ $question_type = "Numerical";
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab mobilescrolltabNew" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
