@@ -3036,8 +3036,8 @@ transform: translateX(100%);
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
-        #filterBy .dropdown-menu{transform: translate(255px,47px)!important;padding: 10px 10px 5px;}
-        .filterdropdown .dropdown-item{margin-bottom:2px;padding-bottom: 4px;font-size: 10px;;}
+        #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
+        .filterdropdown .dropdown-item{margin-bottom:5px;}
        .expandbtnmob1{position: relative;top:15px}
        #clearBtn_response {
         border: none;color: gray;
