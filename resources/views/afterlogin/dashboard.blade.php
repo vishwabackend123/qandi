@@ -77,7 +77,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="myqTodayGraphSec">
                                 <input type="hidden" name="accurate_percent" id="accurate_percent" value="50">
                                 <div class="mq_circle_percent" data-percent="50">
-                                    <div class="circletop">
+                                    <div class="circletop" style="border-radius: 100%;overflow:hidden;">
                                         <div class="mq_circle_inner">
                                             <div class="mq_round_per"></div>
                                         </div>
