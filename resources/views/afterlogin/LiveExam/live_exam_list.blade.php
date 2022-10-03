@@ -88,78 +88,80 @@
                                         <div class="mock_test_qdms_text2">{{$end_date_new}}</div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take Test</button>
-                                @endif
-                                @endif
-                                <div>
-                                     @if(!empty($schedule_list))
-                                    <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                @if(($startDate <= $now && $now <=$endDate)) <a type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test_mobile" href="{{route('live_exam',[$sched_id,'instruction'])}}">Take Test</a>
                                     @endif
-                                    <div class="liveexamScroll liveexamScrollContant">
+
+                                    @endif
+                                    @endif
+                                    <div>
                                         @if(!empty($schedule_list))
+                                        <div class="live_exam_upcoming_text">Upcoming Live Exams</div>
+                                        @endif
+                                        <div class="liveexamScroll liveexamScrollContant">
+                                            @if(!empty($schedule_list))
+                                            @php
+                                            $dataAvail = 0;
+                                            @endphp
+                                            @foreach($schedule_list as $key=>$sche)
+                                            @php
+                                            $cDate = date('d-m-y');
+                                            $start_date_up = $sche->start_date;
+                                            $end_date_up =$sche->end_date;
+                                            $test_completed_yn =$sche->test_completed_yn;
+                                            if($key < 1) { continue; } $dataAvail=1; @endphp @if($test_completed_yn=="N" ) <div class="row mock_test_ques_dure_marks_sub">
+                                                <div class="col live_exam_jee_main_ttext">{{$sche->exam_name}}</div>
+                                                @php
+                                                list( $day,$month, $year) =explode("-",$start_date_up);
+                                                $year=date("Y");
+                                                $update_date=$day.'-'.$month.'-'.$year;
+                                                $newDate = date("d M Y", strtotime($update_date));
+                                                $start_date_new = date('jS F Y', strtotime($newDate));
+                                                @endphp
+                                                <div class="col live_exam_jee_main_date_st_ed_ques">Start Date: <span>{{$start_date_new}}</span></div>
+                                                @php
+                                                list( $day,$month, $year) =explode("-",$end_date_up);
+                                                $year=date("Y");
+                                                $update_date=$day.'-'.$month.'-'.$year;
+                                                $newDate = date("d M Y", strtotime($update_date));
+                                                $end_date_new = date('jS F Y', strtotime($newDate));
+                                                @endphp
+                                                <div class="col live_exam_jee_main_date_st_ed_ques">End Date: <span>{{$end_date_new}}</span></div>
+                                                <div class="col live_exam_jee_main_date_st_ed_ques"><span>{{$sche->questions_count}}</span> Questions</div>
+                                        </div>
+                                        <div class="line_715 mock_test_ques_dure_marks_sub"></div>
+                                        @else
                                         @php
-                                        $dataAvail = 0;
+                                        list( $day,$month, $year) =explode("-",$start_date_up);
+                                        $year=date("Y");
+                                        $update_date=$day.'-'.$month.'-'.$year;
+                                        $newDate = date("d M Y", strtotime($update_date));
+                                        $start_date_new = date('jS F Y', strtotime($newDate));
+                                        list( $day,$month, $year) =explode("-",$end_date_up);
+                                        $year=date("Y");
+                                        $update_date=$day.'-'.$month.'-'.$year;
+                                        $newDate = date("d M Y", strtotime($update_date));
+                                        $end_date_new = date('jS F Y', strtotime($newDate));
                                         @endphp
-                                        @foreach($schedule_list as $key=>$sche)
-                                        @php
-                                        $cDate = date('d-m-y');
-                                        $start_date_up = $sche->start_date;
-                                        $end_date_up =$sche->end_date;
-                                        $test_completed_yn =$sche->test_completed_yn;
-                                        if($key < 1) { continue; } $dataAvail=1; @endphp @if($test_completed_yn=="N" ) <div class="row mock_test_ques_dure_marks_sub">
+                                        <div class="row mock_test_ques_dure_marks_sub">
                                             <div class="col live_exam_jee_main_ttext">{{$sche->exam_name}}</div>
-                                            @php
-                                            list( $day,$month, $year) =explode("-",$start_date_up);
-                                            $year=date("Y");
-                                            $update_date=$day.'-'.$month.'-'.$year;
-                                            $newDate = date("d M Y", strtotime($update_date));
-                                            $start_date_new = date('jS F Y', strtotime($newDate));
-                                            @endphp
                                             <div class="col live_exam_jee_main_date_st_ed_ques">Start Date: <span>{{$start_date_new}}</span></div>
-                                            @php
-                                            list( $day,$month, $year) =explode("-",$end_date_up);
-                                            $year=date("Y");
-                                            $update_date=$day.'-'.$month.'-'.$year;
-                                            $newDate = date("d M Y", strtotime($update_date));
-                                            $end_date_new = date('jS F Y', strtotime($newDate));
-                                            @endphp
                                             <div class="col live_exam_jee_main_date_st_ed_ques">End Date: <span>{{$end_date_new}}</span></div>
                                             <div class="col live_exam_jee_main_date_st_ed_ques"><span>{{$sche->questions_count}}</span> Questions</div>
+                                        </div>
+                                        <div class="line_715 mock_test_ques_dure_marks_sub"></div>
+                                        @endif
+                                        @endforeach
+                                        @if(empty($dataAvail))
+                                        <div class="text-center">
+                                            <span class="sub-details">No upcoming live exam available</span>
+                                        </div>
+                                        @endif
+                                        @else
+                                        <div class="text-center">
+                                            <span class="sub-details">No live exam available right now</span>
+                                        </div>
+                                        @endif
                                     </div>
-                                    <div class="line_715 mock_test_ques_dure_marks_sub"></div>
-                                    @else
-                                    @php
-                                    list( $day,$month, $year) =explode("-",$start_date_up);
-                                    $year=date("Y");
-                                    $update_date=$day.'-'.$month.'-'.$year;
-                                    $newDate = date("d M Y", strtotime($update_date));
-                                    $start_date_new = date('jS F Y', strtotime($newDate));
-                                    list( $day,$month, $year) =explode("-",$end_date_up);
-                                    $year=date("Y");
-                                    $update_date=$day.'-'.$month.'-'.$year;
-                                    $newDate = date("d M Y", strtotime($update_date));
-                                    $end_date_new = date('jS F Y', strtotime($newDate));
-                                    @endphp
-                                    <div class="row mock_test_ques_dure_marks_sub">
-                                        <div class="col live_exam_jee_main_ttext">{{$sche->exam_name}}</div>
-                                        <div class="col live_exam_jee_main_date_st_ed_ques">Start Date: <span>{{$start_date_new}}</span></div>
-                                        <div class="col live_exam_jee_main_date_st_ed_ques">End Date: <span>{{$end_date_new}}</span></div>
-                                        <div class="col live_exam_jee_main_date_st_ed_ques"><span>{{$sche->questions_count}}</span> Questions</div>
-                                    </div>
-                                    <div class="line_715 mock_test_ques_dure_marks_sub"></div>
-                                    @endif
-                                    @endforeach
-                                    @if(empty($dataAvail))
-                                    <div class="text-center">
-                                        <span class="sub-details">No upcoming live exam available</span>
-                                    </div>
-                                    @endif
-                                    @else
-                                    <div class="text-center">
-                                        <span class="sub-details">No live exam available right now</span>
-                                    </div>
-                                    @endif
-                                </div>
 
                             </div>
                         </div>
@@ -203,7 +205,7 @@
         $('#mock_test').show();
         setTimeout(function() {
             $('.spinnerblock').hide();
-            }, 1000);
+        }, 1000);
     });
 </script>
 @include('afterlogin.layouts.footer_new')
