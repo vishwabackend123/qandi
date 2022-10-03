@@ -67,6 +67,7 @@ $(".circle_percent").each(function() {
 });
 
 /************* Dashboard- MyQ Today  Circular Progress Bar ************/
+$(document).ready(function() {
 $(".mq_circle_percent").each(function() {
     var $this = $(this),
 		$dataV = $this.data("percent"),
@@ -104,6 +105,8 @@ else if( headingpercent > 0 &&headingpercent < 40){
     $('.mq_circle_percent').addClass('noshadow');
 }
 $(".mq_percent_text").text(Math.ceil(percent_data))
+
+});
 
 /******Test Analytics-Marks Percentage ******/
 $(document).ready(function(){
