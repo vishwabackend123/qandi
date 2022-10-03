@@ -2082,7 +2082,10 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
+        color: #363c4f;
+        font-weight: 600;
     }
+    .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {font-weight: 800;}
     .modal-popup-customize .modal-content{max-width: 100%;}
 
     /************ Amit end *********/
@@ -2169,7 +2172,7 @@ transform: translateX(100%);
 .checkoutpage {display: block;padding: 32px 16px 59px;}
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
-.planDetailBox {display: block;width: 100%;}
+.planDetailBox {display: block;width: 100%;padding-top:0px;}
 .vLine{display: none;}
 .plantitleBox {padding-right: 0px !important;width: 100%;}
 .planDetail {display: block;width: 100%;}
@@ -3106,7 +3109,11 @@ transform: translateX(100%);
     .testCount {
         font-size: 20px !important;
     }
-
+    .AttempType {
+        font-size: 14px !important;
+    }
+    .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
+  
 }
 
 

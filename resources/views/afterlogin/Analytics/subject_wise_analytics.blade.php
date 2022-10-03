@@ -867,7 +867,7 @@ var configmarktrend = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {
@@ -930,7 +930,7 @@ var configmarktrendw = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {
@@ -993,7 +993,7 @@ var configmarktrendm = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {
