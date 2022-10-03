@@ -2169,7 +2169,7 @@ transform: translateX(100%);
 .checkoutpage {display: block;padding: 32px 16px 59px;}
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
-.planDetailBox {display: block;width: 100%;}
+.planDetailBox {display: block;width: 100%;padding-top:0px;}
 .vLine{display: none;}
 .plantitleBox {padding-right: 0px !important;width: 100%;}
 .planDetail {display: block;width: 100%;}
