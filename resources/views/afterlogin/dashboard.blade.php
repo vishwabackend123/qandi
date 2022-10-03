@@ -15,7 +15,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     min-width: 1em;
     height: 1em;
     border-radius: 50%;
-    display: none;
+    display: inline-block;
     top: -15px;
 }
 .mq_circle_inbox{position: absolute;
@@ -101,8 +101,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </span>
                             </h3>
                             <div class="myqTodayGraphSec">
-                                <input type="hidden" name="accurate_percent" id="accurate_percent" value="79">
-                                <div class="mq_circle_percent" data-percent="79">
+                                <input type="hidden" name="accurate_percent" id="accurate_percent" value="{{$myqtodayScore}}">
+                                <div class="mq_circle_percent" data-percent="{{$accurate_percent}}">
                                     <div class="circletop">
                                         <div class="mq_circle_inner">
                                             <div class="mq_round_per"></div>
@@ -1367,9 +1367,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script>
         $('.toastdata').hide();
         $('.progress').hide();
-        $(document).ready(function () {
-      $('.circletops').css('display', 'inline-block');
- });
     </script>
 
     <style>
