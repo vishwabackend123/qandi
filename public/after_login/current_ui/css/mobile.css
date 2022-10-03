@@ -2082,7 +2082,10 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
+        color: #363c4f;
+        font-weight: 600;
     }
+    .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {font-weight: 800;}
     .modal-popup-customize .modal-content{max-width: 100%;}
 
     /************ Amit end *********/
