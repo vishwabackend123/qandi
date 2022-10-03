@@ -310,6 +310,7 @@ trait CommonTrait
             return $preferences;
         } */
 
+        $user_id = 586;
 
 
         $api_URL = env('API_URL');
@@ -602,11 +603,11 @@ trait CommonTrait
             $preferences = $this->redis_Preference();
             $class_grade_val = isset($preferences->student_stage_at_sgnup) ? $preferences->student_stage_at_sgnup : 1;
             if ($class_grade_val == 1) {
-                $class_grade = 10;
-            } else if ($class_grade_val == 2) {
                 $class_grade = 11;
-            } else {
+            } else if ($class_grade_val == 2) {
                 $class_grade = 12;
+            } else {
+                $class_grade = 13;
             }
 
             $curl_url =  $curl_url . '&class_grade=' . $class_grade;
@@ -633,6 +634,8 @@ trait CommonTrait
         ));
 
         $response_json = curl_exec($curl);
+
+
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
