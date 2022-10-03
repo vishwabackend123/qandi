@@ -3115,7 +3115,9 @@ transform: translateX(100%);
         font-size: 14px !important;
     }
     .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
-  
+    .allSubslider  .disabled {
+        opacity: 1 !important;
+    }
 }
 
 
