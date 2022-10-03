@@ -1113,7 +1113,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             responsive: {
                 0: {
                     items: 1,
-                    nav: false,
                     stagePadding: 40,
                     margin: 0,
                     loop: true,
