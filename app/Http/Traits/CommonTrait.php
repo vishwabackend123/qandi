@@ -310,8 +310,6 @@ trait CommonTrait
             return $preferences;
         } */
 
-        $user_id = 586;
-
 
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/preference/' . $user_id;
