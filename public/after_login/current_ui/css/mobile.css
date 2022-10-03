@@ -3106,7 +3106,11 @@ transform: translateX(100%);
     .testCount {
         font-size: 20px !important;
     }
-
+    .AttempType {
+        font-size: 14px !important;
+    }
+    .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
+  
 }
 
 
