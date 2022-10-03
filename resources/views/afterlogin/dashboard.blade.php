@@ -1120,7 +1120,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                 },
 
                 500: {
-                    items: 1
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: true,
                 },
                 600: {
                     items: 2
