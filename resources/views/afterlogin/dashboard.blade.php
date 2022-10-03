@@ -15,7 +15,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     min-width: 1em;
     height: 1em;
     border-radius: 50%;
-    display: inline-block;
+    display: none;
     top: -15px;
 }
 .mq_circle_inbox{position: absolute;
@@ -1367,6 +1367,9 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script>
         $('.toastdata').hide();
         $('.progress').hide();
+        $(document).ready(function () {
+      $('.circletops').css('display', 'inline-block');
+ });
     </script>
 
     <style>
