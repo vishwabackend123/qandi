@@ -230,172 +230,172 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <<!-- a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
-                                <div class="tabMainblock">
-                                    <div class="commontab mobilejustify">
-                                        <div class="tablist">
-                                            <ul class="nav nav-tabs" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div id="daily" class=" tab-pane active">
-                                                @if((isset($userStatus) && $userStatus==false))
-                                                <div class="taskstatusBlock" style="margin-bottom:12px;">
-                                                    <h4>Task completed</h4>
-                                                    <div class="statusvalue">
-                                                        <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
-                                                    </div>
+                            <!-- <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                            <div class="tabMainblock">
+                                <div class="commontab mobilejustify">
+                                    <div class="tablist">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div id="daily" class=" tab-pane active">
+                                            @if((isset($userStatus) && $userStatus==false))
+                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
+                                                <h4>Task completed</h4>
+                                                <div class="statusvalue">
+                                                    <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
                                                 </div>
-                                                @endif
-                                                @if((isset($userStatus) && $userStatus==true))
-                                                <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
-                                                <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
-                                                </p>
-                                                @endif
-                                                @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
-                                                <div class="tasklisting">
-                                                    <ul class="commonlisting">
-                                                        @foreach($dailyTask as $key=>$data)
-                                                        @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
-                                                        @php
-                                                        $current_date=date("d");
-                                                        if($current_date % 4 == 0){
-                                                        $skill_task = 'Evaluation Skill';
-                                                        $skill_category = 'evaluation';
-                                                        }
-                                                        else if($current_date % 4 == 1){
-                                                        $skill_task = 'Knowledge Skill';
-                                                        $skill_category = 'knowledge';
-                                                        }
-                                                        elseif($current_date % 4 == 2){
-                                                        $skill_task = 'Application Skill';
-                                                        $skill_category = 'application';
-                                                        }
-                                                        else{
-                                                        $skill_task = 'Comprehension Skill';
-                                                        $skill_category = 'comprehension';
-                                                        }
-                                                        @endphp
-                                                        <li>
-                                                            <div class="tasklistleft">
-                                                                <h6>Task {{$key+1}}</h6>
-                                                                <h4>{{$skill_task}}</h4>
-                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                            </div>
-                                                            @if($data['allowed'] == '1')
-                                                            <div class="tasklistbtn">
-                                                                <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                            </div>
-                                                            @else
-                                                            <div class="tasklistbtn">
-                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                            </div>
-                                                            @endif
+                                            </div>
+                                            @endif
+                                            @if((isset($userStatus) && $userStatus==true))
+                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
+                                            </p>
+                                            @endif
+                                            @if((isset($dailyTask) && !empty($dailyTask)) && $userStatus==false)
+                                            <div class="tasklisting">
+                                                <ul class="commonlisting">
+                                                    @foreach($dailyTask as $key=>$data)
+                                                    @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
+                                                    @php
+                                                    $current_date=date("d");
+                                                    if($current_date % 4 == 0){
+                                                    $skill_task = 'Evaluation Skill';
+                                                    $skill_category = 'evaluation';
+                                                    }
+                                                    else if($current_date % 4 == 1){
+                                                    $skill_task = 'Knowledge Skill';
+                                                    $skill_category = 'knowledge';
+                                                    }
+                                                    elseif($current_date % 4 == 2){
+                                                    $skill_task = 'Application Skill';
+                                                    $skill_category = 'application';
+                                                    }
+                                                    else{
+                                                    $skill_task = 'Comprehension Skill';
+                                                    $skill_category = 'comprehension';
+                                                    }
+                                                    @endphp
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>{{$skill_task}}</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExamSkill',[$data['category'],$data['task_type'],'instruction',$skill_category])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                        </div>
+                                                        @endif
 
-                                                        </li>
+                                                    </li>
+                                                    @endif
+                                                    @if($data['category'] == 'time' && $data['task_type'] == 'daily')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$key+1}}</h6>
+                                                            <h4>Time Management</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                        </div>
                                                         @endif
-                                                        @if($data['category'] == 'time' && $data['task_type'] == 'daily')
-                                                        <li>
-                                                            <div class="tasklistleft">
-                                                                <h6>Task {{$key+1}}</h6>
-                                                                <h4>Time Management</h4>
-                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                            </div>
-                                                            @if($data['allowed'] == '1')
-                                                            <div class="tasklistbtn">
-                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                            </div>
-                                                            @else
-                                                            <div class="tasklistbtn">
-                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                            </div>
-                                                            @endif
-                                                        </li>
-                                                        @endif
-                                                        @endforeach
-                                                    </ul>
-                                                    <div class="moreTaskLink bottomlikabs">
-                                                        <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                                    <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                                </svg></span></a>
-                                                    </div>
+                                                    </li>
+                                                    @endif
+                                                    @endforeach
+                                                </ul>
+                                                <div class="moreTaskLink bottomlikabs">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg></span></a>
                                                 </div>
-                                                @endif
                                             </div>
-                                            <div id="weekly" class=" tab-pane">
-                                                @if((isset($userStatus) && $userStatus==false))
-                                                <div class="taskstatusBlock" style="margin-bottom:12px;">
-                                                    <h4>Task completed</h4>
-                                                    <div class="statusvalue">
-                                                        <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
-                                                    </div>
+                                            @endif
+                                        </div>
+                                        <div id="weekly" class=" tab-pane">
+                                            @if((isset($userStatus) && $userStatus==false))
+                                            <div class="taskstatusBlock" style="margin-bottom:12px;">
+                                                <h4>Task completed</h4>
+                                                <div class="statusvalue">
+                                                    <span class="codevalue">{{$completedweekTask}}</span><span>/{{(isset($weekTask) && count($weekTask)>0)?count($weekTask):0}}</span>
                                                 </div>
-                                                @endif
-                                                @if((isset($userStatus) && $userStatus==true))
-                                                <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
-                                                <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
-                                                </p>
-                                                @endif
-                                                @if((isset($weekTask) && !empty($weekTask)) && $userStatus==false)
-                                                <div class="tasklisting">
-                                                    <ul class="commonlisting">
-                                                        @foreach($weekTask as $wkey=>$data)
-                                                        @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
-                                                        <li>
-                                                            <div class="tasklistleft">
-                                                                <h6>Task {{$wkey+1}}</h6>
-                                                                <h4>Accuracy Test</h4>
-                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                            </div>
-                                                            @if($data['allowed'] == '1')
-                                                            <div class="tasklistbtn">
-                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                            </div>
-                                                            @else
-                                                            <div class="tasklistbtn">
-                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                            </div>
-                                                            @endif
-                                                        </li>
-                                                        @endif
-                                                        @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
-                                                        <li>
-                                                            <div class="tasklistleft">
-                                                                <h6>Task {{$wkey+1}}</h6>
-                                                                <h4>Weak Topic Test</h4>
-                                                                <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
-                                                            </div>
-                                                            @if($data['allowed'] == '1')
-                                                            <div class="tasklistbtn">
-                                                                <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
-                                                            </div>
-                                                            @else
-                                                            <div class="tasklistbtn">
-                                                                <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
-                                                            </div>
-                                                            @endif
-                                                        </li>
-                                                        @endif
-                                                        @endforeach
-                                                    </ul>
-                                                    <div class="moreTaskLink bottomlikabs">
-                                                        <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
-                                                                    <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                                </svg></span></a>
-                                                    </div>
-                                                </div>
-                                                @endif
                                             </div>
+                                            @endif
+                                            @if((isset($userStatus) && $userStatus==true))
+                                            <!-- if((isset($prof_asst_test) && $prof_asst_test=='N')) -->
+                                            <p class="dashSubtext">Start taking tests, and we'll create tasks for you based on your proficiency to help you become more prepared.
+                                            </p>
+                                            @endif
+                                            @if((isset($weekTask) && !empty($weekTask)) && $userStatus==false)
+                                            <div class="tasklisting">
+                                                <ul class="commonlisting">
+                                                    @foreach($weekTask as $wkey=>$data)
+                                                    @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Accuracy Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
+                                                    <li>
+                                                        <div class="tasklistleft">
+                                                            <h6>Task {{$wkey+1}}</h6>
+                                                            <h4>Weak Topic Test</h4>
+                                                            <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
+                                                        </div>
+                                                        @if($data['allowed'] == '1')
+                                                        <div class="tasklistbtn">
+                                                            <a href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],'instruction'])}}" class="btn btn-common-transparent nobg">Practice</a>
+                                                        </div>
+                                                        @else
+                                                        <div class="tasklistbtn">
+                                                            <button class="btn btn-common-transparent nobg disabled" disabled>Attempted</button>
+                                                        </div>
+                                                        @endif
+                                                    </li>
+                                                    @endif
+                                                    @endforeach
+                                                </ul>
+                                                <div class="moreTaskLink bottomlikabs">
+                                                    <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2"> more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg></span></a>
+                                                </div>
+                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 commonblockDash">

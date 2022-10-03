@@ -597,11 +597,24 @@ trait CommonTrait
         $curl = curl_init();
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType;
+
+        if ($examType == 'full_body_scan') {
+            $preferences = $this->redis_Preference();
+            $class_grade_val = isset($preferences->student_stage_at_sgnup) ? $preferences->student_stage_at_sgnup : 1;
+            if ($class_grade_val == 1) {
+                $class_grade = 10;
+            } else if ($class_grade_val == 2) {
+                $class_grade = 11;
+            } else {
+                $class_grade = 12;
+            }
+
+            $curl_url =  $curl_url . '&class_grade=' . $class_grade;
+        }
+
         if ($examType == 'prev_year_paper') {
             $curl_url =  $curl_url . '&year=' . $py_year;
         }
-        // $curl_url = $api_URL . 'api/get-leadershipBoard/73/1';
-
 
 
         curl_setopt_array($curl, array(

@@ -153,7 +153,14 @@ class FullExamController extends Controller
                 $exam_title = "Full Body Exam";
                 $test_type = 'Profiling';
 
-                return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
+                $examType = 'full_body_scan';
+                $instructions = $this->getInstructions($examType);
+
+
+                return view('afterlogin.ExamViews.examsInstrucions', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
+
+
+                // return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
             } else {
                 $cacheKey = 'CustomQuestion:full:' . $user_id . '_' . $ranSession;
                 $redis_result = Redis::get($cacheKey);
@@ -567,7 +574,7 @@ class FullExamController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
