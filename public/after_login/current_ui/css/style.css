@@ -4104,7 +4104,7 @@ span.proficiency_value {
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
-    padding: 8px 24px 8px 16px;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
@@ -4114,6 +4114,8 @@ span.proficiency_value {
     box-shadow: none;
     display: inline-block;
     white-space: nowrap;
+    width: 130px;
+    height: 38px;
 }
 .performance_chapter_block .accordion-header .accordion-button i{
     font-weight: 700;
@@ -4154,7 +4156,7 @@ span.proficiency_value {
 .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child {
     margin: 0;
 }
-.accordion-header{min-width:120px;}
+.accordion-header{min-width:128px;}
 /* .performance_chapter_sublists li .performance_chapter_block label{min-width:168px;} */
 /* .accordion.performance_chapter_accordion {
     overflow-y: auto;
@@ -5712,7 +5714,7 @@ justify-content: space-between;}
 .strengthmodal_content
 {
     /* margin-top:60px; */
-    border-radius: 10px;    border: 1px solid #56b663;
+    border-radius: 10px;    border: 2px solid #56b663;
 }
 
 /*********** chapter_proficiency *****************/
