@@ -5,6 +5,7 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
+
 <body class="bg-content">
     <div class="main-wrapper exam-wrapperBg">
         @include('afterlogin.layouts.navbar_header_new')
@@ -69,10 +70,10 @@
                                                 <div class="mock_test_q_d_m_s_text1">Subjects</div>
                                                 <div class="mock_test_qdms_text2">{{$tagrets}}</div>
                                             </div>
-                                            <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test">Take Test</button>
+                                            <button type="button" class="btn btn-common-green mock_test_take_test_btn mock_test_take_test_btn_for_mob mobile_block" id="take_test_mobile">Take Test</button>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                                 <div id="attempted2" class=" tab-pane mock_attempetd_head_wraper mock_attemptepted_spacing">
                                 </div>
@@ -87,7 +88,7 @@
 </body>
 <script type="text/javascript">
     $('.spinnerblock').hide();
-    $('#take_test').click(function() {
+    $('#take_test, #take_test_mobile').click(function() {
         var url = "{{ route('mockExam','instruction') }}";
         window.location.href = url;
     });
@@ -98,7 +99,7 @@
         $("#attempted2").hide();
         setTimeout(function() {
             $('.spinnerblock').hide();
-            }, 1000);
+        }, 1000);
     });
     $('#attempted').click(function() {
         $('.spinnerblock').show();
@@ -110,19 +111,19 @@
             },
             beforeSend: function() {
 
-                },
-                success: function(data) {
-                    $("#attempted2").show();
-                    $('#attempted2').html(data.html);
-                    $('#testTypeDiv').attr("style", "display: none !important");
-                    $('.slot_div').hide();
-                     $('.spinnerblock').hide();
-                },
-                error: function(data, errorThrown) {
-                     $('.spinnerblock').hide();
-                }
-            });
+            },
+            success: function(data) {
+                $("#attempted2").show();
+                $('#attempted2').html(data.html);
+                $('#testTypeDiv').attr("style", "display: none !important");
+                $('.slot_div').hide();
+                $('.spinnerblock').hide();
+            },
+            error: function(data, errorThrown) {
+                $('.spinnerblock').hide();
+            }
         });
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
