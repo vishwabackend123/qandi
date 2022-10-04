@@ -113,6 +113,7 @@
   .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
   .plan_order_sumry_subscription{padding:5px 0px;}
   .plan_order_sumry_subscription{padding:4px 0px}
+  .subjectblockOverall .textblock h3 {font-size: 16px;}
 }
 @media only screen and (max-width: 1200px) {
         .subscriptionsLeftpannel {
@@ -365,7 +366,7 @@
         padding:0 20px;
     }
     .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
-    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 20px;background-color: #fff;height:calc(100vh - 80px);z-index:10000;
+    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);z-index:10000;
         position: fixed;transition: 400ms;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -384,8 +385,21 @@
         ul.mob_sidebar_lists li.active a svg.menu-icon-active{display: inline-block;}
         ul.mob_sidebar_lists li.active a svg:first-child{display: none;}
         ul.mob_sidebar_lists li a svg{width:20px!important;height:20px!important;}
-        .mobileview_logout .btn.btn-common-transparent {min-width: 114px;padding: 8px 16px;height: 38px;background-color: #fff;position: absolute;bottom: 20px;left: 0;}
-        .mobileview_logout {height: calc(100vh - 525px);}
+        .mobileview_logout .btn.btn-common-transparent {
+            min-width: 114px;
+            padding: 8px 16px;
+            height: 38px;
+            background-color: #fff;
+            /* position: absolute;
+            bottom: 20px;
+            left: 0; */
+        }
+        .mobileview_logout {
+            /* height: calc(100vh - 525px); */
+            position: absolute!important;
+            bottom: 20px;
+            left: 24px;
+        }
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -1254,8 +1268,10 @@ transform: translateX(100%);
     }
     .planner-box{
     padding: 20px;  
-    margin-bottom: 20px;
+    margin-bottom: -30px;
+    padding-bottom: 30px;
     }
+    #planner-wrapper{padding-bottom:0px;}
     .custom_modal {
     width: 100%;
     padding: 20px;
@@ -1415,6 +1431,7 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .exam_instruction_scrolling
     {
         height:485px;
+        margin-top: 7px;
     }
     .tabMainblock_myqmatric .exam_instruction_scrolling::-webkit-scrollbar {
         width: 4px;
@@ -1428,7 +1445,7 @@ transform: translateX(100%);
     }
     .dashboad_mqmatrix_text_back_to_dashboard
     {
-        padding: 4px 0px 24px 7px;
+        padding: 0px 0px 24px 2px;
     }
     .knowledge_left_clr_with_text
     {
@@ -1980,7 +1997,7 @@ transform: translateX(100%);
     ul.proficiency-level-lists li:last-child{margin:0 0px 14px 0;}
     .subject-level-proficiency.mb-5 {margin-bottom: 14px!important;}
     .btn.btn-common-green{min-width:156px;}
-    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {justify-content: flex-end!important;padding-top: 0!important;margin-top: 32px!important;}
+    .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 {padding-top: 0!important;margin-top: 32px!important;}
     .performance_rating_wrapper div.mt-5.d-flex.justify-content-between.pt-4 .btn.btn-common-green , 
     .fullbody_scan_wrapper .btn.btn-common-transparent{margin-left:68.5px;}
     .backBtn.mr-2 {margin-right: 0!important;}
@@ -2073,7 +2090,10 @@ transform: translateX(100%);
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
+        color: #363c4f;
+        font-weight: 600;
     }
+    .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {font-weight: 800;}
     .modal-popup-customize .modal-content{max-width: 100%;}
 
     /************ Amit end *********/
@@ -2087,7 +2107,7 @@ transform: translateX(100%);
     .dashSubHeading{font-size:16px;}
     .dashSubtext{margin-bottom:10px;}
     .content-wrapper {
-        padding: 39px 6px 28px 0px;
+        padding: 20px 0px 28px 0px;
     }
     .subject_performance_card .boxheading{margin-bottom:13px;}
     #collapseNotification2{width:100%;}
@@ -2160,7 +2180,7 @@ transform: translateX(100%);
 .checkoutpage {display: block;padding: 32px 16px 59px;}
 .checkoutpage .testType ul li:last-child {margin-bottom: 0px;;}
 
-.planDetailBox {display: block;width: 100%;}
+.planDetailBox {display: block;width: 100%;padding-top:0px;}
 .vLine{display: none;}
 .plantitleBox {padding-right: 0px !important;width: 100%;}
 .planDetail {display: block;width: 100%;}
@@ -2222,7 +2242,7 @@ transform: translateX(100%);
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
-    .fullbodyBox .leftBox h4{margin-bottom:0px;}
+    .fullbodyBox .leftBox h4{margin-bottom:0px;white-space:nowrap;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
     /************ Shiv start for refer and friend************/
     .modal-popup-customize .modal-content {
@@ -2429,8 +2449,8 @@ transform: translateX(100%);
         .timemanagement.common_greenbadge_tabs{padding-right:0px;margin-bottom: 26px;}
         .barwithTAb,.overallMidlle .subjectperformLegend{flex-wrap:wrap;}
         .overallmain{padding-bottom:0px;}
-        .mobilescrolltab{overflow-x: auto;}
-        .mobilescrolltab .nav-tabs{min-width:560px;}
+        .mobilescrolltab,.mobilescrolltabNew{overflow-x: auto;}
+        /* .mobilescrolltab .nav-tabs{min-width:560px;} */
         .commontab   .mobilescrolltab  .nav-tabs .nav-link{margin-right:32px!important;}
         .overallMidlle .commonWhiteBox .garphsubheading{margin-bottom:12px!important;margin-top:0px!important;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav{    margin: 10px 0px!important;}
@@ -2469,7 +2489,7 @@ transform: translateX(100%);
             .boxheading.mb-5,.HeadingWithfilter .dropbox.mb-5{margin-bottom:26px!important;}
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
-            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar {display:none !important; } 
+            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar, .mobilescrolltabNew::-webkit-scrollbar {display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
             .tablescroll{height: calc(100vh - 258px);
@@ -2565,7 +2585,11 @@ transform: translateX(100%);
                 display: flex;
                 flex-wrap: initial;
             }
-            
+            .mobilescrolltabNew {
+                flex-wrap: initial;
+            }
+            .commontab .mobilescrolltabNew .nav-tabs .nav-link{white-space: nowrap;}
+            /* .mobilescrolltabNew .nav-item{min-width:127px;} */
             .testscreenmob .questionwrapper {
                 padding: 0px;
                 margin: auto;
@@ -3019,12 +3043,14 @@ transform: translateX(100%);
         button.btn-ans:nth-child(7n) { margin-right: 18px;}
         .graphDetailempty{min-height:auto;}
 
-        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;padding-bottom:12px;}
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
-        #filterBy .dropdown-menu{transform: translate(223px,45px)!important;padding: 10px 10px 5px;}
-        .filterdropdown .dropdown-item{margin-bottom:5px;}
+        #filterBy .dropdown-menu{transform: translate(236px,47px)!important;padding: 10px 10px 5px;}
+        .filterdropdown .dropdown-item{    margin-bottom: 2px;
+            padding-bottom: 4px;
+            font-size: 10px;}
        .expandbtnmob1{position: relative;top:15px}
        #clearBtn_response {
         border: none;color: gray;
@@ -3044,6 +3070,60 @@ transform: translateX(100%);
         padding: 6px 10px;
         height: auto;
     }
+
+    .examReviewscreenmob{overflow-y:hidden;}
+    .examReviewscreenmob .examMaincontainer,.exam-wrapper{height:calc(100vh - 80px)!important;}
+    .examReviewscreenmob.exam-wrapper{min-height:initial;}
+    .taskcenter_wrapper .mock_inst_text_mock_test{padding-top:0px}
+    .content-wrapper {padding-top:32px;}
+    .matrix-page-wrapper .commonWhiteBox h3.boxheading {
+        margin-bottom: 17px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:first-child td {
+        padding-top: 0;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr:last-child td {
+        border-bottom: 0;
+        padding-bottom: 7px;
+    }
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table{margin-bottom:0;}
+    .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td {
+        padding: 23px 0px;
+    }
+    .content-wrapper.matrixpage-wrapper.matrix-page-wrapper {
+        padding-bottom: 16px;
+    }
+    .myqbottomSec h3 .topictext{margin-left:0;}
+
+    .skill_para_toggle span {
+        font-size: 28px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        line-height: 17px;
+        margin-top: -2px;
+    }
+    .fullbodyBox {
+        margin-bottom: 24px;
+    }
+    .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{bottom:-6px;}
+    .commonWhiteBox.subject_performance_card .tooltipclass {
+        left: auto;
+        right: -74px;
+    }
+    .commonWhiteBox.subject_performance_card .tooltipclass:before{left: 64%;    top: -16px;}
+    .gotoPlanner a {
+        font-size: 16px!important;
+    }
+    .testCount {
+        font-size: 20px !important;
+    }
+    .AttempType {
+        font-size: 14px !important;
+    }
+    .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
+  
 }
 
 
@@ -3102,6 +3182,10 @@ transform: translateX(100%);
         .text-right.flexgrow {margin: 17px 0 0 0px;text-align: left;}
 
         /************ Amit end *********/
+        .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
+        .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
+        .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
+        .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
 
 }
 @media only screen and (max-width: 460px){
@@ -3124,6 +3208,7 @@ transform: translateX(100%);
     /************ Amit end *********/
     .HeadingWithfilter{flex-wrap:wrap;}
     .HeadingWithfilter .dropbox{width:100%;}
+    
 }
 @media only screen and (max-width: 400px){
     
@@ -3132,10 +3217,10 @@ transform: translateX(100%);
     margin-left: 10px;
     }
     /************ Amit start *********/
-    .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
+    /* .task_center_lists .btn-sec {display: block;padding: 16px 0 23px;}
     .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
     .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
-    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
+    .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;} */
     /************ Amit end *********/
     
 }

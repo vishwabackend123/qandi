@@ -53,7 +53,7 @@ $question_type = "Numerical";
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab mobilescrolltabNew" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
@@ -607,7 +607,7 @@ $question_type = "Numerical";
 <!-----End-for-percent-btn-click------->
 
 <script>
-     $(function() {
+    $(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
             function review_right_Height() {
                 var total_right_height = $(".reviewScreenright ").outerHeight();
@@ -640,14 +640,14 @@ $question_type = "Numerical";
                 var answerfinalheight_145 = customcomb_height - 80 + "px";
                 $('.explanation-sec ').css('height', answerfinalheight_145);
             }
-        review_right_Height();
-        $("window").load(function() {
             review_right_Height();
-        });
+            $("window").load(function() {
+                review_right_Height();
+            });
 
-        $(window).resize(function() {
-            review_right_Height();
-        });
+            $(window).resize(function() {
+                review_right_Height();
+            });
         }
     })
 </script>
@@ -666,7 +666,7 @@ $question_type = "Numerical";
             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
             $('.explanation-sec').css('height', ex_scroll_height);
-          
+
         });
 
         $(".collapsebtn1").on('click', function() {
@@ -690,7 +690,7 @@ $question_type = "Numerical";
             var afterclikecoll = $(".explanation-sec").outerHeight();
             var afterclikecoll_cal = afterclikecoll - 10 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
-            
+
         });
     });
 </script>
@@ -863,10 +863,10 @@ $question_type = "Numerical";
     $(function() {
         if (window.matchMedia("(max-width: 767px)").matches) {
             let height = screen.height;
-            $('.examReviewscreenmob').css('height', height);
-            $('.content-wrapper').css('height', height);
-            $('.examSereenwrapper').css('height', height);
-            $('.examreviewMaincontainer ').css('height', height);
+            // $('.examReviewscreenmob').css('height', height);
+            // $('.content-wrapper').css('height', height);
+            // $('.examSereenwrapper').css('height', height);
+            // $('.examreviewMaincontainer ').css('height', height);
             var exam_Review_screenmob_height_767 = $(".examreviewMaincontainer").outerHeight();
             var answer_main_secmob_height_767 = $(".answer-main-sec").outerHeight();
             var cal_height_for_right_767 = exam_Review_screenmob_height_767 - answer_main_secmob_height_767;
@@ -888,7 +888,7 @@ $question_type = "Numerical";
                 $('.list-ans').css('height', examreviewMainboxNew);
             });
 
-             $(".collapseformob").on('click', function() {
+            $(".collapseformob").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.reviewans-mainsec').attr('style', 'height: 150px !important');
                 $('.list-ans').attr('style', '    height: calc( 100% - 80px) !important');
@@ -898,13 +898,13 @@ $question_type = "Numerical";
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter1 = $(".examreviewMaincontainer").outerHeight();
                 var examreviewMainbox1 = examreviewMaincontainerouter1 - 250 + "px !important";
-                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;' );
+                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;');
                 var customanstopheightNew1 = $(".answer-main-sec").outerHeight();
                 var examreviewMainboxNew1 = customanstopheightNew1 - 100 + "px";
                 $('.explanation-sec').css('height', examreviewMainboxNew1);
             });
 
-             $(".collapsebtnmob1").on('click', function() {
+            $(".collapsebtnmob1").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.answer-main-sec').attr('style', 'height: 240px');
                 $('.explanation-sec').attr('style', ' height: 20px !important');
@@ -915,38 +915,48 @@ $question_type = "Numerical";
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
+
+
+
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
+
+
+
+
             });
 
             $(".hideyes").on('click', function() {
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                $('.custom-anstop').attr('style', 'height:0px !important');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important');
+
+                $('.custom-anstop').attr('style', 'height:0px !important; ');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
+
             });
         }
     })
 </script>
 
 <style>
-    @media only screen and (max-width: 767px){
-        .examReviewscreenmob .reviewans-mainsec{
-        height:150px;
+    @media only screen and (max-width: 767px) {
+        .examReviewscreenmob .reviewans-mainsec {
+            height: 150px;
         }
-        .examReviewscreenmob .answer-main-sec{
-            height:240px ;
+
+        .examReviewscreenmob .answer-main-sec {
+            height: 240px;
         }
-        .collapsebtnmob1{
+
+        .collapsebtnmob1 {
             position: relative;
             top: 15px;
-            
+
         }
     }
-   
 </style>
 @endsection
