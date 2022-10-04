@@ -139,10 +139,11 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <div class="bg-white position-fixed w-100 d-sm-none d-block savebtnfix">
+            
+        </div>
+        <div class="bg-white w-100 d-sm-none d-block savebtnfix">
                 <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerMobilebutton">Save Test</button>
             </div>
-        </div>
     </section>
 </div>
 <div class="modal fade" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
