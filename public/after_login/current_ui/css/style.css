@@ -4093,7 +4093,8 @@ span.proficiency_value {
 }
 .performance_chapter_block label b {
     font-weight: 800;
-    color: #56b663;
+    /* color: #56b663; */
+    color: #1f1f1f;
     margin-right: 10px;
     min-width:45px;display:inline-block;
 }
@@ -4108,16 +4109,20 @@ span.proficiency_value {
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
-    padding: 8px 24px 8px 16px;
+    /* padding: 8px 24px 8px 16px; */
+    padding: 0;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
-    color: #fff;
-    background-color: #56b663;
-    border-radius: 8px;
+    /* color: #fff; */
+    color:#56b663;
+    /* background-color: #56b663; */
+    background-color: transparent;
+    /* border-radius: 8px; */
+    border-radius: 0;
     box-shadow: none;
     display: inline-block;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 .performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
@@ -4125,7 +4130,8 @@ span.proficiency_value {
     width: 16px;
     height: 16px;
     text-align: center;
-    margin-left: 0px;
+    /* margin-left: 0px; */
+    margin-left:8px;
     font-size: 16px;
 }
 .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block {
