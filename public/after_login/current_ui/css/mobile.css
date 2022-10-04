@@ -3124,14 +3124,15 @@ transform: translateX(100%);
         white-space: initial;
     }
     .mobile-test .topic_form{position: fixed;
-        width: calc(100% + 0px);
+        width: calc(100% + 1px);
         bottom: 0px;
         background: #fff;
         left: 0px;
         padding: 10px;
         z-index: 9;
         margin: 0px;}
-    .exam_tabdata{padding-bottom:50px!important;}
+    .exam_tabdata{padding-bottom:57px!important;}
+    .exam_tabdata .testtablescroll.allscrollbar{    height: calc(100vh - 400px);    }
 
 }
 
