@@ -4217,7 +4217,8 @@ span.proficiency_value {
     max-width: 100%;
 }
 .contactus-menu{position: absolute;bottom:24px;}
-.tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    border-bottom: 4px solid #56b663;}
+/* .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    
+    border-bottom: 4px solid #56b663;} */
 /* .tooltipmain svg g{stroke: #56b663;opacity: 1;} */
 /* .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
