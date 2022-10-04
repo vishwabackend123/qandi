@@ -205,6 +205,11 @@ $(document).on('click', '.all_attemp', function() {
     $('.open_attemp').removeClass('active');
     $('.live_attemp').removeClass('active');
     $('.compLeteS').show();
+    var data_open = $('.exam_mode_Open').length;
+    var data_live = $('.exam_mode_Live').length;
+    if (data_open > 0 || data_live >0) {
+        $('.no_data_found').hide();
+    }
 
 });
 $(document).on('click', '.open_attemp', function() {

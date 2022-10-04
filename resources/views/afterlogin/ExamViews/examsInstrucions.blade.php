@@ -25,10 +25,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="col-xl-8 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
                         <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> Back</a>
-
                     </div>
                     <div id="inst_details">{!!$instructions!!}</div>
-
                 </div>
                 <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                     <div class="exam_section_right_side">
@@ -44,7 +42,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant2">{{$questions_count}} Questions</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">Subjects</div>
+                                <div class="exam_inst_col_four_text_contant1">{{(isset($subCounts) && $subCounts>1)?'Subjects':'Subject'}}</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
                             </div>
                         </div>
@@ -71,12 +69,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
                                 <form class="form-horizontal ms-auto " action="{{$exam_url}}" method="post">
                                     @csrf
-
                                     <input type="hidden" name="ranSession" value="{{$ranSession}}" />
-
-                                    <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
+                                    <button type="submit" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</button>
                                 </form>
-                                <!--  <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a> -->
+                                {{-- <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</a> --}}
                             </div>
                         </div>
                     </div>

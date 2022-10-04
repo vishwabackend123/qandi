@@ -7,6 +7,32 @@ $user_id = isset($userData->id)?$userData->id:'';
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<style>
+      .circletop {
+    position: relative;
+    overflow: hidden;
+    font-size: 119px;
+    min-width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    display: inline-block;
+    top: -15px;
+}
+.mq_circle_inbox{position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    background-color: #fff;
+    z-index: 3;
+    border-radius: 50%;
+    /* background-image: url(../images/roundshape3.svg); */
+    background-position-x: -12px;
+    background-size: 128px;
+    background-position-y: -3px;
+    background-repeat: no-repeat;
+    box-shadow: 0 15px 18px rgb(232 234 236 / 79%);}
+</style>
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
 @endif
@@ -230,7 +256,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!-- a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                            <!-- <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -1113,14 +1139,17 @@ $user_id = isset($userData->id)?$userData->id:'';
             responsive: {
                 0: {
                     items: 1,
-                    nav: false,
                     stagePadding: 40,
                     margin: 0,
-                    loop: true,
+                    loop: false,
                 },
 
                 500: {
-                    items: 1
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: false,
                 },
                 600: {
                     items: 2

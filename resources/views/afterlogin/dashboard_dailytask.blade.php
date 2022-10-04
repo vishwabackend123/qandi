@@ -94,7 +94,7 @@ $userData = Session::get('user_data');
                         <div class="task1 task2 ">
                             <p><span>Task {{$key+1}}</span></p>
                             <h3>Time Management</h3>
-                            <p>Take this test to improve your time management skills.</p>
+                            <p>Take this test to improve your time management skill.</p>
                             <div class="btn-sec">
                                 <div class="qust-sec">
                                     <span>Questions</span>
@@ -275,7 +275,7 @@ $userData = Session::get('user_data');
                                                 <h3>{{$skill_task}}</h3>
                                                 <span><i class="fa fa-angle-down"></i></span>
                                             </div>
-                                            <p style="display:none;" class="m-0">Quickly sharpen your {{$skill_category}} skills with this curated test.</p>
+                                            <p style="display:none;" class="m-0">Quickly sharpen your {{$skill_category}} skill with this curated test.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Questions</span>
@@ -316,12 +316,12 @@ $userData = Session::get('user_data');
                                     @if($data['category'] == 'time' && $data['task_type'] == 'daily')
                                     <li>
                                         <div class="task1">
-                                            <p class="m-0"><span>Task {$key+1}}</span></p>
+                                            <p class="m-0"><span>Task {{$key+1}}</span></p>
                                             <div class="d-flex justify-content-between align-items-center skill_para_toggle">
                                                 <h3>Time Management</h3>
                                                 <span><i class="fa fa-angle-down"></i></span>
                                             </div>
-                                            <p style="display:none;" class="m-0">Take this test to improve your time management skills.</p>
+                                            <p style="display:none;" class="m-0">Take this test to improve your time management skill.</p>
                                             <div class="btn-sec">
                                                 <div class="qust-sec">
                                                     <span>Questions</span>
