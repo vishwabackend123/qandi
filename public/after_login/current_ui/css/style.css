@@ -4945,7 +4945,10 @@ justify-content: space-between;}
             border-radius: 8px;padding-right:120px;}
 
 .progressnewjourney{height:100%;}
-.progressnewjourney canvas{height:calc(100% + 40px);}
+/* .progressnewjourney canvas{height:calc(100% + 40px);} */
+canvas#progressJourny_graph, canvas#trend_graph {
+    height: 270px!important;
+}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
