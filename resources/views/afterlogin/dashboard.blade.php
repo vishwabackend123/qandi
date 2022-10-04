@@ -26,7 +26,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     background-color: #fff;
     z-index: 3;
     border-radius: 50%;
-    background-image: url(../images/roundshape3.svg);
+    /* background-image: url(../images/roundshape3.svg); */
     background-position-x: -12px;
     background-size: 128px;
     background-position-y: -3px;
