@@ -77,14 +77,12 @@ $(".mq_circle_percent").each(function() {
 	
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
-		// setTimeout(function(){
-		// 	$this.addClass("mq_percent_more");
-		// },1000);
-		// setTimeout(function(){
-		// 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-		// },1000);
-        $this.addClass("mq_percent_more");
-        $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+		setTimeout(function(){
+			$this.addClass("mq_percent_more");
+		},1000);
+		setTimeout(function(){
+			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+		},1000);
 	} 
 });
 var percent_data =$('#accurate_percent').val();
