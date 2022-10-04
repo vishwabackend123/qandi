@@ -3147,6 +3147,11 @@ transform: translateX(100%);
     .exam_topicbtn ul.d-inline-flex .nav-item .nav-link{width:100%;}
     .yaxis_label{left: -11px;}
     .timemanagement.common_greenbadge_tabs .yaxis_label.yaxis_label_2{left:-55px;}
+    .custom-input .form-control{font-weight: 600;}
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #363c4f!important;
+        font-weight: 600;
+    }
 }
 
 
