@@ -36,7 +36,7 @@ $question_type = "Numerical";
 
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
-        <div class="examSereenwrapper">
+        <div class="examSereenwrapper" id="reviewData">
             <div class="examMaincontainer examreviewMaincontainer">
                 <div class="backbtnformobilebox hideondesktop">
                     <button class="btn bck-btn" onclick="history.go(-1)">Back</button>
@@ -269,100 +269,101 @@ $question_type = "Numerical";
                 <div class="examRightpanel reviewScreenright ans-panel">
 
                     <div class="formobileviewdetail hideondesktop">
-                        <div class="answer-main-sec">
-                            <div class="anshead-top">
-                                <span>Answer:</span>
+                        <div id="mob_explanation">
 
-
-                                <div class="review_expand">
-                                    <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
-                                    <div class='expand_block'>
-                                        <div class="first_screen">
-                                            <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
+                            <div class="answer-main-sec">
+                                <div class="anshead-top">
+                                    <span>Answer:</span>
+                                    <div class="review_expand">
+                                        <div class='percent_btn'><button class="btn btn-ans questionbtn">View details</button></div>
+                                        <div class='expand_block'>
+                                            <div class="first_screen">
+                                                <!-- <div class="questionright d-flex align-items-center justify-content-between mb-4">
                                             <h5>{{$accuracy}}%</h5>
                                             <h6>of the people got this question right</h6>
                                         </div> -->
 
-                                            <div class="attemp_box row mt-0">
-                                                <div class="sub_att_1 col-md-6">
-                                                    @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
-                                                    <p>Topic pre-requisite</p>
-                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
-                                                    @endif
+                                                <div class="attemp_box row mt-0">
+                                                    <div class="sub_att_1 col-md-6">
+                                                        @if(isset($question_data->topic_name) && !empty($question_data->topic_name))
+                                                        <p>Topic pre-requisite</p>
+                                                        <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                                                        @endif
 
+                                                    </div>
+                                                    <div class="sub_att_1 col-md-6">
+
+                                                        @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
+                                                        <p>Concept pre-requisite</p>
+                                                        <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                        @endif
+
+                                                    </div>
                                                 </div>
-                                                <div class="sub_att_1 col-md-6">
-
-                                                    @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
-                                                    <p>Concept pre-requisite</p>
-                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
-                                                    @endif
-
+                                                <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
+                                                    <h5>{{$accuracy}}%</h5>
+                                                    <h6>of the people got this question right</h6>
                                                 </div>
-                                            </div>
-                                            <div class="questionright d-flex align-items-center justify-content-between  mt-4 mb-2">
-                                                <h5>{{$accuracy}}%</h5>
-                                                <h6>of the people got this question right</h6>
-                                            </div>
-                                            <div class="box-border"></div>
-                                            <div class="learskill d-flex align-items-center justify-content-between">
-                                                <p>Learning skill required:</p>
-                                                <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                                <div class="box-border"></div>
+                                                <div class="learskill d-flex align-items-center justify-content-between">
+                                                    <p>Learning skill required:</p>
+                                                    <h3>{{isset($question_data->skill_name)?$question_data->skill_name:''}}</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <label class="expandbtn1 hideonmobile" title="Expand">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </label>
-                                <label class="collapsebtn1 hideonmobile" title="Collapse">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </label>
-
-
-                                <div class="viewdetailmobclik hideondesktop">
-                                    <label class="expandbtnmob1" title="Expand">
+                                    <label class="expandbtn1 hideonmobile" title="Expand">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </label>
-                                    <label class="collapsebtnmob1" title="Collapse">
+                                    <label class="collapsebtn1 hideonmobile" title="Collapse">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                             <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </label>
+
+
+                                    <div class="viewdetailmobclik hideondesktop">
+                                        <label class="expandbtnmob1" title="Expand">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.25 1.25h4.5m0 0v4.5m0-4.5L9.5 6.5m-3.75 8.25h-4.5m0 0v-4.5m0 4.5L6.5 9.5" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </label>
+                                        <label class="collapsebtnmob1" title="Collapse">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                <path d="M3 10.5h4.5m0 0V15m0-4.5-5.25 5.25M15 7.5h-4.5m0 0V3m0 4.5 5.25-5.25" stroke="#363C4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="anshead-titletext">
-                                <p> @php $mn=0; @endphp
-                                    @foreach($correct_ans as $akey=>$ans_value)
-                                    @php
-                                    $ans_dom = new DOMDocument();
-                                    @$ans_dom->loadHTML($ans_value);
-                                    $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
-                                    $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
-                                    $alatex = "https://math.now.sh?from=".$atext;
-                                    $view_ans='<img src="'.$alatex.'" />' ;
-                                    @endphp
-                                    {!! !empty($atext)?$view_ans:$ans_value; !!}
-                                    @php $mn++; @endphp
-                                    @endforeach</p>
-                            </div>
-                            <div class="explanation-sec">
-                                <div class="explanationdeteail">
-                                    @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
-                                    <span>Explanation:</span>
-                                    <p>{!! $question_data->explanation !!}</p>
-                                    @endif
+                                <div class="anshead-titletext">
+                                    <p> @php $mn=0; @endphp
+                                        @foreach($correct_ans as $akey=>$ans_value)
+                                        @php
+                                        $ans_dom = new DOMDocument();
+                                        @$ans_dom->loadHTML($ans_value);
+                                        $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
+                                        $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
+                                        $alatex = "https://math.now.sh?from=".$atext;
+                                        $view_ans='<img src="'.$alatex.'" />' ;
+                                        @endphp
+                                        {!! !empty($atext)?$view_ans:$ans_value; !!}
+                                        @php $mn++; @endphp
+                                        @endforeach</p>
+                                </div>
+                                <div class="explanation-sec">
+                                    <div class="explanationdeteail">
+                                        @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                        <span>Explanation:</span>
+                                        <p>{!! $question_data->explanation !!}</p>
+                                        @endif
+                                    </div>
+
                                 </div>
 
+
                             </div>
-
-
                         </div>
                     </div>
 
@@ -548,10 +549,21 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 result_id: "{{$result_id}}"
             },
-            success: function(result) {
+            success: function(response) {
 
-                $("#review_rques_blk").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
+                /*  $("#review_rques_blk").html(response);
+                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]); */
+
+                if (response.status == 'success') {
+                    $("#review_rques_blk").html(response.webView);
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
+
+                    if ($(window).width() < 767) {
+
+                        $("#mob_explanation").html(response.mobView);
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "mob_explanation"]);
+                    }
+                }
 
             }
         });
@@ -567,8 +579,19 @@ $question_type = "Numerical";
                 result_id: "{{$result_id}}"
             },
             success: function(result) {
-                $("#review_rques_blk").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
+                /*   $("#review_rques_blk").html(result);
+                  MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]); */
+
+                if (result.status == 'success') {
+                    $("#review_rques_blk").html(result.webView);
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
+
+                    if ($(window).width() < 767) {
+
+                        $("#mob_explanation").html(result.mobView);
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "mob_explanation"]);
+                    }
+                }
             }
         });
     }
@@ -591,12 +614,14 @@ $question_type = "Numerical";
 
 <!-----Start-for-percent-btn-click------->
 <script>
-    $(".percent_btn").click(function(e) {
+    //$(".percent_btn").click(function(e) {
+    $("#reviewData").on("click", ".percent_btn", function(e) {
         $(".expand_block").show();
         e.stopPropagation();
     });
 
-    $(".expand_block").click(function(e) {
+    /* $(".expand_block").click(function(e) { */
+    $("#reviewData").on("click", ".expand_block", function(e) {
         e.stopPropagation();
     });
 
@@ -607,7 +632,7 @@ $question_type = "Numerical";
 <!-----End-for-percent-btn-click------->
 
 <script>
-     $(function() {
+    $(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
             function review_right_Height() {
                 var total_right_height = $(".reviewScreenright ").outerHeight();
@@ -640,14 +665,17 @@ $question_type = "Numerical";
                 var answerfinalheight_145 = customcomb_height - 80 + "px";
                 $('.explanation-sec ').css('height', answerfinalheight_145);
             }
-        review_right_Height();
-        $("window").load(function() {
             review_right_Height();
-        });
+            $("window").load(function() {
+                review_right_Height();
+            });
 
-        $(window).resize(function() {
-            review_right_Height();
-        });
+            $(window).resize(function() {
+                review_right_Height();
+            });
+
+
+
         }
     })
 </script>
@@ -666,7 +694,7 @@ $question_type = "Numerical";
             var ex_answer_main_sec_height_final = $(".explanation-sec").outerHeight();
             var ex_scroll_height = ex_answer_main_sec_height_final - 120 + "px";
             $('.explanation-sec').css('height', ex_scroll_height);
-          
+
         });
 
         $(".collapsebtn1").on('click', function() {
@@ -690,7 +718,7 @@ $question_type = "Numerical";
             var afterclikecoll = $(".explanation-sec").outerHeight();
             var afterclikecoll_cal = afterclikecoll - 10 + "px";
             $('.explanation-sec').css('height', afterclikecoll_cal);
-            
+
         });
     });
 </script>
@@ -794,7 +822,8 @@ $question_type = "Numerical";
     });
 
 
-    $('.expandformob').on('click', function() {
+    //$('.expandformob').on('click', function() {
+    $("#mob_explanation").on("click", ".expandformob", function() {
         $('.collapseformob').css({
             display: "block"
         });
@@ -808,7 +837,8 @@ $question_type = "Numerical";
 
     });
 
-    $('.collapseformob').on('click', function() {
+    // $('.collapseformob').on('click', function() {
+    $("#mob_explanation").on("click", ".collapseformob", function() {
         $('.collapseformob').css({
             display: "none"
         });
@@ -820,7 +850,8 @@ $question_type = "Numerical";
         });
     });
 
-    $('.expandbtnmob1').on('click', function() {
+    // $('.expandbtnmob1').on('click', function() {
+    $("#mob_explanation").on("click", ".expandbtnmob1", function() {
         $('.collapsebtnmob1').css({
             display: "block"
         });
@@ -832,7 +863,8 @@ $question_type = "Numerical";
         });
     });
 
-    $('.collapsebtnmob1').on('click', function() {
+    /*  $('.collapsebtnmob1').on('click', function() { */
+    $("#mob_explanation").on("click", ".collapsebtnmob1", function() {
         $('.collapsebtnmob1').css({
             display: "none"
         });
@@ -848,14 +880,14 @@ $question_type = "Numerical";
 
 
 <script>
-    if ($(window).height() < 900) {
+    /*  if ($(window).height() < 900) {
         body {
             background - color: red;
         }
 
     } else {
         // change functionality for larger screens
-    }
+    } */
 </script>
 
 
@@ -888,7 +920,7 @@ $question_type = "Numerical";
                 $('.list-ans').css('height', examreviewMainboxNew);
             });
 
-             $(".collapseformob").on('click', function() {
+            $(".collapseformob").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.reviewans-mainsec').attr('style', 'height: 150px !important');
                 $('.list-ans').attr('style', '    height: calc( 100% - 80px) !important');
@@ -898,13 +930,13 @@ $question_type = "Numerical";
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter1 = $(".examreviewMaincontainer").outerHeight();
                 var examreviewMainbox1 = examreviewMaincontainerouter1 - 250 + "px !important";
-                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;' );
+                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;');
                 var customanstopheightNew1 = $(".answer-main-sec").outerHeight();
                 var examreviewMainboxNew1 = customanstopheightNew1 - 100 + "px";
                 $('.explanation-sec').css('height', examreviewMainboxNew1);
             });
 
-             $(".collapsebtnmob1").on('click', function() {
+            $(".collapsebtnmob1").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.answer-main-sec').attr('style', 'height: 240px');
                 $('.explanation-sec').attr('style', ' height: 20px !important');
@@ -925,40 +957,41 @@ $question_type = "Numerical";
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
 
-                
-            
-                
+
+
+
             });
 
             $(".hideyes").on('click', function() {
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                
+
                 $('.custom-anstop').attr('style', 'height:0px !important;display:none;');
                 $('.text-exambottom-sec').attr('style', 'height: 0px !important; display:none;');
-                
+
             });
         }
     })
 </script>
 
 <style>
-    @media only screen and (max-width: 767px){
-        .examReviewscreenmob .reviewans-mainsec{
-        height:150px;
+    @media only screen and (max-width: 767px) {
+        .examReviewscreenmob .reviewans-mainsec {
+            height: 150px;
         }
-        .examReviewscreenmob .answer-main-sec{
-            height:240px ;
+
+        .examReviewscreenmob .answer-main-sec {
+            height: 240px;
         }
-        .collapsebtnmob1{
+
+        .collapsebtnmob1 {
             position: relative;
             top: 15px;
-            
+
         }
 
 
     }
-   
 </style>
 @endsection
