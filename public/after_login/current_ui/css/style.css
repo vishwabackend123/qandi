@@ -4205,6 +4205,7 @@ span.proficiency_value {
     max-width: 100%;
 }
 .contactus-menu{position: absolute;bottom:24px;}
+.planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
 /********************* Amit End ****************************/
 
 
