@@ -3365,7 +3365,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     height: 1em;
     position: relative;
     /* background: #cbebcf; */
-    border-radius: 50%;
+    border-radius: 100%;
     /* overflow: hidden; */
     display: inline-block;
     /* box-shadow:0px 9px 16px rgba(164,172,178,0.4); */
@@ -3376,7 +3376,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     font-size: 119px;
     min-width: 1em;
     height: 1em;
-    border-radius: 50%;
+    border-radius: 100%;
     display: inline-block;
     top: -15px;
     /* transform: rotate(-133deg); */
@@ -3389,6 +3389,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     width: 1em;
     height: 1em;
     clip: rect(0 1em 1em 0.5em);
+    border-radius: 100%;
 }
 
 .mq_round_per {
@@ -3428,7 +3429,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     bottom: 7px;
     background-color: #fff;
     z-index: 3;
-    border-radius: 50%;
+    border-radius: 100%;
     background-image: url(../images/roundshape3.svg);
     background-position-x: -12px;
     background-size: 128px;
@@ -4114,6 +4115,7 @@ span.proficiency_value {
     box-shadow: none;
     display: inline-block;
 }
+.performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
     font-weight: 700;
     width: 16px;
@@ -4944,7 +4946,10 @@ justify-content: space-between;}
             border-radius: 8px;padding-right:120px;}
 
 .progressnewjourney{height:100%;}
-.progressnewjourney canvas{height:calc(100% + 40px);}
+/* .progressnewjourney canvas{height:calc(100% + 40px);} */
+canvas#progressJourny_graph, canvas#trend_graph {
+    height: 270px!important;
+}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
