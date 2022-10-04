@@ -3123,11 +3123,33 @@ transform: translateX(100%);
         text-overflow: initial;
         white-space: initial;
     }
-    .mobile-test .topic_form{position: fixed;    width: 100%;    }
-    .exam_tabdata{padding-bottom:50px!important;}
+    .mobile-test .topic_form{position: fixed;
+        width: calc(100% + 1px);
+        bottom: 0px;
+        background: #fff;
+        left: 0px;
+        padding: 10px;
+        z-index: 9;
+        margin: 0px;}
+    .exam_tabdata{padding-bottom:57px!important;}
+    .exam_tabdata .testtablescroll.allscrollbar{    height: calc(100vh - 400px);    }
+    .exam_tabdata .mobile-test .topic_form{flex-direction: row-reverse;}
+   .exam_topicbtn ul.d-inline-flex{display:flex!important;}
+   .exam_topicbtn ul.d-inline-flex .nav-item{    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;}
+    .exam_topicbtn ul.d-inline-flex .nav-item .nav-link{width:100%;}
+    .yaxis_label{left: -11px;}
+    .timemanagement.common_greenbadge_tabs .yaxis_label.yaxis_label_2{left:-55px;}
+    .custom-input .form-control{font-weight: 600;}
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #363c4f!important;
+        font-weight: 600;
+    }
     .content-wrapper .col-lg-6:first-child {
         padding-right: calc(var(--bs-gutter-x)/ 2)!important;
     }
+    .main-title{color:#1f1f1f;}
     
 }
 
