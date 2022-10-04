@@ -14,7 +14,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     font-size: 119px;
     min-width: 1em;
     height: 1em;
-    border-radius: 50%;
+    border-radius: 100%;
     display: inline-block;
     top: -15px;
 }
@@ -25,7 +25,7 @@ $user_id = isset($userData->id)?$userData->id:'';
     bottom: 7px;
     background-color: #fff;
     z-index: 3;
-    border-radius: 50%;
+    border-radius: 100%;
     /* background-image: url(../images/roundshape3.svg); */
     background-position-x: -12px;
     background-size: 128px;
