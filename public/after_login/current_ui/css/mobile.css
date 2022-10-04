@@ -3125,6 +3125,9 @@ transform: translateX(100%);
     }
     .mobile-test .topic_form{position: fixed;    width: 100%;    }
     .exam_tabdata{padding-bottom:50px!important;}
+    .content-wrapper .col-lg-6:first-child {
+        padding-right: calc(var(--bs-gutter-x)/ 2)!important;
+    }
     
 }
 
