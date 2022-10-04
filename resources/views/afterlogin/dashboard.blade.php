@@ -101,8 +101,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </span>
                             </h3>
                             <div class="myqTodayGraphSec">
-                                <input type="hidden" name="accurate_percent" id="accurate_percent" value="{{$myqtodayScore}}">
-                                <div class="mq_circle_percent" data-percent="{{$accurate_percent}}">
+                                <input type="hidden" name="accurate_percent" id="accurate_percent" value="80">
+                                <div class="mq_circle_percent" data-percent="80">
                                     <div class="circletop">
                                         <div class="mq_circle_inner">
                                             <div class="mq_round_per"></div>
