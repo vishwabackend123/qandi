@@ -113,7 +113,7 @@
   .plan_success_congrats_msg,.plan_success_congrats_msg_faild{padding:10px 27px;}
   .plan_order_sumry_subscription{padding:5px 0px;}
   .plan_order_sumry_subscription{padding:4px 0px}
-  .subjectblockOverall .textblock h3 {font-size: 16px;}
+  .subjectblockOverall .textblock h3 {font-size: 16px;min-width: 104px;}
 }
 @media only screen and (max-width: 1200px) {
         .subscriptionsLeftpannel {
