@@ -4818,7 +4818,11 @@ header {
 .modal-header1{display:flex;justify-content:flex-end;height: 34px;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
 #strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog,#needsfocusmodal .modal-dialog,#hopefulmodal .modal-dialog,#weakmodal .modal-dialog{max-width:635px;width:100%;margin:0 auto;height:100%;}
-.strengthmodal_content hr{background-color:#56b663;opacity: 1;}
+.strengthmodal_content hr{
+    /* background-color:#56b663; */
+    background-color:#868a95;
+    opacity: 1;
+}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
@@ -5732,7 +5736,8 @@ canvas#progressJourny_graph, canvas#trend_graph {
 .strengthmodal_content
 {
     /* margin-top:60px; */
-    border-radius: 10px;    border: 1px solid #56b663;
+    border-radius: 10px;    
+    /* border: 1px solid #56b663; */
 }
 
 /*********** chapter_proficiency *****************/
