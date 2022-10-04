@@ -1262,8 +1262,9 @@ transform: translateX(100%);
     }
     .planner-box{
     padding: 20px;  
-    margin-bottom: 20px;
+    margin-bottom: -20px;
     }
+    #planner-wrapper{padding-bottom:0px;}
     .custom_modal {
     width: 100%;
     padding: 20px;
