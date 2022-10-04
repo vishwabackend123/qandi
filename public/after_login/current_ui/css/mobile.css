@@ -3123,6 +3123,9 @@ transform: translateX(100%);
         text-overflow: initial;
         white-space: initial;
     }
+    .mobile-test .topic_form{position: fixed;    width: 100%;    }
+    .exam_tabdata{padding-bottom:50px!important;}
+    
 }
 
 
@@ -3194,10 +3197,10 @@ transform: translateX(100%);
     .exam_topicbtn  ul.nav .btn.nav-link {
     padding: 0 7px !important;
 }
-      .mobile-test .topic_form{
+      /* .mobile-test .topic_form{
     display: block !Important;
     text-align: center;
-    }
+    } */
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
