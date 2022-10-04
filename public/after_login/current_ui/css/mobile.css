@@ -3124,7 +3124,29 @@ transform: translateX(100%);
         font-size: 14px !important;
     }
     .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
-  
+    .add-insubchapter p span {
+        overflow: inherit;
+        text-overflow: initial;
+        white-space: initial;
+    }
+    .mobile-test .topic_form{position: fixed;
+        width: calc(100% + 1px);
+        bottom: 0px;
+        background: #fff;
+        left: 0px;
+        padding: 10px;
+        z-index: 9;
+        margin: 0px;}
+    .exam_tabdata{padding-bottom:57px!important;}
+    .exam_tabdata .testtablescroll.allscrollbar{    height: calc(100vh - 400px);    }
+    .exam_tabdata .mobile-test .topic_form{flex-direction: row-reverse;}
+   .exam_topicbtn ul.d-inline-flex{display:flex!important;}
+   .exam_topicbtn ul.d-inline-flex .nav-item{    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;}
+    .exam_topicbtn ul.d-inline-flex .nav-item .nav-link{width:100%;}
+    .yaxis_label{left: -11px;}
+    .timemanagement .yaxis_label.yaxis_label_2{left:-55px;}
 }
 
 
@@ -3196,10 +3218,10 @@ transform: translateX(100%);
     .exam_topicbtn  ul.nav .btn.nav-link {
     padding: 0 7px !important;
 }
-      .mobile-test .topic_form{
+      /* .mobile-test .topic_form{
     display: block !Important;
     text-align: center;
-    }
+    } */
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
