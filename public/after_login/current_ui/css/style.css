@@ -4220,6 +4220,9 @@ span.proficiency_value {
     background-color: #EDF4EC;
 }
 .planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
+.take-fulltest .full_take  svg.me-3.align-bottom {
+    height: 44px!important;
+}
 /********************* Amit End ****************************/
 
 

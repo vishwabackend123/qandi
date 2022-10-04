@@ -439,7 +439,6 @@
             }
 }
 @media (min-width:991px){
-    
     .mobile_block_tab {display:none!important;}
    
     .desktop_hide_performence_analytics
@@ -1128,14 +1127,10 @@ transform: translateX(100%);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width:150px;
+        width:200px;
         display: inline-block;
         vertical-align: middle;
         text-align: right;
-    }
-    .headerLeft h2{margin-left:15px;font-size:18px;}
-    .headerLeft h6 label {
-        padding-left: 10px;
     }
 }
 
@@ -1161,7 +1156,6 @@ transform: translateX(100%);
     }
 }
 @media(max-width:767px){ 
-    .performance_chapter_block .accordion-header .accordion-button{    padding: 8px 16px 8px 16px;}
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
@@ -2249,7 +2243,7 @@ transform: translateX(100%);
     .modal-popup-customize .modal-content {
         border: 0 !important;
         height: 100%;
-        background: #EDF4EC;border-radius:0px;
+        background: #f5faf6;border-radius:0px;
     }
     
 
@@ -3152,6 +3146,10 @@ transform: translateX(100%);
         color: #363c4f!important;
         font-weight: 600;
     }
+    .content-wrapper .col-lg-6:first-child {
+        padding-right: calc(var(--bs-gutter-x)/ 2)!important;
+    }
+    
 }
 
 
