@@ -3140,7 +3140,7 @@ transform: translateX(100%);
     text-align: center;}
     .exam_topicbtn ul.d-inline-flex .nav-item .nav-link{width:100%;}
     .yaxis_label{left: -11px;}
-    .timemanagement .yaxis_label.yaxis_label_2{left:-55px;}
+    .timemanagement.common_greenbadge_tabs .yaxis_label.yaxis_label_2{left:-55px;}
 }
 
 
