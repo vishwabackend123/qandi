@@ -3133,6 +3133,7 @@ transform: translateX(100%);
         margin: 0px;}
     .exam_tabdata{padding-bottom:57px!important;}
     .exam_tabdata .testtablescroll.allscrollbar{    height: calc(100vh - 400px);    }
+    .exam_tabdata .mobile-test .topic_form{flex-direction: row-reverse;}
 
 }
 
