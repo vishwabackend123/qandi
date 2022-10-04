@@ -643,7 +643,8 @@ font-size: 20px !important;
     height: 44px;
     line-height: 44px;
     background: transparent;
-    border: solid 1px #56b663  !important;
+    /* border: solid 1px #56b663  !important; */
+    border: solid 1px #d0d5dd  !important;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
@@ -719,7 +720,8 @@ border-radius: 0 8px 8px 0px;
   text-align: center;
 }
 .incre-decre-value{
-    border: solid 1px #56b663;
+    /* border: solid 1px #56b663; */
+    border: solid 1px #d0d5dd;
     border-radius: 8px;
     width: 195px;
 }
@@ -913,7 +915,8 @@ padding-bottom: 0;
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
-    color: #56b663;
+    /* color: #56b663; */
+    color: #1f1f1f;
     margin-left: 6px;
 }
 .test-table h4{
@@ -4209,16 +4212,16 @@ span.proficiency_value {
 .contactus-menu{position: absolute;bottom:24px;}
 .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    border-bottom: 4px solid #56b663;}
 .tooltipmain svg g{stroke: #56b663;opacity: 1;}
-.value-button.border-end, .value-button.border-start {
+/* .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
-}
-.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
+} */
+/* .test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
     background-color: #56b663!important;
     color: #fff;
-}
-#referedfrnd .modal-content {
+} */
+/* #referedfrnd .modal-content {
     background-color: #EDF4EC;
-}
+} */
 .planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
 .take-fulltest .full_take  svg.me-3.align-bottom {
     height: 44px!important;
@@ -4840,6 +4843,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .subjectperformLegend  .pinkbar2{background-color:#f7758f}
 
 .subjectperformLegend  .graybar{background-color:#e5eaee;}
+/* .subjectperformLegend  .graybar{background-color:#7db9ff;} */
 .subjectperformLegend .bluebar{background-color: #7db9ff;}
 .subjectperformLegend  .commonSubjectLeg .text{opacity: 0.6; font-size: 14px;font-weight: 500; line-height: 1.6;color: #1f1f1f;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
@@ -6607,7 +6611,8 @@ td.mymatrix_table_point
 #referfrnd .modal-content {
     border: 0;
     border-radius: 32px;
-    background-color: #EDF4EC;
+    /* background-color: #EDF4EC; */
+    background-color: #fff;
 }
 
 #referfrnd button.btn {
