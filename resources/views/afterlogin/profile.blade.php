@@ -134,7 +134,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="d-sm-flex custom-profileupload">
                                         <div class="preview-zone hidden mb-sm-0 mb-4">
                                             <div class="box box-solid">
-                                                <div class="box-body"><img height="64px" width="64px" style="border-radius:32px;margin-right:20px;" src="{{$imgPath}}" alt="performance"></div>
+                                                <div class="box-body"><img height="64px" width="64px" style="border-radius:100%;margin-right:20px;" src="{{$imgPath}}" alt="performance"></div>
                                             </div>
                                         </div>
                                         <div class="dropzone-wrapper w-100">

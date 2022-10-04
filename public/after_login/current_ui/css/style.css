@@ -643,7 +643,7 @@ font-size: 20px !important;
     height: 44px;
     line-height: 44px;
     background: transparent;
-    border: solid 1px #d0d5dd !important;
+    border: solid 1px #56b663  !important;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
@@ -719,7 +719,7 @@ border-radius: 0 8px 8px 0px;
   text-align: center;
 }
 .incre-decre-value{
-    border: solid 1px #d0d5dd;
+    border: solid 1px #56b663;
     border-radius: 8px;
     width: 195px;
 }
@@ -913,7 +913,7 @@ padding-bottom: 0;
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
-    color: #1f1f1f;
+    color: #56b663;
     margin-left: 6px;
 }
 .test-table h4{
@@ -4090,7 +4090,7 @@ span.proficiency_value {
 }
 .performance_chapter_block label b {
     font-weight: 800;
-    color: #1f1f1f;
+    color: #56b663;
     margin-right: 10px;
     min-width:45px;display:inline-block;
 }
@@ -4105,15 +4105,16 @@ span.proficiency_value {
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
-    padding: 0;
+    padding: 8px 24px 8px 16px;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
-    color: #56b663;
-    background-color: transparent;
-    border-radius: 0;
+    color: #fff;
+    background-color: #56b663;
+    border-radius: 8px;
     box-shadow: none;
     display: inline-block;
+    white-space: nowrap;
 }
 .performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
@@ -4121,7 +4122,7 @@ span.proficiency_value {
     width: 16px;
     height: 16px;
     text-align: center;
-    margin-left: 8px;
+    margin-left: 0px;
     font-size: 16px;
 }
 .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block {
@@ -4196,6 +4197,7 @@ span.proficiency_value {
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
     margin-right: 60px;
     padding: 0 8px 20px;
+    color: #56b663;
 }
 .test_myscrore_card {height: 292px;}
 .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
@@ -4205,6 +4207,18 @@ span.proficiency_value {
     max-width: 100%;
 }
 .contactus-menu{position: absolute;bottom:24px;}
+.tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    border-bottom: 4px solid #56b663;}
+.tooltipmain svg g{stroke: #56b663;opacity: 1;}
+.value-button.border-end, .value-button.border-start {
+    border-color: #56b663!important;
+}
+.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
+    background-color: #56b663!important;
+    color: #fff;
+}
+#referedfrnd .modal-content {
+    background-color: #EDF4EC;
+}
 .planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
 .take-fulltest .full_take  svg.me-3.align-bottom {
     height: 44px!important;
@@ -4794,8 +4808,8 @@ header {
     text-align: center;}
 .modal-header1{display:flex;justify-content:flex-end;height: 34px;}
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog,#needsfocusmodal .modal-dialog,#hopefulmodal .modal-dialog,#weakmodal .modal-dialog{max-width:635px;width:100%;}
-.strengthmodal_content hr{background-color:#868a95;opacity: 0.5;}
+#strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog,#needsfocusmodal .modal-dialog,#hopefulmodal .modal-dialog,#weakmodal .modal-dialog{max-width:635px;width:100%;margin:0 auto;height:100%;}
+.strengthmodal_content hr{background-color:#56b663;opacity: 1;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
 .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #1f1f1f}
@@ -4825,7 +4839,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .subjectperformLegend  .pinkbar{background-color:#ff6678}
 .subjectperformLegend  .pinkbar2{background-color:#f7758f}
 
-.subjectperformLegend  .graybar{background-color:#e5eaee}
+.subjectperformLegend  .graybar{background-color:#7db9ff}
 .subjectperformLegend .bluebar{background-color: #7db9ff;}
 .subjectperformLegend  .commonSubjectLeg .text{opacity: 0.6; font-size: 14px;font-weight: 500; line-height: 1.6;color: #1f1f1f;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
@@ -5454,7 +5468,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
     padding: 15px 0px 15px;
     flex-grow: 0;
     border-radius: 8px;
-    background-color: #56b663;
+    background-color: #42D23D;
 }
 
 .mock_inst_text_mock_test a {
@@ -5585,6 +5599,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 }
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
     position: relative!important;
+    color: #56b663!important;
 }
 .mqmatric_topic {
     font-size: 20px;
@@ -5705,8 +5720,8 @@ canvas#progressJourny_graph, canvas#trend_graph {
 }
 .strengthmodal_content
 {
-    margin-top:60px;
-    border-radius: 10px;border:0px;
+    /* margin-top:60px; */
+    border-radius: 10px;    border: 1px solid #56b663;
 }
 
 /*********** chapter_proficiency *****************/
@@ -6019,7 +6034,7 @@ background: #3e8a44;
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #1f1f1f;
+    color: #56b663;
 }
 .exam_instruction_scrolling_pd_zero
 {
@@ -6591,6 +6606,7 @@ td.mymatrix_table_point
 #referfrnd .modal-content {
     border: 0;
     border-radius: 32px;
+    background-color: #EDF4EC;
 }
 
 #referfrnd button.btn {
