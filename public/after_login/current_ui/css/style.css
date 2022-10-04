@@ -4114,6 +4114,7 @@ span.proficiency_value {
     box-shadow: none;
     display: inline-block;
 }
+.performance_chapter_block .accordion-header .accordion-button:focus-visible{outline:0!important;}
 .performance_chapter_block .accordion-header .accordion-button i{
     font-weight: 700;
     width: 16px;
