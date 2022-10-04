@@ -425,6 +425,7 @@
             }
 }
 @media (min-width:991px){
+    
     .mobile_block_tab {display:none!important;}
    
     .desktop_hide_performence_analytics
@@ -1113,10 +1114,14 @@ transform: translateX(100%);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width:200px;
+        width:150px;
         display: inline-block;
         vertical-align: middle;
         text-align: right;
+    }
+    .headerLeft h2{margin-left:15px;font-size:18px;}
+    .headerLeft h6 label {
+        padding-left: 10px;
     }
 }
 
