@@ -3139,6 +3139,7 @@ transform: translateX(100%);
     flex-grow: 1;
     text-align: center;}
     .exam_topicbtn ul.d-inline-flex .nav-item .nav-link{width:100%;}
+    .yaxis_label{left: -11px;}
 }
 
 
