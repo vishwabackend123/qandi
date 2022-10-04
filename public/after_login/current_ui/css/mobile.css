@@ -3118,7 +3118,11 @@ transform: translateX(100%);
         font-size: 14px !important;
     }
     .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
-  
+    .add-insubchapter p span {
+        overflow: inherit;
+        text-overflow: initial;
+        white-space: initial;
+    }
 }
 
 
