@@ -3123,9 +3123,16 @@ transform: translateX(100%);
         text-overflow: initial;
         white-space: initial;
     }
-    .mobile-test .topic_form{position: fixed;    width: 100%;    }
+    .mobile-test .topic_form{position: fixed;
+        width: calc(100% + 0px);
+        bottom: 0px;
+        background: #fff;
+        left: 0px;
+        padding: 10px;
+        z-index: 9;
+        margin: 0px;}
     .exam_tabdata{padding-bottom:50px!important;}
-    
+
 }
 
 
