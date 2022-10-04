@@ -3149,6 +3149,7 @@ transform: translateX(100%);
     .content-wrapper .col-lg-6:first-child {
         padding-right: calc(var(--bs-gutter-x)/ 2)!important;
     }
+    .main-title{color:#1f1f1f;}
     
 }
 
