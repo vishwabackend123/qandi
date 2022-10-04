@@ -12,9 +12,10 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block matrix-page-wrapper">
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
-        <div class="dashboad_mqmatrix_text_back_to_dashboard"><a href="{{url('/dashboard')}}">
-            <span><</span>Back to Dashboard</a>
-        </div>
+            <div class="dashboad_mqmatrix_text_back_to_dashboard"><a href="{{url('/dashboard')}}">
+                    <span>
+                        < </span>Back to Dashboard</a>
+            </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="commonWhiteBox">
@@ -62,16 +63,17 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor2">
                                         <div class="myqinner">
-                                                <h6>Q2</h6>
-                                                <h5>Opportunity</h5>
-                                                <p>Potentially strong topics that need a little attention.</p>
+                                            <h6>Q2</h6>
+                                            <h5>Opportunity</h5>
+                                            <p>Potentially strong topics that need a little attention.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[1]))
                                                 {{ $myq_matrix[1]}}
                                                 @else
                                                 0
-                                                @endif <span class="topictext">Topics</span></h3>
+                                                @endif <span class="topictext">Topics</span>
+                                            </h3>
                                             <a href="javascript:void(0);" id="q2_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
@@ -82,16 +84,17 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor3 mb-0">
                                         <div class="myqinner">
-                                                   <h6>Q3</h6>
-                                                    <h5>Hurdles </h5>
-                                                    <p>Topics which are not entirely weaknesses but are hurdles in your journey.</p>
+                                            <h6>Q3</h6>
+                                            <h5>Hurdles </h5>
+                                            <p>Topics which are not entirely weaknesses but are hurdles in your journey.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[2]))
                                                 {{ $myq_matrix[2]}}
                                                 @else
                                                 0
-                                                @endif <span class="topictext">Topics</span></h3>
+                                                @endif <span class="topictext">Topics</span>
+                                            </h3>
                                             <a href="javascript:void(0);" id="q3_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
@@ -102,16 +105,17 @@ $userData = Session::get('user_data');
                                 <div class="col-sm-6">
                                     <div class="myqmatPannel myqcolor4 mb-0">
                                         <div class="myqinner">
-                                                    <h6>Q4</h6>
-                                                    <h5>Weakness</h5>
-                                                    <p>Your weakest topics.</p>
+                                            <h6>Q4</h6>
+                                            <h5>Weakness</h5>
+                                            <p>Your weakest topics.</p>
                                         </div>
                                         <div class="myqbottomSec">
                                             <h3>@if(isset($myq_matrix[3]))
                                                 {{ $myq_matrix[3]}}
                                                 @else
                                                 0
-                                                @endif <span class="topictext">Topics</span></h3>
+                                                @endif <span class="topictext">Topics</span>
+                                            </h3>
                                             <a href="javascript:void(0);" id="q4_box"><span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
@@ -123,7 +127,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 fortab">
+                <div class="col-lg-8 fortab" id="matrix-tab">
                     <div class="commonWhiteBox">
                         <div class="tabMainblock tabMainblock_myqmatric">
                             <div class="commontab">
@@ -146,7 +150,7 @@ $userData = Session::get('user_data');
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div id="matrix-quesone" class=" tab-pane active">
-                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="mqmatric_topic">Topics</div>
                                         <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
                                             <div class="mobile_text_topics">TOPICS</div>
                                             <div class="mobile_text_proficiency">PROFICIENCY</div>
@@ -175,7 +179,7 @@ $userData = Session::get('user_data');
                                         @endif
                                     </div>
                                     <div id="matrix-questwo" class=" tab-pane">
-                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="mqmatric_topic">Topics</div>
                                         <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
                                             <div class="mobile_text_topics">TOPICS</div>
                                             <div class="mobile_text_proficiency">PROFICIENCY</div>
@@ -204,7 +208,7 @@ $userData = Session::get('user_data');
                                         @endif
                                     </div>
                                     <div id="matrix-questhree" class=" tab-pane">
-                                    <div class="mqmatric_topic">Topics</div>
+                                        <div class="mqmatric_topic">Topics</div>
                                         <div class="d-flex justify-content-between pe-3 pb-3 mobile_text_topics_proficiency">
                                             <div class="mobile_text_topics">TOPICS</div>
                                             <div class="mobile_text_proficiency">PROFICIENCY</div>
@@ -287,126 +291,152 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-------------------->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
-$(document).ready(function() {
-    $('.filtericon').hide();
-    // $(".dashboard-cards-block .bg-white>small>img").click(function() {
-    //     $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-    //         $(this).parent("p").hide();
-    //     })
-    //     $(this).siblings("p").show();
-    // });
-    // $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-    //     $(this).parent("p").hide();
-    // });
-    $("span.tooltipmain svg").click(function(event) {
-        event.stopPropagation();
+    function questwo_tab() {
+        if ($(window).width() < 767) {
 
-        var card_open = $(this).siblings("p").hasClass('show');
-        if (card_open === true) {
-            $(this).siblings("p").hide();
-            $(this).siblings("p").removeClass('show');
-        } else {
-            $("span.tooltipmain p.tooltipclass span").each(function() {
-                $(this).parent("p").hide();
-                $(this).parent("p").removeClass('show');
-            });
-            $(this).siblings("p").show();
-            $(this).siblings("p").addClass('show');
+            $('html, body').animate({
+                scrollTop: $("div#matrix-tab").offset().top - 100
+            }, 300);
         }
-        $('.customDropdown').removeClass('active');
+        $('#matrix-questwo-tab').addClass('active');
+        $('#matrix-questwo').addClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
 
-    });
-    $("span.tooltipmain p.tooltipclass span").click(function() {
-        $(this).parent("p").hide();
-        $(this).parent("p").removeClass('show');
-    });
-$(document).on('click', function(e) {
-    var card_opened = $('.tooltipclass').hasClass('show');
-    if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-        $('.tooltipclass').hide();
-        $('.tooltipclass').removeClass('show');
     }
 
-});
-    var topic_data = '<?php echo $myq_bool; ?>';
-    if (topic_data) {
-        setInterval(function() {
-         $('#matrix').modal('show');        
-        }, 1000);
+    function quesone_tab() {
+        if ($(window).width() < 767) {
+
+            $('html, body').animate({
+                scrollTop: $("div#matrix-tab").offset().top - 100
+            }, 300);
+        }
+        $('#matrix-quesone-tab').addClass('active');
+        $('#matrix-quesone').addClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
     }
-    var quadrant_name = sessionStorage.getItem("quadrant_name");
-    if (quadrant_name == 'q_2') {
-        questwo_tab();
+
+    function questhree_tab() {
+        if ($(window).width() < 767) {
+
+            $('html, body').animate({
+                scrollTop: $("div#matrix-tab").offset().top - 100
+            }, 300);
+        }
+        $('#matrix-questhree-tab').addClass('active');
+        $('#matrix-questhree').addClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
     }
-    if (quadrant_name == 'q_1') {
-        quesone_tab();
+
+    function quesfour_tab() {
+        if ($(window).width() < 767) {
+
+            $('html, body').animate({
+                scrollTop: $("div#matrix-tab").offset().top - 100
+            }, 300);
+        }
+        $('#matrix-quesfour-tab').addClass('active');
+        $('#matrix-quesfour').addClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
     }
-    if (quadrant_name == 'q_3') {
-        questhree_tab();
-    }
-    if (quadrant_name == 'q_4') {
-        quesfour_tab();
-    }
-    $('#q2_box').on('click', function() {
-        questwo_tab();
+
+
+    $(document).ready(function() {
+        $('.filtericon').hide();
+        // $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        //     $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+        //         $(this).parent("p").hide();
+        //     })
+        //     $(this).siblings("p").show();
+        // });
+        // $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        //     $(this).parent("p").hide();
+        // });
+        $("span.tooltipmain svg").click(function(event) {
+            event.stopPropagation();
+
+            var card_open = $(this).siblings("p").hasClass('show');
+            if (card_open === true) {
+                $(this).siblings("p").hide();
+                $(this).siblings("p").removeClass('show');
+            } else {
+                $("span.tooltipmain p.tooltipclass span").each(function() {
+                    $(this).parent("p").hide();
+                    $(this).parent("p").removeClass('show');
+                });
+                $(this).siblings("p").show();
+                $(this).siblings("p").addClass('show');
+            }
+            $('.customDropdown').removeClass('active');
+
+        });
+        $("span.tooltipmain p.tooltipclass span").click(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
+        });
+        $(document).on('click', function(e) {
+            var card_opened = $('.tooltipclass').hasClass('show');
+            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+                $('.tooltipclass').hide();
+                $('.tooltipclass').removeClass('show');
+            }
+
+        });
+        var topic_data = '<?php echo $myq_bool; ?>';
+        if (topic_data) {
+            setInterval(function() {
+                $('#matrix').modal('show');
+            }, 1000);
+        }
+        var quadrant_name = sessionStorage.getItem("quadrant_name");
+        if (quadrant_name == 'q_2') {
+            questwo_tab();
+        }
+        if (quadrant_name == 'q_1') {
+            quesone_tab();
+        }
+        if (quadrant_name == 'q_3') {
+            questhree_tab();
+        }
+        if (quadrant_name == 'q_4') {
+            quesfour_tab();
+        }
+        $('#q2_box').on('click', function() {
+            questwo_tab();
+        });
+        $('#q1_box').on('click', function() {
+            quesone_tab();
+        });
+        $('#q3_box').on('click', function() {
+            questhree_tab();
+        });
+        $('#q4_box').on('click', function() {
+            quesfour_tab();
+        });
+
     });
-    $('#q1_box').on('click', function() {
-        quesone_tab();
-    });
-    $('#q3_box').on('click', function() {
-        questhree_tab();
-    });
-    $('#q4_box').on('click', function() {
-        quesfour_tab();
-    });
-
-});
-
-function questwo_tab() {
-    $('#matrix-questwo-tab').addClass('active');
-    $('#matrix-questwo').addClass('active');
-    $('#matrix-quesone-tab').removeClass('active');
-    $('#matrix-quesone').removeClass('active');
-    $('#matrix-questhree-tab').removeClass('active');
-    $('#matrix-questhree').removeClass('active');
-    $('#matrix-quesfour-tab').removeClass('active');
-    $('#matrix-quesfour').removeClass('active');
-}
-
-function quesone_tab() {
-    $('#matrix-quesone-tab').addClass('active');
-    $('#matrix-quesone').addClass('active');
-    $('#matrix-questwo-tab').removeClass('active');
-    $('#matrix-questwo').removeClass('active');
-    $('#matrix-questhree-tab').removeClass('active');
-    $('#matrix-questhree').removeClass('active');
-    $('#matrix-quesfour-tab').removeClass('active');
-    $('#matrix-quesfour').removeClass('active');
-}
-
-function questhree_tab() {
-    $('#matrix-questhree-tab').addClass('active');
-    $('#matrix-questhree').addClass('active');
-    $('#matrix-quesone-tab').removeClass('active');
-    $('#matrix-quesone').removeClass('active');
-    $('#matrix-questwo-tab').removeClass('active');
-    $('#matrix-questwo').removeClass('active');
-    $('#matrix-quesfour-tab').removeClass('active');
-    $('#matrix-quesfour').removeClass('active');
-}
-
-function quesfour_tab() {
-    $('#matrix-quesfour-tab').addClass('active');
-    $('#matrix-quesfour').addClass('active');
-    $('#matrix-questwo-tab').removeClass('active');
-    $('#matrix-questwo').removeClass('active');
-    $('#matrix-questhree-tab').removeClass('active');
-    $('#matrix-questhree').removeClass('active');
-    $('#matrix-quesone-tab').removeClass('active');
-    $('#matrix-quesone').removeClass('active');
-}
-
 </script>
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
