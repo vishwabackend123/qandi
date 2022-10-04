@@ -1161,6 +1161,7 @@ transform: translateX(100%);
     }
 }
 @media(max-width:767px){ 
+    .performance_chapter_block .accordion-header .accordion-button{    padding: 8px 16px 8px 16px;}
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
@@ -2248,7 +2249,7 @@ transform: translateX(100%);
     .modal-popup-customize .modal-content {
         border: 0 !important;
         height: 100%;
-        background: #f5faf6;border-radius:0px;
+        background: #EDF4EC;border-radius:0px;
     }
     
 
