@@ -336,9 +336,13 @@ class ReviewController extends Controller
 
 
 
-            /*  return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
-    */
-            return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+            //return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+
+            $webView = view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'))->render();
+
+            $mobView = view('afterlogin.ExamsReview.next_review_question_mobile', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'))->render();
+
+            return response(array('status' => 'success', 'webView' => $webView, 'mobView' => $mobView));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -447,7 +451,12 @@ class ReviewController extends Controller
             }
 
 
-            return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+            //   return view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+            $webView = view('afterlogin.ExamsReview.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'))->render();
+
+            $mobView = view('afterlogin.ExamsReview.next_review_question_mobile', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'))->render();
+
+            return response(array('status' => 'success', 'webView' => $webView, 'mobView' => $mobView));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
