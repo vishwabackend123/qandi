@@ -127,6 +127,7 @@ class PreviousYearExamController extends Controller
 
 
             $paper_id = isset($request->paper_id) ? $request->paper_id : '';
+            $paper_year = isset($request->paper_year) ? $request->paper_year : '';
 
 
             $pyCacheKey = 'PreviousYearExam:' . $user_id . '_' . $ranSession;
@@ -145,7 +146,7 @@ class PreviousYearExamController extends Controller
                 $paper_id = Session::get('paper_id');
             } else {
 
-                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')){
+                if (isset($paper_id) && empty($paper_id) && Session::has('paper_id')) {
                     $paper_id = Session::get('paper_id');
                 }
                 $curl_url = "";
@@ -295,10 +296,12 @@ class PreviousYearExamController extends Controller
                 $exam_url = route('previousYearExam');
 
                 $exam_title = "Previous Year Test";
+                $examType = 'prev_year_paper';
+                $instructions = $this->getInstructions($examType, $paper_year);
 
+                return view('afterlogin.PreviousYearExam.py_instruction', compact('instructions', 'ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
 
-
-                return view('afterlogin.MockExam.mock_exam_instruction', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
+                // return view('afterlogin.MockExam.mock_exam_instruction', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'filtered_subject', 'exam_title', 'header_title', 'aSections'));
             } else {
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $attempt_sub_section_cnt =  [];

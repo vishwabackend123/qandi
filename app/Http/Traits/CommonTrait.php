@@ -311,7 +311,6 @@ trait CommonTrait
         } */
 
 
-
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/preference/' . $user_id;
 
@@ -585,5 +584,65 @@ trait CommonTrait
         }
 
         return $token;
+    }
+
+
+    public function getInstructions($examType, $py_year = '')
+    {
+        $userData = Session::get('user_data');
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
+
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType;
+
+        if ($examType == 'full_body_scan') {
+            $preferences = $this->redis_Preference();
+            $class_grade_val = isset($preferences->student_stage_at_sgnup) ? $preferences->student_stage_at_sgnup : 1;
+            if ($class_grade_val == 1) {
+                $class_grade = 11;
+            } else if ($class_grade_val == 2) {
+                $class_grade = 12;
+            } else {
+                $class_grade = 13;
+            }
+
+            $curl_url =  $curl_url . '&class_grade=' . $class_grade;
+        }
+
+        if ($examType == 'prev_year_paper') {
+            $curl_url =  $curl_url . '&year=' . $py_year;
+        }
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+        curl_close($curl);
+
+        $instHtml = isset($aResponse->instructions) ? $aResponse->instructions : '';
+
+        return $instHtml;
     }
 }

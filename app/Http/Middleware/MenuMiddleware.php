@@ -51,6 +51,7 @@ class MenuMiddleware
             $api_URL = env('API_URL');
 
             $preferences = $this->redis_Preference();
+
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             if ($prof_asst_test == "Y") {
                 Session::put('full_body_attempt', $prof_asst_test);

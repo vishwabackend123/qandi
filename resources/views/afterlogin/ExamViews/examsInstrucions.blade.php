@@ -25,47 +25,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <div class="col-xl-8 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_eight">
                     <div class="mock_inst_text_mock_test">
                         <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> Back</a>
-
                     </div>
-                    <div class="exam_instruction_text">INSTRUCTIONS</div>
-                    <div class="exam_instruction_text_under_text">Please read the instructions carefully prior to taking the test.</div>
-                    <div class="exam_instruction_scrolling">
-                        <div>
-                            <div class="exam_inst_sec_head"><b>1. <span>General</span></b></div>
-                            <div class="line-693"></div>
-                            <ul class="exam_inst_ul_li">
-                                <li>The total duration of this test is <b>{{$exam_fulltime}} mins.</b></li>
-                                <li>This test is of <b>{{$total_marks}} marks.</b></li>
-                                <li>There will be <b>{{$questions_count}} questions</b> in the test.</li>
-                                <!-- <li class="exam_instr_li_one_disk_none">The following are the sections in the test:</li> -->
-                            </ul>
-                        </div>
-                        @php $i=1; @endphp
-                        @if(isset($filtered_subject))
-                        @foreach($filtered_subject as $sub)
-                        @php $i++; @endphp
-
-                        <div>
-                            <div class="exam_inst_sec_head_flex">
-                                <div class="exam_inst_sec_head"><b>{{$i}}. <span>{{$sub->subject_name}}</span></b></div>
-                                <div class="exam_inst_sec_head_padding">
-                                    <span>Total Marks:</span>
-                                    <span><b>{{$sub->count*4}}</b></span>
-                                </div>
-                            </div>
-                            <div class="line-693"></div>
-
-                            <ul class="exam_inst_ul_li">
-                                <li>This section contains {{$sub->count}} <b>questions of Single Choice.</b></li>
-                                <li><b>For Single Choice questions</b>, +4 marks are allotted for each correct response, -1 mark will be deducted for each incorrect response, and 0 mark will be given for unanswered/ marked for review questions. </li>
-                            </ul>
-
-
-                        </div>
-                        @endforeach
-                        @endif
-
-                    </div>
+                    <div id="inst_details">{!!$instructions!!}</div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                     <div class="exam_section_right_side">
@@ -81,7 +42,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="exam_inst_col_four_text_contant2">{{$questions_count}} Questions</div>
                             </div>
                             <div class="exam_inst_col_four_text_contant">
-                                <div class="exam_inst_col_four_text_contant1">Subject</div>
+                                <div class="exam_inst_col_four_text_contant1">{{(isset($subCounts) && $subCounts>1)?'Subjects':'Subject'}}</div>
                                 <div class="exam_inst_col_four_text_contant2">{{$tagrets}}</div>
                             </div>
                         </div>
@@ -106,19 +67,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     </g>
                                 </svg>
                                 <div class="exam_inst_all_the_best">All the Best, {{ucwords($userData->user_name)}}!</div>
-
-                                <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
+                                <form class="form-horizontal ms-auto " action="{{$exam_url}}" method="post">
                                     @csrf
-                                    <input type="hidden" name="series_name" value="{{$requestData->series_name}}" />
-                                    <input type="hidden" name="series_id" value="{{$requestData->series_id}}" />
-                                    <input type="hidden" name="series_type" value="{{$requestData->series_type}}" />
-                                    <input type="hidden" name="time_allowed" value="{{$requestData->time_allowed}}" />
-                                    <input type="hidden" name="questions_count" value="{{$requestData->questions_count}}" />
-                                    <input type="hidden" name="exam_mode" value="{{$requestData->exam_mode}}" />
                                     <input type="hidden" name="ranSession" value="{{$ranSession}}" />
-
-                                    <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
+                                    <button type="submit" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</button>
                                 </form>
+                                {{-- <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">{{(isset($test_type) && (($test_type=='Live') || ($test_type=='Profiling')))?'Take Test': 'Practice' }}</a> --}}
                             </div>
                         </div>
                     </div>

@@ -230,7 +230,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!--   <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                            <!-- <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -619,9 +619,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </svg>
                                                 </span>
                                                 <span class="desktop_hide">
-                                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                      <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                   </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                        <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
                                                 </span>
                                                 <span>Add
                                                 </span>
@@ -717,169 +717,169 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </div>
                                         @if($userStatus==false)
                                         <div class="row row_repeate">
-                                        @else
-                                        <div class="row row_repeate emptyrow">
-                                        @endif
-                                            <div class="col-md-7">
-                                                <div class="progress_journey_chart progressnewjourney">
-                                                    <canvas id="progressJourny_graph"></canvas>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
-                                                @if($userStatus==false)
-                                                <div class="graphDetail w-100">
-                                                    <div class="yourPacebox">
-                                                        <p class="graphTitle">Ideal Pace</p>
-                                                        <p>
-                                                            <span class="weekCountline myscore"></span>
-                                                            <span class="weekCount">{{round($ideal_avg)}}</span>
-                                                            <span class="weekText">chapters per week</span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="yourPacebox">
-                                                        <p class="graphTitle">Your Pace</p>
-                                                        <p>
-                                                            <span class="weekCountline colorHline"></span>
-                                                            <span class="weekCount">{{round($your_place_avg)}}</span>
-                                                            <span class="weekText">chapters per week</span>
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
-                                                    </div>
-
-                                                </div>
-                                                @else
-                                                <div class="graphDetailempty w-100">
-                                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
-                                                    <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
-                                                </div>
-                                                @endif
-                                                <!-- <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3 white_bg">Attempt Now</a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="journeyGraph cardWhiteBg">
-                                        <div class="boxHeadingBlock">
-                                            <h3 class="boxheading">
-                                                Marks Trend
-                                                <span class="tooltipmain">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                                        </g>
-                                                    </svg>
-                                                    <p class="tooltipclass">
-                                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                        Get insights on your progress over time.
-                                                    </p>
-                                                </span>
-                                            </h3>
-                                        </div>
-                                       
-                                        @if($userStatus==false)
-                                        <div class="journeyBoxcontainer row_repeate">
-                                        @else
-                                        <div class="journeyBoxcontainer row_repeate emptyrow">
-                                        @endif
-                                            <div class="graphimg">
-                                              @if($userStatus==false)
-                                                <div class="dropbox desktop_hide">
-                                                    <div class="customDropdown1 dropdown" id="dropdown2">
-                                                        <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
-                                                        <div class="options">
-                                                            <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
-                                                                <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                 </div>
-                                                 @else
-                                                <div></div>
-                                               @endif
-                                                <div class="progress_journey_chart">
-                                                    <canvas id="trend_graph" style="height: 270px;"></canvas>
-                                                </div>
-                                                <div class="desktop_hide">
-                                                    <div class="yourPacebox">
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH myscore"></span>
-                                                            <span class="weekText">My score</span>
-                                                        </p>
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH  peerAvg"></span>
-                                                            <span class="weekText">Peer average</span>
-                                                        </p>
-                                                        <p class="testScrolltype">
-                                                            <span class="weekCountlineH  topScroe"></span>
-                                                            <span class="weekText">Top score</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- if (!empty($trendResponse) && $userStatus==false) -->
-                                            @if($userStatus==false)
-                                            <div class="graphDetail">
-                                                <div class="dropbox mobile_hide">
-                                                    <div class="customDropdown1 dropdown" id="dropdown1">
-                                                        <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
-                                                        <div class="options">
-                                                            <div style=" overflow-y: auto;  height: 145px;">
-                                                                <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
-                                                                <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="yourPacebox scoretype mobile_hide">
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH myscore"></span>
-                                                        <span class="weekText">My score</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  peerAvg"></span>
-                                                        <span class="weekText">Peer average</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  topScroe"></span>
-                                                        <span class="weekText">Top score</span>
-                                                    </p>
-                                                </div>
-                                            </div>
                                             @else
-                                            <div class="graphDetailempty">
-                                                <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                                <div class="yourPacebox">
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH myscore"></span>
-                                                        <span class="weekText">My score</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  peerAvg"></span>
-                                                        <span class="weekText">Peer average</span>
-                                                    </p>
-                                                    <p class="testScrolltype">
-                                                        <span class="weekCountlineH  topScroe"></span>
-                                                        <span class="weekText">Top score</span>
-                                                    </p>
+                                            <div class="row row_repeate emptyrow">
+                                                @endif
+                                                <div class="col-md-7">
+                                                    <div class="progress_journey_chart progressnewjourney">
+                                                        <canvas id="progressJourny_graph"></canvas>
+                                                    </div>
                                                 </div>
-                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
+                                                <div class="col-md-5">
+                                                    <!-- if (isset($ideal) && !empty($ideal) && $userStatus==false) -->
+                                                    @if($userStatus==false)
+                                                    <div class="graphDetail w-100">
+                                                        <div class="yourPacebox">
+                                                            <p class="graphTitle">Ideal Pace</p>
+                                                            <p>
+                                                                <span class="weekCountline myscore"></span>
+                                                                <span class="weekCount">{{round($ideal_avg)}}</span>
+                                                                <span class="weekText">chapters per week</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="yourPacebox">
+                                                            <p class="graphTitle">Your Pace</p>
+                                                            <p>
+                                                                <span class="weekCountline colorHline"></span>
+                                                                <span class="weekCount">{{round($your_place_avg)}}</span>
+                                                                <span class="weekText">chapters per week</span>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="note">
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
+                                                        </div>
+
+                                                    </div>
+                                                    @else
+                                                    <div class="graphDetailempty w-100">
+                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
+                                                        <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
+                                                    </div>
+                                                    @endif
+                                                    <!-- <a href="" class="btn btn-common-transparent desktop_hide mt-3 mb-3 white_bg">Attempt Now</a> -->
+                                                </div>
                                             </div>
-                                            @endif
-                                            
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="journeyGraph cardWhiteBg">
+                                            <div class="boxHeadingBlock">
+                                                <h3 class="boxheading">
+                                                    Marks Trend
+                                                    <span class="tooltipmain">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                            </g>
+                                                        </svg>
+                                                        <p class="tooltipclass">
+                                                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                            Get insights on your progress over time.
+                                                        </p>
+                                                    </span>
+                                                </h3>
+                                            </div>
+
+                                            @if($userStatus==false)
+                                            <div class="journeyBoxcontainer row_repeate">
+                                                @else
+                                                <div class="journeyBoxcontainer row_repeate emptyrow">
+                                                    @endif
+                                                    <div class="graphimg">
+                                                        @if($userStatus==false)
+                                                        <div class="dropbox desktop_hide">
+                                                            <div class="customDropdown1 dropdown" id="dropdown2">
+                                                                <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="All Test" readonly>
+                                                                <div class="options">
+                                                                    <div style=" overflow-y: auto;  height: 145px;">
+                                                                        <div class="active markstrend markstrend_graph2" onclick="showMobile('All Test', 'all','markstrend_graph2')">All Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Mock Test', 'Mocktest','markstrend_graph2')">Mock Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Practice Test', 'Assessment','markstrend_graph2')">Practice Test</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Test Series', 'Test-Series','markstrend_graph2')">Test Series</div>
+                                                                        <div class="markstrend markstrend_graph2" onclick="showMobile('Live', 'Live','markstrend_graph2')">Live Test</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @else
+                                                        <div></div>
+                                                        @endif
+                                                        <div class="progress_journey_chart">
+                                                            <canvas id="trend_graph" style="height: 270px;"></canvas>
+                                                        </div>
+                                                        <div class="desktop_hide">
+                                                            <div class="yourPacebox">
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH myscore"></span>
+                                                                    <span class="weekText">My score</span>
+                                                                </p>
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH  peerAvg"></span>
+                                                                    <span class="weekText">Peer average</span>
+                                                                </p>
+                                                                <p class="testScrolltype">
+                                                                    <span class="weekCountlineH  topScroe"></span>
+                                                                    <span class="weekText">Top score</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- if (!empty($trendResponse) && $userStatus==false) -->
+                                                    @if($userStatus==false)
+                                                    <div class="graphDetail">
+                                                        <div class="dropbox mobile_hide">
+                                                            <div class="customDropdown1 dropdown" id="dropdown1">
+                                                                <input class="text-box markstrend" type="text" id="markstrend_graph" placeholder="All Test" readonly>
+                                                                <div class="options">
+                                                                    <div style=" overflow-y: auto;  height: 145px;">
+                                                                        <div class="active markstrend markstrend_graph" onclick="show('All Test', 'all','markstrend_graph')">All Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Mock Test', 'Mocktest','markstrend_graph')">Mock Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Practice Test', 'Assessment','markstrend_graph')">Practice Test</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Test Series', 'Test-Series','markstrend_graph')">Test Series</div>
+                                                                        <div class="markstrend markstrend_graph" onclick="show('Live', 'Live','markstrend_graph')">Live Test</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="yourPacebox scoretype mobile_hide">
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH myscore"></span>
+                                                                <span class="weekText">My score</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  peerAvg"></span>
+                                                                <span class="weekText">Peer average</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  topScroe"></span>
+                                                                <span class="weekText">Top score</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    @else
+                                                    <div class="graphDetailempty">
+                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                                        <div class="yourPacebox">
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH myscore"></span>
+                                                                <span class="weekText">My score</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  peerAvg"></span>
+                                                                <span class="weekText">Peer average</span>
+                                                            </p>
+                                                            <p class="testScrolltype">
+                                                                <span class="weekCountlineH  topScroe"></span>
+                                                                <span class="weekText">Top score</span>
+                                                            </p>
+                                                        </div>
+                                                        <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg mt-4">Attempt Now</a>
+                                                    </div>
+                                                    @endif
+
+                                                </div>
+                                            </div>
+                                        </div>
                             </section>
                         </div>
                     </div>
@@ -1113,14 +1113,17 @@ $user_id = isset($userData->id)?$userData->id:'';
             responsive: {
                 0: {
                     items: 1,
-                    nav: false,
                     stagePadding: 40,
                     margin: 0,
-                    loop: true,
+                    loop: false,
                 },
 
                 500: {
-                    items: 1
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: false,
                 },
                 600: {
                     items: 2
@@ -1287,7 +1290,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         );
     </script>
     <script>
-        function show(value, type,ids) {
+        function show(value, type, ids) {
             document.querySelector("#markstrend_graph").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({
@@ -1304,7 +1307,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                 }
             });
         }
-        function showMobile(value, type,ids) {
+
+        function showMobile(value, type, ids) {
             document.querySelector("#markstrend_graph2").value = value;
             url = "{{ url('trendGraphUpdate/') }}/" + type;
             $.ajax({

@@ -380,7 +380,7 @@
                         <div class="tab-pane fade show active" id="pills-Day4" role="tabpanel" aria-labelledby="pills-Day4-tab">
                             <div class="chartspent  bargraph_scroll">
                                 <div class="graph_padd bargraph_size">
-                                    <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  Marks </small> </span>
+                                    <span class="yaxis_label"><small> Marks </small> </span>
                                     <canvas id="mark_trend_day_2"></canvas>
                                 </div>
                             </div>
@@ -388,7 +388,7 @@
                         <div class="tab-pane fade" id="pills-Week4" role="tabpanel" aria-labelledby="pills-Week4-tab">
                             <div class="chartspent  bargraph_scroll">
                                 <div class="graph_padd bargraph_size">
-                                    <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  Marks </small> </span>
+                                    <span class="yaxis_label"><small> Marks </small> </span>
                                     <canvas id="mark_trend_week_2"></canvas>
                                 </div>
                             </div>
@@ -396,7 +396,7 @@
                         <div class="tab-pane fade" id="pills-Month4" role="tabpanel" aria-labelledby="pills-Month4-tab">
                             <div class="chartspent  bargraph_scroll">
                                 <div class="graph_padd bargraph_size">
-                                    <span class="yaxis_label yaxis_label_2 yaxis_label_3"><small> Average  Marks </small> </span>
+                                    <span class="yaxis_label"><small> Marks </small> </span>
                                     <canvas id="mark_trend_month_2"></canvas>
                                 </div>
                             </div>
@@ -419,7 +419,7 @@
                     </div>
                     <div class="chartspent bargraph_scroll">
                         <div class="graph_padd bargraph_size">
-                            <span class="yaxis_label  yaxis_label_2"><small> Accuracy Percentage </small> </span>
+                            <span class="yaxis_label  yaxis_label_4"><small> Accuracy Percentage </small> </span>
                             <canvas id="accuracy_graph2"></canvas>
                         </div>
                     </div>
@@ -867,7 +867,7 @@ var configmarktrend = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {
@@ -930,7 +930,7 @@ var configmarktrendw = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {
@@ -993,7 +993,7 @@ var configmarktrendm = {
         maintainAspectRatio: false,
         elements: {
             point: {
-                radius: 0
+                radius: 2
             }
         },
         plugins: {

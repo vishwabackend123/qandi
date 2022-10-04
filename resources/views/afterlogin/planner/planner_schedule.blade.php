@@ -139,10 +139,11 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <div class="bg-white position-fixed w-100 d-sm-none d-block savebtnfix">
-                <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerbutton">Save Test</button>
-            </div>
+            
         </div>
+        <div class="bg-white w-100 d-sm-none d-block savebtnfix">
+                <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerMobilebutton">Save Test</button>
+            </div>
     </section>
 </div>
 <div class="modal fade" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -215,14 +216,19 @@ $userData = Session::get('user_data');
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount > limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
+            $('#saveplannerMobilebutton').removeClass('disabled');
         }
     }
 
@@ -242,14 +248,20 @@ $userData = Session::get('user_data');
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount > limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
+
         } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
+            $('#saveplannerMobilebutton').removeClass('disabled');
         }
     }
 
@@ -356,14 +368,19 @@ $userData = Session::get('user_data');
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount > limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
+            $('#saveplannerMobilebutton').removeClass('disabled');
         }
 
     });
@@ -398,6 +415,7 @@ $userData = Session::get('user_data');
 
                 if (limitrange == chapterscount) {
                     $('#saveplannerbutton').removeClass('disabled');
+                    $('#saveplannerMobilebutton').removeClass('disabled');
                 }
 
             },
@@ -486,6 +504,8 @@ $userData = Session::get('user_data');
                             'scrollTop': $('#topwrapper').position().top
                         }, 500);
                         $('#saveplannerbutton').addClass('disabled');
+                        $('#saveplannerMobilebutton').addClass('disabled');
+
 
                     } else {
                         var message = response.message;
@@ -527,14 +547,20 @@ $userData = Session::get('user_data');
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
+
         } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (chapterscount > limitrange) {
             $('#saveplannerbutton').addClass('disabled');
+            $('#saveplannerMobilebutton').addClass('disabled');
         } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
+            $('#saveplannerMobilebutton').removeClass('disabled');
         }
     });
 
@@ -637,6 +663,10 @@ $userData = Session::get('user_data');
 
         return [year, month, day].join('-');
     }
+
+    $('#saveplannerMobilebutton').click(function() {
+        $('#plannerAddform').submit();
+    })
 </script>
 <script type="text/javascript">
     var config = `

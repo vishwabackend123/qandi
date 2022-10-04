@@ -2928,9 +2928,9 @@ line-height: 1.6;
  .addPlanbtn .btn span {
      display: flex;
  }
- .addPlanbtn .btn span:nth-child(2) {
-     padding-left: 5px;  
- }
+ .addPlanbtn .btn span.mobile_hide,
+ .addPlanbtn .btn span.desktop_hide{margin-right:8px;}
+
  
 /********************End-Dashboard-By-Sachin-Date-06-07-22**************/
  /************Subscription-Responsive-Element Sachin Start Date:20-07-22 *********/
@@ -3365,7 +3365,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     height: 1em;
     position: relative;
     /* background: #cbebcf; */
-    border-radius: 50%;
+    border-radius: 100%;
     /* overflow: hidden; */
     display: inline-block;
     /* box-shadow:0px 9px 16px rgba(164,172,178,0.4); */
@@ -3376,7 +3376,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     font-size: 119px;
     min-width: 1em;
     height: 1em;
-    border-radius: 50%;
+    border-radius: 100%;
     display: inline-block;
     top: -15px;
     /* transform: rotate(-133deg); */
@@ -3389,6 +3389,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     width: 1em;
     height: 1em;
     clip: rect(0 1em 1em 0.5em);
+    border-radius: 100%;
 }
 
 .mq_round_per {
@@ -3426,9 +3427,9 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     left: 7px;
     right: 7px;
     bottom: 7px;
-    background: #fff;
+    background-color: #fff;
     z-index: 3;
-    border-radius: 50%;
+    border-radius: 100%;
     background-image: url(../images/roundshape3.svg);
     background-position-x: -12px;
     background-size: 128px;
@@ -3863,6 +3864,9 @@ span.greenball-3 {
 .yaxis_label.yaxis_label_3 {
     left: -36px;
 }
+.yaxis_label.yaxis_label_4 {
+    left: -54px;
+}
 .overall_analytics_page .topic_score_bar .progress{height: 12px;}
 .chapter_performance_card ul.topic_score_lists {
     min-height: 281px;
@@ -4112,6 +4116,7 @@ span.proficiency_value {
     display: inline-block;
     white-space: nowrap;
 }
+.performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
     font-weight: 700;
     width: 16px;
@@ -4214,6 +4219,7 @@ span.proficiency_value {
 #referedfrnd .modal-content {
     background-color: #EDF4EC;
 }
+.planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
 /********************* Amit End ****************************/
 
 
@@ -4650,7 +4656,7 @@ header {
 
 .commonlisting li {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     position: relative;
     padding-left: 12px;
@@ -4836,7 +4842,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
     align-items: flex-end;
     justify-content: space-between;min-height: 121px;}
-.subjectblockOverall .textblock h3{ margin: 0px 0px 18px ; font-size: 20px; font-weight: 800; color: #000;}
+.subjectblockOverall .textblock h3{ margin: 0px 0px 18px ; font-size:18px; font-weight: 800; color: #000;}
 .subjectblockOverall .textblock h5 { opacity: 0.6; font-size: 14px; font-weight: 500;  line-height: 1.6; color: #363c4f;margin-bottom:0px;}
 .subjectblockOverall .textblock h6{font-size: 14px;font-weight: 800; line-height: 1.6; color: #363c4f;margin:0px}
 .halfdoughnutsmall{height:100px;width:100px;}
@@ -4955,7 +4961,10 @@ justify-content: space-between;}
             border-radius: 8px;padding-right:120px;}
 
 .progressnewjourney{height:100%;}
-.progressnewjourney canvas{height:calc(100% + 40px);}
+/* .progressnewjourney canvas{height:calc(100% + 40px);} */
+canvas#progressJourny_graph, canvas#trend_graph {
+    height: 270px!important;
+}
 .overallmain .boxheading .tooltipmain{top:-2px}
 .chapter_performance_card .progress-bar.incorrect-bg{background-color: #ff6678;}
 .chapter_performance_card .progress-bar.correct-bg { background-color: #34d399;}
@@ -8017,13 +8026,14 @@ margin-bottom: 12px;
 /* Gourav Css */
 .jee_table {
     margin: 20px 0px 20px 20px;
+    width:100%;
 }
 .jee_table th {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
-    background-color: #efefef;
+    background-color: #cceed0;
 }
 .jee_table td {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
 }
