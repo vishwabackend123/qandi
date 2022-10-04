@@ -4206,7 +4206,8 @@ span.proficiency_value {
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
     margin-right: 60px;
     padding: 0 8px 20px;
-    color: #56b663;
+    /* color: #56b663; */
+        color: #363c4f; 
 }
 .test_myscrore_card {height: 292px;}
 .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
@@ -4217,7 +4218,7 @@ span.proficiency_value {
 }
 .contactus-menu{position: absolute;bottom:24px;}
 .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    border-bottom: 4px solid #56b663;}
-.tooltipmain svg g{stroke: #56b663;opacity: 1;}
+/* .tooltipmain svg g{stroke: #56b663;opacity: 1;} */
 /* .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
 } */
@@ -5614,7 +5615,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 }
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
     position: relative!important;
-    color: #56b663!important;
+    /* color: #56b663!important; */
 }
 .mqmatric_topic {
     font-size: 20px;
@@ -6050,7 +6051,8 @@ background: #3e8a44;
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #56b663;
+    /* color: #56b663; */
+    color: #1f1f1f;
 }
 .exam_instruction_scrolling_pd_zero
 {
