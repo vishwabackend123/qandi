@@ -2642,7 +2642,6 @@ transform: translateX(100%);
             .testscreenmob .singleChoice{
                 min-width: auto;
                 max-width: inherit;
-                white-space: nowrap;
             }
 
             .testscreenmob .btnformobietest  .btnbottom {
@@ -3172,7 +3171,7 @@ transform: translateX(100%);
     .exam_tabdata .accordion-body {
         border-top: 2px dashed #cde3d0;
     }
-    
+    .testscreenmob .questionChoice{min-height:36px;height:auto;}  
 }
 
 
