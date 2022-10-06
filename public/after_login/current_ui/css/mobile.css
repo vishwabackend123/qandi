@@ -3080,9 +3080,12 @@ transform: translateX(100%);
     .graphimg .dropbox{margin-bottom:37px;}
     .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
     .upgradebtn {
-        width: auto;
         padding: 6px 10px;
         height: auto;
+        position: absolute;
+        width: calc(100% - 32px);
+        bottom: 16px;
+        left: 16px;
     }
 
     .examReviewscreenmob{overflow-y:hidden;}
