@@ -404,6 +404,10 @@
             padding-top: 44px;
             padding-bottom: 8px;
         }
+        .mock_inst_text_mock_test {
+            display: none;
+        }
+        
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -445,6 +449,7 @@
     {
         display:none;
     }
+    .mock_inst_text_mock_testmobile.mobile_block{display:none!important;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .TestseriesAttempt22 .test-table .accordion-header .btn.btn-common-transparent
