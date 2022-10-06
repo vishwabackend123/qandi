@@ -3164,6 +3164,9 @@ transform: translateX(100%);
         padding-right: calc(var(--bs-gutter-x)/ 2)!important;
     }
     .main-title{color:#1f1f1f;}
+    .exam_tabdata .accordion-body {
+        border-top: 2px dashed #cde3d0;
+    }
     
 }
 
