@@ -4956,7 +4956,7 @@ justify-content: space-between;}
                 background-color: #56b663;
                 border-top-right-radius: 11px;
             }
-          .tabMainblock_myqmatric  .qq1_2_3_4.active:before,.tabMainblock_myqmatric  .qq1_2_3_4.active:after{ height: 4px;}
+          .tabMainblock_myqmatric  .qq1_2_3_4.active:before,.tabMainblock_myqmatric  .qq1_2_3_4.active:after{ height:5px;}
 .blackcolor{color: #1f1f1f    ;}
 .matrixpage-wrapper .fortab .commonWhiteBox{height:100%;}
 .select2-container--open .select2-dropdown--above{border:0px;}
