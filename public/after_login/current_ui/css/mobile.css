@@ -3173,6 +3173,7 @@ transform: translateX(100%);
         border-top: 2px dashed #cde3d0;
     }
     .testscreenmob .questionChoice{min-height:36px;height:auto;}  
+    .singleChoice{font-size:13px;}
 }
 
 
