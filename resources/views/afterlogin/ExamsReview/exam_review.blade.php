@@ -819,8 +819,8 @@ $question_type = "Numerical";
     });
 
 
-    //$('.expandformob').on('click', function() {
-    $("#mob_explanation").on("click", ".expandformob", function() {
+    $('.expandformob').on('click', function() {
+        // $("#reviewData").on("click", ".expandformob", function() {
         $('.collapseformob').css({
             display: "block"
         });
@@ -834,8 +834,8 @@ $question_type = "Numerical";
 
     });
 
-    // $('.collapseformob').on('click', function() {
-    $("#mob_explanation").on("click", ".collapseformob", function() {
+    $('.collapseformob').on('click', function() {
+        //$("#reviewData").on("click", ".collapseformob", function() {
         $('.collapseformob').css({
             display: "none"
         });
@@ -908,6 +908,7 @@ $question_type = "Numerical";
 
 
             $(".expandformob").on('click', function() {
+
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
