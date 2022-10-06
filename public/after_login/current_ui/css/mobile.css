@@ -1534,7 +1534,7 @@ transform: translateX(100%);
     }
     .MockTestMob .exam_tabdata #mock_test
     {
-        padding: 12px;
+        padding: 12px 0px;
         border-radius: 10px!important;
     }
     .MockTestMob .bg-white-bg_mob
@@ -1768,7 +1768,7 @@ transform: translateX(100%);
     }
     .PrevousYearExam_wraper_contant2 .tablescroll
     {
-        padding-right: 10px!important;    height: calc(100vh - 354px);
+        padding-right: 5px!important;    height: calc(100vh - 354px);
     }
     .PrevousYearExam_wraper_contant1 .exam_tabdata #mock_test
     {
