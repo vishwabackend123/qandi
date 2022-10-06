@@ -281,6 +281,14 @@
     .journeyGraph {padding: 20px;}
     .Chapter_Main_Graph{margin-right:10px;width:40px;height:40px;}
     .fullbodyBox{justify-content:space-between;}
+    .planewrapper {
+        flex-wrap: wrap;
+    }
+    .gotoPlanner {
+        min-width: 126px;
+    }
+    .planDetailBox{padding-top:15px;}
+    .vLine{display:none;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -1122,14 +1130,7 @@ transform: translateX(100%);
         vertical-align: middle;
         text-align: right;
     }
-    .planewrapper {
-        flex-wrap: wrap;
-    }
-    .gotoPlanner {
-        min-width: 126px;
-    }
-    .planDetailBox{padding-top:15px;}
-    .vLine{display:none;}
+    
 }
 
 /* *************Tab  Css End ***************** */
