@@ -5005,6 +5005,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 .mocktestarrow  i{    margin-right: 8px;
     transform: rotate(180deg);top: 0px;
     position: relative;}
+    .exam_inst_sec_head b {display:flex;}
     .exam_inst_sec_head b span{margin-left:8.8px;display:inline-block;}
     .test-table h2.mintext, .test-table h2.questiontext{font-weight:600;font-size:14px;}
     .tablescroll{height:calc(100vh - 400px);overflow-y: auto;padding-right:20px;}
