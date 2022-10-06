@@ -75,15 +75,15 @@ $(".mq_circle_percent").each(function() {
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
 	$this.append('<div class="mq_circle_inbox"><div class="valeblocktop"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div></div>');
 	
-	if($dataV >= 51){
-		$round.css("transform", "rotate(" + 360 + "deg)");
-		setTimeout(function(){
-			$this.addClass("mq_percent_more");
-		},1000);
-		setTimeout(function(){
-			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-		},1000);
-	} 
+	// if($dataV >= 51){
+	// 	$round.css("transform", "rotate(" + 360 + "deg)");
+	// 	setTimeout(function(){
+	// 		$this.addClass("mq_percent_more");
+	// 	},1000);
+	// 	setTimeout(function(){
+	// 		$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+	// 	},1000);
+	// } 
 });
 var percent_data =$('#accurate_percent').val();
 var headingpercent = Math.ceil(percent_data);
