@@ -767,7 +767,10 @@
     border-radius: 8px;
     border: solid 1px #cde3d0;
     background-color: white;
-    font-size: 14px;
+    font-size: 14px;font-weight:600;height:44px;border-radius: 10px;
+    }
+    .previous_exam_head_with_drop .customDropdown::before {
+        top: 16px;
     }
     .PrevousYearExam_wraper_contant2 .tablescroll
     {
