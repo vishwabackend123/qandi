@@ -3174,6 +3174,9 @@ transform: translateX(100%);
     }
     .testscreenmob .questionChoice{min-height:36px;height:auto;}  
     .singleChoice{font-size:13px;}
+    .exambox-heading p{overflow: initial;
+        white-space: normal;
+        text-overflow: ellipsis;}
 }
 
 
