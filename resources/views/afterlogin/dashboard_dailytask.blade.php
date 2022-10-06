@@ -231,12 +231,12 @@ $userData = Session::get('user_data');
                             <li class="nav-item">
                                 <a class="nav-link qq1_2_3_4 active m-0" id="daily_tasks-tab" data-bs-toggle="tab" data-bs-target="#daily_tasks" type="button" role="tab" aria-controls="daily_tasks" aria-selected="true">
                                     Daily Tasks
-                                    <span>{{count($dailyTask)}}</span>
+                                    <span id="daily_task">{{count($dailyTask)}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link qq1_2_3_4 m-0" id="weekly_tasks-tab" data-bs-toggle="tab" data-bs-target="#weekly_tasks" type="button" role="tab" aria-controls="weekly_tasks" aria-selected="false">Weekly Tasks
-                                    <span>{{count($weekTask)}}</span>
+                                    <span id="week_task">{{count($weekTask)}}</span>
                                 </a>
                             </li>
                         </ul>
@@ -549,6 +549,17 @@ $userData = Session::get('user_data');
                 });
                 $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                     $(this).parent("p").hide();
+                });
+                $('#week_task').hide();
+                $('#weekly_tasks-tab').click(function() {
+                    $('#week_task').show();
+                    $('#daily_task').hide();
+
+                });
+                 $('#daily_tasks-tab').click(function() {
+                    $('#week_task').hide();
+                    $('#daily_task').show();
+
                 });
             });
 
