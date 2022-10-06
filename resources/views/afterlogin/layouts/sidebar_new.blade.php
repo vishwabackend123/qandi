@@ -6,7 +6,7 @@ $userData = Session::get('user_data');
     <div class="userprofile headericon d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
             @if(isset($userData->user_profile_img))
-            <img src="{{ $imgPath ?? '' }}" class="profileicon" />
+            <img src="{{ $imgPath ?? '' }}" class="profileicon" height="20px" width="20px" />
             @else
             <a href="javascript:void(0)" title="User">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
