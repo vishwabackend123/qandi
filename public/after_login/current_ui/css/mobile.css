@@ -1071,6 +1071,10 @@ transform: translateX(100%);
 /* *************Tab  Css Start ***************** */
 @media(max-width:1024px) and (min-width:768px)
 {
+    .headerLeft h2 {
+        margin-left: 15px;
+        font-size: 18px;
+    }
     .right-seidepannel
     {
         padding: unset!important;
@@ -1127,7 +1131,7 @@ transform: translateX(100%);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width:200px;
+        width:150px;
         display: inline-block;
         vertical-align: middle;
         text-align: right;
