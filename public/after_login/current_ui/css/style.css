@@ -3376,6 +3376,10 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .circletop{position: relative;
     overflow: hidden;
+    -ms-overflow: hidden;
+    -webkit-overflow: hidden;
+    -moz-overflow: hidden;
+    -o-overflow: hidden;
     font-size: 119px;
     min-width: 1em;
     height: 1em;
