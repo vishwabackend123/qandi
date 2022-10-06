@@ -982,7 +982,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width:97px;
+        width:100px;
     }
     .pro_sub_label:link
     {
