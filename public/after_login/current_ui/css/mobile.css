@@ -291,16 +291,6 @@
     }
     .selectedWeek {
         padding-right: 24px !important;
-        font-size: 12px !important;
-    }
-    .AttempType {
-        font-size: 12px !important;
-    }
-    .testCount {
-        font-size: 15px  !important;
-    }
-    .gotoPlanner a {
-        font-size: 12px !important;
     }
     .h {
         display: block !important;
@@ -404,11 +394,7 @@
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .vLine{display: none}
-    .gotoPlanner {
-        min-width: 126px;
-    }
-    .planDetailBox{padding-top:15px;}
-    .planewrapper{flex-wrap:wrap;}
+    
     .scrollnone .main-wrapper.exam-wrapperBg header {width:100%;}
     .mock_btn_vie_detail {
         flex-basis: 405px!important;}
@@ -1136,6 +1122,13 @@ transform: translateX(100%);
         vertical-align: middle;
         text-align: right;
     }
+    .planewrapper {
+        flex-wrap: wrap;
+    }
+    .gotoPlanner {
+        min-width: 126px;
+    }
+    .planDetailBox{padding-top:15px;}
 }
 
 /* *************Tab  Css End ***************** */
