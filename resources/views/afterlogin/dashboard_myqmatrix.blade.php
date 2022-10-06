@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
                         < </span>Back to Dashboard</a>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-xl-4">
                     <div class="commonWhiteBox">
                         <div class="boxHeadingBlock">
                             <h3 class="boxheading">MyQ Matrix
@@ -127,7 +127,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 fortab" id="matrix-tab">
+                <div class="col-xl-8 fortab" id="matrix-tab">
                     <div class="commonWhiteBox">
                         <div class="tabMainblock tabMainblock_myqmatric">
                             <div class="commontab">
