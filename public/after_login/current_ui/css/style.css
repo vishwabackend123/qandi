@@ -3372,6 +3372,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     /* overflow: hidden; */
     display: inline-block;
     /* box-shadow:0px 9px 16px rgba(164,172,178,0.4); */
+    overflow: hidden;
 }
 
 .circletop{position: relative;
