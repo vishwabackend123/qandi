@@ -246,9 +246,14 @@
 
                         }
                     });
-
-
-
+                    $('.js-progress-bar').each(function () {
+                        var ids=this.id;
+                        var scrore_val =$(this).attr('data-score');
+                        var percentageComplete = scrore_val;
+                        var strokeDashOffsetValue = 100 - percentageComplete;
+                        var progressBar = $("#"+ids);
+                        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+                    });
                 }
             });
         };
@@ -411,5 +416,6 @@ $(document).on('click', '.addremovetopic', function(event) {
     $(this).parent().parent().toggleClass('examborderchange');
 });
 </script>
+
 @include('afterlogin.layouts.footer_new')
 @endsection

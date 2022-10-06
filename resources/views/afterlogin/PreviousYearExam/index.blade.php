@@ -55,7 +55,7 @@
                             <div id="mock_test" class=" tab-pane active PrevousYearExam_wraper_contant1 mock_attempetd_head_wraper">
                                 <div class="jee_main_text_take_test__btn previous_exam_head_with_drop">
                                     <div class="mock_exam_jee_main_text d-flex align-items-center">
-                                        <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>past year exam papers</p>
+                                        <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>Past year exam papers</p>
                                     </div>
                                     <div class="dropbox previous_dropbox_page">
                                         <div class="customDropdown dropdown">
