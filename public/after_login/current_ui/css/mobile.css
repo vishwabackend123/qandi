@@ -3180,6 +3180,7 @@ transform: translateX(100%);
     .exambox-heading p{overflow: initial;
         white-space: normal;
         text-overflow: ellipsis;}
+        .exam_inst_sec_head b {display:flex;}
 }
 
 
