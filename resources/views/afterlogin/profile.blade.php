@@ -204,7 +204,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="line mb-3 pb-1"></div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Subscription type</h2>
+                                <h2>Subscription Type :</h2>
                                 @if($subscription_type == "P" || $days >14)
                                      <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
                                     @else
@@ -214,16 +214,16 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             @if($subscription_type == "P" || $days >14)
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Price</h2>
+                                <h2>Price :</h2>
                                 <h3>₹{{number_format($subsprice)}}</h3>
                             </div>
                             @endif
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Active date</h2>
+                                <h2>Active Date :</h2>
                                 <h3>{{!empty($startdate)?date("j F Y", strtotime($startdate)):''}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
-                                <h2>End date</h2>
+                                <h2>End Date :</h2>
                                 <h3>{{!empty($expirydate)?date("j F Y", strtotime($expirydate)):''}}</h3>
                             </div>
                             <div id="panel">
