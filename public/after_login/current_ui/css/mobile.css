@@ -3227,7 +3227,9 @@ transform: translateX(100%);
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
-    width: 140px;
+    width: 200px;white-space: normal;
+    overflow: inherit;
+    text-overflow: inherit;
 }
     .exam_topicbtn  ul.nav .btn.nav-link {
     padding: 0 7px !important;
