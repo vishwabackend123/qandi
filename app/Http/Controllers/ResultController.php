@@ -219,10 +219,12 @@ class ResultController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
+            $result_id = isset($request->result_id) ? $request->result_id : 0;
+
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
+            $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id . '/' . $result_id;
             $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -274,10 +276,11 @@ class ResultController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
+            $result_id = isset($request->result_id) ? $request->result_id : 0;
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/mini-post-exam-analytics2/' . $user_id . '/' . $exam_id;
+            $curl_url = $api_URL . 'api/mini-post-exam-analytics2/' . $user_id . '/' . $exam_id . '/' . $result_id;
             $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -336,12 +339,14 @@ class ResultController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
+            $result_id = isset($request->result_id) ? $request->result_id : 0;
+
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
 
 
-            $curl_url = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
+            $curl_url = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id . '/' . $result_id;
             $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -519,7 +524,7 @@ class ResultController extends Controller
         $curl_url = "";
         $curl = curl_init();
         $api_URL = env('API_URL');
-        $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
+        $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id . '/' . $result_id;
         $curl_option = array(
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -554,7 +559,7 @@ class ResultController extends Controller
 
         $curl_url2 = "";
         $curl2 = curl_init();
-        $curl_url2 = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
+        $curl_url2 = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id . '/' . $result_id;
         $curl_option2 = array(
             CURLOPT_URL => $curl_url2,
             CURLOPT_RETURNTRANSFER => true,
@@ -595,7 +600,9 @@ class ResultController extends Controller
         }
         $header_title = "Test Analysis";
 
-        return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse', 'test_type', 'header_title'));
+
+
+        return view('afterlogin.ResultAnalysis.exam_result', compact('exam_name', 'scoreResponse', 'rankResponse', 'test_type', 'header_title', 'result_id'));
     }
     /**
      * Ajax Exam Result List

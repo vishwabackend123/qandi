@@ -103,7 +103,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                         </div>
                     </div>
-                   @if(isset($scoreResponse->test_type) && ($scoreResponse->test_type =='Live' || $scoreResponse->test_type =='Mocktest' || $scoreResponse->test_type =='PreviousYear'))
+                    @if(isset($scoreResponse->test_type) && ($scoreResponse->test_type =='Live' || $scoreResponse->test_type =='Mocktest' || $scoreResponse->test_type =='PreviousYear'))
                     <div class="commonWhiteBox commonblockDash borderRadius">
                         <h3 class="boxheading d-flex align-items-center">Marks
                             <span class="tooltipmain2 ml-2">
@@ -239,8 +239,8 @@ $clsAvg=$clsAvg+$gh->class_score;
 $total_sub=count($subject_graph);
 if($total_sub > 0)
 {
-    $stuscore=$stuscore/$total_sub;
-    $clsAvg=$clsAvg/$total_sub;
+$stuscore=$stuscore/$total_sub;
+$clsAvg=$clsAvg/$total_sub;
 }
 $stuscore_arr[]=round($stuscore,2);
 $stuscore_json=json_encode($stuscore_arr);
@@ -463,25 +463,24 @@ $clsAvg_json=json_encode($clsAvg_arr);
 
 <script>
     $(document).ready(function() {
-        var test_type ='<?php echo $scoreResponse->test_type ; ?>';
+        var test_type = '<?php echo $scoreResponse->test_type; ?>';
         url2 = "{{ url('exam_result_analysis_attempt/') }}";
         $.ajax({
             url: url2,
             data: {
                 "_token": "{{ csrf_token() }}",
+                'result_id': "{{$result_id}}"
             },
             success: function(result) {
 
                 $("#subject_topic_section").html(result);
                 $('.subject_score_card').hide();
-                if (test_type == 'Mocktest' || test_type == 'Live' || test_type =='PreviousYear') {
+                if (test_type == 'Mocktest' || test_type == 'Live' || test_type == 'PreviousYear') {
                     $('.subject_score_card').show();
                 }
 
             }
         });
-
-
     });
 </script>
 
