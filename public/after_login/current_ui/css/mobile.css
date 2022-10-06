@@ -2879,6 +2879,7 @@ transform: translateX(100%);
     padding: 0px;
     margin: 0px;
     border: none;
+    padding-left: 3px;
     }
  .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
         position: initial;text-overflow: ellipsis;
