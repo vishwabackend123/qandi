@@ -52,14 +52,3 @@
 @endif
 
 
-<script>
-    $('.js-progress-bar').each(function () {
-        var ids=this.id;
-        var scrore_val =$(this).attr('data-score');
-        var percentageComplete = scrore_val;
-        var strokeDashOffsetValue = 100 - percentageComplete;
-        var progressBar = $("#"+ids);
-        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-    });
-    
-</script>
