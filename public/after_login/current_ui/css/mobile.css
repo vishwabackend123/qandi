@@ -1129,6 +1129,7 @@ transform: translateX(100%);
         min-width: 126px;
     }
     .planDetailBox{padding-top:15px;}
+    .vLine{display:none;}
 }
 
 /* *************Tab  Css End ***************** */
