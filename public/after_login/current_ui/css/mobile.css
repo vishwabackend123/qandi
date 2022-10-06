@@ -289,6 +289,7 @@
     }
     .planDetailBox{padding-top:15px;}
     .vLine{display:none;}
+    .exam_instruction_scrolling{padding-right:30px;}
 }
 @media only screen and (max-width: 1024px){
     .plantitleBox {
@@ -397,6 +398,11 @@
             position: absolute!important;
             bottom: 20px;
             left: 24px;
+        }
+        .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
+        .exam_instruction_text {
+            padding-top: 44px;
+            padding-bottom: 8px;
         }
         
 }
