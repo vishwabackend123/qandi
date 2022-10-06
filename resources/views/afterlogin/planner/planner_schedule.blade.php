@@ -139,11 +139,11 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="bg-white w-100 d-sm-none d-block savebtnfix">
-                <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerMobilebutton">Save Test</button>
-            </div>
+            <button type="submit" class="btn btn-common-green disabled w-100" id="saveplannerMobilebutton">Save Test</button>
+        </div>
     </section>
 </div>
 <div class="modal fade" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -204,6 +204,9 @@ $userData = Session::get('user_data');
 
 
     function increaseValue() {
+        if ($('#StartDate').val() == '') {
+            $("#saveplannerbutton").click();
+        }
         var value = parseInt(document.getElementById('number').value, 10);
         value = isNaN(value) ? 0 : value;
         if (value < 7) {
@@ -233,7 +236,9 @@ $userData = Session::get('user_data');
     }
 
     function decreaseValue() {
-
+        if ($('#StartDate').val() == '') {
+            $("#saveplannerbutton").click();
+        }
         var value = parseInt(document.getElementById('number').value, 10);
         var minvalue = parseInt(document.getElementById('number').min, 10);
 
@@ -425,16 +430,22 @@ $userData = Session::get('user_data');
 
     }
 
+
     $("#plannerAddform").validate({
+
         rules: {
             start_date: {
                 // dateBefore: '#EndDate',
-                required: true
+                required: true,
+
             },
-            end_date: {
+            /* end_date: {
                 // dateAfter: '#StartDate',
                 required: true
-            }
+            } */
+        },
+        messages: {
+            start_date: "Start date field is required.",
         },
         submitHandler: function(form) {
 
