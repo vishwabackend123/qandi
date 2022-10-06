@@ -3303,6 +3303,9 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     width: 1em;
     height: 1em;
     clip: rect(0 1em 1em 0.5em);
+    -webkit-clip: rect(0 1em 1em 0.5em);
+
+
 }
 
 .round_per {
@@ -3313,12 +3316,15 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     height: 1em;
     background: #F76C6C;
     clip: rect(0 1em 1em 0.5em);
+    -webkit-clip: rect(0 1em 1em 0.5em);
     transform: rotate(180deg);
     transition: 1.05s;
 }
 
 .percent_more .circle_inner {
     clip: rect(0 0.5em 1em 0em);
+    -webkit-clip: rect(0 0.5em 1em 0em);
+
 }
 
 .percent_more:after {
@@ -3392,6 +3398,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     width: 1em;
     height: 1em;
     clip: rect(0 1em 1em 0.5em);
+    -webkit-clip:rect(0 1em 1em 0.5em);
+
     border-radius: 100%;
 }
 
@@ -3403,6 +3411,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     height: 1em;
     background: #56b663;
     clip: rect(0 1em 1em 0.5em);
+    -webkit-clip:rect(0 1em 1em 0.5em);
+
     transform: rotate(180deg);
     transition: 1.05s;
 }
@@ -3411,6 +3421,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 .mq_circle_yellow .mq_round_per{background: #f7c86d;}
 .mq_percent_more .mq_circle_inner {
     clip: rect(0 0.5em 1em 0em);
+    -webkit-clip:rect(0 0.5em 1em 0em);
+
 }
 
 .mq_percent_more .circletop:after{
