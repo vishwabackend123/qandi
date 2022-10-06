@@ -8060,3 +8060,5 @@ margin-bottom: 12px;
     border: 1px solid rgba(31, 31, 31, 0.1);
     padding: 10px;
 }
+
+.allscrollbar .accordion-item .chapters-expend .accordion-body .testslider .owl-nav span{position: absolute;top:-5px}
