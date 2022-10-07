@@ -5622,7 +5622,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #fff;
+    color: #fff!important;
 }
 
 .exam_instruct_section_subject {
