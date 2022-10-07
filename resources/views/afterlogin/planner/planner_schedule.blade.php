@@ -206,6 +206,7 @@ $userData = Session::get('user_data');
     function increaseValue() {
         if ($('#StartDate').val() == '') {
             $("#saveplannerbutton").click();
+            return false;
         }
         var value = parseInt(document.getElementById('number').value, 10);
         value = isNaN(value) ? 0 : value;
@@ -238,6 +239,7 @@ $userData = Session::get('user_data');
     function decreaseValue() {
         if ($('#StartDate').val() == '') {
             $("#saveplannerbutton").click();
+            return false;
         }
         var value = parseInt(document.getElementById('number').value, 10);
         var minvalue = parseInt(document.getElementById('number').min, 10);
