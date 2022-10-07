@@ -103,7 +103,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>City</label>
-                                    <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" required>
+                                    <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" >
                                         <option class="we" value="">Select City</option>
                                     </select>
                                 </div>
