@@ -34,7 +34,7 @@
         @endphp
         <div class="accordion-item pt-4 compLeteA filter_year_{{$year}}">
             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
-                <h2 class="m-0">
+                <h2 class="m-0" title="{{$sche->py_paper_name}}">
                     @if($sche->test_series_name)
                     {{$sche->test_series_name}}
                     @elseif($sche->live_exam_name)
