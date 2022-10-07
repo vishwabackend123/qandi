@@ -3409,8 +3409,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     clip: rect(0 1em 1em 0.5em);
     -webkit-clip:rect(0 1em 1em 0.5em);
     transform: rotate(180deg);
-    transition:0s;
-    -webkit-transition: 1.05s;
+    /* transition: 1.05s; */
 }
 
 .mq_circle_red .mq_round_per{ background: #f76c6c;}
@@ -5253,6 +5252,12 @@ canvas#progressJourny_graph, canvas#trend_graph {
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
                        .timemanagement .tab-content{padding:0px}
                        .taskcenter_wrapper .commontab .nav-tabs .nav-link{-webkit-appearance: none;}
+                       .exam_inst_right_contant_green{position:relative;overflow: hidden;}
+                       .green_circle{ background-color:#52ac5f;position:absolute;  opacity: 0.2;border-radius: 50%;}
+                       .green_circle.leftenter{ width: 32px;height: 32px;border-radius:50%;top:45%;transform: translateY(-45%);left:36px;}
+                       .green_circle.leftbottom{ width: 40px; height: 49px;border-radius:50%;bottom:0%;left:-10px;}
+                        .green_circle.rightBottom{ width: 18px;
+                            height: 18px;bottom:26px;right:21px;}
                        
 /********* Shubham End ***********/
 
