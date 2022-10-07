@@ -3200,6 +3200,7 @@ transform: translateX(100%);
             .examReviewscreenmob .backbtnformobilebox .bck-btn {
                 padding-left: 1px;border-radius:0px;
             }
+            .testscreenmob .examSereenwrapper{overflow:hidden;}
 }
 
 
