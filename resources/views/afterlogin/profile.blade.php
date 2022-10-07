@@ -103,7 +103,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                                 <div class="col-lg-6 custom-input pb-4">
                                     <label>City</label>
-                                    <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" >
+                                    <select class="form-control selectdata reqrd js-example-basic-single city_list" id="city_name" name="city" required>
                                         <option class="we" value="">Select City</option>
                                     </select>
                                 </div>
@@ -258,7 +258,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             $('.state_list').on('change', function() {
                 var state = $(this).val();
                 getCity(state, 'change');
-
             });
 
 
@@ -478,6 +477,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                 return false;
             }
         }
+        $('.city_list').on('change', function() {
+            if ($(this).val()!="")
+            {
+             $(this).valid();
+            }
+
+        });
     </script>
 </body>
 @endsection
