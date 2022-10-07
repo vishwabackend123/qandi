@@ -149,11 +149,11 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <div class="plan_subscribption">1234-JEE-A-0098</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Subscription type</div>
+                                <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">JEE 1 year Subscription</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Date</div>
+                                <div class="plan_order_summary">Date:</div>
                                 <div class="plan_subscribption">20th April 2022</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
