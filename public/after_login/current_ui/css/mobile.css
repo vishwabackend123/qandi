@@ -365,9 +365,9 @@
         padding:0 20px;
     }
     .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
-    .sidebar_block {width: 258px;right: 0;top: 81px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);
+    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);
         z-index:10000;
-        position: fixed;transition: 400ms;
+        position: fixed;transition: 400ms;border-top: 1px solid #e5f2e6cf;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
         -ms-transform: translateX(100%);}
