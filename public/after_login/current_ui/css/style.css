@@ -2931,8 +2931,7 @@ line-height: 1.6;
  .addPlanbtn .btn span {
      display: flex;
  }
- .addPlanbtn .btn span.mobile_hide,
- .addPlanbtn .btn span.desktop_hide{margin-right:8px;}
+ .addiconempty{margin-right:8px;}
 
  
 /********************End-Dashboard-By-Sachin-Date-06-07-22**************/
