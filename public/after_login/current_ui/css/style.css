@@ -5255,8 +5255,11 @@ canvas#progressJourny_graph, canvas#trend_graph {
                        .exam_inst_right_contant_green{position:relative;overflow: hidden;}
                        .green_circle{ background-color:#52ac5f;position:absolute;  opacity: 0.2;border-radius: 50%;}
                        .green_circle.leftenter{ width: 32px;height: 32px;border-radius:50%;top:45%;transform: translateY(-45%);left:36px;}
-                       .green_circle.leftbottom{ width: 40px; height: 49px;border-radius:50%;bottom: -12px;
-                        left: -14px;}
+                       .green_circle.leftbottom{width: 71px;
+                        height: 71px;
+                        border-radius: 50%;
+                        bottom: -18px;
+                        left: -23px;}
                         .green_circle.rightBottom{ width: 18px;
                             height: 18px;bottom:26px;right:21px;}
                        
