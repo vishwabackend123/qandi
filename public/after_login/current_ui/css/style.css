@@ -3409,7 +3409,8 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     clip: rect(0 1em 1em 0.5em);
     -webkit-clip:rect(0 1em 1em 0.5em);
     transform: rotate(180deg);
-    /* transition: 1.05s; */
+    transition:0s;
+    -webkit-transition: 1.05s;
 }
 
 .mq_circle_red .mq_round_per{ background: #f76c6c;}
