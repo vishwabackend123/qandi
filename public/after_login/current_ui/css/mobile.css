@@ -3202,7 +3202,6 @@ transform: translateX(100%);
         }
         ul.chapter_performance_lists{min-height: auto;}
         .mock_inst_text_mock_test a{z-index: 9;}
-        .mock_inst_text_mock_test a{z-index: 9;}
         .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
         .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
 }
