@@ -3189,6 +3189,7 @@ transform: translateX(100%);
             font-size: 16px;
             padding: 9px 10px;
             line-height: 23px;}
+            .mock_inst_text_mock_test a{z-index: 9; position: relative;}
 }
 
 
