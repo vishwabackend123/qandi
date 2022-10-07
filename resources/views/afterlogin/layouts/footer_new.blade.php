@@ -849,6 +849,7 @@
         $('#menumobilehide').hide();
         $("#menumobile").show();
         $('body').removeClass('sidebartoggle');
+        $('html').removeClass("windowhidden");
     });
     $('.notificationnew').click(function() {
         $('.mobilemenu').removeClass("showmenu");
@@ -871,7 +872,7 @@
     });
 
     /*********Notification-Js*****/
-</script>
+    </script>
 
 
 <script>
