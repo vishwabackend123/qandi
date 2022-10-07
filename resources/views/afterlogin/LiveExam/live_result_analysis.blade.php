@@ -357,19 +357,31 @@
                                         @endif
                                     </ul> -->
                                     <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                                        @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
+                                        @foreach($response->topic_wise_result as $topic)
+                                        @php $topic=(object)$topic; @endphp
+                                        @php
+                                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->correct_count/$topic->total_questions)*100), 2):0;
+                                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->incorrect_count/$topic->total_questions)*100), 2):0;
+                                        $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
+                                        @endphp
+                                        @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
                                             <div class="topic_score_bar">
-                                                <h4>Pair of Tangents, Chord of Contact</h4>
+                                                <h4>@if(!empty($topic->topic_name)) {{$topic->topic_name}}
+                                                    @else
+                                                    ""
+                                                    @endif</h4>
                                                 <div class="dropdown position-static d-inline-block">
                                                     <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <canvas id="topicScore"></canvas>
+                                                        <canvas id="topicScore_{{$topic->topic_id}}"></canvas>
                                                         <script type="text/javascript">
                                                             var circuference = 360;
                                                             var data = {
                                                                 labels: ["Correct", "Incorrect", "Not Attempted"],
                                                                 datasets: [{
                                                                     label: "My First Dataset",
-                                                                    data: [20,40,50],
+                                                                    data: [<?php echo $tcorrect_per; ?>,<?php echo $tincorrect_per; ?>,<?php echo $tnot_attempt_per; ?>],
                                                                     backgroundColor: [
                                                                         "#34d399",
                                                                         "#ff6678",
@@ -409,20 +421,23 @@
 
                                                                 }
                                                             };
-                                                            var myCharted = new Chart("topicScore", config)
+                                                            var myCharted = new Chart("topicScore_{{$topic->topic_id}}", config)
                                                         </script>
                                                     </div>
                                                     <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                                         <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                                         <div class="color_labels">
-                                                            <span class="d-block"><small></small> Correct <b>1</b></span>
-                                                            <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>343</b></span>
-                                                            <span class="d-block"><small></small> Not Attempted <b>23</b></span>
+                                                            <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
+                                                            <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                            <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
                                                         </div>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </li>
+                                        @endif
+                                        @endforeach
+                                        @endif
                                     </ul>
                                 </div>
                                 @php $topx++; @endphp

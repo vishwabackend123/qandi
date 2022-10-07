@@ -112,19 +112,27 @@
                     @endif
                 </ul> -->
                 <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                    @if(isset($response->topic_wise_result))
+                    @foreach($response->topic_wise_result as $key=>$tdata)
+                    @if($tdata->subject_id==$subDataTopic->subject_id)
+                    @php
+                    $corr_Per=(isset($tdata->total_questions)&& !empty($tdata->total_questions))?$tdata->correct_count*100/$tdata->total_questions:0;
+                    $incorr_Per=(isset($tdata->incorrect_count)&& !empty($tdata->total_questions))?$tdata->incorrect_count*100/$tdata->total_questions:0;
+                    $unanswered_Per=(isset($tdata->unanswered_count)&& !empty($tdata->total_questions))?$tdata->unanswered_count*100/$tdata->total_questions:0;
+                    @endphp
                     <li>
                         <div class="topic_score_bar">
-                            <h4>Pair of Tangents, Chord of Contact</h4>
+                            <h4>{{$tdata->topic_name}}</h4>
                             <div class="dropdown position-static d-inline-block">
                                 <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <canvas id="topicScore"></canvas>
+                                    <canvas id="topicScore_{{$tdata->topic_id}}"></canvas>
                                     <script type="text/javascript">
                                         var circuference = 360;
                                         var data = {
                                             labels: ["Correct", "Incorrect", "Not Attempted"],
                                             datasets: [{
                                                 label: "My First Dataset",
-                                                data: [20,40,50],
+                                                data: [<?php echo $corr_Per; ?>,<?php echo $incorr_Per; ?>,<?php echo $unanswered_Per; ?>],
                                                 backgroundColor: [
                                                     "#34d399",
                                                     "#ff6678",
@@ -164,20 +172,23 @@
 
                                             }
                                         };
-                                        var myCharted = new Chart("topicScore", config)
+                                        var myCharted = new Chart("topicScore_{{$tdata->topic_id}}", config)
                                     </script>
                                 </div>
                                 <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
                                     <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
                                     <div class="color_labels">
-                                        <span class="d-block"><small></small> Correct <b>1</b></span>
-                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>343</b></span>
-                                        <span class="d-block"><small></small> Not Attempted <b>23</b></span>
+                                        <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
+                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$tdata->incorrect_count}}</b></span>
+                                        <span class="d-block"><small></small> Not Attempted <b>{{$tdata->unanswered_count}}</b></span>
                                     </div>
                                 </ul>
                             </div>
                         </div>
                     </li>
+                    @endif
+                    @endforeach
+                    @endif
                 </ul>
             </div>
             @endforeach
