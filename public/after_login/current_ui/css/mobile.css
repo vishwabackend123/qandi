@@ -3209,6 +3209,16 @@ transform: translateX(100%);
             padding-left: 0;
             margin-left: 0;
         }
+        .fancy-radio-buttons.with-image img {
+            max-width: 100%;
+            max-height: 70px !important;
+            overflow: scroll;
+        }
+        .examReviewscreenmob .backbtnformobilebox .bck-btn {
+            padding-left: 1px;border-radius:0px;
+        }
+        .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+        .testscreenmob .content-wrapper{height:100%;}
 }
 
 
