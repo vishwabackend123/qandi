@@ -4236,6 +4236,34 @@ span.proficiency_value {
     height: 44px!important;
 }
 .custom_exam_page .test-table .accordion-header .btn.btn-common-transparent{font-size:16px;padding: 11px 16px;height: 48px;}
+.chapter_performance_lists li.topic_score_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chapter_performance_lists li.topic_score_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 11px;
+    border-top: 1px solid #e5eaee;
+}
+.chapter_performance_lists .Chapter_Main_Graph {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+    min-height: 62px;
+    margin-right: 18px;
+}
+ul.chapter_performance_lists{
+    overflow-y: auto;
+    max-height: 277px;
+    min-height: 277px;
+}
+.chapter_performance_lists li.topic_score_bar:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
 /********************* Amit End ****************************/
 
 

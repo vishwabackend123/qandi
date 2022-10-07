@@ -360,7 +360,7 @@
     .chapter_Perfrom_Graph{    justify-content: initial;margin-top:20px;} 
     .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block{    padding: 20px 0px 15px 0px;}
     .Chapter_Main_Graph{margin-right:40px;width:44px;height:44px;}
-    .Chapter_Main_Graph:last-child{margin-right:0px;}
+    .Chapter_Main_Graph:last-child{margin-right:18px;}
     .performance_chapter_sublists li {
         padding:0 20px;
     }
@@ -3186,10 +3186,21 @@ transform: translateX(100%);
         .text-right.addtestbtn{text-align:center;}
         .custom_exam_page .test-table .accordion-header .btn.btn-common-transparent{height: 38px;padding: 10px 18px;font-size: 14px;}
         .addtestbtn .btn{    width: 100%;
-            height: 44px;
-            font-size: 16px;
-            padding: 9px 10px;
-            line-height: 23px;}
+        height: 44px;
+        font-size: 16px;
+        padding: 9px 10px;
+        line-height: 23px;
+        }
+        .chapter_performance_lists .Chapter_Main_Graph:last-child {
+            margin-right: 10px;
+        }
+        .chapter_performance_lists .Chapter_Main_Graph{width: 50px;
+        height: 50px;
+        margin-right: 18px;
+        min-width: 50px;
+         min-height: 50px;
+        }
+        ul.chapter_performance_lists{min-height: auto;}
 }
 
 
