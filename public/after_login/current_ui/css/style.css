@@ -3591,9 +3591,10 @@ h3.commonheading{
     font-size: 0px;
 }
 ul.topic_score_lists li {
-    width: calc(45% - 4px);
-    margin-bottom: 45px;
-	position: relative;
+    width: calc(50% - 18px);
+    margin-bottom: 0;
+    position: relative;
+    padding-bottom: 32px;
 }
 ul.topic_score_lists {
     overflow-y: auto;
@@ -3638,9 +3639,10 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 200px;
     border: 0;
     min-width: auto;	
-    right: -25px!important;
-    left: auto!important;
+    left: 18px!important;
     z-index: 9;
+    top: calc(100% - 20px)!important;
+    transform: none!important;
 }
 .noofquestions-block .color_labels span b {
     font-size: 14px;
@@ -4262,6 +4264,19 @@ ul.chapter_performance_lists{
     border-top: 0;
     padding-top: 0;
 }
+.topic_score_bar .Chapter_Main_Graph {
+    width: 62px;
+    height: 62px;
+    margin-right: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+ul.topic_score_lists li:nth-child(odd) {
+    border-right: 1px solid #e5eaee;
+    padding-right: 18px;
+    margin-right: 18px;
+}
+
 /********************* Amit End ****************************/
 
 
