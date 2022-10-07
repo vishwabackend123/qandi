@@ -372,7 +372,7 @@
                                                     @else
                                                     ""
                                                     @endif</h4>
-                                                <div class="dropdown position-static d-inline-block">
+                                                <div class="dropdown  d-inline-block">
 
                                                     <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                         <canvas id="topicScore_{{$topic->topic_id}}"></canvas>

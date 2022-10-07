@@ -2069,7 +2069,7 @@ transform: translateX(100%);
     .test_analytics_wrapper .halfdoughnut2{margin:0 auto;}
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
     .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
-    .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
+    .test_analytics_wrapper ul.topic_score_lists li{width: 100%;}
     .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
     .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;} 
@@ -3191,7 +3191,7 @@ transform: translateX(100%);
         padding: 9px 10px;
         line-height: 23px;
         }
-        .chapter_performance_lists .Chapter_Main_Graph:last-child {
+        .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph:last-child {
             margin-right: 10px;
         }
         .chapter_performance_lists .Chapter_Main_Graph{width: 50px;
@@ -3204,6 +3204,11 @@ transform: translateX(100%);
         .mock_inst_text_mock_test a{z-index: 9;}
         .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
         .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
+        ul.topic_score_lists li:nth-child(even) {
+            border-left: 0;
+            padding-left: 0;
+            margin-left: 0;
+        }
 }
 
 
