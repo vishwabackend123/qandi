@@ -3183,10 +3183,12 @@ transform: translateX(100%);
         .exam_inst_sec_head b {display:flex;}
         .userprofile .profileicon{    width: 40px; height: 40px;}
         .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
+        .text-right.addtestbtn{text-align:center;}
 }
 
 
 @media only screen and (max-width: 576px){
+    .addtestbtn .btn{width:100%;}
     .right-seidepannel h1 {
     font-size: 24px;
     }
