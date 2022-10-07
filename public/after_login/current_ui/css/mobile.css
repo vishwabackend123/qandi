@@ -3198,8 +3198,10 @@ transform: translateX(100%);
                 overflow: scroll;
             }
             .examReviewscreenmob .backbtnformobilebox .bck-btn {
-                padding-left: 6px;
+                padding-left: 1px;border-radius:0px;
             }
+            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+            .testscreenmob .content-wrapper{height:100%;}
 }
 
 
