@@ -365,7 +365,8 @@
         padding:0 20px;
     }
     .main-wrapper header,.scrollnone .main-wrapper header{width:100%;}
-    .sidebar_block {width: 258px;right: 0;top: 80px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);z-index:10000;
+    .sidebar_block {width: 258px;right: 0;top: 81px;padding: 28px 24px 20px;background-color: #fff;height:calc(100% - 80px);
+        z-index:10000;
         position: fixed;transition: 400ms;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -3183,6 +3184,11 @@ transform: translateX(100%);
         .userprofile .profileicon{    width: 40px; height: 40px;}
         .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
         .text-right.addtestbtn{text-align:center;}
+        .addtestbtn .btn{    width: 100%;
+            height: 44px;
+            font-size: 16px;
+            padding: 9px 10px;
+            line-height: 23px;}
 }
 
 
