@@ -5252,6 +5252,12 @@ canvas#progressJourny_graph, canvas#trend_graph {
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
                        .timemanagement .tab-content{padding:0px}
                        .taskcenter_wrapper .commontab .nav-tabs .nav-link{-webkit-appearance: none;}
+                       .exam_inst_right_contant_green{position:relative;overflow: hidden;}
+                       .green_circle{ background-color:#52ac5f;position:absolute;  opacity: 0.2;}
+                       .green_circle.leftenter{ width: 32px;height: 32px;border-radius:50%;top:50%;transform: translateY(-50%);left:36px;}
+                       .green_circle.leftbottom{ width: 40px; height: 49px;border-radius:50%;bottom:0%;left:-20px;}
+                        .green_circle.rightBottom{ width: 18px;
+                            height: 18px;bottom:26px;right:21px;}
                        
 /********* Shubham End ***********/
 
