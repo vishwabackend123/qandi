@@ -360,7 +360,7 @@
                                         <li>
                                             <div class="topic_score_bar">
                                                 <h4>Pair of Tangents, Chord of Contact</h4>
-                                                <div class="dropdown position-static d-inline-block">
+                                                <div class="dropdown  d-inline-block">
                                                     <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                         <canvas id="topicScore"></canvas>
                                                         <script type="text/javascript">
