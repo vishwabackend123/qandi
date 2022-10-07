@@ -767,7 +767,10 @@
     border-radius: 8px;
     border: solid 1px #cde3d0;
     background-color: white;
-    font-size: 14px;
+    font-size: 14px;font-weight:600;height:44px;border-radius: 10px;
+    }
+    .previous_exam_head_with_drop .customDropdown::before {
+        top: 16px;
     }
     .PrevousYearExam_wraper_contant2 .tablescroll
     {
@@ -1045,7 +1048,7 @@ span.greenball-1 svg {width: 51px!important;height: 70px!important;}
 .fullbody_scan_test p.my-3{margin:6px auto 14px!important;}
 .fullbody_scan_test {padding: 20px 0 20px 0px;}
 .fullbody_scan_test  img{width: 59.5px!important;height: 64.8px!important;}
-.fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;justify-content: flex-end!important;}
+.fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;}
 .fullbody_scan_test span:first-child{top:-10px;}
 span.greenball-1{top:-10px;}
 .fullbody_scan_wrapper {margin-top: 44px;}
@@ -1063,7 +1066,6 @@ transform: translateX(100%);
 } */
 }
 @media(min-width:768px){
-    .addPlanbtn .btn span.desktop_hide{display:none;}
     .mobile_block{display:none!important;}
     .back_button_waraper_tex{
         display: none;
@@ -1534,9 +1536,10 @@ transform: translateX(100%);
     }
     .MockTestMob .exam_tabdata #mock_test
     {
-        padding: 12px 0px;
+        padding: 12px;
         border-radius: 10px!important;
     }
+    .MockTestMob .exam_tabdata .PrevousYearExam_wraper_contant1{ padding: 12px 0px!important}
     .MockTestMob .bg-white-bg_mob
     {
         background: #fff!important;
@@ -2027,7 +2030,7 @@ transform: translateX(100%);
     .fullbody_scan_test p.my-3{margin:6px auto 14px!important;}
     .fullbody_scan_test {padding: 20px 0 20px 0px;}
     .fullbody_scan_test  img{width: 59.5px!important;height: 64.8px!important;}
-    .fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;justify-content: flex-end!important;}
+    .fullbody_scan_wrapper div.mt-5.d-flex.justify-content-between.pt-4{padding-top: 0!important;margin-top:68px!important;}
     .fullbody_scan_test span:first-child{top:-10px;}
     span.greenball-1{top:-10px;}
     .fullbody_scan_wrapper {margin-top: 44px;}
@@ -2494,17 +2497,18 @@ transform: translateX(100%);
             .boxheading.mb-5,.HeadingWithfilter .dropbox.mb-5{margin-bottom:26px!important;}
             .aeck_Evaluation_text{padding-left:10px;}
             .aeck_mqmatrix_wrapper h6{font-size:14px;}
-            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar, .mobilescrolltabNew::-webkit-scrollbar {display:none !important; } 
+            .mobilescrolltab::-webkit-scrollbar, .testscreenmob .questionChoiceType::-webkit-scrollbar, .mobilescrolltabNew::-webkit-scrollbar ,.testscreenmob .questionChoiceType .questionChoice::-webkit-scrollbar{display:none !important; } 
             .commonblockDash.myqTodayPannel .commonWhiteBox{    top: 0px;}
             .resendmail {top: 30px; }
             .tablescroll{height: calc(100vh - 258px);
-               padding-right: 10px;
+               padding-right:5px;
              }
+             .previous_exam_head_with_drop{ padding-right:5px;}
             .contacrus_page_wrapper{
                 padding-bottom: 340px;
                 position: relative;
             }
-            .bg-white.subscription-details.mt-5{margin-top:20px!important;}
+            .bg-white.subscription-details.mt-5{margin-top:20px!important;position: relative;padding-bottom: 64px;}
             .login-signup,.selectPlan{background-color: #e0f6e3;}
             .testscreenmob .hideonmobile{display: none !important;}
             .testscreenmob .hideondesktop{display: block  !important;}
@@ -2635,8 +2639,8 @@ transform: translateX(100%);
             }
 
             .testscreenmob .singleChoice{
-                min-width: 250px;
-                max-width: 250px;
+                min-width: auto;
+                max-width: inherit;
             }
 
             .testscreenmob .btnformobietest  .btnbottom {
@@ -2665,7 +2669,10 @@ transform: translateX(100%);
             }
             .testscreenmob .questionChoice {
                 margin: 15px 0px 2px 0;
-                min-width: 500px;
+                min-width: 100%;
+                width: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
             }
 
             .testscreenmob .btnformobietest .btnbottom {
@@ -2870,6 +2877,7 @@ transform: translateX(100%);
     padding: 0px;
     margin: 0px;
     border: none;
+    padding-left: 3px;
     }
  .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
         position: initial;text-overflow: ellipsis;
@@ -3071,9 +3079,12 @@ transform: translateX(100%);
     .graphimg .dropbox{margin-bottom:37px;}
     .journeyBoxcontainer .graphimg .dropbox.desktop_hide{display:block;}
     .upgradebtn {
-        width: auto;
         padding: 6px 10px;
         height: auto;
+        position: absolute;
+        width: calc(100% - 32px);
+        bottom: 16px;
+        left: 16px;
     }
 
     .examReviewscreenmob{overflow-y:hidden;}
@@ -3160,11 +3171,23 @@ transform: translateX(100%);
         padding-right: calc(var(--bs-gutter-x)/ 2)!important;
     }
     .main-title{color:#1f1f1f;}
-    
+    .exam_tabdata .accordion-body {
+        border-top: 2px dashed #cde3d0;
+    }
+    .testscreenmob .questionChoice{min-height:36px;height:auto;}  
+    .singleChoice{font-size:13px;}
+    .exambox-heading p{overflow: initial;
+        white-space: normal;
+        text-overflow: ellipsis;}
+        .exam_inst_sec_head b {display:flex;}
+        .userprofile .profileicon{    width: 40px; height: 40px;}
+        .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
+        .text-right.addtestbtn{text-align:center;}
 }
 
 
 @media only screen and (max-width: 576px){
+    .addtestbtn .btn{width:100%;}
     .right-seidepannel h1 {
     font-size: 24px;
     }

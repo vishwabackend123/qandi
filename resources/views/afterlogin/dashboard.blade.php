@@ -613,12 +613,12 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
                                             <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
-                                                <span class="mobile_hide">
+                                                <!-- <span class="mobile_hide">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>
-                                                </span>
-                                                <span class="desktop_hide">
+                                                </span> -->
+                                                <span class="addiconempty">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 6v8M6 10h8" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                     </svg>

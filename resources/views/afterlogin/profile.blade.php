@@ -5,12 +5,11 @@ $user_id = isset($userData->id)?$userData->id:'';
 @endphp
 @section('content')
 <style type="text/css">
-.error {
-    font-size: 14px;
-    font-weight: normal;
-    color: #dc6803 !important;
-}
-
+    .error {
+        font-size: 14px;
+        font-weight: normal;
+        color: #dc6803 !important;
+    }
 </style>
 
 <body class="bg-content">
@@ -19,7 +18,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
         <section class="content-wrapper mobile-wrapper">
-             @if(count($errors) > 0 )
+            @if(count($errors) > 0 )
             <div class="toastdata active">
                 <div class="toast-content">
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +33,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         @endforeach
                     </div>
                 </div>
-                
+
                 <div class="progress active"></div>
             </div>
             <script>
@@ -171,7 +170,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 </div>
                 <div class="row">
                     <div class="col-lg-11">
-                    <div class="info">
+                        <div class="info">
                             <h1 class="main-title">Subscription</h1>
                             <p>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         </div>
@@ -204,26 +203,26 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="line mb-3 pb-1"></div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Subscription type</h2>
+                                <h2>Subscription Type :</h2>
                                 @if($subscription_type == "P" || $days >14)
-                                     <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
-                                    @else
-                                    <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14 day trial</h3>
+                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
+                                @else
+                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14 days trial</h3>
 
-                                    @endif
+                                @endif
                             </div>
                             @if($subscription_type == "P" || $days >14)
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Price</h2>
+                                <h2>Price :</h2>
                                 <h3>₹{{number_format($subsprice)}}</h3>
                             </div>
                             @endif
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-                                <h2>Active date</h2>
+                                <h2>Active Date :</h2>
                                 <h3>{{!empty($startdate)?date("j F Y", strtotime($startdate)):''}}</h3>
                             </div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
-                                <h2>End date</h2>
+                                <h2>End Date :</h2>
                                 <h3>{{!empty($expirydate)?date("j F Y", strtotime($expirydate)):''}}</h3>
                             </div>
                             <div id="panel">
@@ -242,241 +241,243 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @include('afterlogin.layouts.footer_new')
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2({
-            placeholder: "Select a State",
-        });
-        $('.city_list').select2({
-            placeholder: "Select a City",
-        });
-        $('.selectgrade').select2({
-            minimumResultsForSearch: -1,
-            placeholder: "Select a Grade",
-        });
-        editProfileCheck();
-        var user_state = '<?php echo $userData->state; ?>';
-        getCity(user_state, 'load');
-        $('.state_list').on('change', function() {
-            var state = $(this).val();
-            getCity(state, 'change');
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2({
+                placeholder: "Select a State",
+            });
+            $('.city_list').select2({
+                placeholder: "Select a City",
+            });
+            $('.selectgrade').select2({
+                minimumResultsForSearch: -1,
+                placeholder: "Select a Grade",
+            });
+            editProfileCheck();
+            var user_state = '<?php echo $userData->state; ?>';
+            getCity(user_state, 'load');
+            $('.state_list').on('change', function() {
+                var state = $(this).val();
+                getCity(state, 'change');
 
-        });
+            });
 
 
-        $.validator.addMethod("mobileregx", function(value, element, regexpr) {
-            return regexpr.test(value);
-        }, 'Please enter valid mobile number.');
-        $("#editProfile_form").validate({
-            rules: {
-                user_mobile: {
-                    mobileregx: /^[6-9][0-9]{9}$/,
+            $.validator.addMethod("mobileregx", function(value, element, regexpr) {
+                return regexpr.test(value);
+            }, 'Please enter valid mobile number.');
+            $("#editProfile_form").validate({
+                rules: {
+                    user_mobile: {
+                        mobileregx: /^[6-9][0-9]{9}$/,
+                    },
                 },
-            },
+
+            });
+            $(".flip").click(function() {
+                $("#panel").slideToggle("slow");
+                $(".fliparrow").toggleClass("arrowToggle");
+                $(this).text(function(i, v) {
+                    return v === 'Show details' ? 'Hide details' : 'Show details'
+                })
+            });
+            $(".fliparrow").click(function() {
+                $('.arrowbtn1').toggleClass('arrowroted');
+                $("#panel").slideToggle("slow");
+                $(this).toggleClass("arrowToggle");
+                $('.flip').text(function(i, v) {
+                    return v === 'Show details' ? 'Hide details' : 'Show details'
+                })
+            });
+
+
 
         });
-        $(".flip").click(function() {
-            $("#panel").slideToggle("slow");
-            $(".fliparrow").toggleClass("arrowToggle");
-            $(this).text(function(i, v) {
-                return v === 'Show details' ? 'Hide details' : 'Show details'
-            })
-        });
-        $(".fliparrow").click(function() {
-            $( '.arrowbtn1' ).toggleClass('arrowroted');
-            $("#panel").slideToggle("slow");
-            $(this).toggleClass("arrowToggle");
-            $('.flip').text(function(i, v) {
-                return v === 'Show details' ? 'Hide details' : 'Show details'
-            })
-        });
-
-
-        
-    });
-    $('#email_success').hide();
-    $('.resend_email').click(function() {
-        $('.email-error').hide();
-        var user_id = '<?php echo $user_id; ?>';
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: "{{ url('send_verfication_email') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                userId: user_id,
-            },
-            success: function(response_data) {
-                if (response_data.status === true) {
-
-                    $('#email_success').css('color', 'green');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(2000);
-                    setTimeout(function() {
-                        $('.email-error').show();
-                    }, 2000);
-
-                } else {
-                    $('#email_success').css('color', 'red');
-                    $('#email_success').text(response_data.message);
-                    $('#email_success').show();
-                    $("#email_success").fadeOut(10000);
-                    setTimeout(function() {
-                        $('.email-error').show();
-                    }, 2000);
-                }
-
-            },
-        });
-    });
-    $('#editProfile_form input').keyup(function() {
-        var id = this.id;
-        if (id === 'mobile_num') {
-            return false;
-        }
-        $('#editProfile_form').valid();
-        editProfileCheck();
-    });
-    $('#editProfile_form select').change(function() {
-        editProfileCheck();
-    });
-    $('#file-input').change(function() {
-        if (this.files[0].size > 2097152) {
-            $(this).val(null);
-            alert("Image size is greater than 2 MB");
-            return false;
-        }
-        editProfileCheck();
-    });
-    $('#cancelEdit').click(function() {
-        var url = "{{ route('dashboard') }}";
-        window.location.href = url;
-    });
-
-
-
-    function editProfileCheck() {
-        var empty = false;
-        $('#editProfile_form input').each(function() {
-            var id = this.id;
-            if (id == 'file-input') {
-                return;
-            }
-            if (id == 'firstname') {
-                return;
-            }
-            if (id == 'lastname') {
-                return;
-            }
-            var city = $('#city_name').val();
-            var state = $('#state').val();
-            var grade = $('#grade').val();
-            if (city == '') {
-                empty = true;
-            }
-            if (state == '') {
-                empty = true;
-            }
-            if (grade == '') {
-                empty = true;
-            }
-            var input_data = $(this).val();
-            input_data = input_data.trim();
-            if (input_data == '') {
-                empty = true;
-            }
-        });
-
-        if (empty) {
-            $('#saveEdit').attr('disabled', 'disabled');
-            $('#saveEdit').addClass("disabled-btn");
-            $('#cancelEdit').attr('disabled', 'disabled');
-            $('#cancelEdit').addClass("disabled-btn");
-
-        } else {
-            $('#saveEdit').removeAttr('disabled');
-            $('#saveEdit').removeClass("disabled-btn");
-            $('#cancelEdit').removeAttr('disabled');
-            $('#cancelEdit').removeClass("disabled-btn");
-
-        }
-
-
-    }
-
-    function getCity(state, type) {
-        if (state) {
-            var user_city = '<?php echo $userData->city; ?>';
-            $.ajax({
-                url: "{{ url('/getCity',) }}",
-                type: "GET",
-                cache: false,
-                data: {
-                    'state': state,
-                },
-                success: function(response_data) {
-                    if (type == 'change') {
-                        $('#saveEdit').attr('disabled', 'disabled');
-                        $('#saveEdit').addClass("disabled-btn");
-                        $('.city_list').html('<option value="">Select City</option>');
-                        $.each(response_data, function(key, value) {
-                            $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                        });
-                    } else {
-                        $('.city_list').html('<option value="">Select City</option>');
-                        $.each(response_data, function(key, value) {
-                            if (value == user_city) {
-                                $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
-                            } else {
-                                $(".city_list").append('<option value="' + value + '">' + value + '</option>');
-                            }
-
-                        });
-                    }
-
+        $('#email_success').hide();
+        $('.resend_email').click(function() {
+            $('.email-error').hide();
+            var user_id = '<?php echo $user_id; ?>';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-        }
+            $.ajax({
+                url: "{{ url('send_verfication_email') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    userId: user_id,
+                },
+                success: function(response_data) {
+                    if (response_data.status === true) {
 
-    }
+                        $('#email_success').css('color', 'green');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(2000);
+                        setTimeout(function() {
+                            $('.email-error').show();
+                        }, 2000);
 
-    function onlyAlphabetsForName(e, t) {
-        try {
-            if (window.event) {
-                var charCode = window.event.keyCode;
-            } else if (e) {
-                var charCode = e.which;
-            } else { return true; }
-            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
-                return true;
-            else
+                    } else {
+                        $('#email_success').css('color', 'red');
+                        $('#email_success').text(response_data.message);
+                        $('#email_success').show();
+                        $("#email_success").fadeOut(10000);
+                        setTimeout(function() {
+                            $('.email-error').show();
+                        }, 2000);
+                    }
+
+                },
+            });
+        });
+        $('#editProfile_form input').keyup(function() {
+            var id = this.id;
+            if (id === 'mobile_num') {
                 return false;
-        } catch (err) {
-            alert(err.Description);
-        }
-    }
+            }
+            $('#editProfile_form').valid();
+            editProfileCheck();
+        });
+        $('#editProfile_form select').change(function() {
+            editProfileCheck();
+        });
+        $('#file-input').change(function() {
+            if (this.files[0].size > 2097152) {
+                $(this).val(null);
+                alert("Image size is greater than 2 MB");
+                return false;
+            }
+            editProfileCheck();
+        });
+        $('#cancelEdit').click(function() {
+            var url = "{{ route('dashboard') }}";
+            window.location.href = url;
+        });
 
-    function onlyAlphabetsDisplay(e, t) {
-        return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
-    }
-    $("#username").keyup(function() {
-        var myValue = $(this).val();
-        var test = myValue.replace(/  +/g, ' ');
-        $("#username").val(test);
-    });
-    function validatePaste(el, e) {
-        var regex = /^[a-z .'-]+$/gi;
-        var key = e.clipboardData.getData('text')
-        if (!regex.test(key)) {
-            e.preventDefault();
-            return false;
-        }
-    }
 
+
+        function editProfileCheck() {
+            var empty = false;
+            $('#editProfile_form input').each(function() {
+                var id = this.id;
+                if (id == 'file-input') {
+                    return;
+                }
+                if (id == 'firstname') {
+                    return;
+                }
+                if (id == 'lastname') {
+                    return;
+                }
+                var city = $('#city_name').val();
+                var state = $('#state').val();
+                var grade = $('#grade').val();
+                if (city == '') {
+                    empty = true;
+                }
+                if (state == '') {
+                    empty = true;
+                }
+                if (grade == '') {
+                    empty = true;
+                }
+                var input_data = $(this).val();
+                input_data = input_data.trim();
+                if (input_data == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#saveEdit').attr('disabled', 'disabled');
+                $('#saveEdit').addClass("disabled-btn");
+                $('#cancelEdit').attr('disabled', 'disabled');
+                $('#cancelEdit').addClass("disabled-btn");
+
+            } else {
+                $('#saveEdit').removeAttr('disabled');
+                $('#saveEdit').removeClass("disabled-btn");
+                $('#cancelEdit').removeAttr('disabled');
+                $('#cancelEdit').removeClass("disabled-btn");
+
+            }
+
+
+        }
+
+        function getCity(state, type) {
+            if (state) {
+                var user_city = '<?php echo $userData->city; ?>';
+                $.ajax({
+                    url: "{{ url('/getCity',) }}",
+                    type: "GET",
+                    cache: false,
+                    data: {
+                        'state': state,
+                    },
+                    success: function(response_data) {
+                        if (type == 'change') {
+                            $('#saveEdit').attr('disabled', 'disabled');
+                            $('#saveEdit').addClass("disabled-btn");
+                            $('.city_list').html('<option value="">Select City</option>');
+                            $.each(response_data, function(key, value) {
+                                $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                            });
+                        } else {
+                            $('.city_list').html('<option value="">Select City</option>');
+                            $.each(response_data, function(key, value) {
+                                if (value == user_city) {
+                                    $(".city_list").append('<option value="' + value + '" selected>' + value + '</option>');
+                                } else {
+                                    $(".city_list").append('<option value="' + value + '">' + value + '</option>');
+                                }
+
+                            });
+                        }
+
+                    }
+                });
+            }
+
+        }
+
+        function onlyAlphabetsForName(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                } else if (e) {
+                    var charCode = e.which;
+                } else {
+                    return true;
+                }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                    return true;
+                else
+                    return false;
+            } catch (err) {
+                alert(err.Description);
+            }
+        }
+
+        function onlyAlphabetsDisplay(e, t) {
+            return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
+        }
+        $("#username").keyup(function() {
+            var myValue = $(this).val();
+            var test = myValue.replace(/  +/g, ' ');
+            $("#username").val(test);
+        });
+
+        function validatePaste(el, e) {
+            var regex = /^[a-z .'-]+$/gi;
+            var key = e.clipboardData.getData('text')
+            if (!regex.test(key)) {
+                e.preventDefault();
+                return false;
+            }
+        }
     </script>
 </body>
 @endsection

@@ -904,6 +904,6 @@ $.fn.tabbing = function (options) {
         });
     });
 };
-$('.mobilescrolltabNew li').tabbing();
+$('.mobilescrolltabNew li,.mobilescrolltabNew  .singleChoice ').tabbing();
 /**************Mobiletab-scroll-end*****************/
 </script>
