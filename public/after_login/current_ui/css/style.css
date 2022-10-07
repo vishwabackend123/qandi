@@ -3642,7 +3642,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     left: 18px!important;
     z-index: 9;
     top: calc(100% - 20px)!important;
-    transform: none!important;
+    /* transform: none!important; */
 }
 .noofquestions-block .color_labels span b {
     font-size: 14px;
@@ -4271,10 +4271,10 @@ ul.chapter_performance_lists{
     border-radius: 0;
     background-color: transparent;
 }
-ul.topic_score_lists li:nth-child(odd) {
-    border-right: 1px solid #e5eaee;
-    padding-right: 18px;
-    margin-right: 18px;
+ul.topic_score_lists li:nth-child(even) {
+    border-left: 1px solid #e5eaee;
+    padding-left: 18px;
+    margin-left: 18px;
 }
 
 /********************* Amit End ****************************/
