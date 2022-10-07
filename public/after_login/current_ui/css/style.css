@@ -3641,8 +3641,8 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     min-width: auto;	
     left: 18px!important;
     z-index: 9;
-    top: calc(100% - 20px)!important;
-    /* transform: none!important; */
+    /* top: calc(100% - 20px)!important;
+    transform: none!important; */
 }
 .noofquestions-block .color_labels span b {
     font-size: 14px;
@@ -4280,7 +4280,7 @@ ul.topic_score_lists li:nth-child(even) {
 /********************* Amit End ****************************/
 
 
-/********* Shubham Start ***********/
+/********* Shubham Start ***********/   
 /*************header***********/
 
 .headerMain {
