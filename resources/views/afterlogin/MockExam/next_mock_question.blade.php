@@ -187,7 +187,7 @@ $question_type = "Numerical";
                                     <div class="colMargin">
                                         <div class="inputAns">
                                             <label for="story">Answer</label>
-                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+                                            <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" role="textbox" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')" pattern="\d*">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
                                         </div>
                                     </div>
                                     @endif
@@ -271,13 +271,15 @@ $question_type = "Numerical";
             if (newWindowWidth < 768) {
                 //$('.right').insertBefore('.left');
                 $("#questNo  #btn_" + question_id).focusout();
+
             } else {
                 //$('.left').insertBefore('.right');
                 $("#questNo  #btn_" + question_id).focus();
+                $('#quest_option_' + question_id).focus();
 
             }
         }
-        $('#quest_option_' + question_id).focus();
+
     });
 
     $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
