@@ -3182,6 +3182,7 @@ transform: translateX(100%);
         text-overflow: ellipsis;}
         .exam_inst_sec_head b {display:flex;}
         .userprofile .profileicon{    width: 40px; height: 40px;}
+        .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
 }
 
 
