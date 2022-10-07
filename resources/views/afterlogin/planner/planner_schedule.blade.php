@@ -274,7 +274,10 @@ $userData = Session::get('user_data');
 
 
     function selectChapter(subject_id, subject_name) {
-
+        if ($('#StartDate').val() == '') {
+            $("#saveplannerbutton").click();
+            return false;
+        }
         var limit = $('#number').val();
         var chapters = $('input[name="chapters[]"]').length;
 
