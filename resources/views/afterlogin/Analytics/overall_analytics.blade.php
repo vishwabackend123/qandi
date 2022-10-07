@@ -131,7 +131,7 @@
                                                                             backgroundColor: [
                                                                                 "#34d399",
                                                                                 "#fb7686",
-                                                                                "#f2f4f7"
+                                                                                "#7db9ff"
                                                                             ]
                                                                         }]
                                                                     };

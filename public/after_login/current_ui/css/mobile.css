@@ -3183,6 +3183,7 @@ transform: translateX(100%);
         .userprofile .profileicon{    width: 40px; height: 40px;}
         .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
         .text-right.addtestbtn{text-align:center;}
+        .custom_exam_page .test-table .accordion-header .btn.btn-common-transparent{height: 38px;padding: 10px 18px;font-size: 14px;}
 }
 
 
