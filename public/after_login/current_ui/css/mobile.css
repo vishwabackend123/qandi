@@ -3201,6 +3201,7 @@ transform: translateX(100%);
          min-height: 50px;
         }
         ul.chapter_performance_lists{min-height: auto;}
+        .mock_inst_text_mock_test a{z-index: 9; position: relative;}
 }
 
 
