@@ -3189,7 +3189,8 @@ transform: translateX(100%);
             font-size: 16px;
             padding: 9px 10px;
             line-height: 23px;}
-            .mock_inst_text_mock_test a{z-index: 9; position: relative;}
+            .mock_inst_text_mock_test a{z-index: 9;}
+            .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
             .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
 }
 
