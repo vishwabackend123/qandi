@@ -93,17 +93,24 @@
                         @endif
                     </ul> -->
                     <ul class="chapter_performance_lists mb-0">
+                        @if($subProf)
+                        @foreach($subProf as $val)
+                        @php
+                        $correct_ans =($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0;
+                        $incorrect_ans =($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0;
+                        $unanswered =($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0;
+                        @endphp
                         <li class="topic_score_bar">
-                            <h4 class="m-0">Application of derivatives</h4>
+                            <h4 class="m-0">{{$val->chapter_name}}</h4>
                             <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance"></canvas>
+                                <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
                                 <script type="text/javascript">
                                 var circuference = 360;
                                 var data = {
                                     labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
                                     datasets: [{
                                         label: "My First Dataset",
-                                        data: [10,29,30],
+                                        data: [<?php echo $correct_ans; ?>,<?php echo $incorrect_ans; ?>,<?php echo $unanswered; ?>],
                                         backgroundColor: [
                                             "#34d399",
                                             "#ff6678",
@@ -143,231 +150,13 @@
 
                                     }
                                 };
-                                var myCharted = new Chart("chapterPerformance", config)
+                                var myCharted = new Chart("chapterPerformance_{{$val->chapter_id}}", config)
 
                                 </script>
                             </div>
                         </li>
-                        <li class="topic_score_bar">
-                            <h4 class="m-0">Application of derivatives</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_2"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [10,29,30],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
-
-                                        },
-
-                                    }
-                                };
-                                var myCharted = new Chart("chapterPerformance_2", config)
-
-                                </script>
-                            </div>
-                        </li>
-                        <li class="topic_score_bar">
-                            <h4 class="m-0">Application of derivatives</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_3"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [10,29,30],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
-
-                                        },
-
-                                    }
-                                };
-                                var myCharted = new Chart("chapterPerformance_3", config)
-
-                                </script>
-                            </div>
-                        </li>
-                        <li class="topic_score_bar">
-                            <h4 class="m-0">Application of derivatives</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_4"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [10,29,30],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
-
-                                        },
-
-                                    }
-                                };
-                                var myCharted = new Chart("chapterPerformance_4", config)
-
-                                </script>
-                            </div>
-                        </li>
-                        <li class="topic_score_bar">
-                            <h4 class="m-0">Application of derivatives</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_5"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [10,29,30],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
-
-                                        },
-
-                                    }
-                                };
-                                var myCharted = new Chart("chapterPerformance_5", config)
-
-                                </script>
-                            </div>
-                        </li>
+                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
