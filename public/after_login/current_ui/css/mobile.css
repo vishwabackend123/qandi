@@ -3181,6 +3181,7 @@ transform: translateX(100%);
         white-space: normal;
         text-overflow: ellipsis;}
         .exam_inst_sec_head b {display:flex;}
+        .userprofile .profileicon{    width: 40px; height: 40px;}
 }
 
 
