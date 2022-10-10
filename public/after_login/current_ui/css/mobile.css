@@ -1175,7 +1175,7 @@ transform: translateX(100%);
             min-width:auto !important;
         }
         .performance_chapter_sublists li {
-            padding: 17px 18px 15px 16px;
+            padding: 17px 16px 15px 16px;
         }
         .performance_chapter_block label {font-size:14px;}
         .performance_chapter_sublists .performance_chapter_block label b {margin-left: -0px !important;}
@@ -3273,7 +3273,8 @@ transform: translateX(100%);
         .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
         .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
         .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
-
+        .chapter_Perfrom_Graph {
+            justify-content: space-between;}
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
