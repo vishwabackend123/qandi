@@ -94,7 +94,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 @else
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">Lets get started!</h6>
-                                    <p class="dashSubtext">To begin your journey, attempt 'Full body scan'.</p>
+                                    <p class="dashSubtext">To begin your journey, attempt 'Full body scan test'</p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
@@ -175,7 +175,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663" />
                                             </svg>
                                         </div>
-                                        <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
+                                        <p class="emptytext">Curious about your subject-wise performance? Attempt <strong>'Full body scan test'</strong></p>
                                         <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                     </div>
                                 </div>
@@ -534,7 +534,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663" />
                                         </svg>
                                     </div>
-                                    <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
+                                    <p class="emptytext">Attempt <strong>'Full body scan test'</strong> to learn about your strengths and weaknesses. </p>
                                     <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                 </div>
                             </div>
@@ -753,7 +753,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </div>
                                                     @else
                                                     <div class="graphDetailempty w-100">
-                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy.</p>
+                                                        <p>Begin your practice and we will curate an ideal pace against your own progress graph.</p>
                                                         <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                     </div>
                                                     @endif
@@ -858,7 +858,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     </div>
                                                     @else
                                                     <div class="graphDetailempty">
-                                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                                        <p>Analyse your marks trend and get a grip on your preparation. Begin your practice to generate your graph.</p>
                                                         <div class="yourPacebox">
                                                             <p class="testScrolltype">
                                                                 <span class="weekCountlineH myscore"></span>
