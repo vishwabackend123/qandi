@@ -2070,8 +2070,8 @@ transform: translateX(100%);
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
     .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
     .test_analytics_wrapper ul.topic_score_lists li{width: 100%;}
-    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
-    .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
+    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 0px;    max-height: 435px;min-height: auto;}
+    ul.topic_score_lists li:nth-last-child(2) , ul.topic_score_lists li{padding-bottom: 22px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;} 
     .email-confirmation{max-width: 328px;margin: 0 auto;padding: 20px;border-top-left-radius: 20px;
         border-top-right-radius: 20px;
