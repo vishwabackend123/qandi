@@ -308,7 +308,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12 col-xl-6">
-                    <div class="timemanagement">
+                    <div class="timemanagement timespentquestion">
                         <h4 class="garphsubheading mb-0 mt-2">Time spent on each question <span>(in Last week)</span></h4>
                         <div class="subjectperformLegend ">
                             <div class="commonSubjectLeg spaceright">
