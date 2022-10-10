@@ -241,9 +241,11 @@ $question_type = "Numerical";
                 //$('.left').insertBefore('.right');
                 $("#exam_content_sec  #btn_" + question_id).focus();
 
+                $('#quest_option_' + question_id).focus();
+
             }
         }
-        $('#quest_option_' + question_id).focus();
+        //  $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
     $('.allownumericwithdecimal').bind("cut copy paste", function(e) {

@@ -250,10 +250,10 @@ $question_type = "Numerical";
             } else {
                 //$('.left').insertBefore('.right');
                 $("#questNo  #btn_" + question_id).focus();
-
+                $('#quest_option_' + question_id).focus();
             }
         }
-        $('#quest_option_' + question_id).focus();
+        //$('#quest_option_' + question_id).focus();
     });
 
     /* Allow only numeric with decimal */
