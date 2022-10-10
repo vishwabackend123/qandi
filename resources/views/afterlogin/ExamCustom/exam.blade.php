@@ -1537,7 +1537,7 @@ $question_type = "Numerical";
         $('.showyes').hide(0);
         $('.hideyes').show(0);
         $('.overlaydiv').show(0);
-
+        $("#questNo  #btn_" + $("#current_question").val()).focus();
     });
     $('.hideyes').click(function() {
         $('.main-textexam-sec').slideToggle({
