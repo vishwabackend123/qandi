@@ -316,22 +316,22 @@ $question_type = "Numerical";
 <script>
     $(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
-            function review_right_Height() {
-                var review_Screen_right_height = $(".reviewScreenright").outerHeight();
-                var test_review_height_div = review_Screen_right_height / 2;
-                $('.custom-anstop').css('height', test_review_height_div);
-                $('.reviewans-mainsec').css('height', test_review_height_div);
-            }
+            // function review_right_Height() {
+            //     var review_Screen_right_height = $(".reviewScreenright").outerHeight();
+            //     var test_review_height_div = review_Screen_right_height / 2;
+            //     $('.custom-anstop').css('height', test_review_height_div);
+            //     $('.reviewans-mainsec').css('height', test_review_height_div);
+            // }
 
-            review_right_Height();
-            $("window").load(function() {
-                review_right_Height();
-            });
+            // review_right_Height();
+            // $("window").load(function() {
+            //     review_right_Height();
+            // });
 
 
-            $(window).resize(function() {
-                review_right_Height();
-            });
+            // $(window).resize(function() {
+            //     review_right_Height();
+            // });
         }
     })
 </script>

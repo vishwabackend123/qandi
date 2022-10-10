@@ -964,8 +964,8 @@ $question_type = "Numerical";
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
 
-                $('.custom-anstop').attr('style', 'height:0px !important;display:none;');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important; display:none;');
+                $('.custom-anstop').attr('style', 'height:0px !important;');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
 
             });
         }
