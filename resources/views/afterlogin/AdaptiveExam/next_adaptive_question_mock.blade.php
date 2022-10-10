@@ -207,7 +207,6 @@ $questtype='radio';
             } else {
                 $("#exam_content_sec  #btn_" + question_id).focus();
                 $('#quest_option_' + question_id).focus();
-
             }
         }
         // $('#quest_option_' + question_id).focus();
