@@ -3212,6 +3212,16 @@ transform: translateX(100%);
             .mock_inst_text_mock_test a{z-index: 9;}
             .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
             .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
+            .fancy-radio-buttons.with-image img {
+                max-width: 100%;
+                max-height: 70px !important;
+                overflow: scroll;
+            }
+            .examReviewscreenmob .backbtnformobilebox .bck-btn {
+                padding-left: 1px;border-radius:0px;
+            }
+            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+            .testscreenmob .content-wrapper{height:100%;}
 }
 
 

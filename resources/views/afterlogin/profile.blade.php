@@ -258,7 +258,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             $('.state_list').on('change', function() {
                 var state = $(this).val();
                 getCity(state, 'change');
-
             });
 
 
@@ -478,6 +477,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                 return false;
             }
         }
+        $('.city_list').on('change', function() {
+            if ($(this).val()!="")
+            {
+             $(this).valid();
+            }
+
+        });
     </script>
 </body>
 @endsection
