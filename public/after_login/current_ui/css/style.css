@@ -3597,12 +3597,12 @@ ul.topic_score_lists li {
 }
 ul.topic_score_lists {
     overflow-y: auto;
-    max-height: 535px;
+    max-height: 550px;
     padding-right: 40px;
     min-height: 410px;
     place-content: flex-start;
 }
-ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){padding-bottom:0;}
+/* ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){padding-bottom:0;} */
 .subject_score_card h5{
     font-size: 20px;
   font-weight: 800;
@@ -3633,14 +3633,13 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){p
 .noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
-    background-color: #fff;
+    background-color: #fff; 
     padding: 20px 20px;
     width: 200px;
     border: 0;
     min-width: auto;	
     left: 18px!important;
     z-index: 9;
-    top: calc(100% - 80px)!important;
 }
 .noofquestions-block .color_labels span b {
     font-size: 14px;
