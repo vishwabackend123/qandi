@@ -3573,6 +3573,7 @@ h3.commonheading{
     font-size: 16px;
     color: #1f1f1f;
     font-weight: 500;
+    padding-right: 20px;
 }
 .progress-bar.correct-bg {
     background-color: #08d5a1;
@@ -3591,7 +3592,7 @@ h3.commonheading{
     font-size: 0px;
 }
 ul.topic_score_lists li {
-    width: calc(50% - 18px);
+    width: calc(50% - 9px);
     position: relative;
     padding-bottom: 32px;
 }
