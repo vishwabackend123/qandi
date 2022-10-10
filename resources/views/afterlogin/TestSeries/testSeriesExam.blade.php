@@ -1036,11 +1036,6 @@ $question_type = "Numerical";
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
-                var newWindowWidth = $(window).width();
-                if (newWindowWidth < 768) {
-                    $('.hideyes').click();
-                }
-
             }
         });
     }
@@ -1613,6 +1608,12 @@ $question_type = "Numerical";
         $('.showyes').show(0);
         $('.hideyes').hide(0);
         $('.overlaydiv').hide(0);
+    });
+    $('.next_button').click(function() {
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            $('.hideyes').click();
+        }
     });
 </script>
 @endsection

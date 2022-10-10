@@ -1331,6 +1331,12 @@ $question_type = "Numerical";
         $('.hideyes').hide(0);
         $('.overlaydiv').hide(0);
     });
+    $('.next_button').click(function() {
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            $('.hideyes').click();
+        }
+    });
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
