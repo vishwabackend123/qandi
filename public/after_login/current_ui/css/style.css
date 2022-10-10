@@ -643,8 +643,7 @@ font-size: 20px !important;
     height: 44px;
     line-height: 44px;
     background: transparent;
-    /* border: solid 1px #56b663  !important; */
-    border: solid 1px #d0d5dd  !important;
+    border: solid 1px #56b663  !important;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
@@ -720,8 +719,7 @@ border-radius: 0 8px 8px 0px;
   text-align: center;
 }
 .incre-decre-value{
-    /* border: solid 1px #56b663; */
-    border: solid 1px #d0d5dd;
+    border: solid 1px #56b663;
     border-radius: 8px;
     width: 195px;
 }
@@ -915,8 +913,7 @@ padding-bottom: 0;
 .test-table h3 span{
     font-size: 16px;
   font-weight: 800;
-    /* color: #56b663; */
-    color: #1f1f1f;
+    color: #56b663;
     margin-left: 6px;
 }
 .test-table h4{
@@ -3256,7 +3253,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
 }
 span.sidebar-menu-tooltip {
     display: none;
-    background-color: #1f4736;
+    background-color: #56b663;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
     z-index: 55;
@@ -3267,6 +3264,7 @@ span.sidebar-menu-tooltip {
     font-size: 16px;
     color: #fff;
     white-space: nowrap;
+    font-weight: bold;
 }
 span.sidebar-menu-tooltip:before{
     content: "";
@@ -3277,7 +3275,7 @@ span.sidebar-menu-tooltip:before{
     top: 16px;
     border: 10px solid transparent;
     border-left: 0;
-    border-right: 15px solid #1f4736;
+    border-right: 15px solid #56b663;
 }
 ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
     display: block;
@@ -3575,6 +3573,7 @@ h3.commonheading{
     font-size: 16px;
     color: #1f1f1f;
     font-weight: 500;
+    padding-right: 20px;
 }
 .progress-bar.correct-bg {
     background-color: #08d5a1;
@@ -3593,18 +3592,18 @@ h3.commonheading{
     font-size: 0px;
 }
 ul.topic_score_lists li {
-    width: calc(45% - 4px);
-    margin-bottom: 45px;
-	position: relative;
+    width: calc(50% - 9px);
+    position: relative;
+    padding-bottom: 32px;
 }
 ul.topic_score_lists {
     overflow-y: auto;
-    max-height: 535px;
+    max-height: 550px;
     padding-right: 40px;
-    min-height: 310px;
+    min-height: 410px;
     place-content: flex-start;
 }
-ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
+ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){padding-bottom:0;}
 .subject_score_card h5{
     font-size: 20px;
   font-weight: 800;
@@ -3635,13 +3634,12 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .noofquestions-block.dropdown-menu {
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
-    background-color: #fff;
+    background-color: #fff; 
     padding: 20px 20px;
     width: 200px;
     border: 0;
     min-width: auto;	
-    right: -25px!important;
-    left: auto!important;
+    left: 18px!important;
     z-index: 9;
 }
 .noofquestions-block .color_labels span b {
@@ -4102,8 +4100,7 @@ span.proficiency_value {
 }
 .performance_chapter_block label b {
     font-weight: 800;
-    /* color: #56b663; */
-    color: #1f1f1f;
+    color: #56b663;
     margin-right: 10px;
     min-width:45px;
     display:inline-block;
@@ -4119,30 +4116,23 @@ span.proficiency_value {
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
-    /* padding: 8px 24px 8px 16px; */
-    padding: 0;
+    padding: 8px 16px 8px 16px;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
-    /* color: #fff; */
-    color:#56b663;
-    /* background-color: #56b663; */
-    background-color: transparent;
-    /* border-radius: 8px; */
-    border-radius: 0;
+    color: #fff;
+    background-color: #56b663;
+    border-radius: 8px;
     box-shadow: none;
     display: inline-block;
-    /* white-space: nowrap; */
 }
 .performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
     font-weight: 700;
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    /* margin-left: 0px; */
-    margin-left:8px;
     font-size: 16px;
+    top: 2px;
+    position: relative;
+    left: 5px;
 }
 .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block {
     height: auto;
@@ -4175,7 +4165,7 @@ span.proficiency_value {
 .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child {
     margin: 0;
 }
-.accordion-header{min-width:120px;}
+.accordion-header{min-width:132px;}
 /* .performance_chapter_sublists li .performance_chapter_block label{min-width:168px;} */
 /* .accordion.performance_chapter_accordion {
     overflow-y: auto;
@@ -4216,8 +4206,8 @@ span.proficiency_value {
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
     margin-right: 60px;
     padding: 0 8px 20px;
-    /* color: #56b663; */
-        color: #363c4f; 
+    color: #56b663;
+    font-weight: 600;
 }
 .test_myscrore_card {height: 292px;}
 .test_analytics_wrapper .common_greenbadge_tabs ul.nav {
@@ -4230,24 +4220,64 @@ span.proficiency_value {
 /* .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    
     border-bottom: 4px solid #56b663;} */
 /* .tooltipmain svg g{stroke: #56b663;opacity: 1;} */
-/* .value-button.border-end, .value-button.border-start {
+.value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
-} */
-/* .test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
+}
+.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
     background-color: #56b663!important;
     color: #fff;
-} */
-/* #referedfrnd .modal-content {
-    background-color: #EDF4EC;
-} */
+}
+#referedfrnd .modal-content {
+    background-color: #f5faf6;
+}
 .planner-date input.form-control::-webkit-date-and-time-value{ text-align:left; }
 .take-fulltest .full_take  svg.me-3.align-bottom {
     height: 44px!important;
 }
+.custom_exam_page .test-table .accordion-header .btn.btn-common-transparent{font-size:16px;padding: 11px 16px;height: 48px;}
+
+.chapter_performance_lists li.topic_score_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 11px;
+    border-top: 1px solid #e5eaee;
+}
+.chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+    min-height: 62px;
+    margin-right: 18px;
+}
+ul.chapter_performance_lists{
+    overflow-y: auto;
+    max-height: 277px;
+    min-height: 277px;
+}
+.chapter_performance_lists li.topic_score_bar:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+.topic_score_bar .Chapter_Main_Graph {
+    width: 62px;
+    height: 62px;
+    margin-right: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+ul.topic_score_lists li:nth-child(even) {
+    border-left: 1px solid #e5eaee;
+    padding-left: 18px;
+    margin-left: 18px;
+}
+.topic_score_card.commonWhiteBox{padding-bottom:5px;}
+.commonWhiteBox.chapter_performance_card{padding-bottom:10px;}
+
 /********************* Amit End ****************************/
 
 
-/********* Shubham Start ***********/
+/********* Shubham Start ***********/   
 /*************header***********/
 
 .headerMain {
@@ -4831,8 +4861,7 @@ header {
 .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
 #strengthmodal .modal-dialog,#Evaluationmodal .modal-dialog,#needsfocusmodal .modal-dialog,#hopefulmodal .modal-dialog,#weakmodal .modal-dialog{max-width:635px;width:100%;margin:0 auto;height:100%;}
 .strengthmodal_content hr{
-    /* background-color:#56b663; */
-    background-color:#868a95;
+    background-color:rgba(86,182,99,0.5);
     opacity: 1;
 }
 .modalcenter{display:flex;align-items:center;height: 100%;}
@@ -4864,8 +4893,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 .subjectperformLegend  .pinkbar{background-color:#ff6678}
 .subjectperformLegend  .pinkbar2{background-color:#f7758f}
 
-.subjectperformLegend  .graybar{background-color:#e5eaee;}
-/* .subjectperformLegend  .graybar{background-color:#7db9ff;} */
+.subjectperformLegend  .graybar{background-color:#7db9ff;}
 .subjectperformLegend .bluebar{background-color: #7db9ff;}
 .subjectperformLegend  .commonSubjectLeg .text{opacity: 0.6; font-size: 14px;font-weight: 500; line-height: 1.6;color: #1f1f1f;}
 .subjectblockOverall{ padding: 12px 16px; border-radius: 8px;border: solid 1px #e0e0e0;margin-top:25px;display: flex;
@@ -5236,6 +5264,16 @@ canvas#progressJourny_graph, canvas#trend_graph {
                        .Chapter_Main_Graph canvas{width:100%!important;height:100%!important;}
                        .timemanagement .tab-content{padding:0px}
                        .taskcenter_wrapper .commontab .nav-tabs .nav-link{-webkit-appearance: none;}
+                       .exam_inst_right_contant_green{position:relative;overflow: hidden;}
+                       .green_circle{ background-color:#52ac5f;position:absolute;  opacity: 0.2;border-radius: 50%;}
+                       .green_circle.leftenter{ width: 32px;height: 32px;border-radius:50%;top:45%;transform: translateY(-45%);left:36px;}
+                       .green_circle.leftbottom{width: 71px;
+                        height: 71px;
+                        border-radius: 50%;
+                        bottom: -18px;
+                        left: -23px;}
+                        .green_circle.rightBottom{ width: 18px;
+                            height: 18px;bottom:26px;right:21px;}
                        
 /********* Shubham End ***********/
 
@@ -5495,8 +5533,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
     padding: 15px 0px 15px;
     flex-grow: 0;
     border-radius: 8px;
-    /* background-color: #42D23D; */
-    background-color: #56b663;
+    background-color: #6cd14e;
 }
 
 .mock_inst_text_mock_test a {
@@ -5599,14 +5636,14 @@ canvas#progressJourny_graph, canvas#trend_graph {
     align-items: center;
     padding: 12px 18px;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #52ac5f;
     border: none;
     margin-top: 15px;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    color: #56b663;
+    color: #fff!important;
 }
 
 .exam_instruct_section_subject {
@@ -5627,7 +5664,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 }
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link.active {
     position: relative!important;
-    /* color: #56b663!important; */
+    color: #56b663!important;
 }
 .mqmatric_topic {
     font-size: 20px;
@@ -5750,7 +5787,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 {
     /* margin-top:60px; */
     border-radius: 10px;    
-    /* border: 1px solid #56b663; */
+    border: 2px solid #56b663;
 }
 
 /*********** chapter_proficiency *****************/
@@ -6063,8 +6100,7 @@ background: #3e8a44;
     font-weight: 800;
     line-height: 1.6;
     letter-spacing: normal;
-    /* color: #56b663; */
-    color: #1f1f1f;
+    color: #56b663;
 }
 .exam_instruction_scrolling_pd_zero
 {
@@ -6636,8 +6672,7 @@ td.mymatrix_table_point
 #referfrnd .modal-content {
     border: 0;
     border-radius: 32px;
-    /* background-color: #EDF4EC; */
-    background-color: #fff;
+    background-color: #f5faf6;
 }
 
 #referfrnd button.btn {

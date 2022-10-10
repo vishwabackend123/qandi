@@ -360,7 +360,7 @@
     .chapter_Perfrom_Graph{    justify-content: initial;margin-top:20px;} 
     .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block{    padding: 20px 0px 15px 0px;}
     .Chapter_Main_Graph{margin-right:40px;width:44px;height:44px;}
-    .Chapter_Main_Graph:last-child{margin-right:0px;}
+    .Chapter_Main_Graph:last-child{margin-right:18px;}
     .performance_chapter_sublists li {
         padding:0 20px;
     }
@@ -2104,9 +2104,9 @@ transform: translateX(100%);
     .test_analytics_wrapper .halfdoughnut2{margin:0 auto;}
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
     .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
-    .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
-    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
-    .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
+    .test_analytics_wrapper ul.topic_score_lists li{width: 100%;}
+    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 0px;    max-height: 435px;min-height: auto;}
+    ul.topic_score_lists li:nth-last-child(2) , ul.topic_score_lists li{padding-bottom: 22px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;} 
     .email-confirmation{max-width: 328px;margin: 0 auto;padding: 20px;border-top-left-radius: 20px;
         border-top-right-radius: 20px;
@@ -3219,24 +3219,41 @@ transform: translateX(100%);
         .userprofile .profileicon{    width: 40px; height: 40px;}
         .overall_analytics_page .commontab .nav-tabs.mobilescrolltabNew{padding:0px 5px;}
         .text-right.addtestbtn{text-align:center;}
+        .custom_exam_page .test-table .accordion-header .btn.btn-common-transparent{height: 38px;padding: 8px 18px;font-size: 14px;}
         .addtestbtn .btn{    width: 100%;
-            height: 44px;
-            font-size: 16px;
-            padding: 9px 10px;
-            line-height: 23px;}
-            .mock_inst_text_mock_test a{z-index: 9;}
-            .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
-            .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
-            .fancy-radio-buttons.with-image img {
-                max-width: 100%;
-                max-height: 70px !important;
-                overflow: scroll;
-            }
-            .examReviewscreenmob .backbtnformobilebox .bck-btn {
-                padding-left: 1px;border-radius:0px;
-            }
-            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
-            .testscreenmob .content-wrapper{height:100%;}
+        height: 44px;
+        font-size: 16px;
+        padding: 9px 10px;
+        line-height: 23px;
+        }
+        .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph:last-child {
+            margin-right: 10px;
+        }
+        .chapter_performance_lists .Chapter_Main_Graph{width: 50px;
+        height: 50px;
+        margin-right: 18px;
+        min-width: 50px;
+         min-height: 50px;
+        }
+        ul.chapter_performance_lists{min-height: auto;}
+        .mock_inst_text_mock_test a{z-index: 9;}
+        .chapter_performance_card .subjectperformLegend .commonSubjectLeg:first-child{width:68%;}
+        .tabMainblock_myqmatric .exam_instruction_scrolling .mymatrix_table tr td:first-child{padding-right:10px;}
+        ul.topic_score_lists li:nth-child(even) {
+            border-left: 0;
+            padding-left: 0;
+            margin-left: 0;
+        }
+        .fancy-radio-buttons.with-image img {
+            max-width: 100%;
+            max-height: 70px !important;
+            overflow: scroll;
+        }
+        .examReviewscreenmob .backbtnformobilebox .bck-btn {
+            padding-left: 1px;border-radius:0px;
+        }
+        .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+        .testscreenmob .content-wrapper{height:100%;}
 }
 
 
