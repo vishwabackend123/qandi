@@ -37,7 +37,7 @@
                         <canvas id="mathChart"></canvas>
                     </div>
                 </div>
-                <div class="commonWhiteBox chapter_performance_card h-auto pb-0" style="margin-top:20px;">
+                <div class="commonWhiteBox chapter_performance_card h-auto" style="margin-top:20px;">
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                         <h3 class="boxheading d-flex align-items-center mb-0">Chapter Performance
                             <span class="tooltipmain">

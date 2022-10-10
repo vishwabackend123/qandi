@@ -4269,6 +4269,8 @@ ul.topic_score_lists li:nth-child(even) {
     padding-left: 18px;
     margin-left: 18px;
 }
+.topic_score_card.commonWhiteBox{padding-bottom:5px;}
+.commonWhiteBox.chapter_performance_card{padding-bottom:10px;}
 
 /********************* Amit End ****************************/
 
