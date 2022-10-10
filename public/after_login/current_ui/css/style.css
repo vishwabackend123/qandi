@@ -4105,7 +4105,8 @@ span.proficiency_value {
     /* color: #56b663; */
     color: #1f1f1f;
     margin-right: 10px;
-    min-width:45px;display:inline-block;
+    min-width:45px;
+    display:inline-block;
 }
 .performance_chapter_block label {
     font-size: 16px;
@@ -8072,3 +8073,8 @@ margin-bottom: 12px;
 }
 
 .allscrollbar .accordion-item .chapters-expend .accordion-body .testslider .owl-nav span{position: absolute;top:-5px}
+
+/*Gourav Kumar*/
+.overallMidlle .commonWhiteBox .timespentquestion .garphsubheading {
+    font-size: 20px;
+}

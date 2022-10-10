@@ -1168,7 +1168,42 @@ transform: translateX(100%);
         margin-top: 20px;
     }
 }
-@media(max-width:767px){ 
+@media(max-width:767px){
+    /*Gourav Kumar*/
+        .performance_chapter_block label b {
+            margin-right: 0px !important;
+            min-width:auto !important;
+        }
+        .performance_chapter_sublists li {
+            padding: 17px 16px 15px 16px;
+        }
+        .performance_chapter_block label {font-size:14px;}
+        .performance_chapter_sublists .performance_chapter_block label b {margin-left: -0px !important;}
+        .timespentquestion span {
+            display: block;
+            width: 100%;
+            margin-left: 0px !important;
+        }
+
+    /*Gourav Kumar*/
+    .performance_chapter_block label b {
+        margin-right: 0px !important;
+        min-width:auto !important;
+    }
+    
+    .performance_chapter_sublists li {
+        padding: 17px 18px 15px 16px;
+    }
+    .performance_chapter_block label {font-size:14px;}
+    .performance_chapter_sublists .performance_chapter_block label b {margin-left: -0px !important;}
+    .timespentquestion span {
+        display: block;
+        width: 100%;
+        margin-left: 0px !important;
+    }
+
+    /* End */
+
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
@@ -3265,7 +3300,8 @@ transform: translateX(100%);
         .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
         .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
         .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
-
+        .chapter_Perfrom_Graph {
+            justify-content: space-between;}
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
