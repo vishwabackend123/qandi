@@ -191,6 +191,9 @@
                         </div>
                         <div>
                             <div class="exam_inst_right_contant_green text-center">
+                               <span class="green_circle leftenter"></span>
+                                <span class="green_circle leftbottom"></span>
+                                <span class="green_circle rightBottom"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" class="exam_inst_svg_right_green">
                                     <mask id="stq5c63rya" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="104" height="104">
                                         <path d="M0 0h104v96.18a7.82 7.82 0 0 1-7.82 7.82H0V0z" fill="#D9D9D9" />

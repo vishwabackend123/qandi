@@ -268,7 +268,7 @@
                         </div>
                     </div>
                     @endif
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius topic_score_card">
                         <h3 class="boxheading d-flex align-items-center">Topic Score
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -315,7 +315,7 @@
                                 $subject_id=$subject->subject_id;
                                 @endphp
                                 <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
-                                    <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                                    <!-- <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
                                         @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                         @foreach($response->topic_wise_result as $topic)
                                         @php $topic=(object)$topic; @endphp
@@ -350,14 +350,90 @@
                                                         <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
                                                     </div>
                                                 </ul>
-                                                <!-- <div class="noofquestions-block">
-                                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
-                                                    <div class="color_labels">
-                                                        <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
-                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
-                                                        <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
+                                            </div>
+                                        </li>
+                                        @endif
+                                        @endforeach
+                                        @endif
+                                    </ul> -->
+                                    <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                                        @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
+                                        @foreach($response->topic_wise_result as $topic)
+                                        @php $topic=(object)$topic; @endphp
+                                        @php
+                                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->correct_count/$topic->total_questions)*100), 2):0;
+                                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->incorrect_count/$topic->total_questions)*100), 2):0;
+                                        $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
+                                        @endphp
+                                        @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>@if(!empty($topic->topic_name)) {{$topic->topic_name}}
+                                                    @else
+                                                    ""
+                                                    @endif</h4>
+                                                <div class="dropdown  d-inline-block">
+
+                                                    <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <canvas id="topicScore_{{$topic->topic_id}}"></canvas>
+                                                        <script type="text/javascript">
+                                                            var circuference = 360;
+                                                            var data = {
+                                                                labels: ["Correct", "Incorrect", "Not Attempted"],
+                                                                datasets: [{
+                                                                    label: "My First Dataset",
+                                                                    data: [<?php echo $tcorrect_per; ?>,<?php echo $tincorrect_per; ?>,<?php echo $tnot_attempt_per; ?>],
+                                                                    backgroundColor: [
+                                                                        "#34d399",
+                                                                        "#ff6678",
+                                                                        "#7db9ff",
+                                                                    ]
+                                                                }]
+                                                            };
+                                                            var config = {
+                                                                type: "doughnut",
+                                                                data: data,
+                                                                options: {
+                                                                    reponsive: true,
+                                                                    maintainAspectRatio: false,
+                                                                    circumference: circuference,
+                                                                    cutout: "50%",
+                                                                    borderWidth: 0,
+                                                                    borderRadius: function(context, options) {
+                                                                        const index = context.dataIndex;
+                                                                        let radius = {};
+                                                                        if (index == 0) {
+                                                                            radius.innerStart = 0;
+                                                                            radius.outerStart = 0;
+                                                                        }
+                                                                        if (index === context.dataset.data.length - 1) {
+                                                                            radius.innerEnd = 0;
+                                                                            radius.outerEnd = 0;
+                                                                        }
+                                                                        return radius;
+                                                                    },
+                                                                    plugins: {
+                                                                        title: false,
+                                                                        subtitle: false,
+                                                                        legend: false,
+                                                                        tooltip: false
+
+                                                                    },
+
+                                                                }
+                                                            };
+                                                            var myCharted = new Chart("topicScore_{{$topic->topic_id}}", config)
+                                                        </script>
                                                     </div>
-                                                </div> -->
+                                                    <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
+                                                        <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                        <div class="color_labels">
+                                                            <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
+                                                            <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                            <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
+                                                        </div>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                         @endif
@@ -606,7 +682,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
         }
     });
     
-    $(".topic_score_bar.dropdown").hover(function() {
+    $(".topic_score_bar .dropdown").hover(function() {
         $(this).children(".progress.dropdown-toggle").trigger('click');
     });
    

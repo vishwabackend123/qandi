@@ -33,7 +33,7 @@
        
     </div>
 </div>
-<div class="commonWhiteBox commonblockDash borderRadius">
+<div class="commonWhiteBox commonblockDash borderRadius topic_score_card">
     <h3 class="boxheading d-flex align-items-center">Topic Score
         <span class="tooltipmain2 ml-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -74,7 +74,7 @@
             @if(isset($response->subject_wise_result))
             @foreach($response->subject_wise_result as $key=>$subDataTopic)
             <div class="tab-pane fade show @if($key==0) active @endif" id="pills-{{$subDataTopic->subject_name}}" role="tabpanel" aria-labelledby="pills-{{$subDataTopic->subject_name}}-tab">
-                <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                <!-- <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
                     @if(isset($response->topic_wise_result))
                     @foreach($response->topic_wise_result as $key=>$tdata)
                     @if($tdata->subject_id==$subDataTopic->subject_id)
@@ -83,7 +83,6 @@
                     $incorr_Per=(isset($tdata->incorrect_count)&& !empty($tdata->total_questions))?$tdata->incorrect_count*100/$tdata->total_questions:0;
                     $unanswered_Per=(isset($tdata->unanswered_count)&& !empty($tdata->total_questions))?$tdata->unanswered_count*100/$tdata->total_questions:0;
                     @endphp
-
                     <li>
                         <div class="topic_score_bar dropdown">
                             <h4>{{$tdata->topic_name}}</h4>
@@ -106,14 +105,86 @@
                                     <span class="d-block"><small></small> Not Attempted <b>{{$tdata->unanswered_count}}</b></span>
                                 </div>
                             </ul>
-                            <!-- <div class="noofquestions-block">
-                                <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
-                                <div class="color_labels">
-                                    <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
-                                    <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$tdata->incorrect_count}}</b></span>
-                                    <span class="d-block"><small></small> Not Attempted <b>{{$tdata->unanswered_count}}</b></span>
+                        </div>
+                    </li>
+                    @endif
+                    @endforeach
+                    @endif
+                </ul> -->
+                <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                    @if(isset($response->topic_wise_result))
+                    @foreach($response->topic_wise_result as $key=>$tdata)
+                    @if($tdata->subject_id==$subDataTopic->subject_id)
+                    @php
+                    $corr_Per=(isset($tdata->total_questions)&& !empty($tdata->total_questions))?$tdata->correct_count*100/$tdata->total_questions:0;
+                    $incorr_Per=(isset($tdata->incorrect_count)&& !empty($tdata->total_questions))?$tdata->incorrect_count*100/$tdata->total_questions:0;
+                    $unanswered_Per=(isset($tdata->unanswered_count)&& !empty($tdata->total_questions))?$tdata->unanswered_count*100/$tdata->total_questions:0;
+                    @endphp
+                    <li>
+                        <div class="topic_score_bar">
+                            <h4>{{$tdata->topic_name}}</h4>
+                            <div class="dropdown  d-inline-block">
+
+                                <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <canvas id="topicScore_{{$tdata->topic_id}}"></canvas>
+                                    <script type="text/javascript">
+                                        var circuference = 360;
+                                        var data = {
+                                            labels: ["Correct", "Incorrect", "Not Attempted"],
+                                            datasets: [{
+                                                label: "My First Dataset",
+                                                data: [<?php echo $corr_Per; ?>,<?php echo $incorr_Per; ?>,<?php echo $unanswered_Per; ?>],
+                                                backgroundColor: [
+                                                    "#34d399",
+                                                    "#ff6678",
+                                                    "#7db9ff",
+                                                ]
+                                            }]
+                                        };
+                                        var config = {
+                                            type: "doughnut",
+                                            data: data,
+                                            options: {
+                                                reponsive: true,
+                                                maintainAspectRatio: false,
+                                                circumference: circuference,
+                                                cutout: "50%",
+                                                borderWidth: 0,
+                                                borderRadius: function(context, options) {
+                                                    const index = context.dataIndex;
+                                                    let radius = {};
+                                                    if (index == 0) {
+                                                        radius.innerStart = 0;
+                                                        radius.outerStart = 0;
+                                                    }
+                                                    if (index === context.dataset.data.length - 1) {
+                                                        radius.innerEnd = 0;
+                                                        radius.outerEnd = 0;
+                                                    }
+                                                    return radius;
+                                                },
+                                                plugins: {
+                                                    title: false,
+                                                    subtitle: false,
+                                                    legend: false,
+                                                    tooltip: false
+
+                                                },
+
+                                            }
+                                        };
+                                        var myCharted = new Chart("topicScore_{{$tdata->topic_id}}", config)
+                                    </script>
                                 </div>
-                            </div> -->
+                                <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
+                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                    <div class="color_labels">
+                                        <span class="d-block"><small></small> Correct <b>{{$tdata->correct_count}}</b></span>
+                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$tdata->incorrect_count}}</b></span>
+                                        <span class="d-block"><small></small> Not Attempted <b>{{$tdata->unanswered_count}}</b></span>
+                                    </div>
+                                </ul>
+                            </div>
                         </div>
                     </li>
                     @endif
@@ -194,7 +265,7 @@
         const myCharted = new Chart("subjectChart_" + subId, config)
     }
 
-    $(".topic_score_bar.dropdown").hover(function() {
+    $(".topic_score_bar .dropdown").hover(function() {
         $(this).children(".progress.dropdown-toggle").trigger('click');
     });
 
