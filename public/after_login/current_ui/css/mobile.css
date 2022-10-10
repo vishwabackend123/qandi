@@ -1169,7 +1169,6 @@ transform: translateX(100%);
     }
 }
 @media(max-width:767px){
-<<<<<<< HEAD
     /*Gourav Kumar*/
         .performance_chapter_block label b {
             margin-right: 0px !important;
@@ -1185,7 +1184,6 @@ transform: translateX(100%);
             width: 100%;
             margin-left: 0px !important;
         }
-=======
 
     /*Gourav Kumar*/
     .performance_chapter_block label b {
@@ -1203,7 +1201,6 @@ transform: translateX(100%);
         width: 100%;
         margin-left: 0px !important;
     }
->>>>>>> 5710ae554b9634fee4e0c013931c09d3743bbae9
 
     /* End */
 
