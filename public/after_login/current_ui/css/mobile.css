@@ -1168,7 +1168,27 @@ transform: translateX(100%);
         margin-top: 20px;
     }
 }
-@media(max-width:767px){ 
+@media(max-width:767px){
+
+    /*Gourav Kumar*/
+    .performance_chapter_block label b {
+        margin-right: 0px !important;
+        min-width:auto !important;
+    }
+    
+    .performance_chapter_sublists li {
+        padding: 17px 18px 15px 16px;
+    }
+    .performance_chapter_block label {font-size:14px;}
+    .performance_chapter_sublists .performance_chapter_block label b {margin-left: -0px !important;}
+    .timespentquestion span {
+        display: block;
+        width: 100%;
+        margin-left: 0px !important;
+    }
+
+    /* End */
+
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
