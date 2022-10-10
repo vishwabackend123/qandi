@@ -206,10 +206,10 @@ $questtype='radio';
                 $("#exam_content_sec  #btn_" + question_id).focusout();
             } else {
                 $("#exam_content_sec  #btn_" + question_id).focus();
-
+                $('#quest_option_' + question_id).focus();
             }
         }
-        $('#quest_option_' + question_id).focus();
+        // $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
     $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
