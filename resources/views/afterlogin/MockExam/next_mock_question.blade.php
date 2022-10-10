@@ -271,13 +271,15 @@ $question_type = "Numerical";
             if (newWindowWidth < 768) {
                 //$('.right').insertBefore('.left');
                 $("#questNo  #btn_" + question_id).focusout();
+
             } else {
                 //$('.left').insertBefore('.right');
                 $("#questNo  #btn_" + question_id).focus();
+                $('#quest_option_' + question_id).focus();
 
             }
         }
-        $('#quest_option_' + question_id).focus();
+
     });
 
     $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
