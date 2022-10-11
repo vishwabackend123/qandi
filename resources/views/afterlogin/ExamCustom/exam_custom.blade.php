@@ -262,6 +262,7 @@
     }
 </script>
 <script type="text/javascript">
+var subject_name='';
 $('#custom_tab').click(function() {
     $('.spinnerblock').show();
     $('#qq1').show();
@@ -296,8 +297,26 @@ $('#custom_tab').click(function() {
     });
     var aTopics = [];
 
-    function addOrRemove(value) {
+    function addOrRemove(value,subject) {
         var index = aTopics.indexOf(value);
+        if (subject_name) {
+            if (subject_name == subject) {
+                $('.addremovetopic').prop('disabled', true);
+                $('.topic_'+subject).prop('disabled', false);
+            }else
+            {
+               $('.topic_'+subject).prop('disabled', true); 
+               return false; 
+            }
+
+        }
+        else 
+        {
+            subject_name = subject;  
+            $('.addremovetopic').prop('disabled', true);
+            $('.topic_'+subject).prop('disabled', false);  
+        }
+        
 
         if (index === -1) {
             aTopics.push(value);
@@ -330,6 +349,8 @@ $('#custom_tab').click(function() {
         } else {
             $('.topic_form').attr("style", "display: none  !important");
             $('.take-fulltest').removeClass('mobile-test');
+            $('.addremovetopic').prop('disabled', false);
+            subject_name = '';
         }
 
 
@@ -345,6 +366,7 @@ $('#custom_tab').click(function() {
         $('.addremovetopic').html('Select');
         $('.exam-box').removeClass('examborderchange');
         $('.topic_form').attr("style", "display: none  !important");
+        subject_name = '';
 
     }
 
