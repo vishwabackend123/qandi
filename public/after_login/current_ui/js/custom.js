@@ -67,14 +67,39 @@ $(".circle_percent").each(function() {
 });
 
 /************* Dashboard- MyQ Today  Circular Progress Bar ************/
+// $(".mq_circle_percent").each(function() {
+//     var $this = $(this),
+// 		$dataV = $this.data("percent"),
+// 		$dataDeg = $dataV * 3.6,
+// 		$round = $this.find(".mq_circle_inner");
+// 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
+// 	$this.append('<div class="mq_circle_inbox"><div class="valeblocktop"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div></div>');
+	
+// 	if($dataV >= 51){
+// 		$round.css("transform", "rotate(" + 360 + "deg)");
+// 		setTimeout(function(){
+// 			$this.addClass("mq_percent_more");
+// 		},1000);
+// 		setTimeout(function(){
+// 			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+// 		},1000);
+// 	} 
+// });
 $(".mq_circle_percent").each(function() {
     var $this = $(this),
 		$dataV = $this.data("percent"),
 		$dataDeg = $dataV * 3.6,
-		$round = $this.find(".mq_round_per");
+		$round = $this.find(".mq_circle_inner");
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
-	$this.append('<div class="mq_circle_inbox"><div class="valeblocktop"><div class="valeblockmyq"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div></div></div>');
-	
+	$this.append('<div class="mq_circle_index"><div class="valeblocktop"></div></div>');
+	$this.prop('Counter', 0).animate({Counter: $dataV},
+	{
+		duration: 2000, 
+		easing: 'swing', 
+		step: function (now) {
+            $this.find(".valeblocktop").text(Math.ceil(now)+'/100');
+        } 
+    });
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
 		setTimeout(function(){
