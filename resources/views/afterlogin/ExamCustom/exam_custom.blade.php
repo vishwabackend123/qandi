@@ -367,6 +367,7 @@ $('#custom_tab').click(function() {
         $('.exam-box').removeClass('examborderchange');
         $('.topic_form').attr("style", "display: none  !important");
         subject_name = '';
+        $('.addremovetopic').prop('disabled', false);
 
     }
 
