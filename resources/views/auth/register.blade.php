@@ -345,9 +345,9 @@
                             $('#editsignnumber').addClass("d-block");
 
                             $('#mobile_num').attr("readonly", true);
-                            if (response.otp) {
-                                $('#testing_otp').html(response.otp);
-                            }
+                            //if (response.otp) {
+                              //  $('#testing_otp').html(response.otp);
+                            //}
 
 
                             $('.otp-input').show();

@@ -1024,6 +1024,11 @@ $question_type = "Numerical";
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
+                var newWindowWidth = $(window).width();
+                if (newWindowWidth < 768) {
+                    $('.hideyes').click();
+                }
+
             }
         });
     }
@@ -1655,7 +1660,7 @@ $question_type = "Numerical";
         var nxtSubVal = $('#next_sub_id').val();
 
         if (nxtSubVal != '') {
-
+            start();
             get_subject_question(nxtSubVal);
         } else {
 

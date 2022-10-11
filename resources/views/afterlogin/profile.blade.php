@@ -207,7 +207,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 @if($subscription_type == "P" || $days >14)
                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
                                 @else
-                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14 days trial</h3>
+                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 14-day trial</h3>
 
                                 @endif
                             </div>
@@ -258,7 +258,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             $('.state_list').on('change', function() {
                 var state = $(this).val();
                 getCity(state, 'change');
-
             });
 
 
@@ -478,6 +477,13 @@ $user_id = isset($userData->id)?$userData->id:'';
                 return false;
             }
         }
+        $('.city_list').on('change', function() {
+            if ($(this).val()!="")
+            {
+             $(this).valid();
+            }
+
+        });
     </script>
 </body>
 @endsection

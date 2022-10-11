@@ -10,7 +10,7 @@
 <div class="main-wrapper exam-wrapperBg">
     @include('afterlogin.layouts.navbar_header_new')
     @include('afterlogin.layouts.sidebar_new')
-    <section class="content-wrapper exam-wrapperpadding TestseriesAttempt22">
+    <section class="content-wrapper exam-wrapperpadding TestseriesAttempt22 custom_exam_page">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
