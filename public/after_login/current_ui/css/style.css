@@ -3366,13 +3366,13 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
-    font-size: 120px;
+    font-size: 119px;
     width: 1em;
     height: 1em;
     position: relative;
     background: #f5faf6;
     border-radius: 50%;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: inline-block;
     /* margin: 20px; */
 }
@@ -3483,6 +3483,7 @@ span.mq_percent_outoff {
     z-index: 3;
     font-weight: 600;
     margin-left: 3px;
+    letter-spacing: initial;
 }
 .valeblockmyq{    position: absolute;
     font-size: 18px;
@@ -8152,7 +8153,7 @@ margin-bottom: 12px;
     background-size: 134px;
     background-position-y: -3px; */
     background-repeat: no-repeat;
-    /* box-shadow: 0 15px 18px rgb(232 234 236 / 79%); */
+    box-shadow: 0 15px 18px rgb(232 234 236 / 79%);
 }
 .valeblocktop {
     font-size: 18px;
