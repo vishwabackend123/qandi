@@ -3266,11 +3266,13 @@ transform: translateX(100%);
     padding-left: 3px;
     }
  .examReviewscreenmob  .backbtnformobilebox .reviewexamType a{
-        position: initial;text-overflow: ellipsis;
+        position: initial;
+        /* text-overflow: ellipsis; */
         overflow: hidden;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         max-width: 260px;
         display: inline-block;
+        word-break: break-all;
     }
     .examReviewscreenmob  .hideyes {
         display: none;
