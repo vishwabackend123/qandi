@@ -51,7 +51,7 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                         <div class="line-692"></div>
                         <div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Transaction ID :</div>
+                                <div class="plan_order_summary">Transaction ID:</div>
                                 <div class="plan_subscribption">{{$transaction_data->id}}</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
@@ -59,7 +59,7 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                                 <div class="plan_subscribption">{{$transaction_data->order_id}}</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Subscription Type :</div>
+                                <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">
                                     @if(isset($transaction_data->notes->exam_id) && $transaction_data->notes->exam_id==1)
                                     JEE Main 1 Year Subscription
@@ -69,11 +69,11 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">Active Date :</div>
+                                <div class="plan_order_summary">Active Date:</div>
                                 <div class="plan_subscribption">{{date('j F Y', $transaction_data->created_at)}}</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
-                                <div class="plan_order_summary">End Date :</div>
+                                <div class="plan_order_summary">End Date:</div>
                                 @php
                                 $subscription_month=$transaction_data->notes->month;
                                 @endphp
