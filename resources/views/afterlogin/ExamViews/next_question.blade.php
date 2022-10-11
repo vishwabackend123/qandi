@@ -220,10 +220,10 @@ $question_type = "Numerical";
             } else {
                 //$('.left').insertBefore('.right');
                 $("#exam_content_sec  #btn_" + question_id).focus();
-
+                $('#quest_option_' + question_id).focus();
             }
         }
-        $('#quest_option_' + question_id).focus();
+        // $('#quest_option_' + question_id).focus();
     });
     $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
         e.preventDefault();
