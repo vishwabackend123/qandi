@@ -1683,8 +1683,8 @@ $question_type = "Numerical";
         var nxtSubVal = $('#next_sub_id').val();
 
         if (nxtSubVal != '') {
-
             get_subject_question(nxtSubVal);
+            start();
         } else {
 
             start();
