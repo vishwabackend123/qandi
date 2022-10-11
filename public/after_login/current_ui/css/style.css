@@ -3482,6 +3482,7 @@ span.mq_percent_outoff {
     font-size: 18px;
     z-index: 3;
     font-weight: 600;
+    margin-left: 3px;
 }
 .valeblockmyq{    position: absolute;
     font-size: 18px;
@@ -8139,7 +8140,8 @@ margin-bottom: 12px;
     left: 6px;
     right: 6px;
     bottom: 6px;
-    background: #e6eee5;
+    /* background: #e6eee5; */
+    background: #ffffff;
     z-index: 3;
     border-radius: 50%;
     background-image: url(../images/roundshape31.png);

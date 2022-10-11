@@ -92,13 +92,14 @@ $(".mq_circle_percent").each(function() {
 		$round = $this.find(".mq_circle_inner");
 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
 	$this.append('<div class="mq_circle_index"><div class="valeblocktop"></div></div>');
+    
 	$this.prop('Counter', 0).animate({Counter: $dataV},
 	{
 		duration: 2000, 
 		easing: 'swing', 
 		step: function (now) {
-            $this.find(".valeblocktop").text(Math.ceil(now)+'/100');
-        } 
+            $this.find(".valeblocktop").html(Math.ceil(now)+`<span class="mq_percent_outoff">/100</span>`);
+        }
     });
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
@@ -110,6 +111,7 @@ $(".mq_circle_percent").each(function() {
 		},1000);
 	} 
 });
+
 var percent_data =$('#accurate_percent').val();
 var headingpercent = Math.ceil(percent_data);
 if( headingpercent == 0){
