@@ -80,6 +80,41 @@
         Loading...
     </div>
     @yield('content')
+@if (env('STUDENT_ENV')=='prod')
+ <script type="text/javascript">
+        window.addEventListener('contextmenu', function (e) { 
+            e.preventDefault(); 
+        }, false);
+         $(document).ready(function() {
+
+        /* mouse rightclick */
+        document.onkeydown = function(e) {
+            // disable F12 key
+            if (e.keyCode == 123 || e.keyCode == 116) {
+                return false;
+            }
+            
+
+            // disable ctrl+shift+I key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                return false;
+            }
+
+            // disable ctrl+shift+J key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+
+            // disable ctrl+U key
+            if (e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+
+            
+        }
+    });
+    </script>
+@endif
 </body>
 
 </html>
