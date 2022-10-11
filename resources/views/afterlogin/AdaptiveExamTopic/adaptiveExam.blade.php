@@ -1395,7 +1395,7 @@ $question_type = "Numerical";
         $('.showyes').hide(0);
         $('.hideyes').show(0);
         $('.overlaydiv').show(0);
-
+        $("#questNo  #btn_" + $("#current_question").val()).focus();
     });
     $('.hideyes').click(function() {
         $('.main-textexam-sec').slideToggle({
@@ -1406,6 +1406,12 @@ $question_type = "Numerical";
         $('.showyes').show(0);
         $('.hideyes').hide(0);
         $('.overlaydiv').hide(0);
+    });
+    $('.next_button').click(function() {
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            $('.hideyes').click();
+        }
     });
 </script>
 @include('afterlogin.layouts.footer_new')
