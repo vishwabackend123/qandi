@@ -39,7 +39,7 @@
                     </span> 
                 </div>
             </div>
-            <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-common-transparent bg-transparent addremovetopic topic_{{$subject_name}}">Select</button>
+            <button id="chpt_topic_{{$topic->id}}" onclick="addOrRemove('{{$topic->id}}','{{$subject_name}}')" class="btn btn-common-transparent bg-transparent addremovetopic topic_{{$subject_name}}">Select</button>
         </div>
     </div>
 </div>
