@@ -3255,6 +3255,7 @@ transform: translateX(100%);
         }
         .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
         .testscreenmob .content-wrapper{height:100%;}
+        body.refrerpopUp .modal-backdrop.show{top:70px}
 }
 
 
