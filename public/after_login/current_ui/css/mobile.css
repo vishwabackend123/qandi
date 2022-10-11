@@ -3594,7 +3594,7 @@ transform: translateX(100%);
             .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
             .testscreenmob .content-wrapper{height:100%;}
             #addChapter svg.position-relative{top: -2px;}
-            body.refrerpopUp .modal-backdrop{top:70px}
+            body.refrerpopUp .modal-backdrop{display:none!important;}
 }
 
 
