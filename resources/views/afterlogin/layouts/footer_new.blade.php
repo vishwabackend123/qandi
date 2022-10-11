@@ -870,6 +870,12 @@
         $('.notificationnew').removeClass('bellactive');
         $('html').removeClass("scrollnone");
     });
+    $('#referfrnd,#referedfrnd').on('shown.bs.modal', function (e) {
+          $('body').addClass('refrerpopUp');  
+        })
+        $('#referfrnd,#referedfrnd').on('hidden.bs.modal', function (e) {
+             $('body').removeClass('refrerpopUp');
+        })
 
     /*********Notification-Js*****/
     </script>
