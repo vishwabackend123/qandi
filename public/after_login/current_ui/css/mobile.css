@@ -2539,6 +2539,7 @@ transform: translateX(100%);
             .tablescroll{height: calc(100vh - 258px);
                padding-right:5px;
              }
+             
              .previous_exam_head_with_drop{ padding-right:5px;}
             .contacrus_page_wrapper{
                 padding-bottom: 340px;
@@ -3254,6 +3255,7 @@ transform: translateX(100%);
         }
         .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
         .testscreenmob .content-wrapper{height:100%;}
+        body.refrerpopUp .modal-backdrop.show{top:70px}
 }
 
 
