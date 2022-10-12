@@ -311,8 +311,14 @@ class StudentSignInController extends Controller
             $exam_id = $request->input('exam_id');
             $stage_at_signup = $request->input('stage_at_signup');
             $state = $request->input('state');
-
-            $reg_otp_value = (int)implode('', $reg_otp);
+            $check_otp = $request->input('check_otp');
+            if ($check_otp == 'N') {
+                $reg_otp_value = $reg_otp;
+            }else
+            {
+                $reg_otp_value = (int)implode('', $reg_otp);    
+            }
+            
 
             /*   if (Session::has('OTP')) {
                 $session_otp = Session::get('OTP');
@@ -335,6 +341,7 @@ class StudentSignInController extends Controller
                 'otp' => (int)$reg_otp_value,
                 'stage_at_signup' => (int)$stage_at_signup,
                 'state' => $state,
+                'check_otp' => $check_otp,
             ];
 
             $request_json = json_encode($request);
