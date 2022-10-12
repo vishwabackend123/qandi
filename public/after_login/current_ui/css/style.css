@@ -7390,7 +7390,7 @@ border-color: #56b663;
     border-radius: 10px;
 }
 
-.name-title > label {
+.name-title > label,.profileNameLead label {
     color: #363c4f;
     font-size: 22px;
     font-weight: 800;
@@ -7400,11 +7400,12 @@ border-color: #56b663;
 /* .name-title > span {
     vertical-align: middle;
 } */
+.profileNameLead{display:flex;}
 .contact-section {
     display: flex;
     padding: 20px 0px 0px;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 /* .contact-num { width: 50%;} */
 .contact-num > span,.city-sec > span {
