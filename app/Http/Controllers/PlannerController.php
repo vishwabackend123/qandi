@@ -281,7 +281,7 @@ class PlannerController extends Controller
             curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
-            $response_json = str_replace('NaN', '""', $response_json);
+            //$response_json = str_replace('NaN', '""', $response_json);
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -497,7 +497,7 @@ class PlannerController extends Controller
                 $response_json = curl_exec($curl);
 
 
-                $response_json = str_replace('NaN', '""', $response_json);
+                // $response_json = str_replace('NaN', '""', $response_json);
 
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
