@@ -3621,10 +3621,12 @@ label.filter {
             .testscreenmob .content-wrapper{height:100%;}
             #addChapter svg.position-relative{top: -2px;}
             body.refrerpopUp .modal-backdrop{display:none!important;}
+            .text-end.scrollbtn{text-align:center!important;}
 }
 
 
 @media only screen and (max-width: 576px){
+    .test_analytics_wrapper .flexgrow .btn.btn-common-transparent{width:100%;}
     .addtestbtn .btn{width:100%;}
     .right-seidepannel h1 {
     font-size: 24px;
