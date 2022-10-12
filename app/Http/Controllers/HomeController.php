@@ -130,8 +130,8 @@ class HomeController extends Controller
             curl_close($curl);
 
             if ($httpcode == 200 || $httpcode == 201) {
-                $scoreResponse = json_decode($score_json, true);
-                $response_json = str_replace('NaN', '""', $scoreResponse);
+                $response_json = json_decode($score_json, true);
+                //$response_json = str_replace('NaN', '""', $scoreResponse);
 
                 $scoreResponse = json_decode($response_json, true);
 
@@ -1042,8 +1042,6 @@ class HomeController extends Controller
 
                     $response_json = curl_exec($curl);
 
-                    // $response_json = str_replace('NaN', '""', $response_json);
-                    // $response_json = stripslashes(html_entity_decode($response_json));
 
                     $err = curl_error($curl);
                     $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -1232,8 +1230,8 @@ class HomeController extends Controller
         curl_close($curl);
 
         if ($httpcode == 200 || $httpcode == 201) {
-            $scoreResponse = json_decode($score_json, true);
-            $response_json = str_replace('NaN', '""', $scoreResponse);
+            $response_json = json_decode($score_json, true);
+            //$response_json = str_replace('NaN', '""', $scoreResponse);
 
             $scoreResponse = json_decode($response_json, true);
             $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
