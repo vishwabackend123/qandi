@@ -500,6 +500,7 @@
                         state: state,
                         refer_code: refer_code,
                         refer_email: referral_email,
+                        check_otp:'Y',
                     },
                     beforeSend: function() {},
                     success: function(response_data) { //debugger;
