@@ -470,7 +470,7 @@ class AdpativeExamController extends Controller
                 $response_json = curl_exec($curl);
 
 
-                $response_json = str_replace('NaN', '""', $response_json);
+                //$response_json = str_replace('NaN', '""', $response_json);
 
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -786,10 +786,6 @@ class AdpativeExamController extends Controller
                 ),
             ));
             $response_json = curl_exec($curl);
-
-
-
-
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

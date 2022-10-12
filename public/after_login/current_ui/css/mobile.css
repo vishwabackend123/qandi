@@ -1607,6 +1607,7 @@ label.filter {
     }
 }
 @media(max-width:767px){ 
+   
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
@@ -2920,6 +2921,7 @@ label.filter {
                 text-align: right;
             }
             .overall_analytics_page.test_analytics_wrapper ul.topic_score_lists li{margin-bottom:24px;}
+            ul.topic_score_lists li:nth-child(even){border-left:0px; padding-left:0px;margin-left: 0px;}
             .overall_analytics_page.test_analytics_wrapper .topic_score_lists .topic_score_bar h4{margin-bottom:12px;}
             .codelearningBlock {
                 margin-top: 19px;
@@ -3574,6 +3576,8 @@ label.filter {
     .allSubslider  .disabled {
         opacity: 1 !important;
     }
+    .strengthmodal_content{width:96%;    margin: 0 auto;}
+    .test_analytics_wrapper ul.topic_score_lists li{padding-bottom:0px;    margin-bottom: 24px;}
   
     .add-insubchapter p span {
         overflow: inherit;
