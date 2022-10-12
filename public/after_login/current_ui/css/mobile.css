@@ -326,6 +326,28 @@
     .subCard h3 {
         font-size: 12px !important;
     }
+    /**************Start-By-Sachin*12-10-22****************/
+    .btn.questionbtn {
+        height: auto;
+    }
+    .questionTypeinner{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .testscreenmob .nav {
+        display: flex;
+        flex-wrap: initial;
+    }
+    .testscreenmob .mobilescrolltab, .testscreenmob .mobilescrolltabNew {
+        overflow-x: auto;
+    }
+    .testscreenmob .examScreentab .nav-tabs .nav-link {
+        padding: 0 0 20px;
+    }
+    /**************End-By-Sachin*12-10-22****************/
+
+
     
 }
 @media only screen and (max-width: 991px){
