@@ -93,12 +93,14 @@
         </div>
         <div class="profile-sec">
             <div class="name-title">
-                <span><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x=".5" y=".5" width="39" height="39" rx="9.5" fill="#fff" stroke="#E9EEF4" />
-                        <path d="M26.667 27.5v-1.667a3.333 3.333 0 0 0-3.334-3.333h-6.666a3.333 3.333 0 0 0-3.334 3.333V27.5M20 19.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667z" stroke="#1F1F1F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </span>
-                <label id="user_name">{{$lead_user_data['FirstName']}} {{$lead_user_data['LastName']}}</label>
+                 <div class="profileNameLead">
+                    <span><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x=".5" y=".5" width="39" height="39" rx="9.5" fill="#fff" stroke="#E9EEF4" />
+                            <path d="M26.667 27.5v-1.667a3.333 3.333 0 0 0-3.334-3.333h-6.666a3.333 3.333 0 0 0-3.334 3.333V27.5M20 19.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667z" stroke="#1F1F1F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <label id="user_name">{{$lead_user_data['FirstName']}} {{$lead_user_data['LastName']}}</label>
+                </div>
                 <div class="contact-section">
                     <div class="contact-num">
                         <span>Mobile</span>

@@ -3367,25 +3367,30 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
     font-size: 119px;
-    min-width: 1em;
+    width: 1em;
     height: 1em;
     position: relative;
-    /* background: #cbebcf; */
-    border-radius: 100%;
-    /* overflow: hidden; */
-    display: inline-block;
-    /* box-shadow:0px 9px 16px rgba(164,172,178,0.4); */
-}
-
-.circletop{position: relative;
+    background: #f5faf6;
+    border-radius: 50%;
     overflow: hidden;
-    font-size: 119px;
-    min-width: 1em;
-    height: 1em;
-    border-radius: 100%;
     display: inline-block;
-    top: -15px;
-    /* transform: rotate(-133deg); */
+    /* margin: 20px; */
+}
+.circletop {
+    position: relative;
+    overflow: inherit;
+    font-size: inherit;
+    min-width: inherit;
+    border-radius: inherit;
+    display: inherit;
+}
+.circletop{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    clip: rect(0 1em 1em 0.5em);
 }
 
 .mq_circle_inner {
@@ -3394,9 +3399,10 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     top: 0;
     width: 1em;
     height: 1em;
+    background: #56b663;
     clip: rect(0 1em 1em 0.5em);
-    -webkit-clip:rect(0 1em 1em 0.5em);
-    border-radius: 100%;
+    transform: rotate(180deg);
+    transition: 1.05s;
 }
 
 .mq_round_per {
@@ -3414,13 +3420,22 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
 
 .mq_circle_red .mq_round_per{ background: #f76c6c;}
 .mq_circle_yellow .mq_round_per{background: #f7c86d;}
-.mq_percent_more .mq_circle_inner {
+.mq_percent_more .circletop {
     clip: rect(0 0.5em 1em 0em);
     -webkit-clip:rect(0 0.5em 1em 0em);
 
 }
-
-.mq_percent_more .circletop:after{
+.mq_percent_more:after {
+    position: absolute;
+    left: 0.5em;
+    top: 0em;
+    right: 0;
+    bottom: 0;
+    background: #56b663;
+    content: '';
+    transition: 1.05s;
+}
+/* .mq_percent_more .circletop:after{
     position: absolute;
     left: 0.4em;
     top: 0em;
@@ -3428,24 +3443,26 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     bottom: 0;
     background: #56b663;
     content: "";
+} */
+.valeblocktop {
+    position: absolute;
+    font-size: 36px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
 }
 .mq_circle_red .circletop:after{ background: #f76c6c;content: "";}
 .mq_circle_yellow .circletop:after{background: #f7c86d;content: "";}
 .mq_circle_inbox {
     position: absolute;
-    top: 7px;
-    left: 7px;
-    right: 7px;
-    bottom: 7px;
-    background-color: #fff;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: #fff;
     z-index: 3;
-    border-radius: 100%;
-    background-image: url(../images/roundshape3.svg);
-    background-position-x: -12px;
-    background-size: 128px;
-    background-position-y: -3px;
-    background-repeat: no-repeat;
-    box-shadow: 0px 15px 18px rgb(232 234 236 / 79%);
+    border-radius: 50%;
 }
 .mq_percent_more.noshadow .mq_circle_inbox{
     box-shadow:none
@@ -3465,6 +3482,8 @@ span.mq_percent_outoff {
     font-size: 18px;
     z-index: 3;
     font-weight: 600;
+    margin-left: 3px;
+    letter-spacing: initial;
 }
 .valeblockmyq{    position: absolute;
     font-size: 18px;
@@ -5274,6 +5293,8 @@ canvas#progressJourny_graph, canvas#trend_graph {
                         left: -23px;}
                         .green_circle.rightBottom{ width: 18px;
                             height: 18px;bottom:26px;right:21px;}
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
+
                        
 /********* Shubham End ***********/
 
@@ -7369,7 +7390,7 @@ border-color: #56b663;
     border-radius: 10px;
 }
 
-.name-title > label {
+.name-title > label,.profileNameLead label {
     color: #363c4f;
     font-size: 22px;
     font-weight: 800;
@@ -7379,11 +7400,12 @@ border-color: #56b663;
 /* .name-title > span {
     vertical-align: middle;
 } */
+.profileNameLead{display:flex;}
 .contact-section {
     display: flex;
     padding: 20px 0px 0px;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 /* .contact-num { width: 50%;} */
 .contact-num > span,.city-sec > span {
@@ -8112,4 +8134,34 @@ margin-bottom: 12px;
 /*Gourav Kumar*/
 .overallMidlle .commonWhiteBox .timespentquestion .garphsubheading {
     font-size: 20px;
+}
+.mq_round_per{
+    display: none !important;
+}
+.mq_circle_index {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    /* background: #e6eee5; */
+    background: #ffffff;
+    z-index: 3;
+    border-radius: 50%;
+    background-image: url(../images/roundshape31.png);
+    background-position-x: center;
+    background-size: 110%;
+    background-position-y: center;
+    /* background-position-x: -13px;
+    background-size: 134px;
+    background-position-y: -3px; */
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 7px rgb(232 234 236 / 79%);
+}
+.valeblocktop {
+    font-size: 18px;
+    z-index: 3;
+    color: #234628;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
