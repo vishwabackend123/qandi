@@ -3402,7 +3402,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     clip: rect(0 1em 1em 0.5em);
     transform: rotate(180deg);
-    transition: 1.05s;
+    /* transition: 1.05s; */
 }
 
 .mq_round_per {
