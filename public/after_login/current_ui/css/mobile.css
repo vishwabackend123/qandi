@@ -3116,7 +3116,7 @@ transform: translateX(100%);
         font-size: 14px !important;
     }
     .selectedWeek p.dateformate,.plannedtest:last-child { min-width: 130px;}
-    .strengthmodal_content{width:98%;    margin: 0 auto;}
+    .strengthmodal_content{width:96%;    margin: 0 auto;}
   
 }
 
