@@ -101,9 +101,7 @@ class StudentSignInController extends Controller
                 return json_encode($response);
             } else {
                 $msg = $aResponse->message;
-                $login_otp = $aResponse->otp;
-                Session::put('OTP', $login_otp);
-
+                
                 $timestamp = $_SERVER["REQUEST_TIME"];
                 Session::put('OTP_time', $timestamp);
 
@@ -111,6 +109,8 @@ class StudentSignInController extends Controller
                     $response = ["message" => "otp sent successfully on registered number", "success" => true,];
                     return json_encode($response);
                 } else {
+                    $login_otp = $aResponse->otp;
+                    Session::put('OTP', $login_otp);
                     return $response_json;
                 }
             }
