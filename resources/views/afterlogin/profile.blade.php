@@ -351,7 +351,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             editProfileCheck();
         });
         $('#cancelEdit').click(function() {
-            var url = "{{ route('dashboard') }}";
+            var url = "{{ route('profile') }}";
             window.location.href = url;
         });
 
