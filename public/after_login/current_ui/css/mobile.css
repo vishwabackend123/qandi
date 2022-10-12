@@ -1585,10 +1585,7 @@ label.filter {
     }
 }
 @media(max-width:767px){ 
-<<<<<<< HEAD
-=======
    
->>>>>>> USAPM-2967
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
         display: none;
