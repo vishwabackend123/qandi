@@ -4135,7 +4135,11 @@ span.proficiency_value {
 .performance_chapter_block .accordion-header .accordion-button:after{background-image:none;}
 .performance_chapter_block .accordion-header .accordion-button {
     border: 0;
+<<<<<<< HEAD
     padding: 8px 16px 8px 16px;
+=======
+    padding: 8px 16px;
+>>>>>>> USAPM-2967
     font-size: 14px;
     font-weight: 800;
     line-height: 1.6;
@@ -4144,6 +4148,12 @@ span.proficiency_value {
     border-radius: 8px;
     box-shadow: none;
     display: inline-block;
+<<<<<<< HEAD
+=======
+    white-space: nowrap;
+    width: 130px;
+    height: 38px;
+>>>>>>> USAPM-2967
 }
 .performance_chapter_block .accordion-header .accordion-button[type="button"]{-webkit-appearance:none;}
 .performance_chapter_block .accordion-header .accordion-button i{
@@ -4184,7 +4194,11 @@ span.proficiency_value {
 .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child {
     margin: 0;
 }
+<<<<<<< HEAD
 .accordion-header{min-width:132px;}
+=======
+.accordion-header{min-width:128px;}
+>>>>>>> USAPM-2967
 /* .performance_chapter_sublists li .performance_chapter_block label{min-width:168px;} */
 /* .accordion.performance_chapter_accordion {
     overflow-y: auto;
