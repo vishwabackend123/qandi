@@ -48,7 +48,7 @@
         </span>
     </h3>
     <div class="common_greenbadge_tabs">
-        <div class="row mt-4 align-items-center">
+        <div class="row mt-4 align-items-center inversecolumnMob">
             <div class="col-12">
                 <div class="d-flex  color_labels mb-4">
                     <span style="margin-left: 4px;"><small></small> Correct</span>

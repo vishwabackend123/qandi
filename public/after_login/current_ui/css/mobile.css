@@ -3622,6 +3622,7 @@ label.filter {
             #addChapter svg.position-relative{top: -2px;}
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
+            .inversecolumnMob .col-12:first-child{order: 2;}
 }
 
 
