@@ -184,6 +184,9 @@ class StudentSignInController extends Controller
                 }
 
                 if ($success == false) {
+                    if (isset($err) && empty($err)) {
+                      $err="The requested URL returned error: 400 Bad Request";
+                    }
                     $response = ["message" => "You have entered a wrong OTP. Please try again", "error" => $err, "success" => false, "status" => 400,];
                     return json_encode($response);
                 } else {
