@@ -1187,7 +1187,7 @@ transform: translateX(100%);
 }
 .testscreenmob .main-textexam-sec {
     position: absolute;
-    bottom: -66px;
+    bottom: -70px;
     width: 100%;
     background: #fff;
 }
@@ -1275,9 +1275,12 @@ button.btn-ans:nth-child(7n) {
 .aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before, .aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
     bottom: -5.4px;
 }
-/* .hideonmobile {
+.hideonmobile {
     display: none;
-} */
+}
+.text-examtop-sec.hideonmobile{
+    display: none !important;
+}
 .examReviewscreenmob .fancy-radio-buttons.with-image {
     width: 97%;
     --bs-gutter-x: 0;
