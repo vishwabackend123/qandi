@@ -408,7 +408,16 @@
         .mock_inst_text_mock_test {
             display: none;
         }
-        
+        .sidebartoggle .content-wrapper:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(31,31,31,0.6);
+            height: 100%;
+            z-index: 10;
+        }
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -2454,16 +2463,7 @@ label.filter {
         margin-left: -1px;
     }
     .sidebartoggle .content-wrapper{position: relative;}
-    .sidebartoggle .content-wrapper:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(31,31,31,0.6);
-        height: 100%;
-        z-index: 10;
-    }
+    
 
     .test_analytics_wrapper .d-flex.mt-4.mb-4.align-items-end {display: block!important;margin: 18px 0 16px!important;}
     .question-attempted-block {border: none;padding: 0;margin: 0 0 16px;}
