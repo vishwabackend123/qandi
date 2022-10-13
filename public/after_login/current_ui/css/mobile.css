@@ -333,6 +333,7 @@
         width: 50%;
     }
     .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {width:auto;}
+    .mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {min-width: auto;}
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
     }
