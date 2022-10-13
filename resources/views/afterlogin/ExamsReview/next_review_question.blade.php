@@ -530,6 +530,7 @@ $(function() {
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
+                $('.custom-anstop').attr('style', 'opacity:1 !important;');
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
@@ -541,7 +542,7 @@ $(function() {
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                $('.custom-anstop').attr('style', 'height:0px !important');
+                $('.custom-anstop').attr('style', 'height:0px !important;opacity:0;');
                 $('.text-exambottom-sec').attr('style', 'height: 0px !important');
             });
         }
