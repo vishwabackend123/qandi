@@ -91,6 +91,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="chapter_id" value="{{$chapter_id}}">
                                         <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                                         <input type="hidden" name="ranSession" value="{{$ranSession}}">
+                                        <input type="hidden" name="exam_name" value="{{isset($exam_name)?$exam_name:'Planner Exam'}}">
 
                                         <button class="btn submitBtnlink" id="submitExam">
                                             <span class="btnText">Submit Test</span>

@@ -103,6 +103,8 @@ class ReviewController extends Controller
             $attempt_opt = [];
 
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
+
+                $test_name = isset($result_response->test_name) ? $result_response->test_name : '';
                 $collection = collect($result_response->all_question);
                 $subject_ids = $collection->pluck('subject_id');
 
@@ -213,6 +215,7 @@ class ReviewController extends Controller
                     }
                 }
 
+                $exam_name = (isset($test_name) && !empty($test_name)) ? $test_name : $exam_name;
 
                 $all_question_array = $this->array_group(json_decode(json_encode($all_question_list), true), 'subject_id');
 
