@@ -4314,6 +4314,13 @@ ul.topic_score_lists li:nth-child(even) {
     width: 90%;
     display: block;
 }
+.chapter_performance_lists  .topic_score_bar h4{white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 40%);
+    padding-right: 0;
+}
+
 /********************* Amit End ****************************/
 
 

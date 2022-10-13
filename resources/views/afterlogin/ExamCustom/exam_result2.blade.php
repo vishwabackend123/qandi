@@ -122,7 +122,7 @@
                     @endphp
                     <li>
                         <div class="topic_score_bar">
-                            <h4>{{$tdata->topic_name}}</h4>
+                            <h4 title="{{$tdata->topic_name}}">{{$tdata->topic_name}}</h4>
                             <div class="dropdown  d-inline-block">
 
                                 <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

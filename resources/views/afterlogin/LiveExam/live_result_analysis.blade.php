@@ -368,7 +368,7 @@
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
                                             <div class="topic_score_bar">
-                                                <h4>@if(!empty($topic->topic_name)) {{$topic->topic_name}}
+                                                <h4 title="{{$topic->topic_name}}">@if(!empty($topic->topic_name)) {{$topic->topic_name}}
                                                     @else
                                                     ""
                                                     @endif</h4>

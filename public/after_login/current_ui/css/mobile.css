@@ -2479,7 +2479,8 @@ label.filter {
     .test_myscrore_card .color_labels {display: flex;justify-content: space-between;margin-top: 16px;}
     .test_myscrore_card .color_labels .d-flex.justify-content-between.mb-3{width: 50%;margin: 0!important;}
     .test_analytics_wrapper ul.topic_score_lists li{width: 100%; margin-bottom: 40px;}
-    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;    max-height: 435px;}
+    .test_analytics_wrapper ul.topic_score_lists{    padding-right: 20px;max-height: 400px;
+        min-height: auto;}
     .test_analytics_wrapper ul.topic_score_lists li:last-child{ margin-bottom: 0px;}
     .test_analytics_wrapper .subject_score_card h5 {font-size: 16px;margin-bottom: 19px!important;} 
     .email-confirmation{max-width: 328px;margin: 0 auto;padding: 20px;border-top-left-radius: 20px;
@@ -3556,7 +3557,7 @@ label.filter {
         opacity: 1 !important;
     }
     .strengthmodal_content{width:96%;    margin: 0 auto;}
-    .test_analytics_wrapper ul.topic_score_lists li{padding-bottom:0px;    margin-bottom: 24px;}
+    .test_analytics_wrapper ul.topic_score_lists li{padding-bottom:0px;    margin-bottom: 35px;}
   
     .add-insubchapter p span {
         overflow: inherit;
@@ -3624,6 +3625,19 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
+            .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+            }
+            .topic_score_bar h4 {
+            font-size: 14px;}
+            .chapter_performance_lists li.topic_score_bar{padding:14px 0 13px;}
+            ul.chapter_performance_lists {max-height: 420px;min-height:auto;}
+            .topic_score_bar .Chapter_Main_Graph {width: 40px;height: 40px;}
+            .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
+
 }
 
 
