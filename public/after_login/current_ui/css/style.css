@@ -4306,6 +4306,12 @@ ul.topic_score_lists li:nth-child(even) {
 .markstrends_whitecard .scoretype {
     padding-left: 0px;
 }
+.clander-box .btn.btn-common-transparent {
+    height: 44px;
+    background-color: #fff;
+    margin-top: 50px;
+    font-size: 16px;
+}
 /********************* Amit End ****************************/
 
 
