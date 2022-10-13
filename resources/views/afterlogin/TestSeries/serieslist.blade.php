@@ -46,10 +46,27 @@
                                         @if(!empty($open_series))
                                         @foreach($open_series as $open)
                                         <div class="accordion-item pt-4 m-0">
+                                        <div class="mock_test_ques_dure_marks_sub d-flex">
+                                        <div class="mock_test_ques_content">
+                                                <div class="mock_test_q_d_m_s_text1">Test Name</div>
+                                                <div class="mock_test_qdms_text2">{{$open->test_series_name}}</div>
+                                            </div>
+                                            <div class="live_exam_diveder_div"></div> 
+                                            <div class="mock_test_dure_content">
+                                                <div class="mock_test_q_d_m_s_text1">No. of Questions</div>
+                                                <div class="mock_test_qdms_text2"><span>{{$open->questions_count}} Questions</div>
+                                            </div>
+                                            <div class="live_exam_diveder_div"></div>
+                                            <div class="mock_test_dure_content">
+                                                <div class="mock_test_q_d_m_s_text1">Duration</div>
+                                                <div class="mock_test_qdms_text2"><span>{{$open->time_allowed}}</span> <span>Mins</span></div>
+                                            </div>
+                                            <div class="live_exam_diveder_div"></div>
+                                        </div>
                                             <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
-                                                <h2 class="m-0">{{$open->test_series_name}}</h2>
-                                                <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2>
-                                                <h2 class="m-0 mintext">{{$open->time_allowed}} minutes</h2>
+                                                <!-- <h2 class="m-0">{{$open->test_series_name}}</h2> -->
+                                                <!-- <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2> -->
+                                                <!-- <h2 class="m-0 mintext">{{$open->time_allowed}} minutes</h2> -->
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
                                                     <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
