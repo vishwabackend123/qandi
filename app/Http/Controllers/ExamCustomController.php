@@ -406,7 +406,12 @@ class ExamCustomController extends Controller
                 $exam_url = route('custom_exam');
 
                 $exam_title = "Custom Subject Exam";
-                return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
+                /* return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
+          */
+                $examType = 'custom';
+                $instructions = $this->getInstructions($examType);
+
+                return view('afterlogin.MockExam.mock_exam_instruction', compact('instructions', 'ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
             }
 
 
@@ -751,7 +756,7 @@ class ExamCustomController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-            //  dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
@@ -1256,7 +1261,10 @@ class ExamCustomController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+                $examType = 'custom';
+                $instructions = $this->getInstructions($examType);
+
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
