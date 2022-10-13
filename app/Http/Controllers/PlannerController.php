@@ -613,7 +613,10 @@ class PlannerController extends Controller
                 $exam_title = "Planner Exam";
                 $eType = "Adaptive";
                 $total_marks = 0;
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
+
+                $examType = 'planner';
+                $instructions = $this->getInstructions($examType);
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title'));
             }
 
 
