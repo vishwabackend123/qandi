@@ -97,6 +97,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
                                         <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
+                                        <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>

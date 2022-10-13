@@ -59,6 +59,7 @@ class ResultController extends Controller
             $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
             $test_series_id = isset($request->series_id) ? $request->series_id : 0;
             $py_paper_id = isset($request->py_paperid) ? $request->py_paperid : 0;
+            $exam_name = isset($request->exam_name) ? $request->exam_name : 0;
 
             $ranSession = isset($request->ranSession) ? $request->ranSession : 0;
 
@@ -143,6 +144,7 @@ class ResultController extends Controller
             $inputjson['live_exam_id'] = $live_exam_id;
             $inputjson['test_series_id'] = $test_series_id;
             $inputjson['py_paper_id'] = $py_paper_id;
+            $inputjson['test_name'] = $exam_name;
 
             $request = json_encode($inputjson);
 
