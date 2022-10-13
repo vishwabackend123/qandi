@@ -8171,6 +8171,6 @@ margin-bottom: 12px;
     font-weight: 800;
     letter-spacing: -2px;
 }
-.mock_test_ques_content, .mock_test_dure_content, .mock_test_marks_content {
+.mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {
     min-width: 150px;
 }

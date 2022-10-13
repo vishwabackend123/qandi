@@ -332,7 +332,7 @@
     .MockTestMob .mock_test_btn_content {
         width: 50%;
     }
-    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {width:auto;min-width: auto;}
+    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {width:auto;}
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
     }
@@ -3627,10 +3627,12 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
+            .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
 }
 
 
 @media only screen and (max-width: 576px){
+    
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent{width:100%;}
     .addtestbtn .btn{width:100%;}
     .right-seidepannel h1 {
