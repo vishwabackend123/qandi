@@ -332,7 +332,7 @@
     .MockTestMob .mock_test_btn_content {
         width: 50%;
     }
-    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {width:auto;}
+    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;width:auto !important;}
     .mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {min-width: auto;}
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
@@ -3629,6 +3629,7 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
+<<<<<<< HEAD
             .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
                 width: 40px;
                 height: 40px;
@@ -3643,6 +3644,9 @@ label.filter {
             .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
 
             .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
+=======
+            
+>>>>>>> MEET-37
 }
 
 
