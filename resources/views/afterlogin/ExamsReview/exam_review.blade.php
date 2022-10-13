@@ -372,7 +372,7 @@ $question_type = "Numerical";
 
                     <!-- <p class="hideonmobile"><span>Answer Palette</span></p> -->
                     <div class="custom-anstop sachin">
-                        <p class="hideonmobile"><span>Answer Palette</span></p>
+                        <p class="hideonmobile removemob"><span>Answer Palette</span></p>
                         <div class="hideondesktop Answerinner">
                             <p><span>Answer Palette</span></p>
                         </div>
@@ -985,6 +985,9 @@ $question_type = "Numerical";
             position: relative;
             top: 15px;
 
+        }
+        .removemob{
+            display:none;
         }
     }
 </style>
