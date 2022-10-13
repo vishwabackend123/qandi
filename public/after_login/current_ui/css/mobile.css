@@ -3629,7 +3629,6 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
-<<<<<<< HEAD
             .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
                 width: 40px;
                 height: 40px;
@@ -3644,9 +3643,7 @@ label.filter {
             .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
 
             .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
-=======
             
->>>>>>> MEET-37
 }
 
 
