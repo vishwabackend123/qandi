@@ -62,11 +62,7 @@
                                                 <div class="mock_test_qdms_text2"><span>{{$open->time_allowed}}</span> <span>Mins</span></div>
                                             </div>
                                             <div class="live_exam_diveder_div"></div>
-                                        </div>
-                                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
-                                                <!-- <h2 class="m-0">{{$open->test_series_name}}</h2> -->
-                                                <!-- <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2> -->
-                                                <!-- <h2 class="m-0 mintext">{{$open->time_allowed}} minutes</h2> -->
+                                            <div class="mock_test_dure_content">
                                                 <div class="accordion-header d-flex align-items-center" id="headingOne">
                                                     <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
                                                         @csrf
@@ -78,8 +74,26 @@
                                                         <input type="hidden" name="exam_mode" value="Open" />
                                                         <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
                                                     </form>
-                                                </div>
-                                            </div>
+                                                 </div>
+                                             </div>
+                                        </div>
+                                            <!-- <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1"> -->
+                                                <!-- <h2 class="m-0">{{$open->test_series_name}}</h2> -->
+                                                <!-- <h2 class="m-0 questiontext">{{$open->questions_count}} Questions</h2> -->
+                                                <!-- <h2 class="m-0 mintext">{{$open->time_allowed}} minutes</h2> -->
+                                                <!-- <div class="accordion-header d-flex align-items-center" id="headingOne">
+                                                    <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="series_name" value="{{$open->test_series_name}}" />
+                                                        <input type="hidden" name="series_id" value="{{$open->test_series_id}}" />
+                                                        <input type="hidden" name="series_type" value="{{$open->series_type}}" />
+                                                        <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
+                                                        <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
+                                                        <input type="hidden" name="exam_mode" value="Open" />
+                                                        <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
+                                                    </form>
+                                                </div> -->
+                                            <!-- </div> -->
                                         </div>
                                         @endforeach
                                         @else
