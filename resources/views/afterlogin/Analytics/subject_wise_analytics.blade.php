@@ -101,7 +101,7 @@
                         $unanswered =($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0;
                         @endphp
                         <li class="topic_score_bar">
-                            <h4 class="m-0">{{$val->chapter_name}}</h4>
+                            <h4 class="m-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h4>
                             <div class="Chapter_Main_Graph">
                                 <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
                                 <script type="text/javascript">

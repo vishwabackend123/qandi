@@ -3624,6 +3624,17 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
+            .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+            }
+            .topic_score_bar h4 {
+            font-size: 14px;}
+            .chapter_performance_lists li.topic_score_bar{padding:14px 0 13px;}
+
+            
 }
 
 
