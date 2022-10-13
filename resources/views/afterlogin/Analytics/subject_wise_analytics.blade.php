@@ -196,7 +196,7 @@
                                                 <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Evaluation" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluation"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -224,7 +224,7 @@
                                                 <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Comprehension" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehension"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -253,7 +253,7 @@
                                                 <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Application" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Application"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -282,7 +282,7 @@
                                                 <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Knowledge" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledge"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -495,7 +495,7 @@
     </div>
 </div>
 <!-- KnowMore-popup start  -->
-<div class="modal fade overall_evaluationmodal_modal" id="knowMore">
+<div class="modal fade overall_evaluationmodal_modal" id="Evaluation">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content strengthmodal_content">
@@ -506,7 +506,61 @@
                     <div class="intraction_text_strength mt-0">Evaluation</div>
                     <hr>
                     <div class="instruction_text_content">
-                        Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. 
+                        Your ability to understand complex information by breaking it into parts, examining the parts individually and judging them according to the received information. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Comprehension">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Comprehension</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                        Your ability to understand the meaning and correctly interpret instructions and problems. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Application">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Application</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                        Your ability to execute or implement the information provided.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Knowledge">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Knowledge</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                         Your ability to recognize and recall factual information and basic concepts.  
                     </div>
                 </div>
             </div>
