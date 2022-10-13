@@ -187,6 +187,7 @@ class LiveExamController extends Controller
 
                 $questions_count = count($aQuestions_list);
                 $exam_fulltime = $responsedata->time_allowed;
+                $exam_name = isset($responsedata->exam_name) ? $responsedata->exam_name : 'Live Exam';
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;
@@ -278,13 +279,12 @@ class LiveExamController extends Controller
                 $exam_title = "Live Exam";
                 $total_marks = $questions_count * 4;
                 $header_title = "Live Exam";
-                $exam_name = $responsedata->exam_name;
+
                 $test_type = 'Live';
 
                 $ranSession = '';
                 return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'test_type', 'subCounts'));
             }
-
 
 
             return view('afterlogin.LiveExam.live_exam', compact('live_exam_id', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
