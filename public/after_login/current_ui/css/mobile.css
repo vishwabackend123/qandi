@@ -329,7 +329,11 @@
     
 }
 @media only screen and (max-width: 991px){
-    
+    .MockTestMob .mock_test_btn_content {
+        width: 50%;
+    }
+    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {width:auto;}
+    .mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {min-width: auto;}
     form#editProfile_form .d-flex.justify-content-end.mb-md-5.mb-2.pb-5 {
         margin-bottom: 0px !important;
     }
@@ -3638,10 +3642,12 @@ label.filter {
             .topic_score_bar .Chapter_Main_Graph {width: 40px;height: 40px;}
             .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
 
+            .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
 }
 
 
 @media only screen and (max-width: 576px){
+    
     .test_analytics_wrapper .flexgrow .btn.btn-common-transparent{width:100%;}
     .addtestbtn .btn{width:100%;}
     .right-seidepannel h1 {
