@@ -764,7 +764,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="journeyGraph cardWhiteBg">
+                                        <div class="journeyGraph cardWhiteBg markstrends_whitecard">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
                                                     Marks Trend
