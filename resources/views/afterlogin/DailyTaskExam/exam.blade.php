@@ -99,6 +99,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="tasktype" value="{{isset($tasktype)?$tasktype:''}}">
                                         <input type="hidden" name="category" value="{{isset($category)?$category:''}}">
                                         <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
+                                        <input type="hidden" name="exam_name" value="{{isset($exam_name)?$exam_name:'Daily Task'}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>

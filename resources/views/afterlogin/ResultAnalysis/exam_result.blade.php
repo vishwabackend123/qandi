@@ -27,9 +27,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             @if(isset($scoreResponse->test_type) && $scoreResponse->test_type =='Assessment')
-            <h3 class="commonheading">Custom Exam</h3>
+            <h3 class="commonheading">{{isset($scoreResponse->test_name)?$scoreResponse->test_name:'Custom Exam'}}</h3>
             @else
-            <h3 class="commonheading">{{$exam_name}}</h3>
+            <h3 class="commonheading">{{isset($scoreResponse->test_name)?$scoreResponse->test_name:$exam_name}}</h3>
             @endif
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">

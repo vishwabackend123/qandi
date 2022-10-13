@@ -91,7 +91,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="session_id" value="{{$session_id}}">
                                         <input type="hidden" name="chapter_id" value="{{$chapter_id}}">
                                         <input type="hidden" name="ranSession" value="{{$ranSession}}">
-
+                                        <input type="hidden" name="exam_name" value="{{isset($exam_name)?$exam_name:'Adaptive Exam'}}">
                                         <button class="btn submitBtnlink" id="submitExam">
                                             <span class="btnText">Submit Test</span>
                                             <span>
