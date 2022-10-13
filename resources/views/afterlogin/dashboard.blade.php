@@ -239,10 +239,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="tablist">
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
+                                                <a class="nav-link active qq1_2_3_4" data-bs-toggle="tab" href="#daily">Daily tasks</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
+                                                <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -764,7 +764,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="journeyGraph cardWhiteBg">
+                                        <div class="journeyGraph cardWhiteBg markstrends_whitecard">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
                                                     Marks Trend

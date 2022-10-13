@@ -372,7 +372,7 @@ $question_type = "Numerical";
 
                     <!-- <p class="hideonmobile"><span>Answer Palette</span></p> -->
                     <div class="custom-anstop sachin">
-                        <p class="hideonmobile"><span>Answer Palette</span></p>
+                        <p class="hideonmobile removemob"><span>Answer Palette</span></p>
                         <div class="hideondesktop Answerinner">
                             <p><span>Answer Palette</span></p>
                         </div>
@@ -945,14 +945,13 @@ $question_type = "Numerical";
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
-
-
-
+                $('.custom-anstop').attr('style', 'opacity:1 !important; display:block !important;');
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
+               
 
 
 
@@ -964,7 +963,7 @@ $question_type = "Numerical";
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
 
-                $('.custom-anstop').attr('style', 'height:0px !important;');
+                $('.custom-anstop').attr('style', 'height:0px !important; opacity:0; display:none;');
                 $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
 
             });
@@ -986,6 +985,12 @@ $question_type = "Numerical";
             position: relative;
             top: 15px;
 
+        }
+        .removemob{
+            display:none;
+        }
+        .custom-anstop{
+            display:none;
         }
     }
 </style>
