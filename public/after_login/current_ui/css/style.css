@@ -6312,7 +6312,8 @@ padding: 11px 20px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
-    margin-top: 25px;justify-content:space-between;
+    /* margin-top: 25px; */
+    justify-content:space-between;
 }
 .mock_test_ques_dure_marks_sub.nojusify {
     justify-content: initial;
@@ -8193,4 +8194,7 @@ margin-bottom: 12px;
     color: #234628;
     font-weight: 800;
     letter-spacing: -2px;
+}
+.mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {
+    min-width: 150px;
 }
