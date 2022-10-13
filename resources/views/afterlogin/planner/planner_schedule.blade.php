@@ -136,7 +136,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white clander-box">
                         <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>
                         <div class="calendar-wrapper" id="calendar-wrapper"></div>
-                        <a href="{{url('/dashboard')}}" class="btn btn-common-transparent">Go to Dashboard</a>
+                        <!-- <a href="{{url('/dashboard')}}" class="btn btn-common-transparent">Go to Dashboard</a> -->
                     </div>
                 </div>
             </div>
