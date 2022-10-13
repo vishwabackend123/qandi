@@ -1152,7 +1152,11 @@ class HomeController extends Controller
                         $header_title = "Task Center";
                         $exam_title = "Task Center";
 
-                        return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title', 'subCounts'));
+                        $examType = 'task_center';
+                        $instructions = $this->getInstructionsDailyTask($examType, $category);
+
+
+                        return view('afterlogin.ExamViews.exam_instructions', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'header_title', 'total_marks', 'exam_title', 'subCounts'));
                     } else {
                         /* set redis for save exam question response */
                         $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
