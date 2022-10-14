@@ -99,7 +99,7 @@ $(".mq_circle_percent").each(function() {
     
 	$this.prop('Counter', 0).animate({Counter: $dataV},
 	{
-		duration: 2000, 
+		duration: 0, 
 		easing: 'swing', 
 		step: function (now) {
             $this.find(".valeblocktop").html(Math.ceil(now)+`<span class="mq_percent_outoff">/100</span>`);
