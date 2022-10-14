@@ -3402,7 +3402,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     clip: rect(0 1em 1em 0.5em);
     transform: rotate(180deg);
-    transition: 1.05s;
+    /* transition: 1.05s; */
 }
 
 .mq_round_per {
@@ -3434,6 +3434,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     content: '';
     transition: 1.05s;
+    animation-delay: 10s;
 }
 /* .mq_percent_more .circletop:after{
     position: absolute;
@@ -3561,7 +3562,7 @@ h3.commonheading{
     position: relative;
 }
 .color_labels span:last-child small {
-    background-color: #e5eaee;
+    background-color: #7db9ff;
 }
 .color_labels span:nth-child(2) small {
     background-color: #fb7686;
@@ -4241,9 +4242,9 @@ span.proficiency_value {
     max-width: 100%;
 }
 .contactus-menu{position: absolute;bottom:24px;}
-/* .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .tabMainblock  .commontab .nav-tabs .nav-link.active{    
-    border-bottom: 4px solid #56b663;} */
-/* .tooltipmain svg g{stroke: #56b663;opacity: 1;} */
+.mytaskdash .tabMainblock  .commontab .nav-tabs .nav-item.show .nav-link, .mytaskdash .tabMainblock  .commontab .nav-tabs .nav-link.active{    
+    border-bottom: 4px solid #56b663;}
+.tooltipmain svg g{stroke: #56b663;opacity: 1;}
 .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
 }
@@ -4297,7 +4298,30 @@ ul.topic_score_lists li:nth-child(even) {
 }
 .topic_score_card.commonWhiteBox{padding-bottom:5px;}
 .commonWhiteBox.chapter_performance_card{padding-bottom:10px;}
-
+.markstrends_whitecard .graphDetail {
+    width: 35%;
+}
+.markstrends_whitecard .graphimg {
+    width: 65%;
+}
+.markstrends_whitecard .scoretype {
+    padding-left: 0px;
+}
+.clander-box .btn.btn-common-transparent {
+    height: 44px;
+    background-color: #fff;
+    font-size: 16px;
+    margin: 50px auto 0;
+    width: 90%;
+    display: block;
+}
+.chapter_performance_lists  .topic_score_bar h4{white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: calc(100% - 40%);
+    padding-right: 0;
+}
+.chapter_performance_lists  .noofquestions-block.dropdown-menu{left: auto!important;}
 /********************* Amit End ****************************/
 
 
@@ -4761,15 +4785,16 @@ header {
 .subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel,.subjectScoreBlock .row .col-sm-6:nth-child(4) .SubjectscorePannel{margin-bottom:0px;}
 .myqTodayGraphSec .dashSubtext{max-width: 78.6%;}
 .tasklistbtn .btn.nobg {
-    background-color: #fff;
+    background-color: #56b663;
+    color: #fff;
 }
 
-.tasklistbtn .btn.nobg:hover,
+/* .tasklistbtn .btn.nobg:hover,
 .tasklistbtn .btn.nobg:focus,
 .tasklistbtn .btn.nobg:active {
     background-color: #f5faf6;
     color: #56b663;
-}
+} */
 
 .myqmatPannel {
     padding: 12px;
@@ -6288,7 +6313,8 @@ padding: 11px 20px!important;
 }
 .mock_test_ques_dure_marks_sub
 {
-    margin-top: 25px;justify-content:space-between;
+    /* margin-top: 25px; */
+    justify-content:space-between;
 }
 .mock_test_ques_dure_marks_sub.nojusify {
     justify-content: initial;
@@ -8169,4 +8195,7 @@ margin-bottom: 12px;
     color: #234628;
     font-weight: 800;
     letter-spacing: -2px;
+}
+.mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {
+    min-width: 150px;
 }

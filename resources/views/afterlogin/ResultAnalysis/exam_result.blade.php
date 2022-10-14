@@ -27,9 +27,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                 <a href="{{url('/dashboard')}}" class="text-decoration-none"><i class="fa fa-angle-left" style="margin-right:8px"></i> Back to Dashboard</a>
             </div>
             @if(isset($scoreResponse->test_type) && $scoreResponse->test_type =='Assessment')
-            <h3 class="commonheading">Custom Exam</h3>
+            <h3 class="commonheading">{{isset($scoreResponse->test_name)?$scoreResponse->test_name:'Custom Exam'}}</h3>
             @else
-            <h3 class="commonheading">{{$exam_name}}</h3>
+            <h3 class="commonheading">{{isset($scoreResponse->test_name)?$scoreResponse->test_name:$exam_name}}</h3>
             @endif
             <div class="d-flex mt-4 mb-4 align-items-end">
                 <div class="question-attempted-block">
@@ -98,7 +98,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <span>Correct <b><small></small>{{isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0}}</b></span>
                                         <span>Incorrect <b><small></small>{{isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0}}</b></span>
                                     </div>
-                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>{{isset($scoreResponse->not_answered)?$scoreResponse->not_answered:0}}</b></span>
+                                    <span>Not Attempted <b><small style="background-color: #7db9ff;"></small>{{isset($scoreResponse->not_answered)?$scoreResponse->not_answered:0}}</b></span>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                 </div>
 
             </div>
-            <div class="text-end" style="margin-top:20px;">
+            <div class="text-end scrollbtn" style="margin-top:20px;">
                 <button class="btn btn-common-transparent scroll-top" style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
@@ -394,7 +394,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             backgroundColor: [
                 "#08d5a1",
                 "#fb7686",
-                "#f2f4f7"
+                "#7db9ff"
             ]
         }]
     };

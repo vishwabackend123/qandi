@@ -24,7 +24,7 @@
                 <div class="color_labels ms-5">
                     <span class="d-block">Correct <b><small></small>{{$subData->correct_count}}</b></span>
                     <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subData->incorrect_count}}</b></span>
-                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subData->unanswered_count}}</b></span>
+                    <span class="d-block">Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$subData->unanswered_count}}</b></span>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
         </span>
     </h3>
     <div class="common_greenbadge_tabs">
-        <div class="row mt-4 align-items-center">
+        <div class="row mt-4 align-items-center inversecolumnMob">
             <div class="col-12">
                 <div class="d-flex  color_labels mb-4">
                     <span style="margin-left: 4px;"><small></small> Correct</span>
@@ -122,7 +122,7 @@
                     @endphp
                     <li>
                         <div class="topic_score_bar">
-                            <h4>{{$tdata->topic_name}}</h4>
+                            <h4 title="{{$tdata->topic_name}}">{{$tdata->topic_name}}</h4>
                             <div class="dropdown  d-inline-block">
 
                                 <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -228,7 +228,7 @@
                 backgroundColor: [
                     "#08d5a1",
                     "#fb7686",
-                    "#f2f4f7"
+                    "#7db9ff"
                 ]
             }]
         };

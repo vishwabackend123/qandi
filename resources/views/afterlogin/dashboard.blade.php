@@ -75,7 +75,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </span>
                             </h3>
                             <div class="myqTodayGraphSec">
-                                
+
                                 <input type="hidden" name="accurate_percent" id="accurate_percent" value="{{$myqtodayScore}}">
                                 <div class="mq_circle">
                                     <div class="mq_circle_percent" data-percent="{{$accurate_percent}}">
@@ -239,10 +239,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <div class="tablist">
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
+                                                <a class="nav-link active qq1_2_3_4" data-bs-toggle="tab" href="#daily">Daily tasks</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
+                                                <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -764,7 +764,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="journeyGraph cardWhiteBg">
+                                        <div class="journeyGraph cardWhiteBg markstrends_whitecard">
                                             <div class="boxHeadingBlock">
                                                 <h3 class="boxheading">
                                                     Marks Trend

@@ -26,6 +26,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="mock_inst_text_mock_test">
                         <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> Back</a>
                     </div>
+                    @if(isset($instructions) && !empty($instructions))
+                    <div id="inst_details">{!!$instructions!!}</div>
+                    @else
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
                     <div class="exam_instruction_text_under_text">Please read the instructions carefully prior to taking the test.</div>
                     <div class="exam_instruction_scrolling">
@@ -67,6 +70,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         @endif
 
                     </div>
+                    @endif
                 </div>
                 <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                     <div class="exam_section_right_side">
@@ -88,7 +92,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                         <div>
                             <div class="exam_inst_right_contant_green text-center">
-                               <span class="green_circle leftenter"></span>
+                                <span class="green_circle leftenter"></span>
                                 <span class="green_circle leftbottom"></span>
                                 <span class="green_circle rightBottom"></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" class="exam_inst_svg_right_green">

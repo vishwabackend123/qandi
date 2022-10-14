@@ -608,14 +608,17 @@ class AdpativeExamController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
-                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
+                $examType = 'custom';
+                $instructions = $this->getInstructions($examType);
+
+                return view('afterlogin.AdaptiveExam.adaptive_exam_instruction', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
 
                 /*  return view('afterlogin.ExamViews.exam_instructions', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime')); */
             }
 
 
 
-            return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('ranSession', 'test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'header_title'));
+            return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('ranSession', 'exam_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'header_title'));
         } catch (\Exception $e) {
 
             Log::info($e->getMessage());
@@ -847,6 +850,7 @@ class AdpativeExamController extends Controller
             $session_id = isset($request->session_id) ? $request->session_id : 0;
             $topic_id = isset($request->topic_id) ? $request->topic_id : 0;
             $ranSession = isset($request->ranSession) ? $request->ranSession : 0;
+            $exam_name = isset($request->exam_name) ? $request->exam_name : 0;
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -880,6 +884,7 @@ class AdpativeExamController extends Controller
             $inputjson['end_test'] = "yes";
             $inputjson['questions_list'] = array_values($questionList);
             $inputjson['answerList'] = array_values($answerList);
+            $inputjson['test_name'] = $exam_name;
 
             $request = json_encode($inputjson);
 
@@ -945,6 +950,8 @@ class AdpativeExamController extends Controller
             $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
             $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
             $ranSession = isset($request->ranSession) ? $request->ranSession : 0;
+            $exam_name = isset($request->exam_name) ? $request->exam_name : '';
+
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -967,6 +974,7 @@ class AdpativeExamController extends Controller
             $inputjson['questions_list'] = array_values($questionList);
             $inputjson['answerList'] = array_values($answerList);
             $inputjson['planner_id'] = $planner_id;
+            $inputjson['test_name'] = $exam_name;
             /* $inputjson['questions_list'] = [];
             $inputjson['answerList'] = []; */
 

@@ -26,6 +26,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="mock_inst_text_mock_test">
                         <a href="{{ url()->previous() }}" class="mocktestarrow"> <i class="fa fa-angle-right" aria-hidden="true"></i> Back</a>
                     </div>
+                    @if(isset($instructions) && !empty($instructions))
+                    <div id="inst_details">{!!$instructions!!}</div>
+                    @else
                     <div class="exam_instruction_text">INSTRUCTIONS</div>
                     <div class="exam_instruction_text_under_text">Please read the instructions carefully prior to taking the test.</div>
                     <div class="exam_instruction_scrolling">
@@ -60,6 +63,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         @endif
 
                     </div>
+                    @endif
                 </div>
                 <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 exam_instruction_col_four">
                     <div class="exam_section_right_side">

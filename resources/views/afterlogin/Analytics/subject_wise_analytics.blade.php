@@ -101,58 +101,68 @@
                         $unanswered =($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0;
                         @endphp
                         <li class="topic_score_bar">
-                            <h4 class="m-0">{{$val->chapter_name}}</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [<?php echo $correct_ans; ?>,<?php echo $incorrect_ans; ?>,<?php echo $unanswered; ?>],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
+                            <h4 class="m-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h4>
+                            <div class="dropdown">
+                                <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
+                                    <script type="text/javascript">
+                                    var circuference = 360;
+                                    var data = {
+                                        labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
+                                        datasets: [{
+                                            label: "My First Dataset",
+                                            data: [<?php echo $correct_ans; ?>,<?php echo $incorrect_ans; ?>,<?php echo $unanswered; ?>],
+                                            backgroundColor: [
+                                                "#34d399",
+                                                "#ff6678",
+                                                "#7db9ff",
+                                            ]
+                                        }]
+                                    };
+                                    var config = {
+                                        type: "doughnut",
+                                        data: data,
+                                        options: {
+                                            reponsive: true,
+                                            maintainAspectRatio: false,
+                                            circumference: circuference,
+                                            cutout: "50%",
+                                            borderWidth: 0,
+                                            borderRadius: function(context, options) {
+                                                const index = context.dataIndex;
+                                                let radius = {};
+                                                if (index == 0) {
+                                                    radius.innerStart = 0;
+                                                    radius.outerStart = 0;
+                                                }
+                                                if (index === context.dataset.data.length - 1) {
+                                                    radius.innerEnd = 0;
+                                                    radius.outerEnd = 0;
+                                                }
+                                                return radius;
+                                            },
+                                            plugins: {
+                                                title: false,
+                                                subtitle: false,
+                                                legend: false,
+                                                tooltip: false
 
-                                        },
+                                            },
 
-                                    }
-                                };
-                                var myCharted = new Chart("chapterPerformance_{{$val->chapter_id}}", config)
+                                        }
+                                    };
+                                    var myCharted = new Chart("chapterPerformance_{{$val->chapter_id}}", config)
 
-                                </script>
+                                    </script>
+                                </div>
+                                <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
+                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                    <div class="color_labels">
+                                        <span class="d-block"><small></small> Correct <b>{{$val->correct_ans}}</b></span>
+                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$val->incorrect_ans}}</b></span>
+                                        <span class="d-block"><small></small> Not Attempted <b>{{$val->unanswered}}</b></span>
+                                    </div>
+                                </ul>
                             </div>
                         </li>
                         @endforeach
@@ -196,7 +206,7 @@
                                                 <h2>{{(int)$skillPer[0]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Evaluation" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Evaluation"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -224,7 +234,7 @@
                                                 <h2>{{(int)$skillPer[1]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Comprehension" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Comprehension"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -253,7 +263,7 @@
                                                 <h2>{{(int)$skillPer[2]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Application" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Application"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -282,7 +292,7 @@
                                                 <h2>{{(int)$skillPer[3]->accuracy_percentage}}%</h2>
                                             </div>
                                             <div class="text-center mobile_block">
-                                                <a href="#knowMore" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#knowMore"> Know more 
+                                                <a href="#Knowledge" class="commmongreenLink" data-bs-toggle="modal" data-bs-target="#Knowledge"> Know more 
                                                     <span class="greenarrow">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -495,7 +505,7 @@
     </div>
 </div>
 <!-- KnowMore-popup start  -->
-<div class="modal fade overall_evaluationmodal_modal" id="knowMore">
+<div class="modal fade overall_evaluationmodal_modal" id="Evaluation">
     <div class="modalcenter">
         <div class="modal-dialog">
             <div class="modal-content strengthmodal_content">
@@ -506,7 +516,61 @@
                     <div class="intraction_text_strength mt-0">Evaluation</div>
                     <hr>
                     <div class="instruction_text_content">
-                        Evaluation indicates your skill to make decisions based on the knowledge you have gained and your own insights. 
+                        Your ability to understand complex information by breaking it into parts, examining the parts individually and judging them according to the received information. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Comprehension">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Comprehension</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                        Your ability to understand the meaning and correctly interpret instructions and problems. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Application">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Application</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                        Your ability to execute or implement the information provided.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade overall_evaluationmodal_modal" id="Knowledge">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                    <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="intraction_text_strength mt-0">Knowledge</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                         Your ability to recognize and recall factual information and basic concepts.  
                     </div>
                 </div>
             </div>
@@ -1226,4 +1290,8 @@ function showSubjectProgress(exam_type, value) {
         }
     });
 }
+
+$(".topic_score_bar .dropdown").hover(function() {
+        $(this).children(".progress.dropdown-toggle").trigger('click');
+    });
 </script>

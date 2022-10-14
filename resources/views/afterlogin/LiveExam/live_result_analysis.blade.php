@@ -82,7 +82,7 @@
                                         <span>Correct <b><small></small>{{$response->correct_count}}</b></span>
                                         <span>Incorrect <b><small></small>{{$response->wrong_count}}</b></span>
                                     </div>
-                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$response->not_answered}}</b></span>
+                                    <span>Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$response->not_answered}}</b></span>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                                                 backgroundColor: [
                                                     "#08d5a1",
                                                     "#fb7686",
-                                                    "#f2f4f7"
+                                                    "#7db9ff"
                                                 ]
                                             }]
                                         };
@@ -259,7 +259,7 @@
                                     <div class="color_labels ms-5">
                                         <span class="d-block">Correct <b><small></small>{{$subject->correct_count}}</b></span>
                                         <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subject->incorrect_count}}</b></span>
-                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subject->unanswered_count}}</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$subject->unanswered_count}}</b></span>
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +284,7 @@
                         </h3>
 
                         <div class="common_greenbadge_tabs">
-                            <div class="row mt-4 align-items-center">
+                            <div class="row mt-4 align-items-center inversecolumnMob">
                                 <div class="col-12">
                                     <div class="d-flex  color_labels mb-4">
                                         <span style="margin-left: 4px;"><small></small> Correct</span>
@@ -368,7 +368,7 @@
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
                                         <li>
                                             <div class="topic_score_bar">
-                                                <h4>@if(!empty($topic->topic_name)) {{$topic->topic_name}}
+                                                <h4 title="{{$topic->topic_name}}">@if(!empty($topic->topic_name)) {{$topic->topic_name}}
                                                     @else
                                                     ""
                                                     @endif</h4>
@@ -449,7 +449,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-end" style="margin-top:20px;">
+            <div class="text-end scrollbtn" style="margin-top:20px;">
                 <button class="btn btn-common-transparent scroll-top" style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
@@ -590,7 +590,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             backgroundColor: [
                 "#08d5a1",
                 "#fb7686",
-                "#f2f4f7"
+                "#7db9ff"
             ]
         }]
     };
