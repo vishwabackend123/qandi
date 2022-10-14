@@ -3643,6 +3643,8 @@ label.filter {
             .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
 
             .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
+    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;width:auto !important;}
+
             
 }
 
