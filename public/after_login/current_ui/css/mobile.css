@@ -3143,7 +3143,7 @@ label.filter {
     .subjextscoreLeft h4 {font-size: 20px;width:100%;}
     .boxHeadingBlock.flexblock{flex-wrap:wrap;}
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{width:83px!important;}
-    .fullbodyBox .leftBox h4{margin-bottom:0px;white-space:nowrap;}
+    .fullbodyBox .leftBox h4{margin-bottom:0px;}
     .fullbodyBox .leftBox .btn-common-white{min-width: 118px;}
     /************ Shiv start for refer and friend************/
     .modal-popup-customize .modal-content {

@@ -49,7 +49,7 @@ class FullExamController extends Controller
             }
 
             if ($exam_name == 'full_exam') {
-                $exam_name = 'Full Body Scan Test';
+                $exam_name = 'Personalized Preparation Assessment';
             } else {
                 $exam_name = 'Mock Test';
             }
@@ -150,7 +150,7 @@ class FullExamController extends Controller
 
                 $exam_url = route('exam', ['full_exam']);
 
-                $exam_title = "Full Body Exam";
+                $exam_title = "Personalized Preparation Assessment";
                 $test_type = 'Profiling';
 
                 $examType = 'full_body_scan';
