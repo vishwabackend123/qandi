@@ -82,7 +82,7 @@
                                         <span>Correct <b><small></small>{{$response->correct_count}}</b></span>
                                         <span>Incorrect <b><small></small>{{$response->wrong_count}}</b></span>
                                     </div>
-                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$response->not_answered}}</b></span>
+                                    <span>Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$response->not_answered}}</b></span>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                                                 backgroundColor: [
                                                     "#08d5a1",
                                                     "#fb7686",
-                                                    "#f2f4f7"
+                                                    "#7db9ff"
                                                 ]
                                             }]
                                         };
@@ -259,7 +259,7 @@
                                     <div class="color_labels ms-5">
                                         <span class="d-block">Correct <b><small></small>{{$subject->correct_count}}</b></span>
                                         <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subject->incorrect_count}}</b></span>
-                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subject->unanswered_count}}</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$subject->unanswered_count}}</b></span>
                                     </div>
                                 </div>
                             </div>
@@ -590,7 +590,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             backgroundColor: [
                 "#08d5a1",
                 "#fb7686",
-                "#f2f4f7"
+                "#7db9ff"
             ]
         }]
     };
