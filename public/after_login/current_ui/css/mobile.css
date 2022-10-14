@@ -3945,6 +3945,9 @@ label.filter {
 
             .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;}
     .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;width:auto !important;}
+    .markstrends_whitecard .graphimg , .markstrends_whitecard .graphDetail{
+        width: 100%;
+    }
 
             
 }
