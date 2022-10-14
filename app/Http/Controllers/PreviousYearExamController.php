@@ -699,6 +699,7 @@ class PreviousYearExamController extends Controller
             $redisArray['given_ans'] = $retrive_array;
             $redisArray['taken_time'] = $retrive_time_array;
             $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+            $redisArray['attempt_count'] = $answer_attempt_cnt;
 
 
             // Push Value in Redis

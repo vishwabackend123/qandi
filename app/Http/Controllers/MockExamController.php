@@ -531,7 +531,6 @@ class MockExamController extends Controller
                 $sec_q_attmpt_count = $attempts_cnt->count();
 
 
-
                 if (($sec_q_attmpt_count >= $max_attempt_limit) && $max_attempt_limit > 0) {
                     $response['status'] = 400;
                     /*   $response['sec_q_attmpt_count'] = $sec_q_attmpt_count; */
@@ -628,7 +627,7 @@ class MockExamController extends Controller
             $redisArray['given_ans'] = $retrive_array;
             $redisArray['taken_time'] = $retrive_time_array;
             $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
-
+            $redisArray['attempt_count'] = $answer_attempt_cnt;
 
             // Push Value in Redis
             Redis::set('custom_answer_time_mock' . $user_id . '_' . $ranSession, json_encode($redisArray));
