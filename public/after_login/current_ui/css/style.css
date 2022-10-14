@@ -4248,7 +4248,10 @@ span.proficiency_value {
 .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
 }
-.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
+.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, 
+.test-table .accordion-header .btn.btn-common-transparent:active, .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:hover,
+.mock_test_btn_content .btn.btn-common-transparent.bg-transparent:focus , .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:active
+{
     background-color: #56b663!important;
     color: #fff;
 }
@@ -4642,7 +4645,6 @@ header {
     font-weight: 800;
     line-height: 1.6;
     color: #fff;width: calc(100% + 90px);
-    
 }
 
 .fullbodyBox .leftBox p {
