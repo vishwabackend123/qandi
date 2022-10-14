@@ -149,7 +149,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                         </svg>
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
-                    <h3 class="mb-0 mt-2">Personalized Preparation Assessment</h3>
+                    <h3 class="mb-0 mt-2 px-4">Personalized Preparation Assessment</h3>
                     <p class="my-3">to assess your preparation. Take your first step to improvement.</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
