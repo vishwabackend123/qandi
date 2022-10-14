@@ -2772,7 +2772,7 @@ label.filter {
         width: 0px;
         top: -17px;
         border-bottom: 12px solid transparent;
-        border-left: 12px solid #1f4736;
+        border-left: 12px solid #56b663;
         right: 50%;
         border-top: 12px solid transparent;
         transform: rotate(-90deg);
@@ -2780,7 +2780,7 @@ label.filter {
 
 
     .tooltipclass {
-        background-color: #1f4736;
+        background-color: #56b663;
         border-radius: 12px;
         box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
         z-index: 9;
@@ -2808,7 +2808,7 @@ label.filter {
         top: -18px;
         border: 12px solid transparent;
         border-left: 0;
-        border-right: 15px solid #1f4736;
+        border-right: 15px solid #56b663;
         transform: rotate(90deg);
     }
 
