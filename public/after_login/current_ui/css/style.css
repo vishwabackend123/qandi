@@ -3434,6 +3434,7 @@ filter: drop-shadow(0px 0px 3px rgb(4,200,148,0.8));
     background: #56b663;
     content: '';
     transition: 1.05s;
+    animation-delay: 10s;
 }
 /* .mq_percent_more .circletop:after{
     position: absolute;
