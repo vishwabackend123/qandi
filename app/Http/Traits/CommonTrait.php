@@ -645,4 +645,52 @@ trait CommonTrait
 
         return $instHtml;
     }
+
+
+    public function getInstructionsDailyTask($examType, $category)
+    {
+        $userData = Session::get('user_data');
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
+
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/instructions/?exam_id=' . $grade_id . '&test_type=' . $examType;
+
+
+
+        if (!empty($category)) {
+            $curl_url =  $curl_url . '&category=' . $category;
+        }
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "Authorization: Bearer " . $this->getAccessToken()
+            ),
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+        curl_close($curl);
+
+        $instHtml = isset($aResponse->instructions) ? $aResponse->instructions : '';
+
+        return $instHtml;
+    }
 }

@@ -24,7 +24,7 @@
                 <div class="color_labels ms-5">
                     <span class="d-block">Correct <b><small></small>{{$subData->correct_count}}</b></span>
                     <span class="d-block mt-3 mb-3">Incorrect <b><small></small>{{$subData->incorrect_count}}</b></span>
-                    <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>{{$subData->unanswered_count}}</b></span>
+                    <span class="d-block">Not Attempted <b><small style="background-color: #7db9ff;"></small>{{$subData->unanswered_count}}</b></span>
                 </div>
             </div>
         </div>
@@ -228,7 +228,7 @@
                 backgroundColor: [
                     "#08d5a1",
                     "#fb7686",
-                    "#f2f4f7"
+                    "#7db9ff"
                 ]
             }]
         };

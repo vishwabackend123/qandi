@@ -47,7 +47,7 @@
                                         @foreach($open_series as $open)
                                         <div class="accordion-item pt-4 m-0 pb-4">
                                         <div class="mock_test_test_series mock_test_ques_dure_marks_sub d-flex">
-                                        <div class="mock_test_ques_content">
+                                            <div class="mock_test_ques_content">
                                                 <div class="mock_test_q_d_m_s_text1">Test Name</div>
                                                 <div class="mock_test_qdms_text2">{{$open->test_series_name}}</div>
                                             </div>
@@ -112,7 +112,38 @@
                                         @foreach($live_series as $live)
                                         @if($live->test_completed_yn === 'N')
                                         <div class="accordion-item pt-4 m-0">
-                                            <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
+                                            <div class="mock_test_test_series mock_test_ques_dure_marks_sub d-flex">
+                                                <div class="mock_test_ques_content">
+                                                    <div class="mock_test_q_d_m_s_text1">Test Name</div>
+                                                    <div class="mock_test_qdms_text2">{{$live->test_series_name}}</div>
+                                                </div>
+                                                <div class="live_exam_diveder_div"></div> 
+                                                <div class="mock_test_dure_content">
+                                                    <div class="mock_test_q_d_m_s_text1">No. of Questions</div>
+                                                    <div class="mock_test_qdms_text2"><span>{{$live->questions_count}} Questions</div>
+                                                </div>
+                                                <div class="live_exam_diveder_div"></div>
+                                                <div class="mock_test_marks_content">
+                                                    <div class="mock_test_q_d_m_s_text1">Duration</div>
+                                                    <div class="mock_test_qdms_text2"><span>{{$live->time_allowed}}</span> <span>Mins</span></div>
+                                                </div>
+                                                <div class="live_exam_diveder_div"></div>
+                                                <div class="mock_test_btn_content">
+                                                    <div class="accordion-header d-flex align-items-center" id="headingOne">
+                                                        <form class="form-horizontal ms-auto " action="{{route('test_series','instruction')}}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
+                                                            <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
+                                                            <input type="hidden" name="series_type" value="{{$live->series_type}}" />
+                                                            <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
+                                                            <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
+                                                            <input type="hidden" name="exam_mode" value="Live" />
+                                                            <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
                                                 <h2 class="m-0">{{$live->test_series_name}}</h2>
                                                 <h2 class="m-0 questiontext">{{$live->questions_count}} Questions</h2>
                                                 <h2 class="m-0 mintext">{{$live->time_allowed}} minutes</h2>
@@ -128,7 +159,7 @@
                                                         <button class="btn btn-common-transparent bg-transparent ms-4">Take Test</button>
                                                     </form>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         @php
                                         $i++;

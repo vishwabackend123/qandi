@@ -102,6 +102,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="exam_type" value="L">
                                         <input type="hidden" name="exam_mode" value="Live">
                                         <input type="hidden" name="planner_id" value="0">
+                                        <input type="hidden" name="exam_name" value="{{isset($exam_name)?$exam_name:'Live Exam'}}">
                                         <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">

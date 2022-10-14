@@ -104,6 +104,7 @@ $question_type = "Numerical";
                                         <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
                                         <input type="hidden" name="py_paperid" value="{{isset($paper_id)?$paper_id:0}}">
                                         <input type="hidden" name="ranSession" value="{{isset($ranSession)?$ranSession:''}}">
+                                        <input type="hidden" name="exam_name" value="{{isset($exam_name)?$exam_name:'Previous Year Exam'}}">
 
                                         <button class="btn submitBtnlink" id="submitExam" onclick="stop('submit');">
                                             <span class="btnText">Submit Test</span>
