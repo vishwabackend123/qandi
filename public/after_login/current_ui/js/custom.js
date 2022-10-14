@@ -49,7 +49,7 @@ $(".circle_percent").each(function() {
 	$this.append('<div class="circle_inbox"></div>');
 	$this.prop('Counter', 0).animate({Counter: $dataV},
 	{
-		duration: 2000, 
+		duration: 0, 
 		easing: 'swing', 
 		step: function (now) {
             $this.find(".percent_text").text(Math.ceil(now)+"%");
@@ -57,12 +57,16 @@ $(".circle_percent").each(function() {
     });
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
-		setTimeout(function(){
 			$this.addClass("percent_more");
-		},1000);
-		setTimeout(function(){
 			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-		},1000);
+
+
+		// setTimeout(function(){
+		// 	$this.addClass("percent_more");
+		// },1000);
+		// setTimeout(function(){
+		// 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+		// },1000);
 	} 
 });
 
@@ -103,12 +107,14 @@ $(".mq_circle_percent").each(function() {
     });
 	if($dataV >= 51){
 		$round.css("transform", "rotate(" + 360 + "deg)");
-		setTimeout(function(){
 			$this.addClass("mq_percent_more");
-		},1000);
-		setTimeout(function(){
 			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
-		},1000);
+		// setTimeout(function(){
+		// 	$this.addClass("mq_percent_more");
+		// },1000);
+		// setTimeout(function(){
+		// 	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+		// },1000);
 	} 
 });
 
