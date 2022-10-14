@@ -44,7 +44,7 @@
                                 <div id="mock_test" class=" tab-pane active bg-white-bg_mob">
                                     <div class="jee_main_text_take_test__btn">
                                         <div class="mock_exam_jee_main_text">
-                                            <h3>{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h3>
+                                            <h3>{{isset($exam_name)?$exam_name:''}}</h3>
                                         </div>
                                         <button type="button" class="btn btn-common-green mock_test_take_test_btn mobile_hide tab_hide" id="take_test">Take Test</button>
                                     </div>

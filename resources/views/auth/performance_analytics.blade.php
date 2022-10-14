@@ -10,7 +10,7 @@ $full_body_attempt = Session::get('full_body_attempt');
 
 @endphp
 <div class="wihoutlogintoast">
- <div class="toastdata">
+    <div class="toastdata">
         <div class="toast-content">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
@@ -22,7 +22,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                 <p class="error_toast"></p>
             </div>
         </div>
-       
+
         <div class="progress"></div>
     </div>
 </div>
@@ -42,7 +42,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item   progress__item--active">
-                    <p class="progress__title">Full Body Scan</p>
+                    <p class="progress__title">Personalized Preparation Assessment</p>
                     <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
@@ -59,8 +59,8 @@ $full_body_attempt = Session::get('full_body_attempt');
     <div class="selectPlan subscriptionsRightpannel">
         <span class="tab_show_performence_analytics tab_show desktop_hide_performence_analytics"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3 class="pageCountBox">Full Body Scan
-            <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
+            <h3 class="pageCountBox">Personalized Preparation Assessment
+                <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
             <p>To assess your preparedness</p>
         </div>
@@ -71,7 +71,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         <div class="fullbody_scan_wrapper">
             <div class="fullbody_scan_box d-flex">
                 <div class="fullbody_scan_card w-50">
-                    <p class="mt-0">Please attempt the Full Body Scan test, so that we can generate tasks based on your proficiency levels.</p>
+                    <p class="mt-0">Please attempt the Personalized Preparation Assessment, so that we can generate tasks based on your proficiency levels.</p>
                     <span class="custom-border"></span>
                     <ul style="margin-top:32px">
                         <li class="mb-3">No of Questions: <span>{{$prof_test_qcount}} questions</span></li>
@@ -87,17 +87,19 @@ $full_body_attempt = Session::get('full_body_attempt');
                             <title>Mask group-svg</title>
                             <defs>
                                 <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m-425 10c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                    <path d="m-425 10c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
                                 </clipPath>
                             </defs>
                             <style>
-                                .s0 { fill: #52ac5f } 
+                                .s0 {
+                                    fill: #52ac5f
+                                }
                             </style>
                             <g id="Clip-Path" clip-path="url(#cp1)">
                                 <g id="Layer">
-                                    <path id="Layer" class="s0" d="m82 103c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
-                                    <path id="Layer" class="s0" d="m-437 372c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
-                                    <path id="Layer" class="s0" d="m-4.5 307c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                    <path id="Layer" class="s0" d="m82 103c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
+                                    <path id="Layer" class="s0" d="m-437 372c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
+                                    <path id="Layer" class="s0" d="m-4.5 307c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
                                 </g>
                             </g>
                         </svg>
@@ -107,17 +109,19 @@ $full_body_attempt = Session::get('full_body_attempt');
                             <title>Mask group-svg</title>
                             <defs>
                                 <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m0-233c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                    <path d="m0-233c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
                                 </clipPath>
                             </defs>
                             <style>
-                                .s0 { fill: #52ac5f } 
+                                .s0 {
+                                    fill: #52ac5f
+                                }
                             </style>
                             <g id="Clip-Path" clip-path="url(#cp1)">
                                 <g id="Layer">
-                                    <path id="Layer" class="s0" d="m507-140c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
-                                    <path id="Layer" class="s0" d="m-12 129c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
-                                    <path id="Layer" class="s0" d="m420.5 64c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                    <path id="Layer" class="s0" d="m507-140c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
+                                    <path id="Layer" class="s0" d="m-12 129c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
+                                    <path id="Layer" class="s0" d="m420.5 64c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
                                 </g>
                             </g>
                         </svg>
@@ -127,23 +131,25 @@ $full_body_attempt = Session::get('full_body_attempt');
                             <title>Mask group-svg</title>
                             <defs>
                                 <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m-377-211c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z"/>
+                                    <path d="m-377-211c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
                                 </clipPath>
                             </defs>
                             <style>
-                                .s0 { fill: #52ac5f } 
+                                .s0 {
+                                    fill: #52ac5f
+                                }
                             </style>
                             <g id="Clip-Path" clip-path="url(#cp1)">
                                 <g id="Layer">
-                                    <path id="Layer" class="s0" d="m130-118c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z"/>
-                                    <path id="Layer" class="s0" d="m-389 151c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z"/>
-                                    <path id="Layer" class="s0" d="m43.5 86c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z"/>
+                                    <path id="Layer" class="s0" d="m130-118c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
+                                    <path id="Layer" class="s0" d="m-389 151c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
+                                    <path id="Layer" class="s0" d="m43.5 86c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
                                 </g>
                             </g>
                         </svg>
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
-                    <h3 class="mb-0 mt-2">Full body scan test</h3>
+                    <h3 class="mb-0 mt-2">Personalized Preparation Assessment</h3>
                     <p class="my-3">to assess your preparation. Take your first step to improvement.</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
@@ -188,7 +194,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                     userId: user_id,
                 },
                 success: function(response_data) {
-                     $('.toastdata').show();
+                    $('.toastdata').show();
                     $('.progress').show();
                     $('.toastdata').addClass('active');
                     $('.progress').addClass('active');
@@ -209,6 +215,5 @@ $full_body_attempt = Session::get('full_body_attempt');
             });
         });
     });
-   
 </script>
 @endsection
