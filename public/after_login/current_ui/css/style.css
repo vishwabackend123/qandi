@@ -3803,11 +3803,11 @@ transform: translate(-50%,-50%);
 .footerheding{padding-left:0px;padding-right:0px;}
 .chapter_performance_card ul.topic_score_lists li {width: 100%;margin-bottom: 27px;}
 .chapter_performance_card ul.topic_score_lists {max-height: 234px;}
-.chapter_performance_card .color_labels {
+/* .chapter_performance_card .color_labels {
     border-bottom: 1px solid #e5eaee;
     padding-bottom: 23px;
     margin: 20px 0;
-}
+} */
 .overall_evaluationmodal_modal .strengthmodal_content .btn-close{padding-top: 20px;}
 a.btn-close,a.btn-close:hover{opacity: 1;}
 .myqmatPannel a:hover{text-decoration:none;}
@@ -4248,7 +4248,10 @@ span.proficiency_value {
 .value-button.border-end, .value-button.border-start {
     border-color: #56b663!important;
 }
-.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, .test-table .accordion-header .btn.btn-common-transparent:active {
+.test-table .accordion-header .btn.btn-common-transparent:hover, .test-table .accordion-header .btn.btn-common-transparent:focus, 
+.test-table .accordion-header .btn.btn-common-transparent:active, .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:hover,
+.mock_test_btn_content .btn.btn-common-transparent.bg-transparent:focus , .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:active
+{
     background-color: #56b663!important;
     color: #fff;
 }
@@ -4321,7 +4324,7 @@ ul.topic_score_lists li:nth-child(even) {
     width: calc(100% - 40%);
     padding-right: 0;
 }
-
+.chapter_performance_lists  .noofquestions-block.dropdown-menu{left: auto!important;}
 /********************* Amit End ****************************/
 
 
@@ -4641,7 +4644,7 @@ header {
     font-size: 20px;
     font-weight: 800;
     line-height: 1.6;
-    color: #fff;
+    color: #fff;width: calc(100% + 90px);
 }
 
 .fullbodyBox .leftBox p {
@@ -5595,7 +5598,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
 }
 
 .exam_instruction_text_under_text {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     line-height: normal;
     color: #363c4f;
@@ -7125,7 +7128,7 @@ border-color: #56b663;
 
 /********** tooltips *********/
 .tooltipclass {
-    background-color: #1f4736;
+    background-color: #56b663;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
     padding: 15px 30px 15px 20px;
@@ -7151,7 +7154,7 @@ border-color: #56b663;
     top: 15px;
     border: 12px solid transparent;
     border-left: 0;
-    border-right: 15px solid #1f4736;
+    border-right: 15px solid #56b663;
 }
 .tooltipmain.right-tolltip .tooltipclass {
     left: -367px;
@@ -7166,7 +7169,7 @@ border-color: #56b663;
     width: 0px;
     top: 15px;
     border-bottom: 12px solid transparent;
-    border-left: 12px solid #1f4736;
+    border-left: 12px solid #56b663;
     right: -12px;
     border-top: 12px solid transparent;
 }

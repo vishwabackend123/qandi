@@ -98,7 +98,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         <span>Correct <b><small></small>{{isset($scoreResponse->correct_count)?$scoreResponse->correct_count:0}}</b></span>
                                         <span>Incorrect <b><small></small>{{isset($scoreResponse->wrong_count)?$scoreResponse->wrong_count:0}}</b></span>
                                     </div>
-                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>{{isset($scoreResponse->not_answered)?$scoreResponse->not_answered:0}}</b></span>
+                                    <span>Not Attempted <b><small style="background-color: #7db9ff;"></small>{{isset($scoreResponse->not_answered)?$scoreResponse->not_answered:0}}</b></span>
                                 </div>
                             </div>
                         </div>
@@ -394,7 +394,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             backgroundColor: [
                 "#08d5a1",
                 "#fb7686",
-                "#f2f4f7"
+                "#7db9ff"
             ]
         }]
     };
