@@ -102,49 +102,50 @@
                         @endphp
                         <li class="topic_score_bar">
                             <h4 class="m-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h4>
-                            <div class="Chapter_Main_Graph">
-                                <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
-                                <script type="text/javascript">
-                                var circuference = 360;
-                                var data = {
-                                    labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
-                                    datasets: [{
-                                        label: "My First Dataset",
-                                        data: [<?php echo $correct_ans; ?>,<?php echo $incorrect_ans; ?>,<?php echo $unanswered; ?>],
-                                        backgroundColor: [
-                                            "#34d399",
-                                            "#ff6678",
-                                            "#7db9ff",
-                                        ]
-                                    }]
-                                };
-                                var config = {
-                                    type: "doughnut",
-                                    data: data,
-                                    options: {
-                                        reponsive: true,
-                                        maintainAspectRatio: false,
-                                        circumference: circuference,
-                                        cutout: "50%",
-                                        borderWidth: 0,
-                                        borderRadius: function(context, options) {
-                                            const index = context.dataIndex;
-                                            let radius = {};
-                                            if (index == 0) {
-                                                radius.innerStart = 0;
-                                                radius.outerStart = 0;
-                                            }
-                                            if (index === context.dataset.data.length - 1) {
-                                                radius.innerEnd = 0;
-                                                radius.outerEnd = 0;
-                                            }
-                                            return radius;
-                                        },
-                                        plugins: {
-                                            title: false,
-                                            subtitle: false,
-                                            legend: false,
-                                            tooltip: false
+                            <div class="dropdown">
+                                <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
+                                    <script type="text/javascript">
+                                    var circuference = 360;
+                                    var data = {
+                                        labels: ["Correct answer", "Incorrect answer", "Unattempted questions"],
+                                        datasets: [{
+                                            label: "My First Dataset",
+                                            data: [<?php echo $correct_ans; ?>,<?php echo $incorrect_ans; ?>,<?php echo $unanswered; ?>],
+                                            backgroundColor: [
+                                                "#34d399",
+                                                "#ff6678",
+                                                "#7db9ff",
+                                            ]
+                                        }]
+                                    };
+                                    var config = {
+                                        type: "doughnut",
+                                        data: data,
+                                        options: {
+                                            reponsive: true,
+                                            maintainAspectRatio: false,
+                                            circumference: circuference,
+                                            cutout: "50%",
+                                            borderWidth: 0,
+                                            borderRadius: function(context, options) {
+                                                const index = context.dataIndex;
+                                                let radius = {};
+                                                if (index == 0) {
+                                                    radius.innerStart = 0;
+                                                    radius.outerStart = 0;
+                                                }
+                                                if (index === context.dataset.data.length - 1) {
+                                                    radius.innerEnd = 0;
+                                                    radius.outerEnd = 0;
+                                                }
+                                                return radius;
+                                            },
+                                            plugins: {
+                                                title: false,
+                                                subtitle: false,
+                                                legend: false,
+                                                tooltip: false
 
                                         },
 

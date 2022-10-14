@@ -4321,7 +4321,7 @@ ul.topic_score_lists li:nth-child(even) {
     width: calc(100% - 40%);
     padding-right: 0;
 }
-
+.chapter_performance_lists  .noofquestions-block.dropdown-menu{left: auto!important;}
 /********************* Amit End ****************************/
 
 
