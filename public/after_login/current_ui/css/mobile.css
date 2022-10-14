@@ -3628,6 +3628,8 @@ label.filter {
             body.refrerpopUp .modal-backdrop{display:none!important;}
             .text-end.scrollbtn{text-align:center!important;}
             .inversecolumnMob .col-12:first-child{order: 2;}
+    .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;width:auto !important;}
+
             
 }
 
