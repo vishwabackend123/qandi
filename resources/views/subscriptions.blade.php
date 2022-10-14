@@ -4,9 +4,9 @@ $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
 $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 $leadData ='';
-    if (Session::has('lead_trail_status')) {
-        $leadData = Session::get('lead_trail_status');
-    }
+if (Session::has('lead_trail_status')) {
+$leadData = Session::get('lead_trail_status');
+}
 @endphp
 @section('content')
 <div class="wrapper wihoutlogintoast">
@@ -22,7 +22,7 @@ $leadData ='';
                 <p class="error_toast"></p>
             </div>
         </div>
-        
+
         <div class="progress"></div>
     </div>
     <section class="subscriptionsPage d-flex">
@@ -39,7 +39,7 @@ $leadData ='';
                         <p class="progress__info">Rate your level of proficiency</p>
                     </li>
                     <li class="progress__item ">
-                        <p class="progress__title">Full Body Scan</p>
+                        <p class="progress__title">Personalized Preparation Assessment</p>
                         <p class="progress__info">To assess your preparedness</p>
                     </li>
                 </ul>
@@ -49,8 +49,8 @@ $leadData ='';
                 <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
                 <a href="javascript:void(0);" class="resend_email">Resend</a>
                 <span class="mt-2" id="email_success"></span>
-            </div>  
-            @endif 
+            </div>
+            @endif
         </div>
         <div class="selectPlan subscriptionsRightpannel">
             <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
@@ -106,7 +106,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -180,10 +180,10 @@ $leadData ='';
                         </ul>
                     </div>
                     <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
-                    <span class="hide-text">Hide benefits</span>
+                        <span class="hide-text">Hide benefits</span>
                         <span class="arrowbtn1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
                     </div>
@@ -226,7 +226,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -300,10 +300,10 @@ $leadData ='';
                         </ul>
                     </div>
                     <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
-                    <span class="hide-text">Hide benefits</span>
+                        <span class="hide-text">Hide benefits</span>
                         <span class="arrowbtn1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
 
@@ -356,7 +356,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -430,12 +430,12 @@ $leadData ='';
                         </ul>
                     </div>
                     <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
-                    <span class="hide-text">Hide benefits</span>
-                            <span class="arrowbtn1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                                    <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
+                        <span class="hide-text">Hide benefits</span>
+                        <span class="arrowbtn1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
                     </div>
                 </div>
                 <div class="planType">
@@ -496,7 +496,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -504,7 +504,7 @@ $leadData ='';
                     </div>
                 </div>
 
-<!------------------------------------------------------------------------------------>
+                <!------------------------------------------------------------------------------------>
                 <div class="testType testTypeformob">
                     <div class="testTypeulbox d-md-flex justify-content-between align-items-center">
                         <ul>
@@ -568,21 +568,21 @@ $leadData ='';
                         </ul>
                     </div>
                     <div class="allbenefitsbtn"><span class="show-text">Show all benefits</span>
-                    <span class="hide-text">Hide benefits</span>
-                    <span class="arrowbtn1">
+                        <span class="hide-text">Hide benefits</span>
+                        <span class="arrowbtn1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="m4 6.314 4 4 4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
                     </div>
-                  
+
                 </div>
                 <div class="planType">
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
 
                     <div class="freeTrial">
-                         @if(isset($leadData) && $leadData !=2)
+                        @if(isset($leadData) && $leadData !=2)
                         <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start your {{$sub->trial_subscription_duration}}-day free trial</a>
                         @endif
                     </div>
@@ -638,7 +638,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -755,7 +755,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -866,7 +866,7 @@ $leadData ='';
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
                                 <span class="offer_disco">({{$discount}}% off)</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="peryearPrice">
@@ -940,7 +940,7 @@ $leadData ='';
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
@@ -1013,15 +1013,14 @@ $leadData ='';
     });
 </script>
 <script>
-  $('.toastdata').hide();
-  $('.progress').hide();
-  $( '.allbenefitsbtn' ).click(function() {
-    $( '.testTypeulbox' ).toggleClass('autoHeight');
-    $( '.arrowbtn1' ).toggleClass('arrowroted');
+    $('.toastdata').hide();
+    $('.progress').hide();
+    $('.allbenefitsbtn').click(function() {
+        $('.testTypeulbox').toggleClass('autoHeight');
+        $('.arrowbtn1').toggleClass('arrowroted');
 
     });
-  
- </script>
+</script>
 
 
 @endsection

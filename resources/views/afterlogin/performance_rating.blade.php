@@ -8,7 +8,7 @@ $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
 <div class="wihoutlogintoast">
-  <div class="toastdata">
+    <div class="toastdata">
         <div class="toast-content">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17C1 8.163 8.163 1 17 1s16 7.163 16 16-7.163 16-16 16S1 25.837 1 17z" fill="#8DFDB3" />
@@ -20,13 +20,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <p class="error_toast"></p>
             </div>
         </div>
-       
+
         <div class="progress"></div>
     </div>
 </div>
 <section class="subscriptionsPage d-flex">
     <div class="subscriptionsLeftpannel">
-       <a href="{{env('CMS_URL')}}" target="_blank"> <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
+        <a href="{{env('CMS_URL')}}" target="_blank"> <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
         <div class="progress-box">
             <ul class="progressorder">
                 <li class="progress__item progress__item--completed">
@@ -40,13 +40,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item ">
-                    <p class="progress__title">Full Body Scan</p>
+                    <p class="progress__title">Personalized Preparation Assessment</p>
                     <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
             </ul>
         </div>
-         @if($userData->email_verified=='No')
+        @if($userData->email_verified=='No')
         <div class="verificationBox">
             <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
             <a href="javascript:void(0);" class="resend_email">Resend</a>
@@ -58,7 +58,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
         <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
             <h3 class="pageCountBox">Self Analysis
-            <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
+                <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
             <p>Rate your level of proficiency</p>
         </div>
@@ -127,7 +127,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @endforeach
             <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
-                    @if (!Session::has('lead_trail_status')) 
+                    @if (!Session::has('lead_trail_status'))
                     <a href="{{route('subscriptions')}}">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -233,6 +233,5 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             }
         });
     }
-     
 </script>
 @endsection
