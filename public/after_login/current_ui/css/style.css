@@ -7126,7 +7126,7 @@ border-color: #56b663;
 
 /********** tooltips *********/
 .tooltipclass {
-    background-color: #1f4736;
+    background-color: #56b663;
     border-radius: 12px;
     box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
     padding: 15px 30px 15px 20px;
@@ -7152,7 +7152,7 @@ border-color: #56b663;
     top: 15px;
     border: 12px solid transparent;
     border-left: 0;
-    border-right: 15px solid #1f4736;
+    border-right: 15px solid #56b663;
 }
 .tooltipmain.right-tolltip .tooltipclass {
     left: -367px;
@@ -7167,7 +7167,7 @@ border-color: #56b663;
     width: 0px;
     top: 15px;
     border-bottom: 12px solid transparent;
-    border-left: 12px solid #1f4736;
+    border-left: 12px solid #56b663;
     right: -12px;
     border-top: 12px solid transparent;
 }
