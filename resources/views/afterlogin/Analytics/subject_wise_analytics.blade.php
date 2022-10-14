@@ -102,7 +102,7 @@
                         @endphp
                         <li class="topic_score_bar">
                             <h4 class="m-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h4>
-                            <div class="dropdown  d-inline-block">
+                            <div class="dropdown">
                                 <div class="Chapter_Main_Graph progress dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <canvas id="chapterPerformance_{{$val->chapter_id}}"></canvas>
                                     <script type="text/javascript">
