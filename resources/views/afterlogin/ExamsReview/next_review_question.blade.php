@@ -502,12 +502,14 @@ $question_type = "Numerical";
                 var customanstopheightNew = $(".reviewans-mainsec").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 80 + "px";
                 $('.list-ans').css('height', examreviewMainboxNew);
+                $("#filterBy .dropdown-menu").addClass("filterByexpand");
             });
 
             $(".collapseformob").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.reviewans-mainsec').attr('style', 'height: 150px !important');
                 $('.list-ans').attr('style', '    height: calc( 100% - 80px) !important');
+                $("#filterBy .dropdown-menu").removeClass("filterByexpand");
             });
 
             $(".expandbtnmob1").on('click', function() {
@@ -604,6 +606,20 @@ $question_type = "Numerical";
         }
         .first_screen_expand{
             max-height:100% !important;   
+        }
+        .filterByexpand  .dropdown-item {
+            padding: 0 0 !important;
+            padding-bottom: 13px !important;
+            font-size: 14px !important;
+            font-weight: 500;
+        }
+
+       .filterByexpand {
+            transform: initial!important;
+            right: 18px!important;
+            inset: initial!important;
+            max-width: 172px;
+            left: -58px!important;
         }
     }
 </style>
