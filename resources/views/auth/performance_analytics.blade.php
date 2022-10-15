@@ -60,7 +60,7 @@ $full_body_attempt = Session::get('full_body_attempt');
         <span class="tab_show_performence_analytics tab_show desktop_hide_performence_analytics"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
             <h3 class="pageCountBox">Personalized Preparation Assessment
-                <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
+                <span class="pagecount hideondesktop"><span class="activePage">3</span>/3</span>
             </h3>
             <p>To assess your preparedness</p>
         </div>
