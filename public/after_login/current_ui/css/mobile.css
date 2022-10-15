@@ -1244,8 +1244,8 @@
             z-index: 10;
         }
         .watch-icon {width: 24px;}
-        .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:focus, .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:active, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:hover, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:focus, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:active{background-color: #56b663!important;
-            color: #fff;}
+        .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .btn.btn-common-transparent.bg-transparent.mobile_block:focus, 
+        .btn.btn-common-transparent.bg-transparent.mobile_block:active {background-color: #56b663!important;color: #fff;}
         
 }
 
@@ -5452,11 +5452,20 @@ transform: translateX(100%);
     }
 
     .first_screen {
+<<<<<<< HEAD
 
         width: 100% !important;
         min-width: 100% !important;
         max-height: 100% !important;
 
+=======
+        max-height: 217px !important;
+        overflow: overlay;
+    width: 100% !important;
+    /* min-width: 100% !important;
+    max-height: 100% !important; */
+       
+>>>>>>> GUIchanges
     }
 
     .questionright h6 {
@@ -5667,7 +5676,7 @@ transform: translateX(100%);
     .examReviewscreenmob .expand_block {
         display: none;
         position: absolute;
-        right: -43px;
+        right: -42px;
         top: -10px;
         z-index: 999;
         padding: 5px;
@@ -5735,10 +5744,35 @@ transform: translateX(100%);
         margin: 6px !important;
     }
 
+<<<<<<< HEAD
     .performance_chapter_block h3 {
         width: 100%;
         max-width: 100%;
         padding-right: 0;
+=======
+        .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;padding-bottom:12px;}
+        .graphDetailempty{width:100%;}
+        .anshead-titletext{max-width: 50%;}
+        label.filter{padding-right:0px;margin-right:20px;}
+        /*********************Start by Sachin -Date-15-10-22********/
+        #filterBy .dropdown-menu{
+            /* transform: translate(236px,47px)!important;padding: 10px 10px 5px; */
+            transform: initial !important;
+            right: 18px !important;
+            inset: initial !important;
+            max-width: 100px;
+            left: -25px !important;
+        }
+        #filterBy{position: relative;}
+
+         /*********************End by Sachin -Date-15-10-22********/
+        .filterdropdown .dropdown-item{    margin-bottom: 2px;
+            padding-bottom: 4px;
+            font-size: 10px;}
+       .expandbtnmob1{position: relative;top:15px}
+       #clearBtn_response {
+        border: none;color: gray;
+>>>>>>> GUIchanges
     }
 
     .performance_chapter_accordion .accordion-item .performance_chapter_block {
