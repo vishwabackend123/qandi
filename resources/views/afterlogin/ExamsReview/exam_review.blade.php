@@ -1026,7 +1026,7 @@ $question_type = "Numerical";
         .filterByexpand  .dropdown-item {
             padding: 0 0 !important;
             padding-bottom: 13px !important;
-            font-size: 14px !important;
+            font-size: 12px !important;
             font-weight: 500;
         }
 
@@ -1034,7 +1034,7 @@ $question_type = "Numerical";
             transform: initial!important;
             right: 18px!important;
             inset: initial!important;
-            max-width: 172px;
+            max-width: 172px !important;
             left: -58px!important;
         }
     }
