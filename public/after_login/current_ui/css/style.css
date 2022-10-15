@@ -4325,6 +4325,11 @@ ul.topic_score_lists li:nth-child(even) {
     padding-right: 0;
 }
 .chapter_performance_lists  .noofquestions-block.dropdown-menu{left: auto!important;}
+.liveexamScrollContant .row.mock_test_ques_dure_marks_sub {
+    padding: 20px 0px;
+}
+
+
 /********************* Amit End ****************************/
 
 
