@@ -932,12 +932,15 @@ $question_type = "Numerical";
                 var customanstopheightNew1 = $(".answer-main-sec").outerHeight();
                 var examreviewMainboxNew1 = customanstopheightNew1 - 100 + "px";
                 $('.explanation-sec').css('height', examreviewMainboxNew1);
+                $(".first_screen").addClass("first_screen_expand");
+
             });
 
             $(".collapsebtnmob1").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.answer-main-sec').attr('style', 'height: 240px');
                 $('.explanation-sec').attr('style', ' height: 20px !important');
+                $(".first_screen").removeClass("first_screen_expand");
             });
 
             $(".showyes").on('click', function() {
@@ -951,10 +954,6 @@ $question_type = "Numerical";
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
-               
-
-
-
 
             });
 
@@ -962,11 +961,33 @@ $question_type = "Numerical";
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-
                 $('.custom-anstop').attr('style', 'height:0px !important; opacity:0; display:none;');
                 $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
 
             });
+
+            $("#reviewData").on("click", ".percent_btn", function(e) {
+                $(".expand_block").show();
+                e.stopPropagation();
+                let screenWidth = screen.width;
+                var screenWidth_15 = screenWidth - 15 + "px";
+                $('.examReviewscreenmob .expand_block').css('width', screenWidth_15);
+                $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
+            
+            });
+
+            $("#reviewData").on("click", ".expand_block", function(e) {
+                e.stopPropagation();
+                $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
+            
+            });
+
+            $(document).click(function() {
+                $(".expand_block").hide();
+                $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
+            
+            });
+
         }
     })
 </script>
@@ -974,7 +995,7 @@ $question_type = "Numerical";
 <style>
     @media only screen and (max-width: 767px) {
         .examReviewscreenmob .reviewans-mainsec {
-            height: 150px;
+            height: 150px;   
         }
 
         .examReviewscreenmob .answer-main-sec {
@@ -991,6 +1012,12 @@ $question_type = "Numerical";
         }
         .custom-anstop{
             display:none;
+        }
+        .darkHeader{
+            display:none;
+        }
+        .first_screen_expand{
+            max-height:100% !important;
         }
     }
 </style>

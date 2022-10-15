@@ -3540,10 +3540,11 @@ label.filter {
         width: 312px;
     }
     .first_screen {
-       
+        max-height: 217px !important;
+        overflow: overlay;
     width: 100% !important;
-    min-width: 100% !important;
-    max-height: 100% !important;
+    /* min-width: 100% !important;
+    max-height: 100% !important; */
        
     }
     .questionright h6 {
@@ -3715,7 +3716,7 @@ label.filter {
     .examReviewscreenmob .expand_block {
         display: none;
         position: absolute;
-        right: -43px;
+        right: -42px;
         top: -10px;
         z-index: 999;
         padding: 5px;
@@ -3781,7 +3782,18 @@ label.filter {
         .graphDetailempty{width:100%;}
         .anshead-titletext{max-width: 50%;}
         label.filter{padding-right:0px;margin-right:20px;}
-        #filterBy .dropdown-menu{transform: translate(236px,47px)!important;padding: 10px 10px 5px;}
+        /*********************Start by Sachin -Date-15-10-22********/
+        #filterBy .dropdown-menu{
+            /* transform: translate(236px,47px)!important;padding: 10px 10px 5px; */
+            transform: initial !important;
+            right: 18px !important;
+            inset: initial !important;
+            max-width: 100px;
+            left: -25px !important;
+        }
+        #filterBy{position: relative;}
+
+         /*********************End by Sachin -Date-15-10-22********/
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
             font-size: 10px;}
