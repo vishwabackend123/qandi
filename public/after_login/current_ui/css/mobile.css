@@ -1246,6 +1246,12 @@
         .watch-icon {width: 24px;}
         .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .btn.btn-common-transparent.bg-transparent.mobile_block:focus, 
         .btn.btn-common-transparent.bg-transparent.mobile_block:active {background-color: #56b663!important;color: #fff;}
+        .LiveExamMob.LiveExamMob22 .liveexamScrollContant .row.mock_test_ques_dure_marks_sub {
+            padding: 0;
+        }
+        .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
+            margin-top: 0px;
+        } 
         
 }
 
@@ -1786,14 +1792,20 @@
         padding-top: 18px;
         padding-bottom: 18px;
     }
+<<<<<<< HEAD
 
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3) {
         width: 70%;
+=======
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3)
+    {
+        width: 67%;
+>>>>>>> GUIchanges
     }
 
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(4) {
         text-align: right;
-        width: 30%;
+        width: 32%;
     }
 
     .CoustomAttempted .mock_test_ques_content2 {
@@ -3576,14 +3588,20 @@ transform: translateX(100%);
         padding-top: 18px;
         padding-bottom: 18px;
     }
+<<<<<<< HEAD
 
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3) {
         width: 70%;
+=======
+    .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3)
+    {
+        width: 67%;
+>>>>>>> GUIchanges
     }
 
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(4) {
         text-align: right;
-        width: 30%;
+        width: 32%;
     }
 
     .CoustomAttempted .mock_test_ques_content2 {
@@ -5452,20 +5470,12 @@ transform: translateX(100%);
     }
 
     .first_screen {
-<<<<<<< HEAD
-
-        width: 100% !important;
-        min-width: 100% !important;
-        max-height: 100% !important;
-
-=======
         max-height: 217px !important;
         overflow: overlay;
     width: 100% !important;
     /* min-width: 100% !important;
     max-height: 100% !important; */
        
->>>>>>> GUIchanges
     }
 
     .questionright h6 {
@@ -6060,6 +6070,7 @@ transform: translateX(100%);
 
     .exam_topicbtn ul.d-inline-flex .nav-item .nav-link {
         width: 100%;
+<<<<<<< HEAD
     }
 
     .yaxis_label {
@@ -6225,6 +6236,10 @@ transform: translateX(100%);
     }
 
 
+=======
+    } 
+    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}     
+>>>>>>> GUIchanges
 }
 
 
