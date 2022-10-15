@@ -726,6 +726,12 @@ label.filter {
         .watch-icon {width: 24px;}
         .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .btn.btn-common-transparent.bg-transparent.mobile_block:focus, 
         .btn.btn-common-transparent.bg-transparent.mobile_block:active {background-color: #56b663!important;color: #fff;}
+        .LiveExamMob.LiveExamMob22 .liveexamScrollContant .row.mock_test_ques_dure_marks_sub {
+            padding: 0;
+        }
+        .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
+            margin-top: 0px;
+        } 
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -1215,12 +1221,12 @@ label.filter {
     }
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3)
     {
-        width: 70%;
+        width: 67%;
     }
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(4)
     {
         text-align: right;
-        width: 30%;
+        width: 32%;
     }
     .CoustomAttempted .mock_test_ques_content2
     {
@@ -2620,12 +2626,12 @@ label.filter {
     }
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(3)
     {
-        width: 70%;
+        width: 67%;
     }
     .liveexamScrollContant .live_exam_jee_main_date_st_ed_ques:nth-child(4)
     {
         text-align: right;
-        width: 30%;
+        width: 32%;
     }
     .CoustomAttempted .mock_test_ques_content2
     {
@@ -3961,9 +3967,8 @@ label.filter {
     .MockTestMob .mock_test_btn_content .btn.btn-common-transparent {min-width: auto;margin-left: 0px !important;width:auto !important;}
     .markstrends_whitecard .graphimg , .markstrends_whitecard .graphDetail{
         width: 100%;
-    }
-
-            
+    } 
+    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}     
 }
 
 
