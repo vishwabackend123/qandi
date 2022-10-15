@@ -3985,7 +3985,8 @@ label.filter {
     .markstrends_whitecard .graphimg , .markstrends_whitecard .graphDetail{
         width: 100%;
     } 
-    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}     
+    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}  
+    .signuprightpannel{overflow-y: inherit;}   
 }
 
 
