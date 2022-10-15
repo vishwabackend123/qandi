@@ -724,8 +724,8 @@ label.filter {
             z-index: 10;
         }
         .watch-icon {width: 24px;}
-        .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:focus, .test-table .btn.btn-common-transparent.bg-transparent.mobile_block:active, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:hover, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:focus, .mock_test_btn_content.btn.btn-common-transparent.bg-transparent.mobile_block.bg-transparent:active{background-color: #56b663!important;
-            color: #fff;}
+        .btn.btn-common-transparent.bg-transparent.mobile_block:hover, .btn.btn-common-transparent.bg-transparent.mobile_block:focus, 
+        .btn.btn-common-transparent.bg-transparent.mobile_block:active {background-color: #56b663!important;color: #fff;}
         
 }
 @media screen and (max-width:991px) and (min-width:768px) {
