@@ -3538,10 +3538,11 @@ label.filter {
         width: 312px;
     }
     .first_screen {
-       
+        max-height: 217px !important;
+        overflow: overlay;
     width: 100% !important;
-    min-width: 100% !important;
-    max-height: 100% !important;
+    /* min-width: 100% !important;
+    max-height: 100% !important; */
        
     }
     .questionright h6 {
@@ -3713,7 +3714,7 @@ label.filter {
     .examReviewscreenmob .expand_block {
         display: none;
         position: absolute;
-        right: -43px;
+        right: -42px;
         top: -10px;
         z-index: 999;
         padding: 5px;

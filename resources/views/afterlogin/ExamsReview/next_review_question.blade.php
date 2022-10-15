@@ -475,13 +475,13 @@ $question_type = "Numerical";
     }
 </script>
 <script>
-$(function() {
+    $(function() {
         if (window.matchMedia("(max-width: 767px)").matches) {
             let height = screen.height;
-            $('.examReviewscreenmob').css('height', height);
-            $('.content-wrapper').css('height', height);
-            $('.examSereenwrapper').css('height', height);
-            $('.examreviewMaincontainer ').css('height', height);
+            // $('.examReviewscreenmob').css('height', height);
+            // $('.content-wrapper').css('height', height);
+            // $('.examSereenwrapper').css('height', height);
+            // $('.examreviewMaincontainer ').css('height', height);
             var exam_Review_screenmob_height_767 = $(".examreviewMaincontainer").outerHeight();
             var answer_main_secmob_height_767 = $(".answer-main-sec").outerHeight();
             var cal_height_for_right_767 = exam_Review_screenmob_height_767 - answer_main_secmob_height_767;
@@ -494,6 +494,7 @@ $(function() {
 
 
             $(".expandformob").on('click', function() {
+
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
@@ -503,7 +504,7 @@ $(function() {
                 $('.list-ans').css('height', examreviewMainboxNew);
             });
 
-             $(".collapseformob").on('click', function() {
+            $(".collapseformob").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.reviewans-mainsec').attr('style', 'height: 150px !important');
                 $('.list-ans').attr('style', '    height: calc( 100% - 80px) !important');
@@ -513,16 +514,19 @@ $(function() {
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter1 = $(".examreviewMaincontainer").outerHeight();
                 var examreviewMainbox1 = examreviewMaincontainerouter1 - 250 + "px !important";
-                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;' );
+                $('.answer-main-sec').attr('style', 'height: calc( 100vh - 250px) !important;z-index:999;');
                 var customanstopheightNew1 = $(".answer-main-sec").outerHeight();
                 var examreviewMainboxNew1 = customanstopheightNew1 - 100 + "px";
                 $('.explanation-sec').css('height', examreviewMainboxNew1);
+                $(".first_screen").addClass("first_screen_expand");
+
             });
 
-             $(".collapsebtnmob1").on('click', function() {
+            $(".collapsebtnmob1").on('click', function() {
                 $('.overlaydiv').hide(0);
                 $('.answer-main-sec').attr('style', 'height: 240px');
-                $('.explanation-sec').attr('style', '    height: 20px !important');
+                $('.explanation-sec').attr('style', ' height: 20px !important');
+                $(".first_screen").removeClass("first_screen_expand");
             });
 
             $(".showyes").on('click', function() {
@@ -530,39 +534,76 @@ $(function() {
                 $('.hideyes').show(0);
                 $('.overlaydiv').show(0);
                 var examreviewMaincontainerouter = $(".examreviewMaincontainer").outerHeight();
-                $('.custom-anstop').attr('style', 'opacity:1 !important;');
+                $('.custom-anstop').attr('style', 'opacity:1 !important; display:block !important;');
                 var examreviewMainbox = examreviewMaincontainerouter - 250 + "px";
                 $('.custom-anstop').css('height', examreviewMainbox);
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
+
             });
 
             $(".hideyes").on('click', function() {
                 $('.showyes').show(0);
                 $('.hideyes').hide(0);
                 $('.overlaydiv').hide(0);
-                $('.custom-anstop').attr('style', 'height:0px !important;opacity:0;');
-                $('.text-exambottom-sec').attr('style', 'height: 0px !important');
+                $('.custom-anstop').attr('style', 'height:0px !important; opacity:0; display:none;');
+                $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
+
             });
+
+            $("#reviewData").on("click", ".percent_btn", function(e) {
+                $(".expand_block").show();
+                e.stopPropagation();
+                let screenWidth = screen.width;
+                var screenWidth_15 = screenWidth - 15 + "px";
+                $('.examReviewscreenmob .expand_block').css('width', screenWidth_15);
+                $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
+            
+            });
+
+            $("#reviewData").on("click", ".expand_block", function(e) {
+                e.stopPropagation();
+                $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
+            
+            });
+
+            $(document).click(function() {
+                $(".expand_block").hide();
+                $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
+            
+            });
+
         }
     })
 </script>
 
-<style>
-    @media only screen and (max-width: 767px){
-        .examReviewscreenmob .reviewans-mainsec{
-        height:150px;
+    <style>
+    @media only screen and (max-width: 767px) {
+        .examReviewscreenmob .reviewans-mainsec {
+            height: 150px;
         }
-        .examReviewscreenmob .answer-main-sec{
-            height:240px ;
+
+        .examReviewscreenmob .answer-main-sec {
+            height: 240px;
         }
-        .collapsebtnmob1{
+
+        .collapsebtnmob1 {
             position: relative;
             top: 15px;
-            
+
+        }
+        .removemob{
+            display:none;
+        }
+        .custom-anstop{
+            display:none;
+        }
+        .darkHeader{
+            display:none;
+        }
+        .first_screen_expand{
+            max-height:100% !important;
         }
     }
-   
- 
-    </style>
+</style>
