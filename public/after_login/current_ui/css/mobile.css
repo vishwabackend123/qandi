@@ -205,7 +205,7 @@
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
-     height: 350px;
+     height: 315px;
     }
     .list-ans{
         height: 27vh;
