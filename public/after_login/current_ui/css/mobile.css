@@ -1218,43 +1218,35 @@
         /* position: absolute;
             bottom: 20px;
             left: 0; */
-    }
-
-    .mobileview_logout {
-        /* height: calc(100vh - 525px); */
-        position: absolute !important;
-        bottom: 20px;
-        left: 24px;
-    }
-
-    .exam_instruction_wrapper .exam_instruction_col_eight {
-        order: 2
-    }
-
-    .exam_instruction_text {
-        padding-top: 44px;
-        padding-bottom: 8px;
-    }
-
-    .mock_inst_text_mock_test {
-        display: none;
-    }
-
-    .sidebartoggle .content-wrapper:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(31, 31, 31, 0.6);
-        height: 100%;
-        z-index: 10;
-    }
-
-    .watch-icon {
-        width: 24px;
-    }
-
+        }
+        .mobileview_logout {
+            /* height: calc(100vh - 525px); */
+            position: absolute!important;
+            bottom: 20px;
+            left: 24px;
+        }
+        .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
+        .exam_instruction_text {
+            padding-top: 44px;
+            padding-bottom: 8px;
+        }
+        .mock_inst_text_mock_test {
+            display: none;
+        }
+        .sidebartoggle .content-wrapper:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(31,31,31,0.6);
+            height: 100%;
+            z-index: 10;
+        }
+        .watch-icon {width: 24px;}
+        .test-table  .btn.btn-common-transparent:hover, .test-table  .btn.btn-common-transparent:focus, .test-table  .btn.btn-common-transparent:active, .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:hover, .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:focus, .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:active{background-color: #56b663!important;
+            color: #fff;}
+        
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
