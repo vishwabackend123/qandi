@@ -8012,6 +8012,8 @@ margin-bottom: 12px;
     cursor: pointer;position: relative;
     top: -2px;
 }
+.tooltipmain2 svg g{stroke: #56b663;opacity: 1;}
+
 .tooltipmain2.right-tolltip .tooltipclass {
     left: -367px;
     position: absolute;
@@ -8025,7 +8027,7 @@ margin-bottom: 12px;
     width: 0px;
     top: 15px;
     border-bottom: 12px solid transparent;
-    border-left: 12px solid #1f4736;
+    border-left: 12px solid #56b663;
     right: -12px;
     border-top: 12px solid transparent;
 }
