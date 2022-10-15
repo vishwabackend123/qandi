@@ -28,6 +28,16 @@
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
         max-height: 287px;}
+        .reviewexamType a{
+            
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            cursor: pointer !important;
+        }
+        
+        
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
@@ -81,7 +91,14 @@
     .contectus_bottom_img_svg{bottom: 50px;
         right: 90;
         max-width: 200px;    height: 241px;}
-    .reviewexamType a{font-size: 14px;}
+    .reviewexamType a{
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 130px;
+        cursor: pointer !important;
+    }
     .reviewScreenleft li.nav-item {
         margin-right: 45px;
     }
