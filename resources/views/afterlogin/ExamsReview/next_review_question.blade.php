@@ -603,7 +603,7 @@ $question_type = "Numerical";
             display:none;
         }
         .first_screen_expand{
-            max-height:100% !important;
+            max-height:100% !important;   
         }
     }
 </style>

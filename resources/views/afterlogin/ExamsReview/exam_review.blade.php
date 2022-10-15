@@ -995,7 +995,7 @@ $question_type = "Numerical";
 <style>
     @media only screen and (max-width: 767px) {
         .examReviewscreenmob .reviewans-mainsec {
-            height: 150px;
+            height: 150px;   
         }
 
         .examReviewscreenmob .answer-main-sec {
