@@ -3816,6 +3816,26 @@ label.filter {
         }
         #filterBy{position: relative;}
 
+        #filterBy .filterByexpand  .dropdown-item {
+            padding: 0 0 !important;
+            padding-bottom: 20px !important;
+            font-size: 16px !important;
+            font-weight: 500;
+        }
+
+       #filterBy .filterByexpand {
+            transform: initial!important;
+            right: 18px!important;
+            inset: initial!important;
+            max-width: 172px !important;
+            left: -98px!important;
+            padding: 20px;
+            top: 38px !important;
+        }
+        #filterBy .filterByexpand li:last-child a {
+             padding-bottom: 0px !important;
+          }
+
          /*********************End by Sachin -Date-15-10-22********/
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
