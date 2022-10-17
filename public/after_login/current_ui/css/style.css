@@ -4793,7 +4793,7 @@ header {
 }
 .subjectScoreBlock .row .col-sm-6:nth-child(3) .SubjectscorePannel,.subjectScoreBlock .row .col-sm-6:nth-child(4) .SubjectscorePannel{margin-bottom:0px;}
 .myqTodayGraphSec .dashSubtext{max-width: 78.6%;}
-.tasklistbtn .btn.nobg {
+.mytaskdash .tasklistbtn .btn.nobg {
     background-color: #56b663;
     color: #fff;
 }
