@@ -104,7 +104,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         </div>
                     </div>
                     @if(isset($scoreResponse->test_type) && ($scoreResponse->test_type =='Live' || $scoreResponse->test_type =='Mocktest' || $scoreResponse->test_type =='PreviousYear'))
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius marsk_result_card">
                         <h3 class="boxheading d-flex align-items-center">Marks
                             <span class="tooltipmain2 ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
