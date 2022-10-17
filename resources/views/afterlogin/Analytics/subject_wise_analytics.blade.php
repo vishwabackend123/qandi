@@ -156,10 +156,10 @@
                                     </script>
                                 </div>
                                 <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
-                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom:12px;">Number of questions</h5>
                                     <div class="color_labels">
                                         <span class="d-block"><small></small> Correct <b>{{$val->correct_ans}}</b></span>
-                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$val->incorrect_ans}}</b></span>
+                                        <span class="d-block mt-2 mb-2"><small></small> Incorrect <b>{{$val->incorrect_ans}}</b></span>
                                         <span class="d-block"><small></small> Not Attempted <b>{{$val->unanswered}}</b></span>
                                     </div>
                                 </ul>
