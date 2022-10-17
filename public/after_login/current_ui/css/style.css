@@ -3655,7 +3655,7 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){p
     border-radius: 4px;
     box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
     background-color: #fff; 
-    padding: 20px 20px;
+    padding: 10px 15px;
     width: 200px;
     border: 0;
     min-width: auto;	
@@ -4268,7 +4268,7 @@ span.proficiency_value {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 0 11px;
+    padding: 14px 0 11px;
     border-top: 1px solid #e5eaee;
 }
 .chapter_performance_lists .topic_score_bar .Chapter_Main_Graph {
@@ -4280,8 +4280,8 @@ span.proficiency_value {
 }
 ul.chapter_performance_lists{
     overflow-y: auto;
-    max-height: 277px;
-    min-height: 277px;
+    max-height: 285px;
+    min-height: 285px;
 }
 .chapter_performance_lists li.topic_score_bar:first-child {
     border-top: 0;
