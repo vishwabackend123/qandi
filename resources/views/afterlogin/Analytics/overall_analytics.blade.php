@@ -403,12 +403,12 @@
     if (mockTestScorePre < 0) {
         mockTestScorePre_color = '#E74969';
     }
-     var mockTestScoreCurr = '<?php echo $mockTestScoreCurr ?>';
-     var mockTestScoreCurr_color = '#56b663';
-     if (mockTestScoreCurr < 0) {
+    var mockTestScoreCurr = '<?php echo $mockTestScoreCurr ?>';
+    var mockTestScoreCurr_color = '#56b663';
+    if (mockTestScoreCurr < 0) {
         mockTestScoreCurr_color = '#E74969';
-     }
-    const ctx = document.getElementById('myChart').getContext('2d');
+    }
+    const ctx = document.getElementById("myChart").getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -432,23 +432,25 @@
                 legend: {
                     display: false
                 },
-                tooltip:{
-                    backgroundColor: '#56B663',
-                    displayColors: false
+                tooltip: {
+
+                    displayColors: false,
+                    yAlign: 'bottom',
+                    backgroundColor: colorItems
                 }
             },
 
             // tooltips: {
             //     custom: function(tooltipModel) {
-                
+
             //         if (tooltipModel.opacity !== 0 && data.labels.length && data.datasets.length) {
-                        
+
             //             var index = tooltipModel.dataPoints[0].index;
-                        
+
             //             var dataSetIndex = tooltipModel.dataPoints[0].datasetIndex;
-                    
+
             //             var color =  data.datasets[dataSetIndex].backgroundColor[index];
-                        
+
             //             tooltipModel.backgroundColor = color;
             //         }
             //     }
@@ -477,6 +479,11 @@
             }
         }
     });
+
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
     /***overall-progress chart-End***** */
 
 
@@ -1185,7 +1192,7 @@
                 if (mockTestScoreCurr < 0) {
                     mockTestScoreCurr_color = '#E74969';
                 }
-                myChart.data.datasets[0].backgroundColor = [mockTestScorePre_color, mockTestScoreCurr_color];   
+                myChart.data.datasets[0].backgroundColor = [mockTestScorePre_color, mockTestScoreCurr_color];
                 myChart.update();
             }
         });
@@ -1299,15 +1306,16 @@
         text-align: left;
         color: #1f1f1f;
     }
-        .customDropdown1 input::placeholder {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 1.6;
-            text-align: left;
-            color: #1f1f1f;
-        }
-    </style>
-    <!-- <script>
+
+    .customDropdown1 input::placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.6;
+        text-align: left;
+        color: #1f1f1f;
+    }
+</style>
+<!-- <script>
         $.fn.tabbing = function (options) {
     var opts = {delayTime : 300};
     options = options || {};
@@ -1341,4 +1349,3 @@ $('.tab-content').animate({height: autoHeight}, 100);
 });
     </script> -->
 @endsection
-
