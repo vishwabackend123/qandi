@@ -6366,7 +6366,7 @@ padding: 11px 20px!important;
     padding: unset!important;
 }
 .exam_tabdata .accordion-body {
-    padding: 0px 0px 25px 0px;
+    padding: 0px 0px 0px 0px!important;
 }
 .live_mock_exam_section
 {

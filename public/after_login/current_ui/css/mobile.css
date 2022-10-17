@@ -769,6 +769,9 @@ label.filter {
             }
 }
 @media (min-width:991px){
+    .exam_tabdata .accordion-body {
+        padding: 25px 0px 25px 0px!important;
+    }
     .mobile_block_tab {display:none!important;}
    
     .desktop_hide_performence_analytics
@@ -2705,7 +2708,7 @@ label.filter {
         padding-bottom: 0px!important;
     }
     .TestseriesAttempt22 .exam_tabdata .accordion-body {
-        padding: 24px 0px 0px 0px!important;
+        padding: 0px 0px 0px 0px!important;
     }
     .chapters-expend .accordion-body {
     margin-top: 23px;
