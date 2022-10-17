@@ -39,7 +39,7 @@ class AnalyticsController extends Controller
     public function overallAnalytics(Request $request)
     {
         $active_id = "";
-        //try {
+        try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
@@ -242,9 +242,9 @@ class AnalyticsController extends Controller
             $chapter_name = "";
             $header_title = "Analytics";
             return view('afterlogin.Analytics.overall_analytics', compact('active_id', 'user_subjects', 'mockTestScoreCurr', 'mockTestScorePre', 'lastscore', 'progress', 'subProf', 'date1', 'date2', 'date3', 'days', 'correctTime1', 'incorrectTime1', 'correctTime2', 'incorrectTime2', 'correctTime3', 'incorrectTime3', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3', 'classAccuracy', 'stuAccuracy', 'day', 'classAcc', 'stuAcc', 'subject', 'topicList', 'otherScorePre', 'chapterList', 'chapter_name', 'header_title'));
-        //} catch (\Exception $e) {
-          //  Log::info($e->getMessage());
-        //}
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 
     /**
