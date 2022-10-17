@@ -3560,7 +3560,8 @@ label.filter {
     .first_screen {
         max-height: 217px !important;
         overflow: overlay;
-    width: 100% !important;
+        width: 100% !important;
+        margin: 10px 0px;
     /* min-width: 100% !important;
     max-height: 100% !important; */
        
