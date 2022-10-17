@@ -433,29 +433,11 @@
                     display: false
                 },
                 tooltip: {
-
                     displayColors: false,
-                    yAlign: 'bottom',
+                    // yAlign: 'bottom',
                     backgroundColor: colorItems
                 }
             },
-
-            // tooltips: {
-            //     custom: function(tooltipModel) {
-
-            //         if (tooltipModel.opacity !== 0 && data.labels.length && data.datasets.length) {
-
-            //             var index = tooltipModel.dataPoints[0].index;
-
-            //             var dataSetIndex = tooltipModel.dataPoints[0].datasetIndex;
-
-            //             var color =  data.datasets[dataSetIndex].backgroundColor[index];
-
-            //             tooltipModel.backgroundColor = color;
-            //         }
-            //     }
-            // },
-
             scales: {
                 x: {
                     grid: {
@@ -527,6 +509,11 @@
                 legend: {
                     display: false
                 },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
                 title: {
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
@@ -594,6 +581,11 @@
                 legend: {
                     display: false
                 },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
                 title: {
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
@@ -659,6 +651,11 @@
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 },
                 title: {
                     display: false,
@@ -855,7 +852,14 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+
+                tooltip: {
+
+                displayColors: false,
+                yAlign: 'bottom',
+                backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
