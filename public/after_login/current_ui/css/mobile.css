@@ -3569,6 +3569,9 @@ label.filter {
     .learskill {
         padding-right: 5px;
     }
+    .inputAns textarea {
+        max-width: 100%;
+    }
     .questionright h6 {
   
         width: 150px;
