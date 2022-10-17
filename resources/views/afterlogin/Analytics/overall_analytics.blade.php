@@ -431,8 +431,29 @@
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip:{
+                    backgroundColor: '#56B663',
+                    displayColors: false
                 }
             },
+
+            // tooltips: {
+            //     custom: function(tooltipModel) {
+                
+            //         if (tooltipModel.opacity !== 0 && data.labels.length && data.datasets.length) {
+                        
+            //             var index = tooltipModel.dataPoints[0].index;
+                        
+            //             var dataSetIndex = tooltipModel.dataPoints[0].datasetIndex;
+                    
+            //             var color =  data.datasets[dataSetIndex].backgroundColor[index];
+                        
+            //             tooltipModel.backgroundColor = color;
+            //         }
+            //     }
+            // },
+
             scales: {
                 x: {
                     grid: {
