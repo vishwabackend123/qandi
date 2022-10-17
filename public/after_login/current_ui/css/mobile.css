@@ -28,16 +28,6 @@
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
         max-height: 287px;}
-        .reviewexamType a{
-            
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 200px;
-            cursor: pointer !important;
-        }
-        
-        
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
@@ -91,14 +81,7 @@
     .contectus_bottom_img_svg{bottom: 50px;
         right: 90;
         max-width: 200px;    height: 241px;}
-    .reviewexamType a{
-        font-size: 14px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 130px;
-        cursor: pointer !important;
-    }
+    .reviewexamType a{font-size: 14px;}
     .reviewScreenleft li.nav-item {
         margin-right: 45px;
     }
@@ -205,7 +188,7 @@
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
-     height: 315px;
+     height: 350px;
     }
     .list-ans{
         height: 27vh;
@@ -749,7 +732,9 @@ label.filter {
         .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
             margin-top: 16px;
         } 
-        
+        .liveexamMobileOrder3{order: 3;}
+        .liveexamMobileOrder4{order:4;text-align:right;}
+        .liveexamOnlyOrder2{order: 2;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .vLine{display: none}
@@ -784,6 +769,9 @@ label.filter {
             }
 }
 @media (min-width:991px){
+    .exam_tabdata .accordion-body {
+        padding: 25px 0px 25px 0px!important;
+    }
     .mobile_block_tab {display:none!important;}
    
     .desktop_hide_performence_analytics
@@ -1044,10 +1032,13 @@ label.filter {
     {
         padding-top:16px;
     }
+    .LiveExamMob .mock_test_dure_content2.liveexamOnlyOrder2{padding-top:0px;}
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
         width: 50%!important;
     }
+
+
     .LiveExamMob .btn.btn-common-transparent
     {
         margin-top: 16px;
@@ -1266,6 +1257,8 @@ label.filter {
         width: 50%;
         text-align: right;
     }
+    .Testseriesattemb .mock_test_dure_content2.liveexamMobileOrder3{text-align:left;padding-top:16px;}
+
     .Testseriesattemb .mock_test_ques_content2 {
         width: 50%;
     }
@@ -2452,6 +2445,7 @@ label.filter {
     {
         padding-top:16px;
     }
+    .LiveExamMob .mock_test_dure_content2.liveexamOnlyOrder2{padding-top:0px;}
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
         width: 50%!important;
@@ -2671,6 +2665,7 @@ label.filter {
         width: 50%;
         text-align: right;
     }
+    .Testseriesattemb .mock_test_dure_content2.liveexamMobileOrder3{text-align:left;padding-top:16px;}
     .Testseriesattemb .mock_test_ques_content2 {
         width: 50%;
     }
@@ -2713,7 +2708,7 @@ label.filter {
         padding-bottom: 0px!important;
     }
     .TestseriesAttempt22 .exam_tabdata .accordion-body {
-        padding: 24px 0px 0px 0px!important;
+        padding: 0px 0px 0px 0px!important;
     }
     .chapters-expend .accordion-body {
     margin-top: 23px;
@@ -3565,10 +3560,14 @@ label.filter {
     .first_screen {
         max-height: 217px !important;
         overflow: overlay;
-    width: 100% !important;
+        width: 100% !important;
+        margin: 10px 0px;
     /* min-width: 100% !important;
     max-height: 100% !important; */
        
+    }
+    .learskill {
+        padding-right: 5px;
     }
     .questionright h6 {
   
@@ -3816,26 +3815,6 @@ label.filter {
         }
         #filterBy{position: relative;}
 
-        #filterBy .filterByexpand  .dropdown-item {
-            padding: 0 0 !important;
-            padding-bottom: 20px !important;
-            font-size: 16px !important;
-            font-weight: 500;
-        }
-
-       #filterBy .filterByexpand {
-            transform: initial!important;
-            right: 18px!important;
-            inset: initial!important;
-            max-width: 172px !important;
-            left: -98px!important;
-            padding: 20px;
-            top: 38px !important;
-        }
-        #filterBy .filterByexpand li:last-child a {
-             padding-bottom: 0px !important;
-          }
-
          /*********************End by Sachin -Date-15-10-22********/
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
@@ -3996,7 +3975,7 @@ label.filter {
             .topic_score_bar h4 {
             font-size: 14px;}
             .chapter_performance_lists li.topic_score_bar{padding:14px 0 13px;}
-            ul.chapter_performance_lists {max-height: 420px;min-height:auto;}
+            ul.chapter_performance_lists {max-height: 420px;min-height:240px;}
             .topic_score_bar .Chapter_Main_Graph {width: 40px;height: 40px;}
             .test_analytics_wrapper .topic_score_lists .topic_score_bar h4{font-size:16px;}
 
@@ -4005,8 +3984,9 @@ label.filter {
     .markstrends_whitecard .graphimg , .markstrends_whitecard .graphDetail{
         width: 100%;
     } 
-    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}  
-    .signuprightpannel{overflow-y: inherit;}   
+    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}   
+    .marsk_result_card .tooltipclass{left:-74px;}  
+    .marsk_result_card .tooltipclass:before{left:31%;}
 }
 
 
@@ -4090,7 +4070,9 @@ label.filter {
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
-    .bargraph_size canvas {position: absolute;left: 18px;top: 0; pointer-events:none; }
+    .bargraph_size canvas {position: absolute;left: 18px;top: 0; 
+        /* pointer-events:none;  */
+    }
     .bargraph_size{width:500px;}
     .colorLabels {margin: 0 22px;}
     /************ Amit end *********/

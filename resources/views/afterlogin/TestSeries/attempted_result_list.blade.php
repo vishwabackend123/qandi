@@ -1,6 +1,6 @@
 <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1 m mobilescrolltab" id="testTypeDiv">
     <div class="mobilehoriontal450">
-        <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
+        <ul class="nav nav-pills d-inline-flex mobilescrolltabNew" id="marks-tab" role="tablist">
             <li class="nav-item" role="presentation" type="button">
                 <button class="nav-link btn pt-0 pb-0 all_attemp active">All Test Series</button>
             </li>
@@ -115,12 +115,12 @@
 
                     @if($sche->test_type == 'Live')
                     <div class="live_exam_diveder_div"></div>
-                    <div class="mock_test_dure_content2">
+                    <div class="mock_test_dure_content2 liveexamMobileOrder3">
                         <div class="mock_test_q_d_m_s_text1">Start Date</div>
                         <div class="mock_test_qdms_text2"><span>{{date('d F Y', strtotime($sche->stat_date));}}</span></div>
                     </div>
                     <div class="live_exam_diveder_div"></div>
-                    <div class="mock_test_marks_content2">
+                    <div class="mock_test_marks_content2 liveexamMobileOrder4">
                         <div class="mock_test_q_d_m_s_text1">End Date</div>
                         <div class="mock_test_qdms_text2">{{date('d F Y', strtotime($sche->end_date));}}</div>
                     </div>
@@ -146,11 +146,19 @@
                         <div class="mock_test_qdms_text2">Morning</div>
                     </div>
                     @endif
+                    @if($sche->test_type == 'Live')
+                    <div class="live_exam_diveder_div"></div>
+                    <div class="mock_test_dure_content2 align_left_text_div liveexamOnlyOrder2">
+                        <div class="mock_test_q_d_m_s_text1">Score</div>
+                        <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$marks}}</span></div>
+                    </div>
+                    @else
                     <div class="live_exam_diveder_div"></div>
                     <div class="mock_test_dure_content2 align_left_text_div">
                         <div class="mock_test_q_d_m_s_text1">Score</div>
                         <div class="mock_test_qdms_text2"><span>{{$sche->marks_gain}}</span>/<span>{{$marks}}</span></div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

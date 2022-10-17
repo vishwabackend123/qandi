@@ -662,7 +662,14 @@ $question_type = "Numerical";
                 return false;
             }
         }
-
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            $("#questNo  #btn_" + activeques_id).focusout();
+            $('#quest_option_' + activeques_id).focusout();
+        } else {
+            $("#questNo  #btn_" + activeques_id).focus();
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
 </script>
 <!-- /page referesh disabled -->

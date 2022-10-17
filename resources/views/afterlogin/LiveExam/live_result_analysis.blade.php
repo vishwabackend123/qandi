@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
-                    <div class="commonWhiteBox commonblockDash borderRadius">
+                    <div class="commonWhiteBox commonblockDash borderRadius marsk_result_card">
                         <h3 class="boxheading d-flex align-items-center">Marks
                             <span class="tooltipmain ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -426,10 +426,10 @@
                                                         </script>
                                                     </div>
                                                     <ul class="dropdown-menu noofquestions-block" aria-labelledby="dropdownMenuButton1">
-                                                        <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                        <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 12px;">Number of questions</h5>
                                                         <div class="color_labels">
                                                             <span class="d-block"><small></small> Correct <b>{{$topic->correct_count}}</b></span>
-                                                            <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
+                                                            <span class="d-block mt-2 mb-2"><small></small> Incorrect <b>{{$topic->incorrect_count}}</b></span>
                                                             <span class="d-block"><small></small> Not Attempted <b>{{$topic->unanswered_count}}</b></span>
                                                         </div>
                                                     </ul>
