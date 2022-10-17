@@ -3982,7 +3982,7 @@ label.filter {
     } 
     .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}   
     .marsk_result_card .tooltipclass{left:-74px;}  
-    .marsk_result_card .tooltipclass:before{left:-31%;}
+    .marsk_result_card .tooltipclass:before{left:31%;}
 }
 
 
