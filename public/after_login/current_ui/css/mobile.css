@@ -28,16 +28,6 @@
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
         max-height: 287px;}
-        .reviewexamType a{
-            
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 200px;
-            cursor: pointer !important;
-        }
-        
-        
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
@@ -91,14 +81,7 @@
     .contectus_bottom_img_svg{bottom: 50px;
         right: 90;
         max-width: 200px;    height: 241px;}
-    .reviewexamType a{
-        font-size: 14px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 130px;
-        cursor: pointer !important;
-    }
+    .reviewexamType a{font-size: 14px;}
     .reviewScreenleft li.nav-item {
         margin-right: 45px;
     }
@@ -205,7 +188,7 @@
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
-     height: 315px;
+     height: 350px;
     }
     .list-ans{
         height: 27vh;
@@ -461,9 +444,9 @@ button.btn-ans:nth-child(7n) {
     overflow-x: auto;
 }
 
-/* .testscreenmob .mobilescrolltab, .testscreenmob .mobilescrolltabNew {
+.testscreenmob .mobilescrolltab, .testscreenmob .mobilescrolltabNew {
     overflow-x: initial !important;
-} */
+}
 
 .aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before, .aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
     bottom: -5.4px;
@@ -749,7 +732,6 @@ label.filter {
         .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
             margin-top: 16px;
         } 
-        
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .vLine{display: none}
@@ -1608,9 +1590,9 @@ button.btn-ans:nth-child(7n) {
     overflow-x: auto;
 }
 
-/* .testscreenmob .mobilescrolltab, .testscreenmob .mobilescrolltabNew {
+.testscreenmob .mobilescrolltab, .testscreenmob .mobilescrolltabNew {
     overflow-x: initial !important;
-} */
+}
 
 .aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before, .aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
     bottom: -5.4px;
@@ -3816,26 +3798,6 @@ label.filter {
         }
         #filterBy{position: relative;}
 
-        #filterBy .filterByexpand  .dropdown-item {
-            padding: 0 0 !important;
-            padding-bottom: 20px !important;
-            font-size: 16px !important;
-            font-weight: 500;
-        }
-
-       #filterBy .filterByexpand {
-            transform: initial!important;
-            right: 18px!important;
-            inset: initial!important;
-            max-width: 172px !important;
-            left: -98px!important;
-            padding: 20px;
-            top: 38px !important;
-        }
-        #filterBy .filterByexpand li:last-child a {
-             padding-bottom: 0px !important;
-          }
-
          /*********************End by Sachin -Date-15-10-22********/
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
@@ -4005,8 +3967,7 @@ label.filter {
     .markstrends_whitecard .graphimg , .markstrends_whitecard .graphDetail{
         width: 100%;
     } 
-    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}  
-    .signuprightpannel{overflow-y: inherit;}   
+    .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}     
 }
 
 
@@ -4090,7 +4051,9 @@ label.filter {
     /************ Amit start *********/
     .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link{font-size:14px;}
     .bargraph_scroll{ overflow-x: auto;    padding-bottom: 23px;}
-    .bargraph_size canvas {position: absolute;left: 18px;top: 0; pointer-events:none; }
+    .bargraph_size canvas {position: absolute;left: 18px;top: 0; 
+        /* pointer-events:none;  */
+    }
     .bargraph_size{width:500px;}
     .colorLabels {margin: 0 22px;}
     /************ Amit end *********/
