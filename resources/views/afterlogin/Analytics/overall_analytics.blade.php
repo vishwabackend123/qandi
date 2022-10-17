@@ -74,7 +74,7 @@
                                                         </svg>
                                                         <p class="tooltipclass">
                                                             <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                                            Check your proficiency levels across subjects.
+                                                            Check your proficiency level across subjects.
                                                         </p>
                                                     </span>
                                                 </h3>
