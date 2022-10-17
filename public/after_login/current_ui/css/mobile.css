@@ -732,6 +732,9 @@ label.filter {
         .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
             margin-top: 16px;
         } 
+        .liveexamMobileOrder3{order: 3;}
+        .liveexamMobileOrder4{order:4;text-align:right;}
+        .liveexamOnlyOrder2{order: 2;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .vLine{display: none}
@@ -1026,10 +1029,13 @@ label.filter {
     {
         padding-top:16px;
     }
+    .LiveExamMob .mock_test_dure_content2.liveexamOnlyOrder2{padding-top:0px;}
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
         width: 50%!important;
     }
+
+
     .LiveExamMob .btn.btn-common-transparent
     {
         margin-top: 16px;
@@ -1248,6 +1254,8 @@ label.filter {
         width: 50%;
         text-align: right;
     }
+    .Testseriesattemb .mock_test_dure_content2.liveexamMobileOrder3{text-align:left;padding-top:16px;}
+
     .Testseriesattemb .mock_test_ques_content2 {
         width: 50%;
     }
@@ -2434,6 +2442,7 @@ label.filter {
     {
         padding-top:16px;
     }
+    .LiveExamMob .mock_test_dure_content2.liveexamOnlyOrder2{padding-top:0px;}
     .LiveExamMob .mock_test_sub_content {
         text-align: right;
         width: 50%!important;
@@ -2653,6 +2662,7 @@ label.filter {
         width: 50%;
         text-align: right;
     }
+    .Testseriesattemb .mock_test_dure_content2.liveexamMobileOrder3{text-align:left;padding-top:16px;}
     .Testseriesattemb .mock_test_ques_content2 {
         width: 50%;
     }
