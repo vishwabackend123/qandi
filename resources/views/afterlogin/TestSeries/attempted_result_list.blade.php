@@ -1,6 +1,6 @@
 <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1 m mobilescrolltab" id="testTypeDiv">
     <div class="mobilehoriontal450">
-        <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
+        <ul class="nav nav-pills d-inline-flex mobilescrolltabNew" id="marks-tab" role="tablist">
             <li class="nav-item" role="presentation" type="button">
                 <button class="nav-link btn pt-0 pb-0 all_attemp active">All Test Series</button>
             </li>
