@@ -29,7 +29,7 @@ $userData = Session::get('user_data');
                                     </svg>
                                     <p class="tooltipclass">
                                         <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        An actionable matrix of your strengths, weaknesses and your improvement areas.
+                                        An actionable matrix of your strengths, weaknesses and improvement areas.
                                     </p>
                                 </span>
                             </h3>

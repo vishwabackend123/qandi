@@ -413,7 +413,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                         <p class="tooltipclass">
                                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                            An actionable matrix of your strengths, weaknesses and your improvement areas.
+                                            An actionable matrix of your strengths, weaknesses and improvement areas.
                                         </p>
                                     </span>
                                 </h3>
