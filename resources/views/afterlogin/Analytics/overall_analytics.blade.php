@@ -724,6 +724,11 @@
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
                 },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             interaction: {
                 intersect: false,
@@ -786,6 +791,11 @@
                 title: {
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 },
             },
             interaction: {
@@ -931,7 +941,12 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
@@ -1002,7 +1017,12 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
