@@ -230,10 +230,10 @@ $question_type = "Numerical";
                 <div class="btnformobietest hideondesktop">
                     <div class="btnbottom">
                         <div class="questionbtnBlock">
-                            <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+
+
                             <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
-                            <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
+                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
                             <!-- <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button> -->
 
 
@@ -1427,16 +1427,16 @@ $question_type = "Numerical";
 </script>
 
 <script>
-    $(document).ready(function(){
-      $(window).resize(function(){
-        var newWindowWidth2 = $(window).width();
-        if (newWindowWidth2 > 1200) {
-            $('.main-textexam-sec').show();
+    $(document).ready(function() {
+        $(window).resize(function() {
+            var newWindowWidth2 = $(window).width();
+            if (newWindowWidth2 > 1200) {
+                $('.main-textexam-sec').show();
 
             } else {
                 $('.main-textexam-sec').hide();
             }
-      });
+        });
     });
 </script>
 @include('afterlogin.layouts.footer_new')
