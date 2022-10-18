@@ -213,6 +213,9 @@
                 if (e.which == 39) {
                     $(e.target).next('.otp_num').focus();
                 }
+                if (e.which == 229 && e.which != 8) {
+                    $(e.target).next('.otp_num').focus();
+                }
                 if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
                     $('#otp-verify-btn').removeAttr("disabled");
                     $('#otp-verify-btn').removeClass("disabled");
