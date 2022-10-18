@@ -659,6 +659,9 @@
             if (e.which == 39) {
                 $(e.target).next('.otp').focus();
             }
+            if (e.which == 229 && e.which != 37) {
+                $(e.target).next('.otp').focus();
+            }
         });
 
         $('.reqrd').keyup(function() {
