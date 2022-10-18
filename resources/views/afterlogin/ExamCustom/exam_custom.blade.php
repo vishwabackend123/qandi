@@ -68,7 +68,7 @@
                                             <input type="hidden" class="selected_topic" name="topics">
                                             <input type="hidden" id="selected_tab" name="selected_tab">
                                             <input type="hidden" name="question_count" value="30">
-                                            <button type="submit" class="btn btn-common-transparent bg-transparent me-sm-3">Practice for selected topics</button>
+                                            <button type="text" class="btn btn-common-transparent me-sm-3">Practice for selected topics</button>
                                         </form>
                                         <a href="javascript:void(0);" onclick="clearTopics();" class="clearsec">Clear Selection</a>
                                     </div>

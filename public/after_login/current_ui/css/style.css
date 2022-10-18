@@ -4254,6 +4254,7 @@ span.proficiency_value {
 .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:focus , .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:active
 {
     background-color: #56b663!important;
+    background: #56b663!important;
     color: #fff;
 }
 #referedfrnd .modal-content {
