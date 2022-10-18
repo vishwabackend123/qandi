@@ -3060,7 +3060,7 @@ line-height: 1.6;
     padding: 8px 16px;
     border-radius: 8px;
     border: solid 1px #56b663;
-    background-color: red;
+    background-color: #f5faf6;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
@@ -4254,7 +4254,6 @@ span.proficiency_value {
 .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:focus , .mock_test_btn_content .btn.btn-common-transparent.bg-transparent:active
 {
     background-color: #56b663!important;
-    background: #56b663!important;
     color: #fff;
 }
 #referedfrnd .modal-content {

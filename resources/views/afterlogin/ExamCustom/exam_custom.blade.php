@@ -68,7 +68,7 @@
                                             <input type="hidden" class="selected_topic" name="topics">
                                             <input type="hidden" id="selected_tab" name="selected_tab">
                                             <input type="hidden" name="question_count" value="30">
-                                            <button type="text" class="btn btn-common-transparent me-sm-3">Practice for selected topics</button>
+                                            <button type="submit" class="btn btn-common-transparent bg-transparent me-sm-3">Practice for selected topics</button>
                                         </form>
                                         <a href="javascript:void(0);" onclick="clearTopics();" class="clearsec">Clear Selection</a>
                                     </div>
@@ -115,7 +115,7 @@
                                                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                                         <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                                                         <input type="hidden" name="question_count" value="30">
-                                                        <button class="btn btn-common-transparent w-100">Practice</button>
+                                                        <button class="btn btn-common-transparent bg-transparent w-100">Practice</button>
                                                     </form>
                                                 </div>
                                             </div>
