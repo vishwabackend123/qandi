@@ -277,6 +277,11 @@
                 input(ev) { // Handle typing
 
                     const i = $inp.index(this);
+                    var input_val=this.value;
+                    if(!input_val.match(/^\d+$/)) {
+                        $(this).val('');
+                        return false;
+                    }
                     if (this.value) $inp.eq(i + 1).focus();
                 },
                 keydown(ev) { // Handle Deleting
