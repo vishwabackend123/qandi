@@ -1455,10 +1455,8 @@ $question_type = "Numerical";
         if (newWindowWidth2 > 1200) {
             $('.main-textexam-sec').show();
 
-       
-
             } else {
-             
+              $('.main-textexam-sec').hide();
             }
       });
     });

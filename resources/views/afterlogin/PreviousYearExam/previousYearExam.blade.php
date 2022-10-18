@@ -1683,20 +1683,4 @@ $question_type = "Numerical";
 
     });
 </script>
-
-<script>
-    $(document).ready(function(){
-      $(window).resize(function(){
-        var newWindowWidth2 = $(window).width();
-        if (newWindowWidth2 > 1200) {
-            $('.main-textexam-sec').show();
-
-         
-
-            } else {
-             
-            }
-      });
-    });
-</script>
 @endsection
