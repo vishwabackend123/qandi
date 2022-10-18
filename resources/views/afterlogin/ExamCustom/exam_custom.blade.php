@@ -115,7 +115,7 @@
                                                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                                         <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                                                         <input type="hidden" name="question_count" value="30">
-                                                        <button class="btn btn-common-transparent bg-transparent w-100">Practice</button>
+                                                        <button class="btn btn-common-transparent w-100">Practice</button>
                                                     </form>
                                                 </div>
                                             </div>
