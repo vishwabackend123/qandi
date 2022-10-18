@@ -1644,12 +1644,13 @@ a.btn-common-attempted svg {
     line-height: 1.43;
     letter-spacing: normal;
     text-align: left;
-    color: rgba(54, 60, 79, 0.8);
+    color: #56b663;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
+.backBtn a  span svg path{ stroke: #56b663;stroke-opacity:1;opacity:1;}
 /************************************Page-Test-Exam-Screen-Start---By-Sachin-Date-13-07-2022**************/
 .inputAns textarea {
     width: 360px;
