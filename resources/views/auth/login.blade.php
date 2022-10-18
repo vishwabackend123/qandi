@@ -202,7 +202,6 @@
                 var opt_three = $('#opt_three').val();
                 var opt_four = $('#opt_four').val();
                 var opt_five = $('#opt_five').val();
-                alert(e.which);
                 if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
                     $(e.target).next('.otp_num').focus();
                 } else if (e.which == 8) {
@@ -212,6 +211,9 @@
                     $(e.target).prev('.otp_num').focus();
                 }
                 if (e.which == 39) {
+                    $(e.target).next('.otp_num').focus();
+                }
+                if (e.which == 229 && e.which != 8) {
                     $(e.target).next('.otp_num').focus();
                 }
                 if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
