@@ -3990,7 +3990,13 @@ label.filter {
     .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}   
     .marsk_result_card .tooltipclass{left:-74px;}  
     .marsk_result_card .tooltipclass:before{left:31%;}
-    /* .performance_chapter_block label b{margin-right: 0px;min-width: auto;} */
+    .performance_chapter_block label b{margin-right: 0px;min-width: auto;}
+    .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block label {
+        padding-left: 30px;
+    }
+    .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block .chapter_Perfrom_Graph {
+        padding-left: 25px;
+    }
 }
 
 
