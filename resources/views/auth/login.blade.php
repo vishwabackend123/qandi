@@ -203,7 +203,8 @@
                 var opt_four = $('#opt_four').val();
                 var opt_five = $('#opt_five').val();
                 if(!opt_one.match(/^\d+$/)) {
-                 return false;
+                    $('#opt_one').val('');
+                    return false;
                 }
                 if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
                     $(e.target).next('.otp_num').focus();
