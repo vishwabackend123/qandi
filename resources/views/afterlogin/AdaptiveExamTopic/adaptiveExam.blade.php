@@ -1434,7 +1434,7 @@ $question_type = "Numerical";
             $('.main-textexam-sec').show();
 
             } else {
-             
+                $('.main-textexam-sec').hide();
             }
       });
     });
