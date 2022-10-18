@@ -206,6 +206,22 @@
                     $('#opt_one').val('');
                     return false;
                 }
+                if(!opt_two.match(/^\d+$/)) {
+                    $('#opt_two').val('');
+                    return false;
+                }
+                if(!opt_three.match(/^\d+$/)) {
+                    $('#opt_three').val('');
+                    return false;
+                }
+                if(!opt_four.match(/^\d+$/)) {
+                    $('#opt_four').val('');
+                    return false;
+                }
+                if(!opt_five.match(/^\d+$/)) {
+                    $('#opt_five').val('');
+                    return false;
+                }
                 if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
                     $(e.target).next('.otp_num').focus();
                 } else if (e.which == 8) {
