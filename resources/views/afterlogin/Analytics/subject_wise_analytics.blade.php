@@ -690,7 +690,12 @@ var myChartmath = new Chart(ctxmath, {
         plugins: {
             legend: {
                 display: false
-            }
+            },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         scales: {
             x: {
@@ -747,7 +752,12 @@ var config8 = {
                 display: false,
                 text: 'Chart.js Bar Chart - Stacked'
             },
-            legend: false
+            legend: false,
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         responsive: true,
         maintainAspectRatio: false,
@@ -809,7 +819,12 @@ var config9 = {
                 display: false,
                 text: 'Chart.js Bar Chart - Stacked'
             },
-            legend: false
+            legend: false,
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         responsive: true,
         maintainAspectRatio: false,
@@ -870,7 +885,12 @@ var config7 = {
                 display: false,
                 text: 'Chart.js Bar Chart - Stacked'
             },
-            legend: false
+            legend: false,
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         responsive: true,
         maintainAspectRatio: false,
@@ -941,6 +961,11 @@ var configaccuracy = {
             legend: {
                 display: false
             },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
             title: {
                 display: false,
                 text: 'Chart.js Line Chart - Cubic interpolation mode'
@@ -1003,6 +1028,11 @@ var configmarktrend = {
         plugins: {
             legend: {
                 display: false
+            },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
             },
             title: {
                 display: false,
@@ -1071,6 +1101,11 @@ var configmarktrendw = {
                 display: false,
                 text: 'Chart.js Line Chart - Cubic interpolation mode'
             },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         interaction: {
             intersect: false,
@@ -1134,6 +1169,11 @@ var configmarktrendm = {
                 display: false,
                 text: 'Chart.js Line Chart - Cubic interpolation mode'
             },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
         },
         interaction: {
             intersect: false,
@@ -1196,6 +1236,11 @@ var configtm2 = {
             legend: {
                 display: false
             },
+            tooltip: {
+                displayColors: false,
+                // yAlign: 'bottom',
+                backgroundColor: colorItems
+            },
             title: {
                 display: false,
                 text: 'Chart.js Line Chart - Cubic interpolation mode'
@@ -1223,6 +1268,11 @@ var myCharttm2 = new Chart(
     configtm2
 );
 /****time-sheet2******* */
+
+function colorItems(tooltipItem) {
+    const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+    return tooltipBackColor;
+}
 
 </script>
 <script>

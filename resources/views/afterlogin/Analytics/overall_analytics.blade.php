@@ -403,12 +403,12 @@
     if (mockTestScorePre < 0) {
         mockTestScorePre_color = '#E74969';
     }
-     var mockTestScoreCurr = '<?php echo $mockTestScoreCurr ?>';
-     var mockTestScoreCurr_color = '#56b663';
-     if (mockTestScoreCurr < 0) {
+    var mockTestScoreCurr = '<?php echo $mockTestScoreCurr ?>';
+    var mockTestScoreCurr_color = '#56b663';
+    if (mockTestScoreCurr < 0) {
         mockTestScoreCurr_color = '#E74969';
-     }
-    const ctx = document.getElementById('myChart').getContext('2d');
+    }
+    const ctx = document.getElementById("myChart").getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -431,6 +431,11 @@
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 }
             },
             scales: {
@@ -456,6 +461,11 @@
             }
         }
     });
+
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
     /***overall-progress chart-End***** */
 
 
@@ -498,6 +508,11 @@
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 },
                 title: {
                     display: false,
@@ -566,6 +581,11 @@
                 legend: {
                     display: false
                 },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
                 title: {
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
@@ -631,6 +651,11 @@
             plugins: {
                 legend: {
                     display: false
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 },
                 title: {
                     display: false,
@@ -699,6 +724,11 @@
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
                 },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             interaction: {
                 intersect: false,
@@ -761,6 +791,11 @@
                 title: {
                     display: false,
                     text: 'Chart.js Line Chart - Cubic interpolation mode'
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
                 },
             },
             interaction: {
@@ -827,7 +862,14 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+
+                tooltip: {
+
+                displayColors: false,
+                yAlign: 'bottom',
+                backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
@@ -899,7 +941,12 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
@@ -970,7 +1017,12 @@
                     display: false,
                     text: 'Chart.js Bar Chart - Stacked'
                 },
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             responsive: true,
             maintainAspectRatio: false,
@@ -1164,7 +1216,7 @@
                 if (mockTestScoreCurr < 0) {
                     mockTestScoreCurr_color = '#E74969';
                 }
-                myChart.data.datasets[0].backgroundColor = [mockTestScorePre_color, mockTestScoreCurr_color];   
+                myChart.data.datasets[0].backgroundColor = [mockTestScorePre_color, mockTestScoreCurr_color];
                 myChart.update();
             }
         });
@@ -1278,15 +1330,16 @@
         text-align: left;
         color: #1f1f1f;
     }
-        .customDropdown1 input::placeholder {
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 1.6;
-            text-align: left;
-            color: #1f1f1f;
-        }
-    </style>
-    <!-- <script>
+
+    .customDropdown1 input::placeholder {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.6;
+        text-align: left;
+        color: #1f1f1f;
+    }
+</style>
+<!-- <script>
         $.fn.tabbing = function (options) {
     var opts = {delayTime : 300};
     options = options || {};
@@ -1320,4 +1373,3 @@ $('.tab-content').animate({height: autoHeight}, 100);
 });
     </script> -->
 @endsection
-
