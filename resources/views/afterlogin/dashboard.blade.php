@@ -1185,6 +1185,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                         display: false,
                         text: 'Chart.js Line Chart - Cubic interpolation mode'
                     },
+                    tooltip: {
+                        displayColors: false,
+                        // yAlign: 'bottom',
+                        backgroundColor: colorItems
+                    },
                 },
                 interaction: {
                     intersect: false,
@@ -1260,6 +1265,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                         display: false,
                         text: 'Chart.js Line Chart - Cubic interpolation mode'
                     },
+                    tooltip: {
+                        displayColors: false,
+                        // yAlign: 'bottom',
+                        backgroundColor: colorItems
+                    },
                 },
                 interaction: {
                     intersect: false,
@@ -1291,6 +1301,12 @@ $user_id = isset($userData->id)?$userData->id:'';
             document.getElementById('trend_graph'),
             config2
         );
+
+        function colorItems(tooltipItem) {
+            const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+            return tooltipBackColor;
+        }
+
     </script>
     <script>
         function show(value, type, ids) {
