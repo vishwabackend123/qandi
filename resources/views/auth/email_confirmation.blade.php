@@ -53,8 +53,11 @@
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
         @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invald Token')
-        <p class="email_head"><span>Invalid token</span></p>
-        <p><label><b></b> Invalid token</label></p>
+        <p class="email_head"><span>Invalid link</span></p>
+        <p><label><b></b> </label></p>
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
+        </div>
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
         @if($message_success == 'Email already Verified')
