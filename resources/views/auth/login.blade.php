@@ -202,6 +202,9 @@
                 var opt_three = $('#opt_three').val();
                 var opt_four = $('#opt_four').val();
                 var opt_five = $('#opt_five').val();
+                if(!opt_one.match(/^\d+$/)) {
+                 return false;
+                }
                 if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
                     $(e.target).next('.otp_num').focus();
                 } else if (e.which == 8) {
@@ -345,7 +348,6 @@
         function isNumber(evt) {
             evt = (evt) ? evt : window.event;
             var charCode = (evt.which) ? evt.which : evt.keyCode;
-            alert(charCode);
             if (charCode > 31 && (charCode < 48 || charCode > 57)) {
                 return false;
             }
