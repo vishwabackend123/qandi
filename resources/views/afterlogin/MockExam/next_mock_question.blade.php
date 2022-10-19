@@ -300,7 +300,7 @@ $question_type = "Numerical";
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
-        alert("hi");
+        alert("hi2");
 
         if (event.charCode === 46) {
             // if dot is the first symbol
