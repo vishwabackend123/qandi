@@ -501,6 +501,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
 @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
 <script>
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
     /*********** BarChart ***********/
     var student_scr = '<?php echo $stuscore ?>';
     var student_bar_color = '#56b663';
@@ -530,7 +534,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
             plugins: {
                 legend: {
                     display: false
-                }
+                },
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                },
             },
             scales: {
                 x: {
