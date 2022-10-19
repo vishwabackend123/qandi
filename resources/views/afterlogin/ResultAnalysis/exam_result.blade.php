@@ -287,12 +287,6 @@ $clsAvg_json=json_encode($clsAvg_arr);
 </script>
 @if(isset($scoreResponse->test_type) && $scoreResponse->test_type !='Assessment')
 <script type="text/javascript">
-
-function colorItems(tooltipItem) {
-        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
-        return tooltipBackColor;
-    }
-
     var student_scr = '<?php echo $stuscore ?>';
     var student_bar_color = '#56b663';
     if (student_scr < 0) {
@@ -326,7 +320,7 @@ function colorItems(tooltipItem) {
                 tooltip: {
                     displayColors: false,
                     // yAlign: 'bottom',
-                    backgroundColor: colorItems
+                    backgroundColor: colorItems_1
                 },
             },
             scales: {
@@ -342,6 +336,10 @@ function colorItems(tooltipItem) {
             }
         }
     });
+    function colorItems_1(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
 
     function resetData(subject_id) {
         /* var subject_data_json = JSON.parse($('#subject_data').val()); */
@@ -463,11 +461,21 @@ function colorItems(tooltipItem) {
             plugins: {
                 title: false,
                 subtitle: false,
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                }
             },
         }
     };
     const myscore = new Chart("myscoregraph", myscoreconfig)
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
+    
 
     /***************** halfdoughnut - end *********************/
 </script>

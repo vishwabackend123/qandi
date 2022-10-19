@@ -258,7 +258,12 @@
                 plugins: {
                     title: false,
                     subtitle: false,
-                    legend: false
+                    legend: false,
+                    tooltip: {
+                    displayColors: false,
+                        // yAlign: 'bottom',
+                        backgroundColor: colorItems
+                    }
                 },
             }
         };
