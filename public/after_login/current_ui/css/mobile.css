@@ -3466,7 +3466,7 @@ label.filter {
             } */
             .testscreenmob .quesbox img ,.reviewscreenquestion .quesbox img{
                 max-width: 280px;
-                height: auto !important;
+                height: auto !important;margin-top: 10px;
             }
 
             .testscreenmob .examRightpanelmob{
