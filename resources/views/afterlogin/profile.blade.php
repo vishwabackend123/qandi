@@ -62,19 +62,19 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnly" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnly" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Display Name</label>
-                                        <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required onkeypress="return onlyAlphabetsDisplay(event,this);"  onkeyup="return onlyAlphabetsDisplay(event,this);"  maxlength="25" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnly" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="25" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -461,7 +461,6 @@ $user_id = isset($userData->id)?$userData->id:'';
         }
 
         function onlyAlphabetsDisplay(e, t) {
-            alert(e.charCode);
             return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
         }
         $("#username").keyup(function() {
@@ -484,6 +483,18 @@ $user_id = isset($userData->id)?$userData->id:'';
              $(this).valid();
             }
 
+        });
+        $('.txtOnly').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            else
+            {
+                e.preventDefault();
+                return false;
+            }
         });
     </script>
 </body>
