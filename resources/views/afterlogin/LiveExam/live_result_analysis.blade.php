@@ -250,11 +250,20 @@
                                                 plugins: {
                                                     title: false,
                                                     subtitle: false,
-                                                    legend: false
+                                                    legend: false,
+                                                    tooltip: {
+                                                        displayColors: false,
+                                                        // yAlign: 'bottom',
+                                                        backgroundColor: colorItems_1
+                                                    }
                                                 },
                                             }
                                         };
                                         var myCharted = new Chart(ids, config)
+                                        function colorItems_1(tooltipItem) {
+                                            const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+                                            return tooltipBackColor;
+                                        }
                                     </script>
                                     <div class="color_labels ms-5">
                                         <span class="d-block">Correct <b><small></small>{{$subject->correct_count}}</b></span>
@@ -501,10 +510,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
 @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
 <script>
-    function colorItems(tooltipItem) {
-        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
-        return tooltipBackColor;
-    }
+    
     /*********** BarChart ***********/
     var student_scr = '<?php echo $stuscore ?>';
     var student_bar_color = '#56b663';
@@ -538,7 +544,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
                 tooltip: {
                     displayColors: false,
                     // yAlign: 'bottom',
-                    backgroundColor: colorItems
+                    backgroundColor: colorItems_2
                 },
             },
             scales: {
@@ -554,6 +560,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
             }
         }
     });
+    function colorItems_2(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
 
     function resetData(subject_id) {
         if (subject_id == 'all') {
@@ -657,11 +667,20 @@ $clsAvg_json=json_encode($clsAvg_arr);
             plugins: {
                 title: false,
                 subtitle: false,
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                }
             },
         }
     };
     const myscore = new Chart("myscoregraph", myscoreconfig)
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
     $("span.tooltipmain svg").click(function(event) {
         event.stopPropagation();
 
