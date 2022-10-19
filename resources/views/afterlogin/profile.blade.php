@@ -74,7 +74,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Display Name</label>
-                                        <input type="text" class="form-control" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="25" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnlySpace" placeholder="Display Name" value="{{$userData->user_name}}" id="username" name="username" required onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="25" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -187,7 +187,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                         $interval = $datetime1->diff($datetime2);
                         $days = $interval->format('%a');
                         @endphp
-                        <div class="bg-white subscription-details mt-5">
+                        @if($days <=14)
+                           <div class="bg-white subscription-details mt-5 withupgradebutton">
+                            @else    
+                           <div class="bg-white subscription-details mt-5">
+                             @endif
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
                                 <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
                                 @if($days <=14) <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
@@ -486,8 +490,12 @@ $user_id = isset($userData->id)?$userData->id:'';
         });
         $('.txtOnly').bind('keyup blur',function(){ 
             var node = $(this);
-            node.val(node.val().replace(/[^a-zA-Z]/g,'') ); }
-        );
+            node.val(node.val().replace(/[^a-zA-Z]/g,'') ); 
+        });
+        $('.txtOnlySpace').bind('keyup blur',function(){ 
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z\s]/g,'') ); 
+        });
     </script>
 </body>
 @endsection
