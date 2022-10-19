@@ -3464,7 +3464,7 @@ label.filter {
                 min-width: 130px;
                 max-width: 130px;
             } */
-            .testscreenmob .quesbox img {
+            .testscreenmob .quesbox img ,.reviewscreenquestion .quesbox img{
                 max-width: 280px;
                 height: auto !important;
             }
