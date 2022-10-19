@@ -165,13 +165,20 @@
                                                                                 tooltip: {
                                                                                     bodyFont: {
                                                                                         "size": 10,
-                                                                                    }
+                                                                                    },
+                                                                                    displayColors: false,
+                                                                                    // yAlign: 'bottom',
+                                                                                    backgroundColor: colorItems_1
                                                                                 }
                                                                             },
 
                                                                         }
                                                                     };
                                                                     var myCharted = new Chart("subjectChart_{{$sub->subject_name}}", config)
+                                                                    function colorItems_1(tooltipItem) {
+                                                                        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+                                                                        return tooltipBackColor;
+                                                                    }
                                                                 </script>
                                                             </div>
                                                         </div>

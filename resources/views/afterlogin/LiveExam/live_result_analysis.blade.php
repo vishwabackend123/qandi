@@ -250,11 +250,20 @@
                                                 plugins: {
                                                     title: false,
                                                     subtitle: false,
-                                                    legend: false
+                                                    legend: false,
+                                                    tooltip: {
+                                                        displayColors: false,
+                                                        // yAlign: 'bottom',
+                                                        backgroundColor: colorItems_1
+                                                    }
                                                 },
                                             }
                                         };
                                         var myCharted = new Chart(ids, config)
+                                        function colorItems_1(tooltipItem) {
+                                            const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+                                            return tooltipBackColor;
+                                        }
                                     </script>
                                     <div class="color_labels ms-5">
                                         <span class="d-block">Correct <b><small></small>{{$subject->correct_count}}</b></span>
@@ -657,7 +666,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
             plugins: {
                 title: false,
                 subtitle: false,
-                legend: false
+                legend: false,
+                tooltip: {
+                    displayColors: false,
+                    // yAlign: 'bottom',
+                    backgroundColor: colorItems
+                }
             },
         }
     };
