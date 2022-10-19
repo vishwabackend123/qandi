@@ -290,12 +290,13 @@ $question_type = "Numerical";
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         console.log(event.which);
+
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
             event.preventDefault();
         }
-        var text = $(this).val();
+        let text = $(this).val();
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
@@ -315,6 +316,7 @@ $question_type = "Numerical";
             }
 
         }
+        alert("hi");
     });
 
     jQuery(function() {
