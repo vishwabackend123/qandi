@@ -3189,7 +3189,7 @@ label.filter {
             width: 5px;
             height: 5px;
             position: absolute;
-            bottom: -5px;
+            bottom: -5.3px;
             right: -4px;
             background-color: #56b663;
             border-top-right-radius: 11px;
@@ -3199,7 +3199,7 @@ label.filter {
             width: 5px;
             height: 5px;
             position: absolute;
-            bottom: -5px;
+            bottom: -5.3px;
             left: -4px;
             background-color: #56b663;
             border-top-left-radius: 11px
