@@ -291,7 +291,8 @@ $question_type = "Numerical";
         if (newWindowWidth < 768) {
             /* Allow only numeric with decimal */
             $(".allownumericwithdecimal").on("keydown keyup", function(event) {
-                //  alert(event.charCode);
+                alert(event.charCode);
+                alert(event.which);
 
                 //this.value = this.value.replace(/[^0-9\.]/g,'');
                 $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
