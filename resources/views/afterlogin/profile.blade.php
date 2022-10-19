@@ -484,7 +484,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             }
 
         });
-        $('.txtOnly').keypress(function (e) {
+        $('.txtOnly').keyup(function (e) {
             var valu=$(this).val();
             if (valu.match('/^[A-Za-z]+$/')) {
                 return true;
