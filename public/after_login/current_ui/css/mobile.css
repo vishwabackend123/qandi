@@ -2833,6 +2833,12 @@ label.filter {
     .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip:before , 
     .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip:before
     {right: -14px;left: auto;border-left: 15px solid #f66c6c;border-right:0;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip.yellowTooltip:before , 
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip.yellowTooltip:before
+    {border-left: 15px solid #f6c86d;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip.greenTooltip:before , 
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip.greenTooltip:before
+    {border-left: 15px solid #04c894;}
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
