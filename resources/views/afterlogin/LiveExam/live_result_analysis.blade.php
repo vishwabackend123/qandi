@@ -544,7 +544,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
                 tooltip: {
                     displayColors: false,
                     // yAlign: 'bottom',
-                    backgroundColor: colorItems
+                    backgroundColor: colorItems_2
                 },
             },
             scales: {
@@ -560,6 +560,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
             }
         }
     });
+    function colorItems_2(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
 
     function resetData(subject_id) {
         if (subject_id == 'all') {
