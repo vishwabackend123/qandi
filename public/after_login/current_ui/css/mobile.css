@@ -70,6 +70,12 @@
     .questionOptionBlock {padding-left: 0px;}
     .questionwrapper { padding: 0px 40px;}
     .exam-wrapper .content-wrapper {padding: 26px 30px;}
+    .markstrends_whitecard .graphimg {
+        width: 62%;
+    }
+    .markstrends_whitecard .graphDetail {
+        width: 38%;
+    }
 }
 @media only screen and (max-width: 1280px){
     .myqTodayGraphSec .textblock {padding-left: 8px;}
