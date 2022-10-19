@@ -15,6 +15,7 @@
                     $attempted = 0;
                     $not_attempted = 0;
                     $color_code='';
+                    $tooltip_color='';
                     if($list['A_ques_attempted'] < 40)
                     {
                         $correct_score=$list['A_ques_attempted'];
@@ -30,6 +31,7 @@
                         $attempted = 75-$list['A_ques_attempted'];
                         $not_attempted = 25;
                         $color_code= "#f6c86d";
+                        $tooltip_color='yellowTooltip';
                         
                     }
                     if($list['A_ques_attempted'] > 75)
@@ -37,6 +39,7 @@
                         $correct_score=$list['A_ques_attempted'];
                         $not_attempted = 100-$list['A_ques_attempted'];
                         $color_code= "#04c894";
+                        $tooltip_color='greenTooltip';
                         
                     }
                     @endphp
@@ -44,7 +47,7 @@
                     <div class="Chapter_Main_Graph">
                         <canvas id="chapterPerformance_5_{{$list['id']}}"></canvas>
                         <span>A</span>
-                        <div class="scoreTooltip">Application: <small>{{$list['A_ques_attempted']}}%</small></div>
+                        <div class="scoreTooltip {{$tooltip_color}}">Application: <small>{{$list['A_ques_attempted']}}%</small></div>
                         <script type="text/javascript">
                         var circuference = 360;
                         var data = {
@@ -103,6 +106,7 @@
                         $attempted = 0;
                         $not_attempted = 0;
                         $color_code='';
+                        $tooltip_color='';
                         if($list['E_ques_attempted'] < 40)
                         {
                             $correct_score=$list['E_ques_attempted'];
@@ -118,6 +122,7 @@
                             $attempted = 75-$list['E_ques_attempted'];
                             $not_attempted = 25;
                             $color_code= "#f6c86d";
+                            $tooltip_color='yellowTooltip';
                             
                         }
                         if($list['E_ques_attempted'] > 75)
@@ -125,12 +130,13 @@
                             $correct_score=$list['E_ques_attempted'];
                             $not_attempted = 100-$list['E_ques_attempted'];
                             $color_code= "#04c894";
+                            $tooltip_color='greenTooltip';
                             
                         }
                         @endphp
                         <canvas id="chapterPerformance_6_{{$list['id']}}"></canvas>
                         <span>E</span>
-                        <div class="scoreTooltip">Evaluation: <small>{{$list['E_ques_attempted']}}%</small></div>
+                        <div class="scoreTooltip {{$tooltip_color}}">Evaluation: <small>{{$list['E_ques_attempted']}}%</small></div>
                         <script type="text/javascript">
                         var circuference = 360;
                         var data = {
@@ -189,6 +195,7 @@
                         $attempted = 0;
                         $not_attempted = 0;
                         $color_code='';
+                        $tooltip_color='';
                         if($list['C_ques_attempted'] < 40)
                         {
                             $correct_score=$list['C_ques_attempted'];
@@ -204,6 +211,7 @@
                             $attempted = 75-$list['C_ques_attempted'];
                             $not_attempted = 25;
                             $color_code= "#f6c86d";
+                            $tooltip_color='yellowTooltip';
                             
                         }
                         if($list['C_ques_attempted'] > 75)
@@ -211,12 +219,13 @@
                             $correct_score=$list['C_ques_attempted'];
                             $not_attempted = 100-$list['C_ques_attempted'];
                             $color_code= "#04c894";
+                            $tooltip_color='greenTooltip';
                             
                         }
                         @endphp
                         <canvas id="chapterPerformance_7_{{$list['id']}}"></canvas>
                         <span>C</span>
-                        <div class="scoreTooltip">Comprehension: <small>{{$list['C_ques_attempted']}}%</small></div>
+                        <div class="scoreTooltip {{$tooltip_color}}">Comprehension: <small>{{$list['C_ques_attempted']}}%</small></div>
                         <script type="text/javascript">
                         var circuference = 360;
                         var data = {
@@ -275,6 +284,7 @@
                         $attempted = 0;
                         $not_attempted = 0;
                         $color_code='';
+                        $tooltip_color='';
                         if($list['K_ques_attempted'] < 40)
                         {
                             $correct_score=$list['K_ques_attempted'];
@@ -290,6 +300,7 @@
                             $attempted = 75-$list['K_ques_attempted'];
                             $not_attempted = 25;
                             $color_code= "#f6c86d";
+                            $tooltip_color='yellowTooltip';
                             
                         }
                         if($list['K_ques_attempted'] > 75)
@@ -297,12 +308,13 @@
                             $correct_score=$list['K_ques_attempted'];
                             $not_attempted = 100-$list['K_ques_attempted'];
                             $color_code= "#04c894";
+                            $tooltip_color='greenTooltip';
                             
                         }
                         @endphp
                         <canvas id="chapterPerformance_8_{{$list['id']}}"></canvas>
                         <span>K</span>
-                        <div class="scoreTooltip"> Knowledge: <small>{{$list['K_ques_attempted']}}%</small></div>
+                        <div class="scoreTooltip {{$tooltip_color}}"> Knowledge: <small>{{$list['K_ques_attempted']}}%</small></div>
                         <script type="text/javascript">
                         var circuference = 360;
                         var data = {
