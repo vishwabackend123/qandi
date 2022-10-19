@@ -3942,7 +3942,7 @@ label.filter {
         z-index: 9;
         margin: 0px;}
     .exam_tabdata{padding-bottom:57px!important;}
-    .exam_tabdata .testtablescroll.allscrollbar{    height: calc(100vh - 400px);    }
+    .exam_tabdata .testtablescroll.allscrollbar.mobilePracticebottom{height: calc(100vh - 400px);}
     .exam_tabdata .mobile-test .topic_form{flex-direction: row-reverse;}
    .exam_topicbtn ul.d-inline-flex{display:flex!important;}
    .exam_topicbtn ul.d-inline-flex .nav-item{    flex-basis: 0;
@@ -4022,6 +4022,7 @@ label.filter {
     .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block .chapter_Perfrom_Graph {
         padding-left: 25px;
     }
+    .testslider.customSlider{padding-top:24px;}
 }
 
 
