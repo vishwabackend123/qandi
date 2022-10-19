@@ -52,9 +52,9 @@ input:focus,
 button:focus,svg:focus {
     outline: none !important;
 }
-:focus {
+/* :focus {
     outline: -webkit-focus-ring-color auto 0px !important;
-}
+} */
 li {
     list-style-type: none;
 }
