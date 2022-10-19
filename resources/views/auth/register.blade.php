@@ -218,9 +218,8 @@
         }
         /* only letter input */
         function onlyAlphabetsDisplay(e, t) {
-            if (e.charCodecharCode == 229) { //this charcode geeting on mobile device.
-                return false;
-            }
+
+
             return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
         }
         $("#user_name").keyup(function() {
@@ -277,8 +276,8 @@
                 input(ev) { // Handle typing
 
                     const i = $inp.index(this);
-                    var input_val=this.value;
-                    if(!input_val.match(/^\d+$/)) {
+                    var input_val = this.value;
+                    if (!input_val.match(/^\d+$/)) {
                         $(this).val('');
                         return false;
                     }

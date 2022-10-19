@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,6 +51,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             window.history.pushState(null, "", window.location.href);
@@ -68,14 +70,17 @@
         };
     </script>
     <!-- Google tag (gtag.js) -->
-<script async src=https://www.googletagmanager.com/gtag/js?id=G-2HBNQEQHDQ></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
- gtag('config', 'G-2HBNQEQHDQ');
-</script>
-   
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-2HBNQEQHDQ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-2HBNQEQHDQ');
+    </script>
+
 </head>
 
 <body>
@@ -100,44 +105,43 @@
         $('.scroll-achiv').slimscroll({
             height: '25vh'
         });
-        
     </script>
-@if (env('STUDENT_ENV')=='prod')
- <script type="text/javascript">
-        window.addEventListener('contextmenu', function (e) { 
-            e.preventDefault(); 
+    @if (env('STUDENT_ENV')=='prod')
+    <script type="text/javascript">
+        window.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
         }, false);
-         $(document).ready(function() {
+        $(document).ready(function() {
 
-        /* mouse rightclick */
-        document.onkeydown = function(e) {
-            // disable F12 key
-            if (e.keyCode == 123 || e.keyCode == 116) {
-                return false;
+            /* mouse rightclick */
+            document.onkeydown = function(e) {
+                // disable F12 key
+                if (e.keyCode == 123 || e.keyCode == 116) {
+                    return false;
+                }
+
+
+                // disable ctrl+shift+I key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    return false;
+                }
+
+                // disable ctrl+shift+J key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    return false;
+                }
+
+                // disable ctrl+U key
+                if (e.ctrlKey && e.keyCode == 85) {
+                    return false;
+                }
+
+
             }
-            
-
-            // disable ctrl+shift+I key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                return false;
-            }
-
-            // disable ctrl+shift+J key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                return false;
-            }
-
-            // disable ctrl+U key
-            if (e.ctrlKey && e.keyCode == 85) {
-                return false;
-            }
-
-            
-        }
-    });
+        });
     </script>
-@endif
-   
+    @endif
+
 </body>
 
 
