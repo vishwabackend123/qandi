@@ -603,7 +603,7 @@ $question_type = "Numerical";
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
-        console.log(event.charCode);
+        console.log(event.which);
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
             event.preventDefault();
