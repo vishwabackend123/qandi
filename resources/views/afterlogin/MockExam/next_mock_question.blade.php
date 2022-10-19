@@ -291,7 +291,7 @@ $question_type = "Numerical";
         if (newWindowWidth < 768) {
             /* Allow only numeric with decimal */
             // $(".allownumericwithdecimal").on("keydown", function(event) {
-            $('input').on('textInput', event => {
+            $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
                 alert(event.keyCode);
                 alert(keyCode);
