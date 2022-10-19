@@ -21,7 +21,7 @@ $question_type = "Numerical";
 
 
 @endphp
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script type="text/javascript">
     var ctimer;
     var setEachQuestionTimeNext_countdownNext;
@@ -290,9 +290,11 @@ $question_type = "Numerical";
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
             /* Allow only numeric with decimal */
-            $(".allownumericwithdecimal").on("keydown keyup", function(event) {
-                alert(event.charCode);
-                alert(event.which);
+            // $(".allownumericwithdecimal").on("keydown", function(event) {
+            $('.allownumericwithdecimal').on('textInput', event => {
+                var keyCode = event.originalEvent.data.charCodeAt(0);
+                alert(event.keyCode);
+                alert(keyCode);
 
                 //this.value = this.value.replace(/[^0-9\.]/g,'');
                 $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
