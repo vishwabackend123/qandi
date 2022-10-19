@@ -2830,7 +2830,7 @@ label.filter {
     .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip{right: 52px;left: auto;}
     .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip:before , 
     .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip:before
-    {right: -14px;left: auto;border-left: 15px solid #1f4736;border-right:0;}
+    {right: -14px;left: auto;border-left: 15px solid #f66c6c;border-right:0;}
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
