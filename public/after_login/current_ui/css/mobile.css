@@ -1678,6 +1678,7 @@ button.btn-ans:nth-child(7n) {
     height: 100%;
     background-color: rgba(0,0,0,0.51);
     display: none;
+    z-index: 9;
 }
 .examReviewscreenmob .examRightpanel {
     min-width: 100%;
@@ -3507,11 +3508,11 @@ label.filter {
                 margin-left: auto;
             }
             .testscreenmob .btn123{
-                position: fixed;
+                 position: fixed;
                 background: white;
                 width: 100%;
                 bottom: 0px;
-                height: 73px;
+                height: 73px; z-index: 9;
             }
             .testscreenmob .main-textexam-sec {
                 position: absolute;
@@ -3531,7 +3532,7 @@ label.filter {
             .testscreenmob .examLeftpanel li.nav-item {
                 margin-right: 30px;
             }
-            .testscreenmob .main-textexam-sec{display:none;}
+            .testscreenmob .main-textexam-sec{display:none; z-index: 9;}
             .testscreenmob .hide{display:none;}
             .testscreenmob .hideyes{ display:none;transform: rotate(270deg) !important;}
             .testscreenmob .overlaydiv{
@@ -3733,6 +3734,7 @@ label.filter {
         height: 100%;
         background-color: rgba(0,0,0,0.51);
         display: none;
+        z-index: 9;
     }
     .examReviewscreenmob .content-wrapper {
         padding: 0px;
@@ -4023,6 +4025,10 @@ label.filter {
         padding-left: 25px;
     }
     .testslider.customSlider{padding-top:24px;}
+    .answer-main-sec {
+      
+        z-index: inherit;
+    }
 }
 
 
