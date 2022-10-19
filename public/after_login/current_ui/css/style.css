@@ -3064,6 +3064,7 @@ line-height: 1.6;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
+    transition: none;
 }
 
 /********* Performance Rating ***************/
@@ -4332,6 +4333,7 @@ ul.topic_score_lists li:nth-child(even) {
 .LiveExamMob.LiveExamMob22 .mock_test_ques_dure_marks_sub.d-flex.nojusify {
     margin-top: 35px;
 } 
+span.select2-selection.select2-selection--single:focus{outline:0!important;}
 /********************* Amit End ****************************/
 
 
