@@ -2890,6 +2890,25 @@ label.filter {
         display: flex;
         align-items: center;
     }
+    .graphimg .desktop_hide .yourPacebox{
+        display: flex;
+        align-items: center;
+        flex-flow: wrap;
+     
+    }
+    .testScrolltype {
+        width: 130px;
+        padding-top: 0px;
+        padding-bottom: 14px;
+    }
+
+     .graphimg .desktop_hide{ width: 100%;}
+     .testScrolltype:last-child {
+        padding-bottom: 14px;
+        justify-content: end;
+    }
+ 
+
     /***************************End by Sachin Date:19-10-22**************/
 
 /************ Sachin Start Date:20-07-22 *********/  
@@ -3922,8 +3941,8 @@ label.filter {
         padding: 10px;
         z-index: 9;
         margin: 0px;}
-    .exam_tabdata{padding-bottom:57px!important;}
-    .exam_tabdata .testtablescroll.allscrollbar.mobilePracticebottom{height: calc(100vh - 400px);}
+    .exam_tabdata{padding-bottom:40px!important;}
+    .testtablescroll.allscrollbar.mobilePracticebottom{height: calc(100vh - 400px);}
     .exam_tabdata .mobile-test .topic_form{flex-direction: row-reverse;}
    .exam_topicbtn ul.d-inline-flex{display:flex!important;}
    .exam_topicbtn ul.d-inline-flex .nav-item{    flex-basis: 0;
@@ -4070,6 +4089,9 @@ label.filter {
         .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
         .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
 
+       
+
+
 }
 @media only screen and (max-width: 460px){
     .test-table h2 {
@@ -4095,6 +4117,11 @@ label.filter {
     /************ Amit end *********/
     .HeadingWithfilter{flex-wrap:wrap;}
     .HeadingWithfilter .dropbox{width:100%;}
+    .testScrolltype:last-child {
+       
+        justify-content: initial;
+    }
+       
     
 }
 @media only screen and (max-width: 400px){
@@ -4109,6 +4136,10 @@ label.filter {
     .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
     .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;} */
     /************ Amit end *********/
+    .testScrolltype:last-child {
+        padding-bottom: 14px;
+        justify-content: initial;
+    }
     
 }
 
@@ -4132,5 +4163,4 @@ label.filter {
     .rank_analysis_block {
         height: auto!important;
     }
-
 }
