@@ -122,7 +122,7 @@
                     <input type="hidden" name="city" id="city_name" value="">
                     <div class="custom-input pb-3">
                         <label>Name </label>
-                        <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return onlyAlphabetsDisplay(event,this);" onpaste="validatePaste(this, event)" required>
+                        <input type="text" name="user_name" id="user_name" class="form-control reqrd txtOnlySpace" placeholder="Name" maxlength="25" onkeypress="return onlyAlphabetsDisplay(event,this);" onpaste="validatePaste(this, event)" required>
                     </div>
                     <div class=" custom-input changeno pb-3 ">
                         <label>Mobile</label>
@@ -209,7 +209,7 @@
         /* name input validation */
         /* only letter number */
         function isNumber(evt) {
-            evt = (evt) ? evt : window.event;
+           evt = (evt) ? evt : window.event;
             var charCode = (evt.which) ? evt.which : evt.keyCode;
             if (charCode > 31 && (charCode < 48 || charCode > 57)) {
                 return false;
@@ -741,6 +741,14 @@
                 return false;
             }
         }
+        $('.txtOnlySpace').bind('keyup blur',function(){ 
+            var node = $(this);
+            node.val(node.val().replace(/[^a-zA-Z\s]/g,'') ); 
+        });
+         $('#mobile_num').bind('keyup blur',function(){ 
+            var node = $(this);
+            node.val(node.val().replace(/[^0-9]/g,'') ); 
+        });
     </script>
 </body>
 @endsection
