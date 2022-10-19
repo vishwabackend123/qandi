@@ -261,7 +261,7 @@
                                         };
                                         var myCharted = new Chart(ids, config)
                                         function colorItems_1(tooltipItem) {
-                                            const tooltipBackColor_1 = tooltipItem.tooltip.labelColors[0].backgroundColor;
+                                            const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
                                             return tooltipBackColor;
                                         }
                                     </script>
