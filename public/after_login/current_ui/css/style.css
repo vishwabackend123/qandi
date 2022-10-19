@@ -4205,7 +4205,7 @@ span.proficiency_value {
 .scoreTooltip {
     padding: 12px 16px 12px 16px;
     box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
-    background-color: #1f4736;
+    background-color: #f66c6c;
     font-size: 16px;
     font-weight: bold;
     line-height: 1.6;
@@ -4228,8 +4228,14 @@ span.proficiency_value {
     top: 15px;
     border: 10px solid transparent;
     border-left: 0;
-    border-right: 15px solid #1f4736;
+    border-right: 15px solid #f66c6c;
 }
+.scoreTooltip.yellowTooltip {background-color: #f6c86d;}
+.scoreTooltip.yellowTooltip:before {border-right: 15px solid #f6c86d;}
+
+.scoreTooltip.greenTooltip {background-color: #04c894;}
+.scoreTooltip.greenTooltip:before {border-right: 15px solid #04c894;}
+
 .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
     margin-right: 60px;
     padding: 0 8px 20px;
