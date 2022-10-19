@@ -2827,12 +2827,18 @@ label.filter {
     .exambox-heading p {font-size: 12px;font-weight: 600;margin: 0 0 12px;}
     .proficiency_graph_block h2{margin: 0 0 6px;}
     .scoreTooltip{padding:8px 12px;font-size: 14px;}
-    .scoreTooltip:before{top: 12px;border: 7px solid transparent;border-left: 0;border-right: 15px solid #1f4736;}
+    .scoreTooltip:before{top: 12px;border: 7px solid transparent;border-left: 0;border-right: 15px solid #f66c6c;}
     .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip ,
     .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip{right: 52px;left: auto;}
     .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip:before , 
     .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip:before
-    {right: -14px;left: auto;border-left: 15px solid #1f4736;border-right:0;}
+    {right: -14px;left: auto;border-left: 15px solid #f66c6c;border-right:0;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip.yellowTooltip:before , 
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip.yellowTooltip:before
+    {border-left: 15px solid #f6c86d;}
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:nth-child(3) .scoreTooltip.greenTooltip:before , 
+    .chapter_Perfrom_Graph .Chapter_Main_Graph:last-child .scoreTooltip.greenTooltip:before
+    {border-left: 15px solid #04c894;}
     .tabMainblock_myqmatric .commontab .nav-tabs .nav-link {
         margin-right: 40px;
         padding: 0 5px 20px;
@@ -3272,7 +3278,8 @@ label.filter {
                 padding-bottom: 340px;
                 position: relative;
             }
-            .bg-white.subscription-details.mt-5{margin-top:20px!important;position: relative;padding-bottom: 64px;}
+            .bg-white.subscription-details.mt-5{margin-top:20px!important;position: relative;padding-bottom: 20px;}
+            .bg-white.subscription-details.mt-5.withupgradebutton{padding-bottom: 64px;}
             .login-signup,.selectPlan{background-color: #e0f6e3;}
             .testscreenmob .hideonmobile{display: none !important;}
             .testscreenmob .hideondesktop{display: block  !important;}
