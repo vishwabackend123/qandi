@@ -298,6 +298,7 @@ $('#custom_tab').click(function() {
     var aTopics = [];
 
     function addOrRemove(value,subject) {
+        $('.testtablescroll').addClass("mobilePracticebottom");
         var index = aTopics.indexOf(value);
         if (subject_name) {
             if (subject_name == subject) {
@@ -351,6 +352,8 @@ $('#custom_tab').click(function() {
             $('.take-fulltest').removeClass('mobile-test');
             $('.addremovetopic').prop('disabled', false);
             subject_name = '';
+          $('.testtablescroll').removeClass("mobilePracticebottom");
+
         }
 
 
@@ -368,6 +371,7 @@ $('#custom_tab').click(function() {
         $('.topic_form').attr("style", "display: none  !important");
         subject_name = '';
         $('.addremovetopic').prop('disabled', false);
+        $('.testtablescroll').removeClass("mobilePracticebottom");
 
     }
 
