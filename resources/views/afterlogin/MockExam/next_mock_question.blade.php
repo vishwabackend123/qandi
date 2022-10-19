@@ -21,7 +21,8 @@ $question_type = "Numerical";
 
 
 @endphp
-<script>
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+<script type="text/javascript">
     var ctimer;
     var setEachQuestionTimeNext_countdownNext;
 
@@ -288,7 +289,7 @@ $question_type = "Numerical";
 
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-
+        console.log(event.which);
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
