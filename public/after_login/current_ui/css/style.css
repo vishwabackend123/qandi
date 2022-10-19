@@ -5336,7 +5336,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
                         .green_circle.rightBottom{ width: 18px;
                             height: 18px;bottom:26px;right:21px;}
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
-
+        .image-container{position: relative;}
                        
 /********* Shubham End ***********/
 
@@ -7987,7 +7987,7 @@ height: 0;
 }
 /*****************************Toast message end***********/
 
-.quesbox img{max-width: 400px; max-height: 110px !important;}
+/* .quesbox img{max-width: 400px; max-height: 110px !important;} */
 .wronganswer .seNo {
     background-color: #d92d20 !important;
     color: #fff !important;
