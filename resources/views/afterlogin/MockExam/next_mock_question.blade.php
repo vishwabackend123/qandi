@@ -316,6 +316,7 @@ $question_type = "Numerical";
             }
 
         }
+        alert("hi");
     });
 
     jQuery(function() {
