@@ -287,12 +287,6 @@ $clsAvg_json=json_encode($clsAvg_arr);
 </script>
 @if(isset($scoreResponse->test_type) && $scoreResponse->test_type !='Assessment')
 <script type="text/javascript">
-
-function colorItems(tooltipItem) {
-        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
-        return tooltipBackColor;
-    }
-
     var student_scr = '<?php echo $stuscore ?>';
     var student_bar_color = '#56b663';
     if (student_scr < 0) {
@@ -473,6 +467,10 @@ function colorItems(tooltipItem) {
         }
     };
     const myscore = new Chart("myscoregraph", myscoreconfig)
+    function colorItems(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
 
     /***************** halfdoughnut - end *********************/
 </script>
