@@ -1547,6 +1547,7 @@ button.btn-ans:nth-child(7n) {
     height: 100%;
     background-color: rgba(0,0,0,0.51);
     display: none;
+    z-index: 9;
 }
 
 
