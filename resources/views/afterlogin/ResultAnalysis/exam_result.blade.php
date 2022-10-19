@@ -320,7 +320,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
                 tooltip: {
                     displayColors: false,
                     // yAlign: 'bottom',
-                    backgroundColor: colorItems
+                    backgroundColor: colorItems_1
                 },
             },
             scales: {
@@ -336,6 +336,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
             }
         }
     });
+    function colorItems_1(tooltipItem) {
+        const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
+        return tooltipBackColor;
+    }
 
     function resetData(subject_id) {
         /* var subject_data_json = JSON.parse($('#subject_data').val()); */
@@ -471,6 +475,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
         const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
         return tooltipBackColor;
     }
+    
 
     /***************** halfdoughnut - end *********************/
 </script>
