@@ -290,7 +290,7 @@ $question_type = "Numerical";
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         console.log(event.which);
-
+        alert("hi");
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
@@ -316,7 +316,7 @@ $question_type = "Numerical";
             }
 
         }
-        alert("hi");
+
     });
 
     jQuery(function() {
