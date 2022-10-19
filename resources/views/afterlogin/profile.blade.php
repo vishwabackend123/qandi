@@ -461,6 +461,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         }
 
         function onlyAlphabetsDisplay(e, t) {
+            alert(e.charCode);
             return (e.charCode > 64 && e.charCode < 91) || (e.charCode > 96 && e.charCode < 123) || e.charCode == 32;
         }
         $("#username").keyup(function() {
