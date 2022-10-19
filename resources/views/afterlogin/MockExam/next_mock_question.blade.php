@@ -293,7 +293,7 @@ $question_type = "Numerical";
             // $(".allownumericwithdecimal").on("keydown", function(event) {
             $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
-                alert(event.keyCode);
+                alert(event.which);
                 alert(keyCode);
 
                 //this.value = this.value.replace(/[^0-9\.]/g,'');
