@@ -485,9 +485,8 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         });
         $('.txtOnly').keypress(function (e) {
-            var regex = new RegExp("^[a-zA-Z]+$");
-            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-            if (regex.test(str)) {
+            var valu=$(this).val();
+            if (valu.match('/^[A-Za-z]+$/')) {
                 return true;
             }
             else
