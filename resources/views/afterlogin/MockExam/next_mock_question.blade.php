@@ -289,42 +289,41 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
-            $('.allownumericwithdecimal').bind('keyup blur', function() {
-                var node = $(this);
-                node.val(node.val().replace(/(?!^-)[^0-9.]/g, ''));
-            });
+
             $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
-                if (keyCode < 45 || keyCode > 57 || keyCode == 47) {
+                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
 
                     event.preventDefault();
-                }
-                let textinput = $('.allownumericwithdecimal').val();
-                if (textinput.indexOf('.') > -1) {
-                    var textarray = textinput.split('.');
-                    if (textarray[1].length === 2) {
-                        event.preventDefault();
+                } else {
+                    let textinput = $('.allownumericwithdecimal').val();
+                    if (textinput.indexOf('.') > -1) {
+                        var textarray = textinput.split('.');
+                        if (textarray[1].length === 2) {
+                            event.preventDefault();
+                        }
                     }
-                }
-                if (keyCode === 46) {
-                    // if dot is the first symbol
-                    if (event.target.value.length === 0) {
-                        event.preventDefault();
-                    }
+                    if (keyCode === 46) {
+                        // if dot is the first symbol
+                        if (event.target.value.length === 0) {
+                            event.preventDefault();
+                        }
 
-                    // if there are dots already 
-                    if (event.target.value.indexOf('.') !== -1) {
-                        event.preventDefault();
+                        // if there are dots already 
+                        if (event.target.value.indexOf('.') !== -1) {
+                            event.preventDefault();
+                        }
                     }
-                }
-                if (keyCode === 45) {
-                    // if - more than 1
+                    if (keyCode === 45) {
+                        // if - more than 1
 
-                    if (event.target.value.length > 0) {
-                        event.preventDefault();
+                        if (event.target.value.length > 0) {
+                            event.preventDefault();
+                        }
                     }
                 }
+
 
             });
         } else {
