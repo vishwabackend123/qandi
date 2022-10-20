@@ -203,15 +203,12 @@
         }
     });
     $(document).ready(function () {
-    // e.stopPropagation();
-    // var container = $(".customDropdown");
-    // if (container.has(e.target).length === 0) {
-    //     $('.customDropdown').removeClass('active');
-    // };
-    $("#filter_year").on("blur", function() {
-        $('.customDropdown').removeClass('active');
-
-   });
+     e.stopPropagation();
+     var container = $(".customDropdown");
+     if (!e.target.classList.contains('customDropdown')) {
+        alert("hi");
+         $('.customDropdown').removeClass('active');
+     };
 })
 </script>
 @include('afterlogin.layouts.footer_new')
