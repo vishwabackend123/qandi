@@ -294,11 +294,6 @@ $question_type = "Numerical";
             $('.allownumericwithdecimal').on('textInput keyup', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
-                var node = $(this);
-                node.val(node.val().replace(/(?!^-)[^0-9.]/g, ''));
-                alert(keyCode);
-                //this.value = this.value.replace(/[^0-9\.]/g,'');
-                // $('.allownumericwithdecimal').val($('.allownumericwithdecimal').val().replace(/(?!^-)[^0-9.]/g, ''));
                 if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
 
                     event.preventDefault();
