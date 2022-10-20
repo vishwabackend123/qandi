@@ -203,12 +203,16 @@
         }
     });
     $(document).ready(function (e) {
-    e.stopPropagation();
-    var container = $(".customDropdown");
-    if (container.has(e.target).length === 0) {
+       if($('#filter_year').not(':focus')){
+        alert('working');
         $('.customDropdown').removeClass('active');
-    }
-})
+       }
+    // e.stopPropagation();
+    // var container = $(".customDropdown");
+    // if (container.has(e.target).length === 0) {
+    //     $('.customDropdown').removeClass('active');
+    // }
+});
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
