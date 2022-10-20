@@ -572,8 +572,11 @@ label.filter {
 }
 
 /************End-by-sachin-13-10-22****/
-
-
+/************Start-by-sachin-20-10-22****/
+.testscreenmob .questionChoiceTypehide{
+    height:20px;
+}
+/************End-by-sachin-20-10-22****/
 
 }
 @media only screen and (max-width: 1024px){
