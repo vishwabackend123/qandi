@@ -202,12 +202,17 @@
             $(this).text('View details');
         }
     });
-    $(document).click(function (e) {
+    $(document).ready(function (e) {
     e.stopPropagation();
     var container = $(".customDropdown");
     if (container.has(e.target).length === 0) {
         $('.customDropdown').removeClass('active');
-    }
+    };
+    $("#filter_year").on("blur", function() {
+        alert('aa');
+        $('.customDropdown').removeClass('active');
+
+   });
 })
 </script>
 @include('afterlogin.layouts.footer_new')
