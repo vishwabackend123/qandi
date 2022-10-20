@@ -208,7 +208,7 @@
         $('.customDropdown').addClass('active');
        }else{
         $('.customDropdown').removeClass('active');
-        alert('working');
+        alert('working2');
        }
     // e.stopPropagation();
     // var container = $(".customDropdown");
