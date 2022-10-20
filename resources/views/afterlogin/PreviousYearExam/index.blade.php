@@ -209,7 +209,6 @@
     //     $('.customDropdown').removeClass('active');
     // };
     $("#filter_year").on("blur", function() {
-        alert('aa');
         $('.customDropdown').removeClass('active');
 
    });
