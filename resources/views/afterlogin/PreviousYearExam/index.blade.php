@@ -202,6 +202,14 @@
             $(this).text('View details');
         }
     });
+    $(document).click(function (e) {
+        alert("hello");
+    e.stopPropagation();
+    var container = $(".customDropdown");
+    if (container.has(e.target).length === 0) {
+        $('.customDropdown').removeClass('active');
+    }
+})
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
