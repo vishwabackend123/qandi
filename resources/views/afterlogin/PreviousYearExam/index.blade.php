@@ -202,8 +202,8 @@
             $(this).text('View details');
         }
     });
-    $(document).ready(function (e) {
-       if($('#filter_year').not(':focus')){
+    $(document).ready(function () {
+       if($('#filter_year').blur()){
         alert('working');
         $('.customDropdown').removeClass('active');
        }
