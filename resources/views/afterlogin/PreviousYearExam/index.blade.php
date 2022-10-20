@@ -205,7 +205,7 @@
    $(document).click(function (e) {
      e.stopPropagation();
      var container = $(".customDropdown");
-     if (!e.target.classList.contains('customDropdown')) {
+     if (container.has(e.target).length === 0) {
         alert("hi");
          $('.customDropdown').removeClass('active');
      };
