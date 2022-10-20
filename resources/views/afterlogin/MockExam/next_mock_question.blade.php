@@ -290,11 +290,32 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
+
             $(".allownumericwithdecimal").on("input", function(evt) {
                 var self = $(this);
                 self.val(self.val().replace(/(?!^-)[^0-9.]/g, ""));
                 if ((evt.which < 48 || evt.which > 57)) {
                     evt.preventDefault();
+                }
+                if ((evt.which != 46 || $(this).val().indexOf('.') != -1) && (evt.which < 45 || evt.which > 57 || evt.which == 47)) {
+                    evt.preventDefault();
+                }
+                let text = $(this).val();
+                if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (evt.which != 0 && evt.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+
+                    evt.preventDefault();
+                }
+
+                if (evt.which === 46) {
+                    // if dot is the first symbol
+                    if (evt.target.value.length === 0) {
+                        evt.preventDefault();
+                    }
+
+                    // if there are dots already 
+                    if (evt.target.value.indexOf('.') !== -1) {
+                        evt.preventDefault();
+                    }
                 }
             });
 
