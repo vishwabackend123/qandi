@@ -595,37 +595,78 @@ $question_type = "Numerical";
     var markForReviewArr = [];
     var saveMarkReviewArr = [];
     var totalQCount = '{{$exam_ques_count}}';
+    jQuery(function($) {
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            /* Allow only numeric with decimal */
+            // $(".allownumericwithdecimal").on("keydown", function(event) {
+            $('.allownumericwithdecimal').on('textInput', event => {
+                var keyCode = event.originalEvent.data.charCodeAt(0);
 
+                //this.value = this.value.replace(/[^0-9\.]/g,'');
+                $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
+                    event.preventDefault();
+                }
 
-    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
-        e.preventDefault();
-    });
-    /* Allow only numeric with decimal */
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        console.log(event.which);
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
+                let textinput = $('.allownumericwithdecimal').val();
+                if (textinput.indexOf('.') > -1) {
+                    var textarray = textinput.split('.');
+                    if (textarray[1].length === 2) {
+                        event.preventDefault();
+                    }
+                }
+                if (keyCode === 46) {
+                    // if dot is the first symbol
+                    if (event.target.value.length === 0) {
+                        event.preventDefault();
+                    }
 
-        if (event.charCode === 46) {
-            // if dot is the first symbol
-            if (event.target.value.length === 0) {
-                event.preventDefault();
-                return;
-            }
+                    // if there are dots already 
+                    if (event.target.value.indexOf('.') !== -1) {
+                        event.preventDefault();
+                    }
+                }
+                if (keyCode === 45) {
+                    // if - more than 1
+                    if (event.target.value.length > 0) {
+                        event.preventDefault();
+                    }
+                }
 
-            // if there are dots already 
-            if (event.target.value.indexOf('.') !== -1) {
-                event.preventDefault();
-                return;
-            }
+            });
+        } else {
+            $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+                e.preventDefault();
+            });
+            /* Allow only numeric with decimal */
+            $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+                //this.value = this.value.replace(/[^0-9\.]/g,'');
+                console.log(event.which);
+                $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+                if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+                    event.preventDefault();
+                }
+                var text = $(this).val();
+                if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+                    event.preventDefault();
+                }
 
+                if (event.charCode === 46) {
+                    // if dot is the first symbol
+                    if (event.target.value.length === 0) {
+                        event.preventDefault();
+                        return;
+                    }
+
+                    // if there are dots already 
+                    if (event.target.value.indexOf('.') !== -1) {
+                        event.preventDefault();
+                        return;
+                    }
+
+                }
+            });
         }
     });
     /* Sachin screen changes */
@@ -1324,7 +1365,7 @@ $question_type = "Numerical";
                     stop("submit");
                     $('#attemptlimit').modal('show');
 
-                    //alert(response.message);
+
                     isValid = 0;
 
                 }

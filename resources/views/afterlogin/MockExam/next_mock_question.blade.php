@@ -293,59 +293,58 @@ $question_type = "Numerical";
             // $(".allownumericwithdecimal").on("keydown", function(event) {
             $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
-                //alert(event.which);
-                //alert(keyCode);
 
                 //this.value = this.value.replace(/[^0-9\.]/g,'');
                 $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
                 if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
-                    // alert("d");
+
                     event.preventDefault();
                 }
-                let text = $(this).val();
-                if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (keyCode != 0 && keyCode != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-                    // alert(event.which);
-                    event.preventDefault();
+                let textinput = $('.allownumericwithdecimal').val();
+                if (textinput.indexOf('.') > -1) {
+                    var textarray = textinput.split('.');
+                    if (textarray[1].length === 2) {
+                        event.preventDefault();
+                    }
                 }
-
-
                 if (keyCode === 46) {
-                    //alert(event.charCode);
-
                     // if dot is the first symbol
                     if (event.target.value.length === 0) {
                         event.preventDefault();
-
                     }
 
                     // if there are dots already 
                     if (event.target.value.indexOf('.') !== -1) {
                         event.preventDefault();
-
                     }
+                }
+                if (keyCode === 45) {
+                    // if - more than 1
 
+                    if (event.target.value.length > 0) {
+                        event.preventDefault();
+                    }
                 }
 
             });
         } else {
             $(".allownumericwithdecimal").on("keypress", function(event) {
-                //  alert(event.charCode);
+
 
                 //this.value = this.value.replace(/[^0-9\.]/g,'');
                 $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
                 if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-                    // alert("d");
+
                     event.preventDefault();
                 }
                 let text = $(this).val();
                 if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-                    // alert(event.which);
+
                     event.preventDefault();
                 }
 
 
                 if (event.charCode === 46) {
-                    //alert(event.charCode);
 
                     // if dot is the first symbol
                     if (event.target.value.length === 0) {
@@ -398,7 +397,7 @@ $question_type = "Numerical";
             option_id.push($(this).val());
         });
     }
-    console.log(option_id);
+
     if (option_id.length > 0) {
         $('.clearBtn_response').attr("disabled", false);
         $('.clearBtn_response').addClass("Clearbtnenable");
