@@ -206,7 +206,6 @@
     e.stopPropagation();
     var container = $(".customDropdown");
     if (container.has(e.target).length === 0) {
-         alert("hello");
         $('.customDropdown').removeClass('active');
     }
 })
