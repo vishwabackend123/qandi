@@ -578,7 +578,7 @@ class SubscriptionController extends Controller
             $curl = curl_init();
             $curl1 = curl_init();
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/get-email-verification-link?UserID=' . $postData['userId'];
+            $curl_url = $api_URL . 'api/get-email-verification-link?user_id=' . $postData['userId'];
             $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
