@@ -8223,3 +8223,5 @@ margin-bottom: 12px;
 .mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {
     min-width: 150px;
 }
+
+.examSereenwrapper .questionwrapper, .reviewScreenleft .questionwrapper{padding-bottom: 20px !important;}
