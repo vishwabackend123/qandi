@@ -62,7 +62,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control txtOnly" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsForName(event,this);"  maxlength="15" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnly" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsForName(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
