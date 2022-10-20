@@ -289,14 +289,14 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
-            /* Allow only numeric with decimal */
-            // $(".allownumericwithdecimal").on("keydown", function(event) {
+            $('.allownumericwithdecimal').bind('keyup blur', function() {
+                var node = $(this);
+                node.val(node.val().replace(/(?!^-)[^0-9.]/g, ''));
+            });
             $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
-                //this.value = this.value.replace(/[^0-9\.]/g,'');
-                $('.allownumericwithdecimal').val($('.allownumericwithdecimal').val().replace(/(?!^-)[^0-9.]/g, ''));
-                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
+                if (keyCode < 45 || keyCode > 57 || keyCode == 47) {
 
                     event.preventDefault();
                 }
