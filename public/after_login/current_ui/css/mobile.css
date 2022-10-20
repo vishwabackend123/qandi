@@ -3854,11 +3854,17 @@ label.filter {
         /*********************Start by Sachin -Date-15-10-22********/
         #filterBy .dropdown-menu{
             /* transform: translate(236px,47px)!important;padding: 10px 10px 5px; */
-            transform: initial !important;
+            /* transform: initial !important;
             right: 18px !important;
             inset: initial !important;
             max-width: 100px;
-            left: -25px !important;
+            left: -25px !important; */
+
+            transform: initial!important;
+            right: 18px!important;
+            inset: initial!important;
+            max-width: 172px !important;
+            left: -58px!important;
         }
         #filterBy{position: relative;}
 
