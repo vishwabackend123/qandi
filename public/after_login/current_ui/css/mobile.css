@@ -572,8 +572,11 @@ label.filter {
 }
 
 /************End-by-sachin-13-10-22****/
-
-
+/************Start-by-sachin-20-10-22****/
+.testscreenmob .questionChoiceTypehide{
+    height:20px;
+}
+/************End-by-sachin-20-10-22****/
 
 }
 @media only screen and (max-width: 1024px){
@@ -3152,8 +3155,8 @@ label.filter {
         position: absolute;
         left: -108px;
         top: 36px;
-        min-width: 250px;
-        max-width: 250px;
+        min-width: 205px;
+        max-width: 205px;
         display: none;
         text-align: left;
         height: auto !important;
@@ -3168,7 +3171,7 @@ label.filter {
         position: absolute;
         display: block;
         width: 0px;
-        left: 43%;
+        left: 54%;
         top: -18px;
         border: 12px solid transparent;
         border-left: 0;

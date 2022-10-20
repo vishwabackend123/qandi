@@ -104,7 +104,7 @@ $question_type = "Numerical";
 
 <div class="questionType" style="visibility:hidden">
     <div class="questionTypeinner">
-        <div class="questionChoiceType" style="visibility:hidden">
+        <div class="questionChoiceType questionChoiceTypehide" style="visibility:hidden">
             <div class="questionChoice"><a class="singleChoice" href="javascript:;">Section A (20Q) - Single Choice</a> <a class="numericalChoice" href="javascript:;">Section B (10Q) - Numerical</a></div>
         </div>
         <div class="timeCounter">
