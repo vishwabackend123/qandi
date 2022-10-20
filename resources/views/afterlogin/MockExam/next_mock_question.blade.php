@@ -289,9 +289,11 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
-            /* Allow only numeric with decimal */
-            // $(".allownumericwithdecimal").on("keydown", function(event) {
-            $('.allownumericwithdecimal').on('textInput keyup', event => {
+            $('.allownumericwithdecimal').bind('keyup blur', function() {
+                var node = $(this);
+                node.val(node.val().replace(/(?!^-)[^0-9.]/g, ''));
+            });
+            $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
                 if (keyCode < 45 || keyCode > 57 || keyCode == 47) {
