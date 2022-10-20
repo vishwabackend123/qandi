@@ -293,6 +293,7 @@ $question_type = "Numerical";
             $('.allownumericwithdecimal').on('textInput', event => {
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
+                alert(keyCode);
                 if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
 
                     event.preventDefault();
