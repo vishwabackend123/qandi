@@ -8224,4 +8224,4 @@ margin-bottom: 12px;
     min-width: 150px;
 }
 
-.examSereenwrapper .questionwrapper{padding-bottom:20px;}
+.examSereenwrapper .questionwrapper, .reviewScreenleft .questionwrapper{padding-bottom:20px;}
