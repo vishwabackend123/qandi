@@ -614,7 +614,7 @@ $question_type = "Numerical";
             font-weight: 500;
         }
 
-       .filterByexpand {
+        #filterBy .filterByexpand {
             transform: initial!important;
             right: 18px!important;
             inset: initial!important;
