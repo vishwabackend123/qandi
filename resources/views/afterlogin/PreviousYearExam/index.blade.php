@@ -202,7 +202,7 @@
             $(this).text('View details');
         }
     });
-    $(document).ready(function (e) {
+   $(document).click(function (e) {
      e.stopPropagation();
      var container = $(".customDropdown");
      if (!e.target.classList.contains('customDropdown')) {
