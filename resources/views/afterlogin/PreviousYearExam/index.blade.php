@@ -202,10 +202,10 @@
             $(this).text('View details');
         }
     });
-    $(document).ready(function (e) {
+    $(document).click(function (e) {
     e.stopPropagation();
-    var container2 = $("#filter_year");
-    if (container2.has(e.target).length === 0) {
+    var container = $(".customDropdown");
+    if (container.has(e.target).length === 0) {
         $('.customDropdown').removeClass('active');
     }
 })
