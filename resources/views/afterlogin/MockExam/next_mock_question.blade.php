@@ -189,6 +189,7 @@ $question_type = "Numerical";
                                         <div class="inputAns">
                                             <label for="story">Answer</label>
                                             <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
+
                                         </div>
                                     </div>
                                     @endif
@@ -289,48 +290,54 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         if (newWindowWidth < 768) {
-
-
-            $('.allownumericwithdecimal').on('textInput', event => {
-
-                console.log(event);
-                var keyCode = event.originalEvent.data.charCodeAt(0);
-
-                alert(keyCode);
-
-                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
-
-                    event.preventDefault();
-                } else {
-                    let textinput = $('.allownumericwithdecimal').val();
-                    if (textinput.indexOf('.') > -1) {
-                        var textarray = textinput.split('.');
-                        if (textarray[1].length === 2) {
-                            event.preventDefault();
-                        }
-                    }
-                    if (keyCode === 46) {
-                        // if dot is the first symbol
-                        if (event.target.value.length === 0) {
-                            event.preventDefault();
-                        }
-
-                        // if there are dots already 
-                        if (event.target.value.indexOf('.') !== -1) {
-                            event.preventDefault();
-                        }
-                    }
-                    if (keyCode === 45) {
-                        // if - more than 1
-
-                        if (event.target.value.length > 0) {
-                            event.preventDefault();
-                        }
-                    }
+            $(".allownumericwithdecimal").on("input", function(evt) {
+                var self = $(this);
+                self.val(self.val().replace(/(?!^-)[^0-9.]/g, ""));
+                if ((evt.which < 48 || evt.which > 57)) {
+                    evt.preventDefault();
                 }
-
-
             });
+
+            /* $('.allownumericwithdecimal').on('textInput', event => {
+
+                    console.log(event);
+                    var keyCode = event.originalEvent.data.charCodeAt(0);
+
+                 
+
+                    if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
+
+                        event.preventDefault();
+                    } else {
+                        let textinput = $('.allownumericwithdecimal').val();
+                        if (textinput.indexOf('.') > -1) {
+                            var textarray = textinput.split('.');
+                            if (textarray[1].length === 2) {
+                                event.preventDefault();
+                            }
+                        }
+                        if (keyCode === 46) {
+                            // if dot is the first symbol
+                            if (event.target.value.length === 0) {
+                                event.preventDefault();
+                            }
+
+                            // if there are dots already 
+                            if (event.target.value.indexOf('.') !== -1) {
+                                event.preventDefault();
+                            }
+                        }
+                        if (keyCode === 45) {
+                            // if - more than 1
+
+                            if (event.target.value.length > 0) {
+                                event.preventDefault();
+                            }
+                        }
+                    }
+
+
+            }); */
         } else {
             $(".allownumericwithdecimal").on("keypress", function(event) {
 
