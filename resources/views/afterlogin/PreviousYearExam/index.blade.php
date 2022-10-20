@@ -203,9 +203,12 @@
         }
     });
     $(document).ready(function () {
-       if($('#filter_year').blur()){
+       if($('#filter_year').focus()){
         alert('working');
+        $('.customDropdown').addClass('active');
+       }else{
         $('.customDropdown').removeClass('active');
+        alert('working');
        }
     // e.stopPropagation();
     // var container = $(".customDropdown");
