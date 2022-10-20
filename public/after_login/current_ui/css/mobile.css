@@ -4046,6 +4046,9 @@ label.filter {
       
         z-index: inherit;
     }
+    .weeklyPlanWrapper .allSubslider  .disabled {
+        opacity: 0 !important;
+    }
 }
 
 
