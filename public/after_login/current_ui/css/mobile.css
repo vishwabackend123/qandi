@@ -4114,7 +4114,7 @@ label.filter {
         .task_center_lists .dura-sec {margin: 0 0 20px 70px;}
         .task_center_lists .qust-sec, .task_center_lists .dura-sec {display: inline-block;vertical-align: top;}
         .task-btn.tasklistbtn .btn.btn-common-transparent.nobg {max-width: 100%;width: 100%;  padding: 8px 20px; height: 38px;}
-        .toastdata{transition: all 0.5s;}
+        .toastdata{transition: none;}
        
 
 
