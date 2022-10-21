@@ -1661,6 +1661,9 @@ a.btn-common-attempted svg {
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     border: solid 1px #cde3d0;
     background-color: #ffffff;
+    outline:none !important;
+    
+
   }
   .inputAns textarea:focus {
       background: none repeat scroll 0 0 #FFFFFF;
@@ -4340,6 +4343,8 @@ ul.topic_score_lists li:nth-child(even) {
     margin-top: 35px;
 } 
 span.select2-selection.select2-selection--single:focus{outline:0!important;}
+.progress_journey_chart .yaxis_label{left: -58px;}
+.progress_journey_chart.graph_padd{padding-left:15px;}
 /********************* Amit End ****************************/
 
 
@@ -8220,3 +8225,5 @@ margin-bottom: 12px;
 .mock_test_test_series .mock_test_ques_content, .mock_test_test_series .mock_test_dure_content, .mock_test_test_series .mock_test_marks_content {
     min-width: 150px;
 }
+
+.examSereenwrapper .questionwrapper, .reviewScreenleft .questionwrapper{padding-bottom: 20px !important;}
