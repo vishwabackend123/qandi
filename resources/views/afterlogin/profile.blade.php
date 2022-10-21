@@ -447,7 +447,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         }
 
         function onlyAlphabetsForName(e, t) {
-            try {
+           try {
                 if (window.event) {
                     var charCode = window.event.keyCode;
                 } else if (e) {
@@ -461,7 +461,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     return false;
             } catch (err) {
                 alert(err.Description);
-            }
+            } 
         }
 
         function onlyAlphabetsDisplay(e, t) {
@@ -491,10 +491,53 @@ $user_id = isset($userData->id)?$userData->id:'';
         $('.txtOnly').bind('keyup blur',function(){ 
             var node = $(this);
             node.val(node.val().replace(/[^a-zA-Z]/g,'') ); 
+            var fieldLength = node.val().length;
+            //Suppose u want 4 number of character
+            if(fieldLength <= 15){
+                return true;
+            }
+            else
+            {
+                var str = node.val();
+                str = str.substring(0, str.length - 1);
+                node.val(str); 
+            }
         });
         $('.txtOnlySpace').bind('keyup blur',function(){ 
             var node = $(this);
             node.val(node.val().replace(/[^a-zA-Z\s]/g,'') ); 
+            var fieldLength = node.val().length;
+            //Suppose u want 4 number of character
+            if(fieldLength <= 25){
+                return true;
+            }
+            else
+            {
+                var str = node.val();
+                str = str.substring(0, str.length - 1);
+                node.val(str); 
+            }
+        });
+        $('#useremail').bind('keyup blur',function(){ 
+            if($('#useremail-error').css('display') != 'none')
+            {
+                $('.email-error').hide();
+                $('.resend_email').hide();
+            }else
+            {
+                $('.email-error').show();
+                $('.resend_email').show();
+            }
+            var fieldLength = document.getElementById('useremail').value.length;
+            if(fieldLength <= 64){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById('useremail').value;
+                str = str.substring(0, str.length - 1);
+                document.getElementById('useremail').value = str;
+            }
         });
     </script>
 </body>

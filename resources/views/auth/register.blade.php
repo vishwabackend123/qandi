@@ -747,11 +747,35 @@
          $('.txtOnlySpace').bind('keyup blur',function(){ 
             var node = $(this);
             node.val(node.val().replace(/[^a-zA-Z\s]/g,'') ); 
+            var fieldLength = document.getElementById('user_name').value.length;
+            //Suppose u want 4 number of character
+            if(fieldLength <= 25){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById('user_name').value;
+                str = str.substring(0, str.length - 1);
+                document.getElementById('user_name').value = str;
+            }
         });
          $('#mobile_num').bind('keyup blur',function(){ 
             var node = $(this);
             node.val(node.val().replace(/[^0-9]/g,'') ); 
         });
+         $('#email_add').bind('keyup blur',function(){ 
+            var fieldLength = document.getElementById('email_add').value.length;
+            if(fieldLength <= 64){
+                return true;
+            }
+            else
+            {
+                var str = document.getElementById('email_add').value;
+                str = str.substring(0, str.length - 1);
+                document.getElementById('email_add').value = str;
+            }
+        });
+
     </script>
 </body>
 @endsection
