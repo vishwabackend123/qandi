@@ -3,7 +3,7 @@
         <p class="previous_exam_year_exam_paper_text"><span class="mobile_hide">Test your preparedness with </span>Past year exam papers</p>
     </div>
     <div class="dropbox previous_dropbox_page">
-        <div class="customDropdown dropdown">
+        <!-- <div class="customDropdown dropdown">
             <select class="form-control form-select" id="filter_attemp_year">
                 <option value="">Select Year </option>
                 @if(!empty($years_list))
@@ -12,8 +12,16 @@
                 @endforeach
                 @endif
             </select>
+        </div> -->
+        <div class="customDropdown1 dropdown" id="dropdown1">
+            <input class="text-box markstrend" type="text" id="filter_attemp_year" placeholder="Select Year" readonly>
+            <div class="options">
+                <div style=" overflow-y: auto;  height: 145px;">
+                    <div class="active markstrend">2022</div>
+                    <div class="markstrend">2021</div>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
 <div class="accordion mt-4 pt-1" id="accordionExampleTwo">
