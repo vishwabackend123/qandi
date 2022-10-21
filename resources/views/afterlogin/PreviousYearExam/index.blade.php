@@ -137,7 +137,7 @@
                                         @endforeach
                                     </div>
                                     @else
-                                    <div class=" text-center p-4">
+                                    <div class=" text-center p-5">
                                         <h5>No series available</h5>
                                     </div>
                                     @endif
