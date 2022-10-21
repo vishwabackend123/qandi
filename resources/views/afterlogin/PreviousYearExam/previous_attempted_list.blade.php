@@ -13,13 +13,18 @@
                 @endif
             </select>
         </div> -->
-        <div class="customDropdown1 dropdown" id="dropdown1">
+        <div class="customDropdown1 dropdown" id="dropdown2">
             <input class="text-box markstrend" type="text" id="filter_attemp_year" placeholder="Select Year" readonly>
             <div class="options">
                 <div style=" overflow-y: auto; max-height: 145px;">
-                    <div class="active markstrend">2022</div>
-                    <div class="markstrend">2021</div>
+                <div class="markstrend" onclick="showAttempedFiter('')">Select Year</div>
+                    @if(!empty($years_list))
+                    @foreach($years_list as $yr)
+                        <div class="markstrend" onclick="showAttempedFiter('{{$yr}}')">{{$yr}}</div>
+                    @endforeach
+                    @endif
                 </div>
+
             </div>
         </div>
     </div>
@@ -144,7 +149,7 @@
             $(this).text('View details');
         }
     });
-    $('#filter_attemp_year').change(function() {
+    /*$('#filter_attemp_year').change(function() {
 
         var selected_val = $(this).val();
         if (selected_val) {
@@ -153,5 +158,19 @@
         } else {
             $('.compLeteA').show();
         }
-    });
+    }); */
+     function showAttempedFiter(selected_val)
+    {
+        document.querySelector("#filter_attemp_year").value = selected_val;
+      if (selected_val) {
+            $('.compLeteA').hide();
+            $('.filter_year_' + selected_val).show();
+        } else {
+            $('.compLeteA').show();
+        }  
+    }
+     var dropdowns = document.querySelector("#dropdown2")
+    dropdowns.onclick = function() {
+        dropdowns.classList.toggle("active1")
+    }
 </script>
