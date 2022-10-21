@@ -299,7 +299,7 @@ $question_type = "Numerical";
 
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
-                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
+                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47 || keyCode == 229)) {
 
                     event.preventDefault();
                 } else {
