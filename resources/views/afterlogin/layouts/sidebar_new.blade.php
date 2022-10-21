@@ -443,9 +443,11 @@ $userData = Session::get('user_data');
     }
     if (action_method == 'profile') {
         $('.user_profile_tab').addClass('active_usericon');
+        $('.pro_sub_label').addClass('mobile_active_usericon');
         $('.current_dashboard').removeClass('active');
     } else {
         $('.user_profile_tab').removeClass('active_usericon');
+        $('.pro_sub_label').removeClass('mobile_active_usericon');
     }
 
     function stateHandle() {
