@@ -75,8 +75,14 @@
                                             <input class="text-box markstrend" type="text" id="filter_year" placeholder="Select Year" readonly>
                                             <div class="options">
                                                 <div style=" overflow-y: auto;max-height: 145px;">
-                                                    <div class="active markstrend">2022</div>
-                                                    <div class="markstrend">2021</div>
+                                                    <!--div class="active markstrend">2022</div-->
+                                                    <!--div class="markstrend">2021</div-->
+                                                    <div class="markstrend" onclick="showFiter('')">Select Year</div>
+                                                    @if(!empty($years_list))
+                                                    @foreach($years_list as $yr)
+                                                    <div class="markstrend" onclick="showFiter('{{$yr}}')">{{$yr}}</div>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +157,7 @@
 </div>
 <script>
     $('.spinnerblock').hide();
-    $('#filter_year').change(function() {
+    /*$('#filter_year').change(function() {
 
         var selected_val = $(this).val();
         if (selected_val) {
@@ -161,9 +167,28 @@
             $('.compLeteS').show();
         }
     });
-    let dropdown = document.querySelector(".customDropdown")
+    $('.select_year').click(function(){
+        var selected_val = $(this).text();
+        if (selected_val) {
+            $('.compLeteS').hide();
+            $('.filter_data_' + selected_val).show();
+        } else {
+            $('.compLeteS').show();
+        }
+    }); */
+    /*let dropdown = document.querySelector(".customDropdown1")
     dropdown.onclick = function() {
         dropdown.classList.toggle("active")
+    } */
+    function showFiter(selected_val)
+    {
+        document.querySelector("#filter_year").value = selected_val;
+      if (selected_val) {
+            $('.compLeteS').hide();
+            $('.filter_data_' + selected_val).show();
+        } else {
+            $('.compLeteS').show();
+        }  
     }
 </script>
 <script type="text/javascript">
@@ -216,6 +241,7 @@
         dropdown1.onclick = function() {
             dropdown1.classList.toggle("active1")
         }
+
        
 </script>
 @include('afterlogin.layouts.footer_new')
