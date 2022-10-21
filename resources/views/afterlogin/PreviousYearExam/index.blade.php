@@ -237,7 +237,7 @@
         }
     });
 
-    let dropdown1 = document.querySelector("#dropdown1")
+    var dropdown1 = document.querySelector("#dropdown1")
         dropdown1.onclick = function() {
             dropdown1.classList.toggle("active1")
         }
