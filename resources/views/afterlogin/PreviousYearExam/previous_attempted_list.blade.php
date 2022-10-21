@@ -169,7 +169,7 @@
             $('.compLeteA').show();
         }  
     }
-     let dropdowns = document.querySelector("#dropdown2")
+     var dropdowns = document.querySelector("#dropdown2")
     dropdowns.onclick = function() {
         dropdowns.classList.toggle("active1")
     }
