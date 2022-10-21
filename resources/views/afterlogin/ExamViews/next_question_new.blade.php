@@ -282,7 +282,12 @@ $question_type = "Numerical";
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
-
+        if (text.indexOf('.') > -1) {
+            var textarray = text.split('.');
+            if (textarray[1].length === 2) {
+                event.preventDefault();
+            }
+        }
         if (event.charCode === 46) {
             // if dot is the first symbol
             if (event.target.value.length === 0) {
