@@ -806,7 +806,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         @else
                                                         <div></div>
                                                         @endif
-                                                        <div class="progress_journey_chart">
+                                                        <div class="progress_journey_chart graph_padd">
+                                                            <span class="yaxis_label"><small>Average Marks (in %)</small> </span>
                                                             <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                         </div>
                                                         <div class="desktop_hide">
