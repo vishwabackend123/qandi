@@ -4343,9 +4343,9 @@ ul.topic_score_lists li:nth-child(even) {
     margin-top: 35px;
 } 
 span.select2-selection.select2-selection--single:focus{outline:0!important;}
-.previous_exam_page_contain .dropbox.previous_dropbox_page{width:233px;}
 .progress_journey_chart .yaxis_label{left: -58px;}
 .progress_journey_chart.graph_padd{padding-left:15px;}
+.previous_exam_page_contain .dropbox.previous_dropbox_page{width:233px;}
 /********************* Amit End ****************************/
 
 
@@ -8228,3 +8228,4 @@ margin-bottom: 12px;
 }
 
 .examSereenwrapper .questionwrapper, .reviewScreenleft .questionwrapper{padding-bottom: 20px !important;}
+.mobile_active_usericon {background-color:#e0f6e3;height: 50px; padding: 12px 12px 12px 12px;border-radius: 8px;}
