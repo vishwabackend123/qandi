@@ -4048,6 +4048,15 @@ label.filter {
     .weeklyPlanWrapper .allSubslider  .disabled {
         opacity: 0 !important;
     }
+    .previous_exam_page_contain .dropbox.previous_dropbox_page{width:161px;}
+    .previous_exam_page_contain .dropbox.previous_dropbox_page input.text-box.markstrend{
+        padding: 8px 24px;
+        border: solid 1px #cde3d0;
+        background-color: white;
+    }
+    .previous_exam_page_contain .dropbox.previous_dropbox_page .customDropdown1 .options{font-size:14px;
+        top: 62px;
+    }
 }
 
 
