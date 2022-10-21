@@ -163,7 +163,7 @@
                     </div>
                     <div class="custom-input pb-3">
                         <label>Email</label>
-                        <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
+                        <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="50" id="email_add" required>
                         <span class="error mt-2" id="errlog_mail"></span>
                     </div>
                     <div class="custom-input pb-3">
@@ -761,9 +761,8 @@
             node.val(node.val().replace(/[^0-9]/g,'') ); 
         });
          $('#email_add').bind('keyup blur',function(){ 
-            var node = $(this);
             var fieldLength = document.getElementById('email_add').value.length;
-            if(fieldLength <= 64){
+            if(fieldLength <= 30){
                 return true;
             }
             else
