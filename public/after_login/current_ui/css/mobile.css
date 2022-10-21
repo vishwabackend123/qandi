@@ -3125,24 +3125,17 @@ label.filter {
 
     /************  for tooltip ************/
     .tooltipmain.right-tolltip .tooltipclass {
-        left: -123px;
-        position: absolute;
-        top: 30px;
-        min-width: 280px;
-        max-width: 280px;
-        margin-right: initial;
+        margin-right: 0;
+        left: -108px;
+        top: 36px;
     }
     .tooltipmain.right-tolltip .tooltipclass:after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 0px;
-        top: -17px;
-        border-bottom: 12px solid transparent;
-        border-left: 12px solid #56b663;
-        right: 50%;
-        border-top: 12px solid transparent;
-        transform: rotate(-90deg);
+        left: 54%;
+        top: -16px;
+        border: 12px solid transparent;
+        border-left: 0;
+        border-right: 15px solid #56b663;
+        transform: rotate(90deg);
     }
 
 
@@ -3172,20 +3165,20 @@ label.filter {
         display: block;
         width: 0px;
         left: 54%;
-        top: -18px;
+        top: -16px;
         border: 12px solid transparent;
         border-left: 0;
         border-right: 15px solid #56b663;
         transform: rotate(90deg);
     }
 
-    .tooltipmain.tooltipmyq .tooltipclass {
+    /* .tooltipmain.tooltipmyq .tooltipclass {
         left: -83px;
-    }
+    } */
 
-    .tooltipmain.tooltipmyq .tooltipclass:before {
+    /* .tooltipmain.tooltipmyq .tooltipclass:before {
         left: 33%;
-    }
+    } */
     
     /************ End ************/
  
@@ -3806,10 +3799,10 @@ label.filter {
     .explanationdeteail {
         padding-top: 16px;
     }
-  .smalltextheading .tooltipclass{    left: -43px;}  
+  /* .smalltextheading .tooltipclass{    left: -43px;}  
   .smalltextheading .tooltipclass::before{
     left: 18%;
-}
+} */
 .aeck_commontab a.nav-link.qq1_2_3_4.active:before, .qq1_2_3_4.active:before,.aeck_commontab a.nav-link.qq1_2_3_4.active:after, .qq1_2_3_4.active:after {
     bottom: -5.4px;}
     .exam_instruction_wrapper .exam_instruction_col_eight{order:2}
@@ -3932,11 +3925,11 @@ label.filter {
         margin-bottom: 24px;
     }
     .fullbodyBox .rightImgBox svg, .fullbodyBox .rightImgBox{bottom:-6px;}
-    .commonWhiteBox.subject_performance_card .tooltipclass {
+    /* .commonWhiteBox.subject_performance_card .tooltipclass {
         left: auto;
         right: -74px;
-    }
-    .commonWhiteBox.subject_performance_card .tooltipclass:before{left: 64%;    top: -16px;}
+    } */
+    /* .commonWhiteBox.subject_performance_card .tooltipclass:before{left: 64%;    top: -16px;} */
     .gotoPlanner a {
         font-size: 16px!important;
     }
@@ -4039,7 +4032,7 @@ label.filter {
     } 
     .live_exam_jee_main_date_st_ed_ques{font-size:12px;font-weight:800;}   
     .marsk_result_card .tooltipclass{left:-74px;}  
-    .marsk_result_card .tooltipclass:before{left:31%;}
+    .marsk_result_card .tooltipclass:before{left:37%;}
     .performance_chapter_block label b{margin-right: 0px;min-width: auto;}
     .performance_chapter_accordion .accordion-item .accordion-body .performance_chapter_block label {
         padding-left: 30px;
