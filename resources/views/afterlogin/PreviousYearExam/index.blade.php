@@ -72,14 +72,11 @@
                                             </select>
                                         </div> -->
                                         <div class="customDropdown1 dropdown" id="dropdown1">
-                                            <input class="text-box markstrend" type="text" id="markstrend_graph2" placeholder="Select Year" readonly>
+                                            <input class="text-box markstrend" type="text" id="filter_year" placeholder="Select Year" readonly>
                                             <div class="options">
                                                 <div style=" overflow-y: auto;  height: 145px;">
-                                                    <div class="active markstrend">All Test</div>
-                                                    <div class="markstrend">Mock Test</div>
-                                                    <div class="markstrend">Practice Test</div>
-                                                    <div class="markstrend">Test Series</div>
-                                                    <div class="markstrend">Live Test</div>
+                                                    <div class="active markstrend">2022</div>
+                                                    <div class="markstrend">2021</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,8 +216,7 @@
         dropdown1.onclick = function() {
             dropdown1.classList.toggle("active1")
         }
-
-
+       
 </script>
 @include('afterlogin.layouts.footer_new')
 
