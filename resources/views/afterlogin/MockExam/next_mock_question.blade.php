@@ -187,15 +187,9 @@ $question_type = "Numerical";
 
                                     <div class="colMargin">
                                         <div class="inputAns">
-                                            <div class=" hideonmobile">
-                                                <label for="story">Answer</label>
-                                                <textarea style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
-                                            </div>
-                                            <div class="hideondesktop">
-                                                <label for="story">Answer</label>
-                                                <input class="form-control ui-autocomplete-input allownumericwithdecimal" type="text" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" onclick="checkResponse('{{$activeq_id}}')" />
+                                            <label for="story">Answer</label>
+                                            <textarea pattern="\d*" inputmode="numeric" style="resize:none" placeholder="Answer here" rows="20" name="quest_option_{{$activeq_id}}" id="quest_option_{{$activeq_id}}" cols="40" class="ui-autocomplete-input allownumericwithdecimal" autocomplete="off" aria-autocomplete="list" maxlength="20" aria-haspopup="true" onchange="checkResponse('{{$activeq_id}}')">{{isset($aGivenAns[0])?$aGivenAns[0]:''}}</textarea>
 
-                                            </div>
                                         </div>
                                     </div>
                                     @endif
