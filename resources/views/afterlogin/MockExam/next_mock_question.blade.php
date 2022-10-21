@@ -292,7 +292,7 @@ $question_type = "Numerical";
         if (newWindowWidth < 768) {
 
 
-            $('.allownumericwithdecimal').on('textInput', event => {
+            $('.allownumericwithdecimal').on('input', event => {
                 var self = $(this);
                 self.val(self.val().replace(/(?!^-)[^0-9\.]/g, ""));
 
