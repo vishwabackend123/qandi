@@ -16,7 +16,7 @@
         <div class="customDropdown1 dropdown" id="dropdown1">
             <input class="text-box markstrend" type="text" id="filter_attemp_year" placeholder="Select Year" readonly>
             <div class="options">
-                <div style=" overflow-y: auto;  height: 145px;">
+                <div style=" overflow-y: auto; max-height: 145px;">
                     <div class="active markstrend">2022</div>
                     <div class="markstrend">2021</div>
                 </div>
