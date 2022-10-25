@@ -284,7 +284,7 @@ $question_type = "Numerical";
         return os;
     }
 
-    alert(getOS());
+    // alert(getOS());
 
     $(document).ready(function() {
         $(window).on("resize", function(e) {
@@ -314,7 +314,8 @@ $question_type = "Numerical";
             e.preventDefault();
         });
         var newWindowWidth = $(window).width();
-        if (newWindowWidth < 768) {
+        var deviceOS = getOS();
+        if ((newWindowWidth < 768) && deviceOS == 'Android') {
 
 
             $('textarea.allownumericwithdecimal').on('textInput', event => {
