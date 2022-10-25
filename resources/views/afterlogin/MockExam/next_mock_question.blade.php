@@ -283,9 +283,6 @@ $question_type = "Numerical";
 
         return os;
     }
-
-    // alert(getOS());
-
     $(document).ready(function() {
         $(window).on("resize", function(e) {
             checkScreenSize();

@@ -54,6 +54,7 @@
         .overall_analytics_page .chapter_performance_card ul.topic_score_lists { min-height: 303px; max-height: 303px;}
         .myqTodayGraphSec .dashSubtext{margin-bottom:15px;max-width:100%;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
+        .successRef_copy.showtext{top:11px;} 
 }
 @media only screen and (max-width: 1300px){
     .subject_performance_card .dashSubtext{font-size:13px;}
@@ -120,6 +121,7 @@
   .plan_order_sumry_subscription{padding:5px 0px;}
   .plan_order_sumry_subscription{padding:4px 0px}
   .subjectblockOverall .textblock h3 {font-size: 16px;min-width: 104px;}
+  
 }
 @media only screen and (max-width: 1200px) {
         .subscriptionsLeftpannel {
@@ -4057,6 +4059,7 @@ label.filter {
     .previous_exam_page_contain .dropbox.previous_dropbox_page .customDropdown1 .options{font-size:14px;
         top: 62px;
     }
+    .MockTestMob .attemptedscroll{    max-height: calc(100vh - 381px);height:auto;}
 }
 
 
