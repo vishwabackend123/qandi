@@ -259,6 +259,28 @@ $question_type = "Numerical";
     }
 </script>
 <script>
+    function getOS() {
+        var userAgent = window.navigator.userAgent,
+            platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+            macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+            windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+            iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+            os = null;
+
+        if (macosPlatforms.indexOf(platform) !== -1) {
+            os = 'Mac OS';
+        } else if (iosPlatforms.indexOf(platform) !== -1) {
+            os = 'iOS';
+        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+            os = 'Windows';
+        } else if (/Android/.test(userAgent)) {
+            os = 'Android';
+        } else if (/Linux/.test(platform)) {
+            os = 'Linux';
+        }
+
+        return os;
+    }
     $(document).ready(function() {
         $(window).on("resize", function(e) {
             checkScreenSize();
@@ -287,43 +309,48 @@ $question_type = "Numerical";
             e.preventDefault();
         });
         var newWindowWidth = $(window).width();
-        if (newWindowWidth < 768) {
-            /* Allow only numeric with decimal */
-            // $(".allownumericwithdecimal").on("keydown", function(event) {
-            $('.allownumericwithdecimal').on('textInput', event => {
+        var deviceOS = getOS();
+        if ((newWindowWidth < 768) && deviceOS == 'Android') {
+
+
+            $('textarea.allownumericwithdecimal').on('textInput', event => {
+                var self = $(this);
+                self.val(self.val().replace(/(?!^-)[^0-9\.]/g, ""));
+
+
                 var keyCode = event.originalEvent.data.charCodeAt(0);
 
-                //this.value = this.value.replace(/[^0-9\.]/g,'');
-                $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47)) {
+                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47 || keyCode == 229)) {
 
                     event.preventDefault();
-                }
-                let textinput = $('.allownumericwithdecimal').val();
-                if (textinput.indexOf('.') > -1) {
-                    var textarray = textinput.split('.');
-                    if (textarray[1].length === 2) {
-                        event.preventDefault();
+                } else {
+                    let textinput = $('.allownumericwithdecimal').val();
+                    if (textinput.indexOf('.') > -1) {
+                        var textarray = textinput.split('.');
+                        if (textarray[1].length === 2) {
+                            event.preventDefault();
+                        }
                     }
-                }
-                if (keyCode === 46) {
-                    // if dot is the first symbol
-                    if (event.target.value.length === 0) {
-                        event.preventDefault();
-                    }
+                    if (keyCode === 46) {
+                        // if dot is the first symbol
+                        if (event.target.value.length === 0) {
+                            event.preventDefault();
+                        }
 
-                    // if there are dots already 
-                    if (event.target.value.indexOf('.') !== -1) {
-                        event.preventDefault();
+                        // if there are dots already 
+                        if (event.target.value.indexOf('.') !== -1) {
+                            event.preventDefault();
+                        }
                     }
-                }
-                if (keyCode === 45) {
-                    // if - more than 1
+                    if (keyCode === 45) {
+                        // if - more than 1
 
-                    if (event.target.value.length > 0) {
-                        event.preventDefault();
+                        if (event.target.value.length > 0) {
+                            event.preventDefault();
+                        }
                     }
                 }
+
 
             });
         } else {
