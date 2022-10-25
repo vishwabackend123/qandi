@@ -328,9 +328,9 @@
                         $("#mobile-input-btn").hide();
                         $('.verify_otp').show();
                         $('#otp-verify-btn').show();
-                        //if (response.otp) {
-                            //$('#testing_otp').html(response.otp);
-                        //}
+                        if(response.hasOwnProperty("otp")){
+                            $('#testing_otp').html(response.otp);
+                        }
                         if (otp_type == 'resend') {
                             $('#opt_one').val('');
                             $('#opt_two').val('');
