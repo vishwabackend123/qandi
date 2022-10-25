@@ -315,7 +315,7 @@ $question_type = "Numerical";
         });
         var newWindowWidth = $(window).width();
         var deviceOS = getOS();
-        if ((newWindowWidth < 768) && deviceOS == 'Android') {
+        if ((newWindowWidth < 768)) {
 
 
             $('textarea.allownumericwithdecimal').on('textInput', event => {
