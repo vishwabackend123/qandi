@@ -1307,7 +1307,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
             return tooltipBackColor;
         }
-
     </script>
     <script>
         function show(value, type, ids) {
