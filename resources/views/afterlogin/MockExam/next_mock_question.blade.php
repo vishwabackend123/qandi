@@ -316,7 +316,7 @@ $question_type = "Numerical";
 
             $('textarea.allownumericwithdecimal').on('textInput', event => {
                 var self = $(this);
-                self.val(self.val().replace(/(?!^-)[^0-9\.]/g, ""));
+                self.val(self.val().replace(/^-?\d*[.,]?\d{0,2}$/g, ""));
 
 
                 var keyCode = event.originalEvent.data.charCodeAt(0);
