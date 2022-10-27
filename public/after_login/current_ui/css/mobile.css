@@ -2810,7 +2810,7 @@ label.filter {
         margin-top: -1px;
         margin-left: -1px;
     }
-    .sidebartoggle .content-wrapper{position: relative;}
+    .sidebartoggle .content-wrapper{position: relative;min-height: 100vh;}
     
 
     .test_analytics_wrapper .d-flex.mt-4.mb-4.align-items-end {display: block!important;margin: 18px 0 16px!important;}
