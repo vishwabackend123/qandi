@@ -144,10 +144,10 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
-                                    <span class="d-block mb-1 commontext">Overall Marks</span>
-                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?number_format($scoreResponse->result_percentage,2):0}}</label>
+                                    <span class="d-block mb-1 commontext">Overall % Marks</span>
+                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($scoreResponse->result_percentage)?number_format($scoreResponse->result_percentage,2):0}} %</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label" style="left:-10px;"><small> Marks </small></span>
+                                        <span class="yaxis_label" style="left:-10px;"><small>% Marks </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -318,6 +318,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
                     display: false
                 },
                 tooltip: {
+                    callbacks: {
+                        label: (item) =>
+                            `${item.formattedValue} %`,
+                    },
                     displayColors: false,
                     // yAlign: 'bottom',
                     backgroundColor: colorItems_1
@@ -331,11 +335,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
                 },
 
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }
         }
     });
+
     function colorItems_1(tooltipItem) {
         const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
         return tooltipBackColor;
@@ -471,11 +476,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
         }
     };
     const myscore = new Chart("myscoregraph", myscoreconfig)
+
     function colorItems(tooltipItem) {
         const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
         return tooltipBackColor;
     }
-    
+
 
     /***************** halfdoughnut - end *********************/
 </script>
