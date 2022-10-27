@@ -4016,7 +4016,7 @@ label.filter {
             .examReviewscreenmob .backbtnformobilebox .bck-btn {
                 padding-left: 1px;border-radius:0px;
             }
-            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;background: #f5faf6;}
             .testscreenmob .content-wrapper{height:100%;}
             #addChapter svg.position-relative{top: -2px;}
             body.refrerpopUp .modal-backdrop{display:none!important;}
