@@ -996,7 +996,6 @@ $user_id = isset($userData->id)?$userData->id:'';
     $trend_stu_score=$trend_avg_score=$trend_max_score=$aWeeks = $weekdates=[];
     $month = date('m');
     $i = $month - count($trendResponse)+1;
-    print_r($i);die;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
     //$week = "W" . $i;

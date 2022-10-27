@@ -143,6 +143,7 @@ class HomeController extends Controller
                 $subject_proficiency = [];
                 $trendResponse = [];
             }
+            print_r($trendResponse);die;
 
             $curl = curl_init();
             $api_URL = env('API_URL');
