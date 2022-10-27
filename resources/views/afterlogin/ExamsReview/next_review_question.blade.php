@@ -560,19 +560,22 @@ $question_type = "Numerical";
                 let screenWidth = screen.width;
                 var screenWidth_15 = screenWidth - 15 + "px";
                 $('.examReviewscreenmob .expand_block').css('width', screenWidth_15);
-                $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
+                // $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
+                $(".reviewans-mainsec").addClass("darkHeader");
             
             });
 
             $("#reviewData").on("click", ".expand_block", function(e) {
                 e.stopPropagation();
-                $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
+                // $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
+                $(".reviewans-mainsec").removeClass("darkHeader");
             
             });
 
             $(document).click(function() {
                 $(".expand_block").hide();
-                $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
+                // $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
+                $(".reviewans-mainsec").removeClass("darkHeader");
             
             });
 
