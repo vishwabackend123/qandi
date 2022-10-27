@@ -3875,7 +3875,7 @@ label.filter {
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
             font-size: 10px;}
-       .expandbtnmob1{position: relative;top:15px}
+       .expandbtnmob1{position: relative;top:15px;left:11px;}
        #clearBtn_response {
         border: none;color: gray;
     }
