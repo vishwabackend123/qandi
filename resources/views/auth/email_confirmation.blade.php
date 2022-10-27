@@ -52,7 +52,7 @@
             <a href="javascript:void(0)" class="btn btn-common-transparent nobg w-50 resend_email" style="padding: 10px 40px;margin:24px 12px 0px 0px;"> Resend</a>
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
-        @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invald Token')
+        @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invalid Token')
         <p class="email_head"><span>Invalid link</span></p>
         <p><label><b></b> </label></p>
         <div class="d-flex align-items-center justify-content-center">
