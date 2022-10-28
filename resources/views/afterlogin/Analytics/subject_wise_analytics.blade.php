@@ -701,7 +701,16 @@ var myChartmath = new Chart(ctxmath, {
             x: {
                 grid: {
                     display: false
-                }
+                },
+                    ticks: {
+                        color: '#1f1f1f',
+                        font: {
+                            size: 14,
+                            weight: 500,
+                            family: 'Manrope',
+                            style: 'normal'
+                        }
+                 }
             },
 
             y: {

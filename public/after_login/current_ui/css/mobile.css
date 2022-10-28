@@ -171,6 +171,10 @@
  .matrixpage-wrapper .exam_instruction_scrolling {
     height: calc(100vh - 320px);
 } 
+.list-ans {
+    height:28vh;
+  
+}
 
 }
 
@@ -199,7 +203,7 @@
      height: 350px;
     }
     .list-ans{
-        height: 27vh;
+        height: 25vh;
     }
     .progress-box{margin-top:20px;}
     .user-profile-sec {
@@ -238,6 +242,9 @@
     .successRef_copy.showtext{top: 4px;}
     .bottom-sec {
         padding: 10px 0 0px;
+    }
+    .list-ans{
+        height: 20vh;
     }
 }
 
@@ -2803,7 +2810,7 @@ label.filter {
         margin-top: -1px;
         margin-left: -1px;
     }
-    .sidebartoggle .content-wrapper{position: relative;}
+    .sidebartoggle .content-wrapper{position: relative;min-height: 100vh;}
     
 
     .test_analytics_wrapper .d-flex.mt-4.mb-4.align-items-end {display: block!important;margin: 18px 0 16px!important;}
@@ -3788,6 +3795,7 @@ label.filter {
         box-shadow: 0 8px 30px 0 rgb(157 170 160 / 30%);
         background: #fff;
         width: 360px;
+        z-index: 999999;
         
     }
 
@@ -3868,7 +3876,7 @@ label.filter {
         .filterdropdown .dropdown-item{    margin-bottom: 2px;
             padding-bottom: 4px;
             font-size: 10px;}
-       .expandbtnmob1{position: relative;top:15px}
+       .expandbtnmob1{position: relative;top:15px;left:11px;}
        #clearBtn_response {
         border: none;color: gray;
     }
@@ -4009,7 +4017,7 @@ label.filter {
             .examReviewscreenmob .backbtnformobilebox .bck-btn {
                 padding-left: 1px;border-radius:0px;
             }
-            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;}
+            .testscreenmob .examSereenwrapper{overflow:hidden;height:100%;background: #f5faf6;}
             .testscreenmob .content-wrapper{height:100%;}
             #addChapter svg.position-relative{top: -2px;}
             body.refrerpopUp .modal-backdrop{display:none!important;}

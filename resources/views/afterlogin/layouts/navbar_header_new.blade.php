@@ -186,6 +186,19 @@ $nitifiCount=count($notifications);
         });
     }
 
+    $(document).on('click', function(e) {
+        if($(".sidebar_block").hasClass("showmenu"))
+        {
+             if ($(event.target).hasClass('content-wrapper') || $(event.target).hasClass('headerMain')) {
+                $('html').removeClass("windowhidden")
+                $('body').removeClass("sidebartoggle")
+                $('#menumobilehide').hide();
+                $("#menumobile").show();
+                $('.sidebar_block').removeClass('showmenu');
+                $('html').removeClass("scrollnone");
+             }
+        }
+    });
     /*****Mobile-menu js*********** */
     $("#menumobile").click(function() {
         $('html').addClass("windowhidden")
@@ -206,6 +219,7 @@ $nitifiCount=count($notifications);
         $('.sidebar_block').removeClass('showmenu');
         $('html').removeClass("scrollnone");
     });
+     
     /*****Mobile-menu js*********** */
     $('#clearAll').click(function() {
         $.ajax({

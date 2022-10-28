@@ -63,7 +63,8 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    This score indicates your readiness, based on your most recent test. <br> Score = (Total number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response) </p>
+                                    This score indicates your readiness, based on your most recent test. <br> Score = (Total number of correct answers x Marking for correct response) – (Total number of incorrect answers x Marking for incorrect response)
+                                </p>
                             </span>
                         </h3>
                         <div class="row align-items-center">
@@ -129,10 +130,10 @@
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
-                                    <span class="d-block mb-1 commontext">Overall Marks</span>
-                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}}</label>
+                                    <span class="d-block mb-1 commontext">Overall % Marks</span>
+                                    <label class="mb-3 commonboldtext" id="percentage" style="font-size: 24px;">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}} %</label>
                                     <div class="overall_percentage_chart graph_padd">
-                                        <span class="yaxis_label" style="left:-10px;"><small> Marks  </small></span>
+                                        <span class="yaxis_label" style="left:-10px;"><small>% Marks </small></span>
                                         <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
@@ -190,7 +191,8 @@
                                 </svg>
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                    Total score split into subject-wise performance.                                </p>
+                                    Total score split into subject-wise performance.
+                                </p>
                             </span>
                         </h3>
                         <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered.</p>
@@ -204,7 +206,7 @@
                             $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
                             @endphp
                             <div class="col-sm-6 mb-5 col-md-12 col-lg-6"">
-                                <h5 class="mb-0">{{$subject->subject_name}}</h5>
+                                <h5 class=" mb-0">{{$subject->subject_name}}</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="halfdoughnut">
                                         <canvas id="subjectChart_{{$subject->subject_id}}"></canvas>
@@ -260,6 +262,7 @@
                                             }
                                         };
                                         var myCharted = new Chart(ids, config)
+
                                         function colorItems_1(tooltipItem) {
                                             const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
                                             return tooltipBackColor;
@@ -391,7 +394,7 @@
                                                                 labels: ["Correct", "Incorrect", "Not Attempted"],
                                                                 datasets: [{
                                                                     label: "My First Dataset",
-                                                                    data: [<?php echo $tcorrect_per; ?>,<?php echo $tincorrect_per; ?>,<?php echo $tnot_attempt_per; ?>],
+                                                                    data: [<?php echo $tcorrect_per; ?>, <?php echo $tincorrect_per; ?>, <?php echo $tnot_attempt_per; ?>],
                                                                     backgroundColor: [
                                                                         "#34d399",
                                                                         "#ff6678",
@@ -484,24 +487,24 @@ $not_attempt_per_pie=(100-($correct_per_pie+$incorrect_per_pie)>=0)? 100-($corre
 $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
 $subject_wise_result=isset($response->subject_wise_result)?$response->subject_wise_result:0;
 $subject_id = array_map(function($e) {
-    return is_object($e) ? $e->subject_id : $e['subject_id'];
+return is_object($e) ? $e->subject_id : $e['subject_id'];
 }, $subject_wise_result);
 $stuscore_arr=$clsAvg_arr=[];
 $stuscore=$clsAvg=0;
 foreach($subject_graph as $key=>$gh){
-    if (in_array($gh->subject_id, $subject_id))
-    {
-        $stuscore=$stuscore+$gh->student_score_percentage;
-        $clsAvg=$clsAvg+$gh->class_score;
-    }
+if (in_array($gh->subject_id, $subject_id))
+{
+$stuscore=$stuscore+$gh->student_score_percentage;
+$clsAvg=$clsAvg+$gh->class_score;
+}
 }
 //$total_sub=count($subject_graph);
 $total_sub=count($subject_wise_result);
 
 if($total_sub > 0)
 {
-    $stuscore=$stuscore/$total_sub;
-    $clsAvg=$clsAvg/$total_sub;
+$stuscore=$stuscore/$total_sub;
+$clsAvg=$clsAvg/$total_sub;
 }
 $stuscore_arr[]=$stuscore;
 $stuscore_json=json_encode($stuscore_arr);
@@ -510,7 +513,6 @@ $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
 @if(isset($type_exam) && !empty($type_exam) && ($type_exam =='Mocktest' || $type_exam =='Live' || $type_exam =='PreviousYear'))
 <script>
-    
     /*********** BarChart ***********/
     var student_scr = '<?php echo $stuscore ?>';
     var student_bar_color = '#56b663';
@@ -542,6 +544,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
                     display: false
                 },
                 tooltip: {
+                    callbacks: {
+                        label: (item) =>
+                            `${item.formattedValue} %`,
+                    },
                     displayColors: false,
                     // yAlign: 'bottom',
                     backgroundColor: colorItems_2
@@ -560,6 +566,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             }
         }
     });
+
     function colorItems_2(tooltipItem) {
         const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
         return tooltipBackColor;
@@ -677,6 +684,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
         }
     };
     const myscore = new Chart("myscoregraph", myscoreconfig)
+
     function colorItems(tooltipItem) {
         const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
         return tooltipBackColor;
@@ -709,11 +717,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
             $('.tooltipclass').removeClass('show');
         }
     });
-    
+
     $(".topic_score_bar .dropdown").hover(function() {
         $(this).children(".progress.dropdown-toggle").trigger('click');
     });
-   
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection

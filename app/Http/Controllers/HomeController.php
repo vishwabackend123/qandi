@@ -129,15 +129,18 @@ class HomeController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
+                $scoreData = [];
+                $subject_proficiency = [];
+                $trendResponse = [];
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_json = json_decode($score_json, true);
                 //$response_json = str_replace('NaN', '""', $scoreResponse);
 
                 $scoreResponse = json_decode($response_json, true);
 
-                $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : '';
+                $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : [];
                 $subject_proficiency = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : [];
-                $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
+                $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : [];
             } else {
                 $scoreData = [];
                 $subject_proficiency = [];

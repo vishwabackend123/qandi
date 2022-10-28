@@ -807,7 +807,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <div></div>
                                                         @endif
                                                         <div class="progress_journey_chart graph_padd">
-                                                            <span class="yaxis_label"><small>Average Marks (in %)</small> </span>
+                                                            <span class="yaxis_label"><small>Marks (in %)</small> </span>
                                                             <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                         </div>
                                                         <div class="desktop_hide">
@@ -1307,7 +1307,6 @@ $user_id = isset($userData->id)?$userData->id:'';
             const tooltipBackColor = tooltipItem.tooltip.labelColors[0].backgroundColor;
             return tooltipBackColor;
         }
-
     </script>
     <script>
         function show(value, type, ids) {
