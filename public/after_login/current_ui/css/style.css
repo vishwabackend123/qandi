@@ -4344,7 +4344,7 @@ ul.topic_score_lists li:nth-child(even) {
 } 
 span.select2-selection.select2-selection--single:focus{outline:0!important;}
 .progress_journey_chart .yaxis_label{left: -28px;}
-.progress_journey_chart.graph_padd{padding-left:15px;}
+ .progress_journey_chart.graph_padd{padding-left:15px;}
 .previous_exam_page_contain .dropbox.previous_dropbox_page{width:233px;}
 /********************* Amit End ****************************/
 
@@ -7156,7 +7156,7 @@ border-color: #56b663;
     position: absolute;
     left: 36px;
     top: -12px;
-    min-width: 350px;
+    min-width: 326px;
     display: none;
     text-align: left;
     height: auto !important;
