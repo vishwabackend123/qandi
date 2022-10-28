@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * AdpativeExamController
@@ -608,6 +609,49 @@ class AdpativeExamController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
+                // Mixpanel Started
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+
+
+                   //Mixpanel Event Started
+   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                   
+                   // track an event
+                   $mp->track("Custom Exam Practice For Selected Topics Button Clicked", array(
+                    'distinct_id' => $userData->id,
+                   '$user_id' => $userData->id,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   'Email Verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   '$city' => $userData->city
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                       '$user_id'       => $userData->id,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       'Email Verified' => $userData->email_verified,
+                       'course' => $grade,
+                       '$city' => $userData->city
+   
+                   ));
+                   
+
+                   //Mixpanel Event Ended
+
+
+
                 $examType = 'custom';
                 $instructions = $this->getInstructions($examType);
 
@@ -924,6 +968,40 @@ class AdpativeExamController extends Controller
             if ($check_response == true) {
 
                 $result_id = $response_data->result_id;
+
+                /*mixpanel start*/
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   $mp = Mixpanel::getInstance("1786724e2a19c89a045f66f90b792a98");
+                   
+                   // track an event
+                   $mp->track("Custom Exam Practice For Topic Submit", array(
+                   'distinct_id' => $userData->id,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   'Email Verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   '$city' => $userData->city,
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                       'distinct_id' => $userData->id,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       'Email Verified' => $userData->email_verified,
+                       'Course' => $grade,
+                       '$city' => $userData->city,
+   
+                   ));
+                   /*mixpanel event end*/
+                
                 return Redirect::route('exam_result_analytics', [$result_id]);
                 // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
@@ -1018,6 +1096,44 @@ class AdpativeExamController extends Controller
 
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
+
+                // Mixpanel Started
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+                
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   // track an event
+                   $mp->track("Custom Exam Practice For Chapter Submit", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city
+   
+                   ));
+                   
+                   // Mixpanel Event End
+
 
 
                 return Redirect::route('exam_result_analytics', [$result_id]);

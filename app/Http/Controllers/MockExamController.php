@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Mixpanel;
 
 /**
  * MockExamController
@@ -256,6 +257,45 @@ class MockExamController extends Controller
             if ($url_name == 'mockExamTest') {
                 return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'header_title'));
             } else {
+
+                // Mixpanel Started
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   /*mixpanel*/
+                   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   // track an event
+                   $mp->track("Mock Exam-clicked to take test button", array(
+                   'distinct_id' => $userData->id,
+                   '$city' => $userData->city,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   'email verified' => $userData->email_verified,
+                   'Course' => $grade
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                       'distinct_id'       => $userData->id,
+                       '$city' => $userData->city,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       'email verified' => $userData->email_verified,
+                       'Course' => $grade
+                   ));
+                
+                // Mixpanel Event Ended
+
+                
                 //return view('afterlogin.MockExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'header_title'));
                 return view('afterlogin.MockExam.mock_exam', compact('ranSession', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'header_title'));
             }

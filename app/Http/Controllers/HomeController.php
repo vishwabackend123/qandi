@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Cache;
 
 use Illuminate\Support\Facades\Validator;
 use AWS;
+use Mixpanel;
 
 /**
  * HomeController
@@ -478,6 +479,16 @@ class HomeController extends Controller
                 curl_close($curl);
             }
 
+            // Mixpanel started
+            $response['user_data'] = $userData;
+            $response['request_rating'] = $request_rating;
+            
+            $aresponse = ["status" => 200, "success" => true, "response" => $response];
+            return json_encode($aresponse);
+            
+            // Mixpanel Event Ended
+
+
             return "success";
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -856,6 +867,30 @@ class HomeController extends Controller
     public function dailytask()
     {
         try {
+
+            // Mixpanel started
+
+            $userData = Session::get('user_data');
+
+                // Mixpanel event started    
+                $Mixpanel_key_id = env('MIXPANEL_KEY');
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                
+                // create/update a profile for user id
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$email' => $userData->email,
+                    '$city' => $userData->city,
+                    '$country' => $userData->country
+                    ));
+                    // Mixpanel event 
+
+                // track an event
+                $mp->track("clicked for more tasks", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+
+            // Mixpanel Event Ended
+
             $response_task = $this->myqDailytask();
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
@@ -990,6 +1025,27 @@ class HomeController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
+            // Mixpanel Started
+            $eventtype = "clicked practice ".$tasktype." task";
+
+            // Mixpanel event started    
+            
+            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+        
+            // track an event
+            $mp->track($eventtype, array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city)); 
+
+            // create/update a profile for user id
+            $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            '$email' => $userData->email,
+            '$city' => $userData->city,
+            '$country' => $userData->country
+            ));
+            // Mixpanel event ended
+
             $filtered_subject = [];
             $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
@@ -1279,6 +1335,26 @@ class HomeController extends Controller
     {
         $userData = Session::get('user_data');
         $user_id = $userData->id;
+
+
+        // Mixpanel Started
+
+        $Mixpanel_key_id = env('MIXPANEL_KEY');
+        $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+        
+        // track an event
+        $mp->track("Go to task center", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+
+        // create/update a profile for user id
+        $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            '$email' => $userData->email,
+            '$city' => $userData->city,
+            '$country' => $userData->country
+        ));
+        // Mixpanel Event Ended
+
 
         $exam_id = $userData->grade_id;
         $curl = curl_init();

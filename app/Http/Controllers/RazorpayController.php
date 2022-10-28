@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * RazorpayController
@@ -109,6 +110,48 @@ class RazorpayController extends Controller
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = isset($exam_id) && !empty($exam_id) ? $exam_id : $sessionData->grade_id;
 
+                // Mixpanel Started
+                $details = $aResponse->orderDetails;
+
+                $amount = isset($details->amount) ? $details->amount: 0;
+
+
+                // Mixpanel Started Event
+                
+                $Mixpanel_key_id = env('MIXPANEL_KEY');
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                
+                    // track an event
+
+                    $mp->track("Payment Completed", array(
+                        'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    //'Email Verified' => $userData->email_verified,
+                    //'Course' => $grade,
+                    '$city' => $userData->city,
+
+                    'amount paid' => $amount));
+
+                    // create/update a profile for user id
+
+                    $mp->people->set($userData->id, array(
+                        'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    //'Email Verified' => $userData->email_verified,
+                    //'Course' => $grade,
+                    '$city' => $userData->city,
+                    'amount paid' => $amount
+                    ));
+
+
+                // Mixpanel Event Ended
+
+
+
                 Session::put('user_data', $sessionData);
                 if (env('CRM_URL_STATUS')) {
                     $curl = curl_init();
@@ -139,6 +182,39 @@ class RazorpayController extends Controller
                 }
                 return view('plan_purchased_success', compact('transaction_data'));
             } else {
+
+                // Mixpanel Started
+                $Mixpanel_key_id = env('MIXPANEL_KEY');
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                // track an event
+
+                $mp->track("Payment Failed", array(
+                    'distinct_id' => $userData->id,
+                '$user_id' => $userData->id,
+                '$phone' => $userData->mobile,
+                '$email' => $userData->email,
+                //'Email Verified' => $userData->email_verified,
+                //'Course' => $grade,
+                '$city' => $userData->city,
+                'amount paid' => "", 'course cost' => "", 'discount' => "" ));
+
+                // create/update a profile for user id
+
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+
+                '$user_id' => $userData->id,
+                '$phone' => $userData->mobile,
+                '$email' => $userData->email,
+                //'Email Verified' => $userData->email_verified,
+                //'Course' => $grade,
+                '$city' => $userData->city
+                ));
+
+                // Mixpanel Event Ended
+
+                
                 return view('plan_purchased_faild', compact('transaction_data', 'exam_id'));
             }
         } catch (\Exception $e) {

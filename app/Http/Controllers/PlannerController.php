@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * PlannerController
@@ -642,6 +643,24 @@ class PlannerController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
+            // Mixpanel Started  
+            
+            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            // track an event
+            $mp->track("Add plan", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+
+            // create/update a profile for user id
+            $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            '$email' => $userData->email,
+            '$city' => $userData->city,
+            '$country' => $userData->country
+            ));
+            // Mixpanel event ended
+
 
             $curl = curl_init();
             $api_URL = env('API_URL');

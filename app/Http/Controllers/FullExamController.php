@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * FullExamController
@@ -34,13 +35,45 @@ class FullExamController extends Controller
      *
      * @return void
      */
-    public function exam(Request $request, $exam_name, $inst = '')
+    public function exam(Request $request, $exam_name, $inst = '',$is_empty_user = '', $event_type ='')
     {
         try {
             $filtered_subject = [];
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
+            // Mixpanel Started
+            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            // track an event
+            //$mp->track("Attempt full body scan from MyQ Today", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+
+            if($is_empty_user==='empty_user' && $event_type==='my_task_center')
+            {
+                $mp->track("Attempt full body scan from My Task Center  ", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            }
+            else if($is_empty_user==='empty_user' && $event_type==='myq_today')
+            {
+                $mp->track("Attempt full body scan from MyQ Today", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            }
+            else if($is_empty_user==='empty_user' && $event_type==='myq_matrix')
+            {
+                $mp->track("Attempt full body scan from MyQ Matrix", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            }
+            
+            // create/update a profile for user id
+            $mp->people->set($userData->id, array(
+                'distinct_id' => $userData->id,
+                '$email' => $userData->email,
+                '$city' => $userData->city,
+                '$country' => $userData->country
+            ));
+            
+
+            // Mixpanel Event Ended
+
 
             $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
@@ -146,12 +179,52 @@ class FullExamController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
+                $Redis = Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
 
                 $exam_url = route('exam', ['full_exam']);
 
                 $exam_title = "Personalized Preparation Assessment";
                 $test_type = 'Profiling';
+
+                // Mixpanel started 
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   // track an event
+                   $mp->track("Full Body Scan Attempt Now", array(
+                    'distinct_id' => $userData->id,
+                   '$user_id' => $userData->id,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   'Email Verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   '$city' => $userData->city
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                   '$user_id' => $userData->id,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   'Email Verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   '$city' => $userData->city
+   
+                   ));
+                
+
+                // Mixpanel Event Ended
+
 
                 $examType = 'full_body_scan';
                 $instructions = $this->getInstructions($examType);
