@@ -503,6 +503,7 @@ $question_type = "Numerical";
                 var examreviewMainboxNew = customanstopheightNew - 80 + "px";
                 $('.list-ans').css('height', examreviewMainboxNew);
                 $("#filterBy .dropdown-menu").addClass("filterByexpand");
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:none !important;');
             });
 
             $(".collapseformob").on('click', function() {
@@ -510,6 +511,7 @@ $question_type = "Numerical";
                 $('.reviewans-mainsec').attr('style', 'height: 150px !important');
                 $('.list-ans').attr('style', '    height: calc( 100% - 80px) !important');
                 $("#filterBy .dropdown-menu").removeClass("filterByexpand");
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:1px solid rgba(205, 227, 208, 0.5) !important;');
             });
 
             $(".expandbtnmob1").on('click', function() {
@@ -521,6 +523,7 @@ $question_type = "Numerical";
                 var examreviewMainboxNew1 = customanstopheightNew1 - 100 + "px";
                 $('.explanation-sec').css('height', examreviewMainboxNew1);
                 $(".first_screen").addClass("first_screen_expand");
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:none !important;');
 
             });
 
@@ -529,6 +532,7 @@ $question_type = "Numerical";
                 $('.answer-main-sec').attr('style', 'height: 240px');
                 $('.explanation-sec').attr('style', ' height: 20px !important');
                 $(".first_screen").removeClass("first_screen_expand");
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:1px solid rgba(205, 227, 208, 0.5) !important;');
             });
 
             $(".showyes").on('click', function() {
@@ -542,6 +546,7 @@ $question_type = "Numerical";
                 var customanstopheightNew = $(".custom-anstop").outerHeight();
                 var examreviewMainboxNew = customanstopheightNew - 70 + "px";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:none !important;');
 
             });
 
@@ -551,6 +556,7 @@ $question_type = "Numerical";
                 $('.overlaydiv').hide(0);
                 $('.custom-anstop').attr('style', 'height:0px !important; opacity:0; display:none;');
                 $('.text-exambottom-sec').attr('style', 'height: 0px !important; ');
+                $('.examReviewscreenmob .btn123').attr('style', 'border-top:1px solid rgba(205, 227, 208, 0.5) !important;');
 
             });
 
