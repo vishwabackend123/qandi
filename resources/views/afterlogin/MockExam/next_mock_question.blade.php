@@ -260,28 +260,6 @@ $question_type = "Numerical";
     }
 </script>
 <script>
-    function getOS() {
-        var userAgent = window.navigator.userAgent,
-            platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
-            macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-            windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-            iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-            os = null;
-
-        if (macosPlatforms.indexOf(platform) !== -1) {
-            os = 'Mac OS';
-        } else if (iosPlatforms.indexOf(platform) !== -1) {
-            os = 'iOS';
-        } else if (windowsPlatforms.indexOf(platform) !== -1) {
-            os = 'Windows';
-        } else if (/Android/.test(userAgent)) {
-            os = 'Android';
-        } else if (/Linux/.test(platform)) {
-            os = 'Linux';
-        }
-
-        return os;
-    }
     $(document).ready(function() {
         $(window).on("resize", function(e) {
             checkScreenSize();
@@ -304,6 +282,7 @@ $question_type = "Numerical";
         }
         //$('#quest_option_' + question_id).focus();
     });
+    /* numerical input validation */
     (function($) {
         $.fn.inputFilter = function(callback, errMsg) {
             return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function(e) {
@@ -330,94 +309,14 @@ $question_type = "Numerical";
             });
         };
     }(jQuery));
-    /* jQuery(function($) {
+    jQuery(function($) {
 
         $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
             e.preventDefault();
         });
-        var newWindowWidth = $(window).width();
-        var deviceOS = getOS();
-        if ((newWindowWidth < 768) && deviceOS == 'Android') {
-
-
-            $('textarea.allownumericwithdecimal').on('textInput', event => {
-                var self = $(this);
-                self.val(self.val().replace(/^-?\d*[.,]?\d{0,2}$/g, ""));
-
-
-                var keyCode = event.originalEvent.data.charCodeAt(0);
-
-                if ((keyCode != 46 || $(this).val().indexOf('.') != -1) && (keyCode < 45 || keyCode > 57 || keyCode == 47 || keyCode == 229)) {
-
-                    event.preventDefault();
-                } else {
-                    let textinput = $('.allownumericwithdecimal').val();
-                    if (textinput.indexOf('.') > -1) {
-                        var textarray = textinput.split('.');
-                        if (textarray[1].length >= 2) {
-                            event.preventDefault();
-                        }
-                    }
-                    if (keyCode === 46) {
-                        // if dot is the first symbol
-                        if (event.target.value.length === 0) {
-                            event.preventDefault();
-                        }
-
-                        // if there are dots already 
-                        if (event.target.value.indexOf('.') !== -1) {
-                            event.preventDefault();
-                        }
-                    }
-                    if (keyCode === 45) {
-                        // if - more than 1
-
-                        if (event.target.value.length > 0) {
-                            event.preventDefault();
-                        }
-                    }
-                }
-
-
-            });
-        } else {
-            $(".allownumericwithdecimal").on("keypress", function(event) {
-
-
-                //this.value = this.value.replace(/[^0-9\.]/g,'');
-                $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-                if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-
-                    event.preventDefault();
-                }
-                let text = $(this).val();
-                if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-
-                    event.preventDefault();
-                }
-
-
-                if (event.charCode === 46) {
-
-                    // if dot is the first symbol
-                    if (event.target.value.length === 0) {
-                        event.preventDefault();
-
-                    }
-
-                    // if there are dots already 
-                    if (event.target.value.indexOf('.') !== -1) {
-                        event.preventDefault();
-
-                    }
-
-                }
-
-            });
-        }
-    }); */
-    $(".allownumericwithdecimal").inputFilter(function(value) {
-        return /^-?\d*[.]?\d{0,2}$/.test(value);
+        $(".allownumericwithdecimal").inputFilter(function(value) {
+            return /^-?\d*[.]?\d{0,2}$/.test(value);
+        });
     });
 
     jQuery(function() {

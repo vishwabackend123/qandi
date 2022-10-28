@@ -81,7 +81,7 @@ $question_type = "Numerical";
                         <div class="examScreentab">
                             <div class="examTabheader">
                                 <div class="tablist">
-                                    <ul class="nav nav-tabs mobilescrolltab" role="tablist" id="myTab">
+                                    <ul class="nav nav-tabs mobilescrolltab mobilescrolltabNew" role="tablist" id="myTab">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item">
@@ -668,34 +668,40 @@ $question_type = "Numerical";
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
-    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
-        e.preventDefault();
-    })
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+    (function($) {
+        $.fn.inputFilter = function(callback, errMsg) {
+            return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function(e) {
+                if (callback(this.value)) {
+                    // Accepted value
+                    if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+                        $(this).removeClass("input-error");
+                        this.setCustomValidity("");
+                    }
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    // Rejected value - restore the previous one
+                    //$(this).addClass("input-error");
+                    //this.setCustomValidity(errMsg);
+                    this.reportValidity();
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                } else {
+                    // Rejected value - nothing to restore
+                    this.value = "";
+                }
+            });
+        };
+    }(jQuery));
+    jQuery(function($) {
 
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
-        if (event.charCode === 46) {
-            // if dot is the first symbol
-            if (event.target.value.length === 0) {
-                event.preventDefault();
-                return;
-            }
-
-            // if there are dots already 
-            if (event.target.value.indexOf('.') !== -1) {
-                event.preventDefault();
-                return;
-            }
-
-        }
+        $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+            e.preventDefault();
+        });
+        $(".allownumericwithdecimal").inputFilter(function(value) {
+            return /^-?\d*[.]?\d{0,2}$/.test(value);
+        });
     });
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
