@@ -30,7 +30,7 @@
     </div>
     <div class="email-confirmation token_verfiy">
         <div class="email-profile-pick">
-            @if(isset($response_json['message']) && !empty($response_json['message']) && ($response_json['message'] == 'Token Expired, please resend email verification' || $response_json['message'] == 'Invald Token'))
+            @if(isset($response_json['message']) && !empty($response_json['message']) && ($response_json['message'] == 'Token Expired, please resend email verification' || $response_json['message'] == 'Invalid Token'))
             <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50.5" cy="50" r="50" fill="#FEF0C7" />
                 <path d="M50 43.793v-9.655c8.702 0 15.862 7.16 15.862 15.862S58.702 65.862 50 65.862 34.138 58.702 34.138 50c0-4.206 1.672-8.243 4.645-11.217" stroke="#DC6803" stroke-width="2.5" stroke-miterlimit="10" />

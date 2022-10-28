@@ -189,7 +189,7 @@ $nitifiCount=count($notifications);
     $(document).on('click', function(e) {
         if($(".sidebar_block").hasClass("showmenu"))
         {
-             if ($(event.target).hasClass('dashbaordContainer') || $(event.target).hasClass('headerMain')) {
+             if ($(event.target).hasClass('content-wrapper') || $(event.target).hasClass('headerMain')) {
                 $('html').removeClass("windowhidden")
                 $('body').removeClass("sidebartoggle")
                 $('#menumobilehide').hide();

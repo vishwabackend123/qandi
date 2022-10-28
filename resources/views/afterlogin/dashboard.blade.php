@@ -233,7 +233,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                             </div>
                             @endif
-                            <!-- <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a> -->
+                            <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
                             <div class="tabMainblock">
                                 <div class="commontab mobilejustify">
                                     <div class="tablist">
@@ -807,7 +807,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                         <div></div>
                                                         @endif
                                                         <div class="progress_journey_chart graph_padd">
-                                                            <span class="yaxis_label"><small>Average Marks (in %)</small> </span>
+                                                            <span class="yaxis_label"><small>Marks (in %)</small> </span>
                                                             <canvas id="trend_graph" style="height: 270px;"></canvas>
                                                         </div>
                                                         <div class="desktop_hide">
