@@ -37,6 +37,29 @@ Route::any('/', function () {
 Route::any('/logout', function (Request $request) {
     //return view('index');
     $request->session()->flush();
+
+    /*mixpanel start*/
+    
+    $userData = Session::get('user_data');
+    $user_id = $userData->id;
+    
+    $Mixpanel_key_id = env('MIXPANEL_KEY');
+    $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+    // track an event
+    $mp->track("Log Out", array('$distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$user_id' => $userData->id,'log_out_at' => date("Y-m-d H:i:s"))); 
+
+    // create/update a profile for user id
+    $mp->people->set($userData->id, array(
+        '$distinct_id' => $userData->id,
+            '$email' => $userData->email,
+            '$city' => $userData->city,
+        '$user_id' => $userData->id,
+        'log_out_at'   => date("Y-m-d H:i:s"),
+    ));
+    /*mixpanel end*/
+
+
     return Redirect()->route('login');
     /*  $landing_URL = env('LANDING_URL');
     return redirect($landing_URL); */
@@ -125,7 +148,8 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 
 /* Full exam Controller Routes */
-Route::any('/exam/{full_exam}/{instruction?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
+// For Mixpanel 
+Route::any('/exam/{full_exam}/{instruction?}/{empty?}/{button_type?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
 Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'nextQuestion'])->name('next_question')->middleware('auth');
 Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
