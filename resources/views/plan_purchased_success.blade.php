@@ -40,7 +40,7 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                         </svg>
                         <div class="plan_success_congrats_msg">
                             <div class="plan_success_congrats_msg_name">Congratulations {{$user_name}}</div>
-                            <div class="plan_success_congrats_msg_text">Thank you for your purchase. You have now been upgraded to the 1 year plan. We hope you continue to enjoy your learning journey.</div>
+                            <div class="plan_success_congrats_msg_text">Thank you for your purchase. You are now fully upgraded to the 1 year plan. We hope you will continue to enjoy using our product.</div>
                         </div>
                     </div>
                     <div class="plan_box_status_contant">
