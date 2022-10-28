@@ -25,16 +25,16 @@
             stop();
         }
     });
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $("#FullTest_Exam_Panel_Interface_A").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-    });
+    /*  $(window).load(function() {
+         $("#endExam").modal({
+             backdrop: "static",
+             keyboard: false
+         });
+         $("#FullTest_Exam_Panel_Interface_A").modal({
+             backdrop: "static",
+             keyboard: false
+         });
+     }); */
 </script>
 @php
 $userData = Session::get('user_data');
