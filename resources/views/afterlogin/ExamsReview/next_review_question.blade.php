@@ -631,5 +631,8 @@ $question_type = "Numerical";
             left: -100px!important;
             top: 35px !important;
         }
+        .removebottombtn{
+            display:none;
+        }
     }
 </style>
