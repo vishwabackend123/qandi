@@ -85,7 +85,7 @@ $userData = Session::get('user_data');
                             @endphp
                             <div class="d-flex align-items-center justify-content-between add-chapter position-relative">
                                 <p class="m-0">{{$sub->subject_name}}</p>
-                                <label class="m-0" onclick="selectChapter('{{$sub->id}}','{{$sub->subject_name}}');">
+                                <label class="m-0 addChapter" onclick="selectChapter('{{$sub->id}}','{{$sub->subject_name}}');">
                                     <svg class="position-relative" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10 4.167v11.666M4.167 10h11.666" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -275,6 +275,7 @@ $userData = Session::get('user_data');
 
 
     function selectChapter(subject_id, subject_name) {
+
         if ($('#StartDate').val() == '') {
             $("#saveplannerbutton").click();
             return false;
@@ -283,7 +284,12 @@ $userData = Session::get('user_data');
         var chapters = $('input[name="chapters[]"]').length;
 
 
+
         if (limit == 0) {
+            if ($('#limit_error').is(":visible")) {
+                $('#limit_error').fadeOut(5000);
+
+            }
             $('#limit_error span').html('');
             var error_txt = 'Please select Exams Per Week';
             $('#limit_error span').html(error_txt);
@@ -291,7 +297,7 @@ $userData = Session::get('user_data');
             $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error ').fadeOut('fast');
-            }, 5000);
+            }, 3000);
             return false;
         }
 
@@ -303,14 +309,17 @@ $userData = Session::get('user_data');
             } else {
                 var error_txt = 'You can not select more than ' + limit + ' chapters for selected week';
             }
+            if ($('#limit_error').is(":visible")) {
+                $('#limit_error').fadeOut(5000);
 
+            }
 
             $('#limit_error span').html(error_txt);
             $('#limit_error').show();
             $(".planner-box")[0].scrollIntoView();;
             setTimeout(function() {
                 $('#limit_error').fadeOut('fast');
-            }, 5000);
+            }, 3000);
             return false;
         }
 
@@ -370,7 +379,7 @@ $userData = Session::get('user_data');
             $('#errChptAdd_alert').show();
             setTimeout(function() {
                 $('#errChptAdd_alert').fadeOut('fast');
-            }, 5000);
+            }, 2000);
             return false;
         }
 
@@ -464,7 +473,7 @@ $userData = Session::get('user_data');
                 $(".planner-box")[0].scrollIntoView();;
                 setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
-                }, 5000);
+                }, 3000);
                 return false;
             }
             if (limit <= 0) {
@@ -474,7 +483,7 @@ $userData = Session::get('user_data');
                 $(".planner-box")[0].scrollIntoView();;
                 setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
-                }, 5000);
+                }, 3000);
                 return false;
             }
             var chapters = [];
