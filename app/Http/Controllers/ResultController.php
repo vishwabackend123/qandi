@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use App\Http\Traits\CommonTrait;
+use Mixpanel;
 
 /**
  * ResultController
@@ -73,10 +74,137 @@ class ResultController extends Controller
             /* end parameter for dailyTaskExam result */
 
             if ($test_type == 'Live') {
+
+                // For Mixpanel 
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   /*mixpanel started*/
+                   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   
+                   // track an event
+                   $mp->track("Live Exam Submit Test", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                   'exam attempt end at' => date("Y-m-d H:i:s"),
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+   
+                   ));
+                   /*mixpanel event ended*/
+
+
                 $redis_json = Redis::get('custom_answer_time_live_' . $user_id);
             } elseif ($test_type == 'Mocktest') {
+
+                // For Mixpanel 
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                  // Mixpanel Started
+                   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   
+                   // track an event
+                   $mp->track("Mock Exam Submit Test", array(
+                   'distinct_id' => $userData->id,
+                   '$phone' => $userData->mobile,
+                   '$email' => $userData->email,
+                   '$city' => $userData->city,
+                   'email verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   'exam attempt end at' => date("Y-m-d H:i:s"),
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                       'distinct_id'       => $userData->id,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       '$city' => $userData->city,
+                       'email verified' => $userData->email_verified,
+                       'Course' => $grade,
+                       'exam attempt end at' => date("Y-m-d H:i:s"),
+   
+                   ));
+                // Mixpanel Event Ended
                 $redis_json = Redis::get('custom_answer_time_mock' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Profiling') {
+
+                // For Mixpanel 
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   // Mixpanel started
+                   
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   // track an event
+                   $mp->track("Full Body Scan Submit Test", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                   'exam attempt end at' => date("Y-m-d H:i:s"),
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+   
+                   ));
+            
+                // Mixpanel Event Ended
+
 
                 $redis_json = Redis::get('custom_answer_time_full' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'PreviousYear') {
@@ -91,6 +219,48 @@ class ResultController extends Controller
 
                 $redis_json = Redis::get('custom_answer_time_task' . $user_id . '_' . $ranSession);
             } else {
+
+                // For Mixpanel 
+                
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                  // Mixpanel Started
+                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   
+                   // track an event
+                   $mp->track("Custom Exam Full Submit Test", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                   'exam attempt end at' => date("Y-m-d H:i:s"),
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+   
+                   ));
+                // Mixpanel Event Ended
+
                 //custom subject exam
                 $redis_json = Redis::get('custom_answer_time_' . $user_id . '_' . $ranSession);
             }
@@ -521,6 +691,10 @@ class ResultController extends Controller
         } else {
             $exam_name = '';
         }
+
+
+        #for mixpanel
+        $exam_type=Redis::get('test_type' . $user_id);
 
 
         $curl_url = "";

@@ -3,6 +3,21 @@
 $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
 @endphp
+
+<?php 
+// For Mixpanel 
+if($userData->grade_id == '1'){
+$grade='JEE';
+}
+elseif($userData->grade_id == '2'){
+$grade='NEET';
+}
+else{
+$grade='NA';
+}
+
+?>
+
 @section('content')
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
@@ -13,6 +28,28 @@ $user_id = isset($userData->id)?$userData->id:'';
     });
 </script>
 @endif
+
+<!-- Mixpanel Started -->
+<script type="text/javascript">
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+// Enabling the debug mode flag is useful during implementation,
+// but it's recommended you remove it for production
+
+var exam_title = "{{isset($exam_title)?$exam_title:''}}
+
+var mixpanelid="{{env('MIXPANEL_KEY')}}";
+mixpanel.init(mixpanelid);
+mixpanel.track('Loaded '+exam_title+' Instruction',{
+        "$city" : '<?php echo $userData->city; ?>',
+        }
+);
+</script>
+<!-- Mixpanel Event Ended-->
+
+
 <div class="main-wrapper exam-wrapperBg">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
@@ -116,6 +153,34 @@ $user_id = isset($userData->id)?$userData->id:'';
         </div>
     </div>
 </div>
+
+<!-- For Mixpanel -->
+
+<script type="text/javascript">
+    // Mixpanel Started 
+    $('.exam_inst_take_test_btn').click(function() {
+            var user_id = '<?php echo $user_id; ?>';
+            mixpanel.identify(user_id);
+            mixpanel.people.set({
+            $phone : '<?php echo $userData->mobile; ?>',
+            $email : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
+            "Course" : '<?php echo $grade; ?>',
+            "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',
+            });
+            mixpanel.track("Custom Exam Topic Take Test Click",{
+            $phone : '<?php echo $userData->mobile; ?>',
+            $email: '<?php echo $userData->email; ?>', 
+            "Email Verified": '<?php echo $userData->email_verified; ?>', 
+            "Course": '<?php echo $grade; ?>', 
+            "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',
+              });
+            
+        });
+        // Mixpanel Event Ended
+
+</script>
+
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->

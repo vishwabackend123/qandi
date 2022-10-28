@@ -198,6 +198,10 @@ class StudentSignInController extends Controller
                         Session::put('user_data', $user_Data);
 
                         $response['status'] = 200;
+                        // For Mixpanel 
+                        $response['user_data'] = $aResponse;
+                        
+
 
                         return json_encode($response);
                     } else {
@@ -414,6 +418,10 @@ class StudentSignInController extends Controller
                     $response['message'] = $succ_msg;
                     $user_Data = Auth::user();
                     Session::put('user_data', $user_Data);
+
+                    // For Mixpanel 
+                    $response['user_data'] = $aResponse;
+                    
                     if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
                         $inputjson = ["email" => $email_add, "student_refer_by" => $data['refer_code'],];
                         $request = json_encode($inputjson);

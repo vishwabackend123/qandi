@@ -1,3 +1,12 @@
+@php
+$userData = Session::get('user_data');
+@endphp
+<script type="text/javascript">
+mixpanel.track('Attempted Page Load',{
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+</script>
+
 <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1 m mobilescrolltab" id="testTypeDiv">
     <div class="mobilehoriontal450">
         <ul class="nav nav-pills d-inline-flex mobilescrolltabNew" id="marks-tab" role="tablist">
@@ -182,6 +191,22 @@
     $('.no_data_found').hide();
     $('.view_details').click(function() {
        
+
+        /*mixpanel start*/       
+        var user_id = '<?php echo $userData->id; ?>';
+        var test_type = '<?php echo isset($sche->test_type)?$sche->test_type:'Live'; ?>';
+        mixpanel.identify(user_id);
+        mixpanel.people.set({
+        "$city" : '<?php echo $userData->city; ?>',
+        "test type" : test_type,
+        });
+
+        mixpanel.track(test_type + " - click view details",{
+        "city" : '<?php echo $userData->city; ?>',
+        "test type" : test_type,
+        });
+        /*mixpanel end*/
+
         var text_data = $(this).text();
         var ids = parseInt($(this).attr('data-id'));
         var toggel = $('#chapter_' + ids).hasClass('show');
@@ -200,4 +225,24 @@
             $('#chapter_' + ids).removeClass('show');
         }
     });
+
+    $('.see_analytics').click(function() {
+
+    /*mixpanel start*/
+    var user_id = '<?php echo $userData->id; ?>';
+    var test_type = '<?php echo isset($sche->test_type)?$sche->test_type:'Live'; ?>';
+    mixpanel.identify(user_id);
+    mixpanel.people.set({
+    "$city" : '<?php echo $userData->city; ?>',
+    "test type" : test_type,
+    });
+
+    mixpanel.track(test_type + " - click see analytics",{
+    "city" : '<?php echo $userData->city; ?>',
+    "test type" : test_type,
+    });
+    /*mixpanel end*/
+
+    });
+
 </script>
