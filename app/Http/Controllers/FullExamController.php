@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 use Mixpanel;
-
 /**
  * FullExamController
  *
@@ -41,14 +40,11 @@ class FullExamController extends Controller
             $filtered_subject = [];
             $userData = Session::get('user_data');
             $user_id = $userData->id;
-            $exam_id = $userData->exam_id;
-            $grade ="";
+            $exam_id = $userData->grade_id;
 
             // Mixpanel Started
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
-            $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-            
+                
+            $mp = Mixpanel::getInstance("cde29a1613d3ceca7b54336c8ae944b3");
             // track an event
             //$mp->track("Attempt full body scan from MyQ Today", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
 
@@ -73,10 +69,8 @@ class FullExamController extends Controller
                 '$country' => $userData->country
             ));
             
-            
 
             // Mixpanel Event Ended
-
 
             $ranSession =  isset($request->ranSession) ? $request->ranSession : mt_rand(10, 1000000);
 
@@ -182,15 +176,15 @@ class FullExamController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
-
+                $Redis = Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
+                
                 $exam_url = route('exam', ['full_exam']);
 
                 $exam_title = "Personalized Preparation Assessment";
                 $test_type = 'Profiling';
 
                 // Mixpanel started 
-                echo "<pre>"; print_r("Hi"); die;
+
                 if($userData->grade_id == '1'){
                     $grade = 'JEE';
                    }elseif($userData->grade_id == '2'){
@@ -199,9 +193,8 @@ class FullExamController extends Controller
                     $grade = 'NA';
                    }
    
-                   $Mixpanel_key_id = env('MIXPANEL_KEY');
-                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
+                   
+                   $mp = Mixpanel::getInstance("cde29a1613d3ceca7b54336c8ae944b3");
                    // track an event
                    $mp->track("Full Body Scan Attempt Now", array(
                     'distinct_id' => $userData->id,
@@ -227,7 +220,6 @@ class FullExamController extends Controller
                 
 
                 // Mixpanel Event Ended
-
 
                 $examType = 'full_body_scan';
                 $instructions = $this->getInstructions($examType);
@@ -351,7 +343,6 @@ class FullExamController extends Controller
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-            
 
             $ranSession = isset($request->ranSession) ? $request->ranSession : '';
 
