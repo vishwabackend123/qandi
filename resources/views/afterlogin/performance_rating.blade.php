@@ -8,6 +8,7 @@ $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
 
+
 <!-- Mixpanel Started -->
 
 <script type="text/javascript">
@@ -242,8 +243,8 @@ mixpanel.track('Loaded Self Analysis ',{
             },
             beforeSend: function() {},
             success: function(response_data) {
+                
 
-                // For Mixpanel
                 var response = jQuery.parseJSON(response_data);
                 
                 var sujects = jQuery.parseJSON(response.response.request_rating.subjects_rating);
@@ -377,10 +378,9 @@ mixpanel.track('Loaded Self Analysis ',{
                     });
 
                     //Mixpanel Event Ended
-
-                if (response_data == 'success') {
                     window.location.href = '{{url("performance_analytics")}}';
                 }
+
 
             },
             error: function(xhr, b, c) {
