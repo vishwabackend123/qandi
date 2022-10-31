@@ -25,16 +25,17 @@
             stop();
         }
     });
-    /*  $(window).load(function() {
-         $("#endExam").modal({
-             backdrop: "static",
-             keyboard: false
-         });
-         $("#FullTest_Exam_Panel_Interface_A").modal({
-             backdrop: "static",
-             keyboard: false
-         });
-     }); */
+
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+    });
 </script>
 @php
 $userData = Session::get('user_data');
@@ -586,7 +587,7 @@ $question_type = "Numerical";
     })
 </script>
 
-
+@include('afterlogin.layouts.exam_footer')
 
 <!-- page referesh disabled -->
 <script>
@@ -1558,12 +1559,13 @@ $question_type = "Numerical";
 
     }
 
-
     $(document).ready(function() {
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
+
                 if (timeLeft >= 1) {
+
                     let timer_left = document.querySelector("#base-timer-path-remaining_alt");
 
 
@@ -1574,13 +1576,15 @@ $question_type = "Numerical";
 
                     let lefttime_exam_s = document.getElementById("lefttime_pop_s");
                     lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
                     $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
 
                 } else {
                     form.submit();
                 }
 
-
+                return false;
             }
 
         });
@@ -1698,7 +1702,7 @@ $question_type = "Numerical";
     });
 </script>
 
-@include('afterlogin.layouts.exam_footer')
+
 
 
 @endsection
