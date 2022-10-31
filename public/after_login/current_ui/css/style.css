@@ -3673,19 +3673,19 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){p
     color: #1f1f1f;
 	float: right;
 }
-.myScore span {
+.my_Score span {
     font-size: 12px;
     font-weight: bold;
     color: #868a95;
     margin-top: 5px;
     display: block;
 }
-.myScore h6 {
+.my_Score h6 {
     font-size: 24px;
     font-weight: 800;
     color: #1f1f1f;
 }
-.myScore {
+.my_Score {
     position: absolute;
     text-align: center;
     top: 58%;
