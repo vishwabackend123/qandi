@@ -160,11 +160,11 @@ return [
         ],
 
         'cache' => [
-            'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', $redis_data['REDIS_HOST']),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', $redis_data['REDIS_PORT']),
-            'database' => env('REDIS_CACHE_DB', '1'),
+            'url' => env('REDIS_URL',$redis_data['CACHE_URL']),
+            #'host' => env('REDIS_HOST', $redis_data['REDIS_HOST']),
+            #'password' => env('REDIS_PASSWORD', null),
+            #'port' => env('REDIS_PORT', $redis_data['REDIS_PORT']),
+            #'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
     ],
