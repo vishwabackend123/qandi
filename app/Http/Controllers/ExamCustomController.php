@@ -52,7 +52,8 @@ class ExamCustomController extends Controller
             $exam_id = $userData->grade_id;
 
             // Mixpanel Started
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $redis_data = Session::get('redis_data');
+			$Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
             $mp->track("Attempt full body scan from Marks Trend", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
@@ -435,7 +436,8 @@ class ExamCustomController extends Controller
            }
 
 
-           $Mixpanel_key_id = env('MIXPANEL_KEY');
+           $redis_data = Session::get('redis_data');
+           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
            $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
            
@@ -1330,7 +1332,9 @@ class ExamCustomController extends Controller
                     $grade = 'NA';
                    }
                    
-                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $redis_data = Session::get('redis_data');
+                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
                    
                    

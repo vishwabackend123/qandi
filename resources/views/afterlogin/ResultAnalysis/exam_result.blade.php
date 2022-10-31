@@ -69,7 +69,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         let total_percentage = ((correct_answer+wrong_answer)/total_question)*100;
 
-        var mixpanelid="{{env('MIXPANEL_KEY')}}";
+        var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
         mixpanel.init(mixpanelid);
 
         mixpanel.track("Loaded "+event_exam_type+" Result Analytics",{

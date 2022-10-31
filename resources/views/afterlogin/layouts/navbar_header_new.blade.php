@@ -128,7 +128,7 @@ $nitifiCount=count($notifications);
 
     function sendEvent()
     {
-        var mixpanelid="{{env('MIXPANEL_KEY')}}";
+    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
     mixpanel.init(mixpanelid);
     mixpanel.track('LogOut');
     }

@@ -207,7 +207,9 @@ class SubscriptionController extends Controller
 
             // Mixpanel Started
 
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
             // track an event
@@ -332,7 +334,9 @@ class SubscriptionController extends Controller
             $cacheKey = 'checkout_details:' . $user_id;
 
             // Mixpanel Started
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
             
@@ -491,7 +495,9 @@ class SubscriptionController extends Controller
 
             // Mixpanel Started
 
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
 

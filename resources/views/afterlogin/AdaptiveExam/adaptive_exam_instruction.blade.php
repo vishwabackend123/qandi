@@ -40,7 +40,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
 var exam_title = "{{isset($exam_title)?$exam_title:''}}
 
-var mixpanelid="{{env('MIXPANEL_KEY')}}";
+var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid);
 mixpanel.track('Loaded '+exam_title+' Instruction',{
         "$city" : '<?php echo $userData->city; ?>',

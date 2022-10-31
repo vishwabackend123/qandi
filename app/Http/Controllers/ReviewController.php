@@ -217,7 +217,9 @@ class ReviewController extends Controller
                        }
        
                        /*mixpanel*/
-                       $Mixpanel_key_id = env('MIXPANEL_KEY');
+                       $redis_data = Session::get('redis_data');
+                       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
                        $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
                        
@@ -266,7 +268,9 @@ class ReviewController extends Controller
                    }
    
                    /*mixpanel*/
-                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $redis_data = Session::get('redis_data');
+                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
                    
