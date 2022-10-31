@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
+use Mixpanel;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::any('/', function () {
 
 Route::any('/logout', function (Request $request) {
     //return view('index');
-    $request->session()->flush();
+    
 
     /*mixpanel start*/
     
@@ -59,7 +60,7 @@ Route::any('/logout', function (Request $request) {
     ));
     /*mixpanel end*/
 
-
+    $request->session()->flush();
     return Redirect()->route('login');
     /*  $landing_URL = env('LANDING_URL');
     return redirect($landing_URL); */
