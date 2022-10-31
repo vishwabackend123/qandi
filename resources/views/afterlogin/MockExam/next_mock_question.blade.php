@@ -21,7 +21,6 @@ $question_type = "Numerical";
 
 
 @endphp
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script type="text/javascript">
     var ctimer;
     var setEachQuestionTimeNext_countdownNext;
