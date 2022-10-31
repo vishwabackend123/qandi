@@ -425,12 +425,7 @@ mixpanel.track('Loaded log in');
 
                     var response = jQuery.parseJSON(response_data);
 
-                    // Mixpanel Started
-                    mixpanel.identify(response.user_data.result[0].id);
-                    mixpanel.people.set({"$name":response.user_data.result[0].user_name ,"$city": response.user_data.result[0].city, "$phone" : response.user_data.result[0].mobile ,"$email" : response.user_data.result[0].email});
-                    mixpanel.track("login Completed",{"$name":response.user_data.result[0].user_name,"$city": response.user_data.result[0].city, "$phone" : response.user_data.result[0].mobile, "$email" : response.user_data.result[0].email  })
-
-                    // Mixpanel event ended
+                   
 
                     
                     if (response.status == 400) {
@@ -443,6 +438,12 @@ mixpanel.track('Loaded log in');
 
                         }
                     } else {
+                         // Mixpanel Started
+                        mixpanel.identify(response.user_data.result[0].id);
+                         mixpanel.people.set({"$name":response.user_data.result[0].user_name ,"$city": response.user_data.result[0].city, "$phone" : response.user_data.result[0].mobile ,"$email" : response.user_data.result[0].email});
+                        mixpanel.track("login Completed",{"$name":response.user_data.result[0].user_name,"$city": response.user_data.result[0].city, "$phone" : response.user_data.result[0].mobile, "$email" : response.user_data.result[0].email  })
+
+                    // Mixpanel event ended
                         var previousUrl = '{{ url()->previous() }}';
                         if ((previousUrl.includes('subscriptions') == true) || (previousUrl.includes('trial_subscription') == true)) {
 
