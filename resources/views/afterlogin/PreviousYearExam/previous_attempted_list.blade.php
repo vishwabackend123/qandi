@@ -145,7 +145,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 // but it's recommended you remove it for production
 
 function sendEvent(){
-    var mixpanelid="{{env('MIXPANEL_KEY')}}";
+    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
     mixpanel.init(mixpanelid);
     mixpanel.track('clicked to see analytics of PY exam');
 }
@@ -161,7 +161,7 @@ function sendEvent(){
         if (text_data === 'View details') {
 
             // Mixpanel Started 
-            var mixpanelid="{{env('MIXPANEL_KEY')}}";
+            var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
             mixpanel.init(mixpanelid);
             mixpanel.track('Clicked to view details of PY exam');
             // Mixpanel Event Ended

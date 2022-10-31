@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 use Illuminate\Support\Str;
 use Aws\SecretsManager\SecretsManagerClient;
 use Aws\Exception\AwsException;
@@ -23,6 +23,7 @@ $resultStudent = $client->getSecretValue([
 ]);
 if (isset($resultStudent['SecretString']) && !empty($resultStudent['SecretString'])) {
     $redis_data=json_decode($resultStudent['SecretString'], true);
+    $_SESSION['SECRET_REDIS'] = $redis_data;
 };
 
 

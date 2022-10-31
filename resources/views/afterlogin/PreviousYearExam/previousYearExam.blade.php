@@ -596,7 +596,7 @@ $question_type = "Numerical";
 // but it's recommended you remove it for production
 
     function sendEvent(){
-        var mixpanelid="{{env('MIXPANEL_KEY')}}";
+        var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
         mixpanel.init(mixpanelid);
         mixpanel.track('Previous Year Exam Submit Test');
     }

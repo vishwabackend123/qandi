@@ -873,7 +873,9 @@ class HomeController extends Controller
             $userData = Session::get('user_data');
 
                 // Mixpanel event started    
-                $Mixpanel_key_id = env('MIXPANEL_KEY');
+                $redis_data = Session::get('redis_data');
+           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
                 $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
                 
@@ -1031,7 +1033,9 @@ class HomeController extends Controller
 
             // Mixpanel event started    
             
-            $Mixpanel_key_id = env('MIXPANEL_KEY');
+            $redis_data = Session::get('redis_data');
+           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
         
             // track an event
@@ -1339,7 +1343,9 @@ class HomeController extends Controller
 
         // Mixpanel Started
 
-        $Mixpanel_key_id = env('MIXPANEL_KEY');
+        $redis_data = Session::get('redis_data');
+        $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
         $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
         

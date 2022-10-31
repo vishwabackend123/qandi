@@ -621,7 +621,8 @@ class AdpativeExamController extends Controller
 
                    //Mixpanel Event Started
    
-                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $redis_data = Session::get('redis_data');
+			       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
                    
                    // track an event
@@ -1106,7 +1107,8 @@ class AdpativeExamController extends Controller
                     $grade = 'NA';
                    }
                 
-                   $Mixpanel_key_id = env('MIXPANEL_KEY');
+                   $redis_data = Session::get('redis_data');
+			       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
                    // track an event

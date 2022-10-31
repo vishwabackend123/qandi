@@ -10,6 +10,12 @@
 
 </script>
 
+<?php 
+    if( isset( $_SESSION['SECRET_REDIS'] ) ) {
+      $redis_data = $_SESSION['SECRET_REDIS'];
+   }
+?>
+
 <!-- Mixpanel Started -->
 <script type="text/javascript">
 (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -18,7 +24,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
 // Enabling the debug mode flag is useful during implementation,
 // but it's recommended you remove it for production
-var mixpanelid="{{env('MIXPANEL_KEY')}}";
+var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid); 
 mixpanel.track('Loaded log in');
 
@@ -319,7 +325,7 @@ mixpanel.track('Loaded log in');
         function sentotplogin(otp_type) {
 
             // Mixpanel Started
-            var mixpanelid="{{env('MIXPANEL_KEY')}}";
+            var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
             mixpanel.init(mixpanelid);
              
             mixpanel.track('Log in Started');
