@@ -4525,7 +4525,8 @@ header {
 }
 
 .content-wrapper {
-    padding: 40px 25px ;
+    padding: 40px 25px;
+    position: relative;
 }
 
 .commondashboardTop {
