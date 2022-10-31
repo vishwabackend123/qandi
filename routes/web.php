@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
-use Mixpanel;
+//use Mixpanel;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,28 +37,6 @@ Route::any('/', function () {
 
 Route::any('/logout', function (Request $request) {
     //return view('index');
-    
-
-    /*mixpanel start*/
-    
-    $userData = Session::get('user_data');
-    $user_id = $userData->id;
-    
-    $Mixpanel_key_id = env('MIXPANEL_KEY');
-    $mp = Mixpanel::getInstance($Mixpanel_key_id);
-
-    // track an event
-    $mp->track("Log Out", array('$distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$user_id' => $userData->id,'log_out_at' => date("Y-m-d H:i:s"))); 
-
-    // create/update a profile for user id
-    $mp->people->set($userData->id, array(
-        '$distinct_id' => $userData->id,
-            '$email' => $userData->email,
-            '$city' => $userData->city,
-        '$user_id' => $userData->id,
-        'log_out_at'   => date("Y-m-d H:i:s"),
-    ));
-    /*mixpanel end*/
 
     $request->session()->flush();
     return Redirect()->route('login');
