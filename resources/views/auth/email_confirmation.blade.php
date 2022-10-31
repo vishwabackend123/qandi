@@ -87,6 +87,7 @@
     </div>
     @endif
 </div>
+<?php $redis_data = Session::get('redis_data'); ?>
 <script type="text/javascript">
 
     // Mixpanel Started

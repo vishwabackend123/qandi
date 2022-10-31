@@ -123,7 +123,7 @@ $nitifiCount=count($notifications);
     </div>
 </div>
 <!--main-profile-section-->
-
+<?php $redis_data = Session::get('redis_data'); ?>
 <script>
 
     function sendEvent()

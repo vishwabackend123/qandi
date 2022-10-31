@@ -5,6 +5,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 @endphp
 
+<?php $redis_data = Session::get('redis_data'); ?>
 @if((isset($userStatus) && $userStatus==false))
 <!-- Mixpanel Started-->
 <script type="text/javascript">
