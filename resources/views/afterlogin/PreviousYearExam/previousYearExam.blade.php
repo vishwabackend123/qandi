@@ -584,7 +584,7 @@ $question_type = "Numerical";
 
 <!-- @ include('afterlogin.layouts.footer_new') -->
 @include('afterlogin.layouts.exam_footer')
-
+<?php $redis_data = Session::get('redis_data'); ?>
 <!-- page referesh disabled -->
 <script>
 

@@ -8,7 +8,7 @@ $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
 
-
+<?php $redis_data = Session::get('redis_data'); ?>
 <!-- Mixpanel Started -->
 
 <script type="text/javascript">

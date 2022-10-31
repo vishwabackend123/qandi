@@ -10,6 +10,7 @@ $full_body_attempt = Session::get('full_body_attempt');
 
 @endphp
 
+<?php $redis_data = Session::get('redis_data'); ?>
 <?php 
 // For Mixpanel
 if($user_exam_id == '1'){

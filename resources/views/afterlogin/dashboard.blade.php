@@ -5,6 +5,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
 @endphp
 
+<?php $redis_data = Session::get('redis_data'); ?>
 @if((isset($userStatus) && $userStatus==false))
 <!-- Mixpanel Started-->
 <script type="text/javascript">
@@ -14,6 +15,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
 // Enabling the debug mode flag is useful during implementation,
 // but it's recommended you remove it for production
+
 var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid);
 mixpanel.track('Loaded - Dashboard',{
