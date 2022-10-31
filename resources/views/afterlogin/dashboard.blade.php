@@ -24,8 +24,6 @@ mixpanel.track('Loaded - Dashboard',{
 );
 
 
-
-
 </script>
 
 @else
@@ -249,7 +247,7 @@ mixpanel.track('Loaded - Dashoard - empty state',{
                                     </span>
                                 </h3>
                                 @if((isset($userStatus) && $userStatus==false))
-                                <a href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <a onclick="sendtaskEvent()" href="{{route('dashboard-DailyTask')}}" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                             <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg></span></a>
                                 @endif
@@ -641,7 +639,7 @@ mixpanel.track('Loaded - Dashoard - empty state',{
                                         </div>
                                     </div>
                                     <div class="gotoPlanner mobile_hide">
-                                        <a href="{{ url('/planner') }}">
+                                        <a onclick="sendGoToPlannerEvent()" href="{{ url('/planner') }}">
                                             <span>Go to Planner</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -661,7 +659,7 @@ mixpanel.track('Loaded - Dashoard - empty state',{
                                         </svg>
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
-                                            <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
+                                            <a onclick = "sendAddPlanEvent()" href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
                                                 <!-- <span class="mobile_hide">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -1075,6 +1073,33 @@ mixpanel.track('Loaded - Dashoard - empty state',{
     @endphp
 
     <script>
+
+        function sendtaskEvent()
+            {
+                
+                mixpanel.track('Go to Task Center ',{
+                "$city" : '<?php echo $userData->city; ?>',
+                });
+
+        }
+
+        function sendAddPlanEvent(){
+                
+                mixpanel.track('Click Add Plan',{
+                "$city" : '<?php echo $userData->city; ?>',
+                });
+
+        }
+        
+        function sendGoToPlannerEvent(){
+                
+                mixpanel.track('Click Go to Planner Button',{
+                "$city" : '<?php echo $userData->city; ?>',
+                });
+
+        }
+
+        
         $(document).ready(function() {
             $("span.tooltipmain svg").click(function(event) {
                 event.stopPropagation();
