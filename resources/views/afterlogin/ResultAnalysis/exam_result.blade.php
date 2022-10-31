@@ -164,7 +164,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="col-xl-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
-                                    <div class="myScore">
+                                    <div class="my_Score">
                                         <h6 class="m-0">{{isset($scoreResponse->total_get_marks)?$scoreResponse->total_get_marks:0}}/{{isset($scoreResponse->total_exam_marks)?$scoreResponse->total_exam_marks:0}}</h6>
                                         <span>MARKS</span>
                                     </div>

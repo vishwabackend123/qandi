@@ -71,7 +71,7 @@
                             <div class="col-xl-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
-                                    <div class="myScore">
+                                    <div class="my_Score">
                                         <h6 class="m-0">{{$response->total_get_marks}}/{{$response->total_exam_marks}}</h6>
                                         <span>MARKS</span>
                                     </div>
