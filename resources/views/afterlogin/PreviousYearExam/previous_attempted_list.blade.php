@@ -17,10 +17,10 @@
             <input class="text-box markstrend" type="text" id="filter_attemp_year" placeholder="Select Year" readonly>
             <div class="options">
                 <div style=" overflow-y: auto; max-height: 145px;">
-                <div class="markstrend" onclick="showAttempedFiter('')">Select Year</div>
+                    <div class="markstrend" onclick="showAttempedFiter('')">Select Year</div>
                     @if(!empty($years_list))
                     @foreach($years_list as $yr)
-                        <div class="markstrend" onclick="showAttempedFiter('{{$yr}}')">{{$yr}}</div>
+                    <div class="markstrend" onclick="showAttempedFiter('{{$yr}}')">{{$yr}}</div>
                     @endforeach
                     @endif
                 </div>
@@ -37,13 +37,13 @@
         $year = isset($sche->paper_year) ? $sche->paper_year : '';
         $marks =$sche->no_of_question * 4;
         if($sche->no_of_question == 90)
-            {
-            $marks=300;
-            }
-            if($sche->no_of_question == 200)
-            {
-            $marks=720;
-            }
+        {
+        $marks=300;
+        }
+        if($sche->no_of_question == 200)
+        {
+        $marks=720;
+        }
         @endphp
         <div class="accordion-item pt-4 compLeteA filter_year_{{$year}}">
             <div class="test-table d-flex align-items-center justify-content-between live_mock_exam_section">
@@ -53,7 +53,7 @@
                     @elseif($sche->live_exam_name)
                     {{$sche->live_exam_name}}
                     @elseif($sche->test_type == 'Mocktest')
-                    Mock Test
+                    Mock Exam
                     @elseif($sche->test_type == 'PreviousYear')
                     {{$sche->py_paper_name}}
                     @else
@@ -67,7 +67,7 @@
                 <h3 class="m-0 notbold">{{date('d F Y', strtotime($sche->created_at));}}</h3>
                 <div class="accordion-header mock_btn_vie_detail d-flex align-items-center" id="headingTwoTwo">
                     <h4 data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo_{{$sche->id}}" aria-expanded="true" aria-controls="collapseTwoTwo" class="m-0 view_detail_text_colleps view_details">View details</h4>
-                    <a onclick = "sendEvent()" title="See analytics" href="{{route('get_exam_result_analytics',[$sche->id,$test_type,$test_name])}}">
+                    <a onclick="sendEvent()" title="See analytics" href="{{route('get_exam_result_analytics',[$sche->id,$test_type,$test_name])}}">
                         <div class="d-flex align-items-center see_analytics_mock_exam see_analytics_mock_exam_previoues_border mobile_hide">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M15.267 10c2.166 0 3.066-.833 2.266-3.566-.541-1.842-2.125-3.425-3.966-3.967-2.734-.8-3.567.1-3.567 2.267v2.4C10 9.167 10.833 10 12.5 10h2.767z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -136,23 +136,70 @@
 </div>
 <?php $redis_data = Session::get('redis_data'); ?>
 <script type="text/javascript">
-
     // Mixpanel Started
-(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
-MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+    (function(f, b) {
+        if (!b.__SV) {
+            var e, g, i, h;
+            window.mixpanel = b;
+            b._i = [];
+            b.init = function(e, f, c) {
+                function g(a, d) {
+                    var b = d.split(".");
+                    2 == b.length && (a = a[b[0]], d = b[1]);
+                    a[d] = function() {
+                        a.push([d].concat(Array.prototype.slice.call(arguments, 0)))
+                    }
+                }
+                var a = b;
+                "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel";
+                a.people = a.people || [];
+                a.toString = function(a) {
+                    var d = "mixpanel";
+                    "mixpanel" !== c && (d += "." + c);
+                    a || (d += " (stub)");
+                    return d
+                };
+                a.people.toString = function() {
+                    return a.toString(1) + ".people (stub)"
+                };
+                i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                for (h = 0; h < i.length; h++) g(a, i[h]);
+                var j = "set set_once union unset remove delete".split(" ");
+                a.get_group = function() {
+                    function b(c) {
+                        d[c] = function() {
+                            call2_args = arguments;
+                            call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                            a.push([e, call2])
+                        }
+                    }
+                    for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]);
+                    return d
+                };
+                b._i.push([e, f, c])
+            };
+            b.__SV = 1.2;
+            e = f.createElement("script");
+            e.type = "text/javascript";
+            e.async = !0;
+            e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+            g = f.getElementsByTagName("script")[0];
+            g.parentNode.insertBefore(e, g)
+        }
+    })(document, window.mixpanel || []);
 
-// Enabling the debug mode flag is useful during implementation,
-// but it's recommended you remove it for production
+    // Enabling the debug mode flag is useful during implementation,
+    // but it's recommended you remove it for production
 
-function sendEvent(){
-    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
-    mixpanel.init(mixpanelid);
-    mixpanel.track('clicked to see analytics of PY exam');
-}
+    function sendEvent() {
+        var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
+        mixpanel.init(mixpanelid);
+        mixpanel.track('clicked to see analytics of PY exam');
+    }
 
-// Mixpanel Event Ended
- 
+    // Mixpanel Event Ended
+
     $('.view_details').click(function() {
 
         var text_data = $(this).text();
@@ -162,7 +209,7 @@ function sendEvent(){
         if (text_data === 'View details') {
 
             // Mixpanel Started 
-            var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+            var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
             mixpanel.init(mixpanelid);
             mixpanel.track('Clicked to view details of PY exam');
             // Mixpanel Event Ended
@@ -184,17 +231,16 @@ function sendEvent(){
             $('.compLeteA').show();
         }
     }); */
-     function showAttempedFiter(selected_val)
-    {
+    function showAttempedFiter(selected_val) {
         document.querySelector("#filter_attemp_year").value = selected_val;
-      if (selected_val) {
+        if (selected_val) {
             $('.compLeteA').hide();
             $('.filter_year_' + selected_val).show();
         } else {
             $('.compLeteA').show();
-        }  
+        }
     }
-     var dropdowns = document.querySelector("#dropdown2")
+    var dropdowns = document.querySelector("#dropdown2")
     dropdowns.onclick = function() {
         dropdowns.classList.toggle("active1")
     }
