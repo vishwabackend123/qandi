@@ -87,7 +87,11 @@
     </div>
     @endif
 </div>
-<?php $redis_data = Session::get('redis_data'); ?>
+<?php 
+    if( isset( $_SESSION['SECRET_REDIS'] ) ) {
+      $redis_data = $_SESSION['SECRET_REDIS'];
+   }
+?>
 <script type="text/javascript">
 
     // Mixpanel Started
@@ -113,7 +117,7 @@ $('.email_send').hide();
 
     // Mixpanel Event Ended
 </script>
-
+@endif
 
 @if(isset($response_json['student_id']))
 <script type="text/javascript">
@@ -121,7 +125,7 @@ $('.email_send').hide();
     // Mixpanel Started
     mixpanel.identify('<?php echo $response_json["student_id"]; ?>');
         mixpanel.people.set({ "email_verified" : "Yes"});
-        mixpanel.track( "Loaded Email verification" );
+        mixpanel.track( "Email verification confirmed" );
 
     // Mixpanel Event Ended
 

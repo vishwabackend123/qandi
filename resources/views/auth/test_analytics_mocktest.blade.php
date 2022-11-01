@@ -213,7 +213,7 @@
                             <div class="col-md-6">
                                 <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
-                                    <div class="myScore">
+                                    <div class="my_Score">
                                         <h6 class="m-0">80/200</h6>
                                         <span>MARKS</span>
                                     </div> 

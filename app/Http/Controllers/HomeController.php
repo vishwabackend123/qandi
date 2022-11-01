@@ -130,9 +130,9 @@ class HomeController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-                $scoreData = [];
-                $subject_proficiency = [];
-                $trendResponse = [];
+            $scoreData = [];
+            $subject_proficiency = [];
+            $trendResponse = [];
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_json = json_decode($score_json, true);
                 //$response_json = str_replace('NaN', '""', $scoreResponse);
@@ -482,10 +482,10 @@ class HomeController extends Controller
             // Mixpanel started
             $response['user_data'] = $userData;
             $response['request_rating'] = $request_rating;
-            
+
             $aresponse = ["status" => 200, "success" => true, "response" => $response];
             return json_encode($aresponse);
-            
+
             // Mixpanel Event Ended
 
 
@@ -872,24 +872,24 @@ class HomeController extends Controller
 
             $userData = Session::get('user_data');
 
-                // Mixpanel event started    
-                $redis_data = Session::get('redis_data');
-           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-           
-                $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-                
-                // create/update a profile for user id
-                $mp->people->set($userData->id, array(
-                    'distinct_id' => $userData->id,
-                    '$email' => $userData->email,
-                    '$city' => $userData->city,
-                    '$country' => $userData->country
-                    ));
-                    // Mixpanel event 
+            // Mixpanel event started    
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
 
-                // track an event
-                $mp->track("clicked for more tasks", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+            // create/update a profile for user id
+            $mp->people->set($userData->id, array(
+                'distinct_id' => $userData->id,
+                '$email' => $userData->email,
+                '$city' => $userData->city,
+                '$country' => $userData->country
+            ));
+            // Mixpanel event 
+
+            // track an event
+            $mp->track("clicked for more tasks", array('distinct_id' => $userData->id, '$email' => $userData->email, '$city' => $userData->city, '$country' => $userData->country));
 
             // Mixpanel Event Ended
 
@@ -1029,24 +1029,24 @@ class HomeController extends Controller
             $exam_id = $userData->grade_id;
 
             // Mixpanel Started
-            $eventtype = "clicked practice ".$tasktype." task";
+            $eventtype = "clicked practice " . $tasktype . " task";
 
             // Mixpanel event started    
-            
+
             $redis_data = Session::get('redis_data');
-           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-           
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
-        
+
             // track an event
-            $mp->track($eventtype, array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city)); 
+            $mp->track($eventtype, array('distinct_id' => $userData->id, '$email' => $userData->email, '$city' => $userData->city));
 
             // create/update a profile for user id
             $mp->people->set($userData->id, array(
-            'distinct_id' => $userData->id,
-            '$email' => $userData->email,
-            '$city' => $userData->city,
-            '$country' => $userData->country
+                'distinct_id' => $userData->id,
+                '$email' => $userData->email,
+                '$city' => $userData->city,
+                '$country' => $userData->country
             ));
             // Mixpanel event ended
 
@@ -1339,27 +1339,6 @@ class HomeController extends Controller
     {
         $userData = Session::get('user_data');
         $user_id = $userData->id;
-
-
-        // Mixpanel Started
-
-        $redis_data = Session::get('redis_data');
-        $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-           
-        $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-        
-        // track an event
-        $mp->track("Go to task center", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
-
-        // create/update a profile for user id
-        $mp->people->set($userData->id, array(
-            'distinct_id' => $userData->id,
-            '$email' => $userData->email,
-            '$city' => $userData->city,
-            '$country' => $userData->country
-        ));
-        // Mixpanel Event Ended
 
 
         $exam_id = $userData->grade_id;

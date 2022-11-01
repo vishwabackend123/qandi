@@ -77,36 +77,24 @@ class ResultController extends Controller
 
                 // For Mixpanel 
 
-                if($userData->grade_id == '1'){
+                if ($userData->grade_id == '1') {
                     $grade = 'JEE';
-                   }elseif($userData->grade_id == '2'){
+                } elseif ($userData->grade_id == '2') {
                     $grade = 'NEET';
-                   }else{
+                } else {
                     $grade = 'NA';
-                   }
-   
-                   /*mixpanel started*/
-                   
-                   $redis_data = Session::get('redis_data');
-                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-           
-                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-                   
-                   // track an event
-                   $mp->track("Live Exam Submit Test", array(
-                    'distinct_id' => $userData->id,
-                    '$user_id' => $userData->id,
-                    '$phone' => $userData->mobile,
-                    '$email' => $userData->email,
-                    'Email Verified' => $userData->email_verified,
-                    'Course' => $grade,
-                    '$city' => $userData->city,
-                   'exam attempt end at' => date("Y-m-d H:i:s"),
-                   )); 
-   
-                   // create/update a profile for user id
-                   $mp->people->set($userData->id, array(
+                }
+
+                /*mixpanel started*/
+
+                $redis_data = Session::get('redis_data');
+                $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+                // track an event
+                $mp->track("Live Exam Submit Test", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
@@ -115,9 +103,21 @@ class ResultController extends Controller
                     'Course' => $grade,
                     '$city' => $userData->city,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
-   
-                   ));
-                   /*mixpanel event ended*/
+                ));
+
+                // create/update a profile for user id
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+
+                ));
+                /*mixpanel event ended*/
 
 
                 $redis_json = Redis::get('custom_answer_time_live_' . $user_id);
@@ -125,79 +125,67 @@ class ResultController extends Controller
 
                 // For Mixpanel 
 
-                if($userData->grade_id == '1'){
+                if ($userData->grade_id == '1') {
                     $grade = 'JEE';
-                   }elseif($userData->grade_id == '2'){
+                } elseif ($userData->grade_id == '2') {
                     $grade = 'NEET';
-                   }else{
+                } else {
                     $grade = 'NA';
-                   }
-   
-                  // Mixpanel Started
-                   
-                  $redis_data = Session::get('redis_data');
-                  $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-                  
-                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-                   
-                   // track an event
-                   $mp->track("Mock Exam Submit Test", array(
-                   'distinct_id' => $userData->id,
-                   '$phone' => $userData->mobile,
-                   '$email' => $userData->email,
-                   '$city' => $userData->city,
-                   'email verified' => $userData->email_verified,
-                   'Course' => $grade,
-                   'exam attempt end at' => date("Y-m-d H:i:s"),
-                   )); 
-   
-                   // create/update a profile for user id
-                   $mp->people->set($userData->id, array(
-                       'distinct_id'       => $userData->id,
-                       '$phone' => $userData->mobile,
-                       '$email' => $userData->email,
-                       '$city' => $userData->city,
-                       'email verified' => $userData->email_verified,
-                       'Course' => $grade,
-                       'exam attempt end at' => date("Y-m-d H:i:s"),
-   
-                   ));
+                }
+
+                // Mixpanel Started
+
+                $redis_data = Session::get('redis_data');
+                $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+                // track an event
+                $mp->track("Mock Exam Submit Test", array(
+                    'distinct_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    '$city' => $userData->city,
+                    'email verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+                ));
+
+                // create/update a profile for user id
+                $mp->people->set($userData->id, array(
+                    'distinct_id'       => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    '$city' => $userData->city,
+                    'email verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+
+                ));
                 // Mixpanel Event Ended
                 $redis_json = Redis::get('custom_answer_time_mock' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Profiling') {
 
                 // For Mixpanel 
 
-                if($userData->grade_id == '1'){
+                if ($userData->grade_id == '1') {
                     $grade = 'JEE';
-                   }elseif($userData->grade_id == '2'){
+                } elseif ($userData->grade_id == '2') {
                     $grade = 'NEET';
-                   }else{
+                } else {
                     $grade = 'NA';
-                   }
-   
-                   // Mixpanel started
-                   
-                   $redis_data = Session::get('redis_data');
-                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-           
-                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-                   // track an event
-                   $mp->track("Full Body Scan Submit Test", array(
-                    'distinct_id' => $userData->id,
-                    '$user_id' => $userData->id,
-                    '$phone' => $userData->mobile,
-                    '$email' => $userData->email,
-                    'Email Verified' => $userData->email_verified,
-                    'Course' => $grade,
-                    '$city' => $userData->city,
-                   'exam attempt end at' => date("Y-m-d H:i:s"),
-                   )); 
-   
-                   // create/update a profile for user id
-                   $mp->people->set($userData->id, array(
+                }
+
+                // Mixpanel started
+
+                $redis_data = Session::get('redis_data');
+                $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+                // track an event
+                $mp->track("Full Body Scan Submit Test", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
@@ -206,9 +194,21 @@ class ResultController extends Controller
                     'Course' => $grade,
                     '$city' => $userData->city,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
-   
-                   ));
-            
+                ));
+
+                // create/update a profile for user id
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+
+                ));
+
                 // Mixpanel Event Ended
 
 
@@ -227,36 +227,24 @@ class ResultController extends Controller
             } else {
 
                 // For Mixpanel 
-                
-                if($userData->grade_id == '1'){
+
+                if ($userData->grade_id == '1') {
                     $grade = 'JEE';
-                   }elseif($userData->grade_id == '2'){
+                } elseif ($userData->grade_id == '2') {
                     $grade = 'NEET';
-                   }else{
+                } else {
                     $grade = 'NA';
-                   }
-   
-                  // Mixpanel Started
-                  $redis_data = Session::get('redis_data');
-                  $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-                  
-                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-                   
-                   // track an event
-                   $mp->track("Custom Exam Full Submit Test", array(
-                    'distinct_id' => $userData->id,
-                    '$user_id' => $userData->id,
-                    '$phone' => $userData->mobile,
-                    '$email' => $userData->email,
-                    'Email Verified' => $userData->email_verified,
-                    'Course' => $grade,
-                    '$city' => $userData->city,
-                   'exam attempt end at' => date("Y-m-d H:i:s"),
-                   )); 
-   
-                   // create/update a profile for user id
-                   $mp->people->set($userData->id, array(
+                }
+
+                // Mixpanel Started
+                $redis_data = Session::get('redis_data');
+                $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+                // track an event
+                $mp->track("Custom Exam Full Submit Test", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
@@ -265,8 +253,20 @@ class ResultController extends Controller
                     'Course' => $grade,
                     '$city' => $userData->city,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
-   
-                   ));
+                ));
+
+                // create/update a profile for user id
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    'exam attempt end at' => date("Y-m-d H:i:s"),
+
+                ));
                 // Mixpanel Event Ended
 
                 //custom subject exam
@@ -702,7 +702,7 @@ class ResultController extends Controller
 
 
         #for mixpanel
-        $exam_type=Redis::get('test_type' . $user_id);
+        $exam_type = Redis::get('test_type' . $user_id);
 
 
         $curl_url = "";
