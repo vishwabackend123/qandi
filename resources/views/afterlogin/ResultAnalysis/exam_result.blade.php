@@ -331,7 +331,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
 // For Mixpanel
     function sendEvent(){
 
-     mixpanel.track('Clicked to review PY exam');
+     mixpanel.track('Clicked to review PY exam',{
+        "$city" : '<?php echo $userData->city; ?>',
+        });
      }
 
 
