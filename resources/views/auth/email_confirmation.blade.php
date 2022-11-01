@@ -125,7 +125,7 @@ $('.email_send').hide();
     // Mixpanel Started
     mixpanel.identify('<?php echo $response_json["student_id"]; ?>');
         mixpanel.people.set({ "email_verified" : "Yes"});
-        mixpanel.track( "Loaded Email verification" );
+        mixpanel.track( "Email verification confirmed" );
 
     // Mixpanel Event Ended
 
