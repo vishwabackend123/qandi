@@ -10,6 +10,8 @@
             </div>
             @if($type_name=='Assessment')
             <h3 class="commonheading">Custom Exam</h3>
+            @elseif($type_name=='Mock Test')
+            <h3 class="commonheading">Mock Exam</h3>
             @else
             <h3 class="commonheading">{{$type_name}}</h3>
             @endif
