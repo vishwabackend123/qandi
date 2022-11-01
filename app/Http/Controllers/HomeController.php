@@ -1341,27 +1341,6 @@ class HomeController extends Controller
         $user_id = $userData->id;
 
 
-        // Mixpanel Started
-
-        $redis_data = Session::get('redis_data');
-        $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-
-        $mp = Mixpanel::getInstance($Mixpanel_key_id);
-
-
-        // track an event
-        $mp->track("Go to task center", array('distinct_id' => $userData->id, '$email' => $userData->email, '$city' => $userData->city, '$country' => $userData->country));
-
-        // create/update a profile for user id
-        $mp->people->set($userData->id, array(
-            'distinct_id' => $userData->id,
-            '$email' => $userData->email,
-            '$city' => $userData->city,
-            '$country' => $userData->country
-        ));
-        // Mixpanel Event Ended
-
-
         $exam_id = $userData->grade_id;
         $curl = curl_init();
         $api_URL = env('API_URL');

@@ -2,13 +2,13 @@
 @php
 $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
-
-$redis_data = Session::get('redis_data');
 @endphp
 @section('content')
 
 <!-- Mixpanel Started -->
-<?php ?>
+
+<?php $redis_data = Session::get('redis_data'); ?>
+
 <script type="text/javascript">
     (function(f, b) {
         if (!b.__SV) {
@@ -62,66 +62,72 @@ $redis_data = Session::get('redis_data');
         }
     })(document, window.mixpanel || []);
 
-    // Enabling the debug mode flag is useful during implementation,
-    // but it's recommended you remove it for production
-    var correct_answer = '{{$scoreResponse->correct_count}}';
+    try {
 
-    var wrong_answer = '{{$scoreResponse->wrong_count}}';
+        // Enabling the debug mode flag is useful during implementation,
+        // but it's recommended you remove it for production
+        var correct_answer = '{{$scoreResponse->correct_count}}';
 
-    var total_question = '{{$scoreResponse->no_of_question}}';
+        var wrong_answer = '{{$scoreResponse->wrong_count}}';
 
-    var total_time = '{{$rankResponse->test_total_time/60}}';
+        var total_question = '{{$scoreResponse->no_of_question}}';
 
-    var grade = "";
+        var total_time = '{{$rankResponse->test_total_time/60}}';
 
-    var test_name = "{{ isset($scoreResponse->test_name) ? $scoreResponse->test_name : 'Custom Exam'}}";
+        var grade = "";
 
-    var grade_id = "{{$userData->grade_id}}"
+        var test_name = "{{ isset($scoreResponse->test_name) ? $scoreResponse->test_name : 'Custom Exam'}}";
+
+        var grade_id = "{{$userData->grade_id}}"
 
 
-    if (grade_id == '1') {
-        grade = 'JEE';
-    } else if (grade_id == '2') {
-        grade = 'NEET';
-    } else {
-        grade = 'NA';
-    }
-    let position = test_name.search("Chapter Test");
-    var event_exam_type = "{{isset($scoreResponse->test_type)?$scoreResponse->test_type:$exam_type}}";
-    if (position > 0) {
-        event_exam_type = "Custom Chapter Test"
-    } else if (position < 0) {
-        position = test_name.search("Topic Adaptive Exam")
-        if (position > 0) {
-            event_exam_type = "Topic Adaptive Exam";
+        if (grade_id == '1') {
+            grade = 'JEE';
+        } else if (grade_id == '2') {
+            grade = 'NEET';
+        } else {
+            grade = 'NA';
         }
+        let position = test_name.search("Chapter Test");
+        var event_exam_type = "{{isset($scoreResponse->test_type)?$scoreResponse->test_type:$exam_type}}";
+        if (position > 0) {
+            event_exam_type = "Custom Chapter Test"
+        } else if (position < 0) {
+            position = test_name.search("Topic Adaptive Exam")
+            if (position > 0) {
+                event_exam_type = "Topic Adaptive Exam";
+            }
+        }
+
+        if (position > 0 && grade == "NEET" && total_time == 60) {
+            total_question = 60;
+            /*NEET
+                        - Subject/chapter test - 60mins - 60 Questions(Q)
+                         if the attempted(A) questions count is less then (Q)
+                        percentage completion is A/Q*100 else 100*/
+        } else if (position > 0 && grade == "JEE" && total_time == 60) {
+            total_question = 30;
+            /*JEE
+                        Subject/chapter test - 60mins - 30 Questions(Q)
+                        if the attempted(A) questions count is less then (Q)
+                        percentage completion is A/Q*100 else 100
+                         */
+        }
+
+        let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
+
+        var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
+        mixpanel.init(mixpanelid);
+
+        mixpanel.track("Loaded " + event_exam_type + " Result Analytics", {
+            // test_type variable is used for mixpanel purpose as we need exam_type 
+            "$city": '<?php echo $userData->city; ?>',
+            "Percentage Completion": Math.round(total_percentage),
+        });
+
+    } catch (err) {
+        console.log(err.message);
     }
-
-    if (position > 0 && grade == "NEET" && total_time == 60) {
-        total_question = 60;
-        /*NEET
-                    - Subject/chapter test - 60mins - 60 Questions(Q)
-                     if the attempted(A) questions count is less then (Q)
-                    percentage completion is A/Q*100 else 100*/
-    } else if (position > 0 && grade == "JEE" && total_time == 60) {
-        total_question = 30;
-        /*JEE
-                    Subject/chapter test - 60mins - 30 Questions(Q)
-                    if the attempted(A) questions count is less then (Q)
-                    percentage completion is A/Q*100 else 100
-                     */
-    }
-
-    let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
-
-    var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
-    mixpanel.init(mixpanelid);
-
-    mixpanel.track("Loaded " + event_exam_type + " Result Analytics", {
-        // test_type variable is used for mixpanel purpose as we need exam_type 
-        "$city": '<?php echo $userData->city; ?>',
-        "Percentage Completion": Math.round(total_percentage),
-    });
 </script>
 
 <!-- Mixpanel Event Ended -->
@@ -375,7 +381,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
     // For Mixpanel
     function sendEvent() {
 
-        mixpanel.track('Clicked to review PY exam');
+        mixpanel.track('Clicked to review PY exam', {
+            "$city": '<?php echo $userData->city; ?>',
+        });
     }
 
 
