@@ -581,11 +581,11 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                             //var grade_stage = $("#grade").val();
                             var grade_stage = $("#grade").find(":selected").attr("data-value");
                             
-                            mixpanel.identify(response.student_id);
+                            /*mixpanel.identify(response.student_id);
                             mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$city":response.city,"$email":response.email});
                             mixpanel.track('Sign up completed',{
                             "$city" : response.city
-                            });
+                            }); */
                             // Mixpanel Event Ended
 
                             
