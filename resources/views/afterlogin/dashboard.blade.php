@@ -94,7 +94,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Practice more to improve your score</p>
-                                    <a href="{{route('overall_analytics')}}" class="commmongreenLink">See Analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a onclick="sendSeeAnalyticsEvent()" href="{{route('overall_analytics')}}" class="commmongreenLink">See Analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -1035,10 +1035,16 @@ $user_id = isset($userData->id)?$userData->id:'';
     <script>
         function sendtaskEvent() {
 
-            mixpanel.track('Go to Task Center ', {
+            mixpanel.track('Go to Task Center', {
                 "$city": '<?php echo $userData->city; ?>',
             });
 
+        }
+
+        function sendSeeAnalyticsEvent(){
+            mixpanel.track('Clicked See Analytics', {
+                "$city": '<?php echo $userData->city; ?>',
+            });
         }
 
         function sendAddPlanEvent() {
