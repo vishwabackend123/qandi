@@ -5349,7 +5349,12 @@ canvas#progressJourny_graph, canvas#trend_graph {
                             height: 18px;bottom:26px;right:21px;}
         .mytaskdash .tabMainblock .commontab .nav-tabs .nav-link{text-transform:capitalize;}
         .image-container{position: relative;}
-         .optionText:focus{outline:none!important;}              
+         .optionText:focus{outline:none!important;} 
+         .anshead-titletext {
+            max-height: 60px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }             
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
