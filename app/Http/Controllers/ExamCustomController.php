@@ -50,7 +50,7 @@ class ExamCustomController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-
+/*
             // Mixpanel Started
             $redis_data = Session::get('redis_data');
 			$Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
@@ -64,7 +64,7 @@ class ExamCustomController extends Controller
                 '$country' => $userData->country
             ));
            // Mixpanel Event Ended
-
+*/
 
             $cacheKey = 'exam_subjects:' . $exam_id;
             if ($data = Redis::get($cacheKey)) {
