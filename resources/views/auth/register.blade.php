@@ -195,7 +195,7 @@
                     </div>
                     <span class="error mt-2" id="errlog_auth"></span>
                     <div class="Get-otp pt-4">
-                    <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 " onclick="sendEvent()" disabled>Continue</button>
+                    <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 " onclick="sendSignUpEvent()" disabled>Continue</button>
                     
                     </div>
                 </form>
@@ -814,7 +814,7 @@
             }
         });
 
-        function sendEvent(){
+        function sendSignUpEvent(){
 
             var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
             mixpanel.init(mixpanelid);
