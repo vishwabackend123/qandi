@@ -10,7 +10,7 @@
                     0%
                     @endif</span></h3>
             <div class="accordion-header d-flex align-items-center justify-content-between pt-md-0 pt-4" id="headingTwo">
-                <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$subject_id}}')" class="m-0" id="chapter_list_{{$subject_id}}_expandTopic_{{$chapters->chapter_id}}">View Topics</h4>
+                <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$subject_id}}')" class="m-0 view-topic-scrolling-position" id="chapter_list_{{$subject_id}}_expandTopic_{{$chapters->chapter_id}}">View Topics</h4>
                 <form class="w-100 text-right" method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                     @csrf
                     <input type="hidden" name="subject_id" value="">
