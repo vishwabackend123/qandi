@@ -138,7 +138,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         console.log(wrong_answer);
         console.log(total_question);
 
-        let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
+        let total_percentage = Math.round(((correct_answer + wrong_answer) / total_question) * 100);
+
         console.log(total_percentage);
 
         if (total_percentage >= 100){
@@ -152,7 +153,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         mixpanel.track("Loaded " + event_exam_type + " Result Analytics", {
             // test_type variable is used for mixpanel purpose as we need exam_type 
             "$city": '<?php echo $userData->city; ?>',
-            "Percentage Completion": Math.round(total_percentage),
+            "Percentage Completion": total_percentage,
         });
 
     } catch (err) {
