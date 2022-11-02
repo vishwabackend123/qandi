@@ -19,6 +19,8 @@ $user_id = isset($userData->id)?$userData->id:'';
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
 @if($errors->any())
+<?php $redis_data = Session::get('redis_data'); ?>
+
 <script>
     $(window).on('load', function() {
         $('#matrix').modal('show');
@@ -1454,7 +1456,7 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         // Enabling the debug mode flag is useful during implementation,
         // but it's recommended you remove it for production
-        var mixpanelid = "{{env('MIXPANEL_KEY')}}";
+        var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
         mixpanel.init(mixpanelid);
         mixpanel.track('Loaded - Dashboard', {
             "$city": '<?php echo $userData->city; ?>',
