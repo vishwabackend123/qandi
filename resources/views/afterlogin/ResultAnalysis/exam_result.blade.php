@@ -88,6 +88,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         } else {
             grade = 'NA';
         }
+
+        
         let position = test_name.search("Chapter Test");
         var event_exam_type = "{{isset($scoreResponse->test_type)?$scoreResponse->test_type:$exam_type}}";
         if (position > 0) {
@@ -101,12 +103,14 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         if (position > 0 && grade == "NEET" && total_time == 60) {
             total_question = 60;
+            console.log("1");
             /*NEET
                         - Subject/chapter test - 60mins - 60 Questions(Q)
                          if the attempted(A) questions count is less then (Q)
                         percentage completion is A/Q*100 else 100*/
         } else if (position > 0 && grade == "JEE" && total_time == 60) {
             total_question = 30;
+            console.log("2");
             /*JEE
                         Subject/chapter test - 60mins - 30 Questions(Q)
                         if the attempted(A) questions count is less then (Q)
@@ -116,12 +120,14 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         if (position > 0 && grade == "NEET" && total_time == 30) {
             total_question = 30;
+            console.log("3");
             /*NEET
                         -  single/multi topic test - 30mins - 30 Questions(Q)
                          if the attempted(A) questions count is less then (Q)
                         percentage completion is A/Q*100 else 100*/
         } else if (position > 0 && grade == "JEE" && total_time == 30) {
             total_question = 15;
+            console.log("4");
             /*JEE
                         - single/multi topic test - 30mins - 15 Questions(Q)
                         if the attempted(A) questions count is less then (Q)
