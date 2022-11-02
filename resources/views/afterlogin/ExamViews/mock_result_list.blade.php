@@ -86,13 +86,13 @@ $userData = Session::get('user_data');
                                                     @elseif($sche->live_exam_name)
                                                     {{$sche->live_exam_name}}
                                                     @elseif($sche->test_type == 'Mocktest')
-                                                    Mock Test
+                                                    Mock Exam
                                                     @else
                                                     {{$sche->test_type}}
                                                     @endif
                                                     @php
                                                     $test_type = base64_encode($sche->test_type);
-                                                    $test_name = base64_encode('Mock Test');
+                                                    $test_name = base64_encode('Mock Exam');
                                                     @endphp
                                                 </h4>
                                                 <p class="m-0 p-0">{{date('d F Y', strtotime($sche->created_at));}}</p>

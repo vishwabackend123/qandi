@@ -517,6 +517,7 @@ $('#custom_tab').click(function() {
 
                 $('.filterCha_' + sub_id).removeClass('activeFilter');
                 $('#' + filter_type + '_' + sub_id).addClass('activeFilter');
+                $('.view-topic-scrolling-position').text('View Topics');
 
             }
         });
@@ -537,6 +538,7 @@ $('#custom_tab').click(function() {
             success: function(result) {
                 $(".chapter_list_" + sub_id).html('');
                 $(".chapter_list_" + sub_id).html(result);
+                $('.view-topic-scrolling-position').text('View Topics');
             }
         });
 
