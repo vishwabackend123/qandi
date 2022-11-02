@@ -844,7 +844,7 @@
                     left: 0.6,
                     right: 0.6
                 },
-                barThickness: 26
+                barThickness: 10
             },
             {
                 label: 'Incorrect Answers',
@@ -856,7 +856,7 @@
                     left: 0.6,
                     right: 0.6
                 },
-                barThickness: 26
+                barThickness: 10
             },
         ]
     };
