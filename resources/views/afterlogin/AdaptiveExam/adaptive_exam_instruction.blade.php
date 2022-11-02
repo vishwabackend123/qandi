@@ -161,6 +161,8 @@ mixpanel.track('Loaded '+exam_title+' Instruction',{
     // Mixpanel Started 
     $('.exam_inst_take_test_btn').click(function() {
             var user_id = '<?php echo $user_id; ?>';
+            var test_type = '<?php echo isset($exam_title)?$exam_title:''; ?>';
+
             mixpanel.identify(user_id);
             mixpanel.people.set({
             $phone : '<?php echo $userData->mobile; ?>',
@@ -169,7 +171,7 @@ mixpanel.track('Loaded '+exam_title+' Instruction',{
             "Course" : '<?php echo $grade; ?>',
             "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',
             });
-            mixpanel.track("Custom Exam Topic Take Test Click",{
+            mixpanel.track(test_type+" Take Test Click",{
             $phone : '<?php echo $userData->mobile; ?>',
             $email: '<?php echo $userData->email; ?>', 
             "Email Verified": '<?php echo $userData->email_verified; ?>', 

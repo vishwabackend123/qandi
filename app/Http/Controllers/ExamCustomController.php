@@ -1325,7 +1325,7 @@ class ExamCustomController extends Controller
                    
                    
                    // track an event
-                   $mp->track("Custom Exam Full Practice For Subjects", array(
+                   $mp->track("Loaded ".$exam_title." Page", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
