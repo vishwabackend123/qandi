@@ -20,6 +20,12 @@ mixpanel.track('Loaded Previous Year Exam Instruction',{
         "$city" : '<?php echo $userData->city; ?>',
 		});
 
+
+function sendTakeTestPYEvent(){
+    mixpanel.track('Clicked Previous Year Take Test',{
+        "$city" : '<?php echo $userData->city; ?>',
+		});
+}
 </script>
 <!-- Mixpanel Event Ended -->
 
@@ -96,7 +102,7 @@ mixpanel.track('Loaded Previous Year Exam Instruction',{
 
                                     <input type="hidden" name="ranSession" value="{{$ranSession}}" />
 
-                                    <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
+                                    <button type="submit" class="btn exam_inst_take_test_btn" onclick="sendTakeTestPYEvent()">Take Test</button>
                                 </form>
                                 <!--  <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a> -->
                             </div>
