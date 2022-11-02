@@ -209,6 +209,9 @@ $question_type = "Numerical";
     var chapter_id = '{{$chapter_id}}';
     var subject_id = '{{$subject_id}}';
     var last_qId = '{{$last_qid}}';
+
+    $('#myTabContent .quesBtn').attr("disabled", false);
+    $('#myTabContent .quesBtn').removeClass("disabled");
     /*  $(".next_button").removeClass("activequestion");
      */
     /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */

@@ -88,7 +88,7 @@
     .contectus_bottom_img_svg{bottom: 50px;
         right: 90;
         max-width: 200px;    height: 241px;}
-    .reviewexamType a{font-size: 14px;}
+    .reviewexamType a{font-size: 14px;    max-width: 228px; text-align:right;}
     .reviewScreenleft li.nav-item {
         margin-right: 45px;
     }
@@ -121,6 +121,7 @@
   .plan_order_sumry_subscription{padding:5px 0px;}
   .plan_order_sumry_subscription{padding:4px 0px}
   .subjectblockOverall .textblock h3 {font-size: 16px;min-width: 104px;}
+  .qq1_2_3_4.active:after , .qq1_2_3_4.active:before{height:4px;}
   
 }
 @media only screen and (max-width: 1200px) {
