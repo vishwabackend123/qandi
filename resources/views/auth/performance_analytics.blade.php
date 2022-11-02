@@ -35,9 +35,13 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 // but it's recommended you remove it for production
 var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid);
+
+
+function sendSkipDashboardEvent(){
 mixpanel.track('Skip Dashboard',{
-        "$city" : '<?php echo $userData->city; ?>',
-        });
+"$city" : '<?php echo $userData->city; ?>',
+});
+}
 
 </script>
 
@@ -204,7 +208,7 @@ mixpanel.track('Skip Dashboard',{
                         Back
                     </a>
                 </div>
-                <a class="btn btn-common-transparent" href="{{url('/dashboard')}}">Skip to Dashboard</a>
+                <a onclick="sendSkipDashboardEvent()" class="btn btn-common-transparent" href="{{url('/dashboard')}}">Skip to Dashboard</a>
             </div>
         </div>
     </div>
