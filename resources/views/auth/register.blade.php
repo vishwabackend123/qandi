@@ -818,10 +818,8 @@
         function sendSignUpEvent(){
 
             var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
-            if (mix_env=='server') {
                 mixpanel.init(mixpanelid);
                 mixpanel.track('Sign up Started');
-            }
         }
 </script>
 
