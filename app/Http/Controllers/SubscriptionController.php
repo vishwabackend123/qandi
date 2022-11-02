@@ -221,8 +221,7 @@ class SubscriptionController extends Controller
             '$email' => $userData->email,
             'Email Verified' => $userData->email_verified,
             '$city' => $userData->city,
-            'Exam Id' => $exam_id,
-            'Subscription id' =>$subscription_id));
+            'Exam Id' => $exam_id));
 
             // create/update a profile for user id
 
@@ -233,8 +232,7 @@ class SubscriptionController extends Controller
             '$email' => $userData->email,
             'Email Verified' => $userData->email_verified,
             '$city' => $userData->city,
-            'Exam Id' => $exam_id,
-            'Subscription id' =>$subscription_id
+            'Exam Id' => $exam_id
 
 
             ));
