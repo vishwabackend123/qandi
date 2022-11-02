@@ -573,7 +573,6 @@ $question_type = "Numerical";
 
             }
         });
-        $('.text-exambottom-sec #btn_'+ question_id)[0].scrollIntoView();
     }
 
     function get_subject_question(subject_id) {
