@@ -129,7 +129,7 @@ mixpanel.track('Custom Exam Listing',{
                                                         0%
                                                         @endif</span></h3>
                                                 <div class="accordion-header d-flex align-items-center justify-content-between pt-md-0 pt-4" id="headingTwo">
-                                                    <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}','{{$sub->subject_name}}')" class="m-0 view-topic-scrolling-position" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View Topics</h4>
+                                                    <h4 onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}','{{$sub->subject_name}}')" class="m-0 view-topic-scrolling-position filter_view" id="chapter_list_{{$sub->id}}_expandTopic_{{$chapters->chapter_id}}">View Topics</h4>
                                                     <form class="w-100 text-right" method="post" action="{{route('custom_exam_chapter','instruction')}}" class="mb-0">
                                                         @csrf
                                                         <input type="hidden" name="subject_id" value="">
@@ -558,6 +558,7 @@ $('#custom_tab').click(function() {
                     $(this).removeClass('show_div_' + chapt_id);
                     $('#collapseTwo_custome_' + chapt_id).removeClass('show');
                     $('#collapseTwo_custome_' + chapt_id).hide();
+                    $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View Topics');
                 });
 
             }
