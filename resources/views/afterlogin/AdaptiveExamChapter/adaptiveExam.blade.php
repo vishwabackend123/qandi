@@ -1042,9 +1042,9 @@ $question_type = "Numerical";
         var qNo = $("#current_question_no").val();
 
 
-        $('#question_section .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').attr("disabled", true);
 
-        $('#question_section .quesBtn').addClass("disabled");
+        $('#myTabContent .quesBtn').addClass("disabled");
 
         var question_id = question_id;
 
@@ -1091,8 +1091,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
 
             $('#smtBtns .quesBtns').attr("disabled", false);
             setTimeout(function() {
@@ -1130,8 +1130,8 @@ $question_type = "Numerical";
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
+                $('#myTabContent .quesBtn').attr("disabled", false);
+                $('#myTabContent .quesBtn').removeClass("disabled");
             }
         });
 
@@ -1182,8 +1182,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
