@@ -114,7 +114,27 @@ $user_id = isset($userData->id)?$userData->id:'';
                          */
         }
 
+        if (position > 0 && grade == "NEET" && total_time == 30) {
+            total_question = 30;
+            /*NEET
+                        -  single/multi topic test - 30mins - 30 Questions(Q)
+                         if the attempted(A) questions count is less then (Q)
+                        percentage completion is A/Q*100 else 100*/
+        } else if (position > 0 && grade == "JEE" && total_time == 30) {
+            total_question = 15;
+            /*JEE
+                        - single/multi topic test - 30mins - 15 Questions(Q)
+                        if the attempted(A) questions count is less then (Q)
+                        percentage completion is A/Q*100 else 100
+                         */
+        }
+
         let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
+        
+        if (total_percentage >= 100){
+            total_percentage = 100;
+        }
+
 
         var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
         mixpanel.init(mixpanelid);

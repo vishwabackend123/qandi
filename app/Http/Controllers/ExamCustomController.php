@@ -50,21 +50,7 @@ class ExamCustomController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
-/*
-            // Mixpanel Started
-            $redis_data = Session::get('redis_data');
-			$Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
-            $mp = Mixpanel::getInstance($Mixpanel_key_id);
-			
-            $mp->track("Attempt full body scan from Marks Trend", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
-            $mp->people->set($userData->id, array(
-                'distinct_id' => $userData->id,
-                '$email' => $userData->email,
-                '$city' => $userData->city,
-                '$country' => $userData->country
-            ));
-           // Mixpanel Event Ended
-*/
+
 
             $cacheKey = 'exam_subjects:' . $exam_id;
             if ($data = Redis::get($cacheKey)) {
