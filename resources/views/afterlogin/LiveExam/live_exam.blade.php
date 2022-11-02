@@ -229,7 +229,7 @@ $question_type = "Numerical";
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                                <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                                <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
@@ -238,7 +238,7 @@ $question_type = "Numerical";
                     <div class="btnbottom">
                         <div class="questionbtnBlock">
                             <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                            <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
                             <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
                             <!-- <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button> -->
@@ -1001,6 +1001,10 @@ $question_type = "Numerical";
     /* mark or review */
     //function markforreview(quest_id, subject_id, chapt_id) {
     function markforreview() {
+
+        $('#myTabContent .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').addClass("disabled");
+
         var quest_id = $("#current_question").val();
         var subject_id = $("#current_subject_id").val();
         var chapt_id = $("#current_chapter_id").val();
@@ -1065,8 +1069,8 @@ $question_type = "Numerical";
         var question_id = $("#current_question").val();
         var qNo = $("#current_question_no").val();
 
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+        $('#myTabContent .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').addClass("disabled");
 
         var question_id = question_id;
         var option_id = [];
@@ -1114,8 +1118,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1156,8 +1160,8 @@ $question_type = "Numerical";
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
+                $('#myTabContent .quesBtn').attr("disabled", false);
+                $('#myTabContent .quesBtn').removeClass("disabled");
             }
         });
 
@@ -1169,8 +1173,6 @@ $question_type = "Numerical";
         var question_id = $("#current_question").val();
         var qNo = $("#current_question_no").val();
 
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
 
         var question_id = question_id;
         var option_id = [];
@@ -1214,8 +1216,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1240,23 +1242,23 @@ $question_type = "Numerical";
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                     return true;
                 }
-            },
-            complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
-            },
-            async: false
+            }
         });
 
     }
 
     function savemarkreview() {
+
+        $('#myTabContent .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').addClass("disabled");
+
         var quest_id = $("#current_question").val();
         var subject_id = $("#current_subject_id").val();
         var chapt_id = $("#current_chapter_id").val();
         /* saving response */
         if (saveAnswerAjax(quest_id, '') != false) {
-
+            $('#myTabContent .quesBtn').attr("disabled", true);
+            $('#myTabContent .quesBtn').addClass("disabled");
             // marking for review
             $.ajax({
                 url: "{{ route('markforreview') }}",

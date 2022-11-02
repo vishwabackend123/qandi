@@ -66,11 +66,11 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         // Enabling the debug mode flag is useful during implementation,
         // but it's recommended you remove it for production
-        var correct_answer = '{{$scoreResponse->correct_count}}';
+        var correct_answer = {{$scoreResponse->correct_count}};
 
-        var wrong_answer = '{{$scoreResponse->wrong_count}}';
+        var wrong_answer = {{$scoreResponse->wrong_count}};
 
-        var total_question = '{{$scoreResponse->no_of_question}}';
+        var total_question = {{$scoreResponse->no_of_question}};
 
         var total_time = '{{$rankResponse->test_total_time/60}}';
 
@@ -88,6 +88,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         } else {
             grade = 'NA';
         }
+
+
         let position = test_name.search("Chapter Test");
         var event_exam_type = "{{isset($scoreResponse->test_type)?$scoreResponse->test_type:$exam_type}}";
         if (position > 0) {
@@ -101,12 +103,14 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         if (position > 0 && grade == "NEET" && total_time == 60) {
             total_question = 60;
+            //console.log("1");
             /*NEET
                         - Subject/chapter test - 60mins - 60 Questions(Q)
                          if the attempted(A) questions count is less then (Q)
                         percentage completion is A/Q*100 else 100*/
         } else if (position > 0 && grade == "JEE" && total_time == 60) {
             total_question = 30;
+            //console.log("2");
             /*JEE
                         Subject/chapter test - 60mins - 30 Questions(Q)
                         if the attempted(A) questions count is less then (Q)
@@ -116,21 +120,28 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         if (position > 0 && grade == "NEET" && total_time == 30) {
             total_question = 30;
+            //console.log("3");
             /*NEET
                         -  single/multi topic test - 30mins - 30 Questions(Q)
                          if the attempted(A) questions count is less then (Q)
                         percentage completion is A/Q*100 else 100*/
         } else if (position > 0 && grade == "JEE" && total_time == 30) {
             total_question = 15;
+            //console.log("4");
             /*JEE
                         - single/multi topic test - 30mins - 15 Questions(Q)
                         if the attempted(A) questions count is less then (Q)
                         percentage completion is A/Q*100 else 100
                          */
         }
+        //console.log(correct_answer);
+        //console.log(wrong_answer);
+        //console.log(total_question);
 
-        let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
-        
+        let total_percentage = Math.round(((correct_answer + wrong_answer) / total_question) * 100);
+
+        //console.log(total_percentage);
+
         if (total_percentage >= 100){
             total_percentage = 100;
         }
@@ -142,7 +153,7 @@ $user_id = isset($userData->id)?$userData->id:'';
         mixpanel.track("Loaded " + event_exam_type + " Result Analytics", {
             // test_type variable is used for mixpanel purpose as we need exam_type 
             "$city": '<?php echo $userData->city; ?>',
-            "Percentage Completion": Math.round(total_percentage),
+            "Percentage Completion": total_percentage,
         });
 
     } catch (err) {

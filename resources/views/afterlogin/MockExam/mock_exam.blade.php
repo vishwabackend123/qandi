@@ -1059,6 +1059,7 @@ $question_type = "Numerical";
 
             }
         });
+        $('.text-exambottom-sec #btn_'+ question_id)[0].scrollIntoView();
     }
 
 
@@ -1370,8 +1371,6 @@ $question_type = "Numerical";
         var response = saveAnswerAjax(quest_id, current_question_no);
 
         if (response != false) {
-            $('#myTabContent .quesBtn').attr("disabled", true);
-            $('#myTabContent .quesBtn').addClass("disabled");
 
             // marking for review
             $.ajax({
