@@ -549,8 +549,12 @@
                             var grade_stage = $("#grade").find(":selected").attr("data-value");
                             
                             mixpanel.identify(response.student_id);
-                            mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email});
-                            mixpanel.track('Sign up completed'); 
+                            mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email, "Email Verified":response.email_verified});
+                            mixpanel.track('Sign up completed',{
+                                '$email' : '<?php echo $userData->email; ?>',
+                                'Email Verified' => '<?php echo $userData->email_verified; ?>',
+
+                            }); 
 
                             // Mixpanel Event Ended
 
