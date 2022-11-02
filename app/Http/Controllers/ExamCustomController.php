@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * ExamCustomController
@@ -49,6 +50,21 @@ class ExamCustomController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+/*
+            // Mixpanel Started
+            $redis_data = Session::get('redis_data');
+			$Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            $mp->track("Attempt full body scan from Marks Trend", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            $mp->people->set($userData->id, array(
+                'distinct_id' => $userData->id,
+                '$email' => $userData->email,
+                '$city' => $userData->city,
+                '$country' => $userData->country
+            ));
+           // Mixpanel Event Ended
+*/
 
             $cacheKey = 'exam_subjects:' . $exam_id;
             if ($data = Redis::get($cacheKey)) {
@@ -408,6 +424,50 @@ class ExamCustomController extends Controller
                 $exam_title = "Custom Subject Exam";
                 /* return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'filtered_subject', 'total_marks', 'exam_title', 'header_title', 'subCounts'));
           */
+
+          // Mixpanel Started
+
+          if($userData->grade_id == '1'){
+            $grade = 'JEE';
+           }elseif($userData->grade_id == '2'){
+            $grade = 'NEET';
+           }else{
+            $grade = 'NA';
+           }
+
+
+           $redis_data = Session::get('redis_data');
+           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+           
+           // track an event
+           $mp->track("Custom Exam Full Practice For Subjects", array(
+            'distinct_id' => $userData->id,
+            '$user_id' => $userData->id,
+            '$phone' => $userData->mobile,
+            '$email' => $userData->email,
+            'Email Verified' => $userData->email_verified,
+            'Course' => $grade,
+            '$city' => $userData->city
+           )); 
+
+           // create/update a profile for user id
+           $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            '$user_id' => $userData->id,
+            '$phone' => $userData->mobile,
+            '$email' => $userData->email,
+            'Email Verified' => $userData->email_verified,
+            'Course' => $grade,
+            '$city' => $userData->city
+
+           ));
+          
+
+           // Mixpanel Event Ended
+
+
                 $examType = 'custom';
                 $instructions = $this->getInstructions($examType);
 
@@ -1262,6 +1322,48 @@ class ExamCustomController extends Controller
                 $eType = "Adaptive";
                 $total_marks = 0;
 
+                // Mixpanel Started
+
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+                   
+                   $redis_data = Session::get('redis_data');
+                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                   
+                   
+                   // track an event
+                   $mp->track("Custom Exam Full Practice For Subjects", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    'Course' => $grade,
+                    '$city' => $userData->city
+   
+                   ));
+                   
+
+                // Mixpanel Event Ended
+                
                 $examType = 'custom';
                 $instructions = $this->getInstructions($examType);
 

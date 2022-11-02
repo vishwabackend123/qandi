@@ -1,5 +1,26 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
+@php
+$userData = Session::get('user_data');
+@endphp
+
+<?php $redis_data = Session::get('redis_data'); ?>
+<!-- mixpanel start -->
+<script type="text/javascript">
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+// Enabling the debug mode flag is useful during implementation,
+// but it's recommended you remove it for production
+var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+mixpanel.init(mixpanelid);
+mixpanel.track('Custom Exam Listing',{
+    "$city" : '<?php echo $userData->city; ?>'
+}
+);
+</script>
+<!-- mixpanel end -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="spinnerblock">
@@ -151,6 +172,23 @@
     });
 
     function showSubChapters(subject) {
+
+        
+        /*mixpanel start*/
+        var user_id = '<?php echo $userData->id; ?>';
+        mixpanel.identify(user_id);
+        mixpanel.people.set({
+        "Subject" : subject,
+        "$city" : '<?php echo $userData->city; ?>'
+        });
+
+        mixpanel.track("Custom Exam Select Subject",{
+        "Subject" : subject,
+        "$city" : '<?php echo $userData->city; ?>'
+        });
+        /*mixpanel end*/
+
+
         $('.SubActBtn').removeClass('active');
         $('.subjectlist').removeClass('d-block');
         $('.subjectlist').addClass('d-none');
@@ -211,6 +249,19 @@
                     $('#overlay').fadeIn();
                 },
                 success: function(result) {
+
+                    /*mixpanel start*/
+                    var user_id = '<?php echo $userData->id; ?>';
+                    mixpanel.identify(user_id);
+                    mixpanel.people.set({
+                    "$city" : '<?php echo $userData->city; ?>',
+                    });
+
+                    mixpanel.track("Custom Exam View Topics",{
+                    "$city" : '<?php echo $userData->city; ?>',
+                    });
+                    /*mixpanel end*/
+
                     $('.spinnerblock').hide();
                     $(".chapters-expend  #topic_section_" + chapt_id).html(result);
                     $("#topic_section_" + chapt_id).addClass('show_div_' + chapt_id);
@@ -272,6 +323,14 @@ $('#custom_tab').click(function() {
             }, 1000);
 });
     $('#attempted').click(function() {
+
+        /*mixpanel start*/
+        mixpanel.track("Custom Exam Attempted",{
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+        /*mixpanel end*/
+
+
         $('.spinnerblock').show();
         url = "{{ url('ajax_exam_result_list') }}/Assessment";
         $.ajax({
@@ -300,6 +359,20 @@ $('#custom_tab').click(function() {
     function addOrRemove(value,subject) {
         $('.testtablescroll').addClass("mobilePracticebottom");
         var index = aTopics.indexOf(value);
+        
+        /*mixpanel start*/
+        var user_id = '<?php echo $userData->id; ?>';
+        mixpanel.identify(user_id);
+        mixpanel.people.set({
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+
+        mixpanel.track("Custom Exam Select Topics",{
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+        /*mixpanel end*/
+
+
         if (subject_name) {
             if (subject_name == subject) {
                 $('.addremovetopic').prop('disabled', true);
@@ -360,6 +433,20 @@ $('#custom_tab').click(function() {
     }
 
     function clearTopics() {
+
+        /*mixpanel start*/
+        var user_id = '<?php echo $userData->id; ?>';
+        mixpanel.identify(user_id);
+        mixpanel.people.set({
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+
+        mixpanel.track("Custom Exam Clear Selected Topics",{
+        "$city" : '<?php echo $userData->city; ?>',
+        });
+        /*mixpanel end*/
+
+
         aTopics = [];
         $('.selected_topic').val('');
         $('.addremovetopic').removeClass('topic_selected');
@@ -376,6 +463,21 @@ $('#custom_tab').click(function() {
     }
 
     function showSubfilter(subject) {
+
+        /*mixpanel start*/
+        var user_id = '<?php echo $userData->id; ?>';
+        mixpanel.identify(user_id);
+        mixpanel.people.set({
+        "subject" : subject,
+        });
+
+        mixpanel.track("Custom Exam-Attempted Select Subject",{
+        "subject" : subject,
+        "$city" : '<?php echo $userData->city; ?>'
+        });
+        /*mixpanel end*/
+
+        
         $('.SubattemptActBtn').removeClass('active');
         $('.compLeteS').hide();
         $('.no_data_found').hide();
@@ -415,6 +517,7 @@ $('#custom_tab').click(function() {
 
                 $('.filterCha_' + sub_id).removeClass('activeFilter');
                 $('#' + filter_type + '_' + sub_id).addClass('activeFilter');
+                $('.view-topic-scrolling-position').text('View Topics');
 
             }
         });
@@ -435,6 +538,7 @@ $('#custom_tab').click(function() {
             success: function(result) {
                 $(".chapter_list_" + sub_id).html('');
                 $(".chapter_list_" + sub_id).html(result);
+                $('.view-topic-scrolling-position').text('View Topics');
             }
         });
 

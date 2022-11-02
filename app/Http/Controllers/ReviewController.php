@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * ReviewController
@@ -205,6 +206,48 @@ class ReviewController extends Controller
                 //if (Session::has('exam_name')) {
                 if ($pageName == 'attempted') {
                     $exam_name = !empty($type_name) ? $type_name : '';
+
+                    // Mixpanel Started
+                    if($userData->grade_id == '1'){
+                        $grade = 'JEE';
+                       }elseif($userData->grade_id == '2'){
+                        $grade = 'NEET';
+                       }else{
+                        $grade = 'NA';
+                       }
+       
+                       /*mixpanel*/
+                       $redis_data = Session::get('redis_data');
+                       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+                       $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                       
+                       // track an event
+                       $mp->track("Custom Exam Attempted-clicked to review button", array(
+                       'distinct_id' => $userData->id,
+                       '$city' => $userData->city,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       'email verified' => $userData->email_verified,
+                       'Course' => $grade,
+                       'exam type' => $type_name
+       
+                       )); 
+       
+                       // create/update a profile for user id
+                       $mp->people->set($userData->id, array(
+                           'distinct_id' => $userData->id,
+                           '$city' => $userData->city,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'email verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           'exam type' => $type_name
+                       ));
+                    // Mixpanel Event Ended
+
+
                 } else {
                     if (Redis::exists('exam_name' . $user_id)) {
                         //$exam_name = Session::get('exam_name');
@@ -214,6 +257,46 @@ class ReviewController extends Controller
                         $exam_name = '';
                     }
                 }
+
+                // Mixpanel Started 
+                if($userData->grade_id == '1'){
+                    $grade = 'JEE';
+                   }elseif($userData->grade_id == '2'){
+                    $grade = 'NEET';
+                   }else{
+                    $grade = 'NA';
+                   }
+   
+                   /*mixpanel*/
+                   $redis_data = Session::get('redis_data');
+                   $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+                   
+                   // track an event
+                   $mp->track($type_name." - clicked to review button", array(
+                   'distinct_id' => $userData->id,
+                   '$city' => $userData->city,
+                   '$email' => $userData->email,
+                   'email verified' => $userData->email_verified,
+                   'Course' => $grade,
+                   'exam type' => $type_name,
+                   )); 
+   
+                   // create/update a profile for user id
+                   $mp->people->set($userData->id, array(
+                       'distinct_id'       => $userData->id,
+                       '$city' => $userData->city,
+                       '$phone' => $userData->mobile,
+                       '$email' => $userData->email,
+                       'email verified' => $userData->email_verified,
+                       'Course' => $grade,
+                       'exam type' => $type_name,
+                   ));
+                  
+                // Mixpanel Event Ended
+
 
                 $exam_name = (isset($test_name) && !empty($test_name)) ? $test_name : $exam_name;
 

@@ -475,7 +475,8 @@ $question_type = "Numerical";
                     <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn">
                             <button class="btn btn-common-transparent nobg reviewbtn submitPopupBtn" data-bs-dismiss="modal" onclick="start()">Back To test</button>
-                            <button id="bt-modal-confirm" class="btn btn-common-green submitPopupBtn"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- for Mixpanel -->
+                            <button id="bt-modal-confirm" class="btn btn-common-green submitPopupBtn" onclick="sendEvent()"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg>
                                 </label>
@@ -583,9 +584,22 @@ $question_type = "Numerical";
 
 <!-- @ include('afterlogin.layouts.footer_new') -->
 @include('afterlogin.layouts.exam_footer')
-
+<?php $redis_data = Session::get('redis_data'); ?>
 <!-- page referesh disabled -->
 <script>
+
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+    for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+    MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+// Enabling the debug mode flag is useful during implementation,
+// but it's recommended you remove it for production
+
+    function sendEvent(){
+        var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+        mixpanel.init(mixpanelid);
+        mixpanel.track('Previous Year Exam Submit Test');
+    }
     var activeques_id = '{{$activeq_id}}';
 
     var saveArr = [];
@@ -594,35 +608,40 @@ $question_type = "Numerical";
     var totalQCount = '{{$exam_ques_count}}';
 
     /* Allow only numeric with decimal */
-    $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
-        e.preventDefault();
-    })
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
+    (function($) {
+        $.fn.inputFilter = function(callback, errMsg) {
+            return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function(e) {
+                if (callback(this.value)) {
+                    // Accepted value
+                    if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+                        $(this).removeClass("input-error");
+                        this.setCustomValidity("");
+                    }
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    // Rejected value - restore the previous one
+                    //$(this).addClass("input-error");
+                    //this.setCustomValidity(errMsg);
+                    this.reportValidity();
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                } else {
+                    // Rejected value - nothing to restore
+                    this.value = "";
+                }
+            });
+        };
+    }(jQuery));
+    jQuery(function($) {
 
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
-
-        if (event.charCode === 46) {
-            // if dot is the first symbol
-            if (event.target.value.length === 0) {
-                event.preventDefault();
-                return;
-            }
-
-            // if there are dots already 
-            if (event.target.value.indexOf('.') !== -1) {
-                event.preventDefault();
-                return;
-            }
-
-        }
+        $('.allownumericwithdecimal').bind("cut copy paste", function(e) {
+            e.preventDefault();
+        });
+        $(".allownumericwithdecimal").inputFilter(function(value) {
+            return /^-?\d*[.]?\d{0,2}$/.test(value);
+        });
     });
     /* Sachin screen changes */
     function setboxHeight() {

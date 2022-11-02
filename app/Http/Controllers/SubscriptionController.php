@@ -22,6 +22,7 @@ use App\Models\UserPurchase;
 use Illuminate\Support\Facades\Log;
 use Aws\SecretsManager\SecretsManagerClient;
 use Aws\Exception\AwsException;
+use Mixpanel;
 
 /**
  * SubscriptionController
@@ -204,6 +205,43 @@ class SubscriptionController extends Controller
             $exam_id = $exam_id;
             $subscription_id = $sub_id;
 
+            // Mixpanel Started
+
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            // track an event
+
+            $mp->track("Free Trial", array(
+            'distinct_id' => $userData->id,
+            '$user_id' => $userData->id,
+            '$phone' => $userData->mobile,
+            '$email' => $userData->email,
+            'Email Verified' => $userData->email_verified,
+            '$city' => $userData->city,
+            'Exam Id' => $exam_id,
+            'Subscription id' =>$subscription_id));
+
+            // create/update a profile for user id
+
+            $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            '$user_id' => $userData->id,
+            '$phone' => $userData->mobile,
+            '$email' => $userData->email,
+            'Email Verified' => $userData->email_verified,
+            '$city' => $userData->city,
+            'Exam Id' => $exam_id,
+            'Subscription id' =>$subscription_id
+
+
+            ));
+
+            // Mixpanel Event Ended
+
+
             $trail_purchase_data = [
                 'student_id' => $user_id,
                 'subscription_id' => $subscription_id,
@@ -294,6 +332,37 @@ class SubscriptionController extends Controller
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $cacheKey = 'checkout_details:' . $user_id;
+
+            // Mixpanel Started
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            
+            // track an event
+
+                $mp->track("Get Subcription/Payment start", array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    
+                    '$city' => $userData->city));
+                // create/update a profile for user id
+
+                $mp->people->set($userData->id, array(
+                    'distinct_id' => $userData->id,
+                    '$user_id' => $userData->id,
+                    '$phone' => $userData->mobile,
+                    '$email' => $userData->email,
+                    
+                    '$city' => $userData->city
+
+                ));
+            // Mixpanel Event Ended
+            
+
             if ($request->isMethod('post')) {
                 $postdata = $request->all();
                 $price = isset($request->exam_price) ? $request->exam_price : 0;
@@ -423,6 +492,36 @@ class SubscriptionController extends Controller
                 return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price','razorData'));
             }
         } catch (\Exception $e) {
+
+            // Mixpanel Started
+
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+           
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+
+            $mp->track("Payment Failed", array(
+                'distinct_id' => $userData->id,
+                '$user_id' => $userData->id,
+                '$phone' => $userData->mobile,
+                '$email' => $userData->email,
+                
+                '$city' => $userData->city));
+               // create/update a profile for user id
+               $mp->people->set($userData->id, array(
+                'distinct_id' => $userData->id,
+                '$user_id' => $userData->id,
+                '$phone' => $userData->mobile,
+                '$email' => $userData->email,
+                
+                '$city' => $userData->city
+
+                
+            ));
+            // Mixpanel Event Ended
+
+            
             Log::info($e->getMessage());
         }
     }

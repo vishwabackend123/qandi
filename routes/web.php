@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
+//use Mixpanel;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::any('/', function () {
 
 Route::any('/logout', function (Request $request) {
     //return view('index');
+
     $request->session()->flush();
     return Redirect()->route('login');
     /*  $landing_URL = env('LANDING_URL');
@@ -125,7 +127,8 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 
 /* Full exam Controller Routes */
-Route::any('/exam/{full_exam}/{instruction?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
+// For Mixpanel 
+Route::any('/exam/{full_exam}/{instruction?}/{empty?}/{button_type?}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
 Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'nextQuestion'])->name('next_question')->middleware('auth');
 Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');

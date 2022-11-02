@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * PlannerController
@@ -642,6 +643,7 @@ class PlannerController extends Controller
 
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+
 
             $curl = curl_init();
             $api_URL = env('API_URL');

@@ -172,6 +172,7 @@ class MenuMiddleware
             ]);
             if (isset($resultStudent['SecretString']) && !empty($resultStudent['SecretString'])) {
                 $redis_data = json_decode($resultStudent['SecretString'], true);
+                Session::put('redis_data', $redis_data);
             };
 
 

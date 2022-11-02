@@ -66,7 +66,7 @@ $nitifiCount=count($notifications);
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{ route('profile') }}">Profile & Subscription</a></li>
-                    <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                    <li><a onclick= "sendEvent()" class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </span>
             <span class="headericon  mobile_block_tab mobilenav" id="menumobile">
@@ -123,8 +123,15 @@ $nitifiCount=count($notifications);
     </div>
 </div>
 <!--main-profile-section-->
-
+<?php $redis_data = Session::get('redis_data'); ?>
 <script>
+
+    function sendEvent()
+    {
+    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+    mixpanel.init(mixpanelid);
+    mixpanel.track('LogOut');
+    }
     var notificationCount = '{{$nitifiCount}}';
     if (notificationCount > 0) {
         $('#clearAll').show();

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 
 use App\Http\Traits\CommonTrait;
+use Mixpanel;
 
 /**
  * AnalyticsController
@@ -44,6 +45,25 @@ class AnalyticsController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             //get user exam subjects
+
+            // Mixpanel event started    
+            
+            $redis_data = Session::get('redis_data');
+			$Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+			
+            // track an event
+            $mp->track("Loaded Overall Analytics", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+
+            // create/update a profile for user id
+            $mp->people->set($userData->id, array(
+                'distinct_id' => $userData->id,
+                '$email' => $userData->email,
+                '$city' => $userData->city,
+                '$country' => $userData->country
+            ));
+            // Mixpanel event ended
+
             $user_subjects = $this->redis_subjects();
 
             $api_URL = env('API_URL');

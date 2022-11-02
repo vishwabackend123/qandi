@@ -124,6 +124,9 @@ class LeadUserController extends Controller
 		if ($response_status) {
 			$email_id = isset($response_json['email']) ? $response_json['email'] : '';
 			$message_success = isset($response_json['message']) ? $response_json['message'] : '';
+		}else
+		{
+			$response_json['message']='Invalid Token';
 		}
 		return view('auth.email_confirmation', compact('email_id', 'response_json', 'message_success'));
 	}
