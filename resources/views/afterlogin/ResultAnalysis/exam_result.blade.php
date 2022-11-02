@@ -89,7 +89,7 @@ $user_id = isset($userData->id)?$userData->id:'';
             grade = 'NA';
         }
 
-        
+
         let position = test_name.search("Chapter Test");
         var event_exam_type = "{{isset($scoreResponse->test_type)?$scoreResponse->test_type:$exam_type}}";
         if (position > 0) {
@@ -139,7 +139,8 @@ $user_id = isset($userData->id)?$userData->id:'';
         console.log(total_question);
 
         let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
-        
+        console.log(total_percentage);
+
         if (total_percentage >= 100){
             total_percentage = 100;
         }
