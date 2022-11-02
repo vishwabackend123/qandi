@@ -982,8 +982,8 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+        $('#myTabContent .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').addClass("disabled");
 
         var question_id = question_id;
         var option_id = [];
@@ -1031,8 +1031,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1063,8 +1063,8 @@ $question_type = "Numerical";
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
+                $('#myTabContent .quesBtn').attr("disabled", false);
+                $('#myTabContent .quesBtn').removeClass("disabled");
             }
         });
         if ($("#quesnext" + question_id).is(":disabled") == true) {
@@ -1078,8 +1078,8 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswerAjax(question_id, qNo) {
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+        $('#myTabContent .quesBtn').attr("disabled", true);
+        $('#myTabContent .quesBtn').addClass("disabled");
 
         var question_id = question_id;
         var option_id = [];
@@ -1123,8 +1123,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             $('#qoption_err_' + question_id)[0].scrollIntoView();
-            $('#question_section .quesBtn').attr("disabled", false);
-            $('#question_section .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1151,8 +1151,8 @@ $question_type = "Numerical";
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
+                $('#myTabContent .quesBtn').attr("disabled", false);
+                $('#myTabContent .quesBtn').removeClass("disabled");
             },
             async: false
         });
