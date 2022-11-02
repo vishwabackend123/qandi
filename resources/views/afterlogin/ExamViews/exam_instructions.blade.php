@@ -45,6 +45,7 @@ mixpanel.track('Loaded Full Body Take Test',{
 </script>
 <!-- Mixpanel event ended-->
 
+
 <div class="main-wrapper exam-wrapperBg">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')

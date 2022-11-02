@@ -548,6 +548,7 @@
                             //var grade_stage = $("#grade").val();
                             var grade_stage = $("#grade").find(":selected").attr("data-value");
                             var email_add = $("#email_add").val();
+                            var mix_env='{{env("MIXPANEL_ENVIRONMENT")}}';
                             if (mix_env=='server') {
                                 mixpanel.identify(response.student_id);
                                 mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email_add});
