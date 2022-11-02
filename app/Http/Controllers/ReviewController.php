@@ -253,6 +253,7 @@ class ReviewController extends Controller
                         //$exam_name = Session::get('exam_name');
                         $cacheKey = 'exam_name' . $user_id;
                         $exam_name = Redis::get($cacheKey);
+                        $type_name = $exam_name;
                     } else {
                         $exam_name = '';
                     }
