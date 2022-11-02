@@ -128,6 +128,9 @@ $user_id = isset($userData->id)?$userData->id:'';
                         percentage completion is A/Q*100 else 100
                          */
         }
+        console.log(correct_answer);
+        console.log(wrong_answer);
+        console.log(total_question);
 
         let total_percentage = ((correct_answer + wrong_answer) / total_question) * 100;
         
