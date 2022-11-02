@@ -230,6 +230,9 @@ $question_type = "Numerical";
     var subject_id = '{{$subject_id}}';
     var curr_section_id = '{{$section_id}}';
     var next_sub_id = '{{$nextSubId}}';
+
+    $('#myTabContent .quesBtn').attr("disabled", false);
+    $('#myTabContent .quesBtn').removeClass("disabled");
     /*  $(".next_button").removeClass("activequestion");
      */
     /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
