@@ -736,7 +736,7 @@ var data8 = {
                 left: 0.6,
                 right: 0.6
                 },
-            barThickness: 26
+            barThickness: 10
         },
         {
             label: 'Incorrect Answers',
@@ -748,7 +748,7 @@ var data8 = {
                 left: 0.6,
                 right: 0.6
                 },
-            barThickness: 26
+            barThickness: 10
         },
     ]
 };
