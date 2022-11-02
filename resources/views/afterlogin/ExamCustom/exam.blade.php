@@ -1001,7 +1001,6 @@ $question_type = "Numerical";
 
             }
         });
-        $('.text-exambottom-sec #btn_'+ question_id)[0].scrollIntoView();
     }
 
 

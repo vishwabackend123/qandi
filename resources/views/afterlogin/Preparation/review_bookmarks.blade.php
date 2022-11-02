@@ -227,7 +227,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             }
         });
-        $('.text-exambottom-sec #btn_'+ question_id)[0].scrollIntoView();
     }
 
     function get_subject_question(subject_id) {
