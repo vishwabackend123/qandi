@@ -550,9 +550,10 @@
                             var email_add = $("#email_add").val();
                             
                             mixpanel.identify(response.student_id);
-                            mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email_add});
+                            mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email_add,"Email Verified" :"No" });
                             mixpanel.track('Sign up completed',{
-                                '$email_add' : email_add,
+                                '$email' : email_add,
+
                             }); 
 
                             // Mixpanel Event Ended
