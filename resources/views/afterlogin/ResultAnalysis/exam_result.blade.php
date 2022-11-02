@@ -66,11 +66,11 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         // Enabling the debug mode flag is useful during implementation,
         // but it's recommended you remove it for production
-        var correct_answer = '{{$scoreResponse->correct_count}}';
+        var correct_answer = {{$scoreResponse->correct_count}};
 
-        var wrong_answer = '{{$scoreResponse->wrong_count}}';
+        var wrong_answer = {{$scoreResponse->wrong_count}};
 
-        var total_question = '{{$scoreResponse->no_of_question}}';
+        var total_question = {{$scoreResponse->no_of_question}};
 
         var total_time = '{{$rankResponse->test_total_time/60}}';
 
