@@ -745,7 +745,7 @@ font-weight: 800;
 .chapter-error{
 font-size: 14px;
 color: #fb7686;
-font-weight: 500;
+font-weight: 500;padding-top: 15px!important;
 }
 .add-subchapter{
     position: absolute;
@@ -5304,7 +5304,7 @@ canvas#progressJourny_graph, canvas#trend_graph {
         width: 109%;font-size: 14px;
         font-weight: normal;
         color: #fb7686 !important;
-        bottom: -35px;}
+        bottom: -31px;}
         .planner-date .plannerEndDate{pointer-events: none;
             -ms-user-select: none;
             -moz-user-select: none;
