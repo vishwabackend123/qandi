@@ -517,7 +517,17 @@ $('#custom_tab').click(function() {
 
                 $('.filterCha_' + sub_id).removeClass('activeFilter');
                 $('#' + filter_type + '_' + sub_id).addClass('activeFilter');
+                clearTopics();
                 $('.view-topic-scrolling-position').text('View Topics');
+                $('.testslider').each(function() {
+                    var ids=this.id;
+                    var idArray = ids.split("_");
+                    var chapt_id=idArray[2];
+                    $(this).removeClass('show_div_' + chapt_id);
+                    $('#collapseTwo_custome_' + chapt_id).removeClass('show');
+                    $('#collapseTwo_custome_' + chapt_id).hide();
+                });
+
 
             }
         });
@@ -538,7 +548,17 @@ $('#custom_tab').click(function() {
             success: function(result) {
                 $(".chapter_list_" + sub_id).html('');
                 $(".chapter_list_" + sub_id).html(result);
+                clearTopics();
                 $('.view-topic-scrolling-position').text('View Topics');
+                $('.testslider').each(function() {
+                    var ids=this.id;
+                    var idArray = ids.split("_");
+                    var chapt_id=idArray[2];
+                    $(this).removeClass('show_div_' + chapt_id);
+                    $('#collapseTwo_custome_' + chapt_id).removeClass('show');
+                    $('#collapseTwo_custome_' + chapt_id).hide();
+                });
+
             }
         });
 
