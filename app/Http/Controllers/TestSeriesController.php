@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * TestSeriesController
@@ -282,6 +283,43 @@ class TestSeriesController extends Controller
 
 
                         $exam_title = "Test Series Exam";
+
+                        /*mixpanel start*/
+                        if($userData->grade_id == '1'){
+                            $grade = 'JEE';
+                           }elseif($userData->grade_id == '2'){
+                            $grade = 'NEET';
+                           }else{
+                            $grade = 'NA';
+                           }
+   
+                           $redis_data = Session::get('redis_data');
+                           $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+                   
+                           $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                           
+                           // track an event
+                           $mp->track("Test Series Instruction Page Loaded", array(
+                           'distinct_id' => $userData->id,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'Email Verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           '$city' => $userData->city,
+                           )); 
+   
+                           // create/update a profile for user id
+                           $mp->people->set($userData->id, array(
+                               'distinct_id'       => $userData->id,
+                               '$phone' => $userData->mobile,
+                               '$email' => $userData->email,
+                               'Email Verified' => $userData->email_verified,
+                               'Course' => $grade,
+                               'city' => $userData->city,
+   
+                           ));
+                           /*mixpanel end*/
+                           
                         return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject', 'header_title', 'ranSession'));
                     }
 

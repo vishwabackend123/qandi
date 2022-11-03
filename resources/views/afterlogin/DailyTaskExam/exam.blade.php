@@ -1474,7 +1474,10 @@ $question_type = "Numerical";
 
             $('#form_exam_submit')[0].submit();
         });
-
+        $('.reviewbtn').click(function() {
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
+        });
 
 
     });

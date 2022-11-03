@@ -281,7 +281,7 @@ class MockExamController extends Controller
                     '$city' => $userData->city,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    'email verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     'Course' => $grade
                 ));
 
@@ -291,7 +291,7 @@ class MockExamController extends Controller
                     '$city' => $userData->city,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    'email verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     'Course' => $grade
                 ));
 

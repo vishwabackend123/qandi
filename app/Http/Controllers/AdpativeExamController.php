@@ -626,7 +626,7 @@ class AdpativeExamController extends Controller
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
                    
                    // track an event
-                   $mp->track("Custom Exam Practice For Selected Topics Button Clicked", array(
+                   $mp->track($exam_name." Button Clicked", array(
                     'distinct_id' => $userData->id,
                    '$user_id' => $userData->id,
                    '$phone' => $userData->mobile,
@@ -643,7 +643,7 @@ class AdpativeExamController extends Controller
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
                        'Email Verified' => $userData->email_verified,
-                       'course' => $grade,
+                       'Course' => $grade,
                        '$city' => $userData->city
    
                    ));
@@ -978,11 +978,14 @@ class AdpativeExamController extends Controller
                    }else{
                     $grade = 'NA';
                    }
-   
-                   $mp = Mixpanel::getInstance("1786724e2a19c89a045f66f90b792a98");
+                   
+                   $redis_data = Session::get('redis_data');
+			       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                   
                    
                    // track an event
-                   $mp->track("Custom Exam Practice For Topic Submit", array(
+                   $mp->track("Adaptive Topic Exam Submit", array(
                    'distinct_id' => $userData->id,
                    '$phone' => $userData->mobile,
                    '$email' => $userData->email,
@@ -1112,7 +1115,7 @@ class AdpativeExamController extends Controller
                    $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
                    // track an event
-                   $mp->track("Custom Exam Practice For Chapter Submit", array(
+                   $mp->track("Adaptive Chapter Exam Submit", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,

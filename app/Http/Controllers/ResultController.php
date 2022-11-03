@@ -147,7 +147,7 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
-                    'email verified' => $userData->email_verified,
+                    'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
                 ));
@@ -158,7 +158,7 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
-                    'email verified' => $userData->email_verified,
+                    'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
 
@@ -217,8 +217,97 @@ class ResultController extends Controller
                 $redis_json = Redis::get('custom_answer_time_py' . $user_id . '_' . $ranSession);
             } elseif ($test_type == 'Test-Series') {
                 if ($exam_mode == 'Open') {
+
+                    if($userData->grade_id == '1'){
+                        $grade = 'JEE';
+                       }elseif($userData->grade_id == '2'){
+                        $grade = 'NEET';
+                       }else{
+                        $grade = 'NA';
+                       }
+       
+                       /*mixpanel*/
+                       
+
+                        $redis_data = Session::get('redis_data');
+                        $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                        $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+
+                       $mp->track("Open Test Series Submit", array(
+                           'distinct_id' => $userData->id,
+                           '$user_id' => $userData->id,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'Email Verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           '$city' => $userData->city,
+                           'exam attempt end at' => date("Y-m-d H:i:s"),
+                       ));
+       
+                       // create/update a profile for user id
+                       $mp->people->set($userData->id, array(
+                           'distinct_id' => $userData->id,
+                           '$user_id' => $userData->id,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'Email Verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           '$city' => $userData->city,
+                           'exam attempt end at' => date("Y-m-d H:i:s"),
+       
+                       ));
+       
+       
+                       /*mixpanel*/
+
                     $redis_json = Redis::get('custom_answer_time_ts' . $user_id . '_' . $ranSession);
                 } else {
+
+                    if($userData->grade_id == '1'){
+                        $grade = 'JEE';
+                       }elseif($userData->grade_id == '2'){
+                        $grade = 'NEET';
+                       }else{
+                        $grade = 'NA';
+                       }
+       
+                       /*mixpanel*/
+                       
+
+                        $redis_data = Session::get('redis_data');
+                        $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+                        $mp = Mixpanel::getInstance($Mixpanel_key_id);
+
+
+
+                       $mp->track("Live Test Series Submit", array(
+                           'distinct_id' => $userData->id,
+                           '$user_id' => $userData->id,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'Email Verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           '$city' => $userData->city,
+                           'exam attempt end at' => date("Y-m-d H:i:s"),
+                       ));
+       
+                       // create/update a profile for user id
+                       $mp->people->set($userData->id, array(
+                           'distinct_id' => $userData->id,
+                           '$user_id' => $userData->id,
+                           '$phone' => $userData->mobile,
+                           '$email' => $userData->email,
+                           'Email Verified' => $userData->email_verified,
+                           'Course' => $grade,
+                           '$city' => $userData->city,
+                           'exam attempt end at' => date("Y-m-d H:i:s"),
+       
+                       ));
+
                     $redis_json = Redis::get('custom_answer_time_tsl' . $user_id . '_' . $ranSession);
                 }
             } elseif ($tasktype == 'daily' || $tasktype == 'weekly') {

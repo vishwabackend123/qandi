@@ -105,7 +105,7 @@ mixpanel.track( "Loaded Full Body Instruction",{
 
 function sendTakeTest(){
     var test_type = "{{$test_type}}";
-    mixpanel.track( test_type+'Take Test',{
+    mixpanel.track( test_type+' Take Test',{
     "$city" : '<?php echo $userData->city; ?>'
 });
 

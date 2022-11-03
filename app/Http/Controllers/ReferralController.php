@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Mixpanel;
 
 /**
  * ReferralController
@@ -93,6 +94,25 @@ class ReferralController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
             if ($httpcode == 200 || $httpcode == 201) {
+
+            // Mixpanel event started    
+            $redis_data = Session::get('redis_data');
+            $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+
+            $mp = Mixpanel::getInstance($Mixpanel_key_id);
+            // track an event
+            $referrals = str_replace('"',"",$referrals);
+
+            $mp->track("Refer a Friend Send Email invite", array('distinct_id' => $userData->id, 'Referral Emails' => $referrals)); 
+            $mp->people->set($userData->id, array(
+            'distinct_id' => $userData->id,
+            'Referral Emails' => $referrals
+
+            ));
+            // create/update a profile for user id
+            // Mixpanel event ended
+
+
                 return $response_json;
             } 
             else if ($httpcode == 400) 
