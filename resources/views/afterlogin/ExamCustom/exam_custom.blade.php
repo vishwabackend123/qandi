@@ -526,7 +526,6 @@ $('#custom_tab').click(function() {
                     $(this).removeClass('show_div_' + chapt_id);
                     $('#collapseTwo_custome_' + chapt_id).removeClass('show');
                     $('#collapseTwo_custome_' + chapt_id).hide();
-                    $("#chapter_list_" + sub_id + "_expandTopic_" + chapt_id).text('View Topics');
                 });
 
 

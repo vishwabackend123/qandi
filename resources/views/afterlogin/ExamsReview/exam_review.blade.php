@@ -279,9 +279,9 @@ $question_type = "Numerical";
                                         <div class='expand_block'>
                                             <div class="first_screen new">
                                                 <div class="questionright d-flex align-items-center justify-content-between mb-4">
-                                            <h5>{{$accuracy}}%</h5>
-                                            <h6>of the people got this question right</h6>
-                                        </div>
+                                                    <h5>{{$accuracy}}%</h5>
+                                                    <h6>of the people got this question right</h6>
+                                                </div>
 
                                                 <div class="attemp_box row mt-0">
                                                     <div class="sub_att_1 col-md-6">
@@ -376,7 +376,7 @@ $question_type = "Numerical";
                         <div class="hideondesktop Answerinner">
                             <p><span>Answer Palette</span></p>
                         </div>
-                        <div class="text-exambottom-sec">
+                        <div class="text-exambottom-sec" id="questNo">
 
                             @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
@@ -562,6 +562,15 @@ $question_type = "Numerical";
 
                         $("#mob_explanation").html(response.mobView);
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, "mob_explanation"]);
+                    }
+
+                    var newWindowWidth = $(window).width();
+                    if (newWindowWidth < 768) {
+                        $("#questNo  #btn_" + question_id).focusout();
+
+                    } else {
+                        $("#questNo  #btn_" + question_id).focus();
+
                     }
                 }
 
@@ -876,16 +885,6 @@ $question_type = "Numerical";
 <!-----end-for-expand-btn-click------->
 
 
-<script>
-    /*  if ($(window).height() < 900) {
-        body {
-            background - color: red;
-        }
-
-    } else {
-        // change functionality for larger screens
-    } */
-</script>
 
 
 <script>
@@ -919,7 +918,7 @@ $question_type = "Numerical";
                 $("#filterBy .dropdown-menu").addClass("filterByexpand");
                 $('.examReviewscreenmob .btn123').attr('style', 'border-top:none !important;');
 
-                
+
             });
 
             $(".collapseformob").on('click', function() {
@@ -965,7 +964,7 @@ $question_type = "Numerical";
                 $('.text-exambottom-sec').css('height', examreviewMainboxNew);
                 $('.examReviewscreenmob .btn123').attr('style', 'border-top:none !important;');
 
-                
+
 
             });
 
@@ -988,14 +987,14 @@ $question_type = "Numerical";
                 // $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
                 $(".reviewans-mainsec").addClass("darkHeader");
                 $(".bottomfixarrow").addClass("removebottombtn");
-            
+
             });
 
             $("#reviewData").on("click", ".expand_block", function(e) {
                 e.stopPropagation();
                 // $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
                 $(".reviewans-mainsec").removeClass("darkHeader");
-            
+
             });
 
             $(document).click(function() {
@@ -1003,7 +1002,7 @@ $question_type = "Numerical";
                 // $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
                 $(".reviewans-mainsec").removeClass("darkHeader");
                 $(".bottomfixarrow").removeClass("removebottombtn");
-            
+
             });
 
         }
@@ -1013,7 +1012,7 @@ $question_type = "Numerical";
 <style>
     @media only screen and (max-width: 767px) {
         .examReviewscreenmob .reviewans-mainsec {
-            height: 150px;   
+            height: 150px;
         }
 
         .examReviewscreenmob .answer-main-sec {
@@ -1025,19 +1024,24 @@ $question_type = "Numerical";
             top: 15px;
 
         }
-        .removemob{
-            display:none;
+
+        .removemob {
+            display: none;
         }
-        .custom-anstop{
-            display:none;
+
+        .custom-anstop {
+            display: none;
         }
-        .darkHeader{
-            display:none;
+
+        .darkHeader {
+            display: none;
         }
-        .first_screen_expand{
-            max-height:100% !important;
+
+        .first_screen_expand {
+            max-height: 100% !important;
         }
-        .filterByexpand  .dropdown-item {
+
+        .filterByexpand .dropdown-item {
             padding: 10px !important;
             padding-bottom: 13px !important;
             font-size: 16px !important;
@@ -1045,15 +1049,16 @@ $question_type = "Numerical";
         }
 
         #filterBy .filterByexpand {
-            transform: initial!important;
-            right: 18px!important;
-            inset: initial!important;
+            transform: initial !important;
+            right: 18px !important;
+            inset: initial !important;
             max-width: 172px !important;
-            left: -100px!important;
+            left: -100px !important;
             top: 35px !important;
         }
-        .removebottombtn{
-            display:none;
+
+        .removebottombtn {
+            display: none;
         }
     }
 </style>

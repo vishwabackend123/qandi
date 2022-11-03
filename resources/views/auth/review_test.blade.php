@@ -889,16 +889,7 @@
 <!-----end-for-expand-btn-click------->
 
 
-<script>
-    if ($(window).height() < 900) {
-        body {
-            background - color: red;
-        }
 
-    } else {
-        // change functionality for larger screens
-    }
-</script>
 
 </style>
 @endsection

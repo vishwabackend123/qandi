@@ -657,7 +657,8 @@ $userData = Session::get('user_data');
     });
 
     $(".plannerDate").change(function() {
-
+        $('#limit_error span').html('');
+        $('#limit_error').hide();
         var start_date = this.value;
         var date = new Date(start_date);
 

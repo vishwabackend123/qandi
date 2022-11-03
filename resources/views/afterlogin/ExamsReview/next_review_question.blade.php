@@ -131,7 +131,7 @@ $question_type = "Numerical";
 
                                     </div>
                                 </div>
-                                
+
                                 <div class="box-border"></div>
                                 <div class="learskill d-flex align-items-center justify-content-between">
                                     <p>Learning skill required:</p>
@@ -216,7 +216,7 @@ $question_type = "Numerical";
 
 
 <script>
-        $(function() {
+    $(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
             function review_right_Height() {
                 var total_right_height = $(".reviewScreenright ").outerHeight();
@@ -251,20 +251,17 @@ $question_type = "Numerical";
             }
 
 
+            review_right_Height();
+            $("window").load(function() {
                 review_right_Height();
-                $("window").load(function() {
-                    review_right_Height();
-                });
+            });
 
-                $(window).resize(function() {
-                    review_right_Height();
-                });
+            $(window).resize(function() {
+                review_right_Height();
+            });
 
-            }
-        })
-    
-
-    
+        }
+    })
 </script>
 <script>
     $(document).ready(function() {
@@ -303,15 +300,15 @@ $question_type = "Numerical";
             $('.explanation-sec').css('height', coll_scroll_height);
             var afterclikecoll = $(".explanation-sec").outerHeight();
             var afterclikecoll_cal = afterclikecoll - 10 + "px";
-            $('.explanation-sec').css('height', afterclikecoll_cal); 
-            
+            $('.explanation-sec').css('height', afterclikecoll_cal);
+
         });
     });
 </script>
- 
 
 
- 
+
+
 
 <script>
     $(function() {
@@ -463,17 +460,6 @@ $question_type = "Numerical";
 </script>
 <!-----end-for-expand-btn-click------->
 
-
-<script>
-    if ($(window).height() < 900) {
-        body {
-            background - color: red;
-        }
-
-    } else {
-        // change functionality for larger screens
-    }
-</script>
 <script>
     $(function() {
         if (window.matchMedia("(max-width: 767px)").matches) {
@@ -568,28 +554,28 @@ $question_type = "Numerical";
                 $('.examReviewscreenmob .expand_block').css('width', screenWidth_15);
                 // $(".explanation-sec , .reviewans-mainsec").addClass("darkHeader");
                 $(".reviewans-mainsec").addClass("darkHeader");
-            
+
             });
 
             $("#reviewData").on("click", ".expand_block", function(e) {
                 e.stopPropagation();
                 // $(".explanation-sec .reviewans-mainsec").removeClass("darkHeader");
                 $(".reviewans-mainsec").removeClass("darkHeader");
-            
+
             });
 
             $(document).click(function() {
                 $(".expand_block").hide();
                 // $(".explanation-sec , .reviewans-mainsec").removeClass("darkHeader");
                 $(".reviewans-mainsec").removeClass("darkHeader");
-            
+
             });
 
         }
     })
 </script>
 
-    <style>
+<style>
     @media only screen and (max-width: 767px) {
         .examReviewscreenmob .reviewans-mainsec {
             height: 150px;
@@ -604,19 +590,24 @@ $question_type = "Numerical";
             top: 15px;
 
         }
-        .removemob{
-            display:none;
+
+        .removemob {
+            display: none;
         }
-        .custom-anstop{
-            display:none;
+
+        .custom-anstop {
+            display: none;
         }
-        .darkHeader{
-            display:none;
+
+        .darkHeader {
+            display: none;
         }
-        .first_screen_expand{
-            max-height:100% !important;   
+
+        .first_screen_expand {
+            max-height: 100% !important;
         }
-        .filterByexpand  .dropdown-item {
+
+        .filterByexpand .dropdown-item {
             padding: 10px !important;
             padding-bottom: 13px !important;
             font-size: 16px !important;
@@ -624,15 +615,16 @@ $question_type = "Numerical";
         }
 
         #filterBy .filterByexpand {
-            transform: initial!important;
-            right: 18px!important;
-            inset: initial!important;
+            transform: initial !important;
+            right: 18px !important;
+            inset: initial !important;
             max-width: 172px !important;
-            left: -100px!important;
+            left: -100px !important;
             top: 35px !important;
         }
-        .removebottombtn{
-            display:none;
+
+        .removebottombtn {
+            display: none;
         }
     }
 </style>

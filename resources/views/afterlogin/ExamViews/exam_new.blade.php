@@ -1048,7 +1048,14 @@ $question_type = "Numerical";
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
+                var newWindowWidth = $(window).width();
+                if (newWindowWidth < 768) {
+                    $("#questNo  #btn_" + question_id).focusout();
 
+                } else {
+                    $("#questNo  #btn_" + activeques_id).focus();
+
+                }
             }
         });
     }
