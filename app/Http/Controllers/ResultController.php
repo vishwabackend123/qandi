@@ -147,7 +147,7 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
-                    'email verified' => $userData->email_verified,
+                    'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
                 ));
@@ -158,7 +158,7 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
-                    'email verified' => $userData->email_verified,
+                    'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
 

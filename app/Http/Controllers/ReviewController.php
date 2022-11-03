@@ -229,7 +229,7 @@ class ReviewController extends Controller
                        '$city' => $userData->city,
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
-                       'email verified' => $userData->email_verified,
+                       'Email Verified' => $userData->email_verified,
                        'Course' => $grade,
                        'exam type' => $type_name
        
@@ -241,7 +241,7 @@ class ReviewController extends Controller
                            '$city' => $userData->city,
                            '$phone' => $userData->mobile,
                            '$email' => $userData->email,
-                           'email verified' => $userData->email_verified,
+                           'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
                            'exam type' => $type_name
                        ));
@@ -280,7 +280,7 @@ class ReviewController extends Controller
                    'distinct_id' => $userData->id,
                    '$city' => $userData->city,
                    '$email' => $userData->email,
-                   'email verified' => $userData->email_verified,
+                   'Email Verified' => $userData->email_verified,
                    'Course' => $grade,
                    'exam type' => $type_name,
                    )); 
@@ -291,7 +291,7 @@ class ReviewController extends Controller
                        '$city' => $userData->city,
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
-                       'email verified' => $userData->email_verified,
+                       'Email Verified' => $userData->email_verified,
                        'Course' => $grade,
                        'exam type' => $type_name,
                    ));

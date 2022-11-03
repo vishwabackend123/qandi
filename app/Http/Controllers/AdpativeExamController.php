@@ -643,7 +643,7 @@ class AdpativeExamController extends Controller
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
                        'Email Verified' => $userData->email_verified,
-                       'course' => $grade,
+                       'Course' => $grade,
                        '$city' => $userData->city
    
                    ));

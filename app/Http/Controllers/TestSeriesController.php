@@ -303,7 +303,7 @@ class TestSeriesController extends Controller
                            'distinct_id' => $userData->id,
                            '$phone' => $userData->mobile,
                            '$email' => $userData->email,
-                           'email verified' => $userData->email_verified,
+                           'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
                            '$city' => $userData->city,
                            )); 
