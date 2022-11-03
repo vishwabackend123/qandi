@@ -1029,6 +1029,8 @@ $question_type = "Numerical";
         var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
+        $('#myTabContent .quest_btn').attr("disabled", true);
+
         saveQuestionTime(act_question, q_submit_time);
 
         url = "{{ url('mock_next_question/') }}/" + question_id;
@@ -1050,11 +1052,11 @@ $question_type = "Numerical";
 
                 var newWindowWidth = $(window).width();
                 if (newWindowWidth < 768) {
-                    $("#questNo  #btn_" + activeques_id).focusout();
-                    $('#quest_option_' + activeques_id).focusout();
+                    $("#questNo  #btn_" + question_id).focusout();
+
                 } else {
                     $("#questNo  #btn_" + activeques_id).focus();
-                    $('#quest_option_' + activeques_id).focus();
+
                 }
 
             }
