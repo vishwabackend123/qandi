@@ -319,6 +319,7 @@ class TestSeriesController extends Controller
    
                            ));
                            /*mixpanel end*/
+                           
                         return view('afterlogin.TestSeries.instruction', compact('exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'requestData', 'total_marks', 'exam_title', 'filtered_subject', 'header_title', 'ranSession'));
                     }
 

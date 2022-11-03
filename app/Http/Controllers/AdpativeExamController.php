@@ -978,8 +978,11 @@ class AdpativeExamController extends Controller
                    }else{
                     $grade = 'NA';
                    }
-   
-                   $mp = Mixpanel::getInstance("1786724e2a19c89a045f66f90b792a98");
+                   
+                   $redis_data = Session::get('redis_data');
+			       $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
+                   $mp = Mixpanel::getInstance($Mixpanel_key_id);
+                   
                    
                    // track an event
                    $mp->track("Adaptive Topic Exam Submit", array(
