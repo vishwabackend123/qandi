@@ -1,6 +1,9 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+
+<?php $redis_data = Session::get('redis_data'); ?>
+
 <!-------- Mobile Sidebar -- jjknjk------------>
 <section class="sidebar_block mobile_block_tab mobilemenu">
     <div class="userprofile headericon d-flex align-items-center justify-content-between">
