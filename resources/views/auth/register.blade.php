@@ -549,6 +549,12 @@
                             var grade_stage = $("#grade").find(":selected").attr("data-value");
                             var email_add = $("#email_add").val();
                                 mixpanel.identify(response.student_id);
+                                // mixpanel requirment need to modify the code in case course list increases
+                                // if(exam==1){
+                                // exam='JEE'
+                                // }else{
+                                // exam='NEET'
+                                // }
                                 mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam,"Grade":grade_stage,"$email":response.email_add});
                                 mixpanel.track('Sign up completed',{
                                 '$email_add' : email_add,
