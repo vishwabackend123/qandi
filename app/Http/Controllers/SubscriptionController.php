@@ -207,7 +207,12 @@ class SubscriptionController extends Controller
 
             // Mixpanel Started
 
-            $redis_data = Session::get('redis_data');
+            if (Session::has('redis_data')) {
+                $redis_data = Session::get('redis_data');
+            }else
+            {
+                $redis_data = $_SESSION['SECRET_REDIS'];
+            }
             $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
            
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
@@ -332,7 +337,13 @@ class SubscriptionController extends Controller
             $cacheKey = 'checkout_details:' . $user_id;
 
             // Mixpanel Started
-            $redis_data = Session::get('redis_data');
+            if (Session::has('redis_data')) {
+                $redis_data = Session::get('redis_data');
+            }else
+            {
+                $redis_data = $_SESSION['SECRET_REDIS'];
+            }
+            
             $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
            
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
@@ -493,7 +504,12 @@ class SubscriptionController extends Controller
 
             // Mixpanel Started
 
-            $redis_data = Session::get('redis_data');
+            if (Session::has('redis_data')) {
+                $redis_data = Session::get('redis_data');
+            }else
+            {
+                $redis_data = $_SESSION['SECRET_REDIS'];
+            }
             $Mixpanel_key_id = $redis_data['MIXPANEL_KEY'];
            
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
