@@ -2808,7 +2808,9 @@ label.filter {
     .fullbody_scan_page .SelectPlane_text {padding: 24px 0px 24px 0px;}
     .userprofile strong {font-size: 16px;font-weight: 800;line-height: 1.6;color: #1f1f1f;margin-left: 12px;}
     
-    .userprofile.headericon a{border: 1px solid #e9eef4;}
+    .userprofile.headericon a{border: 1px solid #e9eef4;display: inline-flex;
+        align-items: center;
+        justify-content: center;}
     .userprofile.headericon a img {
         width: 40px;
         height: 40px;
@@ -4075,6 +4077,9 @@ label.filter {
         top: 62px;
     }
     .MockTestMob .attemptedscroll{    max-height: calc(100vh - 381px);height:auto;}
+    .dashbaordContainer .myqarrow {
+        margin-top: 8px;
+    }   
 }
 
 

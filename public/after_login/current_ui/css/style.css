@@ -4400,6 +4400,7 @@ span.select2-selection.select2-selection--single:focus{outline:0!important;}
 .headerRight span {
     display: inline-block;
     width:auto;
+    vertical-align: middle;
 }
 
 .headerLeft h6 {
@@ -8236,3 +8237,12 @@ margin-bottom: 12px;
 
 .examSereenwrapper .questionwrapper, .reviewScreenleft .questionwrapper{padding-bottom: 20px !important;}
 .mobile_active_usericon {background-color:#e0f6e3;height: 50px; padding: 12px 12px 12px 12px;border-radius: 8px;}
+
+.notificationnew>a, .user_profile_tab>a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashbaordContainer .myqarrow {
+    margin-top: 5px;
+}
