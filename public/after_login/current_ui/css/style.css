@@ -4907,6 +4907,8 @@ header {
 
 .moreTaskLink .commmongreenLink {
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .moreTaskLink {
@@ -8245,4 +8247,7 @@ margin-bottom: 12px;
 }
 .dashbaordContainer .myqarrow {
     margin-top: 5px;
+}
+.usertext a span {
+    vertical-align: text-bottom;
 }

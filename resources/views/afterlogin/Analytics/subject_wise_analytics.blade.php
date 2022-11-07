@@ -809,13 +809,13 @@ var data9 = {
             label: 'Correct Answers',
             data: <?php print_r($correctTime2); ?>,
             backgroundColor: '#34d399',
-            barThickness: 32
+            barThickness: 18
         },
         {
             label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime2); ?>,
             backgroundColor: '#f7758f',
-            barThickness: 32
+            barThickness: 18
         },
     ]
 };
@@ -875,13 +875,13 @@ var data7 = {
             label: 'Correct Answers',
             data: <?php print_r($correctTime3); ?>,
             backgroundColor: '#34d399',
-            barThickness: 32
+            barThickness: 20
         },
         {
             label: 'Incorrect Answers',
             data: <?php print_r($incorrectTime3); ?>,
             backgroundColor: '#f7758f',
-            barThickness: 32
+            barThickness: 20
         },
     ]
 };
