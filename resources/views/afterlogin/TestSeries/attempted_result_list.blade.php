@@ -1,7 +1,10 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+<?php $redis_data = Session::get('redis_data'); ?>
 <script type="text/javascript">
+    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+    mixpanel.init(mixpanelid); 
     mixpanel.track('Attempted Page Load', {
         "$city": '<?php echo $userData->city; ?>',
     });
