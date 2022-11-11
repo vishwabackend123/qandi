@@ -45,25 +45,25 @@
             @endif
         </div>
         @if(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Token Expired, please resend email verification')
-        <p class="email_head"><span>Email link Expired</span></p>
-        <p><label><b>{{$response_json['email']}}</b> is not Verified yet. </label></p>
+        <p class="email_head"><span>Email Link Expired</span></p>
+        <p><label><b>{{$response_json['email']}}</b> is not verified yet. </label></p>
         <span class="mt-2" id="email_success"></span>
         <div class="d-flex align-items-center justify-content-center">
             <a href="javascript:void(0)" class="btn btn-common-transparent nobg w-50 resend_email" style="padding: 10px 40px;margin:24px 12px 0px 0px;"> Resend</a>
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
         @elseif(isset($response_json['message']) && !empty($response_json['message']) && $response_json['message'] == 'Invalid Token')
-        <p class="email_head"><span>Invalid link</span></p>
+        <p class="email_head"><span>Invalid Link</span></p>
         <p><label><b></b> </label></p>
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
         </div>
         @else
         <p class="email_head"><span>{{$message_success}}</span></p>
-        @if($message_success == 'Email already Verified')
-        <p><label><b>{{$response_json['email']}}</b> is Verified. </label></p>
+        @if($message_success == 'Email Already Verified')
+        <p><label><b>{{$response_json['email']}}</b> is verified. </label></p>
         @else
-        <p><label><b>{{$response_json['email']}}</b> is now Verified. </label></p>
+        <p><label><b>{{$response_json['email']}}</b> is now verified. </label></p>
         @endif
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
@@ -79,7 +79,7 @@
                 <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </div>
-        <p class="email_head"><span>Email link Sent</span></p>
+        <p class="email_head"><span>Email Link Sent</span></p>
         <p><label><b></b> A verification link has been sent to <strong>{{$response_json['email']}}</strong>, please click the link to get your account verified</label></p>
         <div class="d-flex align-items-center justify-content-center">
             <a href="{{ url('/dashboard') }}" class="btn btn-common-green w-50"> Continue</a>
