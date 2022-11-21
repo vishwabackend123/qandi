@@ -90,13 +90,13 @@ mixpanel.track('Loaded Profile');
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control txtOnly" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnlySpace" placeholder="First Name" value="{{$userData->first_name}}" id="firstname" name="firstname" onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="custom-input pb-4">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control txtOnly" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
+                                        <input type="text" class="form-control txtOnlySpace" placeholder="Last Name" value="{{$userData->last_name}}" id="lastname" name="lastname" onkeypress="return onlyAlphabetsDisplay(event,this);" maxlength="15" onpaste="validatePaste(this, event)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
