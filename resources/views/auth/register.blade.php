@@ -405,6 +405,9 @@
             rules: {
                 user_name: {
                     required: true,
+                    normalizer: function( value ) {
+                        return $.trim( value );
+                     },
                 },
                 mobile_num: {
                     required: true,
