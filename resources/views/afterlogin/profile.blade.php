@@ -500,6 +500,16 @@ mixpanel.track('Loaded Profile');
             var test = myValue.replace(/  +/g, ' ');
             $("#username").val(test);
         });
+        $("#firstname").keyup(function() {
+            var myValue = $(this).val();
+            var test = myValue.replace(/  +/g, ' ');
+            $("#firstname").val(test);
+        });
+        $("#lastname").keyup(function() {
+            var myValue = $(this).val();
+            var test = myValue.replace(/  +/g, ' ');
+            $("#lastname").val(test);
+        });
 
         function validatePaste(el, e) {
             var regex = /^[a-z .'-]+$/gi;
