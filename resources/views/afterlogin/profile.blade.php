@@ -1,6 +1,16 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+if(strlen($userData->first_name) > 15)
+{
+    $userData->first_name = substr($userData->first_name,0,15);
+}
+if(strlen($userData->last_name) > 15)
+{
+    $userData->last_name = substr($userData->last_name,0,15);
+}
+$userData->first_name = trim($userData->first_name);
+$userData->last_name = trim($userData->last_name);
 $user_id = isset($userData->id)?$userData->id:'';
 @endphp
 @section('content')

@@ -229,6 +229,12 @@
             var test = myValue.replace(/  +/g, ' ');
             $("#user_name").val(test);
         });
+        $("#user_name").blur(function() {
+            var myValue = $(this).val();
+            myValue = myValue.trim();
+            $("#user_name").val(myValue);
+            saveFormValidate();
+        });
 
 
         /* convert text in to capitalized text */
