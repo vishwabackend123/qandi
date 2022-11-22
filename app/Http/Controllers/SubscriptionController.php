@@ -177,10 +177,10 @@ class SubscriptionController extends Controller
             }
 
             $subscription_packages = $this->subscription_packages();
+            $subscriptionData = $this->subscribedPackage();
             $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
             $subscription_type = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->subscription_t : '';
-
-            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
+            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status','subscriptionData'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

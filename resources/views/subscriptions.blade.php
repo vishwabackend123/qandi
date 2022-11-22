@@ -331,9 +331,25 @@ mixpanel.track('Loaded Select Plan',{
 
                     </div>
                 </div>
+                @php
+                $days=14;
+                if(isset($subscriptionData))
+                {
+                    $startdate=isset($subscriptionData->subscription_start_date)? date("d-m-Y", strtotime($subscriptionData->subscription_start_date)):'';
+                    $expirydate=isset($subscriptionData->subscription_end_date)? date("d-m-Y", strtotime($subscriptionData->subscription_end_date)):'';
+                    $datetime1 = new DateTime($startdate);
+                    $datetime2 = new DateTime($expirydate);
+                    $interval = $datetime1->diff($datetime2);
+                    $days = $interval->format('%a');
+                }
+                @endphp
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="{{url('/performance-rating')}}">Already in {{$sub->trial_subscription_duration}} day trial Period</a>
+                        @if($days <=14)
+                        <a href="{{url('/performance-rating')}}">Already in {{$days}} day trial Period</a>
+                        @else
+                        <a href="{{url('/performance-rating')}}">Already in 1 year trial Period</a>
+                        @endif
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
