@@ -79,7 +79,7 @@ class FullExamController extends Controller
             }
 
             if ($exam_name == 'full_exam') {
-                $exam_name = 'Personalised Assessment';
+                $exam_name = 'Personalized Assessment';
             } else {
                 $exam_name = 'Mock Test';
             }
@@ -180,7 +180,7 @@ class FullExamController extends Controller
                 
                 $exam_url = route('exam', ['full_exam']);
 
-                $exam_title = "Personalised Assessment";
+                $exam_title = "Personalized Assessment";
                 $test_type = 'Profiling';
 
                 // Mixpanel started 
