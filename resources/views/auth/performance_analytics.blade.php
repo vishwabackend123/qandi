@@ -75,7 +75,7 @@ mixpanel.init(mixpanelid);
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item   progress__item--active">
-                    <p class="progress__title">Personalized Preparation Assessment</p>
+                    <p class="progress__title">Personalised Assessment</p>
                     <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
@@ -92,7 +92,7 @@ mixpanel.init(mixpanelid);
     <div class="selectPlan subscriptionsRightpannel">
         <span class="tab_show_performence_analytics tab_show desktop_hide_performence_analytics"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3 class="pageCountBox">Personalized Preparation Assessment
+            <h3 class="pageCountBox">Personalised Assessment
                 <span class="pagecount hideondesktop"><span class="activePage">3</span>/3</span>
             </h3>
             <p>To assess your preparedness</p>
@@ -104,7 +104,7 @@ mixpanel.init(mixpanelid);
         <div class="fullbody_scan_wrapper">
             <div class="fullbody_scan_box d-flex">
                 <div class="fullbody_scan_card w-50">
-                    <p class="mt-0">Please attempt the Personalized Preparation Assessment, so that we can generate tasks based on your proficiency levels.</p>
+                    <p class="mt-0">Please attempt the Personalised Assessment, so that we can generate tasks based on your proficiency levels.</p>
                     <span class="custom-border"></span>
                     <ul style="margin-top:32px">
                         <li class="mb-3">No of Questions: <span>{{$prof_test_qcount}} questions</span></li>
@@ -182,7 +182,7 @@ mixpanel.init(mixpanelid);
                         </svg>
                     </span>
                     <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
-                    <h3 class="mb-0 mt-2 px-4">Personalized Preparation Assessment</h3>
+                    <h3 class="mb-0 mt-2 px-4">Personalised Assessment</h3>
                     <p class="my-3">to assess your preparation. Take your first step to improvement.</p>
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
