@@ -149,6 +149,9 @@ $user_id = isset($userData->id)?$userData->id:'';
 
         var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
         mixpanel.init(mixpanelid);
+        if (event_exam_type == 'assessment') {
+            event_exam_type = 'custom subject exam';
+        }
 
         mixpanel.track("Loaded " + event_exam_type + " Result Analytics", {
             // test_type variable is used for mixpanel purpose as we need exam_type 

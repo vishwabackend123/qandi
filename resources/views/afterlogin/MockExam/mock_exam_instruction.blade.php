@@ -19,8 +19,14 @@ var exam_name = '{{isset($exam_name)?$exam_name:''}}';
 var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid);
 mixpanel.track('Loaded '+exam_name+' Instruction',{
-        "$city" : '<?php echo $userData->city; ?>',
+        "$Subject" : '<?php echo $tagrets; ?>',
 		});
+function sendTakeTestEvent()
+{
+    mixpanel.track('Take Test Click',{
+        "$Subject" : '<?php echo $tagrets; ?>',
+        });
+}
 
 </script>
 <!-- Mixpanel Event Ended -->
@@ -153,7 +159,7 @@ mixpanel.track('Loaded '+exam_name+' Instruction',{
 
                                     <input type="hidden" name="ranSession" value="{{$ranSession}}" />
 
-                                    <button type="submit" class="btn exam_inst_take_test_btn">Take Test</button>
+                                    <button type="submit" class="btn exam_inst_take_test_btn" onclick="sendTakeTestEvent()">Take Test</button>
                                 </form>
                                 <!--  <a href="{{$exam_url}}" class="btn exam_inst_take_test_btn">Take Test</a> -->
                             </div>

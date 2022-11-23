@@ -124,7 +124,7 @@ class RazorpayController extends Controller
                 $mp = Mixpanel::getInstance($Mixpanel_key_id);
                 
                     // track an event
-
+                    $mixpane_amount= $amount/100;
                     $mp->track("Payment Completed", array(
                         'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
@@ -134,7 +134,7 @@ class RazorpayController extends Controller
                     //'Course' => $grade,
                     '$city' => $userData->city,
 
-                    'amount paid' => $amount));
+                    'amount paid' => $mixpane_amount));
 
                     // create/update a profile for user id
 
@@ -146,7 +146,7 @@ class RazorpayController extends Controller
                     //'Email Verified' => $userData->email_verified,
                     //'Course' => $grade,
                     '$city' => $userData->city,
-                    'amount paid' => $amount
+                    'amount paid' => $mixpane_amount
                     ));
 
 

@@ -351,7 +351,7 @@ class SubscriptionController extends Controller
             
             // track an event
 
-                $mp->track("Get Subcription/Payment start", array(
+                $mp->track("Payment start", array(
                     'distinct_id' => $userData->id,
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,

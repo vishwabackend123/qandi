@@ -433,7 +433,8 @@ class ExamCustomController extends Controller
             '$user_id' => $userData->id,
             '$phone' => $userData->mobile,
             '$email' => $userData->email,
-            'Email Verified' => $userData->email_verified,
+            //'Email Verified' => $userData->email_verified,
+            '$subject' => $tagrets,
             'Course' => $grade,
             '$city' => $userData->city
            )); 
@@ -444,7 +445,8 @@ class ExamCustomController extends Controller
             '$user_id' => $userData->id,
             '$phone' => $userData->mobile,
             '$email' => $userData->email,
-            'Email Verified' => $userData->email_verified,
+            //'Email Verified' => $userData->email_verified,
+            '$subject' => $tagrets,
             'Course' => $grade,
             '$city' => $userData->city
 

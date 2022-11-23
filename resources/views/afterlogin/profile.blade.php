@@ -24,9 +24,6 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
 // Enabling the debug mode flag is useful during implementation,
 // but it's recommended you remove it for production
-var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
-mixpanel.init(mixpanelid);
-mixpanel.track('Loaded Profile');
 </script>
 
 <!-- Mixpanel Event Ended -->
@@ -45,6 +42,10 @@ mixpanel.track('Loaded Profile');
     <div class="main-wrapper exam-wrapperBg">
         @include('afterlogin.layouts.navbar_header_new')
         @include('afterlogin.layouts.sidebar_new')
+        <script>
+          mixpanel.track('Loaded Profile');
+        </script>
+        </script>
         <section class="content-wrapper mobile-wrapper">
             @if(count($errors) > 0 )
             <div class="toastdata active">
@@ -229,7 +230,7 @@ mixpanel.track('Loaded Profile');
                                     <input type="hidden" name="exam_period" value="12">
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                                    <button type="submit" class="btn savebtn text-white border-0 upgradebtn" id="get-sub-btn">Upgrade Plan</button>
+                                    <button type="submit" class="btn savebtn text-white border-0 upgradebtn" id="get-sub-btn" onclick="sendUpgradePlanEvent()">Upgrade Plan</button>
                                     </form>
                                     @endif
                             </div>
@@ -581,6 +582,12 @@ mixpanel.track('Loaded Profile');
                 document.getElementById('useremail').value = str;
             }
         });
+        function sendUpgradePlanEvent()
+        {
+            mixpanel.track('Upgrade Plan',{
+                "$city" : '<?php echo $userData->city; ?>',
+                });
+        }
     </script>
 </body>
 @endsection
