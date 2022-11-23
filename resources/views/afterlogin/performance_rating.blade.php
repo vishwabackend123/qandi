@@ -61,7 +61,7 @@ mixpanel.track('Loaded Self Analysis ',{
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item ">
-                    <p class="progress__title">Personalised Assessment</p>
+                    <p class="progress__title">Personalized Assessment</p>
                     <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
