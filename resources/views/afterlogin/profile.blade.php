@@ -562,8 +562,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
             }
         });
         $('#useremail').bind('keyup blur',function(){ 
-            if($('#useremail-error').css('display') != 'none')
-            {
+            if (checkExists('#useremail-error') && $('#useremail-error').css('display') != 'none') {
                 $('.email-error').hide();
                 $('.resend_email').hide();
             }else
@@ -588,6 +587,11 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                 "$city" : '<?php echo $userData->city; ?>',
                 });
         }
+    function checkExists(sel) {
+        var status = false;
+        if ($(sel).length) status = true;
+        return status;
+    }
     </script>
 </body>
 @endsection
