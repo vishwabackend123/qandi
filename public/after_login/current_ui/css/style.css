@@ -1195,6 +1195,7 @@ border-color: #56b663;
 .verificationBox b{
     font-weight: bold;
     color: #363c4f;
+    word-break: break-word;
 }
 
 .progress__item:last-child:before {

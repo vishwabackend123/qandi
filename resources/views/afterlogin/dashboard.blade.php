@@ -111,7 +111,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div class="col-lg-12">
                         @if($userData->email_verified=='No')
                         <div class="verifiaction-link">
-                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified. <a href="javascript:void(0);" class="resend_email">Resend</a></p>
+                            <p style="line-height: 34px;">A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified. <a href="javascript:void(0);" class="resend_email">Resend</a></p>
                         </div>
                         @endif
                     </div>
