@@ -265,16 +265,33 @@ function sendSignUpCompletedEvent(){
     var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
     mixpanel.init(mixpanelid);
     var user_name = '<?php echo $lead_user_data["FirstName"] .' '. $lead_user_data["LastName"];?>';
+    var phone = <?php echo $lead_user_data['Mobile'] ?>;
+    var created_at = new Date();
+    var exam = '<?php echo $lead_user_data['mx_Exam_id']?>';
+    var grade = '<?php echo $lead_user_data['mx_Grade_id']?>';
+    var email = $(".email_input").val();
+    var exam_name='JEE Main';
+        if (exam == 2) {
+            exam_name='NEET';
+        }
+    var grade_name='10th Standard Pass';
+    if (grade==2) {
+        grade_name='11th Standard Pass';
+    }else if (grade==3) {
+        grade_name='12th Standard Pass';
+    }
+    mixpanel.people.set({"$name":user_name,"$phone":phone,"$Signup_at":created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_name,"$email":email});
+
     mixpanel.track('Signup completed',{
-        "$name" : user_name,
-        "$mobile" : '<?php echo $lead_user_data['Mobile'] ?>',
-        "$email" : $(".email_input").val(),
+        // "$name" : user_name,
+        // "$mobile" : phone,
+        "$email_add" : email,
         "$email_verified" : 'True',
-        "$city" : '<?php echo $lead_user_data["mx_City"]?>',
-        "$exam" : '<?php echo $lead_user_data['mx_Exam_id']?>',
-        "$referral" : '',
-        "$grade_stage" : '<?php echo $lead_user_data['mx_Grade_id']?>',
-        "$signup_at" : new Date(),
+        // "$city" : '<?php echo $lead_user_data["mx_City"]?>',
+        // "$exam" : exam,
+        // "$referral" : '',
+        // "$grade_stage" : grade,
+       // "$signup_at" : created_at,
         });     
     //mixpanel.track('Free trial');
 }
