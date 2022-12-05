@@ -189,6 +189,7 @@ $('.trail').click(function() {
         var refer_code = '';
         var referral_email = '';
         var state = $("#state").val();
+        sendSignUpEvent();
         $.ajax({
             url: "{{ url('/verifyOtpRegister') }}",
             type: 'POST',
@@ -218,9 +219,11 @@ $('.trail').click(function() {
                     }, 5000);
                     return false
                 } else {
-                    sendSignUpCompletedEvent();
+                    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+                    mixpanel.init(mixpanelid);
+                    mixpanel.identify(response.student_id);
+                    sendSignUpCompletedEvent(response.student_id);
                     if (ids == 'free_trail') {
-                        sendSignUpFreeTrial();
                         var subscription_id = '';
                         if (exam == 1) {
                             subscription_id = 1;
@@ -261,7 +264,7 @@ $(document).ready(function() {
         mixpanel.track('Loaded Lead Sign up');
 
 
-function sendSignUpCompletedEvent(){
+function sendSignUpCompletedEvent(user_id){
     var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
     mixpanel.init(mixpanelid);
     var user_name = '<?php echo $lead_user_data["FirstName"] .' '. $lead_user_data["LastName"];?>';
@@ -280,24 +283,25 @@ function sendSignUpCompletedEvent(){
     }else if (grade==3) {
         grade_name='12th Standard Pass';
     }
-    mixpanel.people.set({"$name":user_name,"$phone":phone,"$Signup_at":created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_name,"$email":email});
+    mixpanel.people.set({"$user_id":user_id,"$name":user_name,"$phone":phone,"$Signup_at":created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_name,"$email":email,"$city":'<?php echo $lead_user_data["mx_City"]?>'});
 
-    mixpanel.track('Signup completed',{
+    mixpanel.track('Sign up completed',{
         // "$name" : user_name,
         // "$mobile" : phone,
-        "$email_add" : email,
-        "$email_verified" : 'True',
-        // "$city" : '<?php echo $lead_user_data["mx_City"]?>',
+        "$email" : email,
+        "email_verified" : 'False',
+        "$city" : '<?php echo $lead_user_data["mx_City"]?>',
         // "$exam" : exam,
         // "$referral" : '',
         // "$grade_stage" : grade,
        // "$signup_at" : created_at,
         });     
-    //mixpanel.track('Free trial');
 }
-function sendSignUpFreeTrial() {
-    mixpanel.init(mixpanelid);
-    mixpanel.track('Free trial');
+function sendSignUpEvent(){
+
+    var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+        mixpanel.init(mixpanelid);
+        mixpanel.track('Sign up Started');
 }
 
 </script>

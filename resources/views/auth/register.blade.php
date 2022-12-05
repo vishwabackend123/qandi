@@ -562,6 +562,7 @@
                             //var grade_stage = $("#grade").val();
                             var grade_stage = $("#grade").find(":selected").attr("data-value");
                             var email_add = $("#email_add").val();
+                            var city = $('#city_name').val();
                                 mixpanel.identify(response.student_id);
                                 // mixpanel requirment need to modify the code in case course list increases
                                 // if(exam==1){
@@ -569,9 +570,11 @@
                                 // }else{
                                 // exam='NEET'
                                 // }
-                                mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_stage,"$email":email_add});
+                                mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_stage,"$email":email_add,"$city":city});
                                 mixpanel.track('Sign up completed',{
-                                '$email_add' : email_add,
+                                '$email' : email_add,
+                                'email_verified' : 'False',
+                                "$city":city,
                                 }); 
                            
 
