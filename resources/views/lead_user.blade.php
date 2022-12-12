@@ -283,18 +283,20 @@ function sendSignUpCompletedEvent(user_id){
     }else if (grade==3) {
         grade_name='12th Standard Pass';
     }
-    mixpanel.people.set({"$user_id":user_id,"$name":user_name,"$phone":phone,"$Signup_at":created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_name,"$email":email,"$city":'<?php echo $lead_user_data["mx_City"]?>'});
+    var state = $("#state").val();
+    mixpanel.people.set({"$user_id":user_id,"$name":user_name,"$phone":phone,"$Signup_at":created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_name,"$email":email,"$city":'<?php echo $lead_user_data["mx_City"]?>',"State":state});
 
     mixpanel.track('Sign up completed',{
         // "$name" : user_name,
         // "$mobile" : phone,
         "$email" : email,
-        "email_verified" : 'False',
+        "Email Verified" : 'No',
         "$city" : '<?php echo $lead_user_data["mx_City"]?>',
         // "$exam" : exam,
         // "$referral" : '',
         // "$grade_stage" : grade,
        // "$signup_at" : created_at,
+        "State":state
         });     
 }
 function sendSignUpEvent(){

@@ -574,7 +574,7 @@
                                 mixpanel.people.set({"$user_id":response.student_id,"$name":response.user_name,"$phone":response.mobile,"$Signup_at":response.created_at,"platform":"","referral":"","Course":exam_name,"Grade":grade_stage,"$email":email_add,"$city":city,"State":state});
                                 mixpanel.track('Sign up completed',{
                                 '$email' : email_add,
-                                'email_verified' : 'False',
+                                "Email Verified" : 'No',
                                 "$city":city,
                                 "State":state,
                                 }); 
