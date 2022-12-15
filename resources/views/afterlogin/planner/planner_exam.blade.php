@@ -405,7 +405,7 @@ $question_type = "Numerical";
                     </div>
                     <div class="exam-footer-sec">
                         <div class="task-btn tasklistbtn">
-                            <button class="btn btn-common-transparent nobg reviewbtn submitPopupBtn" data-bs-dismiss="modal" onclick="start()">Back To test</button>
+                            <button class="btn btn-common-transparent nobg reviewbtn submitPopupBtn" data-bs-dismiss="modal" onclick="start()" id="back_to_restart">Back To test</button>
                             <button id="bt-modal-confirm" class="btn btn-common-green submitPopupBtn"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg>
@@ -534,6 +534,19 @@ $question_type = "Numerical";
     });
     /* /Sachin screen changes */
 
+    $("#bt-modal-cancel").click(function() {       
+        $(this).attr("disabled", true);
+        setTimeout(function() {
+            $('#bt-modal-cancel').removeAttr("disabled");      
+        }, 1000);
+    });
+    $("#back_to_restart").click(function() {       
+       $(this).attr("disabled", true);
+       setTimeout(function() {
+           $('#back_to_restart').removeAttr("disabled");      
+       }, 1000);
+   });
+   
     /* page referesh disabled */
     $(document).ready(function() {
 
