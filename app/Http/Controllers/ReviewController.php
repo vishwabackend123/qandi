@@ -227,6 +227,8 @@ class ReviewController extends Controller
                        $mp->track("Custom Exam Attempted-clicked to review button", array(
                        'distinct_id' => $userData->id,
                        '$city' => $userData->city,
+                       '$name'=>$userData->user_name,
+                       'State'=>$userData->state,
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
                        'Email Verified' => $userData->email_verified,
@@ -238,7 +240,9 @@ class ReviewController extends Controller
                        // create/update a profile for user id
                        $mp->people->set($userData->id, array(
                            'distinct_id' => $userData->id,
-                           '$city' => $userData->city,
+                            '$city' => $userData->city,
+                            '$name'=>$userData->user_name,
+                            'State'=>$userData->state,
                            '$phone' => $userData->mobile,
                            '$email' => $userData->email,
                            'Email Verified' => $userData->email_verified,
@@ -278,7 +282,9 @@ class ReviewController extends Controller
                    // track an event
                    $mp->track($type_name." - clicked to review button", array(
                    'distinct_id' => $userData->id,
-                   '$city' => $userData->city,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                    '$email' => $userData->email,
                    'Email Verified' => $userData->email_verified,
                    'Course' => $grade,
@@ -289,6 +295,8 @@ class ReviewController extends Controller
                    $mp->people->set($userData->id, array(
                        'distinct_id'       => $userData->id,
                        '$city' => $userData->city,
+                       '$name'=>$userData->user_name,
+                       'State'=>$userData->state,
                        '$phone' => $userData->mobile,
                        '$email' => $userData->email,
                        'Email Verified' => $userData->email_verified,

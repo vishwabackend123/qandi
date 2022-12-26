@@ -53,14 +53,16 @@ class AnalyticsController extends Controller
             $mp = Mixpanel::getInstance($Mixpanel_key_id);
 			
             // track an event
-            $mp->track("Loaded Overall Analytics", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+            $mp->track("Loaded Overall Analytics", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$name'=>$userData->user_name,'State'=>$userData->state)); 
 
             // create/update a profile for user id
             $mp->people->set($userData->id, array(
                 'distinct_id' => $userData->id,
                 '$email' => $userData->email,
+                'Email Verified' => $userData->email_verified,
                 '$city' => $userData->city,
-                '$country' => $userData->country
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state
             ));
             // Mixpanel event ended
 

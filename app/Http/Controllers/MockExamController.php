@@ -278,21 +278,27 @@ class MockExamController extends Controller
                 // track an event
                 $mp->track("Mock Exam-clicked to take test button", array(
                     'distinct_id' => $userData->id,
-                    '$city' => $userData->city,
+                    //'$city' => $userData->city,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     'Email Verified' => $userData->email_verified,
-                    'Course' => $grade
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state
                 ));
 
                 // create/update a profile for user id
                 $mp->people->set($userData->id, array(
                     'distinct_id'       => $userData->id,
-                    '$city' => $userData->city,
+                    //'$city' => $userData->city,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     'Email Verified' => $userData->email_verified,
-                    'Course' => $grade
+                    'Course' => $grade,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state
                 ));
 
                 // Mixpanel Event Ended

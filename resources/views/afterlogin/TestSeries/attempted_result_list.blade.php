@@ -200,12 +200,18 @@ $userData = Session::get('user_data');
         var test_type = '<?php echo isset($sche->test_type) ? $sche->test_type : 'Live'; ?>';
         mixpanel.identify(user_id);
         mixpanel.people.set({
-            "$city": '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
             "test type": test_type,
         });
 
         mixpanel.track(test_type + " - click view details", {
-            "city": '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
             "test type": test_type,
         });
         /*mixpanel end*/
@@ -236,12 +242,20 @@ $userData = Session::get('user_data');
         var test_type = '<?php echo isset($sche->test_type) ? $sche->test_type : 'Live'; ?>';
         mixpanel.identify(user_id);
         mixpanel.people.set({
-            "$city": '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
             "test type": test_type,
         });
 
         mixpanel.track(test_type + " - click see analytics", {
-            "city": '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
             "test type": test_type,
         });
         /*mixpanel end*/

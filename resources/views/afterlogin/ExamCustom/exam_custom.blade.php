@@ -179,12 +179,20 @@ mixpanel.track('Custom Exam Listing',{
         mixpanel.identify(user_id);
         mixpanel.people.set({
         "Subject" : subject,
-        "$city" : '<?php echo $userData->city; ?>'
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
 
         mixpanel.track("Custom Exam Select Subject",{
         "Subject" : subject,
-        "$city" : '<?php echo $userData->city; ?>'
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
         /*mixpanel end*/
 
@@ -254,11 +262,19 @@ mixpanel.track('Custom Exam Listing',{
                     var user_id = '<?php echo $userData->id; ?>';
                     mixpanel.identify(user_id);
                     mixpanel.people.set({
-                    "$city" : '<?php echo $userData->city; ?>',
+                        "$city" :'<?php echo $userData->city; ?>',
+                        "$name" :'<?php echo $userData->user_name; ?>',
+                        "State" :'<?php echo $userData->state; ?>',
+                        "$email" : '<?php echo $userData->email; ?>',
+                        "Email Verified" : '<?php echo $userData->email_verified; ?>',
                     });
 
                     mixpanel.track("Custom Exam View Topics",{
-                    "$city" : '<?php echo $userData->city; ?>',
+                        "$city" :'<?php echo $userData->city; ?>',
+                        "$name" :'<?php echo $userData->user_name; ?>',
+                        "State" :'<?php echo $userData->state; ?>',
+                        "$email" : '<?php echo $userData->email; ?>',
+                        "Email Verified" : '<?php echo $userData->email_verified; ?>',
                     });
                     /*mixpanel end*/
 
@@ -364,11 +380,19 @@ $('#custom_tab').click(function() {
         var user_id = '<?php echo $userData->id; ?>';
         mixpanel.identify(user_id);
         mixpanel.people.set({
-        "$city" : '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
 
         mixpanel.track("Custom Exam Select Topics",{
-        "$city" : '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
         /*mixpanel end*/
 
@@ -438,11 +462,19 @@ $('#custom_tab').click(function() {
         var user_id = '<?php echo $userData->id; ?>';
         mixpanel.identify(user_id);
         mixpanel.people.set({
-        "$city" : '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
 
         mixpanel.track("Custom Exam Clear Selected Topics",{
-        "$city" : '<?php echo $userData->city; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
         /*mixpanel end*/
 
@@ -469,11 +501,20 @@ $('#custom_tab').click(function() {
         mixpanel.identify(user_id);
         mixpanel.people.set({
         "subject" : subject,
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
 
         mixpanel.track("Custom Exam-Attempted Select Subject",{
         "subject" : subject,
-        "$city" : '<?php echo $userData->city; ?>'
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         });
         /*mixpanel end*/
 

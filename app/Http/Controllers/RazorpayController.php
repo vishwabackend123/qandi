@@ -130,10 +130,11 @@ class RazorpayController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    //'Email Verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     //'Course' => $grade,
                     '$city' => $userData->city,
-
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'amount paid' => $mixpane_amount));
 
                     // create/update a profile for user id
@@ -143,9 +144,11 @@ class RazorpayController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    //'Email Verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     //'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'amount paid' => $mixpane_amount
                     ));
 
@@ -198,9 +201,11 @@ class RazorpayController extends Controller
                 '$user_id' => $userData->id,
                 '$phone' => $userData->mobile,
                 '$email' => $userData->email,
-                //'Email Verified' => $userData->email_verified,
+                'Email Verified' => $userData->email_verified,
                 //'Course' => $grade,
                 '$city' => $userData->city,
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state,
                 'amount paid' => "", 'course cost' => "", 'discount' => "" ));
 
                 // create/update a profile for user id
@@ -211,9 +216,11 @@ class RazorpayController extends Controller
                 '$user_id' => $userData->id,
                 '$phone' => $userData->mobile,
                 '$email' => $userData->email,
-                //'Email Verified' => $userData->email_verified,
+                'Email Verified' => $userData->email_verified,
                 //'Course' => $grade,
-                '$city' => $userData->city
+                '$city' => $userData->city,
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state
                 ));
 
                 // Mixpanel Event Ended

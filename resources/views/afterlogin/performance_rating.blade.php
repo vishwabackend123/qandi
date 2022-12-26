@@ -352,6 +352,8 @@ mixpanel.track('Loaded Self Analysis ',{
                     mixpanel.identify(response.response.user_data.id);
                     mixpanel.people.set({
                     "$city" :response.response.user_data.city,
+                    "$name" :response.response.user_data.user_name,
+                    "State" :response.response.user_data.state,
                     "$phone" : response.response.user_data.mobile, 
                     "$email" : response.response.user_data.email, 
                     "Email Verified":response.response.user_data.email_verified,
@@ -366,6 +368,8 @@ mixpanel.track('Loaded Self Analysis ',{
 
                     mixpanel.track("Self Analysis  Captured",{
                     "$city" :response.response.user_data.city,
+                    "$name" :response.response.user_data.user_name,
+                    "State" :response.response.user_data.state,
                     "$phone" : response.response.user_data.mobile, 
                     "$email" : response.response.user_data.email, 
                     "Email Verified":response.response.user_data.email_verified,

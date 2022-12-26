@@ -102,6 +102,8 @@ class ResultController extends Controller
                     'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
                 ));
 
@@ -114,6 +116,8 @@ class ResultController extends Controller
                     'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
 
                 ));
@@ -147,6 +151,8 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
@@ -158,6 +164,8 @@ class ResultController extends Controller
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'Email verified' => $userData->email_verified,
                     'Course' => $grade,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
@@ -193,6 +201,8 @@ class ResultController extends Controller
                     'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
                 ));
 
@@ -205,6 +215,8 @@ class ResultController extends Controller
                     'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
 
                 ));
@@ -243,7 +255,9 @@ class ResultController extends Controller
                            '$email' => $userData->email,
                            'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
-                           '$city' => $userData->city,
+                            '$city' => $userData->city,
+                            '$name'=>$userData->user_name,
+                            'State'=>$userData->state,
                            'exam attempt end at' => date("Y-m-d H:i:s"),
                        ));
        
@@ -255,7 +269,9 @@ class ResultController extends Controller
                            '$email' => $userData->email,
                            'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
-                           '$city' => $userData->city,
+                            '$city' => $userData->city,
+                            '$name'=>$userData->user_name,
+                            'State'=>$userData->state,
                            'exam attempt end at' => date("Y-m-d H:i:s"),
        
                        ));
@@ -291,7 +307,9 @@ class ResultController extends Controller
                            '$email' => $userData->email,
                            'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
-                           '$city' => $userData->city,
+                            '$city' => $userData->city,
+                            '$name'=>$userData->user_name,
+                            'State'=>$userData->state,
                            'exam attempt end at' => date("Y-m-d H:i:s"),
                        ));
        
@@ -303,7 +321,9 @@ class ResultController extends Controller
                            '$email' => $userData->email,
                            'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
-                           '$city' => $userData->city,
+                            '$city' => $userData->city,
+                            '$name'=>$userData->user_name,
+                            'State'=>$userData->state,
                            'exam attempt end at' => date("Y-m-d H:i:s"),
        
                        ));
@@ -338,9 +358,11 @@ class ResultController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    //'Email Verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
                 ));
 
@@ -350,9 +372,11 @@ class ResultController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    //'Email Verified' => $userData->email_verified,
+                    'Email Verified' => $userData->email_verified,
                     'Course' => $grade,
                     '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state,
                     'exam attempt end at' => date("Y-m-d H:i:s"),
 
                 ));

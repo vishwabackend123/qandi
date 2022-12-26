@@ -306,6 +306,8 @@ class TestSeriesController extends Controller
                            'Email Verified' => $userData->email_verified,
                            'Course' => $grade,
                            '$city' => $userData->city,
+                           '$name'=>$userData->user_name,
+                           'State'=>$userData->state
                            )); 
    
                            // create/update a profile for user id
@@ -315,7 +317,9 @@ class TestSeriesController extends Controller
                                '$email' => $userData->email,
                                'Email Verified' => $userData->email_verified,
                                'Course' => $grade,
-                               'city' => $userData->city,
+                               '$city' => $userData->city,
+                               '$name'=>$userData->user_name,
+                               'State'=>$userData->state
    
                            ));
                            /*mixpanel end*/

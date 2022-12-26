@@ -226,6 +226,8 @@ class SubscriptionController extends Controller
             '$email' => $userData->email,
             'Email Verified' => $userData->email_verified,
             '$city' => $userData->city,
+            '$name'=>$userData->user_name,
+            'State'=>$userData->state,
             'Exam Id' => $exam_id));
 
             // create/update a profile for user id
@@ -237,6 +239,8 @@ class SubscriptionController extends Controller
             '$email' => $userData->email,
             'Email Verified' => $userData->email_verified,
             '$city' => $userData->city,
+            '$name'=>$userData->user_name,
+            'State'=>$userData->state,
             'Exam Id' => $exam_id
 
 
@@ -356,8 +360,11 @@ class SubscriptionController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    
-                    '$city' => $userData->city));
+                    'Email Verified' => $userData->email_verified,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state
+                ));
                 // create/update a profile for user id
 
                 $mp->people->set($userData->id, array(
@@ -365,8 +372,10 @@ class SubscriptionController extends Controller
                     '$user_id' => $userData->id,
                     '$phone' => $userData->mobile,
                     '$email' => $userData->email,
-                    
-                    '$city' => $userData->city
+                    'Email Verified' => $userData->email_verified,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state
 
                 ));
             // Mixpanel Event Ended
@@ -520,16 +529,19 @@ class SubscriptionController extends Controller
                 '$user_id' => $userData->id,
                 '$phone' => $userData->mobile,
                 '$email' => $userData->email,
-                
-                '$city' => $userData->city));
+                '$city' => $userData->city,
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state
+            ));
                // create/update a profile for user id
                $mp->people->set($userData->id, array(
                 'distinct_id' => $userData->id,
                 '$user_id' => $userData->id,
                 '$phone' => $userData->mobile,
                 '$email' => $userData->email,
-                
-                '$city' => $userData->city
+                '$city' => $userData->city,
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state
 
                 
             ));

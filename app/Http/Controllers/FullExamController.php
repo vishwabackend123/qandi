@@ -58,15 +58,24 @@ class FullExamController extends Controller
             }
             else if($is_empty_user==='empty_user' && $event_type==='myq_matrix')
             {
-                $mp->track("Attempt full body scan from MyQ Matrix", array('distinct_id' => $userData->id,'$email' => $userData->email,'$city' => $userData->city,'$country' => $userData->country)); 
+                $mp->track("Attempt full body scan from MyQ Matrix", array(
+                    'distinct_id' => $userData->id,
+                    '$email' => $userData->email,
+                    'Email Verified' => $userData->email_verified,
+                    '$city' => $userData->city,
+                    '$name'=>$userData->user_name,
+                    'State'=>$userData->state
+                )); 
             }
             
             // create/update a profile for user id
             $mp->people->set($userData->id, array(
                 'distinct_id' => $userData->id,
                 '$email' => $userData->email,
+                'Email Verified' => $userData->email_verified,
                 '$city' => $userData->city,
-                '$country' => $userData->country
+                '$name'=>$userData->user_name,
+                'State'=>$userData->state
             ));
             
 
@@ -203,7 +212,9 @@ class FullExamController extends Controller
                    '$email' => $userData->email,
                    'Email Verified' => $userData->email_verified,
                    'Course' => $grade,
-                   '$city' => $userData->city
+                   '$city' => $userData->city,
+                   '$name'=>$userData->user_name,
+                   "State"=>$userData->state
                    )); 
    
                    // create/update a profile for user id
@@ -214,8 +225,9 @@ class FullExamController extends Controller
                    '$email' => $userData->email,
                    'Email Verified' => $userData->email_verified,
                    'Course' => $grade,
-                   '$city' => $userData->city
-   
+                   '$city' => $userData->city,
+                   '$name'=>$userData->user_name,
+                   "State"=>$userData->state
                    ));
                 
 

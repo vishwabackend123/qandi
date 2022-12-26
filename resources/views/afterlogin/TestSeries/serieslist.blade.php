@@ -331,15 +331,21 @@ $grade='NA';
             
             mixpanel.identify(user_id);
             mixpanel.people.set({
-            $phone : '<?php echo $userData->mobile; ?>',
-            $email : '<?php echo $userData->email; ?>',
+            "$phone" : '<?php echo $userData->mobile; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
             "Email Verified" : '<?php echo $userData->email_verified; ?>',
             "Course" : '<?php echo $grade; ?>',
             "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',
             });
             mixpanel.track("Test Series Take Test Click",{
-                $phone : '<?php echo $userData->mobile; ?>',
-            $email : '<?php echo $userData->email; ?>',
+            "$phone" : '<?php echo $userData->mobile; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
             "Email Verified": '<?php echo $userData->email_verified; ?>', 
             "Course": '<?php echo $grade; ?>', 
             "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',

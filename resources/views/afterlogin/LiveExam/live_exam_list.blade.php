@@ -207,12 +207,20 @@ mixpanel.track('Loaded Live Exam Listing',{
         var user_id = '<?php echo $userData->id; ?>';
         mixpanel.identify(user_id);
         mixpanel.people.set({
-        "$city" : '<?php echo $userData->city; ?>',
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         "test type" : "Live",
         });
 
         mixpanel.track("Live Exam Attempted",{
-        "city" : '<?php echo $userData->city; ?>',
+        "$city" :'<?php echo $userData->city; ?>',
+        "$name" :'<?php echo $userData->user_name; ?>',
+        "State" :'<?php echo $userData->state; ?>',
+        "$email" : '<?php echo $userData->email; ?>',
+        "Email Verified" : '<?php echo $userData->email_verified; ?>',
         "test type" : "Live",
         });
         /*mixpanel event end*/
@@ -254,13 +262,17 @@ mixpanel.track('Loaded Live Exam Listing',{
 var user_id = '<?php echo $userData->id; ?>';
 mixpanel.identify(user_id);
 mixpanel.people.set({
-"$city" : '<?php echo $userData->city; ?>',
-"test type" : "Live",
+    "$city" :'<?php echo $userData->city; ?>',
+    "$name" :'<?php echo $userData->user_name; ?>',
+    "State" :'<?php echo $userData->state; ?>',
+    "test type" : "Live",
 });
 
 mixpanel.track("Live Exam Click Take Live exam",{
-"city" : '<?php echo $userData->city; ?>',
-"test type" : "Live",
+    "$city" :'<?php echo $userData->city; ?>',
+    "$name" :'<?php echo $userData->user_name; ?>',
+    "State" :'<?php echo $userData->state; ?>',
+    "test type" : "Live",
 });
 /*mixpanel end*/
 });

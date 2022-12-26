@@ -168,19 +168,23 @@ mixpanel.track('Loaded Full Body Take Test',{
             var user_id = '<?php echo $user_id; ?>';
             mixpanel.identify(user_id);
             mixpanel.people.set({
-            $phone : '<?php echo $userData->mobile; ?>',
-            "$city" : '<?php echo $userData->city; ?>',
-            $email : '<?php echo $userData->email; ?>',
+            "$phone" : '<?php echo $userData->mobile; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
             "Email Verified" : '<?php echo $userData->email_verified; ?>',
             "Course" : '<?php echo $grade; ?>',
             "Exam Attempt Start At" : '<?php echo date("Y-m-d H:i:s"); ?>',
             });
             mixpanel.track("Take Test Click",{
-            $phone : '<?php echo $userData->mobile; ?>',
-            "$city" : '<?php echo $userData->city; ?>',
-            $email: '<?php echo $userData->email; ?>', 
-            "Email Verified": '<?php echo $userData->email_verified; ?>', 
-            "Course": '<?php echo $grade; ?>', 
+           "$phone" : '<?php echo $userData->mobile; ?>',
+            "$city" :'<?php echo $userData->city; ?>',
+            "$name" :'<?php echo $userData->user_name; ?>',
+            "State" :'<?php echo $userData->state; ?>',
+            "$email" : '<?php echo $userData->email; ?>',
+            "Email Verified" : '<?php echo $userData->email_verified; ?>',
+            "Course" : '<?php echo $grade; ?>',
             "exam attempt start at" : '<?php echo date("Y-m-d H:i:s"); ?>',
               });
             
