@@ -1133,7 +1133,7 @@ mixpanel.track('Loaded Select Plan',{
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 12px 20px;
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
             line-height: 1;
             letter-spacing: normal;
@@ -1176,7 +1176,7 @@ mixpanel.track('Loaded Select Plan',{
         }
 
         .customDropdownpdown1 input::-webkit-input-placeholder {
-            font-size: 18px;
+            font-size: 17px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
@@ -1187,7 +1187,7 @@ mixpanel.track('Loaded Select Plan',{
 
         .customDropdown1 input::-webkit-input-placeholder {
             /* Edge */
-            font-size: 18px;
+            font-size: 17px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
@@ -1198,7 +1198,7 @@ mixpanel.track('Loaded Select Plan',{
 
         .customDropdown1 input:-ms-input-placeholder {
             /* Internet Explorer 10-11 */
-            font-size: 18px;
+            font-size: 17px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
@@ -1208,7 +1208,7 @@ mixpanel.track('Loaded Select Plan',{
         }
 
         .customDropdown1 input::placeholder {
-            font-size: 18px;
+            font-size: 17px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
