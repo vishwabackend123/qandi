@@ -113,7 +113,7 @@ mixpanel.track('Loaded Select Plan',{
                       <div class="customDropdown1 dropdown" id="dropdownnew">
                             <input class="text-box markstrend" type="text" id="Plan_type" placeholder="Select Plan" readonly>
                             <div class="options">
-                                <div style=" overflow-y: auto;  height: 160px;">
+                                <div style=" overflow-y: auto;  height: 210px;">
                                     <div class="active markstrend markstrend_graph">NEET Annual Plan</div>
                                     <div class="markstrend markstrend_graph" >NEET 3-Month Plan</div>
                                     <div class="markstrend markstrend_graph">NEET 6-Month Plan</div>
@@ -137,7 +137,7 @@ mixpanel.track('Loaded Select Plan',{
                         <div class="customDropdown1 dropdown" id="dropdownnew2">
                             <input class="text-box markstrend" type="text" id="Plan_type" placeholder="Select Plan" readonly>
                             <div class="options">
-                                <div style=" overflow-y: auto;  height: 160px;">
+                                <div style=" overflow-y: auto;  height: 210px;">
                                     <div class="active markstrend markstrend_graph">NEET Annual Plan</div>
                                     <div class="markstrend markstrend_graph" >NEET 3-Month Plan</div>
                                     <div class="markstrend markstrend_graph">NEET 6-Month Plan</div>
