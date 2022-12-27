@@ -8253,11 +8253,38 @@ margin-bottom: 12px;
     vertical-align: text-bottom;
 }
 /* shubham-css(27-12-22) */
-.planeName .customDropdown1{max-width: 210px;}
-.customDropdown1 input{font-size: 18px;
-    font-weight: 800;
+.planeName .plandropdown{max-width: 220px;}
+.plandropdown {
+    margin-left:-10px;
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    height: 60px;
+    background-image: url(https://app.thomsondigital2021.com/public/after_login/current_ui/images/arrow_drop_down.svg)!important;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    font-size: 17px!important;
+    font-weight: 800!important;
     line-height: 1;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
+    color: #1f1f1f!important;border:0px;
+    background: transparent;padding-left:10px
+}
+
+.plandropdown option {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
     color: #1f1f1f;
-    background: transparent;}
+}
