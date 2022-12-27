@@ -1091,7 +1091,7 @@ mixpanel.track('Loaded Select Plan',{
         };
 </script>
 <style>
-    .planeName .customDropdown1{max-width: 210px;}
+    .planeName .customDropdown1{max-width: 215px;}
         .customDropdown1 {
             position: relative;
             width: 100%;
@@ -1180,7 +1180,7 @@ mixpanel.track('Loaded Select Plan',{
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #1f1f1f;
     background: transparent;
         }
@@ -1191,7 +1191,7 @@ mixpanel.track('Loaded Select Plan',{
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #1f1f1f;
     background: transparent;
         }
@@ -1202,7 +1202,7 @@ mixpanel.track('Loaded Select Plan',{
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #1f1f1f;
     background: transparent;
         }
@@ -1212,7 +1212,7 @@ mixpanel.track('Loaded Select Plan',{
     font-weight: 800;
     line-height: 1;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #1f1f1f;
     background: transparent;
         }
