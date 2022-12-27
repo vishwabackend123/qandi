@@ -8252,3 +8252,12 @@ margin-bottom: 12px;
 .usertext a span {
     vertical-align: text-bottom;
 }
+/* shubham-css(27-12-22) */
+.planeName .customDropdown1{max-width: 210px;}
+.customDropdown1 input{font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    background: transparent;}

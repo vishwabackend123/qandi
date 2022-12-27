@@ -109,7 +109,18 @@ mixpanel.track('Loaded Select Plan',{
             @if($subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <p>{{$sub->subscription_name}} Annual Plan</p>
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
+                      <div class="customDropdown1 dropdown" id="dropdownnew">
+                            <input class="text-box markstrend" type="text" id="Plan_type" placeholder="Select Plan" readonly>
+                            <div class="options">
+                                <div style=" overflow-y: auto;  height: 160px;">
+                                    <div class="active markstrend markstrend_graph">NEET Annual Plan</div>
+                                    <div class="markstrend markstrend_graph" >NEET 3-Month Plan</div>
+                                    <div class="markstrend markstrend_graph">NEET 6-Month Plan</div>
+                                    <div class="markstrend markstrend_graph">NEET 9-Month Plan</div>
+                                </div>
+                            </div>
+                        </div>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -122,7 +133,18 @@ mixpanel.track('Loaded Select Plan',{
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <p>{{$sub->subscription_name}} Annual Plan</p>
+                        <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
+                        <div class="customDropdown1 dropdown" id="dropdownnew2">
+                            <input class="text-box markstrend" type="text" id="Plan_type" placeholder="Select Plan" readonly>
+                            <div class="options">
+                                <div style=" overflow-y: auto;  height: 160px;">
+                                    <div class="active markstrend markstrend_graph">NEET Annual Plan</div>
+                                    <div class="markstrend markstrend_graph" >NEET 3-Month Plan</div>
+                                    <div class="markstrend markstrend_graph">NEET 6-Month Plan</div>
+                                    <div class="markstrend markstrend_graph">NEET 9-Month Plan</div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -1058,7 +1080,142 @@ mixpanel.track('Loaded Select Plan',{
         $('.arrowbtn1').toggleClass('arrowroted');
 
     });
-</script>
 
+    let dropdownnew = document.querySelector("#dropdownnew")
+        dropdownnew.onclick = function() {
+            dropdownnew.classList.toggle("active1")
+        };
+        let dropdownnew2 = document.querySelector("#dropdownnew2")
+        dropdownnew2.onclick = function() {
+            dropdownnew2.classList.toggle("active1")
+        };
+</script>
+<style>
+    .planeName .customDropdown1{max-width: 210px;}
+        .customDropdown1 {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            height: 60px;
+        }
+
+        .customDropdown1::before {
+            content: "";
+            background: url(https://app.thomsondigital2021.com/public/after_login/current_ui/images/arrow_drop_down.svg);
+            position: absolute;
+            top: 27px;
+            right: 20px;
+            z-index: 1;
+            width: 21px;
+            height: 8px;
+            transition: 0.5s;
+            pointer-events: none;
+            background-size: revert;
+            background-position: center;
+            width: 13.1px;
+            height: 10px;
+        }
+
+        .customDropdown1.active1::before {
+            top: 22px;
+            transform: rotate(-180deg);
+        }
+
+        .customDropdown1 input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: normal;
+            text-align: left;
+            color: #1f1f1f;
+            background: transparent;padding-left:0px
+        }
+
+        .customDropdown1 .options {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-scrollbar-position: outside;
+            overflow: hidden;
+            display: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: normal;
+            color: #1f1f1f;
+        }
+
+        .customDropdown1.active1 .options {
+            display: block;
+            z-index: 9;
+        }
+
+        .customDropdown1 .options .markstrend {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        .journeyBoxcontainer .customDropdown1 .options .markstrend:hover {
+            background: #f0fcf2;
+        }
+
+        .customDropdownpdown1 input::-webkit-input-placeholder {
+            font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    background: transparent;
+        }
+
+        .customDropdown1 input::-webkit-input-placeholder {
+            /* Edge */
+            font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    background: transparent;
+        }
+
+        .customDropdown1 input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    background: transparent;
+        }
+
+        .customDropdown1 input::placeholder {
+            font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1f1f1f;
+    background: transparent;
+        }
+    </style>
 
 @endsection
