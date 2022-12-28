@@ -223,7 +223,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                              @endif
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
                                 <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
-                                @if($subscription_type == "T" || $days <=14) <form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
+                                @if($subscription_type == "T" || $days <=14) <!--form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$current_subscription->subscript_id}}">
@@ -231,7 +231,8 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
                                     <button type="submit" class="btn savebtn text-white border-0 upgradebtn" id="get-sub-btn" onclick="sendUpgradePlanEvent()">Upgrade Plan</button>
-                                    </form>
+                                    </form-->
+                                    <button type="button" class="btn savebtn text-white border-0 upgradebtn" id="get-sub-btn" onclick="sendUpgradePlanEvent()">Upgrade Plan</button>
                                     @endif
                             </div>
                             <div class="line mb-3 pb-1"></div>
@@ -586,6 +587,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
             mixpanel.track('Upgrade Plan',{
                 "$city" : '<?php echo $userData->city; ?>',
                 });
+             window.location = "{{url('subscriptions')}}";
         }
     function checkExists(sel) {
         var status = false;

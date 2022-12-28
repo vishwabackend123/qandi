@@ -180,7 +180,22 @@ class SubscriptionController extends Controller
             $subscriptionData = $this->subscribedPackage();
             $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
             $subscription_type = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->subscription_t : '';
-            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status','subscriptionData'));
+            $plan_list = [];
+            $default_month = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->months : 12;;
+            $subscriptions_list = $subscriptions;
+            $subscriptions=[];
+            $cacheKey = 'plan_details:' . $user_id;
+            Redis::set($cacheKey, json_encode($subscriptions_list));
+
+            foreach ($subscriptions_list as $key => $value) {
+                if ($value->class_exam_id == $userData->grade_id) {
+                    $plan_list[] = $value->months;
+                    if ($default_month == $value->months) {
+                        $subscriptions[0]=$value;
+                    }
+                }
+            }
+            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status','subscriptionData','plan_list','default_month','subscriptions_list'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -757,5 +772,25 @@ class SubscriptionController extends Controller
             $redis_data=json_decode($resultStudent['SecretString'], true);
         }; 
         return $redis_data;
+    }
+    public function getPlanList(Request $request)
+    {
+        $userData = Session::get('user_data');
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $cacheKey = 'plan_details:' . $user_id;
+        $postData = $request->all();
+        $subscriptions_list = json_decode(Redis::get($cacheKey));
+        $return_data = [];
+        foreach ($subscriptions_list as $key => $value) {
+                if ($value->class_exam_id == $userData->grade_id) {
+                    if ($postData['planMonth'] == $value->months) {
+                      $price = json_decode($value->subs_price);
+                      $return_data['subscript_id'] = $value->subscript_id;
+                      $return_data['months'] = $value->months;   
+                      $return_data['price'] = number_format($price->price);   
+                    }
+                }
+        }
+        return $return_data;
     }
 }

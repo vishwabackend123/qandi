@@ -149,7 +149,7 @@ mixpanel.track('Loaded Make Payment',{
                         </div>
                     </div>
                     <div class="payDetail">
-                        <p><span class="planL">Plan duration</span><span class="PlanR">1 year</span></p>
+                        <p><span class="planL">Plan duration</span><span class="PlanR">{{$subscriptions_data->months}} months</span></p>
                         <p style="display:none"><span class="planL">Discount</span><span class="PlanR">₹0</span></p>
                         <p><span class="planL">Total</span><span class="PlanR">₹{{number_format($price)}}</span></p>
                     </div>

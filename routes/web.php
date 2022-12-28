@@ -343,3 +343,4 @@ Route::any('/export_test_analytics', [App\Http\Controllers\LeadUserController::c
 Route::any('/review_test', [App\Http\Controllers\LeadUserController::class, 'reviewTest']);
 Route::any('/overall_progress_graph/{exam_type}', [App\Http\Controllers\AnalyticsController::class, 'overallProgressGraph'])->name('overall_progress_graph')->middleware('auth', 'menu');
 Route::any('/subject_progress_graph/{sub_id}/{exam_type}', [App\Http\Controllers\AnalyticsController::class, 'subjectProgressGraph'])->name('overall_progress_graph')->middleware('auth', 'menu');
+Route::any('/get_plan_list', [App\Http\Controllers\SubscriptionController::class, 'getPlanList']);

@@ -111,19 +111,17 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
@@ -131,12 +129,10 @@ mixpanel.track('Loaded Select Plan',{
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                         <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -146,7 +142,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -244,32 +240,28 @@ mixpanel.track('Loaded Select Plan',{
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                     <select class="form-control plandropdown">
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                        <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
+                         <select class="form-control plandropdown">
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
                         </select>
                         <div class="price">
                             <div class="offer">
@@ -280,7 +272,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -405,19 +397,17 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
@@ -425,12 +415,10 @@ mixpanel.track('Loaded Select Plan',{
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                         <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -440,7 +428,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -558,19 +546,17 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
@@ -579,11 +565,9 @@ mixpanel.track('Loaded Select Plan',{
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                         <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
                         </select>
                         <div class="price">
                             <div class="offer">
@@ -594,7 +578,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -715,31 +699,27 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                        <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
+                         <select class="form-control plandropdown">
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
                         </select>
                         <div class="price">
                             <div class="offer">
@@ -750,7 +730,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -846,32 +826,27 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
                 <div class="planenameformob hideondesktop">
                     <div class="planeName">
-                        <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                        <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                         <select class="form-control plandropdown">
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -881,7 +856,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -969,21 +944,18 @@ mixpanel.track('Loaded Select Plan',{
             @else
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                     <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                    </select>
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
                         <div class="peryearPrice">
-                            ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                            ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                         </div>
                     </div>
                 </div>
@@ -991,12 +963,10 @@ mixpanel.track('Loaded Select Plan',{
                     <div class="planeName">
                         <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
                         <select class="form-control plandropdown">
-                             <option>NEET 3-Month Plan</option>
-                             <option>NEET 6-Month Plan</option>
-                             <option>NEET 12-Month Plan</option>
-                             <option>NEET 24-Month Plan</option>
-
-                        </select>
+                             @foreach($plan_list as $list)
+                             <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
+                             @endforeach
+                       </select>
                         <div class="price">
                             <div class="offer">
                                 <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -1006,7 +976,7 @@ mixpanel.track('Loaded Select Plan',{
                         </div>
                     </div>
                     <div class="peryearPrice">
-                        ₹{{number_format($subsprice-$discount_price)}}<span>per year</span>
+                        ₹{{number_format($subsprice-$discount_price)}}<span>{{$default_month}} months</span>
                     </div>
                 </div>
 
@@ -1108,6 +1078,9 @@ mixpanel.track('Loaded Select Plan',{
         </div>
     </section>
 </div>
+@php 
+$subscrption_json= json_encode($subscriptions_list);
+@endphp
 <script type="text/javascript">
     $(document).ready(function() {
         $('#email_success').hide();
@@ -1143,6 +1116,23 @@ mixpanel.track('Loaded Select Plan',{
                         $('.progress').hide();
                     }, 10000);
 
+                },
+            });
+        });
+        $(".plandropdown").on('change',function () {
+             var plan_month= $('.plandropdown option:selected').val();
+                         $.ajax({
+                url: "{{ url('get_plan_list') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    planMonth: plan_month,
+                },
+                success: function(response_data) {
+                    $("input[name='subscript_id']").val(response_data.subscript_id);
+                    $("input[name='exam_period']").val(response_data.months);
+                    $('.peryearPrice').html("₹"+response_data.price+"<span>"+response_data.months+" months</span>");
+                    $('.offer_price').html("₹"+response_data.price);
                 },
             });
         });
