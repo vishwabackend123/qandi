@@ -216,14 +216,14 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                         $interval = $datetime1->diff($datetime2);
                         $days = $interval->format('%a');
                         @endphp
-                        @if($days <=14)
+                        @if($days <=7)
                            <div class="bg-white subscription-details mt-5 withupgradebutton">
                             @else    
                            <div class="bg-white subscription-details mt-5">
                              @endif
                             <div class="d-flex justify-content-between align-items-center mb-sm-3 mb-2 pb-1">
                                 <h1 class="subs-heading d-inline-block m-0">{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} Subscription</h1>
-                                @if($subscription_type == "T" || $days <=14) <!--form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
+                                @if($subscription_type == "T" || $days <=7) <!--form action="{{route('checkout')}}" if="checkout_{{$current_subscription->subscript_id}}" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$current_subscription->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$current_subscription->subscript_id}}">
@@ -238,10 +238,10 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                             <div class="line mb-3 pb-1"></div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription Type:</h2>
-                                @if($subscription_type != "T" && ($subscription_type == "P" || $days >14))
+                                @if($subscription_type != "T" && ($subscription_type == "P" || $days >7))
                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year Subscription</h3>
                                 @else
-                                @if($days >14)
+                                @if($days >7)
                                     <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year trial</h3>
                                 @else
                                     <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} {{$current_subscription->trial_subscription_duration}}-day trial</h3>
@@ -249,7 +249,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
                                 @endif
                             </div>
-                            @if($subscription_type != "T" && ($subscription_type == "P" || $days >14))
+                            @if($subscription_type != "T" && ($subscription_type == "P" || $days >7))
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Price:</h2>
                                 <h3>₹{{number_format($subsprice)}}</h3>
