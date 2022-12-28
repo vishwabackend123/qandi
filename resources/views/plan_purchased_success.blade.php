@@ -40,7 +40,7 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                         </svg>
                         <div class="plan_success_congrats_msg">
                             <div class="plan_success_congrats_msg_name">Congratulations {{$user_name}}</div>
-                            <div class="plan_success_congrats_msg_text">Thank you for your purchase. You are now fully upgraded to the 1 year plan. We hope you will continue to enjoy using our product.</div>
+                            <div class="plan_success_congrats_msg_text">Thank you for your purchase. You are now fully upgraded to the {{$transaction_data->notes->month}} months plan. We hope you will continue to enjoy using our product.</div>
                         </div>
                     </div>
                     <div class="plan_box_status_contant">
@@ -62,9 +62,9 @@ $user_name = isset($userData->user_name)?$userData->user_name:'';
                                 <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">
                                     @if(isset($transaction_data->notes->exam_id) && $transaction_data->notes->exam_id==1)
-                                    JEE Main 1 Year Subscription
+                                    JEE Main {{$transaction_data->notes->month}} Months Subscription
                                     @else
-                                    NEET 1 Year Subscription
+                                    NEET {{$transaction_data->notes->month}} Months Subscription
                                     @endif
                                 </div>
                             </div>

@@ -56,6 +56,7 @@ mixpanel.track('Loaded Select Plan',{
                         <p class="progress__title">Select Plan</p>
                         <p class="progress__info">Decide on the best plan for your preparation</p>
                     </li>
+                   @if ($student_rating == null || empty($student_rating)) 
                     <li class="progress__item">
                         <p class="progress__title">Self Analysis</p>
                         <p class="progress__info">Rate your level of proficiency</p>
@@ -64,6 +65,7 @@ mixpanel.track('Loaded Select Plan',{
                         <p class="progress__title">Personalized Assessment</p>
                         <p class="progress__info">To assess your preparedness</p>
                     </li>
+                    @endif
                 </ul>
             </div>
             @if($userData->email_verified=='No')
@@ -222,14 +224,18 @@ mixpanel.track('Loaded Select Plan',{
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
+                        @if ($student_rating == null || empty($student_rating)) 
                         <a href="{{url('/performance-rating')}}">Continue</a>
+                        @else
+                        <a href="{{url('/dashboard')}}">Continue</a>
+                        @endif
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
                             @csrf
                             <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
-                            <input type="hidden" name="exam_period" value="12">
+                            <input type="hidden" name="exam_period" value="{{$default_month}}">
                             <input type="hidden" name="period_unit" value="month">
                             <button type="submit" class="btn btn-common-green disabled" disabled id="get-sub-btn"> Purchased</button>
                         </form>
@@ -366,9 +372,17 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planType">
                     <div class="freeTrial">
                         @if($days <=14)
-                        <a href="{{url('/performance-rating')}}">Already in {{$days}} day trial Period</a>
+                            @if ($student_rating == null || empty($student_rating)) 
+                            <a href="{{url('/performance-rating')}}">Already in {{$days}} day trial Period</a>
+                            @else
+                            <a href="{{url('/dashboard')}}">Already in {{$days}} day trial Period</a>
+                            @endif
                         @else
-                        <a href="{{url('/performance-rating')}}">Already in 1 year trial Period</a>
+                        @if ($student_rating == null || empty($student_rating)) 
+                            <a href="{{url('/performance-rating')}}">Already in 1 year trial Period</a>
+                            @else
+                            <a href="{{url('/dashboard')}}">Already in 1 year trial Period</a>
+                            @endif
                         @endif
                     </div>
                     <div class="getSubs">

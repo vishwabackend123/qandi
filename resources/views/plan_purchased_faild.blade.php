@@ -58,9 +58,9 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
                                 <div class="plan_order_summary">Subscription Type:</div>
                                 <div class="plan_subscribption">@if(isset($user_exam_id) && $user_exam_id==1)
-                                    JEE 1 year Subscription
+                                    JEE {{$transaction_data->notes->month}} Months Subscription
                                     @elseif(isset($user_exam_id) && $user_exam_id==2)
-                                    NEET 1 year Subscription
+                                    NEET {{$transaction_data->notes->month}} Months Subscription
                                     @endif</div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
