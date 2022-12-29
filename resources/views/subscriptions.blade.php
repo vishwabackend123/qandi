@@ -1378,7 +1378,7 @@ $subscrption_json= json_encode($subscriptions_list);
         .customDropdown1 .options{font-size:14px}
         .customDropdown1{    height: 48px; width: 237px;}
         .customDropdown1::before{top: 19px;right: 8px;}
-        .customDropdown1 .options{height: 49px; }
+        .customDropdown1 .options{top: 49px; }
         .customDropdown1 input{padding: 12px 10px;}
         .customDropdownpdown1 input::-webkit-input-placeholder {
             font-size: 14px;
