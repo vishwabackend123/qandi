@@ -118,7 +118,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px; pointer-events: none;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" pointer-events: none;">
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -278,7 +278,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" >
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -469,7 +469,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1">
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -644,7 +644,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" >
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -823,7 +823,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" >
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -976,7 +976,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" >
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -1367,6 +1367,37 @@ $subscrption_json= json_encode($subscriptions_list);
 
     });
 </script>
+<style>
 
+    .customDropdown1{width:250px}
+
+    @media screen and (max-width: 1199px) and (min-width: 768px){
+        .planenameformob.hideondesktop {display: block;}
+    }
+    @media screen and (max-width: 767px){
+        .customDropdown1 .options{font-size:14px}
+        .customDropdown1{    height: 48px; width: 237px;}
+        .customDropdown1::before{top: 19px;right: 8px;}
+        .customDropdown1 .options{height: 49px; }
+        .customDropdown1 input{padding: 12px 10px;}
+        .customDropdownpdown1 input::-webkit-input-placeholder {
+            font-size: 14px;
+        }
+
+        .customDropdown1 input::-webkit-input-placeholder {
+            /* Edge */
+            font-size: 14px;
+        }
+
+        .customDropdown1 input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-size: 14px;
+        }
+
+        .customDropdown1 input::placeholder {
+            font-size: 14px;
+    }
+
+</style>
 
 @endsection
