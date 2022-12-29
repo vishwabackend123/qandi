@@ -111,12 +111,25 @@ mixpanel.track('Loaded Select Plan',{
             @if($subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                    <!-- <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -245,12 +258,26 @@ mixpanel.track('Loaded Select Plan',{
             @elseif($subscription_type!="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                     <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                     <!-- <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
+
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -409,12 +436,25 @@ mixpanel.track('Loaded Select Plan',{
             @endphp
             <div class="selectPlanedetail" style="display:none">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                   <!--  <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -558,12 +598,25 @@ mixpanel.track('Loaded Select Plan',{
             @endphp
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                    <!-- <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -711,12 +764,25 @@ mixpanel.track('Loaded Select Plan',{
             @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                    <!-- <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -838,12 +904,25 @@ mixpanel.track('Loaded Select Plan',{
                 }
                 @endphp
                 <div class="planeName hideonmobile">
-                    <!-- <p>{{$sub->subscription_name}} Annual Plan</p> -->
-                    <select class="form-control plandropdown">
+                    <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
+                    <!-- <select class="form-control plandropdown">
                              @foreach($plan_list as $list)
                              <option value="{{$list}}" @if($list==$default_month) selected @else "" @endif>{{$sub->subscription_name}} {{$list}}-Month Plan</option>
                              @endforeach
-                    </select>
+                    </select> -->
+                    <!-- Select2 drop down -->
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                        <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
+                        <div class="options">
+                            <div style=" overflow-y: auto;  height: 145px;">
+                            @foreach($plan_list as $list)
+                            <div class="active markstrend subscriptions_plan" onclick="showPlan('{{$sub->subscription_name}}', '{{$list}}','subscriptions_plan')" >{{$sub->subscription_name}} {{$list}}-Month Plan</div>
+                             @endforeach
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Select2 drop down END -->
                     <div class="price">
                         <div class="offer">
                             <span class="offer_price">₹{{number_format($subsprice)}}</span>
@@ -1096,6 +1175,30 @@ mixpanel.track('Loaded Select Plan',{
 $subscrption_json= json_encode($subscriptions_list);
 @endphp
 <script type="text/javascript">
+    function showPlan(type, month, id) {
+            document.querySelector("#subscriptions_plan").value = type + " " +month+ "-Month Plan"  ;   
+            
+            
+                         $.ajax({
+                url: "{{ url('get_plan_list') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    planMonth: month,
+                },
+                success: function(response_data) {
+                    $("input[name='subscript_id']").val(response_data.subscript_id);
+                    $("input[name='exam_period']").val(response_data.months);
+                    $('.peryearPrice').html("₹"+response_data.price+"<span>"+response_data.months+" months</span>");
+                    $('.offer_price').html("₹"+response_data.price);
+                },
+            });
+        }
+    let dropdown1 = document.querySelector("#dropdown1")
+        dropdown1.onclick = function() {
+            dropdown1.classList.toggle("active1")
+        }
+        
     $(document).ready(function() {
         $('#email_success').hide();
         $('.resend_email').click(function() {
