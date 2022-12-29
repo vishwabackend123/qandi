@@ -811,6 +811,9 @@ mixpanel.track('Loaded Select Plan',{
             @php
             $subspriceData=(isset($sub->subs_price) && !empty($sub->subs_price))?(array)json_decode($sub->subs_price):[];
             $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+            $subspriceDiscount=(isset($sub->subs_dis_price) && !empty($sub->subs_dis_price))?(array)json_decode($sub->subs_dis_price):[];
+            $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
+            $discount_price=($subsprice*$discount)/100;
             @endphp
             @if(isset($user_exam_id) && !empty($user_exam_id) && $collect_Sub->contains('class_exam_id', $user_exam_id))
             @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
