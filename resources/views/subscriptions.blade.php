@@ -118,7 +118,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down -->
-                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px;">
+                    <div class="customDropdown1 dropdown" id="dropdown1" style=" width:300px; pointer-events: none;">
                         <input class="text-box markstrend" type="text" id="subscriptions_plan" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
@@ -149,7 +149,7 @@ mixpanel.track('Loaded Select Plan',{
                              @endforeach
                     </select> -->
                     <!-- Select2 drop down Mobile -->
-                    <div class="customDropdown1 dropdown" id="dropdown2" >
+                    <div class="customDropdown1 dropdown" id="dropdown2" style="  pointer-events: none;">
                         <input class="text-box markstrend" type="text" id="subscriptions_plan_mobile" placeholder="{{$sub->subscription_name}} {{$default_month}}-Month Plan" readonly>
                         <div class="options">
                             <div style=" overflow-y: auto;  height: 145px;">
