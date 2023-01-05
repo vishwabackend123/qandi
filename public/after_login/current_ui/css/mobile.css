@@ -1941,6 +1941,7 @@ label.filter {
     #endExam .modalcenter {
         justify-content: center;
     }
+    .notification-main{height: 100vh;}
    
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
