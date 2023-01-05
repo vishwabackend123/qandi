@@ -1938,6 +1938,9 @@ label.filter {
 @media(max-width:767px){ 
     .offer{width: 82px;margin-left: 10px;text-align:center; display: inline-block;}
     .planeName{align-items: center;}
+    #endExam .modalcenter {
+        justify-content: center;
+    }
    
     .graphDetailempty {padding-left: 0px;padding-bottom:30px;}
     .graphDetailempty .yourPacebox {
