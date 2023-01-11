@@ -814,10 +814,15 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                                 @endif
                                                             </p>
                                                         </div>
-
+                                                        @if(((round($ideal_avg) > round($your_place_avg)) &&  (round($ideal_avg)-round($your_place_avg)) ==1))
+                                                        <div class="note">
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapter this week
+                                                        </div>
+                                                        @else
                                                         <div class="note">
                                                             <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
                                                         </div>
+                                                        @endif
 
                                                     </div>
                                                     @else
