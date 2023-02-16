@@ -550,16 +550,19 @@ $question_type = "Numerical";
                 <div class="modal-body exam-paused-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
-                            <label>Exam Paused</label>
+                            <label id="resume_lebel" >Exam Paused</label>
                         </div>
                     </div>
-                    <div class="exam_duration_block text-center">
+                    <div class="exam_duration_block text-center" id="resume-duration-div">
                         <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
                         <label class="d-block">Duration of time paused </label>
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
-                    <p>Your last assessment is on hold; click resume to go back to it.</p>
-                    <div class="exam-footer-sec">
+                    <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your connection </h6>                        
+                    </div>
+                    <p id="resume_subMsg">Your last assessment is on hold; click resume to go back to it.</p>
+                    <div class="exam-footer-sec" id="resume-button-div">
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

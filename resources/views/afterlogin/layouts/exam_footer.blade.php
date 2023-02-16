@@ -38,9 +38,53 @@ $('.mobilescrolltabNew li').tabbing();
 $('.submitBtnlink').click(function() {
     $('body').addClass("make_me_blue");
 });
+
+const checkConnection = async () => {
+    try {
+        /* const response = await fetch(
+            'http://localhost/uniqtoday/'
+        ); */
+        const response = navigator.onLine;
+
+        //return response.status >= 200 && response.status < 300;
+        return response;
+    } catch (error) {
+        return false;
+    }
+};
+setInterval(async () => {
+    const isOnline = await checkConnection();
+    if(isOnline == false){
+      
+      $endExamCheck = $('#endExam').hasClass('show');
+        if ($endExamCheck == false) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+            $('#attemptlimit').modal('hide');
+            
+            $("#resume_lebel").text("Connection Lost");
+            $("#connectivity_div").show();            
+            $("#resume-duration-div").hide();
+            $("#resume-button-div").hide();
+            $("#resume_subMsg").hide();
+            stop();
+        }
+    }
+
+    if(isOnline == true){
+      $("#resume_lebel").text("Exam Paused");
+            $("#resume-duration-div").show();
+            $("#resume-button-div").show();
+            $("#connectivity_div").hide();
+            $("#resume_subMsg").show();
+    }
+    
+    
+}, 10000);
+
 </script>
 
 <style>
+
 
 .make_me_blue  .modal-backdrop {
     background: #f5faf6;
