@@ -38,8 +38,8 @@ setInterval(async () => {
             $("#connectivity_div").hide();
             $("#resume_subMsg").show();
 
-            $('#myTabContent .quesBtn').attr("disabled", false);
-            $('#myTabContent .quesBtn').removeClass("disabled");
+            $('#myTabContent .quesBtns').attr("disabled", false);
+            $('#myTabContent .quesBtns').removeClass("disabled");
     }
     
     
