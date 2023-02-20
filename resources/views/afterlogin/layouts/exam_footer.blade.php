@@ -66,6 +66,8 @@ setInterval(async () => {
             $("#resume-duration-div").hide();
             $("#resume-button-div").hide();
             $("#resume_subMsg").hide();
+
+           
             stop();
         }
     }
@@ -76,6 +78,9 @@ setInterval(async () => {
             $("#resume-button-div").show();
             $("#connectivity_div").hide();
             $("#resume_subMsg").show();
+
+            $('#myTabContent .quesBtn').attr("disabled", false);
+            $('#myTabContent .quesBtn').removeClass("disabled");
     }
     
     
