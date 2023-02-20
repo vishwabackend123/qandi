@@ -246,7 +246,7 @@ $question_type = "Numerical";
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                                <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                                <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
@@ -255,7 +255,7 @@ $question_type = "Numerical";
                     <div class="btnbottom">
                         <div class="questionbtnBlock">
                             <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                            <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
                             <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
                             <!-- <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button> -->
@@ -1293,15 +1293,15 @@ $question_type = "Numerical";
 
                         $("#submitExam").click();
                     } else {
-
                         $("#quesnext" + question_id).click();
 
                     }
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
+                    
                     $('#attemptlimit').modal('show');
-
+                    
 
                     err_sts = false;
                 }
@@ -1392,6 +1392,7 @@ $question_type = "Numerical";
             success: function(response_data) {
                 //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
+                console.log(response);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
@@ -1408,7 +1409,9 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
                     $('#attemptlimit').modal('show');
-                    //alert(response.message);
+                    clearResponse();
+                    $('#myTabContent .quesBtn').attr("disabled", false);
+                    $('#myTabContent .quesBtn').removeClass("disabled");
                     isValid = 0;
 
                 }
@@ -1510,7 +1513,7 @@ $question_type = "Numerical";
 
         $.ajax({
             url: "{{ route('clearResponsePy') }}",
-            type: 'POST',
+            type: 'POST',            
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
@@ -1719,8 +1722,7 @@ $question_type = "Numerical";
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
 
-        console.log(save_count, r_count, s_r_count, unanswered);
-
+       
         $('#ans_cnt_2').html(save_count);
         $('#ans_cnt').html(save_count);
 

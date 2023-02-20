@@ -1257,6 +1257,7 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
                     $('#attemptlimit').modal('show');
+                    
 
 
                     err_sts = false;
@@ -1365,10 +1366,11 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop("submit");
                     $('#attemptlimit').modal('show');
-
+                    clearResponse();
+                    $('#myTabContent .quesBtn').attr("disabled", false);
+                    $('#myTabContent .quesBtn').removeClass("disabled");
 
                     isValid = 0;
-
                 }
             }
         });
@@ -1383,7 +1385,7 @@ $question_type = "Numerical";
 
     function savemarkreview() {
         $('#myTabContent .quesBtn').attr("disabled", true);
-        $('#myTabContent .quesBtn').addClass("disabled");
+           $('#myTabContent .quesBtn').addClass("disabled");
 
 
         var quest_id = $("#current_question").val();
@@ -1463,7 +1465,7 @@ $question_type = "Numerical";
 
         $.ajax({
             url: "{{ route('clearResponseMock') }}",
-            type: 'POST',
+            type: 'POST',            
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
