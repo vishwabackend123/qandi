@@ -1266,6 +1266,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerPy') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1301,7 +1302,7 @@ $question_type = "Numerical";
                     stop('submit');
                     
                     $('#attemptlimit').modal('show');
-                    
+                    clearResponse();
 
                     err_sts = false;
                 }
@@ -1377,6 +1378,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerPy') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1410,8 +1412,7 @@ $question_type = "Numerical";
                     stop('submit');
                     $('#attemptlimit').modal('show');
                     clearResponse();
-                    $('#myTabContent .quesBtn').attr("disabled", false);
-                    $('#myTabContent .quesBtn').removeClass("disabled");
+
                     isValid = 0;
 
                 }

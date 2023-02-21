@@ -1219,6 +1219,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1257,7 +1258,7 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
                     $('#attemptlimit').modal('show');
-                    
+                    clearResponse();
 
 
                     err_sts = false;
@@ -1276,7 +1277,7 @@ $question_type = "Numerical";
         var qNo = $("#current_question_no").val();
 
         var question_id = question_id;
-        var isValid = 1;
+        let isValid = 1;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
         var current_subject_id = $("#current_subject_id").val();
@@ -1333,6 +1334,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1361,21 +1363,21 @@ $question_type = "Numerical";
 
                     }
                     isValid = 1;
+                    return true;
 
                 } else if (response.status == 400) {
+                    isValid = 0;
+                   
                     $('#attempt-alert-text').text(response.message);
                     stop("submit");
-                    $('#attemptlimit').modal('show');
+                    $('#attemptlimit').modal('show');                   
                     clearResponse();
-                    $('#myTabContent .quesBtn').attr("disabled", false);
-                    $('#myTabContent .quesBtn').removeClass("disabled");
-
-                    isValid = 0;
+                    
                 }
             }
         });
 
-        if (isValid == 1) {
+if (isValid == 1) {
             return true;
         } else {
             return false;
@@ -1387,14 +1389,14 @@ $question_type = "Numerical";
         $('#myTabContent .quesBtn').attr("disabled", true);
            $('#myTabContent .quesBtn').addClass("disabled");
 
-
+         
         var quest_id = $("#current_question").val();
         var subject_id = $("#current_subject_id").val();
         var chapt_id = $("#current_chapter_id").val();
         /* saving response */
         var current_question_no = $("#current_question_no").val();
         var response = saveAnswerAjax(quest_id, current_question_no);
-
+        
         if (response != false) {
 
             // marking for review
@@ -1409,6 +1411,9 @@ $question_type = "Numerical";
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
+
+                    
+
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("border-btn");
                         $("#btn_" + quest_id).removeClass("pink-btn");
