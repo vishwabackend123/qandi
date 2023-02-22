@@ -534,7 +534,7 @@ $question_type = "Numerical";
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
                     <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
-                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your connection </h6>                        
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your network connectivity. </h6>                        
                     </div>
                     <p id="resume_subMsg"  >Your last assessment is on hold; click resume to go back to it.</p>
                     <div class="exam-footer-sec" id="resume-button-div">
@@ -1370,9 +1370,9 @@ $question_type = "Numerical";
                    
                     $('#attempt-alert-text').text(response.message);
                     stop("submit");
-                    $('#attemptlimit').modal('show');                   
+                    $('#attemptlimit').modal('show');
                     clearResponse();
-                    
+
                 }
             }
         });
@@ -1389,14 +1389,14 @@ if (isValid == 1) {
         $('#myTabContent .quesBtn').attr("disabled", true);
            $('#myTabContent .quesBtn').addClass("disabled");
 
-         
+
         var quest_id = $("#current_question").val();
         var subject_id = $("#current_subject_id").val();
         var chapt_id = $("#current_chapter_id").val();
         /* saving response */
         var current_question_no = $("#current_question_no").val();
         var response = saveAnswerAjax(quest_id, current_question_no);
-        
+
         if (response != false) {
 
             // marking for review
@@ -1470,7 +1470,7 @@ if (isValid == 1) {
 
         $.ajax({
             url: "{{ route('clearResponseMock') }}",
-            type: 'POST',            
+            type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,

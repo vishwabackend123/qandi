@@ -61,6 +61,7 @@ setInterval(async () => {
             $('#FullTest_Exam_Panel_Interface_A').modal('hide');
             $('#attemptlimit').modal('hide');
             
+            $('#resume-test .exammodal_content').addClass("connectionlost");
             $("#resume_lebel").text("Connection Lost");
             $("#connectivity_div").show();            
             $("#resume-duration-div").hide();
@@ -74,7 +75,9 @@ setInterval(async () => {
 
     if(isOnline == true){
       $("#resume_lebel").text("Exam Paused");
+      $('#resume-test .exammodal_content').removeClass("connectionlost");
             $("#resume-duration-div").show();
+
             $("#resume-button-div").show();
             $("#connectivity_div").hide();
             $("#resume_subMsg").show();

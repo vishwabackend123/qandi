@@ -529,7 +529,7 @@ $question_type = "Numerical";
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
                     <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
-                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your connection </h6>                        
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your network connectivity. </h6>                        
                     </div>
                     <p id="resume_subMsg">Your last assessment is on hold; click resume to go back to it.</p>
                     <div class="exam-footer-sec" id="resume-button-div">
@@ -1300,7 +1300,7 @@ $question_type = "Numerical";
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
-                    
+
                     $('#attemptlimit').modal('show');
                     clearResponse();
 
@@ -1514,7 +1514,7 @@ $question_type = "Numerical";
 
         $.ajax({
             url: "{{ route('clearResponsePy') }}",
-            type: 'POST',            
+            type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
@@ -1723,7 +1723,7 @@ $question_type = "Numerical";
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
 
-       
+
         $('#ans_cnt_2').html(save_count);
         $('#ans_cnt').html(save_count);
 

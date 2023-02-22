@@ -490,7 +490,7 @@ $question_type = "Numerical";
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
                     <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
-                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your connection </h6>                        
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your network connectivity. </h6>                        
                     </div>
                     <p id="resume_subMsg">Your last assessment is on hold; click resume to go back to it.</p>
                     <div class="exam-footer-sec" id="resume-button-div">
