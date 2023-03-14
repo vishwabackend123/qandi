@@ -666,7 +666,7 @@ label.filter {
         .orblock span:after{
             height: 1%;
             width: 100%;
-            left: 0;
+            left: 0;content: '';
             top: 23px;}
             .fullwidth.btn{position: initial;width: 100%;}
             .AssesmentWhitePannel{padding:30px ;}

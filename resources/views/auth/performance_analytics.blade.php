@@ -238,7 +238,7 @@ mixpanel.init(mixpanelid);
                                 <label>30</label>
                                 <span>Questions</span>
                           </div>
-                          <div class="hourassisment">
+                          <div class="questionAss mr-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M20.75 13.25C20.75 18.08 16.83 22 12 22C7.17 22 3.25 18.08 3.25 13.25C3.25 8.42 7.17 4.5 12 4.5C16.83 4.5 20.75 8.42 20.75 13.25Z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M12 8V13" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -283,7 +283,78 @@ mixpanel.init(mixpanelid);
                 </div>
             </div>
             <div class="InstructionSectionAssisment">
-                  
+                <div class="instructionScroolBlock">
+                   <h3 class="instrctionHeading">INSTRUCTIONS</h3>
+                   <p class="Instsubheading">
+                     Prior to taking the test, please read through all of the instruction sections carefully. 
+                   </p>
+                   <div class="instructionListBlock">
+                         <div class="commonInstructionList">
+                               <div class="instHeading">
+                                 <b>1. <span>General</span></b>
+                               </div>
+                               <div class="instLine"></div>
+                               <ul>
+                                 <li> This DesD is of <b>300 marks (100 </b> marks each section) </li>
+                               </ul>
+                         </div>
+                         <div class="commonInstructionList">
+                               <div class="instHeading">
+                                 <b>2. <span>Subject-Specific Instructions (Physics/ Chemistry/Mathematics)</span></b>
+                               </div>
+                               <div class="instLine"></div>
+                               <ul>
+                                 <li> Each subjecD consisDs of <b>25 </b>single correcD MCQs</li>
+                                 <li>The answer to each question will be evaluated according to the following marking</li>
+                               </ul>
+                               <div class="instructionTable">
+                                   <table class="table table-bordered ">
+                                      <tbody>
+                                         <tr>
+                                             <td>Full marks</td>
+                                             <td><b>+4 </b>CorrecD answer</td>
+                                         </tr>
+                                         <tr>
+                                             <td>No Mark</td>
+                                             <td><b>0 </b>Unanswered/Unanswered and marked for review</td>
+                                         </tr>
+                                         <tr>
+                                             <td>Minus One Mark</td>
+                                             <td><b>-1</b>in all other cases</td>
+                                         </tr>  
+                                      </tbody>
+                                   </table>
+                               </div>
+                               <div class="commonInstructionList">
+                               <div class="instHeading">
+                                 <b>3. <span>CBT (Computer-Based Test) Instructions</span></b>
+                               </div>
+                               <div class="instLine"></div>
+                               <ul>
+                                   <li>The clock will be set at the server. The countdown timer at the top right corner of the screen will display the remaining time for the test. As soon as the designated time ends, the test will end.</li>
+                                    <li><b>Average Time </b>on the top right corner indicates the ideal time in which that question should be solved.</li>
+                                    <li>To pause the test, click on <b>"Pause"</b> icon and to resume the same, click on <b>"Resume"</b> button.</li>
+
+                                    <li>To submit the test, click on the <b>"Submit"</b> button present at the top right side of the screen after attempting the last displayed question.</li>
+
+                                    <li>To answer any question, choose the correct option and click on <b>"Save & Next" button.</b></li>
+
+                                    <li>To deselect your chosen answer, click on the <b>"Clear Response" </b>button.</li>
+
+                                    <li>To mark the question for review (without answering it), click on the <b>"Mark for Review”</b> button</li>
+
+                                    <li>To mark the question for review (alter answering it), click on the <b>“Save & Mark for Review"</b> button</li>
+
+                                    <li>Click on <b>"Next Question"</b> arrow button to skip any question without answering it.</li>
+
+                                    <li>Click on the question number in the question palette at the right side of the screen to go to that question directly.<br>
+                                        <b>
+                                    Note that using this option does NOT save the answer to the currently displayed question.</b></li>
+                               </ul>
+                         </div>
+                         </div>
+                   </div>
+               </div>
             </div>
             <!-- <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
