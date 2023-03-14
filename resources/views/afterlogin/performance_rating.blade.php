@@ -7,27 +7,55 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id) ?$userData->lead_exam_id:'';
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
-
 <?php $redis_data = Session::get('redis_data'); ?>
 <!-- Mixpanel Started -->
-
 <script type="text/javascript">
-(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
-MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+(function(f, b) {
+    if (!b.__SV) {
+        var e, g, i, h;
+        window.mixpanel = b;
+        b._i = [];
+        b.init = function(e, f, c) {
+            function g(a, d) { var b = d.split(".");
+                2 == b.length && (a = a[b[0]], d = b[1]);
+                a[d] = function() { a.push([d].concat(Array.prototype.slice.call(arguments, 0))) } }
+            var a = b;
+            "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel";
+            a.people = a.people || [];
+            a.toString = function(a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c);
+                a || (d += " (stub)"); return d };
+            a.people.toString = function() { return a.toString(1) + ".people (stub)" };
+            i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+            for (h = 0; h < i.length; h++) g(a, i[h]);
+            var j = "set set_once union unset remove delete".split(" ");
+            a.get_group = function() {
+                function b(c) { d[c] = function() { call2_args = arguments;
+                        call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                        a.push([e, call2]) } } for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d };
+            b._i.push([e, f, c])
+        };
+        b.__SV = 1.2;
+        e = f.createElement("script");
+        e.type = "text/javascript";
+        e.async = !0;
+        e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+            MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+        g = f.getElementsByTagName("script")[0];
+        g.parentNode.insertBefore(e, g)
+    }
+})(document, window.mixpanel || []);
 
 // Enabling the debug mode flag is useful during implementation,
 // but it's recommended you remove it for production
 
-var mixpanelid="{{$redis_data['MIXPANEL_KEY']}}";
+var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
 mixpanel.init(mixpanelid);
-mixpanel.track('Loaded Self Analysis ',{
-        "$city" : '<?php echo $userData->city; ?>',
-        });
+mixpanel.track('Loaded Self Analysis ', {
+    "$city": '<?php echo $userData->city; ?>',
+});
+
 </script>
-
 <!-- Mixpanel Event Ended -->
-
 <div class="wihoutlogintoast">
     <div class="toastdata">
         <div class="toast-content">
@@ -41,7 +69,6 @@ mixpanel.track('Loaded Self Analysis ',{
                 <p class="error_toast"></p>
             </div>
         </div>
-
         <div class="progress"></div>
     </div>
 </div>
@@ -82,54 +109,27 @@ mixpanel.track('Loaded Self Analysis ',{
                 <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
             <p>To help you better prepare, please provide your past school/board scores for the following subjects.</p>
-
         </div>
         <div class="performance_rating_wrapper">
-        <div class="performanceNewWrapper">
-               <div class="performanceInputWrapper">
-                <div class="custom-input">
-                        <label>Mathematics*</label>
-                        <div class="input-field inputerror">
-                            <input type="text" class="form-control" placeholder="Type here">
+            <div class="performanceNewWrapper">
+                <div class="performanceInputWrapper">
+                    @foreach($user_subjects as $subject_proficiency)
+                    @php
+                    $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
+                    @endphp
+                    <div class="custom-input" style="width:300px">
+                        <label>{{$subject_proficiency->subject_name}}*</label>
+                        <div class="input-field">
+                            <input type="text" class="form-control rating_input" placeholder="Type here" onblur="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
                             </div>
                         </div>
-                        <span class="scoreError">Score should be out of 100. Please enter a valid score.</span>
-
+                        <span class="scoreError" id="error_{{$subject_proficiency->subject_name}}">Score should be out of 100. Please enter a valid score.</span>
                     </div>
-                    <div class="custom-input">
-                        <label>Chemistry*</label>
-                        <div class="input-field ">
-                            <input type="text" class="form-control" placeholder="Type here">
-                            <div class="Floattext">
-                                <span class="input-group-text">100</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="custom-input">
-                        <label>Physics*</label>
-                        <div class="input-field ">
-                            <input type="text" class="form-control" placeholder="Type here">
-                            <div class="Floattext">
-                                <span class="input-group-text">100</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="custom-input">
-                        <label>Botony*</label>
-                        <div class="input-field ">
-                            <input type="text" class="form-control" placeholder="Type here">
-                            <div class="Floattext">
-                                <span class="input-group-text">100</span>
-                            </div>
-                        </div>
-
-                    </div>
-               </div>
-             </div>
+                    @endforeach
+                </div>
+            </div>
             <!-- @foreach($user_subjects as $subject_proficiency)
             @php
             $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
@@ -215,228 +215,256 @@ mixpanel.track('Loaded Self Analysis ',{
     </div>
 </section>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#email_success').hide();
-        $('.toastdata').hide();
-        $('.progress').hide();
-        $('.resend_email').click(function() {
-            var user_id = '<?php echo $user_id; ?>';
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "{{ url('send_verfication_email') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    userId: user_id,
-                },
-                success: function(response_data) {
-                    $('.toastdata').show();
-                    $('.progress').show();
-                    $('.toastdata').addClass('active');
-                    $('.progress').addClass('active');
-                    $('.error_header').text("Email Verification Link Sent");
-                    if (response_data.status === true) {
-                        $('.error_toast').text("A verification link has been sent, please click the link to get your account verified.");
-                    } else {
-                        $('.error_toast').text(response_data.message);
-                    }
-                    setTimeout(function() {
-                        $(".toastdata").removeClass('active');
-                        $(".progress").removeClass('active');
-                        $('.toastdata').hide();
-                        $('.progress').hide();
-                    }, 10000);
-
-                },
-            });
+$(document).ready(function() {
+    $('.scoreError').hide();
+    $('#email_success').hide();
+    $('.toastdata').hide();
+    $('.progress').hide();
+    $('.resend_email').click(function() {
+        var user_id = '<?php echo $user_id; ?>';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
-    });
-
-    function selectProficiencyLevel(id, pr_level) {
-        $(".subject_" + id).removeClass('selected-level');
-        $("#user_pro_level_" + id + "_" + pr_level).addClass('selected-level');
-        $('#store_rating').removeAttr("disabled");
-        $('#store_rating').removeClass("disabled");
-    }
-
-    function isEmpty(obj) {
-        return Object.keys(obj).length === 0;
-    }
-
-
-    function store_rating() {
-        let subjects_rating = {};
-        $('.selected-level').each(function() {
-
-
-            var name = $(this).attr('data-id');
-            var value = $(this).attr('data-value');;
-
-            subjects_rating[name] = value;
-        });
-
-
         $.ajax({
-            url: "{{ url('/dailyWelcomeUpdates') }}",
+            url: "{{ url('send_verfication_email') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                storeddata: subjects_rating,
+                userId: user_id,
             },
-            beforeSend: function() {},
             success: function(response_data) {
-                
-
-                var response = jQuery.parseJSON(response_data);
-                
-                var sujects = jQuery.parseJSON(response.response.request_rating.subjects_rating);
-                var values = Object.values(sujects);
-                var keys = Object.keys(sujects);
-                var MathProficiency = '';
-                var PhysicsProficiency = '';
-                var ChemistryProficiency = '';
-                var BotanyProficiency = '';
-                var ZoologyProficiency = '';
-
-                if(sujects['1'] == '1'){
-                var MathProficiency = "Beginner";
+                $('.toastdata').show();
+                $('.progress').show();
+                $('.toastdata').addClass('active');
+                $('.progress').addClass('active');
+                $('.error_header').text("Email Verification Link Sent");
+                if (response_data.status === true) {
+                    $('.error_toast').text("A verification link has been sent, please click the link to get your account verified.");
+                } else {
+                    $('.error_toast').text(response_data.message);
                 }
-                if(sujects['1'] == '2'){
-                var MathProficiency = "Foundation";
-                }
-                if(sujects['1'] == '3'){
-                var MathProficiency = "Intermediate";
-                }
-                if(sujects['1'] == '4'){
-                var MathProficiency = "Proficient";
-                }
-                if(sujects['1'] == '5'){
-                var MathProficiency = "Expert";
-                }
-
-                if(sujects['2'] == '1'){
-                var PhysicsProficiency = "Beginner";
-                }
-                if(sujects['2'] == '2'){
-                var PhysicsProficiency = "Foundation";
-                }
-                if(sujects['2'] == '3'){
-                var PhysicsProficiency = "Intermediate";
-                }
-                if(sujects['2'] == '4'){
-                var PhysicsProficiency = "Proficient";
-                }
-                if(sujects['2'] == '5'){
-                var PhysicsProficiency = "Expert";
-                }
-
-                if(sujects['3'] == '1'){
-                var ChemistryProficiency = "Beginner";
-                }
-                if(sujects['3'] == '2'){
-                var ChemistryProficiency = "Foundation";
-                }
-                if(sujects['3'] == '3'){
-                var ChemistryProficiency = "Intermediate";
-                }
-                if(sujects['3'] == '4'){
-                var ChemistryProficiency = "Proficient";
-                }
-                if(sujects['3'] == '5'){
-                var ChemistryProficiency = "Expert";
-                }
-
-                if(sujects['4'] == '1'){
-                var BotanyProficiency = "Beginner";
-                }
-                if(sujects['4'] == '2'){
-                var BotanyProficiency = "Foundation";
-                }
-                if(sujects['4'] == '3'){
-                var BotanyProficiency = "Intermediate";
-                }
-                if(sujects['4'] == '4'){
-                var BotanyProficiency = "Proficient";
-                }
-                if(sujects['4'] == '5'){
-                var BotanyProficiency = "Expert";
-                }
-
-                if(sujects['146'] == '1'){
-                var ZoologyProficiency = "Beginner";
-                }
-                if(sujects['146'] == '2'){
-                var ZoologyProficiency = "Foundation";
-                }
-                if(sujects['146'] == '3'){
-                var ZoologyProficiency = "Intermediate";
-                }
-                if(sujects['146'] == '4'){
-                var ZoologyProficiency = "Proficient";
-                }
-                if(sujects['146'] == '5'){
-                var ZoologyProficiency = "Expert";
-                }
-
-                if(response.response.user_data.grade_id == '1'){
-                var course = "JEE";
-                }else if(response.response.user_data.grade_id == '2'){
-                var course = "NEET";
-                }else{
-                var course = "NA";
-                }
-                
-
-                
-                if (response.success == true) {
-
-                    //Mixpanel Started 
-                    mixpanel.identify(response.response.user_data.id);
-                    mixpanel.people.set({
-                    "$city" :response.response.user_data.city,
-                    "$name" :response.response.user_data.user_name,
-                    "State" :response.response.user_data.state,
-                    "$phone" : response.response.user_data.mobile, 
-                    "$email" : response.response.user_data.email, 
-                    "Email Verified":response.response.user_data.email_verified,
-                    "Course":course,
-                    "Mathematics Proficiency":MathProficiency,
-                    "Physics Proficiency":PhysicsProficiency,
-                    "Chemistry Proficiency":ChemistryProficiency,
-                    "Botany Proficiency":BotanyProficiency,
-                    "Zoology Proficiency":ZoologyProficiency,
-                    });
-
-
-                    mixpanel.track("Self Analysis  Captured",{
-                    "$city" :response.response.user_data.city,
-                    "$name" :response.response.user_data.user_name,
-                    "State" :response.response.user_data.state,
-                    "$phone" : response.response.user_data.mobile, 
-                    "$email" : response.response.user_data.email, 
-                    "Email Verified":response.response.user_data.email_verified,
-                    "Course":course,
-                    "Mathematics Proficiency":MathProficiency,
-                    "Physics Proficiency":PhysicsProficiency,
-                    "Chemistry Proficiency":ChemistryProficiency,
-                    "Botany Proficiency":BotanyProficiency,
-                    "Zoology Proficiency":ZoologyProficiency,
-                    });
-
-                    //Mixpanel Event Ended
-                    window.location.href = '{{url("performance_analytics")}}';
-                }
-
+                setTimeout(function() {
+                    $(".toastdata").removeClass('active');
+                    $(".progress").removeClass('active');
+                    $('.toastdata').hide();
+                    $('.progress').hide();
+                }, 10000);
 
             },
-            error: function(xhr, b, c) {
-                console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-            }
         });
+    });
+});
+
+function selectProficiencyLevel(id, pr_level) {
+    $(".subject_" + id).removeClass('selected-level');
+    $("#user_pro_level_" + id + "_" + pr_level).addClass('selected-level');
+    $('#store_rating').removeAttr("disabled");
+    $('#store_rating').removeClass("disabled");
+}
+
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
+
+function store_rating() {
+    let subjects_rating = {};
+    $('.rating_input').each(function() {
+
+
+        var name = $(this).attr('data-id');
+        var value = $(this).val();;
+
+        subjects_rating[name] = value;
+    });
+
+
+    $.ajax({
+        url: "{{ url('/dailyWelcomeUpdates') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            storeddata: subjects_rating,
+        },
+        beforeSend: function() {},
+        success: function(response_data) {
+
+
+            var response = jQuery.parseJSON(response_data);
+
+            var sujects = jQuery.parseJSON(response.response.request_rating.subjects_rating);
+            var values = Object.values(sujects);
+            var keys = Object.keys(sujects);
+            var MathProficiency = '';
+            var PhysicsProficiency = '';
+            var ChemistryProficiency = '';
+            var BotanyProficiency = '';
+            var ZoologyProficiency = '';
+
+            if (sujects['1'] == '1') {
+                var MathProficiency = "Beginner";
+            }
+            if (sujects['1'] == '2') {
+                var MathProficiency = "Foundation";
+            }
+            if (sujects['1'] == '3') {
+                var MathProficiency = "Intermediate";
+            }
+            if (sujects['1'] == '4') {
+                var MathProficiency = "Proficient";
+            }
+            if (sujects['1'] == '5') {
+                var MathProficiency = "Expert";
+            }
+
+            if (sujects['2'] == '1') {
+                var PhysicsProficiency = "Beginner";
+            }
+            if (sujects['2'] == '2') {
+                var PhysicsProficiency = "Foundation";
+            }
+            if (sujects['2'] == '3') {
+                var PhysicsProficiency = "Intermediate";
+            }
+            if (sujects['2'] == '4') {
+                var PhysicsProficiency = "Proficient";
+            }
+            if (sujects['2'] == '5') {
+                var PhysicsProficiency = "Expert";
+            }
+
+            if (sujects['3'] == '1') {
+                var ChemistryProficiency = "Beginner";
+            }
+            if (sujects['3'] == '2') {
+                var ChemistryProficiency = "Foundation";
+            }
+            if (sujects['3'] == '3') {
+                var ChemistryProficiency = "Intermediate";
+            }
+            if (sujects['3'] == '4') {
+                var ChemistryProficiency = "Proficient";
+            }
+            if (sujects['3'] == '5') {
+                var ChemistryProficiency = "Expert";
+            }
+
+            if (sujects['4'] == '1') {
+                var BotanyProficiency = "Beginner";
+            }
+            if (sujects['4'] == '2') {
+                var BotanyProficiency = "Foundation";
+            }
+            if (sujects['4'] == '3') {
+                var BotanyProficiency = "Intermediate";
+            }
+            if (sujects['4'] == '4') {
+                var BotanyProficiency = "Proficient";
+            }
+            if (sujects['4'] == '5') {
+                var BotanyProficiency = "Expert";
+            }
+
+            if (sujects['146'] == '1') {
+                var ZoologyProficiency = "Beginner";
+            }
+            if (sujects['146'] == '2') {
+                var ZoologyProficiency = "Foundation";
+            }
+            if (sujects['146'] == '3') {
+                var ZoologyProficiency = "Intermediate";
+            }
+            if (sujects['146'] == '4') {
+                var ZoologyProficiency = "Proficient";
+            }
+            if (sujects['146'] == '5') {
+                var ZoologyProficiency = "Expert";
+            }
+
+            if (response.response.user_data.grade_id == '1') {
+                var course = "JEE";
+            } else if (response.response.user_data.grade_id == '2') {
+                var course = "NEET";
+            } else {
+                var course = "NA";
+            }
+
+            if (response.success == true) {
+
+                 //Mixpanel Started 
+                 mixpanel.identify(response.response.user_data.id);
+                 mixpanel.people.set({
+                     "$city": response.response.user_data.city,
+                     "$name": response.response.user_data.user_name,
+                     "State": response.response.user_data.state,
+                     "$phone": response.response.user_data.mobile,
+                     "$email": response.response.user_data.email,
+                     "Email Verified": response.response.user_data.email_verified,
+                     "Course": course,
+                     "Mathematics Proficiency": MathProficiency,
+                     "Physics Proficiency": PhysicsProficiency,
+                     "Chemistry Proficiency": ChemistryProficiency,
+                     "Botany Proficiency": BotanyProficiency,
+                     "Zoology Proficiency": ZoologyProficiency,
+                 });
+
+
+                 mixpanel.track("Self Analysis  Captured", {
+                     "$city": response.response.user_data.city,
+                     "$name": response.response.user_data.user_name,
+                     "State": response.response.user_data.state,
+                     "$phone": response.response.user_data.mobile,
+                     "$email": response.response.user_data.email,
+                     "Email Verified": response.response.user_data.email_verified,
+                     "Course": course,
+                     "Mathematics Proficiency": MathProficiency,
+                     "Physics Proficiency": PhysicsProficiency,
+                     "Chemistry Proficiency": ChemistryProficiency,
+                     "Botany Proficiency": BotanyProficiency,
+                     "Zoology Proficiency": ZoologyProficiency,
+                 });
+
+                 //Mixpanel Event Ended
+                 window.location.href = '{{url("performance_analytics")}}';
+             }
+             
+
+        },
+        error: function(xhr, b, c) {
+            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+        }
+    });
+}
+
+function checkValidRating(valueData, subject) {
+    checkValueOrNot();
+    if (valueData) {
+        if (valueData > 100) {
+            $('#error_' + subject).show();
+            $('#store_rating').attr('disabled', true);
+        } else {
+            $('#error_' + subject).hide();
+        }
+
     }
+}
+
+function checkValueOrNot() {
+    var isBool = false;
+    $(".rating_input").each(function() {
+        var valu = $(this).val();
+        if (valu) {
+            isBool = true;
+        }
+    });
+    if (isBool) {
+        $('#store_rating').removeAttr("disabled");
+    } else {
+        $('#store_rating').attr('disabled', true);
+    }
+}
+
 </script>
 @endsection
