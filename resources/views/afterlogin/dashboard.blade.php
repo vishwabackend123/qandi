@@ -795,7 +795,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <p>
                                                                 <span class="weekCountline myscore"></span>
                                                                 <span class="weekCount">{{round($ideal_avg)}}</span>
+                                                                @if(round($ideal_avg)==1)
+                                                                <span class="weekText">chapter per week</span>
+                                                                @else
                                                                 <span class="weekText">chapters per week</span>
+                                                                @endif
                                                             </p>
                                                         </div>
                                                         <div class="yourPacebox">
@@ -803,13 +807,22 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                             <p>
                                                                 <span class="weekCountline colorHline"></span>
                                                                 <span class="weekCount">{{round($your_place_avg)}}</span>
-                                                                <span class="weekText">chapters per week</span>
+                                                                @if(round($your_place_avg)==1)
+                                                                 <span class="weekText">chapter per week</span>
+                                                                @else
+                                                                 <span class="weekText">chapters per week</span>
+                                                                @endif
                                                             </p>
                                                         </div>
-
+                                                        @if(((round($ideal_avg) > round($your_place_avg)) &&  (round($ideal_avg)-round($your_place_avg)) ==1))
+                                                        <div class="note">
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapter this week
+                                                        </div>
+                                                        @else
                                                         <div class="note">
                                                             <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
                                                         </div>
+                                                        @endif
 
                                                     </div>
                                                     @else

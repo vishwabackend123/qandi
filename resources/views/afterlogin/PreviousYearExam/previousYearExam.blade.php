@@ -246,7 +246,7 @@ $question_type = "Numerical";
                             </div>
                             <div class="questionRightbtns">
                                 <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                                <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                                <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             </div>
                         </div>
                     </div>
@@ -255,7 +255,7 @@ $question_type = "Numerical";
                     <div class="btnbottom">
                         <div class="questionbtnBlock">
                             <button class="btn questionbtn quesBtn" onclick="savemarkreview()">Save & Mark for Review</button>
-                            <button id="saveNext" class="btn questionbtn quesBtns" onclick="saveAnswer()">Save & Next</button>
+                            <button id="saveNext" class="btn questionbtn quesBtn" onclick="saveAnswer()">Save & Next</button>
                             <button id="clearBtn_response" class="btn questionbtn Clearbtn quesBtn clearBtn_response" disabled onclick="clearResponse()">Clear Response</button>
                             <button class="btn questionbtn quesBtn markReviwebtn" onclick="markforreview()">Mark for Review</button>
                             <!-- <button class="btn questionbtn Clearbtn disabled quesBtn" onclick="clearResponse()">Clear Response</button> -->
@@ -520,16 +520,19 @@ $question_type = "Numerical";
                 <div class="modal-body exam-paused-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
-                            <label>Exam Paused</label>
+                            <label id="resume_lebel" >Exam Paused</label>
                         </div>
                     </div>
-                    <div class="exam_duration_block text-center">
+                    <div class="exam_duration_block text-center" id="resume-duration-div">
                         <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
                         <label class="d-block">Duration of time paused </label>
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
-                    <p>Your last assessment is on hold; click resume to go back to it.</p>
-                    <div class="exam-footer-sec">
+                    <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your network connectivity. </h6>                        
+                    </div>
+                    <p id="resume_subMsg">Your last assessment is on hold; click resume to go back to it.</p>
+                    <div class="exam-footer-sec" id="resume-button-div">
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -554,7 +557,7 @@ $question_type = "Numerical";
                             <label id="attempt-alert-text">Exam Paused</label>
                         </div>
                     </div>
-                    <div class="exam-footer-sec  p-4">
+                    <div class="exam-footer-sec  p-4" >
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-limit" class="btn btn-common-green" data-bs-dismiss="modal"> OK <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
@@ -1263,6 +1266,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerPy') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1290,15 +1294,15 @@ $question_type = "Numerical";
 
                         $("#submitExam").click();
                     } else {
-
                         $("#quesnext" + question_id).click();
 
                     }
                 } else if (response.status == 400) {
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
-                    $('#attemptlimit').modal('show');
 
+                    $('#attemptlimit').modal('show');
+                    clearResponse();
 
                     err_sts = false;
                 }
@@ -1374,6 +1378,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerPy') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1389,6 +1394,7 @@ $question_type = "Numerical";
             success: function(response_data) {
                 //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
+                console.log(response);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
@@ -1405,7 +1411,8 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
                     $('#attemptlimit').modal('show');
-                    //alert(response.message);
+                    clearResponse();
+
                     isValid = 0;
 
                 }
@@ -1716,7 +1723,6 @@ $question_type = "Numerical";
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
 
-        console.log(save_count, r_count, s_r_count, unanswered);
 
         $('#ans_cnt_2').html(save_count);
         $('#ans_cnt').html(save_count);

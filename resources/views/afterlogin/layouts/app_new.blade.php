@@ -24,7 +24,12 @@
     border-radius: 100%;
     display: inline-block;
     top: -15px;
-}
+
+        }
+    .connectionlost{
+        background: #e0f6e3 !important;
+    }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{URL::asset('public/images/favicon.ico')}}" type="{{URL::asset('public/image/x-icon')}}" />

@@ -525,16 +525,19 @@ $question_type = "Numerical";
                 <div class="modal-body exam-paused-body">
                     <div class="modal-header-exam text-center ">
                         <div class="exam-overview ">
-                            <label>Exam Paused</label>
+                            <label id="resume_lebel" >Exam Paused</label>
                         </div>
                     </div>
-                    <div class="exam_duration_block text-center">
+                    <div class="exam_duration_block text-center" id="resume-duration-div">
                         <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
                         <label class="d-block">Duration of time paused </label>
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
-                    <p>Your last assessment is on hold; click resume to go back to it.</p>
-                    <div class="exam-footer-sec">
+                    <div class="exam_duration_block text-center" id="connectivity_div" style="display:none;">
+                        <h6 class="d-block">You don't seem to have an active internet connection. Kindly check your network connectivity. </h6>                        
+                    </div>
+                    <p id="resume_subMsg"  >Your last assessment is on hold; click resume to go back to it.</p>
+                    <div class="exam-footer-sec" id="resume-button-div">
                         <div class="task-btn tasklistbtn text-center">
                             <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1216,6 +1219,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1254,6 +1258,7 @@ $question_type = "Numerical";
                     $('#attempt-alert-text').text(response.message);
                     stop('submit');
                     $('#attemptlimit').modal('show');
+                    clearResponse();
 
 
                     err_sts = false;
@@ -1272,7 +1277,7 @@ $question_type = "Numerical";
         var qNo = $("#current_question_no").val();
 
         var question_id = question_id;
-        var isValid = 1;
+        let isValid = 1;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
         var current_subject_id = $("#current_subject_id").val();
@@ -1329,6 +1334,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('saveAnswerMock') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
@@ -1357,20 +1363,21 @@ $question_type = "Numerical";
 
                     }
                     isValid = 1;
+                    return true;
 
                 } else if (response.status == 400) {
+                    isValid = 0;
+                   
                     $('#attempt-alert-text').text(response.message);
                     stop("submit");
                     $('#attemptlimit').modal('show');
-
-
-                    isValid = 0;
+                    clearResponse();
 
                 }
             }
         });
 
-        if (isValid == 1) {
+if (isValid == 1) {
             return true;
         } else {
             return false;
@@ -1380,7 +1387,7 @@ $question_type = "Numerical";
 
     function savemarkreview() {
         $('#myTabContent .quesBtn').attr("disabled", true);
-        $('#myTabContent .quesBtn').addClass("disabled");
+           $('#myTabContent .quesBtn').addClass("disabled");
 
 
         var quest_id = $("#current_question").val();
@@ -1404,6 +1411,9 @@ $question_type = "Numerical";
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
+
+                    
+
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("border-btn");
                         $("#btn_" + quest_id).removeClass("pink-btn");
