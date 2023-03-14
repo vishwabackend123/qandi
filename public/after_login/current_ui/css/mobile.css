@@ -779,6 +779,11 @@ label.filter {
         .liveexamMobileOrder3{order: 3;}
         .liveexamMobileOrder4{order:4;text-align:right;}
         .liveexamOnlyOrder2{order: 2;}
+        .InstructionSectionAssisment{padding:20px;}
+        .instHeading b{display: flex;}
+        .commonInstructionList ul{padding-left: 25px;}
+        .instructionScroolBlock{height: auto;}
+        .instructionTable table.table tr td{padding:8px 10px;}
 }
 @media screen and (max-width:991px) and (min-width:768px) {
     .vLine{display: none}

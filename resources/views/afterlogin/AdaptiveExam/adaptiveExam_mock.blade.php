@@ -455,7 +455,7 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="exam_duration_block text-center">
-                        <img src="{{URL::asset('public/after_login/current_ui/images/exam-clock.svg')}}" />
+                        <img src="{{URL::asset('public/after_login/current_ui/images/exam-clockNew.svg')}}" />
                         <label class="d-block">Duration of time paused </label>
                         <span class="exam_duration d-block" id="pauseTime">03 mins</span>
                     </div>
