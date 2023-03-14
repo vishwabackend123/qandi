@@ -28,6 +28,11 @@
     .overall_analytics_page .chapter_performance_card ul.topic_score_lists {
         min-height: 285px;
         max-height: 287px;}
+        
+        .performanceNewWrapper{height: auto;display: block;}
+        .performanceInputWrapper .custom-input{margin-bottom:25px;}
+        .mt1400-2{margin-top:20px !important;}
+        .fullwidth.btn{width: 83%;    min-width: auto;}
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
@@ -55,6 +60,7 @@
         .myqTodayGraphSec .dashSubtext{margin-bottom:15px;max-width:100%;}
         .test_analytics_wrapper .common_greenbadge_tabs ul.nav .btn.nav-link {font-size: 13px;padding: 0 14px!important;}
         .successRef_copy.showtext{top:11px;} 
+        .AssesmentWhitePannel{padding: 40px 20px 80px;}
 }
 @media only screen and (max-width: 1300px){
     .subject_performance_card .dashSubtext{font-size:13px;}
@@ -650,7 +656,20 @@ label.filter {
         padding: 0 0 20px;
     }
     /**************End-By-Sachin*12-10-22****************/
-
+    .AssiementNewRow{flex-wrap: wrap;}
+    .AssesmentWhitePannel{width: 100%;margin-top: 20px;}
+    .orblock{height: 50px;
+        margin-top: 20px;width: 100%;}
+        .orblock span{
+            width: 60px;
+        }
+        .orblock span:after{
+            height: 1%;
+            width: 100%;
+            left: 0;
+            top: 23px;}
+            .fullwidth.btn{position: initial;width: 100%;}
+            .AssesmentWhitePannel{padding:30px ;}
 
     
 }
@@ -1390,9 +1409,10 @@ ul.proficiency-level-lists{margin:0;}
 .SelectPlane_text h3{margin-bottom: 8px;display: flex; justify-content: space-between;}
 .hideondesktop{display: block;}
 .fullbody_scan_box.d-flex {display: block!important;}
-.fullbody_scan_card.w-50 , .fullbody_scan_test.w-50{width: 100%!important;}
-.fullbody_scan_card.w-50{border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:0px;padding: 20px 20px;}
-.fullbody_scan_test.w-50{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;overflow: hidden;}
+.fullbody_scan_card.w-50 , .fullbody_scan_test.w-50,.fullBodyNew .fullbody_scan_card,.fullBodyNew .fullbody_scan_test{width: 100%!important;}
+
+.fullbody_scan_card.w-50,.fullBodyNew .fullbody_scan_test{border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:0px;padding: 20px 20px;}
+.fullbody_scan_test.w-50,.fullBodyNew .fullbody_scan_test{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;overflow: hidden;}
 span.greenball-2 svg {width: 29px!important;height: 39px!important;}
 span.greenball-3 svg {width: 21px!important;height: 21px!important;}
 span.greenball-1 svg {width: 51px!important;height: 70px!important;}
@@ -2792,9 +2812,12 @@ label.filter {
     ul.proficiency-level-lists{margin:0;}
     .SelectPlane_text h3{margin-bottom: 8px;}
     .fullbody_scan_box.d-flex {display: block!important;}
-    .fullbody_scan_card.w-50 , .fullbody_scan_test.w-50{width: 100%!important;}
-    .fullbody_scan_card.w-50{border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:0px;padding: 20px 20px;}
-    .fullbody_scan_test.w-50{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;overflow: hidden;}
+    .fullbody_scan_card.w-50 , .fullbody_scan_test.w-50,.fullBodyNew .fullbody_scan_card,.fullBodyNew .fullbody_scan_test{width: 100%!important;}
+    .fullbody_scan_card.w-50,.fullBodyNew .fullbody_scan_card{border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:0px;padding: 20px 20px;}
+    .fullbody_scan_test.w-50,.fullBodyNew .fullbody_scan_test{border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-right-radius: 0px;overflow: hidden;}
+    .fullBodyNew .fullbody_scan_card{border-bottom-left-radius: 0px;
+        border-top-right-radius: 20px;}
+        .fullBodyNew .fullbody_scan_test{border-top-left-radius: 0px;}
     span.greenball-2 svg {width: 29px!important;height: 39px!important;}
     span.greenball-3 svg {width: 21px!important;height: 21px!important;}
     span.greenball-1 svg {width: 51px!important;height: 70px!important;}

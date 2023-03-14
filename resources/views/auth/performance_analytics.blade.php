@@ -91,107 +91,201 @@ mixpanel.init(mixpanelid);
     </div>
     <div class="selectPlan subscriptionsRightpannel">
         <span class="tab_show_performence_analytics tab_show desktop_hide_performence_analytics"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
-        <div class="SelectPlane_text">
-            <h3 class="pageCountBox">Personalized Assessment
-                <span class="pagecount hideondesktop"><span class="activePage">3</span>/3</span>
-            </h3>
-            <p>To assess your preparedness</p>
-        </div>
-        <div class="verificationBox mt-0 desktop_hide_performence_analytics">
-            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
-            <a href="javascript:void(0);" class="resend_email">Resend</a>
+            <div class="AssementTestBlock" style="display:none">
+            <div class="SelectPlane_text">
+                <h3 class="pageCountBox"><div>Personalized Preparation Assessment  <span class="badge badge-light">JEE</span></div>
+                    <span class="pagecount hideondesktop"><span class="activePage">3</span>/3</span>
+                </h3>
+                <p>To assess your preparedness, this will also help us to generate daily and weekly tasks for you, based on your proficiency levels.</p>
+            </div>
+            <div class="verificationBox mt-0 desktop_hide_performence_analytics">
+                <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
+                <a href="javascript:void(0);" class="resend_email">Resend</a>
+            </div>
+            <div class="personalAssesmentNewBlock">
+                <div class="AssiementNewRow">
+                    <div class="AssesmentWhitePannel">
+                        <h4 class="assismetHeading">Basic Personalized Assessment</h4>
+                        <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                        <hr>
+                        <div class="AssementBlockList">
+                            <ul>
+                            <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>
+                                    1 hour duration
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>
+                                    30 questions in this assessment
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>
+                                    Covers the key topics in the syllabus
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>
+                                    Short-lenght test to evaluate specific knowledge
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>
+                                    Personalized recommendations for improvement
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                    </div>
+                    <div class="orblock">
+                        <span>OR</span>
+                    </div>
+                    <div class="AssesmentWhitePannel">
+                        <span class="recomondFloat">Recommended</span>
+                    <h4 class="assismetHeading">Advanced Personalized Assessment</h4>
+                        <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                        <hr>
+                        <div class="AssementBlockList">
+                            <ul>
+                            <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>3 hours duration
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>75 questions in this assessment
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>Comprehensive assessment covering all topics
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>Full-length test designed to evaluate overall knowledge & simulate the actual exam experience
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                    </svg>Personalized recommendations for improvement
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                    </div>
+                </div>
+                <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+                    <div class="backBtn pt-0 mr-2">
+                        <a href="{{ url('performance-rating') }}">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                            Back
+                        </a>
+                    </div>
+                    <a  class="btn btn-common-transparent no-border" href="{{url('/dashboard')}}">Skip to Dashboard</a>
+                </div>
+            </div>
         </div>
         <div class="fullbody_scan_wrapper">
-            <div class="fullbody_scan_box d-flex">
-                <div class="fullbody_scan_card w-50">
-                    <p class="mt-0">Please attempt the Personalized Assessment, so that we can generate tasks based on your proficiency levels.</p>
-                    <span class="custom-border"></span>
-                    <ul style="margin-top:32px">
+        <div class="mt-5 d-flex justify-content-between align-items-center pb-5">
+                    <div class="backBtn pt-0 mr-2">
+                        <a href="{{ url('performance-rating') }}">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                            Back
+                        </a>
+                </div>
+            </div>
+            <div class="fullbody_scan_box d-flex fullBodyNew">
+                <div class="fullbody_scan_card">
+                    <span class="badge badge-light Subjectbadge mb-4">JEE</span>
+                    <h4 class="assismetHeading w-100">Basic Personalized Assessment</h4>
+                    <h6 class="assismetSubHeading">Mathematics, Physics &amp; Chemistry</h6>
+                     <div class="TimeblockAssisment">
+                          <div class="questionAss">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3.5 18V7C3.5 3 4.5 2 8.5 2H15.5C19.5 2 20.5 3 20.5 7V17C20.5 17.14 20.5 17.28 20.49 17.42" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.35 15H20.5V18.5C20.5 20.43 18.93 22 17 22H7C5.07 22 3.5 20.43 3.5 18.5V17.85C3.5 16.28 4.78 15 6.35 15Z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 7H16" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 10.5H13" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <label>30</label>
+                                <span>Questions</span>
+                          </div>
+                          <div class="hourassisment">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20.75 13.25C20.75 18.08 16.83 22 12 22C7.17 22 3.25 18.08 3.25 13.25C3.25 8.42 7.17 4.5 12 4.5C16.83 4.5 20.75 8.42 20.75 13.25Z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 8V13" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 2H15" stroke="#56B663" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <label>01</label>
+                                <span>Hours</span>
+                          </div>
+                     </div>
+                    <!-- <ul style="margin-top:32px">
                         <li class="mb-3">No of Questions: <span>{{$prof_test_qcount}} questions</span></li>
                         <li class="mb-3">Duration <span>3 hours</span></li>
                         <li>Subjects <span>{{$subjects_name}}</span></li>
-                    </ul>
+                    </ul> -->
                 </div>
-                <div class="fullbody_scan_test w-50 text-center position-relative">
-                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.svg')}}"></span>
-                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.svg')}}"></span>
+                <div class="fullbody_scan_test text-center position-relative">
+                    <!-- <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.svg')}}"></span>
+                    <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.svg')}}"></span> -->
                     <span class="greenball-1">
-                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109 106" width="109" height="106">
-                            <title>Mask group-svg</title>
-                            <defs>
-                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m-425 10c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
-                                </clipPath>
-                            </defs>
-                            <style>
-                                .s0 {
-                                    fill: #52ac5f
-                                }
-                            </style>
-                            <g id="Clip-Path" clip-path="url(#cp1)">
-                                <g id="Layer">
-                                    <path id="Layer" class="s0" d="m82 103c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
-                                    <path id="Layer" class="s0" d="m-437 372c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
-                                    <path id="Layer" class="s0" d="m-4.5 307c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
-                                </g>
-                            </g>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+                        <circle cx="14.9725" cy="13.9891" r="13.9891" fill="#52AC5F"/>
                         </svg>
                     </span>
                     <span class="greenball-2">
-                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 109" width="53" height="109">
-                            <title>Mask group-svg</title>
-                            <defs>
-                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m0-233c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
-                                </clipPath>
-                            </defs>
-                            <style>
-                                .s0 {
-                                    fill: #52ac5f
-                                }
-                            </style>
-                            <g id="Clip-Path" clip-path="url(#cp1)">
-                                <g id="Layer">
-                                    <path id="Layer" class="s0" d="m507-140c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
-                                    <path id="Layer" class="s0" d="m-12 129c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
-                                    <path id="Layer" class="s0" d="m420.5 64c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
-                                </g>
-                            </g>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="71" viewBox="0 0 35 71" fill="none">
+                            <circle cx="4.95911e-05" cy="35.2847" r="34.9727" fill="#52AC5F"/>
                         </svg>
                     </span>
                     <span class="greenball-3">
-                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87 88" width="87" height="88">
-                            <title>Mask group-svg</title>
-                            <defs>
-                                <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
-                                    <path d="m-377-211c0-5.52 4.48-10 10-10h514c5.52 0 10 4.48 10 10v332c0 5.52-4.48 10-10 10h-514c-5.52 0-10-4.48-10-10z" />
-                                </clipPath>
-                            </defs>
-                            <style>
-                                .s0 {
-                                    fill: #52ac5f
-                                }
-                            </style>
-                            <g id="Clip-Path" clip-path="url(#cp1)">
-                                <g id="Layer">
-                                    <path id="Layer" class="s0" d="m130-118c-44.2 0-80-35.8-80-80 0-44.2 35.8-80 80-80 44.2 0 80 35.8 80 80 0 44.2-35.8 80-80 80z" />
-                                    <path id="Layer" class="s0" d="m-389 151c-35.4 0-64-28.6-64-64 0-35.4 28.6-64 64-64 35.4 0 64 28.6 64 64 0 35.4-28.6 64-64 64z" />
-                                    <path id="Layer" class="s0" d="m43.5 86c-21.8 0-39.5-17.7-39.5-39.5 0-21.8 17.7-39.5 39.5-39.5 21.8 0 39.5 17.7 39.5 39.5 0 21.8-17.7 39.5-39.5 39.5z" />
-                                </g>
-                            </g>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <circle cx="8.53024" cy="8.61739" r="7.86886" fill="#52AC5F"/>
                         </svg>
                     </span>
-                    <img src="{{URL::asset('public/after_login/current_ui/images/note.svg')}}" style="width: 106.5px;height: 116px;">
-                    <h3 class="mb-0 mt-2 px-4">Personalized Assessment</h3>
-                    <p class="my-3">to assess your preparation. Take your first step to improvement.</p>
+                    <img src="{{URL::asset('public/after_login/current_ui/images/note2.svg')}}" style="width: 72px;height: 78px;">
+                    <h4>All the Best Sakshi!</h3>
+                    <!-- <p class="my-3">to assess your preparation. Take your first step to improvement.</p> -->
                     @if($full_body_attempt=="Y")
                     <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                     @else
-                    <a class="btn btn-common-white" href="{{route('exam',['full_exam','instruction'])}}">Attempt Now</a>
+                    <a class="btn btn-common-white" href="{{route('exam',['full_exam','instruction'])}}">Take Test</a>
                     @endif
                 </div>
             </div>
-            <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+            <div class="InstructionSectionAssisment">
+                  
+            </div>
+            <!-- <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
                     <a href="{{ url('performance-rating') }}">
                         <span>
@@ -203,7 +297,7 @@ mixpanel.init(mixpanelid);
                     </a>
                 </div>
                 <a  class="btn btn-common-transparent" href="{{url('/dashboard')}}">Skip to Dashboard</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

@@ -78,13 +78,59 @@ mixpanel.track('Loaded Self Analysis ',{
     <div class="selectPlan subscriptionsRightpannel">
         <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3 class="pageCountBox">Self Analysis
+            <h3 class="pageCountBox">Provide your past school/board scores
                 <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
-            <p>Rate your level of proficiency</p>
+            <p>To help you better prepare, please provide your past school/board scores for the following subjects.</p>
+
         </div>
         <div class="performance_rating_wrapper">
-            @foreach($user_subjects as $subject_proficiency)
+        <div class="performanceNewWrapper">
+               <div class="performanceInputWrapper">
+                <div class="custom-input">
+                        <label>Mathematics*</label>
+                        <div class="input-field inputerror">
+                            <input type="text" class="form-control" placeholder="Type here">
+                            <div class="Floattext">
+                                <span class="input-group-text">100</span>
+                            </div>
+                        </div>
+                        <span class="scoreError">Score should be out of 100. Please enter a valid score.</span>
+
+                    </div>
+                    <div class="custom-input">
+                        <label>Chemistry*</label>
+                        <div class="input-field ">
+                            <input type="text" class="form-control" placeholder="Type here">
+                            <div class="Floattext">
+                                <span class="input-group-text">100</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="custom-input">
+                        <label>Physics*</label>
+                        <div class="input-field ">
+                            <input type="text" class="form-control" placeholder="Type here">
+                            <div class="Floattext">
+                                <span class="input-group-text">100</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="custom-input">
+                        <label>Botony*</label>
+                        <div class="input-field ">
+                            <input type="text" class="form-control" placeholder="Type here">
+                            <div class="Floattext">
+                                <span class="input-group-text">100</span>
+                            </div>
+                        </div>
+
+                    </div>
+               </div>
+             </div>
+            <!-- @foreach($user_subjects as $subject_proficiency)
             @php
             $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
 
@@ -145,8 +191,8 @@ mixpanel.track('Loaded Self Analysis ',{
                     </li>
                 </ul>
             </div>
-            @endforeach
-            <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+            @endforeach -->
+            <div class="mt1400-2 mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
                     @if (!Session::has('lead_trail_status'))
                     <a href="{{route('subscriptions')}}">

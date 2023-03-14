@@ -3014,8 +3014,8 @@ line-height: 1.6;
 }
 
 .fullbody_scan_test {
-    padding: 15px 0 70px 0px;
-    background-color: #56b663;
+    padding: 20px 0 11px 0px;
+    background-color: #6CD14E;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     /* background-image: url(../images/fullscan-card-bg.png);
@@ -3026,15 +3026,17 @@ line-height: 1.6;
 
 .fullbody_scan_test span:first-child {
     position: absolute;
-    right: 0px;
-    top: 5px;
+    right: auto;
+    top: 26px;
+    left: 20px;
     z-index: 1;
 }
 
 .fullbody_scan_test span:nth-child(2) {
     position: absolute;
     left: 0px;
-    top: 80px;
+    top: auto;
+    bottom: 14px;
 }
 
 .fullbody_scan_test h3 {
@@ -3857,8 +3859,8 @@ span.greenball-2 {
 }
 span.greenball-3 {
     position: absolute;
-    bottom: 45px;
-    right: 5%;
+    bottom: 9px;
+    right: 4px;
 }
 .commonWhiteBox.borderRadius {
     border-radius: 32px;
@@ -8288,3 +8290,151 @@ margin-bottom: 12px;
     letter-spacing: normal;
     color: #1f1f1f;
 }
+
+/* new Css(13-03-2023) */
+.performanceNewWrapper{height: 62vh;display: flex;align-items: center;}
+.performanceInputWrapper .input-group-text{background:transparent;
+    border-radius: 8px;height: 44px;width: 68px;text-align: center;
+    display: inline-block;
+    line-height: 32px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: #666666;border:0px;border-left:1px solid #d0d5dd;}
+    .performanceInputWrapper .custom-input{margin-bottom: 40px;}
+    .performanceInputWrapper .input-field {max-width: 287px;    position: relative;}
+    .performanceInputWrapper .input-field.inputerror input.form-control{border-color: #F8BDB8!important;}
+    .scoreError{font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #D92D20;}
+        .Floattext{    position: absolute;
+            top: 0;
+            right: 0;
+            height: 44px;}
+        .pageCountBox span.badge{padding: 3px 8px;
+        min-width: 35px;
+        height: 20px;
+        background: rgba(54, 60, 79, 0.1);
+        border-radius: 4px;
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #363C4F;margin-left:12px;display: inline-block;vertical-align: middle;
+        }
+        .AssiementNewRow{display:flex;}
+        .AssesmentWhitePannel{
+            position: relative;
+            padding: 40px 32px 80px;
+            background: #FFFFFF;
+            border: 1px solid rgba(86, 182, 99, 0.2);
+            border-radius: 20px;width:calc(100% - 54px );
+        }
+        .orblock{min-width: 108px;text-align: center;position: relative;}
+        .orblock:after {
+            background: #CAEFCF;
+            height: 100%;
+            width: 1px;
+            content: '';
+            /* border: 1px solid #ddd; */
+            display: block;
+            top: 0;
+            position: absolute;
+            left: 49%;
+        }
+        .orblock span{display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 45px;
+            transform: translate(-50%, -50%);
+            background: #f5faf6;
+            z-index: 9;font-weight: 800;
+            font-size: 16px;
+            line-height: 40px;
+            color: #234628;}
+            .assismetHeading {font-weight: 800;
+                font-size: 24px;
+                line-height: 33px;
+                letter-spacing: 0.01em;
+                color: #1F1F1F;margin-bottom: 16px;max-width: 352px;}
+                .assismetSubHeading{font-weight: 400;
+                    font-size: 12px;
+                    line-height: 130%;
+                    color: #363C4F;margin-bottom: 0px;}
+                    .AssementBlockList {margin-bottom: 25px;}
+                    .AssiementNewRow hr{margin: 24px 0px;}
+                    .AssementBlockList li{display: flex;line-height: 2.5;
+                        text-align: left;
+                        color: #363c4f;
+                        font-size: 14px;    align-items: center;
+                        font-weight: 500;margin-bottom: 16px;}
+                    .AssementBlockList ul li svg {
+                        margin-right: 8px;
+                    }
+                    .fullwidth.btn{    width: 90%;
+                        position: absolute;
+                        bottom: 32px;
+                        left: 30px;}
+                    .recomondFloat{position: absolute;
+                        left: 30px;
+                        top: 0;
+                        padding: 2px;
+                        width: 125px;
+                        height: 23px;
+                        background: #56B663;
+                        box-shadow: 0px 8px 30px rgb(172 185 176 / 14%);
+                        text-align: center;
+                        border-radius: 0px 0px 4px 4px;
+                        font-weight: 700;
+                        font-size: 12px;
+                        letter-spacing: 0.08em;
+                        text-transform: uppercase;
+                        color: #FFFFFF;}
+                        .no-border{border: 0px!important;}
+                        .Subjectbadge{padding: 3px 8px;
+                            min-width: 35px;
+                            height: 20px;
+                            background: rgba(54, 60, 79, 0.1);
+                            border-radius: 4px;
+                            font-weight: 800;
+                            font-size: 10px;
+                            line-height: 14px;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                            color: #363C4F;}
+                            .assismetHeading.w-100{max-width: 100%;margin-bottom: 8px;}
+                            .questionAss label{font-weight: 600;
+                                font-size: 20px;
+                                line-height: 160%;margin:0px;
+                                color: #1F1F1F;margin-left: 8px;}
+                                .questionAss span{display: inline-block;font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 130%;
+                                    color: #363C4F;margin-right: 4px;
+                                    }
+                                    .TimeblockAssisment{margin-top: 27px;display: flex;}
+                                    .fullbody_scan_test h4{font-weight: 800;
+                                        font-size: 17.4864px;
+                                        line-height: 130%;
+                                        margin: 22px 0px 12px;
+                                        text-align: center;
+                                        color: #FFFFFF;}
+                                        .fullBodyNew .fullbody_scan_card{width: calc(100% - 290px);}
+                                        .fullBodyNew .fullbody_scan_test{width: 290px;}
+                                        .questionAss{margin-left: 32px;}
+                                        .questionAss,.hourassisment{display: inline-flex;align-items: center;}
+                                        .InstructionSectionAssisment{  
+                                            padding: 20px 40px;
+                                            box-shadow: 0 8px 30px 0 rgb(172 185 176 / 14%);
+                                            border: solid 3px #fff;
+                                            background-color: #fff;border-radius: 30px;}
+
+
+ /* new Css(13-03-2023)-End */
+                                   

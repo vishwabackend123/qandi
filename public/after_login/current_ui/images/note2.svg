@@ -1,0 +1,19 @@
+<svg width="73" height="79" viewBox="0 0 73 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="11.8398" width="53.4586" height="68.3459" rx="1.36735" transform="rotate(-12.7955 0 11.8398)" fill="#D4ECD8"/>
+<rect x="6.90479" y="5.07275" width="53.4586" height="68.3459" rx="1.36735" fill="#EDFFEF"/>
+<rect x="10.9653" y="34.1709" width="6.76692" height="6.76692" rx="2.13649" fill="#56B663"/>
+<path d="M13.0808 37.5544L13.9267 38.4002L15.6184 36.7085" stroke="#E0F6E3" stroke-width="0.854596" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="10.9646" y="47.7024" width="6.76692" height="6.76692" rx="2.13649" fill="#56B663"/>
+<path d="M13.0801 51.0854L13.9259 51.9312L15.6177 50.2395" stroke="#E0F6E3" stroke-width="0.854596" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="21.1226" y1="34.8388" x2="31.259" y2="34.8388" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="21.1226" y1="48.372" x2="31.259" y2="48.372" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="12.3248" y1="18.5988" x2="40.7319" y2="18.5988" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="12.3248" y1="24.0121" x2="31.9349" y2="24.0121" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="44.8065" y1="18.5988" x2="56.2963" y2="18.5988" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="21.1226" y1="39.5751" x2="38.7027" y2="39.5751" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<line x1="21.1226" y1="53.1093" x2="38.7027" y2="53.1093" stroke="#B2D9B6" stroke-width="1.36735" stroke-linecap="round"/>
+<path d="M49.6815 59.7246L42.8577 55.323L41.4763 62.7463C41.2504 63.9599 42.6211 64.8278 43.6215 64.1047L49.6815 59.7246Z" fill="#56B663"/>
+<path d="M63.7493 22.9329C64.568 21.6637 66.2606 21.2984 67.5298 22.1171L69.7575 23.554C71.0267 24.3727 71.3919 26.0653 70.5732 27.3345L49.6808 59.7244L42.8569 55.3228L63.7493 22.9329Z" fill="#4A9453"/>
+<path d="M63.7493 22.9329C64.568 21.6637 66.2606 21.2984 67.5298 22.1171L69.7575 23.554C71.0267 24.3727 71.3919 26.0653 70.5732 27.3345L66.9204 32.9975L60.0965 28.596L63.7493 22.9329Z" fill="#E0F6E3"/>
+<rect x="61.1965" y="26.8909" width="8.1203" height="4.06015" transform="rotate(32.8232 61.1965 26.8909)" fill="#56B663"/>
+</svg>
