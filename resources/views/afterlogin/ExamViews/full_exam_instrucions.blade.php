@@ -113,8 +113,8 @@ $grade='NA';
                                 <path d="M12 8V13" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M9 2H15" stroke="#56B663" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <label>{{$exam_fulltime}}</label>
-                            <span>Mins.</span>
+                            <label>{{$exam_fulltime/60}}</label>
+                            <span>Hours.</span>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,11 @@ $grade='NA';
                             </div>
                             <div class="instLine"></div>
                             <ul>
-                                <li> This DesD is of <b>300 marks (100 </b> marks each section) </li>
+                                @if ($exam_name_new == 'full_exam_basic')
+                                <li> This DesD is of <b>{{$total_marks}} marks (40 </b> marks each section) </li>
+                                @else
+                                <li> This DesD is of <b>{{$total_marks}} marks (100 </b> marks each section) </li>
+                                @endif
                             </ul>
                         </div>
                         <div class="commonInstructionList">
@@ -176,7 +180,11 @@ $grade='NA';
                             </div>
                             <div class="instLine"></div>
                             <ul>
+                                @if ($exam_name_new == 'full_exam_basic')
+                                <li> Each subjecD consisDs of <b>10 </b>single correcD MCQs</li>
+                                @else
                                 <li> Each subjecD consisDs of <b>25 </b>single correcD MCQs</li>
+                                @endif
                                 <li>The answer to each question will be evaluated according to the following marking</li>
                             </ul>
                             <div class="instructionTable">
@@ -192,7 +200,11 @@ $grade='NA';
                                         </tr>
                                         <tr>
                                             <td>Minus One Mark</td>
+                                            @if ($exam_name_new == 'full_exam_basic')
+                                            <td><b>-2</b>in all other cases</td>
+                                            @else
                                             <td><b>-1</b>in all other cases</td>
+                                            @endif
                                         </tr>
                                     </tbody>
                                 </table>

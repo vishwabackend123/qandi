@@ -218,9 +218,13 @@ mixpanel.init(mixpanelid);
             </div>
             <div class="fullbody_scan_box d-flex fullBodyNew">
                 <div class="fullbody_scan_card">
-                    <span class="badge badge-light Subjectbadge mb-4">JEE</span>
+                    <span class="badge badge-light Subjectbadge mb-4">{{$grade}}</span>
                     <h4 class="assismetHeading w-100">Basic Personalized Assessment</h4>
+                    @if($user_exam_id == '1')
                     <h6 class="assismetSubHeading">Mathematics, Physics &amp; Chemistry</h6>
+                    @else
+                    <h6 class="assismetSubHeading">Physics, Chemistry,Biology  &amp; Zoology</h6>
+                    @endif
                     <div class="TimeblockAssisment">
                         <div class="questionAss">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

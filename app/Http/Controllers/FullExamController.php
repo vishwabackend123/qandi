@@ -97,8 +97,12 @@ class FullExamController extends Controller
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
-                $curl_url = $api_URL . 'api/profiling-test-web-class-based/' . $exam_id . '/' . $user_id;
-
+                if ($exam_name_new == 'full_exam_basic') {
+                    $curl_url = $api_URL . 'api/get-basic-profiling-test/' . $user_id . '/' . $exam_id;
+                }else
+                {
+                    $curl_url = $api_URL . 'api/profiling-test-web-class-based/' . $exam_id . '/' . $user_id;
+                }
                 $curl_option = array(
 
                     CURLOPT_URL => $curl_url,
@@ -116,7 +120,6 @@ class FullExamController extends Controller
                 curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
-
 
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
