@@ -310,6 +310,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             @if((isset($userStatus) && $userStatus==false))
                                             <div class="taskstatusBlock" style="margin-bottom:12px;">
                                                 <h4>Task completed</h4>
+                                                <!-- <a href="#Assesmentmodal" data-bs-toggle="modal" data-bs-target="#Assesmentmodal">Click me</a> -->
+
                                                 <div class="statusvalue">
                                                     <span class="codevalue">{{$completeddailyTask}}</span><span>/{{(isset($dailyTask) && count($dailyTask)>0)?count($dailyTask):0}}</span>
                                                 </div>
@@ -346,6 +348,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                                     @endphp
                                                     <li>
                                                         <div class="tasklistleft">
+
                                                             <h6>Task {{$key+1}}</h6>
                                                             <h4>{{$skill_task}}</h4>
                                                             <h5>{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}} Questions | {{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</h5>
@@ -1057,6 +1060,126 @@ $user_id = isset($userData->id)?$userData->id:'';
             </div>
         </div>
     </div>
+  <!-- Assesment Modal -->
+  <div class="modal fade assesmentmodal" id="Assesmentmodal">
+        <div class="modal-dialog">
+            <div class="modalcenter">
+                <div class="modal-content strengthmodal_content">
+                    <div class="modal-header1">
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                    <div class="AssementTestBlock">
+                        <div class="SelectPlane_text">
+                            <h3 class="pageCountBox"><div>Personalized Preparation Assessment </div>
+                            </h3>
+                        </div>
+                        <div class="verificationBox mt-0 desktop_hide_performence_analytics">
+                            <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
+                            <a href="javascript:void(0);" class="resend_email">Resend</a>
+                        </div>
+                        <div class="personalAssesmentNewBlock">
+                            <div class="AssiementNewRow">
+                                <div class="AssesmentWhitePannel">
+                                    <h4 class="assismetHeading">Basic Personalized Assessment</h4>
+                                    <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                                    <hr>
+                                    <div class="AssementBlockList">
+                                        <ul>
+                                        <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>
+                                                1 hour duration
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>
+                                                30 questions in this assessment
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>
+                                                Covers the key topics in the syllabus
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>
+                                                Short-lenght test to evaluate specific knowledge
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>
+                                                Personalized recommendations for improvement
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                                </div>
+                                <div class="orblock">
+                                    <span>OR</span>
+                                </div>
+                                <div class="AssesmentWhitePannel">
+                                    <span class="recomondFloat">Recommended</span>
+                                <h4 class="assismetHeading">Advanced Personalized Assessment</h4>
+                                    <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                                    <hr>
+                                    <div class="AssementBlockList">
+                                        <ul>
+                                        <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>3 hours duration
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>75 questions in this assessment
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>Comprehensive assessment covering all topics
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>Full-length test designed to evaluate overall knowledge & simulate the actual exam experience
+                                            </li>
+                                            <li>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663"></path>
+                                                </svg>Personalized recommendations for improvement
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- Assesment Modal_end -->
+
+
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
@@ -1492,6 +1615,8 @@ $user_id = isset($userData->id)?$userData->id:'';
     @endif
     <!-- Mixpanel Event Ended-->
     <style>
+                .assesmentmodal .modal-dialog{max-width:960px;}
+
         .customDropdown1 {
             position: relative;
             width: 100%;
