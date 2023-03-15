@@ -8374,7 +8374,7 @@ margin-bottom: 12px;
                         font-size: 14px;    align-items: center;
                         font-weight: 500;margin-bottom: 16px;}
                     .AssementBlockList ul li svg {
-                        margin-right: 8px;
+                        margin-right: 8px;min-width: 20px;
                     }
                     .fullwidth.btn{    width: 90%;
                         position: absolute;
@@ -8479,5 +8479,12 @@ margin-bottom: 12px;
         .instructionTable{margin-bottom: 50px;}
         .instructionScroolBlock{height: 52vh;
             overflow-y: auto;}
+            .assesmentmodal .modal-dialog{max-width:960px;}
+            .assesmentmodal  .modal-content{background-color: #F5FAF6;border:0px;border-radius: 32px;}
+            .assesmentmodal  .SelectPlane_text{padding: 0px 0px 12px;}
+            .assesmentmodal   .orblock{width: 64px;min-width: 64px;}
+            .assesmentmodal  .fullwidth.btn{width:85%;}
+            
+
  /* new Css(13-03-2023)-End */
                                    
