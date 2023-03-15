@@ -165,6 +165,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="commonWhiteBox subject_performance_card">
                                 <div class="boxHeadingBlock">
+                                <a href="#resume-test" data-bs-toggle="modal" data-bs-target="#resume-test">Click me</a>
                                     <h3 class="boxheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -1614,6 +1615,56 @@ $user_id = isset($userData->id)?$userData->id:'';
 
     @endif
     <!-- Mixpanel Event Ended-->
+
+
+<div class="modal fade examModal 10" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modalcenter">
+        <div class="modal-dialog">
+            <div class="modal-content exammodal_content">
+                <div class="modal-body exam-paused-body">
+                    <div class="modal-header-exam text-center ">
+                        <div class="exam-overview ">
+                            <label>Exam Paused</label>
+                        </div>
+                    </div>
+                    <div class="exam_duration_block text-center">
+                        <img src="{{URL::asset('public/after_login/current_ui/images/exam-clockNew.svg')}}" />
+                        <label class="d-block">Remaining time in the exam</label>
+                        <span class="exam_duration d-block" id="pauseTime">03 mins</span>
+                    </div>
+                    <p class="exittext">Do you want to exit the test? </P>
+                    <p class="exittext-subheading">You can always come back and resume the test </p>
+                    <div class="exam-footer-sec">
+                        <!-- <div class="task-btn tasklistbtn text-center">
+                            <button id="bt-modal-cancel" onclick="start();" class="btn btn-common-green" data-bs-dismiss="modal"> Resume <label class="p-0">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259z" fill="#fff" />
+                                    </svg>
+                                </label>
+                            </button>
+                        </div> -->
+                    </div>
+
+                    <div id="button_width" class="exam-footer-sec width-50">
+                        <div class="task-btn tasklistbtn">
+                            <button class="btn btn-common-transparent nobg reviewbtn submitPopupBtn" data-bs-dismiss="modal" onclick="start()" id="back_to_restart">Back To test</button>
+                            <button id="bt-modal-confirm" class="btn btn-common-green green50 submitPopupBtn">Exit Test<label>
+                                <!-- <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
+                                    </svg> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                    <path d="M11.4998 18.9515C10.1574 19.1083 8.79687 18.9579 7.52111 18.5116C6.24535 18.0654 5.08775 17.3349 4.13582 16.3755C3.05866 15.2982 2.27257 13.9652 1.85118 12.5013C1.42979 11.0373 1.38688 9.49039 1.72649 8.00535C2.0661 6.52031 2.7771 5.14577 3.79289 4.0105C4.80868 2.87523 6.09602 2.01637 7.53432 1.51438C8.97261 1.0124 10.5148 0.883716 12.0164 1.14039C13.518 1.39706 14.9299 2.03068 16.1198 2.98191C17.3097 3.93313 18.2386 5.17082 18.8197 6.57905C19.4007 7.98727 19.6148 9.51993 19.4418 11.0335" stroke="#F2F4F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.5 5.01123V10.0112L12.5 12.0112M15.5 15.0112V20.0112M19.5 15.0112V20.0112" stroke="#F2F4F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <style>
                 .assesmentmodal .modal-dialog{max-width:960px;}
 
