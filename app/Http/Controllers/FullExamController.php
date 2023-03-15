@@ -41,6 +41,7 @@ class FullExamController extends Controller
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
+            $exam_name_new = $exam_name;
 
             // Mixpanel Started
                 
@@ -87,7 +88,7 @@ class FullExamController extends Controller
                 Redis::del(Redis::keys('custom_answer_time_full' . $user_id . '_' . $ranSession));
             }
 
-            if ($exam_name == 'full_exam') {
+            if ($exam_name == 'full_exam_basic' || $exam_name == 'full_exam_advance') {
                 $exam_name = 'Personalized Assessment';
             } else {
                 $exam_name = 'Mock Test';
@@ -96,9 +97,6 @@ class FullExamController extends Controller
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
-
-                // $curl_url = $api_URL . 'api/profiling-test-web/' . $exam_id; //old api url 
-
                 $curl_url = $api_URL . 'api/profiling-test-web-class-based/' . $exam_id . '/' . $user_id;
 
                 $curl_option = array(
@@ -235,10 +233,16 @@ class FullExamController extends Controller
 
                 $examType = 'full_body_scan';
                 $instructions = $this->getInstructions($examType);
+                if ($exam_name_new == 'full_exam_basic' || $exam_name_new == 'full_exam_advance') {
+                    return view('afterlogin.ExamViews.full_exam_instrucions', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type','exam_name_new'));
 
+                } else
+                {
+                    return view('afterlogin.ExamViews.examsInstrucions', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
+    
+                }
 
-                return view('afterlogin.ExamViews.examsInstrucions', compact('instructions', 'ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
-
+                
 
                 // return view('afterlogin.ExamViews.exam_instructions', compact('ranSession', 'filtered_subject', 'exam_url', 'exam_name', 'questions_count', 'tagrets', 'exam_fulltime', 'total_marks', 'exam_title', 'subCounts', 'test_type'));
             } else {
