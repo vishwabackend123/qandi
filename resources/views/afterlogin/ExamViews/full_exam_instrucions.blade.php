@@ -236,4 +236,47 @@ $grade='NA';
         </div>
     </div>
 </section>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#email_success').hide();
+    $('.toastdata').hide();
+    $('.progress').hide();
+    $('.resend_email').click(function() {
+        var user_id = '<?php echo $user_id; ?>';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: "{{ url('send_verfication_email') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                userId: user_id,
+            },
+            success: function(response_data) {
+                $('.toastdata').show();
+                $('.progress').show();
+                $('.toastdata').addClass('active');
+                $('.progress').addClass('active');
+                $('.error_header').text("Email Verification Link Sent");
+                if (response_data.status === true) {
+                    $('.error_toast').text("A verification link has been sent, please click the link to get your account verified.");
+                } else {
+                    $('.error_toast').text(response_data.message);
+                }
+                setTimeout(function() {
+                    $(".toastdata").removeClass('active');
+                    $(".progress").removeClass('active');
+                    $('.toastdata').hide();
+                    $('.progress').hide();
+                }, 10000);
+
+            },
+        });
+    });
+});
+
+</script>
 @endsection
