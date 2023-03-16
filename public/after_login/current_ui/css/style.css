@@ -8306,7 +8306,7 @@ margin-bottom: 12px;
     text-align: center;
     color: #666666;border:0px;border-left:1px solid #d0d5dd;}
     .performanceInputWrapper .custom-input{margin-bottom: 40px;}
-    .performanceInputWrapper .input-field {max-width: 287px;    position: relative;}
+    .performanceInputWrapper .input-field {max-width: 287px;    position: relative;min-width: 287px;width: 100%;}
     .performanceInputWrapper .input-field.inputerror input.form-control{border-color: #F8BDB8!important;}
     .scoreError{font-weight: 500;
         font-size: 14px;
