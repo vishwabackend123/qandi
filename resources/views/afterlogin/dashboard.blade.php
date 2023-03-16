@@ -156,7 +156,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">Lets get started!</h6>
                                     <p class="dashSubtext">To begin your journey, attempt 'Personalized Assessment'</p>
-                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="#Assesmentmodal" data-bs-toggle="modal" data-bs-target="#Assesmentmodal" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
@@ -237,7 +237,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </svg>
                                         </div>
                                         <p class="emptytext">Curious about your subject-wise performance? Attempt <strong>'Personalized Assessment'</strong></p>
-                                        <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
+                                        <a href="#Assesmentmodal" data-bs-toggle="modal" data-bs-target="#Assesmentmodal" class="btn btn-common-transparent nobg">Attempt Now</a>
                                     </div>
                                 </div>
                                 @endif
