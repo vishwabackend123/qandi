@@ -72,7 +72,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
                         <div class="input-field">
-                            <input type="text" class="form-control rating_input" placeholder="Type here" onblur="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
+                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
                             </div>
@@ -358,7 +358,7 @@ function store_rating() {
 function checkValidRating(valueData, subject) {
     checkValueOrNot();
     if (valueData) {
-        if (valueData > 100) {
+        if (Number(valueData) > 100) {
             $('#error_' + subject).show();
             $('#store_rating').attr('disabled', true);
         } else {
@@ -376,7 +376,15 @@ function checkValueOrNot() {
     $(".rating_input").each(function() {
         var valu = $(this).val();
         if (valu) {
-            isBool = true;
+            if(Number(valu) <= 100)
+            {
+                isBool = true; 
+            }else
+            {
+                isBool=false;
+                return false
+            }
+            
         }
     });
     if (isBool) {
