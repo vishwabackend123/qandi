@@ -175,7 +175,7 @@ $grade='NA';
                                 @if($user_exam_id == '1')
                                 <b>2. <span>Subject-Specific Instructions (Physics/ Chemistry/Mathematics)</span></b>
                                 @else
-                                <b>2. <span>Subject-Specific Instructions (Physics/Chemistry/Biology/Zoology)</span></b>
+                                <b>2. <span>Subject-Specific Instructions (Physics/Chemistry/Botony/Zoology)</span></b>
                                 @endif
                             </div>
                             <div class="instLine"></div>
