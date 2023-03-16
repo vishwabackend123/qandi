@@ -8,54 +8,6 @@ $lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id
 $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
 <?php $redis_data = Session::get('redis_data'); ?>
-<!-- Mixpanel Started -->
-<script type="text/javascript">
-(function(f, b) {
-    if (!b.__SV) {
-        var e, g, i, h;
-        window.mixpanel = b;
-        b._i = [];
-        b.init = function(e, f, c) {
-            function g(a, d) { var b = d.split(".");
-                2 == b.length && (a = a[b[0]], d = b[1]);
-                a[d] = function() { a.push([d].concat(Array.prototype.slice.call(arguments, 0))) } }
-            var a = b;
-            "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel";
-            a.people = a.people || [];
-            a.toString = function(a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c);
-                a || (d += " (stub)"); return d };
-            a.people.toString = function() { return a.toString(1) + ".people (stub)" };
-            i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-            for (h = 0; h < i.length; h++) g(a, i[h]);
-            var j = "set set_once union unset remove delete".split(" ");
-            a.get_group = function() {
-                function b(c) { d[c] = function() { call2_args = arguments;
-                        call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
-                        a.push([e, call2]) } } for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d };
-            b._i.push([e, f, c])
-        };
-        b.__SV = 1.2;
-        e = f.createElement("script");
-        e.type = "text/javascript";
-        e.async = !0;
-        e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
-            MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
-        g = f.getElementsByTagName("script")[0];
-        g.parentNode.insertBefore(e, g)
-    }
-})(document, window.mixpanel || []);
-
-// Enabling the debug mode flag is useful during implementation,
-// but it's recommended you remove it for production
-
-var mixpanelid = "{{$redis_data['MIXPANEL_KEY']}}";
-mixpanel.init(mixpanelid);
-mixpanel.track('Loaded Self Analysis ', {
-    "$city": '<?php echo $userData->city; ?>',
-});
-
-</script>
-<!-- Mixpanel Event Ended -->
 <div class="wihoutlogintoast">
     <div class="toastdata">
         <div class="toast-content">
@@ -115,12 +67,12 @@ mixpanel.track('Loaded Self Analysis ', {
                 <div class="performanceInputWrapper">
                     @foreach($user_subjects as $subject_proficiency)
                     @php
-                    $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
+                    $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:'';
                     @endphp
                     <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
                         <div class="input-field">
-                            <input type="text" class="form-control rating_input" placeholder="Type here" onblur="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}">
+                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
                             </div>
@@ -130,68 +82,6 @@ mixpanel.track('Loaded Self Analysis ', {
                     @endforeach
                 </div>
             </div>
-            <!-- @foreach($user_subjects as $subject_proficiency)
-            @php
-            $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
-
-            @endphp
-
-            <div class="subject-level-proficiency mb-5">
-                <h5>{{$subject_proficiency->subject_name}}</h5>
-                <ul class="proficiency-level-lists d-flex justify-content-beween flex-wrap">
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==1) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="1" id="user_pro_level_{{$subject_proficiency->id}}_1" onclick="selectProficiencyLevel({{$subject_proficiency->id}},1)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Beginner</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==2) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="2" id="user_pro_level_{{$subject_proficiency->id}}_2" onclick="selectProficiencyLevel({{$subject_proficiency->id}},2)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Foundation</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==3) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="3" id="user_pro_level_{{$subject_proficiency->id}}_3" onclick="selectProficiencyLevel({{$subject_proficiency->id}},3)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Intermediate</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==4) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="4" id="user_pro_level_{{$subject_proficiency->id}}_4" onclick="selectProficiencyLevel({{$subject_proficiency->id}},4)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Proficient</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==5) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="5" id="user_pro_level_{{$subject_proficiency->id}}_5" onclick="selectProficiencyLevel({{$subject_proficiency->id}},5)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                        </span>
-                        <label class="mb-0">Expert</label>
-                    </li>
-                </ul>
-            </div>
-            @endforeach -->
             <div class=" mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
                     @if (!Session::has('lead_trail_status'))
@@ -392,44 +282,9 @@ function store_rating() {
             }
 
             if (response.success == true) {
+                window.location.href = '{{url("performance_analytics")}}';
+            }
 
-                 //Mixpanel Started 
-                 mixpanel.identify(response.response.user_data.id);
-                 mixpanel.people.set({
-                     "$city": response.response.user_data.city,
-                     "$name": response.response.user_data.user_name,
-                     "State": response.response.user_data.state,
-                     "$phone": response.response.user_data.mobile,
-                     "$email": response.response.user_data.email,
-                     "Email Verified": response.response.user_data.email_verified,
-                     "Course": course,
-                     "Mathematics Proficiency": MathProficiency,
-                     "Physics Proficiency": PhysicsProficiency,
-                     "Chemistry Proficiency": ChemistryProficiency,
-                     "Botany Proficiency": BotanyProficiency,
-                     "Zoology Proficiency": ZoologyProficiency,
-                 });
-
-
-                 mixpanel.track("Self Analysis  Captured", {
-                     "$city": response.response.user_data.city,
-                     "$name": response.response.user_data.user_name,
-                     "State": response.response.user_data.state,
-                     "$phone": response.response.user_data.mobile,
-                     "$email": response.response.user_data.email,
-                     "Email Verified": response.response.user_data.email_verified,
-                     "Course": course,
-                     "Mathematics Proficiency": MathProficiency,
-                     "Physics Proficiency": PhysicsProficiency,
-                     "Chemistry Proficiency": ChemistryProficiency,
-                     "Botany Proficiency": BotanyProficiency,
-                     "Zoology Proficiency": ZoologyProficiency,
-                 });
-
-                 //Mixpanel Event Ended
-                 window.location.href = '{{url("performance_analytics")}}';
-             }
-             
 
         },
         error: function(xhr, b, c) {
@@ -441,29 +296,51 @@ function store_rating() {
 function checkValidRating(valueData, subject) {
     checkValueOrNot();
     if (valueData) {
-        if (valueData > 100) {
+        if (Number(valueData) > 100) {
             $('#error_' + subject).show();
             $('#store_rating').attr('disabled', true);
+            $('#store_rating').addClass("disabled");
         } else {
             $('#error_' + subject).hide();
         }
 
     }
 }
+$('.rating_input').keyup(function() {
+    checkValueOrNot();
+});
 
 function checkValueOrNot() {
     var isBool = false;
     $(".rating_input").each(function() {
         var valu = $(this).val();
         if (valu) {
-            isBool = true;
+            if(Number(valu) <= 100)
+            {
+                isBool = true; 
+            }else
+            {
+                isBool=false;
+                return false
+            }
+            
         }
     });
     if (isBool) {
         $('#store_rating').removeAttr("disabled");
+        $('#store_rating').removeClass("disabled");
     } else {
         $('#store_rating').attr('disabled', true);
     }
+}
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
 }
 
 </script>

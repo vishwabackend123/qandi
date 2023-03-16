@@ -448,14 +448,40 @@ class HomeController extends Controller
                 $rating = $storeddata;
 
                 $request_rating = ['student_id' => (int)$user_id, 'subjects_rating' => json_encode($rating),];
-                //$request_rating = ['student_id' => (int)$user_id, 'proficiency_at_signup' => json_encode($rating),];
-
                 $request_json = json_encode($request_rating);
 
                 $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/subject-rating';
                 //$curl_url = $api_URL . 'api/proficiency-at-signUp';
 
+                $curl = curl_init();
+                $curl_option = array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => $request_json,
+                    CURLOPT_HTTPHEADER => array(
+                        "accept: application/json",
+                        "content-type: application/json",
+                        "Authorization: Bearer " . $this->getAccessToken()
+                    ),
+                );
+                curl_setopt_array($curl, $curl_option);
+                $response_json = curl_exec($curl);
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+                
+                $request_rating_pr = ['student_id' => (int)$user_id, 'proficiency_at_signup' => json_encode($rating),];
+
+                $request_json = json_encode($request_rating_pr);
+                $curl_url = $api_URL . 'api/proficiency-at-signUp';
                 $curl = curl_init();
                 $curl_option = array(
                     CURLOPT_URL => $curl_url,

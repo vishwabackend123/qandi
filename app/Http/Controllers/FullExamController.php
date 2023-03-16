@@ -87,10 +87,12 @@ class FullExamController extends Controller
             if (Redis::exists('custom_answer_time_full' . $user_id . '_' . $ranSession)) {
                 Redis::del(Redis::keys('custom_answer_time_full' . $user_id . '_' . $ranSession));
             }
-
-            if ($exam_name == 'full_exam_basic' || $exam_name == 'full_exam_advance') {
-                $exam_name = 'Personalized Assessment';
-            } else {
+            if ($exam_name == 'full_exam_basic') {
+                $exam_name = 'Quick Personalized Assessment';
+            } else if ($exam_name == 'full_exam_advance'){
+                $exam_name = 'Detailed Personalized Assessment';
+            } 
+            else {
                 $exam_name = 'Mock Test';
             }
             if (isset($inst) && $inst === 'instruction') {
@@ -187,8 +189,13 @@ class FullExamController extends Controller
 
                 // Push Value in Redis
                 $Redis = Redis::set('custom_answer_time_full' . $user_id . '_' . $ranSession, json_encode($redis_data));
+                if ($exam_name_new == 'full_exam_basic' || $exam_name_new == 'full_exam_advance') {
+                  $exam_url = route('exam', [$exam_name_new]);
+                }else
+                {
+                    $exam_url = route('exam', ['full_exam']);    
+                }
                 
-                $exam_url = route('exam', ['full_exam']);
 
                 $exam_title = "Personalized Assessment";
                 $test_type = 'Profiling';
