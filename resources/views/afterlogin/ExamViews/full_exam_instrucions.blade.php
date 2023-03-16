@@ -94,7 +94,7 @@ $grade='NA';
                     @if($user_exam_id == '1')
                     <h6 class="assismetSubHeading">Mathematics, Physics &amp; Chemistry</h6>
                     @else
-                    <h6 class="assismetSubHeading">Physics, Chemistry, Biology &amp; Zoology</h6>
+                    <h6 class="assismetSubHeading">Physics, Chemistry, Botany &amp; Zoology</h6>
                     @endif
                     <div class="TimeblockAssisment">
                         <div class="questionAss">
