@@ -165,7 +165,6 @@ $user_id = isset($userData->id)?$userData->id:'';
                             </div>
                             <div class="commonWhiteBox subject_performance_card">
                                 <div class="boxHeadingBlock">
-                                <a href="#resume-test" data-bs-toggle="modal" data-bs-target="#resume-test">Click me</a>
                                     <h3 class="boxheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
