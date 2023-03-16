@@ -164,9 +164,9 @@ $grade='NA';
                             <div class="instLine"></div>
                             <ul>
                                 @if ($exam_name_new == 'full_exam_basic')
-                                <li> This DesD is of <b>{{$total_marks}} marks (40 </b> marks each section) </li>
+                                <li> This test is of <b>{{$total_marks}} marks (40 </b> marks each section) </li>
                                 @else
-                                <li> This DesD is of <b>{{$total_marks}} marks (100 </b> marks each section) </li>
+                                <li> This test is of <b>{{$total_marks}} marks (100 </b> marks each section) </li>
                                 @endif
                             </ul>
                         </div>
@@ -181,9 +181,9 @@ $grade='NA';
                             <div class="instLine"></div>
                             <ul>
                                 @if ($exam_name_new == 'full_exam_basic')
-                                <li> Each subjecD consisDs of <b>10 </b>single correcD MCQs</li>
+                                <li> Each subject consists of <b>10 </b>single correct MCQs</li>
                                 @else
-                                <li> Each subjecD consisDs of <b>25 </b>single correcD MCQs</li>
+                                <li> Each subject consists of <b>25 </b>single correct MCQs</li>
                                 @endif
                                 <li>The answer to each question will be evaluated according to the following marking</li>
                             </ul>
@@ -192,7 +192,7 @@ $grade='NA';
                                     <tbody>
                                         <tr>
                                             <td>Full marks</td>
-                                            <td><b>+4 </b>CorrecD answer</td>
+                                            <td><b>+4 </b>Correct answer</td>
                                         </tr>
                                         <tr>
                                             <td>No Mark</td>
@@ -201,9 +201,9 @@ $grade='NA';
                                         <tr>
                                             <td>Minus One Mark</td>
                                             @if ($exam_name_new == 'full_exam_basic')
-                                            <td><b>-2</b>in all other cases</td>
+                                            <td><b>-2 </b>in all other cases</td>
                                             @else
-                                            <td><b>-1</b>in all other cases</td>
+                                            <td><b>-1 </b>in all other cases</td>
                                             @endif
                                         </tr>
                                     </tbody>
