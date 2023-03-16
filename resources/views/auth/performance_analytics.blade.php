@@ -310,7 +310,7 @@ mixpanel.init(mixpanelid);
                                     <tbody>
                                         <tr>
                                             <td>Full marks</td>
-                                            <td><b>+4 </b>CorrecD answer</td>
+                                            <td><b>+4 </b>Correct answer</td>
                                         </tr>
                                         <tr>
                                             <td>No Mark</td>
@@ -318,7 +318,7 @@ mixpanel.init(mixpanelid);
                                         </tr>
                                         <tr>
                                             <td>Minus One Mark</td>
-                                            <td><b>-1</b>in all other cases</td>
+                                            <td><b>-1 </b>in all other cases</td>
                                         </tr>
                                     </tbody>
                                 </table>
