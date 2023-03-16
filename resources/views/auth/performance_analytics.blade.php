@@ -90,7 +90,7 @@ mixpanel.init(mixpanelid);
                     <div>Personalized Preparation Assessment <span class="badge badge-light">{{$grade}}</span></div>
                     <span class="pagecount hideondesktop"><span class="activePage">3</span>/3</span>
                 </h3>
-                <p>To assess your preparedness, this will also help us to generate daily and weekly tasks for you, based on your proficiency levels.</p>
+                <p class="setwidth">To assess your preparedness, this will also help us to generate daily and weekly tasks for you, based on your proficiency levels.</p>
             </div>
             <div class="verificationBox mt-0 desktop_hide_performence_analytics">
                 <p>A verification link has been sent to<b> {{$userData->email}}</b>, please click the link to get your account verified.</p>
