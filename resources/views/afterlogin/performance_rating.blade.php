@@ -82,68 +82,6 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     @endforeach
                 </div>
             </div>
-            <!-- @foreach($user_subjects as $subject_proficiency)
-            @php
-            $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
-
-            @endphp
-
-            <div class="subject-level-proficiency mb-5">
-                <h5>{{$subject_proficiency->subject_name}}</h5>
-                <ul class="proficiency-level-lists d-flex justify-content-beween flex-wrap">
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==1) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="1" id="user_pro_level_{{$subject_proficiency->id}}_1" onclick="selectProficiencyLevel({{$subject_proficiency->id}},1)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Beginner</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==2) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="2" id="user_pro_level_{{$subject_proficiency->id}}_2" onclick="selectProficiencyLevel({{$subject_proficiency->id}},2)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Foundation</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==3) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="3" id="user_pro_level_{{$subject_proficiency->id}}_3" onclick="selectProficiencyLevel({{$subject_proficiency->id}},3)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Intermediate</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==4) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="4" id="user_pro_level_{{$subject_proficiency->id}}_4" onclick="selectProficiencyLevel({{$subject_proficiency->id}},4)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b></b>
-                        </span>
-                        <label class="mb-0">Proficient</label>
-                    </li>
-                    <li class="user-proficiency-level subject_{{$subject_proficiency->id}} @if($sub_sel_rating==5) selected-level @endif" data-id="{{$subject_proficiency->id}}" data-value="5" id="user_pro_level_{{$subject_proficiency->id}}_5" onclick="selectProficiencyLevel({{$subject_proficiency->id}},5)">
-                        <span class="mr-3">
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                        </span>
-                        <label class="mb-0">Expert</label>
-                    </li>
-                </ul>
-            </div>
-            @endforeach -->
             <div class=" mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
                     @if (!Session::has('lead_trail_status'))
@@ -361,6 +299,7 @@ function checkValidRating(valueData, subject) {
         if (Number(valueData) > 100) {
             $('#error_' + subject).show();
             $('#store_rating').attr('disabled', true);
+            $('#store_rating').addClass("disabled");
         } else {
             $('#error_' + subject).hide();
         }
@@ -389,6 +328,7 @@ function checkValueOrNot() {
     });
     if (isBool) {
         $('#store_rating').removeAttr("disabled");
+        $('#store_rating').removeClass("disabled");
     } else {
         $('#store_rating').attr('disabled', true);
     }
