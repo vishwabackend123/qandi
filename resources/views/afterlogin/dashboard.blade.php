@@ -2,7 +2,7 @@
 @php
 $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
-
+$user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 @endphp
 
 <script>
@@ -1087,7 +1087,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                             <div class="AssiementNewRow">
                                 <div class="AssesmentWhitePannel">
                                     <h4 class="assismetHeading">Quick Personalized Assessment</h4>
+                                    @if($user_exam_id == '1')
                                     <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                                    @else
+                                    <h6 class="assismetSubHeading">Physics, Chemistry, Botany & Zoology</h6>
+                                    @endif
                                     <hr>
                                     <div class="AssementBlockList">
                                         <ul>
@@ -1136,7 +1140,11 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="AssesmentWhitePannel">
                                     <span class="recomondFloat">Recommended</span>
                                 <h4 class="assismetHeading">Detailed Personalized Assessment</h4>
+                                    @if($user_exam_id == '1')
                                     <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
+                                    @else
+                                    <h6 class="assismetSubHeading">Physics, Chemistry, Botany & Zoology</h6>
+                                    @endif
                                     <hr>
                                     <div class="AssementBlockList">
                                         <ul>
