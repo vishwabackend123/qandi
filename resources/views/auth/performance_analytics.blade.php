@@ -188,9 +188,7 @@ mixpanel.init(mixpanelid);
                         <a href="{{route('exam',['full_exam_advance','instruction'])}}" class="btn btn-common-green fullwidth"> Take Test</a>
                     </div>
                 </div>
-                
-            </div>
-            <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+                <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                     <div class="backBtn pt-0 mr-2">
                         <a href="{{ url('performance-rating') }}">
                             <span>
@@ -203,6 +201,7 @@ mixpanel.init(mixpanelid);
                     </div>
                     <a class="btn btn-common-transparent no-border" href="{{url('/dashboard')}}">Skip to Dashboard</a>
                 </div>
+            </div>
         </div>
         <div class="fullbody_scan_wrapper" style="display:none">
             <div class="mt-5 d-flex justify-content-between align-items-center pb-5">
@@ -294,7 +293,7 @@ mixpanel.init(mixpanelid);
                             </div>
                             <div class="instLine"></div>
                             <ul>
-                                <li> This DesD is of <b>300 marks (100 </b> marks each section) </li>
+                                <li> This test is of <b>300 marks (100 </b> marks each section) </li>
                             </ul>
                         </div>
                         <div class="commonInstructionList">
@@ -303,7 +302,7 @@ mixpanel.init(mixpanelid);
                             </div>
                             <div class="instLine"></div>
                             <ul>
-                                <li> Each subjecD consisDs of <b>25 </b>single correcD MCQs</li>
+                                <li> Each subject consists of <b>25 </b>single correct MCQs</li>
                                 <li>The answer to each question will be evaluated according to the following marking</li>
                             </ul>
                             <div class="instructionTable">
