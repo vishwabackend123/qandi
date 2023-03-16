@@ -105,10 +105,10 @@ mixpanel.track('Loaded Self Analysis ', {
     <div class="selectPlan subscriptionsRightpannel">
         <span class="mobile_block"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></span>
         <div class="SelectPlane_text">
-            <h3 class="pageCountBox">Provide your past school/board scores
+            <h3 class="pageCountBox">Help us get to know you
                 <span class="pagecount hideondesktop"><span class="activePage">2</span>/3</span>
             </h3>
-            <p>To help you better prepare, please provide your past school/board scores for the following subjects.</p>
+            <p>Provide your latest school/board exam scores.</p>
         </div>
         <div class="performance_rating_wrapper">
             <div class="performanceNewWrapper">

@@ -87,9 +87,9 @@ $grade='NA';
                 <div class="fullbody_scan_card">
                     <span class="badge badge-light Subjectbadge mb-4">{{$grade}}</span>
                     @if ($exam_name_new == 'full_exam_basic')
-                    <h4 class="assismetHeading w-100">Basic Personalized Assessment</h4>
+                    <h4 class="assismetHeading w-100">Quick Personalized Assessment</h4>
                     @else
-                    <h4 class="assismetHeading w-100">Advance Personalized Assessment</h4>
+                    <h4 class="assismetHeading w-100">Detailed Personalized Assessment</h4>
                     @endif
                     @if($user_exam_id == '1')
                     <h6 class="assismetSubHeading">Mathematics, Physics &amp; Chemistry</h6>
@@ -121,7 +121,7 @@ $grade='NA';
                 <div class="fullbody_scan_test text-center position-relative">
                     <!-- <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.svg')}}"></span>
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.svg')}}"></span> -->
-                    <span class="greenball-1">
+                    <!-- <span class="greenball-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
                             <circle cx="14.9725" cy="13.9891" r="13.9891" fill="#52AC5F" />
                         </svg>
@@ -135,7 +135,7 @@ $grade='NA';
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                             <circle cx="8.53024" cy="8.61739" r="7.86886" fill="#52AC5F" />
                         </svg>
-                    </span>
+                    </span> -->
                     <img src="{{URL::asset('public/after_login/current_ui/images/note2.svg')}}" style="width: 72px;height: 78px;">
                     <h4>All the Best {{ucwords($userData->user_name)}}!</h3>
                         <!-- <p class="my-3">to assess your preparation. Take your first step to improvement.</p> -->

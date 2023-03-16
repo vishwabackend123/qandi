@@ -1083,7 +1083,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                         <div class="personalAssesmentNewBlock">
                             <div class="AssiementNewRow">
                                 <div class="AssesmentWhitePannel">
-                                    <h4 class="assismetHeading">Basic Personalized Assessment</h4>
+                                    <h4 class="assismetHeading">Quick Personalized Assessment</h4>
                                     <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
                                     <hr>
                                     <div class="AssementBlockList">
@@ -1132,7 +1132,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 </div>
                                 <div class="AssesmentWhitePannel">
                                     <span class="recomondFloat">Recommended</span>
-                                <h4 class="assismetHeading">Advanced Personalized Assessment</h4>
+                                <h4 class="assismetHeading">Detailed Personalized Assessment</h4>
                                     <h6 class="assismetSubHeading">Mathematics, Physics & Chemistry</h6>
                                     <hr>
                                     <div class="AssementBlockList">
