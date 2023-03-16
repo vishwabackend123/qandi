@@ -272,7 +272,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                 <div class="leftBox">
                                     <h4>Personalized Assessment</h4>
                                     <p> to assess your preparation. Take your first step to improvement.</p>
-                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a>
+                                    <a href="#Assesmentmodal" data-bs-toggle="modal" data-bs-target="#Assesmentmodal" class="btn btn-common-white">Attempt Now</a>
+                                    <!--a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-white">Attempt Now</a-->
                                 </div>
                                 <div class="rightImgBox">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="107" height="105" viewBox="0 0 107 105" fill="none">
@@ -599,7 +600,8 @@ $user_id = isset($userData->id)?$userData->id:'';
                                         </svg>
                                     </div>
                                     <p class="emptytext">Attempt <strong>'Personalized Assessment'</strong> to learn about your strengths and weaknesses. </p>
-                                    <a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a>
+                                    <!--a href="{{route('exam',['full_exam','instruction'])}}" class="btn btn-common-transparent nobg">Attempt Now</a-->
+                                    <a href="#Assesmentmodal" data-bs-toggle="modal" data-bs-target="#Assesmentmodal" class="btn btn-common-transparent nobg">Attempt Now</a>
                                 </div>
                             </div>
                             @endif
@@ -1123,7 +1125,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </li>
                                         </ul>
                                     </div>
-                                    <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                                    <a href="{{route('exam',['full_exam_basic','instruction'])}}" class="btn btn-common-green fullwidth"> Take Test</a>
                                 </div>
                                 <div class="orblock">
                                     <span>OR</span>
@@ -1167,7 +1169,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                             </li>
                                         </ul>
                                     </div>
-                                    <button type="submit" class="btn btn-common-green fullwidth"> Take Test</button>
+                                    <a href="{{route('exam',['full_exam_advance','instruction'])}}" class="btn btn-common-green fullwidth"> Take Test</a>
                                 </div>
                             </div>
                         </div>
@@ -1647,7 +1649,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                     <div id="button_width" class="exam-footer-sec width-50">
                         <div class="task-btn tasklistbtn">
                             <button class="btn btn-common-transparent nobg reviewbtn submitPopupBtn" data-bs-dismiss="modal" onclick="start()" id="back_to_restart">Back To test</button>
-                            <button id="bt-modal-confirm" class="btn btn-common-green green50 submitPopupBtn">Exit Test<label>
+                            <a href="{{url('/dashboard')}}" id="bt-modal-confirm" class="btn btn-common-green green50 submitPopupBtn">Exit Test<label>
                                 <!-- <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff" />
                                     </svg> -->
@@ -1656,7 +1658,7 @@ $user_id = isset($userData->id)?$userData->id:'';
                                     <path d="M10.5 5.01123V10.0112L12.5 12.0112M15.5 15.0112V20.0112M19.5 15.0112V20.0112" stroke="#F2F4F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </label>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

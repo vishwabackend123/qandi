@@ -139,7 +139,7 @@ $grade='NA';
                     <img src="{{URL::asset('public/after_login/current_ui/images/note2.svg')}}" style="width: 72px;height: 78px;">
                     <h4>All the Best {{ucwords($userData->user_name)}}!</h3>
                         <!-- <p class="my-3">to assess your preparation. Take your first step to improvement.</p> -->
-                        @if($full_body_attempt =="Y")
+                         @if($full_body_attempt =="Y")
                         <a class="btn btn-common-white disabled" href="javescript:void(0);">Attempted</a>
                         @else
                          <form class="form-horizontal ms-auto " action="{{$exam_url}}" method="post">
