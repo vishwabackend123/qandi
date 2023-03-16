@@ -35,6 +35,9 @@
         .AssementBlockList ul li svg {
             margin-top: 6px;
         }
+        #Assesmentmodal .AssementBlockList ul li svg {
+            margin-top: 2px;
+        }
 }
 @media only screen and (max-width: 1366px) { 
     .recomondFloat{left: 20px;}
