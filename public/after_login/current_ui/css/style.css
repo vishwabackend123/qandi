@@ -8489,6 +8489,8 @@ margin-bottom: 12px;
             .assesmentmodal  .fullwidth.btn{width:85%;}
           .personalAssesmentNewBlock .btn-common-transparent.no-border {padding:0px} 
            .setwidth{max-width: 743px;}
+          #Assesmentmodal .AssementBlockList ul li svg{margin-top: 8px;}
+          .assesmentmodal .SelectPlane_text{margin-top: -10px;}
  /* new Css(13-03-2023)-End */
 
  /*Sachin New Css(13-03-2023)-Start for Exam Paused Popup*/

@@ -1068,7 +1068,10 @@ $user_id = isset($userData->id)?$userData->id:'';
             <div class="modalcenter">
                 <div class="modal-content strengthmodal_content">
                     <div class="modal-header1">
-                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                        <a href="javascript:;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M18 6.51123L6 18.5112" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 6.51123L18 18.5112" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></a>
                     </div>
                     <div class="modal-body">
                     <div class="AssementTestBlock">

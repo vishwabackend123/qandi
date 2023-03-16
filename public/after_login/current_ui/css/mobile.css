@@ -37,6 +37,7 @@
         }
 }
 @media only screen and (max-width: 1366px) { 
+    .recomondFloat{left: 20px;}
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
     .commonWhiteBox{padding:30px 20px}
     .boxheading {font-size: 20px;}
