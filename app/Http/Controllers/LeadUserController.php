@@ -69,9 +69,7 @@ class LeadUserController extends Controller
 		}
 		$subjects_name = implode(', ', $subjects);
 		if (isset($prof_asst_test) && $prof_asst_test == 'Y') {
-			// return redirect()->route('dashboard');
-			return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
-
+			return redirect()->route('dashboard');
 		} else {
 			return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
 		}

@@ -8292,6 +8292,7 @@ margin-bottom: 12px;
 }
 
 /* new Css(13-03-2023) */
+.subscriptionNew .selectPlan{padding-bottom: 40px;}
 .performanceNewWrapper .custom-input input.form-control{font-weight: 600;}
 .performanceNewWrapper{height: 66vh;display: flex;align-items: center;}
 .performanceInputWrapper .input-group-text{background:transparent;
@@ -8372,10 +8373,11 @@ margin-bottom: 12px;
                     .AssementBlockList li{display: flex;line-height: 2.5;
                         text-align: left;
                         color: #363c4f;
-                        font-size: 14px;    align-items: center;
+                        font-size: 14px;
                         font-weight: 500;margin-bottom: 16px;}
                     .AssementBlockList ul li svg {
                         margin-right: 8px;min-width: 20px;
+                        margin-top: 10px;
                     }
                     .fullwidth.btn{    width: 90%;
                         position: absolute;
@@ -8485,7 +8487,7 @@ margin-bottom: 12px;
             .assesmentmodal  .SelectPlane_text{padding: 0px 0px 12px;}
             .assesmentmodal   .orblock{width: 64px;min-width: 64px;}
             .assesmentmodal  .fullwidth.btn{width:85%;}
-            
+          .personalAssesmentNewBlock .btn-common-transparent.no-border {padding:0px} 
 
  /* new Css(13-03-2023)-End */
 
