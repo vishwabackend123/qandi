@@ -62,7 +62,7 @@ mixpanel.track('Loaded Select Plan',{
                         <p class="progress__info">Rate your level of proficiency</p>
                     </li>
                     <li class="progress__item ">
-                        <p class="progress__title">Personalized Assessment</p>
+                        <p class="progress__title">Personal Assessment Test</p>
                         <p class="progress__info">To assess your preparedness</p>
                     </li>
                     @endif

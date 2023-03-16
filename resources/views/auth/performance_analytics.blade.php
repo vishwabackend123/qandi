@@ -68,7 +68,7 @@ mixpanel.init(mixpanelid);
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item   progress__item--active">
-                    <p class="progress__title">Personalized Assessment</p>
+                    <p class="progress__title">Personal Assessment Test</p>
                     <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
