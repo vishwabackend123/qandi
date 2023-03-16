@@ -52,7 +52,7 @@ mixpanel.init(mixpanelid);
         <div class="progress"></div>
     </div>
 </div>
-<section class="subscriptionsPage d-flex fullbody_scan_page">
+<section class="subscriptionsPage d-flex fullbody_scan_page subscriptionNew">
     <div class="subscriptionsLeftpannel">
         <a href="{{env('CMS_URL')}}" target="_blank"><img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
         <div class="progress-box">
@@ -188,7 +188,9 @@ mixpanel.init(mixpanelid);
                         <a href="{{route('exam',['full_exam_advance','instruction'])}}" class="btn btn-common-green fullwidth"> Take Test</a>
                     </div>
                 </div>
-                <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+                
+            </div>
+            <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
                     <div class="backBtn pt-0 mr-2">
                         <a href="{{ url('performance-rating') }}">
                             <span>
@@ -201,7 +203,6 @@ mixpanel.init(mixpanelid);
                     </div>
                     <a class="btn btn-common-transparent no-border" href="{{url('/dashboard')}}">Skip to Dashboard</a>
                 </div>
-            </div>
         </div>
         <div class="fullbody_scan_wrapper" style="display:none">
             <div class="mt-5 d-flex justify-content-between align-items-center pb-5">

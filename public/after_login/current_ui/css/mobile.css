@@ -31,6 +31,10 @@
         .performanceInputWrapper .custom-input{margin-bottom:25px;}
         .mt1400-2{margin-top:20px !important;}
         .fullwidth.btn{width: 83%;    min-width: auto;}
+        .AssementBlockList li{line-height: 1.8;}
+        .AssementBlockList ul li svg {
+            margin-top: 6px;
+        }
 }
 @media only screen and (max-width: 1366px) { 
     .commonblockDash.myqTodayPannel .commonWhiteBox {top:-21px}
