@@ -71,7 +71,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     @endphp
                     <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
-                        <div class="input-field">
+                        <div class="input-field" id="input_{{$subject_proficiency->subject_name}}">
                             <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
@@ -298,10 +298,12 @@ function checkValidRating(valueData, subject) {
     if (valueData) {
         if (Number(valueData) > 100) {
             $('#error_' + subject).show();
+            $('#input_' + subject).addClass('inputerror');
             $('#store_rating').attr('disabled', true);
             $('#store_rating').addClass("disabled");
         } else {
             $('#error_' + subject).hide();
+            $('#input_' + subject).removeClass('inputerror');
         }
 
     }
