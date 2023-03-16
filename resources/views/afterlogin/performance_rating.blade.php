@@ -72,7 +72,7 @@ mixpanel.track('Loaded Self Analysis ', {
         <div class="progress"></div>
     </div>
 </div>
-<section class="subscriptionsPage d-flex">
+<section class="subscriptionsPage d-flex subscriptionNew">
     <div class="subscriptionsLeftpannel">
         <a href="{{env('CMS_URL')}}" target="_blank"> <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo"></a>
         <div class="progress-box">
@@ -117,7 +117,7 @@ mixpanel.track('Loaded Self Analysis ', {
                     @php
                     $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:0;
                     @endphp
-                    <div class="custom-input" style="width:300px">
+                    <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
                         <div class="input-field">
                             <input type="text" class="form-control rating_input" placeholder="Type here" onblur="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}">
@@ -192,7 +192,7 @@ mixpanel.track('Loaded Self Analysis ', {
                 </ul>
             </div>
             @endforeach -->
-            <div class="mt1400-2 mt-5 d-flex justify-content-between align-items-center pt-4">
+            <div class=" mt-5 d-flex justify-content-between align-items-center pt-4">
                 <div class="backBtn pt-0 mr-2">
                     @if (!Session::has('lead_trail_status'))
                     <a href="{{route('subscriptions')}}">

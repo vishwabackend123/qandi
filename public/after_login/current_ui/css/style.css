@@ -8292,7 +8292,8 @@ margin-bottom: 12px;
 }
 
 /* new Css(13-03-2023) */
-.performanceNewWrapper{height: 62vh;display: flex;align-items: center;}
+.performanceNewWrapper .custom-input input.form-control{font-weight: 600;}
+.performanceNewWrapper{height: 66vh;display: flex;align-items: center;}
 .performanceInputWrapper .input-group-text{background:transparent;
     border-radius: 8px;height: 44px;width: 68px;text-align: center;
     display: inline-block;

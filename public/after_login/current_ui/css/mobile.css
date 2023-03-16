@@ -29,7 +29,7 @@
         min-height: 285px;
         max-height: 287px;}
         
-        .performanceNewWrapper{height: auto;display: block;}
+        
         .performanceInputWrapper .custom-input{margin-bottom:25px;}
         .mt1400-2{margin-top:20px !important;}
         .fullwidth.btn{width: 83%;    min-width: auto;}
@@ -48,6 +48,8 @@
     .graph_head_label h4  {   font-size: 17px;}
         .boxheading.subheading {font-size: 17px; }
         .SelectPlane_text {  padding: 30px 0px 20px 0px;}
+        .subscriptionNew  .SelectPlane_text {    padding: 60px 0px 40px 0px;
+        }
         .planType { padding-top: 35px;}
         .planeName{padding-bottom:20px;}
         .selectPlanedetail {padding: 30px 40px;}
@@ -208,7 +210,7 @@
 }
 @media only screen and (max-height: 720px) {
     .text-exambottom-sec {height: 26vh;}
-   
+    .performanceNewWrapper{height: auto;display: block;}
 }
 @media only screen and (max-height: 700px) {
     .left-sidepannel .carousel-inner .carousel-item img {
