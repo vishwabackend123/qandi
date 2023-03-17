@@ -417,7 +417,7 @@ class ResultController extends Controller
                     $answersArrQID[] = (int)$key;
                 }
             }
-            if ($exam_name = 'Quick Personalized Assessment') {
+            if ($exam_name == 'Quick Personalized Assessment') {
                 $test_type ='Profiling1';
             }
 
