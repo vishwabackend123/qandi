@@ -213,26 +213,23 @@ $('.rating_input').keyup(function() {
 });
 
 function checkValueOrNot() {
-    var isBool = false;
+    var isNumber = 0;
+    var inputcount = $(".rating_input").length;
     $(".rating_input").each(function() {
         var valu = $(this).val();
         if (valu) {
-            if(Number(valu) <= 100)
-            {
-                isBool = true; 
-            }else
-            {
-                isBool=false;
-                return false
+            if (Number(valu) <= 100) {
+                isNumber++;
             }
-            
+
         }
     });
-    if (isBool) {
+    if (isNumber == inputcount) {
         $('#store_rating').removeAttr("disabled");
         $('#store_rating').removeClass("disabled");
     } else {
         $('#store_rating').attr('disabled', true);
+         $('#store_rating').addClass("disabled");
     }
 }
 

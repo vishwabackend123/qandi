@@ -1268,7 +1268,7 @@ class HomeController extends Controller
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
         $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
-        $aStudentRating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? (array)json_decode($preferences->subjects_rating) : [];
+        $aStudentRating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? (array)json_decode($preferences->proficiency_at_signup) : [];
         Session::put('subscription_status', true);
 
         return view('afterlogin.performance_rating', compact('user_subjects', 'aStudentRating'));
