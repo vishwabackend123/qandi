@@ -417,7 +417,9 @@ class ResultController extends Controller
                     $answersArrQID[] = (int)$key;
                 }
             }
-
+            if ($exam_name = 'Quick Personalized Assessment') {
+                $test_type ='Profiling1';
+            }
 
             $inputjson = [];
             $inputjson['answerList'] = $answersArr;
@@ -438,7 +440,6 @@ class ResultController extends Controller
             $inputjson['test_name'] = $exam_name;
 
             $request = json_encode($inputjson);
-
 
             $curl_url = "";
             $curl = curl_init();
