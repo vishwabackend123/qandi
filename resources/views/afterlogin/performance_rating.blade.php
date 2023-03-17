@@ -67,12 +67,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <div class="performanceInputWrapper">
                     @foreach($user_subjects as $subject_proficiency)
                     @php
-                    $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:'';
+                    $sub_sel_rating=isset($aStudentRating['additionalProp'.$subject_proficiency->id])?$aStudentRating['additionalProp'.$subject_proficiency->id]:'';
                     @endphp
                     <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
                         <div class="input-field" id="input_{{$subject_proficiency->subject_name}}">
-                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
+                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="additionalProp{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
                             </div>
@@ -180,107 +180,7 @@ function store_rating() {
         },
         beforeSend: function() {},
         success: function(response_data) {
-
-
             var response = jQuery.parseJSON(response_data);
-
-            var sujects = jQuery.parseJSON(response.response.request_rating.subjects_rating);
-            var values = Object.values(sujects);
-            var keys = Object.keys(sujects);
-            var MathProficiency = '';
-            var PhysicsProficiency = '';
-            var ChemistryProficiency = '';
-            var BotanyProficiency = '';
-            var ZoologyProficiency = '';
-
-            if (sujects['1'] == '1') {
-                var MathProficiency = "Beginner";
-            }
-            if (sujects['1'] == '2') {
-                var MathProficiency = "Foundation";
-            }
-            if (sujects['1'] == '3') {
-                var MathProficiency = "Intermediate";
-            }
-            if (sujects['1'] == '4') {
-                var MathProficiency = "Proficient";
-            }
-            if (sujects['1'] == '5') {
-                var MathProficiency = "Expert";
-            }
-
-            if (sujects['2'] == '1') {
-                var PhysicsProficiency = "Beginner";
-            }
-            if (sujects['2'] == '2') {
-                var PhysicsProficiency = "Foundation";
-            }
-            if (sujects['2'] == '3') {
-                var PhysicsProficiency = "Intermediate";
-            }
-            if (sujects['2'] == '4') {
-                var PhysicsProficiency = "Proficient";
-            }
-            if (sujects['2'] == '5') {
-                var PhysicsProficiency = "Expert";
-            }
-
-            if (sujects['3'] == '1') {
-                var ChemistryProficiency = "Beginner";
-            }
-            if (sujects['3'] == '2') {
-                var ChemistryProficiency = "Foundation";
-            }
-            if (sujects['3'] == '3') {
-                var ChemistryProficiency = "Intermediate";
-            }
-            if (sujects['3'] == '4') {
-                var ChemistryProficiency = "Proficient";
-            }
-            if (sujects['3'] == '5') {
-                var ChemistryProficiency = "Expert";
-            }
-
-            if (sujects['4'] == '1') {
-                var BotanyProficiency = "Beginner";
-            }
-            if (sujects['4'] == '2') {
-                var BotanyProficiency = "Foundation";
-            }
-            if (sujects['4'] == '3') {
-                var BotanyProficiency = "Intermediate";
-            }
-            if (sujects['4'] == '4') {
-                var BotanyProficiency = "Proficient";
-            }
-            if (sujects['4'] == '5') {
-                var BotanyProficiency = "Expert";
-            }
-
-            if (sujects['146'] == '1') {
-                var ZoologyProficiency = "Beginner";
-            }
-            if (sujects['146'] == '2') {
-                var ZoologyProficiency = "Foundation";
-            }
-            if (sujects['146'] == '3') {
-                var ZoologyProficiency = "Intermediate";
-            }
-            if (sujects['146'] == '4') {
-                var ZoologyProficiency = "Proficient";
-            }
-            if (sujects['146'] == '5') {
-                var ZoologyProficiency = "Expert";
-            }
-
-            if (response.response.user_data.grade_id == '1') {
-                var course = "JEE";
-            } else if (response.response.user_data.grade_id == '2') {
-                var course = "NEET";
-            } else {
-                var course = "NA";
-            }
-
             if (response.success == true) {
                 window.location.href = '{{url("performance_analytics")}}';
             }
@@ -313,26 +213,23 @@ $('.rating_input').keyup(function() {
 });
 
 function checkValueOrNot() {
-    var isBool = false;
+    var isNumber = 0;
+    var inputcount = $(".rating_input").length;
     $(".rating_input").each(function() {
         var valu = $(this).val();
         if (valu) {
-            if(Number(valu) <= 100)
-            {
-                isBool = true; 
-            }else
-            {
-                isBool=false;
-                return false
+            if (Number(valu) <= 100) {
+                isNumber++;
             }
-            
+
         }
     });
-    if (isBool) {
+    if (isNumber == inputcount) {
         $('#store_rating').removeAttr("disabled");
         $('#store_rating').removeClass("disabled");
     } else {
         $('#store_rating').attr('disabled', true);
+         $('#store_rating').addClass("disabled");
     }
 }
 

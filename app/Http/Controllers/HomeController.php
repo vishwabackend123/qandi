@@ -72,7 +72,7 @@ class HomeController extends Controller
 
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
-            $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+            $student_rating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
@@ -446,41 +446,10 @@ class HomeController extends Controller
 
             if (isset($storeddata) && !empty($storeddata)) {
                 $rating = $storeddata;
-
-                $request_rating = ['student_id' => (int)$user_id, 'subjects_rating' => json_encode($rating),];
-                $request_json = json_encode($request_rating);
-
-                $api_URL = env('API_URL');
-                $curl_url = $api_URL . 'api/subject-rating';
-                //$curl_url = $api_URL . 'api/proficiency-at-signUp';
-
-                $curl = curl_init();
-                $curl_option = array(
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_FAILONERROR => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "POST",
-                    CURLOPT_POSTFIELDS => $request_json,
-                    CURLOPT_HTTPHEADER => array(
-                        "accept: application/json",
-                        "content-type: application/json",
-                        "Authorization: Bearer " . $this->getAccessToken()
-                    ),
-                );
-                curl_setopt_array($curl, $curl_option);
-                $response_json = curl_exec($curl);
-
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
-                
-                $request_rating_pr = ['student_id' => (int)$user_id, 'proficiency_at_signup' => json_encode($rating),];
+                $request_rating_pr = ['student_id' => (int)$user_id, 'proficiency_at_signup' => $rating];
 
                 $request_json = json_encode($request_rating_pr);
+                $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/proficiency-at-signUp';
                 $curl = curl_init();
                 $curl_option = array(
@@ -491,7 +460,7 @@ class HomeController extends Controller
                     CURLOPT_MAXREDIRS => 10,
                     CURLOPT_TIMEOUT => 0,
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_CUSTOMREQUEST => "PUT",
                     CURLOPT_POSTFIELDS => $request_json,
                     CURLOPT_HTTPHEADER => array(
                         "accept: application/json",
@@ -501,7 +470,6 @@ class HomeController extends Controller
                 );
                 curl_setopt_array($curl, $curl_option);
                 $response_json = curl_exec($curl);
-
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
@@ -509,15 +477,12 @@ class HomeController extends Controller
 
             // Mixpanel started
             $response['user_data'] = $userData;
-            $response['request_rating'] = $request_rating;
+            $response['request_rating'] = $request_rating_pr;
 
-            $aresponse = ["status" => 200, "success" => true, "response" => $response];
+            $aresponse = ["status" => 200, "success" => true];
             return json_encode($aresponse);
 
             // Mixpanel Event Ended
-
-
-            return "success";
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1302,7 +1267,7 @@ class HomeController extends Controller
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
         $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
-        $aStudentRating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? (array)json_decode($preferences->subjects_rating) : [];
+        $aStudentRating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? (array)json_decode($preferences->proficiency_at_signup) : [];
         Session::put('subscription_status', true);
 
         return view('afterlogin.performance_rating', compact('user_subjects', 'aStudentRating'));

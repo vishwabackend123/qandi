@@ -201,7 +201,7 @@ $grade='NA';
                                         <tr>
                                             <td>Minus One Mark</td>
                                             @if ($exam_name_new == 'full_exam_basic')
-                                            <td><b>-2 </b>in all other cases</td>
+                                            <td><b>-1 </b>in all other cases</td>
                                             @else
                                             <td><b>-1 </b>in all other cases</td>
                                             @endif
