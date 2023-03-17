@@ -56,7 +56,7 @@ mixpanel.track('Loaded Select Plan',{
                         <p class="progress__title">Select Plan</p>
                         <p class="progress__info">Decide on the best plan for your preparation</p>
                     </li>
-                   @if ($student_rating == null || empty($student_rating)) 
+                   @if (($student_rating_prof == null || empty($student_rating_prof)) && ($student_rating == null || empty($student_rating))) 
                     <li class="progress__item">
                         <p class="progress__title">Self Analysis</p>
                         <p class="progress__info">Rate your level of proficiency</p>

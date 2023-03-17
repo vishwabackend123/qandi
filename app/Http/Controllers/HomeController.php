@@ -72,7 +72,9 @@ class HomeController extends Controller
 
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
-            $student_rating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
+            $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+
+            $student_rating_prof = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
@@ -307,7 +309,7 @@ class HomeController extends Controller
 
             // myq matrix
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
-            if ($student_rating == null || empty($student_rating)) {
+            if (($student_rating_prof == null || empty($student_rating_prof)) && ($student_rating == null || empty($student_rating))) {
                 return redirect()->route('performance-rating');
             }
 

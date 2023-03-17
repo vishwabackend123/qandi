@@ -196,8 +196,9 @@ class SubscriptionController extends Controller
                 }
             }
             $preferences = $this->redis_Preference();
-            $student_rating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
-            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status','subscriptionData','plan_list','default_month','subscriptions_list','student_rating'));
+            $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+            $student_rating_prof = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
+            return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status','subscriptionData','plan_list','default_month','subscriptions_list','student_rating','student_rating_prof'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
