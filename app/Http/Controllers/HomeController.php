@@ -72,7 +72,7 @@ class HomeController extends Controller
 
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
-            $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+            $student_rating = (isset($preferences->proficiency_at_signup) && !empty($preferences->proficiency_at_signup)) ? $preferences->proficiency_at_signup : '';
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
@@ -446,7 +446,7 @@ class HomeController extends Controller
 
             if (isset($storeddata) && !empty($storeddata)) {
                 $rating = $storeddata;
-                $request_rating_pr = ['student_id' => (int)$user_id, 'proficiency_at_signup' => json_encode($rating),];
+                $request_rating_pr = ['student_id' => (int)$user_id, 'proficiency_at_signup' => $rating];
 
                 $request_json = json_encode($request_rating_pr);
                 $api_URL = env('API_URL');
@@ -460,7 +460,7 @@ class HomeController extends Controller
                     CURLOPT_MAXREDIRS => 10,
                     CURLOPT_TIMEOUT => 0,
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_CUSTOMREQUEST => "PUT",
                     CURLOPT_POSTFIELDS => $request_json,
                     CURLOPT_HTTPHEADER => array(
                         "accept: application/json",
@@ -470,7 +470,6 @@ class HomeController extends Controller
                 );
                 curl_setopt_array($curl, $curl_option);
                 $response_json = curl_exec($curl);
-
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);

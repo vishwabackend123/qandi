@@ -67,12 +67,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <div class="performanceInputWrapper">
                     @foreach($user_subjects as $subject_proficiency)
                     @php
-                    $sub_sel_rating=isset($aStudentRating[$subject_proficiency->id])?$aStudentRating[$subject_proficiency->id]:'';
+                    $sub_sel_rating=isset($aStudentRating['additionalProp'.$subject_proficiency->id])?$aStudentRating['additionalProp'.$subject_proficiency->id]:'';
                     @endphp
                     <div class="custom-input">
                         <label>{{$subject_proficiency->subject_name}}*</label>
                         <div class="input-field" id="input_{{$subject_proficiency->subject_name}}">
-                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
+                            <input type="text" class="form-control rating_input" placeholder="Type here" onkeyup="checkValidRating(this.value,'{{$subject_proficiency->subject_name}}')" maxlength="3" value="{{$sub_sel_rating}}" data-id="additionalProp{{$subject_proficiency->id}}" onkeypress="return isNumber(event)">
                             <div class="Floattext">
                                 <span class="input-group-text">100</span>
                             </div>
