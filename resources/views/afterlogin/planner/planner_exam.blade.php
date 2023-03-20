@@ -945,7 +945,7 @@ $question_type = "Numerical";
             });
         }
         if (option_id.length > 0) {
-            //clearResponse(quest_id, subject_id, cur_quest_no);
+            clearResponse(quest_id, subject_id, cur_quest_no);
         }
 
         $.ajax({
