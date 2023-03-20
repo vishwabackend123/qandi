@@ -1694,9 +1694,10 @@ if (isValid == 1) {
         } else {
 
         }
-
+        console.log(type);
         var save_count = saveArr.length;
         var r_count = markForReviewArr.length;
+        console.log(r_count);
         var s_r_count = saveMarkReviewArr.length;
         var unanswered = totalQCount - (save_count + r_count + s_r_count);
 

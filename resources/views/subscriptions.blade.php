@@ -425,13 +425,13 @@ mixpanel.track('Loaded Select Plan',{
                 <div class="planType">
                     <div class="freeTrial">
                         @if($days <=14)
-                            @if ($student_rating == null || empty($student_rating)) 
+                            @if (($student_rating_prof == null || empty($student_rating_prof)) && ($student_rating == null || empty($student_rating))) 
                             <a href="{{url('/performance-rating')}}">Already in {{$days}} day trial Period</a>
                             @else
                             <a href="{{url('/dashboard')}}">Already in {{$days}} day trial Period</a>
                             @endif
                         @else
-                        @if ($student_rating == null || empty($student_rating)) 
+                            @if (($student_rating_prof == null || empty($student_rating_prof)) && ($student_rating == null || empty($student_rating))) 
                             <a href="{{url('/performance-rating')}}">Already in 1 year trial Period</a>
                             @else
                             <a href="{{url('/dashboard')}}">Already in 1 year trial Period</a>
