@@ -1125,6 +1125,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
@@ -1440,6 +1441,7 @@ $("#resume-test").modal("show");
         $.ajax({
             url: "{{ route('clearResponseProfiling') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,

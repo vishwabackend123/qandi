@@ -1075,6 +1075,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
@@ -1379,6 +1380,7 @@ $question_type = "Numerical";
         $.ajax({
             url: "{{ route('clearResponse') }}",
             type: 'POST',
+            async:false,
             data: {
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
