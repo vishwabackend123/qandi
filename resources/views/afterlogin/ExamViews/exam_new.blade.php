@@ -1119,7 +1119,7 @@ $question_type = "Numerical";
             });
         }
         if (option_id.length > 0) {
-            clearResponse();
+            //clearResponse();
         }
 
         $.ajax({
