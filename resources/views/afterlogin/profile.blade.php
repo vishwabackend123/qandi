@@ -238,7 +238,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                             <div class="line mb-3 pb-1"></div>
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription Type:</h2>
-                                @if($subscription_type != "T" && ($subscription_type == "P" || $days >7))
+                                @if($subscription_type != "T" && (($subscription_type == "P" || $subscription_type == "S") || $days >7))
                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}  {{$current_subscription->months}} Months Subscription</h3>
                                 @else
                                 @if($days >7)
@@ -249,7 +249,7 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
 
                                 @endif
                             </div>
-                            @if($subscription_type != "T" && ($subscription_type == "P" || $days >7))
+                            @if($subscription_type != "T" && (($subscription_type == "P" || $subscription_type == "S") || $days >7))
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Price:</h2>
                                 <h3>₹{{number_format($subsprice)}}</h3>

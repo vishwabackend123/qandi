@@ -108,7 +108,7 @@ mixpanel.track('Loaded Select Plan',{
             continue;
             }
             @endphp
-            @if($subscription_type=="P")
+            @if($subscription_type=="P" || $subscription_type=="S")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
@@ -268,7 +268,7 @@ mixpanel.track('Loaded Select Plan',{
                     </div>
                 </div>
             </div>
-            @elseif($subscription_type!="P")
+            @elseif($subscription_type!="P" && $subscription_type!="S")
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
@@ -816,7 +816,7 @@ mixpanel.track('Loaded Select Plan',{
             $discount_price=($subsprice*$discount)/100;
             @endphp
             @if(isset($user_exam_id) && !empty($user_exam_id) && $collect_Sub->contains('class_exam_id', $user_exam_id))
-            @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
+            @if( $user_exam_id==$sub->class_exam_id && ($subscription_type=="P" || $subscription_type=="S"))
             <div class="selectPlanedetail">
                 <div class="planeName hideonmobile">
                     <!-- <p>{{$sub->subscription_name}} Annual Plan desktop</p> -->
@@ -961,7 +961,7 @@ mixpanel.track('Loaded Select Plan',{
                     </div>
                 </div>
             </div>
-            @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type !="P")
+            @elseif( $user_exam_id==$sub->class_exam_id && ($subscription_type !="P" && $subscription_type !="S"))
             <div class="selectPlanedetail">
                 @php
                 $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
