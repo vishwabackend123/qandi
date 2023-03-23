@@ -947,7 +947,11 @@ mixpanel.track('Loaded Select Plan',{
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
+                        @if($subscription_type=="S")
+                        <a href="javascript:void(0);">Your scholarship expired</a>
+                        @else
                         <a href="javascript:void(0);">Your paid subscription expired</a>
+                        @endif
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">

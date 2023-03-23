@@ -239,7 +239,11 @@ MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mix
                             <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
                                 <h2>Subscription Type:</h2>
                                 @if($subscription_type != "T" && (($subscription_type == "P" || $subscription_type == "S") || $days >7))
+                                @if($subscription_type == "P")
                                 <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}  {{$current_subscription->months}} Months Subscription</h3>
+                                @else
+                                <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}  {{$current_subscription->months}} Months Scholarship</h3>
+                                @endif
                                 @else
                                 @if($days >7)
                                     <h3>{{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}} 1 year trial</h3>
