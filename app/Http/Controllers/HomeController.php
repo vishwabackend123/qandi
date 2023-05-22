@@ -256,14 +256,12 @@ class HomeController extends Controller
 
             if (isset($response_prog['response']['studentProgress']) && !empty($response_prog['response']['studentProgress'])) {
                 $month = date('m');
-                $i = $month - count($response_prog['response']['studentProgress']) + 1;
                 foreach ($response_prog['response']['studentProgress'] as $progData) {
                     array_push($ideal, $progData['monthIndex']);
                     array_push($your_place, $progData['chapterCount']);
-                    $monthName = date('M', mktime(0, 0, 0, $i, 10));
+                    $monthName = date('M', mktime(0, 0, 0, $progData['month'], 10));
                     $week = $monthName;
                     array_push($progress_cat, $week);
-                    $i++;
                 }
                 //Session::put('ideal', $ideal);
                 //Session::put('your_place', $your_place);
@@ -272,7 +270,13 @@ class HomeController extends Controller
                 Redis::set('your_place' . $user_id, json_encode($your_place));
                 Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
             }
-            $totalNoOfChapters=isset($response_prog['response']['totalNoOfChapters']) && !empty($response_prog['response']['totalNoOfChapters']) ? $response_prog['response']['totalNoOfChapters'] : 0;
+            $ideal = array_filter($ideal, function ($v) {
+                    return $v >= 0;
+            });
+            $your_place = array_filter($your_place, function ($v) {
+                    return $v >= 0;
+            });
+            $totalNoOfChapters=isset($response_prog['response']['chapterToBeCompleted']) && !empty($response_prog['response']['chapterToBeCompleted']) ? $response_prog['response']['chapterToBeCompleted'] : 0;
             // }
             $curl = curl_init();
             $api_URL = env('API_URL');
