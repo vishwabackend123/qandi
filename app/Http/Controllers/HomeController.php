@@ -254,12 +254,12 @@ class HomeController extends Controller
             $response_prog = json_decode($response_preg_json, true);
 
 
-            if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
+            if (isset($response_prog['response']['studentProgress']) && !empty($response_prog['response']['studentProgress'])) {
                 $month = date('m');
-                $i = $month - count($response_prog['response']['student_progress']) + 1;
-                foreach ($response_prog['response']['student_progress'] as $progData) {
-                    array_push($ideal, $progData['month_index']);
-                    array_push($your_place, $progData['chapter_count']);
+                $i = $month - count($response_prog['response']['studentProgress']) + 1;
+                foreach ($response_prog['response']['studentProgress'] as $progData) {
+                    array_push($ideal, $progData['monthIndex']);
+                    array_push($your_place, $progData['chapterCount']);
                     $monthName = date('M', mktime(0, 0, 0, $i, 10));
                     $week = $monthName;
                     array_push($progress_cat, $week);
@@ -272,6 +272,7 @@ class HomeController extends Controller
                 Redis::set('your_place' . $user_id, json_encode($your_place));
                 Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
             }
+            $totalNoOfChapters=isset($response_prog['response']['totalNoOfChapters']) && !empty($response_prog['response']['totalNoOfChapters']) ? $response_prog['response']['totalNoOfChapters'] : 0;
             // }
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -314,18 +315,18 @@ class HomeController extends Controller
             }
 
 
-            if (isset($ideal) && !empty($ideal)) {
-                $ideal_avg = array_sum($ideal) / count($ideal);
-            } else {
-                $ideal_avg = 0;
-            }
+            //if (isset($ideal) && !empty($ideal)) {
+                $ideal_avg = $response_prog['response']['idealPace'];
+            //} else {
+              //  $ideal_avg = 0;
+            //}
 
 
-            if (isset($your_place) && !empty($your_place)) {
-                $your_place_avg = array_sum($your_place) / count($your_place);
-            } else {
-                $your_place_avg = 0;
-            }
+            //if (isset($your_place) && !empty($your_place)) {
+                $your_place_avg = $response_prog['response']['yourPace'];//array_sum($your_place) / count($your_place);
+            //} else {
+              //  $your_place_avg = 0;
+            //}
 
 
 
@@ -372,7 +373,7 @@ class HomeController extends Controller
             /* check user status new or old */
 
             // $accurate_percent = ($myqtodayScore * 75) / 100;
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent'));
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask', 'accurate_percent','totalNoOfChapters'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

@@ -789,6 +789,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                                 @endif
                                                 <div class="col-md-7">
                                                     <div class="progress_journey_chart progressnewjourney">
+                                                         <span class="yaxis_label" style="position: relative;margin: 0px 0 0 -60px;"><small>No. of chapters completed.</small> </span>
                                                         <canvas id="progressJourny_graph"></canvas>
                                                     </div>
                                                 </div>
@@ -820,13 +821,13 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                                                 @endif
                                                             </p>
                                                         </div>
-                                                        @if(((round($ideal_avg) > round($your_place_avg)) &&  (round($ideal_avg)-round($your_place_avg)) ==1))
+                                                        @if(round($totalNoOfChapters) ==1)
                                                         <div class="note">
-                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapter this week
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{round($totalNoOfChapters)}} chapter this week
                                                         </div>
                                                         @else
                                                         <div class="note">
-                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{((round($ideal_avg) > round($your_place_avg)))?(round($ideal_avg)-round($your_place_avg)):0}} chapters this week
+                                                            <b>Note:</b> To achieve the ideal pace, you have to complete {{round($totalNoOfChapters)}} chapters this week
                                                         </div>
                                                         @endif
 
