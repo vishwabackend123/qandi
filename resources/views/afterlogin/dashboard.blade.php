@@ -1462,8 +1462,10 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                             display: true,
 
                         },
-                    }
-
+                    },
+                y: {
+                    beginAtZero: true
+                    },
                 }
             }
         };
