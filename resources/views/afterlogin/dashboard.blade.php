@@ -1464,7 +1464,10 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                         },
                     },
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                         precision: 0
+                        }
                     },
                 }
             }
