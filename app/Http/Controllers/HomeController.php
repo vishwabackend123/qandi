@@ -257,7 +257,7 @@ class HomeController extends Controller
             if (isset($response_prog['response']['studentProgress']) && !empty($response_prog['response']['studentProgress'])) {
                 $month = date('m');
                 foreach ($response_prog['response']['studentProgress'] as $progData) {
-                    array_push($ideal, $progData['monthIndex']);
+                    array_push($ideal, $progData['idealPace']);
                     array_push($your_place, $progData['chapterCount']);
                     $monthName = date('M', mktime(0, 0, 0, $progData['month'], 10));
                     $week = $monthName;
