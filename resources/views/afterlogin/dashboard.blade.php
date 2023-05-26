@@ -821,6 +821,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                                                 @endif
                                                             </p>
                                                         </div>
+                                                        @if($your_place_avg < $ideal_avg)
                                                         @if(round($totalNoOfChapters) ==1)
                                                         <div class="note">
                                                             <b>Note:</b> To achieve the ideal pace, you have to complete {{round($totalNoOfChapters)}} chapter this week
@@ -830,6 +831,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                                             <b>Note:</b> To achieve the ideal pace, you have to complete {{round($totalNoOfChapters)}} chapters this week
                                                         </div>
                                                         @endif
+                                                       @endif 
 
                                                     </div>
                                                     @else
